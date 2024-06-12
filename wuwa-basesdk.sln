@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wuwa-basesdk", "wuwa-basesdk\wuwa-basesdk.vcxproj", "{9295C555-4E22-4EB5-BFAD-2F45685D6114}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9295C555-4E22-4EB5-BFAD-2F45685D6114}.Debug|x64.ActiveCfg = Debug|x64
+		{9295C555-4E22-4EB5-BFAD-2F45685D6114}.Debug|x64.Build.0 = Debug|x64
+		{9295C555-4E22-4EB5-BFAD-2F45685D6114}.Release|x64.ActiveCfg = Release|x64
+		{9295C555-4E22-4EB5-BFAD-2F45685D6114}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E747E5A5-925C-4B12-918E-6712BB5CF2A4}
+	EndGlobalSection
+EndGlobal
