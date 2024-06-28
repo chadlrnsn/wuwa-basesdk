@@ -11,6 +11,9 @@ DWORD WINAPI MainThread(HMODULE hMod, LPVOID lp) {
     SDK::UWorld* World = SDK::UWorld::GetWorld();
     SDK::UEngine* Engine = SDK::UEngine::GetEngine();
 
+    // Will print 0x00000000 because both will initialized immeadeately after game open
+    // you can make while cycle
+
     printf("UWorld -> 0x%p\n", &World);
     printf("UEngine -> 0x%p\n", &Engine);
 
