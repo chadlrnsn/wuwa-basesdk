@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "ECaughtResultType_structs.hpp"
 #include "BP_ManagerBase_classes.hpp"
 #include "ECharacterState_structs.hpp"
+#include "ECaughtResultType_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_EventManager.BP_EventManager_C
-// 0x0170 (0x01B8 - 0x0048)
+// 0x0180 (0x01C8 - 0x0048)
 class UBP_EventManager_C final : public UBP_ManagerBase_C
 {
 public:
@@ -46,6 +46,7 @@ public:
 	FMulticastInlineDelegateProperty_             S_____;                                            // 0x0188(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	FMulticastInlineDelegateProperty_             OnEnterPhotograph;                                 // 0x0198(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	FMulticastInlineDelegateProperty_             OnExitPhotograph;                                  // 0x01A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	FMulticastInlineDelegateProperty_             __i_04b_;                                          // 0x01B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void Lb__h_9___DelegateSignature(uint8 __h___, class UObject* Lb__);
@@ -71,6 +72,7 @@ public:
 	void S_______DelegateSignature();
 	void OnEnterPhotograph__DelegateSignature();
 	void OnExitPhotograph__DelegateSignature();
+	void __i_04b___DelegateSignature(class AActor* __i, class AActor* Fourb);
 
 public:
 	static class UClass* StaticClass()
@@ -83,7 +85,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_EventManager_C) == 0x000008, "Wrong alignment on UBP_EventManager_C");
-static_assert(sizeof(UBP_EventManager_C) == 0x0001B8, "Wrong size on UBP_EventManager_C");
+static_assert(sizeof(UBP_EventManager_C) == 0x0001C8, "Wrong size on UBP_EventManager_C");
 static_assert(offsetof(UBP_EventManager_C, Lb__h_9_) == 0x000048, "Member 'UBP_EventManager_C::Lb__h_9_' has a wrong offset!");
 static_assert(offsetof(UBP_EventManager_C, S__r___) == 0x000058, "Member 'UBP_EventManager_C::S__r___' has a wrong offset!");
 static_assert(offsetof(UBP_EventManager_C, S__LbS__) == 0x000068, "Member 'UBP_EventManager_C::S__LbS__' has a wrong offset!");
@@ -107,6 +109,7 @@ static_assert(offsetof(UBP_EventManager_C, P______) == 0x000178, "Member 'UBP_Ev
 static_assert(offsetof(UBP_EventManager_C, S_____) == 0x000188, "Member 'UBP_EventManager_C::S_____' has a wrong offset!");
 static_assert(offsetof(UBP_EventManager_C, OnEnterPhotograph) == 0x000198, "Member 'UBP_EventManager_C::OnEnterPhotograph' has a wrong offset!");
 static_assert(offsetof(UBP_EventManager_C, OnExitPhotograph) == 0x0001A8, "Member 'UBP_EventManager_C::OnExitPhotograph' has a wrong offset!");
+static_assert(offsetof(UBP_EventManager_C, __i_04b_) == 0x0001B8, "Member 'UBP_EventManager_C::__i_04b_' has a wrong offset!");
 
 }
 

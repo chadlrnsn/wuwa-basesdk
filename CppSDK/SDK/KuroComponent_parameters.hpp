@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroComponent_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroComponent_structs.hpp"
 
 
 namespace SDK::Params

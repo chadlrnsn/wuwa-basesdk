@@ -128,6 +128,37 @@ void UKuroPointCloudCache::UpdateFromData(const TArray<struct FVector>& Position
 }
 
 
+// Function KuroPointCloud.KuroPointCloudCache.UpdateFromDataWithIndices
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<struct FVector>                  Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FQuat>                    Rotations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FVector>                  Scales                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<int32>                           Indices                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UKuroPointCloudCache::UpdateFromDataWithIndices(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales, const TArray<int32>& Indices)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "UpdateFromDataWithIndices");
+
+	Params::KuroPointCloudCache_UpdateFromDataWithIndices Parms{};
+
+	Parms.Positions = std::move(Positions);
+	Parms.Rotations = std::move(Rotations);
+	Parms.Scales = std::move(Scales);
+	Parms.Indices = std::move(Indices);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroPointCloud.KuroPointCloudInstance.BuildFrom2DPoints
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:

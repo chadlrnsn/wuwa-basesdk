@@ -56,7 +56,6 @@ public:
 	void DrawDebugPatrolPoints();
 	void DrawErrorNavigationPaths();
 	void SetMovementDebug(bool NewDebug);
-	void AiDebugDraw();
 
 public:
 	static class UClass* StaticClass()

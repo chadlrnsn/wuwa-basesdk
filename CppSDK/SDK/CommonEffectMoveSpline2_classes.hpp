@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CommonEffectMoveSpline2.CommonEffectMoveSpline2_C
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class ACommonEffectMoveSpline2_C final : public AActor
 {
 public:
-	class UKuroMoveSplineComponent*               KuroMoveSpline;                                    // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UKuroMoveSplineComponent*               KuroMoveSpline;                                    // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(ACommonEffectMoveSpline2_C) == 0x000008, "Wrong alignment on ACommonEffectMoveSpline2_C");
-static_assert(sizeof(ACommonEffectMoveSpline2_C) == 0x0002B0, "Wrong size on ACommonEffectMoveSpline2_C");
-static_assert(offsetof(ACommonEffectMoveSpline2_C, KuroMoveSpline) == 0x0002A8, "Member 'ACommonEffectMoveSpline2_C::KuroMoveSpline' has a wrong offset!");
+static_assert(sizeof(ACommonEffectMoveSpline2_C) == 0x0002B8, "Wrong size on ACommonEffectMoveSpline2_C");
+static_assert(offsetof(ACommonEffectMoveSpline2_C, KuroMoveSpline) == 0x0002B0, "Member 'ACommonEffectMoveSpline2_C::KuroMoveSpline' has a wrong offset!");
 
 }
 

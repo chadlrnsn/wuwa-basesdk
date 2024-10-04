@@ -750,6 +750,17 @@ static_assert(sizeof(NiagaraComponent_SetVariableVec4) == 0x000020, "Wrong size 
 static_assert(offsetof(NiagaraComponent_SetVariableVec4, InVariableName) == 0x000000, "Member 'NiagaraComponent_SetVariableVec4::InVariableName' has a wrong offset!");
 static_assert(offsetof(NiagaraComponent_SetVariableVec4, InValue) == 0x000010, "Member 'NiagaraComponent_SetVariableVec4::InValue' has a wrong offset!");
 
+// Function Niagara.NiagaraComponent.SetVisibleInRayTracing
+// 0x0001 (0x0001 - 0x0000)
+struct NiagaraComponent_SetVisibleInRayTracing final
+{
+public:
+	bool                                          NewValue;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraComponent_SetVisibleInRayTracing) == 0x000001, "Wrong alignment on NiagaraComponent_SetVisibleInRayTracing");
+static_assert(sizeof(NiagaraComponent_SetVisibleInRayTracing) == 0x000001, "Wrong size on NiagaraComponent_SetVisibleInRayTracing");
+static_assert(offsetof(NiagaraComponent_SetVisibleInRayTracing, NewValue) == 0x000000, "Member 'NiagaraComponent_SetVisibleInRayTracing::NewValue' has a wrong offset!");
+
 // Function Niagara.NiagaraComponent.GetAgeUpdateMode
 // 0x0001 (0x0001 - 0x0000)
 struct NiagaraComponent_GetAgeUpdateMode final
@@ -1295,6 +1306,17 @@ static_assert(offsetof(NiagaraDataInterfaceGrid3DCollection_GetTextureSize, Size
 static_assert(offsetof(NiagaraDataInterfaceGrid3DCollection_GetTextureSize, SizeY) == 0x00000C, "Member 'NiagaraDataInterfaceGrid3DCollection_GetTextureSize::SizeY' has a wrong offset!");
 static_assert(offsetof(NiagaraDataInterfaceGrid3DCollection_GetTextureSize, SizeZ) == 0x000010, "Member 'NiagaraDataInterfaceGrid3DCollection_GetTextureSize::SizeZ' has a wrong offset!");
 
+// Function Niagara.NiagaraFunctionLibrary.GetGlobalInfo
+// 0x0010 (0x0010 - 0x0000)
+struct NiagaraFunctionLibrary_GetGlobalInfo final
+{
+public:
+	struct FNiagaraGlobalInfoInHUD                ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraFunctionLibrary_GetGlobalInfo) == 0x000004, "Wrong alignment on NiagaraFunctionLibrary_GetGlobalInfo");
+static_assert(sizeof(NiagaraFunctionLibrary_GetGlobalInfo) == 0x000010, "Wrong size on NiagaraFunctionLibrary_GetGlobalInfo");
+static_assert(offsetof(NiagaraFunctionLibrary_GetGlobalInfo, ReturnValue) == 0x000000, "Member 'NiagaraFunctionLibrary_GetGlobalInfo::ReturnValue' has a wrong offset!");
+
 // Function Niagara.NiagaraFunctionLibrary.GetNiagaraParameterCollection
 // 0x0018 (0x0018 - 0x0000)
 struct NiagaraFunctionLibrary_GetNiagaraParameterCollection final
@@ -1309,6 +1331,17 @@ static_assert(sizeof(NiagaraFunctionLibrary_GetNiagaraParameterCollection) == 0x
 static_assert(offsetof(NiagaraFunctionLibrary_GetNiagaraParameterCollection, WorldContextObject) == 0x000000, "Member 'NiagaraFunctionLibrary_GetNiagaraParameterCollection::WorldContextObject' has a wrong offset!");
 static_assert(offsetof(NiagaraFunctionLibrary_GetNiagaraParameterCollection, Collection) == 0x000008, "Member 'NiagaraFunctionLibrary_GetNiagaraParameterCollection::Collection' has a wrong offset!");
 static_assert(offsetof(NiagaraFunctionLibrary_GetNiagaraParameterCollection, ReturnValue) == 0x000010, "Member 'NiagaraFunctionLibrary_GetNiagaraParameterCollection::ReturnValue' has a wrong offset!");
+
+// Function Niagara.NiagaraFunctionLibrary.MarkNiagaraScalabilityNeedUpdate
+// 0x0008 (0x0008 - 0x0000)
+struct NiagaraFunctionLibrary_MarkNiagaraScalabilityNeedUpdate final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NiagaraFunctionLibrary_MarkNiagaraScalabilityNeedUpdate) == 0x000008, "Wrong alignment on NiagaraFunctionLibrary_MarkNiagaraScalabilityNeedUpdate");
+static_assert(sizeof(NiagaraFunctionLibrary_MarkNiagaraScalabilityNeedUpdate) == 0x000008, "Wrong size on NiagaraFunctionLibrary_MarkNiagaraScalabilityNeedUpdate");
+static_assert(offsetof(NiagaraFunctionLibrary_MarkNiagaraScalabilityNeedUpdate, WorldContextObject) == 0x000000, "Member 'NiagaraFunctionLibrary_MarkNiagaraScalabilityNeedUpdate::WorldContextObject' has a wrong offset!");
 
 // Function Niagara.NiagaraFunctionLibrary.OverrideSystemUserVariableSkeletalMeshComponent
 // 0x0020 (0x0020 - 0x0000)

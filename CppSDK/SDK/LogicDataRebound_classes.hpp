@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "LogicDataBase_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SCounterAttackCamera_structs.hpp"
-#include "LogicDataBase_classes.hpp"
 
 
 namespace SDK

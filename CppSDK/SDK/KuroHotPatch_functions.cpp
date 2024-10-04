@@ -577,6 +577,31 @@ bool UKuroLauncherLibrary::Encrypt(const class FString& InPlain, class FString* 
 }
 
 
+// Function KuroHotPatch.KuroLauncherLibrary.GameSavedDir
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKuroLauncherLibrary::GameSavedDir()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "GameSavedDir");
+
+	Params::KuroLauncherLibrary_GameSavedDir Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroHotPatch.KuroLauncherLibrary.GetAppChangeList
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1251,6 +1276,102 @@ void UKuroLauncherLibrary::SetRestartApp(uint8 RestartType)
 }
 
 
+// Function KuroHotPatch.KuroPakMountStatic.AddSha1Check
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           FilePath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           CheckSha1Hash                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroPakMountStatic::AddSha1Check(const class FString& FilePath, const class FString& CheckSha1Hash)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPakMountStatic", "AddSha1Check");
+
+	Params::KuroPakMountStatic_AddSha1Check Parms{};
+
+	Parms.FilePath = std::move(FilePath);
+	Parms.CheckSha1Hash = std::move(CheckSha1Hash);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroHotPatch.KuroPakMountStatic.DeleteSha1CheckFailedFiles
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UKuroPakMountStatic::DeleteSha1CheckFailedFiles()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPakMountStatic", "DeleteSha1CheckFailedFiles");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroHotPatch.KuroPakMountStatic.GetSha1CheckFailedCount
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPakMountStatic::GetSha1CheckFailedCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPakMountStatic", "GetSha1CheckFailedCount");
+
+	Params::KuroPakMountStatic_GetSha1CheckFailedCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroHotPatch.KuroPakMountStatic.IsSha1CheckWorking
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPakMountStatic::IsSha1CheckWorking()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPakMountStatic", "IsSha1CheckWorking");
+
+	Params::KuroPakMountStatic_IsSha1CheckWorking Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroHotPatch.KuroPakMountStatic.MakePakPatch
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1392,6 +1513,50 @@ void UKuroPakMountStatic::MountStartupPaks()
 }
 
 
+// Function KuroHotPatch.KuroPakMountStatic.RemoveSha1Check
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           FilePath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroPakMountStatic::RemoveSha1Check(const class FString& FilePath)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPakMountStatic", "RemoveSha1Check");
+
+	Params::KuroPakMountStatic_RemoveSha1Check Parms{};
+
+	Parms.FilePath = std::move(FilePath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroHotPatch.KuroPakMountStatic.ResetSha1CheckResult
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UKuroPakMountStatic::ResetSha1CheckResult()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPakMountStatic", "ResetSha1CheckResult");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroHotPatch.KuroPakMountStatic.Save
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1412,6 +1577,44 @@ void UKuroPakMountStatic::Save(const class FString& Path)
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroHotPatch.KuroPakMountStatic.StartSha1Check
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UKuroPakMountStatic::StartSha1Check()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPakMountStatic", "StartSha1Check");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroHotPatch.KuroPakMountStatic.StopSha1Check
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UKuroPakMountStatic::StopSha1Check()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPakMountStatic", "StopSha1Check");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

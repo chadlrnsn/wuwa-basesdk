@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemovePublicTags
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.AddPublicTags
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   EntityId1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // TArray<class FString>                   Tags1                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWorldFunctionLibrary_C::RemovePublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext)
+void UWorldFunctionLibrary_C::AddPublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("WorldFunctionLibrary_C", "RemovePublicTags");
+		Func = StaticClass()->GetFunction("WorldFunctionLibrary_C", "AddPublicTags");
 
-	Params::WorldFunctionLibrary_C_RemovePublicTags Parms{};
+	Params::WorldFunctionLibrary_C_AddPublicTags Parms{};
 
 	Parms.EntityId1 = EntityId1;
 	Parms.Tags1 = std::move(Tags1);
@@ -48,21 +48,21 @@ void UWorldFunctionLibrary_C::RemovePublicTags(float EntityId1, TArray<class FSt
 }
 
 
-// Function WorldFunctionLibrary.WorldFunctionLibrary_C.AddPublicTags
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemovePublicTags
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   EntityId1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // TArray<class FString>                   Tags1                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWorldFunctionLibrary_C::AddPublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext)
+void UWorldFunctionLibrary_C::RemovePublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("WorldFunctionLibrary_C", "AddPublicTags");
+		Func = StaticClass()->GetFunction("WorldFunctionLibrary_C", "RemovePublicTags");
 
-	Params::WorldFunctionLibrary_C_AddPublicTags Parms{};
+	Params::WorldFunctionLibrary_C_RemovePublicTags Parms{};
 
 	Parms.EntityId1 = EntityId1;
 	Parms.Tags1 = std::move(Tags1);

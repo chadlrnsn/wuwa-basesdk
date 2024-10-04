@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_StartupPlayerController.BP_StartupPlayerController_C
-// 0x0000 (0x0728 - 0x0728)
+// 0x0000 (0x0738 - 0x0738)
 class ABP_StartupPlayerController_C final : public ATsStartupPlayerController_C
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_StartupPlayerController_C) == 0x000008, "Wrong alignment on ABP_StartupPlayerController_C");
-static_assert(sizeof(ABP_StartupPlayerController_C) == 0x000728, "Wrong size on ABP_StartupPlayerController_C");
+static_assert(sizeof(ABP_StartupPlayerController_C) == 0x000738, "Wrong size on ABP_StartupPlayerController_C");
 
 }
 

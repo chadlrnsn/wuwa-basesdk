@@ -16,6 +16,17 @@
 namespace SDK::Params
 {
 
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct WuYinQuBattleActor_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WuYinQuBattleActor_C_ReceiveEndPlay) == 0x000001, "Wrong alignment on WuYinQuBattleActor_C_ReceiveEndPlay");
+static_assert(sizeof(WuYinQuBattleActor_C_ReceiveEndPlay) == 0x000001, "Wrong size on WuYinQuBattleActor_C_ReceiveEndPlay");
+static_assert(offsetof(WuYinQuBattleActor_C_ReceiveEndPlay, EndPlayReason) == 0x000000, "Member 'WuYinQuBattleActor_C_ReceiveEndPlay::EndPlayReason' has a wrong offset!");
+
 // Function WuYinQuBattleActor.WuYinQuBattleActor_C.ExecuteUbergraph_WuYinQuBattleActor
 // 0x0008 (0x0008 - 0x0000)
 struct WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor final
@@ -28,17 +39,6 @@ static_assert(alignof(WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor) 
 static_assert(sizeof(WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor) == 0x000008, "Wrong size on WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor");
 static_assert(offsetof(WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor, EntryPoint) == 0x000000, "Member 'WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor::EntryPoint' has a wrong offset!");
 static_assert(offsetof(WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor, K2Node_Event_EndPlayReason) == 0x000004, "Member 'WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor::K2Node_Event_EndPlayReason' has a wrong offset!");
-
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct WuYinQuBattleActor_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WuYinQuBattleActor_C_ReceiveEndPlay) == 0x000001, "Wrong alignment on WuYinQuBattleActor_C_ReceiveEndPlay");
-static_assert(sizeof(WuYinQuBattleActor_C_ReceiveEndPlay) == 0x000001, "Wrong size on WuYinQuBattleActor_C_ReceiveEndPlay");
-static_assert(offsetof(WuYinQuBattleActor_C_ReceiveEndPlay, EndPlayReason) == 0x000000, "Member 'WuYinQuBattleActor_C_ReceiveEndPlay::EndPlayReason' has a wrong offset!");
 
 }
 

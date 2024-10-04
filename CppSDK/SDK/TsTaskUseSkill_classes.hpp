@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskUseSkill_C;                   // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_TsTaskUseSkill(int32 EntryPoint);
 	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ExecuteUbergraph_TsTaskUseSkill(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

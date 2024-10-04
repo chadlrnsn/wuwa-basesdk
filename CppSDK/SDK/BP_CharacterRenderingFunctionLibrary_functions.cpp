@@ -477,6 +477,30 @@ void UBP_CharacterRenderingFunctionLibrary_C::RemoveMaterialControllerDataGroup_
 }
 
 
+// Function BP_CharacterRenderingFunctionLibrary.BP_CharacterRenderingFunctionLibrary_C.SetNiagaraSkeletalMeshSimpleNPC
+// (Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UNiagaraComponent*                NiagaraComponen                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           ParamName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_CharacterRenderingFunctionLibrary_C::SetNiagaraSkeletalMeshSimpleNPC(class UNiagaraComponent* NiagaraComponen, const class FString& ParamName, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BP_CharacterRenderingFunctionLibrary_C", "SetNiagaraSkeletalMeshSimpleNPC");
+
+	Params::BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC Parms{};
+
+	Parms.NiagaraComponen = NiagaraComponen;
+	Parms.ParamName = std::move(ParamName);
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_CharacterRenderingFunctionLibrary.BP_CharacterRenderingFunctionLibrary_C.ApplyMaterialParems
 // (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:

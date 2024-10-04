@@ -45,26 +45,6 @@ void ABP_SuperFarFog_C::Refresh()
 }
 
 
-// Function BP_SuperFarFog.BP_SuperFarFog_C.Update
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_SuperFarFog_C::Update(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SuperFarFog_C", "Update");
-
-	Params::BP_SuperFarFog_C_Update Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_SuperFarFog.BP_SuperFarFog_C.ExecuteUbergraph_BP_SuperFarFog
 // (Final, UbergraphFunction)
 // Parameters:

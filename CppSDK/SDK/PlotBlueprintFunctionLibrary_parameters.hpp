@@ -253,19 +253,23 @@ static_assert(sizeof(PlotBlueprintFunctionLibrary_C_CloseUiView) == 0x000008, "W
 static_assert(offsetof(PlotBlueprintFunctionLibrary_C_CloseUiView, __WorldContext) == 0x000000, "Member 'PlotBlueprintFunctionLibrary_C_CloseUiView::__WorldContext' has a wrong offset!");
 
 // Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenUiView
-// 0x0028 (0x0028 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct PlotBlueprintFunctionLibrary_C_OpenUiView final
 {
 public:
 	class FString                                 MaleAssetName;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 FemaleAssetName;                                   // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 MaleSpineName;                                     // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 FemaleSpineName;                                   // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(PlotBlueprintFunctionLibrary_C_OpenUiView) == 0x000008, "Wrong alignment on PlotBlueprintFunctionLibrary_C_OpenUiView");
-static_assert(sizeof(PlotBlueprintFunctionLibrary_C_OpenUiView) == 0x000028, "Wrong size on PlotBlueprintFunctionLibrary_C_OpenUiView");
+static_assert(sizeof(PlotBlueprintFunctionLibrary_C_OpenUiView) == 0x000048, "Wrong size on PlotBlueprintFunctionLibrary_C_OpenUiView");
 static_assert(offsetof(PlotBlueprintFunctionLibrary_C_OpenUiView, MaleAssetName) == 0x000000, "Member 'PlotBlueprintFunctionLibrary_C_OpenUiView::MaleAssetName' has a wrong offset!");
 static_assert(offsetof(PlotBlueprintFunctionLibrary_C_OpenUiView, FemaleAssetName) == 0x000010, "Member 'PlotBlueprintFunctionLibrary_C_OpenUiView::FemaleAssetName' has a wrong offset!");
-static_assert(offsetof(PlotBlueprintFunctionLibrary_C_OpenUiView, __WorldContext) == 0x000020, "Member 'PlotBlueprintFunctionLibrary_C_OpenUiView::__WorldContext' has a wrong offset!");
+static_assert(offsetof(PlotBlueprintFunctionLibrary_C_OpenUiView, MaleSpineName) == 0x000020, "Member 'PlotBlueprintFunctionLibrary_C_OpenUiView::MaleSpineName' has a wrong offset!");
+static_assert(offsetof(PlotBlueprintFunctionLibrary_C_OpenUiView, FemaleSpineName) == 0x000030, "Member 'PlotBlueprintFunctionLibrary_C_OpenUiView::FemaleSpineName' has a wrong offset!");
+static_assert(offsetof(PlotBlueprintFunctionLibrary_C_OpenUiView, __WorldContext) == 0x000040, "Member 'PlotBlueprintFunctionLibrary_C_OpenUiView::__WorldContext' has a wrong offset!");
 
 // Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.PlayUiLevelSequence
 // 0x0018 (0x0018 - 0x0000)

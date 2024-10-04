@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "EClimbState_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "EMovementDirection_structs.hpp"
-#include "SMovementSetting_structs.hpp"
-#include "SClimbState_structs.hpp"
 #include "EEnterClimb_structs.hpp"
+#include "SMovementSetting_structs.hpp"
 #include "EExitClimb_structs.hpp"
-#include "EClimbState_structs.hpp"
 #include "SClimbInfo_structs.hpp"
+#include "SClimbState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SMovementSetting_State_structs.hpp"
 
@@ -1556,6 +1556,46 @@ static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_SimpleSwim, DetectedHeig
 static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_SimpleSwim, CurrentSpeed) == 0x00000C, "Member 'TsMoveBlueprintFunctionLibrary_C_SimpleSwim::CurrentSpeed' has a wrong offset!");
 static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_SimpleSwim, __WorldContext) == 0x000018, "Member 'TsMoveBlueprintFunctionLibrary_C_SimpleSwim::__WorldContext' has a wrong offset!");
 static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_SimpleSwim, ReturnValue) == 0x000020, "Member 'TsMoveBlueprintFunctionLibrary_C_SimpleSwim::ReturnValue' has a wrong offset!");
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.LeaveRoll
+// 0x0010 (0x0010 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_LeaveRoll final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsMoveBlueprintFunctionLibrary_C_LeaveRoll) == 0x000008, "Wrong alignment on TsMoveBlueprintFunctionLibrary_C_LeaveRoll");
+static_assert(sizeof(TsMoveBlueprintFunctionLibrary_C_LeaveRoll) == 0x000010, "Wrong size on TsMoveBlueprintFunctionLibrary_C_LeaveRoll");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_LeaveRoll, EntityId) == 0x000000, "Member 'TsMoveBlueprintFunctionLibrary_C_LeaveRoll::EntityId' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_LeaveRoll, __WorldContext) == 0x000008, "Member 'TsMoveBlueprintFunctionLibrary_C_LeaveRoll::__WorldContext' has a wrong offset!");
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.EnterRoll
+// 0x0028 (0x0028 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_EnterRoll final
+{
+public:
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         TargetSpeed;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Friction;                                          // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         AccelOnGround;                                     // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Gravity;                                           // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         StepUpHeight;                                      // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         MaxSpeed;                                          // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsMoveBlueprintFunctionLibrary_C_EnterRoll) == 0x000008, "Wrong alignment on TsMoveBlueprintFunctionLibrary_C_EnterRoll");
+static_assert(sizeof(TsMoveBlueprintFunctionLibrary_C_EnterRoll) == 0x000028, "Wrong size on TsMoveBlueprintFunctionLibrary_C_EnterRoll");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_EnterRoll, EntityId) == 0x000000, "Member 'TsMoveBlueprintFunctionLibrary_C_EnterRoll::EntityId' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_EnterRoll, TargetSpeed) == 0x000004, "Member 'TsMoveBlueprintFunctionLibrary_C_EnterRoll::TargetSpeed' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_EnterRoll, Friction) == 0x000008, "Member 'TsMoveBlueprintFunctionLibrary_C_EnterRoll::Friction' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_EnterRoll, AccelOnGround) == 0x00000C, "Member 'TsMoveBlueprintFunctionLibrary_C_EnterRoll::AccelOnGround' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_EnterRoll, Gravity) == 0x000010, "Member 'TsMoveBlueprintFunctionLibrary_C_EnterRoll::Gravity' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_EnterRoll, StepUpHeight) == 0x000014, "Member 'TsMoveBlueprintFunctionLibrary_C_EnterRoll::StepUpHeight' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_EnterRoll, MaxSpeed) == 0x000018, "Member 'TsMoveBlueprintFunctionLibrary_C_EnterRoll::MaxSpeed' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_EnterRoll, __WorldContext) == 0x000020, "Member 'TsMoveBlueprintFunctionLibrary_C_EnterRoll::__WorldContext' has a wrong offset!");
 
 }
 

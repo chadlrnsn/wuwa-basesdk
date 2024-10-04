@@ -16,6 +16,76 @@
 namespace SDK::Params
 {
 
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_ParaglidingBase_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+static_assert(alignof(ABP_ParaglidingBase_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_ParaglidingBase_C_AnimGraph");
+static_assert(sizeof(ABP_ParaglidingBase_C_AnimGraph) == 0x000010, "Wrong size on ABP_ParaglidingBase_C_AnimGraph");
+static_assert(offsetof(ABP_ParaglidingBase_C_AnimGraph, AnimGraph_0) == 0x000000, "Member 'ABP_ParaglidingBase_C_AnimGraph::AnimGraph_0' has a wrong offset!");
+
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetDash
+// 0x0001 (0x0001 - 0x0000)
+struct ABP_ParaglidingBase_C_SetDash final
+{
+public:
+	bool                                          Dash;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(ABP_ParaglidingBase_C_SetDash) == 0x000001, "Wrong alignment on ABP_ParaglidingBase_C_SetDash");
+static_assert(sizeof(ABP_ParaglidingBase_C_SetDash) == 0x000001, "Wrong size on ABP_ParaglidingBase_C_SetDash");
+static_assert(offsetof(ABP_ParaglidingBase_C_SetDash, Dash) == 0x000000, "Member 'ABP_ParaglidingBase_C_SetDash::Dash' has a wrong offset!");
+
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetHover
+// 0x0001 (0x0001 - 0x0000)
+struct ABP_ParaglidingBase_C_SetHover final
+{
+public:
+	bool                                          Hover;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(ABP_ParaglidingBase_C_SetHover) == 0x000001, "Wrong alignment on ABP_ParaglidingBase_C_SetHover");
+static_assert(sizeof(ABP_ParaglidingBase_C_SetHover) == 0x000001, "Wrong size on ABP_ParaglidingBase_C_SetHover");
+static_assert(offsetof(ABP_ParaglidingBase_C_SetHover, Hover) == 0x000000, "Member 'ABP_ParaglidingBase_C_SetHover::Hover' has a wrong offset!");
+
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetOpenParagliding
+// 0x0001 (0x0001 - 0x0000)
+struct ABP_ParaglidingBase_C_SetOpenParagliding final
+{
+public:
+	bool                                          bOpen;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(ABP_ParaglidingBase_C_SetOpenParagliding) == 0x000001, "Wrong alignment on ABP_ParaglidingBase_C_SetOpenParagliding");
+static_assert(sizeof(ABP_ParaglidingBase_C_SetOpenParagliding) == 0x000001, "Wrong size on ABP_ParaglidingBase_C_SetOpenParagliding");
+static_assert(offsetof(ABP_ParaglidingBase_C_SetOpenParagliding, bOpen) == 0x000000, "Member 'ABP_ParaglidingBase_C_SetOpenParagliding::bOpen' has a wrong offset!");
+
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SyncAnim
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_ParaglidingBase_C_SyncAnim final
+{
+public:
+	class UABP_ParaglidingBase_C*                 Other;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SyncAnimStates_ReturnValue;               // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(ABP_ParaglidingBase_C_SyncAnim) == 0x000008, "Wrong alignment on ABP_ParaglidingBase_C_SyncAnim");
+static_assert(sizeof(ABP_ParaglidingBase_C_SyncAnim) == 0x000010, "Wrong size on ABP_ParaglidingBase_C_SyncAnim");
+static_assert(offsetof(ABP_ParaglidingBase_C_SyncAnim, Other) == 0x000000, "Member 'ABP_ParaglidingBase_C_SyncAnim::Other' has a wrong offset!");
+static_assert(offsetof(ABP_ParaglidingBase_C_SyncAnim, CallFunc_IsValid_ReturnValue) == 0x000008, "Member 'ABP_ParaglidingBase_C_SyncAnim::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_ParaglidingBase_C_SyncAnim, CallFunc_SyncAnimStates_ReturnValue) == 0x000009, "Member 'ABP_ParaglidingBase_C_SyncAnim::CallFunc_SyncAnimStates_ReturnValue' has a wrong offset!");
+
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.BlueprintUpdateAnimation
+// 0x0004 (0x0004 - 0x0000)
+struct ABP_ParaglidingBase_C_BlueprintUpdateAnimation final
+{
+public:
+	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(ABP_ParaglidingBase_C_BlueprintUpdateAnimation) == 0x000004, "Wrong alignment on ABP_ParaglidingBase_C_BlueprintUpdateAnimation");
+static_assert(sizeof(ABP_ParaglidingBase_C_BlueprintUpdateAnimation) == 0x000004, "Wrong size on ABP_ParaglidingBase_C_BlueprintUpdateAnimation");
+static_assert(offsetof(ABP_ParaglidingBase_C_BlueprintUpdateAnimation, DeltaTimeX) == 0x000000, "Member 'ABP_ParaglidingBase_C_BlueprintUpdateAnimation::DeltaTimeX' has a wrong offset!");
+
 // Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.ExecuteUbergraph_ABP_ParaglidingBase
 // 0x0030 (0x0030 - 0x0000)
 struct ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBase final
@@ -44,76 +114,6 @@ static_assert(offsetof(ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBas
 static_assert(offsetof(ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBase, CallFunc_IsValid_ReturnValue) == 0x000021, "Member 'ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBase::CallFunc_IsValid_ReturnValue' has a wrong offset!");
 static_assert(offsetof(ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBase, K2Node_Event_DeltaTimeX) == 0x000024, "Member 'ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBase::K2Node_Event_DeltaTimeX' has a wrong offset!");
 static_assert(offsetof(ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBase, CallFunc_FInterpTo_ReturnValue) == 0x000028, "Member 'ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBase::CallFunc_FInterpTo_ReturnValue' has a wrong offset!");
-
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.BlueprintUpdateAnimation
-// 0x0004 (0x0004 - 0x0000)
-struct ABP_ParaglidingBase_C_BlueprintUpdateAnimation final
-{
-public:
-	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(ABP_ParaglidingBase_C_BlueprintUpdateAnimation) == 0x000004, "Wrong alignment on ABP_ParaglidingBase_C_BlueprintUpdateAnimation");
-static_assert(sizeof(ABP_ParaglidingBase_C_BlueprintUpdateAnimation) == 0x000004, "Wrong size on ABP_ParaglidingBase_C_BlueprintUpdateAnimation");
-static_assert(offsetof(ABP_ParaglidingBase_C_BlueprintUpdateAnimation, DeltaTimeX) == 0x000000, "Member 'ABP_ParaglidingBase_C_BlueprintUpdateAnimation::DeltaTimeX' has a wrong offset!");
-
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SyncAnim
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_ParaglidingBase_C_SyncAnim final
-{
-public:
-	class UABP_ParaglidingBase_C*                 Other;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SyncAnimStates_ReturnValue;               // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(ABP_ParaglidingBase_C_SyncAnim) == 0x000008, "Wrong alignment on ABP_ParaglidingBase_C_SyncAnim");
-static_assert(sizeof(ABP_ParaglidingBase_C_SyncAnim) == 0x000010, "Wrong size on ABP_ParaglidingBase_C_SyncAnim");
-static_assert(offsetof(ABP_ParaglidingBase_C_SyncAnim, Other) == 0x000000, "Member 'ABP_ParaglidingBase_C_SyncAnim::Other' has a wrong offset!");
-static_assert(offsetof(ABP_ParaglidingBase_C_SyncAnim, CallFunc_IsValid_ReturnValue) == 0x000008, "Member 'ABP_ParaglidingBase_C_SyncAnim::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_ParaglidingBase_C_SyncAnim, CallFunc_SyncAnimStates_ReturnValue) == 0x000009, "Member 'ABP_ParaglidingBase_C_SyncAnim::CallFunc_SyncAnimStates_ReturnValue' has a wrong offset!");
-
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetOpenParagliding
-// 0x0001 (0x0001 - 0x0000)
-struct ABP_ParaglidingBase_C_SetOpenParagliding final
-{
-public:
-	bool                                          bOpen;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(ABP_ParaglidingBase_C_SetOpenParagliding) == 0x000001, "Wrong alignment on ABP_ParaglidingBase_C_SetOpenParagliding");
-static_assert(sizeof(ABP_ParaglidingBase_C_SetOpenParagliding) == 0x000001, "Wrong size on ABP_ParaglidingBase_C_SetOpenParagliding");
-static_assert(offsetof(ABP_ParaglidingBase_C_SetOpenParagliding, bOpen) == 0x000000, "Member 'ABP_ParaglidingBase_C_SetOpenParagliding::bOpen' has a wrong offset!");
-
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetHover
-// 0x0001 (0x0001 - 0x0000)
-struct ABP_ParaglidingBase_C_SetHover final
-{
-public:
-	bool                                          Hover;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(ABP_ParaglidingBase_C_SetHover) == 0x000001, "Wrong alignment on ABP_ParaglidingBase_C_SetHover");
-static_assert(sizeof(ABP_ParaglidingBase_C_SetHover) == 0x000001, "Wrong size on ABP_ParaglidingBase_C_SetHover");
-static_assert(offsetof(ABP_ParaglidingBase_C_SetHover, Hover) == 0x000000, "Member 'ABP_ParaglidingBase_C_SetHover::Hover' has a wrong offset!");
-
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetDash
-// 0x0001 (0x0001 - 0x0000)
-struct ABP_ParaglidingBase_C_SetDash final
-{
-public:
-	bool                                          Dash;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(ABP_ParaglidingBase_C_SetDash) == 0x000001, "Wrong alignment on ABP_ParaglidingBase_C_SetDash");
-static_assert(sizeof(ABP_ParaglidingBase_C_SetDash) == 0x000001, "Wrong size on ABP_ParaglidingBase_C_SetDash");
-static_assert(offsetof(ABP_ParaglidingBase_C_SetDash, Dash) == 0x000000, "Member 'ABP_ParaglidingBase_C_SetDash::Dash' has a wrong offset!");
-
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_ParaglidingBase_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-static_assert(alignof(ABP_ParaglidingBase_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_ParaglidingBase_C_AnimGraph");
-static_assert(sizeof(ABP_ParaglidingBase_C_AnimGraph) == 0x000010, "Wrong size on ABP_ParaglidingBase_C_AnimGraph");
-static_assert(offsetof(ABP_ParaglidingBase_C_AnimGraph, AnimGraph_0) == 0x000000, "Member 'ABP_ParaglidingBase_C_AnimGraph::AnimGraph_0' has a wrong offset!");
 
 }
 

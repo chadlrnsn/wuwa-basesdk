@@ -17,35 +17,197 @@
 namespace SDK
 {
 
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.ExecuteUbergraph_GA_Common_AirAttack
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnTick_5D118C384AE61F1C80292E8132E47F3E
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_Common_AirAttack_C::ExecuteUbergraph_GA_Common_AirAttack(int32 EntryPoint)
+void UGA_Common_AirAttack_C::OnTick_5D118C384AE61F1C80292E8132E47F3E()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "ExecuteUbergraph_GA_Common_AirAttack");
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnTick_5D118C384AE61F1C80292E8132E47F3E");
 
-	Params::GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttack Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCancelled_5D118C384AE61F1C80292E8132E47F3E
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_Common_AirAttack_C::K2_ActivateAbility()
+void UGA_Common_AirAttack_C::OnCancelled_5D118C384AE61F1C80292E8132E47F3E()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCancelled_5D118C384AE61F1C80292E8132E47F3E");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnInterrupted_5D118C384AE61F1C80292E8132E47F3E
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnInterrupted_5D118C384AE61F1C80292E8132E47F3E()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnInterrupted_5D118C384AE61F1C80292E8132E47F3E");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnBlendOut_5D118C384AE61F1C80292E8132E47F3E
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnBlendOut_5D118C384AE61F1C80292E8132E47F3E()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnBlendOut_5D118C384AE61F1C80292E8132E47F3E");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCompleted_5D118C384AE61F1C80292E8132E47F3E
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnCompleted_5D118C384AE61F1C80292E8132E47F3E()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCompleted_5D118C384AE61F1C80292E8132E47F3E");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnTick_5D118C384AE61F1C80292E810CE84E38
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnTick_5D118C384AE61F1C80292E810CE84E38()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnTick_5D118C384AE61F1C80292E810CE84E38");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCancelled_5D118C384AE61F1C80292E810CE84E38
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnCancelled_5D118C384AE61F1C80292E810CE84E38()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCancelled_5D118C384AE61F1C80292E810CE84E38");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnInterrupted_5D118C384AE61F1C80292E810CE84E38
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnInterrupted_5D118C384AE61F1C80292E810CE84E38()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnInterrupted_5D118C384AE61F1C80292E810CE84E38");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnBlendOut_5D118C384AE61F1C80292E810CE84E38
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnBlendOut_5D118C384AE61F1C80292E810CE84E38()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnBlendOut_5D118C384AE61F1C80292E810CE84E38");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCompleted_5D118C384AE61F1C80292E810CE84E38
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnCompleted_5D118C384AE61F1C80292E810CE84E38()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCompleted_5D118C384AE61F1C80292E810CE84E38");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnTick_5D118C384AE61F1C80292E8133A9FB93
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnTick_5D118C384AE61F1C80292E8133A9FB93()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnTick_5D118C384AE61F1C80292E8133A9FB93");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCancelled_5D118C384AE61F1C80292E8133A9FB93
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnCancelled_5D118C384AE61F1C80292E8133A9FB93()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCancelled_5D118C384AE61F1C80292E8133A9FB93");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnInterrupted_5D118C384AE61F1C80292E8133A9FB93
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnInterrupted_5D118C384AE61F1C80292E8133A9FB93()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnInterrupted_5D118C384AE61F1C80292E8133A9FB93");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCompleted_5D118C384AE61F1C80292E8133A9FB93
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Common_AirAttack_C::OnCompleted_5D118C384AE61F1C80292E8133A9FB93()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCompleted_5D118C384AE61F1C80292E8133A9FB93");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -71,17 +233,37 @@ void UGA_Common_AirAttack_C::K2_OnEndAbility(bool bWasCancelled)
 }
 
 
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCompleted_5D118C384AE61F1C80292E8133A9FB93
-// (BlueprintCallable, BlueprintEvent)
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_Common_AirAttack_C::OnCompleted_5D118C384AE61F1C80292E8133A9FB93()
+void UGA_Common_AirAttack_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCompleted_5D118C384AE61F1C80292E8133A9FB93");
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "K2_ActivateAbility");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.ExecuteUbergraph_GA_Common_AirAttack
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Common_AirAttack_C::ExecuteUbergraph_GA_Common_AirAttack(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Common_AirAttack_C", "ExecuteUbergraph_GA_Common_AirAttack");
+
+	Params::GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttack Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -94,188 +276,6 @@ void UGA_Common_AirAttack_C::OnBlendOut_5D118C384AE61F1C80292E8133A9FB93()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnBlendOut_5D118C384AE61F1C80292E8133A9FB93");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnInterrupted_5D118C384AE61F1C80292E8133A9FB93
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnInterrupted_5D118C384AE61F1C80292E8133A9FB93()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnInterrupted_5D118C384AE61F1C80292E8133A9FB93");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCancelled_5D118C384AE61F1C80292E8133A9FB93
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnCancelled_5D118C384AE61F1C80292E8133A9FB93()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCancelled_5D118C384AE61F1C80292E8133A9FB93");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnTick_5D118C384AE61F1C80292E8133A9FB93
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnTick_5D118C384AE61F1C80292E8133A9FB93()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnTick_5D118C384AE61F1C80292E8133A9FB93");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCompleted_5D118C384AE61F1C80292E810CE84E38
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnCompleted_5D118C384AE61F1C80292E810CE84E38()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCompleted_5D118C384AE61F1C80292E810CE84E38");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnBlendOut_5D118C384AE61F1C80292E810CE84E38
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnBlendOut_5D118C384AE61F1C80292E810CE84E38()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnBlendOut_5D118C384AE61F1C80292E810CE84E38");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnInterrupted_5D118C384AE61F1C80292E810CE84E38
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnInterrupted_5D118C384AE61F1C80292E810CE84E38()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnInterrupted_5D118C384AE61F1C80292E810CE84E38");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCancelled_5D118C384AE61F1C80292E810CE84E38
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnCancelled_5D118C384AE61F1C80292E810CE84E38()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCancelled_5D118C384AE61F1C80292E810CE84E38");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnTick_5D118C384AE61F1C80292E810CE84E38
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnTick_5D118C384AE61F1C80292E810CE84E38()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnTick_5D118C384AE61F1C80292E810CE84E38");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCompleted_5D118C384AE61F1C80292E8132E47F3E
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnCompleted_5D118C384AE61F1C80292E8132E47F3E()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCompleted_5D118C384AE61F1C80292E8132E47F3E");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnBlendOut_5D118C384AE61F1C80292E8132E47F3E
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnBlendOut_5D118C384AE61F1C80292E8132E47F3E()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnBlendOut_5D118C384AE61F1C80292E8132E47F3E");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnInterrupted_5D118C384AE61F1C80292E8132E47F3E
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnInterrupted_5D118C384AE61F1C80292E8132E47F3E()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnInterrupted_5D118C384AE61F1C80292E8132E47F3E");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnCancelled_5D118C384AE61F1C80292E8132E47F3E
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnCancelled_5D118C384AE61F1C80292E8132E47F3E()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnCancelled_5D118C384AE61F1C80292E8132E47F3E");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.OnTick_5D118C384AE61F1C80292E8132E47F3E
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Common_AirAttack_C::OnTick_5D118C384AE61F1C80292E8132E47F3E()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Common_AirAttack_C", "OnTick_5D118C384AE61F1C80292E8132E47F3E");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

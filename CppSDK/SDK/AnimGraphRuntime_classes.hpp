@@ -19,40 +19,6 @@
 namespace SDK
 {
 
-// Class AnimGraphRuntime.SequencerAnimationSupport
-// 0x0000 (0x0030 - 0x0030)
-class ISequencerAnimationSupport final : public IInterface
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"SequencerAnimationSupport">();
-	}
-	static class ISequencerAnimationSupport* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ISequencerAnimationSupport>();
-	}
-};
-static_assert(alignof(ISequencerAnimationSupport) == 0x000008, "Wrong alignment on ISequencerAnimationSupport");
-static_assert(sizeof(ISequencerAnimationSupport) == 0x000030, "Wrong size on ISequencerAnimationSupport");
-
-// Class AnimGraphRuntime.AnimSequencerInstance
-// 0x0000 (0x03B0 - 0x03B0)
-class UAnimSequencerInstance : public UAnimInstance
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"AnimSequencerInstance">();
-	}
-	static class UAnimSequencerInstance* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAnimSequencerInstance>();
-	}
-};
-static_assert(alignof(UAnimSequencerInstance) == 0x000010, "Wrong alignment on UAnimSequencerInstance");
-static_assert(sizeof(UAnimSequencerInstance) == 0x0003B0, "Wrong size on UAnimSequencerInstance");
-
 // Class AnimGraphRuntime.AnimNotify_PlayMontageNotify
 // 0x0010 (0x0050 - 0x0040)
 class UAnimNotify_PlayMontageNotify final : public UAnimNotify
@@ -74,6 +40,23 @@ public:
 static_assert(alignof(UAnimNotify_PlayMontageNotify) == 0x000008, "Wrong alignment on UAnimNotify_PlayMontageNotify");
 static_assert(sizeof(UAnimNotify_PlayMontageNotify) == 0x000050, "Wrong size on UAnimNotify_PlayMontageNotify");
 static_assert(offsetof(UAnimNotify_PlayMontageNotify, NotifyName) == 0x000040, "Member 'UAnimNotify_PlayMontageNotify::NotifyName' has a wrong offset!");
+
+// Class AnimGraphRuntime.AnimSequencerInstance
+// 0x0000 (0x03B0 - 0x03B0)
+class UAnimSequencerInstance : public UAnimInstance
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AnimSequencerInstance">();
+	}
+	static class UAnimSequencerInstance* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAnimSequencerInstance>();
+	}
+};
+static_assert(alignof(UAnimSequencerInstance) == 0x000010, "Wrong alignment on UAnimSequencerInstance");
+static_assert(sizeof(UAnimSequencerInstance) == 0x0003B0, "Wrong size on UAnimSequencerInstance");
 
 // Class AnimGraphRuntime.AnimNotify_PlayMontageNotifyWindow
 // 0x0010 (0x0050 - 0x0040)
@@ -163,6 +146,23 @@ static_assert(offsetof(UPlayMontageCallbackProxy, OnBlendOut) == 0x000040, "Memb
 static_assert(offsetof(UPlayMontageCallbackProxy, OnInterrupted) == 0x000050, "Member 'UPlayMontageCallbackProxy::OnInterrupted' has a wrong offset!");
 static_assert(offsetof(UPlayMontageCallbackProxy, OnNotifyBegin) == 0x000060, "Member 'UPlayMontageCallbackProxy::OnNotifyBegin' has a wrong offset!");
 static_assert(offsetof(UPlayMontageCallbackProxy, OnNotifyEnd) == 0x000070, "Member 'UPlayMontageCallbackProxy::OnNotifyEnd' has a wrong offset!");
+
+// Class AnimGraphRuntime.SequencerAnimationSupport
+// 0x0000 (0x0030 - 0x0030)
+class ISequencerAnimationSupport final : public IInterface
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"SequencerAnimationSupport">();
+	}
+	static class ISequencerAnimationSupport* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ISequencerAnimationSupport>();
+	}
+};
+static_assert(alignof(ISequencerAnimationSupport) == 0x000008, "Wrong alignment on ISequencerAnimationSupport");
+static_assert(sizeof(ISequencerAnimationSupport) == 0x000030, "Wrong size on ISequencerAnimationSupport");
 
 }
 

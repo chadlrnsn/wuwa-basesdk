@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SEntityProperty_structs.hpp"
 #include "SAIConfig_structs.hpp"
-#include "SMapConfig_structs.hpp"
-#include "SModelConfig_structs.hpp"
 #include "SEntityConfig_structs.hpp"
+#include "SEntityProperty_structs.hpp"
+#include "SModelConfig_structs.hpp"
+#include "SMapConfig_structs.hpp"
 
 
 namespace SDK::Params

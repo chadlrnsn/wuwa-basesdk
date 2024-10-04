@@ -17,22 +17,22 @@
 namespace SDK
 {
 
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityActor
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetInteractionDebugInfos
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntityId1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
-class AActor* UTsEntityDebugInfoManager_C::GetDebugEntityActor(int32 EntityId)
+class FString UTsEntityDebugInfoManager_C::GetInteractionDebugInfos(int32 EntityId1)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetDebugEntityActor");
+		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetInteractionDebugInfos");
 
-	Params::TsEntityDebugInfoManager_C_GetDebugEntityActor Parms{};
+	Params::TsEntityDebugInfoManager_C_GetInteractionDebugInfos Parms{};
 
-	Parms.EntityId = EntityId;
+	Parms.EntityId1 = EntityId1;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -40,66 +40,40 @@ class AActor* UTsEntityDebugInfoManager_C::GetDebugEntityActor(int32 EntityId)
 }
 
 
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugBaseInfo
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityNameList
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TArray<class FString> UTsEntityDebugInfoManager_C::GetDebugEntityNameList()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetDebugEntityNameList");
+
+	Params::TsEntityDebugInfoManager_C_GetDebugEntityNameList Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityName
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
-class FString UTsEntityDebugInfoManager_C::GetDebugBaseInfo(int32 EntityId)
+class FString UTsEntityDebugInfoManager_C::GetDebugEntityName(int32 EntityId)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetDebugBaseInfo");
+		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetDebugEntityName");
 
-	Params::TsEntityDebugInfoManager_C_GetDebugBaseInfo Parms{};
-
-	Parms.EntityId = EntityId;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetSelectedEntityId
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FString                           Label                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-int32 UTsEntityDebugInfoManager_C::GetSelectedEntityId(const class FString& Label)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetSelectedEntityId");
-
-	Params::TsEntityDebugInfoManager_C_GetSelectedEntityId Parms{};
-
-	Parms.Label = std::move(Label);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetEntityPbDataId
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-int32 UTsEntityDebugInfoManager_C::GetEntityPbDataId(int32 EntityId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetEntityPbDataId");
-
-	Params::TsEntityDebugInfoManager_C_GetEntityPbDataId Parms{};
+	Params::TsEntityDebugInfoManager_C_GetDebugEntityName Parms{};
 
 	Parms.EntityId = EntityId;
 
@@ -132,20 +106,20 @@ class FString UTsEntityDebugInfoManager_C::GetEntityCommonTagDebugString(int32 E
 }
 
 
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityName
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetEntityPbDataId
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class FString UTsEntityDebugInfoManager_C::GetDebugEntityName(int32 EntityId)
+int32 UTsEntityDebugInfoManager_C::GetEntityPbDataId(int32 EntityId)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetDebugEntityName");
+		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetEntityPbDataId");
 
-	Params::TsEntityDebugInfoManager_C_GetDebugEntityName Parms{};
+	Params::TsEntityDebugInfoManager_C_GetEntityPbDataId Parms{};
 
 	Parms.EntityId = EntityId;
 
@@ -155,19 +129,22 @@ class FString UTsEntityDebugInfoManager_C::GetDebugEntityName(int32 EntityId)
 }
 
 
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityNameList
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetSelectedEntityId
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ReturnParm)
+// class FString                           Label                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-TArray<class FString> UTsEntityDebugInfoManager_C::GetDebugEntityNameList()
+int32 UTsEntityDebugInfoManager_C::GetSelectedEntityId(const class FString& Label)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetDebugEntityNameList");
+		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetSelectedEntityId");
 
-	Params::TsEntityDebugInfoManager_C_GetDebugEntityNameList Parms{};
+	Params::TsEntityDebugInfoManager_C_GetSelectedEntityId Parms{};
+
+	Parms.Label = std::move(Label);
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -175,22 +152,45 @@ TArray<class FString> UTsEntityDebugInfoManager_C::GetDebugEntityNameList()
 }
 
 
-// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetInteractionDebugInfos
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugBaseInfo
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntityId1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
-class FString UTsEntityDebugInfoManager_C::GetInteractionDebugInfos(int32 EntityId1)
+class FString UTsEntityDebugInfoManager_C::GetDebugBaseInfo(int32 EntityId)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetInteractionDebugInfos");
+		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetDebugBaseInfo");
 
-	Params::TsEntityDebugInfoManager_C_GetInteractionDebugInfos Parms{};
+	Params::TsEntityDebugInfoManager_C_GetDebugBaseInfo Parms{};
 
-	Parms.EntityId1 = EntityId1;
+	Parms.EntityId = EntityId;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetDebugEntityActor
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class AActor* UTsEntityDebugInfoManager_C::GetDebugEntityActor(int32 EntityId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsEntityDebugInfoManager_C", "GetDebugEntityActor");
+
+	Params::TsEntityDebugInfoManager_C_GetDebugEntityActor Parms{};
+
+	Parms.EntityId = EntityId;
 
 	UObject::ProcessEvent(Func, &Parms);
 

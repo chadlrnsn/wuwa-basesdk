@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "EBulletType_structs.hpp"
-#include "EBulletHitDirectionType_structs.hpp"
-#include "Engine_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "EBulletHitDirectionType_structs.hpp"
+#include "EBulletType_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -40,6 +40,7 @@ public:
 	class FString                                 _____S;                                            // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          _e4S;                                              // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          _____;                                             // 0x0089(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          Z____;                                             // 0x008A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	static class UClass* StaticClass()
@@ -68,6 +69,7 @@ static_assert(offsetof(UBulletLogicType_C, ____) == 0x000058, "Member 'UBulletLo
 static_assert(offsetof(UBulletLogicType_C, _____S) == 0x000078, "Member 'UBulletLogicType_C::_____S' has a wrong offset!");
 static_assert(offsetof(UBulletLogicType_C, _e4S) == 0x000088, "Member 'UBulletLogicType_C::_e4S' has a wrong offset!");
 static_assert(offsetof(UBulletLogicType_C, _____) == 0x000089, "Member 'UBulletLogicType_C::_____' has a wrong offset!");
+static_assert(offsetof(UBulletLogicType_C, Z____) == 0x00008A, "Member 'UBulletLogicType_C::Z____' has a wrong offset!");
 
 }
 

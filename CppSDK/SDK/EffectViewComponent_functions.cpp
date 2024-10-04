@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function EffectViewComponent.EffectViewComponent_C.EditorTick
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   DeltaSecond                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -33,12 +33,17 @@ void UEffectViewComponent_C::EditorTick(float DeltaSecond)
 
 	Parms.DeltaSecond = DeltaSecond;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
 // Function EffectViewComponent.EffectViewComponent_C.SetAutoPlay
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    AutoPlay                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
@@ -53,12 +58,17 @@ void UEffectViewComponent_C::SetAutoPlay(bool AutoPlay)
 
 	Parms.AutoPlay = AutoPlay;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
 // Function EffectViewComponent.EffectViewComponent_C.Play
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
 void UEffectViewComponent_C::Play()
 {
@@ -67,12 +77,17 @@ void UEffectViewComponent_C::Play()
 	if (Func == nullptr)
 		Func = Class->GetFunction("EffectViewComponent_C", "Play");
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
 // Function EffectViewComponent.EffectViewComponent_C.Stop
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    Immediately                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
@@ -87,7 +102,12 @@ void UEffectViewComponent_C::Stop(bool Immediately)
 
 	Parms.Immediately = Immediately;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

@@ -54,11 +54,11 @@ static_assert(offsetof(UGIVolumeComponent, StaticIrraidianceScale) == 0x000240, 
 static_assert(offsetof(UGIVolumeComponent, TintColor) == 0x000244, "Member 'UGIVolumeComponent::TintColor' has a wrong offset!");
 
 // Class VolumeGIRender.ProbeVolumeActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AProbeVolumeActor final : public AActor
 {
 public:
-	class UGIVolumeComponent*                     GIVolumeComp;                                      // 0x02A8(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGIVolumeComponent*                     GIVolumeComp;                                      // 0x02B0(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -71,8 +71,8 @@ public:
 	}
 };
 static_assert(alignof(AProbeVolumeActor) == 0x000008, "Wrong alignment on AProbeVolumeActor");
-static_assert(sizeof(AProbeVolumeActor) == 0x0002B0, "Wrong size on AProbeVolumeActor");
-static_assert(offsetof(AProbeVolumeActor, GIVolumeComp) == 0x0002A8, "Member 'AProbeVolumeActor::GIVolumeComp' has a wrong offset!");
+static_assert(sizeof(AProbeVolumeActor) == 0x0002B8, "Wrong size on AProbeVolumeActor");
+static_assert(offsetof(AProbeVolumeActor, GIVolumeComp) == 0x0002B0, "Member 'AProbeVolumeActor::GIVolumeComp' has a wrong offset!");
 
 // Class VolumeGIRender.VolumeGIRenderSystem
 // 0x0008 (0x0040 - 0x0038)

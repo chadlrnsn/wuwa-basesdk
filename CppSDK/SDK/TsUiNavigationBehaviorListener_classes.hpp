@@ -12,10 +12,10 @@
 
 #include "Engine_structs.hpp"
 #include "SNavigationCursor_structs.hpp"
-#include "SNavigationMode_structs.hpp"
+#include "LGUI_classes.hpp"
 #include "EHotKeyNameStateType_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "LGUI_classes.hpp"
+#include "SNavigationMode_structs.hpp"
 
 
 namespace SDK

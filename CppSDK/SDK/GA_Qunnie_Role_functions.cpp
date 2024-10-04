@@ -17,23 +17,87 @@
 namespace SDK
 {
 
-// Function GA_Qunnie_Role.GA_Qunnie_Role_C.ExecuteUbergraph_GA_Qunnie_Role
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnTick_5D118C384AE61F1C80292E813CFD910C
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_Qunnie_Role_C::ExecuteUbergraph_GA_Qunnie_Role(int32 EntryPoint)
+void UGA_Qunnie_Role_C::OnTick_5D118C384AE61F1C80292E813CFD910C()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Qunnie_Role_C", "ExecuteUbergraph_GA_Qunnie_Role");
+		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnTick_5D118C384AE61F1C80292E813CFD910C");
 
-	Params::GA_Qunnie_Role_C_ExecuteUbergraph_GA_Qunnie_Role Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnCancelled_5D118C384AE61F1C80292E813CFD910C
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Qunnie_Role_C::OnCancelled_5D118C384AE61F1C80292E813CFD910C()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnCancelled_5D118C384AE61F1C80292E813CFD910C");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnInterrupted_5D118C384AE61F1C80292E813CFD910C
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Qunnie_Role_C::OnInterrupted_5D118C384AE61F1C80292E813CFD910C()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnInterrupted_5D118C384AE61F1C80292E813CFD910C");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnBlendOut_5D118C384AE61F1C80292E813CFD910C
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Qunnie_Role_C::OnBlendOut_5D118C384AE61F1C80292E813CFD910C()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnBlendOut_5D118C384AE61F1C80292E813CFD910C");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnCompleted_5D118C384AE61F1C80292E813CFD910C
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Qunnie_Role_C::OnCompleted_5D118C384AE61F1C80292E813CFD910C()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnCompleted_5D118C384AE61F1C80292E813CFD910C");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Qunnie_Role.GA_Qunnie_Role_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGA_Qunnie_Role_C::K2_ActivateAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Qunnie_Role_C", "K2_ActivateAbility");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,87 +121,23 @@ void UGA_Qunnie_Role_C::K2_OnEndAbility(bool bWasCancelled)
 }
 
 
-// Function GA_Qunnie_Role.GA_Qunnie_Role_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_Qunnie_Role.GA_Qunnie_Role_C.ExecuteUbergraph_GA_Qunnie_Role
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Qunnie_Role_C::K2_ActivateAbility()
+void UGA_Qunnie_Role_C::ExecuteUbergraph_GA_Qunnie_Role(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Qunnie_Role_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("GA_Qunnie_Role_C", "ExecuteUbergraph_GA_Qunnie_Role");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::GA_Qunnie_Role_C_ExecuteUbergraph_GA_Qunnie_Role Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnCompleted_5D118C384AE61F1C80292E813CFD910C
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Qunnie_Role_C::OnCompleted_5D118C384AE61F1C80292E813CFD910C()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnCompleted_5D118C384AE61F1C80292E813CFD910C");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnBlendOut_5D118C384AE61F1C80292E813CFD910C
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Qunnie_Role_C::OnBlendOut_5D118C384AE61F1C80292E813CFD910C()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnBlendOut_5D118C384AE61F1C80292E813CFD910C");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnInterrupted_5D118C384AE61F1C80292E813CFD910C
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Qunnie_Role_C::OnInterrupted_5D118C384AE61F1C80292E813CFD910C()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnInterrupted_5D118C384AE61F1C80292E813CFD910C");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnCancelled_5D118C384AE61F1C80292E813CFD910C
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Qunnie_Role_C::OnCancelled_5D118C384AE61F1C80292E813CFD910C()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnCancelled_5D118C384AE61F1C80292E813CFD910C");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Qunnie_Role.GA_Qunnie_Role_C.OnTick_5D118C384AE61F1C80292E813CFD910C
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Qunnie_Role_C::OnTick_5D118C384AE61F1C80292E813CFD910C()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Qunnie_Role_C", "OnTick_5D118C384AE61F1C80292E813CFD910C");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

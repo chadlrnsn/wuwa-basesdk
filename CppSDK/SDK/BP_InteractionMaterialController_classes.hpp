@@ -10,35 +10,35 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_InteractionMaterialController.BP_InteractionMaterialController_C
-// 0x0058 (0x0300 - 0x02A8)
+// 0x0058 (0x0308 - 0x02B0)
 class ABP_InteractionMaterialController_C final : public AActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         Float;                                             // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ScalarName;                                        // 0x02C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	TArray<class AActor*>                         Actor;                                             // 0x02D0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	class FString                                 VectorName;                                        // 0x02E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	struct FLinearColor                           Vector;                                            // 0x02F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         Float;                                             // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2C4[0x4];                                      // 0x02C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ScalarName;                                        // 0x02C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	TArray<class AActor*>                         Actor;                                             // 0x02D8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	class FString                                 VectorName;                                        // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	struct FLinearColor                           Vector;                                            // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_InteractionMaterialController(int32 EntryPoint);
-	void ReceiveBeginPlay();
-	void Test();
-	void ForEach();
-	void ChangeScalarParameter(float FloatParameter, const class FString& FloatParameterName);
 	void ChangeVectorParameter(const struct FLinearColor& VectorParameter, const class FString& VectorParameterName);
+	void ChangeScalarParameter(float FloatParameter, const class FString& FloatParameterName);
+	void ForEach();
+	void Test();
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_InteractionMaterialController(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -51,14 +51,14 @@ public:
 	}
 };
 static_assert(alignof(ABP_InteractionMaterialController_C) == 0x000008, "Wrong alignment on ABP_InteractionMaterialController_C");
-static_assert(sizeof(ABP_InteractionMaterialController_C) == 0x000300, "Wrong size on ABP_InteractionMaterialController_C");
-static_assert(offsetof(ABP_InteractionMaterialController_C, UberGraphFrame) == 0x0002A8, "Member 'ABP_InteractionMaterialController_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ABP_InteractionMaterialController_C, DefaultSceneRoot) == 0x0002B0, "Member 'ABP_InteractionMaterialController_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_InteractionMaterialController_C, Float) == 0x0002B8, "Member 'ABP_InteractionMaterialController_C::Float' has a wrong offset!");
-static_assert(offsetof(ABP_InteractionMaterialController_C, ScalarName) == 0x0002C0, "Member 'ABP_InteractionMaterialController_C::ScalarName' has a wrong offset!");
-static_assert(offsetof(ABP_InteractionMaterialController_C, Actor) == 0x0002D0, "Member 'ABP_InteractionMaterialController_C::Actor' has a wrong offset!");
-static_assert(offsetof(ABP_InteractionMaterialController_C, VectorName) == 0x0002E0, "Member 'ABP_InteractionMaterialController_C::VectorName' has a wrong offset!");
-static_assert(offsetof(ABP_InteractionMaterialController_C, Vector) == 0x0002F0, "Member 'ABP_InteractionMaterialController_C::Vector' has a wrong offset!");
+static_assert(sizeof(ABP_InteractionMaterialController_C) == 0x000308, "Wrong size on ABP_InteractionMaterialController_C");
+static_assert(offsetof(ABP_InteractionMaterialController_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_InteractionMaterialController_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ABP_InteractionMaterialController_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_InteractionMaterialController_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ABP_InteractionMaterialController_C, Float) == 0x0002C0, "Member 'ABP_InteractionMaterialController_C::Float' has a wrong offset!");
+static_assert(offsetof(ABP_InteractionMaterialController_C, ScalarName) == 0x0002C8, "Member 'ABP_InteractionMaterialController_C::ScalarName' has a wrong offset!");
+static_assert(offsetof(ABP_InteractionMaterialController_C, Actor) == 0x0002D8, "Member 'ABP_InteractionMaterialController_C::Actor' has a wrong offset!");
+static_assert(offsetof(ABP_InteractionMaterialController_C, VectorName) == 0x0002E8, "Member 'ABP_InteractionMaterialController_C::VectorName' has a wrong offset!");
+static_assert(offsetof(ABP_InteractionMaterialController_C, Vector) == 0x0002F8, "Member 'ABP_InteractionMaterialController_C::Vector' has a wrong offset!");
 
 }
 

@@ -17,12 +17,9 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelNiagara.EffectModelNiagara_C
-// 0x0008 (0x0668 - 0x0660)
+// 0x0000 (0x0670 - 0x0670)
 class UEffectModelNiagara_C final : public UEffectModelNiagara
 {
-public:
-	bool                                          ForceNeedSkeletalMesh;                             // 0x0660(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-
 public:
 	static class UClass* StaticClass()
 	{
@@ -34,8 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UEffectModelNiagara_C) == 0x000008, "Wrong alignment on UEffectModelNiagara_C");
-static_assert(sizeof(UEffectModelNiagara_C) == 0x000668, "Wrong size on UEffectModelNiagara_C");
-static_assert(offsetof(UEffectModelNiagara_C, ForceNeedSkeletalMesh) == 0x000660, "Member 'UEffectModelNiagara_C::ForceNeedSkeletalMesh' has a wrong offset!");
+static_assert(sizeof(UEffectModelNiagara_C) == 0x000670, "Wrong size on UEffectModelNiagara_C");
 
 }
 

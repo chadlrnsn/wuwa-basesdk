@@ -18,15 +18,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CharacterController.BP_CharacterController_C
-// 0x0020 (0x0750 - 0x0730)
+// 0x0020 (0x0760 - 0x0740)
 class ABP_CharacterController_C final : public ATsCharacterController_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CharacterController_C;           // 0x0730(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     SM___r;                                            // 0x0738(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          GmIsOpen;                                          // 0x0740(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_741[0x7];                                      // 0x0741(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBP_KuroCheatManager_C*                 KuroCheatManager;                                  // 0x0748(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CharacterController_C;           // 0x0740(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     SM___r;                                            // 0x0748(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          GmIsOpen;                                          // 0x0750(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_751[0x7];                                      // 0x0751(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBP_KuroCheatManager_C*                 KuroCheatManager;                                  // 0x0758(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_CharacterController(int32 EntryPoint);
@@ -47,11 +47,11 @@ public:
 	}
 };
 static_assert(alignof(ABP_CharacterController_C) == 0x000008, "Wrong alignment on ABP_CharacterController_C");
-static_assert(sizeof(ABP_CharacterController_C) == 0x000750, "Wrong size on ABP_CharacterController_C");
-static_assert(offsetof(ABP_CharacterController_C, UberGraphFrame_BP_CharacterController_C) == 0x000730, "Member 'ABP_CharacterController_C::UberGraphFrame_BP_CharacterController_C' has a wrong offset!");
-static_assert(offsetof(ABP_CharacterController_C, SM___r) == 0x000738, "Member 'ABP_CharacterController_C::SM___r' has a wrong offset!");
-static_assert(offsetof(ABP_CharacterController_C, GmIsOpen) == 0x000740, "Member 'ABP_CharacterController_C::GmIsOpen' has a wrong offset!");
-static_assert(offsetof(ABP_CharacterController_C, KuroCheatManager) == 0x000748, "Member 'ABP_CharacterController_C::KuroCheatManager' has a wrong offset!");
+static_assert(sizeof(ABP_CharacterController_C) == 0x000760, "Wrong size on ABP_CharacterController_C");
+static_assert(offsetof(ABP_CharacterController_C, UberGraphFrame_BP_CharacterController_C) == 0x000740, "Member 'ABP_CharacterController_C::UberGraphFrame_BP_CharacterController_C' has a wrong offset!");
+static_assert(offsetof(ABP_CharacterController_C, SM___r) == 0x000748, "Member 'ABP_CharacterController_C::SM___r' has a wrong offset!");
+static_assert(offsetof(ABP_CharacterController_C, GmIsOpen) == 0x000750, "Member 'ABP_CharacterController_C::GmIsOpen' has a wrong offset!");
+static_assert(offsetof(ABP_CharacterController_C, KuroCheatManager) == 0x000758, "Member 'ABP_CharacterController_C::KuroCheatManager' has a wrong offset!");
 
 }
 

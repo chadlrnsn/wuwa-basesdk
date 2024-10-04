@@ -17,75 +17,15 @@
 namespace SDK
 {
 
-// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.ExecuteUbergraph_GA_Vision_ShowTime
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.>:©¶!‹
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UGA_Vision_ShowTime_C::ExecuteUbergraph_GA_Vision_ShowTime(int32 EntryPoint)
+void UGA_Vision_ShowTime_C::_______3()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Vision_ShowTime_C", "ExecuteUbergraph_GA_Vision_ShowTime");
-
-	Params::GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.P(Ó_
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   P_ID                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Vision_ShowTime_C::P___(int32 P_ID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Vision_ShowTime_C", "P(Ó_");
-
-	Params::GA_Vision_ShowTime_C_P___ Parms{};
-
-	Parms.P_ID = P_ID;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Vision_ShowTime_C::K2_OnEndAbility(bool bWasCancelled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Vision_ShowTime_C", "K2_OnEndAbility");
-
-	Params::GA_Vision_ShowTime_C_K2_OnEndAbility Parms{};
-
-	Parms.bWasCancelled = bWasCancelled;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Vision_ShowTime_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Vision_ShowTime_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("GA_Vision_ShowTime_C", ">:©¶!‹");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,17 +51,77 @@ void UGA_Vision_ShowTime_C::EventReceived_18B59F5945020DB23C42FD88A68D9368(const
 }
 
 
-// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.>:©¶!‹
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_Vision_ShowTime_C::_______3()
+void UGA_Vision_ShowTime_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Vision_ShowTime_C", ">:©¶!‹");
+		Func = Class->GetFunction("GA_Vision_ShowTime_C", "K2_ActivateAbility");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Vision_ShowTime_C::K2_OnEndAbility(bool bWasCancelled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Vision_ShowTime_C", "K2_OnEndAbility");
+
+	Params::GA_Vision_ShowTime_C_K2_OnEndAbility Parms{};
+
+	Parms.bWasCancelled = bWasCancelled;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.P(Ó_
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   P_ID                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Vision_ShowTime_C::P___(int32 P_ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Vision_ShowTime_C", "P(Ó_");
+
+	Params::GA_Vision_ShowTime_C_P___ Parms{};
+
+	Parms.P_ID = P_ID;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.ExecuteUbergraph_GA_Vision_ShowTime
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Vision_ShowTime_C::ExecuteUbergraph_GA_Vision_ShowTime(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Vision_ShowTime_C", "ExecuteUbergraph_GA_Vision_ShowTime");
+
+	Params::GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

@@ -17,21 +17,99 @@
 namespace SDK
 {
 
-// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.ExecuteUbergraph_TsTaskTerritoryWander
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.FindWanderPath
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void UTsTaskTerritoryWander_C::ExecuteUbergraph_TsTaskTerritoryWander(int32 EntryPoint)
+void UTsTaskTerritoryWander_C::FindWanderPath()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskTerritoryWander_C", "ExecuteUbergraph_TsTaskTerritoryWander");
+		Func = Class->GetFunction("TsTaskTerritoryWander_C", "FindWanderPath");
 
-	Params::TsTaskTerritoryWander_C_ExecuteUbergraph_TsTaskTerritoryWander Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.EntryPoint = EntryPoint;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.DebugDraw
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UTsTaskTerritoryWander_C::DebugDraw()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskTerritoryWander_C", "DebugDraw");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.FindWanderLocation
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UTsTaskTerritoryWander_C::FindWanderLocation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskTerritoryWander_C", "FindWanderLocation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.OnClear
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UTsTaskTerritoryWander_C::OnClear()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskTerritoryWander_C", "OnClear");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.ReceiveExecuteAI
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsTaskTerritoryWander_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskTerritoryWander_C", "ReceiveExecuteAI");
+
+	Params::TsTaskTerritoryWander_C_ReceiveExecuteAI Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -71,104 +149,26 @@ void UTsTaskTerritoryWander_C::ReceiveTickAI(class AAIController* OwnerControlle
 }
 
 
-// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.ReceiveExecuteAI
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.ExecuteUbergraph_TsTaskTerritoryWander
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskTerritoryWander_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+void UTsTaskTerritoryWander_C::ExecuteUbergraph_TsTaskTerritoryWander(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskTerritoryWander_C", "ReceiveExecuteAI");
+		Func = Class->GetFunction("TsTaskTerritoryWander_C", "ExecuteUbergraph_TsTaskTerritoryWander");
 
-	Params::TsTaskTerritoryWander_C_ReceiveExecuteAI Parms{};
+	Params::TsTaskTerritoryWander_C_ExecuteUbergraph_TsTaskTerritoryWander Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.OnClear
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsTaskTerritoryWander_C::OnClear()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskTerritoryWander_C", "OnClear");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.FindWanderLocation
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsTaskTerritoryWander_C::FindWanderLocation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskTerritoryWander_C", "FindWanderLocation");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.DebugDraw
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsTaskTerritoryWander_C::DebugDraw()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskTerritoryWander_C", "DebugDraw");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTaskTerritoryWander.TsTaskTerritoryWander_C.FindWanderPath
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsTaskTerritoryWander_C::FindWanderPath()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskTerritoryWander_C", "FindWanderPath");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

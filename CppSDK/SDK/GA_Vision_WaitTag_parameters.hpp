@@ -10,12 +10,45 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "SVisionData_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Removed_DB9F64004F8908FEAD99D3815F1E8945
+// 0x000C (0x000C - 0x0000)
+struct GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945 final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945) == 0x000004, "Wrong alignment on GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945");
+static_assert(sizeof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945) == 0x00000C, "Wrong size on GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945");
+static_assert(offsetof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945, Tag) == 0x000000, "Member 'GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945::Tag' has a wrong offset!");
+
+// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Added_21071CB943CD992BF8EFD6A338ACB336
+// 0x000C (0x000C - 0x0000)
+struct GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336 final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336) == 0x000004, "Wrong alignment on GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336");
+static_assert(sizeof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336) == 0x00000C, "Wrong size on GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336");
+static_assert(offsetof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336, Tag) == 0x000000, "Member 'GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336::Tag' has a wrong offset!");
+
+// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Vision_WaitTag_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Vision_WaitTag_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Vision_WaitTag_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Vision_WaitTag_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Vision_WaitTag_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Vision_WaitTag_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Vision_WaitTag_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
 // Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.ExecuteUbergraph_GA_Vision_WaitTag
 // 0x0218 (0x0218 - 0x0000)
@@ -109,39 +142,6 @@ static_assert(offsetof(GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag, C
 static_assert(offsetof(GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag, CallFunc_Array_Get_Item_2) == 0x000208, "Member 'GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag::CallFunc_Array_Get_Item_2' has a wrong offset!");
 static_assert(offsetof(GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag, CallFunc_Less_IntInt_ReturnValue_2) == 0x000210, "Member 'GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag, CallFunc___________1) == 0x000211, "Member 'GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag::CallFunc___________1' has a wrong offset!");
-
-// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Vision_WaitTag_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Vision_WaitTag_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Vision_WaitTag_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Vision_WaitTag_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Vision_WaitTag_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Vision_WaitTag_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Vision_WaitTag_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Added_21071CB943CD992BF8EFD6A338ACB336
-// 0x000C (0x000C - 0x0000)
-struct GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336 final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336) == 0x000004, "Wrong alignment on GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336");
-static_assert(sizeof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336) == 0x00000C, "Wrong size on GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336");
-static_assert(offsetof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336, Tag) == 0x000000, "Member 'GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336::Tag' has a wrong offset!");
-
-// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Removed_DB9F64004F8908FEAD99D3815F1E8945
-// 0x000C (0x000C - 0x0000)
-struct GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945 final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945) == 0x000004, "Wrong alignment on GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945");
-static_assert(sizeof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945) == 0x00000C, "Wrong size on GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945");
-static_assert(offsetof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945, Tag) == 0x000000, "Member 'GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945::Tag' has a wrong offset!");
 
 }
 

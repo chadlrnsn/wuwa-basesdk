@@ -17,21 +17,23 @@
 namespace SDK
 {
 
-// Function TsTaskTeamWander.TsTaskTeamWander_C.ExecuteUbergraph_TsTaskTeamWander
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Function TsTaskTeamWander.TsTaskTeamWander_C.ReceiveExecuteAI
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskTeamWander_C::ExecuteUbergraph_TsTaskTeamWander(int32 EntryPoint)
+void UTsTaskTeamWander_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskTeamWander_C", "ExecuteUbergraph_TsTaskTeamWander");
+		Func = Class->GetFunction("TsTaskTeamWander_C", "ReceiveExecuteAI");
 
-	Params::TsTaskTeamWander_C_ExecuteUbergraph_TsTaskTeamWander Parms{};
+	Params::TsTaskTeamWander_C_ReceiveExecuteAI Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -71,23 +73,21 @@ void UTsTaskTeamWander_C::ReceiveTickAI(class AAIController* OwnerController, cl
 }
 
 
-// Function TsTaskTeamWander.TsTaskTeamWander_C.ReceiveExecuteAI
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsTaskTeamWander.TsTaskTeamWander_C.ExecuteUbergraph_TsTaskTeamWander
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskTeamWander_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+void UTsTaskTeamWander_C::ExecuteUbergraph_TsTaskTeamWander(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskTeamWander_C", "ReceiveExecuteAI");
+		Func = Class->GetFunction("TsTaskTeamWander_C", "ExecuteUbergraph_TsTaskTeamWander");
 
-	Params::TsTaskTeamWander_C_ReceiveExecuteAI Parms{};
+	Params::TsTaskTeamWander_C_ExecuteUbergraph_TsTaskTeamWander Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -17,6 +17,30 @@
 namespace SDK
 {
 
+// Function ABP_Switch_Seq_V2.ABP_Switch_Seq_V2_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+
+void UABP_Switch_Seq_V2_C::AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* AnimGraph_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Switch_Seq_V2_C", "AnimGraph");
+
+	Params::ABP_Switch_Seq_V2_C_AnimGraph Parms{};
+
+	Parms.InPose = std::move(InPose);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+}
+
+
 // Function ABP_Switch_Seq_V2.ABP_Switch_Seq_V2_C.ExecuteUbergraph_ABP_Switch_Seq_V2
 // (Final, UbergraphFunction)
 // Parameters:
@@ -34,30 +58,6 @@ void UABP_Switch_Seq_V2_C::ExecuteUbergraph_ABP_Switch_Seq_V2(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ABP_Switch_Seq_V2.ABP_Switch_Seq_V2_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        Param_AnimGraph                                        (Parm, OutParm, NoDestructor)
-
-void UABP_Switch_Seq_V2_C::AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* Param_AnimGraph)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Switch_Seq_V2_C", "AnimGraph");
-
-	Params::ABP_Switch_Seq_V2_C_AnimGraph Parms{};
-
-	Parms.InPose = std::move(InPose);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Param_AnimGraph != nullptr)
-		*Param_AnimGraph = std::move(Parms.Param_AnimGraph);
 }
 
 }

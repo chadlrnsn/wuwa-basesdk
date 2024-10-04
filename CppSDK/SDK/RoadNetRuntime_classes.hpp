@@ -20,11 +20,11 @@ namespace SDK
 {
 
 // Class RoadNetRuntime.RoadNetActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class ARoadNetActor final : public AActor
 {
 public:
-	class URoadNetComponent*                      RoadNetComponent;                                  // 0x02A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class URoadNetComponent*                      RoadNetComponent;                                  // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -37,22 +37,21 @@ public:
 	}
 };
 static_assert(alignof(ARoadNetActor) == 0x000008, "Wrong alignment on ARoadNetActor");
-static_assert(sizeof(ARoadNetActor) == 0x0002B0, "Wrong size on ARoadNetActor");
-static_assert(offsetof(ARoadNetActor, RoadNetComponent) == 0x0002A8, "Member 'ARoadNetActor::RoadNetComponent' has a wrong offset!");
+static_assert(sizeof(ARoadNetActor) == 0x0002B8, "Wrong size on ARoadNetActor");
+static_assert(offsetof(ARoadNetActor, RoadNetComponent) == 0x0002B0, "Member 'ARoadNetActor::RoadNetComponent' has a wrong offset!");
 
 // Class RoadNetRuntime.RoadNetComponent
 // 0x0080 (0x0570 - 0x04F0)
 class URoadNetComponent final : public UPrimitiveComponent
 {
 public:
-	bool                                          bDrawDebug;                                        // 0x04E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHasBeenEdited;                                    // 0x04E9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4EA[0x2];                                      // 0x04EA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                TileSize;                                          // 0x04EC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<int32, struct FRoadNetNode>              RoadNetNodes;                                      // 0x04F8(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
-	uint32                                        RoadNetID;                                         // 0x0548(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBox                                   DataBoundsBox;                                     // 0x054C(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_568[0x8];                                      // 0x0568(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bDrawDebug;                                        // 0x04F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasBeenEdited;                                    // 0x04F1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4F2[0x2];                                      // 0x04F2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TileSize;                                          // 0x04F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<int32, struct FRoadNetNode>              RoadNetNodes;                                      // 0x0500(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
+	uint32                                        RoadNetID;                                         // 0x0550(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBox                                   DataBoundsBox;                                     // 0x0554(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	struct FVector GetLeaveTangentAtNode(int32 NodeID, ERoadNetCoordinateSpace CoordinateSpace) const;
@@ -70,12 +69,12 @@ public:
 };
 static_assert(alignof(URoadNetComponent) == 0x000010, "Wrong alignment on URoadNetComponent");
 static_assert(sizeof(URoadNetComponent) == 0x000570, "Wrong size on URoadNetComponent");
-static_assert(offsetof(URoadNetComponent, bDrawDebug) == 0x0004E8, "Member 'URoadNetComponent::bDrawDebug' has a wrong offset!");
-static_assert(offsetof(URoadNetComponent, bHasBeenEdited) == 0x0004E9, "Member 'URoadNetComponent::bHasBeenEdited' has a wrong offset!");
-static_assert(offsetof(URoadNetComponent, TileSize) == 0x0004EC, "Member 'URoadNetComponent::TileSize' has a wrong offset!");
-static_assert(offsetof(URoadNetComponent, RoadNetNodes) == 0x0004F8, "Member 'URoadNetComponent::RoadNetNodes' has a wrong offset!");
-static_assert(offsetof(URoadNetComponent, RoadNetID) == 0x000548, "Member 'URoadNetComponent::RoadNetID' has a wrong offset!");
-static_assert(offsetof(URoadNetComponent, DataBoundsBox) == 0x00054C, "Member 'URoadNetComponent::DataBoundsBox' has a wrong offset!");
+static_assert(offsetof(URoadNetComponent, bDrawDebug) == 0x0004F0, "Member 'URoadNetComponent::bDrawDebug' has a wrong offset!");
+static_assert(offsetof(URoadNetComponent, bHasBeenEdited) == 0x0004F1, "Member 'URoadNetComponent::bHasBeenEdited' has a wrong offset!");
+static_assert(offsetof(URoadNetComponent, TileSize) == 0x0004F4, "Member 'URoadNetComponent::TileSize' has a wrong offset!");
+static_assert(offsetof(URoadNetComponent, RoadNetNodes) == 0x000500, "Member 'URoadNetComponent::RoadNetNodes' has a wrong offset!");
+static_assert(offsetof(URoadNetComponent, RoadNetID) == 0x000550, "Member 'URoadNetComponent::RoadNetID' has a wrong offset!");
+static_assert(offsetof(URoadNetComponent, DataBoundsBox) == 0x000554, "Member 'URoadNetComponent::DataBoundsBox' has a wrong offset!");
 
 // Class RoadNetRuntime.RoadNetSetting
 // 0x0010 (0x0040 - 0x0030)

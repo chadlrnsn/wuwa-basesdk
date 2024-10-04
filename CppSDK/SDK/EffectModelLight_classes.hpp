@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelLight.EffectModelLight_C
-// 0x0000 (0x06D0 - 0x06D0)
+// 0x0000 (0x06D8 - 0x06D8)
 class UEffectModelLight_C final : public UEffectModelLight
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UEffectModelLight_C) == 0x000008, "Wrong alignment on UEffectModelLight_C");
-static_assert(sizeof(UEffectModelLight_C) == 0x0006D0, "Wrong size on UEffectModelLight_C");
+static_assert(sizeof(UEffectModelLight_C) == 0x0006D8, "Wrong size on UEffectModelLight_C");
 
 }
 

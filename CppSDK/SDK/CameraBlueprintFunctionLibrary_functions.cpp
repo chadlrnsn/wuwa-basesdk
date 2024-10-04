@@ -1304,5 +1304,59 @@ void UCameraBlueprintFunctionLibrary_C::PlaySettlementCamera(class UObject* __Wo
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetSequenceCameraCollisionState
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bEnable                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::SetSequenceCameraCollisionState(bool bEnable, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SetSequenceCameraCollisionState");
+
+	Params::CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState Parms{};
+
+	Parms.bEnable = bEnable;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetXRayState
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsEnable                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::SetXRayState(bool IsEnable, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SetXRayState");
+
+	Params::CameraBlueprintFunctionLibrary_C_SetXRayState Parms{};
+
+	Parms.IsEnable = IsEnable;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

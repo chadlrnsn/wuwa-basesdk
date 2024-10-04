@@ -18,6 +18,115 @@
 namespace SDK::Params
 {
 
+// Function GA_Role_Manipulate.GA_Role_Manipulate_C.	éÊ>§i¨\¹
+// 0x0070 (0x0070 - 0x0000)
+struct GA_Role_Manipulate_C______i____ final
+{
+public:
+	int32                                         ___0;                                              // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Fours____;                                         // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               _l__;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FRotator                               D___l;                                             // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FRotator                               _r_l;                                              // 0x0020(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_InRange_FloatFloat_ReturnValue;           // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_InRange_FloatFloat_ReturnValue_1;         // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_InRange_FloatFloat_ReturnValue_2;         // 0x002E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_BreakRotator_Roll;                        // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakRotator_Pitch;                       // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakRotator_Yaw;                         // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_NormalizedDeltaRotator_ReturnValue;       // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_K2_GetActorRotation_ReturnValue;          // 0x0050(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetCameraRotator_Success;                 // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5D[0x3];                                       // 0x005D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               CallFunc_GetCameraRotator_Rotator;                 // 0x0060(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Role_Manipulate_C______i____) == 0x000008, "Wrong alignment on GA_Role_Manipulate_C______i____");
+static_assert(sizeof(GA_Role_Manipulate_C______i____) == 0x000070, "Wrong size on GA_Role_Manipulate_C______i____");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, ___0) == 0x000000, "Member 'GA_Role_Manipulate_C______i____::___0' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, Fours____) == 0x000004, "Member 'GA_Role_Manipulate_C______i____::Fours____' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, _l__) == 0x000008, "Member 'GA_Role_Manipulate_C______i____::_l__' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, D___l) == 0x000014, "Member 'GA_Role_Manipulate_C______i____::D___l' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, _r_l) == 0x000020, "Member 'GA_Role_Manipulate_C______i____::_r_l' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_InRange_FloatFloat_ReturnValue) == 0x00002C, "Member 'GA_Role_Manipulate_C______i____::CallFunc_InRange_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_InRange_FloatFloat_ReturnValue_1) == 0x00002D, "Member 'GA_Role_Manipulate_C______i____::CallFunc_InRange_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_InRange_FloatFloat_ReturnValue_2) == 0x00002E, "Member 'GA_Role_Manipulate_C______i____::CallFunc_InRange_FloatFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_BreakRotator_Roll) == 0x000030, "Member 'GA_Role_Manipulate_C______i____::CallFunc_BreakRotator_Roll' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_BreakRotator_Pitch) == 0x000034, "Member 'GA_Role_Manipulate_C______i____::CallFunc_BreakRotator_Pitch' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_BreakRotator_Yaw) == 0x000038, "Member 'GA_Role_Manipulate_C______i____::CallFunc_BreakRotator_Yaw' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_NormalizedDeltaRotator_ReturnValue) == 0x00003C, "Member 'GA_Role_Manipulate_C______i____::CallFunc_NormalizedDeltaRotator_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc__________) == 0x000048, "Member 'GA_Role_Manipulate_C______i____::CallFunc__________' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_K2_GetActorRotation_ReturnValue) == 0x000050, "Member 'GA_Role_Manipulate_C______i____::CallFunc_K2_GetActorRotation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_GetCameraRotator_Success) == 0x00005C, "Member 'GA_Role_Manipulate_C______i____::CallFunc_GetCameraRotator_Success' has a wrong offset!");
+static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_GetCameraRotator_Rotator) == 0x000060, "Member 'GA_Role_Manipulate_C______i____::CallFunc_GetCameraRotator_Rotator' has a wrong offset!");
+
+// Function GA_Role_Manipulate.GA_Role_Manipulate_C.Added_21071CB943CD992BF8EFD6A302D055A4
+// 0x000C (0x000C - 0x0000)
+struct GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4 final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4) == 0x000004, "Wrong alignment on GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4");
+static_assert(sizeof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4) == 0x00000C, "Wrong size on GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4");
+static_assert(offsetof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4, Tag) == 0x000000, "Member 'GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4::Tag' has a wrong offset!");
+
+// Function GA_Role_Manipulate.GA_Role_Manipulate_C.Added_21071CB943CD992BF8EFD6A385FA7D9C
+// 0x000C (0x000C - 0x0000)
+struct GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C) == 0x000004, "Wrong alignment on GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C");
+static_assert(sizeof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C) == 0x00000C, "Wrong size on GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C");
+static_assert(offsetof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C, Tag) == 0x000000, "Member 'GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C::Tag' has a wrong offset!");
+
+// Function GA_Role_Manipulate.GA_Role_Manipulate_C.EventReceived_216442174E3088EB354911B5CC57F2B1
+// 0x00B8 (0x00B8 - 0x0000)
+struct GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1 final
+{
+public:
+	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+static_assert(alignof(GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1) == 0x000008, "Wrong alignment on GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1");
+static_assert(sizeof(GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1) == 0x0000B8, "Wrong size on GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1");
+static_assert(offsetof(GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1, Payload) == 0x000000, "Member 'GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1::Payload' has a wrong offset!");
+
+// Function GA_Role_Manipulate.GA_Role_Manipulate_C.EventReceived_A99B2F604F8C8EFCA354FB99DC615855
+// 0x00B8 (0x00B8 - 0x0000)
+struct GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855 final
+{
+public:
+	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+static_assert(alignof(GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855) == 0x000008, "Wrong alignment on GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855");
+static_assert(sizeof(GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855) == 0x0000B8, "Wrong size on GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855");
+static_assert(offsetof(GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855, Payload) == 0x000000, "Member 'GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855::Payload' has a wrong offset!");
+
+// Function GA_Role_Manipulate.GA_Role_Manipulate_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Role_Manipulate_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Role_Manipulate_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_Manipulate_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Role_Manipulate_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Manipulate_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Role_Manipulate_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Manipulate_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
+// Function GA_Role_Manipulate.GA_Role_Manipulate_C.AfterRequest
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Role_Manipulate_C_AfterRequest final
+{
+public:
+	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Role_Manipulate_C_AfterRequest) == 0x000001, "Wrong alignment on GA_Role_Manipulate_C_AfterRequest");
+static_assert(sizeof(GA_Role_Manipulate_C_AfterRequest) == 0x000001, "Wrong size on GA_Role_Manipulate_C_AfterRequest");
+static_assert(offsetof(GA_Role_Manipulate_C_AfterRequest, bContent) == 0x000000, "Member 'GA_Role_Manipulate_C_AfterRequest::bContent' has a wrong offset!");
+
 // Function GA_Role_Manipulate.GA_Role_Manipulate_C.ExecuteUbergraph_GA_Role_Manipulate
 // 0x0C18 (0x0C18 - 0x0000)
 struct GA_Role_Manipulate_C_ExecuteUbergraph_GA_Role_Manipulate final
@@ -443,115 +552,6 @@ static_assert(offsetof(GA_Role_Manipulate_C_ExecuteUbergraph_GA_Role_Manipulate,
 static_assert(offsetof(GA_Role_Manipulate_C_ExecuteUbergraph_GA_Role_Manipulate, CallFunc___________33) == 0x000C00, "Member 'GA_Role_Manipulate_C_ExecuteUbergraph_GA_Role_Manipulate::CallFunc___________33' has a wrong offset!");
 static_assert(offsetof(GA_Role_Manipulate_C_ExecuteUbergraph_GA_Role_Manipulate, CallFunc___________34) == 0x000C08, "Member 'GA_Role_Manipulate_C_ExecuteUbergraph_GA_Role_Manipulate::CallFunc___________34' has a wrong offset!");
 static_assert(offsetof(GA_Role_Manipulate_C_ExecuteUbergraph_GA_Role_Manipulate, CallFunc___________35) == 0x000C10, "Member 'GA_Role_Manipulate_C_ExecuteUbergraph_GA_Role_Manipulate::CallFunc___________35' has a wrong offset!");
-
-// Function GA_Role_Manipulate.GA_Role_Manipulate_C.AfterRequest
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Role_Manipulate_C_AfterRequest final
-{
-public:
-	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_Manipulate_C_AfterRequest) == 0x000001, "Wrong alignment on GA_Role_Manipulate_C_AfterRequest");
-static_assert(sizeof(GA_Role_Manipulate_C_AfterRequest) == 0x000001, "Wrong size on GA_Role_Manipulate_C_AfterRequest");
-static_assert(offsetof(GA_Role_Manipulate_C_AfterRequest, bContent) == 0x000000, "Member 'GA_Role_Manipulate_C_AfterRequest::bContent' has a wrong offset!");
-
-// Function GA_Role_Manipulate.GA_Role_Manipulate_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Role_Manipulate_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_Manipulate_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_Manipulate_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Role_Manipulate_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Manipulate_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Role_Manipulate_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Manipulate_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_Role_Manipulate.GA_Role_Manipulate_C.EventReceived_A99B2F604F8C8EFCA354FB99DC615855
-// 0x00B8 (0x00B8 - 0x0000)
-struct GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855 final
-{
-public:
-	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-static_assert(alignof(GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855) == 0x000008, "Wrong alignment on GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855");
-static_assert(sizeof(GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855) == 0x0000B8, "Wrong size on GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855");
-static_assert(offsetof(GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855, Payload) == 0x000000, "Member 'GA_Role_Manipulate_C_EventReceived_A99B2F604F8C8EFCA354FB99DC615855::Payload' has a wrong offset!");
-
-// Function GA_Role_Manipulate.GA_Role_Manipulate_C.EventReceived_216442174E3088EB354911B5CC57F2B1
-// 0x00B8 (0x00B8 - 0x0000)
-struct GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1 final
-{
-public:
-	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-static_assert(alignof(GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1) == 0x000008, "Wrong alignment on GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1");
-static_assert(sizeof(GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1) == 0x0000B8, "Wrong size on GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1");
-static_assert(offsetof(GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1, Payload) == 0x000000, "Member 'GA_Role_Manipulate_C_EventReceived_216442174E3088EB354911B5CC57F2B1::Payload' has a wrong offset!");
-
-// Function GA_Role_Manipulate.GA_Role_Manipulate_C.Added_21071CB943CD992BF8EFD6A385FA7D9C
-// 0x000C (0x000C - 0x0000)
-struct GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C) == 0x000004, "Wrong alignment on GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C");
-static_assert(sizeof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C) == 0x00000C, "Wrong size on GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C");
-static_assert(offsetof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C, Tag) == 0x000000, "Member 'GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A385FA7D9C::Tag' has a wrong offset!");
-
-// Function GA_Role_Manipulate.GA_Role_Manipulate_C.Added_21071CB943CD992BF8EFD6A302D055A4
-// 0x000C (0x000C - 0x0000)
-struct GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4 final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4) == 0x000004, "Wrong alignment on GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4");
-static_assert(sizeof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4) == 0x00000C, "Wrong size on GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4");
-static_assert(offsetof(GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4, Tag) == 0x000000, "Member 'GA_Role_Manipulate_C_Added_21071CB943CD992BF8EFD6A302D055A4::Tag' has a wrong offset!");
-
-// Function GA_Role_Manipulate.GA_Role_Manipulate_C.	éÊ>§i¨\¹
-// 0x0070 (0x0070 - 0x0000)
-struct GA_Role_Manipulate_C______i____ final
-{
-public:
-	int32                                         ___0;                                              // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Fours____;                                         // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               _l__;                                              // 0x0008(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FRotator                               D___l;                                             // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FRotator                               _r_l;                                              // 0x0020(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_InRange_FloatFloat_ReturnValue;           // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_InRange_FloatFloat_ReturnValue_1;         // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_InRange_FloatFloat_ReturnValue_2;         // 0x002E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_BreakRotator_Roll;                        // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakRotator_Pitch;                       // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakRotator_Yaw;                         // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_NormalizedDeltaRotator_ReturnValue;       // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_K2_GetActorRotation_ReturnValue;          // 0x0050(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GetCameraRotator_Success;                 // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5D[0x3];                                       // 0x005D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               CallFunc_GetCameraRotator_Rotator;                 // 0x0060(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_Manipulate_C______i____) == 0x000008, "Wrong alignment on GA_Role_Manipulate_C______i____");
-static_assert(sizeof(GA_Role_Manipulate_C______i____) == 0x000070, "Wrong size on GA_Role_Manipulate_C______i____");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, ___0) == 0x000000, "Member 'GA_Role_Manipulate_C______i____::___0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, Fours____) == 0x000004, "Member 'GA_Role_Manipulate_C______i____::Fours____' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, _l__) == 0x000008, "Member 'GA_Role_Manipulate_C______i____::_l__' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, D___l) == 0x000014, "Member 'GA_Role_Manipulate_C______i____::D___l' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, _r_l) == 0x000020, "Member 'GA_Role_Manipulate_C______i____::_r_l' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_InRange_FloatFloat_ReturnValue) == 0x00002C, "Member 'GA_Role_Manipulate_C______i____::CallFunc_InRange_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_InRange_FloatFloat_ReturnValue_1) == 0x00002D, "Member 'GA_Role_Manipulate_C______i____::CallFunc_InRange_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_InRange_FloatFloat_ReturnValue_2) == 0x00002E, "Member 'GA_Role_Manipulate_C______i____::CallFunc_InRange_FloatFloat_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_BreakRotator_Roll) == 0x000030, "Member 'GA_Role_Manipulate_C______i____::CallFunc_BreakRotator_Roll' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_BreakRotator_Pitch) == 0x000034, "Member 'GA_Role_Manipulate_C______i____::CallFunc_BreakRotator_Pitch' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_BreakRotator_Yaw) == 0x000038, "Member 'GA_Role_Manipulate_C______i____::CallFunc_BreakRotator_Yaw' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_NormalizedDeltaRotator_ReturnValue) == 0x00003C, "Member 'GA_Role_Manipulate_C______i____::CallFunc_NormalizedDeltaRotator_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc__________) == 0x000048, "Member 'GA_Role_Manipulate_C______i____::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_K2_GetActorRotation_ReturnValue) == 0x000050, "Member 'GA_Role_Manipulate_C______i____::CallFunc_K2_GetActorRotation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_GetCameraRotator_Success) == 0x00005C, "Member 'GA_Role_Manipulate_C______i____::CallFunc_GetCameraRotator_Success' has a wrong offset!");
-static_assert(offsetof(GA_Role_Manipulate_C______i____, CallFunc_GetCameraRotator_Rotator) == 0x000060, "Member 'GA_Role_Manipulate_C______i____::CallFunc_GetCameraRotator_Rotator' has a wrong offset!");
 
 }
 

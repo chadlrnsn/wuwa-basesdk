@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "LiveLinkInterface_classes.hpp"
 #include "Engine_classes.hpp"
+#include "LiveLinkInterface_classes.hpp"
 #include "MagicLeapHandTracking_structs.hpp"
 #include "InputCore_structs.hpp"
 

@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "ECharacterMeshPart_structs.hpp"
 #include "ECharacterControllerType_structs.hpp"
-#include "ECharacterBodySpecifiedType_structs.hpp"
 #include "ECharacterSlotSpecifiedType_structs.hpp"
-#include "SMaterialControllerLoopTime_structs.hpp"
-#include "SMaterialControllerFloatGroup_structs.hpp"
-#include "ECharacterControllerApplyType_structs.hpp"
-#include "ECharacterControllerChannelSwitch_structs.hpp"
 #include "SMaterialControllerColorGroup_structs.hpp"
+#include "SMaterialControllerFloatGroup_structs.hpp"
+#include "ECharacterMeshPart_structs.hpp"
+#include "ECharacterBodySpecifiedType_structs.hpp"
+#include "ECharacterControllerChannelSwitch_structs.hpp"
+#include "ECharacterControllerApplyType_structs.hpp"
 #include "ECharacterControllerUVSwitch_structs.hpp"
+#include "SMaterialControllerLoopTime_structs.hpp"
 #include "SMaterialControllerFloatParameter_structs.hpp"
 #include "SMaterialControllerColorParameter_structs.hpp"
 #include "SMaterialControllerTextureParameter_structs.hpp"
@@ -30,7 +30,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PD_CharacterControllerData.PD_CharacterControllerData_C
-// 0x4A40 (0x4A78 - 0x0038)
+// 0x4A50 (0x4A88 - 0x0038)
 class UPD_CharacterControllerData_C final : public UPrimaryDataAsset
 {
 public:
@@ -125,7 +125,10 @@ public:
 	struct FSMaterialControllerFloatGroup         RimIntensity;                                      // 0x4700(0x01B0)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TArray<class FString>                         CustomPartNames;                                   // 0x48B0(0x0010)(Edit, BlueprintVisible)
 	struct FSMaterialControllerFloatGroup         TextureMaskRange;                                  // 0x48C0(0x01B0)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	bool                                          UpdateAtLeastOneFrame;                             // 0x4A70(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          MaskOriginEffect;                                  // 0x4A70(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          UpdateAtLeastOneFrame;                             // 0x4A71(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4A72[0x6];                                     // 0x4A72(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         CustomExcludePartNames;                            // 0x4A78(0x0010)(Edit, BlueprintVisible)
 
 public:
 	void InitCache();
@@ -141,7 +144,7 @@ public:
 	}
 };
 static_assert(alignof(UPD_CharacterControllerData_C) == 0x000008, "Wrong alignment on UPD_CharacterControllerData_C");
-static_assert(sizeof(UPD_CharacterControllerData_C) == 0x004A78, "Wrong size on UPD_CharacterControllerData_C");
+static_assert(sizeof(UPD_CharacterControllerData_C) == 0x004A88, "Wrong size on UPD_CharacterControllerData_C");
 static_assert(offsetof(UPD_CharacterControllerData_C, DataType) == 0x000038, "Member 'UPD_CharacterControllerData_C::DataType' has a wrong offset!");
 static_assert(offsetof(UPD_CharacterControllerData_C, SpecifiedBodyType) == 0x000039, "Member 'UPD_CharacterControllerData_C::SpecifiedBodyType' has a wrong offset!");
 static_assert(offsetof(UPD_CharacterControllerData_C, SpecifiedParts) == 0x000040, "Member 'UPD_CharacterControllerData_C::SpecifiedParts' has a wrong offset!");
@@ -215,7 +218,9 @@ static_assert(offsetof(UPD_CharacterControllerData_C, CleanOriginEffect) == 0x00
 static_assert(offsetof(UPD_CharacterControllerData_C, RimIntensity) == 0x004700, "Member 'UPD_CharacterControllerData_C::RimIntensity' has a wrong offset!");
 static_assert(offsetof(UPD_CharacterControllerData_C, CustomPartNames) == 0x0048B0, "Member 'UPD_CharacterControllerData_C::CustomPartNames' has a wrong offset!");
 static_assert(offsetof(UPD_CharacterControllerData_C, TextureMaskRange) == 0x0048C0, "Member 'UPD_CharacterControllerData_C::TextureMaskRange' has a wrong offset!");
-static_assert(offsetof(UPD_CharacterControllerData_C, UpdateAtLeastOneFrame) == 0x004A70, "Member 'UPD_CharacterControllerData_C::UpdateAtLeastOneFrame' has a wrong offset!");
+static_assert(offsetof(UPD_CharacterControllerData_C, MaskOriginEffect) == 0x004A70, "Member 'UPD_CharacterControllerData_C::MaskOriginEffect' has a wrong offset!");
+static_assert(offsetof(UPD_CharacterControllerData_C, UpdateAtLeastOneFrame) == 0x004A71, "Member 'UPD_CharacterControllerData_C::UpdateAtLeastOneFrame' has a wrong offset!");
+static_assert(offsetof(UPD_CharacterControllerData_C, CustomExcludePartNames) == 0x004A78, "Member 'UPD_CharacterControllerData_C::CustomExcludePartNames' has a wrong offset!");
 
 }
 

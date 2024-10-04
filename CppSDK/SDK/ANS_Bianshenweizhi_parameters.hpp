@@ -16,22 +16,22 @@
 namespace SDK::Params
 {
 
-// Function ANS_Bianshenweizhi.ANS_Bianshenweizhi_C.K2_NotifyBegin
+// Function ANS_Bianshenweizhi.ANS_Bianshenweizhi_C.K2_NotifyTick
 // 0x0018 (0x0018 - 0x0000)
-struct ANS_Bianshenweizhi_C_K2_NotifyBegin final
+struct ANS_Bianshenweizhi_C_K2_NotifyTick final
 {
 public:
 	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         TotalDuration;                                     // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         FrameDeltaTime;                                    // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(ANS_Bianshenweizhi_C_K2_NotifyBegin) == 0x000008, "Wrong alignment on ANS_Bianshenweizhi_C_K2_NotifyBegin");
-static_assert(sizeof(ANS_Bianshenweizhi_C_K2_NotifyBegin) == 0x000018, "Wrong size on ANS_Bianshenweizhi_C_K2_NotifyBegin");
-static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyBegin, MeshComp) == 0x000000, "Member 'ANS_Bianshenweizhi_C_K2_NotifyBegin::MeshComp' has a wrong offset!");
-static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyBegin, Animation) == 0x000008, "Member 'ANS_Bianshenweizhi_C_K2_NotifyBegin::Animation' has a wrong offset!");
-static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyBegin, TotalDuration) == 0x000010, "Member 'ANS_Bianshenweizhi_C_K2_NotifyBegin::TotalDuration' has a wrong offset!");
-static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyBegin, ReturnValue) == 0x000014, "Member 'ANS_Bianshenweizhi_C_K2_NotifyBegin::ReturnValue' has a wrong offset!");
+static_assert(alignof(ANS_Bianshenweizhi_C_K2_NotifyTick) == 0x000008, "Wrong alignment on ANS_Bianshenweizhi_C_K2_NotifyTick");
+static_assert(sizeof(ANS_Bianshenweizhi_C_K2_NotifyTick) == 0x000018, "Wrong size on ANS_Bianshenweizhi_C_K2_NotifyTick");
+static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyTick, MeshComp) == 0x000000, "Member 'ANS_Bianshenweizhi_C_K2_NotifyTick::MeshComp' has a wrong offset!");
+static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyTick, Animation) == 0x000008, "Member 'ANS_Bianshenweizhi_C_K2_NotifyTick::Animation' has a wrong offset!");
+static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyTick, FrameDeltaTime) == 0x000010, "Member 'ANS_Bianshenweizhi_C_K2_NotifyTick::FrameDeltaTime' has a wrong offset!");
+static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyTick, ReturnValue) == 0x000014, "Member 'ANS_Bianshenweizhi_C_K2_NotifyTick::ReturnValue' has a wrong offset!");
 
 // Function ANS_Bianshenweizhi.ANS_Bianshenweizhi_C.K2_NotifyEnd
 // 0x0038 (0x0038 - 0x0000)
@@ -53,22 +53,22 @@ static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyEnd, ReturnValue) == 0x0000
 static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyEnd, Object_Types) == 0x000018, "Member 'ANS_Bianshenweizhi_C_K2_NotifyEnd::Object_Types' has a wrong offset!");
 static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyEnd, K2Node_MakeArray_Array) == 0x000028, "Member 'ANS_Bianshenweizhi_C_K2_NotifyEnd::K2Node_MakeArray_Array' has a wrong offset!");
 
-// Function ANS_Bianshenweizhi.ANS_Bianshenweizhi_C.K2_NotifyTick
+// Function ANS_Bianshenweizhi.ANS_Bianshenweizhi_C.K2_NotifyBegin
 // 0x0018 (0x0018 - 0x0000)
-struct ANS_Bianshenweizhi_C_K2_NotifyTick final
+struct ANS_Bianshenweizhi_C_K2_NotifyBegin final
 {
 public:
 	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         FrameDeltaTime;                                    // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         TotalDuration;                                     // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(ANS_Bianshenweizhi_C_K2_NotifyTick) == 0x000008, "Wrong alignment on ANS_Bianshenweizhi_C_K2_NotifyTick");
-static_assert(sizeof(ANS_Bianshenweizhi_C_K2_NotifyTick) == 0x000018, "Wrong size on ANS_Bianshenweizhi_C_K2_NotifyTick");
-static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyTick, MeshComp) == 0x000000, "Member 'ANS_Bianshenweizhi_C_K2_NotifyTick::MeshComp' has a wrong offset!");
-static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyTick, Animation) == 0x000008, "Member 'ANS_Bianshenweizhi_C_K2_NotifyTick::Animation' has a wrong offset!");
-static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyTick, FrameDeltaTime) == 0x000010, "Member 'ANS_Bianshenweizhi_C_K2_NotifyTick::FrameDeltaTime' has a wrong offset!");
-static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyTick, ReturnValue) == 0x000014, "Member 'ANS_Bianshenweizhi_C_K2_NotifyTick::ReturnValue' has a wrong offset!");
+static_assert(alignof(ANS_Bianshenweizhi_C_K2_NotifyBegin) == 0x000008, "Wrong alignment on ANS_Bianshenweizhi_C_K2_NotifyBegin");
+static_assert(sizeof(ANS_Bianshenweizhi_C_K2_NotifyBegin) == 0x000018, "Wrong size on ANS_Bianshenweizhi_C_K2_NotifyBegin");
+static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyBegin, MeshComp) == 0x000000, "Member 'ANS_Bianshenweizhi_C_K2_NotifyBegin::MeshComp' has a wrong offset!");
+static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyBegin, Animation) == 0x000008, "Member 'ANS_Bianshenweizhi_C_K2_NotifyBegin::Animation' has a wrong offset!");
+static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyBegin, TotalDuration) == 0x000010, "Member 'ANS_Bianshenweizhi_C_K2_NotifyBegin::TotalDuration' has a wrong offset!");
+static_assert(offsetof(ANS_Bianshenweizhi_C_K2_NotifyBegin, ReturnValue) == 0x000014, "Member 'ANS_Bianshenweizhi_C_K2_NotifyBegin::ReturnValue' has a wrong offset!");
 
 }
 

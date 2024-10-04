@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function TsTaskPatrolPerformanceQuery.TsTaskPatrolPerformanceQuery_C.ExecuteUbergraph_TsTaskPatrolPerformanceQuery
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsTaskPatrolPerformanceQuery_C::ExecuteUbergraph_TsTaskPatrolPerformanceQuery(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskPatrolPerformanceQuery_C", "ExecuteUbergraph_TsTaskPatrolPerformanceQuery");
-
-	Params::TsTaskPatrolPerformanceQuery_C_ExecuteUbergraph_TsTaskPatrolPerformanceQuery Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function TsTaskPatrolPerformanceQuery.TsTaskPatrolPerformanceQuery_C.ReceiveExecuteAI
 // (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -59,6 +34,31 @@ void UTsTaskPatrolPerformanceQuery_C::ReceiveExecuteAI(class AAIController* Owne
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskPatrolPerformanceQuery.TsTaskPatrolPerformanceQuery_C.ExecuteUbergraph_TsTaskPatrolPerformanceQuery
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsTaskPatrolPerformanceQuery_C::ExecuteUbergraph_TsTaskPatrolPerformanceQuery(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskPatrolPerformanceQuery_C", "ExecuteUbergraph_TsTaskPatrolPerformanceQuery");
+
+	Params::TsTaskPatrolPerformanceQuery_C_ExecuteUbergraph_TsTaskPatrolPerformanceQuery Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

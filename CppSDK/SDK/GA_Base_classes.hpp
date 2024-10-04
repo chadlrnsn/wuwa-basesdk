@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "KuroGAS_classes.hpp"
-#include "Engine_structs.hpp"
 #include "EAimViewState_structs.hpp"
+#include "Engine_structs.hpp"
 #include "SSkillInfo_structs.hpp"
+#include "KuroGAS_classes.hpp"
 #include "EPawnChannel_structs.hpp"
 
 

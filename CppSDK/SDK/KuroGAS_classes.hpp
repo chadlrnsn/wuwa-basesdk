@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "KuroGAS_structs.hpp"
 #include "Engine_classes.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayAbilities_classes.hpp"
+#include "KuroGAS_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -742,25 +742,25 @@ static_assert(offsetof(UBaseAttributeSet, RageReduce) == 0x000C80, "Member 'UBas
 static_assert(offsetof(UBaseAttributeSet, ToughRecoverDelayTime) == 0x000C98, "Member 'UBaseAttributeSet::ToughRecoverDelayTime' has a wrong offset!");
 
 // Class KuroGAS.BaseCharacter
-// 0x00B0 (0x0650 - 0x05A0)
+// 0x00B0 (0x0660 - 0x05B0)
 class ABaseCharacter : public ACharacter
 {
 public:
-	struct FVector                                CachedActorLocation;                               // 0x05A0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               CachedActorRotation;                               // 0x05AC(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5B8[0x8];                                      // 0x05B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  CachedActorQuat;                                   // 0x05C0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                CachedActorScale;                                  // 0x05D0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5DC[0x4];                                      // 0x05DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CachedActorTransform;                              // 0x05E0(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                CachedActorUp;                                     // 0x0610(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CachedActorForward;                                // 0x061C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CachedActorVelocity;                               // 0x0628(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInitializeAttributes;                             // 0x0634(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_635[0x3];                                      // 0x0635(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBaseAttributeSet*                      AttributeSet;                                      // 0x0638(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0640(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_648[0x8];                                      // 0x0648(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                CachedActorLocation;                               // 0x05B0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               CachedActorRotation;                               // 0x05BC(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C8[0x8];                                      // 0x05C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  CachedActorQuat;                                   // 0x05D0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                CachedActorScale;                                  // 0x05E0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5EC[0x4];                                      // 0x05EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CachedActorTransform;                              // 0x05F0(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                CachedActorUp;                                     // 0x0620(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CachedActorForward;                                // 0x062C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CachedActorVelocity;                               // 0x0638(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInitializeAttributes;                             // 0x0644(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_645[0x3];                                      // 0x0645(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBaseAttributeSet*                      AttributeSet;                                      // 0x0648(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0650(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_658[0x8];                                      // 0x0658(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void CreateAttribute();
@@ -786,18 +786,18 @@ public:
 	}
 };
 static_assert(alignof(ABaseCharacter) == 0x000010, "Wrong alignment on ABaseCharacter");
-static_assert(sizeof(ABaseCharacter) == 0x000650, "Wrong size on ABaseCharacter");
-static_assert(offsetof(ABaseCharacter, CachedActorLocation) == 0x0005A0, "Member 'ABaseCharacter::CachedActorLocation' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, CachedActorRotation) == 0x0005AC, "Member 'ABaseCharacter::CachedActorRotation' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, CachedActorQuat) == 0x0005C0, "Member 'ABaseCharacter::CachedActorQuat' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, CachedActorScale) == 0x0005D0, "Member 'ABaseCharacter::CachedActorScale' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, CachedActorTransform) == 0x0005E0, "Member 'ABaseCharacter::CachedActorTransform' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, CachedActorUp) == 0x000610, "Member 'ABaseCharacter::CachedActorUp' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, CachedActorForward) == 0x00061C, "Member 'ABaseCharacter::CachedActorForward' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, CachedActorVelocity) == 0x000628, "Member 'ABaseCharacter::CachedActorVelocity' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, bInitializeAttributes) == 0x000634, "Member 'ABaseCharacter::bInitializeAttributes' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, AttributeSet) == 0x000638, "Member 'ABaseCharacter::AttributeSet' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, AbilitySystemComponent) == 0x000640, "Member 'ABaseCharacter::AbilitySystemComponent' has a wrong offset!");
+static_assert(sizeof(ABaseCharacter) == 0x000660, "Wrong size on ABaseCharacter");
+static_assert(offsetof(ABaseCharacter, CachedActorLocation) == 0x0005B0, "Member 'ABaseCharacter::CachedActorLocation' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, CachedActorRotation) == 0x0005BC, "Member 'ABaseCharacter::CachedActorRotation' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, CachedActorQuat) == 0x0005D0, "Member 'ABaseCharacter::CachedActorQuat' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, CachedActorScale) == 0x0005E0, "Member 'ABaseCharacter::CachedActorScale' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, CachedActorTransform) == 0x0005F0, "Member 'ABaseCharacter::CachedActorTransform' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, CachedActorUp) == 0x000620, "Member 'ABaseCharacter::CachedActorUp' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, CachedActorForward) == 0x00062C, "Member 'ABaseCharacter::CachedActorForward' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, CachedActorVelocity) == 0x000638, "Member 'ABaseCharacter::CachedActorVelocity' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, bInitializeAttributes) == 0x000644, "Member 'ABaseCharacter::bInitializeAttributes' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, AttributeSet) == 0x000648, "Member 'ABaseCharacter::AttributeSet' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, AbilitySystemComponent) == 0x000650, "Member 'ABaseCharacter::AbilitySystemComponent' has a wrong offset!");
 
 // Class KuroGAS.BaseGameplayAbility
 // 0x0008 (0x03C8 - 0x03C0)

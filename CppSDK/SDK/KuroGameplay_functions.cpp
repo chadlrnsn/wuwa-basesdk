@@ -87,6 +87,31 @@ class USceneComponent* UKuroEffectLibrary::AddSceneComponentWithTransform(class 
 }
 
 
+// Function KuroGameplay.KuroEffectLibrary.DeactivateImmediateNiagaraComponent
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class UNiagaraComponent*                NiagaraComponent                                       (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroEffectLibrary::DeactivateImmediateNiagaraComponent(class UNiagaraComponent* NiagaraComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroEffectLibrary", "DeactivateImmediateNiagaraComponent");
+
+	Params::KuroEffectLibrary_DeactivateImmediateNiagaraComponent Parms{};
+
+	Parms.NiagaraComponent = NiagaraComponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroGameplay.KuroEffectLibrary.EqualWorld
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
@@ -261,9 +286,10 @@ void UKuroEffectLibrary::InitModelNiagaraSpec(class UNiagaraComponent* NiagaraCo
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
 // class UNiagaraComponent*                NiagaraComponent                                       (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Threshold                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroEffectLibrary::IsNiagaraComponentHasBound(class UNiagaraComponent* NiagaraComponent)
+bool UKuroEffectLibrary::IsNiagaraComponentHasBound(class UNiagaraComponent* NiagaraComponent, float Threshold)
 {
 	static class UFunction* Func = nullptr;
 
@@ -273,6 +299,7 @@ bool UKuroEffectLibrary::IsNiagaraComponentHasBound(class UNiagaraComponent* Nia
 	Params::KuroEffectLibrary_IsNiagaraComponentHasBound Parms{};
 
 	Parms.NiagaraComponent = NiagaraComponent;
+	Parms.Threshold = Threshold;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -335,6 +362,35 @@ void UKuroEffectLibrary::RegisterOnSystemPaused(class UNiagaraComponent* Niagara
 }
 
 
+// Function KuroGameplay.KuroEffectLibrary.SetEffectActorSpawnInUIScene
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Immediately                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroEffectLibrary::SetEffectActorSpawnInUIScene(class AActor* Actor, bool Value, bool Immediately)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroEffectLibrary", "SetEffectActorSpawnInUIScene");
+
+	Params::KuroEffectLibrary_SetEffectActorSpawnInUIScene Parms{};
+
+	Parms.Actor = Actor;
+	Parms.Value = Value;
+	Parms.Immediately = Immediately;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroGameplay.KuroEffectLibrary.SetNiagaraFrameDeltaTime
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
@@ -362,6 +418,33 @@ bool UKuroEffectLibrary::SetNiagaraFrameDeltaTime(class UNiagaraComponent* Niaga
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroEffectLibrary.SetNiagaraSimulationMinDeltaTime
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class UNiagaraComponent*                NiagaraComponent                                       (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   MinDeltaTime                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroEffectLibrary::SetNiagaraSimulationMinDeltaTime(class UNiagaraComponent* NiagaraComponent, float MinDeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroEffectLibrary", "SetNiagaraSimulationMinDeltaTime");
+
+	Params::KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime Parms{};
+
+	Parms.NiagaraComponent = NiagaraComponent;
+	Parms.MinDeltaTime = MinDeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -925,6 +1008,34 @@ void UKuroInputManager::OnActorDestroy(class AActor* Actor)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetCurrentLevelRefPath
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKuroLevelPlayLibrary::GetCurrentLevelRefPath(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLevelPlayLibrary", "GetCurrentLevelRefPath");
+
+	Params::KuroLevelPlayLibrary_GetCurrentLevelRefPath Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -1995,6 +2106,36 @@ bool UKuroSequenceRuntimeFunctionLibrary::SectionContains(class UMovieSceneSecti
 
 	Parms.Section = Section;
 	Parms.Frame = std::move(Frame);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.SetSequenceInUiScene
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class UMovieSceneSequence*              Sequence                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsEnable                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroSequenceRuntimeFunctionLibrary::SetSequenceInUiScene(class UMovieSceneSequence* Sequence, bool IsEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSequenceRuntimeFunctionLibrary", "SetSequenceInUiScene");
+
+	Params::KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene Parms{};
+
+	Parms.Sequence = Sequence;
+	Parms.IsEnable = IsEnable;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

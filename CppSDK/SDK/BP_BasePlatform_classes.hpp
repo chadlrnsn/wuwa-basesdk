@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BasePlatform.BP_BasePlatform_C
-// 0x0018 (0x02C0 - 0x02A8)
+// 0x0018 (0x02C8 - 0x02B0)
 class ABP_BasePlatform_C final : public AActor
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         LeaveSphereRadius;                                 // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                LeaveSphereCenter;                                 // 0x02B4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         LeaveSphereRadius;                                 // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                LeaveSphereCenter;                                 // 0x02BC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -37,10 +37,10 @@ public:
 	}
 };
 static_assert(alignof(ABP_BasePlatform_C) == 0x000008, "Wrong alignment on ABP_BasePlatform_C");
-static_assert(sizeof(ABP_BasePlatform_C) == 0x0002C0, "Wrong size on ABP_BasePlatform_C");
-static_assert(offsetof(ABP_BasePlatform_C, DefaultSceneRoot) == 0x0002A8, "Member 'ABP_BasePlatform_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_BasePlatform_C, LeaveSphereRadius) == 0x0002B0, "Member 'ABP_BasePlatform_C::LeaveSphereRadius' has a wrong offset!");
-static_assert(offsetof(ABP_BasePlatform_C, LeaveSphereCenter) == 0x0002B4, "Member 'ABP_BasePlatform_C::LeaveSphereCenter' has a wrong offset!");
+static_assert(sizeof(ABP_BasePlatform_C) == 0x0002C8, "Wrong size on ABP_BasePlatform_C");
+static_assert(offsetof(ABP_BasePlatform_C, DefaultSceneRoot) == 0x0002B0, "Member 'ABP_BasePlatform_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ABP_BasePlatform_C, LeaveSphereRadius) == 0x0002B8, "Member 'ABP_BasePlatform_C::LeaveSphereRadius' has a wrong offset!");
+static_assert(offsetof(ABP_BasePlatform_C, LeaveSphereCenter) == 0x0002BC, "Member 'ABP_BasePlatform_C::LeaveSphereCenter' has a wrong offset!");
 
 }
 

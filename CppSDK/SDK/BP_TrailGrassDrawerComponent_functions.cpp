@@ -17,21 +17,35 @@
 namespace SDK
 {
 
-// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.ExecuteUbergraph_BP_TrailGrassDrawerComponent
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.OnDrawerBegin
+// (Event, Public, BlueprintEvent)
 
-void UBP_TrailGrassDrawerComponent_C::ExecuteUbergraph_BP_TrailGrassDrawerComponent(int32 EntryPoint)
+void UBP_TrailGrassDrawerComponent_C::OnDrawerBegin()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TrailGrassDrawerComponent_C", "ExecuteUbergraph_BP_TrailGrassDrawerComponent");
+		Func = Class->GetFunction("BP_TrailGrassDrawerComponent_C", "OnDrawerBegin");
 
-	Params::BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGrassDrawerComponent Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.OnDrawerEnd
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_TrailGrassDrawerComponent_C::OnDrawerEnd(const EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TrailGrassDrawerComponent_C", "OnDrawerEnd");
+
+	Params::BP_TrailGrassDrawerComponent_C_OnDrawerEnd Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,37 +71,23 @@ void UBP_TrailGrassDrawerComponent_C::OnDrawerTick(float DeltaTime)
 }
 
 
-// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.OnDrawerEnd
-// (Event, Public, BlueprintEvent)
+// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.ExecuteUbergraph_BP_TrailGrassDrawerComponent
+// (Final, UbergraphFunction)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBP_TrailGrassDrawerComponent_C::OnDrawerEnd(const EEndPlayReason EndPlayReason)
+void UBP_TrailGrassDrawerComponent_C::ExecuteUbergraph_BP_TrailGrassDrawerComponent(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TrailGrassDrawerComponent_C", "OnDrawerEnd");
+		Func = Class->GetFunction("BP_TrailGrassDrawerComponent_C", "ExecuteUbergraph_BP_TrailGrassDrawerComponent");
 
-	Params::BP_TrailGrassDrawerComponent_C_OnDrawerEnd Parms{};
+	Params::BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGrassDrawerComponent Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.OnDrawerBegin
-// (Event, Public, BlueprintEvent)
-
-void UBP_TrailGrassDrawerComponent_C::OnDrawerBegin()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TrailGrassDrawerComponent_C", "OnDrawerBegin");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

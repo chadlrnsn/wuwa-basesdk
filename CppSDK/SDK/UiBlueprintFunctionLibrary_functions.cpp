@@ -2145,5 +2145,33 @@ void UUiBlueprintFunctionLibrary_C::ActivitySequenceEmitEvent(const class FStrin
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.GetUiWeaponEquippedRoleId
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UUiBlueprintFunctionLibrary_C::GetUiWeaponEquippedRoleId(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UiBlueprintFunctionLibrary_C", "GetUiWeaponEquippedRoleId");
+
+	Params::UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
 }
 

@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "ECharParentMoveState_structs.hpp"
+#include "EWalkingPosture_structs.hpp"
+#include "Engine_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
+#include "ECharState_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "KuroAnim_structs.hpp"
 #include "KuroAnim_classes.hpp"
-#include "AnimGraphRuntime_structs.hpp"
+#include "ECharParentMoveState_structs.hpp"
 #include "EMovementDirection_structs.hpp"
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "EWalkingPosture_structs.hpp"
-#include "ECharState_structs.hpp"
 
 
 namespace SDK
@@ -124,40 +124,40 @@ public:
 	class UBP_ABPLogicParams_C*                   Ts_____;                                           // 0x2340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void NewEventDispatcher_0__DelegateSignature();
-	void ExecuteUbergraph_ABP_VisionCommon(int32 EntryPoint);
-	void AnimNotify______1();
-	void AnimNotify______0();
-	void AnimNotify_____();
-	void AnimNotify______();
-	void OnComponentStart();
-	void AnimNotify__e__();
-	void PlayShakeFX(int32 Section);
-	void BlueprintInitializeAnimation();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_3E3A6B3343741F764B5A4CB9359C9681();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_5F4247094A79D9F8B3ADA18884514005();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_968992674153C6C6873DAC969B2CD72B();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_765F6D9C4A48F3B534BEA1A26FEF5251();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_FD4B710B49AE918855FBDAA6DB446ADA();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_A9C1C8A74E930F3D7B4BDC9B1380CF3A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_A62E321544F9C1255BB0CD9473C9B8B0();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_389E80BF4F42F63944C347B2B19B4763();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_8D42FB4648FB96001BC976AD2D1C5BD2();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_D12DDE404ED59447D9E16AAE61D5FF57();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_86A606294ABC09217DBA8CAD183C94C1();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_D2E001C445FC3301D13F5DA8B32E3540();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_5351818C4D3DFF112C55E69968810DB2();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_98445E3D4CDE8CDB637A6585BBF1A9BE();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_F263CB9243A94CC4BE5C3A8C2EB85B38();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_F081664C4C3F23A9F777878955FB8D5A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_Feedback_F7F9D443402E1DFF8A267EBE1B7A9842();
-	void _______0();
-	void ______Tag();
-	void ______();
-	void ___p__();
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void HitFk(const struct FPoseLink& InPose, struct FPoseLink* HitFk_0);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void ___p__();
+	void ______();
+	void ______Tag();
+	void _______0();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_Feedback_F7F9D443402E1DFF8A267EBE1B7A9842();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_F081664C4C3F23A9F777878955FB8D5A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_F263CB9243A94CC4BE5C3A8C2EB85B38();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_98445E3D4CDE8CDB637A6585BBF1A9BE();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_5351818C4D3DFF112C55E69968810DB2();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_D2E001C445FC3301D13F5DA8B32E3540();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_86A606294ABC09217DBA8CAD183C94C1();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_D12DDE404ED59447D9E16AAE61D5FF57();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_8D42FB4648FB96001BC976AD2D1C5BD2();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_389E80BF4F42F63944C347B2B19B4763();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_A62E321544F9C1255BB0CD9473C9B8B0();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_A9C1C8A74E930F3D7B4BDC9B1380CF3A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_FD4B710B49AE918855FBDAA6DB446ADA();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_765F6D9C4A48F3B534BEA1A26FEF5251();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_968992674153C6C6873DAC969B2CD72B();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_5F4247094A79D9F8B3ADA18884514005();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_3E3A6B3343741F764B5A4CB9359C9681();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void BlueprintInitializeAnimation();
+	void PlayShakeFX(int32 Section);
+	void AnimNotify__e__();
+	void OnComponentStart();
+	void AnimNotify______();
+	void AnimNotify_____();
+	void AnimNotify______0();
+	void AnimNotify______1();
+	void ExecuteUbergraph_ABP_VisionCommon(int32 EntryPoint);
+	void NewEventDispatcher_0__DelegateSignature();
 
 public:
 	static class UClass* StaticClass()

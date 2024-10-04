@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "KuroPointCloud_structs.hpp"
-#include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "KuroPointCloud_structs.hpp"
+#include "Engine_classes.hpp"
 #include "Niagara_classes.hpp"
 
 
@@ -21,18 +21,18 @@ namespace SDK
 {
 
 // Class KuroPointCloud.KuroPointCloudActor
-// 0x0088 (0x0330 - 0x02A8)
+// 0x0088 (0x0338 - 0x02B0)
 class AKuroPointCloudActor final : public AActor
 {
 public:
-	class UInstancedStaticMeshComponent*          InstancedStaticMeshComponent;                      // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UKuroPointCloudCache*                   PointCloudAsset;                                   // 0x02B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PointNumToStopDivide;                              // 0x02B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BoxLengthToStopDivide;                             // 0x02BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InstanceScale;                                     // 0x02C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C4[0x4];                                      // 0x02C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroPointKdTree                       KdTree;                                            // 0x02C8(0x0058)(NativeAccessSpecifierPrivate)
-	TArray<float>                                 CustomData;                                        // 0x0320(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	class UInstancedStaticMeshComponent*          InstancedStaticMeshComponent;                      // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UKuroPointCloudCache*                   PointCloudAsset;                                   // 0x02B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PointNumToStopDivide;                              // 0x02C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BoxLengthToStopDivide;                             // 0x02C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InstanceScale;                                     // 0x02C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroPointKdTree                       KdTree;                                            // 0x02D0(0x0058)(NativeAccessSpecifierPrivate)
+	TArray<float>                                 CustomData;                                        // 0x0328(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 
 public:
 	void BuildKdTreeData();
@@ -51,14 +51,14 @@ public:
 	}
 };
 static_assert(alignof(AKuroPointCloudActor) == 0x000008, "Wrong alignment on AKuroPointCloudActor");
-static_assert(sizeof(AKuroPointCloudActor) == 0x000330, "Wrong size on AKuroPointCloudActor");
-static_assert(offsetof(AKuroPointCloudActor, InstancedStaticMeshComponent) == 0x0002A8, "Member 'AKuroPointCloudActor::InstancedStaticMeshComponent' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, PointCloudAsset) == 0x0002B0, "Member 'AKuroPointCloudActor::PointCloudAsset' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, PointNumToStopDivide) == 0x0002B8, "Member 'AKuroPointCloudActor::PointNumToStopDivide' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, BoxLengthToStopDivide) == 0x0002BC, "Member 'AKuroPointCloudActor::BoxLengthToStopDivide' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, InstanceScale) == 0x0002C0, "Member 'AKuroPointCloudActor::InstanceScale' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, KdTree) == 0x0002C8, "Member 'AKuroPointCloudActor::KdTree' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudActor, CustomData) == 0x000320, "Member 'AKuroPointCloudActor::CustomData' has a wrong offset!");
+static_assert(sizeof(AKuroPointCloudActor) == 0x000338, "Wrong size on AKuroPointCloudActor");
+static_assert(offsetof(AKuroPointCloudActor, InstancedStaticMeshComponent) == 0x0002B0, "Member 'AKuroPointCloudActor::InstancedStaticMeshComponent' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudActor, PointCloudAsset) == 0x0002B8, "Member 'AKuroPointCloudActor::PointCloudAsset' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudActor, PointNumToStopDivide) == 0x0002C0, "Member 'AKuroPointCloudActor::PointNumToStopDivide' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudActor, BoxLengthToStopDivide) == 0x0002C4, "Member 'AKuroPointCloudActor::BoxLengthToStopDivide' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudActor, InstanceScale) == 0x0002C8, "Member 'AKuroPointCloudActor::InstanceScale' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudActor, KdTree) == 0x0002D0, "Member 'AKuroPointCloudActor::KdTree' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudActor, CustomData) == 0x000328, "Member 'AKuroPointCloudActor::CustomData' has a wrong offset!");
 
 // Class KuroPointCloud.KuroPointCloudCache
 // 0x0040 (0x0070 - 0x0030)
@@ -72,6 +72,7 @@ public:
 
 public:
 	void UpdateFromData(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales);
+	void UpdateFromDataWithIndices(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales, const TArray<int32>& Indices);
 
 public:
 	static class UClass* StaticClass()
@@ -154,13 +155,13 @@ static_assert(offsetof(UKuroPointCloudStreamingConfig, StreamingCells) == 0x0000
 static_assert(offsetof(UKuroPointCloudStreamingConfig, CellSize) == 0x000048, "Member 'UKuroPointCloudStreamingConfig::CellSize' has a wrong offset!");
 
 // Class KuroPointCloud.KuroPointCloudStreamingActor
-// 0x0028 (0x02D0 - 0x02A8)
+// 0x0028 (0x02D8 - 0x02B0)
 class AKuroPointCloudStreamingActor final : public AActor
 {
 public:
-	class USceneComponent*                        SceneRoot;                                         // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroPointCloudWorldComponent*          PointCloudWorldComponent;                          // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B8[0x18];                                     // 0x02B8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        SceneRoot;                                         // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroPointCloudWorldComponent*          PointCloudWorldComponent;                          // 0x02B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C0[0x18];                                     // 0x02C0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -173,9 +174,9 @@ public:
 	}
 };
 static_assert(alignof(AKuroPointCloudStreamingActor) == 0x000008, "Wrong alignment on AKuroPointCloudStreamingActor");
-static_assert(sizeof(AKuroPointCloudStreamingActor) == 0x0002D0, "Wrong size on AKuroPointCloudStreamingActor");
-static_assert(offsetof(AKuroPointCloudStreamingActor, SceneRoot) == 0x0002A8, "Member 'AKuroPointCloudStreamingActor::SceneRoot' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudStreamingActor, PointCloudWorldComponent) == 0x0002B0, "Member 'AKuroPointCloudStreamingActor::PointCloudWorldComponent' has a wrong offset!");
+static_assert(sizeof(AKuroPointCloudStreamingActor) == 0x0002D8, "Wrong size on AKuroPointCloudStreamingActor");
+static_assert(offsetof(AKuroPointCloudStreamingActor, SceneRoot) == 0x0002B0, "Member 'AKuroPointCloudStreamingActor::SceneRoot' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudStreamingActor, PointCloudWorldComponent) == 0x0002B8, "Member 'AKuroPointCloudStreamingActor::PointCloudWorldComponent' has a wrong offset!");
 
 // Class KuroPointCloud.KuroPointCloudStreamer
 // 0x0090 (0x00C0 - 0x0030)
@@ -205,14 +206,14 @@ static_assert(offsetof(UKuroPointCloudStreamer, SpawnedActors) == 0x000088, "Mem
 static_assert(offsetof(UKuroPointCloudStreamer, ActorPool) == 0x000098, "Member 'UKuroPointCloudStreamer::ActorPool' has a wrong offset!");
 
 // Class KuroPointCloud.KuroPointCloudWorldActor
-// 0x0028 (0x02D0 - 0x02A8)
+// 0x0028 (0x02D8 - 0x02B0)
 class AKuroPointCloudWorldActor final : public AActor
 {
 public:
-	class USceneComponent*                        SceneComponent;                                    // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroPointCloudWorldComponent*          PointCloudWorldComponent;                          // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   GroupName;                                         // 0x02B8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SubGroupName;                                      // 0x02C4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USceneComponent*                        SceneComponent;                                    // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroPointCloudWorldComponent*          PointCloudWorldComponent;                          // 0x02B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   GroupName;                                         // 0x02C0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SubGroupName;                                      // 0x02CC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static void DeleteAllActorsInGroup(const class UObject* WorldContextObject, class FName TargetGroupName, class FName TargetSubGroupName);
@@ -228,11 +229,11 @@ public:
 	}
 };
 static_assert(alignof(AKuroPointCloudWorldActor) == 0x000008, "Wrong alignment on AKuroPointCloudWorldActor");
-static_assert(sizeof(AKuroPointCloudWorldActor) == 0x0002D0, "Wrong size on AKuroPointCloudWorldActor");
-static_assert(offsetof(AKuroPointCloudWorldActor, SceneComponent) == 0x0002A8, "Member 'AKuroPointCloudWorldActor::SceneComponent' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudWorldActor, PointCloudWorldComponent) == 0x0002B0, "Member 'AKuroPointCloudWorldActor::PointCloudWorldComponent' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudWorldActor, GroupName) == 0x0002B8, "Member 'AKuroPointCloudWorldActor::GroupName' has a wrong offset!");
-static_assert(offsetof(AKuroPointCloudWorldActor, SubGroupName) == 0x0002C4, "Member 'AKuroPointCloudWorldActor::SubGroupName' has a wrong offset!");
+static_assert(sizeof(AKuroPointCloudWorldActor) == 0x0002D8, "Wrong size on AKuroPointCloudWorldActor");
+static_assert(offsetof(AKuroPointCloudWorldActor, SceneComponent) == 0x0002B0, "Member 'AKuroPointCloudWorldActor::SceneComponent' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudWorldActor, PointCloudWorldComponent) == 0x0002B8, "Member 'AKuroPointCloudWorldActor::PointCloudWorldComponent' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudWorldActor, GroupName) == 0x0002C0, "Member 'AKuroPointCloudWorldActor::GroupName' has a wrong offset!");
+static_assert(offsetof(AKuroPointCloudWorldActor, SubGroupName) == 0x0002CC, "Member 'AKuroPointCloudWorldActor::SubGroupName' has a wrong offset!");
 
 // Class KuroPointCloud.KuroPointCloudWorldComponent
 // 0x0020 (0x00E0 - 0x00C0)

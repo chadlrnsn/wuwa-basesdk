@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Nvzhu.ABP_Nvzhu_C
-// 0x0000 (0x1FC50 - 0x1FC50)
+// 0x0000 (0x1FF50 - 0x1FF50)
 class UABP_Nvzhu_C final : public UABP_BaseRole_C
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UABP_Nvzhu_C) == 0x000010, "Wrong alignment on UABP_Nvzhu_C");
-static_assert(sizeof(UABP_Nvzhu_C) == 0x01FC50, "Wrong size on UABP_Nvzhu_C");
+static_assert(sizeof(UABP_Nvzhu_C) == 0x01FF50, "Wrong size on UABP_Nvzhu_C");
 
 }
 

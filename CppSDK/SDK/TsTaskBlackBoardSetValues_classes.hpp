@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "TsTaskAbortImmediatelyBase_classes.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -31,8 +31,8 @@ public:
 	TMap<class FString, int32>                    IntMap;                                            // 0x0200(0x0050)(Edit, BlueprintVisible)
 
 public:
-	void ExecuteUbergraph_TsTaskBlackBoardSetValues(int32 EntryPoint);
 	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ExecuteUbergraph_TsTaskBlackBoardSetValues(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

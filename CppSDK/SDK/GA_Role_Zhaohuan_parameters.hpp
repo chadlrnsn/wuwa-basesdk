@@ -14,6 +14,17 @@
 namespace SDK::Params
 {
 
+// Function GA_Role_Zhaohuan.GA_Role_Zhaohuan_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Role_Zhaohuan_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Role_Zhaohuan_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_Zhaohuan_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Role_Zhaohuan_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Zhaohuan_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Role_Zhaohuan_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Zhaohuan_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_Role_Zhaohuan.GA_Role_Zhaohuan_C.ExecuteUbergraph_GA_Role_Zhaohuan
 // 0x0018 (0x0018 - 0x0000)
 struct GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan final
@@ -31,17 +42,6 @@ static_assert(offsetof(GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan, Ent
 static_assert(offsetof(GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan, K2Node_Event_bWasCancelled) == 0x000004, "Member 'GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan::K2Node_Event_bWasCancelled' has a wrong offset!");
 static_assert(offsetof(GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan, CallFunc__________) == 0x000008, "Member 'GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan::CallFunc__________' has a wrong offset!");
 static_assert(offsetof(GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan, CallFunc_ActivateAbilityVision_ReturnValue) == 0x000010, "Member 'GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan::CallFunc_ActivateAbilityVision_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Zhaohuan.GA_Role_Zhaohuan_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Role_Zhaohuan_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_Zhaohuan_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_Zhaohuan_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Role_Zhaohuan_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Zhaohuan_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Role_Zhaohuan_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Zhaohuan_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
 }
 

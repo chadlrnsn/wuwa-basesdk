@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "TimeOfDayData_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "TimeOfDayData_structs.hpp"
 
 
 namespace SDK

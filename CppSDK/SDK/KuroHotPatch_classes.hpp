@@ -153,6 +153,7 @@ public:
 	static bool DeleteFile(const class FString& FilePath);
 	static bool DoesDiskHaveEnoughSpace(const class FString& CheckPath, const int64 CheckSize);
 	static bool Encrypt(const class FString& InPlain, class FString* OutCipher);
+	static class FString GameSavedDir();
 	static class FString GetAppChangeList();
 	static class FString GetAppInternalUseType();
 	static class FString GetAppParallel();
@@ -200,13 +201,21 @@ static_assert(offsetof(UKuroLauncherLibrary, PreloadBp) == 0x000030, "Member 'UK
 class UKuroPakMountStatic final : public UBlueprintFunctionLibrary
 {
 public:
+	static void AddSha1Check(const class FString& FilePath, const class FString& CheckSha1Hash);
+	static void DeleteSha1CheckFailedFiles();
+	static int32 GetSha1CheckFailedCount();
+	static bool IsSha1CheckWorking();
 	static bool MakePakPatch(const class FString& OldPakPath, const class FString& DiffPath, const class FString& NewPatchPath);
 	static void MountFromManifest(const class FString& Path);
 	static void MountGamePaks();
 	static void MountMultiLangPaks();
 	static void MountPak(const class FString& Path, int32 Order);
 	static void MountStartupPaks();
+	static void RemoveSha1Check(const class FString& FilePath);
+	static void ResetSha1CheckResult();
 	static void Save(const class FString& Path);
+	static void StartSha1Check();
+	static void StopSha1Check();
 	static void UnmountAllPaks();
 	static void UnmountFromManifest(const class FString& Path);
 	static void UnmountPak(const class FString& Path);

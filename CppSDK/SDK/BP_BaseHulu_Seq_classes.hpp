@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseHulu_Seq.BP_BaseHulu_Seq_C
-// 0x0018 (0x02C0 - 0x02A8)
+// 0x0018 (0x02C8 - 0x02B0)
 class ABP_BaseHulu_Seq_C final : public AActor
 {
 public:
-	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMesh*                          HuluMesh;                                          // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMesh*                          HuluMesh;                                          // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();
@@ -39,10 +39,10 @@ public:
 	}
 };
 static_assert(alignof(ABP_BaseHulu_Seq_C) == 0x000008, "Wrong alignment on ABP_BaseHulu_Seq_C");
-static_assert(sizeof(ABP_BaseHulu_Seq_C) == 0x0002C0, "Wrong size on ABP_BaseHulu_Seq_C");
-static_assert(offsetof(ABP_BaseHulu_Seq_C, SkeletalMeshComponent) == 0x0002A8, "Member 'ABP_BaseHulu_Seq_C::SkeletalMeshComponent' has a wrong offset!");
-static_assert(offsetof(ABP_BaseHulu_Seq_C, DefaultSceneRoot) == 0x0002B0, "Member 'ABP_BaseHulu_Seq_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_BaseHulu_Seq_C, HuluMesh) == 0x0002B8, "Member 'ABP_BaseHulu_Seq_C::HuluMesh' has a wrong offset!");
+static_assert(sizeof(ABP_BaseHulu_Seq_C) == 0x0002C8, "Wrong size on ABP_BaseHulu_Seq_C");
+static_assert(offsetof(ABP_BaseHulu_Seq_C, SkeletalMeshComponent) == 0x0002B0, "Member 'ABP_BaseHulu_Seq_C::SkeletalMeshComponent' has a wrong offset!");
+static_assert(offsetof(ABP_BaseHulu_Seq_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_BaseHulu_Seq_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ABP_BaseHulu_Seq_C, HuluMesh) == 0x0002C0, "Member 'ABP_BaseHulu_Seq_C::HuluMesh' has a wrong offset!");
 
 }
 

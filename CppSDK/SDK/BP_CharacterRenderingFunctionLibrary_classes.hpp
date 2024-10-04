@@ -39,6 +39,7 @@ public:
 	static void AddMaterialControllerDataForAllCases(class AActor* Actor, class UPD_CharacterControllerData_C* Data, class UObject* __WorldContext);
 	static void QuickInitAndAddDataGroup_MeshComponent(class USkeletalMeshComponent* MeshComponent, class UPD_CharacterControllerDataGroup_C* Data, class UObject* __WorldContext, float* HandleId, class UCharRenderingComponent_C** CharRenderComponent);
 	static void RemoveMaterialControllerDataGroup_MeshComponent(class UMeshComponent* MeshComponent, float HandleId, class UObject* __WorldContext);
+	static void SetNiagaraSkeletalMeshSimpleNPC(class UNiagaraComponent* NiagaraComponen, const class FString& ParamName, class UObject* __WorldContext);
 
 	void ApplyMaterialParems(const struct FSWeaponMaterialParams& Params_0, class UMaterialInstanceDynamic* Material, class UObject* __WorldContext);
 	void GetFallbackLevelData(int32 FirstIndex, class UPD_WeaponLevelMaterialDatas_C* Data, class UObject* __WorldContext, struct FSWeaponLevelMaterialData* Value);

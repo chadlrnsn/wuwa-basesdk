@@ -14,17 +14,6 @@
 namespace SDK::Params
 {
 
-// Function PerfSight.PerfSightHelper.BeginExtTag
-// 0x0010 (0x0010 - 0x0000)
-struct PerfSightHelper_BeginExtTag final
-{
-public:
-	class FString                                 TagName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PerfSightHelper_BeginExtTag) == 0x000008, "Wrong alignment on PerfSightHelper_BeginExtTag");
-static_assert(sizeof(PerfSightHelper_BeginExtTag) == 0x000010, "Wrong size on PerfSightHelper_BeginExtTag");
-static_assert(offsetof(PerfSightHelper_BeginExtTag, TagName) == 0x000000, "Member 'PerfSightHelper_BeginExtTag::TagName' has a wrong offset!");
-
 // Function PerfSight.PerfSightHelper.BeginTag
 // 0x0010 (0x0010 - 0x0000)
 struct PerfSightHelper_BeginTag final
@@ -46,17 +35,6 @@ public:
 static_assert(alignof(PerfSightHelper_BeginTupleWrap) == 0x000008, "Wrong alignment on PerfSightHelper_BeginTupleWrap");
 static_assert(sizeof(PerfSightHelper_BeginTupleWrap) == 0x000010, "Wrong size on PerfSightHelper_BeginTupleWrap");
 static_assert(offsetof(PerfSightHelper_BeginTupleWrap, Key) == 0x000000, "Member 'PerfSightHelper_BeginTupleWrap::Key' has a wrong offset!");
-
-// Function PerfSight.PerfSightHelper.EndExtTag
-// 0x0010 (0x0010 - 0x0000)
-struct PerfSightHelper_EndExtTag final
-{
-public:
-	class FString                                 TagName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PerfSightHelper_EndExtTag) == 0x000008, "Wrong alignment on PerfSightHelper_EndExtTag");
-static_assert(sizeof(PerfSightHelper_EndExtTag) == 0x000010, "Wrong size on PerfSightHelper_EndExtTag");
-static_assert(offsetof(PerfSightHelper_EndExtTag, TagName) == 0x000000, "Member 'PerfSightHelper_EndExtTag::TagName' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.GetDeviceLevelByQcc
 // 0x0028 (0x0028 - 0x0000)
@@ -114,17 +92,15 @@ static_assert(offsetof(PerfSightHelper_PostEvent, Key) == 0x000000, "Member 'Per
 static_assert(offsetof(PerfSightHelper_PostEvent, Info) == 0x000008, "Member 'PerfSightHelper_PostEvent::Info' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.PostFrame
-// 0x0008 (0x0008 - 0x0000)
+// 0x0004 (0x0004 - 0x0000)
 struct PerfSightHelper_PostFrame final
 {
 public:
 	float                                         Deltatime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIdx;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(PerfSightHelper_PostFrame) == 0x000004, "Wrong alignment on PerfSightHelper_PostFrame");
-static_assert(sizeof(PerfSightHelper_PostFrame) == 0x000008, "Wrong size on PerfSightHelper_PostFrame");
+static_assert(sizeof(PerfSightHelper_PostFrame) == 0x000004, "Wrong size on PerfSightHelper_PostFrame");
 static_assert(offsetof(PerfSightHelper_PostFrame, Deltatime) == 0x000000, "Member 'PerfSightHelper_PostFrame::Deltatime' has a wrong offset!");
-static_assert(offsetof(PerfSightHelper_PostFrame, FrameIdx) == 0x000004, "Member 'PerfSightHelper_PostFrame::FrameIdx' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.PostNetworkLatency
 // 0x0028 (0x0028 - 0x0000)
@@ -150,17 +126,16 @@ public:
 	class FString                                 Catgory;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         A;                                                 // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIdx;                                          // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PerfSightHelper_PostValueF1) == 0x000008, "Wrong alignment on PerfSightHelper_PostValueF1");
 static_assert(sizeof(PerfSightHelper_PostValueF1) == 0x000028, "Wrong size on PerfSightHelper_PostValueF1");
 static_assert(offsetof(PerfSightHelper_PostValueF1, Catgory) == 0x000000, "Member 'PerfSightHelper_PostValueF1::Catgory' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueF1, Key) == 0x000010, "Member 'PerfSightHelper_PostValueF1::Key' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueF1, A) == 0x000020, "Member 'PerfSightHelper_PostValueF1::A' has a wrong offset!");
-static_assert(offsetof(PerfSightHelper_PostValueF1, FrameIdx) == 0x000024, "Member 'PerfSightHelper_PostValueF1::FrameIdx' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.PostValueF2
-// 0x0030 (0x0030 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct PerfSightHelper_PostValueF2 final
 {
 public:
@@ -168,16 +143,13 @@ public:
 	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         A;                                                 // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         b;                                                 // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIdx;                                          // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PerfSightHelper_PostValueF2) == 0x000008, "Wrong alignment on PerfSightHelper_PostValueF2");
-static_assert(sizeof(PerfSightHelper_PostValueF2) == 0x000030, "Wrong size on PerfSightHelper_PostValueF2");
+static_assert(sizeof(PerfSightHelper_PostValueF2) == 0x000028, "Wrong size on PerfSightHelper_PostValueF2");
 static_assert(offsetof(PerfSightHelper_PostValueF2, Catgory) == 0x000000, "Member 'PerfSightHelper_PostValueF2::Catgory' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueF2, Key) == 0x000010, "Member 'PerfSightHelper_PostValueF2::Key' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueF2, A) == 0x000020, "Member 'PerfSightHelper_PostValueF2::A' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueF2, b) == 0x000024, "Member 'PerfSightHelper_PostValueF2::b' has a wrong offset!");
-static_assert(offsetof(PerfSightHelper_PostValueF2, FrameIdx) == 0x000028, "Member 'PerfSightHelper_PostValueF2::FrameIdx' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.PostValueF3
 // 0x0030 (0x0030 - 0x0000)
@@ -189,7 +161,7 @@ public:
 	float                                         A;                                                 // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         b;                                                 // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         C;                                                 // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIdx;                                          // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PerfSightHelper_PostValueF3) == 0x000008, "Wrong alignment on PerfSightHelper_PostValueF3");
 static_assert(sizeof(PerfSightHelper_PostValueF3) == 0x000030, "Wrong size on PerfSightHelper_PostValueF3");
@@ -198,7 +170,6 @@ static_assert(offsetof(PerfSightHelper_PostValueF3, Key) == 0x000010, "Member 'P
 static_assert(offsetof(PerfSightHelper_PostValueF3, A) == 0x000020, "Member 'PerfSightHelper_PostValueF3::A' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueF3, b) == 0x000024, "Member 'PerfSightHelper_PostValueF3::b' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueF3, C) == 0x000028, "Member 'PerfSightHelper_PostValueF3::C' has a wrong offset!");
-static_assert(offsetof(PerfSightHelper_PostValueF3, FrameIdx) == 0x00002C, "Member 'PerfSightHelper_PostValueF3::FrameIdx' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.PostValueI1
 // 0x0028 (0x0028 - 0x0000)
@@ -208,17 +179,16 @@ public:
 	class FString                                 Catgory;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         A;                                                 // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIdx;                                          // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PerfSightHelper_PostValueI1) == 0x000008, "Wrong alignment on PerfSightHelper_PostValueI1");
 static_assert(sizeof(PerfSightHelper_PostValueI1) == 0x000028, "Wrong size on PerfSightHelper_PostValueI1");
 static_assert(offsetof(PerfSightHelper_PostValueI1, Catgory) == 0x000000, "Member 'PerfSightHelper_PostValueI1::Catgory' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueI1, Key) == 0x000010, "Member 'PerfSightHelper_PostValueI1::Key' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueI1, A) == 0x000020, "Member 'PerfSightHelper_PostValueI1::A' has a wrong offset!");
-static_assert(offsetof(PerfSightHelper_PostValueI1, FrameIdx) == 0x000024, "Member 'PerfSightHelper_PostValueI1::FrameIdx' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.PostValueI2
-// 0x0030 (0x0030 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct PerfSightHelper_PostValueI2 final
 {
 public:
@@ -226,16 +196,13 @@ public:
 	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         A;                                                 // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         b;                                                 // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIdx;                                          // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PerfSightHelper_PostValueI2) == 0x000008, "Wrong alignment on PerfSightHelper_PostValueI2");
-static_assert(sizeof(PerfSightHelper_PostValueI2) == 0x000030, "Wrong size on PerfSightHelper_PostValueI2");
+static_assert(sizeof(PerfSightHelper_PostValueI2) == 0x000028, "Wrong size on PerfSightHelper_PostValueI2");
 static_assert(offsetof(PerfSightHelper_PostValueI2, Catgory) == 0x000000, "Member 'PerfSightHelper_PostValueI2::Catgory' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueI2, Key) == 0x000010, "Member 'PerfSightHelper_PostValueI2::Key' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueI2, A) == 0x000020, "Member 'PerfSightHelper_PostValueI2::A' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueI2, b) == 0x000024, "Member 'PerfSightHelper_PostValueI2::b' has a wrong offset!");
-static_assert(offsetof(PerfSightHelper_PostValueI2, FrameIdx) == 0x000028, "Member 'PerfSightHelper_PostValueI2::FrameIdx' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.PostValueI3
 // 0x0030 (0x0030 - 0x0000)
@@ -247,7 +214,7 @@ public:
 	int32                                         A;                                                 // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         b;                                                 // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         C;                                                 // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIdx;                                          // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PerfSightHelper_PostValueI3) == 0x000008, "Wrong alignment on PerfSightHelper_PostValueI3");
 static_assert(sizeof(PerfSightHelper_PostValueI3) == 0x000030, "Wrong size on PerfSightHelper_PostValueI3");
@@ -256,25 +223,21 @@ static_assert(offsetof(PerfSightHelper_PostValueI3, Key) == 0x000010, "Member 'P
 static_assert(offsetof(PerfSightHelper_PostValueI3, A) == 0x000020, "Member 'PerfSightHelper_PostValueI3::A' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueI3, b) == 0x000024, "Member 'PerfSightHelper_PostValueI3::b' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueI3, C) == 0x000028, "Member 'PerfSightHelper_PostValueI3::C' has a wrong offset!");
-static_assert(offsetof(PerfSightHelper_PostValueI3, FrameIdx) == 0x00002C, "Member 'PerfSightHelper_PostValueI3::FrameIdx' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.PostValueS
-// 0x0038 (0x0038 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct PerfSightHelper_PostValueS final
 {
 public:
 	class FString                                 Catgory;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Value;                                             // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameIdx;                                          // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(PerfSightHelper_PostValueS) == 0x000008, "Wrong alignment on PerfSightHelper_PostValueS");
-static_assert(sizeof(PerfSightHelper_PostValueS) == 0x000038, "Wrong size on PerfSightHelper_PostValueS");
+static_assert(sizeof(PerfSightHelper_PostValueS) == 0x000030, "Wrong size on PerfSightHelper_PostValueS");
 static_assert(offsetof(PerfSightHelper_PostValueS, Catgory) == 0x000000, "Member 'PerfSightHelper_PostValueS::Catgory' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueS, Key) == 0x000010, "Member 'PerfSightHelper_PostValueS::Key' has a wrong offset!");
 static_assert(offsetof(PerfSightHelper_PostValueS, Value) == 0x000020, "Member 'PerfSightHelper_PostValueS::Value' has a wrong offset!");
-static_assert(offsetof(PerfSightHelper_PostValueS, FrameIdx) == 0x000030, "Member 'PerfSightHelper_PostValueS::FrameIdx' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.SetCustomizedDeviceClass
 // 0x0004 (0x0004 - 0x0000)
@@ -330,19 +293,6 @@ public:
 static_assert(alignof(PerfSightHelper_SetQuality) == 0x000004, "Wrong alignment on PerfSightHelper_SetQuality");
 static_assert(sizeof(PerfSightHelper_SetQuality) == 0x000004, "Wrong size on PerfSightHelper_SetQuality");
 static_assert(offsetof(PerfSightHelper_SetQuality, Quality) == 0x000000, "Member 'PerfSightHelper_SetQuality::Quality' has a wrong offset!");
-
-// Function PerfSight.PerfSightHelper.SetStrategyById1
-// 0x0008 (0x0008 - 0x0000)
-struct PerfSightHelper_SetStrategyById1 final
-{
-public:
-	int32                                         Strategy_id;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Strategy_value;                                    // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PerfSightHelper_SetStrategyById1) == 0x000004, "Wrong alignment on PerfSightHelper_SetStrategyById1");
-static_assert(sizeof(PerfSightHelper_SetStrategyById1) == 0x000008, "Wrong size on PerfSightHelper_SetStrategyById1");
-static_assert(offsetof(PerfSightHelper_SetStrategyById1, Strategy_id) == 0x000000, "Member 'PerfSightHelper_SetStrategyById1::Strategy_id' has a wrong offset!");
-static_assert(offsetof(PerfSightHelper_SetStrategyById1, Strategy_value) == 0x000004, "Member 'PerfSightHelper_SetStrategyById1::Strategy_value' has a wrong offset!");
 
 // Function PerfSight.PerfSightHelper.SetTargetFrameRate
 // 0x0004 (0x0004 - 0x0000)

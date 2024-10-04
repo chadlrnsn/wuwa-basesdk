@@ -17,127 +17,27 @@
 namespace SDK
 {
 
-// Function GA_Born_Vision.GA_Born_Vision_C.ExecuteUbergraph_GA_Born_Vision
-// (Final, UbergraphFunction, HasDefaults)
+// Function GA_Born_Vision.GA_Born_Vision_C.分{apn
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   _aID                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSVisionData                     _apn                                                   (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
 
-void UGA_Born_Vision_C::ExecuteUbergraph_GA_Born_Vision(int32 EntryPoint)
+void UGA_Born_Vision_C::___apn(int32 _aID, struct FSVisionData* _apn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Born_Vision_C", "ExecuteUbergraph_GA_Born_Vision");
+		Func = Class->GetFunction("GA_Born_Vision_C", "分{apn");
 
-	Params::GA_Born_Vision_C_ExecuteUbergraph_GA_Born_Vision Parms{};
+	Params::GA_Born_Vision_C____apn Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms._aID = _aID;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
 
-
-// Function GA_Born_Vision.GA_Born_Vision_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Born_Vision_C::K2_OnEndAbility(bool bWasCancelled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Born_Vision_C", "K2_OnEndAbility");
-
-	Params::GA_Born_Vision_C_K2_OnEndAbility Parms{};
-
-	Parms.bWasCancelled = bWasCancelled;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Born_Vision.GA_Born_Vision_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Born_Vision_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Born_Vision_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Born_Vision.GA_Born_Vision_C.OnCompleted_5D118C384AE61F1C80292E81F2255DE9
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Born_Vision_C::OnCompleted_5D118C384AE61F1C80292E81F2255DE9()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Born_Vision_C", "OnCompleted_5D118C384AE61F1C80292E81F2255DE9");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Born_Vision.GA_Born_Vision_C.OnBlendOut_5D118C384AE61F1C80292E81F2255DE9
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Born_Vision_C::OnBlendOut_5D118C384AE61F1C80292E81F2255DE9()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Born_Vision_C", "OnBlendOut_5D118C384AE61F1C80292E81F2255DE9");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Born_Vision.GA_Born_Vision_C.OnInterrupted_5D118C384AE61F1C80292E81F2255DE9
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Born_Vision_C::OnInterrupted_5D118C384AE61F1C80292E81F2255DE9()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Born_Vision_C", "OnInterrupted_5D118C384AE61F1C80292E81F2255DE9");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Born_Vision.GA_Born_Vision_C.OnCancelled_5D118C384AE61F1C80292E81F2255DE9
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Born_Vision_C::OnCancelled_5D118C384AE61F1C80292E81F2255DE9()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Born_Vision_C", "OnCancelled_5D118C384AE61F1C80292E81F2255DE9");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Born_Vision.GA_Born_Vision_C.OnTick_5D118C384AE61F1C80292E81F2255DE9
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Born_Vision_C::OnTick_5D118C384AE61F1C80292E81F2255DE9()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Born_Vision_C", "OnTick_5D118C384AE61F1C80292E81F2255DE9");
-
-	UObject::ProcessEvent(Func, nullptr);
+	if (_apn != nullptr)
+		*_apn = std::move(Parms._apn);
 }
 
 
@@ -161,27 +61,127 @@ void UGA_Born_Vision_C::EventReceived_18B59F5945020DB23C42FD889881D7F7(const str
 }
 
 
-// Function GA_Born_Vision.GA_Born_Vision_C.分{apn
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// int32                                   _aID                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSVisionData                     _apn                                                   (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+// Function GA_Born_Vision.GA_Born_Vision_C.OnTick_5D118C384AE61F1C80292E81F2255DE9
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_Born_Vision_C::___apn(int32 _aID, struct FSVisionData* _apn)
+void UGA_Born_Vision_C::OnTick_5D118C384AE61F1C80292E81F2255DE9()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Born_Vision_C", "分{apn");
+		Func = Class->GetFunction("GA_Born_Vision_C", "OnTick_5D118C384AE61F1C80292E81F2255DE9");
 
-	Params::GA_Born_Vision_C____apn Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms._aID = _aID;
+
+// Function GA_Born_Vision.GA_Born_Vision_C.OnCancelled_5D118C384AE61F1C80292E81F2255DE9
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Born_Vision_C::OnCancelled_5D118C384AE61F1C80292E81F2255DE9()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Born_Vision_C", "OnCancelled_5D118C384AE61F1C80292E81F2255DE9");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Born_Vision.GA_Born_Vision_C.OnInterrupted_5D118C384AE61F1C80292E81F2255DE9
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Born_Vision_C::OnInterrupted_5D118C384AE61F1C80292E81F2255DE9()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Born_Vision_C", "OnInterrupted_5D118C384AE61F1C80292E81F2255DE9");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Born_Vision.GA_Born_Vision_C.OnBlendOut_5D118C384AE61F1C80292E81F2255DE9
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Born_Vision_C::OnBlendOut_5D118C384AE61F1C80292E81F2255DE9()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Born_Vision_C", "OnBlendOut_5D118C384AE61F1C80292E81F2255DE9");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Born_Vision.GA_Born_Vision_C.OnCompleted_5D118C384AE61F1C80292E81F2255DE9
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Born_Vision_C::OnCompleted_5D118C384AE61F1C80292E81F2255DE9()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Born_Vision_C", "OnCompleted_5D118C384AE61F1C80292E81F2255DE9");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Born_Vision.GA_Born_Vision_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGA_Born_Vision_C::K2_ActivateAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Born_Vision_C", "K2_ActivateAbility");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Born_Vision.GA_Born_Vision_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Born_Vision_C::K2_OnEndAbility(bool bWasCancelled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Born_Vision_C", "K2_OnEndAbility");
+
+	Params::GA_Born_Vision_C_K2_OnEndAbility Parms{};
+
+	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
 
-	if (_apn != nullptr)
-		*_apn = std::move(Parms._apn);
+
+// Function GA_Born_Vision.GA_Born_Vision_C.ExecuteUbergraph_GA_Born_Vision
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Born_Vision_C::ExecuteUbergraph_GA_Born_Vision(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Born_Vision_C", "ExecuteUbergraph_GA_Born_Vision");
+
+	Params::GA_Born_Vision_C_ExecuteUbergraph_GA_Born_Vision Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

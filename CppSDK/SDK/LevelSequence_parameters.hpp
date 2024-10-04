@@ -10,12 +10,98 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "MovieScene_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function LevelSequence.LevelSequence.CopyMetaData
+// 0x0010 (0x0010 - 0x0000)
+struct LevelSequence_CopyMetaData final
+{
+public:
+	class UObject*                                InMetaData;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequence_CopyMetaData) == 0x000008, "Wrong alignment on LevelSequence_CopyMetaData");
+static_assert(sizeof(LevelSequence_CopyMetaData) == 0x000010, "Wrong size on LevelSequence_CopyMetaData");
+static_assert(offsetof(LevelSequence_CopyMetaData, InMetaData) == 0x000000, "Member 'LevelSequence_CopyMetaData::InMetaData' has a wrong offset!");
+static_assert(offsetof(LevelSequence_CopyMetaData, ReturnValue) == 0x000008, "Member 'LevelSequence_CopyMetaData::ReturnValue' has a wrong offset!");
+
+// Function LevelSequence.LevelSequence.FindOrAddMetaDataByClass
+// 0x0010 (0x0010 - 0x0000)
+struct LevelSequence_FindOrAddMetaDataByClass final
+{
+public:
+	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequence_FindOrAddMetaDataByClass) == 0x000008, "Wrong alignment on LevelSequence_FindOrAddMetaDataByClass");
+static_assert(sizeof(LevelSequence_FindOrAddMetaDataByClass) == 0x000010, "Wrong size on LevelSequence_FindOrAddMetaDataByClass");
+static_assert(offsetof(LevelSequence_FindOrAddMetaDataByClass, InClass) == 0x000000, "Member 'LevelSequence_FindOrAddMetaDataByClass::InClass' has a wrong offset!");
+static_assert(offsetof(LevelSequence_FindOrAddMetaDataByClass, ReturnValue) == 0x000008, "Member 'LevelSequence_FindOrAddMetaDataByClass::ReturnValue' has a wrong offset!");
+
+// Function LevelSequence.LevelSequence.GetCenterOffset
+// 0x0010 (0x0010 - 0x0000)
+struct LevelSequence_GetCenterOffset final
+{
+public:
+	struct FVector                                OutCenterOffset;                                   // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(LevelSequence_GetCenterOffset) == 0x000004, "Wrong alignment on LevelSequence_GetCenterOffset");
+static_assert(sizeof(LevelSequence_GetCenterOffset) == 0x000010, "Wrong size on LevelSequence_GetCenterOffset");
+static_assert(offsetof(LevelSequence_GetCenterOffset, OutCenterOffset) == 0x000000, "Member 'LevelSequence_GetCenterOffset::OutCenterOffset' has a wrong offset!");
+static_assert(offsetof(LevelSequence_GetCenterOffset, ReturnValue) == 0x00000C, "Member 'LevelSequence_GetCenterOffset::ReturnValue' has a wrong offset!");
+
+// Function LevelSequence.LevelSequence.RemoveMetaDataByClass
+// 0x0008 (0x0008 - 0x0000)
+struct LevelSequence_RemoveMetaDataByClass final
+{
+public:
+	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequence_RemoveMetaDataByClass) == 0x000008, "Wrong alignment on LevelSequence_RemoveMetaDataByClass");
+static_assert(sizeof(LevelSequence_RemoveMetaDataByClass) == 0x000008, "Wrong size on LevelSequence_RemoveMetaDataByClass");
+static_assert(offsetof(LevelSequence_RemoveMetaDataByClass, InClass) == 0x000000, "Member 'LevelSequence_RemoveMetaDataByClass::InClass' has a wrong offset!");
+
+// Function LevelSequence.LevelSequence.SetCenterOffset
+// 0x000C (0x000C - 0x0000)
+struct LevelSequence_SetCenterOffset final
+{
+public:
+	struct FVector                                InCenterOffset;                                    // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequence_SetCenterOffset) == 0x000004, "Wrong alignment on LevelSequence_SetCenterOffset");
+static_assert(sizeof(LevelSequence_SetCenterOffset) == 0x00000C, "Wrong size on LevelSequence_SetCenterOffset");
+static_assert(offsetof(LevelSequence_SetCenterOffset, InCenterOffset) == 0x000000, "Member 'LevelSequence_SetCenterOffset::InCenterOffset' has a wrong offset!");
+
+// Function LevelSequence.LevelSequence.FindMetaDataByClass
+// 0x0010 (0x0010 - 0x0000)
+struct LevelSequence_FindMetaDataByClass final
+{
+public:
+	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequence_FindMetaDataByClass) == 0x000008, "Wrong alignment on LevelSequence_FindMetaDataByClass");
+static_assert(sizeof(LevelSequence_FindMetaDataByClass) == 0x000010, "Wrong size on LevelSequence_FindMetaDataByClass");
+static_assert(offsetof(LevelSequence_FindMetaDataByClass, InClass) == 0x000000, "Member 'LevelSequence_FindMetaDataByClass::InClass' has a wrong offset!");
+static_assert(offsetof(LevelSequence_FindMetaDataByClass, ReturnValue) == 0x000008, "Member 'LevelSequence_FindMetaDataByClass::ReturnValue' has a wrong offset!");
+
+// Function LevelSequence.LevelSequence.GetMovieScene
+// 0x0008 (0x0008 - 0x0000)
+struct LevelSequence_GetMovieScene final
+{
+public:
+	class UMovieScene*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequence_GetMovieScene) == 0x000008, "Wrong alignment on LevelSequence_GetMovieScene");
+static_assert(sizeof(LevelSequence_GetMovieScene) == 0x000008, "Wrong size on LevelSequence_GetMovieScene");
+static_assert(offsetof(LevelSequence_GetMovieScene, ReturnValue) == 0x000000, "Member 'LevelSequence_GetMovieScene::ReturnValue' has a wrong offset!");
 
 // Function LevelSequence.LevelSequenceActor.AddBinding
 // 0x0028 (0x0028 - 0x0000)
@@ -209,6 +295,21 @@ static_assert(alignof(LevelSequenceActor_SetShouldLatentDestroy) == 0x000001, "W
 static_assert(sizeof(LevelSequenceActor_SetShouldLatentDestroy) == 0x000001, "Wrong size on LevelSequenceActor_SetShouldLatentDestroy");
 static_assert(offsetof(LevelSequenceActor_SetShouldLatentDestroy, bInShouldLatentDestroy) == 0x000000, "Member 'LevelSequenceActor_SetShouldLatentDestroy::bInShouldLatentDestroy' has a wrong offset!");
 
+// Function LevelSequence.LevelSequenceActor.SetTickOptimize
+// 0x0003 (0x0003 - 0x0000)
+struct LevelSequenceActor_SetTickOptimize final
+{
+public:
+	bool                                          Enable;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InCheckBindingActorVisibility;                     // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InSeekTicks;                                       // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequenceActor_SetTickOptimize) == 0x000001, "Wrong alignment on LevelSequenceActor_SetTickOptimize");
+static_assert(sizeof(LevelSequenceActor_SetTickOptimize) == 0x000003, "Wrong size on LevelSequenceActor_SetTickOptimize");
+static_assert(offsetof(LevelSequenceActor_SetTickOptimize, Enable) == 0x000000, "Member 'LevelSequenceActor_SetTickOptimize::Enable' has a wrong offset!");
+static_assert(offsetof(LevelSequenceActor_SetTickOptimize, InCheckBindingActorVisibility) == 0x000001, "Member 'LevelSequenceActor_SetTickOptimize::InCheckBindingActorVisibility' has a wrong offset!");
+static_assert(offsetof(LevelSequenceActor_SetTickOptimize, InSeekTicks) == 0x000002, "Member 'LevelSequenceActor_SetTickOptimize::InSeekTicks' has a wrong offset!");
+
 // Function LevelSequence.LevelSequenceActor.FindNamedBinding
 // 0x0024 (0x0024 - 0x0000)
 struct LevelSequenceActor_FindNamedBinding final
@@ -279,67 +380,6 @@ public:
 static_assert(alignof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000008, "Wrong alignment on LevelSequenceBurnInOptions_SetBurnIn");
 static_assert(sizeof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000020, "Wrong size on LevelSequenceBurnInOptions_SetBurnIn");
 static_assert(offsetof(LevelSequenceBurnInOptions_SetBurnIn, InBurnInClass) == 0x000000, "Member 'LevelSequenceBurnInOptions_SetBurnIn::InBurnInClass' has a wrong offset!");
-
-// Function LevelSequence.LevelSequence.CopyMetaData
-// 0x0010 (0x0010 - 0x0000)
-struct LevelSequence_CopyMetaData final
-{
-public:
-	class UObject*                                InMetaData;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LevelSequence_CopyMetaData) == 0x000008, "Wrong alignment on LevelSequence_CopyMetaData");
-static_assert(sizeof(LevelSequence_CopyMetaData) == 0x000010, "Wrong size on LevelSequence_CopyMetaData");
-static_assert(offsetof(LevelSequence_CopyMetaData, InMetaData) == 0x000000, "Member 'LevelSequence_CopyMetaData::InMetaData' has a wrong offset!");
-static_assert(offsetof(LevelSequence_CopyMetaData, ReturnValue) == 0x000008, "Member 'LevelSequence_CopyMetaData::ReturnValue' has a wrong offset!");
-
-// Function LevelSequence.LevelSequence.FindOrAddMetaDataByClass
-// 0x0010 (0x0010 - 0x0000)
-struct LevelSequence_FindOrAddMetaDataByClass final
-{
-public:
-	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LevelSequence_FindOrAddMetaDataByClass) == 0x000008, "Wrong alignment on LevelSequence_FindOrAddMetaDataByClass");
-static_assert(sizeof(LevelSequence_FindOrAddMetaDataByClass) == 0x000010, "Wrong size on LevelSequence_FindOrAddMetaDataByClass");
-static_assert(offsetof(LevelSequence_FindOrAddMetaDataByClass, InClass) == 0x000000, "Member 'LevelSequence_FindOrAddMetaDataByClass::InClass' has a wrong offset!");
-static_assert(offsetof(LevelSequence_FindOrAddMetaDataByClass, ReturnValue) == 0x000008, "Member 'LevelSequence_FindOrAddMetaDataByClass::ReturnValue' has a wrong offset!");
-
-// Function LevelSequence.LevelSequence.RemoveMetaDataByClass
-// 0x0008 (0x0008 - 0x0000)
-struct LevelSequence_RemoveMetaDataByClass final
-{
-public:
-	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LevelSequence_RemoveMetaDataByClass) == 0x000008, "Wrong alignment on LevelSequence_RemoveMetaDataByClass");
-static_assert(sizeof(LevelSequence_RemoveMetaDataByClass) == 0x000008, "Wrong size on LevelSequence_RemoveMetaDataByClass");
-static_assert(offsetof(LevelSequence_RemoveMetaDataByClass, InClass) == 0x000000, "Member 'LevelSequence_RemoveMetaDataByClass::InClass' has a wrong offset!");
-
-// Function LevelSequence.LevelSequence.FindMetaDataByClass
-// 0x0010 (0x0010 - 0x0000)
-struct LevelSequence_FindMetaDataByClass final
-{
-public:
-	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LevelSequence_FindMetaDataByClass) == 0x000008, "Wrong alignment on LevelSequence_FindMetaDataByClass");
-static_assert(sizeof(LevelSequence_FindMetaDataByClass) == 0x000010, "Wrong size on LevelSequence_FindMetaDataByClass");
-static_assert(offsetof(LevelSequence_FindMetaDataByClass, InClass) == 0x000000, "Member 'LevelSequence_FindMetaDataByClass::InClass' has a wrong offset!");
-static_assert(offsetof(LevelSequence_FindMetaDataByClass, ReturnValue) == 0x000008, "Member 'LevelSequence_FindMetaDataByClass::ReturnValue' has a wrong offset!");
-
-// Function LevelSequence.LevelSequence.GetMovieScene
-// 0x0008 (0x0008 - 0x0000)
-struct LevelSequence_GetMovieScene final
-{
-public:
-	class UMovieScene*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LevelSequence_GetMovieScene) == 0x000008, "Wrong alignment on LevelSequence_GetMovieScene");
-static_assert(sizeof(LevelSequence_GetMovieScene) == 0x000008, "Wrong size on LevelSequence_GetMovieScene");
-static_assert(offsetof(LevelSequence_GetMovieScene, ReturnValue) == 0x000000, "Member 'LevelSequence_GetMovieScene::ReturnValue' has a wrong offset!");
 
 // Function LevelSequence.LevelSequenceBurnIn.SetSettings
 // 0x0008 (0x0008 - 0x0000)

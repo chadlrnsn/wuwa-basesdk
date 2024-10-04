@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EPerformanceRoleState_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "EPerformanceRoleState_structs.hpp"
 
 
 namespace SDK

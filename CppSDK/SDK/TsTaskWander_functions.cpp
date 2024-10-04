@@ -17,21 +17,25 @@
 namespace SDK
 {
 
-// Function TsTaskWander.TsTaskWander_C.ExecuteUbergraph_TsTaskWander
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Function TsTaskWander.TsTaskWander_C.ReceiveTickAI
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskWander_C::ExecuteUbergraph_TsTaskWander(int32 EntryPoint)
+void UTsTaskWander_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskWander_C", "ExecuteUbergraph_TsTaskWander");
+		Func = Class->GetFunction("TsTaskWander_C", "ReceiveTickAI");
 
-	Params::TsTaskWander_C_ExecuteUbergraph_TsTaskWander Parms{};
+	Params::TsTaskWander_C_ReceiveTickAI Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -69,25 +73,21 @@ void UTsTaskWander_C::ReceiveExecuteAI(class AAIController* OwnerController, cla
 }
 
 
-// Function TsTaskWander.TsTaskWander_C.ReceiveTickAI
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsTaskWander.TsTaskWander_C.ExecuteUbergraph_TsTaskWander
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskWander_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
+void UTsTaskWander_C::ExecuteUbergraph_TsTaskWander(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskWander_C", "ReceiveTickAI");
+		Func = Class->GetFunction("TsTaskWander_C", "ExecuteUbergraph_TsTaskWander");
 
-	Params::TsTaskWander_C_ReceiveTickAI Parms{};
+	Params::TsTaskWander_C_ExecuteUbergraph_TsTaskWander Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

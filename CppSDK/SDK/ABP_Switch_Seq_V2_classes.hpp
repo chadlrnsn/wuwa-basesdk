@@ -23,7 +23,7 @@ namespace SDK
 class UABP_Switch_Seq_V2_C : public UAnimInstance
 {
 public:
-	uint8                                         Pad_306B[0x8];                                     // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A8[0x8];                                      // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x03B8(0x0038)()
 	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x03F0(0x00B0)()
@@ -31,12 +31,12 @@ public:
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x0550(0x0138)()
 	struct FPoseSnapshot                          CachePose;                                         // 0x0688(0x0040)(Edit, BlueprintVisible)
 	bool                                          EnableSwitchPose;                                  // 0x06C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_306C[0x3];                                     // 0x06C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6C9[0x3];                                      // 0x06C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FalseBlendTime;                                    // 0x06CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* AnimGraph_0);
 	void ExecuteUbergraph_ABP_Switch_Seq_V2(int32 EntryPoint);
-	void AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* Param_AnimGraph);
 
 public:
 	static class UClass* StaticClass()

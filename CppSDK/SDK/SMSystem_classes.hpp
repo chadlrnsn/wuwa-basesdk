@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "SMSystem_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "SMSystem_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -208,7 +208,9 @@ public:
 	class FString                                 NodeName;                                          // 0x00D8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsRefNode;                                         // 0x00E8(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsOvrNode;                                         // 0x00E9(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EA[0x6];                                       // 0x00EA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          IsAnimNode;                                        // 0x00EA(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsConduitNode;                                     // 0x00EB(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EC[0x4];                                       // 0x00EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void EvaluateTransitions();
@@ -267,15 +269,15 @@ static_assert(offsetof(USMStateInstance_Base, OnExitActions) == 0x0000C8, "Membe
 static_assert(offsetof(USMStateInstance_Base, NodeName) == 0x0000D8, "Member 'USMStateInstance_Base::NodeName' has a wrong offset!");
 static_assert(offsetof(USMStateInstance_Base, IsRefNode) == 0x0000E8, "Member 'USMStateInstance_Base::IsRefNode' has a wrong offset!");
 static_assert(offsetof(USMStateInstance_Base, IsOvrNode) == 0x0000E9, "Member 'USMStateInstance_Base::IsOvrNode' has a wrong offset!");
+static_assert(offsetof(USMStateInstance_Base, IsAnimNode) == 0x0000EA, "Member 'USMStateInstance_Base::IsAnimNode' has a wrong offset!");
+static_assert(offsetof(USMStateInstance_Base, IsConduitNode) == 0x0000EB, "Member 'USMStateInstance_Base::IsConduitNode' has a wrong offset!");
 
 // Class SMSystem.SMConduitInstance
 // 0x0008 (0x00F8 - 0x00F0)
 class USMConduitInstance final : public USMStateInstance_Base
 {
 public:
-	bool                                          bEvalWithTransitions;                              // 0x00F0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bCanEvaluate;                                      // 0x00F1(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F0[0x8];                                       // 0x00F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetCanEvaluate(const bool bValue);
@@ -296,8 +298,6 @@ public:
 };
 static_assert(alignof(USMConduitInstance) == 0x000008, "Wrong alignment on USMConduitInstance");
 static_assert(sizeof(USMConduitInstance) == 0x0000F8, "Wrong size on USMConduitInstance");
-static_assert(offsetof(USMConduitInstance, bEvalWithTransitions) == 0x0000F0, "Member 'USMConduitInstance::bEvalWithTransitions' has a wrong offset!");
-static_assert(offsetof(USMConduitInstance, bCanEvaluate) == 0x0000F1, "Member 'USMConduitInstance::bCanEvaluate' has a wrong offset!");
 
 // Class SMSystem.SMInstance
 // 0x0580 (0x05B0 - 0x0030)

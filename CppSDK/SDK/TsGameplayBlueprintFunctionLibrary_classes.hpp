@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "EAimViewState_structs.hpp"
-#include "ESkillTargetDirection_structs.hpp"
+#include "Engine_classes.hpp"
+#include "ECharViewDirectionState_structs.hpp"
 #include "EVisionType_structs.hpp"
 #include "EHitAnim_structs.hpp"
-#include "ECharViewDirectionState_structs.hpp"
+#include "ESkillTargetDirection_structs.hpp"
 #include "ECharParentMoveState_structs.hpp"
 #include "ECharState_structs.hpp"
 
@@ -224,16 +224,24 @@ public:
 	static bool ActivateAbilityVision(int32 EntityId, EVisionType VisionType, class UObject* __WorldContext);
 	static bool EndAbilityVision(int32 EntityId, EVisionType VisionType, class UObject* __WorldContext);
 	static void ResetBaseValueLocal(int32 EntityId, int32 Id, float Val, class UObject* __WorldContext);
-	static void TryGenerateDynamicPortal(class UObject* __WorldContext);
 	static void SetEntityEnable(int32 EntityId, bool Enable, class UObject* CallObject, const class FString& Reason, class UObject* __WorldContext);
 	static void SetPassiveGaSkillId(int32 EntityId, class UObject* CallObject, class UObject* __WorldContext);
 	static void SetEnableAttackInputActionOfMorphVision(int32 EntityId, bool bEnable, class UObject* __WorldContext);
 	static class FString GetSpecialBuffToSkillId(int64 buffId, const class FString& SkillId, class UObject* __WorldContext);
 	static class AActor* FixHookTargetActor(int32 EntityId, class UObject* __WorldContext);
 	static bool FixHookTargetIsSuiGuangType(int32 EntityId, class UObject* __WorldContext);
+	static TArray<struct FVector> FixHookTargetPathways(int32 EntityId, class UObject* __WorldContext);
+	static class AActor* FixHookTargetEnterPortalCapture(int32 EntityId, class UObject* __WorldContext);
 	static void SetSkillTargetDirection(int32 EntityId, ESkillTargetDirection Direction, class UObject* __WorldContext);
 	static void ChangeAiControllerDebugDraw(int32 EntityId, bool Debug, class UObject* __WorldContext);
 	static class UKuroDebugMovementComponent* TryGetDebugMovementComp(const class FString& PbDataId, class UObject* __WorldContext);
+	static EHitAnim GetBeHitAnimType(int32 TypeId, class UObject* __WorldContext);
+	static void SkillBehaviorBegin(int32 EntityId, class UGA_Base_C* Ga, const struct FSSkillBehaviorAction& Action, class UObject* __WorldContext);
+	static bool SkillBehaviorSatisfy(int32 EntityId, class UGA_Base_C* Ga, const struct FSSkillBehaviorCondition& Condition, class UObject* __WorldContext);
+	static class UObject* ChangeBlueprintVariablesRef(class UObject* Object, class UObject* base, class UObject* __WorldContext);
+	static void ActivateAbilityVisionPlayAudio(int32 EntityId, EVisionType VisionType, class UObject* __WorldContext);
+	static void AddCue(int32 InstigatorEntityId, int32 TargetEntityId, int64 CueId, class UObject* __WorldContext);
+	static void RemoveCue(int32 EntityId, int64 CueId, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

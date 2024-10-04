@@ -37,6 +37,20 @@ void ABP_Portal_C::ExecuteUbergraph_BP_Portal(int32 EntryPoint)
 }
 
 
+// Function BP_Portal.BP_Portal_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Portal_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Portal.BP_Portal_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -54,20 +68,6 @@ void ABP_Portal_C::ReceiveTick(float DeltaSeconds)
 	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Portal.BP_Portal_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Portal_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Portal_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -99,8 +99,48 @@ void ABP_Portal_C::One()
 }
 
 
+// Function BP_Portal.BP_Portal_C.SetPortal1Bounds
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVector                          Bounds                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Portal_C::SetPortal1Bounds(const struct FVector& Bounds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "SetPortal1Bounds");
+
+	Params::BP_Portal_C_SetPortal1Bounds Parms{};
+
+	Parms.Bounds = std::move(Bounds);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Portal.BP_Portal_C.SetPortal2Bounds
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVector                          Bounds                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Portal_C::SetPortal2Bounds(const struct FVector& Bounds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "SetPortal2Bounds");
+
+	Params::BP_Portal_C_SetPortal2Bounds Parms{};
+
+	Parms.Bounds = std::move(Bounds);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Portal.BP_Portal_C.SetPortal1Transform
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FTransform                       Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // struct FTransform                       CaptureTransform                                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
@@ -122,7 +162,7 @@ void ABP_Portal_C::SetPortal1Transform(const struct FTransform& Transform, const
 
 
 // Function BP_Portal.BP_Portal_C.SetPortal2Transform
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FTransform                       Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // struct FTransform                       CaptureTransform                                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
@@ -140,6 +180,34 @@ void ABP_Portal_C::SetPortal2Transform(const struct FTransform& Transform, const
 	Parms.CaptureTransform = std::move(CaptureTransform);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Portal.BP_Portal_C.EnablePortal1Rendering
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Portal_C::EnablePortal1Rendering()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "EnablePortal1Rendering");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Portal.BP_Portal_C.DisablePortal1Rendering
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Portal_C::DisablePortal1Rendering()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "DisablePortal1Rendering");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -166,34 +234,6 @@ void ABP_Portal_C::DisablePortal2Rendering()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Portal_C", "DisablePortal2Rendering");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Portal.BP_Portal_C.DisablePortal1Rendering
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Portal_C::DisablePortal1Rendering()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Portal_C", "DisablePortal1Rendering");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Portal.BP_Portal_C.EnablePortal1Rendering
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Portal_C::EnablePortal1Rendering()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Portal_C", "EnablePortal1Rendering");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -238,6 +278,77 @@ void ABP_Portal_C::DEBUG_s_2()
 		Func = Class->GetFunction("BP_Portal_C", "DEBUG_sí2");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Portal.BP_Portal_C.SetCaptureShowingActors
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsCapture1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// TArray<class AActor*>                   HiddenActors                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class AActor*>                   ForceShowActors                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void ABP_Portal_C::SetCaptureShowingActors(bool IsCapture1, TArray<class AActor*>& HiddenActors, TArray<class AActor*>& ForceShowActors)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "SetCaptureShowingActors");
+
+	Params::BP_Portal_C_SetCaptureShowingActors Parms{};
+
+	Parms.IsCapture1 = IsCapture1;
+	Parms.HiddenActors = std::move(HiddenActors);
+	Parms.ForceShowActors = std::move(ForceShowActors);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	HiddenActors = std::move(Parms.HiddenActors);
+	ForceShowActors = std::move(Parms.ForceShowActors);
+}
+
+
+// Function BP_Portal.BP_Portal_C.SetCaptureMaxViewDistance
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsCapture1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float                                   MaxViewDistance                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Portal_C::SetCaptureMaxViewDistance(bool IsCapture1, float MaxViewDistance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "SetCaptureMaxViewDistance");
+
+	Params::BP_Portal_C_SetCaptureMaxViewDistance Parms{};
+
+	Parms.IsCapture1 = IsCapture1;
+	Parms.MaxViewDistance = MaxViewDistance;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Portal.BP_Portal_C.SetCaptureShowFlags
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsCapture1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// TMap<class FString, bool>               ShowFlags                                              (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void ABP_Portal_C::SetCaptureShowFlags(bool IsCapture1, const TMap<class FString, bool>& ShowFlags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "SetCaptureShowFlags");
+
+	Params::BP_Portal_C_SetCaptureShowFlags Parms{};
+
+	Parms.IsCapture1 = IsCapture1;
+	Parms.ShowFlags = std::move(ShowFlags);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -294,6 +405,172 @@ void ABP_Portal_C::UpdatePortalsCameraPosition()
 		Func = Class->GetFunction("BP_Portal_C", "UpdatePortalsCameraPosition");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Portal.BP_Portal_C.GetMappingTransformToOtherPortal
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FTransform                       SourceTransform                                        (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// bool                                    bA2B                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FTransform                       TargetTransform                                        (Parm, OutParm, IsPlainOldData, NoDestructor)
+
+void ABP_Portal_C::GetMappingTransformToOtherPortal(const struct FTransform& SourceTransform, bool bA2B, struct FTransform* TargetTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "GetMappingTransformToOtherPortal");
+
+	Params::BP_Portal_C_GetMappingTransformToOtherPortal Parms{};
+
+	Parms.SourceTransform = std::move(SourceTransform);
+	Parms.bA2B = bA2B;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TargetTransform != nullptr)
+		*TargetTransform = std::move(Parms.TargetTransform);
+}
+
+
+// Function BP_Portal.BP_Portal_C.DrawDebugFrustum
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FTransform                       Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// float                                   FovX                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   NearClipPlane                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   AspectRatio                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Portal_C::DrawDebugFrustum(const struct FTransform& Transform, float FovX, float NearClipPlane, float AspectRatio)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "DrawDebugFrustum");
+
+	Params::BP_Portal_C_DrawDebugFrustum Parms{};
+
+	Parms.Transform = std::move(Transform);
+	Parms.FovX = FovX;
+	Parms.NearClipPlane = NearClipPlane;
+	Parms.AspectRatio = AspectRatio;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Portal.BP_Portal_C.GetAngleBetweenVector
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FVector                          Vector1                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          Vector2                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Angle                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Portal_C::GetAngleBetweenVector(const struct FVector& Vector1, const struct FVector& Vector2, float* Angle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "GetAngleBetweenVector");
+
+	Params::BP_Portal_C_GetAngleBetweenVector Parms{};
+
+	Parms.Vector1 = std::move(Vector1);
+	Parms.Vector2 = std::move(Vector2);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Angle != nullptr)
+		*Angle = Parms.Angle;
+}
+
+
+// Function BP_Portal.BP_Portal_C.ApplyCapturePerformace
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsPortalA                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   ConfigLevel                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   CaptureMaxViewDistance                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Portal_C::ApplyCapturePerformace(bool IsPortalA, int32 ConfigLevel, float CaptureMaxViewDistance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "ApplyCapturePerformace");
+
+	Params::BP_Portal_C_ApplyCapturePerformace Parms{};
+
+	Parms.IsPortalA = IsPortalA;
+	Parms.ConfigLevel = ConfigLevel;
+	Parms.CaptureMaxViewDistance = CaptureMaxViewDistance;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Portal.BP_Portal_C.CheckCapturePerformanceLevel
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsPortalA                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FTransform                       TargetTrans                                            (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+
+void ABP_Portal_C::CheckCapturePerformanceLevel(bool IsPortalA, const struct FTransform& TargetTrans)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "CheckCapturePerformanceLevel");
+
+	Params::BP_Portal_C_CheckCapturePerformanceLevel Parms{};
+
+	Parms.IsPortalA = IsPortalA;
+	Parms.TargetTrans = std::move(TargetTrans);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Portal.BP_Portal_C.PrintDebugCaptureParams
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsCapture1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSceneCaptureComponent2DParams   CaptureParam                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+
+void ABP_Portal_C::PrintDebugCaptureParams(bool IsCapture1, const struct FSceneCaptureComponent2DParams& CaptureParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "PrintDebugCaptureParams");
+
+	Params::BP_Portal_C_PrintDebugCaptureParams Parms{};
+
+	Parms.IsCapture1 = IsCapture1;
+	Parms.CaptureParam = std::move(CaptureParam);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Portal.BP_Portal_C.DrawDebugPortalBounds
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsPortal1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_Portal_C::DrawDebugPortalBounds(bool IsPortal1)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Portal_C", "DrawDebugPortalBounds");
+
+	Params::BP_Portal_C_DrawDebugPortalBounds Parms{};
+
+	Parms.IsPortal1 = IsPortal1;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

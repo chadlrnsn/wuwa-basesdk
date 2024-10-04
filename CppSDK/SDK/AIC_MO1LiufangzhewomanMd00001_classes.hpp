@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "AIC_AICommon_classes.hpp"
-#include "SAiConditions_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SAiConditions_structs.hpp"
+#include "AIC_AICommon_classes.hpp"
 
 
 namespace SDK
@@ -31,9 +31,9 @@ public:
 	struct FSAiConditions                         EntryPoint;                                        // 0x0A68(0x00B8)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001(int32 EntryPoint);
-	void OnStart();
 	void _______1(bool bContent);
+	void OnStart();
+	void ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

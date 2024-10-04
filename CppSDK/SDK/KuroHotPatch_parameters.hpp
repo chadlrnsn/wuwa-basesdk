@@ -234,6 +234,17 @@ static_assert(offsetof(KuroLauncherLibrary_Encrypt, InPlain) == 0x000000, "Membe
 static_assert(offsetof(KuroLauncherLibrary_Encrypt, OutCipher) == 0x000010, "Member 'KuroLauncherLibrary_Encrypt::OutCipher' has a wrong offset!");
 static_assert(offsetof(KuroLauncherLibrary_Encrypt, ReturnValue) == 0x000020, "Member 'KuroLauncherLibrary_Encrypt::ReturnValue' has a wrong offset!");
 
+// Function KuroHotPatch.KuroLauncherLibrary.GameSavedDir
+// 0x0010 (0x0010 - 0x0000)
+struct KuroLauncherLibrary_GameSavedDir final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLauncherLibrary_GameSavedDir) == 0x000008, "Wrong alignment on KuroLauncherLibrary_GameSavedDir");
+static_assert(sizeof(KuroLauncherLibrary_GameSavedDir) == 0x000010, "Wrong size on KuroLauncherLibrary_GameSavedDir");
+static_assert(offsetof(KuroLauncherLibrary_GameSavedDir, ReturnValue) == 0x000000, "Member 'KuroLauncherLibrary_GameSavedDir::ReturnValue' has a wrong offset!");
+
 // Function KuroHotPatch.KuroLauncherLibrary.GetAppChangeList
 // 0x0010 (0x0010 - 0x0000)
 struct KuroLauncherLibrary_GetAppChangeList final
@@ -500,6 +511,41 @@ static_assert(alignof(KuroLauncherLibrary_SetRestartApp) == 0x000001, "Wrong ali
 static_assert(sizeof(KuroLauncherLibrary_SetRestartApp) == 0x000001, "Wrong size on KuroLauncherLibrary_SetRestartApp");
 static_assert(offsetof(KuroLauncherLibrary_SetRestartApp, RestartType) == 0x000000, "Member 'KuroLauncherLibrary_SetRestartApp::RestartType' has a wrong offset!");
 
+// Function KuroHotPatch.KuroPakMountStatic.AddSha1Check
+// 0x0020 (0x0020 - 0x0000)
+struct KuroPakMountStatic_AddSha1Check final
+{
+public:
+	class FString                                 FilePath;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 CheckSha1Hash;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroPakMountStatic_AddSha1Check) == 0x000008, "Wrong alignment on KuroPakMountStatic_AddSha1Check");
+static_assert(sizeof(KuroPakMountStatic_AddSha1Check) == 0x000020, "Wrong size on KuroPakMountStatic_AddSha1Check");
+static_assert(offsetof(KuroPakMountStatic_AddSha1Check, FilePath) == 0x000000, "Member 'KuroPakMountStatic_AddSha1Check::FilePath' has a wrong offset!");
+static_assert(offsetof(KuroPakMountStatic_AddSha1Check, CheckSha1Hash) == 0x000010, "Member 'KuroPakMountStatic_AddSha1Check::CheckSha1Hash' has a wrong offset!");
+
+// Function KuroHotPatch.KuroPakMountStatic.GetSha1CheckFailedCount
+// 0x0004 (0x0004 - 0x0000)
+struct KuroPakMountStatic_GetSha1CheckFailedCount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroPakMountStatic_GetSha1CheckFailedCount) == 0x000004, "Wrong alignment on KuroPakMountStatic_GetSha1CheckFailedCount");
+static_assert(sizeof(KuroPakMountStatic_GetSha1CheckFailedCount) == 0x000004, "Wrong size on KuroPakMountStatic_GetSha1CheckFailedCount");
+static_assert(offsetof(KuroPakMountStatic_GetSha1CheckFailedCount, ReturnValue) == 0x000000, "Member 'KuroPakMountStatic_GetSha1CheckFailedCount::ReturnValue' has a wrong offset!");
+
+// Function KuroHotPatch.KuroPakMountStatic.IsSha1CheckWorking
+// 0x0001 (0x0001 - 0x0000)
+struct KuroPakMountStatic_IsSha1CheckWorking final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroPakMountStatic_IsSha1CheckWorking) == 0x000001, "Wrong alignment on KuroPakMountStatic_IsSha1CheckWorking");
+static_assert(sizeof(KuroPakMountStatic_IsSha1CheckWorking) == 0x000001, "Wrong size on KuroPakMountStatic_IsSha1CheckWorking");
+static_assert(offsetof(KuroPakMountStatic_IsSha1CheckWorking, ReturnValue) == 0x000000, "Member 'KuroPakMountStatic_IsSha1CheckWorking::ReturnValue' has a wrong offset!");
+
 // Function KuroHotPatch.KuroPakMountStatic.MakePakPatch
 // 0x0038 (0x0038 - 0x0000)
 struct KuroPakMountStatic_MakePakPatch final
@@ -542,6 +588,17 @@ static_assert(alignof(KuroPakMountStatic_MountPak) == 0x000008, "Wrong alignment
 static_assert(sizeof(KuroPakMountStatic_MountPak) == 0x000018, "Wrong size on KuroPakMountStatic_MountPak");
 static_assert(offsetof(KuroPakMountStatic_MountPak, Path) == 0x000000, "Member 'KuroPakMountStatic_MountPak::Path' has a wrong offset!");
 static_assert(offsetof(KuroPakMountStatic_MountPak, Order) == 0x000010, "Member 'KuroPakMountStatic_MountPak::Order' has a wrong offset!");
+
+// Function KuroHotPatch.KuroPakMountStatic.RemoveSha1Check
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPakMountStatic_RemoveSha1Check final
+{
+public:
+	class FString                                 FilePath;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroPakMountStatic_RemoveSha1Check) == 0x000008, "Wrong alignment on KuroPakMountStatic_RemoveSha1Check");
+static_assert(sizeof(KuroPakMountStatic_RemoveSha1Check) == 0x000010, "Wrong size on KuroPakMountStatic_RemoveSha1Check");
+static_assert(offsetof(KuroPakMountStatic_RemoveSha1Check, FilePath) == 0x000000, "Member 'KuroPakMountStatic_RemoveSha1Check::FilePath' has a wrong offset!");
 
 // Function KuroHotPatch.KuroPakMountStatic.Save
 // 0x0010 (0x0010 - 0x0000)

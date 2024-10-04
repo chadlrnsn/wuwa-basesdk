@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass TPrefab_SM_Gat_31A.TPrefab_SM_Gat_31A_C
-// 0x0000 (0x02B0 - 0x02B0)
+// 0x0000 (0x02B8 - 0x02B8)
 class TPrefab_SM_Gat_31A::ATPrefab_SM_Gat_31A_C final : public ALevelScriptActor
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(TPrefab_SM_Gat_31A::ATPrefab_SM_Gat_31A_C) == 0x000008, "Wrong alignment on TPrefab_SM_Gat_31A::ATPrefab_SM_Gat_31A_C");
-static_assert(sizeof(TPrefab_SM_Gat_31A::ATPrefab_SM_Gat_31A_C) == 0x0002B0, "Wrong size on TPrefab_SM_Gat_31A::ATPrefab_SM_Gat_31A_C");
+static_assert(sizeof(TPrefab_SM_Gat_31A::ATPrefab_SM_Gat_31A_C) == 0x0002B8, "Wrong size on TPrefab_SM_Gat_31A::ATPrefab_SM_Gat_31A_C");
 
 }
 

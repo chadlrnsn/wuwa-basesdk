@@ -11,46 +11,54 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "MovieScene_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "KuroAudio_structs.hpp"
+#include "MovieScene_classes.hpp"
 
 
 namespace SDK
 {
 
-// Class KuroAudio.KuroAudioStateVolume
-// 0x0028 (0x0308 - 0x02E0)
-class AKuroAudioStateVolume final : public AVolume
+// Class KuroAudio.KuroAudioEnvironmentSubsystem
+// 0x03E8 (0x0420 - 0x0038)
+class alignas(0x10) UKuroAudioEnvironmentSubsystem final : public UWorldSubsystem
 {
 public:
-	class FString                                 Group;                                             // 0x02E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 State;                                             // 0x02F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Priority;                                          // 0x0300(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_301[0x7];                                      // 0x0301(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x278];                                     // 0x0038(0x0278)(Fixing Size After Last Property [ Dumper-7 ])
+	FMulticastInlineDelegateProperty_             EnvironmentUpdatedDelegate;                        // 0x02B0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C0[0x160];                                    // 0x02C0(0x0160)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void DynamicReverbApply();
+	void DynamicReverbReset();
+	void DynamicReverbTrace(const struct FVector& Location, const bool bForceUpdate);
+	void EnvironmentUpdatedDelegate__DelegateSignature();
+
+	struct FKuroDynamicReverbParam CalculateDynamicReverbParam(const struct FVector& Location, const float HorizontalTraceDistance, const float VerticalTraceDistance) const;
+	struct FKuroAudioEnvironmentInfo GetEnvironmentInfo(const struct FVector& Location) const;
+	struct FKuroAudioEnvironmentInfo GetEnvironmentInfo_MusicCompatible(const struct FVector& Location) const;
+	TMap<class FString, class FString> GetEnvironmentStates(const struct FVector& Location) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroAudioStateVolume">();
+		return StaticClassImpl<"KuroAudioEnvironmentSubsystem">();
 	}
-	static class AKuroAudioStateVolume* GetDefaultObj()
+	static class UKuroAudioEnvironmentSubsystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AKuroAudioStateVolume>();
+		return GetDefaultObjImpl<UKuroAudioEnvironmentSubsystem>();
 	}
 };
-static_assert(alignof(AKuroAudioStateVolume) == 0x000008, "Wrong alignment on AKuroAudioStateVolume");
-static_assert(sizeof(AKuroAudioStateVolume) == 0x000308, "Wrong size on AKuroAudioStateVolume");
-static_assert(offsetof(AKuroAudioStateVolume, Group) == 0x0002E0, "Member 'AKuroAudioStateVolume::Group' has a wrong offset!");
-static_assert(offsetof(AKuroAudioStateVolume, State) == 0x0002F0, "Member 'AKuroAudioStateVolume::State' has a wrong offset!");
-static_assert(offsetof(AKuroAudioStateVolume, Priority) == 0x000300, "Member 'AKuroAudioStateVolume::Priority' has a wrong offset!");
+static_assert(alignof(UKuroAudioEnvironmentSubsystem) == 0x000010, "Wrong alignment on UKuroAudioEnvironmentSubsystem");
+static_assert(sizeof(UKuroAudioEnvironmentSubsystem) == 0x000420, "Wrong size on UKuroAudioEnvironmentSubsystem");
+static_assert(offsetof(UKuroAudioEnvironmentSubsystem, EnvironmentUpdatedDelegate) == 0x0002B0, "Member 'UKuroAudioEnvironmentSubsystem::EnvironmentUpdatedDelegate' has a wrong offset!");
 
 // Class KuroAudio.KuroAmbientSoundActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AKuroAmbientSoundActor final : public AActor
 {
 public:
-	class UKuroAmbientSoundComponent*             AmbientSoundComponent;                             // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UKuroAmbientSoundComponent*             AmbientSoundComponent;                             // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -63,8 +71,8 @@ public:
 	}
 };
 static_assert(alignof(AKuroAmbientSoundActor) == 0x000008, "Wrong alignment on AKuroAmbientSoundActor");
-static_assert(sizeof(AKuroAmbientSoundActor) == 0x0002B0, "Wrong size on AKuroAmbientSoundActor");
-static_assert(offsetof(AKuroAmbientSoundActor, AmbientSoundComponent) == 0x0002A8, "Member 'AKuroAmbientSoundActor::AmbientSoundComponent' has a wrong offset!");
+static_assert(sizeof(AKuroAmbientSoundActor) == 0x0002B8, "Wrong size on AKuroAmbientSoundActor");
+static_assert(offsetof(AKuroAmbientSoundActor, AmbientSoundComponent) == 0x0002B0, "Member 'AKuroAmbientSoundActor::AmbientSoundComponent' has a wrong offset!");
 
 // Class KuroAudio.KuroAmbientSoundComponent
 // 0x0020 (0x0240 - 0x0220)
@@ -136,12 +144,11 @@ static_assert(alignof(UKuroAudioStatics) == 0x000008, "Wrong alignment on UKuroA
 static_assert(sizeof(UKuroAudioStatics) == 0x000030, "Wrong size on UKuroAudioStatics");
 
 // Class KuroAudio.KuroAmbientSoundPositionsProxyComponent
-// 0x0010 (0x0650 - 0x0640)
+// 0x0000 (0x0650 - 0x0650)
 class UKuroAmbientSoundPositionsProxyComponent final : public UInstancedStaticMeshComponent
 {
 public:
-	class UKuroAmbientSoundComponent*             TargetComponent;                                   // 0x0640(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_648[0x8];                                      // 0x0648(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKuroAmbientSoundComponent*             TargetComponent;                                   // 0x0648(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -155,19 +162,19 @@ public:
 };
 static_assert(alignof(UKuroAmbientSoundPositionsProxyComponent) == 0x000010, "Wrong alignment on UKuroAmbientSoundPositionsProxyComponent");
 static_assert(sizeof(UKuroAmbientSoundPositionsProxyComponent) == 0x000650, "Wrong size on UKuroAmbientSoundPositionsProxyComponent");
-static_assert(offsetof(UKuroAmbientSoundPositionsProxyComponent, TargetComponent) == 0x000640, "Member 'UKuroAmbientSoundPositionsProxyComponent::TargetComponent' has a wrong offset!");
+static_assert(offsetof(UKuroAmbientSoundPositionsProxyComponent, TargetComponent) == 0x000648, "Member 'UKuroAmbientSoundPositionsProxyComponent::TargetComponent' has a wrong offset!");
 
 // Class KuroAudio.KuroAudioVolume
-// 0x0018 (0x02F8 - 0x02E0)
+// 0x0018 (0x0300 - 0x02E8)
 class AKuroAudioVolume final : public AVolume
 {
 public:
-	EKuroAudioVolumeChannel                       Channel;                                           // 0x02E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Priority;                                          // 0x02E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2E2[0x6];                                      // 0x02E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkAudioEvent*                          StateEvent;                                        // 0x02E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableDynamicReverb;                              // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F1[0x7];                                      // 0x02F1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EKuroAudioVolumeChannel                       Channel;                                           // 0x02E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Priority;                                          // 0x02E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2EA[0x6];                                      // 0x02EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAkAudioEvent*                          StateEvent;                                        // 0x02F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableDynamicReverb;                              // 0x02F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F9[0x7];                                      // 0x02F9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -180,11 +187,11 @@ public:
 	}
 };
 static_assert(alignof(AKuroAudioVolume) == 0x000008, "Wrong alignment on AKuroAudioVolume");
-static_assert(sizeof(AKuroAudioVolume) == 0x0002F8, "Wrong size on AKuroAudioVolume");
-static_assert(offsetof(AKuroAudioVolume, Channel) == 0x0002E0, "Member 'AKuroAudioVolume::Channel' has a wrong offset!");
-static_assert(offsetof(AKuroAudioVolume, Priority) == 0x0002E1, "Member 'AKuroAudioVolume::Priority' has a wrong offset!");
-static_assert(offsetof(AKuroAudioVolume, StateEvent) == 0x0002E8, "Member 'AKuroAudioVolume::StateEvent' has a wrong offset!");
-static_assert(offsetof(AKuroAudioVolume, bEnableDynamicReverb) == 0x0002F0, "Member 'AKuroAudioVolume::bEnableDynamicReverb' has a wrong offset!");
+static_assert(sizeof(AKuroAudioVolume) == 0x000300, "Wrong size on AKuroAudioVolume");
+static_assert(offsetof(AKuroAudioVolume, Channel) == 0x0002E8, "Member 'AKuroAudioVolume::Channel' has a wrong offset!");
+static_assert(offsetof(AKuroAudioVolume, Priority) == 0x0002E9, "Member 'AKuroAudioVolume::Priority' has a wrong offset!");
+static_assert(offsetof(AKuroAudioVolume, StateEvent) == 0x0002F0, "Member 'AKuroAudioVolume::StateEvent' has a wrong offset!");
+static_assert(offsetof(AKuroAudioVolume, bEnableDynamicReverb) == 0x0002F8, "Member 'AKuroAudioVolume::bEnableDynamicReverb' has a wrong offset!");
 
 // Class KuroAudio.KuroAudioDelegates
 // 0x0000 (0x0030 - 0x0030)
@@ -209,35 +216,31 @@ public:
 static_assert(alignof(UKuroAudioDelegates) == 0x000008, "Wrong alignment on UKuroAudioDelegates");
 static_assert(sizeof(UKuroAudioDelegates) == 0x000030, "Wrong size on UKuroAudioDelegates");
 
-// Class KuroAudio.KuroAudioEnvironmentSubsystem
-// 0x0288 (0x02C0 - 0x0038)
-class alignas(0x10) UKuroAudioEnvironmentSubsystem final : public UWorldSubsystem
+// Class KuroAudio.KuroAudioStateVolume
+// 0x0028 (0x0310 - 0x02E8)
+class AKuroAudioStateVolume final : public AVolume
 {
 public:
-	uint8                                         Pad_38[0x278];                                     // 0x0038(0x0278)(Fixing Size After Last Property [ Dumper-7 ])
-	FMulticastInlineDelegateProperty_             EnvironmentUpdatedDelegate;                        // 0x02B0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-
-public:
-	void EnvironmentUpdatedDelegate__DelegateSignature();
-
-	struct FKuroDynamicReverbParam CalculateDynamicReverbParam(const struct FVector& Location, const float HorizontalTraceDistance, const float VerticalTraceDistance) const;
-	struct FKuroAudioEnvironmentInfo GetEnvironmentInfo(const struct FVector& Location) const;
-	struct FKuroAudioEnvironmentInfo GetEnvironmentInfo_MusicCompatible(const struct FVector& Location) const;
-	TMap<class FString, class FString> GetEnvironmentStates(const struct FVector& Location) const;
+	class FString                                 Group;                                             // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 State;                                             // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Priority;                                          // 0x0308(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_309[0x7];                                      // 0x0309(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroAudioEnvironmentSubsystem">();
+		return StaticClassImpl<"KuroAudioStateVolume">();
 	}
-	static class UKuroAudioEnvironmentSubsystem* GetDefaultObj()
+	static class AKuroAudioStateVolume* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKuroAudioEnvironmentSubsystem>();
+		return GetDefaultObjImpl<AKuroAudioStateVolume>();
 	}
 };
-static_assert(alignof(UKuroAudioEnvironmentSubsystem) == 0x000010, "Wrong alignment on UKuroAudioEnvironmentSubsystem");
-static_assert(sizeof(UKuroAudioEnvironmentSubsystem) == 0x0002C0, "Wrong size on UKuroAudioEnvironmentSubsystem");
-static_assert(offsetof(UKuroAudioEnvironmentSubsystem, EnvironmentUpdatedDelegate) == 0x0002B0, "Member 'UKuroAudioEnvironmentSubsystem::EnvironmentUpdatedDelegate' has a wrong offset!");
+static_assert(alignof(AKuroAudioStateVolume) == 0x000008, "Wrong alignment on AKuroAudioStateVolume");
+static_assert(sizeof(AKuroAudioStateVolume) == 0x000310, "Wrong size on AKuroAudioStateVolume");
+static_assert(offsetof(AKuroAudioStateVolume, Group) == 0x0002E8, "Member 'AKuroAudioStateVolume::Group' has a wrong offset!");
+static_assert(offsetof(AKuroAudioStateVolume, State) == 0x0002F8, "Member 'AKuroAudioStateVolume::State' has a wrong offset!");
+static_assert(offsetof(AKuroAudioStateVolume, Priority) == 0x000308, "Member 'AKuroAudioStateVolume::Priority' has a wrong offset!");
 
 // Class KuroAudio.KuroBgPlayerStatic
 // 0x0000 (0x0030 - 0x0030)

@@ -17,6 +17,25 @@
 namespace SDK
 {
 
+// Function TsDecoratorCoolDown.TsDecoratorCoolDown_C.InitTsVariables
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UTsDecoratorCoolDown_C::InitTsVariables()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsDecoratorCoolDown_C", "InitTsVariables");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function TsDecoratorCoolDown.TsDecoratorCoolDown_C.PerformConditionCheckAI
 // (Native, Event, Public, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -44,25 +63,6 @@ bool UTsDecoratorCoolDown_C::PerformConditionCheckAI(class AAIController* OwnerC
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function TsDecoratorCoolDown.TsDecoratorCoolDown_C.InitTsVariables
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsDecoratorCoolDown_C::InitTsVariables()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsDecoratorCoolDown_C", "InitTsVariables");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

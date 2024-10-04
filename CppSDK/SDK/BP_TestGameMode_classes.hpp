@@ -10,37 +10,37 @@
 
 #include "Basic.hpp"
 
-#include "KuroUtility_classes.hpp"
 #include "Engine_structs.hpp"
+#include "KuroUtility_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_TestGameMode.BP_TestGameMode_C
-// 0x0090 (0x0430 - 0x03A0)
+// 0x0090 (0x0438 - 0x03A8)
 class ABP_TestGameMode_C final : public AKuroSilenceGameMode
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 StreamingSource;                                   // 0x03B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class APlayerStart*>                   PlayerStarts;                                      // 0x03B8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	TArray<struct FWorldPartitionStreamingQuerySource> QuerySources;                                      // 0x03C8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FTimerHandle                           Handler;                                           // 0x03D8(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsMovieRenderQueueMode;                            // 0x03E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3E1[0x7];                                      // 0x03E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBP_MainGameInstance_C*                 BpMainGameInstance;                                // 0x03E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class AActor*                                 StreamingSourceActor;                              // 0x03F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsLoginServerReady;                                // 0x03F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          IsWaitingLoginHttpResponse;                        // 0x03F9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3FA[0x6];                                      // 0x03FA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 LoginUrl;                                          // 0x0400(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          IsWaitingApiHttpResponse;                          // 0x0410(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          IsApiServerReady;                                  // 0x0411(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_412[0x6];                                      // 0x0412(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ApiUrl;                                            // 0x0418(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	bool                                          bTriggerLoginOnce;                                 // 0x0428(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 StreamingSource;                                   // 0x03B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class APlayerStart*>                   PlayerStarts;                                      // 0x03C0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	TArray<struct FWorldPartitionStreamingQuerySource> QuerySources;                                      // 0x03D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FTimerHandle                           Handler;                                           // 0x03E0(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsMovieRenderQueueMode;                            // 0x03E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3E9[0x7];                                      // 0x03E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBP_MainGameInstance_C*                 BpMainGameInstance;                                // 0x03F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class AActor*                                 StreamingSourceActor;                              // 0x03F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsLoginServerReady;                                // 0x0400(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsWaitingLoginHttpResponse;                        // 0x0401(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_402[0x6];                                      // 0x0402(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LoginUrl;                                          // 0x0408(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          IsWaitingApiHttpResponse;                          // 0x0418(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsApiServerReady;                                  // 0x0419(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_41A[0x6];                                      // 0x041A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ApiUrl;                                            // 0x0420(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	bool                                          bTriggerLoginOnce;                                 // 0x0430(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void GetServerIpAndPort(class FString* ServerIp, class FString* ApiServerPort, class FString* LoginServerPort);
@@ -66,23 +66,23 @@ public:
 	}
 };
 static_assert(alignof(ABP_TestGameMode_C) == 0x000008, "Wrong alignment on ABP_TestGameMode_C");
-static_assert(sizeof(ABP_TestGameMode_C) == 0x000430, "Wrong size on ABP_TestGameMode_C");
-static_assert(offsetof(ABP_TestGameMode_C, UberGraphFrame) == 0x0003A0, "Member 'ABP_TestGameMode_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, DefaultSceneRoot) == 0x0003A8, "Member 'ABP_TestGameMode_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, StreamingSource) == 0x0003B0, "Member 'ABP_TestGameMode_C::StreamingSource' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, PlayerStarts) == 0x0003B8, "Member 'ABP_TestGameMode_C::PlayerStarts' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, QuerySources) == 0x0003C8, "Member 'ABP_TestGameMode_C::QuerySources' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, Handler) == 0x0003D8, "Member 'ABP_TestGameMode_C::Handler' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, IsMovieRenderQueueMode) == 0x0003E0, "Member 'ABP_TestGameMode_C::IsMovieRenderQueueMode' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, BpMainGameInstance) == 0x0003E8, "Member 'ABP_TestGameMode_C::BpMainGameInstance' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, StreamingSourceActor) == 0x0003F0, "Member 'ABP_TestGameMode_C::StreamingSourceActor' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, IsLoginServerReady) == 0x0003F8, "Member 'ABP_TestGameMode_C::IsLoginServerReady' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, IsWaitingLoginHttpResponse) == 0x0003F9, "Member 'ABP_TestGameMode_C::IsWaitingLoginHttpResponse' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, LoginUrl) == 0x000400, "Member 'ABP_TestGameMode_C::LoginUrl' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, IsWaitingApiHttpResponse) == 0x000410, "Member 'ABP_TestGameMode_C::IsWaitingApiHttpResponse' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, IsApiServerReady) == 0x000411, "Member 'ABP_TestGameMode_C::IsApiServerReady' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, ApiUrl) == 0x000418, "Member 'ABP_TestGameMode_C::ApiUrl' has a wrong offset!");
-static_assert(offsetof(ABP_TestGameMode_C, bTriggerLoginOnce) == 0x000428, "Member 'ABP_TestGameMode_C::bTriggerLoginOnce' has a wrong offset!");
+static_assert(sizeof(ABP_TestGameMode_C) == 0x000438, "Wrong size on ABP_TestGameMode_C");
+static_assert(offsetof(ABP_TestGameMode_C, UberGraphFrame) == 0x0003A8, "Member 'ABP_TestGameMode_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, DefaultSceneRoot) == 0x0003B0, "Member 'ABP_TestGameMode_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, StreamingSource) == 0x0003B8, "Member 'ABP_TestGameMode_C::StreamingSource' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, PlayerStarts) == 0x0003C0, "Member 'ABP_TestGameMode_C::PlayerStarts' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, QuerySources) == 0x0003D0, "Member 'ABP_TestGameMode_C::QuerySources' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, Handler) == 0x0003E0, "Member 'ABP_TestGameMode_C::Handler' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, IsMovieRenderQueueMode) == 0x0003E8, "Member 'ABP_TestGameMode_C::IsMovieRenderQueueMode' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, BpMainGameInstance) == 0x0003F0, "Member 'ABP_TestGameMode_C::BpMainGameInstance' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, StreamingSourceActor) == 0x0003F8, "Member 'ABP_TestGameMode_C::StreamingSourceActor' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, IsLoginServerReady) == 0x000400, "Member 'ABP_TestGameMode_C::IsLoginServerReady' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, IsWaitingLoginHttpResponse) == 0x000401, "Member 'ABP_TestGameMode_C::IsWaitingLoginHttpResponse' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, LoginUrl) == 0x000408, "Member 'ABP_TestGameMode_C::LoginUrl' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, IsWaitingApiHttpResponse) == 0x000418, "Member 'ABP_TestGameMode_C::IsWaitingApiHttpResponse' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, IsApiServerReady) == 0x000419, "Member 'ABP_TestGameMode_C::IsApiServerReady' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, ApiUrl) == 0x000420, "Member 'ABP_TestGameMode_C::ApiUrl' has a wrong offset!");
+static_assert(offsetof(ABP_TestGameMode_C, bTriggerLoginOnce) == 0x000430, "Member 'ABP_TestGameMode_C::bTriggerLoginOnce' has a wrong offset!");
 
 }
 

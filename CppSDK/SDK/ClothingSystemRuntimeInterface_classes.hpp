@@ -10,98 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ClothingSystemRuntimeInterface_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ClothingSystemRuntimeInterface_structs.hpp"
 
 
 namespace SDK
 {
-
-// Class ClothingSystemRuntimeInterface.ClothConfigBase
-// 0x0000 (0x0030 - 0x0030)
-class UClothConfigBase : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ClothConfigBase">();
-	}
-	static class UClothConfigBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UClothConfigBase>();
-	}
-};
-static_assert(alignof(UClothConfigBase) == 0x000008, "Wrong alignment on UClothConfigBase");
-static_assert(sizeof(UClothConfigBase) == 0x000030, "Wrong size on UClothConfigBase");
-
-// Class ClothingSystemRuntimeInterface.ClothingSimulationFactory
-// 0x0000 (0x0030 - 0x0030)
-class UClothingSimulationFactory : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ClothingSimulationFactory">();
-	}
-	static class UClothingSimulationFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UClothingSimulationFactory>();
-	}
-};
-static_assert(alignof(UClothingSimulationFactory) == 0x000008, "Wrong alignment on UClothingSimulationFactory");
-static_assert(sizeof(UClothingSimulationFactory) == 0x000030, "Wrong size on UClothingSimulationFactory");
-
-// Class ClothingSystemRuntimeInterface.ClothingSimulationInteractor
-// 0x0008 (0x0038 - 0x0030)
-class UClothingSimulationInteractor : public UObject
-{
-public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ClothConfigUpdated();
-	void DisableGravityOverride();
-	void EnableGravityOverride(const struct FVector& InVector);
-	void PhysicsAssetUpdated();
-	void SetAnimDriveSpringStiffness(float InStiffness);
-
-	int32 GetNumCloths() const;
-	int32 GetNumDynamicParticles() const;
-	int32 GetNumIterations() const;
-	int32 GetNumKinematicParticles() const;
-	int32 GetNumSubsteps() const;
-	float GetSimulationTime() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ClothingSimulationInteractor">();
-	}
-	static class UClothingSimulationInteractor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UClothingSimulationInteractor>();
-	}
-};
-static_assert(alignof(UClothingSimulationInteractor) == 0x000008, "Wrong alignment on UClothingSimulationInteractor");
-static_assert(sizeof(UClothingSimulationInteractor) == 0x000038, "Wrong size on UClothingSimulationInteractor");
-
-// Class ClothingSystemRuntimeInterface.ClothSharedSimConfigBase
-// 0x0000 (0x0030 - 0x0030)
-class UClothSharedSimConfigBase final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ClothSharedSimConfigBase">();
-	}
-	static class UClothSharedSimConfigBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UClothSharedSimConfigBase>();
-	}
-};
-static_assert(alignof(UClothSharedSimConfigBase) == 0x000008, "Wrong alignment on UClothSharedSimConfigBase");
-static_assert(sizeof(UClothSharedSimConfigBase) == 0x000030, "Wrong size on UClothSharedSimConfigBase");
 
 // Class ClothingSystemRuntimeInterface.ClothingAssetBase
 // 0x0020 (0x0050 - 0x0030)
@@ -125,6 +40,23 @@ static_assert(alignof(UClothingAssetBase) == 0x000008, "Wrong alignment on UClot
 static_assert(sizeof(UClothingAssetBase) == 0x000050, "Wrong size on UClothingAssetBase");
 static_assert(offsetof(UClothingAssetBase, ImportedFilePath) == 0x000030, "Member 'UClothingAssetBase::ImportedFilePath' has a wrong offset!");
 static_assert(offsetof(UClothingAssetBase, AssetGuid) == 0x000040, "Member 'UClothingAssetBase::AssetGuid' has a wrong offset!");
+
+// Class ClothingSystemRuntimeInterface.ClothConfigBase
+// 0x0000 (0x0030 - 0x0030)
+class UClothConfigBase : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ClothConfigBase">();
+	}
+	static class UClothConfigBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UClothConfigBase>();
+	}
+};
+static_assert(alignof(UClothConfigBase) == 0x000008, "Wrong alignment on UClothConfigBase");
+static_assert(sizeof(UClothConfigBase) == 0x000030, "Wrong size on UClothConfigBase");
 
 // Class ClothingSystemRuntimeInterface.ClothPhysicalMeshDataBase_Legacy
 // 0x00B8 (0x00E8 - 0x0030)
@@ -161,6 +93,74 @@ static_assert(offsetof(UClothPhysicalMeshDataBase_Legacy, BoneData) == 0x000070,
 static_assert(offsetof(UClothPhysicalMeshDataBase_Legacy, NumFixedVerts) == 0x000080, "Member 'UClothPhysicalMeshDataBase_Legacy::NumFixedVerts' has a wrong offset!");
 static_assert(offsetof(UClothPhysicalMeshDataBase_Legacy, MaxBoneWeights) == 0x000084, "Member 'UClothPhysicalMeshDataBase_Legacy::MaxBoneWeights' has a wrong offset!");
 static_assert(offsetof(UClothPhysicalMeshDataBase_Legacy, SelfCollisionIndices) == 0x000088, "Member 'UClothPhysicalMeshDataBase_Legacy::SelfCollisionIndices' has a wrong offset!");
+
+// Class ClothingSystemRuntimeInterface.ClothingSimulationFactory
+// 0x0000 (0x0030 - 0x0030)
+class UClothingSimulationFactory : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ClothingSimulationFactory">();
+	}
+	static class UClothingSimulationFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UClothingSimulationFactory>();
+	}
+};
+static_assert(alignof(UClothingSimulationFactory) == 0x000008, "Wrong alignment on UClothingSimulationFactory");
+static_assert(sizeof(UClothingSimulationFactory) == 0x000030, "Wrong size on UClothingSimulationFactory");
+
+// Class ClothingSystemRuntimeInterface.ClothSharedSimConfigBase
+// 0x0000 (0x0030 - 0x0030)
+class UClothSharedSimConfigBase final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ClothSharedSimConfigBase">();
+	}
+	static class UClothSharedSimConfigBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UClothSharedSimConfigBase>();
+	}
+};
+static_assert(alignof(UClothSharedSimConfigBase) == 0x000008, "Wrong alignment on UClothSharedSimConfigBase");
+static_assert(sizeof(UClothSharedSimConfigBase) == 0x000030, "Wrong size on UClothSharedSimConfigBase");
+
+// Class ClothingSystemRuntimeInterface.ClothingSimulationInteractor
+// 0x0008 (0x0038 - 0x0030)
+class UClothingSimulationInteractor : public UObject
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ClothConfigUpdated();
+	void DisableGravityOverride();
+	void EnableGravityOverride(const struct FVector& InVector);
+	void PhysicsAssetUpdated();
+	void SetAnimDriveSpringStiffness(float InStiffness);
+
+	int32 GetNumCloths() const;
+	int32 GetNumDynamicParticles() const;
+	int32 GetNumIterations() const;
+	int32 GetNumKinematicParticles() const;
+	int32 GetNumSubsteps() const;
+	float GetSimulationTime() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ClothingSimulationInteractor">();
+	}
+	static class UClothingSimulationInteractor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UClothingSimulationInteractor>();
+	}
+};
+static_assert(alignof(UClothingSimulationInteractor) == 0x000008, "Wrong alignment on UClothingSimulationInteractor");
+static_assert(sizeof(UClothingSimulationInteractor) == 0x000038, "Wrong size on UClothingSimulationInteractor");
 
 }
 

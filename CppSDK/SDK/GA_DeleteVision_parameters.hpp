@@ -16,6 +16,30 @@
 namespace SDK::Params
 {
 
+// Function GA_DeleteVision.GA_DeleteVision_C.°H d;‘
+// 0x0008 (0x0008 - 0x0000)
+struct GA_DeleteVision_C__H_d__ final
+{
+public:
+	int32                                         CallFunc_____ID___ID;                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_____ID___ID_1;                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_DeleteVision_C__H_d__) == 0x000004, "Wrong alignment on GA_DeleteVision_C__H_d__");
+static_assert(sizeof(GA_DeleteVision_C__H_d__) == 0x000008, "Wrong size on GA_DeleteVision_C__H_d__");
+static_assert(offsetof(GA_DeleteVision_C__H_d__, CallFunc_____ID___ID) == 0x000000, "Member 'GA_DeleteVision_C__H_d__::CallFunc_____ID___ID' has a wrong offset!");
+static_assert(offsetof(GA_DeleteVision_C__H_d__, CallFunc_____ID___ID_1) == 0x000004, "Member 'GA_DeleteVision_C__H_d__::CallFunc_____ID___ID_1' has a wrong offset!");
+
+// Function GA_DeleteVision.GA_DeleteVision_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_DeleteVision_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_DeleteVision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_DeleteVision_C_K2_OnEndAbility");
+static_assert(sizeof(GA_DeleteVision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_DeleteVision_C_K2_OnEndAbility");
+static_assert(offsetof(GA_DeleteVision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_DeleteVision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_DeleteVision.GA_DeleteVision_C.ExecuteUbergraph_GA_DeleteVision
 // 0x00D8 (0x00D8 - 0x0000)
 struct GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision final
@@ -53,30 +77,6 @@ static_assert(offsetof(GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision, K2Nod
 static_assert(offsetof(GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision, K2Node_DynamicCast_AsBP_Base_Vision) == 0x0000B0, "Member 'GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision::K2Node_DynamicCast_AsBP_Base_Vision' has a wrong offset!");
 static_assert(offsetof(GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision, K2Node_DynamicCast_bSuccess) == 0x0000B8, "Member 'GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 static_assert(offsetof(GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision, CallFunc_Format_ReturnValue) == 0x0000C0, "Member 'GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision::CallFunc_Format_ReturnValue' has a wrong offset!");
-
-// Function GA_DeleteVision.GA_DeleteVision_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_DeleteVision_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_DeleteVision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_DeleteVision_C_K2_OnEndAbility");
-static_assert(sizeof(GA_DeleteVision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_DeleteVision_C_K2_OnEndAbility");
-static_assert(offsetof(GA_DeleteVision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_DeleteVision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_DeleteVision.GA_DeleteVision_C.°H d;‘
-// 0x0008 (0x0008 - 0x0000)
-struct GA_DeleteVision_C__H_d__ final
-{
-public:
-	int32                                         CallFunc_____ID___ID;                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_____ID___ID_1;                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_DeleteVision_C__H_d__) == 0x000004, "Wrong alignment on GA_DeleteVision_C__H_d__");
-static_assert(sizeof(GA_DeleteVision_C__H_d__) == 0x000008, "Wrong size on GA_DeleteVision_C__H_d__");
-static_assert(offsetof(GA_DeleteVision_C__H_d__, CallFunc_____ID___ID) == 0x000000, "Member 'GA_DeleteVision_C__H_d__::CallFunc_____ID___ID' has a wrong offset!");
-static_assert(offsetof(GA_DeleteVision_C__H_d__, CallFunc_____ID___ID_1) == 0x000004, "Member 'GA_DeleteVision_C__H_d__::CallFunc_____ID___ID_1' has a wrong offset!");
 
 }
 

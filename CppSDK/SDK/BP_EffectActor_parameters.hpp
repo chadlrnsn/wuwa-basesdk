@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "SEffectFloatParameter_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -226,19 +226,21 @@ struct BP_EffectActor_C_Play final
 {
 public:
 	class FString                                 Reason;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GetIsWorldPartitionActor_ReturnValue;     // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0013(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FSEffectFloatParameter                 K2Node_MakeStruct_SEffectFloatParameter;           // 0x0014(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue;      // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsEditor_IsEditor;                        // 0x0025(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_26[0xA];                                       // 0x0026(0x000A)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          CallFunc_EffectHandleIsValid_ReturnValue;          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetIsWorldPartitionActor_ReturnValue;     // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0013(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSEffectFloatParameter                 K2Node_MakeStruct_SEffectFloatParameter;           // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue;      // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsEditor_IsEditor;                        // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_GetTransform_ReturnValue;                 // 0x0030(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
 	class UObject*                                CallFunc_GetOuterObject_ReturnValue;               // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_PlayEffect_ReturnValue;                   // 0x006C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EffectHandleIsValid_ReturnValue;          // 0x006D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EffectHandleIsValid_ReturnValue_1;        // 0x006D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_6E[0x2];                                       // 0x006E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                CallFunc_GetOuterObject_ReturnValue_1;             // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_BreakSoftObjectPath_PathString;           // 0x0078(0x0010)(ZeroConstructor, HasGetValueTypeHash)
@@ -250,18 +252,19 @@ public:
 static_assert(alignof(BP_EffectActor_C_Play) == 0x000010, "Wrong alignment on BP_EffectActor_C_Play");
 static_assert(sizeof(BP_EffectActor_C_Play) == 0x0000A0, "Wrong size on BP_EffectActor_C_Play");
 static_assert(offsetof(BP_EffectActor_C_Play, Reason) == 0x000000, "Member 'BP_EffectActor_C_Play::Reason' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_Not_PreBool_ReturnValue) == 0x000010, "Member 'BP_EffectActor_C_Play::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_GetIsWorldPartitionActor_ReturnValue) == 0x000011, "Member 'BP_EffectActor_C_Play::CallFunc_GetIsWorldPartitionActor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_BooleanAND_ReturnValue) == 0x000012, "Member 'BP_EffectActor_C_Play::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_BooleanOR_ReturnValue) == 0x000013, "Member 'BP_EffectActor_C_Play::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_Play, K2Node_MakeStruct_SEffectFloatParameter) == 0x000014, "Member 'BP_EffectActor_C_Play::K2Node_MakeStruct_SEffectFloatParameter' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_GreaterEqual_FloatFloat_ReturnValue) == 0x000024, "Member 'BP_EffectActor_C_Play::CallFunc_GreaterEqual_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_IsEditor_IsEditor) == 0x000025, "Member 'BP_EffectActor_C_Play::CallFunc_IsEditor_IsEditor' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_EffectHandleIsValid_ReturnValue) == 0x000010, "Member 'BP_EffectActor_C_Play::CallFunc_EffectHandleIsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_Not_PreBool_ReturnValue) == 0x000011, "Member 'BP_EffectActor_C_Play::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_GetIsWorldPartitionActor_ReturnValue) == 0x000012, "Member 'BP_EffectActor_C_Play::CallFunc_GetIsWorldPartitionActor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_BooleanAND_ReturnValue) == 0x000013, "Member 'BP_EffectActor_C_Play::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_BooleanOR_ReturnValue) == 0x000014, "Member 'BP_EffectActor_C_Play::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_Play, K2Node_MakeStruct_SEffectFloatParameter) == 0x000018, "Member 'BP_EffectActor_C_Play::K2Node_MakeStruct_SEffectFloatParameter' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_GreaterEqual_FloatFloat_ReturnValue) == 0x000028, "Member 'BP_EffectActor_C_Play::CallFunc_GreaterEqual_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_IsEditor_IsEditor) == 0x000029, "Member 'BP_EffectActor_C_Play::CallFunc_IsEditor_IsEditor' has a wrong offset!");
 static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_GetTransform_ReturnValue) == 0x000030, "Member 'BP_EffectActor_C_Play::CallFunc_GetTransform_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_GetOuterObject_ReturnValue) == 0x000060, "Member 'BP_EffectActor_C_Play::CallFunc_GetOuterObject_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_Array_Add_ReturnValue) == 0x000068, "Member 'BP_EffectActor_C_Play::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_PlayEffect_ReturnValue) == 0x00006C, "Member 'BP_EffectActor_C_Play::CallFunc_PlayEffect_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_EffectHandleIsValid_ReturnValue) == 0x00006D, "Member 'BP_EffectActor_C_Play::CallFunc_EffectHandleIsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_EffectHandleIsValid_ReturnValue_1) == 0x00006D, "Member 'BP_EffectActor_C_Play::CallFunc_EffectHandleIsValid_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_GetOuterObject_ReturnValue_1) == 0x000070, "Member 'BP_EffectActor_C_Play::CallFunc_GetOuterObject_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_BreakSoftObjectPath_PathString) == 0x000078, "Member 'BP_EffectActor_C_Play::CallFunc_BreakSoftObjectPath_PathString' has a wrong offset!");
 static_assert(offsetof(BP_EffectActor_C_Play, CallFunc_IsEmpty_ReturnValue) == 0x000088, "Member 'BP_EffectActor_C_Play::CallFunc_IsEmpty_ReturnValue' has a wrong offset!");

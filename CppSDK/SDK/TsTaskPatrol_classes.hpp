@@ -31,9 +31,9 @@ public:
 	bool                                          UseSimpleMove;                                     // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_TsTaskPatrol(int32 EntryPoint);
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ExecuteUbergraph_TsTaskPatrol(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

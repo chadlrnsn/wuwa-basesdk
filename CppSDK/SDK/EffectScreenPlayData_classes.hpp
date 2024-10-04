@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "E_SE_PlayOrder_structs.hpp"
 #include "Engine_classes.hpp"
+#include "E_SE_PlayOrder_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass EffectScreenPlayData.EffectScreenPlayData_C
-// 0x0030 (0x0068 - 0x0038)
+// 0x0060 (0x0098 - 0x0038)
 class UEffectScreenPlayData_C final : public UPrimaryDataAsset
 {
 public:
@@ -38,6 +38,11 @@ public:
 	bool                                          bUseAudio;                                         // 0x005E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_5F[0x1];                                       // 0x005F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAkAudioEvent*                          AudioEvent;                                        // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAkAudioEvent*                          AudioEventEnd;                                     // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         AudioEventEndDelay;                                // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ConsoleCommandOnBegin;                             // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash)
+	class FString                                 ConsoleCommandOnEnd;                               // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -50,7 +55,7 @@ public:
 	}
 };
 static_assert(alignof(UEffectScreenPlayData_C) == 0x000008, "Wrong alignment on UEffectScreenPlayData_C");
-static_assert(sizeof(UEffectScreenPlayData_C) == 0x000068, "Wrong size on UEffectScreenPlayData_C");
+static_assert(sizeof(UEffectScreenPlayData_C) == 0x000098, "Wrong size on UEffectScreenPlayData_C");
 static_assert(offsetof(UEffectScreenPlayData_C, Start) == 0x000038, "Member 'UEffectScreenPlayData_C::Start' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, Loop) == 0x00003C, "Member 'UEffectScreenPlayData_C::Loop' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, End) == 0x000040, "Member 'UEffectScreenPlayData_C::End' has a wrong offset!");
@@ -64,6 +69,10 @@ static_assert(offsetof(UEffectScreenPlayData_C, bUsedForSequence) == 0x00005C, "
 static_assert(offsetof(UEffectScreenPlayData_C, bAutoDestroy) == 0x00005D, "Member 'UEffectScreenPlayData_C::bAutoDestroy' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, bUseAudio) == 0x00005E, "Member 'UEffectScreenPlayData_C::bUseAudio' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, AudioEvent) == 0x000060, "Member 'UEffectScreenPlayData_C::AudioEvent' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, AudioEventEnd) == 0x000068, "Member 'UEffectScreenPlayData_C::AudioEventEnd' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, AudioEventEndDelay) == 0x000070, "Member 'UEffectScreenPlayData_C::AudioEventEndDelay' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, ConsoleCommandOnBegin) == 0x000078, "Member 'UEffectScreenPlayData_C::ConsoleCommandOnBegin' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, ConsoleCommandOnEnd) == 0x000088, "Member 'UEffectScreenPlayData_C::ConsoleCommandOnEnd' has a wrong offset!");
 
 }
 

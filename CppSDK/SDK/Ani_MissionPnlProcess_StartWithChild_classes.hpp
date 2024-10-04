@@ -25,11 +25,11 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0038(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_SequenceDirector(int32 EntryPoint);
-	void PnlSubTitle_Event_0(class AUIContainerActor* PnlSubTitle);
-	void PnlParentEvent(class AUIContainerActor* PnlParent, const class FString& SequenceName, const class FString& EventName);
-	void SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUIContainerActor* PnlParent);
 	void SequenceEvent__ENTRYPOINTSequenceDirector_1(class AUIContainerActor* PnlParent);
+	void SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUIContainerActor* PnlParent);
+	void PnlParentEvent(class AUIContainerActor* PnlParent, const class FString& SequenceName, const class FString& EventName);
+	void PnlSubTitle_Event_0(class AUIContainerActor* PnlSubTitle);
+	void ExecuteUbergraph_SequenceDirector(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

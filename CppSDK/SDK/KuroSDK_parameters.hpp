@@ -342,6 +342,28 @@ static_assert(alignof(KuroSDKManager_QueryProductInfo) == 0x000008, "Wrong align
 static_assert(sizeof(KuroSDKManager_QueryProductInfo) == 0x000010, "Wrong size on KuroSDKManager_QueryProductInfo");
 static_assert(offsetof(KuroSDKManager_QueryProductInfo, Data) == 0x000000, "Member 'KuroSDKManager_QueryProductInfo::Data' has a wrong offset!");
 
+// Function KuroSDK.KuroSDKManager.RequestReviewApp
+// 0x0010 (0x0010 - 0x0000)
+struct KuroSDKManager_RequestReviewApp final
+{
+public:
+	class FString                                 Data;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_RequestReviewApp) == 0x000008, "Wrong alignment on KuroSDKManager_RequestReviewApp");
+static_assert(sizeof(KuroSDKManager_RequestReviewApp) == 0x000010, "Wrong size on KuroSDKManager_RequestReviewApp");
+static_assert(offsetof(KuroSDKManager_RequestReviewApp, Data) == 0x000000, "Member 'KuroSDKManager_RequestReviewApp::Data' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKManager.SetCursor
+// 0x0010 (0x0010 - 0x0000)
+struct KuroSDKManager_SetCursor final
+{
+public:
+	class FString                                 Data;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_SetCursor) == 0x000008, "Wrong alignment on KuroSDKManager_SetCursor");
+static_assert(sizeof(KuroSDKManager_SetCursor) == 0x000010, "Wrong size on KuroSDKManager_SetCursor");
+static_assert(offsetof(KuroSDKManager_SetCursor, Data) == 0x000000, "Member 'KuroSDKManager_SetCursor::Data' has a wrong offset!");
+
 // Function KuroSDK.KuroSDKManager.SetFont
 // 0x0010 (0x0010 - 0x0000)
 struct KuroSDKManager_SetFont final
@@ -352,6 +374,17 @@ public:
 static_assert(alignof(KuroSDKManager_SetFont) == 0x000008, "Wrong alignment on KuroSDKManager_SetFont");
 static_assert(sizeof(KuroSDKManager_SetFont) == 0x000010, "Wrong size on KuroSDKManager_SetFont");
 static_assert(offsetof(KuroSDKManager_SetFont, Data) == 0x000000, "Member 'KuroSDKManager_SetFont::Data' has a wrong offset!");
+
+// Function KuroSDK.KuroSDKManager.SetGamePadMode
+// 0x0001 (0x0001 - 0x0000)
+struct KuroSDKManager_SetGamePadMode final
+{
+public:
+	bool                                          Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSDKManager_SetGamePadMode) == 0x000001, "Wrong alignment on KuroSDKManager_SetGamePadMode");
+static_assert(sizeof(KuroSDKManager_SetGamePadMode) == 0x000001, "Wrong size on KuroSDKManager_SetGamePadMode");
+static_assert(offsetof(KuroSDKManager_SetGamePadMode, Mode) == 0x000000, "Member 'KuroSDKManager_SetGamePadMode::Mode' has a wrong offset!");
 
 // Function KuroSDK.KuroSDKManager.SetIfGlobalSdk
 // 0x0001 (0x0001 - 0x0000)

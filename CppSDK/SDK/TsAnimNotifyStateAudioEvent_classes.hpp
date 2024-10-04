@@ -34,8 +34,8 @@ public:
 	TMap<class AActor*, float>                    HandleMap;                                         // 0x00C0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, Transient, DisableEditOnInstance)
 
 public:
-	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
 	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
+	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
 
 	class FString GetNotifyName() const;
 

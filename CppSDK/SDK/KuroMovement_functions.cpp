@@ -884,6 +884,52 @@ void AKuroMoveTrigger::OnEnterOverlap(class UPrimitiveComponent* OverlappedCompo
 }
 
 
+// Function KuroMovement.KuroMovementBPLibrary.KuroRoll
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCharacterMovementComponent*      CharMoveComp                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TargetSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Friction                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   AccelOnGround                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          FloorNormal                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Gravity                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   StepUpHeight                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   MaxSpeed                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroMovementBPLibrary::KuroRoll(float DeltaSeconds, class UCharacterMovementComponent* CharMoveComp, float TargetSpeed, float Friction, float AccelOnGround, struct FVector* FloorNormal, float Gravity, float StepUpHeight, float MaxSpeed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroMovementBPLibrary", "KuroRoll");
+
+	Params::KuroMovementBPLibrary_KuroRoll Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.CharMoveComp = CharMoveComp;
+	Parms.TargetSpeed = TargetSpeed;
+	Parms.Friction = Friction;
+	Parms.AccelOnGround = AccelOnGround;
+	Parms.Gravity = Gravity;
+	Parms.StepUpHeight = StepUpHeight;
+	Parms.MaxSpeed = MaxSpeed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (FloorNormal != nullptr)
+		*FloorNormal = std::move(Parms.FloorNormal);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroMovement.KuroMovementBPLibrary.KuroSki
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -894,9 +940,9 @@ void AKuroMoveTrigger::OnEnterOverlap(class UPrimitiveComponent* OverlappedCompo
 // struct FVector                          SpeedParams                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   IgnoreStepHeight                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      SpeedReduceCurve                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroMovementBPLibrary::KuroSki(float DeltaTime, class UCharacterMovementComponent* CharMoveComp, const struct FVector& PrevBlockNormal, const struct FVector& Direction, const struct FVector& SpeedParams, float IgnoreStepHeight, class UCurveFloat* SpeedReduceCurve)
+int32 UKuroMovementBPLibrary::KuroSki(float DeltaTime, class UCharacterMovementComponent* CharMoveComp, const struct FVector& PrevBlockNormal, const struct FVector& Direction, const struct FVector& SpeedParams, float IgnoreStepHeight, class UCurveFloat* SpeedReduceCurve)
 {
 	static class UFunction* Func = nullptr;
 

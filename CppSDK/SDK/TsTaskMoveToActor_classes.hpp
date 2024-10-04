@@ -33,9 +33,9 @@ public:
 	bool                                          WalkOff;                                           // 0x00E4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 
 public:
-	void ExecuteUbergraph_TsTaskMoveToActor(int32 EntryPoint);
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ExecuteUbergraph_TsTaskMoveToActor(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

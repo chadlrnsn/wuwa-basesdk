@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "SNpcHookPart_structs.hpp"
+#include "EBodyPartName_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SNpcSetupPartInfo_structs.hpp"
-#include "EBodyPartName_structs.hpp"
-#include "SNpcHookPart_structs.hpp"
 
 
 namespace SDK::Params
@@ -440,25 +440,22 @@ public:
 	class FName                                   Name_0;                                            // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 SkeletalComp;                                      // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSNpcSetupPartInfo                     ___struct_Variable;                                // 0x0018(0x0010)(ConstParm, ContainsInstancedReference, HasGetValueTypeHash)
+	TArray<class USkeletalMeshComponent*>         K2Node_MakeArray_Array;                            // 0x0018(0x0010)(ReferenceParm, ContainsInstancedReference)
 	struct FSNpcSetupPartInfo                     CallFunc_Map_Find_Value;                           // 0x0028(0x0010)(ContainsInstancedReference, HasGetValueTypeHash)
 	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSNpcSetupPartInfo                     CallFunc_Map_Find_Value_1;                         // 0x0040(0x0010)(ContainsInstancedReference, HasGetValueTypeHash)
-	bool                                          CallFunc_Map_Find_ReturnValue_1;                   // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSNpcSetupPartInfo                     K2Node_MakeStruct_SNpcSetupPartInfo;               // 0x0040(0x0010)(ContainsInstancedReference, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_NpcCombinedMesh_C_AddSkeletalComponent) == 0x000008, "Wrong alignment on BP_NpcCombinedMesh_C_AddSkeletalComponent");
 static_assert(sizeof(BP_NpcCombinedMesh_C_AddSkeletalComponent) == 0x000058, "Wrong size on BP_NpcCombinedMesh_C_AddSkeletalComponent");
 static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, Name_0) == 0x000000, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::Name_0' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, SkeletalComp) == 0x000010, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::SkeletalComp' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, ___struct_Variable) == 0x000018, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::___struct_Variable' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, K2Node_MakeArray_Array) == 0x000018, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::K2Node_MakeArray_Array' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, CallFunc_Map_Find_Value) == 0x000028, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::CallFunc_Map_Find_Value' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, CallFunc_Map_Find_ReturnValue) == 0x000038, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::CallFunc_Map_Find_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, CallFunc_Map_Find_Value_1) == 0x000040, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::CallFunc_Map_Find_Value_1' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, CallFunc_Map_Find_ReturnValue_1) == 0x000050, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::CallFunc_Map_Find_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, CallFunc_Array_Add_ReturnValue) == 0x000054, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, K2Node_MakeStruct_SNpcSetupPartInfo) == 0x000040, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::K2Node_MakeStruct_SNpcSetupPartInfo' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_AddSkeletalComponent, CallFunc_Array_Add_ReturnValue) == 0x000050, "Member 'BP_NpcCombinedMesh_C_AddSkeletalComponent::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
 
 // Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.GetMainMeshComponent
 // 0x0008 (0x0008 - 0x0000)

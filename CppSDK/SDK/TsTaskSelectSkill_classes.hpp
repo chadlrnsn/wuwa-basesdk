@@ -27,8 +27,8 @@ public:
 	bool                                          DebugLog;                                          // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_TsTaskSelectSkill(int32 EntryPoint);
 	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ExecuteUbergraph_TsTaskSelectSkill(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

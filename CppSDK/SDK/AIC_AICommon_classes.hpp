@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SAiConditions_structs.hpp"
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "TsAiController_classes.hpp"
+#include "Engine_structs.hpp"
+#include "SAiConditions_structs.hpp"
 #include "ECharacterState_structs.hpp"
+#include "TsAiController_classes.hpp"
 
 
 namespace SDK
@@ -62,13 +62,13 @@ public:
 	void ____AI(bool bContent);
 	void ________(bool bContent);
 	void __L__a_(bool bContent);
+	void OnStart();
 	void ReceiveTick(float DeltaSeconds);
 	void ___b_p(class UObject* _r, ECharacterState ___, ECharacterState ____0, bool ___0, class UObject** _r__, ECharacterState* _____, ECharacterState* ______0, bool* Param______0);
 	void __0_h__();
 	void _n_____a();
 	void __(const TDelegate<void()>& b___);
 	void _______p(const class FString& Param______0, const TDelegate<void(bool IsInRegion, class AActor* Target)>& __);
-	void OnStart();
 	void ___b_(ECharacterState OldState, ECharacterState NewState, bool IsAutonomousProxy_0);
 	void ___6C_();
 

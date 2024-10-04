@@ -16,6 +16,45 @@
 namespace SDK::Params
 {
 
+// Function GA_ToFight_Vision.GA_ToFight_Vision_C.·—{apn
+// 0x0220 (0x0220 - 0x0000)
+struct GA_ToFight_Vision_C____apn final
+{
+public:
+	class ATsBaseCharacter_C*                     Entity;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          __0;                                               // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSVisionData                           __L;                                               // 0x0010(0x00F0)(Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+	int32                                         CallFunc_GetIntValueByEntityWithCharacter_ReturnValue; // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSVisionData                           CallFunc_GetDataTableRowFromName_OutRow;           // 0x0128(0x00F0)(ContainsInstancedReference, HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_ToFight_Vision_C____apn) == 0x000008, "Wrong alignment on GA_ToFight_Vision_C____apn");
+static_assert(sizeof(GA_ToFight_Vision_C____apn) == 0x000220, "Wrong size on GA_ToFight_Vision_C____apn");
+static_assert(offsetof(GA_ToFight_Vision_C____apn, Entity) == 0x000000, "Member 'GA_ToFight_Vision_C____apn::Entity' has a wrong offset!");
+static_assert(offsetof(GA_ToFight_Vision_C____apn, __0) == 0x000008, "Member 'GA_ToFight_Vision_C____apn::__0' has a wrong offset!");
+static_assert(offsetof(GA_ToFight_Vision_C____apn, __L) == 0x000010, "Member 'GA_ToFight_Vision_C____apn::__L' has a wrong offset!");
+static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_GetIntValueByEntityWithCharacter_ReturnValue) == 0x000100, "Member 'GA_ToFight_Vision_C____apn::CallFunc_GetIntValueByEntityWithCharacter_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_Conv_IntToString_ReturnValue) == 0x000108, "Member 'GA_ToFight_Vision_C____apn::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_Conv_StringToName_ReturnValue) == 0x000118, "Member 'GA_ToFight_Vision_C____apn::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_GetDataTableRowFromName_OutRow) == 0x000128, "Member 'GA_ToFight_Vision_C____apn::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
+static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000218, "Member 'GA_ToFight_Vision_C____apn::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
+
+// Function GA_ToFight_Vision.GA_ToFight_Vision_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_ToFight_Vision_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_ToFight_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_ToFight_Vision_C_K2_OnEndAbility");
+static_assert(sizeof(GA_ToFight_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_ToFight_Vision_C_K2_OnEndAbility");
+static_assert(offsetof(GA_ToFight_Vision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_ToFight_Vision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_ToFight_Vision.GA_ToFight_Vision_C.ExecuteUbergraph_GA_ToFight_Vision
 // 0x01D0 (0x01D0 - 0x0000)
 struct GA_ToFight_Vision_C_ExecuteUbergraph_GA_ToFight_Vision final
@@ -112,45 +151,6 @@ static_assert(offsetof(GA_ToFight_Vision_C_ExecuteUbergraph_GA_ToFight_Vision, C
 static_assert(offsetof(GA_ToFight_Vision_C_ExecuteUbergraph_GA_ToFight_Vision, K2Node_DynamicCast_AsTs_Base_Character_1) == 0x0001C0, "Member 'GA_ToFight_Vision_C_ExecuteUbergraph_GA_ToFight_Vision::K2Node_DynamicCast_AsTs_Base_Character_1' has a wrong offset!");
 static_assert(offsetof(GA_ToFight_Vision_C_ExecuteUbergraph_GA_ToFight_Vision, K2Node_DynamicCast_bSuccess_1) == 0x0001C8, "Member 'GA_ToFight_Vision_C_ExecuteUbergraph_GA_ToFight_Vision::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
 static_assert(offsetof(GA_ToFight_Vision_C_ExecuteUbergraph_GA_ToFight_Vision, CallFunc_____ID___ID_1) == 0x0001CC, "Member 'GA_ToFight_Vision_C_ExecuteUbergraph_GA_ToFight_Vision::CallFunc_____ID___ID_1' has a wrong offset!");
-
-// Function GA_ToFight_Vision.GA_ToFight_Vision_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_ToFight_Vision_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_ToFight_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_ToFight_Vision_C_K2_OnEndAbility");
-static_assert(sizeof(GA_ToFight_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_ToFight_Vision_C_K2_OnEndAbility");
-static_assert(offsetof(GA_ToFight_Vision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_ToFight_Vision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_ToFight_Vision.GA_ToFight_Vision_C.·—{apn
-// 0x0220 (0x0220 - 0x0000)
-struct GA_ToFight_Vision_C____apn final
-{
-public:
-	class ATsBaseCharacter_C*                     Entity;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          __0;                                               // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSVisionData                           __L;                                               // 0x0010(0x00F0)(Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
-	int32                                         CallFunc_GetIntValueByEntityWithCharacter_ReturnValue; // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSVisionData                           CallFunc_GetDataTableRowFromName_OutRow;           // 0x0128(0x00F0)(ContainsInstancedReference, HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_ToFight_Vision_C____apn) == 0x000008, "Wrong alignment on GA_ToFight_Vision_C____apn");
-static_assert(sizeof(GA_ToFight_Vision_C____apn) == 0x000220, "Wrong size on GA_ToFight_Vision_C____apn");
-static_assert(offsetof(GA_ToFight_Vision_C____apn, Entity) == 0x000000, "Member 'GA_ToFight_Vision_C____apn::Entity' has a wrong offset!");
-static_assert(offsetof(GA_ToFight_Vision_C____apn, __0) == 0x000008, "Member 'GA_ToFight_Vision_C____apn::__0' has a wrong offset!");
-static_assert(offsetof(GA_ToFight_Vision_C____apn, __L) == 0x000010, "Member 'GA_ToFight_Vision_C____apn::__L' has a wrong offset!");
-static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_GetIntValueByEntityWithCharacter_ReturnValue) == 0x000100, "Member 'GA_ToFight_Vision_C____apn::CallFunc_GetIntValueByEntityWithCharacter_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_Conv_IntToString_ReturnValue) == 0x000108, "Member 'GA_ToFight_Vision_C____apn::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_Conv_StringToName_ReturnValue) == 0x000118, "Member 'GA_ToFight_Vision_C____apn::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_GetDataTableRowFromName_OutRow) == 0x000128, "Member 'GA_ToFight_Vision_C____apn::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(GA_ToFight_Vision_C____apn, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000218, "Member 'GA_ToFight_Vision_C____apn::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
 
 }
 

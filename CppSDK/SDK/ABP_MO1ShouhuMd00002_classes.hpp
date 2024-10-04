@@ -27,8 +27,8 @@ public:
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x03B8(0x0038)()
 
 public:
-	void ExecuteUbergraph_ABP_MO1ShouhuMd00002(int32 EntryPoint);
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void ExecuteUbergraph_ABP_MO1ShouhuMd00002(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

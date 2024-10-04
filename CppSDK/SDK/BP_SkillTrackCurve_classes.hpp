@@ -18,14 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SkillTrackCurve.BP_SkillTrackCurve_C
-// 0x0060 (0x0308 - 0x02A8)
+// 0x0060 (0x0310 - 0x02B0)
 class ABP_SkillTrackCurve_C final : public AActor
 {
 public:
-	class USplineComponent*                       Spline;                                            // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	int32                                         SplinePointsNum;                                   // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         SplinePointsIndex;                                 // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<int32, struct FSplinePoint>              SplinePointsMap;                                   // 0x02B8(0x0050)(Edit, BlueprintVisible)
+	class USplineComponent*                       Spline;                                            // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	int32                                         SplinePointsNum;                                   // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         SplinePointsIndex;                                 // 0x02BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<int32, struct FSplinePoint>              SplinePointsMap;                                   // 0x02C0(0x0050)(Edit, BlueprintVisible)
 
 public:
 	void UpdateSplineData();
@@ -41,11 +41,11 @@ public:
 	}
 };
 static_assert(alignof(ABP_SkillTrackCurve_C) == 0x000008, "Wrong alignment on ABP_SkillTrackCurve_C");
-static_assert(sizeof(ABP_SkillTrackCurve_C) == 0x000308, "Wrong size on ABP_SkillTrackCurve_C");
-static_assert(offsetof(ABP_SkillTrackCurve_C, Spline) == 0x0002A8, "Member 'ABP_SkillTrackCurve_C::Spline' has a wrong offset!");
-static_assert(offsetof(ABP_SkillTrackCurve_C, SplinePointsNum) == 0x0002B0, "Member 'ABP_SkillTrackCurve_C::SplinePointsNum' has a wrong offset!");
-static_assert(offsetof(ABP_SkillTrackCurve_C, SplinePointsIndex) == 0x0002B4, "Member 'ABP_SkillTrackCurve_C::SplinePointsIndex' has a wrong offset!");
-static_assert(offsetof(ABP_SkillTrackCurve_C, SplinePointsMap) == 0x0002B8, "Member 'ABP_SkillTrackCurve_C::SplinePointsMap' has a wrong offset!");
+static_assert(sizeof(ABP_SkillTrackCurve_C) == 0x000310, "Wrong size on ABP_SkillTrackCurve_C");
+static_assert(offsetof(ABP_SkillTrackCurve_C, Spline) == 0x0002B0, "Member 'ABP_SkillTrackCurve_C::Spline' has a wrong offset!");
+static_assert(offsetof(ABP_SkillTrackCurve_C, SplinePointsNum) == 0x0002B8, "Member 'ABP_SkillTrackCurve_C::SplinePointsNum' has a wrong offset!");
+static_assert(offsetof(ABP_SkillTrackCurve_C, SplinePointsIndex) == 0x0002BC, "Member 'ABP_SkillTrackCurve_C::SplinePointsIndex' has a wrong offset!");
+static_assert(offsetof(ABP_SkillTrackCurve_C, SplinePointsMap) == 0x0002C0, "Member 'ABP_SkillTrackCurve_C::SplinePointsMap' has a wrong offset!");
 
 }
 

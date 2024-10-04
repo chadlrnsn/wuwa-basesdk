@@ -17,59 +17,33 @@
 namespace SDK
 {
 
-// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.OnStart
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void AAIC_ME1LiufangzheleaderMd00601_C::ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601(int32 EntryPoint)
+void AAIC_ME1LiufangzheleaderMd00601_C::OnStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601");
+		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "OnStart");
 
-	Params::AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ç'ûz
+// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.Œ6µÑ,
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void AAIC_ME1LiufangzheleaderMd00601_C::___z(bool bContent)
+void AAIC_ME1LiufangzheleaderMd00601_C::_6___(bool bContent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "ç'ûz");
+		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "Œ6µÑ,");
 
-	Params::AIC_ME1LiufangzheleaderMd00601_C____z Parms{};
-
-	Parms.bContent = bContent;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ç'bá
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void AAIC_ME1LiufangzheleaderMd00601_C::__b__(bool bContent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "ç'bá");
-
-	Params::AIC_ME1LiufangzheleaderMd00601_C___b__ Parms{};
+	Params::AIC_ME1LiufangzheleaderMd00601_C__6___ Parms{};
 
 	Parms.bContent = bContent;
 
@@ -99,19 +73,19 @@ void AAIC_ME1LiufangzheleaderMd00601_C::___p(class ATsBaseCharacter_C* _r, const
 }
 
 
-// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.Œ6µÑ,
+// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ç'bá
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void AAIC_ME1LiufangzheleaderMd00601_C::_6___(bool bContent)
+void AAIC_ME1LiufangzheleaderMd00601_C::__b__(bool bContent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "Œ6µÑ,");
+		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "ç'bá");
 
-	Params::AIC_ME1LiufangzheleaderMd00601_C__6___ Parms{};
+	Params::AIC_ME1LiufangzheleaderMd00601_C___b__ Parms{};
 
 	Parms.bContent = bContent;
 
@@ -119,17 +93,43 @@ void AAIC_ME1LiufangzheleaderMd00601_C::_6___(bool bContent)
 }
 
 
-// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.OnStart
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ç'ûz
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void AAIC_ME1LiufangzheleaderMd00601_C::OnStart()
+void AAIC_ME1LiufangzheleaderMd00601_C::___z(bool bContent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "OnStart");
+		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "ç'ûz");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::AIC_ME1LiufangzheleaderMd00601_C____z Parms{};
+
+	Parms.bContent = bContent;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AAIC_ME1LiufangzheleaderMd00601_C::ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_ME1LiufangzheleaderMd00601_C", "ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601");
+
+	Params::AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

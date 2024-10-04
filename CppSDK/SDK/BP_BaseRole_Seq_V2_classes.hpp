@@ -18,26 +18,26 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C
-// 0x0070 (0x0378 - 0x0308)
+// 0x0070 (0x0380 - 0x0310)
 class ABP_BaseRole_Seq_V2_C final : public APawn
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0308(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UChildActorComponent*                   Hulu;                                              // 0x0310(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UABPC_Seq_Body_V2_C*                    ABPC_Body_V2;                                      // 0x0318(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 SkeletalMeshComponent0;                            // 0x0320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	int32                                         TalkID;                                            // 0x0330(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   BindingTag;                                        // 0x0334(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         HuluFX_Handle;                                     // 0x0340(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CharFX_Group_Handle;                               // 0x0344(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CharFX_Handle;                                     // 0x0348(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_34C[0x4];                                      // 0x034C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPD_CharacterControllerDataGroup_C*     DataGroup;                                         // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
-	class UPD_CharacterControllerData_C*          Data;                                              // 0x0358(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
-	class ABP_Fx_Scanning_C*                      BPScanning;                                        // 0x0360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UCharRenderingComponent_C*              CharRenderingComponent;                            // 0x0368(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         TalkID_SP;                                         // 0x0370(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0310(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UChildActorComponent*                   Hulu;                                              // 0x0318(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UABPC_Seq_Body_V2_C*                    ABPC_Body_V2;                                      // 0x0320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 SkeletalMeshComponent0;                            // 0x0328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	int32                                         TalkID;                                            // 0x0338(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   BindingTag;                                        // 0x033C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         HuluFX_Handle;                                     // 0x0348(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CharFX_Group_Handle;                               // 0x034C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CharFX_Handle;                                     // 0x0350(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_354[0x4];                                      // 0x0354(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPD_CharacterControllerDataGroup_C*     DataGroup;                                         // 0x0358(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	class UPD_CharacterControllerData_C*          Data;                                              // 0x0360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	class ABP_Fx_Scanning_C*                      BPScanning;                                        // 0x0368(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCharRenderingComponent_C*              CharRenderingComponent;                            // 0x0370(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         TalkID_SP;                                         // 0x0378(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_BaseRole_Seq_V2(int32 EntryPoint);
@@ -76,22 +76,22 @@ public:
 	}
 };
 static_assert(alignof(ABP_BaseRole_Seq_V2_C) == 0x000008, "Wrong alignment on ABP_BaseRole_Seq_V2_C");
-static_assert(sizeof(ABP_BaseRole_Seq_V2_C) == 0x000378, "Wrong size on ABP_BaseRole_Seq_V2_C");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, UberGraphFrame) == 0x000308, "Member 'ABP_BaseRole_Seq_V2_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, Hulu) == 0x000310, "Member 'ABP_BaseRole_Seq_V2_C::Hulu' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, ABPC_Body_V2) == 0x000318, "Member 'ABP_BaseRole_Seq_V2_C::ABPC_Body_V2' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, SkeletalMeshComponent0) == 0x000320, "Member 'ABP_BaseRole_Seq_V2_C::SkeletalMeshComponent0' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, DefaultSceneRoot) == 0x000328, "Member 'ABP_BaseRole_Seq_V2_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, TalkID) == 0x000330, "Member 'ABP_BaseRole_Seq_V2_C::TalkID' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, BindingTag) == 0x000334, "Member 'ABP_BaseRole_Seq_V2_C::BindingTag' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, HuluFX_Handle) == 0x000340, "Member 'ABP_BaseRole_Seq_V2_C::HuluFX_Handle' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, CharFX_Group_Handle) == 0x000344, "Member 'ABP_BaseRole_Seq_V2_C::CharFX_Group_Handle' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, CharFX_Handle) == 0x000348, "Member 'ABP_BaseRole_Seq_V2_C::CharFX_Handle' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, DataGroup) == 0x000350, "Member 'ABP_BaseRole_Seq_V2_C::DataGroup' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, Data) == 0x000358, "Member 'ABP_BaseRole_Seq_V2_C::Data' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, BPScanning) == 0x000360, "Member 'ABP_BaseRole_Seq_V2_C::BPScanning' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, CharRenderingComponent) == 0x000368, "Member 'ABP_BaseRole_Seq_V2_C::CharRenderingComponent' has a wrong offset!");
-static_assert(offsetof(ABP_BaseRole_Seq_V2_C, TalkID_SP) == 0x000370, "Member 'ABP_BaseRole_Seq_V2_C::TalkID_SP' has a wrong offset!");
+static_assert(sizeof(ABP_BaseRole_Seq_V2_C) == 0x000380, "Wrong size on ABP_BaseRole_Seq_V2_C");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, UberGraphFrame) == 0x000310, "Member 'ABP_BaseRole_Seq_V2_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, Hulu) == 0x000318, "Member 'ABP_BaseRole_Seq_V2_C::Hulu' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, ABPC_Body_V2) == 0x000320, "Member 'ABP_BaseRole_Seq_V2_C::ABPC_Body_V2' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, SkeletalMeshComponent0) == 0x000328, "Member 'ABP_BaseRole_Seq_V2_C::SkeletalMeshComponent0' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, DefaultSceneRoot) == 0x000330, "Member 'ABP_BaseRole_Seq_V2_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, TalkID) == 0x000338, "Member 'ABP_BaseRole_Seq_V2_C::TalkID' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, BindingTag) == 0x00033C, "Member 'ABP_BaseRole_Seq_V2_C::BindingTag' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, HuluFX_Handle) == 0x000348, "Member 'ABP_BaseRole_Seq_V2_C::HuluFX_Handle' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, CharFX_Group_Handle) == 0x00034C, "Member 'ABP_BaseRole_Seq_V2_C::CharFX_Group_Handle' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, CharFX_Handle) == 0x000350, "Member 'ABP_BaseRole_Seq_V2_C::CharFX_Handle' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, DataGroup) == 0x000358, "Member 'ABP_BaseRole_Seq_V2_C::DataGroup' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, Data) == 0x000360, "Member 'ABP_BaseRole_Seq_V2_C::Data' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, BPScanning) == 0x000368, "Member 'ABP_BaseRole_Seq_V2_C::BPScanning' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, CharRenderingComponent) == 0x000370, "Member 'ABP_BaseRole_Seq_V2_C::CharRenderingComponent' has a wrong offset!");
+static_assert(offsetof(ABP_BaseRole_Seq_V2_C, TalkID_SP) == 0x000378, "Member 'ABP_BaseRole_Seq_V2_C::TalkID_SP' has a wrong offset!");
 
 }
 

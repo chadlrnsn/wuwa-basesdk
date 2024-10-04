@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "EDetachType_structs.hpp"
-#include "EInputState_structs.hpp"
-#include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
-#include "EWeatherState_structs.hpp"
 #include "ERelation_structs.hpp"
 #include "EInputAction_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
+#include "EInputState_structs.hpp"
+#include "EDetachType_structs.hpp"
 #include "EPawnChannel_structs.hpp"
 #include "EWuYinQuState_structs.hpp"
+#include "EWeatherState_structs.hpp"
 
 
 namespace SDK
@@ -29,8 +29,8 @@ namespace SDK
 class UWorldFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void RemovePublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext);
 	static void AddPublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext);
+	static void RemovePublicTags(float EntityId1, TArray<class FString>& Tags1, class UObject* __WorldContext);
 	static int32 GetIntValueByEntity(int32 EntityId, const class FString& Key, class UObject* __WorldContext);
 	static int32 GetIntValueByEntityWithCharacter(class ATsBaseCharacter_C* Entity, const class FString& Key, class UObject* __WorldContext);
 	static void SetIntValueByEntity(int32 EntityId, const class FString& Key, int32 Value, class UObject* __WorldContext);

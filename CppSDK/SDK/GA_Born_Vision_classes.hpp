@@ -27,16 +27,16 @@ public:
 	class ATsBaseCharacter_C*                     ___;                                               // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_Born_Vision(int32 EntryPoint);
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
-	void OnCompleted_5D118C384AE61F1C80292E81F2255DE9();
-	void OnBlendOut_5D118C384AE61F1C80292E81F2255DE9();
-	void OnInterrupted_5D118C384AE61F1C80292E81F2255DE9();
-	void OnCancelled_5D118C384AE61F1C80292E81F2255DE9();
-	void OnTick_5D118C384AE61F1C80292E81F2255DE9();
-	void EventReceived_18B59F5945020DB23C42FD889881D7F7(const struct FGameplayEventData& Payload);
 	void ___apn(int32 _aID, struct FSVisionData* _apn);
+	void EventReceived_18B59F5945020DB23C42FD889881D7F7(const struct FGameplayEventData& Payload);
+	void OnTick_5D118C384AE61F1C80292E81F2255DE9();
+	void OnCancelled_5D118C384AE61F1C80292E81F2255DE9();
+	void OnInterrupted_5D118C384AE61F1C80292E81F2255DE9();
+	void OnBlendOut_5D118C384AE61F1C80292E81F2255DE9();
+	void OnCompleted_5D118C384AE61F1C80292E81F2255DE9();
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_Born_Vision(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

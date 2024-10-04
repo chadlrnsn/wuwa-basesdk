@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CommonSmallAnimal.BP_CommonSmallAnimal_C
-// 0x0000 (0x0780 - 0x0780)
+// 0x0000 (0x0790 - 0x0790)
 class ABP_CommonSmallAnimal_C : public ABP_BaseAnimal_C
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_CommonSmallAnimal_C) == 0x000010, "Wrong alignment on ABP_CommonSmallAnimal_C");
-static_assert(sizeof(ABP_CommonSmallAnimal_C) == 0x000780, "Wrong size on ABP_CommonSmallAnimal_C");
+static_assert(sizeof(ABP_CommonSmallAnimal_C) == 0x000790, "Wrong size on ABP_CommonSmallAnimal_C");
 
 }
 

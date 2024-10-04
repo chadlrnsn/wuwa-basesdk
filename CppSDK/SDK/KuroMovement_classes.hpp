@@ -63,10 +63,10 @@ static_assert(sizeof(UKuroClimbObject) == 0x000210, "Wrong size on UKuroClimbObj
 class UKuroDebugMovementComponent final : public UPrimitiveComponent
 {
 public:
-	int32                                         DrawDebugCount;                                    // 0x04E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bShowLog : 1;                                      // 0x04EC(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	EKDMDrawDebugType                             bDrawDebug;                                        // 0x04ED(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4EE[0x1A2];                                    // 0x04EE(0x01A2)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         DrawDebugCount;                                    // 0x04F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bShowLog : 1;                                      // 0x04F4(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	EKDMDrawDebugType                             bDrawDebug;                                        // 0x04F5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4F6[0x19A];                                    // 0x04F6(0x019A)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class FString KuroDebugMovementBaseRecordToString(const struct FBaseRecord& Record);
@@ -94,16 +94,16 @@ public:
 };
 static_assert(alignof(UKuroDebugMovementComponent) == 0x000010, "Wrong alignment on UKuroDebugMovementComponent");
 static_assert(sizeof(UKuroDebugMovementComponent) == 0x000690, "Wrong size on UKuroDebugMovementComponent");
-static_assert(offsetof(UKuroDebugMovementComponent, DrawDebugCount) == 0x0004E8, "Member 'UKuroDebugMovementComponent::DrawDebugCount' has a wrong offset!");
-static_assert(offsetof(UKuroDebugMovementComponent, bDrawDebug) == 0x0004ED, "Member 'UKuroDebugMovementComponent::bDrawDebug' has a wrong offset!");
+static_assert(offsetof(UKuroDebugMovementComponent, DrawDebugCount) == 0x0004F0, "Member 'UKuroDebugMovementComponent::DrawDebugCount' has a wrong offset!");
+static_assert(offsetof(UKuroDebugMovementComponent, bDrawDebug) == 0x0004F5, "Member 'UKuroDebugMovementComponent::bDrawDebug' has a wrong offset!");
 
 // Class KuroMovement.KuroMoveTrigger
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AKuroMoveTrigger : public AActor
 {
 public:
-	ETriggerAreaType                              AreaType;                                          // 0x02A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ETriggerAreaType                              AreaType;                                          // 0x02B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
@@ -120,15 +120,15 @@ public:
 	}
 };
 static_assert(alignof(AKuroMoveTrigger) == 0x000008, "Wrong alignment on AKuroMoveTrigger");
-static_assert(sizeof(AKuroMoveTrigger) == 0x0002B0, "Wrong size on AKuroMoveTrigger");
-static_assert(offsetof(AKuroMoveTrigger, AreaType) == 0x0002A8, "Member 'AKuroMoveTrigger::AreaType' has a wrong offset!");
+static_assert(sizeof(AKuroMoveTrigger) == 0x0002B8, "Wrong size on AKuroMoveTrigger");
+static_assert(offsetof(AKuroMoveTrigger, AreaType) == 0x0002B0, "Member 'AKuroMoveTrigger::AreaType' has a wrong offset!");
 
 // Class KuroMovement.KuroMoveBoxTrigger
-// 0x0008 (0x02B8 - 0x02B0)
+// 0x0008 (0x02C0 - 0x02B8)
 class AKuroMoveBoxTrigger final : public AKuroMoveTrigger
 {
 public:
-	class UBoxComponent*                          BoxCollision;                                      // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBoxComponent*                          BoxCollision;                                      // 0x02B8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -141,16 +141,16 @@ public:
 	}
 };
 static_assert(alignof(AKuroMoveBoxTrigger) == 0x000008, "Wrong alignment on AKuroMoveBoxTrigger");
-static_assert(sizeof(AKuroMoveBoxTrigger) == 0x0002B8, "Wrong size on AKuroMoveBoxTrigger");
-static_assert(offsetof(AKuroMoveBoxTrigger, BoxCollision) == 0x0002B0, "Member 'AKuroMoveBoxTrigger::BoxCollision' has a wrong offset!");
+static_assert(sizeof(AKuroMoveBoxTrigger) == 0x0002C0, "Wrong size on AKuroMoveBoxTrigger");
+static_assert(offsetof(AKuroMoveBoxTrigger, BoxCollision) == 0x0002B8, "Member 'AKuroMoveBoxTrigger::BoxCollision' has a wrong offset!");
 
 // Class KuroMovement.KuroMoveBrushTrigger
-// 0x0010 (0x02C0 - 0x02B0)
+// 0x0010 (0x02C8 - 0x02B8)
 class AKuroMoveBrushTrigger final : public AKuroMoveTrigger
 {
 public:
-	class ABrush*                                 Volume;                                            // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USceneComponent*                        Root;                                              // 0x02B8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ABrush*                                 Volume;                                            // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USceneComponent*                        Root;                                              // 0x02C0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -163,16 +163,17 @@ public:
 	}
 };
 static_assert(alignof(AKuroMoveBrushTrigger) == 0x000008, "Wrong alignment on AKuroMoveBrushTrigger");
-static_assert(sizeof(AKuroMoveBrushTrigger) == 0x0002C0, "Wrong size on AKuroMoveBrushTrigger");
-static_assert(offsetof(AKuroMoveBrushTrigger, Volume) == 0x0002B0, "Member 'AKuroMoveBrushTrigger::Volume' has a wrong offset!");
-static_assert(offsetof(AKuroMoveBrushTrigger, Root) == 0x0002B8, "Member 'AKuroMoveBrushTrigger::Root' has a wrong offset!");
+static_assert(sizeof(AKuroMoveBrushTrigger) == 0x0002C8, "Wrong size on AKuroMoveBrushTrigger");
+static_assert(offsetof(AKuroMoveBrushTrigger, Volume) == 0x0002B8, "Member 'AKuroMoveBrushTrigger::Volume' has a wrong offset!");
+static_assert(offsetof(AKuroMoveBrushTrigger, Root) == 0x0002C0, "Member 'AKuroMoveBrushTrigger::Root' has a wrong offset!");
 
 // Class KuroMovement.KuroMovementBPLibrary
 // 0x0000 (0x0030 - 0x0030)
 class UKuroMovementBPLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	static bool KuroSki(float DeltaTime, class UCharacterMovementComponent* CharMoveComp, const struct FVector& PrevBlockNormal, const struct FVector& Direction, const struct FVector& SpeedParams, float IgnoreStepHeight, class UCurveFloat* SpeedReduceCurve);
+	static bool KuroRoll(float DeltaSeconds, class UCharacterMovementComponent* CharMoveComp, float TargetSpeed, float Friction, float AccelOnGround, struct FVector* FloorNormal, float Gravity, float StepUpHeight, float MaxSpeed);
+	static int32 KuroSki(float DeltaTime, class UCharacterMovementComponent* CharMoveComp, const struct FVector& PrevBlockNormal, const struct FVector& Direction, const struct FVector& SpeedParams, float IgnoreStepHeight, class UCurveFloat* SpeedReduceCurve);
 	static bool KuroSoar(float DeltaSeconds, class UCharacterMovementComponent* CharMoveComp, float AirFriction, float Aerodynamics, const struct FVector& Gravity, const struct FVector& SoarPlaneNormal);
 
 public:
@@ -189,12 +190,12 @@ static_assert(alignof(UKuroMovementBPLibrary) == 0x000008, "Wrong alignment on U
 static_assert(sizeof(UKuroMovementBPLibrary) == 0x000030, "Wrong size on UKuroMovementBPLibrary");
 
 // Class KuroMovement.KuroMoveTriggerController
-// 0x0020 (0x02C8 - 0x02A8)
+// 0x0020 (0x02D0 - 0x02B0)
 class AKuroMoveTriggerController final : public AInfo
 {
 public:
-	FMulticastInlineDelegateProperty_             Callback;                                          // 0x02A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TArray<struct FOverlapActorRecord>            Records;                                           // 0x02B8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	FMulticastInlineDelegateProperty_             Callback;                                          // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TArray<struct FOverlapActorRecord>            Records;                                           // 0x02C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 
 public:
 	static void RegisterController(class AKuroMoveTriggerController* ControllerPtr);
@@ -213,9 +214,9 @@ public:
 	}
 };
 static_assert(alignof(AKuroMoveTriggerController) == 0x000008, "Wrong alignment on AKuroMoveTriggerController");
-static_assert(sizeof(AKuroMoveTriggerController) == 0x0002C8, "Wrong size on AKuroMoveTriggerController");
-static_assert(offsetof(AKuroMoveTriggerController, Callback) == 0x0002A8, "Member 'AKuroMoveTriggerController::Callback' has a wrong offset!");
-static_assert(offsetof(AKuroMoveTriggerController, Records) == 0x0002B8, "Member 'AKuroMoveTriggerController::Records' has a wrong offset!");
+static_assert(sizeof(AKuroMoveTriggerController) == 0x0002D0, "Wrong size on AKuroMoveTriggerController");
+static_assert(offsetof(AKuroMoveTriggerController, Callback) == 0x0002B0, "Member 'AKuroMoveTriggerController::Callback' has a wrong offset!");
+static_assert(offsetof(AKuroMoveTriggerController, Records) == 0x0002C0, "Member 'AKuroMoveTriggerController::Records' has a wrong offset!");
 
 }
 

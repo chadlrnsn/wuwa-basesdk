@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // Class KuroEffectMakerRuntime.KuroEffectProxyActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AKuroEffectProxyActor final : public AActor
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B0[0x8];                                      // 0x02B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34,7 +34,7 @@ public:
 	}
 };
 static_assert(alignof(AKuroEffectProxyActor) == 0x000008, "Wrong alignment on AKuroEffectProxyActor");
-static_assert(sizeof(AKuroEffectProxyActor) == 0x0002B0, "Wrong size on AKuroEffectProxyActor");
+static_assert(sizeof(AKuroEffectProxyActor) == 0x0002B8, "Wrong size on AKuroEffectProxyActor");
 
 }
 

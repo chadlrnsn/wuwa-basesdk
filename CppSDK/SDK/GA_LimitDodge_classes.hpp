@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "GA_Passive_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "GA_Passive_classes.hpp"
 
 
 namespace SDK
@@ -28,9 +28,9 @@ public:
 	struct FTransform                             Transform;                                         // 0x0570(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_GA_LimitDodge(int32 EntryPoint);
-	void K2_ActivateAbility();
 	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void ExecuteUbergraph_GA_LimitDodge(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

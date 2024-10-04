@@ -46,29 +46,29 @@ public:
 	int64                                         ServerID;                                          // 0x06A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie(int32 EntryPoint);
-	void S____S(int32 _SID, class AActor* Entity);
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
-	void OnCompleted_5D118C384AE61F1C80292E81DEEC160B();
-	void OnBlendOut_5D118C384AE61F1C80292E81DEEC160B();
-	void OnInterrupted_5D118C384AE61F1C80292E81DEEC160B();
-	void OnCancelled_5D118C384AE61F1C80292E81DEEC160B();
-	void OnTick_5D118C384AE61F1C80292E81DEEC160B();
-	void OnCompleted_5D118C384AE61F1C80292E81908403EF();
-	void OnBlendOut_5D118C384AE61F1C80292E81908403EF();
-	void OnInterrupted_5D118C384AE61F1C80292E81908403EF();
-	void OnCancelled_5D118C384AE61F1C80292E81908403EF();
-	void OnTick_5D118C384AE61F1C80292E81908403EF();
-	void OnFinish_A56FA84F4FE577F6C95DA6813551A97C();
-	void Removed_34F9BAE944891AC1C495D9AB9F1436CD(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A3C3F21C2A(const struct FGameplayTag& Tag);
-	void ___apn(int32 _aID_0, struct FSVisionData* _apn_0);
-	void ______ID(int32 Param______0, class FName* Param______1);
-	void ____Skill_ID(class FName* Skill_ID);
-	void _____a(class AActor* Entity, int32 _SID);
-	void _r_____1P_(int32* MaterialDataID_0);
 	void _r______P_(int32* MaterialDataID_0);
+	void _r_____1P_(int32* MaterialDataID_0);
+	void _____a(class AActor* Entity, int32 _SID);
+	void ____Skill_ID(class FName* Skill_ID);
+	void ______ID(int32 Param______0, class FName* Param______1);
+	void OnFinish_A56FA84F4FE577F6C95DA6813551A97C();
+	void OnTick_5D118C384AE61F1C80292E81908403EF();
+	void OnCancelled_5D118C384AE61F1C80292E81908403EF();
+	void OnInterrupted_5D118C384AE61F1C80292E81908403EF();
+	void OnBlendOut_5D118C384AE61F1C80292E81908403EF();
+	void OnCompleted_5D118C384AE61F1C80292E81908403EF();
+	void ___apn(int32 _aID_0, struct FSVisionData* _apn_0);
+	void Added_21071CB943CD992BF8EFD6A3C3F21C2A(const struct FGameplayTag& Tag);
+	void Removed_34F9BAE944891AC1C495D9AB9F1436CD(const struct FGameplayTag& Tag);
+	void OnTick_5D118C384AE61F1C80292E81DEEC160B();
+	void OnCancelled_5D118C384AE61F1C80292E81DEEC160B();
+	void OnInterrupted_5D118C384AE61F1C80292E81DEEC160B();
+	void OnBlendOut_5D118C384AE61F1C80292E81DEEC160B();
+	void OnCompleted_5D118C384AE61F1C80292E81DEEC160B();
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void S____S(int32 _SID, class AActor* Entity);
+	void ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

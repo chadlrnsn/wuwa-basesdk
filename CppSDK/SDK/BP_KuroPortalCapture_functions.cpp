@@ -38,7 +38,7 @@ void ABP_KuroPortalCapture_C::RoleTeleport__DelegateSignature(const struct FVect
 
 
 // Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.ExecuteUbergraph_BP_KuroPortalCapture
-// (Final, UbergraphFunction, HasDefaults)
+// (Final, UbergraphFunction)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -54,20 +54,6 @@ void ABP_KuroPortalCapture_C::ExecuteUbergraph_BP_KuroPortalCapture(int32 EntryP
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_KuroPortalCapture_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroPortalCapture_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -91,45 +77,15 @@ void ABP_KuroPortalCapture_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.BndEvt__BP_Portal_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature
-// (HasOutParams, BlueprintEvent)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UPrimitiveComponent*              OtherComp                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   OtherBodyIndex                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bFromSweep                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FHitResult                       SweepResult                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_KuroPortalCapture_C::BndEvt__BP_Portal_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+void ABP_KuroPortalCapture_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroPortalCapture_C", "BndEvt__BP_Portal_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature");
-
-	Params::BP_KuroPortalCapture_C_BndEvt__BP_Portal_Box_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.CameraCacl
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_KuroPortalCapture_C::CameraCacl()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroPortalCapture_C", "CameraCacl");
+		Func = Class->GetFunction("BP_KuroPortalCapture_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -179,26 +135,6 @@ void ABP_KuroPortalCapture_C::SetPair(class AActor* Pair)
 }
 
 
-// Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.SetCaptureTextureTarget
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UTextureRenderTarget2D*           Rendertarget                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_KuroPortalCapture_C::SetCaptureTextureTarget(class UTextureRenderTarget2D* Rendertarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroPortalCapture_C", "SetCaptureTextureTarget");
-
-	Params::BP_KuroPortalCapture_C_SetCaptureTextureTarget Parms{};
-
-	Parms.Rendertarget = Rendertarget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.SetPbDataId
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -237,6 +173,47 @@ void ABP_KuroPortalCapture_C::GetPortalTrans(struct FTransform* NewParam)
 
 	if (NewParam != nullptr)
 		*NewParam = std::move(Parms.NewParam);
+}
+
+
+// Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.GetPair
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ABP_KuroPortalCapture_C*          Target_0                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_KuroPortalCapture_C::GetPair(class ABP_KuroPortalCapture_C** Target_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroPortalCapture_C", "GetPair");
+
+	Params::BP_KuroPortalCapture_C_GetPair Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Target_0 != nullptr)
+		*Target_0 = Parms.Target_0;
+}
+
+
+// Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.ToggleDebug
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_KuroPortalCapture_C::ToggleDebug(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroPortalCapture_C", "ToggleDebug");
+
+	Params::BP_KuroPortalCapture_C_ToggleDebug Parms{};
+
+	Parms.Enable = Enable;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

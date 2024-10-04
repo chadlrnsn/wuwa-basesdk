@@ -24,7 +24,7 @@ namespace SDK
 class UABP_Base_Sword_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_3123[0x8];                                     // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A8[0x8];                                      // 0x03A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x03B8(0x0038)()
 	struct FAnimNode_PhyCloth                     AnimGraphNode_PhyCloth;                            // 0x03F0(0x0440)()
@@ -33,8 +33,8 @@ public:
 	struct FAnimNode_RefPose                      AnimGraphNode_LocalRefPose;                        // 0x0870(0x0018)()
 
 public:
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void ExecuteUbergraph_ABP_Base_Sword(int32 EntryPoint);
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
 
 public:
 	static class UClass* StaticClass()

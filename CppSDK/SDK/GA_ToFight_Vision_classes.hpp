@@ -26,15 +26,15 @@ public:
 	class ATsBaseCharacter_C*                     ___;                                               // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_ToFight_Vision(int32 EntryPoint);
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
-	void OnCompleted_5D118C384AE61F1C80292E8161096401();
-	void OnBlendOut_5D118C384AE61F1C80292E8161096401();
-	void OnInterrupted_5D118C384AE61F1C80292E8161096401();
-	void OnCancelled_5D118C384AE61F1C80292E8161096401();
-	void OnTick_5D118C384AE61F1C80292E8161096401();
 	void ___apn(class ATsBaseCharacter_C* Entity, bool* __0, struct FSVisionData* __L);
+	void OnTick_5D118C384AE61F1C80292E8161096401();
+	void OnCancelled_5D118C384AE61F1C80292E8161096401();
+	void OnInterrupted_5D118C384AE61F1C80292E8161096401();
+	void OnBlendOut_5D118C384AE61F1C80292E8161096401();
+	void OnCompleted_5D118C384AE61F1C80292E8161096401();
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_ToFight_Vision(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

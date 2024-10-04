@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "SCameraModifier_Settings_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GA_Base_classes.hpp"
 
 
@@ -33,16 +33,16 @@ public:
 	bool                                          ____r;                                             // 0x0698(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_GA_Common_QTEnew(int32 EntryPoint);
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
-	void EventReceived_E1111D36446963FA74DB968DBE3C7127(const struct FGameplayEventData& Payload);
-	void OnCompleted_5D118C384AE61F1C80292E814F2D26E4();
-	void OnBlendOut_5D118C384AE61F1C80292E814F2D26E4();
-	void OnInterrupted_5D118C384AE61F1C80292E814F2D26E4();
-	void OnCancelled_5D118C384AE61F1C80292E814F2D26E4();
-	void OnTick_5D118C384AE61F1C80292E814F2D26E4();
 	void EventReceived_18B59F5945020DB23C42FD88C6BCD2BE(const struct FGameplayEventData& Payload);
+	void OnTick_5D118C384AE61F1C80292E814F2D26E4();
+	void OnCancelled_5D118C384AE61F1C80292E814F2D26E4();
+	void OnInterrupted_5D118C384AE61F1C80292E814F2D26E4();
+	void OnBlendOut_5D118C384AE61F1C80292E814F2D26E4();
+	void OnCompleted_5D118C384AE61F1C80292E814F2D26E4();
+	void EventReceived_E1111D36446963FA74DB968DBE3C7127(const struct FGameplayEventData& Payload);
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_Common_QTEnew(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

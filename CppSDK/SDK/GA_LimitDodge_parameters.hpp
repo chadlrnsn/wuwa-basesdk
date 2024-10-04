@@ -16,6 +16,17 @@
 namespace SDK::Params
 {
 
+// Function GA_LimitDodge.GA_LimitDodge_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_LimitDodge_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_LimitDodge_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_LimitDodge_C_K2_OnEndAbility");
+static_assert(sizeof(GA_LimitDodge_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_LimitDodge_C_K2_OnEndAbility");
+static_assert(offsetof(GA_LimitDodge_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_LimitDodge_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_LimitDodge.GA_LimitDodge_C.ExecuteUbergraph_GA_LimitDodge
 // 0x0150 (0x0150 - 0x0000)
 struct GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge final
@@ -110,17 +121,6 @@ static_assert(offsetof(GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge, CallFunc_
 static_assert(offsetof(GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge, CallFunc_CreateBulletFromGA_ReturnValue) == 0x000138, "Member 'GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge::CallFunc_CreateBulletFromGA_ReturnValue' has a wrong offset!");
 static_assert(offsetof(GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge, CallFunc_CreateBulletFromGA_ReturnValue_1) == 0x00013C, "Member 'GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge::CallFunc_CreateBulletFromGA_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge, CallFunc_Conv_IntToString_ReturnValue_3) == 0x000140, "Member 'GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge::CallFunc_Conv_IntToString_ReturnValue_3' has a wrong offset!");
-
-// Function GA_LimitDodge.GA_LimitDodge_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_LimitDodge_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_LimitDodge_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_LimitDodge_C_K2_OnEndAbility");
-static_assert(sizeof(GA_LimitDodge_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_LimitDodge_C_K2_OnEndAbility");
-static_assert(offsetof(GA_LimitDodge_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_LimitDodge_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
 }
 

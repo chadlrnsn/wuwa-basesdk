@@ -17,6 +17,75 @@
 namespace SDK::Params
 {
 
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.>:©¶!‹
+// 0x0008 (0x0008 - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C________3 final
+{
+public:
+	bool                                          CallFunc_GetIsInGame_ReturnValue;                  // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_____ID___ID;                              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_______) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_______");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_______) == 0x000008, "Wrong size on GA_Destroy_Bianshen_Vision_C_______");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_______, CallFunc_GetIsInGame_ReturnValue) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_______::CallFunc_GetIsInGame_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_______, CallFunc_____ID___ID) == 0x000004, "Member 'GA_Destroy_Bianshen_Vision_C_______::CallFunc_____ID___ID' has a wrong offset!");
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3CA2D8247
+// 0x000C (0x000C - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247 final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247) == 0x00000C, "Wrong size on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247, Tag) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247::Tag' has a wrong offset!");
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3567B001E
+// 0x000C (0x000C - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E) == 0x00000C, "Wrong size on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E, Tag) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E::Tag' has a wrong offset!");
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD881A98D764
+// 0x00B8 (0x00B8 - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764 final
+{
+public:
+	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764) == 0x000008, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764) == 0x0000B8, "Wrong size on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764, Payload) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764::Payload' has a wrong offset!");
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD88740B0A0F
+// 0x00B8 (0x00B8 - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F final
+{
+public:
+	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F) == 0x000008, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F) == 0x0000B8, "Wrong size on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F, Payload) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F::Payload' has a wrong offset!");
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.ExecuteUbergraph_GA_Destroy_Bianshen_Vision
 // 0x05D0 (0x05D0 - 0x0000)
 struct GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision final
@@ -167,75 +236,6 @@ static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_
 static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision, CallFunc_WaitGameplayTagAdd_ReturnValue_1) == 0x0005C0, "Member 'GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision::CallFunc_WaitGameplayTagAdd_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision, CallFunc_IsValid_ReturnValue_5) == 0x0005C8, "Member 'GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision::CallFunc_IsValid_ReturnValue_5' has a wrong offset!");
 static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision, CallFunc_IsValid_ReturnValue_6) == 0x0005C9, "Member 'GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision::CallFunc_IsValid_ReturnValue_6' has a wrong offset!");
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD88740B0A0F
-// 0x00B8 (0x00B8 - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F final
-{
-public:
-	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F) == 0x000008, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F) == 0x0000B8, "Wrong size on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F, Payload) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F::Payload' has a wrong offset!");
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD881A98D764
-// 0x00B8 (0x00B8 - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764 final
-{
-public:
-	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764) == 0x000008, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764) == 0x0000B8, "Wrong size on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764, Payload) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764::Payload' has a wrong offset!");
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3567B001E
-// 0x000C (0x000C - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E) == 0x00000C, "Wrong size on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E, Tag) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E::Tag' has a wrong offset!");
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3CA2D8247
-// 0x000C (0x000C - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247 final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247) == 0x00000C, "Wrong size on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247, Tag) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247::Tag' has a wrong offset!");
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.>:©¶!‹
-// 0x0008 (0x0008 - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C________3 final
-{
-public:
-	bool                                          CallFunc_GetIsInGame_ReturnValue;                  // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_____ID___ID;                              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_______) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_______");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_______) == 0x000008, "Wrong size on GA_Destroy_Bianshen_Vision_C_______");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_______, CallFunc_GetIsInGame_ReturnValue) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_______::CallFunc_GetIsInGame_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_______, CallFunc_____ID___ID) == 0x000004, "Member 'GA_Destroy_Bianshen_Vision_C_______::CallFunc_____ID___ID' has a wrong offset!");
 
 }
 

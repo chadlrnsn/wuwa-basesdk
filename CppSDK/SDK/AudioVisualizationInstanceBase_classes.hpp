@@ -19,13 +19,13 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass AudioVisualizationInstanceBase.AudioVisualizationInstanceBase_C
-// 0x0020 (0x02C8 - 0x02A8)
+// 0x0020 (0x02D0 - 0x02B0)
 class AAudioVisualizationInstanceBase_C final : public AActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class FString                                 Identifier;                                        // 0x02B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class FString                                 Identifier;                                        // 0x02C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_AudioVisualizationInstanceBase(int32 EntryPoint);
@@ -70,10 +70,10 @@ public:
 	}
 };
 static_assert(alignof(AAudioVisualizationInstanceBase_C) == 0x000008, "Wrong alignment on AAudioVisualizationInstanceBase_C");
-static_assert(sizeof(AAudioVisualizationInstanceBase_C) == 0x0002C8, "Wrong size on AAudioVisualizationInstanceBase_C");
-static_assert(offsetof(AAudioVisualizationInstanceBase_C, UberGraphFrame) == 0x0002A8, "Member 'AAudioVisualizationInstanceBase_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(AAudioVisualizationInstanceBase_C, DefaultSceneRoot) == 0x0002B0, "Member 'AAudioVisualizationInstanceBase_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(AAudioVisualizationInstanceBase_C, Identifier) == 0x0002B8, "Member 'AAudioVisualizationInstanceBase_C::Identifier' has a wrong offset!");
+static_assert(sizeof(AAudioVisualizationInstanceBase_C) == 0x0002D0, "Wrong size on AAudioVisualizationInstanceBase_C");
+static_assert(offsetof(AAudioVisualizationInstanceBase_C, UberGraphFrame) == 0x0002B0, "Member 'AAudioVisualizationInstanceBase_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(AAudioVisualizationInstanceBase_C, DefaultSceneRoot) == 0x0002B8, "Member 'AAudioVisualizationInstanceBase_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(AAudioVisualizationInstanceBase_C, Identifier) == 0x0002C0, "Member 'AAudioVisualizationInstanceBase_C::Identifier' has a wrong offset!");
 
 }
 

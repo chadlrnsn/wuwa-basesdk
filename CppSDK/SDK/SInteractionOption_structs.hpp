@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "EinteractionIconType_structs.hpp"
 #include "EInteractOptionType_structs.hpp"
-#include "SInteractionLimit_structs.hpp"
 #include "SQuestRequest_structs.hpp"
+#include "SInteractionLimit_structs.hpp"
+#include "EinteractionIconType_structs.hpp"
 
 
 namespace SDK

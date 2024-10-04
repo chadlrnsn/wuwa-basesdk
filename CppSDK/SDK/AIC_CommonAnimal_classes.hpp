@@ -26,8 +26,8 @@ public:
 	class ATsBaseCharacter_C*                     _r__;                                              // 0x03E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_AIC_CommonAnimal(int32 EntryPoint);
 	void OnStart();
+	void ExecuteUbergraph_AIC_CommonAnimal(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

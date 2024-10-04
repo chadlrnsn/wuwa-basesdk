@@ -11,11 +11,11 @@
 #include "Basic.hpp"
 
 #include "SMaterialControllerColorParameter_structs.hpp"
-#include "ETrailingAttachType_structs.hpp"
+#include "KuroCurve_structs.hpp"
 #include "SMaterialControllerFloatParameter_structs.hpp"
+#include "ETrailingAttachType_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
-#include "KuroCurve_structs.hpp"
 
 
 namespace SDK

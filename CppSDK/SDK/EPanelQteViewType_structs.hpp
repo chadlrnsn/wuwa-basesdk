@@ -15,12 +15,14 @@ namespace SDK
 {
 
 // UserDefinedEnum EPanelQteViewType.EPanelQteViewType
-// NumValues: 0x0003
+// NumValues: 0x0005
 enum class EPanelQteViewType : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator3                           = 1,
-	EPanelQteViewType_MAX                    = 2,
+	NewEnumerator4                           = 2,
+	NewEnumerator5                           = 3,
+	EPanelQteViewType_MAX                    = 4,
 };
 
 }

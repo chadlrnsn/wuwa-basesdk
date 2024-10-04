@@ -17,26 +17,26 @@
 namespace SDK
 {
 
-// Function ANS_Bianshenweizhi.ANS_Bianshenweizhi_C.K2_NotifyBegin
+// Function ANS_Bianshenweizhi.ANS_Bianshenweizhi_C.K2_NotifyTick
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   FrameDeltaTime                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool UANS_Bianshenweizhi_C::K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration)
+bool UANS_Bianshenweizhi_C::K2_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ANS_Bianshenweizhi_C", "K2_NotifyBegin");
+		Func = Class->GetFunction("ANS_Bianshenweizhi_C", "K2_NotifyTick");
 
-	Params::ANS_Bianshenweizhi_C_K2_NotifyBegin Parms{};
+	Params::ANS_Bianshenweizhi_C_K2_NotifyTick Parms{};
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
-	Parms.TotalDuration = TotalDuration;
+	Parms.FrameDeltaTime = FrameDeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -69,26 +69,26 @@ bool UANS_Bianshenweizhi_C::K2_NotifyEnd(class USkeletalMeshComponent* MeshComp,
 }
 
 
-// Function ANS_Bianshenweizhi.ANS_Bianshenweizhi_C.K2_NotifyTick
+// Function ANS_Bianshenweizhi.ANS_Bianshenweizhi_C.K2_NotifyBegin
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   FrameDeltaTime                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool UANS_Bianshenweizhi_C::K2_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime)
+bool UANS_Bianshenweizhi_C::K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ANS_Bianshenweizhi_C", "K2_NotifyTick");
+		Func = Class->GetFunction("ANS_Bianshenweizhi_C", "K2_NotifyBegin");
 
-	Params::ANS_Bianshenweizhi_C_K2_NotifyTick Parms{};
+	Params::ANS_Bianshenweizhi_C_K2_NotifyBegin Parms{};
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
-	Parms.FrameDeltaTime = FrameDeltaTime;
+	Parms.TotalDuration = TotalDuration;
 
 	UObject::ProcessEvent(Func, &Parms);
 

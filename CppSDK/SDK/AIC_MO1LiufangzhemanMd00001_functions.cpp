@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function AIC_MO1LiufangzhemanMd00001.AIC_MO1LiufangzhemanMd00001_C.ExecuteUbergraph_AIC_MO1LiufangzhemanMd00001
-// (Final, UbergraphFunction)
+// Function AIC_MO1LiufangzhemanMd00001.AIC_MO1LiufangzhemanMd00001_C.Ùûª€ýÄ
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void AAIC_MO1LiufangzhemanMd00001_C::ExecuteUbergraph_AIC_MO1LiufangzhemanMd00001(int32 EntryPoint)
+void AAIC_MO1LiufangzhemanMd00001_C::_______1(bool bContent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_MO1LiufangzhemanMd00001_C", "ExecuteUbergraph_AIC_MO1LiufangzhemanMd00001");
+		Func = Class->GetFunction("AIC_MO1LiufangzhemanMd00001_C", "Ùûª€ýÄ");
 
-	Params::AIC_MO1LiufangzhemanMd00001_C_ExecuteUbergraph_AIC_MO1LiufangzhemanMd00001 Parms{};
+	Params::AIC_MO1LiufangzhemanMd00001_C________1 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bContent = bContent;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -51,21 +51,21 @@ void AAIC_MO1LiufangzhemanMd00001_C::OnStart()
 }
 
 
-// Function AIC_MO1LiufangzhemanMd00001.AIC_MO1LiufangzhemanMd00001_C.Ùûª€ýÄ
-// (BlueprintCallable, BlueprintEvent)
+// Function AIC_MO1LiufangzhemanMd00001.AIC_MO1LiufangzhemanMd00001_C.ExecuteUbergraph_AIC_MO1LiufangzhemanMd00001
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AAIC_MO1LiufangzhemanMd00001_C::_______1(bool bContent)
+void AAIC_MO1LiufangzhemanMd00001_C::ExecuteUbergraph_AIC_MO1LiufangzhemanMd00001(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_MO1LiufangzhemanMd00001_C", "Ùûª€ýÄ");
+		Func = Class->GetFunction("AIC_MO1LiufangzhemanMd00001_C", "ExecuteUbergraph_AIC_MO1LiufangzhemanMd00001");
 
-	Params::AIC_MO1LiufangzhemanMd00001_C________1 Parms{};
+	Params::AIC_MO1LiufangzhemanMd00001_C_ExecuteUbergraph_AIC_MO1LiufangzhemanMd00001 Parms{};
 
-	Parms.bContent = bContent;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

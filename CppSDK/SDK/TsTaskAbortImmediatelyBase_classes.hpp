@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "AIModule_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_TsTaskAbortImmediatelyBase(int32 EntryPoint);
 	void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ExecuteUbergraph_TsTaskAbortImmediatelyBase(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

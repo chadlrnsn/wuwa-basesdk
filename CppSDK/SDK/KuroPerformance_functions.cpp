@@ -81,6 +81,86 @@ bool UKuroPerformanceBPLibrary::BoostGPU(int32 FrequencyPercentage, int32 BoostD
 }
 
 
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetBoostFlags
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bCPU                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWithMemory                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EKuroBoostFlags                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EKuroBoostFlags UKuroPerformanceBPLibrary::GetBoostFlags(bool bCPU, bool bWithMemory)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetBoostFlags");
+
+	Params::KuroPerformanceBPLibrary_GetBoostFlags Parms{};
+
+	Parms.bCPU = bCPU;
+	Parms.bWithMemory = bWithMemory;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetCurrentActivePerformanceAdaptiveModuleName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKuroPerformanceBPLibrary::GetCurrentActivePerformanceAdaptiveModuleName()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetCurrentActivePerformanceAdaptiveModuleName");
+
+	Params::KuroPerformanceBPLibrary_GetCurrentActivePerformanceAdaptiveModuleName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetCurrentAndroidDeviceRequireAdaptiveModule
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPerformanceBPLibrary::GetCurrentAndroidDeviceRequireAdaptiveModule()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetCurrentAndroidDeviceRequireAdaptiveModule");
+
+	Params::KuroPerformanceBPLibrary_GetCurrentAndroidDeviceRequireAdaptiveModule Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroPerformance.KuroPerformanceBPLibrary.GetCurrentTemperatureData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -106,19 +186,19 @@ void UKuroPerformanceBPLibrary::GetCurrentTemperatureData(const TDelegate<void(b
 }
 
 
-// Function KuroPerformance.KuroPerformanceBPLibrary.GetTickedPerformanceReportAndAdvice
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetInitReturnMessage
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FKuroPerformanceReport           PerformanceReport                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroPerformanceBPLibrary::GetTickedPerformanceReportAndAdvice(struct FKuroPerformanceReport* PerformanceReport)
+class FString UKuroPerformanceBPLibrary::GetInitReturnMessage()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetTickedPerformanceReportAndAdvice");
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetInitReturnMessage");
 
-	Params::KuroPerformanceBPLibrary_GetTickedPerformanceReportAndAdvice Parms{};
+	Params::KuroPerformanceBPLibrary_GetInitReturnMessage Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -127,8 +207,316 @@ void UKuroPerformanceBPLibrary::GetTickedPerformanceReportAndAdvice(struct FKuro
 
 	Func->FunctionFlags = Flgs;
 
-	if (PerformanceReport != nullptr)
-		*PerformanceReport = std::move(Parms.PerformanceReport);
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetMaxBoostDurationInSecondForCPU
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPerformanceBPLibrary::GetMaxBoostDurationInSecondForCPU()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetMaxBoostDurationInSecondForCPU");
+
+	Params::KuroPerformanceBPLibrary_GetMaxBoostDurationInSecondForCPU Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetMaxBoostDurationInSecondForGPU
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPerformanceBPLibrary::GetMaxBoostDurationInSecondForGPU()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetMaxBoostDurationInSecondForGPU");
+
+	Params::KuroPerformanceBPLibrary_GetMaxBoostDurationInSecondForGPU Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetPerformanceAdaptiveStatus
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// EKuroModuleStatus                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EKuroModuleStatus UKuroPerformanceBPLibrary::GetPerformanceAdaptiveStatus()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetPerformanceAdaptiveStatus");
+
+	Params::KuroPerformanceBPLibrary_GetPerformanceAdaptiveStatus Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetRegisterGameThreadId
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPerformanceBPLibrary::GetRegisterGameThreadId()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetRegisterGameThreadId");
+
+	Params::KuroPerformanceBPLibrary_GetRegisterGameThreadId Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetRegisterRenderThreadId
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPerformanceBPLibrary::GetRegisterRenderThreadId()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetRegisterRenderThreadId");
+
+	Params::KuroPerformanceBPLibrary_GetRegisterRenderThreadId Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetRegisterRHIThreadId
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPerformanceBPLibrary::GetRegisterRHIThreadId()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetRegisterRHIThreadId");
+
+	Params::KuroPerformanceBPLibrary_GetRegisterRHIThreadId Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetSupportedBoostFlag
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// EKuroBoostFlags                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EKuroBoostFlags UKuroPerformanceBPLibrary::GetSupportedBoostFlag()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetSupportedBoostFlag");
+
+	Params::KuroPerformanceBPLibrary_GetSupportedBoostFlag Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.GetTickedPerformanceReportAndAdvice
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(const struct FKuroPerformanceReport& PerformanceReport)>ReportDelegate                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UKuroPerformanceBPLibrary::GetTickedPerformanceReportAndAdvice(const TDelegate<void(const struct FKuroPerformanceReport& PerformanceReport)>& ReportDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "GetTickedPerformanceReportAndAdvice");
+
+	Params::KuroPerformanceBPLibrary_GetTickedPerformanceReportAndAdvice Parms{};
+
+	Parms.ReportDelegate = ReportDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.InitGameConfig
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FKuroGameConfig                  GameConfig                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::InitGameConfig(const struct FKuroGameConfig& GameConfig)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "InitGameConfig");
+
+	Params::KuroPerformanceBPLibrary_InitGameConfig Parms{};
+
+	Parms.GameConfig = std::move(GameConfig);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.InitGameConfigFPS
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   FPS                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::InitGameConfigFPS(int32 FPS)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "InitGameConfigFPS");
+
+	Params::KuroPerformanceBPLibrary_InitGameConfigFPS Parms{};
+
+	Parms.FPS = FPS;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.InitGameConfigSceneTransition
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Enable                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::InitGameConfigSceneTransition(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "InitGameConfigSceneTransition");
+
+	Params::KuroPerformanceBPLibrary_InitGameConfigSceneTransition Parms{};
+
+	Parms.Enable = Enable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.IsPerformanceAdaptiveInitialize
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::IsPerformanceAdaptiveInitialize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "IsPerformanceAdaptiveInitialize");
+
+	Params::KuroPerformanceBPLibrary_IsPerformanceAdaptiveInitialize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -145,6 +533,56 @@ bool UKuroPerformanceBPLibrary::IsPerformanceAdaptiveRunning()
 		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "IsPerformanceAdaptiveRunning");
 
 	Params::KuroPerformanceBPLibrary_IsPerformanceAdaptiveRunning Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.IsPredictCPUWorkloadSupported
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::IsPredictCPUWorkloadSupported()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "IsPredictCPUWorkloadSupported");
+
+	Params::KuroPerformanceBPLibrary_IsPredictCPUWorkloadSupported Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.IsPredictGPUWorkloadSupported
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::IsPredictGPUWorkloadSupported()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "IsPredictGPUWorkloadSupported");
+
+	Params::KuroPerformanceBPLibrary_IsPredictGPUWorkloadSupported Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -175,6 +613,118 @@ bool UKuroPerformanceBPLibrary::PredictWorkload(int32 CPULoadScale, int32 GPULoa
 
 	Parms.CPULoadScale = CPULoadScale;
 	Parms.GPULoadScale = GPULoadScale;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.QueryBoostCPU
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FKuroBoostQueryResult            BoostQueryResult                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKuroPerformanceBPLibrary::QueryBoostCPU(struct FKuroBoostQueryResult* BoostQueryResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "QueryBoostCPU");
+
+	Params::KuroPerformanceBPLibrary_QueryBoostCPU Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (BoostQueryResult != nullptr)
+		*BoostQueryResult = std::move(Parms.BoostQueryResult);
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.QueryBoostGPU
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FKuroBoostQueryResult            BoostQueryResult                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKuroPerformanceBPLibrary::QueryBoostGPU(struct FKuroBoostQueryResult* BoostQueryResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "QueryBoostGPU");
+
+	Params::KuroPerformanceBPLibrary_QueryBoostGPU Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (BoostQueryResult != nullptr)
+		*BoostQueryResult = std::move(Parms.BoostQueryResult);
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.RegisterCriticalThreads
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   GameTid                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   RenderTid                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   RHITid                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::RegisterCriticalThreads(int32 GameTid, int32 RenderTid, int32 RHITid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "RegisterCriticalThreads");
+
+	Params::KuroPerformanceBPLibrary_RegisterCriticalThreads Parms{};
+
+	Parms.GameTid = GameTid;
+	Parms.RenderTid = RenderTid;
+	Parms.RHITid = RHITid;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.SetForeground
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bForeGround                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::SetForeground(bool bForeGround)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "SetForeground");
+
+	Params::KuroPerformanceBPLibrary_SetForeground Parms{};
+
+	Parms.bForeGround = bForeGround;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -270,6 +820,34 @@ bool UKuroPerformanceBPLibrary::StartPerformanceAdaptiveService(int32 EServiceFl
 }
 
 
+// Function KuroPerformance.KuroPerformanceBPLibrary.StartService
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Service                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::StartService(int32 Service)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "StartService");
+
+	Params::KuroPerformanceBPLibrary_StartService Parms{};
+
+	Parms.Service = Service;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroPerformance.KuroPerformanceBPLibrary.StopPerformanceAdaptiveService
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -286,6 +864,62 @@ bool UKuroPerformanceBPLibrary::StopPerformanceAdaptiveService(int32 EServiceFla
 	Params::KuroPerformanceBPLibrary_StopPerformanceAdaptiveService Parms{};
 
 	Parms.EServiceFlags = EServiceFlags;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.StopService
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Service                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::StopService(int32 Service)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "StopService");
+
+	Params::KuroPerformanceBPLibrary_StopService Parms{};
+
+	Parms.Service = Service;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.SyncRenderingFrameID
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   FrameId                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::SyncRenderingFrameID(int32 FrameId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "SyncRenderingFrameID");
+
+	Params::KuroPerformanceBPLibrary_SyncRenderingFrameID Parms{};
+
+	Parms.FrameId = FrameId;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -323,6 +957,31 @@ int32 UKuroPerformanceBPLibrary::Tick()
 }
 
 
+// Function KuroPerformance.KuroPerformanceBPLibrary.TickPerformanceReport
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPerformanceBPLibrary::TickPerformanceReport()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "TickPerformanceReport");
+
+	Params::KuroPerformanceBPLibrary_TickPerformanceReport Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroPerformance.KuroPerformanceBPLibrary.TickPerfReport
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -336,6 +995,122 @@ int32 UKuroPerformanceBPLibrary::TickPerfReport()
 		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "TickPerfReport");
 
 	Params::KuroPerformanceBPLibrary_TickPerfReport Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.UnregisterCriticalThreads
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   GameTid                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   RenderTid                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   RHITid                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::UnregisterCriticalThreads(int32 GameTid, int32 RenderTid, int32 RHITid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "UnregisterCriticalThreads");
+
+	Params::KuroPerformanceBPLibrary_UnregisterCriticalThreads Parms{};
+
+	Parms.GameTid = GameTid;
+	Parms.RenderTid = RenderTid;
+	Parms.RHITid = RHITid;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.UpdateGameConfig
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FKuroGameConfig                  GameConfig                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::UpdateGameConfig(const struct FKuroGameConfig& GameConfig)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "UpdateGameConfig");
+
+	Params::KuroPerformanceBPLibrary_UpdateGameConfig Parms{};
+
+	Parms.GameConfig = std::move(GameConfig);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.UpdateGameConfigFPS
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   FPS                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::UpdateGameConfigFPS(int32 FPS)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "UpdateGameConfigFPS");
+
+	Params::KuroPerformanceBPLibrary_UpdateGameConfigFPS Parms{};
+
+	Parms.FPS = FPS;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPerformance.KuroPerformanceBPLibrary.UpdateGameConfigSceneTransition
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Enable                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPerformanceBPLibrary::UpdateGameConfigSceneTransition(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroPerformanceBPLibrary", "UpdateGameConfigSceneTransition");
+
+	Params::KuroPerformanceBPLibrary_UpdateGameConfigSceneTransition Parms{};
+
+	Parms.Enable = Enable;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

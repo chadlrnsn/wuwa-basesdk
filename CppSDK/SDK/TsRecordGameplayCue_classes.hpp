@@ -10,23 +10,23 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "KuroAnim_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsRecordGameplayCue.TsRecordGameplayCue_C
-// 0x0020 (0x02C8 - 0x02A8)
+// 0x0020 (0x02D0 - 0x02B0)
 class ATsRecordGameplayCue_C final : public AKuroRecordEffect
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	int32                                         ConfigId;                                          // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                Position0;                                         // 0x02BC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	int32                                         ConfigId;                                          // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                Position0;                                         // 0x02C4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_TsRecordGameplayCue(int32 EntryPoint);
@@ -44,11 +44,11 @@ public:
 	}
 };
 static_assert(alignof(ATsRecordGameplayCue_C) == 0x000008, "Wrong alignment on ATsRecordGameplayCue_C");
-static_assert(sizeof(ATsRecordGameplayCue_C) == 0x0002C8, "Wrong size on ATsRecordGameplayCue_C");
-static_assert(offsetof(ATsRecordGameplayCue_C, UberGraphFrame) == 0x0002A8, "Member 'ATsRecordGameplayCue_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsRecordGameplayCue_C, DefaultSceneRoot) == 0x0002B0, "Member 'ATsRecordGameplayCue_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ATsRecordGameplayCue_C, ConfigId) == 0x0002B8, "Member 'ATsRecordGameplayCue_C::ConfigId' has a wrong offset!");
-static_assert(offsetof(ATsRecordGameplayCue_C, Position0) == 0x0002BC, "Member 'ATsRecordGameplayCue_C::Position0' has a wrong offset!");
+static_assert(sizeof(ATsRecordGameplayCue_C) == 0x0002D0, "Wrong size on ATsRecordGameplayCue_C");
+static_assert(offsetof(ATsRecordGameplayCue_C, UberGraphFrame) == 0x0002B0, "Member 'ATsRecordGameplayCue_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ATsRecordGameplayCue_C, DefaultSceneRoot) == 0x0002B8, "Member 'ATsRecordGameplayCue_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ATsRecordGameplayCue_C, ConfigId) == 0x0002C0, "Member 'ATsRecordGameplayCue_C::ConfigId' has a wrong offset!");
+static_assert(offsetof(ATsRecordGameplayCue_C, Position0) == 0x0002C4, "Member 'ATsRecordGameplayCue_C::Position0' has a wrong offset!");
 
 }
 

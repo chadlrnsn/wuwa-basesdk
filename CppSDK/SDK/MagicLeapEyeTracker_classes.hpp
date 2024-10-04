@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "MagicLeapEyeTracker_structs.hpp"
 #include "Engine_classes.hpp"
+#include "MagicLeapEyeTracker_structs.hpp"
 
 
 namespace SDK

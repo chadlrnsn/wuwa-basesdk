@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass AkiWorld_WP.AkiWorld_WP_C
-// 0x0008 (0x02B8 - 0x02B0)
+// 0x0008 (0x02C0 - 0x02B8)
 class AAkiWorld_WP_C final : public ALevelScriptActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveBeginPlay();
@@ -39,8 +39,8 @@ public:
 	}
 };
 static_assert(alignof(AAkiWorld_WP_C) == 0x000008, "Wrong alignment on AAkiWorld_WP_C");
-static_assert(sizeof(AAkiWorld_WP_C) == 0x0002B8, "Wrong size on AAkiWorld_WP_C");
-static_assert(offsetof(AAkiWorld_WP_C, UberGraphFrame) == 0x0002B0, "Member 'AAkiWorld_WP_C::UberGraphFrame' has a wrong offset!");
+static_assert(sizeof(AAkiWorld_WP_C) == 0x0002C0, "Wrong size on AAkiWorld_WP_C");
+static_assert(offsetof(AAkiWorld_WP_C, UberGraphFrame) == 0x0002B8, "Member 'AAkiWorld_WP_C::UberGraphFrame' has a wrong offset!");
 
 }
 

@@ -51,8 +51,8 @@ public:
 	static int32 CreateBulletFromGA(class ATsBaseCharacter_C* Owner, const class FString& bulletRowName, const struct FTransform& InitialTransform, const class FString& SkillId, bool NeedSync, const struct FVector& TargetLocation, class UObject* __WorldContext);
 	static float CreateBulletForDebug(class ATsBaseCharacter_C* Owner, const class FString& bulletRowName, class UObject* __WorldContext);
 	static class FString GetSpecialBulletToSkillId(const class FString& bulletRowName, const class FString& SkillId, class UObject* __WorldContext);
-	static void DestroySpecifiedBullet(int32 OwnerId, class FName bulletName, bool SummonChild, int32 IncludeTeammate, class UObject* __WorldContext);
 	static int32 GetSpecifiedBulletCount(int32 OwnerId, class FName bulletName, class UObject* __WorldContext);
+	static void DestroySpecifiedBullet(int32 OwnerId, class FName bulletName, bool SummonChild, int32 IncludeTeammate, float Interval, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

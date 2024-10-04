@@ -17,6 +17,39 @@
 namespace SDK::Params
 {
 
+// Function GA_Role_Move_F_Net.GA_Role_Move_F_Net_C.Added_21071CB943CD992BF8EFD6A3DAFC9936
+// 0x000C (0x000C - 0x0000)
+struct GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936 final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936) == 0x000004, "Wrong alignment on GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936");
+static_assert(sizeof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936) == 0x00000C, "Wrong size on GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936");
+static_assert(offsetof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936, Tag) == 0x000000, "Member 'GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936::Tag' has a wrong offset!");
+
+// Function GA_Role_Move_F_Net.GA_Role_Move_F_Net_C.Added_21071CB943CD992BF8EFD6A382AFCAE1
+// 0x000C (0x000C - 0x0000)
+struct GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1 final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1) == 0x000004, "Wrong alignment on GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1");
+static_assert(sizeof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1) == 0x00000C, "Wrong size on GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1");
+static_assert(offsetof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1, Tag) == 0x000000, "Member 'GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1::Tag' has a wrong offset!");
+
+// Function GA_Role_Move_F_Net.GA_Role_Move_F_Net_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Role_Move_F_Net_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Role_Move_F_Net_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_Move_F_Net_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Role_Move_F_Net_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Move_F_Net_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Role_Move_F_Net_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Move_F_Net_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_Role_Move_F_Net.GA_Role_Move_F_Net_C.ExecuteUbergraph_GA_Role_Move_F_Net
 // 0x0238 (0x0238 - 0x0000)
 struct GA_Role_Move_F_Net_C_ExecuteUbergraph_GA_Role_Move_F_Net final
@@ -122,39 +155,6 @@ static_assert(offsetof(GA_Role_Move_F_Net_C_ExecuteUbergraph_GA_Role_Move_F_Net,
 static_assert(offsetof(GA_Role_Move_F_Net_C_ExecuteUbergraph_GA_Role_Move_F_Net, CallFunc__________SpeedRatio) == 0x000224, "Member 'GA_Role_Move_F_Net_C_ExecuteUbergraph_GA_Role_Move_F_Net::CallFunc__________SpeedRatio' has a wrong offset!");
 static_assert(offsetof(GA_Role_Move_F_Net_C_ExecuteUbergraph_GA_Role_Move_F_Net, CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue) == 0x000228, "Member 'GA_Role_Move_F_Net_C_ExecuteUbergraph_GA_Role_Move_F_Net::CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue' has a wrong offset!");
 static_assert(offsetof(GA_Role_Move_F_Net_C_ExecuteUbergraph_GA_Role_Move_F_Net, CallFunc_IsValid_ReturnValue_3) == 0x000230, "Member 'GA_Role_Move_F_Net_C_ExecuteUbergraph_GA_Role_Move_F_Net::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
-
-// Function GA_Role_Move_F_Net.GA_Role_Move_F_Net_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Role_Move_F_Net_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_Move_F_Net_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_Move_F_Net_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Role_Move_F_Net_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Move_F_Net_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Role_Move_F_Net_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Move_F_Net_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_Role_Move_F_Net.GA_Role_Move_F_Net_C.Added_21071CB943CD992BF8EFD6A382AFCAE1
-// 0x000C (0x000C - 0x0000)
-struct GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1 final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1) == 0x000004, "Wrong alignment on GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1");
-static_assert(sizeof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1) == 0x00000C, "Wrong size on GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1");
-static_assert(offsetof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1, Tag) == 0x000000, "Member 'GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A382AFCAE1::Tag' has a wrong offset!");
-
-// Function GA_Role_Move_F_Net.GA_Role_Move_F_Net_C.Added_21071CB943CD992BF8EFD6A3DAFC9936
-// 0x000C (0x000C - 0x0000)
-struct GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936 final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936) == 0x000004, "Wrong alignment on GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936");
-static_assert(sizeof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936) == 0x00000C, "Wrong size on GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936");
-static_assert(offsetof(GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936, Tag) == 0x000000, "Member 'GA_Role_Move_F_Net_C_Added_21071CB943CD992BF8EFD6A3DAFC9936::Tag' has a wrong offset!");
 
 // Function GA_Role_Move_F_Net.GA_Role_Move_F_Net_C.K2_CanActivateAbility
 // 0x00C8 (0x00C8 - 0x0000)

@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EWeaponViewName.EWeaponViewName
-// NumValues: 0x0006
+// NumValues: 0x0007
 enum class EWeaponViewName : uint8
 {
 	NewEnumerator0                           = 0,
@@ -23,7 +23,8 @@ enum class EWeaponViewName : uint8
 	NewEnumerator20                          = 2,
 	NewEnumerator21                          = 3,
 	NewEnumerator22                          = 4,
-	EWeaponViewName_MAX                      = 5,
+	NewEnumerator23                          = 5,
+	EWeaponViewName_MAX                      = 6,
 };
 
 }

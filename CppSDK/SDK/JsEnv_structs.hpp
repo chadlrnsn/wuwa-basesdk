@@ -11,7 +11,6 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "SNavigationGroup_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SCameraConfig_structs.hpp"
 
@@ -38,13 +37,13 @@ enum class EV8GCType : uint8
 struct FPropertyMetaRoot final
 {
 public:
-	struct FSNavigationGroup                      None;                                              // 0x0000(0x00C8)(HasGetValueTypeHash)
-	struct FSplinePoint                           None_0;                                            // 0x0000(0x0044)(NoDestructor, HasGetValueTypeHash)
-	class UUIItem*                                None_1;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         None_2;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         None_3;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTransform                             None_4;                                            // 0x0000(0x0030)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UItemMaterialControllerActorData_C*     None_5;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             None;                                              // 0x0000(0x0094)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UItemMaterialControllerActorData_C*     None_0;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             None_1;                                            // 0x0000(0x0030)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSplinePoint                           None_2;                                            // 0x0000(0x0044)(NoDestructor, HasGetValueTypeHash)
+	class UUIItem*                                None_3;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         None_4;                                            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         None_5;                                            // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USkeletalMesh*                          None_6;                                            // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                None_7;                                            // 0x0000(0x000C)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSCameraConfig                         None_8;                                            // 0x0000(0x0738)(HasGetValueTypeHash)

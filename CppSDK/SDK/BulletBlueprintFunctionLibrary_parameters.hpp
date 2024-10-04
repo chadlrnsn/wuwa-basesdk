@@ -558,26 +558,6 @@ static_assert(offsetof(BulletBlueprintFunctionLibrary_C_GetSpecialBulletToSkillI
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_GetSpecialBulletToSkillId, __WorldContext) == 0x000020, "Member 'BulletBlueprintFunctionLibrary_C_GetSpecialBulletToSkillId::__WorldContext' has a wrong offset!");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_GetSpecialBulletToSkillId, ReturnValue) == 0x000028, "Member 'BulletBlueprintFunctionLibrary_C_GetSpecialBulletToSkillId::ReturnValue' has a wrong offset!");
 
-// Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.DestroySpecifiedBullet
-// 0x0020 (0x0020 - 0x0000)
-struct BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet final
-{
-public:
-	int32                                         OwnerId;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   bulletName;                                        // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          SummonChild;                                       // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         IncludeTeammate;                                   // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet) == 0x000008, "Wrong alignment on BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet");
-static_assert(sizeof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet) == 0x000020, "Wrong size on BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, OwnerId) == 0x000000, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::OwnerId' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, bulletName) == 0x000004, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::bulletName' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, SummonChild) == 0x000010, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::SummonChild' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, IncludeTeammate) == 0x000014, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::IncludeTeammate' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, __WorldContext) == 0x000018, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::__WorldContext' has a wrong offset!");
-
 // Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.GetSpecifiedBulletCount
 // 0x0020 (0x0020 - 0x0000)
 struct BulletBlueprintFunctionLibrary_C_GetSpecifiedBulletCount final
@@ -594,6 +574,29 @@ static_assert(offsetof(BulletBlueprintFunctionLibrary_C_GetSpecifiedBulletCount,
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_GetSpecifiedBulletCount, bulletName) == 0x000004, "Member 'BulletBlueprintFunctionLibrary_C_GetSpecifiedBulletCount::bulletName' has a wrong offset!");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_GetSpecifiedBulletCount, __WorldContext) == 0x000010, "Member 'BulletBlueprintFunctionLibrary_C_GetSpecifiedBulletCount::__WorldContext' has a wrong offset!");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_GetSpecifiedBulletCount, ReturnValue) == 0x000018, "Member 'BulletBlueprintFunctionLibrary_C_GetSpecifiedBulletCount::ReturnValue' has a wrong offset!");
+
+// Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.DestroySpecifiedBullet
+// 0x0028 (0x0028 - 0x0000)
+struct BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet final
+{
+public:
+	int32                                         OwnerId;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   bulletName;                                        // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          SummonChild;                                       // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         IncludeTeammate;                                   // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Interval;                                          // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet) == 0x000008, "Wrong alignment on BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet");
+static_assert(sizeof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet) == 0x000028, "Wrong size on BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, OwnerId) == 0x000000, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::OwnerId' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, bulletName) == 0x000004, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::bulletName' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, SummonChild) == 0x000010, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::SummonChild' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, IncludeTeammate) == 0x000014, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::IncludeTeammate' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, Interval) == 0x000018, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::Interval' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet, __WorldContext) == 0x000020, "Member 'BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet::__WorldContext' has a wrong offset!");
 
 }
 

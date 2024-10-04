@@ -19,12 +19,12 @@ namespace SDK
 {
 
 // Class LTween.LTweenActor
-// 0x0038 (0x02E0 - 0x02A8)
+// 0x0048 (0x02F8 - 0x02B0)
 class ALTweenActor final : public AActor
 {
 public:
-	TArray<class ULTweener*>                      TweenerList;                                       // 0x02A8(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2B8[0x28];                                     // 0x02B8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class ULTweener*>                      TweenerList;                                       // 0x02B0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2C0[0x38];                                     // 0x02C0(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class ALTweenActor* GetLTweenInstance(class UObject* WorldContextObject);
@@ -45,8 +45,8 @@ public:
 	}
 };
 static_assert(alignof(ALTweenActor) == 0x000008, "Wrong alignment on ALTweenActor");
-static_assert(sizeof(ALTweenActor) == 0x0002E0, "Wrong size on ALTweenActor");
-static_assert(offsetof(ALTweenActor, TweenerList) == 0x0002A8, "Member 'ALTweenActor::TweenerList' has a wrong offset!");
+static_assert(sizeof(ALTweenActor) == 0x0002F8, "Wrong size on ALTweenActor");
+static_assert(offsetof(ALTweenActor, TweenerList) == 0x0002B0, "Member 'ALTweenActor::TweenerList' has a wrong offset!");
 
 // Class LTween.LTweenBPLibrary
 // 0x0000 (0x0030 - 0x0030)
@@ -118,15 +118,15 @@ static_assert(alignof(ULTweenBPLibrary) == 0x000008, "Wrong alignment on ULTween
 static_assert(sizeof(ULTweenBPLibrary) == 0x000030, "Wrong size on ULTweenBPLibrary");
 
 // Class LTween.LTweener
-// 0x00F8 (0x0128 - 0x0030)
+// 0x0100 (0x0130 - 0x0030)
 class ULTweener : public UObject
 {
 public:
-	uint8                                         Pad_30[0x70];                                      // 0x0030(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             OnStartCallBack;                                   // 0x00A0(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void()>                             OnUpdateCallBack;                                  // 0x00C8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void()>                             OnCompleteCallBack;                                // 0x00F0(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_118[0x10];                                     // 0x0118(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x78];                                      // 0x0030(0x0078)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             OnStartCallBack;                                   // 0x00A8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void()>                             OnUpdateCallBack;                                  // 0x00D0(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void()>                             OnCompleteCallBack;                                // 0x00F8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_120[0x10];                                     // 0x0120(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ForceComplete();
@@ -140,12 +140,15 @@ public:
 	void Resume();
 	class ULTweener* SetCurveFloat(class UCurveFloat* NewCurveFloat);
 	class ULTweener* SetDelay(float NewDelay);
+	void SetDuration(float NewDuration);
 	class ULTweener* SetEase(ELTweenEase Easetype);
 	class ULTweener* SetEaseCurve(class UCurveFloat* NewCurve);
 	class ULTweener* SetLoop(ELTweenLoop NewLoopType, int32 NewLoopCount);
 	class ULTweener* SetLoopType(ELTweenLoop NewLoopType);
+	class ULTweener* SetSpeed(float NewSpeed);
 
 	int32 GetLoopCycleCount() const;
+	float GetSpeed() const;
 
 public:
 	static class UClass* StaticClass()
@@ -158,17 +161,17 @@ public:
 	}
 };
 static_assert(alignof(ULTweener) == 0x000008, "Wrong alignment on ULTweener");
-static_assert(sizeof(ULTweener) == 0x000128, "Wrong size on ULTweener");
-static_assert(offsetof(ULTweener, OnStartCallBack) == 0x0000A0, "Member 'ULTweener::OnStartCallBack' has a wrong offset!");
-static_assert(offsetof(ULTweener, OnUpdateCallBack) == 0x0000C8, "Member 'ULTweener::OnUpdateCallBack' has a wrong offset!");
-static_assert(offsetof(ULTweener, OnCompleteCallBack) == 0x0000F0, "Member 'ULTweener::OnCompleteCallBack' has a wrong offset!");
+static_assert(sizeof(ULTweener) == 0x000130, "Wrong size on ULTweener");
+static_assert(offsetof(ULTweener, OnStartCallBack) == 0x0000A8, "Member 'ULTweener::OnStartCallBack' has a wrong offset!");
+static_assert(offsetof(ULTweener, OnUpdateCallBack) == 0x0000D0, "Member 'ULTweener::OnUpdateCallBack' has a wrong offset!");
+static_assert(offsetof(ULTweener, OnCompleteCallBack) == 0x0000F8, "Member 'ULTweener::OnCompleteCallBack' has a wrong offset!");
 
 // Class LTween.LTweenerColor
-// 0x0030 (0x0158 - 0x0128)
+// 0x0030 (0x0160 - 0x0130)
 class ULTweenerColor final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x30];                                     // 0x0128(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x30];                                     // 0x0130(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -181,14 +184,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerColor) == 0x000008, "Wrong alignment on ULTweenerColor");
-static_assert(sizeof(ULTweenerColor) == 0x000158, "Wrong size on ULTweenerColor");
+static_assert(sizeof(ULTweenerColor) == 0x000160, "Wrong size on ULTweenerColor");
 
 // Class LTween.LTweenerFloat
-// 0x0030 (0x0158 - 0x0128)
+// 0x0030 (0x0160 - 0x0130)
 class ULTweenerFloat final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x30];                                     // 0x0128(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x30];                                     // 0x0130(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -201,14 +204,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerFloat) == 0x000008, "Wrong alignment on ULTweenerFloat");
-static_assert(sizeof(ULTweenerFloat) == 0x000158, "Wrong size on ULTweenerFloat");
+static_assert(sizeof(ULTweenerFloat) == 0x000160, "Wrong size on ULTweenerFloat");
 
 // Class LTween.LTweenerFrame
-// 0x0008 (0x0130 - 0x0128)
+// 0x0008 (0x0138 - 0x0130)
 class ULTweenerFrame final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x8];                                      // 0x0128(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x8];                                      // 0x0130(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -221,14 +224,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerFrame) == 0x000008, "Wrong alignment on ULTweenerFrame");
-static_assert(sizeof(ULTweenerFrame) == 0x000130, "Wrong size on ULTweenerFrame");
+static_assert(sizeof(ULTweenerFrame) == 0x000138, "Wrong size on ULTweenerFrame");
 
 // Class LTween.LTweenerInteger
-// 0x0030 (0x0158 - 0x0128)
+// 0x0030 (0x0160 - 0x0130)
 class ULTweenerInteger final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x30];                                     // 0x0128(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x30];                                     // 0x0130(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -241,14 +244,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerInteger) == 0x000008, "Wrong alignment on ULTweenerInteger");
-static_assert(sizeof(ULTweenerInteger) == 0x000158, "Wrong size on ULTweenerInteger");
+static_assert(sizeof(ULTweenerInteger) == 0x000160, "Wrong size on ULTweenerInteger");
 
 // Class LTween.LTweenerLinearColor
-// 0x0048 (0x0170 - 0x0128)
+// 0x0048 (0x0178 - 0x0130)
 class ULTweenerLinearColor final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x48];                                     // 0x0128(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x48];                                     // 0x0130(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -261,14 +264,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerLinearColor) == 0x000008, "Wrong alignment on ULTweenerLinearColor");
-static_assert(sizeof(ULTweenerLinearColor) == 0x000170, "Wrong size on ULTweenerLinearColor");
+static_assert(sizeof(ULTweenerLinearColor) == 0x000178, "Wrong size on ULTweenerLinearColor");
 
 // Class LTween.LTweenerMaterialScalar
-// 0x0030 (0x0158 - 0x0128)
+// 0x0030 (0x0160 - 0x0130)
 class ULTweenerMaterialScalar final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x30];                                     // 0x0128(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x30];                                     // 0x0130(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -281,14 +284,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerMaterialScalar) == 0x000008, "Wrong alignment on ULTweenerMaterialScalar");
-static_assert(sizeof(ULTweenerMaterialScalar) == 0x000158, "Wrong size on ULTweenerMaterialScalar");
+static_assert(sizeof(ULTweenerMaterialScalar) == 0x000160, "Wrong size on ULTweenerMaterialScalar");
 
 // Class LTween.LTweenerMaterialVector
-// 0x0050 (0x0178 - 0x0128)
+// 0x0050 (0x0180 - 0x0130)
 class ULTweenerMaterialVector final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x50];                                     // 0x0128(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x50];                                     // 0x0130(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -301,14 +304,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerMaterialVector) == 0x000008, "Wrong alignment on ULTweenerMaterialVector");
-static_assert(sizeof(ULTweenerMaterialVector) == 0x000178, "Wrong size on ULTweenerMaterialVector");
+static_assert(sizeof(ULTweenerMaterialVector) == 0x000180, "Wrong size on ULTweenerMaterialVector");
 
 // Class LTween.LTweenerPosition
-// 0x0058 (0x0180 - 0x0128)
+// 0x0058 (0x0188 - 0x0130)
 class ULTweenerPosition final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x58];                                     // 0x0128(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x58];                                     // 0x0130(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -321,14 +324,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerPosition) == 0x000008, "Wrong alignment on ULTweenerPosition");
-static_assert(sizeof(ULTweenerPosition) == 0x000180, "Wrong size on ULTweenerPosition");
+static_assert(sizeof(ULTweenerPosition) == 0x000188, "Wrong size on ULTweenerPosition");
 
 // Class LTween.LTweenerQuaternion
-// 0x0048 (0x0170 - 0x0128)
+// 0x0050 (0x0180 - 0x0130)
 class ULTweenerQuaternion final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x48];                                     // 0x0128(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x50];                                     // 0x0130(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -341,14 +344,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerQuaternion) == 0x000008, "Wrong alignment on ULTweenerQuaternion");
-static_assert(sizeof(ULTweenerQuaternion) == 0x000170, "Wrong size on ULTweenerQuaternion");
+static_assert(sizeof(ULTweenerQuaternion) == 0x000180, "Wrong size on ULTweenerQuaternion");
 
 // Class LTween.LTweenerRotationEuler
-// 0x0058 (0x0180 - 0x0128)
+// 0x0060 (0x0190 - 0x0130)
 class ULTweenerRotationEuler final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x58];                                     // 0x0128(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x60];                                     // 0x0130(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -361,14 +364,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerRotationEuler) == 0x000008, "Wrong alignment on ULTweenerRotationEuler");
-static_assert(sizeof(ULTweenerRotationEuler) == 0x000180, "Wrong size on ULTweenerRotationEuler");
+static_assert(sizeof(ULTweenerRotationEuler) == 0x000190, "Wrong size on ULTweenerRotationEuler");
 
 // Class LTween.LTweenerRotationQuat
-// 0x0068 (0x0190 - 0x0128)
+// 0x0070 (0x01A0 - 0x0130)
 class ULTweenerRotationQuat final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x68];                                     // 0x0128(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x70];                                     // 0x0130(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -381,14 +384,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerRotationQuat) == 0x000008, "Wrong alignment on ULTweenerRotationQuat");
-static_assert(sizeof(ULTweenerRotationQuat) == 0x000190, "Wrong size on ULTweenerRotationQuat");
+static_assert(sizeof(ULTweenerRotationQuat) == 0x0001A0, "Wrong size on ULTweenerRotationQuat");
 
 // Class LTween.LTweenerRotator
-// 0x0040 (0x0168 - 0x0128)
+// 0x0040 (0x0170 - 0x0130)
 class ULTweenerRotator final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x40];                                     // 0x0128(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x40];                                     // 0x0130(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -401,14 +404,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerRotator) == 0x000008, "Wrong alignment on ULTweenerRotator");
-static_assert(sizeof(ULTweenerRotator) == 0x000168, "Wrong size on ULTweenerRotator");
+static_assert(sizeof(ULTweenerRotator) == 0x000170, "Wrong size on ULTweenerRotator");
 
 // Class LTween.LTweenerScale
-// 0x0040 (0x0168 - 0x0128)
+// 0x0040 (0x0170 - 0x0130)
 class ULTweenerScale final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x40];                                     // 0x0128(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x40];                                     // 0x0130(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -421,14 +424,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerScale) == 0x000008, "Wrong alignment on ULTweenerScale");
-static_assert(sizeof(ULTweenerScale) == 0x000168, "Wrong size on ULTweenerScale");
+static_assert(sizeof(ULTweenerScale) == 0x000170, "Wrong size on ULTweenerScale");
 
 // Class LTween.LTweenerVector
-// 0x0040 (0x0168 - 0x0128)
+// 0x0040 (0x0170 - 0x0130)
 class ULTweenerVector final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x40];                                     // 0x0128(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x40];                                     // 0x0130(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -441,14 +444,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerVector) == 0x000008, "Wrong alignment on ULTweenerVector");
-static_assert(sizeof(ULTweenerVector) == 0x000168, "Wrong size on ULTweenerVector");
+static_assert(sizeof(ULTweenerVector) == 0x000170, "Wrong size on ULTweenerVector");
 
 // Class LTween.LTweenerVector2D
-// 0x0038 (0x0160 - 0x0128)
+// 0x0038 (0x0168 - 0x0130)
 class ULTweenerVector2D final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x38];                                     // 0x0128(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x38];                                     // 0x0130(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -461,14 +464,14 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerVector2D) == 0x000008, "Wrong alignment on ULTweenerVector2D");
-static_assert(sizeof(ULTweenerVector2D) == 0x000160, "Wrong size on ULTweenerVector2D");
+static_assert(sizeof(ULTweenerVector2D) == 0x000168, "Wrong size on ULTweenerVector2D");
 
 // Class LTween.LTweenerVector4
-// 0x0048 (0x0170 - 0x0128)
+// 0x0050 (0x0180 - 0x0130)
 class ULTweenerVector4 final : public ULTweener
 {
 public:
-	uint8                                         Pad_128[0x48];                                     // 0x0128(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x50];                                     // 0x0130(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -481,10 +484,10 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerVector4) == 0x000008, "Wrong alignment on ULTweenerVector4");
-static_assert(sizeof(ULTweenerVector4) == 0x000170, "Wrong size on ULTweenerVector4");
+static_assert(sizeof(ULTweenerVector4) == 0x000180, "Wrong size on ULTweenerVector4");
 
 // Class LTween.LTweenerVirtual
-// 0x0000 (0x0128 - 0x0128)
+// 0x0000 (0x0130 - 0x0130)
 class ULTweenerVirtual final : public ULTweener
 {
 public:
@@ -498,7 +501,7 @@ public:
 	}
 };
 static_assert(alignof(ULTweenerVirtual) == 0x000008, "Wrong alignment on ULTweenerVirtual");
-static_assert(sizeof(ULTweenerVirtual) == 0x000128, "Wrong size on ULTweenerVirtual");
+static_assert(sizeof(ULTweenerVirtual) == 0x000130, "Wrong size on ULTweenerVirtual");
 
 }
 

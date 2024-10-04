@@ -17,6 +17,27 @@
 namespace SDK
 {
 
+// Function ABP_Base_Sword.ABP_Base_Sword_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+
+void UABP_Base_Sword_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Base_Sword_C", "AnimGraph");
+
+	Params::ABP_Base_Sword_C_AnimGraph Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+}
+
+
 // Function ABP_Base_Sword.ABP_Base_Sword_C.ExecuteUbergraph_ABP_Base_Sword
 // (Final, UbergraphFunction)
 // Parameters:
@@ -34,27 +55,6 @@ void UABP_Base_Sword_C::ExecuteUbergraph_ABP_Base_Sword(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ABP_Base_Sword.ABP_Base_Sword_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FPoseLink                        Param_AnimGraph                                        (Parm, OutParm, NoDestructor)
-
-void UABP_Base_Sword_C::AnimGraph(struct FPoseLink* Param_AnimGraph)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Base_Sword_C", "AnimGraph");
-
-	Params::ABP_Base_Sword_C_AnimGraph Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Param_AnimGraph != nullptr)
-		*Param_AnimGraph = std::move(Parms.Param_AnimGraph);
 }
 
 }

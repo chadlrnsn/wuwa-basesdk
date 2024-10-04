@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // Class KuroWorldPartition.KuroWorldPartitionActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AKuroWorldPartitionActor : public AActor
 {
 public:
-	class UKuroWorldPartitionLocationComponent*   LocationComponent;                                 // 0x02A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroWorldPartitionLocationComponent*   LocationComponent;                                 // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -35,8 +35,8 @@ public:
 	}
 };
 static_assert(alignof(AKuroWorldPartitionActor) == 0x000008, "Wrong alignment on AKuroWorldPartitionActor");
-static_assert(sizeof(AKuroWorldPartitionActor) == 0x0002B0, "Wrong size on AKuroWorldPartitionActor");
-static_assert(offsetof(AKuroWorldPartitionActor, LocationComponent) == 0x0002A8, "Member 'AKuroWorldPartitionActor::LocationComponent' has a wrong offset!");
+static_assert(sizeof(AKuroWorldPartitionActor) == 0x0002B8, "Wrong size on AKuroWorldPartitionActor");
+static_assert(offsetof(AKuroWorldPartitionActor, LocationComponent) == 0x0002B0, "Member 'AKuroWorldPartitionActor::LocationComponent' has a wrong offset!");
 
 // Class KuroWorldPartition.KuroWorldPartitionLocationComponent
 // 0x0020 (0x0240 - 0x0220)

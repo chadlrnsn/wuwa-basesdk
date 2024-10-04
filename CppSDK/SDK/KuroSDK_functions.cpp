@@ -905,6 +905,56 @@ void UKuroSDKManager::RequestPhotoPermission()
 }
 
 
+// Function KuroSDK.KuroSDKManager.RequestReviewApp
+// (Final, Native, Static, Public)
+// Parameters:
+// class FString                           Data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSDKManager::RequestReviewApp(const class FString& Data)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSDKManager", "RequestReviewApp");
+
+	Params::KuroSDKManager_RequestReviewApp Parms{};
+
+	Parms.Data = std::move(Data);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSDK.KuroSDKManager.SetCursor
+// (Final, Native, Static, Public)
+// Parameters:
+// class FString                           Data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSDKManager::SetCursor(const class FString& Data)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSDKManager", "SetCursor");
+
+	Params::KuroSDKManager_SetCursor Parms{};
+
+	Parms.Data = std::move(Data);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroSDK.KuroSDKManager.SetFont
 // (Final, Native, Static, Public)
 // Parameters:
@@ -920,6 +970,31 @@ void UKuroSDKManager::SetFont(const class FString& Data)
 	Params::KuroSDKManager_SetFont Parms{};
 
 	Parms.Data = std::move(Data);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroSDK.KuroSDKManager.SetGamePadMode
+// (Final, Native, Static, Public)
+// Parameters:
+// bool                                    Mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSDKManager::SetGamePadMode(bool Mode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSDKManager", "SetGamePadMode");
+
+	Params::KuroSDKManager_SetGamePadMode Parms{};
+
+	Parms.Mode = Mode;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

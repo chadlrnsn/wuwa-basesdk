@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "KuroCurve_structs.hpp"
+#include "Engine_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
@@ -85,18 +85,22 @@ enum class EKuroPerformanceMode : uint8
 	EPM_MAX                                  = 2,
 };
 
-// ScriptStruct KuroGameplay.SequencerBindingRuntimeProxy
-// 0x0018 (0x0018 - 0x0000)
-struct FSequencerBindingRuntimeProxy final
+// ScriptStruct KuroGameplay.KuroProgressBarStyle
+// 0x0240 (0x0248 - 0x0008)
+struct FKuroProgressBarStyle final : public FSlateWidgetStyle
 {
 public:
-	struct FGuid                                  BindingID;                                         // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMovieSceneSequence*                    Sequence;                                          // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            BackgroundImage;                                   // 0x0008(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            FillImageMiddle;                                   // 0x0098(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            FillImage;                                         // 0x0128(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            MarqueeImage;                                      // 0x01B8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FSequencerBindingRuntimeProxy) == 0x000008, "Wrong alignment on FSequencerBindingRuntimeProxy");
-static_assert(sizeof(FSequencerBindingRuntimeProxy) == 0x000018, "Wrong size on FSequencerBindingRuntimeProxy");
-static_assert(offsetof(FSequencerBindingRuntimeProxy, BindingID) == 0x000000, "Member 'FSequencerBindingRuntimeProxy::BindingID' has a wrong offset!");
-static_assert(offsetof(FSequencerBindingRuntimeProxy, Sequence) == 0x000010, "Member 'FSequencerBindingRuntimeProxy::Sequence' has a wrong offset!");
+static_assert(alignof(FKuroProgressBarStyle) == 0x000008, "Wrong alignment on FKuroProgressBarStyle");
+static_assert(sizeof(FKuroProgressBarStyle) == 0x000248, "Wrong size on FKuroProgressBarStyle");
+static_assert(offsetof(FKuroProgressBarStyle, BackgroundImage) == 0x000008, "Member 'FKuroProgressBarStyle::BackgroundImage' has a wrong offset!");
+static_assert(offsetof(FKuroProgressBarStyle, FillImageMiddle) == 0x000098, "Member 'FKuroProgressBarStyle::FillImageMiddle' has a wrong offset!");
+static_assert(offsetof(FKuroProgressBarStyle, FillImage) == 0x000128, "Member 'FKuroProgressBarStyle::FillImage' has a wrong offset!");
+static_assert(offsetof(FKuroProgressBarStyle, MarqueeImage) == 0x0001B8, "Member 'FKuroProgressBarStyle::MarqueeImage' has a wrong offset!");
 
 // ScriptStruct KuroGameplay.EffectModelNiagaraExtraState
 // 0x00F0 (0x00F0 - 0x0000)
@@ -170,22 +174,18 @@ public:
 static_assert(alignof(FGameBudgetAllocatorTickFunction) == 0x000008, "Wrong alignment on FGameBudgetAllocatorTickFunction");
 static_assert(sizeof(FGameBudgetAllocatorTickFunction) == 0x000030, "Wrong size on FGameBudgetAllocatorTickFunction");
 
-// ScriptStruct KuroGameplay.KuroProgressBarStyle
-// 0x0240 (0x0248 - 0x0008)
-struct FKuroProgressBarStyle final : public FSlateWidgetStyle
+// ScriptStruct KuroGameplay.SequencerBindingRuntimeProxy
+// 0x0018 (0x0018 - 0x0000)
+struct FSequencerBindingRuntimeProxy final
 {
 public:
-	struct FSlateBrush                            BackgroundImage;                                   // 0x0008(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            FillImageMiddle;                                   // 0x0098(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            FillImage;                                         // 0x0128(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            MarqueeImage;                                      // 0x01B8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FGuid                                  BindingID;                                         // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMovieSceneSequence*                    Sequence;                                          // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FKuroProgressBarStyle) == 0x000008, "Wrong alignment on FKuroProgressBarStyle");
-static_assert(sizeof(FKuroProgressBarStyle) == 0x000248, "Wrong size on FKuroProgressBarStyle");
-static_assert(offsetof(FKuroProgressBarStyle, BackgroundImage) == 0x000008, "Member 'FKuroProgressBarStyle::BackgroundImage' has a wrong offset!");
-static_assert(offsetof(FKuroProgressBarStyle, FillImageMiddle) == 0x000098, "Member 'FKuroProgressBarStyle::FillImageMiddle' has a wrong offset!");
-static_assert(offsetof(FKuroProgressBarStyle, FillImage) == 0x000128, "Member 'FKuroProgressBarStyle::FillImage' has a wrong offset!");
-static_assert(offsetof(FKuroProgressBarStyle, MarqueeImage) == 0x0001B8, "Member 'FKuroProgressBarStyle::MarqueeImage' has a wrong offset!");
+static_assert(alignof(FSequencerBindingRuntimeProxy) == 0x000008, "Wrong alignment on FSequencerBindingRuntimeProxy");
+static_assert(sizeof(FSequencerBindingRuntimeProxy) == 0x000018, "Wrong size on FSequencerBindingRuntimeProxy");
+static_assert(offsetof(FSequencerBindingRuntimeProxy, BindingID) == 0x000000, "Member 'FSequencerBindingRuntimeProxy::BindingID' has a wrong offset!");
+static_assert(offsetof(FSequencerBindingRuntimeProxy, Sequence) == 0x000010, "Member 'FSequencerBindingRuntimeProxy::Sequence' has a wrong offset!");
 
 // ScriptStruct KuroGameplay.PerformanceStatisticsTagTreeNodeSerialize
 // 0x0028 (0x0028 - 0x0000)

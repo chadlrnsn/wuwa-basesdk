@@ -17,23 +17,17 @@
 namespace SDK
 {
 
-// Function GA_Role_Zhaohuan.GA_Role_Zhaohuan_C.ExecuteUbergraph_GA_Role_Zhaohuan
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_Role_Zhaohuan.GA_Role_Zhaohuan_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_Role_Zhaohuan_C::ExecuteUbergraph_GA_Role_Zhaohuan(int32 EntryPoint)
+void UGA_Role_Zhaohuan_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Zhaohuan_C", "ExecuteUbergraph_GA_Role_Zhaohuan");
+		Func = Class->GetFunction("GA_Role_Zhaohuan_C", "K2_ActivateAbility");
 
-	Params::GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,17 +51,23 @@ void UGA_Role_Zhaohuan_C::K2_OnEndAbility(bool bWasCancelled)
 }
 
 
-// Function GA_Role_Zhaohuan.GA_Role_Zhaohuan_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_Role_Zhaohuan.GA_Role_Zhaohuan_C.ExecuteUbergraph_GA_Role_Zhaohuan
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Role_Zhaohuan_C::K2_ActivateAbility()
+void UGA_Role_Zhaohuan_C::ExecuteUbergraph_GA_Role_Zhaohuan(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Zhaohuan_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("GA_Role_Zhaohuan_C", "ExecuteUbergraph_GA_Role_Zhaohuan");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::GA_Role_Zhaohuan_C_ExecuteUbergraph_GA_Role_Zhaohuan Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

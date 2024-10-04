@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_NA006.BP_NA006_C
-// 0x0010 (0x0790 - 0x0780)
+// 0x0010 (0x07A0 - 0x0790)
 class ABP_NA006_C final : public ABP_CommonSmallAnimal_C
 {
 public:
-	class UCapsuleComponent*                      Root;                                              // 0x0780(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Root;                                              // 0x0790(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_NA006_C) == 0x000010, "Wrong alignment on ABP_NA006_C");
-static_assert(sizeof(ABP_NA006_C) == 0x000790, "Wrong size on ABP_NA006_C");
-static_assert(offsetof(ABP_NA006_C, Root) == 0x000780, "Member 'ABP_NA006_C::Root' has a wrong offset!");
+static_assert(sizeof(ABP_NA006_C) == 0x0007A0, "Wrong size on ABP_NA006_C");
+static_assert(offsetof(ABP_NA006_C, Root) == 0x000790, "Member 'ABP_NA006_C::Root' has a wrong offset!");
 
 }
 

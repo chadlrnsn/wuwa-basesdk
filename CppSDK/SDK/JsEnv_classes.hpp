@@ -12,8 +12,8 @@
 
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
-#include "JsEnv_structs.hpp"
 #include "UMG_classes.hpp"
+#include "JsEnv_structs.hpp"
 
 
 namespace SDK
@@ -162,7 +162,7 @@ static_assert(alignof(UDynamicDelegateProxy) == 0x000008, "Wrong alignment on UD
 static_assert(sizeof(UDynamicDelegateProxy) == 0x0000A8, "Wrong size on UDynamicDelegateProxy");
 
 // Class JsEnv.JsEnvSetting
-// 0x0068 (0x0098 - 0x0030)
+// 0x0070 (0x00A0 - 0x0030)
 class UJsEnvSetting final : public UObject
 {
 public:
@@ -191,8 +191,9 @@ public:
 	bool                                          JsAbsPathSupportPak;                               // 0x0093(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          EnableV8DeoptimizeTrace;                           // 0x0094(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          EnableV8RuntimeTrace;                              // 0x0095(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          TraceDeoptimizedValue;                             // 0x0096(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_97[0x1];                                       // 0x0097(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_96[0x2];                                       // 0x0096(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReportDeoptFrameInfoThreshold;                     // 0x0098(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -205,7 +206,7 @@ public:
 	}
 };
 static_assert(alignof(UJsEnvSetting) == 0x000008, "Wrong alignment on UJsEnvSetting");
-static_assert(sizeof(UJsEnvSetting) == 0x000098, "Wrong size on UJsEnvSetting");
+static_assert(sizeof(UJsEnvSetting) == 0x0000A0, "Wrong size on UJsEnvSetting");
 static_assert(offsetof(UJsEnvSetting, JsRootPath) == 0x000030, "Member 'UJsEnvSetting::JsRootPath' has a wrong offset!");
 static_assert(offsetof(UJsEnvSetting, RawJsRootPath) == 0x000040, "Member 'UJsEnvSetting::RawJsRootPath' has a wrong offset!");
 static_assert(offsetof(UJsEnvSetting, V8Flags) == 0x000050, "Member 'UJsEnvSetting::V8Flags' has a wrong offset!");
@@ -230,7 +231,7 @@ static_assert(offsetof(UJsEnvSetting, UseRelativeScriptOrigin) == 0x000092, "Mem
 static_assert(offsetof(UJsEnvSetting, JsAbsPathSupportPak) == 0x000093, "Member 'UJsEnvSetting::JsAbsPathSupportPak' has a wrong offset!");
 static_assert(offsetof(UJsEnvSetting, EnableV8DeoptimizeTrace) == 0x000094, "Member 'UJsEnvSetting::EnableV8DeoptimizeTrace' has a wrong offset!");
 static_assert(offsetof(UJsEnvSetting, EnableV8RuntimeTrace) == 0x000095, "Member 'UJsEnvSetting::EnableV8RuntimeTrace' has a wrong offset!");
-static_assert(offsetof(UJsEnvSetting, TraceDeoptimizedValue) == 0x000096, "Member 'UJsEnvSetting::TraceDeoptimizedValue' has a wrong offset!");
+static_assert(offsetof(UJsEnvSetting, ReportDeoptFrameInfoThreshold) == 0x000098, "Member 'UJsEnvSetting::ReportDeoptFrameInfoThreshold' has a wrong offset!");
 
 // Class JsEnv.ExtensionMethods
 // 0x0000 (0x0030 - 0x0030)

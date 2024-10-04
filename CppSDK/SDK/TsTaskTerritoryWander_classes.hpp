@@ -33,13 +33,13 @@ public:
 	bool                                          DebugMode;                                         // 0x00E5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_TsTaskTerritoryWander(int32 EntryPoint);
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void OnClear();
-	void FindWanderLocation();
-	void DebugDraw();
 	void FindWanderPath();
+	void DebugDraw();
+	void FindWanderLocation();
+	void OnClear();
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ExecuteUbergraph_TsTaskTerritoryWander(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "KuroGameplay_structs.hpp"
-#include "Niagara_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "KuroGameplay_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Niagara_structs.hpp"
 
 
 namespace SDK::Params
@@ -61,6 +61,17 @@ static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Parent)
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, bDeferredFinish) == 0x000018, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::bDeferredFinish' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, Transform) == 0x000020, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::Transform' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_AddSceneComponentWithTransform, ReturnValue) == 0x000050, "Member 'KuroEffectLibrary_AddSceneComponentWithTransform::ReturnValue' has a wrong offset!");
+
+// Function KuroGameplay.KuroEffectLibrary.DeactivateImmediateNiagaraComponent
+// 0x0008 (0x0008 - 0x0000)
+struct KuroEffectLibrary_DeactivateImmediateNiagaraComponent final
+{
+public:
+	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroEffectLibrary_DeactivateImmediateNiagaraComponent) == 0x000008, "Wrong alignment on KuroEffectLibrary_DeactivateImmediateNiagaraComponent");
+static_assert(sizeof(KuroEffectLibrary_DeactivateImmediateNiagaraComponent) == 0x000008, "Wrong size on KuroEffectLibrary_DeactivateImmediateNiagaraComponent");
+static_assert(offsetof(KuroEffectLibrary_DeactivateImmediateNiagaraComponent, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_DeactivateImmediateNiagaraComponent::NiagaraComponent' has a wrong offset!");
 
 // Function KuroGameplay.KuroEffectLibrary.EqualWorld
 // 0x0018 (0x0018 - 0x0000)
@@ -154,13 +165,15 @@ struct KuroEffectLibrary_IsNiagaraComponentHasBound final
 {
 public:
 	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         Threshold;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroEffectLibrary_IsNiagaraComponentHasBound) == 0x000008, "Wrong alignment on KuroEffectLibrary_IsNiagaraComponentHasBound");
 static_assert(sizeof(KuroEffectLibrary_IsNiagaraComponentHasBound) == 0x000010, "Wrong size on KuroEffectLibrary_IsNiagaraComponentHasBound");
 static_assert(offsetof(KuroEffectLibrary_IsNiagaraComponentHasBound, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_IsNiagaraComponentHasBound::NiagaraComponent' has a wrong offset!");
-static_assert(offsetof(KuroEffectLibrary_IsNiagaraComponentHasBound, ReturnValue) == 0x000008, "Member 'KuroEffectLibrary_IsNiagaraComponentHasBound::ReturnValue' has a wrong offset!");
+static_assert(offsetof(KuroEffectLibrary_IsNiagaraComponentHasBound, Threshold) == 0x000008, "Member 'KuroEffectLibrary_IsNiagaraComponentHasBound::Threshold' has a wrong offset!");
+static_assert(offsetof(KuroEffectLibrary_IsNiagaraComponentHasBound, ReturnValue) == 0x00000C, "Member 'KuroEffectLibrary_IsNiagaraComponentHasBound::ReturnValue' has a wrong offset!");
 
 // Function KuroGameplay.KuroEffectLibrary.RegisterOnSystemFinished
 // 0x0008 (0x0008 - 0x0000)
@@ -184,6 +197,22 @@ static_assert(alignof(KuroEffectLibrary_RegisterOnSystemPaused) == 0x000008, "Wr
 static_assert(sizeof(KuroEffectLibrary_RegisterOnSystemPaused) == 0x000008, "Wrong size on KuroEffectLibrary_RegisterOnSystemPaused");
 static_assert(offsetof(KuroEffectLibrary_RegisterOnSystemPaused, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_RegisterOnSystemPaused::NiagaraComponent' has a wrong offset!");
 
+// Function KuroGameplay.KuroEffectLibrary.SetEffectActorSpawnInUIScene
+// 0x0010 (0x0010 - 0x0000)
+struct KuroEffectLibrary_SetEffectActorSpawnInUIScene final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Value;                                             // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Immediately;                                       // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroEffectLibrary_SetEffectActorSpawnInUIScene) == 0x000008, "Wrong alignment on KuroEffectLibrary_SetEffectActorSpawnInUIScene");
+static_assert(sizeof(KuroEffectLibrary_SetEffectActorSpawnInUIScene) == 0x000010, "Wrong size on KuroEffectLibrary_SetEffectActorSpawnInUIScene");
+static_assert(offsetof(KuroEffectLibrary_SetEffectActorSpawnInUIScene, Actor) == 0x000000, "Member 'KuroEffectLibrary_SetEffectActorSpawnInUIScene::Actor' has a wrong offset!");
+static_assert(offsetof(KuroEffectLibrary_SetEffectActorSpawnInUIScene, Value) == 0x000008, "Member 'KuroEffectLibrary_SetEffectActorSpawnInUIScene::Value' has a wrong offset!");
+static_assert(offsetof(KuroEffectLibrary_SetEffectActorSpawnInUIScene, Immediately) == 0x000009, "Member 'KuroEffectLibrary_SetEffectActorSpawnInUIScene::Immediately' has a wrong offset!");
+
 // Function KuroGameplay.KuroEffectLibrary.SetNiagaraFrameDeltaTime
 // 0x0010 (0x0010 - 0x0000)
 struct KuroEffectLibrary_SetNiagaraFrameDeltaTime final
@@ -199,6 +228,20 @@ static_assert(sizeof(KuroEffectLibrary_SetNiagaraFrameDeltaTime) == 0x000010, "W
 static_assert(offsetof(KuroEffectLibrary_SetNiagaraFrameDeltaTime, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_SetNiagaraFrameDeltaTime::NiagaraComponent' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_SetNiagaraFrameDeltaTime, DeltaTime) == 0x000008, "Member 'KuroEffectLibrary_SetNiagaraFrameDeltaTime::DeltaTime' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_SetNiagaraFrameDeltaTime, ReturnValue) == 0x00000C, "Member 'KuroEffectLibrary_SetNiagaraFrameDeltaTime::ReturnValue' has a wrong offset!");
+
+// Function KuroGameplay.KuroEffectLibrary.SetNiagaraSimulationMinDeltaTime
+// 0x0010 (0x0010 - 0x0000)
+struct KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime final
+{
+public:
+	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinDeltaTime;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime) == 0x000008, "Wrong alignment on KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime");
+static_assert(sizeof(KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime) == 0x000010, "Wrong size on KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime");
+static_assert(offsetof(KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime, NiagaraComponent) == 0x000000, "Member 'KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime::NiagaraComponent' has a wrong offset!");
+static_assert(offsetof(KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime, MinDeltaTime) == 0x000008, "Member 'KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime::MinDeltaTime' has a wrong offset!");
 
 // Function KuroGameplay.KuroEffectLibrary.SetOnSystemFinishedDelegate
 // 0x0028 (0x0028 - 0x0000)
@@ -485,6 +528,19 @@ public:
 static_assert(alignof(KuroInputManager_OnActorDestroy) == 0x000008, "Wrong alignment on KuroInputManager_OnActorDestroy");
 static_assert(sizeof(KuroInputManager_OnActorDestroy) == 0x000008, "Wrong size on KuroInputManager_OnActorDestroy");
 static_assert(offsetof(KuroInputManager_OnActorDestroy, Actor) == 0x000000, "Member 'KuroInputManager_OnActorDestroy::Actor' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetCurrentLevelRefPath
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLevelPlayLibrary_GetCurrentLevelRefPath final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLevelPlayLibrary_GetCurrentLevelRefPath) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetCurrentLevelRefPath");
+static_assert(sizeof(KuroLevelPlayLibrary_GetCurrentLevelRefPath) == 0x000018, "Wrong size on KuroLevelPlayLibrary_GetCurrentLevelRefPath");
+static_assert(offsetof(KuroLevelPlayLibrary_GetCurrentLevelRefPath, WorldContextObject) == 0x000000, "Member 'KuroLevelPlayLibrary_GetCurrentLevelRefPath::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetCurrentLevelRefPath, ReturnValue) == 0x000008, "Member 'KuroLevelPlayLibrary_GetCurrentLevelRefPath::ReturnValue' has a wrong offset!");
 
 // Function KuroGameplay.KuroLevelPlayLibrary.GetEntityIdByBaseItem
 // 0x0010 (0x0010 - 0x0000)
@@ -966,6 +1022,22 @@ static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_SectionContains) == 0x00
 static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SectionContains, Section) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_SectionContains::Section' has a wrong offset!");
 static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SectionContains, Frame) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_SectionContains::Frame' has a wrong offset!");
 static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SectionContains, ReturnValue) == 0x000010, "Member 'KuroSequenceRuntimeFunctionLibrary_SectionContains::ReturnValue' has a wrong offset!");
+
+// Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.SetSequenceInUiScene
+// 0x0010 (0x0010 - 0x0000)
+struct KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene final
+{
+public:
+	class UMovieSceneSequence*                    Sequence;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsEnable;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene");
+static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene) == 0x000010, "Wrong size on KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene");
+static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene::Sequence' has a wrong offset!");
+static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene, IsEnable) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene::IsEnable' has a wrong offset!");
+static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene, ReturnValue) == 0x000009, "Member 'KuroSequenceRuntimeFunctionLibrary_SetSequenceInUiScene::ReturnValue' has a wrong offset!");
 
 // Function KuroGameplay.KuroStaticMeshLibrary.MergeSimpleCollisions
 // 0x0018 (0x0018 - 0x0000)

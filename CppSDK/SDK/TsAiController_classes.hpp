@@ -19,14 +19,12 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAiController.TsAiController_C
-// 0x0020 (0x03D8 - 0x03B8)
+// 0x0018 (0x03D8 - 0x03C0)
 class ATsAiController_C : public AKuroAIController
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBehaviorTree*                          BehaviorTree;                                      // 0x03C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         DebugDraw;                                         // 0x03C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3CC[0x4];                                      // 0x03CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBehaviorTree*                          BehaviorTree;                                      // 0x03C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UKuroStateMachineGroup*                 StateMachineGroup;                                 // 0x03D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
@@ -72,7 +70,6 @@ public:
 	bool _______(TArray<class FString>& States);
 	void _b_____(TArray<class FString>& States);
 	void GetDebugStateMachine(TArray<class FText>& Output);
-	void ChangeDebugDraw();
 	void AicApplyBuffToTarget(int32 TargetId, int64 buffId);
 
 public:
@@ -87,9 +84,8 @@ public:
 };
 static_assert(alignof(ATsAiController_C) == 0x000008, "Wrong alignment on ATsAiController_C");
 static_assert(sizeof(ATsAiController_C) == 0x0003D8, "Wrong size on ATsAiController_C");
-static_assert(offsetof(ATsAiController_C, UberGraphFrame) == 0x0003B8, "Member 'ATsAiController_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsAiController_C, BehaviorTree) == 0x0003C0, "Member 'ATsAiController_C::BehaviorTree' has a wrong offset!");
-static_assert(offsetof(ATsAiController_C, DebugDraw) == 0x0003C8, "Member 'ATsAiController_C::DebugDraw' has a wrong offset!");
+static_assert(offsetof(ATsAiController_C, UberGraphFrame) == 0x0003C0, "Member 'ATsAiController_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ATsAiController_C, BehaviorTree) == 0x0003C8, "Member 'ATsAiController_C::BehaviorTree' has a wrong offset!");
 static_assert(offsetof(ATsAiController_C, StateMachineGroup) == 0x0003D0, "Member 'ATsAiController_C::StateMachineGroup' has a wrong offset!");
 
 }

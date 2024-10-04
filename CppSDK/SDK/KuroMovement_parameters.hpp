@@ -444,6 +444,37 @@ static_assert(offsetof(KuroMoveTrigger_OnEnterOverlap, OtherBodyIndex) == 0x0000
 static_assert(offsetof(KuroMoveTrigger_OnEnterOverlap, bFromSweep) == 0x00001C, "Member 'KuroMoveTrigger_OnEnterOverlap::bFromSweep' has a wrong offset!");
 static_assert(offsetof(KuroMoveTrigger_OnEnterOverlap, SweepResult) == 0x000020, "Member 'KuroMoveTrigger_OnEnterOverlap::SweepResult' has a wrong offset!");
 
+// Function KuroMovement.KuroMovementBPLibrary.KuroRoll
+// 0x0038 (0x0038 - 0x0000)
+struct KuroMovementBPLibrary_KuroRoll final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCharacterMovementComponent*            CharMoveComp;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TargetSpeed;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Friction;                                          // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AccelOnGround;                                     // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                FloorNormal;                                       // 0x001C(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Gravity;                                           // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StepUpHeight;                                      // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxSpeed;                                          // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0034(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroMovementBPLibrary_KuroRoll) == 0x000008, "Wrong alignment on KuroMovementBPLibrary_KuroRoll");
+static_assert(sizeof(KuroMovementBPLibrary_KuroRoll) == 0x000038, "Wrong size on KuroMovementBPLibrary_KuroRoll");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, DeltaSeconds) == 0x000000, "Member 'KuroMovementBPLibrary_KuroRoll::DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, CharMoveComp) == 0x000008, "Member 'KuroMovementBPLibrary_KuroRoll::CharMoveComp' has a wrong offset!");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, TargetSpeed) == 0x000010, "Member 'KuroMovementBPLibrary_KuroRoll::TargetSpeed' has a wrong offset!");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, Friction) == 0x000014, "Member 'KuroMovementBPLibrary_KuroRoll::Friction' has a wrong offset!");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, AccelOnGround) == 0x000018, "Member 'KuroMovementBPLibrary_KuroRoll::AccelOnGround' has a wrong offset!");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, FloorNormal) == 0x00001C, "Member 'KuroMovementBPLibrary_KuroRoll::FloorNormal' has a wrong offset!");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, Gravity) == 0x000028, "Member 'KuroMovementBPLibrary_KuroRoll::Gravity' has a wrong offset!");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, StepUpHeight) == 0x00002C, "Member 'KuroMovementBPLibrary_KuroRoll::StepUpHeight' has a wrong offset!");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, MaxSpeed) == 0x000030, "Member 'KuroMovementBPLibrary_KuroRoll::MaxSpeed' has a wrong offset!");
+static_assert(offsetof(KuroMovementBPLibrary_KuroRoll, ReturnValue) == 0x000034, "Member 'KuroMovementBPLibrary_KuroRoll::ReturnValue' has a wrong offset!");
+
 // Function KuroMovement.KuroMovementBPLibrary.KuroSki
 // 0x0048 (0x0048 - 0x0000)
 struct KuroMovementBPLibrary_KuroSki final
@@ -457,8 +488,8 @@ public:
 	struct FVector                                SpeedParams;                                       // 0x0028(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         IgnoreStepHeight;                                  // 0x0034(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UCurveFloat*                            SpeedReduceCurve;                                  // 0x0038(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0040(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMovementBPLibrary_KuroSki) == 0x000008, "Wrong alignment on KuroMovementBPLibrary_KuroSki");
 static_assert(sizeof(KuroMovementBPLibrary_KuroSki) == 0x000048, "Wrong size on KuroMovementBPLibrary_KuroSki");

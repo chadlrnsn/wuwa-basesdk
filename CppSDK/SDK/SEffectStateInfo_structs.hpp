@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SStateBasedEffectLinearColorCurveSection_structs.hpp"
 #include "SEffectStateFloatCurve_structs.hpp"
 #include "SEffectStateLinearColorCurve_structs.hpp"
 #include "SStateBasedEffectFloatCurveSection_structs.hpp"
+#include "SStateBasedEffectLinearColorCurveSection_structs.hpp"
 
 
 namespace SDK

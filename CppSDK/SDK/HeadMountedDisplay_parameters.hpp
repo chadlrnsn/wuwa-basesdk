@@ -18,229 +18,6 @@
 namespace SDK::Params
 {
 
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingForComponent
-// 0x0008 (0x0008 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent final
-{
-public:
-	const class UMotionControllerComponent*       MotionControllerComponent;                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent) == 0x000008, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent) == 0x000008, "Wrong size on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent, MotionControllerComponent) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent::MotionControllerComponent' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingOfControllersForPlayer
-// 0x0004 (0x0004 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer final
-{
-public:
-	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer) == 0x000004, "Wrong size on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer::PlayerIndex' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingOfDevice
-// 0x0008 (0x0008 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice final
-{
-public:
-	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EControllerHand                               Hand;                                              // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice) == 0x000008, "Wrong size on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice::PlayerIndex' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice, Hand) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice::Hand' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingOfSource
-// 0x0010 (0x0010 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource final
-{
-public:
-	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SourceName;                                        // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource) == 0x000010, "Wrong size on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource::PlayerIndex' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource, SourceName) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource::SourceName' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.EnableMotionTrackingForComponent
-// 0x0010 (0x0010 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent final
-{
-public:
-	class UMotionControllerComponent*             MotionControllerComponent;                         // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent) == 0x000008, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent) == 0x000010, "Wrong size on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent, MotionControllerComponent) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent::MotionControllerComponent' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent, ReturnValue) == 0x000008, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.EnableMotionTrackingOfDevice
-// 0x0008 (0x0008 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice final
-{
-public:
-	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EControllerHand                               Hand;                                              // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0005(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice) == 0x000008, "Wrong size on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice::PlayerIndex' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice, Hand) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice::Hand' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice, ReturnValue) == 0x000005, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.EnableMotionTrackingOfSource
-// 0x0014 (0x0014 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource final
-{
-public:
-	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SourceName;                                        // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource) == 0x000014, "Wrong size on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource::PlayerIndex' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource, SourceName) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource::SourceName' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource, ReturnValue) == 0x000010, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.EnumerateMotionSources
-// 0x0010 (0x0010 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources final
-{
-public:
-	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources) == 0x000008, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources) == 0x000010, "Wrong size on MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.GetActiveTrackingSystemName
-// 0x000C (0x000C - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName final
-{
-public:
-	class FName                                   ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName) == 0x00000C, "Wrong size on MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.GetMaximumMotionTrackedControllerCount
-// 0x0004 (0x0004 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount) == 0x000004, "Wrong size on MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.GetMotionTrackingEnabledControllerCount
-// 0x0004 (0x0004 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount) == 0x000004, "Wrong size on MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionSourceTracking
-// 0x0014 (0x0014 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking final
-{
-public:
-	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SourceName;                                        // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking) == 0x000014, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking::PlayerIndex' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking, SourceName) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking::SourceName' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking, ReturnValue) == 0x000010, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionTrackedDeviceCountManagementNecessary
-// 0x0001 (0x0001 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary) == 0x000001, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary) == 0x000001, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionTrackingEnabledForComponent
-// 0x0010 (0x0010 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent final
-{
-public:
-	const class UMotionControllerComponent*       MotionControllerComponent;                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent) == 0x000008, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent) == 0x000010, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent, MotionControllerComponent) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent::MotionControllerComponent' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent, ReturnValue) == 0x000008, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionTrackingEnabledForDevice
-// 0x0008 (0x0008 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice final
-{
-public:
-	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EControllerHand                               Hand;                                              // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0005(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice) == 0x000008, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice::PlayerIndex' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice, Hand) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice::Hand' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice, ReturnValue) == 0x000005, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionTrackingEnabledForSource
-// 0x0014 (0x0014 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource final
-{
-public:
-	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SourceName;                                        // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource) == 0x000014, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource::PlayerIndex' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource, SourceName) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource::SourceName' has a wrong offset!");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource, ReturnValue) == 0x000010, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource::ReturnValue' has a wrong offset!");
-
-// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.SetIsControllerMotionTrackingEnabledByDefault
-// 0x0001 (0x0001 - 0x0000)
-struct MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault final
-{
-public:
-	bool                                          Enable;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault) == 0x000001, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault");
-static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault) == 0x000001, "Wrong size on MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault");
-static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault, Enable) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault::Enable' has a wrong offset!");
-
 // Function HeadMountedDisplay.HeadMountedDisplayFunctionLibrary.CalibrateExternalTrackingToHMD
 // 0x0030 (0x0030 - 0x0000)
 struct HeadMountedDisplayFunctionLibrary_CalibrateExternalTrackingToHMD final
@@ -962,6 +739,229 @@ public:
 static_assert(alignof(MotionControllerComponent_IsTracked) == 0x000001, "Wrong alignment on MotionControllerComponent_IsTracked");
 static_assert(sizeof(MotionControllerComponent_IsTracked) == 0x000001, "Wrong size on MotionControllerComponent_IsTracked");
 static_assert(offsetof(MotionControllerComponent_IsTracked, ReturnValue) == 0x000000, "Member 'MotionControllerComponent_IsTracked::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingForComponent
+// 0x0008 (0x0008 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent final
+{
+public:
+	const class UMotionControllerComponent*       MotionControllerComponent;                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent) == 0x000008, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent) == 0x000008, "Wrong size on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent, MotionControllerComponent) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingForComponent::MotionControllerComponent' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingOfControllersForPlayer
+// 0x0004 (0x0004 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer final
+{
+public:
+	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer) == 0x000004, "Wrong size on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfControllersForPlayer::PlayerIndex' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingOfDevice
+// 0x0008 (0x0008 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice final
+{
+public:
+	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EControllerHand                               Hand;                                              // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice) == 0x000008, "Wrong size on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice::PlayerIndex' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice, Hand) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfDevice::Hand' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.DisableMotionTrackingOfSource
+// 0x0010 (0x0010 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource final
+{
+public:
+	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SourceName;                                        // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource) == 0x000010, "Wrong size on MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource::PlayerIndex' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource, SourceName) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_DisableMotionTrackingOfSource::SourceName' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.EnableMotionTrackingForComponent
+// 0x0010 (0x0010 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent final
+{
+public:
+	class UMotionControllerComponent*             MotionControllerComponent;                         // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent) == 0x000008, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent) == 0x000010, "Wrong size on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent, MotionControllerComponent) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent::MotionControllerComponent' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent, ReturnValue) == 0x000008, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingForComponent::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.EnableMotionTrackingOfDevice
+// 0x0008 (0x0008 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice final
+{
+public:
+	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EControllerHand                               Hand;                                              // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0005(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice) == 0x000008, "Wrong size on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice::PlayerIndex' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice, Hand) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice::Hand' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice, ReturnValue) == 0x000005, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfDevice::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.EnableMotionTrackingOfSource
+// 0x0014 (0x0014 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource final
+{
+public:
+	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SourceName;                                        // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource) == 0x000014, "Wrong size on MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource::PlayerIndex' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource, SourceName) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource::SourceName' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource, ReturnValue) == 0x000010, "Member 'MotionTrackedDeviceFunctionLibrary_EnableMotionTrackingOfSource::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.EnumerateMotionSources
+// 0x0010 (0x0010 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources final
+{
+public:
+	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources) == 0x000008, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources) == 0x000010, "Wrong size on MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_EnumerateMotionSources::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.GetActiveTrackingSystemName
+// 0x000C (0x000C - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName) == 0x00000C, "Wrong size on MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_GetActiveTrackingSystemName::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.GetMaximumMotionTrackedControllerCount
+// 0x0004 (0x0004 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount) == 0x000004, "Wrong size on MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_GetMaximumMotionTrackedControllerCount::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.GetMotionTrackingEnabledControllerCount
+// 0x0004 (0x0004 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount) == 0x000004, "Wrong size on MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_GetMotionTrackingEnabledControllerCount::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionSourceTracking
+// 0x0014 (0x0014 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking final
+{
+public:
+	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SourceName;                                        // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking) == 0x000014, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking::PlayerIndex' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking, SourceName) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking::SourceName' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking, ReturnValue) == 0x000010, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionSourceTracking::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionTrackedDeviceCountManagementNecessary
+// 0x0001 (0x0001 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary) == 0x000001, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary) == 0x000001, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary, ReturnValue) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackedDeviceCountManagementNecessary::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionTrackingEnabledForComponent
+// 0x0010 (0x0010 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent final
+{
+public:
+	const class UMotionControllerComponent*       MotionControllerComponent;                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent) == 0x000008, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent) == 0x000010, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent, MotionControllerComponent) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent::MotionControllerComponent' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent, ReturnValue) == 0x000008, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForComponent::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionTrackingEnabledForDevice
+// 0x0008 (0x0008 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice final
+{
+public:
+	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EControllerHand                               Hand;                                              // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0005(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice) == 0x000008, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice::PlayerIndex' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice, Hand) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice::Hand' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice, ReturnValue) == 0x000005, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForDevice::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.IsMotionTrackingEnabledForSource
+// 0x0014 (0x0014 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource final
+{
+public:
+	int32                                         PlayerIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SourceName;                                        // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource) == 0x000004, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource) == 0x000014, "Wrong size on MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource, PlayerIndex) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource::PlayerIndex' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource, SourceName) == 0x000004, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource::SourceName' has a wrong offset!");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource, ReturnValue) == 0x000010, "Member 'MotionTrackedDeviceFunctionLibrary_IsMotionTrackingEnabledForSource::ReturnValue' has a wrong offset!");
+
+// Function HeadMountedDisplay.MotionTrackedDeviceFunctionLibrary.SetIsControllerMotionTrackingEnabledByDefault
+// 0x0001 (0x0001 - 0x0000)
+struct MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault final
+{
+public:
+	bool                                          Enable;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault) == 0x000001, "Wrong alignment on MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault");
+static_assert(sizeof(MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault) == 0x000001, "Wrong size on MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault");
+static_assert(offsetof(MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault, Enable) == 0x000000, "Member 'MotionTrackedDeviceFunctionLibrary_SetIsControllerMotionTrackingEnabledByDefault::Enable' has a wrong offset!");
 
 // Function HeadMountedDisplay.XRAssetFunctionLibrary.AddDeviceVisualizationComponentBlocking
 // 0x0060 (0x0060 - 0x0000)

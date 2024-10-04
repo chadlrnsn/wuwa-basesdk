@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "SHolographicData_structs.hpp"
+#include "SMaterialControllerFloatParameter_structs.hpp"
 #include "KuroCurve_structs.hpp"
 #include "SMaterialControllerColorParameter_structs.hpp"
-#include "SHolographicData_structs.hpp"
 #include "SMaterialParamCache_structs.hpp"
-#include "SMaterialControllerFloatParameter_structs.hpp"
 #include "SHolographicMaterialsCache_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
@@ -118,41 +118,41 @@ static_assert(offsetof(BP_NPCMaterialController_C_CacheMaterialParameters, CallF
 static_assert(offsetof(BP_NPCMaterialController_C_CacheMaterialParameters, CallFunc_Add_IntInt_ReturnValue_1) == 0x000AA0, "Member 'BP_NPCMaterialController_C_CacheMaterialParameters::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
 
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.CacheAndReplace
-// 0x01E8 (0x01E8 - 0x0000)
+// 0x01F0 (0x01F0 - 0x0000)
 struct BP_NPCMaterialController_C_CacheAndReplace final
 {
 public:
-	struct FSHolographicData                      SHolographicData;                                  // 0x0000(0x0050)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    Self2;                                             // 0x0050(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	int32                                         ElementIndex;                                      // 0x0058(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               Material;                                          // 0x0060(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               ReturnValue;                                       // 0x0068(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMaterialParamCache                   CacheResult;                                       // 0x0070(0x00B0)(Parm, OutParm, HasGetValueTypeHash)
-	class UMaterialInterface*                     ReplaceMaterial;                                   // 0x0120(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0129(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x012A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x012B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_12C[0x4];                                      // 0x012C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMaterialParamCache                   CallFunc_CacheMaterialParameters_result;           // 0x0138(0x00B0)(HasGetValueTypeHash)
+	struct FSHolographicData                      SHolographicData;                                  // 0x0000(0x0058)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    Self2;                                             // 0x0058(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	int32                                         ElementIndex;                                      // 0x0060(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               Material;                                          // 0x0068(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               ReturnValue;                                       // 0x0070(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMaterialParamCache                   CacheResult;                                       // 0x0078(0x00B0)(Parm, OutParm, HasGetValueTypeHash)
+	class UMaterialInterface*                     ReplaceMaterial;                                   // 0x0128(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0131(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0132(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0133(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_134[0x4];                                      // 0x0134(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMaterialParamCache                   CallFunc_CacheMaterialParameters_result;           // 0x0140(0x00B0)(HasGetValueTypeHash)
 };
 static_assert(alignof(BP_NPCMaterialController_C_CacheAndReplace) == 0x000008, "Wrong alignment on BP_NPCMaterialController_C_CacheAndReplace");
-static_assert(sizeof(BP_NPCMaterialController_C_CacheAndReplace) == 0x0001E8, "Wrong size on BP_NPCMaterialController_C_CacheAndReplace");
+static_assert(sizeof(BP_NPCMaterialController_C_CacheAndReplace) == 0x0001F0, "Wrong size on BP_NPCMaterialController_C_CacheAndReplace");
 static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, SHolographicData) == 0x000000, "Member 'BP_NPCMaterialController_C_CacheAndReplace::SHolographicData' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, Self2) == 0x000050, "Member 'BP_NPCMaterialController_C_CacheAndReplace::Self2' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, ElementIndex) == 0x000058, "Member 'BP_NPCMaterialController_C_CacheAndReplace::ElementIndex' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, Material) == 0x000060, "Member 'BP_NPCMaterialController_C_CacheAndReplace::Material' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, ReturnValue) == 0x000068, "Member 'BP_NPCMaterialController_C_CacheAndReplace::ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CacheResult) == 0x000070, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CacheResult' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, ReplaceMaterial) == 0x000120, "Member 'BP_NPCMaterialController_C_CacheAndReplace::ReplaceMaterial' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000128, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000129, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_BooleanAND_ReturnValue) == 0x00012A, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_IsValid_ReturnValue) == 0x00012B, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000130, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_CacheMaterialParameters_result) == 0x000138, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_CacheMaterialParameters_result' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, Self2) == 0x000058, "Member 'BP_NPCMaterialController_C_CacheAndReplace::Self2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, ElementIndex) == 0x000060, "Member 'BP_NPCMaterialController_C_CacheAndReplace::ElementIndex' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, Material) == 0x000068, "Member 'BP_NPCMaterialController_C_CacheAndReplace::Material' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, ReturnValue) == 0x000070, "Member 'BP_NPCMaterialController_C_CacheAndReplace::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CacheResult) == 0x000078, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CacheResult' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, ReplaceMaterial) == 0x000128, "Member 'BP_NPCMaterialController_C_CacheAndReplace::ReplaceMaterial' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000130, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000131, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_BooleanAND_ReturnValue) == 0x000132, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_IsValid_ReturnValue) == 0x000133, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000138, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_CacheAndReplace, CallFunc_CacheMaterialParameters_result) == 0x000140, "Member 'BP_NPCMaterialController_C_CacheAndReplace::CallFunc_CacheMaterialParameters_result' has a wrong offset!");
 
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.RevertMaterialParamters
 // 0x01D8 (0x01D8 - 0x0000)
@@ -258,76 +258,76 @@ static_assert(offsetof(BP_NPCMaterialController_C_RemoveNpcEffect, CallFunc_Arra
 static_assert(offsetof(BP_NPCMaterialController_C_RemoveNpcEffect, CallFunc_Less_IntInt_ReturnValue_1) == 0x000114, "Member 'BP_NPCMaterialController_C_RemoveNpcEffect::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
 
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.UpdateMaterialsWithDa
-// 0x0BC0 (0x0BC0 - 0x0000)
+// 0x0BC8 (0x0BC8 - 0x0000)
 struct BP_NPCMaterialController_C_UpdateMaterialsWithDa final
 {
 public:
 	TArray<class UMaterialInstanceDynamic*>       Materials;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FSHolographicData                      SHolographicData;                                  // 0x0010(0x0050)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-	struct FKuroCurveLinearColor                  TempColor;                                         // 0x0060(0x0220)(Edit, BlueprintVisible)
-	struct FKuroCurveFloat                        TempFloat;                                         // 0x0280(0x0090)(Edit, BlueprintVisible)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0310(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0314(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0318(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable;                       // 0x031C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMaterialControllerFloatParameter     CallFunc_Array_Get_Item;                           // 0x0320(0x01C0)(HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x04E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x04E4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4E5[0x3];                                      // 0x04E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x04E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x04EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x04F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4F4[0x4];                                      // 0x04F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CallFunc_Array_Get_Item_1;                         // 0x04F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0500(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_501[0x3];                                      // 0x0501(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0504(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ___wildcard_Variable;                              // 0x0508(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x050C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0510(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_511[0x3];                                      // 0x0511(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0514(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           ___wildcard_Variable_1;                            // 0x0518(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_2;                     // 0x0528(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_52C[0x4];                                      // 0x052C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSMaterialControllerColorParameter     CallFunc_Array_Get_Item_2;                         // 0x0530(0x0670)(HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0BA0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_BA1[0x3];                                      // 0x0BA1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           CallFunc_GetValue_LinearColor_ReturnValue;         // 0x0BA4(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x0BB4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_BB5[0x3];                                      // 0x0BB5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_GetValue_Float_ReturnValue;               // 0x0BB8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSHolographicData                      SHolographicData;                                  // 0x0010(0x0058)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+	struct FKuroCurveLinearColor                  TempColor;                                         // 0x0068(0x0220)(Edit, BlueprintVisible)
+	struct FKuroCurveFloat                        TempFloat;                                         // 0x0288(0x0090)(Edit, BlueprintVisible)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0318(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x031C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0320(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0324(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMaterialControllerFloatParameter     CallFunc_Array_Get_Item;                           // 0x0328(0x01C0)(HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x04E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x04EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4ED[0x3];                                      // 0x04ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x04F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x04F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x04F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4FC[0x4];                                      // 0x04FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_Array_Get_Item_1;                         // 0x0500(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0508(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_509[0x3];                                      // 0x0509(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x050C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ___wildcard_Variable;                              // 0x0510(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x0514(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0518(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_519[0x3];                                      // 0x0519(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x051C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           ___wildcard_Variable_1;                            // 0x0520(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_2;                     // 0x0530(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_534[0x4];                                      // 0x0534(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSMaterialControllerColorParameter     CallFunc_Array_Get_Item_2;                         // 0x0538(0x0670)(HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0BA8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BA9[0x3];                                      // 0x0BA9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           CallFunc_GetValue_LinearColor_ReturnValue;         // 0x0BAC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x0BBC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BBD[0x3];                                      // 0x0BBD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetValue_Float_ReturnValue;               // 0x0BC0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_NPCMaterialController_C_UpdateMaterialsWithDa) == 0x000008, "Wrong alignment on BP_NPCMaterialController_C_UpdateMaterialsWithDa");
-static_assert(sizeof(BP_NPCMaterialController_C_UpdateMaterialsWithDa) == 0x000BC0, "Wrong size on BP_NPCMaterialController_C_UpdateMaterialsWithDa");
+static_assert(sizeof(BP_NPCMaterialController_C_UpdateMaterialsWithDa) == 0x000BC8, "Wrong size on BP_NPCMaterialController_C_UpdateMaterialsWithDa");
 static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, Materials) == 0x000000, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::Materials' has a wrong offset!");
 static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, SHolographicData) == 0x000010, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::SHolographicData' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, TempColor) == 0x000060, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::TempColor' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, TempFloat) == 0x000280, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::TempFloat' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue) == 0x000310, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue_1) == 0x000314, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue_2) == 0x000318, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable) == 0x00031C, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item) == 0x000320, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable) == 0x0004E0, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue) == 0x0004E4, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue) == 0x0004E8, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable_1) == 0x0004EC, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable_1) == 0x0004F0, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item_1) == 0x0004F8, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue_1) == 0x000500, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue_1) == 0x000504, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___wildcard_Variable) == 0x000508, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___wildcard_Variable' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable_2) == 0x00050C, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable_2' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue_2) == 0x000510, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue_2) == 0x000514, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___wildcard_Variable_1) == 0x000518, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___wildcard_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable_2) == 0x000528, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Array_Index_Variable_2' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item_2) == 0x000530, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, K2Node_SwitchEnum_CmpSuccess) == 0x000BA0, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_GetValue_LinearColor_ReturnValue) == 0x000BA4, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_GetValue_LinearColor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, K2Node_SwitchEnum_CmpSuccess_1) == 0x000BB4, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_GetValue_Float_ReturnValue) == 0x000BB8, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_GetValue_Float_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, TempColor) == 0x000068, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::TempColor' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, TempFloat) == 0x000288, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::TempFloat' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue) == 0x000318, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue_1) == 0x00031C, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue_2) == 0x000320, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable) == 0x000324, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item) == 0x000328, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable) == 0x0004E8, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue) == 0x0004EC, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue) == 0x0004F0, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable_1) == 0x0004F4, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable_1) == 0x0004F8, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item_1) == 0x000500, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue_1) == 0x000508, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue_1) == 0x00050C, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___wildcard_Variable) == 0x000510, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___wildcard_Variable' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable_2) == 0x000514, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue_2) == 0x000518, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue_2) == 0x00051C, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___wildcard_Variable_1) == 0x000520, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___wildcard_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable_2) == 0x000530, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::___int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item_2) == 0x000538, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, K2Node_SwitchEnum_CmpSuccess) == 0x000BA8, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_GetValue_LinearColor_ReturnValue) == 0x000BAC, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_GetValue_LinearColor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, K2Node_SwitchEnum_CmpSuccess_1) == 0x000BBC, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_UpdateMaterialsWithDa, CallFunc_GetValue_Float_ReturnValue) == 0x000BC0, "Member 'BP_NPCMaterialController_C_UpdateMaterialsWithDa::CallFunc_GetValue_Float_ReturnValue' has a wrong offset!");
 
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.EndEffect
 // 0x0001 (0x0001 - 0x0000)
@@ -341,7 +341,7 @@ static_assert(sizeof(BP_NPCMaterialController_C_EndEffect) == 0x000001, "Wrong s
 static_assert(offsetof(BP_NPCMaterialController_C_EndEffect, K2Node_SwitchEnum_CmpSuccess) == 0x000000, "Member 'BP_NPCMaterialController_C_EndEffect::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
 
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.StartEffect
-// 0x0208 (0x0208 - 0x0000)
+// 0x0230 (0x0230 - 0x0000)
 struct BP_NPCMaterialController_C_StartEffect final
 {
 public:
@@ -353,48 +353,50 @@ public:
 	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Array_Index_Variable;                       // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSHolographicData                      ___wildcard_Variable;                              // 0x0038(0x0050)(HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetOwner_ReturnValue;                     // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class USkeletalMeshComponent*>         CallFunc_K2_GetComponentsByClass_ReturnValue;      // 0x0098(0x0010)(ReferenceParm, ContainsInstancedReference)
-	class USceneComponent*                        CallFunc_Array_Get_Item;                           // 0x00A8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsVisible_ReturnValue;                    // 0x00B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00B5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B6[0x2];                                       // 0x00B6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMeshComponent*                 K2Node_DynamicCast_As_______;                      // 0x00B8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UMaterialInterface*>             CallFunc_GetMaterials_ReturnValue;                 // 0x00C8(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x00DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_DD[0x3];                                       // 0x00DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSHolographicMaterialsCache            K2Node_MakeStruct_SHolographicMaterialsCache;      // 0x00E0(0x0010)(HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_F1[0x3];                                       // 0x00F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     CallFunc_Array_Get_Item_1;                         // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               K2Node_DynamicCast_As______;                       // 0x0110(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0118(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0119(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_11A[0x6];                                      // 0x011A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               ___wildcard_Variable_1;                            // 0x0120(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CacheAndReplace_ReturnValue;              // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMaterialParamCache                   CallFunc_CacheAndReplace_CacheResult;              // 0x0130(0x00B0)(HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x01E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1E4[0x4];                                      // 0x01E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x01E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x01F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EndsWith_ReturnValue;                     // 0x01FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1FD[0x3];                                      // 0x01FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue_2;                  // 0x0200(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSHolographicData                      ___wildcard_Variable;                              // 0x0038(0x0058)(HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetOwner_ReturnValue;                     // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class USkeletalMeshComponent*>         CallFunc_K2_GetComponentsByClass_ReturnValue;      // 0x00A0(0x0010)(ReferenceParm, ContainsInstancedReference)
+	class USceneComponent*                        CallFunc_Array_Get_Item;                           // 0x00B0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsVisible_ReturnValue;                    // 0x00BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00BD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BE[0x2];                                       // 0x00BE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkeletalMeshComponent*                 K2Node_DynamicCast_As_______;                      // 0x00C0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UMaterialInterface*>             CallFunc_GetMaterials_ReturnValue;                 // 0x00D0(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x00E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x00E4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_E5[0x3];                                       // 0x00E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSHolographicMaterialsCache            K2Node_MakeStruct_SHolographicMaterialsCache;      // 0x00E8(0x0010)(HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F9[0x3];                                       // 0x00F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x00FC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     CallFunc_Array_Get_Item_1;                         // 0x0100(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0110(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               K2Node_DynamicCast_As______;                       // 0x0118(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0121(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_122[0x6];                                      // 0x0122(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0128(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0138(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               ___wildcard_Variable_1;                            // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CacheAndReplace_ReturnValue;              // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMaterialParamCache                   CallFunc_CacheAndReplace_CacheResult;              // 0x0158(0x00B0)(HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0208(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_20C[0x4];                                      // 0x020C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetObjectName_ReturnValue_1;              // 0x0210(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EndsWith_ReturnValue;                     // 0x0224(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_225[0x3];                                      // 0x0225(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue_2;                  // 0x0228(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_NPCMaterialController_C_StartEffect) == 0x000008, "Wrong alignment on BP_NPCMaterialController_C_StartEffect");
-static_assert(sizeof(BP_NPCMaterialController_C_StartEffect) == 0x000208, "Wrong size on BP_NPCMaterialController_C_StartEffect");
+static_assert(sizeof(BP_NPCMaterialController_C_StartEffect) == 0x000230, "Wrong size on BP_NPCMaterialController_C_StartEffect");
 static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, TempMaterialCaches) == 0x000000, "Member 'BP_NPCMaterialController_C_StartEffect::TempMaterialCaches' has a wrong offset!");
 static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, Caches) == 0x000010, "Member 'BP_NPCMaterialController_C_StartEffect::Caches' has a wrong offset!");
 static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, ___int_Loop_Counter_Variable) == 0x000020, "Member 'BP_NPCMaterialController_C_StartEffect::___int_Loop_Counter_Variable' has a wrong offset!");
@@ -403,68 +405,72 @@ static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Add_IntI
 static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Add_IntInt_ReturnValue_1) == 0x00002C, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, ___int_Array_Index_Variable) == 0x000030, "Member 'BP_NPCMaterialController_C_StartEffect::___int_Array_Index_Variable' has a wrong offset!");
 static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, ___wildcard_Variable) == 0x000038, "Member 'BP_NPCMaterialController_C_StartEffect::___wildcard_Variable' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_GetOwner_ReturnValue) == 0x000088, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_GetOwner_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsValid_ReturnValue) == 0x000090, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_K2_GetComponentsByClass_ReturnValue) == 0x000098, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_K2_GetComponentsByClass_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Get_Item) == 0x0000A8, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Length_ReturnValue) == 0x0000B0, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsVisible_ReturnValue) == 0x0000B4, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsVisible_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Less_IntInt_ReturnValue) == 0x0000B5, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_DynamicCast_As_______) == 0x0000B8, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_DynamicCast_As_______' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_DynamicCast_bSuccess) == 0x0000C0, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_GetMaterials_ReturnValue) == 0x0000C8, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_GetMaterials_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Length_ReturnValue_1) == 0x0000D8, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Less_IntInt_ReturnValue_1) == 0x0000DC, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_MakeStruct_SHolographicMaterialsCache) == 0x0000E0, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_MakeStruct_SHolographicMaterialsCache' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x0000F0, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, ___int_Array_Index_Variable_1) == 0x0000F4, "Member 'BP_NPCMaterialController_C_StartEffect::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Get_Item_1) == 0x0000F8, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsValid_ReturnValue_1) == 0x000100, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000108, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_DynamicCast_As______) == 0x000110, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_DynamicCast_As______' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_DynamicCast_bSuccess_1) == 0x000118, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsValid_ReturnValue_2) == 0x000119, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, ___wildcard_Variable_1) == 0x000120, "Member 'BP_NPCMaterialController_C_StartEffect::___wildcard_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_CacheAndReplace_ReturnValue) == 0x000128, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_CacheAndReplace_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_CacheAndReplace_CacheResult) == 0x000130, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_CacheAndReplace_CacheResult' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Add_ReturnValue) == 0x0001E0, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_GetObjectName_ReturnValue) == 0x0001E8, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_GetObjectName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Add_ReturnValue_1) == 0x0001F8, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Add_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_EndsWith_ReturnValue) == 0x0001FC, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_EndsWith_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Add_ReturnValue_2) == 0x000200, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Add_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_GetOwner_ReturnValue) == 0x000090, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_GetOwner_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsValid_ReturnValue) == 0x000098, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_K2_GetComponentsByClass_ReturnValue) == 0x0000A0, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_K2_GetComponentsByClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Get_Item) == 0x0000B0, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Length_ReturnValue) == 0x0000B8, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsVisible_ReturnValue) == 0x0000BC, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsVisible_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Less_IntInt_ReturnValue) == 0x0000BD, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_DynamicCast_As_______) == 0x0000C0, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_DynamicCast_As_______' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_DynamicCast_bSuccess) == 0x0000C8, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_GetMaterials_ReturnValue) == 0x0000D0, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_GetMaterials_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Length_ReturnValue_1) == 0x0000E0, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Less_IntInt_ReturnValue_1) == 0x0000E4, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_MakeStruct_SHolographicMaterialsCache) == 0x0000E8, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_MakeStruct_SHolographicMaterialsCache' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x0000F8, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, ___int_Array_Index_Variable_1) == 0x0000FC, "Member 'BP_NPCMaterialController_C_StartEffect::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Get_Item_1) == 0x000100, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsValid_ReturnValue_1) == 0x000108, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000110, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_DynamicCast_As______) == 0x000118, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_DynamicCast_As______' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, K2Node_DynamicCast_bSuccess_1) == 0x000120, "Member 'BP_NPCMaterialController_C_StartEffect::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsValid_ReturnValue_2) == 0x000121, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_GetObjectName_ReturnValue) == 0x000128, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_GetObjectName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Concat_StrStr_ReturnValue) == 0x000138, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, ___wildcard_Variable_1) == 0x000148, "Member 'BP_NPCMaterialController_C_StartEffect::___wildcard_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_CacheAndReplace_ReturnValue) == 0x000150, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_CacheAndReplace_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_CacheAndReplace_CacheResult) == 0x000158, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_CacheAndReplace_CacheResult' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Add_ReturnValue) == 0x000208, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_GetObjectName_ReturnValue_1) == 0x000210, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_GetObjectName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Add_ReturnValue_1) == 0x000220, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Add_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_EndsWith_ReturnValue) == 0x000224, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_EndsWith_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_Array_Add_ReturnValue_2) == 0x000228, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_Array_Add_ReturnValue_2' has a wrong offset!");
 
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.MaterialPretreatment
-// 0x0330 (0x0330 - 0x0000)
+// 0x0338 (0x0338 - 0x0000)
 struct BP_NPCMaterialController_C_MaterialPretreatment final
 {
 public:
 	TArray<class UMaterialInstanceDynamic*>       Materials;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FSHolographicData                      SHolographicData;                                  // 0x0010(0x0050)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-	struct FKuroCurveLinearColor                  TempColor;                                         // 0x0060(0x0220)(Edit, BlueprintVisible)
-	struct FKuroCurveFloat                        TempFloat;                                         // 0x0280(0x0090)(Edit, BlueprintVisible)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0310(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0314(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_315[0x3];                                      // 0x0315(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Array_Index_Variable;                       // 0x0318(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x031C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_Array_Get_Item;                           // 0x0320(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0328(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_329[0x3];                                      // 0x0329(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x032C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSHolographicData                      SHolographicData;                                  // 0x0010(0x0058)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+	struct FKuroCurveLinearColor                  TempColor;                                         // 0x0068(0x0220)(Edit, BlueprintVisible)
+	struct FKuroCurveFloat                        TempFloat;                                         // 0x0288(0x0090)(Edit, BlueprintVisible)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0318(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x031C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x031D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_31E[0x2];                                      // 0x031E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Array_Index_Variable;                       // 0x0320(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0324(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_Array_Get_Item;                           // 0x0328(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0330(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_331[0x3];                                      // 0x0331(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0334(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_NPCMaterialController_C_MaterialPretreatment) == 0x000008, "Wrong alignment on BP_NPCMaterialController_C_MaterialPretreatment");
-static_assert(sizeof(BP_NPCMaterialController_C_MaterialPretreatment) == 0x000330, "Wrong size on BP_NPCMaterialController_C_MaterialPretreatment");
+static_assert(sizeof(BP_NPCMaterialController_C_MaterialPretreatment) == 0x000338, "Wrong size on BP_NPCMaterialController_C_MaterialPretreatment");
 static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, Materials) == 0x000000, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::Materials' has a wrong offset!");
 static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, SHolographicData) == 0x000010, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::SHolographicData' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, TempColor) == 0x000060, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::TempColor' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, TempFloat) == 0x000280, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::TempFloat' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_Array_Length_ReturnValue) == 0x000310, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_IsValid_ReturnValue) == 0x000314, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, ___int_Array_Index_Variable) == 0x000318, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, ___int_Loop_Counter_Variable) == 0x00031C, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_Array_Get_Item) == 0x000320, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_Less_IntInt_ReturnValue) == 0x000328, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_Add_IntInt_ReturnValue) == 0x00032C, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, TempColor) == 0x000068, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::TempColor' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, TempFloat) == 0x000288, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::TempFloat' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_Array_Length_ReturnValue) == 0x000318, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_IsValid_ReturnValue) == 0x00031C, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_IsValid_ReturnValue_1) == 0x00031D, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, ___int_Array_Index_Variable) == 0x000320, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, ___int_Loop_Counter_Variable) == 0x000324, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_Array_Get_Item) == 0x000328, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_Less_IntInt_ReturnValue) == 0x000330, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_MaterialPretreatment, CallFunc_Add_IntInt_ReturnValue) == 0x000334, "Member 'BP_NPCMaterialController_C_MaterialPretreatment::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
 
 }
 

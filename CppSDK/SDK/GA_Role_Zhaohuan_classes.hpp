@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_Zhaohuan_C;                 // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_GA_Role_Zhaohuan(int32 EntryPoint);
-	void K2_OnEndAbility(bool bWasCancelled);
 	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_Role_Zhaohuan(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

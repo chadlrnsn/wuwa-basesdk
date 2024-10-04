@@ -50,11 +50,11 @@ static_assert(offsetof(UGeometryCache, StartFrame) == 0x000070, "Member 'UGeomet
 static_assert(offsetof(UGeometryCache, EndFrame) == 0x000074, "Member 'UGeometryCache::EndFrame' has a wrong offset!");
 
 // Class GeometryCache.GeometryCacheActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AGeometryCacheActor final : public AActor
 {
 public:
-	class UGeometryCacheComponent*                GeometryCacheComponent;                            // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UGeometryCacheComponent*                GeometryCacheComponent;                            // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	class UGeometryCacheComponent* GetGeometryCacheComponent() const;
@@ -70,8 +70,8 @@ public:
 	}
 };
 static_assert(alignof(AGeometryCacheActor) == 0x000008, "Wrong alignment on AGeometryCacheActor");
-static_assert(sizeof(AGeometryCacheActor) == 0x0002B0, "Wrong size on AGeometryCacheActor");
-static_assert(offsetof(AGeometryCacheActor, GeometryCacheComponent) == 0x0002A8, "Member 'AGeometryCacheActor::GeometryCacheComponent' has a wrong offset!");
+static_assert(sizeof(AGeometryCacheActor) == 0x0002B8, "Wrong size on AGeometryCacheActor");
+static_assert(offsetof(AGeometryCacheActor, GeometryCacheComponent) == 0x0002B0, "Member 'AGeometryCacheActor::GeometryCacheComponent' has a wrong offset!");
 
 // Class GeometryCache.GeometryCacheCodecBase
 // 0x0010 (0x0040 - 0x0030)
@@ -137,22 +137,22 @@ static_assert(alignof(UGeometryCacheCodecV1) == 0x000008, "Wrong alignment on UG
 static_assert(sizeof(UGeometryCacheCodecV1) == 0x000048, "Wrong size on UGeometryCacheCodecV1");
 
 // Class GeometryCache.GeometryCacheComponent
-// 0x0060 (0x0570 - 0x0510)
+// 0x0050 (0x0570 - 0x0520)
 class UGeometryCacheComponent final : public UMeshComponent
 {
 public:
-	class UGeometryCache*                         GeometryCache;                                     // 0x0510(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRunning;                                          // 0x0518(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bLooping;                                          // 0x0519(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_51A[0x2];                                      // 0x051A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StartTimeOffset;                                   // 0x051C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         PlaybackSpeed;                                     // 0x0520(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         NumTracks;                                         // 0x0524(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ElapsedTime;                                       // 0x0528(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_52C[0x30];                                     // 0x052C(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Duration;                                          // 0x055C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bManualTick;                                       // 0x0560(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_561[0xF];                                      // 0x0561(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UGeometryCache*                         GeometryCache;                                     // 0x0518(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRunning;                                          // 0x0520(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bLooping;                                          // 0x0521(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_522[0x2];                                      // 0x0522(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StartTimeOffset;                                   // 0x0524(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         PlaybackSpeed;                                     // 0x0528(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         NumTracks;                                         // 0x052C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ElapsedTime;                                       // 0x0530(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_534[0x30];                                     // 0x0534(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Duration;                                          // 0x0564(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bManualTick;                                       // 0x0568(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_569[0x7];                                      // 0x0569(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void Pause();
@@ -189,15 +189,15 @@ public:
 };
 static_assert(alignof(UGeometryCacheComponent) == 0x000010, "Wrong alignment on UGeometryCacheComponent");
 static_assert(sizeof(UGeometryCacheComponent) == 0x000570, "Wrong size on UGeometryCacheComponent");
-static_assert(offsetof(UGeometryCacheComponent, GeometryCache) == 0x000510, "Member 'UGeometryCacheComponent::GeometryCache' has a wrong offset!");
-static_assert(offsetof(UGeometryCacheComponent, bRunning) == 0x000518, "Member 'UGeometryCacheComponent::bRunning' has a wrong offset!");
-static_assert(offsetof(UGeometryCacheComponent, bLooping) == 0x000519, "Member 'UGeometryCacheComponent::bLooping' has a wrong offset!");
-static_assert(offsetof(UGeometryCacheComponent, StartTimeOffset) == 0x00051C, "Member 'UGeometryCacheComponent::StartTimeOffset' has a wrong offset!");
-static_assert(offsetof(UGeometryCacheComponent, PlaybackSpeed) == 0x000520, "Member 'UGeometryCacheComponent::PlaybackSpeed' has a wrong offset!");
-static_assert(offsetof(UGeometryCacheComponent, NumTracks) == 0x000524, "Member 'UGeometryCacheComponent::NumTracks' has a wrong offset!");
-static_assert(offsetof(UGeometryCacheComponent, ElapsedTime) == 0x000528, "Member 'UGeometryCacheComponent::ElapsedTime' has a wrong offset!");
-static_assert(offsetof(UGeometryCacheComponent, Duration) == 0x00055C, "Member 'UGeometryCacheComponent::Duration' has a wrong offset!");
-static_assert(offsetof(UGeometryCacheComponent, bManualTick) == 0x000560, "Member 'UGeometryCacheComponent::bManualTick' has a wrong offset!");
+static_assert(offsetof(UGeometryCacheComponent, GeometryCache) == 0x000518, "Member 'UGeometryCacheComponent::GeometryCache' has a wrong offset!");
+static_assert(offsetof(UGeometryCacheComponent, bRunning) == 0x000520, "Member 'UGeometryCacheComponent::bRunning' has a wrong offset!");
+static_assert(offsetof(UGeometryCacheComponent, bLooping) == 0x000521, "Member 'UGeometryCacheComponent::bLooping' has a wrong offset!");
+static_assert(offsetof(UGeometryCacheComponent, StartTimeOffset) == 0x000524, "Member 'UGeometryCacheComponent::StartTimeOffset' has a wrong offset!");
+static_assert(offsetof(UGeometryCacheComponent, PlaybackSpeed) == 0x000528, "Member 'UGeometryCacheComponent::PlaybackSpeed' has a wrong offset!");
+static_assert(offsetof(UGeometryCacheComponent, NumTracks) == 0x00052C, "Member 'UGeometryCacheComponent::NumTracks' has a wrong offset!");
+static_assert(offsetof(UGeometryCacheComponent, ElapsedTime) == 0x000530, "Member 'UGeometryCacheComponent::ElapsedTime' has a wrong offset!");
+static_assert(offsetof(UGeometryCacheComponent, Duration) == 0x000564, "Member 'UGeometryCacheComponent::Duration' has a wrong offset!");
+static_assert(offsetof(UGeometryCacheComponent, bManualTick) == 0x000568, "Member 'UGeometryCacheComponent::bManualTick' has a wrong offset!");
 
 // Class GeometryCache.GeometryCacheTrack
 // 0x0048 (0x0078 - 0x0030)

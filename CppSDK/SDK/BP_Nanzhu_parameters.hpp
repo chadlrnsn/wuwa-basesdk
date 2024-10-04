@@ -14,24 +14,13 @@
 namespace SDK::Params
 {
 
-// Function BP_Nanzhu.BP_Nanzhu_C.ExecuteUbergraph_BP_Nanzhu
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu) == 0x000004, "Wrong alignment on BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu");
-static_assert(sizeof(BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu) == 0x000004, "Wrong size on BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu");
-static_assert(offsetof(BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu, EntryPoint) == 0x000000, "Member 'BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu::EntryPoint' has a wrong offset!");
-
 // Function BP_Nanzhu.BP_Nanzhu_C.FightCommand
 // 0x0020 (0x0020 - 0x0000)
 struct BP_Nanzhu_C_FightCommand final
 {
 public:
 	bool                                          IsInAir;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3207[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 CallFunc_GetSkillTarget_ReturnValue;               // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 CallFunc_GetSkillTarget_ReturnValue_1;             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BeginSkill_ReturnValue;                   // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -46,6 +35,17 @@ static_assert(offsetof(BP_Nanzhu_C_FightCommand, CallFunc_GetSkillTarget_ReturnV
 static_assert(offsetof(BP_Nanzhu_C_FightCommand, CallFunc_BeginSkill_ReturnValue) == 0x000018, "Member 'BP_Nanzhu_C_FightCommand::CallFunc_BeginSkill_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_Nanzhu_C_FightCommand, CallFunc_BeginSkill_ReturnValue_1) == 0x000019, "Member 'BP_Nanzhu_C_FightCommand::CallFunc_BeginSkill_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_Nanzhu_C_FightCommand, CallFunc_ContainsTag_ReturnValue) == 0x00001A, "Member 'BP_Nanzhu_C_FightCommand::CallFunc_ContainsTag_ReturnValue' has a wrong offset!");
+
+// Function BP_Nanzhu.BP_Nanzhu_C.ExecuteUbergraph_BP_Nanzhu
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu) == 0x000004, "Wrong alignment on BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu");
+static_assert(sizeof(BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu) == 0x000004, "Wrong size on BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu");
+static_assert(offsetof(BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu, EntryPoint) == 0x000000, "Member 'BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu::EntryPoint' has a wrong offset!");
 
 }
 

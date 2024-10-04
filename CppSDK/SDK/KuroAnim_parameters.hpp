@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "KuroAnim_structs.hpp"
-#include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK::Params
@@ -989,27 +989,16 @@ static_assert(offsetof(KuroAnimInstance_UpdateSkillMoveInfo, RotatorSpeed) == 0x
 static_assert(offsetof(KuroAnimInstance_UpdateSkillMoveInfo, SkillTarget) == 0x000070, "Member 'KuroAnimInstance_UpdateSkillMoveInfo::SkillTarget' has a wrong offset!");
 static_assert(offsetof(KuroAnimInstance_UpdateSkillMoveInfo, CachedActorLocation) == 0x000078, "Member 'KuroAnimInstance_UpdateSkillMoveInfo::CachedActorLocation' has a wrong offset!");
 
-// Function KuroAnim.KuroTrackRecorder.GetMainGuid
-// 0x0010 (0x0010 - 0x0000)
-struct KuroTrackRecorder_GetMainGuid final
-{
-public:
-	struct FGuid                                  ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroTrackRecorder_GetMainGuid) == 0x000004, "Wrong alignment on KuroTrackRecorder_GetMainGuid");
-static_assert(sizeof(KuroTrackRecorder_GetMainGuid) == 0x000010, "Wrong size on KuroTrackRecorder_GetMainGuid");
-static_assert(offsetof(KuroTrackRecorder_GetMainGuid, ReturnValue) == 0x000000, "Member 'KuroTrackRecorder_GetMainGuid::ReturnValue' has a wrong offset!");
-
-// Function KuroAnim.KuroTrackRecorder.GetShadow
+// Function KuroAnim.KuroAnimLibrary.EndAnimNotifyStates
 // 0x0008 (0x0008 - 0x0000)
-struct KuroTrackRecorder_GetShadow final
+struct KuroAnimLibrary_EndAnimNotifyStates final
 {
 public:
-	class AActor*                                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAnimInstance*                          AnimInstance;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroTrackRecorder_GetShadow) == 0x000008, "Wrong alignment on KuroTrackRecorder_GetShadow");
-static_assert(sizeof(KuroTrackRecorder_GetShadow) == 0x000008, "Wrong size on KuroTrackRecorder_GetShadow");
-static_assert(offsetof(KuroTrackRecorder_GetShadow, ReturnValue) == 0x000000, "Member 'KuroTrackRecorder_GetShadow::ReturnValue' has a wrong offset!");
+static_assert(alignof(KuroAnimLibrary_EndAnimNotifyStates) == 0x000008, "Wrong alignment on KuroAnimLibrary_EndAnimNotifyStates");
+static_assert(sizeof(KuroAnimLibrary_EndAnimNotifyStates) == 0x000008, "Wrong size on KuroAnimLibrary_EndAnimNotifyStates");
+static_assert(offsetof(KuroAnimLibrary_EndAnimNotifyStates, AnimInstance) == 0x000000, "Member 'KuroAnimLibrary_EndAnimNotifyStates::AnimInstance' has a wrong offset!");
 
 // Function KuroAnim.KuroAnimMathLibrary.LookRotation_ForwardFirst
 // 0x0024 (0x0024 - 0x0000)
@@ -1056,16 +1045,27 @@ static_assert(offsetof(KuroAnimMathLibrary_Quat_FindBetween, V1) == 0x000000, "M
 static_assert(offsetof(KuroAnimMathLibrary_Quat_FindBetween, V2) == 0x00000C, "Member 'KuroAnimMathLibrary_Quat_FindBetween::V2' has a wrong offset!");
 static_assert(offsetof(KuroAnimMathLibrary_Quat_FindBetween, ReturnValue) == 0x000018, "Member 'KuroAnimMathLibrary_Quat_FindBetween::ReturnValue' has a wrong offset!");
 
-// Function KuroAnim.KuroAnimLibrary.EndAnimNotifyStates
-// 0x0008 (0x0008 - 0x0000)
-struct KuroAnimLibrary_EndAnimNotifyStates final
+// Function KuroAnim.KuroTrackRecorder.GetMainGuid
+// 0x0010 (0x0010 - 0x0000)
+struct KuroTrackRecorder_GetMainGuid final
 {
 public:
-	class UAnimInstance*                          AnimInstance;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(KuroAnimLibrary_EndAnimNotifyStates) == 0x000008, "Wrong alignment on KuroAnimLibrary_EndAnimNotifyStates");
-static_assert(sizeof(KuroAnimLibrary_EndAnimNotifyStates) == 0x000008, "Wrong size on KuroAnimLibrary_EndAnimNotifyStates");
-static_assert(offsetof(KuroAnimLibrary_EndAnimNotifyStates, AnimInstance) == 0x000000, "Member 'KuroAnimLibrary_EndAnimNotifyStates::AnimInstance' has a wrong offset!");
+static_assert(alignof(KuroTrackRecorder_GetMainGuid) == 0x000004, "Wrong alignment on KuroTrackRecorder_GetMainGuid");
+static_assert(sizeof(KuroTrackRecorder_GetMainGuid) == 0x000010, "Wrong size on KuroTrackRecorder_GetMainGuid");
+static_assert(offsetof(KuroTrackRecorder_GetMainGuid, ReturnValue) == 0x000000, "Member 'KuroTrackRecorder_GetMainGuid::ReturnValue' has a wrong offset!");
+
+// Function KuroAnim.KuroTrackRecorder.GetShadow
+// 0x0008 (0x0008 - 0x0000)
+struct KuroTrackRecorder_GetShadow final
+{
+public:
+	class AActor*                                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroTrackRecorder_GetShadow) == 0x000008, "Wrong alignment on KuroTrackRecorder_GetShadow");
+static_assert(sizeof(KuroTrackRecorder_GetShadow) == 0x000008, "Wrong size on KuroTrackRecorder_GetShadow");
+static_assert(offsetof(KuroTrackRecorder_GetShadow, ReturnValue) == 0x000000, "Member 'KuroTrackRecorder_GetShadow::ReturnValue' has a wrong offset!");
 
 // Function KuroAnim.KuroRecorderLibrary.CopyLevelSequence
 // 0x0100 (0x0100 - 0x0000)

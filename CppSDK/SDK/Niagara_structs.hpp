@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "MovieScene_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "NiagaraShader_structs.hpp"
 #include "NiagaraCore_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -1913,6 +1913,23 @@ static_assert(offsetof(FNiagaraCollisionEventPayload, CollisionNormal) == 0x0000
 static_assert(offsetof(FNiagaraCollisionEventPayload, CollisionVelocity) == 0x000018, "Member 'FNiagaraCollisionEventPayload::CollisionVelocity' has a wrong offset!");
 static_assert(offsetof(FNiagaraCollisionEventPayload, ParticleIndex) == 0x000024, "Member 'FNiagaraCollisionEventPayload::ParticleIndex' has a wrong offset!");
 static_assert(offsetof(FNiagaraCollisionEventPayload, PhysicalMaterialIndex) == 0x000028, "Member 'FNiagaraCollisionEventPayload::PhysicalMaterialIndex' has a wrong offset!");
+
+// ScriptStruct Niagara.NiagaraGlobalInfoInHUD
+// 0x0010 (0x0010 - 0x0000)
+struct FNiagaraGlobalInfoInHUD final
+{
+public:
+	int32                                         GlobalTotalActive;                                 // 0x0000(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GlobalTotalScalability;                            // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GlobalTotalEmitters;                               // 0x0008(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GlobalTotalParticles;                              // 0x000C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FNiagaraGlobalInfoInHUD) == 0x000004, "Wrong alignment on FNiagaraGlobalInfoInHUD");
+static_assert(sizeof(FNiagaraGlobalInfoInHUD) == 0x000010, "Wrong size on FNiagaraGlobalInfoInHUD");
+static_assert(offsetof(FNiagaraGlobalInfoInHUD, GlobalTotalActive) == 0x000000, "Member 'FNiagaraGlobalInfoInHUD::GlobalTotalActive' has a wrong offset!");
+static_assert(offsetof(FNiagaraGlobalInfoInHUD, GlobalTotalScalability) == 0x000004, "Member 'FNiagaraGlobalInfoInHUD::GlobalTotalScalability' has a wrong offset!");
+static_assert(offsetof(FNiagaraGlobalInfoInHUD, GlobalTotalEmitters) == 0x000008, "Member 'FNiagaraGlobalInfoInHUD::GlobalTotalEmitters' has a wrong offset!");
+static_assert(offsetof(FNiagaraGlobalInfoInHUD, GlobalTotalParticles) == 0x00000C, "Member 'FNiagaraGlobalInfoInHUD::GlobalTotalParticles' has a wrong offset!");
 
 // ScriptStruct Niagara.NiagaraMeshMaterialOverride
 // 0x0028 (0x0028 - 0x0000)

@@ -10,24 +10,24 @@
 
 #include "Basic.hpp"
 
-#include "KuroGameplay_classes.hpp"
 #include "EEffectModelGhostComponent_structs.hpp"
 #include "KuroCurve_structs.hpp"
+#include "KuroGameplay_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelGhost.EffectModelGhost_C
-// 0x00C0 (0x0118 - 0x0058)
+// 0x00C0 (0x0120 - 0x0060)
 class UEffectModelGhost_C final : public UEffectModelBase
 {
 public:
-	class USkeletalMesh*                          Mesh;                                              // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     MaterialRef;                                       // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<EEffectModelGhostComponent>            MeshComponentsToUse;                               // 0x0068(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<class FName>                           CustomComponentNames;                              // 0x0078(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FKuroCurveFloat                        AlphaCurve;                                        // 0x0088(0x0090)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class USkeletalMesh*                          Mesh;                                              // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     MaterialRef;                                       // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<EEffectModelGhostComponent>            MeshComponentsToUse;                               // 0x0070(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class FName>                           CustomComponentNames;                              // 0x0080(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FKuroCurveFloat                        AlphaCurve;                                        // 0x0090(0x0090)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()
@@ -40,12 +40,12 @@ public:
 	}
 };
 static_assert(alignof(UEffectModelGhost_C) == 0x000008, "Wrong alignment on UEffectModelGhost_C");
-static_assert(sizeof(UEffectModelGhost_C) == 0x000118, "Wrong size on UEffectModelGhost_C");
-static_assert(offsetof(UEffectModelGhost_C, Mesh) == 0x000058, "Member 'UEffectModelGhost_C::Mesh' has a wrong offset!");
-static_assert(offsetof(UEffectModelGhost_C, MaterialRef) == 0x000060, "Member 'UEffectModelGhost_C::MaterialRef' has a wrong offset!");
-static_assert(offsetof(UEffectModelGhost_C, MeshComponentsToUse) == 0x000068, "Member 'UEffectModelGhost_C::MeshComponentsToUse' has a wrong offset!");
-static_assert(offsetof(UEffectModelGhost_C, CustomComponentNames) == 0x000078, "Member 'UEffectModelGhost_C::CustomComponentNames' has a wrong offset!");
-static_assert(offsetof(UEffectModelGhost_C, AlphaCurve) == 0x000088, "Member 'UEffectModelGhost_C::AlphaCurve' has a wrong offset!");
+static_assert(sizeof(UEffectModelGhost_C) == 0x000120, "Wrong size on UEffectModelGhost_C");
+static_assert(offsetof(UEffectModelGhost_C, Mesh) == 0x000060, "Member 'UEffectModelGhost_C::Mesh' has a wrong offset!");
+static_assert(offsetof(UEffectModelGhost_C, MaterialRef) == 0x000068, "Member 'UEffectModelGhost_C::MaterialRef' has a wrong offset!");
+static_assert(offsetof(UEffectModelGhost_C, MeshComponentsToUse) == 0x000070, "Member 'UEffectModelGhost_C::MeshComponentsToUse' has a wrong offset!");
+static_assert(offsetof(UEffectModelGhost_C, CustomComponentNames) == 0x000080, "Member 'UEffectModelGhost_C::CustomComponentNames' has a wrong offset!");
+static_assert(offsetof(UEffectModelGhost_C, AlphaCurve) == 0x000090, "Member 'UEffectModelGhost_C::AlphaCurve' has a wrong offset!");
 
 }
 

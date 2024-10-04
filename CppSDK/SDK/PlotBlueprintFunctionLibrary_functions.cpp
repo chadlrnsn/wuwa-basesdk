@@ -508,9 +508,11 @@ void UPlotBlueprintFunctionLibrary_C::CloseUiView(class UObject* __WorldContext)
 // Parameters:
 // class FString                           MaleAssetName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class FString                           FemaleAssetName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           MaleSpineName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString                           FemaleSpineName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPlotBlueprintFunctionLibrary_C::OpenUiView(const class FString& MaleAssetName, const class FString& FemaleAssetName, class UObject* __WorldContext)
+void UPlotBlueprintFunctionLibrary_C::OpenUiView(const class FString& MaleAssetName, const class FString& FemaleAssetName, const class FString& MaleSpineName, const class FString& FemaleSpineName, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -521,6 +523,8 @@ void UPlotBlueprintFunctionLibrary_C::OpenUiView(const class FString& MaleAssetN
 
 	Parms.MaleAssetName = std::move(MaleAssetName);
 	Parms.FemaleAssetName = std::move(FemaleAssetName);
+	Parms.MaleSpineName = std::move(MaleSpineName);
+	Parms.FemaleSpineName = std::move(FemaleSpineName);
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;

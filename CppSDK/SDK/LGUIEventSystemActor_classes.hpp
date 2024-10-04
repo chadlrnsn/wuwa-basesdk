@@ -19,19 +19,19 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass LGUIEventSystemActor.LGUIEventSystemActor_C
-// 0x0068 (0x0318 - 0x02B0)
+// 0x0068 (0x0320 - 0x02B8)
 class ALGUIEventSystemActor_C final : public ALGUIEventSystemActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ULGUI_TouchInputModule*                 LGUI_TouchInputModule;                             // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class ULGUI_StandaloneInputModule*            LGUI_StandaloneInputModule;                        // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class ULGUI_PointerInputModule*               ValidInputModule;                                  // 0x02D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	FMulticastInlineDelegateProperty_             OnMiddleMouseScroll;                               // 0x02D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	FMulticastInlineDelegateProperty_             OnTouch;                                           // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	FMulticastInlineDelegateProperty_             OnTouchMove;                                       // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	FMulticastInlineDelegateProperty_             OnClickKey;                                        // 0x0308(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ULGUI_TouchInputModule*                 LGUI_TouchInputModule;                             // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class ULGUI_StandaloneInputModule*            LGUI_StandaloneInputModule;                        // 0x02C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class ULGUI_PointerInputModule*               ValidInputModule;                                  // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	FMulticastInlineDelegateProperty_             OnMiddleMouseScroll;                               // 0x02E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	FMulticastInlineDelegateProperty_             OnTouch;                                           // 0x02F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	FMulticastInlineDelegateProperty_             OnTouchMove;                                       // 0x0300(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	FMulticastInlineDelegateProperty_             OnClickKey;                                        // 0x0310(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void OnMiddleMouseScroll__DelegateSignature(float AxisValue);
@@ -84,16 +84,16 @@ public:
 	}
 };
 static_assert(alignof(ALGUIEventSystemActor_C) == 0x000008, "Wrong alignment on ALGUIEventSystemActor_C");
-static_assert(sizeof(ALGUIEventSystemActor_C) == 0x000318, "Wrong size on ALGUIEventSystemActor_C");
-static_assert(offsetof(ALGUIEventSystemActor_C, UberGraphFrame) == 0x0002B0, "Member 'ALGUIEventSystemActor_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ALGUIEventSystemActor_C, LGUI_TouchInputModule) == 0x0002B8, "Member 'ALGUIEventSystemActor_C::LGUI_TouchInputModule' has a wrong offset!");
-static_assert(offsetof(ALGUIEventSystemActor_C, LGUI_StandaloneInputModule) == 0x0002C0, "Member 'ALGUIEventSystemActor_C::LGUI_StandaloneInputModule' has a wrong offset!");
-static_assert(offsetof(ALGUIEventSystemActor_C, DefaultSceneRoot) == 0x0002C8, "Member 'ALGUIEventSystemActor_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ALGUIEventSystemActor_C, ValidInputModule) == 0x0002D0, "Member 'ALGUIEventSystemActor_C::ValidInputModule' has a wrong offset!");
-static_assert(offsetof(ALGUIEventSystemActor_C, OnMiddleMouseScroll) == 0x0002D8, "Member 'ALGUIEventSystemActor_C::OnMiddleMouseScroll' has a wrong offset!");
-static_assert(offsetof(ALGUIEventSystemActor_C, OnTouch) == 0x0002E8, "Member 'ALGUIEventSystemActor_C::OnTouch' has a wrong offset!");
-static_assert(offsetof(ALGUIEventSystemActor_C, OnTouchMove) == 0x0002F8, "Member 'ALGUIEventSystemActor_C::OnTouchMove' has a wrong offset!");
-static_assert(offsetof(ALGUIEventSystemActor_C, OnClickKey) == 0x000308, "Member 'ALGUIEventSystemActor_C::OnClickKey' has a wrong offset!");
+static_assert(sizeof(ALGUIEventSystemActor_C) == 0x000320, "Wrong size on ALGUIEventSystemActor_C");
+static_assert(offsetof(ALGUIEventSystemActor_C, UberGraphFrame) == 0x0002B8, "Member 'ALGUIEventSystemActor_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ALGUIEventSystemActor_C, LGUI_TouchInputModule) == 0x0002C0, "Member 'ALGUIEventSystemActor_C::LGUI_TouchInputModule' has a wrong offset!");
+static_assert(offsetof(ALGUIEventSystemActor_C, LGUI_StandaloneInputModule) == 0x0002C8, "Member 'ALGUIEventSystemActor_C::LGUI_StandaloneInputModule' has a wrong offset!");
+static_assert(offsetof(ALGUIEventSystemActor_C, DefaultSceneRoot) == 0x0002D0, "Member 'ALGUIEventSystemActor_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ALGUIEventSystemActor_C, ValidInputModule) == 0x0002D8, "Member 'ALGUIEventSystemActor_C::ValidInputModule' has a wrong offset!");
+static_assert(offsetof(ALGUIEventSystemActor_C, OnMiddleMouseScroll) == 0x0002E0, "Member 'ALGUIEventSystemActor_C::OnMiddleMouseScroll' has a wrong offset!");
+static_assert(offsetof(ALGUIEventSystemActor_C, OnTouch) == 0x0002F0, "Member 'ALGUIEventSystemActor_C::OnTouch' has a wrong offset!");
+static_assert(offsetof(ALGUIEventSystemActor_C, OnTouchMove) == 0x000300, "Member 'ALGUIEventSystemActor_C::OnTouchMove' has a wrong offset!");
+static_assert(offsetof(ALGUIEventSystemActor_C, OnClickKey) == 0x000310, "Member 'ALGUIEventSystemActor_C::OnClickKey' has a wrong offset!");
 
 }
 

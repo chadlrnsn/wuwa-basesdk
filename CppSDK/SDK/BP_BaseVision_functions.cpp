@@ -17,57 +17,24 @@
 namespace SDK
 {
 
-// Function BP_BaseVision.BP_BaseVision_C.ExecuteUbergraph_BP_BaseVision
-// (Final, UbergraphFunction)
+// Function BP_BaseVision.BP_BaseVision_C.·Öì$Òr
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               ___r                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseVision_C::ExecuteUbergraph_BP_BaseVision(int32 EntryPoint)
+void ABP_BaseVision_C::_____r(class ATsBaseCharacter_C** ___r)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "ExecuteUbergraph_BP_BaseVision");
+		Func = Class->GetFunction("BP_BaseVision_C", "·Öì$Òr");
 
-	Params::BP_BaseVision_C_ExecuteUbergraph_BP_BaseVision Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::BP_BaseVision_C______r Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
-}
 
-
-// Function BP_BaseVision.BP_BaseVision_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_BaseVision_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "ReceiveTick");
-
-	Params::BP_BaseVision_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BaseVision.BP_BaseVision_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_BaseVision_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
+	if (___r != nullptr)
+		*___r = Parms.___r;
 }
 
 
@@ -92,24 +59,57 @@ void ABP_BaseVision_C::___apn(struct FSVisionData* _apn)
 }
 
 
-// Function BP_BaseVision.BP_BaseVision_C.·Öì$Òr
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class ATsBaseCharacter_C*               ___r                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_BaseVision.BP_BaseVision_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_BaseVision_C::_____r(class ATsBaseCharacter_C** ___r)
+void ABP_BaseVision_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "·Öì$Òr");
+		Func = Class->GetFunction("BP_BaseVision_C", "ReceiveBeginPlay");
 
-	Params::BP_BaseVision_C______r Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BaseVision.BP_BaseVision_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseVision_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseVision_C", "ReceiveTick");
+
+	Params::BP_BaseVision_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
 
-	if (___r != nullptr)
-		*___r = Parms.___r;
+
+// Function BP_BaseVision.BP_BaseVision_C.ExecuteUbergraph_BP_BaseVision
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseVision_C::ExecuteUbergraph_BP_BaseVision(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseVision_C", "ExecuteUbergraph_BP_BaseVision");
+
+	Params::BP_BaseVision_C_ExecuteUbergraph_BP_BaseVision Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

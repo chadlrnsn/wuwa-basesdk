@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "NavmeshPartition_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -38,13 +38,13 @@ static_assert(alignof(UAudioMaterialComponent) == 0x000010, "Wrong alignment on 
 static_assert(sizeof(UAudioMaterialComponent) == 0x000230, "Wrong size on UAudioMaterialComponent");
 
 // Class NavmeshPartition.NavmeshPartitionBaseActor
-// 0x0010 (0x02B8 - 0x02A8)
+// 0x0010 (0x02C0 - 0x02B0)
 class ANavmeshPartitionBaseActor : public AActor
 {
 public:
-	class UNavmeshPartitionComponent*             NavmeshPartitionComp;                              // 0x02A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENavPartition                                 Type;                                              // 0x02B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UNavmeshPartitionComponent*             NavmeshPartitionComp;                              // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENavPartition                                 Type;                                              // 0x02B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B9[0x7];                                      // 0x02B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -57,16 +57,16 @@ public:
 	}
 };
 static_assert(alignof(ANavmeshPartitionBaseActor) == 0x000008, "Wrong alignment on ANavmeshPartitionBaseActor");
-static_assert(sizeof(ANavmeshPartitionBaseActor) == 0x0002B8, "Wrong size on ANavmeshPartitionBaseActor");
-static_assert(offsetof(ANavmeshPartitionBaseActor, NavmeshPartitionComp) == 0x0002A8, "Member 'ANavmeshPartitionBaseActor::NavmeshPartitionComp' has a wrong offset!");
-static_assert(offsetof(ANavmeshPartitionBaseActor, Type) == 0x0002B0, "Member 'ANavmeshPartitionBaseActor::Type' has a wrong offset!");
+static_assert(sizeof(ANavmeshPartitionBaseActor) == 0x0002C0, "Wrong size on ANavmeshPartitionBaseActor");
+static_assert(offsetof(ANavmeshPartitionBaseActor, NavmeshPartitionComp) == 0x0002B0, "Member 'ANavmeshPartitionBaseActor::NavmeshPartitionComp' has a wrong offset!");
+static_assert(offsetof(ANavmeshPartitionBaseActor, Type) == 0x0002B8, "Member 'ANavmeshPartitionBaseActor::Type' has a wrong offset!");
 
 // Class NavmeshPartition.NavmeshPartitionActor
-// 0x0008 (0x02C0 - 0x02B8)
+// 0x0008 (0x02C8 - 0x02C0)
 class ANavmeshPartitionActor final : public ANavmeshPartitionBaseActor
 {
 public:
-	class UAudioMaterialComponent*                AudioMaterialComp;                                 // 0x02B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAudioMaterialComponent*                AudioMaterialComp;                                 // 0x02C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -79,8 +79,8 @@ public:
 	}
 };
 static_assert(alignof(ANavmeshPartitionActor) == 0x000008, "Wrong alignment on ANavmeshPartitionActor");
-static_assert(sizeof(ANavmeshPartitionActor) == 0x0002C0, "Wrong size on ANavmeshPartitionActor");
-static_assert(offsetof(ANavmeshPartitionActor, AudioMaterialComp) == 0x0002B8, "Member 'ANavmeshPartitionActor::AudioMaterialComp' has a wrong offset!");
+static_assert(sizeof(ANavmeshPartitionActor) == 0x0002C8, "Wrong size on ANavmeshPartitionActor");
+static_assert(offsetof(ANavmeshPartitionActor, AudioMaterialComp) == 0x0002C0, "Member 'ANavmeshPartitionActor::AudioMaterialComp' has a wrong offset!");
 
 // Class NavmeshPartition.NavmeshPartitionComponent
 // 0x0050 (0x0270 - 0x0220)
@@ -103,13 +103,13 @@ static_assert(alignof(UNavmeshPartitionComponent) == 0x000010, "Wrong alignment 
 static_assert(sizeof(UNavmeshPartitionComponent) == 0x000270, "Wrong size on UNavmeshPartitionComponent");
 
 // Class NavmeshPartition.NavmeshPartitionGlobalBaseActor
-// 0x0010 (0x02B8 - 0x02A8)
+// 0x0010 (0x02C0 - 0x02B0)
 class ANavmeshPartitionGlobalBaseActor : public AActor
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	ENavPartition                                 Type;                                              // 0x02B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B0[0x8];                                      // 0x02B0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	ENavPartition                                 Type;                                              // 0x02B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B9[0x7];                                      // 0x02B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -122,11 +122,11 @@ public:
 	}
 };
 static_assert(alignof(ANavmeshPartitionGlobalBaseActor) == 0x000008, "Wrong alignment on ANavmeshPartitionGlobalBaseActor");
-static_assert(sizeof(ANavmeshPartitionGlobalBaseActor) == 0x0002B8, "Wrong size on ANavmeshPartitionGlobalBaseActor");
-static_assert(offsetof(ANavmeshPartitionGlobalBaseActor, Type) == 0x0002B0, "Member 'ANavmeshPartitionGlobalBaseActor::Type' has a wrong offset!");
+static_assert(sizeof(ANavmeshPartitionGlobalBaseActor) == 0x0002C0, "Wrong size on ANavmeshPartitionGlobalBaseActor");
+static_assert(offsetof(ANavmeshPartitionGlobalBaseActor, Type) == 0x0002B8, "Member 'ANavmeshPartitionGlobalBaseActor::Type' has a wrong offset!");
 
 // Class NavmeshPartition.NavmeshPartitionGlobalActor
-// 0x0000 (0x02B8 - 0x02B8)
+// 0x0000 (0x02C0 - 0x02C0)
 class ANavmeshPartitionGlobalActor final : public ANavmeshPartitionGlobalBaseActor
 {
 public:
@@ -140,7 +140,7 @@ public:
 	}
 };
 static_assert(alignof(ANavmeshPartitionGlobalActor) == 0x000008, "Wrong alignment on ANavmeshPartitionGlobalActor");
-static_assert(sizeof(ANavmeshPartitionGlobalActor) == 0x0002B8, "Wrong size on ANavmeshPartitionGlobalActor");
+static_assert(sizeof(ANavmeshPartitionGlobalActor) == 0x0002C0, "Wrong size on ANavmeshPartitionGlobalActor");
 
 // Class NavmeshPartition.NavmeshPartitionGlobalComponent
 // 0x00A0 (0x02C0 - 0x0220)
@@ -163,7 +163,7 @@ static_assert(alignof(UNavmeshPartitionGlobalComponent) == 0x000010, "Wrong alig
 static_assert(sizeof(UNavmeshPartitionGlobalComponent) == 0x0002C0, "Wrong size on UNavmeshPartitionGlobalComponent");
 
 // Class NavmeshPartition.NavmeshWaterPartitionActor
-// 0x0000 (0x02B8 - 0x02B8)
+// 0x0000 (0x02C0 - 0x02C0)
 class ANavmeshWaterPartitionActor final : public ANavmeshPartitionBaseActor
 {
 public:
@@ -177,10 +177,10 @@ public:
 	}
 };
 static_assert(alignof(ANavmeshWaterPartitionActor) == 0x000008, "Wrong alignment on ANavmeshWaterPartitionActor");
-static_assert(sizeof(ANavmeshWaterPartitionActor) == 0x0002B8, "Wrong size on ANavmeshWaterPartitionActor");
+static_assert(sizeof(ANavmeshWaterPartitionActor) == 0x0002C0, "Wrong size on ANavmeshWaterPartitionActor");
 
 // Class NavmeshPartition.NavmeshWaterPartitionGlobalActor
-// 0x0000 (0x02B8 - 0x02B8)
+// 0x0000 (0x02C0 - 0x02C0)
 class ANavmeshWaterPartitionGlobalActor final : public ANavmeshPartitionGlobalBaseActor
 {
 public:
@@ -194,7 +194,7 @@ public:
 	}
 };
 static_assert(alignof(ANavmeshWaterPartitionGlobalActor) == 0x000008, "Wrong alignment on ANavmeshWaterPartitionGlobalActor");
-static_assert(sizeof(ANavmeshWaterPartitionGlobalActor) == 0x0002B8, "Wrong size on ANavmeshWaterPartitionGlobalActor");
+static_assert(sizeof(ANavmeshWaterPartitionGlobalActor) == 0x0002C0, "Wrong size on ANavmeshWaterPartitionGlobalActor");
 
 }
 

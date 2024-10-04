@@ -1379,6 +1379,17 @@ static_assert(sizeof(LTweener_SetDelay) == 0x000010, "Wrong size on LTweener_Set
 static_assert(offsetof(LTweener_SetDelay, NewDelay) == 0x000000, "Member 'LTweener_SetDelay::NewDelay' has a wrong offset!");
 static_assert(offsetof(LTweener_SetDelay, ReturnValue) == 0x000008, "Member 'LTweener_SetDelay::ReturnValue' has a wrong offset!");
 
+// Function LTween.LTweener.SetDuration
+// 0x0004 (0x0004 - 0x0000)
+struct LTweener_SetDuration final
+{
+public:
+	float                                         NewDuration;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LTweener_SetDuration) == 0x000004, "Wrong alignment on LTweener_SetDuration");
+static_assert(sizeof(LTweener_SetDuration) == 0x000004, "Wrong size on LTweener_SetDuration");
+static_assert(offsetof(LTweener_SetDuration, NewDuration) == 0x000000, "Member 'LTweener_SetDuration::NewDuration' has a wrong offset!");
+
 // Function LTween.LTweener.SetEase
 // 0x0010 (0x0010 - 0x0000)
 struct LTweener_SetEase final
@@ -1436,6 +1447,20 @@ static_assert(sizeof(LTweener_SetLoopType) == 0x000010, "Wrong size on LTweener_
 static_assert(offsetof(LTweener_SetLoopType, NewLoopType) == 0x000000, "Member 'LTweener_SetLoopType::NewLoopType' has a wrong offset!");
 static_assert(offsetof(LTweener_SetLoopType, ReturnValue) == 0x000008, "Member 'LTweener_SetLoopType::ReturnValue' has a wrong offset!");
 
+// Function LTween.LTweener.SetSpeed
+// 0x0010 (0x0010 - 0x0000)
+struct LTweener_SetSpeed final
+{
+public:
+	float                                         NewSpeed;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULTweener*                              ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LTweener_SetSpeed) == 0x000008, "Wrong alignment on LTweener_SetSpeed");
+static_assert(sizeof(LTweener_SetSpeed) == 0x000010, "Wrong size on LTweener_SetSpeed");
+static_assert(offsetof(LTweener_SetSpeed, NewSpeed) == 0x000000, "Member 'LTweener_SetSpeed::NewSpeed' has a wrong offset!");
+static_assert(offsetof(LTweener_SetSpeed, ReturnValue) == 0x000008, "Member 'LTweener_SetSpeed::ReturnValue' has a wrong offset!");
+
 // Function LTween.LTweener.GetLoopCycleCount
 // 0x0004 (0x0004 - 0x0000)
 struct LTweener_GetLoopCycleCount final
@@ -1446,6 +1471,17 @@ public:
 static_assert(alignof(LTweener_GetLoopCycleCount) == 0x000004, "Wrong alignment on LTweener_GetLoopCycleCount");
 static_assert(sizeof(LTweener_GetLoopCycleCount) == 0x000004, "Wrong size on LTweener_GetLoopCycleCount");
 static_assert(offsetof(LTweener_GetLoopCycleCount, ReturnValue) == 0x000000, "Member 'LTweener_GetLoopCycleCount::ReturnValue' has a wrong offset!");
+
+// Function LTween.LTweener.GetSpeed
+// 0x0004 (0x0004 - 0x0000)
+struct LTweener_GetSpeed final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LTweener_GetSpeed) == 0x000004, "Wrong alignment on LTweener_GetSpeed");
+static_assert(sizeof(LTweener_GetSpeed) == 0x000004, "Wrong size on LTweener_GetSpeed");
+static_assert(offsetof(LTweener_GetSpeed, ReturnValue) == 0x000000, "Member 'LTweener_GetSpeed::ReturnValue' has a wrong offset!");
 
 }
 

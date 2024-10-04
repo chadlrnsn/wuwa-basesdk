@@ -976,39 +976,6 @@ class FString UBulletBlueprintFunctionLibrary_C::GetSpecialBulletToSkillId(const
 }
 
 
-// Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.DestroySpecifiedBullet
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   OwnerId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FName                             bulletName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    SummonChild                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// int32                                   IncludeTeammate                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBulletBlueprintFunctionLibrary_C::DestroySpecifiedBullet(int32 OwnerId, class FName bulletName, bool SummonChild, int32 IncludeTeammate, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BulletBlueprintFunctionLibrary_C", "DestroySpecifiedBullet");
-
-	Params::BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet Parms{};
-
-	Parms.OwnerId = OwnerId;
-	Parms.bulletName = bulletName;
-	Parms.SummonChild = SummonChild;
-	Parms.IncludeTeammate = IncludeTeammate;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.GetSpecifiedBulletCount
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1038,6 +1005,41 @@ int32 UBulletBlueprintFunctionLibrary_C::GetSpecifiedBulletCount(int32 OwnerId, 
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.DestroySpecifiedBullet
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   OwnerId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             bulletName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    SummonChild                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   IncludeTeammate                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Interval                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBulletBlueprintFunctionLibrary_C::DestroySpecifiedBullet(int32 OwnerId, class FName bulletName, bool SummonChild, int32 IncludeTeammate, float Interval, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BulletBlueprintFunctionLibrary_C", "DestroySpecifiedBullet");
+
+	Params::BulletBlueprintFunctionLibrary_C_DestroySpecifiedBullet Parms{};
+
+	Parms.OwnerId = OwnerId;
+	Parms.bulletName = bulletName;
+	Parms.SummonChild = SummonChild;
+	Parms.IncludeTeammate = IncludeTeammate;
+	Parms.Interval = Interval;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

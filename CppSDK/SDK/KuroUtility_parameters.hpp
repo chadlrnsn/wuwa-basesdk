@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "KuroUtility_structs.hpp"
 #include "Engine_structs.hpp"
+#include "KuroUtility_structs.hpp"
 
 
 namespace SDK::Params
@@ -1006,6 +1006,19 @@ static_assert(sizeof(KuroStaticLibrary_Base64Encode) == 0x000020, "Wrong size on
 static_assert(offsetof(KuroStaticLibrary_Base64Encode, InString) == 0x000000, "Member 'KuroStaticLibrary_Base64Encode::InString' has a wrong offset!");
 static_assert(offsetof(KuroStaticLibrary_Base64Encode, ReturnValue) == 0x000010, "Member 'KuroStaticLibrary_Base64Encode::ReturnValue' has a wrong offset!");
 
+// Function KuroUtility.KuroStaticLibrary.Base64EncodeWithConvertToUTF8
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticLibrary_Base64EncodeWithConvertToUTF8 final
+{
+public:
+	class FString                                 InString;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticLibrary_Base64EncodeWithConvertToUTF8) == 0x000008, "Wrong alignment on KuroStaticLibrary_Base64EncodeWithConvertToUTF8");
+static_assert(sizeof(KuroStaticLibrary_Base64EncodeWithConvertToUTF8) == 0x000020, "Wrong size on KuroStaticLibrary_Base64EncodeWithConvertToUTF8");
+static_assert(offsetof(KuroStaticLibrary_Base64EncodeWithConvertToUTF8, InString) == 0x000000, "Member 'KuroStaticLibrary_Base64EncodeWithConvertToUTF8::InString' has a wrong offset!");
+static_assert(offsetof(KuroStaticLibrary_Base64EncodeWithConvertToUTF8, ReturnValue) == 0x000010, "Member 'KuroStaticLibrary_Base64EncodeWithConvertToUTF8::ReturnValue' has a wrong offset!");
+
 // Function KuroUtility.KuroStaticLibrary.BindCustomGetTimeBetweenGarbageCollectionPassesDelegate
 // 0x0028 (0x0028 - 0x0000)
 struct KuroStaticLibrary_BindCustomGetTimeBetweenGarbageCollectionPassesDelegate final
@@ -1016,6 +1029,17 @@ public:
 static_assert(alignof(KuroStaticLibrary_BindCustomGetTimeBetweenGarbageCollectionPassesDelegate) == 0x000004, "Wrong alignment on KuroStaticLibrary_BindCustomGetTimeBetweenGarbageCollectionPassesDelegate");
 static_assert(sizeof(KuroStaticLibrary_BindCustomGetTimeBetweenGarbageCollectionPassesDelegate) == 0x000028, "Wrong size on KuroStaticLibrary_BindCustomGetTimeBetweenGarbageCollectionPassesDelegate");
 static_assert(offsetof(KuroStaticLibrary_BindCustomGetTimeBetweenGarbageCollectionPassesDelegate, Delegate) == 0x000000, "Member 'KuroStaticLibrary_BindCustomGetTimeBetweenGarbageCollectionPassesDelegate::Delegate' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticLibrary.BindDeviceLangChangeDelegate
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticLibrary_BindDeviceLangChangeDelegate final
+{
+public:
+	TDelegate<void()>                             Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticLibrary_BindDeviceLangChangeDelegate) == 0x000004, "Wrong alignment on KuroStaticLibrary_BindDeviceLangChangeDelegate");
+static_assert(sizeof(KuroStaticLibrary_BindDeviceLangChangeDelegate) == 0x000028, "Wrong size on KuroStaticLibrary_BindDeviceLangChangeDelegate");
+static_assert(offsetof(KuroStaticLibrary_BindDeviceLangChangeDelegate, Delegate) == 0x000000, "Member 'KuroStaticLibrary_BindDeviceLangChangeDelegate::Delegate' has a wrong offset!");
 
 // Function KuroUtility.KuroStaticLibrary.ClearPlayerInputCache
 // 0x0008 (0x0008 - 0x0000)
@@ -1859,6 +1883,17 @@ static_assert(alignof(KuroStaticLibrary_GetTotalMemoryGB) == 0x000004, "Wrong al
 static_assert(sizeof(KuroStaticLibrary_GetTotalMemoryGB) == 0x000004, "Wrong size on KuroStaticLibrary_GetTotalMemoryGB");
 static_assert(offsetof(KuroStaticLibrary_GetTotalMemoryGB, ReturnValue) == 0x000000, "Member 'KuroStaticLibrary_GetTotalMemoryGB::ReturnValue' has a wrong offset!");
 
+// Function KuroUtility.KuroStaticLibrary.GetTotalPhysicalMemory
+// 0x0008 (0x0008 - 0x0000)
+struct KuroStaticLibrary_GetTotalPhysicalMemory final
+{
+public:
+	int64                                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticLibrary_GetTotalPhysicalMemory) == 0x000008, "Wrong alignment on KuroStaticLibrary_GetTotalPhysicalMemory");
+static_assert(sizeof(KuroStaticLibrary_GetTotalPhysicalMemory) == 0x000008, "Wrong size on KuroStaticLibrary_GetTotalPhysicalMemory");
+static_assert(offsetof(KuroStaticLibrary_GetTotalPhysicalMemory, ReturnValue) == 0x000000, "Member 'KuroStaticLibrary_GetTotalPhysicalMemory::ReturnValue' has a wrong offset!");
+
 // Function KuroUtility.KuroStaticLibrary.GetTrackByClass
 // 0x0020 (0x0020 - 0x0000)
 struct KuroStaticLibrary_GetTrackByClass final
@@ -1969,28 +2004,6 @@ static_assert(alignof(KuroStaticLibrary_IsAsyncLoadingThreadEnabled) == 0x000001
 static_assert(sizeof(KuroStaticLibrary_IsAsyncLoadingThreadEnabled) == 0x000001, "Wrong size on KuroStaticLibrary_IsAsyncLoadingThreadEnabled");
 static_assert(offsetof(KuroStaticLibrary_IsAsyncLoadingThreadEnabled, ReturnValue) == 0x000000, "Member 'KuroStaticLibrary_IsAsyncLoadingThreadEnabled::ReturnValue' has a wrong offset!");
 
-// Function KuroUtility.KuroStaticLibrary.IsBuildShipping
-// 0x0001 (0x0001 - 0x0000)
-struct KuroStaticLibrary_IsBuildShipping final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroStaticLibrary_IsBuildShipping) == 0x000001, "Wrong alignment on KuroStaticLibrary_IsBuildShipping");
-static_assert(sizeof(KuroStaticLibrary_IsBuildShipping) == 0x000001, "Wrong size on KuroStaticLibrary_IsBuildShipping");
-static_assert(offsetof(KuroStaticLibrary_IsBuildShipping, ReturnValue) == 0x000000, "Member 'KuroStaticLibrary_IsBuildShipping::ReturnValue' has a wrong offset!");
-
-// Function KuroUtility.KuroStaticLibrary.IsBuildTest
-// 0x0001 (0x0001 - 0x0000)
-struct KuroStaticLibrary_IsBuildTest final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroStaticLibrary_IsBuildTest) == 0x000001, "Wrong alignment on KuroStaticLibrary_IsBuildTest");
-static_assert(sizeof(KuroStaticLibrary_IsBuildTest) == 0x000001, "Wrong size on KuroStaticLibrary_IsBuildTest");
-static_assert(offsetof(KuroStaticLibrary_IsBuildTest, ReturnValue) == 0x000000, "Member 'KuroStaticLibrary_IsBuildTest::ReturnValue' has a wrong offset!");
-
 // Function KuroUtility.KuroStaticLibrary.IsEditor
 // 0x0010 (0x0010 - 0x0000)
 struct KuroStaticLibrary_IsEditor final
@@ -2031,6 +2044,17 @@ static_assert(sizeof(KuroStaticLibrary_IsImplementInterface) == 0x000018, "Wrong
 static_assert(offsetof(KuroStaticLibrary_IsImplementInterface, InClass) == 0x000000, "Member 'KuroStaticLibrary_IsImplementInterface::InClass' has a wrong offset!");
 static_assert(offsetof(KuroStaticLibrary_IsImplementInterface, InInterfaceClass) == 0x000008, "Member 'KuroStaticLibrary_IsImplementInterface::InInterfaceClass' has a wrong offset!");
 static_assert(offsetof(KuroStaticLibrary_IsImplementInterface, ReturnValue) == 0x000010, "Member 'KuroStaticLibrary_IsImplementInterface::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticLibrary.IsLowMemoryDevice
+// 0x0001 (0x0001 - 0x0000)
+struct KuroStaticLibrary_IsLowMemoryDevice final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticLibrary_IsLowMemoryDevice) == 0x000001, "Wrong alignment on KuroStaticLibrary_IsLowMemoryDevice");
+static_assert(sizeof(KuroStaticLibrary_IsLowMemoryDevice) == 0x000001, "Wrong size on KuroStaticLibrary_IsLowMemoryDevice");
+static_assert(offsetof(KuroStaticLibrary_IsLowMemoryDevice, ReturnValue) == 0x000000, "Member 'KuroStaticLibrary_IsLowMemoryDevice::ReturnValue' has a wrong offset!");
 
 // Function KuroUtility.KuroStaticLibrary.IsModuleLoaded
 // 0x0018 (0x0018 - 0x0000)
@@ -2558,6 +2582,261 @@ static_assert(alignof(KuroStaticLibrary_UnRegisterCustomCommandProcessor) == 0x0
 static_assert(sizeof(KuroStaticLibrary_UnRegisterCustomCommandProcessor) == 0x000010, "Wrong size on KuroStaticLibrary_UnRegisterCustomCommandProcessor");
 static_assert(offsetof(KuroStaticLibrary_UnRegisterCustomCommandProcessor, Category) == 0x000000, "Member 'KuroStaticLibrary_UnRegisterCustomCommandProcessor::Category' has a wrong offset!");
 
+// Function KuroUtility.KuroStaticLibrary.WriteStringToFile
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticLibrary_WriteStringToFile final
+{
+public:
+	class FString                                 SaveText;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 FileName;                                          // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPublic;                                           // 0x0020(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWithBom;                                          // 0x0021(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0022(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticLibrary_WriteStringToFile) == 0x000008, "Wrong alignment on KuroStaticLibrary_WriteStringToFile");
+static_assert(sizeof(KuroStaticLibrary_WriteStringToFile) == 0x000028, "Wrong size on KuroStaticLibrary_WriteStringToFile");
+static_assert(offsetof(KuroStaticLibrary_WriteStringToFile, SaveText) == 0x000000, "Member 'KuroStaticLibrary_WriteStringToFile::SaveText' has a wrong offset!");
+static_assert(offsetof(KuroStaticLibrary_WriteStringToFile, FileName) == 0x000010, "Member 'KuroStaticLibrary_WriteStringToFile::FileName' has a wrong offset!");
+static_assert(offsetof(KuroStaticLibrary_WriteStringToFile, bPublic) == 0x000020, "Member 'KuroStaticLibrary_WriteStringToFile::bPublic' has a wrong offset!");
+static_assert(offsetof(KuroStaticLibrary_WriteStringToFile, bWithBom) == 0x000021, "Member 'KuroStaticLibrary_WriteStringToFile::bWithBom' has a wrong offset!");
+static_assert(offsetof(KuroStaticLibrary_WriteStringToFile, ReturnValue) == 0x000022, "Member 'KuroStaticLibrary_WriteStringToFile::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.AbortTrophyHandleAsync
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticPS5Library_AbortTrophyHandleAsync final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(int32 Ret)>                    Callback;                                          // 0x0008(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_AbortTrophyHandleAsync) == 0x000004, "Wrong alignment on KuroStaticPS5Library_AbortTrophyHandleAsync");
+static_assert(sizeof(KuroStaticPS5Library_AbortTrophyHandleAsync) == 0x000030, "Wrong size on KuroStaticPS5Library_AbortTrophyHandleAsync");
+static_assert(offsetof(KuroStaticPS5Library_AbortTrophyHandleAsync, Handle) == 0x000000, "Member 'KuroStaticPS5Library_AbortTrophyHandleAsync::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_AbortTrophyHandleAsync, Callback) == 0x000008, "Member 'KuroStaticPS5Library_AbortTrophyHandleAsync::Callback' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.AbortUdsHandle
+// 0x0008 (0x0008 - 0x0000)
+struct KuroStaticPS5Library_AbortUdsHandle final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_AbortUdsHandle) == 0x000004, "Wrong alignment on KuroStaticPS5Library_AbortUdsHandle");
+static_assert(sizeof(KuroStaticPS5Library_AbortUdsHandle) == 0x000008, "Wrong size on KuroStaticPS5Library_AbortUdsHandle");
+static_assert(offsetof(KuroStaticPS5Library_AbortUdsHandle, Handle) == 0x000000, "Member 'KuroStaticPS5Library_AbortUdsHandle::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_AbortUdsHandle, ReturnValue) == 0x000004, "Member 'KuroStaticPS5Library_AbortUdsHandle::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.AddCacheMapElement
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticPS5Library_AddCacheMapElement final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_AddCacheMapElement) == 0x000008, "Wrong alignment on KuroStaticPS5Library_AddCacheMapElement");
+static_assert(sizeof(KuroStaticPS5Library_AddCacheMapElement) == 0x000020, "Wrong size on KuroStaticPS5Library_AddCacheMapElement");
+static_assert(offsetof(KuroStaticPS5Library_AddCacheMapElement, Key) == 0x000000, "Member 'KuroStaticPS5Library_AddCacheMapElement::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_AddCacheMapElement, Value) == 0x000010, "Member 'KuroStaticPS5Library_AddCacheMapElement::Value' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.AddJoinSessionDelegate
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticPS5Library_AddJoinSessionDelegate final
+{
+public:
+	TDelegate<void(const class FString& UserId, const class FString& PlayerSessionId)> InDelegate;                                        // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_AddJoinSessionDelegate) == 0x000004, "Wrong alignment on KuroStaticPS5Library_AddJoinSessionDelegate");
+static_assert(sizeof(KuroStaticPS5Library_AddJoinSessionDelegate) == 0x000028, "Wrong size on KuroStaticPS5Library_AddJoinSessionDelegate");
+static_assert(offsetof(KuroStaticPS5Library_AddJoinSessionDelegate, InDelegate) == 0x000000, "Member 'KuroStaticPS5Library_AddJoinSessionDelegate::InDelegate' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.CheckJoinSession
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticPS5Library_CheckJoinSession final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_CheckJoinSession) == 0x000008, "Wrong alignment on KuroStaticPS5Library_CheckJoinSession");
+static_assert(sizeof(KuroStaticPS5Library_CheckJoinSession) == 0x000010, "Wrong size on KuroStaticPS5Library_CheckJoinSession");
+static_assert(offsetof(KuroStaticPS5Library_CheckJoinSession, ReturnValue) == 0x000000, "Member 'KuroStaticPS5Library_CheckJoinSession::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.CheckUserPremium
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticPS5Library_CheckUserPremium final
+{
+public:
+	class FString                                 UserId;                                            // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_CheckUserPremium) == 0x000008, "Wrong alignment on KuroStaticPS5Library_CheckUserPremium");
+static_assert(sizeof(KuroStaticPS5Library_CheckUserPremium) == 0x000018, "Wrong size on KuroStaticPS5Library_CheckUserPremium");
+static_assert(offsetof(KuroStaticPS5Library_CheckUserPremium, UserId) == 0x000000, "Member 'KuroStaticPS5Library_CheckUserPremium::UserId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CheckUserPremium, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_CheckUserPremium::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.CreatePlayerSession
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticPS5Library_CreatePlayerSession final
+{
+public:
+	int32                                         JoinableUserType;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PlayerId;                                          // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_CreatePlayerSession) == 0x000008, "Wrong alignment on KuroStaticPS5Library_CreatePlayerSession");
+static_assert(sizeof(KuroStaticPS5Library_CreatePlayerSession) == 0x000028, "Wrong size on KuroStaticPS5Library_CreatePlayerSession");
+static_assert(offsetof(KuroStaticPS5Library_CreatePlayerSession, JoinableUserType) == 0x000000, "Member 'KuroStaticPS5Library_CreatePlayerSession::JoinableUserType' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreatePlayerSession, PlayerId) == 0x000008, "Member 'KuroStaticPS5Library_CreatePlayerSession::PlayerId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreatePlayerSession, ReturnValue) == 0x000018, "Member 'KuroStaticPS5Library_CreatePlayerSession::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.CreateTrophyContextAsync
+// 0x0050 (0x0050 - 0x0000)
+struct KuroStaticPS5Library_CreateTrophyContextAsync final
+{
+public:
+	class FString                                 UserId;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ServiceLabel;                                      // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OptionsLong;                                       // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Ret, int32 Result)>      Callback;                                          // 0x0028(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_CreateTrophyContextAsync) == 0x000008, "Wrong alignment on KuroStaticPS5Library_CreateTrophyContextAsync");
+static_assert(sizeof(KuroStaticPS5Library_CreateTrophyContextAsync) == 0x000050, "Wrong size on KuroStaticPS5Library_CreateTrophyContextAsync");
+static_assert(offsetof(KuroStaticPS5Library_CreateTrophyContextAsync, UserId) == 0x000000, "Member 'KuroStaticPS5Library_CreateTrophyContextAsync::UserId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreateTrophyContextAsync, ServiceLabel) == 0x000010, "Member 'KuroStaticPS5Library_CreateTrophyContextAsync::ServiceLabel' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreateTrophyContextAsync, OptionsLong) == 0x000018, "Member 'KuroStaticPS5Library_CreateTrophyContextAsync::OptionsLong' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreateTrophyContextAsync, Callback) == 0x000028, "Member 'KuroStaticPS5Library_CreateTrophyContextAsync::Callback' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.CreateTrophyHandleAsync
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticPS5Library_CreateTrophyHandleAsync final
+{
+public:
+	TDelegate<void(int32 Ret, int32 Result)>      Callback;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_CreateTrophyHandleAsync) == 0x000004, "Wrong alignment on KuroStaticPS5Library_CreateTrophyHandleAsync");
+static_assert(sizeof(KuroStaticPS5Library_CreateTrophyHandleAsync) == 0x000028, "Wrong size on KuroStaticPS5Library_CreateTrophyHandleAsync");
+static_assert(offsetof(KuroStaticPS5Library_CreateTrophyHandleAsync, Callback) == 0x000000, "Member 'KuroStaticPS5Library_CreateTrophyHandleAsync::Callback' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.CreateUdsContext
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticPS5Library_CreateUdsContext final
+{
+public:
+	class FString                                 UserId;                                            // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Context;                                           // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_CreateUdsContext) == 0x000008, "Wrong alignment on KuroStaticPS5Library_CreateUdsContext");
+static_assert(sizeof(KuroStaticPS5Library_CreateUdsContext) == 0x000018, "Wrong size on KuroStaticPS5Library_CreateUdsContext");
+static_assert(offsetof(KuroStaticPS5Library_CreateUdsContext, UserId) == 0x000000, "Member 'KuroStaticPS5Library_CreateUdsContext::UserId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreateUdsContext, Context) == 0x000010, "Member 'KuroStaticPS5Library_CreateUdsContext::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreateUdsContext, ReturnValue) == 0x000014, "Member 'KuroStaticPS5Library_CreateUdsContext::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.CreateUdsEvent
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticPS5Library_CreateUdsEvent final
+{
+public:
+	class FString                                 EventName;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         OutEventPtr;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         OutProPtr;                                         // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_CreateUdsEvent) == 0x000008, "Wrong alignment on KuroStaticPS5Library_CreateUdsEvent");
+static_assert(sizeof(KuroStaticPS5Library_CreateUdsEvent) == 0x000028, "Wrong size on KuroStaticPS5Library_CreateUdsEvent");
+static_assert(offsetof(KuroStaticPS5Library_CreateUdsEvent, EventName) == 0x000000, "Member 'KuroStaticPS5Library_CreateUdsEvent::EventName' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreateUdsEvent, OutEventPtr) == 0x000010, "Member 'KuroStaticPS5Library_CreateUdsEvent::OutEventPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreateUdsEvent, OutProPtr) == 0x000018, "Member 'KuroStaticPS5Library_CreateUdsEvent::OutProPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreateUdsEvent, ReturnValue) == 0x000020, "Member 'KuroStaticPS5Library_CreateUdsEvent::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.CreateUdsHandle
+// 0x0008 (0x0008 - 0x0000)
+struct KuroStaticPS5Library_CreateUdsHandle final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_CreateUdsHandle) == 0x000004, "Wrong alignment on KuroStaticPS5Library_CreateUdsHandle");
+static_assert(sizeof(KuroStaticPS5Library_CreateUdsHandle) == 0x000008, "Wrong size on KuroStaticPS5Library_CreateUdsHandle");
+static_assert(offsetof(KuroStaticPS5Library_CreateUdsHandle, Handle) == 0x000000, "Member 'KuroStaticPS5Library_CreateUdsHandle::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_CreateUdsHandle, ReturnValue) == 0x000004, "Member 'KuroStaticPS5Library_CreateUdsHandle::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.DestroyTrophyContextAsync
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticPS5Library_DestroyTrophyContextAsync final
+{
+public:
+	int32                                         Context;                                           // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(int32 Ret)>                    Callback;                                          // 0x0008(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_DestroyTrophyContextAsync) == 0x000004, "Wrong alignment on KuroStaticPS5Library_DestroyTrophyContextAsync");
+static_assert(sizeof(KuroStaticPS5Library_DestroyTrophyContextAsync) == 0x000030, "Wrong size on KuroStaticPS5Library_DestroyTrophyContextAsync");
+static_assert(offsetof(KuroStaticPS5Library_DestroyTrophyContextAsync, Context) == 0x000000, "Member 'KuroStaticPS5Library_DestroyTrophyContextAsync::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_DestroyTrophyContextAsync, Callback) == 0x000008, "Member 'KuroStaticPS5Library_DestroyTrophyContextAsync::Callback' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.DestroyTrophyHandleAsync
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticPS5Library_DestroyTrophyHandleAsync final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(int32 Ret)>                    Callback;                                          // 0x0008(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_DestroyTrophyHandleAsync) == 0x000004, "Wrong alignment on KuroStaticPS5Library_DestroyTrophyHandleAsync");
+static_assert(sizeof(KuroStaticPS5Library_DestroyTrophyHandleAsync) == 0x000030, "Wrong size on KuroStaticPS5Library_DestroyTrophyHandleAsync");
+static_assert(offsetof(KuroStaticPS5Library_DestroyTrophyHandleAsync, Handle) == 0x000000, "Member 'KuroStaticPS5Library_DestroyTrophyHandleAsync::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_DestroyTrophyHandleAsync, Callback) == 0x000008, "Member 'KuroStaticPS5Library_DestroyTrophyHandleAsync::Callback' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.DestroyUdsContext
+// 0x0008 (0x0008 - 0x0000)
+struct KuroStaticPS5Library_DestroyUdsContext final
+{
+public:
+	int32                                         Context;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_DestroyUdsContext) == 0x000004, "Wrong alignment on KuroStaticPS5Library_DestroyUdsContext");
+static_assert(sizeof(KuroStaticPS5Library_DestroyUdsContext) == 0x000008, "Wrong size on KuroStaticPS5Library_DestroyUdsContext");
+static_assert(offsetof(KuroStaticPS5Library_DestroyUdsContext, Context) == 0x000000, "Member 'KuroStaticPS5Library_DestroyUdsContext::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_DestroyUdsContext, ReturnValue) == 0x000004, "Member 'KuroStaticPS5Library_DestroyUdsContext::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.DestroyUdsEvent
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticPS5Library_DestroyUdsEvent final
+{
+public:
+	int64                                         EventPtr;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_DestroyUdsEvent) == 0x000008, "Wrong alignment on KuroStaticPS5Library_DestroyUdsEvent");
+static_assert(sizeof(KuroStaticPS5Library_DestroyUdsEvent) == 0x000010, "Wrong size on KuroStaticPS5Library_DestroyUdsEvent");
+static_assert(offsetof(KuroStaticPS5Library_DestroyUdsEvent, EventPtr) == 0x000000, "Member 'KuroStaticPS5Library_DestroyUdsEvent::EventPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_DestroyUdsEvent, ReturnValue) == 0x000008, "Member 'KuroStaticPS5Library_DestroyUdsEvent::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.DestroyUdsHandle
+// 0x0008 (0x0008 - 0x0000)
+struct KuroStaticPS5Library_DestroyUdsHandle final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_DestroyUdsHandle) == 0x000004, "Wrong alignment on KuroStaticPS5Library_DestroyUdsHandle");
+static_assert(sizeof(KuroStaticPS5Library_DestroyUdsHandle) == 0x000008, "Wrong size on KuroStaticPS5Library_DestroyUdsHandle");
+static_assert(offsetof(KuroStaticPS5Library_DestroyUdsHandle, Handle) == 0x000000, "Member 'KuroStaticPS5Library_DestroyUdsHandle::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_DestroyUdsHandle, ReturnValue) == 0x000004, "Member 'KuroStaticPS5Library_DestroyUdsHandle::ReturnValue' has a wrong offset!");
+
 // Function KuroUtility.KuroStaticPS5Library.GetAccountIdByUserId
 // 0x0020 (0x0020 - 0x0000)
 struct KuroStaticPS5Library_GetAccountIdByUserId final
@@ -2618,6 +2897,47 @@ static_assert(offsetof(KuroStaticPS5Library_GetBlockUserList, Offset) == 0x00000
 static_assert(offsetof(KuroStaticPS5Library_GetBlockUserList, Limit) == 0x000004, "Member 'KuroStaticPS5Library_GetBlockUserList::Limit' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_GetBlockUserList, ReturnValue) == 0x000008, "Member 'KuroStaticPS5Library_GetBlockUserList::ReturnValue' has a wrong offset!");
 
+// Function KuroUtility.KuroStaticPS5Library.GetBlockUserListAsync
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticPS5Library_GetBlockUserListAsync final
+{
+public:
+	int32                                         Offset;                                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Limit;                                             // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FBlockUserData& Data)> Delegate;                                          // 0x0008(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetBlockUserListAsync) == 0x000004, "Wrong alignment on KuroStaticPS5Library_GetBlockUserListAsync");
+static_assert(sizeof(KuroStaticPS5Library_GetBlockUserListAsync) == 0x000030, "Wrong size on KuroStaticPS5Library_GetBlockUserListAsync");
+static_assert(offsetof(KuroStaticPS5Library_GetBlockUserListAsync, Offset) == 0x000000, "Member 'KuroStaticPS5Library_GetBlockUserListAsync::Offset' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetBlockUserListAsync, Limit) == 0x000004, "Member 'KuroStaticPS5Library_GetBlockUserListAsync::Limit' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetBlockUserListAsync, Delegate) == 0x000008, "Member 'KuroStaticPS5Library_GetBlockUserListAsync::Delegate' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.GetCacheMapElement
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticPS5Library_GetCacheMapElement final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetCacheMapElement) == 0x000008, "Wrong alignment on KuroStaticPS5Library_GetCacheMapElement");
+static_assert(sizeof(KuroStaticPS5Library_GetCacheMapElement) == 0x000020, "Wrong size on KuroStaticPS5Library_GetCacheMapElement");
+static_assert(offsetof(KuroStaticPS5Library_GetCacheMapElement, Key) == 0x000000, "Member 'KuroStaticPS5Library_GetCacheMapElement::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetCacheMapElement, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_GetCacheMapElement::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.GetCommunicationRestrictionStatusAsync
+// 0x0038 (0x0038 - 0x0000)
+struct KuroStaticPS5Library_GetCommunicationRestrictionStatusAsync final
+{
+public:
+	class FString                                 AccountId;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Ret, int32 Status)>      Callback;                                          // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetCommunicationRestrictionStatusAsync) == 0x000008, "Wrong alignment on KuroStaticPS5Library_GetCommunicationRestrictionStatusAsync");
+static_assert(sizeof(KuroStaticPS5Library_GetCommunicationRestrictionStatusAsync) == 0x000038, "Wrong size on KuroStaticPS5Library_GetCommunicationRestrictionStatusAsync");
+static_assert(offsetof(KuroStaticPS5Library_GetCommunicationRestrictionStatusAsync, AccountId) == 0x000000, "Member 'KuroStaticPS5Library_GetCommunicationRestrictionStatusAsync::AccountId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetCommunicationRestrictionStatusAsync, Callback) == 0x000010, "Member 'KuroStaticPS5Library_GetCommunicationRestrictionStatusAsync::Callback' has a wrong offset!");
+
 // Function KuroUtility.KuroStaticPS5Library.GetIdToken
 // 0x0048 (0x0048 - 0x0000)
 struct KuroStaticPS5Library_GetIdToken final
@@ -2638,6 +2958,17 @@ static_assert(offsetof(KuroStaticPS5Library_GetIdToken, Scope) == 0x000020, "Mem
 static_assert(offsetof(KuroStaticPS5Library_GetIdToken, IdToken) == 0x000030, "Member 'KuroStaticPS5Library_GetIdToken::IdToken' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_GetIdToken, ReturnValue) == 0x000040, "Member 'KuroStaticPS5Library_GetIdToken::ReturnValue' has a wrong offset!");
 
+// Function KuroUtility.KuroStaticPS5Library.GetMessageDialogStateAsync
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticPS5Library_GetMessageDialogStateAsync final
+{
+public:
+	TDelegate<void(int32 Ret)>                    Callback;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetMessageDialogStateAsync) == 0x000004, "Wrong alignment on KuroStaticPS5Library_GetMessageDialogStateAsync");
+static_assert(sizeof(KuroStaticPS5Library_GetMessageDialogStateAsync) == 0x000028, "Wrong size on KuroStaticPS5Library_GetMessageDialogStateAsync");
+static_assert(offsetof(KuroStaticPS5Library_GetMessageDialogStateAsync, Callback) == 0x000000, "Member 'KuroStaticPS5Library_GetMessageDialogStateAsync::Callback' has a wrong offset!");
+
 // Function KuroUtility.KuroStaticPS5Library.GetOnlineIdByUserId
 // 0x0020 (0x0020 - 0x0000)
 struct KuroStaticPS5Library_GetOnlineIdByUserId final
@@ -2650,6 +2981,30 @@ static_assert(alignof(KuroStaticPS5Library_GetOnlineIdByUserId) == 0x000008, "Wr
 static_assert(sizeof(KuroStaticPS5Library_GetOnlineIdByUserId) == 0x000020, "Wrong size on KuroStaticPS5Library_GetOnlineIdByUserId");
 static_assert(offsetof(KuroStaticPS5Library_GetOnlineIdByUserId, UserId) == 0x000000, "Member 'KuroStaticPS5Library_GetOnlineIdByUserId::UserId' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_GetOnlineIdByUserId, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_GetOnlineIdByUserId::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.GetPlayerIdByPlayerSessionId
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticPS5Library_GetPlayerIdByPlayerSessionId final
+{
+public:
+	class FString                                 PlayerSessionId;                                   // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetPlayerIdByPlayerSessionId) == 0x000008, "Wrong alignment on KuroStaticPS5Library_GetPlayerIdByPlayerSessionId");
+static_assert(sizeof(KuroStaticPS5Library_GetPlayerIdByPlayerSessionId) == 0x000020, "Wrong size on KuroStaticPS5Library_GetPlayerIdByPlayerSessionId");
+static_assert(offsetof(KuroStaticPS5Library_GetPlayerIdByPlayerSessionId, PlayerSessionId) == 0x000000, "Member 'KuroStaticPS5Library_GetPlayerIdByPlayerSessionId::PlayerSessionId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetPlayerIdByPlayerSessionId, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_GetPlayerIdByPlayerSessionId::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.GetStoreProducts
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticPS5Library_GetStoreProducts final
+{
+public:
+	TArray<struct FProductData>                   ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetStoreProducts) == 0x000008, "Wrong alignment on KuroStaticPS5Library_GetStoreProducts");
+static_assert(sizeof(KuroStaticPS5Library_GetStoreProducts) == 0x000010, "Wrong size on KuroStaticPS5Library_GetStoreProducts");
+static_assert(offsetof(KuroStaticPS5Library_GetStoreProducts, ReturnValue) == 0x000000, "Member 'KuroStaticPS5Library_GetStoreProducts::ReturnValue' has a wrong offset!");
 
 // Function KuroUtility.KuroStaticPS5Library.GetTrophyList
 // 0x0040 (0x0040 - 0x0000)
@@ -2668,6 +3023,68 @@ static_assert(offsetof(KuroStaticPS5Library_GetTrophyList, InputOffset) == 0x000
 static_assert(offsetof(KuroStaticPS5Library_GetTrophyList, Length) == 0x000014, "Member 'KuroStaticPS5Library_GetTrophyList::Length' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_GetTrophyList, ReturnValue) == 0x000018, "Member 'KuroStaticPS5Library_GetTrophyList::ReturnValue' has a wrong offset!");
 
+// Function KuroUtility.KuroStaticPS5Library.GetTrophyListWithContextIdAndHandleId
+// 0x0038 (0x0038 - 0x0000)
+struct KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId final
+{
+public:
+	int32                                         Context;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InputOffset;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Length;                                            // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTrophyInfoData                        ReturnValue;                                       // 0x0010(0x0028)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId) == 0x000008, "Wrong alignment on KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId");
+static_assert(sizeof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId) == 0x000038, "Wrong size on KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId, Context) == 0x000000, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId, Handle) == 0x000004, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId, InputOffset) == 0x000008, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId::InputOffset' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId, Length) == 0x00000C, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId::Length' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleId::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.GetTrophyListWithContextIdAndHandleIdAsync
+// 0x0038 (0x0038 - 0x0000)
+struct KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync final
+{
+public:
+	int32                                         InputOffset;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Length;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Context;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FTrophyInfoData& Data)> Callback;                                          // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync) == 0x000004, "Wrong alignment on KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync");
+static_assert(sizeof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync) == 0x000038, "Wrong size on KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync, InputOffset) == 0x000000, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync::InputOffset' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync, Length) == 0x000004, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync::Length' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync, Context) == 0x000008, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync, Handle) == 0x00000C, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync, Callback) == 0x000010, "Member 'KuroStaticPS5Library_GetTrophyListWithContextIdAndHandleIdAsync::Callback' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.GetUserId
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticPS5Library_GetUserId final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetUserId) == 0x000008, "Wrong alignment on KuroStaticPS5Library_GetUserId");
+static_assert(sizeof(KuroStaticPS5Library_GetUserId) == 0x000010, "Wrong size on KuroStaticPS5Library_GetUserId");
+static_assert(offsetof(KuroStaticPS5Library_GetUserId, ReturnValue) == 0x000000, "Member 'KuroStaticPS5Library_GetUserId::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.GetUserIdByAccountId
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticPS5Library_GetUserIdByAccountId final
+{
+public:
+	class FString                                 AccountId;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_GetUserIdByAccountId) == 0x000008, "Wrong alignment on KuroStaticPS5Library_GetUserIdByAccountId");
+static_assert(sizeof(KuroStaticPS5Library_GetUserIdByAccountId) == 0x000020, "Wrong size on KuroStaticPS5Library_GetUserIdByAccountId");
+static_assert(offsetof(KuroStaticPS5Library_GetUserIdByAccountId, AccountId) == 0x000000, "Member 'KuroStaticPS5Library_GetUserIdByAccountId::AccountId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_GetUserIdByAccountId, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_GetUserIdByAccountId::ReturnValue' has a wrong offset!");
+
 // Function KuroUtility.KuroStaticPS5Library.HidePsStoreIcon
 // 0x0004 (0x0004 - 0x0000)
 struct KuroStaticPS5Library_HidePsStoreIcon final
@@ -2678,6 +3095,19 @@ public:
 static_assert(alignof(KuroStaticPS5Library_HidePsStoreIcon) == 0x000004, "Wrong alignment on KuroStaticPS5Library_HidePsStoreIcon");
 static_assert(sizeof(KuroStaticPS5Library_HidePsStoreIcon) == 0x000004, "Wrong size on KuroStaticPS5Library_HidePsStoreIcon");
 static_assert(offsetof(KuroStaticPS5Library_HidePsStoreIcon, ReturnValue) == 0x000000, "Member 'KuroStaticPS5Library_HidePsStoreIcon::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.InitNpUniversalDataSystem
+// 0x0008 (0x0008 - 0x0000)
+struct KuroStaticPS5Library_InitNpUniversalDataSystem final
+{
+public:
+	int32                                         PoolSize;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_InitNpUniversalDataSystem) == 0x000004, "Wrong alignment on KuroStaticPS5Library_InitNpUniversalDataSystem");
+static_assert(sizeof(KuroStaticPS5Library_InitNpUniversalDataSystem) == 0x000008, "Wrong size on KuroStaticPS5Library_InitNpUniversalDataSystem");
+static_assert(offsetof(KuroStaticPS5Library_InitNpUniversalDataSystem, PoolSize) == 0x000000, "Member 'KuroStaticPS5Library_InitNpUniversalDataSystem::PoolSize' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_InitNpUniversalDataSystem, ReturnValue) == 0x000004, "Member 'KuroStaticPS5Library_InitNpUniversalDataSystem::ReturnValue' has a wrong offset!");
 
 // Function KuroUtility.KuroStaticPS5Library.InitWebApi
 // 0x0018 (0x0018 - 0x0000)
@@ -2693,6 +3123,73 @@ static_assert(sizeof(KuroStaticPS5Library_InitWebApi) == 0x000018, "Wrong size o
 static_assert(offsetof(KuroStaticPS5Library_InitWebApi, UserId) == 0x000000, "Member 'KuroStaticPS5Library_InitWebApi::UserId' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_InitWebApi, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_InitWebApi::ReturnValue' has a wrong offset!");
 
+// Function KuroUtility.KuroStaticPS5Library.JoinPlayerSession
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticPS5Library_JoinPlayerSession final
+{
+public:
+	class FString                                 PlayerSessionId;                                   // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_JoinPlayerSession) == 0x000008, "Wrong alignment on KuroStaticPS5Library_JoinPlayerSession");
+static_assert(sizeof(KuroStaticPS5Library_JoinPlayerSession) == 0x000010, "Wrong size on KuroStaticPS5Library_JoinPlayerSession");
+static_assert(offsetof(KuroStaticPS5Library_JoinPlayerSession, PlayerSessionId) == 0x000000, "Member 'KuroStaticPS5Library_JoinPlayerSession::PlayerSessionId' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.NotifyPremium
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticPS5Library_NotifyPremium final
+{
+public:
+	class FString                                 UserId;                                            // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_NotifyPremium) == 0x000008, "Wrong alignment on KuroStaticPS5Library_NotifyPremium");
+static_assert(sizeof(KuroStaticPS5Library_NotifyPremium) == 0x000010, "Wrong size on KuroStaticPS5Library_NotifyPremium");
+static_assert(offsetof(KuroStaticPS5Library_NotifyPremium, UserId) == 0x000000, "Member 'KuroStaticPS5Library_NotifyPremium::UserId' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.NotifyPremiumFeature
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticPS5Library_NotifyPremiumFeature final
+{
+public:
+	class FString                                 UserId;                                            // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsPlayStationOnly;                                 // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_NotifyPremiumFeature) == 0x000008, "Wrong alignment on KuroStaticPS5Library_NotifyPremiumFeature");
+static_assert(sizeof(KuroStaticPS5Library_NotifyPremiumFeature) == 0x000018, "Wrong size on KuroStaticPS5Library_NotifyPremiumFeature");
+static_assert(offsetof(KuroStaticPS5Library_NotifyPremiumFeature, UserId) == 0x000000, "Member 'KuroStaticPS5Library_NotifyPremiumFeature::UserId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_NotifyPremiumFeature, IsPlayStationOnly) == 0x000010, "Member 'KuroStaticPS5Library_NotifyPremiumFeature::IsPlayStationOnly' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.OpenCheckoutDialog
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticPS5Library_OpenCheckoutDialog final
+{
+public:
+	class FString                                 ProductLabel;                                      // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_OpenCheckoutDialog) == 0x000008, "Wrong alignment on KuroStaticPS5Library_OpenCheckoutDialog");
+static_assert(sizeof(KuroStaticPS5Library_OpenCheckoutDialog) == 0x000018, "Wrong size on KuroStaticPS5Library_OpenCheckoutDialog");
+static_assert(offsetof(KuroStaticPS5Library_OpenCheckoutDialog, ProductLabel) == 0x000000, "Member 'KuroStaticPS5Library_OpenCheckoutDialog::ProductLabel' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_OpenCheckoutDialog, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_OpenCheckoutDialog::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.OpenMessageDialog
+// 0x0040 (0x0040 - 0x0000)
+struct KuroStaticPS5Library_OpenMessageDialog final
+{
+public:
+	class FString                                 UserId;                                            // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OpenMode;                                          // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MsgType;                                           // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Ret)>                    Callback;                                          // 0x0018(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_OpenMessageDialog) == 0x000008, "Wrong alignment on KuroStaticPS5Library_OpenMessageDialog");
+static_assert(sizeof(KuroStaticPS5Library_OpenMessageDialog) == 0x000040, "Wrong size on KuroStaticPS5Library_OpenMessageDialog");
+static_assert(offsetof(KuroStaticPS5Library_OpenMessageDialog, UserId) == 0x000000, "Member 'KuroStaticPS5Library_OpenMessageDialog::UserId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_OpenMessageDialog, OpenMode) == 0x000010, "Member 'KuroStaticPS5Library_OpenMessageDialog::OpenMode' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_OpenMessageDialog, MsgType) == 0x000014, "Member 'KuroStaticPS5Library_OpenMessageDialog::MsgType' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_OpenMessageDialog, Callback) == 0x000018, "Member 'KuroStaticPS5Library_OpenMessageDialog::Callback' has a wrong offset!");
+
 // Function KuroUtility.KuroStaticPS5Library.OpenWebBrowser
 // 0x0010 (0x0010 - 0x0000)
 struct KuroStaticPS5Library_OpenWebBrowser final
@@ -2703,6 +3200,129 @@ public:
 static_assert(alignof(KuroStaticPS5Library_OpenWebBrowser) == 0x000008, "Wrong alignment on KuroStaticPS5Library_OpenWebBrowser");
 static_assert(sizeof(KuroStaticPS5Library_OpenWebBrowser) == 0x000010, "Wrong size on KuroStaticPS5Library_OpenWebBrowser");
 static_assert(offsetof(KuroStaticPS5Library_OpenWebBrowser, Url) == 0x000000, "Member 'KuroStaticPS5Library_OpenWebBrowser::Url' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.OpenWebView
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticPS5Library_OpenWebView final
+{
+public:
+	class FString                                 Url;                                               // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_OpenWebView) == 0x000008, "Wrong alignment on KuroStaticPS5Library_OpenWebView");
+static_assert(sizeof(KuroStaticPS5Library_OpenWebView) == 0x000018, "Wrong size on KuroStaticPS5Library_OpenWebView");
+static_assert(offsetof(KuroStaticPS5Library_OpenWebView, Url) == 0x000000, "Member 'KuroStaticPS5Library_OpenWebView::Url' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_OpenWebView, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_OpenWebView::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.PollCheckoutDialogResult
+// 0x0004 (0x0004 - 0x0000)
+struct KuroStaticPS5Library_PollCheckoutDialogResult final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_PollCheckoutDialogResult) == 0x000004, "Wrong alignment on KuroStaticPS5Library_PollCheckoutDialogResult");
+static_assert(sizeof(KuroStaticPS5Library_PollCheckoutDialogResult) == 0x000004, "Wrong size on KuroStaticPS5Library_PollCheckoutDialogResult");
+static_assert(offsetof(KuroStaticPS5Library_PollCheckoutDialogResult, ReturnValue) == 0x000000, "Member 'KuroStaticPS5Library_PollCheckoutDialogResult::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.PollWebBrowser
+// 0x0001 (0x0001 - 0x0000)
+struct KuroStaticPS5Library_PollWebBrowser final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_PollWebBrowser) == 0x000001, "Wrong alignment on KuroStaticPS5Library_PollWebBrowser");
+static_assert(sizeof(KuroStaticPS5Library_PollWebBrowser) == 0x000001, "Wrong size on KuroStaticPS5Library_PollWebBrowser");
+static_assert(offsetof(KuroStaticPS5Library_PollWebBrowser, ReturnValue) == 0x000000, "Member 'KuroStaticPS5Library_PollWebBrowser::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.PostUdsEvent
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticPS5Library_PostUdsEvent final
+{
+public:
+	int32                                         Context;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         EventPtr;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_PostUdsEvent) == 0x000008, "Wrong alignment on KuroStaticPS5Library_PostUdsEvent");
+static_assert(sizeof(KuroStaticPS5Library_PostUdsEvent) == 0x000018, "Wrong size on KuroStaticPS5Library_PostUdsEvent");
+static_assert(offsetof(KuroStaticPS5Library_PostUdsEvent, Context) == 0x000000, "Member 'KuroStaticPS5Library_PostUdsEvent::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_PostUdsEvent, Handle) == 0x000004, "Member 'KuroStaticPS5Library_PostUdsEvent::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_PostUdsEvent, EventPtr) == 0x000008, "Member 'KuroStaticPS5Library_PostUdsEvent::EventPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_PostUdsEvent, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_PostUdsEvent::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.RegisterTrophyContextAsync
+// 0x0040 (0x0040 - 0x0000)
+struct KuroStaticPS5Library_RegisterTrophyContextAsync final
+{
+public:
+	int32                                         Context;                                           // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OptionsLong;                                       // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Ret)>                    Callback;                                          // 0x0018(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_RegisterTrophyContextAsync) == 0x000008, "Wrong alignment on KuroStaticPS5Library_RegisterTrophyContextAsync");
+static_assert(sizeof(KuroStaticPS5Library_RegisterTrophyContextAsync) == 0x000040, "Wrong size on KuroStaticPS5Library_RegisterTrophyContextAsync");
+static_assert(offsetof(KuroStaticPS5Library_RegisterTrophyContextAsync, Context) == 0x000000, "Member 'KuroStaticPS5Library_RegisterTrophyContextAsync::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_RegisterTrophyContextAsync, Handle) == 0x000004, "Member 'KuroStaticPS5Library_RegisterTrophyContextAsync::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_RegisterTrophyContextAsync, OptionsLong) == 0x000008, "Member 'KuroStaticPS5Library_RegisterTrophyContextAsync::OptionsLong' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_RegisterTrophyContextAsync, Callback) == 0x000018, "Member 'KuroStaticPS5Library_RegisterTrophyContextAsync::Callback' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.RegisterUdsContext
+// 0x000C (0x000C - 0x0000)
+struct KuroStaticPS5Library_RegisterUdsContext final
+{
+public:
+	int32                                         Context;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_RegisterUdsContext) == 0x000004, "Wrong alignment on KuroStaticPS5Library_RegisterUdsContext");
+static_assert(sizeof(KuroStaticPS5Library_RegisterUdsContext) == 0x00000C, "Wrong size on KuroStaticPS5Library_RegisterUdsContext");
+static_assert(offsetof(KuroStaticPS5Library_RegisterUdsContext, Context) == 0x000000, "Member 'KuroStaticPS5Library_RegisterUdsContext::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_RegisterUdsContext, Handle) == 0x000004, "Member 'KuroStaticPS5Library_RegisterUdsContext::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_RegisterUdsContext, ReturnValue) == 0x000008, "Member 'KuroStaticPS5Library_RegisterUdsContext::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.RemoveCacheElement
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticPS5Library_RemoveCacheElement final
+{
+public:
+	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_RemoveCacheElement) == 0x000008, "Wrong alignment on KuroStaticPS5Library_RemoveCacheElement");
+static_assert(sizeof(KuroStaticPS5Library_RemoveCacheElement) == 0x000010, "Wrong size on KuroStaticPS5Library_RemoveCacheElement");
+static_assert(offsetof(KuroStaticPS5Library_RemoveCacheElement, Key) == 0x000000, "Member 'KuroStaticPS5Library_RemoveCacheElement::Key' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.SceNpGetNpReachabilityState
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticPS5Library_SceNpGetNpReachabilityState final
+{
+public:
+	class FString                                 UserId;                                            // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OutState;                                          // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_SceNpGetNpReachabilityState) == 0x000008, "Wrong alignment on KuroStaticPS5Library_SceNpGetNpReachabilityState");
+static_assert(sizeof(KuroStaticPS5Library_SceNpGetNpReachabilityState) == 0x000018, "Wrong size on KuroStaticPS5Library_SceNpGetNpReachabilityState");
+static_assert(offsetof(KuroStaticPS5Library_SceNpGetNpReachabilityState, UserId) == 0x000000, "Member 'KuroStaticPS5Library_SceNpGetNpReachabilityState::UserId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_SceNpGetNpReachabilityState, OutState) == 0x000010, "Member 'KuroStaticPS5Library_SceNpGetNpReachabilityState::OutState' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_SceNpGetNpReachabilityState, ReturnValue) == 0x000014, "Member 'KuroStaticPS5Library_SceNpGetNpReachabilityState::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.SetPlayerSessionJoinableUserType
+// 0x0004 (0x0004 - 0x0000)
+struct KuroStaticPS5Library_SetPlayerSessionJoinableUserType final
+{
+public:
+	int32                                         JoinableUserType;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_SetPlayerSessionJoinableUserType) == 0x000004, "Wrong alignment on KuroStaticPS5Library_SetPlayerSessionJoinableUserType");
+static_assert(sizeof(KuroStaticPS5Library_SetPlayerSessionJoinableUserType) == 0x000004, "Wrong size on KuroStaticPS5Library_SetPlayerSessionJoinableUserType");
+static_assert(offsetof(KuroStaticPS5Library_SetPlayerSessionJoinableUserType, JoinableUserType) == 0x000000, "Member 'KuroStaticPS5Library_SetPlayerSessionJoinableUserType::JoinableUserType' has a wrong offset!");
 
 // Function KuroUtility.KuroStaticPS5Library.ShowPsStoreIcon
 // 0x0008 (0x0008 - 0x0000)
@@ -2716,6 +3336,147 @@ static_assert(alignof(KuroStaticPS5Library_ShowPsStoreIcon) == 0x000004, "Wrong 
 static_assert(sizeof(KuroStaticPS5Library_ShowPsStoreIcon) == 0x000008, "Wrong size on KuroStaticPS5Library_ShowPsStoreIcon");
 static_assert(offsetof(KuroStaticPS5Library_ShowPsStoreIcon, Position) == 0x000000, "Member 'KuroStaticPS5Library_ShowPsStoreIcon::Position' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_ShowPsStoreIcon, ReturnValue) == 0x000004, "Member 'KuroStaticPS5Library_ShowPsStoreIcon::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UdsEventPropertyObjectSetBool
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticPS5Library_UdsEventPropertyObjectSetBool final
+{
+public:
+	int64                                         ProPtr;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Value;                                             // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_UdsEventPropertyObjectSetBool) == 0x000008, "Wrong alignment on KuroStaticPS5Library_UdsEventPropertyObjectSetBool");
+static_assert(sizeof(KuroStaticPS5Library_UdsEventPropertyObjectSetBool) == 0x000020, "Wrong size on KuroStaticPS5Library_UdsEventPropertyObjectSetBool");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetBool, ProPtr) == 0x000000, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetBool::ProPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetBool, Key) == 0x000008, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetBool::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetBool, Value) == 0x000018, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetBool::Value' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetBool, ReturnValue) == 0x00001C, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetBool::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UdsEventPropertyObjectSetFloat32
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32 final
+{
+public:
+	int64                                         ProPtr;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32) == 0x000008, "Wrong alignment on KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32");
+static_assert(sizeof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32) == 0x000020, "Wrong size on KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32, ProPtr) == 0x000000, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32::ProPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32, Key) == 0x000008, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32, Value) == 0x000018, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32::Value' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32, ReturnValue) == 0x00001C, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetFloat32::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UdsEventPropertyObjectSetFloat64
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64 final
+{
+public:
+	int64                                         ProPtr;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        Value;                                             // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64) == 0x000008, "Wrong alignment on KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64");
+static_assert(sizeof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64) == 0x000028, "Wrong size on KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64, ProPtr) == 0x000000, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64::ProPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64, Key) == 0x000008, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64, Value) == 0x000018, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64::Value' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64, ReturnValue) == 0x000020, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetFloat64::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UdsEventPropertyObjectSetInt32
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticPS5Library_UdsEventPropertyObjectSetInt32 final
+{
+public:
+	int64                                         ProPtr;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt32) == 0x000008, "Wrong alignment on KuroStaticPS5Library_UdsEventPropertyObjectSetInt32");
+static_assert(sizeof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt32) == 0x000020, "Wrong size on KuroStaticPS5Library_UdsEventPropertyObjectSetInt32");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt32, ProPtr) == 0x000000, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetInt32::ProPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt32, Key) == 0x000008, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetInt32::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt32, Value) == 0x000018, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetInt32::Value' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt32, ReturnValue) == 0x00001C, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetInt32::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UdsEventPropertyObjectSetInt64
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticPS5Library_UdsEventPropertyObjectSetInt64 final
+{
+public:
+	int64                                         ProPtr;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         Value;                                             // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt64) == 0x000008, "Wrong alignment on KuroStaticPS5Library_UdsEventPropertyObjectSetInt64");
+static_assert(sizeof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt64) == 0x000028, "Wrong size on KuroStaticPS5Library_UdsEventPropertyObjectSetInt64");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt64, ProPtr) == 0x000000, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetInt64::ProPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt64, Key) == 0x000008, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetInt64::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt64, Value) == 0x000018, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetInt64::Value' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetInt64, ReturnValue) == 0x000020, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetInt64::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UdsEventPropertyObjectSetString
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticPS5Library_UdsEventPropertyObjectSetString final
+{
+public:
+	int64                                         ProPtr;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0028(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_UdsEventPropertyObjectSetString) == 0x000008, "Wrong alignment on KuroStaticPS5Library_UdsEventPropertyObjectSetString");
+static_assert(sizeof(KuroStaticPS5Library_UdsEventPropertyObjectSetString) == 0x000030, "Wrong size on KuroStaticPS5Library_UdsEventPropertyObjectSetString");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetString, ProPtr) == 0x000000, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetString::ProPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetString, Key) == 0x000008, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetString::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetString, Value) == 0x000018, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetString::Value' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetString, ReturnValue) == 0x000028, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetString::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UdsEventPropertyObjectSetUInt32
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32 final
+{
+public:
+	int64                                         ProPtr;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32) == 0x000008, "Wrong alignment on KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32");
+static_assert(sizeof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32) == 0x000020, "Wrong size on KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32, ProPtr) == 0x000000, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32::ProPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32, Key) == 0x000008, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32, Value) == 0x000018, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32::Value' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32, ReturnValue) == 0x00001C, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetUInt32::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UdsEventPropertyObjectSetUInt64
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64 final
+{
+public:
+	int64                                         ProPtr;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         Value;                                             // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64) == 0x000008, "Wrong alignment on KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64");
+static_assert(sizeof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64) == 0x000028, "Wrong size on KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64, ProPtr) == 0x000000, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64::ProPtr' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64, Key) == 0x000008, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64::Key' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64, Value) == 0x000018, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64::Value' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64, ReturnValue) == 0x000020, "Member 'KuroStaticPS5Library_UdsEventPropertyObjectSetUInt64::ReturnValue' has a wrong offset!");
 
 // Function KuroUtility.KuroStaticPS5Library.UnlockTrophy
 // 0x0018 (0x0018 - 0x0000)
@@ -2731,6 +3492,41 @@ static_assert(sizeof(KuroStaticPS5Library_UnlockTrophy) == 0x000018, "Wrong size
 static_assert(offsetof(KuroStaticPS5Library_UnlockTrophy, UserId) == 0x000000, "Member 'KuroStaticPS5Library_UnlockTrophy::UserId' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_UnlockTrophy, TrophyId) == 0x000010, "Member 'KuroStaticPS5Library_UnlockTrophy::TrophyId' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_UnlockTrophy, ReturnValue) == 0x000014, "Member 'KuroStaticPS5Library_UnlockTrophy::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UnlockTrophyWithContextIdAndHandleId
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId final
+{
+public:
+	int32                                         ContextId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TrophyId;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId) == 0x000004, "Wrong alignment on KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId");
+static_assert(sizeof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId) == 0x000010, "Wrong size on KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId");
+static_assert(offsetof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId, ContextId) == 0x000000, "Member 'KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId::ContextId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId, Handle) == 0x000004, "Member 'KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId, TrophyId) == 0x000008, "Member 'KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId::TrophyId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId, ReturnValue) == 0x00000C, "Member 'KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleId::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UnlockTrophyWithContextIdAndHandleIdAsync
+// 0x0038 (0x0038 - 0x0000)
+struct KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync final
+{
+public:
+	int32                                         ContextId;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TrophyId;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(int32 Ret)>                    Callback;                                          // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync) == 0x000004, "Wrong alignment on KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync");
+static_assert(sizeof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync) == 0x000038, "Wrong size on KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync");
+static_assert(offsetof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync, ContextId) == 0x000000, "Member 'KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync::ContextId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync, Handle) == 0x000004, "Member 'KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync, TrophyId) == 0x000008, "Member 'KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync::TrophyId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync, Callback) == 0x000010, "Member 'KuroStaticPS5Library_UnlockTrophyWithContextIdAndHandleIdAsync::Callback' has a wrong offset!");
 
 // Function KuroUtility.KuroStaticPS5Library.UpdateTrophyProgress
 // 0x0020 (0x0020 - 0x0000)
@@ -2749,6 +3545,44 @@ static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgress, UserId) == 0x0
 static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgress, TrophyId) == 0x000010, "Member 'KuroStaticPS5Library_UpdateTrophyProgress::TrophyId' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgress, Progress) == 0x000014, "Member 'KuroStaticPS5Library_UpdateTrophyProgress::Progress' has a wrong offset!");
 static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgress, ReturnValue) == 0x000018, "Member 'KuroStaticPS5Library_UpdateTrophyProgress::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UpdateTrophyProgressWithContextIdAndHandleId
+// 0x0014 (0x0014 - 0x0000)
+struct KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId final
+{
+public:
+	int32                                         Context;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TrophyId;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Progress;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId) == 0x000004, "Wrong alignment on KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId");
+static_assert(sizeof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId) == 0x000014, "Wrong size on KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId, Context) == 0x000000, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId, Handle) == 0x000004, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId, TrophyId) == 0x000008, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId::TrophyId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId, Progress) == 0x00000C, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId::Progress' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId, ReturnValue) == 0x000010, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleId::ReturnValue' has a wrong offset!");
+
+// Function KuroUtility.KuroStaticPS5Library.UpdateTrophyProgressWithContextIdAndHandleIdAsync
+// 0x0038 (0x0038 - 0x0000)
+struct KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync final
+{
+public:
+	int32                                         Context;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Handle;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TrophyId;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Progress;                                          // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Ret)>                    Callback;                                          // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync) == 0x000004, "Wrong alignment on KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync");
+static_assert(sizeof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync) == 0x000038, "Wrong size on KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync, Context) == 0x000000, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync::Context' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync, Handle) == 0x000004, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync::Handle' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync, TrophyId) == 0x000008, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync::TrophyId' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync, Progress) == 0x00000C, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync::Progress' has a wrong offset!");
+static_assert(offsetof(KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync, Callback) == 0x000010, "Member 'KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync::Callback' has a wrong offset!");
 
 // Function KuroUtility.KuroTencentCOSLibrary.EnableAuthorization
 // 0x0001 (0x0001 - 0x0000)
@@ -3096,11 +3930,11 @@ static_assert(offsetof(KuroTickManager_AddTick, ReturnValue) == 0x000030, "Membe
 struct KuroTickManager_CleanSkeletalMeshProxyTickFunction final
 {
 public:
-	class USkeletalMeshComponent*                 SkelComp;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 SkeletalComp;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroTickManager_CleanSkeletalMeshProxyTickFunction) == 0x000008, "Wrong alignment on KuroTickManager_CleanSkeletalMeshProxyTickFunction");
 static_assert(sizeof(KuroTickManager_CleanSkeletalMeshProxyTickFunction) == 0x000008, "Wrong size on KuroTickManager_CleanSkeletalMeshProxyTickFunction");
-static_assert(offsetof(KuroTickManager_CleanSkeletalMeshProxyTickFunction, SkelComp) == 0x000000, "Member 'KuroTickManager_CleanSkeletalMeshProxyTickFunction::SkelComp' has a wrong offset!");
+static_assert(offsetof(KuroTickManager_CleanSkeletalMeshProxyTickFunction, SkeletalComp) == 0x000000, "Member 'KuroTickManager_CleanSkeletalMeshProxyTickFunction::SkeletalComp' has a wrong offset!");
 
 // Function KuroUtility.KuroTickManager.RemovePrerequisiteActorComponent
 // 0x0010 (0x0010 - 0x0000)
@@ -3136,12 +3970,12 @@ struct KuroTickManager_SetSkeletalMeshProxyTickFunction final
 public:
 	ETickingGroup                                 TickingGroup;                                      // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMeshComponent*                 SkelComp;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 SkeletalComp;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroTickManager_SetSkeletalMeshProxyTickFunction) == 0x000008, "Wrong alignment on KuroTickManager_SetSkeletalMeshProxyTickFunction");
 static_assert(sizeof(KuroTickManager_SetSkeletalMeshProxyTickFunction) == 0x000010, "Wrong size on KuroTickManager_SetSkeletalMeshProxyTickFunction");
 static_assert(offsetof(KuroTickManager_SetSkeletalMeshProxyTickFunction, TickingGroup) == 0x000000, "Member 'KuroTickManager_SetSkeletalMeshProxyTickFunction::TickingGroup' has a wrong offset!");
-static_assert(offsetof(KuroTickManager_SetSkeletalMeshProxyTickFunction, SkelComp) == 0x000008, "Member 'KuroTickManager_SetSkeletalMeshProxyTickFunction::SkelComp' has a wrong offset!");
+static_assert(offsetof(KuroTickManager_SetSkeletalMeshProxyTickFunction, SkeletalComp) == 0x000008, "Member 'KuroTickManager_SetSkeletalMeshProxyTickFunction::SkeletalComp' has a wrong offset!");
 
 }
 

@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsTaskUseSkillDesignated.TsTaskUseSkillDesignated_C
-// 0x0020 (0x00D8 - 0x00B8)
+// 0x0028 (0x00E0 - 0x00B8)
 class UTsTaskUseSkillDesignated_C final : public UTsTaskAbortImmediatelyBase_C
 {
 public:
@@ -26,10 +26,11 @@ public:
 	int32                                         SkillInfoId;                                       // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 BlackboardKeyTarget;                               // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          DebugLog;                                          // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_TsTaskUseSkillDesignated(int32 EntryPoint);
 	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ExecuteUbergraph_TsTaskUseSkillDesignated(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -42,10 +43,11 @@ public:
 	}
 };
 static_assert(alignof(UTsTaskUseSkillDesignated_C) == 0x000008, "Wrong alignment on UTsTaskUseSkillDesignated_C");
-static_assert(sizeof(UTsTaskUseSkillDesignated_C) == 0x0000D8, "Wrong size on UTsTaskUseSkillDesignated_C");
+static_assert(sizeof(UTsTaskUseSkillDesignated_C) == 0x0000E0, "Wrong size on UTsTaskUseSkillDesignated_C");
 static_assert(offsetof(UTsTaskUseSkillDesignated_C, UberGraphFrame_TsTaskUseSkillDesignated_C) == 0x0000B8, "Member 'UTsTaskUseSkillDesignated_C::UberGraphFrame_TsTaskUseSkillDesignated_C' has a wrong offset!");
 static_assert(offsetof(UTsTaskUseSkillDesignated_C, SkillInfoId) == 0x0000C0, "Member 'UTsTaskUseSkillDesignated_C::SkillInfoId' has a wrong offset!");
 static_assert(offsetof(UTsTaskUseSkillDesignated_C, BlackboardKeyTarget) == 0x0000C8, "Member 'UTsTaskUseSkillDesignated_C::BlackboardKeyTarget' has a wrong offset!");
+static_assert(offsetof(UTsTaskUseSkillDesignated_C, DebugLog) == 0x0000D8, "Member 'UTsTaskUseSkillDesignated_C::DebugLog' has a wrong offset!");
 
 }
 

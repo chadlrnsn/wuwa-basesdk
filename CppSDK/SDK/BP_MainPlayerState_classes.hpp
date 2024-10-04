@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MainPlayerState.BP_MainPlayerState_C
-// 0x0008 (0x03B8 - 0x03B0)
+// 0x0008 (0x03C0 - 0x03B8)
 class ABP_MainPlayerState_C final : public APlayerState
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_MainPlayerState_C) == 0x000008, "Wrong alignment on ABP_MainPlayerState_C");
-static_assert(sizeof(ABP_MainPlayerState_C) == 0x0003B8, "Wrong size on ABP_MainPlayerState_C");
-static_assert(offsetof(ABP_MainPlayerState_C, DefaultSceneRoot) == 0x0003B0, "Member 'ABP_MainPlayerState_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(sizeof(ABP_MainPlayerState_C) == 0x0003C0, "Wrong size on ABP_MainPlayerState_C");
+static_assert(offsetof(ABP_MainPlayerState_C, DefaultSceneRoot) == 0x0003B8, "Member 'ABP_MainPlayerState_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

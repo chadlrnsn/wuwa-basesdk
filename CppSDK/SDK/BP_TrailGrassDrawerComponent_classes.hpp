@@ -25,10 +25,10 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0220(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_BP_TrailGrassDrawerComponent(int32 EntryPoint);
-	void OnDrawerTick(float DeltaTime);
-	void OnDrawerEnd(const EEndPlayReason EndPlayReason);
 	void OnDrawerBegin();
+	void OnDrawerEnd(const EEndPlayReason EndPlayReason);
+	void OnDrawerTick(float DeltaTime);
+	void ExecuteUbergraph_BP_TrailGrassDrawerComponent(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

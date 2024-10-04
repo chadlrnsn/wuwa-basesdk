@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function BP_InteractFoliageManager.BP_InteractFoliageManager_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_InteractFoliageManager_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InteractFoliageManager_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_InteractFoliageManager.BP_InteractFoliageManager_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -96,6 +82,20 @@ void ABP_InteractFoliageManager_C::ExecuteUbergraph_BP_InteractFoliageManager(in
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_InteractFoliageManager.BP_InteractFoliageManager_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_InteractFoliageManager_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InteractFoliageManager_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

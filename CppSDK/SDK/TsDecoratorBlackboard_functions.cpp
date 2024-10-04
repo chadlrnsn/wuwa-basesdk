@@ -17,6 +17,25 @@
 namespace SDK
 {
 
+// Function TsDecoratorBlackboard.TsDecoratorBlackboard_C.InitTsVariables
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UTsDecoratorBlackboard_C::InitTsVariables()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsDecoratorBlackboard_C", "InitTsVariables");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function TsDecoratorBlackboard.TsDecoratorBlackboard_C.PerformConditionCheckAI
 // (Native, Event, Public, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -44,25 +63,6 @@ bool UTsDecoratorBlackboard_C::PerformConditionCheckAI(class AAIController* Owne
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function TsDecoratorBlackboard.TsDecoratorBlackboard_C.InitTsVariables
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsDecoratorBlackboard_C::InitTsVariables()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsDecoratorBlackboard_C", "InitTsVariables");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

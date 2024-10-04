@@ -163,15 +163,44 @@ static_assert(offsetof(BP_ScreenEffectPlayer_C_StartPlayer, CallFunc_IsValid_Ret
 static_assert(offsetof(BP_ScreenEffectPlayer_C_StartPlayer, CallFunc_Concat_StrStr_ReturnValue_1) == 0x0000D0, "Member 'BP_ScreenEffectPlayer_C_StartPlayer::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
 
 // Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.EndPlayer
-// 0x0001 (0x0001 - 0x0000)
+// 0x0118 (0x0118 - 0x0000)
 struct BP_ScreenEffectPlayer_C_EndPlayer final
 {
 public:
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0000(0x0028)(ZeroConstructor)
+	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> ___delegate_Variable;                              // 0x0028(0x0028)(ConstParm, ZeroConstructor)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_52[0x6];                                       // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetPathName_ReturnValue;                  // 0x0058(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0068(0x0018)()
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0080(0x0040)(HasGetValueTypeHash)
+	int32                                         CallFunc_PostEvent_ReturnValue;                    // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x00C8(0x0010)(ReferenceParm)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x00E0(0x0018)()
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x00F8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class ULTweener*                              CallFunc_DelayCall_ReturnValue;                    // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(BP_ScreenEffectPlayer_C_EndPlayer) == 0x000001, "Wrong alignment on BP_ScreenEffectPlayer_C_EndPlayer");
-static_assert(sizeof(BP_ScreenEffectPlayer_C_EndPlayer) == 0x000001, "Wrong size on BP_ScreenEffectPlayer_C_EndPlayer");
-static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_IsValid_ReturnValue) == 0x000000, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(alignof(BP_ScreenEffectPlayer_C_EndPlayer) == 0x000008, "Wrong alignment on BP_ScreenEffectPlayer_C_EndPlayer");
+static_assert(sizeof(BP_ScreenEffectPlayer_C_EndPlayer) == 0x000118, "Wrong size on BP_ScreenEffectPlayer_C_EndPlayer");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, K2Node_CreateDelegate_OutputDelegate) == 0x000000, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, ___delegate_Variable) == 0x000028, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::___delegate_Variable' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_Less_FloatFloat_ReturnValue) == 0x000050, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_IsValid_ReturnValue) == 0x000051, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_GetPathName_ReturnValue) == 0x000058, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_GetPathName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_Conv_StringToText_ReturnValue) == 0x000068, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, K2Node_MakeStruct_FormatArgumentData) == 0x000080, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_PostEvent_ReturnValue) == 0x0000C0, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_PostEvent_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, K2Node_MakeArray_Array) == 0x0000C8, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::K2Node_MakeArray_Array' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_Greater_FloatFloat_ReturnValue) == 0x0000D8, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_Format_ReturnValue) == 0x0000E0, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_Format_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_Conv_TextToString_ReturnValue) == 0x0000F8, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_DelayCall_ReturnValue) == 0x000108, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_DelayCall_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_EndPlayer, CallFunc_IsValid_ReturnValue_1) == 0x000110, "Member 'BP_ScreenEffectPlayer_C_EndPlayer::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
 
 // Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.UpdateComponents
 // 0x00C8 (0x00C8 - 0x0000)
@@ -311,7 +340,7 @@ static_assert(offsetof(BP_ScreenEffectPlayer_C_SetUIVisible, CallFunc_Array_Leng
 static_assert(offsetof(BP_ScreenEffectPlayer_C_SetUIVisible, CallFunc_Less_IntInt_ReturnValue_1) == 0x000054, "Member 'BP_ScreenEffectPlayer_C_SetUIVisible::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
 
 // Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.Set Effect Hidden
-// 0x0008 (0x0008 - 0x0000)
+// 0x000C (0x000C - 0x0000)
 struct BP_ScreenEffectPlayer_C_Set_Effect_Hidden final
 {
 public:
@@ -319,12 +348,16 @@ public:
 	bool                                          bOverrideFadeSpeed;                                // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         OverrideFadeSpeed;                                 // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsEmpty_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsEmpty_ReturnValue_1;                    // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_ScreenEffectPlayer_C_Set_Effect_Hidden) == 0x000004, "Wrong alignment on BP_ScreenEffectPlayer_C_Set_Effect_Hidden");
-static_assert(sizeof(BP_ScreenEffectPlayer_C_Set_Effect_Hidden) == 0x000008, "Wrong size on BP_ScreenEffectPlayer_C_Set_Effect_Hidden");
+static_assert(sizeof(BP_ScreenEffectPlayer_C_Set_Effect_Hidden) == 0x00000C, "Wrong size on BP_ScreenEffectPlayer_C_Set_Effect_Hidden");
 static_assert(offsetof(BP_ScreenEffectPlayer_C_Set_Effect_Hidden, bToHide_0) == 0x000000, "Member 'BP_ScreenEffectPlayer_C_Set_Effect_Hidden::bToHide_0' has a wrong offset!");
 static_assert(offsetof(BP_ScreenEffectPlayer_C_Set_Effect_Hidden, bOverrideFadeSpeed) == 0x000001, "Member 'BP_ScreenEffectPlayer_C_Set_Effect_Hidden::bOverrideFadeSpeed' has a wrong offset!");
 static_assert(offsetof(BP_ScreenEffectPlayer_C_Set_Effect_Hidden, OverrideFadeSpeed) == 0x000004, "Member 'BP_ScreenEffectPlayer_C_Set_Effect_Hidden::OverrideFadeSpeed' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_Set_Effect_Hidden, CallFunc_IsEmpty_ReturnValue) == 0x000008, "Member 'BP_ScreenEffectPlayer_C_Set_Effect_Hidden::CallFunc_IsEmpty_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_Set_Effect_Hidden, CallFunc_IsEmpty_ReturnValue_1) == 0x000009, "Member 'BP_ScreenEffectPlayer_C_Set_Effect_Hidden::CallFunc_IsEmpty_ReturnValue_1' has a wrong offset!");
 
 // Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.BeforeStart
 // 0x0038 (0x0038 - 0x0000)
@@ -428,6 +461,19 @@ static_assert(offsetof(BP_ScreenEffectPlayer_C_UpdatePlayerSEEnvironmentFactor, 
 static_assert(offsetof(BP_ScreenEffectPlayer_C_UpdatePlayerSEEnvironmentFactor, CallFunc_Lerp_ReturnValue) == 0x000064, "Member 'BP_ScreenEffectPlayer_C_UpdatePlayerSEEnvironmentFactor::CallFunc_Lerp_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_ScreenEffectPlayer_C_UpdatePlayerSEEnvironmentFactor, CallFunc_NearlyEqual_FloatFloat_ReturnValue) == 0x000068, "Member 'BP_ScreenEffectPlayer_C_UpdatePlayerSEEnvironmentFactor::CallFunc_NearlyEqual_FloatFloat_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_ScreenEffectPlayer_C_UpdatePlayerSEEnvironmentFactor, CallFunc_Not_PreBool_ReturnValue) == 0x000069, "Member 'BP_ScreenEffectPlayer_C_UpdatePlayerSEEnvironmentFactor::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
+
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.DelayEndAudioCall
+// 0x0030 (0x0030 - 0x0000)
+struct alignas(0x08) BP_ScreenEffectPlayer_C_DelayEndAudioCall final
+{
+public:
+	TDelegate<void(EAkCallbackType CallbackType, class UAkCallbackInfo* CallbackInfo)> ___delegate_Variable;                              // 0x0000(0x0028)(ConstParm, ZeroConstructor)
+	int32                                         CallFunc_PostEvent_ReturnValue;                    // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_ScreenEffectPlayer_C_DelayEndAudioCall) == 0x000008, "Wrong alignment on BP_ScreenEffectPlayer_C_DelayEndAudioCall");
+static_assert(sizeof(BP_ScreenEffectPlayer_C_DelayEndAudioCall) == 0x000030, "Wrong size on BP_ScreenEffectPlayer_C_DelayEndAudioCall");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_DelayEndAudioCall, ___delegate_Variable) == 0x000000, "Member 'BP_ScreenEffectPlayer_C_DelayEndAudioCall::___delegate_Variable' has a wrong offset!");
+static_assert(offsetof(BP_ScreenEffectPlayer_C_DelayEndAudioCall, CallFunc_PostEvent_ReturnValue) == 0x000028, "Member 'BP_ScreenEffectPlayer_C_DelayEndAudioCall::CallFunc_PostEvent_ReturnValue' has a wrong offset!");
 
 }
 

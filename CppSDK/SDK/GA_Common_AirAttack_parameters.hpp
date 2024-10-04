@@ -17,6 +17,17 @@
 namespace SDK::Params
 {
 
+// Function GA_Common_AirAttack.GA_Common_AirAttack_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Common_AirAttack_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Common_AirAttack_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Common_AirAttack_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Common_AirAttack_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Common_AirAttack_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Common_AirAttack_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Common_AirAttack_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_Common_AirAttack.GA_Common_AirAttack_C.ExecuteUbergraph_GA_Common_AirAttack
 // 0x0548 (0x0548 - 0x0000)
 struct GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttack final
@@ -253,17 +264,6 @@ static_assert(offsetof(GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttac
 static_assert(offsetof(GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttack, K2Node_DynamicCast_As_____actor) == 0x000538, "Member 'GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttack::K2Node_DynamicCast_As_____actor' has a wrong offset!");
 static_assert(offsetof(GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttack, K2Node_DynamicCast_bSuccess_3) == 0x000540, "Member 'GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttack::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
 static_assert(offsetof(GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttack, CallFunc_Add_FloatFloat_ReturnValue) == 0x000544, "Member 'GA_Common_AirAttack_C_ExecuteUbergraph_GA_Common_AirAttack::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-
-// Function GA_Common_AirAttack.GA_Common_AirAttack_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Common_AirAttack_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Common_AirAttack_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Common_AirAttack_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Common_AirAttack_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Common_AirAttack_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Common_AirAttack_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Common_AirAttack_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
 }
 

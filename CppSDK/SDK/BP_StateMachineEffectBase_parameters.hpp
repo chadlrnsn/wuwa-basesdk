@@ -11,19 +11,239 @@
 #include "Basic.hpp"
 
 #include "EEffectState_structs.hpp"
-#include "SStateBasedEffectFloatCurveSection_structs.hpp"
-#include "SStateBasedEffectLinearColorCurveSection_structs.hpp"
-#include "SEffectStateFloatCurve_structs.hpp"
 #include "STransitionFloatIndexGroup_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "SEffectStateInfo_structs.hpp"
 #include "STransitionLinearColorIndexGroup_structs.hpp"
+#include "SEffectStateInfo_structs.hpp"
+#include "SStateBasedEffectFloatCurveSection_structs.hpp"
+#include "SEffectStateFloatCurve_structs.hpp"
+#include "SStateBasedEffectLinearColorCurveSection_structs.hpp"
 #include "SEffectStateLinearColorCurve_structs.hpp"
 #include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ExecuteUbergraph_BP_StateMachineEffectBase
+// 0x000C (0x000C - 0x0000)
+struct BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase) == 0x000004, "Wrong alignment on BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase");
+static_assert(sizeof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase) == 0x00000C, "Wrong size on BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase");
+static_assert(offsetof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase, EntryPoint) == 0x000000, "Member 'BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase::EntryPoint' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase, K2Node_Event_DeltaSeconds_1) == 0x000004, "Member 'BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase::K2Node_Event_DeltaSeconds_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase, K2Node_Event_DeltaSeconds) == 0x000008, "Member 'BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase::K2Node_Event_DeltaSeconds' has a wrong offset!");
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_StateMachineEffectBase_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_StateMachineEffectBase_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_StateMachineEffectBase_C_ReceiveTick");
+static_assert(sizeof(BP_StateMachineEffectBase_C_ReceiveTick) == 0x000004, "Wrong size on BP_StateMachineEffectBase_C_ReceiveTick");
+static_assert(offsetof(BP_StateMachineEffectBase_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_StateMachineEffectBase_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_StateMachineEffectBase_C_EditorTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_StateMachineEffectBase_C_EditorTick) == 0x000004, "Wrong alignment on BP_StateMachineEffectBase_C_EditorTick");
+static_assert(sizeof(BP_StateMachineEffectBase_C_EditorTick) == 0x000004, "Wrong size on BP_StateMachineEffectBase_C_EditorTick");
+static_assert(offsetof(BP_StateMachineEffectBase_C_EditorTick, DeltaSeconds) == 0x000000, "Member 'BP_StateMachineEffectBase_C_EditorTick::DeltaSeconds' has a wrong offset!");
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Init
+// 0x0390 (0x0390 - 0x0000)
+struct BP_StateMachineEffectBase_C_Init final
+{
+public:
+	EEffectState                                  TargetState_0;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Array_Index_Variable;                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             ___struct_Variable;                                // 0x0020(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
+	class UNiagaraComponent*                      CallFunc_AddComponent_ReturnValue;                 // 0x0050(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetRelativeTransform_SweepHitResult;   // 0x0060(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	int32                                         ___int_Array_Index_Variable_2;                     // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraSystem*                         CallFunc_Array_Get_Item;                           // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0104(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_105[0x3];                                      // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            CallFunc_Array_Get_Item_1;                         // 0x0110(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue_1;         // 0x011C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x011D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_11E[0x2];                                      // 0x011E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_124[0xC];                                      // 0x0124(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             ___struct_Variable_1;                              // 0x0130(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
+	class UStaticMeshComponent*                   CallFunc_AddComponent_ReturnValue_1;               // 0x0160(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetRelativeTransform_SweepHitResult_1; // 0x0168(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	uint8                                         Pad_1FC[0x4];                                      // 0x01FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSEffectStateInfo                      CallFunc_GetStateInfo_Ret;                         // 0x0200(0x0150)(HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0350(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_354[0x4];                                      // 0x0354(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     CallFunc_GetMaterial_ReturnValue;                  // 0x0358(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UMaterialInterface*>             CallFunc_GetMaterials_ReturnValue;                 // 0x0360(0x0010)(ReferenceParm)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0370(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0378(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_2;                  // 0x037C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0380(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0381(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0382(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_StateMachineEffectBase_C_Init) == 0x000010, "Wrong alignment on BP_StateMachineEffectBase_C_Init");
+static_assert(sizeof(BP_StateMachineEffectBase_C_Init) == 0x000390, "Wrong size on BP_StateMachineEffectBase_C_Init");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, TargetState_0) == 0x000000, "Member 'BP_StateMachineEffectBase_C_Init::TargetState_0' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Array_Index_Variable) == 0x000004, "Member 'BP_StateMachineEffectBase_C_Init::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Loop_Counter_Variable) == 0x000008, "Member 'BP_StateMachineEffectBase_C_Init::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Array_Index_Variable_1) == 0x00000C, "Member 'BP_StateMachineEffectBase_C_Init::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Add_IntInt_ReturnValue) == 0x000010, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Loop_Counter_Variable_1) == 0x000014, "Member 'BP_StateMachineEffectBase_C_Init::___int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Add_IntInt_ReturnValue_1) == 0x000018, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___struct_Variable) == 0x000020, "Member 'BP_StateMachineEffectBase_C_Init::___struct_Variable' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_AddComponent_ReturnValue) == 0x000050, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_AddComponent_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_IsValidIndex_ReturnValue) == 0x000058, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Add_ReturnValue) == 0x00005C, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_K2_SetRelativeTransform_SweepHitResult) == 0x000060, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_K2_SetRelativeTransform_SweepHitResult' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Array_Index_Variable_2) == 0x0000F4, "Member 'BP_StateMachineEffectBase_C_Init::___int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Get_Item) == 0x0000F8, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Length_ReturnValue) == 0x000100, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Less_IntInt_ReturnValue) == 0x000104, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Loop_Counter_Variable_2) == 0x000108, "Member 'BP_StateMachineEffectBase_C_Init::___int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Get_Item_1) == 0x000110, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Length_ReturnValue_1) == 0x000118, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_IsValidIndex_ReturnValue_1) == 0x00011C, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_IsValidIndex_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Less_IntInt_ReturnValue_1) == 0x00011D, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Add_IntInt_ReturnValue_2) == 0x000120, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___struct_Variable_1) == 0x000130, "Member 'BP_StateMachineEffectBase_C_Init::___struct_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_AddComponent_ReturnValue_1) == 0x000160, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_AddComponent_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_K2_SetRelativeTransform_SweepHitResult_1) == 0x000168, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_K2_SetRelativeTransform_SweepHitResult_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_GetStateInfo_Ret) == 0x000200, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_GetStateInfo_Ret' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Add_ReturnValue_1) == 0x000350, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Add_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_GetMaterial_ReturnValue) == 0x000358, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_GetMaterial_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_GetMaterials_ReturnValue) == 0x000360, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_GetMaterials_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000370, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Length_ReturnValue_2) == 0x000378, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Add_ReturnValue_2) == 0x00037C, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Add_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Less_IntInt_ReturnValue_2) == 0x000380, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_SetStaticMesh_ReturnValue) == 0x000381, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_SetStaticMesh_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_IsValid_ReturnValue) == 0x000382, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Tick
+// 0x0040 (0x0040 - 0x0000)
+struct BP_StateMachineEffectBase_C_Tick final
+{
+public:
+	int32                                         ___int_Array_Index_Variable;                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      CallFunc_Array_Get_Item;                           // 0x0010(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_1;                         // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_StateMachineEffectBase_C_Tick) == 0x000008, "Wrong alignment on BP_StateMachineEffectBase_C_Tick");
+static_assert(sizeof(BP_StateMachineEffectBase_C_Tick) == 0x000040, "Wrong size on BP_StateMachineEffectBase_C_Tick");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_StateMachineEffectBase_C_Tick::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, ___int_Loop_Counter_Variable) == 0x000004, "Member 'BP_StateMachineEffectBase_C_Tick::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, ___int_Array_Index_Variable_1) == 0x00000C, "Member 'BP_StateMachineEffectBase_C_Tick::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Array_Get_Item) == 0x000010, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Array_Length_ReturnValue) == 0x000018, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, ___int_Loop_Counter_Variable_1) == 0x00001C, "Member 'BP_StateMachineEffectBase_C_Tick::___int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_NotEqual_ByteByte_ReturnValue) == 0x000020, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_NotEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Less_IntInt_ReturnValue) == 0x000021, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Add_IntInt_ReturnValue_1) == 0x000024, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_IsValid_ReturnValue) == 0x000028, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Array_Get_Item_1) == 0x000030, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Array_Length_ReturnValue_1) == 0x000038, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Less_IntInt_ReturnValue_1) == 0x00003C, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.PlayEffectState
+// 0x0010 (0x0010 - 0x0000)
+struct BP_StateMachineEffectBase_C_PlayEffectState final
+{
+public:
+	class UPD_StateMachineEffect_C*               InputData;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEffectState                                  TargetState_0;                                     // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x000A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_StateMachineEffectBase_C_PlayEffectState) == 0x000008, "Wrong alignment on BP_StateMachineEffectBase_C_PlayEffectState");
+static_assert(sizeof(BP_StateMachineEffectBase_C_PlayEffectState) == 0x000010, "Wrong size on BP_StateMachineEffectBase_C_PlayEffectState");
+static_assert(offsetof(BP_StateMachineEffectBase_C_PlayEffectState, InputData) == 0x000000, "Member 'BP_StateMachineEffectBase_C_PlayEffectState::InputData' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_PlayEffectState, TargetState_0) == 0x000008, "Member 'BP_StateMachineEffectBase_C_PlayEffectState::TargetState_0' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_PlayEffectState, CallFunc_IsValid_ReturnValue) == 0x000009, "Member 'BP_StateMachineEffectBase_C_PlayEffectState::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_PlayEffectState, CallFunc_EqualEqual_ObjectObject_ReturnValue) == 0x00000A, "Member 'BP_StateMachineEffectBase_C_PlayEffectState::CallFunc_EqualEqual_ObjectObject_ReturnValue' has a wrong offset!");
+
+// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Reset
+// 0x0040 (0x0040 - 0x0000)
+struct BP_StateMachineEffectBase_C_Reset final
+{
+public:
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      CallFunc_Array_Get_Item;                           // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0025(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_26[0x2];                                       // 0x0026(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_1;                         // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_StateMachineEffectBase_C_Reset) == 0x000008, "Wrong alignment on BP_StateMachineEffectBase_C_Reset");
+static_assert(sizeof(BP_StateMachineEffectBase_C_Reset) == 0x000040, "Wrong size on BP_StateMachineEffectBase_C_Reset");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, ___int_Loop_Counter_Variable) == 0x000000, "Member 'BP_StateMachineEffectBase_C_Reset::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Add_IntInt_ReturnValue) == 0x000004, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, ___int_Array_Index_Variable) == 0x000008, "Member 'BP_StateMachineEffectBase_C_Reset::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, ___int_Loop_Counter_Variable_1) == 0x00000C, "Member 'BP_StateMachineEffectBase_C_Reset::___int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Add_IntInt_ReturnValue_1) == 0x000010, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, ___int_Array_Index_Variable_1) == 0x000014, "Member 'BP_StateMachineEffectBase_C_Reset::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Array_Get_Item) == 0x000018, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Array_Length_ReturnValue) == 0x000020, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Less_IntInt_ReturnValue) == 0x000024, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_IsValid_ReturnValue) == 0x000025, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Array_Get_Item_1) == 0x000028, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_IsValid_ReturnValue_1) == 0x000030, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Array_Length_ReturnValue_1) == 0x000034, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Less_IntInt_ReturnValue_1) == 0x000038, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
 
 // Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Update Transition State
 // 0x03C0 (0x03C0 - 0x0000)
@@ -202,226 +422,6 @@ static_assert(offsetof(BP_StateMachineEffectBase_C_Update_Transition_State, Call
 static_assert(offsetof(BP_StateMachineEffectBase_C_Update_Transition_State, CallFunc_GetWorldDeltaSeconds_ReturnValue) == 0x0003B4, "Member 'BP_StateMachineEffectBase_C_Update_Transition_State::CallFunc_GetWorldDeltaSeconds_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_StateMachineEffectBase_C_Update_Transition_State, CallFunc_Greater_FloatFloat_ReturnValue) == 0x0003B8, "Member 'BP_StateMachineEffectBase_C_Update_Transition_State::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_StateMachineEffectBase_C_Update_Transition_State, CallFunc_Add_FloatFloat_ReturnValue) == 0x0003BC, "Member 'BP_StateMachineEffectBase_C_Update_Transition_State::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Reset
-// 0x0040 (0x0040 - 0x0000)
-struct BP_StateMachineEffectBase_C_Reset final
-{
-public:
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      CallFunc_Array_Get_Item;                           // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0025(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_26[0x2];                                       // 0x0026(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_1;                         // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_StateMachineEffectBase_C_Reset) == 0x000008, "Wrong alignment on BP_StateMachineEffectBase_C_Reset");
-static_assert(sizeof(BP_StateMachineEffectBase_C_Reset) == 0x000040, "Wrong size on BP_StateMachineEffectBase_C_Reset");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, ___int_Loop_Counter_Variable) == 0x000000, "Member 'BP_StateMachineEffectBase_C_Reset::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Add_IntInt_ReturnValue) == 0x000004, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, ___int_Array_Index_Variable) == 0x000008, "Member 'BP_StateMachineEffectBase_C_Reset::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, ___int_Loop_Counter_Variable_1) == 0x00000C, "Member 'BP_StateMachineEffectBase_C_Reset::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Add_IntInt_ReturnValue_1) == 0x000010, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, ___int_Array_Index_Variable_1) == 0x000014, "Member 'BP_StateMachineEffectBase_C_Reset::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Array_Get_Item) == 0x000018, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Array_Length_ReturnValue) == 0x000020, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Less_IntInt_ReturnValue) == 0x000024, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_IsValid_ReturnValue) == 0x000025, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Array_Get_Item_1) == 0x000028, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_IsValid_ReturnValue_1) == 0x000030, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Array_Length_ReturnValue_1) == 0x000034, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Reset, CallFunc_Less_IntInt_ReturnValue_1) == 0x000038, "Member 'BP_StateMachineEffectBase_C_Reset::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.PlayEffectState
-// 0x0010 (0x0010 - 0x0000)
-struct BP_StateMachineEffectBase_C_PlayEffectState final
-{
-public:
-	class UPD_StateMachineEffect_C*               InputData;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEffectState                                  TargetState_0;                                     // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x000A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_StateMachineEffectBase_C_PlayEffectState) == 0x000008, "Wrong alignment on BP_StateMachineEffectBase_C_PlayEffectState");
-static_assert(sizeof(BP_StateMachineEffectBase_C_PlayEffectState) == 0x000010, "Wrong size on BP_StateMachineEffectBase_C_PlayEffectState");
-static_assert(offsetof(BP_StateMachineEffectBase_C_PlayEffectState, InputData) == 0x000000, "Member 'BP_StateMachineEffectBase_C_PlayEffectState::InputData' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_PlayEffectState, TargetState_0) == 0x000008, "Member 'BP_StateMachineEffectBase_C_PlayEffectState::TargetState_0' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_PlayEffectState, CallFunc_IsValid_ReturnValue) == 0x000009, "Member 'BP_StateMachineEffectBase_C_PlayEffectState::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_PlayEffectState, CallFunc_EqualEqual_ObjectObject_ReturnValue) == 0x00000A, "Member 'BP_StateMachineEffectBase_C_PlayEffectState::CallFunc_EqualEqual_ObjectObject_ReturnValue' has a wrong offset!");
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Tick
-// 0x0040 (0x0040 - 0x0000)
-struct BP_StateMachineEffectBase_C_Tick final
-{
-public:
-	int32                                         ___int_Array_Index_Variable;                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      CallFunc_Array_Get_Item;                           // 0x0010(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_22[0x2];                                       // 0x0022(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   CallFunc_Array_Get_Item_1;                         // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_StateMachineEffectBase_C_Tick) == 0x000008, "Wrong alignment on BP_StateMachineEffectBase_C_Tick");
-static_assert(sizeof(BP_StateMachineEffectBase_C_Tick) == 0x000040, "Wrong size on BP_StateMachineEffectBase_C_Tick");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_StateMachineEffectBase_C_Tick::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, ___int_Loop_Counter_Variable) == 0x000004, "Member 'BP_StateMachineEffectBase_C_Tick::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, ___int_Array_Index_Variable_1) == 0x00000C, "Member 'BP_StateMachineEffectBase_C_Tick::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Array_Get_Item) == 0x000010, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Array_Length_ReturnValue) == 0x000018, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, ___int_Loop_Counter_Variable_1) == 0x00001C, "Member 'BP_StateMachineEffectBase_C_Tick::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_NotEqual_ByteByte_ReturnValue) == 0x000020, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_NotEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Less_IntInt_ReturnValue) == 0x000021, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Add_IntInt_ReturnValue_1) == 0x000024, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_IsValid_ReturnValue) == 0x000028, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Array_Get_Item_1) == 0x000030, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Array_Length_ReturnValue_1) == 0x000038, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Tick, CallFunc_Less_IntInt_ReturnValue_1) == 0x00003C, "Member 'BP_StateMachineEffectBase_C_Tick::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.Init
-// 0x0390 (0x0390 - 0x0000)
-struct BP_StateMachineEffectBase_C_Init final
-{
-public:
-	EEffectState                                  TargetState_0;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Array_Index_Variable;                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             ___struct_Variable;                                // 0x0020(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
-	class UNiagaraComponent*                      CallFunc_AddComponent_ReturnValue;                 // 0x0050(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetRelativeTransform_SweepHitResult;   // 0x0060(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	int32                                         ___int_Array_Index_Variable_2;                     // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraSystem*                         CallFunc_Array_Get_Item;                           // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0104(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_105[0x3];                                      // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x0108(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMesh*                            CallFunc_Array_Get_Item_1;                         // 0x0110(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue_1;         // 0x011C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x011D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_11E[0x2];                                      // 0x011E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_124[0xC];                                      // 0x0124(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             ___struct_Variable_1;                              // 0x0130(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
-	class UStaticMeshComponent*                   CallFunc_AddComponent_ReturnValue_1;               // 0x0160(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetRelativeTransform_SweepHitResult_1; // 0x0168(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	uint8                                         Pad_1FC[0x4];                                      // 0x01FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSEffectStateInfo                      CallFunc_GetStateInfo_Ret;                         // 0x0200(0x0150)(HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0350(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_354[0x4];                                      // 0x0354(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInterface*                     CallFunc_GetMaterial_ReturnValue;                  // 0x0358(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UMaterialInterface*>             CallFunc_GetMaterials_ReturnValue;                 // 0x0360(0x0010)(ReferenceParm)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0370(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0378(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue_2;                  // 0x037C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0380(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0381(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0382(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_StateMachineEffectBase_C_Init) == 0x000010, "Wrong alignment on BP_StateMachineEffectBase_C_Init");
-static_assert(sizeof(BP_StateMachineEffectBase_C_Init) == 0x000390, "Wrong size on BP_StateMachineEffectBase_C_Init");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, TargetState_0) == 0x000000, "Member 'BP_StateMachineEffectBase_C_Init::TargetState_0' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Array_Index_Variable) == 0x000004, "Member 'BP_StateMachineEffectBase_C_Init::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Loop_Counter_Variable) == 0x000008, "Member 'BP_StateMachineEffectBase_C_Init::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Array_Index_Variable_1) == 0x00000C, "Member 'BP_StateMachineEffectBase_C_Init::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Add_IntInt_ReturnValue) == 0x000010, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Loop_Counter_Variable_1) == 0x000014, "Member 'BP_StateMachineEffectBase_C_Init::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Add_IntInt_ReturnValue_1) == 0x000018, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___struct_Variable) == 0x000020, "Member 'BP_StateMachineEffectBase_C_Init::___struct_Variable' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_AddComponent_ReturnValue) == 0x000050, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_AddComponent_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_IsValidIndex_ReturnValue) == 0x000058, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Add_ReturnValue) == 0x00005C, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_K2_SetRelativeTransform_SweepHitResult) == 0x000060, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_K2_SetRelativeTransform_SweepHitResult' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Array_Index_Variable_2) == 0x0000F4, "Member 'BP_StateMachineEffectBase_C_Init::___int_Array_Index_Variable_2' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Get_Item) == 0x0000F8, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Length_ReturnValue) == 0x000100, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Less_IntInt_ReturnValue) == 0x000104, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___int_Loop_Counter_Variable_2) == 0x000108, "Member 'BP_StateMachineEffectBase_C_Init::___int_Loop_Counter_Variable_2' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Get_Item_1) == 0x000110, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Length_ReturnValue_1) == 0x000118, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_IsValidIndex_ReturnValue_1) == 0x00011C, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_IsValidIndex_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Less_IntInt_ReturnValue_1) == 0x00011D, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Add_IntInt_ReturnValue_2) == 0x000120, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, ___struct_Variable_1) == 0x000130, "Member 'BP_StateMachineEffectBase_C_Init::___struct_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_AddComponent_ReturnValue_1) == 0x000160, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_AddComponent_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_K2_SetRelativeTransform_SweepHitResult_1) == 0x000168, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_K2_SetRelativeTransform_SweepHitResult_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_GetStateInfo_Ret) == 0x000200, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_GetStateInfo_Ret' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Add_ReturnValue_1) == 0x000350, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Add_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_GetMaterial_ReturnValue) == 0x000358, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_GetMaterial_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_GetMaterials_ReturnValue) == 0x000360, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_GetMaterials_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000370, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Length_ReturnValue_2) == 0x000378, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Array_Add_ReturnValue_2) == 0x00037C, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Array_Add_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_Less_IntInt_ReturnValue_2) == 0x000380, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_SetStaticMesh_ReturnValue) == 0x000381, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_SetStaticMesh_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_Init, CallFunc_IsValid_ReturnValue) == 0x000382, "Member 'BP_StateMachineEffectBase_C_Init::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.EditorTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_StateMachineEffectBase_C_EditorTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_StateMachineEffectBase_C_EditorTick) == 0x000004, "Wrong alignment on BP_StateMachineEffectBase_C_EditorTick");
-static_assert(sizeof(BP_StateMachineEffectBase_C_EditorTick) == 0x000004, "Wrong size on BP_StateMachineEffectBase_C_EditorTick");
-static_assert(offsetof(BP_StateMachineEffectBase_C_EditorTick, DeltaSeconds) == 0x000000, "Member 'BP_StateMachineEffectBase_C_EditorTick::DeltaSeconds' has a wrong offset!");
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_StateMachineEffectBase_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_StateMachineEffectBase_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_StateMachineEffectBase_C_ReceiveTick");
-static_assert(sizeof(BP_StateMachineEffectBase_C_ReceiveTick) == 0x000004, "Wrong size on BP_StateMachineEffectBase_C_ReceiveTick");
-static_assert(offsetof(BP_StateMachineEffectBase_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_StateMachineEffectBase_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
-
-// Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.ExecuteUbergraph_BP_StateMachineEffectBase
-// 0x000C (0x000C - 0x0000)
-struct BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase) == 0x000004, "Wrong alignment on BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase");
-static_assert(sizeof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase) == 0x00000C, "Wrong size on BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase");
-static_assert(offsetof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase, EntryPoint) == 0x000000, "Member 'BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase, K2Node_Event_DeltaSeconds_1) == 0x000004, "Member 'BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase::K2Node_Event_DeltaSeconds_1' has a wrong offset!");
-static_assert(offsetof(BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase, K2Node_Event_DeltaSeconds) == 0x000008, "Member 'BP_StateMachineEffectBase_C_ExecuteUbergraph_BP_StateMachineEffectBase::K2Node_Event_DeltaSeconds' has a wrong offset!");
 
 // Function BP_StateMachineEffectBase.BP_StateMachineEffectBase_C.UpdatePreLoopState
 // 0x0C60 (0x0C60 - 0x0000)

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PD_CloudPreset.PD_CloudPreset_C
-// 0x0420 (0x0458 - 0x0038)
+// 0x0690 (0x06C8 - 0x0038)
 class UPD_CloudPreset_C final : public UPrimaryDataAsset
 {
 public:
@@ -43,6 +43,19 @@ public:
 	TSoftObjectPtr<class UPD_CloudPrefab_C>       X_q;                                               // 0x03C8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	TSoftObjectPtr<class UPD_CloudPrefab_C>       _w__B;                                             // 0x03F8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	TSoftObjectPtr<class UPD_CloudPrefab_C>       _w__B_0;                                           // 0x0428(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       _w__Z;                                             // 0x0458(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       ____01;                                            // 0x0488(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       ____02;                                            // 0x04B8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       ____03;                                            // 0x04E8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       ____04;                                            // 0x0518(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       __PT;                                              // 0x0548(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       __sW_0;                                            // 0x0578(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       __J_;                                              // 0x05A8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       ___w_8___M;                                        // 0x05D8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       ___w_8____;                                        // 0x0608(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       ___B;                                              // 0x0638(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       ____05;                                            // 0x0668(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       _w____4;                                           // 0x0698(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -55,7 +68,7 @@ public:
 	}
 };
 static_assert(alignof(UPD_CloudPreset_C) == 0x000008, "Wrong alignment on UPD_CloudPreset_C");
-static_assert(sizeof(UPD_CloudPreset_C) == 0x000458, "Wrong size on UPD_CloudPreset_C");
+static_assert(sizeof(UPD_CloudPreset_C) == 0x0006C8, "Wrong size on UPD_CloudPreset_C");
 static_assert(offsetof(UPD_CloudPreset_C, __) == 0x000038, "Member 'UPD_CloudPreset_C::__' has a wrong offset!");
 static_assert(offsetof(UPD_CloudPreset_C, W__a) == 0x000068, "Member 'UPD_CloudPreset_C::W__a' has a wrong offset!");
 static_assert(offsetof(UPD_CloudPreset_C, _IK_) == 0x000098, "Member 'UPD_CloudPreset_C::_IK_' has a wrong offset!");
@@ -78,6 +91,19 @@ static_assert(offsetof(UPD_CloudPreset_C, X_q_a) == 0x000398, "Member 'UPD_Cloud
 static_assert(offsetof(UPD_CloudPreset_C, X_q) == 0x0003C8, "Member 'UPD_CloudPreset_C::X_q' has a wrong offset!");
 static_assert(offsetof(UPD_CloudPreset_C, _w__B) == 0x0003F8, "Member 'UPD_CloudPreset_C::_w__B' has a wrong offset!");
 static_assert(offsetof(UPD_CloudPreset_C, _w__B_0) == 0x000428, "Member 'UPD_CloudPreset_C::_w__B_0' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, _w__Z) == 0x000458, "Member 'UPD_CloudPreset_C::_w__Z' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, ____01) == 0x000488, "Member 'UPD_CloudPreset_C::____01' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, ____02) == 0x0004B8, "Member 'UPD_CloudPreset_C::____02' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, ____03) == 0x0004E8, "Member 'UPD_CloudPreset_C::____03' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, ____04) == 0x000518, "Member 'UPD_CloudPreset_C::____04' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, __PT) == 0x000548, "Member 'UPD_CloudPreset_C::__PT' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, __sW_0) == 0x000578, "Member 'UPD_CloudPreset_C::__sW_0' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, __J_) == 0x0005A8, "Member 'UPD_CloudPreset_C::__J_' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, ___w_8___M) == 0x0005D8, "Member 'UPD_CloudPreset_C::___w_8___M' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, ___w_8____) == 0x000608, "Member 'UPD_CloudPreset_C::___w_8____' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, ___B) == 0x000638, "Member 'UPD_CloudPreset_C::___B' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, ____05) == 0x000668, "Member 'UPD_CloudPreset_C::____05' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, _w____4) == 0x000698, "Member 'UPD_CloudPreset_C::_w____4' has a wrong offset!");
 
 }
 

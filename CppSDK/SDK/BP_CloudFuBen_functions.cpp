@@ -250,8 +250,9 @@ void ABP_CloudFuBen_C::SunMoon_Parameters_Initial(class UMaterialInstanceDynamic
 // float                                   NoiseSpeed_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   NoiseStrength_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   NoiseTilling_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor                     Color_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CloudFuBen_C::Special_Parameters_Initial(class UMaterialInstanceDynamic* DMI, class UStaticMeshComponent* Mesh, class UTexture2D* Texture, const struct FRotator& POIRotation, float Intensity_0, const struct FVector& Scale, class UTexture2D* NoiseTex, float NoiseSpeed_0, float NoiseStrength_0, float NoiseTilling_0)
+void ABP_CloudFuBen_C::Special_Parameters_Initial(class UMaterialInstanceDynamic* DMI, class UStaticMeshComponent* Mesh, class UTexture2D* Texture, const struct FRotator& POIRotation, float Intensity_0, const struct FVector& Scale, class UTexture2D* NoiseTex, float NoiseSpeed_0, float NoiseStrength_0, float NoiseTilling_0, const struct FLinearColor& Color_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -270,6 +271,7 @@ void ABP_CloudFuBen_C::Special_Parameters_Initial(class UMaterialInstanceDynamic
 	Parms.NoiseSpeed_0 = NoiseSpeed_0;
 	Parms.NoiseStrength_0 = NoiseStrength_0;
 	Parms.NoiseTilling_0 = NoiseTilling_0;
+	Parms.Color_0 = std::move(Color_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

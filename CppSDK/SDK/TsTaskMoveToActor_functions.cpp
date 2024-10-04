@@ -17,21 +17,23 @@
 namespace SDK
 {
 
-// Function TsTaskMoveToActor.TsTaskMoveToActor_C.ExecuteUbergraph_TsTaskMoveToActor
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Function TsTaskMoveToActor.TsTaskMoveToActor_C.ReceiveExecuteAI
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskMoveToActor_C::ExecuteUbergraph_TsTaskMoveToActor(int32 EntryPoint)
+void UTsTaskMoveToActor_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskMoveToActor_C", "ExecuteUbergraph_TsTaskMoveToActor");
+		Func = Class->GetFunction("TsTaskMoveToActor_C", "ReceiveExecuteAI");
 
-	Params::TsTaskMoveToActor_C_ExecuteUbergraph_TsTaskMoveToActor Parms{};
+	Params::TsTaskMoveToActor_C_ReceiveExecuteAI Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -71,23 +73,21 @@ void UTsTaskMoveToActor_C::ReceiveTickAI(class AAIController* OwnerController, c
 }
 
 
-// Function TsTaskMoveToActor.TsTaskMoveToActor_C.ReceiveExecuteAI
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsTaskMoveToActor.TsTaskMoveToActor_C.ExecuteUbergraph_TsTaskMoveToActor
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskMoveToActor_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+void UTsTaskMoveToActor_C::ExecuteUbergraph_TsTaskMoveToActor(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskMoveToActor_C", "ReceiveExecuteAI");
+		Func = Class->GetFunction("TsTaskMoveToActor_C", "ExecuteUbergraph_TsTaskMoveToActor");
 
-	Params::TsTaskMoveToActor_C_ReceiveExecuteAI Parms{};
+	Params::TsTaskMoveToActor_C_ExecuteUbergraph_TsTaskMoveToActor Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

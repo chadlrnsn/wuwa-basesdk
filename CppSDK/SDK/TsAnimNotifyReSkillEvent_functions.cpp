@@ -17,6 +17,31 @@
 namespace SDK
 {
 
+// Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.GetRandomIndex
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UTsAnimNotifyReSkillEvent_C::GetRandomIndex()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAnimNotifyReSkillEvent_C", "GetRandomIndex");
+
+	Params::TsAnimNotifyReSkillEvent_C_GetRandomIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.K2_Notify
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -35,31 +60,6 @@ bool UTsAnimNotifyReSkillEvent_C::K2_Notify(class USkeletalMeshComponent* MeshCo
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.GetRandomIndex
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-float UTsAnimNotifyReSkillEvent_C::GetRandomIndex()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyReSkillEvent_C", "GetRandomIndex");
-
-	Params::TsAnimNotifyReSkillEvent_C_GetRandomIndex Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

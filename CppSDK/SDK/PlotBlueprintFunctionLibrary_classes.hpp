@@ -39,7 +39,7 @@ public:
 	static void OpenChapterUi(int32 ChapterState, int32 ChapterId, class UObject* __WorldContext);
 	static void ShowLogo(float Time, class UObject* __WorldContext);
 	static void CloseUiView(class UObject* __WorldContext);
-	static void OpenUiView(const class FString& MaleAssetName, const class FString& FemaleAssetName, class UObject* __WorldContext);
+	static void OpenUiView(const class FString& MaleAssetName, const class FString& FemaleAssetName, const class FString& MaleSpineName, const class FString& FemaleSpineName, class UObject* __WorldContext);
 	static void PlayUiLevelSequence(const class FString& SeqName, class UObject* __WorldContext);
 
 public:

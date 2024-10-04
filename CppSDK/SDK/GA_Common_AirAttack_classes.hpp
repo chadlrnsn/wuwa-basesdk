@@ -28,24 +28,24 @@ public:
 	float                                         BlockTime;                                         // 0x0564(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_Common_AirAttack(int32 EntryPoint);
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
-	void OnCompleted_5D118C384AE61F1C80292E8133A9FB93();
-	void OnBlendOut_5D118C384AE61F1C80292E8133A9FB93();
-	void OnInterrupted_5D118C384AE61F1C80292E8133A9FB93();
-	void OnCancelled_5D118C384AE61F1C80292E8133A9FB93();
-	void OnTick_5D118C384AE61F1C80292E8133A9FB93();
-	void OnCompleted_5D118C384AE61F1C80292E810CE84E38();
-	void OnBlendOut_5D118C384AE61F1C80292E810CE84E38();
-	void OnInterrupted_5D118C384AE61F1C80292E810CE84E38();
-	void OnCancelled_5D118C384AE61F1C80292E810CE84E38();
-	void OnTick_5D118C384AE61F1C80292E810CE84E38();
-	void OnCompleted_5D118C384AE61F1C80292E8132E47F3E();
-	void OnBlendOut_5D118C384AE61F1C80292E8132E47F3E();
-	void OnInterrupted_5D118C384AE61F1C80292E8132E47F3E();
-	void OnCancelled_5D118C384AE61F1C80292E8132E47F3E();
 	void OnTick_5D118C384AE61F1C80292E8132E47F3E();
+	void OnCancelled_5D118C384AE61F1C80292E8132E47F3E();
+	void OnInterrupted_5D118C384AE61F1C80292E8132E47F3E();
+	void OnBlendOut_5D118C384AE61F1C80292E8132E47F3E();
+	void OnCompleted_5D118C384AE61F1C80292E8132E47F3E();
+	void OnTick_5D118C384AE61F1C80292E810CE84E38();
+	void OnCancelled_5D118C384AE61F1C80292E810CE84E38();
+	void OnInterrupted_5D118C384AE61F1C80292E810CE84E38();
+	void OnBlendOut_5D118C384AE61F1C80292E810CE84E38();
+	void OnCompleted_5D118C384AE61F1C80292E810CE84E38();
+	void OnTick_5D118C384AE61F1C80292E8133A9FB93();
+	void OnCancelled_5D118C384AE61F1C80292E8133A9FB93();
+	void OnInterrupted_5D118C384AE61F1C80292E8133A9FB93();
+	void OnCompleted_5D118C384AE61F1C80292E8133A9FB93();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void ExecuteUbergraph_GA_Common_AirAttack(int32 EntryPoint);
+	void OnBlendOut_5D118C384AE61F1C80292E8133A9FB93();
 
 public:
 	static class UClass* StaticClass()

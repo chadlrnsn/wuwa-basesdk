@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
 #include "BPE_ManipulateState_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "GA_Base_classes.hpp"
 
 
@@ -40,36 +40,36 @@ public:
 	int32                                         Entity_Id;                                         // 0x05F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_Role_Manipulate(int32 EntryPoint);
-	void AfterRequest(bool bContent);
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
-	void OnCompleted_5D118C384AE61F1C80292E8150E58CB4();
-	void OnBlendOut_5D118C384AE61F1C80292E8150E58CB4();
-	void OnInterrupted_5D118C384AE61F1C80292E8150E58CB4();
-	void OnCancelled_5D118C384AE61F1C80292E8150E58CB4();
-	void OnTick_5D118C384AE61F1C80292E8150E58CB4();
-	void OnFinish_C3FDF179485000A0038F85B4A18EE0C1();
-	void EventReceived_A99B2F604F8C8EFCA354FB99DC615855(const struct FGameplayEventData& Payload);
-	void EventReceived_216442174E3088EB354911B5CC57F2B1(const struct FGameplayEventData& Payload);
-	void Added_21071CB943CD992BF8EFD6A385FA7D9C(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A302D055A4(const struct FGameplayTag& Tag);
-	void OnCompleted_5D118C384AE61F1C80292E815237D5DE();
-	void OnBlendOut_5D118C384AE61F1C80292E815237D5DE();
-	void OnInterrupted_5D118C384AE61F1C80292E815237D5DE();
-	void OnCancelled_5D118C384AE61F1C80292E815237D5DE();
-	void OnTick_5D118C384AE61F1C80292E815237D5DE();
-	void OnCompleted_5D118C384AE61F1C80292E81D680877C();
-	void OnBlendOut_5D118C384AE61F1C80292E81D680877C();
-	void OnInterrupted_5D118C384AE61F1C80292E81D680877C();
-	void OnCancelled_5D118C384AE61F1C80292E81D680877C();
-	void OnTick_5D118C384AE61F1C80292E81D680877C();
-	void OnCompleted_5D118C384AE61F1C80292E815CB87408();
-	void OnBlendOut_5D118C384AE61F1C80292E815CB87408();
-	void OnInterrupted_5D118C384AE61F1C80292E815CB87408();
-	void OnCancelled_5D118C384AE61F1C80292E815CB87408();
-	void OnTick_5D118C384AE61F1C80292E815CB87408();
 	void _____i____(int32* ___0);
+	void OnTick_5D118C384AE61F1C80292E815CB87408();
+	void OnCancelled_5D118C384AE61F1C80292E815CB87408();
+	void OnInterrupted_5D118C384AE61F1C80292E815CB87408();
+	void OnBlendOut_5D118C384AE61F1C80292E815CB87408();
+	void OnCompleted_5D118C384AE61F1C80292E815CB87408();
+	void OnTick_5D118C384AE61F1C80292E81D680877C();
+	void OnCancelled_5D118C384AE61F1C80292E81D680877C();
+	void OnInterrupted_5D118C384AE61F1C80292E81D680877C();
+	void OnBlendOut_5D118C384AE61F1C80292E81D680877C();
+	void OnCompleted_5D118C384AE61F1C80292E81D680877C();
+	void OnTick_5D118C384AE61F1C80292E815237D5DE();
+	void OnCancelled_5D118C384AE61F1C80292E815237D5DE();
+	void OnInterrupted_5D118C384AE61F1C80292E815237D5DE();
+	void OnBlendOut_5D118C384AE61F1C80292E815237D5DE();
+	void OnCompleted_5D118C384AE61F1C80292E815237D5DE();
+	void Added_21071CB943CD992BF8EFD6A302D055A4(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A385FA7D9C(const struct FGameplayTag& Tag);
+	void EventReceived_216442174E3088EB354911B5CC57F2B1(const struct FGameplayEventData& Payload);
+	void EventReceived_A99B2F604F8C8EFCA354FB99DC615855(const struct FGameplayEventData& Payload);
+	void OnFinish_C3FDF179485000A0038F85B4A18EE0C1();
+	void OnTick_5D118C384AE61F1C80292E8150E58CB4();
+	void OnCancelled_5D118C384AE61F1C80292E8150E58CB4();
+	void OnInterrupted_5D118C384AE61F1C80292E8150E58CB4();
+	void OnBlendOut_5D118C384AE61F1C80292E8150E58CB4();
+	void OnCompleted_5D118C384AE61F1C80292E8150E58CB4();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void AfterRequest(bool bContent);
+	void ExecuteUbergraph_GA_Role_Manipulate(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

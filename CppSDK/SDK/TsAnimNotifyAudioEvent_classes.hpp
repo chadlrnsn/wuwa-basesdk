@@ -26,8 +26,8 @@ public:
 	bool                                          Follow;                                            // 0x0084(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 	void PostAudioEventAsync(const class FString& AudioEventPath, class USkeletalMeshComponent* MeshComponent, class UAnimSequenceBase* AnimSequence);
+	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 
 	class FString GetNotifyName() const;
 

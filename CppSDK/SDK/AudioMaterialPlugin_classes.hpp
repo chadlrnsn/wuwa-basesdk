@@ -79,11 +79,11 @@ static_assert(alignof(UAudioMaterialBlueprint) == 0x000008, "Wrong alignment on 
 static_assert(sizeof(UAudioMaterialBlueprint) == 0x000030, "Wrong size on UAudioMaterialBlueprint");
 
 // Class AudioMaterialPlugin.AudioMaterialPartitionActor
-// 0x0008 (0x02B8 - 0x02B0)
+// 0x0008 (0x02C0 - 0x02B8)
 class AAudioMaterialPartitionActor final : public AKuroWorldPartitionActor
 {
 public:
-	class UAudioMaterialComponent*                AudioMaterialComp;                                 // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAudioMaterialComponent*                AudioMaterialComp;                                 // 0x02B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -96,8 +96,8 @@ public:
 	}
 };
 static_assert(alignof(AAudioMaterialPartitionActor) == 0x000008, "Wrong alignment on AAudioMaterialPartitionActor");
-static_assert(sizeof(AAudioMaterialPartitionActor) == 0x0002B8, "Wrong size on AAudioMaterialPartitionActor");
-static_assert(offsetof(AAudioMaterialPartitionActor, AudioMaterialComp) == 0x0002B0, "Member 'AAudioMaterialPartitionActor::AudioMaterialComp' has a wrong offset!");
+static_assert(sizeof(AAudioMaterialPartitionActor) == 0x0002C0, "Wrong size on AAudioMaterialPartitionActor");
+static_assert(offsetof(AAudioMaterialPartitionActor, AudioMaterialComp) == 0x0002B8, "Member 'AAudioMaterialPartitionActor::AudioMaterialComp' has a wrong offset!");
 
 }
 

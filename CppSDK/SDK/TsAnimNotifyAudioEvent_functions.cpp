@@ -17,6 +17,35 @@
 namespace SDK
 {
 
+// Function TsAnimNotifyAudioEvent.TsAnimNotifyAudioEvent_C.PostAudioEventAsync
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           AudioEventPath                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class USkeletalMeshComponent*           MeshComponent                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAnimSequenceBase*                AnimSequence                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsAnimNotifyAudioEvent_C::PostAudioEventAsync(const class FString& AudioEventPath, class USkeletalMeshComponent* MeshComponent, class UAnimSequenceBase* AnimSequence)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAnimNotifyAudioEvent_C", "PostAudioEventAsync");
+
+	Params::TsAnimNotifyAudioEvent_C_PostAudioEventAsync Parms{};
+
+	Parms.AudioEventPath = std::move(AudioEventPath);
+	Parms.MeshComponent = MeshComponent;
+	Parms.AnimSequence = AnimSequence;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function TsAnimNotifyAudioEvent.TsAnimNotifyAudioEvent_C.K2_Notify
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -44,35 +73,6 @@ bool UTsAnimNotifyAudioEvent_C::K2_Notify(class USkeletalMeshComponent* MeshComp
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function TsAnimNotifyAudioEvent.TsAnimNotifyAudioEvent_C.PostAudioEventAsync
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FString                           AudioEventPath                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class USkeletalMeshComponent*           MeshComponent                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UAnimSequenceBase*                AnimSequence                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsAnimNotifyAudioEvent_C::PostAudioEventAsync(const class FString& AudioEventPath, class USkeletalMeshComponent* MeshComponent, class UAnimSequenceBase* AnimSequence)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyAudioEvent_C", "PostAudioEventAsync");
-
-	Params::TsAnimNotifyAudioEvent_C_PostAudioEventAsync Parms{};
-
-	Parms.AudioEventPath = std::move(AudioEventPath);
-	Parms.MeshComponent = MeshComponent;
-	Parms.AnimSequence = AnimSequence;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

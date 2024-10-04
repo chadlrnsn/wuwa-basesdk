@@ -120,7 +120,7 @@ void ABP_ScreenEffectPlayer_C::StartPlayer()
 
 
 // Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.EndPlayer
-// (Public, BlueprintCallable, BlueprintEvent)
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void ABP_ScreenEffectPlayer_C::EndPlayer()
 {
@@ -286,6 +286,34 @@ void ABP_ScreenEffectPlayer_C::UpdatePlayerSEEnvironmentFactor(float Environment
 	Parms.EnvironmentFactor = EnvironmentFactor;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.DelayEndAudioCall
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_ScreenEffectPlayer_C::DelayEndAudioCall()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "DelayEndAudioCall");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.BP_ScreenEffectPlayer_AutoGenFunc
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_ScreenEffectPlayer_C::BP_ScreenEffectPlayer_AutoGenFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "BP_ScreenEffectPlayer_AutoGenFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

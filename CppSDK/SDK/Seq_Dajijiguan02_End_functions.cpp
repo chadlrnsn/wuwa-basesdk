@@ -17,23 +17,17 @@
 namespace SDK
 {
 
-// Function Seq_Dajijiguan02_End.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function Seq_Dajijiguan02_End.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void Seq_Dajijiguan02_End::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
+void Seq_Dajijiguan02_End::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
+		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
 
-	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -51,17 +45,23 @@ void Seq_Dajijiguan02_End::USequenceDirector_C::SequenceEvent_0()
 }
 
 
-// Function Seq_Dajijiguan02_End.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function Seq_Dajijiguan02_End.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Seq_Dajijiguan02_End::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0()
+void Seq_Dajijiguan02_End::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
+		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

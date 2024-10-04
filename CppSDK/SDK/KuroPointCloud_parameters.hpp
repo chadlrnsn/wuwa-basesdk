@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "KuroPointCloud_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
@@ -42,6 +42,23 @@ static_assert(sizeof(KuroPointCloudCache_UpdateFromData) == 0x000030, "Wrong siz
 static_assert(offsetof(KuroPointCloudCache_UpdateFromData, Positions) == 0x000000, "Member 'KuroPointCloudCache_UpdateFromData::Positions' has a wrong offset!");
 static_assert(offsetof(KuroPointCloudCache_UpdateFromData, Rotations) == 0x000010, "Member 'KuroPointCloudCache_UpdateFromData::Rotations' has a wrong offset!");
 static_assert(offsetof(KuroPointCloudCache_UpdateFromData, Scales) == 0x000020, "Member 'KuroPointCloudCache_UpdateFromData::Scales' has a wrong offset!");
+
+// Function KuroPointCloud.KuroPointCloudCache.UpdateFromDataWithIndices
+// 0x0040 (0x0040 - 0x0000)
+struct KuroPointCloudCache_UpdateFromDataWithIndices final
+{
+public:
+	TArray<struct FVector>                        Positions;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FQuat>                          Rotations;                                         // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        Scales;                                            // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Indices;                                           // 0x0030(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroPointCloudCache_UpdateFromDataWithIndices) == 0x000008, "Wrong alignment on KuroPointCloudCache_UpdateFromDataWithIndices");
+static_assert(sizeof(KuroPointCloudCache_UpdateFromDataWithIndices) == 0x000040, "Wrong size on KuroPointCloudCache_UpdateFromDataWithIndices");
+static_assert(offsetof(KuroPointCloudCache_UpdateFromDataWithIndices, Positions) == 0x000000, "Member 'KuroPointCloudCache_UpdateFromDataWithIndices::Positions' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudCache_UpdateFromDataWithIndices, Rotations) == 0x000010, "Member 'KuroPointCloudCache_UpdateFromDataWithIndices::Rotations' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudCache_UpdateFromDataWithIndices, Scales) == 0x000020, "Member 'KuroPointCloudCache_UpdateFromDataWithIndices::Scales' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudCache_UpdateFromDataWithIndices, Indices) == 0x000030, "Member 'KuroPointCloudCache_UpdateFromDataWithIndices::Indices' has a wrong offset!");
 
 // Function KuroPointCloud.KuroPointCloudInstance.BuildFrom2DPoints
 // 0x0050 (0x0050 - 0x0000)

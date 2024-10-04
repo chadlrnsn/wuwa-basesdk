@@ -16,6 +16,52 @@
 namespace SDK::Params
 {
 
+// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.Œ6µÑ,
+// 0x0001 (0x0001 - 0x0000)
+struct AIC_ME1LiufangzheleaderMd00601_C__6___ final
+{
+public:
+	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(AIC_ME1LiufangzheleaderMd00601_C__6___) == 0x000001, "Wrong alignment on AIC_ME1LiufangzheleaderMd00601_C__6___");
+static_assert(sizeof(AIC_ME1LiufangzheleaderMd00601_C__6___) == 0x000001, "Wrong size on AIC_ME1LiufangzheleaderMd00601_C__6___");
+static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C__6___, bContent) == 0x000000, "Member 'AIC_ME1LiufangzheleaderMd00601_C__6___::bContent' has a wrong offset!");
+
+// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.×û¡p
+// 0x0840 (0x0840 - 0x0000)
+struct AIC_ME1LiufangzheleaderMd00601_C____p final
+{
+public:
+	class ATsBaseCharacter_C*                     _r;                                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSHitInformation                       __pn;                                              // 0x0008(0x0838)(BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference, HasGetValueTypeHash)
+};
+static_assert(alignof(AIC_ME1LiufangzheleaderMd00601_C____p) == 0x000008, "Wrong alignment on AIC_ME1LiufangzheleaderMd00601_C____p");
+static_assert(sizeof(AIC_ME1LiufangzheleaderMd00601_C____p) == 0x000840, "Wrong size on AIC_ME1LiufangzheleaderMd00601_C____p");
+static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C____p, _r) == 0x000000, "Member 'AIC_ME1LiufangzheleaderMd00601_C____p::_r' has a wrong offset!");
+static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C____p, __pn) == 0x000008, "Member 'AIC_ME1LiufangzheleaderMd00601_C____p::__pn' has a wrong offset!");
+
+// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ç'bá
+// 0x0001 (0x0001 - 0x0000)
+struct AIC_ME1LiufangzheleaderMd00601_C___b__ final
+{
+public:
+	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(AIC_ME1LiufangzheleaderMd00601_C___b__) == 0x000001, "Wrong alignment on AIC_ME1LiufangzheleaderMd00601_C___b__");
+static_assert(sizeof(AIC_ME1LiufangzheleaderMd00601_C___b__) == 0x000001, "Wrong size on AIC_ME1LiufangzheleaderMd00601_C___b__");
+static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C___b__, bContent) == 0x000000, "Member 'AIC_ME1LiufangzheleaderMd00601_C___b__::bContent' has a wrong offset!");
+
+// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ç'ûz
+// 0x0001 (0x0001 - 0x0000)
+struct AIC_ME1LiufangzheleaderMd00601_C____z final
+{
+public:
+	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(AIC_ME1LiufangzheleaderMd00601_C____z) == 0x000001, "Wrong alignment on AIC_ME1LiufangzheleaderMd00601_C____z");
+static_assert(sizeof(AIC_ME1LiufangzheleaderMd00601_C____z) == 0x000001, "Wrong size on AIC_ME1LiufangzheleaderMd00601_C____z");
+static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C____z, bContent) == 0x000000, "Member 'AIC_ME1LiufangzheleaderMd00601_C____z::bContent' has a wrong offset!");
+
 // Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601
 // 0x0910 (0x0910 - 0x0000)
 struct AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601 final
@@ -80,52 +126,6 @@ static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1
 static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601, CallFunc___AIC___ReturnValue_1) == 0x0008F8, "Member 'AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601::CallFunc___AIC___ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601, K2Node_CustomEvent_bContent) == 0x000900, "Member 'AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601::K2Node_CustomEvent_bContent' has a wrong offset!");
 static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601, CallFunc___AIC___ReturnValue_2) == 0x000908, "Member 'AIC_ME1LiufangzheleaderMd00601_C_ExecuteUbergraph_AIC_ME1LiufangzheleaderMd00601::CallFunc___AIC___ReturnValue_2' has a wrong offset!");
-
-// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ç'ûz
-// 0x0001 (0x0001 - 0x0000)
-struct AIC_ME1LiufangzheleaderMd00601_C____z final
-{
-public:
-	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(AIC_ME1LiufangzheleaderMd00601_C____z) == 0x000001, "Wrong alignment on AIC_ME1LiufangzheleaderMd00601_C____z");
-static_assert(sizeof(AIC_ME1LiufangzheleaderMd00601_C____z) == 0x000001, "Wrong size on AIC_ME1LiufangzheleaderMd00601_C____z");
-static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C____z, bContent) == 0x000000, "Member 'AIC_ME1LiufangzheleaderMd00601_C____z::bContent' has a wrong offset!");
-
-// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.ç'bá
-// 0x0001 (0x0001 - 0x0000)
-struct AIC_ME1LiufangzheleaderMd00601_C___b__ final
-{
-public:
-	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(AIC_ME1LiufangzheleaderMd00601_C___b__) == 0x000001, "Wrong alignment on AIC_ME1LiufangzheleaderMd00601_C___b__");
-static_assert(sizeof(AIC_ME1LiufangzheleaderMd00601_C___b__) == 0x000001, "Wrong size on AIC_ME1LiufangzheleaderMd00601_C___b__");
-static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C___b__, bContent) == 0x000000, "Member 'AIC_ME1LiufangzheleaderMd00601_C___b__::bContent' has a wrong offset!");
-
-// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.×û¡p
-// 0x0840 (0x0840 - 0x0000)
-struct AIC_ME1LiufangzheleaderMd00601_C____p final
-{
-public:
-	class ATsBaseCharacter_C*                     _r;                                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSHitInformation                       __pn;                                              // 0x0008(0x0838)(BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference, HasGetValueTypeHash)
-};
-static_assert(alignof(AIC_ME1LiufangzheleaderMd00601_C____p) == 0x000008, "Wrong alignment on AIC_ME1LiufangzheleaderMd00601_C____p");
-static_assert(sizeof(AIC_ME1LiufangzheleaderMd00601_C____p) == 0x000840, "Wrong size on AIC_ME1LiufangzheleaderMd00601_C____p");
-static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C____p, _r) == 0x000000, "Member 'AIC_ME1LiufangzheleaderMd00601_C____p::_r' has a wrong offset!");
-static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C____p, __pn) == 0x000008, "Member 'AIC_ME1LiufangzheleaderMd00601_C____p::__pn' has a wrong offset!");
-
-// Function AIC_ME1LiufangzheleaderMd00601.AIC_ME1LiufangzheleaderMd00601_C.Œ6µÑ,
-// 0x0001 (0x0001 - 0x0000)
-struct AIC_ME1LiufangzheleaderMd00601_C__6___ final
-{
-public:
-	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(AIC_ME1LiufangzheleaderMd00601_C__6___) == 0x000001, "Wrong alignment on AIC_ME1LiufangzheleaderMd00601_C__6___");
-static_assert(sizeof(AIC_ME1LiufangzheleaderMd00601_C__6___) == 0x000001, "Wrong size on AIC_ME1LiufangzheleaderMd00601_C__6___");
-static_assert(offsetof(AIC_ME1LiufangzheleaderMd00601_C__6___, bContent) == 0x000000, "Member 'AIC_ME1LiufangzheleaderMd00601_C__6___::bContent' has a wrong offset!");
 
 }
 

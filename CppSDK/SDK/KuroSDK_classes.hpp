@@ -90,7 +90,10 @@ public:
 	static void PostSplashScreenEndSuccess();
 	static void QueryProductInfo(const class FString& Data);
 	static void RequestPhotoPermission();
+	static void RequestReviewApp(const class FString& Data);
+	static void SetCursor(const class FString& Data);
 	static void SetFont(const class FString& Data);
+	static void SetGamePadMode(bool Mode);
 	static void SetIfGlobalSdk(bool IfGlobal);
 	static void SetWindowsMode(bool Mode);
 	static void Share(const TArray<uint8>& ImageData, const class FString& SKuroSDKEventParameter);

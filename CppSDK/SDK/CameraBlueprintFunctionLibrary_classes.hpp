@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "EAimAssistMode_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "EAimAssistMode_structs.hpp"
 #include "ECameraAnsEffectiveClientType_structs.hpp"
 #include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "ECustomCameraMode_structs.hpp"
@@ -70,6 +70,8 @@ public:
 	static TArray<struct FSCameraDebugTool_ControllerModification> GetControllerModifications(class UObject* __WorldContext);
 	static struct FSCameraDebugTool_CameraModeInfo GetCamereModeInfo(class UObject* __WorldContext);
 	static void PlaySettlementCamera(class UObject* __WorldContext);
+	static void SetSequenceCameraCollisionState(bool bEnable, class UObject* __WorldContext);
+	static void SetXRayState(bool IsEnable, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

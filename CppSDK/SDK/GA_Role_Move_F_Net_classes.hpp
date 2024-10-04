@@ -26,16 +26,16 @@ public:
 	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_Role_Move_F_Net(int32 EntryPoint);
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
-	void OnCompleted_5D118C384AE61F1C80292E81E2803D47();
-	void OnBlendOut_5D118C384AE61F1C80292E81E2803D47();
-	void OnInterrupted_5D118C384AE61F1C80292E81E2803D47();
-	void OnCancelled_5D118C384AE61F1C80292E81E2803D47();
-	void OnTick_5D118C384AE61F1C80292E81E2803D47();
-	void Added_21071CB943CD992BF8EFD6A382AFCAE1(const struct FGameplayTag& Tag);
 	void Added_21071CB943CD992BF8EFD6A3DAFC9936(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A382AFCAE1(const struct FGameplayTag& Tag);
+	void OnTick_5D118C384AE61F1C80292E81E2803D47();
+	void OnInterrupted_5D118C384AE61F1C80292E81E2803D47();
+	void OnBlendOut_5D118C384AE61F1C80292E81E2803D47();
+	void OnCompleted_5D118C384AE61F1C80292E81E2803D47();
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_Role_Move_F_Net(int32 EntryPoint);
+	void OnCancelled_5D118C384AE61F1C80292E81E2803D47();
 
 	bool K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, struct FGameplayTagContainer* RelevantTags) const;
 

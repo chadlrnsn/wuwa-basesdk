@@ -10,14 +10,185 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "SVisionData_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Òrû Ø>:P(
+// 0x0008 (0x0008 - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C__r______P_ final
+{
+public:
+	int32                                         MaterialDataID_0;                                  // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_AddMaterialControllerData_ReturnValue;    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C__r______P_) == 0x000004, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C__r______P_");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C__r______P_) == 0x000008, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C__r______P_");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C__r______P_, MaterialDataID_0) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C__r______P_::MaterialDataID_0' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C__r______P_, CallFunc_AddMaterialControllerData_ReturnValue) == 0x000004, "Member 'GA_Role_Bianshen_Level_Youyidie_C__r______P_::CallFunc_AddMaterialControllerData_ReturnValue' has a wrong offset!");
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Òrû Øˆ1P(
+// 0x0008 (0x0008 - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C__r_____1P_ final
+{
+public:
+	int32                                         MaterialDataID_0;                                  // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_AddMaterialControllerData_ReturnValue;    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C__r_____1P_) == 0x000004, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C__r_____1P_");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C__r_____1P_) == 0x000008, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C__r_____1P_");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C__r_____1P_, MaterialDataID_0) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C__r_____1P_::MaterialDataID_0' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C__r_____1P_, CallFunc_AddMaterialControllerData_ReturnValue) == 0x000004, "Member 'GA_Role_Bianshen_Level_Youyidie_C__r_____1P_::CallFunc_AddMaterialControllerData_ReturnValue' has a wrong offset!");
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Ÿú{a
+// 0x00D0 (0x00D0 - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C______a final
+{
+public:
+	class AActor*                                 Entity;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         _SID;                                              // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetSocketName_ReturnValue;                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0030(0x0018)()
+	class ABP_BaseVision_C*                       K2Node_DynamicCast_AsBP_Base_Vision;               // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0058(0x0040)(HasGetValueTypeHash)
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0098(0x0010)(ReferenceParm)
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x00A8(0x0018)()
+	bool                                          CallFunc____________;                              // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 CallFunc_GetSkillTarget_ReturnValue;               // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C______a) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C______a");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C______a) == 0x0000D0, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C______a");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, Entity) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::Entity' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, _SID) == 0x000008, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::_SID' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_GetDisplayName_ReturnValue) == 0x000010, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_GetDisplayName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_GetSocketName_ReturnValue) == 0x000020, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_GetSocketName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_Conv_StringToText_ReturnValue) == 0x000030, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, K2Node_DynamicCast_AsBP_Base_Vision) == 0x000048, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::K2Node_DynamicCast_AsBP_Base_Vision' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, K2Node_DynamicCast_bSuccess) == 0x000050, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, K2Node_MakeStruct_FormatArgumentData) == 0x000058, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, K2Node_MakeArray_Array) == 0x000098, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::K2Node_MakeArray_Array' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_Format_ReturnValue) == 0x0000A8, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_Format_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc____________) == 0x0000C0, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc____________' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_GetSkillTarget_ReturnValue) == 0x0000C8, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_GetSkillTarget_ReturnValue' has a wrong offset!");
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.·Ö½ÕSkill_ID
+// 0x0030 (0x0030 - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID final
+{
+public:
+	class FName                                   Skill_ID;                                          // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0020(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID) == 0x000030, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID, Skill_ID) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID::Skill_ID' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID, CallFunc_Conv_IntToString_ReturnValue) == 0x000010, "Member 'GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID, CallFunc_Conv_StringToName_ReturnValue) == 0x000020, "Member 'GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.¡—½Õ€ýID
+// 0x0038 (0x0038 - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C_______ID final
+{
+public:
+	int32                                         Param______0;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   Param______1;                                      // 0x0004(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Multiply_IntInt_ReturnValue;              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_______ID) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_______ID");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_______ID) == 0x000038, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_______ID");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, Param______0) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::Param______0' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, Param______1) == 0x000004, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::Param______1' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, CallFunc_Multiply_IntInt_ReturnValue) == 0x000010, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::CallFunc_Multiply_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, CallFunc_Add_IntInt_ReturnValue) == 0x000014, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, CallFunc_Conv_IntToString_ReturnValue) == 0x000018, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, CallFunc_Conv_StringToName_ReturnValue) == 0x000028, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.·Ö{apn
+// 0x0300 (0x0300 - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C____apn final
+{
+public:
+	int32                                         _aID_0;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSVisionData                           _apn_0;                                            // 0x0008(0x00F0)(Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+	struct FSVisionData                           _0__apn;                                           // 0x00F8(0x00F0)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x01E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x01F8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSVisionData                           CallFunc_GetDataTableRowFromName_OutRow;           // 0x0208(0x00F0)(ContainsInstancedReference, HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x02F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C____apn) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C____apn");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C____apn) == 0x000300, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C____apn");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, _aID_0) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::_aID_0' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, _apn_0) == 0x000008, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::_apn_0' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, _0__apn) == 0x0000F8, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::_0__apn' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, CallFunc_Conv_IntToString_ReturnValue) == 0x0001E8, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, CallFunc_Conv_StringToName_ReturnValue) == 0x0001F8, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, CallFunc_GetDataTableRowFromName_OutRow) == 0x000208, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x0002F8, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Added_21071CB943CD992BF8EFD6A3C3F21C2A
+// 0x000C (0x000C - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A) == 0x000004, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A) == 0x00000C, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A, Tag) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A::Tag' has a wrong offset!");
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Removed_34F9BAE944891AC1C495D9AB9F1436CD
+// 0x000C (0x000C - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD) == 0x000004, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD) == 0x00000C, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD, Tag) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD::Tag' has a wrong offset!");
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.S°ž žS
+// 0x0010 (0x0010 - 0x0000)
+struct GA_Role_Bianshen_Level_Youyidie_C_S____S final
+{
+public:
+	int32                                         _SID;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Entity;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_S____S) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_S____S");
+static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_S____S) == 0x000010, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_S____S");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_S____S, _SID) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_S____S::_SID' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_S____S, Entity) == 0x000008, "Member 'GA_Role_Bianshen_Level_Youyidie_C_S____S::Entity' has a wrong offset!");
 
 // Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie
 // 0x0540 (0x0540 - 0x0000)
@@ -247,177 +418,6 @@ static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_ExecuteUbergraph_GA_Rol
 static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie, CallFunc_________Id________) == 0x000520, "Member 'GA_Role_Bianshen_Level_Youyidie_C_ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie::CallFunc_________Id________' has a wrong offset!");
 static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie, CallFunc_Conv_StringToInt_ReturnValue) == 0x000530, "Member 'GA_Role_Bianshen_Level_Youyidie_C_ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie::CallFunc_Conv_StringToInt_ReturnValue' has a wrong offset!");
 static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie, CallFunc_SummonRequest_ReturnValue) == 0x000538, "Member 'GA_Role_Bianshen_Level_Youyidie_C_ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie::CallFunc_SummonRequest_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.S°ž žS
-// 0x0010 (0x0010 - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C_S____S final
-{
-public:
-	int32                                         _SID;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 Entity;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_S____S) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_S____S");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_S____S) == 0x000010, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_S____S");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_S____S, _SID) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_S____S::_SID' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_S____S, Entity) == 0x000008, "Member 'GA_Role_Bianshen_Level_Youyidie_C_S____S::Entity' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Removed_34F9BAE944891AC1C495D9AB9F1436CD
-// 0x000C (0x000C - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD) == 0x000004, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD) == 0x00000C, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD, Tag) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_Removed_34F9BAE944891AC1C495D9AB9F1436CD::Tag' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Added_21071CB943CD992BF8EFD6A3C3F21C2A
-// 0x000C (0x000C - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A) == 0x000004, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A) == 0x00000C, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A, Tag) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_Added_21071CB943CD992BF8EFD6A3C3F21C2A::Tag' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.·Ö{apn
-// 0x0300 (0x0300 - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C____apn final
-{
-public:
-	int32                                         _aID_0;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSVisionData                           _apn_0;                                            // 0x0008(0x00F0)(Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
-	struct FSVisionData                           _0__apn;                                           // 0x00F8(0x00F0)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x01E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x01F8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSVisionData                           CallFunc_GetDataTableRowFromName_OutRow;           // 0x0208(0x00F0)(ContainsInstancedReference, HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x02F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C____apn) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C____apn");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C____apn) == 0x000300, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C____apn");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, _aID_0) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::_aID_0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, _apn_0) == 0x000008, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::_apn_0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, _0__apn) == 0x0000F8, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::_0__apn' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, CallFunc_Conv_IntToString_ReturnValue) == 0x0001E8, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, CallFunc_Conv_StringToName_ReturnValue) == 0x0001F8, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, CallFunc_GetDataTableRowFromName_OutRow) == 0x000208, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C____apn, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x0002F8, "Member 'GA_Role_Bianshen_Level_Youyidie_C____apn::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.¡—½Õ€ýID
-// 0x0038 (0x0038 - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C_______ID final
-{
-public:
-	int32                                         Param______0;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   Param______1;                                      // 0x0004(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Multiply_IntInt_ReturnValue;              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_______ID) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_______ID");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_______ID) == 0x000038, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_______ID");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, Param______0) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::Param______0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, Param______1) == 0x000004, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::Param______1' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, CallFunc_Multiply_IntInt_ReturnValue) == 0x000010, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::CallFunc_Multiply_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, CallFunc_Add_IntInt_ReturnValue) == 0x000014, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, CallFunc_Conv_IntToString_ReturnValue) == 0x000018, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_______ID, CallFunc_Conv_StringToName_ReturnValue) == 0x000028, "Member 'GA_Role_Bianshen_Level_Youyidie_C_______ID::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.·Ö½ÕSkill_ID
-// 0x0030 (0x0030 - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID final
-{
-public:
-	class FName                                   Skill_ID;                                          // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0020(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID) == 0x000030, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID, Skill_ID) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID::Skill_ID' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID, CallFunc_Conv_IntToString_ReturnValue) == 0x000010, "Member 'GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID, CallFunc_Conv_StringToName_ReturnValue) == 0x000020, "Member 'GA_Role_Bianshen_Level_Youyidie_C_____Skill_ID::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Ÿú{a
-// 0x00D0 (0x00D0 - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C______a final
-{
-public:
-	class AActor*                                 Entity;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         _SID;                                              // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetSocketName_ReturnValue;                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0030(0x0018)()
-	class ABP_BaseVision_C*                       K2Node_DynamicCast_AsBP_Base_Vision;               // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0058(0x0040)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0098(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x00A8(0x0018)()
-	bool                                          CallFunc____________;                              // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 CallFunc_GetSkillTarget_ReturnValue;               // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C______a) == 0x000008, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C______a");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C______a) == 0x0000D0, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C______a");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, Entity) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::Entity' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, _SID) == 0x000008, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::_SID' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_GetDisplayName_ReturnValue) == 0x000010, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_GetDisplayName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_GetSocketName_ReturnValue) == 0x000020, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_GetSocketName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_Conv_StringToText_ReturnValue) == 0x000030, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, K2Node_DynamicCast_AsBP_Base_Vision) == 0x000048, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::K2Node_DynamicCast_AsBP_Base_Vision' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, K2Node_DynamicCast_bSuccess) == 0x000050, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, K2Node_MakeStruct_FormatArgumentData) == 0x000058, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, K2Node_MakeArray_Array) == 0x000098, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_Format_ReturnValue) == 0x0000A8, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_Format_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc____________) == 0x0000C0, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc____________' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C______a, CallFunc_GetSkillTarget_ReturnValue) == 0x0000C8, "Member 'GA_Role_Bianshen_Level_Youyidie_C______a::CallFunc_GetSkillTarget_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Òrû Øˆ1P(
-// 0x0008 (0x0008 - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C__r_____1P_ final
-{
-public:
-	int32                                         MaterialDataID_0;                                  // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_AddMaterialControllerData_ReturnValue;    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C__r_____1P_) == 0x000004, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C__r_____1P_");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C__r_____1P_) == 0x000008, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C__r_____1P_");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C__r_____1P_, MaterialDataID_0) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C__r_____1P_::MaterialDataID_0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C__r_____1P_, CallFunc_AddMaterialControllerData_ReturnValue) == 0x000004, "Member 'GA_Role_Bianshen_Level_Youyidie_C__r_____1P_::CallFunc_AddMaterialControllerData_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.Òrû Ø>:P(
-// 0x0008 (0x0008 - 0x0000)
-struct GA_Role_Bianshen_Level_Youyidie_C__r______P_ final
-{
-public:
-	int32                                         MaterialDataID_0;                                  // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_AddMaterialControllerData_ReturnValue;    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_Level_Youyidie_C__r______P_) == 0x000004, "Wrong alignment on GA_Role_Bianshen_Level_Youyidie_C__r______P_");
-static_assert(sizeof(GA_Role_Bianshen_Level_Youyidie_C__r______P_) == 0x000008, "Wrong size on GA_Role_Bianshen_Level_Youyidie_C__r______P_");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C__r______P_, MaterialDataID_0) == 0x000000, "Member 'GA_Role_Bianshen_Level_Youyidie_C__r______P_::MaterialDataID_0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_Level_Youyidie_C__r______P_, CallFunc_AddMaterialControllerData_ReturnValue) == 0x000004, "Member 'GA_Role_Bianshen_Level_Youyidie_C__r______P_::CallFunc_AddMaterialControllerData_ReturnValue' has a wrong offset!");
 
 }
 

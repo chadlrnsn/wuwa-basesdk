@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Engine_classes.hpp"
 #include "MagicLeapARPin_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -127,13 +127,13 @@ static_assert(alignof(UMagicLeapARPinFunctionLibrary) == 0x000008, "Wrong alignm
 static_assert(sizeof(UMagicLeapARPinFunctionLibrary) == 0x000030, "Wrong size on UMagicLeapARPinFunctionLibrary");
 
 // Class MagicLeapARPin.MagicLeapARPinInfoActorBase
-// 0x0018 (0x02C0 - 0x02A8)
+// 0x0018 (0x02C8 - 0x02B0)
 class AMagicLeapARPinInfoActorBase : public AActor
 {
 public:
-	struct FGuid                                  PinID;                                             // 0x02A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bVisibilityOverride;                               // 0x02B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B9[0x7];                                      // 0x02B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  PinID;                                             // 0x02B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVisibilityOverride;                               // 0x02C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C1[0x7];                                      // 0x02C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnUpdateARPinState();
@@ -149,20 +149,20 @@ public:
 	}
 };
 static_assert(alignof(AMagicLeapARPinInfoActorBase) == 0x000008, "Wrong alignment on AMagicLeapARPinInfoActorBase");
-static_assert(sizeof(AMagicLeapARPinInfoActorBase) == 0x0002C0, "Wrong size on AMagicLeapARPinInfoActorBase");
-static_assert(offsetof(AMagicLeapARPinInfoActorBase, PinID) == 0x0002A8, "Member 'AMagicLeapARPinInfoActorBase::PinID' has a wrong offset!");
-static_assert(offsetof(AMagicLeapARPinInfoActorBase, bVisibilityOverride) == 0x0002B8, "Member 'AMagicLeapARPinInfoActorBase::bVisibilityOverride' has a wrong offset!");
+static_assert(sizeof(AMagicLeapARPinInfoActorBase) == 0x0002C8, "Wrong size on AMagicLeapARPinInfoActorBase");
+static_assert(offsetof(AMagicLeapARPinInfoActorBase, PinID) == 0x0002B0, "Member 'AMagicLeapARPinInfoActorBase::PinID' has a wrong offset!");
+static_assert(offsetof(AMagicLeapARPinInfoActorBase, bVisibilityOverride) == 0x0002C0, "Member 'AMagicLeapARPinInfoActorBase::bVisibilityOverride' has a wrong offset!");
 
 // Class MagicLeapARPin.MagicLeapARPinRenderer
-// 0x0068 (0x0310 - 0x02A8)
+// 0x0068 (0x0318 - 0x02B0)
 class AMagicLeapARPinRenderer final : public AActor
 {
 public:
-	bool                                          bInfoActorsVisibilityOverride;                     // 0x02A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGuid, class AMagicLeapARPinInfoActorBase*> AllInfoActors;                                     // 0x02B0(0x0050)(NativeAccessSpecifierPrivate)
-	uint8                                         Pad_300[0x8];                                      // 0x0300(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class AMagicLeapARPinInfoActorBase> ClassToSpawn;                                      // 0x0308(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bInfoActorsVisibilityOverride;                     // 0x02B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGuid, class AMagicLeapARPinInfoActorBase*> AllInfoActors;                                     // 0x02B8(0x0050)(NativeAccessSpecifierPrivate)
+	uint8                                         Pad_308[0x8];                                      // 0x0308(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class AMagicLeapARPinInfoActorBase> ClassToSpawn;                                      // 0x0310(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	void SetVisibilityOverride(const bool InVisibilityOverride);
@@ -178,10 +178,10 @@ public:
 	}
 };
 static_assert(alignof(AMagicLeapARPinRenderer) == 0x000008, "Wrong alignment on AMagicLeapARPinRenderer");
-static_assert(sizeof(AMagicLeapARPinRenderer) == 0x000310, "Wrong size on AMagicLeapARPinRenderer");
-static_assert(offsetof(AMagicLeapARPinRenderer, bInfoActorsVisibilityOverride) == 0x0002A8, "Member 'AMagicLeapARPinRenderer::bInfoActorsVisibilityOverride' has a wrong offset!");
-static_assert(offsetof(AMagicLeapARPinRenderer, AllInfoActors) == 0x0002B0, "Member 'AMagicLeapARPinRenderer::AllInfoActors' has a wrong offset!");
-static_assert(offsetof(AMagicLeapARPinRenderer, ClassToSpawn) == 0x000308, "Member 'AMagicLeapARPinRenderer::ClassToSpawn' has a wrong offset!");
+static_assert(sizeof(AMagicLeapARPinRenderer) == 0x000318, "Wrong size on AMagicLeapARPinRenderer");
+static_assert(offsetof(AMagicLeapARPinRenderer, bInfoActorsVisibilityOverride) == 0x0002B0, "Member 'AMagicLeapARPinRenderer::bInfoActorsVisibilityOverride' has a wrong offset!");
+static_assert(offsetof(AMagicLeapARPinRenderer, AllInfoActors) == 0x0002B8, "Member 'AMagicLeapARPinRenderer::AllInfoActors' has a wrong offset!");
+static_assert(offsetof(AMagicLeapARPinRenderer, ClassToSpawn) == 0x000310, "Member 'AMagicLeapARPinRenderer::ClassToSpawn' has a wrong offset!");
 
 // Class MagicLeapARPin.MagicLeapARPinSettings
 // 0x0018 (0x0048 - 0x0030)

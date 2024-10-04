@@ -10,41 +10,38 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "KuroCurve_structs.hpp"
 #include "Engine_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "KuroCurve_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SuperFarFog.BP_SuperFarFog_C
-// 0x00F0 (0x03B8 - 0x02C8)
+// 0x00D8 (0x0460 - 0x0388)
 class ABP_SuperFarFog_C final : public AKuroSuperFarFog
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          ___l;                                              // 0x02D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D1[0x3];                                      // 0x02D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Four___;                                           // 0x02D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         _Igq__;                                            // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           _r______t;                                         // 0x02DC(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ___U___t_;                                         // 0x02EC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2ED[0x3];                                      // 0x02ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           ____r_____;                                        // 0x02F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FKuroCurveFloat                        ______;                                            // 0x0300(0x0090)(Edit, BlueprintVisible, AdvancedDisplay)
-	struct FVector2D                              A____Add_;                                         // 0x0390(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ________;                                          // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         _________0;                                        // 0x039C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_GlobalGI_C*                         CachedGlobalGI;                                    // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           ColorTint;                                         // 0x03A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0388(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          ___l;                                              // 0x0390(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_391[0x3];                                      // 0x0391(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Four___;                                           // 0x0394(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         _Igq__;                                            // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           _r______t;                                         // 0x039C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ___U___t_;                                         // 0x03AC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3AD[0x3];                                      // 0x03AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           ____r_____;                                        // 0x03B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FKuroCurveFloat                        ______;                                            // 0x03C0(0x0090)(Edit, BlueprintVisible, AdvancedDisplay)
+	struct FVector2D                              A____Add_;                                         // 0x0450(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ________;                                          // 0x0458(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         _________0;                                        // 0x045C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();
 	void Refresh();
-	void Update(float DeltaSeconds);
 	void ExecuteUbergraph_BP_SuperFarFog(int32 EntryPoint);
 
 public:
@@ -58,20 +55,18 @@ public:
 	}
 };
 static_assert(alignof(ABP_SuperFarFog_C) == 0x000008, "Wrong alignment on ABP_SuperFarFog_C");
-static_assert(sizeof(ABP_SuperFarFog_C) == 0x0003B8, "Wrong size on ABP_SuperFarFog_C");
-static_assert(offsetof(ABP_SuperFarFog_C, UberGraphFrame) == 0x0002C8, "Member 'ABP_SuperFarFog_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, ___l) == 0x0002D0, "Member 'ABP_SuperFarFog_C::___l' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, Four___) == 0x0002D4, "Member 'ABP_SuperFarFog_C::Four___' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, _Igq__) == 0x0002D8, "Member 'ABP_SuperFarFog_C::_Igq__' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, _r______t) == 0x0002DC, "Member 'ABP_SuperFarFog_C::_r______t' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, ___U___t_) == 0x0002EC, "Member 'ABP_SuperFarFog_C::___U___t_' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, ____r_____) == 0x0002F0, "Member 'ABP_SuperFarFog_C::____r_____' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, ______) == 0x000300, "Member 'ABP_SuperFarFog_C::______' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, A____Add_) == 0x000390, "Member 'ABP_SuperFarFog_C::A____Add_' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, ________) == 0x000398, "Member 'ABP_SuperFarFog_C::________' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, _________0) == 0x00039C, "Member 'ABP_SuperFarFog_C::_________0' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, CachedGlobalGI) == 0x0003A0, "Member 'ABP_SuperFarFog_C::CachedGlobalGI' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, ColorTint) == 0x0003A8, "Member 'ABP_SuperFarFog_C::ColorTint' has a wrong offset!");
+static_assert(sizeof(ABP_SuperFarFog_C) == 0x000460, "Wrong size on ABP_SuperFarFog_C");
+static_assert(offsetof(ABP_SuperFarFog_C, UberGraphFrame) == 0x000388, "Member 'ABP_SuperFarFog_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, ___l) == 0x000390, "Member 'ABP_SuperFarFog_C::___l' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, Four___) == 0x000394, "Member 'ABP_SuperFarFog_C::Four___' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, _Igq__) == 0x000398, "Member 'ABP_SuperFarFog_C::_Igq__' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, _r______t) == 0x00039C, "Member 'ABP_SuperFarFog_C::_r______t' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, ___U___t_) == 0x0003AC, "Member 'ABP_SuperFarFog_C::___U___t_' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, ____r_____) == 0x0003B0, "Member 'ABP_SuperFarFog_C::____r_____' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, ______) == 0x0003C0, "Member 'ABP_SuperFarFog_C::______' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, A____Add_) == 0x000450, "Member 'ABP_SuperFarFog_C::A____Add_' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, ________) == 0x000458, "Member 'ABP_SuperFarFog_C::________' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, _________0) == 0x00045C, "Member 'ABP_SuperFarFog_C::_________0' has a wrong offset!");
 
 }
 

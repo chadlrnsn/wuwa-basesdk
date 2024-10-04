@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0038(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_SequenceDirector(int32 EntryPoint);
-	void SequenceEvent_0();
 	void SequenceEvent__ENTRYPOINTSequenceDirector_0();
+	void SequenceEvent_0();
+	void ExecuteUbergraph_SequenceDirector(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

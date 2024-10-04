@@ -12,13 +12,14 @@
 
 #include "ECameraModifyConditionType_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SCameraModifier_Condition.SCameraModifier_Condition
-// 0x0058 (0x0058 - 0x0000)
+// 0x0070 (0x0070 - 0x0000)
 struct FSCameraModifier_Condition final
 {
 public:
@@ -38,9 +39,12 @@ public:
 	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MinLockDistance_46_10CED90B4FEB788CDCFFE08B33AA2C8C; // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         MaxLockDistance_45_75B83DDC40FE14620EAB08A1FFF59168; // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CameraTraceSocket_50_64F21E424C7DC6D281833882876A4514; // 0x0054(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CameraTraceRadius_53_D0093E184DA13FE2155BB8BD7EFFFA96; // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CameraTraceOffset_56_7F0CE49441F258DDFDE48AA51904D00E; // 0x0064(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSCameraModifier_Condition) == 0x000008, "Wrong alignment on FSCameraModifier_Condition");
-static_assert(sizeof(FSCameraModifier_Condition) == 0x000058, "Wrong size on FSCameraModifier_Condition");
+static_assert(sizeof(FSCameraModifier_Condition) == 0x000070, "Wrong size on FSCameraModifier_Condition");
 static_assert(offsetof(FSCameraModifier_Condition, ConditionType_2_E0F00BA5468BDB9A8C3CF4AE18A8BF08) == 0x000000, "Member 'FSCameraModifier_Condition::ConditionType_2_E0F00BA5468BDB9A8C3CF4AE18A8BF08' has a wrong offset!");
 static_assert(offsetof(FSCameraModifier_Condition, AnyTag_39_0ACABC6D492EBAE1BCB46F9BD0EBB013) == 0x000001, "Member 'FSCameraModifier_Condition::AnyTag_39_0ACABC6D492EBAE1BCB46F9BD0EBB013' has a wrong offset!");
 static_assert(offsetof(FSCameraModifier_Condition, TagToCheck_40_3C2B224D4B7C9665BBA904B77C8345A1) == 0x000008, "Member 'FSCameraModifier_Condition::TagToCheck_40_3C2B224D4B7C9665BBA904B77C8345A1' has a wrong offset!");
@@ -55,6 +59,9 @@ static_assert(offsetof(FSCameraModifier_Condition, LockTargetDeltaPitchMax_25_57
 static_assert(offsetof(FSCameraModifier_Condition, Reverse_34_F69E18214C8243456B820E800D538172) == 0x000048, "Member 'FSCameraModifier_Condition::Reverse_34_F69E18214C8243456B820E800D538172' has a wrong offset!");
 static_assert(offsetof(FSCameraModifier_Condition, MinLockDistance_46_10CED90B4FEB788CDCFFE08B33AA2C8C) == 0x00004C, "Member 'FSCameraModifier_Condition::MinLockDistance_46_10CED90B4FEB788CDCFFE08B33AA2C8C' has a wrong offset!");
 static_assert(offsetof(FSCameraModifier_Condition, MaxLockDistance_45_75B83DDC40FE14620EAB08A1FFF59168) == 0x000050, "Member 'FSCameraModifier_Condition::MaxLockDistance_45_75B83DDC40FE14620EAB08A1FFF59168' has a wrong offset!");
+static_assert(offsetof(FSCameraModifier_Condition, CameraTraceSocket_50_64F21E424C7DC6D281833882876A4514) == 0x000054, "Member 'FSCameraModifier_Condition::CameraTraceSocket_50_64F21E424C7DC6D281833882876A4514' has a wrong offset!");
+static_assert(offsetof(FSCameraModifier_Condition, CameraTraceRadius_53_D0093E184DA13FE2155BB8BD7EFFFA96) == 0x000060, "Member 'FSCameraModifier_Condition::CameraTraceRadius_53_D0093E184DA13FE2155BB8BD7EFFFA96' has a wrong offset!");
+static_assert(offsetof(FSCameraModifier_Condition, CameraTraceOffset_56_7F0CE49441F258DDFDE48AA51904D00E) == 0x000064, "Member 'FSCameraModifier_Condition::CameraTraceOffset_56_7F0CE49441F258DDFDE48AA51904D00E' has a wrong offset!");
 
 }
 

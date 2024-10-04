@@ -10,7 +10,7 @@
 
 #include "Basic.hpp"
 
-#include "KuroImposter_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -35,16 +35,19 @@ static_assert(alignof(UKuroImposterCommandlet) == 0x000008, "Wrong alignment on 
 static_assert(sizeof(UKuroImposterCommandlet) == 0x000088, "Wrong size on UKuroImposterCommandlet");
 
 // Class KuroImposter.KuroImposterComponent
-// 0x0030 (0x0250 - 0x0220)
+// 0x0040 (0x0260 - 0x0220)
 class UKuroImposterComponent final : public USceneComponent
 {
 public:
-	EImposterType                                 ImpType;                                           // 0x0218(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EImpMemType                                   EnumImpMemType;                                    // 0x021C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_220[0x8];                                      // 0x0220(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bPreview;                                          // 0x0228(0x0001)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRenderAtlasEveryFrame;                            // 0x0229(0x0001)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_22A[0x26];                                     // 0x022A(0x0026)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_218[0xC];                                      // 0x0218(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bPreview;                                          // 0x0224(0x0001)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_225[0x3];                                      // 0x0225(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPerPlatformFloat                      ImposterScreenSizeScaleLod0;                       // 0x0228(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPerPlatformFloat                      ImposterScreenSizeScaleLod1;                       // 0x022C(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ImposterUseComtomBelowThr;                         // 0x0230(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_231[0x3];                                      // 0x0231(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPerPlatformFloat                      ImposterBelowThr;                                  // 0x0234(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_238[0x28];                                     // 0x0238(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -57,20 +60,21 @@ public:
 	}
 };
 static_assert(alignof(UKuroImposterComponent) == 0x000010, "Wrong alignment on UKuroImposterComponent");
-static_assert(sizeof(UKuroImposterComponent) == 0x000250, "Wrong size on UKuroImposterComponent");
-static_assert(offsetof(UKuroImposterComponent, ImpType) == 0x000218, "Member 'UKuroImposterComponent::ImpType' has a wrong offset!");
-static_assert(offsetof(UKuroImposterComponent, EnumImpMemType) == 0x00021C, "Member 'UKuroImposterComponent::EnumImpMemType' has a wrong offset!");
-static_assert(offsetof(UKuroImposterComponent, bPreview) == 0x000228, "Member 'UKuroImposterComponent::bPreview' has a wrong offset!");
-static_assert(offsetof(UKuroImposterComponent, bRenderAtlasEveryFrame) == 0x000229, "Member 'UKuroImposterComponent::bRenderAtlasEveryFrame' has a wrong offset!");
+static_assert(sizeof(UKuroImposterComponent) == 0x000260, "Wrong size on UKuroImposterComponent");
+static_assert(offsetof(UKuroImposterComponent, bPreview) == 0x000224, "Member 'UKuroImposterComponent::bPreview' has a wrong offset!");
+static_assert(offsetof(UKuroImposterComponent, ImposterScreenSizeScaleLod0) == 0x000228, "Member 'UKuroImposterComponent::ImposterScreenSizeScaleLod0' has a wrong offset!");
+static_assert(offsetof(UKuroImposterComponent, ImposterScreenSizeScaleLod1) == 0x00022C, "Member 'UKuroImposterComponent::ImposterScreenSizeScaleLod1' has a wrong offset!");
+static_assert(offsetof(UKuroImposterComponent, ImposterUseComtomBelowThr) == 0x000230, "Member 'UKuroImposterComponent::ImposterUseComtomBelowThr' has a wrong offset!");
+static_assert(offsetof(UKuroImposterComponent, ImposterBelowThr) == 0x000234, "Member 'UKuroImposterComponent::ImposterBelowThr' has a wrong offset!");
 
 // Class KuroImposter.KuroImposterUpdater
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AKuroImposterUpdater final : public AActor
 {
 public:
-	bool                                          bEnabled;                                          // 0x02A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSearchMainLight;                                  // 0x02A9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AA[0x6];                                      // 0x02AA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bEnabled;                                          // 0x02B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSearchMainLight;                                  // 0x02B1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B2[0x6];                                      // 0x02B2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void FillAllInstGlobalColor();
@@ -87,9 +91,9 @@ public:
 	}
 };
 static_assert(alignof(AKuroImposterUpdater) == 0x000008, "Wrong alignment on AKuroImposterUpdater");
-static_assert(sizeof(AKuroImposterUpdater) == 0x0002B0, "Wrong size on AKuroImposterUpdater");
-static_assert(offsetof(AKuroImposterUpdater, bEnabled) == 0x0002A8, "Member 'AKuroImposterUpdater::bEnabled' has a wrong offset!");
-static_assert(offsetof(AKuroImposterUpdater, bSearchMainLight) == 0x0002A9, "Member 'AKuroImposterUpdater::bSearchMainLight' has a wrong offset!");
+static_assert(sizeof(AKuroImposterUpdater) == 0x0002B8, "Wrong size on AKuroImposterUpdater");
+static_assert(offsetof(AKuroImposterUpdater, bEnabled) == 0x0002B0, "Member 'AKuroImposterUpdater::bEnabled' has a wrong offset!");
+static_assert(offsetof(AKuroImposterUpdater, bSearchMainLight) == 0x0002B1, "Member 'AKuroImposterUpdater::bSearchMainLight' has a wrong offset!");
 
 // Class KuroImposter.KuroImposterUtility
 // 0x0000 (0x0030 - 0x0030)

@@ -219,8 +219,9 @@ void ABP_Cinematics_Tick_C::SetActorLight(class AActor* InActor, float LightYaw,
 // class AActor*                           InActor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsHideMesh_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    IsHideEffect_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    IsDestroyed                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Cinematics_Tick_C::UpdateMeshAndEffectState(class AActor* InActor, bool IsHideMesh_0, bool IsHideEffect_0)
+void ABP_Cinematics_Tick_C::UpdateMeshAndEffectState(class AActor* InActor, bool IsHideMesh_0, bool IsHideEffect_0, bool IsDestroyed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -232,6 +233,7 @@ void ABP_Cinematics_Tick_C::UpdateMeshAndEffectState(class AActor* InActor, bool
 	Parms.InActor = InActor;
 	Parms.IsHideMesh_0 = IsHideMesh_0;
 	Parms.IsHideEffect_0 = IsHideEffect_0;
+	Parms.IsDestroyed = IsDestroyed;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -259,6 +261,28 @@ struct FVector ABP_Cinematics_Tick_C::EulerToForward(float Pitch, float Yaw)
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_Cinematics_Tick.BP_Cinematics_Tick_C.UpdateCameraCollision
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           InActor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDisableCameraCollision_0                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_Cinematics_Tick_C::UpdateCameraCollision(class AActor* InActor, bool IsDisableCameraCollision_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Cinematics_Tick_C", "UpdateCameraCollision");
+
+	Params::BP_Cinematics_Tick_C_UpdateCameraCollision Parms{};
+
+	Parms.InActor = InActor;
+	Parms.IsDisableCameraCollision_0 = IsDisableCameraCollision_0;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

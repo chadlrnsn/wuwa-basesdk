@@ -51,6 +51,10 @@ class UEditorRuntimeOperations final : public UBlueprintFunctionLibrary
 {
 public:
 	static bool IsPortInUse(int32 Port);
+	static bool IsTcpPortInUse(int32 Port);
+	static bool IsUdpPortInUse(int32 Port);
+	static void ReadBatchFilesAsync(const TArray<class FString>& FilePaths, TDelegate<void(TArray<struct FReadFileData>& LoadedFiles, TArray<class FString>& ReadFailedFiles)> OnAllFilesRead);
+	static void ReadFileAsync(const class FString& FilePath, TDelegate<void(bool IsSuccess, const class FString& FileContent)> OnFileRead);
 	static void SendHttpRequest(const class FString& Method, const class FString& Url, const TMap<class FString, class FString>& HeaderParam, const class FString& Content, TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handler);
 	static bool SendMessage(const class FString& Msg, const class FString& Ip, int32 Port);
 

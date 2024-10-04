@@ -80,6 +80,34 @@ enum class EStandTurnType : uint8
 	EStandTurnType_MAX                       = 3,
 };
 
+// Enum KuroAnim.EBeHitAnim
+// NumValues: 0x000D
+enum class EBeHitAnim : uint8
+{
+	LightLeft                                = 0,
+	LightRight                               = 1,
+	HeavyLeft                                = 2,
+	HeavyRight                               = 3,
+	KnockUp                                  = 4,
+	KnockDown                                = 5,
+	Suppress                                 = 6,
+	Rebound                                  = 7,
+	LightFront                               = 8,
+	LightBack                                = 9,
+	HeavyFront                               = 10,
+	HeavyBack                                = 11,
+	EBeHitAnim_MAX                           = 12,
+};
+
+// Enum KuroAnim.EWalkPosture
+// NumValues: 0x0003
+enum class EWalkPosture : uint8
+{
+	Walk                                     = 0,
+	Run                                      = 1,
+	EWalkPosture_MAX                         = 2,
+};
+
 // Enum KuroAnim.EMoveDirection
 // NumValues: 0x0006
 enum class EMoveDirection : uint8
@@ -190,6 +218,15 @@ enum class ECharPositionStateType : uint8
 	ECharPositionStateType_MAX               = 5,
 };
 
+// Enum KuroAnim.EUpdateInfoFunction
+// NumValues: 0x0003
+enum class EUpdateInfoFunction : uint8
+{
+	Default                                  = 0,
+	Monster                                  = 1,
+	EUpdateInfoFunction_MAX                  = 2,
+};
+
 // Enum KuroAnim.SightLockTurnMode
 // NumValues: 0x0003
 enum class ESightLockTurnMode : uint8
@@ -242,6 +279,102 @@ enum class EKuroHumanIKMode : uint8
 	KuroHumanIKMode_MAX                      = 4,
 };
 
+// ScriptStruct KuroAnim.BoneBlock
+// 0x0060 (0x0060 - 0x0000)
+struct FBoneBlock final
+{
+public:
+	TArray<class FName>                           Groups;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TMap<int32, float>                            Link;                                              // 0x0010(0x0050)(Edit, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FBoneBlock) == 0x000008, "Wrong alignment on FBoneBlock");
+static_assert(sizeof(FBoneBlock) == 0x000060, "Wrong size on FBoneBlock");
+static_assert(offsetof(FBoneBlock, Groups) == 0x000000, "Member 'FBoneBlock::Groups' has a wrong offset!");
+static_assert(offsetof(FBoneBlock, Link) == 0x000010, "Member 'FBoneBlock::Link' has a wrong offset!");
+
+// ScriptStruct KuroAnim.SpecialBoneShakeData
+// 0x0018 (0x0018 - 0x0000)
+struct FSpecialBoneShakeData final
+{
+public:
+	TArray<class FName>                           Groups;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Influence;                                         // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShakeTime;                                         // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSpecialBoneShakeData) == 0x000008, "Wrong alignment on FSpecialBoneShakeData");
+static_assert(sizeof(FSpecialBoneShakeData) == 0x000018, "Wrong size on FSpecialBoneShakeData");
+static_assert(offsetof(FSpecialBoneShakeData, Groups) == 0x000000, "Member 'FSpecialBoneShakeData::Groups' has a wrong offset!");
+static_assert(offsetof(FSpecialBoneShakeData, Influence) == 0x000010, "Member 'FSpecialBoneShakeData::Influence' has a wrong offset!");
+static_assert(offsetof(FSpecialBoneShakeData, ShakeTime) == 0x000014, "Member 'FSpecialBoneShakeData::ShakeTime' has a wrong offset!");
+
+// ScriptStruct KuroAnim.SkeletonGroup
+// 0x0020 (0x0020 - 0x0000)
+struct FSkeletonGroup final
+{
+public:
+	TArray<struct FBoneBlock>                     Blocks;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSpecialBoneShakeData>          SpeicalBoneShakeData;                              // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSkeletonGroup) == 0x000008, "Wrong alignment on FSkeletonGroup");
+static_assert(sizeof(FSkeletonGroup) == 0x000020, "Wrong size on FSkeletonGroup");
+static_assert(offsetof(FSkeletonGroup, Blocks) == 0x000000, "Member 'FSkeletonGroup::Blocks' has a wrong offset!");
+static_assert(offsetof(FSkeletonGroup, SpeicalBoneShakeData) == 0x000010, "Member 'FSkeletonGroup::SpeicalBoneShakeData' has a wrong offset!");
+
+// ScriptStruct KuroAnim.HitBones
+// 0x0010 (0x0010 - 0x0000)
+struct FHitBones final
+{
+public:
+	TArray<class FName>                           Bones;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FHitBones) == 0x000008, "Wrong alignment on FHitBones");
+static_assert(sizeof(FHitBones) == 0x000010, "Wrong size on FHitBones");
+static_assert(offsetof(FHitBones, Bones) == 0x000000, "Member 'FHitBones::Bones' has a wrong offset!");
+
+// ScriptStruct KuroAnim.AnimNode_Feedback
+// 0x0190 (0x0260 - 0x00D0)
+struct FAnimNode_Feedback final : public FAnimNode_SkeletalControlBase
+{
+public:
+	struct FSkeletonGroup                         SkeletonBlockInfo;                                 // 0x00D0(0x0020)(Edit, NativeAccessSpecifierPublic)
+	float                                         DeltaTime;                                         // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UnitTime;                                          // 0x00F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Hit;                                               // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          NotEffectToChild;                                  // 0x00F9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FA[0x2];                                       // 0x00FA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ShakeRate;                                         // 0x00FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FHitBones                              HitBoneNames;                                      // 0x0100(0x0010)(Edit, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            Curve;                                             // 0x0110(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDebug;                                            // 0x0118(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_119[0x147];                                    // 0x0119(0x0147)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FAnimNode_Feedback) == 0x000008, "Wrong alignment on FAnimNode_Feedback");
+static_assert(sizeof(FAnimNode_Feedback) == 0x000260, "Wrong size on FAnimNode_Feedback");
+static_assert(offsetof(FAnimNode_Feedback, SkeletonBlockInfo) == 0x0000D0, "Member 'FAnimNode_Feedback::SkeletonBlockInfo' has a wrong offset!");
+static_assert(offsetof(FAnimNode_Feedback, DeltaTime) == 0x0000F0, "Member 'FAnimNode_Feedback::DeltaTime' has a wrong offset!");
+static_assert(offsetof(FAnimNode_Feedback, UnitTime) == 0x0000F4, "Member 'FAnimNode_Feedback::UnitTime' has a wrong offset!");
+static_assert(offsetof(FAnimNode_Feedback, Hit) == 0x0000F8, "Member 'FAnimNode_Feedback::Hit' has a wrong offset!");
+static_assert(offsetof(FAnimNode_Feedback, NotEffectToChild) == 0x0000F9, "Member 'FAnimNode_Feedback::NotEffectToChild' has a wrong offset!");
+static_assert(offsetof(FAnimNode_Feedback, ShakeRate) == 0x0000FC, "Member 'FAnimNode_Feedback::ShakeRate' has a wrong offset!");
+static_assert(offsetof(FAnimNode_Feedback, HitBoneNames) == 0x000100, "Member 'FAnimNode_Feedback::HitBoneNames' has a wrong offset!");
+static_assert(offsetof(FAnimNode_Feedback, Curve) == 0x000110, "Member 'FAnimNode_Feedback::Curve' has a wrong offset!");
+static_assert(offsetof(FAnimNode_Feedback, bDebug) == 0x000118, "Member 'FAnimNode_Feedback::bDebug' has a wrong offset!");
+
+// ScriptStruct KuroAnim.AdditiveBlendAlpha
+// 0x000C (0x000C - 0x0000)
+struct FAdditiveBlendAlpha final
+{
+public:
+	float                                         MeshSpaceAlpha;                                    // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AdditiveAlpha;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OverlayAlpha;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FAdditiveBlendAlpha) == 0x000004, "Wrong alignment on FAdditiveBlendAlpha");
+static_assert(sizeof(FAdditiveBlendAlpha) == 0x00000C, "Wrong size on FAdditiveBlendAlpha");
+static_assert(offsetof(FAdditiveBlendAlpha, MeshSpaceAlpha) == 0x000000, "Member 'FAdditiveBlendAlpha::MeshSpaceAlpha' has a wrong offset!");
+static_assert(offsetof(FAdditiveBlendAlpha, AdditiveAlpha) == 0x000004, "Member 'FAdditiveBlendAlpha::AdditiveAlpha' has a wrong offset!");
+static_assert(offsetof(FAdditiveBlendAlpha, OverlayAlpha) == 0x000008, "Member 'FAdditiveBlendAlpha::OverlayAlpha' has a wrong offset!");
+
 // ScriptStruct KuroAnim.BranchBlendFilter
 // 0x0018 (0x0018 - 0x0000)
 struct FBranchBlendFilter final
@@ -265,21 +398,6 @@ public:
 static_assert(alignof(FMaskLayer) == 0x000008, "Wrong alignment on FMaskLayer");
 static_assert(sizeof(FMaskLayer) == 0x000010, "Wrong size on FMaskLayer");
 static_assert(offsetof(FMaskLayer, MaskLayer) == 0x000000, "Member 'FMaskLayer::MaskLayer' has a wrong offset!");
-
-// ScriptStruct KuroAnim.AdditiveBlendAlpha
-// 0x000C (0x000C - 0x0000)
-struct FAdditiveBlendAlpha final
-{
-public:
-	float                                         MeshSpaceAlpha;                                    // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AdditiveAlpha;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OverlayAlpha;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FAdditiveBlendAlpha) == 0x000004, "Wrong alignment on FAdditiveBlendAlpha");
-static_assert(sizeof(FAdditiveBlendAlpha) == 0x00000C, "Wrong size on FAdditiveBlendAlpha");
-static_assert(offsetof(FAdditiveBlendAlpha, MeshSpaceAlpha) == 0x000000, "Member 'FAdditiveBlendAlpha::MeshSpaceAlpha' has a wrong offset!");
-static_assert(offsetof(FAdditiveBlendAlpha, AdditiveAlpha) == 0x000004, "Member 'FAdditiveBlendAlpha::AdditiveAlpha' has a wrong offset!");
-static_assert(offsetof(FAdditiveBlendAlpha, OverlayAlpha) == 0x000008, "Member 'FAdditiveBlendAlpha::OverlayAlpha' has a wrong offset!");
 
 // ScriptStruct KuroAnim.AnimNode_AdditiveBoneBlend
 // 0x01B0 (0x01C0 - 0x0010)
@@ -380,87 +498,6 @@ public:
 };
 static_assert(alignof(FAnimNode_ExtraFollowAnims) == 0x000010, "Wrong alignment on FAnimNode_ExtraFollowAnims");
 static_assert(sizeof(FAnimNode_ExtraFollowAnims) == 0x000A50, "Wrong size on FAnimNode_ExtraFollowAnims");
-
-// ScriptStruct KuroAnim.BoneBlock
-// 0x0060 (0x0060 - 0x0000)
-struct FBoneBlock final
-{
-public:
-	TArray<class FName>                           Groups;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TMap<int32, float>                            Link;                                              // 0x0010(0x0050)(Edit, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FBoneBlock) == 0x000008, "Wrong alignment on FBoneBlock");
-static_assert(sizeof(FBoneBlock) == 0x000060, "Wrong size on FBoneBlock");
-static_assert(offsetof(FBoneBlock, Groups) == 0x000000, "Member 'FBoneBlock::Groups' has a wrong offset!");
-static_assert(offsetof(FBoneBlock, Link) == 0x000010, "Member 'FBoneBlock::Link' has a wrong offset!");
-
-// ScriptStruct KuroAnim.SpecialBoneShakeData
-// 0x0018 (0x0018 - 0x0000)
-struct FSpecialBoneShakeData final
-{
-public:
-	TArray<class FName>                           Groups;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         Influence;                                         // 0x0010(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShakeTime;                                         // 0x0014(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSpecialBoneShakeData) == 0x000008, "Wrong alignment on FSpecialBoneShakeData");
-static_assert(sizeof(FSpecialBoneShakeData) == 0x000018, "Wrong size on FSpecialBoneShakeData");
-static_assert(offsetof(FSpecialBoneShakeData, Groups) == 0x000000, "Member 'FSpecialBoneShakeData::Groups' has a wrong offset!");
-static_assert(offsetof(FSpecialBoneShakeData, Influence) == 0x000010, "Member 'FSpecialBoneShakeData::Influence' has a wrong offset!");
-static_assert(offsetof(FSpecialBoneShakeData, ShakeTime) == 0x000014, "Member 'FSpecialBoneShakeData::ShakeTime' has a wrong offset!");
-
-// ScriptStruct KuroAnim.SkeletonGroup
-// 0x0020 (0x0020 - 0x0000)
-struct FSkeletonGroup final
-{
-public:
-	TArray<struct FBoneBlock>                     Blocks;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FSpecialBoneShakeData>          SpeicalBoneShakeData;                              // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSkeletonGroup) == 0x000008, "Wrong alignment on FSkeletonGroup");
-static_assert(sizeof(FSkeletonGroup) == 0x000020, "Wrong size on FSkeletonGroup");
-static_assert(offsetof(FSkeletonGroup, Blocks) == 0x000000, "Member 'FSkeletonGroup::Blocks' has a wrong offset!");
-static_assert(offsetof(FSkeletonGroup, SpeicalBoneShakeData) == 0x000010, "Member 'FSkeletonGroup::SpeicalBoneShakeData' has a wrong offset!");
-
-// ScriptStruct KuroAnim.HitBones
-// 0x0010 (0x0010 - 0x0000)
-struct FHitBones final
-{
-public:
-	TArray<class FName>                           Bones;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FHitBones) == 0x000008, "Wrong alignment on FHitBones");
-static_assert(sizeof(FHitBones) == 0x000010, "Wrong size on FHitBones");
-static_assert(offsetof(FHitBones, Bones) == 0x000000, "Member 'FHitBones::Bones' has a wrong offset!");
-
-// ScriptStruct KuroAnim.AnimNode_Feedback
-// 0x0190 (0x0260 - 0x00D0)
-struct FAnimNode_Feedback final : public FAnimNode_SkeletalControlBase
-{
-public:
-	struct FSkeletonGroup                         SkeletonBlockInfo;                                 // 0x00D0(0x0020)(Edit, NativeAccessSpecifierPublic)
-	float                                         DeltaTime;                                         // 0x00F0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UnitTime;                                          // 0x00F4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Hit;                                               // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          NotEffectToChild;                                  // 0x00F9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_FA[0x2];                                       // 0x00FA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ShakeRate;                                         // 0x00FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FHitBones                              HitBoneNames;                                      // 0x0100(0x0010)(Edit, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            Curve;                                             // 0x0110(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDebug;                                            // 0x0118(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_119[0x147];                                    // 0x0119(0x0147)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FAnimNode_Feedback) == 0x000008, "Wrong alignment on FAnimNode_Feedback");
-static_assert(sizeof(FAnimNode_Feedback) == 0x000260, "Wrong size on FAnimNode_Feedback");
-static_assert(offsetof(FAnimNode_Feedback, SkeletonBlockInfo) == 0x0000D0, "Member 'FAnimNode_Feedback::SkeletonBlockInfo' has a wrong offset!");
-static_assert(offsetof(FAnimNode_Feedback, DeltaTime) == 0x0000F0, "Member 'FAnimNode_Feedback::DeltaTime' has a wrong offset!");
-static_assert(offsetof(FAnimNode_Feedback, UnitTime) == 0x0000F4, "Member 'FAnimNode_Feedback::UnitTime' has a wrong offset!");
-static_assert(offsetof(FAnimNode_Feedback, Hit) == 0x0000F8, "Member 'FAnimNode_Feedback::Hit' has a wrong offset!");
-static_assert(offsetof(FAnimNode_Feedback, NotEffectToChild) == 0x0000F9, "Member 'FAnimNode_Feedback::NotEffectToChild' has a wrong offset!");
-static_assert(offsetof(FAnimNode_Feedback, ShakeRate) == 0x0000FC, "Member 'FAnimNode_Feedback::ShakeRate' has a wrong offset!");
-static_assert(offsetof(FAnimNode_Feedback, HitBoneNames) == 0x000100, "Member 'FAnimNode_Feedback::HitBoneNames' has a wrong offset!");
-static_assert(offsetof(FAnimNode_Feedback, Curve) == 0x000110, "Member 'FAnimNode_Feedback::Curve' has a wrong offset!");
-static_assert(offsetof(FAnimNode_Feedback, bDebug) == 0x000118, "Member 'FAnimNode_Feedback::bDebug' has a wrong offset!");
 
 // ScriptStruct KuroAnim.AnimNode_FeedbackRotate
 // 0x0238 (0x0308 - 0x00D0)

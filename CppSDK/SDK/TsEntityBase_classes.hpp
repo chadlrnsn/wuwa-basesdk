@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsEntityBase.TsEntityBase_C
-// 0x0018 (0x02C8 - 0x02B0)
+// 0x0018 (0x02D0 - 0x02B8)
 class ATsEntityBase_C final : public AKuroEffectActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	int32                                         Id;                                                // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	int32                                         Id;                                                // 0x02C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
 	void EditorInit();
@@ -41,10 +41,10 @@ public:
 	}
 };
 static_assert(alignof(ATsEntityBase_C) == 0x000008, "Wrong alignment on ATsEntityBase_C");
-static_assert(sizeof(ATsEntityBase_C) == 0x0002C8, "Wrong size on ATsEntityBase_C");
-static_assert(offsetof(ATsEntityBase_C, UberGraphFrame) == 0x0002B0, "Member 'ATsEntityBase_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsEntityBase_C, DefaultSceneRoot) == 0x0002B8, "Member 'ATsEntityBase_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ATsEntityBase_C, Id) == 0x0002C0, "Member 'ATsEntityBase_C::Id' has a wrong offset!");
+static_assert(sizeof(ATsEntityBase_C) == 0x0002D0, "Wrong size on ATsEntityBase_C");
+static_assert(offsetof(ATsEntityBase_C, UberGraphFrame) == 0x0002B8, "Member 'ATsEntityBase_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ATsEntityBase_C, DefaultSceneRoot) == 0x0002C0, "Member 'ATsEntityBase_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ATsEntityBase_C, Id) == 0x0002C8, "Member 'ATsEntityBase_C::Id' has a wrong offset!");
 
 }
 

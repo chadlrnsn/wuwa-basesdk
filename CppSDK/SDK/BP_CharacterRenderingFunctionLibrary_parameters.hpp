@@ -474,6 +474,29 @@ static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_RemoveMaterialCont
 static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_RemoveMaterialControllerDataGroup_MeshComponent, CallFunc_GetComponentByClass_ReturnValue) == 0x000028, "Member 'BP_CharacterRenderingFunctionLibrary_C_RemoveMaterialControllerDataGroup_MeshComponent::CallFunc_GetComponentByClass_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_RemoveMaterialControllerDataGroup_MeshComponent, CallFunc_IsValid_ReturnValue) == 0x000030, "Member 'BP_CharacterRenderingFunctionLibrary_C_RemoveMaterialControllerDataGroup_MeshComponent::CallFunc_IsValid_ReturnValue' has a wrong offset!");
 
+// Function BP_CharacterRenderingFunctionLibrary.BP_CharacterRenderingFunctionLibrary_C.SetNiagaraSkeletalMeshSimpleNPC
+// 0x0040 (0x0040 - 0x0000)
+struct BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC final
+{
+public:
+	class UNiagaraComponent*                      NiagaraComponen;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 ParamName;                                         // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        CallFunc_GetAttachParent_ReturnValue;              // 0x0020(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetOwner_ReturnValue;                     // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UChildActorComponent*                   CallFunc_GetComponentByClass_ReturnValue;          // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 CallFunc_GetComponentByClass_ReturnValue_1;        // 0x0038(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC) == 0x000008, "Wrong alignment on BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC");
+static_assert(sizeof(BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC) == 0x000040, "Wrong size on BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC");
+static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC, NiagaraComponen) == 0x000000, "Member 'BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC::NiagaraComponen' has a wrong offset!");
+static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC, ParamName) == 0x000008, "Member 'BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC::ParamName' has a wrong offset!");
+static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC, __WorldContext) == 0x000018, "Member 'BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC, CallFunc_GetAttachParent_ReturnValue) == 0x000020, "Member 'BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC::CallFunc_GetAttachParent_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC, CallFunc_GetOwner_ReturnValue) == 0x000028, "Member 'BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC::CallFunc_GetOwner_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC, CallFunc_GetComponentByClass_ReturnValue) == 0x000030, "Member 'BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC::CallFunc_GetComponentByClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC, CallFunc_GetComponentByClass_ReturnValue_1) == 0x000038, "Member 'BP_CharacterRenderingFunctionLibrary_C_SetNiagaraSkeletalMeshSimpleNPC::CallFunc_GetComponentByClass_ReturnValue_1' has a wrong offset!");
+
 // Function BP_CharacterRenderingFunctionLibrary.BP_CharacterRenderingFunctionLibrary_C.ApplyMaterialParems
 // 0x01F8 (0x01F8 - 0x0000)
 struct BP_CharacterRenderingFunctionLibrary_C_ApplyMaterialParems final

@@ -27,8 +27,8 @@ public:
 	bool                                          DebugMode;                                         // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 
 public:
-	void ExecuteUbergraph_TsTaskQueryFleeLocation(int32 EntryPoint);
 	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ExecuteUbergraph_TsTaskQueryFleeLocation(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

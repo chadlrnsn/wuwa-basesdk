@@ -147,17 +147,21 @@ static_assert(sizeof(BP_KuroMasterSeqEvent_C_U_8_Logo) == 0x000004, "Wrong size 
 static_assert(offsetof(BP_KuroMasterSeqEvent_C_U_8_Logo, Time) == 0x000000, "Member 'BP_KuroMasterSeqEvent_C_U_8_Logo::Time' has a wrong offset!");
 
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.>:„Èþ
-// 0x0020 (0x0020 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct BP_KuroMasterSeqEvent_C______ final
 {
 public:
 	class FString                                 MaleAssetPath;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 FemaleAssetPath;                                   // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 MaleSpineName;                                     // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 FemaleSpineName;                                   // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_KuroMasterSeqEvent_C______) == 0x000008, "Wrong alignment on BP_KuroMasterSeqEvent_C______");
-static_assert(sizeof(BP_KuroMasterSeqEvent_C______) == 0x000020, "Wrong size on BP_KuroMasterSeqEvent_C______");
+static_assert(sizeof(BP_KuroMasterSeqEvent_C______) == 0x000040, "Wrong size on BP_KuroMasterSeqEvent_C______");
 static_assert(offsetof(BP_KuroMasterSeqEvent_C______, MaleAssetPath) == 0x000000, "Member 'BP_KuroMasterSeqEvent_C______::MaleAssetPath' has a wrong offset!");
 static_assert(offsetof(BP_KuroMasterSeqEvent_C______, FemaleAssetPath) == 0x000010, "Member 'BP_KuroMasterSeqEvent_C______::FemaleAssetPath' has a wrong offset!");
+static_assert(offsetof(BP_KuroMasterSeqEvent_C______, MaleSpineName) == 0x000020, "Member 'BP_KuroMasterSeqEvent_C______::MaleSpineName' has a wrong offset!");
+static_assert(offsetof(BP_KuroMasterSeqEvent_C______, FemaleSpineName) == 0x000030, "Member 'BP_KuroMasterSeqEvent_C______::FemaleSpineName' has a wrong offset!");
 
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.­>„Èþ¨;
 // 0x0010 (0x0010 - 0x0000)

@@ -17,9 +17,12 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelPostProcess.EffectModelPostProcess_C
-// 0x0000 (0x24E8 - 0x24E8)
+// 0x0008 (0x24F8 - 0x24F0)
 class UEffectModelPostProcess_C final : public UEffectModelPostProcess
 {
+public:
+	bool                                          VisibleForProtoPlayer;                             // 0x24F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -31,7 +34,8 @@ public:
 	}
 };
 static_assert(alignof(UEffectModelPostProcess_C) == 0x000008, "Wrong alignment on UEffectModelPostProcess_C");
-static_assert(sizeof(UEffectModelPostProcess_C) == 0x0024E8, "Wrong size on UEffectModelPostProcess_C");
+static_assert(sizeof(UEffectModelPostProcess_C) == 0x0024F8, "Wrong size on UEffectModelPostProcess_C");
+static_assert(offsetof(UEffectModelPostProcess_C, VisibleForProtoPlayer) == 0x0024F0, "Member 'UEffectModelPostProcess_C::VisibleForProtoPlayer' has a wrong offset!");
 
 }
 

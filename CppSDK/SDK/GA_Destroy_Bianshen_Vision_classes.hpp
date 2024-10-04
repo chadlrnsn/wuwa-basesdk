@@ -35,20 +35,20 @@ public:
 	bool                                          ____0;                                             // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_GA_Destroy_Bianshen_Vision(int32 EntryPoint);
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
-	void EventReceived_18B59F5945020DB23C42FD88740B0A0F(const struct FGameplayEventData& Payload);
-	void EventReceived_18B59F5945020DB23C42FD881A98D764(const struct FGameplayEventData& Payload);
-	void Added_21071CB943CD992BF8EFD6A3567B001E(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A3CA2D8247(const struct FGameplayTag& Tag);
-	void OnCompleted_5D118C384AE61F1C80292E81E2A60EB1();
-	void OnBlendOut_5D118C384AE61F1C80292E81E2A60EB1();
-	void OnInterrupted_5D118C384AE61F1C80292E81E2A60EB1();
-	void OnCancelled_5D118C384AE61F1C80292E81E2A60EB1();
-	void OnTick_5D118C384AE61F1C80292E81E2A60EB1();
-	void _______3();
 	void _______s___();
+	void _______3();
+	void OnTick_5D118C384AE61F1C80292E81E2A60EB1();
+	void OnCancelled_5D118C384AE61F1C80292E81E2A60EB1();
+	void OnInterrupted_5D118C384AE61F1C80292E81E2A60EB1();
+	void OnBlendOut_5D118C384AE61F1C80292E81E2A60EB1();
+	void OnCompleted_5D118C384AE61F1C80292E81E2A60EB1();
+	void Added_21071CB943CD992BF8EFD6A3CA2D8247(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A3567B001E(const struct FGameplayTag& Tag);
+	void EventReceived_18B59F5945020DB23C42FD881A98D764(const struct FGameplayEventData& Payload);
+	void EventReceived_18B59F5945020DB23C42FD88740B0A0F(const struct FGameplayEventData& Payload);
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_Destroy_Bianshen_Vision(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

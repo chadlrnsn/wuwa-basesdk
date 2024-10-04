@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "TASdkPlugin_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "TASdkPlugin_structs.hpp"
 
 
 namespace SDK

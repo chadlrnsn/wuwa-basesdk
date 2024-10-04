@@ -10,13 +10,98 @@
 
 #include "Basic.hpp"
 
-#include "EMovementDirection_structs.hpp"
 #include "Engine_structs.hpp"
+#include "EMovementDirection_structs.hpp"
 #include "KuroAnim_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function ABP_VisionCommon.ABP_VisionCommon_C.HitFk
+// 0x0020 (0x0020 - 0x0000)
+struct ABP_VisionCommon_C_HitFk final
+{
+public:
+	struct FPoseLink                              InPose;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+	struct FPoseLink                              HitFk_0;                                           // 0x0010(0x0010)(Parm, OutParm, NoDestructor)
+};
+static_assert(alignof(ABP_VisionCommon_C_HitFk) == 0x000008, "Wrong alignment on ABP_VisionCommon_C_HitFk");
+static_assert(sizeof(ABP_VisionCommon_C_HitFk) == 0x000020, "Wrong size on ABP_VisionCommon_C_HitFk");
+static_assert(offsetof(ABP_VisionCommon_C_HitFk, InPose) == 0x000000, "Member 'ABP_VisionCommon_C_HitFk::InPose' has a wrong offset!");
+static_assert(offsetof(ABP_VisionCommon_C_HitFk, HitFk_0) == 0x000010, "Member 'ABP_VisionCommon_C_HitFk::HitFk_0' has a wrong offset!");
+
+// Function ABP_VisionCommon.ABP_VisionCommon_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_VisionCommon_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+static_assert(alignof(ABP_VisionCommon_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_VisionCommon_C_AnimGraph");
+static_assert(sizeof(ABP_VisionCommon_C_AnimGraph) == 0x000010, "Wrong size on ABP_VisionCommon_C_AnimGraph");
+static_assert(offsetof(ABP_VisionCommon_C_AnimGraph, AnimGraph_0) == 0x000000, "Member 'ABP_VisionCommon_C_AnimGraph::AnimGraph_0' has a wrong offset!");
+
+// Function ABP_VisionCommon.ABP_VisionCommon_C.û¨¶ô°
+// 0x0002 (0x0002 - 0x0000)
+struct ABP_VisionCommon_C_______ final
+{
+public:
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EMovementDirection                            CallFunc_GetMonsterMoveDirection_ReturnValue;      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(ABP_VisionCommon_C_______) == 0x000001, "Wrong alignment on ABP_VisionCommon_C_______");
+static_assert(sizeof(ABP_VisionCommon_C_______) == 0x000002, "Wrong size on ABP_VisionCommon_C_______");
+static_assert(offsetof(ABP_VisionCommon_C_______, K2Node_SwitchEnum_CmpSuccess) == 0x000000, "Member 'ABP_VisionCommon_C_______::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_GetMonsterMoveDirection_ReturnValue) == 0x000001, "Member 'ABP_VisionCommon_C_______::CallFunc_GetMonsterMoveDirection_ReturnValue' has a wrong offset!");
+
+// Function ABP_VisionCommon.ABP_VisionCommon_C.×û¶ô°
+// 0x0024 (0x0024 - 0x0000)
+struct ABP_VisionCommon_C________0 final
+{
+public:
+	float                                         CallFunc_GetToughDecreaseValue_ReturnValue;        // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_GetBeHitBone_ReturnValue;                 // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchName_CmpSuccess;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MapRangeClamped_ReturnValue;              // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_IntFloat_ReturnValue;            // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(ABP_VisionCommon_C_______) == 0x000004, "Wrong alignment on ABP_VisionCommon_C_______");
+static_assert(sizeof(ABP_VisionCommon_C_______) == 0x000024, "Wrong size on ABP_VisionCommon_C_______");
+static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_GetToughDecreaseValue_ReturnValue) == 0x000000, "Member 'ABP_VisionCommon_C_______::CallFunc_GetToughDecreaseValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_GetBeHitBone_ReturnValue) == 0x000004, "Member 'ABP_VisionCommon_C_______::CallFunc_GetBeHitBone_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_Array_IsValidIndex_ReturnValue) == 0x000010, "Member 'ABP_VisionCommon_C_______::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_VisionCommon_C_______, K2Node_SwitchName_CmpSuccess) == 0x000011, "Member 'ABP_VisionCommon_C_______::K2Node_SwitchName_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_Array_Add_ReturnValue) == 0x000014, "Member 'ABP_VisionCommon_C_______::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_MapRangeClamped_ReturnValue) == 0x000018, "Member 'ABP_VisionCommon_C_______::CallFunc_MapRangeClamped_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_Multiply_IntFloat_ReturnValue) == 0x00001C, "Member 'ABP_VisionCommon_C_______::CallFunc_Multiply_IntFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000020, "Member 'ABP_VisionCommon_C_______::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+
+// Function ABP_VisionCommon.ABP_VisionCommon_C.BlueprintUpdateAnimation
+// 0x0004 (0x0004 - 0x0000)
+struct ABP_VisionCommon_C_BlueprintUpdateAnimation final
+{
+public:
+	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(ABP_VisionCommon_C_BlueprintUpdateAnimation) == 0x000004, "Wrong alignment on ABP_VisionCommon_C_BlueprintUpdateAnimation");
+static_assert(sizeof(ABP_VisionCommon_C_BlueprintUpdateAnimation) == 0x000004, "Wrong size on ABP_VisionCommon_C_BlueprintUpdateAnimation");
+static_assert(offsetof(ABP_VisionCommon_C_BlueprintUpdateAnimation, DeltaTimeX) == 0x000000, "Member 'ABP_VisionCommon_C_BlueprintUpdateAnimation::DeltaTimeX' has a wrong offset!");
+
+// Function ABP_VisionCommon.ABP_VisionCommon_C.PlayShakeFX
+// 0x0004 (0x0004 - 0x0000)
+struct ABP_VisionCommon_C_PlayShakeFX final
+{
+public:
+	int32                                         Section;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(ABP_VisionCommon_C_PlayShakeFX) == 0x000004, "Wrong alignment on ABP_VisionCommon_C_PlayShakeFX");
+static_assert(sizeof(ABP_VisionCommon_C_PlayShakeFX) == 0x000004, "Wrong size on ABP_VisionCommon_C_PlayShakeFX");
+static_assert(offsetof(ABP_VisionCommon_C_PlayShakeFX, Section) == 0x000000, "Member 'ABP_VisionCommon_C_PlayShakeFX::Section' has a wrong offset!");
 
 // Function ABP_VisionCommon.ABP_VisionCommon_C.ExecuteUbergraph_ABP_VisionCommon
 // 0x0088 (0x0088 - 0x0000)
@@ -119,91 +204,6 @@ static_assert(offsetof(ABP_VisionCommon_C_ExecuteUbergraph_ABP_VisionCommon, K2N
 static_assert(offsetof(ABP_VisionCommon_C_ExecuteUbergraph_ABP_VisionCommon, K2Node_DynamicCast_bSuccess_1) == 0x000080, "Member 'ABP_VisionCommon_C_ExecuteUbergraph_ABP_VisionCommon::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
 static_assert(offsetof(ABP_VisionCommon_C_ExecuteUbergraph_ABP_VisionCommon, CallFunc_EqualEqual_ByteByte_ReturnValue_12) == 0x000081, "Member 'ABP_VisionCommon_C_ExecuteUbergraph_ABP_VisionCommon::CallFunc_EqualEqual_ByteByte_ReturnValue_12' has a wrong offset!");
 static_assert(offsetof(ABP_VisionCommon_C_ExecuteUbergraph_ABP_VisionCommon, CallFunc_IsValid_ReturnValue_2) == 0x000082, "Member 'ABP_VisionCommon_C_ExecuteUbergraph_ABP_VisionCommon::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
-
-// Function ABP_VisionCommon.ABP_VisionCommon_C.PlayShakeFX
-// 0x0004 (0x0004 - 0x0000)
-struct ABP_VisionCommon_C_PlayShakeFX final
-{
-public:
-	int32                                         Section;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(ABP_VisionCommon_C_PlayShakeFX) == 0x000004, "Wrong alignment on ABP_VisionCommon_C_PlayShakeFX");
-static_assert(sizeof(ABP_VisionCommon_C_PlayShakeFX) == 0x000004, "Wrong size on ABP_VisionCommon_C_PlayShakeFX");
-static_assert(offsetof(ABP_VisionCommon_C_PlayShakeFX, Section) == 0x000000, "Member 'ABP_VisionCommon_C_PlayShakeFX::Section' has a wrong offset!");
-
-// Function ABP_VisionCommon.ABP_VisionCommon_C.BlueprintUpdateAnimation
-// 0x0004 (0x0004 - 0x0000)
-struct ABP_VisionCommon_C_BlueprintUpdateAnimation final
-{
-public:
-	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(ABP_VisionCommon_C_BlueprintUpdateAnimation) == 0x000004, "Wrong alignment on ABP_VisionCommon_C_BlueprintUpdateAnimation");
-static_assert(sizeof(ABP_VisionCommon_C_BlueprintUpdateAnimation) == 0x000004, "Wrong size on ABP_VisionCommon_C_BlueprintUpdateAnimation");
-static_assert(offsetof(ABP_VisionCommon_C_BlueprintUpdateAnimation, DeltaTimeX) == 0x000000, "Member 'ABP_VisionCommon_C_BlueprintUpdateAnimation::DeltaTimeX' has a wrong offset!");
-
-// Function ABP_VisionCommon.ABP_VisionCommon_C.×û¶ô°
-// 0x0024 (0x0024 - 0x0000)
-struct ABP_VisionCommon_C________0 final
-{
-public:
-	float                                         CallFunc_GetToughDecreaseValue_ReturnValue;        // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_GetBeHitBone_ReturnValue;                 // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchName_CmpSuccess;                      // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MapRangeClamped_ReturnValue;              // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_IntFloat_ReturnValue;            // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(ABP_VisionCommon_C_______) == 0x000004, "Wrong alignment on ABP_VisionCommon_C_______");
-static_assert(sizeof(ABP_VisionCommon_C_______) == 0x000024, "Wrong size on ABP_VisionCommon_C_______");
-static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_GetToughDecreaseValue_ReturnValue) == 0x000000, "Member 'ABP_VisionCommon_C_______::CallFunc_GetToughDecreaseValue_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_GetBeHitBone_ReturnValue) == 0x000004, "Member 'ABP_VisionCommon_C_______::CallFunc_GetBeHitBone_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_Array_IsValidIndex_ReturnValue) == 0x000010, "Member 'ABP_VisionCommon_C_______::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_VisionCommon_C_______, K2Node_SwitchName_CmpSuccess) == 0x000011, "Member 'ABP_VisionCommon_C_______::K2Node_SwitchName_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_Array_Add_ReturnValue) == 0x000014, "Member 'ABP_VisionCommon_C_______::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_MapRangeClamped_ReturnValue) == 0x000018, "Member 'ABP_VisionCommon_C_______::CallFunc_MapRangeClamped_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_Multiply_IntFloat_ReturnValue) == 0x00001C, "Member 'ABP_VisionCommon_C_______::CallFunc_Multiply_IntFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000020, "Member 'ABP_VisionCommon_C_______::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
-
-// Function ABP_VisionCommon.ABP_VisionCommon_C.û¨¶ô°
-// 0x0002 (0x0002 - 0x0000)
-struct ABP_VisionCommon_C_______ final
-{
-public:
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EMovementDirection                            CallFunc_GetMonsterMoveDirection_ReturnValue;      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(ABP_VisionCommon_C_______) == 0x000001, "Wrong alignment on ABP_VisionCommon_C_______");
-static_assert(sizeof(ABP_VisionCommon_C_______) == 0x000002, "Wrong size on ABP_VisionCommon_C_______");
-static_assert(offsetof(ABP_VisionCommon_C_______, K2Node_SwitchEnum_CmpSuccess) == 0x000000, "Member 'ABP_VisionCommon_C_______::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(ABP_VisionCommon_C_______, CallFunc_GetMonsterMoveDirection_ReturnValue) == 0x000001, "Member 'ABP_VisionCommon_C_______::CallFunc_GetMonsterMoveDirection_ReturnValue' has a wrong offset!");
-
-// Function ABP_VisionCommon.ABP_VisionCommon_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_VisionCommon_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-static_assert(alignof(ABP_VisionCommon_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_VisionCommon_C_AnimGraph");
-static_assert(sizeof(ABP_VisionCommon_C_AnimGraph) == 0x000010, "Wrong size on ABP_VisionCommon_C_AnimGraph");
-static_assert(offsetof(ABP_VisionCommon_C_AnimGraph, AnimGraph_0) == 0x000000, "Member 'ABP_VisionCommon_C_AnimGraph::AnimGraph_0' has a wrong offset!");
-
-// Function ABP_VisionCommon.ABP_VisionCommon_C.HitFk
-// 0x0020 (0x0020 - 0x0000)
-struct ABP_VisionCommon_C_HitFk final
-{
-public:
-	struct FPoseLink                              InPose;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-	struct FPoseLink                              HitFk_0;                                           // 0x0010(0x0010)(Parm, OutParm, NoDestructor)
-};
-static_assert(alignof(ABP_VisionCommon_C_HitFk) == 0x000008, "Wrong alignment on ABP_VisionCommon_C_HitFk");
-static_assert(sizeof(ABP_VisionCommon_C_HitFk) == 0x000020, "Wrong size on ABP_VisionCommon_C_HitFk");
-static_assert(offsetof(ABP_VisionCommon_C_HitFk, InPose) == 0x000000, "Member 'ABP_VisionCommon_C_HitFk::InPose' has a wrong offset!");
-static_assert(offsetof(ABP_VisionCommon_C_HitFk, HitFk_0) == 0x000010, "Member 'ABP_VisionCommon_C_HitFk::HitFk_0' has a wrong offset!");
 
 }
 

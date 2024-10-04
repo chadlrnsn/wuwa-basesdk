@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SHolographicData.SHolographicData
-// 0x0050 (0x0050 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct FSHolographicData final
 {
 public:
@@ -33,9 +33,10 @@ public:
 	bool                                          bActive_27_2CF94B2C45421EB008661E9B70C1D57E;       // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture2D*                             Tex_39_86E74FFA47C656007301EE82E1891D0D;           // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UTexture2D*                             BaseTex_44_F260BD8544218E39F821B6948F3B44D7;       // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSHolographicData) == 0x000008, "Wrong alignment on FSHolographicData");
-static_assert(sizeof(FSHolographicData) == 0x000050, "Wrong size on FSHolographicData");
+static_assert(sizeof(FSHolographicData) == 0x000058, "Wrong size on FSHolographicData");
 static_assert(offsetof(FSHolographicData, ReplaceMaterial_9_B354D5EA4447D05E67D918A7744632B1) == 0x000000, "Member 'FSHolographicData::ReplaceMaterial_9_B354D5EA4447D05E67D918A7744632B1' has a wrong offset!");
 static_assert(offsetof(FSHolographicData, MobileUseDifferentMaterial_31_5905E221465EFC42C78F7D811D5BA6D7) == 0x000008, "Member 'FSHolographicData::MobileUseDifferentMaterial_31_5905E221465EFC42C78F7D811D5BA6D7' has a wrong offset!");
 static_assert(offsetof(FSHolographicData, ReplaceMaterialMobile_33_0AF68EE141764D319C90789212821796) == 0x000010, "Member 'FSHolographicData::ReplaceMaterialMobile_33_0AF68EE141764D319C90789212821796' has a wrong offset!");
@@ -44,6 +45,7 @@ static_assert(offsetof(FSHolographicData, CustomFloats_20_BEFE4A72466DBBF31C7BE8
 static_assert(offsetof(FSHolographicData, CustomColors_23_D46E551F4EE49A33813738920A17A1A1) == 0x000030, "Member 'FSHolographicData::CustomColors_23_D46E551F4EE49A33813738920A17A1A1' has a wrong offset!");
 static_assert(offsetof(FSHolographicData, bActive_27_2CF94B2C45421EB008661E9B70C1D57E) == 0x000040, "Member 'FSHolographicData::bActive_27_2CF94B2C45421EB008661E9B70C1D57E' has a wrong offset!");
 static_assert(offsetof(FSHolographicData, Tex_39_86E74FFA47C656007301EE82E1891D0D) == 0x000048, "Member 'FSHolographicData::Tex_39_86E74FFA47C656007301EE82E1891D0D' has a wrong offset!");
+static_assert(offsetof(FSHolographicData, BaseTex_44_F260BD8544218E39F821B6948F3B44D7) == 0x000050, "Member 'FSHolographicData::BaseTex_44_F260BD8544218E39F821B6948F3B44D7' has a wrong offset!");
 
 }
 

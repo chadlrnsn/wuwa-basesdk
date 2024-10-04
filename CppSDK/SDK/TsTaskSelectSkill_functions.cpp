@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function TsTaskSelectSkill.TsTaskSelectSkill_C.ExecuteUbergraph_TsTaskSelectSkill
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsTaskSelectSkill_C::ExecuteUbergraph_TsTaskSelectSkill(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskSelectSkill_C", "ExecuteUbergraph_TsTaskSelectSkill");
-
-	Params::TsTaskSelectSkill_C_ExecuteUbergraph_TsTaskSelectSkill Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function TsTaskSelectSkill.TsTaskSelectSkill_C.ReceiveTickAI
 // (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -61,6 +36,31 @@ void UTsTaskSelectSkill_C::ReceiveTickAI(class AAIController* OwnerController, c
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
 	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskSelectSkill.TsTaskSelectSkill_C.ExecuteUbergraph_TsTaskSelectSkill
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsTaskSelectSkill_C::ExecuteUbergraph_TsTaskSelectSkill(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskSelectSkill_C", "ExecuteUbergraph_TsTaskSelectSkill");
+
+	Params::TsTaskSelectSkill_C_ExecuteUbergraph_TsTaskSelectSkill Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

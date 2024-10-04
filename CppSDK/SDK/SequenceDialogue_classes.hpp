@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
-#include "SequenceDialogue_structs.hpp"
 #include "MovieScene_classes.hpp"
+#include "SequenceDialogue_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK
@@ -36,31 +36,6 @@ public:
 static_assert(alignof(UMovieSceneAutoTransformSection) == 0x000008, "Wrong alignment on UMovieSceneAutoTransformSection");
 static_assert(sizeof(UMovieSceneAutoTransformSection) == 0x0000F8, "Wrong size on UMovieSceneAutoTransformSection");
 
-// Class SequenceDialogue.MovieSceneDialogueTrack
-// 0x0020 (0x00A0 - 0x0080)
-class UMovieSceneDialogueTrack final : public UMovieSceneNameableTrack
-{
-public:
-	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	ELanguageAudio                                LanguageType;                                      // 0x0098(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneDialogueTrack">();
-	}
-	static class UMovieSceneDialogueTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneDialogueTrack>();
-	}
-};
-static_assert(alignof(UMovieSceneDialogueTrack) == 0x000008, "Wrong alignment on UMovieSceneDialogueTrack");
-static_assert(sizeof(UMovieSceneDialogueTrack) == 0x0000A0, "Wrong size on UMovieSceneDialogueTrack");
-static_assert(offsetof(UMovieSceneDialogueTrack, Sections) == 0x000088, "Member 'UMovieSceneDialogueTrack::Sections' has a wrong offset!");
-static_assert(offsetof(UMovieSceneDialogueTrack, LanguageType) == 0x000098, "Member 'UMovieSceneDialogueTrack::LanguageType' has a wrong offset!");
-
 // Class SequenceDialogue.MovieSceneAutoTransformTrack
 // 0x0018 (0x0098 - 0x0080)
 class UMovieSceneAutoTransformTrack final : public UMovieSceneNameableTrack
@@ -82,28 +57,6 @@ public:
 static_assert(alignof(UMovieSceneAutoTransformTrack) == 0x000008, "Wrong alignment on UMovieSceneAutoTransformTrack");
 static_assert(sizeof(UMovieSceneAutoTransformTrack) == 0x000098, "Wrong size on UMovieSceneAutoTransformTrack");
 static_assert(offsetof(UMovieSceneAutoTransformTrack, Sections) == 0x000088, "Member 'UMovieSceneAutoTransformTrack::Sections' has a wrong offset!");
-
-// Class SequenceDialogue.MovieSceneDialogueAudioTrack
-// 0x0018 (0x0098 - 0x0080)
-class UMovieSceneDialogueAudioTrack final : public UMovieSceneNameableTrack
-{
-public:
-	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneDialogueAudioTrack">();
-	}
-	static class UMovieSceneDialogueAudioTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneDialogueAudioTrack>();
-	}
-};
-static_assert(alignof(UMovieSceneDialogueAudioTrack) == 0x000008, "Wrong alignment on UMovieSceneDialogueAudioTrack");
-static_assert(sizeof(UMovieSceneDialogueAudioTrack) == 0x000098, "Wrong size on UMovieSceneDialogueAudioTrack");
-static_assert(offsetof(UMovieSceneDialogueAudioTrack, Sections) == 0x000088, "Member 'UMovieSceneDialogueAudioTrack::Sections' has a wrong offset!");
 
 // Class SequenceDialogue.MovieSceneDialogueAudioSection
 // 0x0018 (0x0110 - 0x00F8)
@@ -129,6 +82,28 @@ static_assert(sizeof(UMovieSceneDialogueAudioSection) == 0x000110, "Wrong size o
 static_assert(offsetof(UMovieSceneDialogueAudioSection, AudioKey) == 0x0000F8, "Member 'UMovieSceneDialogueAudioSection::AudioKey' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueAudioSection, AudioTransitionDuration) == 0x000108, "Member 'UMovieSceneDialogueAudioSection::AudioTransitionDuration' has a wrong offset!");
 
+// Class SequenceDialogue.MovieSceneDialogueAudioTrack
+// 0x0018 (0x0098 - 0x0080)
+class UMovieSceneDialogueAudioTrack final : public UMovieSceneNameableTrack
+{
+public:
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneDialogueAudioTrack">();
+	}
+	static class UMovieSceneDialogueAudioTrack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneDialogueAudioTrack>();
+	}
+};
+static_assert(alignof(UMovieSceneDialogueAudioTrack) == 0x000008, "Wrong alignment on UMovieSceneDialogueAudioTrack");
+static_assert(sizeof(UMovieSceneDialogueAudioTrack) == 0x000098, "Wrong size on UMovieSceneDialogueAudioTrack");
+static_assert(offsetof(UMovieSceneDialogueAudioTrack, Sections) == 0x000088, "Member 'UMovieSceneDialogueAudioTrack::Sections' has a wrong offset!");
+
 // Class SequenceDialogue.MovieSceneDialogueSection
 // 0x0088 (0x0180 - 0x00F8)
 class UMovieSceneDialogueSection final : public UMovieSceneSection
@@ -147,7 +122,8 @@ public:
 	int32                                         AudioDelay;                                        // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         AudioTransitionDuration;                           // 0x0178(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	ELanguageAudio                                LanguageType;                                      // 0x017C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          EnableGuardTime;                                   // 0x017D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_17E[0x2];                                      // 0x017E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -172,6 +148,7 @@ static_assert(offsetof(UMovieSceneDialogueSection, GuardTime) == 0x000170, "Memb
 static_assert(offsetof(UMovieSceneDialogueSection, AudioDelay) == 0x000174, "Member 'UMovieSceneDialogueSection::AudioDelay' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSection, AudioTransitionDuration) == 0x000178, "Member 'UMovieSceneDialogueSection::AudioTransitionDuration' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSection, LanguageType) == 0x00017C, "Member 'UMovieSceneDialogueSection::LanguageType' has a wrong offset!");
+static_assert(offsetof(UMovieSceneDialogueSection, EnableGuardTime) == 0x00017D, "Member 'UMovieSceneDialogueSection::EnableGuardTime' has a wrong offset!");
 
 // Class SequenceDialogue.MovieSceneDialogueStateSection
 // 0x0008 (0x0100 - 0x00F8)
@@ -218,7 +195,7 @@ static_assert(sizeof(UMovieSceneDialogueStateTrack) == 0x000098, "Wrong size on 
 static_assert(offsetof(UMovieSceneDialogueStateTrack, Sections) == 0x000088, "Member 'UMovieSceneDialogueStateTrack::Sections' has a wrong offset!");
 
 // Class SequenceDialogue.MovieSceneDialogueSubsystem
-// 0x0060 (0x0098 - 0x0038)
+// 0x0068 (0x00A0 - 0x0038)
 class UMovieSceneDialogueSubsystem final : public UWorldSubsystem
 {
 public:
@@ -228,7 +205,7 @@ public:
 	uint8                                         Pad_60[0x10];                                      // 0x0060(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 AutoTransformActor;                                // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMovieScene3DTransformTrack*            AutoTransformDataTrack;                            // 0x0078(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_80[0x18];                                      // 0x0080(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x20];                                      // 0x0080(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ShowDialogue(bool bShow, const class FText& DialogueID, const int32 GuardTime, const int32 AudioDelay, const int32 AudioTransitionDuration, const ELanguageAudio LanguageType);
@@ -246,11 +223,36 @@ public:
 	}
 };
 static_assert(alignof(UMovieSceneDialogueSubsystem) == 0x000008, "Wrong alignment on UMovieSceneDialogueSubsystem");
-static_assert(sizeof(UMovieSceneDialogueSubsystem) == 0x000098, "Wrong size on UMovieSceneDialogueSubsystem");
+static_assert(sizeof(UMovieSceneDialogueSubsystem) == 0x0000A0, "Wrong size on UMovieSceneDialogueSubsystem");
 static_assert(offsetof(UMovieSceneDialogueSubsystem, OnShowDialogue) == 0x000040, "Member 'UMovieSceneDialogueSubsystem::OnShowDialogue' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSubsystem, OnShowDialogueAudio) == 0x000050, "Member 'UMovieSceneDialogueSubsystem::OnShowDialogueAudio' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSubsystem, AutoTransformActor) == 0x000070, "Member 'UMovieSceneDialogueSubsystem::AutoTransformActor' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSubsystem, AutoTransformDataTrack) == 0x000078, "Member 'UMovieSceneDialogueSubsystem::AutoTransformDataTrack' has a wrong offset!");
+
+// Class SequenceDialogue.MovieSceneDialogueTrack
+// 0x0020 (0x00A0 - 0x0080)
+class UMovieSceneDialogueTrack final : public UMovieSceneNameableTrack
+{
+public:
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	ELanguageAudio                                LanguageType;                                      // 0x0098(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneDialogueTrack">();
+	}
+	static class UMovieSceneDialogueTrack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneDialogueTrack>();
+	}
+};
+static_assert(alignof(UMovieSceneDialogueTrack) == 0x000008, "Wrong alignment on UMovieSceneDialogueTrack");
+static_assert(sizeof(UMovieSceneDialogueTrack) == 0x0000A0, "Wrong size on UMovieSceneDialogueTrack");
+static_assert(offsetof(UMovieSceneDialogueTrack, Sections) == 0x000088, "Member 'UMovieSceneDialogueTrack::Sections' has a wrong offset!");
+static_assert(offsetof(UMovieSceneDialogueTrack, LanguageType) == 0x000098, "Member 'UMovieSceneDialogueTrack::LanguageType' has a wrong offset!");
 
 // Class SequenceDialogue.MovieSceneSeqAnimDataSection
 // 0x0020 (0x0118 - 0x00F8)

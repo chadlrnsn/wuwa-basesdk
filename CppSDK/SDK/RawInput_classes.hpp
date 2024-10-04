@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "RawInput_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "RawInput_structs.hpp"
 
 
 namespace SDK

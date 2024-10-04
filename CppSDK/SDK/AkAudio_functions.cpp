@@ -242,66 +242,6 @@ void UAkGameObject::SetRTPCValue(class UAkRtpc* RTPCValue, float Value, int32 In
 }
 
 
-// Function AkAudio.AkComponent.PostAkEventAndWaitForEnd
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UAkAudioEvent*                    AkEvent                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           In_EventName                                           (Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLatentActionInfo                LatentInfo                                             (Parm, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAkComponent::PostAkEventAndWaitForEnd(class UAkAudioEvent* AkEvent, const class FString& In_EventName, const struct FLatentActionInfo& LatentInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AkComponent", "PostAkEventAndWaitForEnd");
-
-	Params::AkComponent_PostAkEventAndWaitForEnd Parms{};
-
-	Parms.AkEvent = AkEvent;
-	Parms.In_EventName = std::move(In_EventName);
-	Parms.LatentInfo = std::move(LatentInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AkAudio.AkComponent.PostAssociatedAkEventAndWaitForEnd
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// struct FLatentActionInfo                LatentInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UAkComponent::PostAssociatedAkEventAndWaitForEnd(const struct FLatentActionInfo& LatentInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AkComponent", "PostAssociatedAkEventAndWaitForEnd");
-
-	Params::AkComponent_PostAssociatedAkEventAndWaitForEnd Parms{};
-
-	Parms.LatentInfo = std::move(LatentInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AkAudio.AkComponent.PostTrigger
 // (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
 // Parameters:
@@ -2228,6 +2168,25 @@ void UAkGameplayStatics::PostTrigger(class UAkTrigger* TriggerValue, class AActo
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AkAudio.AkGameplayStatics.ReloadAudioAssetData
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UAkGameplayStatics::ReloadAudioAssetData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("AkGameplayStatics", "ReloadAudioAssetData");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

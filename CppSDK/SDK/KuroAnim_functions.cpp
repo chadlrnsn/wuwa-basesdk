@@ -1817,53 +1817,28 @@ void UKuroAnimInstance::UpdateSkillMoveInfo(const float& DeltaTime, const struct
 }
 
 
-// Function KuroAnim.KuroTrackRecorder.GetMainGuid
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Function KuroAnim.KuroAnimLibrary.EndAnimNotifyStates
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGuid                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAnimInstance*                    AnimInstance                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FGuid UKuroTrackRecorder::GetMainGuid()
+void UKuroAnimLibrary::EndAnimNotifyStates(class UAnimInstance* AnimInstance)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroTrackRecorder", "GetMainGuid");
+		Func = StaticClass()->GetFunction("KuroAnimLibrary", "EndAnimNotifyStates");
 
-	Params::KuroTrackRecorder_GetMainGuid Parms{};
+	Params::KuroAnimLibrary_EndAnimNotifyStates Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroAnim.KuroTrackRecorder.GetShadow
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* UKuroTrackRecorder::GetShadow()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroTrackRecorder", "GetShadow");
-
-	Params::KuroTrackRecorder_GetShadow Parms{};
+	Parms.AnimInstance = AnimInstance;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -1957,28 +1932,53 @@ struct FRotator UKuroAnimMathLibrary::Quat_FindBetween(const struct FVector& V1,
 }
 
 
-// Function KuroAnim.KuroAnimLibrary.EndAnimNotifyStates
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function KuroAnim.KuroTrackRecorder.GetMainGuid
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UAnimInstance*                    AnimInstance                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGuid                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroAnimLibrary::EndAnimNotifyStates(class UAnimInstance* AnimInstance)
+struct FGuid UKuroTrackRecorder::GetMainGuid()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroAnimLibrary", "EndAnimNotifyStates");
+		Func = Class->GetFunction("KuroTrackRecorder", "GetMainGuid");
 
-	Params::KuroAnimLibrary_EndAnimNotifyStates Parms{};
-
-	Parms.AnimInstance = AnimInstance;
+	Params::KuroTrackRecorder_GetMainGuid Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroAnim.KuroTrackRecorder.GetShadow
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* UKuroTrackRecorder::GetShadow()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroTrackRecorder", "GetShadow");
+
+	Params::KuroTrackRecorder_GetShadow Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

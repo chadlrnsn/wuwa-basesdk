@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "SCameraModifier_Settings_structs.hpp"
-#include "SCameraModifier_Condition_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GA_Base_classes.hpp"
+#include "SCameraModifier_Condition_structs.hpp"
 
 
 namespace SDK
@@ -35,13 +35,13 @@ public:
 	TArray<struct FSCameraModifier_Condition>     Camera_Modifier_Contions;                          // 0x0698(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void ExecuteUbergraph_GA_Mingzhongzhigui_Vision(int32 EntryPoint);
-	void K2_ActivateAbility();
-	void OnCompleted_5D118C384AE61F1C80292E8140EF0AD9();
-	void OnBlendOut_5D118C384AE61F1C80292E8140EF0AD9();
-	void OnInterrupted_5D118C384AE61F1C80292E8140EF0AD9();
-	void OnCancelled_5D118C384AE61F1C80292E8140EF0AD9();
 	void OnTick_5D118C384AE61F1C80292E8140EF0AD9();
+	void OnCancelled_5D118C384AE61F1C80292E8140EF0AD9();
+	void OnInterrupted_5D118C384AE61F1C80292E8140EF0AD9();
+	void OnBlendOut_5D118C384AE61F1C80292E8140EF0AD9();
+	void OnCompleted_5D118C384AE61F1C80292E8140EF0AD9();
+	void K2_ActivateAbility();
+	void ExecuteUbergraph_GA_Mingzhongzhigui_Vision(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

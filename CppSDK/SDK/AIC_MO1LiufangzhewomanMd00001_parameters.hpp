@@ -14,6 +14,17 @@
 namespace SDK::Params
 {
 
+// Function AIC_MO1LiufangzhewomanMd00001.AIC_MO1LiufangzhewomanMd00001_C.Ùûª€ýÄ
+// 0x0001 (0x0001 - 0x0000)
+struct AIC_MO1LiufangzhewomanMd00001_C________1 final
+{
+public:
+	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(AIC_MO1LiufangzhewomanMd00001_C_______) == 0x000001, "Wrong alignment on AIC_MO1LiufangzhewomanMd00001_C_______");
+static_assert(sizeof(AIC_MO1LiufangzhewomanMd00001_C_______) == 0x000001, "Wrong size on AIC_MO1LiufangzhewomanMd00001_C_______");
+static_assert(offsetof(AIC_MO1LiufangzhewomanMd00001_C_______, bContent) == 0x000000, "Member 'AIC_MO1LiufangzhewomanMd00001_C_______::bContent' has a wrong offset!");
+
 // Function AIC_MO1LiufangzhewomanMd00001.AIC_MO1LiufangzhewomanMd00001_C.ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001
 // 0x0058 (0x0058 - 0x0000)
 struct AIC_MO1LiufangzhewomanMd00001_C_ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001 final
@@ -39,17 +50,6 @@ static_assert(offsetof(AIC_MO1LiufangzhewomanMd00001_C_ExecuteUbergraph_AIC_MO1L
 static_assert(offsetof(AIC_MO1LiufangzhewomanMd00001_C_ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001, K2Node_DynamicCast_AsTs_Base_Character) == 0x000040, "Member 'AIC_MO1LiufangzhewomanMd00001_C_ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
 static_assert(offsetof(AIC_MO1LiufangzhewomanMd00001_C_ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001, K2Node_DynamicCast_bSuccess) == 0x000048, "Member 'AIC_MO1LiufangzhewomanMd00001_C_ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 static_assert(offsetof(AIC_MO1LiufangzhewomanMd00001_C_ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001, CallFunc___AIC___ReturnValue) == 0x000050, "Member 'AIC_MO1LiufangzhewomanMd00001_C_ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001::CallFunc___AIC___ReturnValue' has a wrong offset!");
-
-// Function AIC_MO1LiufangzhewomanMd00001.AIC_MO1LiufangzhewomanMd00001_C.Ùûª€ýÄ
-// 0x0001 (0x0001 - 0x0000)
-struct AIC_MO1LiufangzhewomanMd00001_C________1 final
-{
-public:
-	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(AIC_MO1LiufangzhewomanMd00001_C_______) == 0x000001, "Wrong alignment on AIC_MO1LiufangzhewomanMd00001_C_______");
-static_assert(sizeof(AIC_MO1LiufangzhewomanMd00001_C_______) == 0x000001, "Wrong size on AIC_MO1LiufangzhewomanMd00001_C_______");
-static_assert(offsetof(AIC_MO1LiufangzhewomanMd00001_C_______, bContent) == 0x000000, "Member 'AIC_MO1LiufangzhewomanMd00001_C_______::bContent' has a wrong offset!");
 
 }
 

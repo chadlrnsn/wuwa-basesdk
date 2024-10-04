@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Synthesis_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Synthesis_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "AudioMixer_classes.hpp"
@@ -772,6 +772,66 @@ static_assert(alignof(USubmixEffectTapDelayPreset) == 0x000008, "Wrong alignment
 static_assert(sizeof(USubmixEffectTapDelayPreset) == 0x0000E0, "Wrong size on USubmixEffectTapDelayPreset");
 static_assert(offsetof(USubmixEffectTapDelayPreset, Settings) == 0x0000B0, "Member 'USubmixEffectTapDelayPreset::Settings' has a wrong offset!");
 
+// Class Synthesis.SynthKnob
+// 0x0330 (0x04A0 - 0x0170)
+class USynthKnob final : public UWidget
+{
+public:
+	float                                         Value;                                             // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StepSize;                                          // 0x0174(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MouseSpeed;                                        // 0x0178(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MouseFineTuneSpeed;                                // 0x017C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ShowTooltipInfo : 1;                               // 0x0180(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_181[0x7];                                      // 0x0181(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   ParameterName;                                     // 0x0188(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   ParameterUnits;                                    // 0x01A0(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             ValueDelegate;                                     // 0x01B8(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	struct FSynthKnobStyle                        WidgetStyle;                                       // 0x01E0(0x0258)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          Locked;                                            // 0x0438(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsFocusable;                                       // 0x0439(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_43A[0x6];                                      // 0x043A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	FMulticastInlineDelegateProperty_             OnMouseCaptureBegin;                               // 0x0440(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_             OnMouseCaptureEnd;                                 // 0x0450(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_             OnControllerCaptureBegin;                          // 0x0460(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_             OnControllerCaptureEnd;                            // 0x0470(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	FMulticastInlineDelegateProperty_             OnValueChanged;                                    // 0x0480(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_490[0x10];                                     // 0x0490(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetLocked(bool InValue);
+	void SetStepSize(float InValue);
+	void SetValue(float InValue);
+
+	float GetValue() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"SynthKnob">();
+	}
+	static class USynthKnob* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USynthKnob>();
+	}
+};
+static_assert(alignof(USynthKnob) == 0x000008, "Wrong alignment on USynthKnob");
+static_assert(sizeof(USynthKnob) == 0x0004A0, "Wrong size on USynthKnob");
+static_assert(offsetof(USynthKnob, Value) == 0x000170, "Member 'USynthKnob::Value' has a wrong offset!");
+static_assert(offsetof(USynthKnob, StepSize) == 0x000174, "Member 'USynthKnob::StepSize' has a wrong offset!");
+static_assert(offsetof(USynthKnob, MouseSpeed) == 0x000178, "Member 'USynthKnob::MouseSpeed' has a wrong offset!");
+static_assert(offsetof(USynthKnob, MouseFineTuneSpeed) == 0x00017C, "Member 'USynthKnob::MouseFineTuneSpeed' has a wrong offset!");
+static_assert(offsetof(USynthKnob, ParameterName) == 0x000188, "Member 'USynthKnob::ParameterName' has a wrong offset!");
+static_assert(offsetof(USynthKnob, ParameterUnits) == 0x0001A0, "Member 'USynthKnob::ParameterUnits' has a wrong offset!");
+static_assert(offsetof(USynthKnob, ValueDelegate) == 0x0001B8, "Member 'USynthKnob::ValueDelegate' has a wrong offset!");
+static_assert(offsetof(USynthKnob, WidgetStyle) == 0x0001E0, "Member 'USynthKnob::WidgetStyle' has a wrong offset!");
+static_assert(offsetof(USynthKnob, Locked) == 0x000438, "Member 'USynthKnob::Locked' has a wrong offset!");
+static_assert(offsetof(USynthKnob, IsFocusable) == 0x000439, "Member 'USynthKnob::IsFocusable' has a wrong offset!");
+static_assert(offsetof(USynthKnob, OnMouseCaptureBegin) == 0x000440, "Member 'USynthKnob::OnMouseCaptureBegin' has a wrong offset!");
+static_assert(offsetof(USynthKnob, OnMouseCaptureEnd) == 0x000450, "Member 'USynthKnob::OnMouseCaptureEnd' has a wrong offset!");
+static_assert(offsetof(USynthKnob, OnControllerCaptureBegin) == 0x000460, "Member 'USynthKnob::OnControllerCaptureBegin' has a wrong offset!");
+static_assert(offsetof(USynthKnob, OnControllerCaptureEnd) == 0x000470, "Member 'USynthKnob::OnControllerCaptureEnd' has a wrong offset!");
+static_assert(offsetof(USynthKnob, OnValueChanged) == 0x000480, "Member 'USynthKnob::OnValueChanged' has a wrong offset!");
+
 // Class Synthesis.Synth2DSlider
 // 0x03C8 (0x0538 - 0x0170)
 class USynth2DSlider final : public UWidget
@@ -1071,66 +1131,6 @@ public:
 };
 static_assert(alignof(USynthesisUtilitiesBlueprintFunctionLibrary) == 0x000008, "Wrong alignment on USynthesisUtilitiesBlueprintFunctionLibrary");
 static_assert(sizeof(USynthesisUtilitiesBlueprintFunctionLibrary) == 0x000030, "Wrong size on USynthesisUtilitiesBlueprintFunctionLibrary");
-
-// Class Synthesis.SynthKnob
-// 0x0330 (0x04A0 - 0x0170)
-class USynthKnob final : public UWidget
-{
-public:
-	float                                         Value;                                             // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StepSize;                                          // 0x0174(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MouseSpeed;                                        // 0x0178(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MouseFineTuneSpeed;                                // 0x017C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ShowTooltipInfo : 1;                               // 0x0180(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_181[0x7];                                      // 0x0181(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   ParameterName;                                     // 0x0188(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   ParameterUnits;                                    // 0x01A0(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             ValueDelegate;                                     // 0x01B8(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	struct FSynthKnobStyle                        WidgetStyle;                                       // 0x01E0(0x0258)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          Locked;                                            // 0x0438(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsFocusable;                                       // 0x0439(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_43A[0x6];                                      // 0x043A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	FMulticastInlineDelegateProperty_             OnMouseCaptureBegin;                               // 0x0440(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	FMulticastInlineDelegateProperty_             OnMouseCaptureEnd;                                 // 0x0450(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	FMulticastInlineDelegateProperty_             OnControllerCaptureBegin;                          // 0x0460(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	FMulticastInlineDelegateProperty_             OnControllerCaptureEnd;                            // 0x0470(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	FMulticastInlineDelegateProperty_             OnValueChanged;                                    // 0x0480(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_490[0x10];                                     // 0x0490(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetLocked(bool InValue);
-	void SetStepSize(float InValue);
-	void SetValue(float InValue);
-
-	float GetValue() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"SynthKnob">();
-	}
-	static class USynthKnob* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USynthKnob>();
-	}
-};
-static_assert(alignof(USynthKnob) == 0x000008, "Wrong alignment on USynthKnob");
-static_assert(sizeof(USynthKnob) == 0x0004A0, "Wrong size on USynthKnob");
-static_assert(offsetof(USynthKnob, Value) == 0x000170, "Member 'USynthKnob::Value' has a wrong offset!");
-static_assert(offsetof(USynthKnob, StepSize) == 0x000174, "Member 'USynthKnob::StepSize' has a wrong offset!");
-static_assert(offsetof(USynthKnob, MouseSpeed) == 0x000178, "Member 'USynthKnob::MouseSpeed' has a wrong offset!");
-static_assert(offsetof(USynthKnob, MouseFineTuneSpeed) == 0x00017C, "Member 'USynthKnob::MouseFineTuneSpeed' has a wrong offset!");
-static_assert(offsetof(USynthKnob, ParameterName) == 0x000188, "Member 'USynthKnob::ParameterName' has a wrong offset!");
-static_assert(offsetof(USynthKnob, ParameterUnits) == 0x0001A0, "Member 'USynthKnob::ParameterUnits' has a wrong offset!");
-static_assert(offsetof(USynthKnob, ValueDelegate) == 0x0001B8, "Member 'USynthKnob::ValueDelegate' has a wrong offset!");
-static_assert(offsetof(USynthKnob, WidgetStyle) == 0x0001E0, "Member 'USynthKnob::WidgetStyle' has a wrong offset!");
-static_assert(offsetof(USynthKnob, Locked) == 0x000438, "Member 'USynthKnob::Locked' has a wrong offset!");
-static_assert(offsetof(USynthKnob, IsFocusable) == 0x000439, "Member 'USynthKnob::IsFocusable' has a wrong offset!");
-static_assert(offsetof(USynthKnob, OnMouseCaptureBegin) == 0x000440, "Member 'USynthKnob::OnMouseCaptureBegin' has a wrong offset!");
-static_assert(offsetof(USynthKnob, OnMouseCaptureEnd) == 0x000450, "Member 'USynthKnob::OnMouseCaptureEnd' has a wrong offset!");
-static_assert(offsetof(USynthKnob, OnControllerCaptureBegin) == 0x000460, "Member 'USynthKnob::OnControllerCaptureBegin' has a wrong offset!");
-static_assert(offsetof(USynthKnob, OnControllerCaptureEnd) == 0x000470, "Member 'USynthKnob::OnControllerCaptureEnd' has a wrong offset!");
-static_assert(offsetof(USynthKnob, OnValueChanged) == 0x000480, "Member 'USynthKnob::OnValueChanged' has a wrong offset!");
 
 }
 

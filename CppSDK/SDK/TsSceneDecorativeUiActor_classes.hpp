@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsSceneDecorativeUiActor.TsSceneDecorativeUiActor_C
-// 0x0008 (0x02E8 - 0x02E0)
+// 0x0008 (0x02F0 - 0x02E8)
 class ATsSceneDecorativeUiActor_C final : public ATsSceneUiTag_C
 {
 public:
-	float                                         ShowDistance;                                      // 0x02E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsFaceToCharacter;                                 // 0x02E4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         ShowDistance;                                      // 0x02E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsFaceToCharacter;                                 // 0x02EC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void Create3dUi();
@@ -40,9 +40,9 @@ public:
 	}
 };
 static_assert(alignof(ATsSceneDecorativeUiActor_C) == 0x000008, "Wrong alignment on ATsSceneDecorativeUiActor_C");
-static_assert(sizeof(ATsSceneDecorativeUiActor_C) == 0x0002E8, "Wrong size on ATsSceneDecorativeUiActor_C");
-static_assert(offsetof(ATsSceneDecorativeUiActor_C, ShowDistance) == 0x0002E0, "Member 'ATsSceneDecorativeUiActor_C::ShowDistance' has a wrong offset!");
-static_assert(offsetof(ATsSceneDecorativeUiActor_C, IsFaceToCharacter) == 0x0002E4, "Member 'ATsSceneDecorativeUiActor_C::IsFaceToCharacter' has a wrong offset!");
+static_assert(sizeof(ATsSceneDecorativeUiActor_C) == 0x0002F0, "Wrong size on ATsSceneDecorativeUiActor_C");
+static_assert(offsetof(ATsSceneDecorativeUiActor_C, ShowDistance) == 0x0002E8, "Member 'ATsSceneDecorativeUiActor_C::ShowDistance' has a wrong offset!");
+static_assert(offsetof(ATsSceneDecorativeUiActor_C, IsFaceToCharacter) == 0x0002EC, "Member 'ATsSceneDecorativeUiActor_C::IsFaceToCharacter' has a wrong offset!");
 
 }
 

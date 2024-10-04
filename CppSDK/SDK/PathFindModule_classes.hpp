@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "NavigationSystem_classes.hpp"
 #include "Engine_classes.hpp"
+#include "NavigationSystem_classes.hpp"
 
 
 namespace SDK

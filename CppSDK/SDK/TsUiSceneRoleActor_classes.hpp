@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsUiSceneRoleActor.TsUiSceneRoleActor_C
-// 0x0010 (0x02B8 - 0x02A8)
+// 0x0010 (0x02C0 - 0x02B0)
 class ATsUiSceneRoleActor_C final : public AActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_TsUiSceneRoleActor(int32 EntryPoint);
@@ -41,9 +41,9 @@ public:
 	}
 };
 static_assert(alignof(ATsUiSceneRoleActor_C) == 0x000008, "Wrong alignment on ATsUiSceneRoleActor_C");
-static_assert(sizeof(ATsUiSceneRoleActor_C) == 0x0002B8, "Wrong size on ATsUiSceneRoleActor_C");
-static_assert(offsetof(ATsUiSceneRoleActor_C, UberGraphFrame) == 0x0002A8, "Member 'ATsUiSceneRoleActor_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsUiSceneRoleActor_C, DefaultSceneRoot) == 0x0002B0, "Member 'ATsUiSceneRoleActor_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(sizeof(ATsUiSceneRoleActor_C) == 0x0002C0, "Wrong size on ATsUiSceneRoleActor_C");
+static_assert(offsetof(ATsUiSceneRoleActor_C, UberGraphFrame) == 0x0002B0, "Member 'ATsUiSceneRoleActor_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ATsUiSceneRoleActor_C, DefaultSceneRoot) == 0x0002B8, "Member 'ATsUiSceneRoleActor_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

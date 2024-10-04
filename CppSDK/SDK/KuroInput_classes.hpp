@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "KuroInput_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroInput_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
@@ -21,11 +21,11 @@ namespace SDK
 {
 
 // Class KuroInput.BasePlayerController
-// 0x0058 (0x0670 - 0x0618)
+// 0x0060 (0x0680 - 0x0620)
 class ABasePlayerController : public APlayerController
 {
 public:
-	uint8                                         Pad_618[0x58];                                     // 0x0618(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_620[0x60];                                     // 0x0620(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void SetKuroForceFeedbackConfig(EGlobalKuroForceFeedbackType FeedbackConfig, int32 GlobalFeedbackCoef);
@@ -58,7 +58,7 @@ public:
 	}
 };
 static_assert(alignof(ABasePlayerController) == 0x000008, "Wrong alignment on ABasePlayerController");
-static_assert(sizeof(ABasePlayerController) == 0x000670, "Wrong size on ABasePlayerController");
+static_assert(sizeof(ABasePlayerController) == 0x000680, "Wrong size on ABasePlayerController");
 
 // Class KuroInput.KuroForceFeedbackEffect
 // 0x0020 (0x0068 - 0x0048)

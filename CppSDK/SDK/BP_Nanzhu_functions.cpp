@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function BP_Nanzhu.BP_Nanzhu_C.ExecuteUbergraph_BP_Nanzhu
-// (Final, UbergraphFunction)
+// Function BP_Nanzhu.BP_Nanzhu_C.FightCommand
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsInAir                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Nanzhu_C::ExecuteUbergraph_BP_Nanzhu(int32 EntryPoint)
+void ABP_Nanzhu_C::FightCommand(bool IsInAir)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Nanzhu_C", "ExecuteUbergraph_BP_Nanzhu");
+		Func = Class->GetFunction("BP_Nanzhu_C", "FightCommand");
 
-	Params::BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu Parms{};
+	Params::BP_Nanzhu_C_FightCommand Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.IsInAir = IsInAir;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -51,21 +51,21 @@ void ABP_Nanzhu_C::ReceiveBeginPlay()
 }
 
 
-// Function BP_Nanzhu.BP_Nanzhu_C.FightCommand
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Nanzhu.BP_Nanzhu_C.ExecuteUbergraph_BP_Nanzhu
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    IsInAir                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Nanzhu_C::FightCommand(bool IsInAir)
+void ABP_Nanzhu_C::ExecuteUbergraph_BP_Nanzhu(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Nanzhu_C", "FightCommand");
+		Func = Class->GetFunction("BP_Nanzhu_C", "ExecuteUbergraph_BP_Nanzhu");
 
-	Params::BP_Nanzhu_C_FightCommand Parms{};
+	Params::BP_Nanzhu_C_ExecuteUbergraph_BP_Nanzhu Parms{};
 
-	Parms.IsInAir = IsInAir;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -17,21 +17,42 @@
 namespace SDK
 {
 
-// Function TsTaskBattleWander.TsTaskBattleWander_C.ExecuteUbergraph_TsTaskBattleWander
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TsTaskBattleWander.TsTaskBattleWander_C.InitTsVariables
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void UTsTaskBattleWander_C::ExecuteUbergraph_TsTaskBattleWander(int32 EntryPoint)
+void UTsTaskBattleWander_C::InitTsVariables()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskBattleWander_C", "ExecuteUbergraph_TsTaskBattleWander");
+		Func = Class->GetFunction("TsTaskBattleWander_C", "InitTsVariables");
 
-	Params::TsTaskBattleWander_C_ExecuteUbergraph_TsTaskBattleWander Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.EntryPoint = EntryPoint;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskBattleWander.TsTaskBattleWander_C.ReceiveExecuteAI
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsTaskBattleWander_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskBattleWander_C", "ReceiveExecuteAI");
+
+	Params::TsTaskBattleWander_C_ReceiveExecuteAI Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -71,47 +92,26 @@ void UTsTaskBattleWander_C::ReceiveTickAI(class AAIController* OwnerController, 
 }
 
 
-// Function TsTaskBattleWander.TsTaskBattleWander_C.ReceiveExecuteAI
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsTaskBattleWander.TsTaskBattleWander_C.ExecuteUbergraph_TsTaskBattleWander
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskBattleWander_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+void UTsTaskBattleWander_C::ExecuteUbergraph_TsTaskBattleWander(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskBattleWander_C", "ReceiveExecuteAI");
+		Func = Class->GetFunction("TsTaskBattleWander_C", "ExecuteUbergraph_TsTaskBattleWander");
 
-	Params::TsTaskBattleWander_C_ReceiveExecuteAI Parms{};
+	Params::TsTaskBattleWander_C_ExecuteUbergraph_TsTaskBattleWander Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTaskBattleWander.TsTaskBattleWander_C.InitTsVariables
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsTaskBattleWander_C::InitTsVariables()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskBattleWander_C", "InitTsVariables");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -42,12 +42,12 @@ public:
 	class ATsBaseCharacter_C*                     ___a;                                              // 0x06A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_Vision_ShowTime(int32 EntryPoint);
-	void P___(int32 P_ID);
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
-	void EventReceived_18B59F5945020DB23C42FD88A68D9368(const struct FGameplayEventData& Payload);
 	void _______3();
+	void EventReceived_18B59F5945020DB23C42FD88A68D9368(const struct FGameplayEventData& Payload);
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void P___(int32 P_ID);
+	void ExecuteUbergraph_GA_Vision_ShowTime(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Weather.BP_Weather_C
-// 0x0010 (0x02B8 - 0x02A8)
+// 0x0010 (0x02C0 - 0x02B0)
 class ABP_Weather_C final : public AActor
 {
 public:
-	class UKuroPostProcessComponent*              KuroPostProcess_2;                                 // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UKuroPostProcessComponent*              KuroPostProcess_1;                                 // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UKuroPostProcessComponent*              KuroPostProcess_2;                                 // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UKuroPostProcessComponent*              KuroPostProcess_1;                                 // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -35,9 +35,9 @@ public:
 	}
 };
 static_assert(alignof(ABP_Weather_C) == 0x000008, "Wrong alignment on ABP_Weather_C");
-static_assert(sizeof(ABP_Weather_C) == 0x0002B8, "Wrong size on ABP_Weather_C");
-static_assert(offsetof(ABP_Weather_C, KuroPostProcess_2) == 0x0002A8, "Member 'ABP_Weather_C::KuroPostProcess_2' has a wrong offset!");
-static_assert(offsetof(ABP_Weather_C, KuroPostProcess_1) == 0x0002B0, "Member 'ABP_Weather_C::KuroPostProcess_1' has a wrong offset!");
+static_assert(sizeof(ABP_Weather_C) == 0x0002C0, "Wrong size on ABP_Weather_C");
+static_assert(offsetof(ABP_Weather_C, KuroPostProcess_2) == 0x0002B0, "Member 'ABP_Weather_C::KuroPostProcess_2' has a wrong offset!");
+static_assert(offsetof(ABP_Weather_C, KuroPostProcess_1) == 0x0002B8, "Member 'ABP_Weather_C::KuroPostProcess_1' has a wrong offset!");
 
 }
 

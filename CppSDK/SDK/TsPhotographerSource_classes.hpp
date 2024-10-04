@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsPhotographerSource.TsPhotographerSource_C
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class ATsPhotographerSource_C final : public AActor
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(ATsPhotographerSource_C) == 0x000008, "Wrong alignment on ATsPhotographerSource_C");
-static_assert(sizeof(ATsPhotographerSource_C) == 0x0002B0, "Wrong size on ATsPhotographerSource_C");
-static_assert(offsetof(ATsPhotographerSource_C, DefaultSceneRoot) == 0x0002A8, "Member 'ATsPhotographerSource_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(sizeof(ATsPhotographerSource_C) == 0x0002B8, "Wrong size on ATsPhotographerSource_C");
+static_assert(offsetof(ATsPhotographerSource_C, DefaultSceneRoot) == 0x0002B0, "Member 'ATsPhotographerSource_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

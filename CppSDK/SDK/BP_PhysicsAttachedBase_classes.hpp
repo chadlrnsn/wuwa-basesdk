@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PhysicsAttachedBase.BP_PhysicsAttachedBase_C
-// 0x0000 (0x02B8 - 0x02B8)
+// 0x0000 (0x02C0 - 0x02C0)
 class ABP_PhysicsAttachedBase_C final : public AStaticMeshActor
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_PhysicsAttachedBase_C) == 0x000008, "Wrong alignment on ABP_PhysicsAttachedBase_C");
-static_assert(sizeof(ABP_PhysicsAttachedBase_C) == 0x0002B8, "Wrong size on ABP_PhysicsAttachedBase_C");
+static_assert(sizeof(ABP_PhysicsAttachedBase_C) == 0x0002C0, "Wrong size on ABP_PhysicsAttachedBase_C");
 
 }
 

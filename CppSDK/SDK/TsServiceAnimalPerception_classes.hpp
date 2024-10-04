@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "AIModule_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "AIModule_classes.hpp"
 
 
 namespace SDK
@@ -27,9 +27,9 @@ public:
 	struct FFloatRange                            SenseRadius;                                       // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_TsServiceAnimalPerception(int32 EntryPoint);
-	void ReceiveActivationAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ReceiveActivationAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ExecuteUbergraph_TsServiceAnimalPerception(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

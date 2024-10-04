@@ -28,8 +28,8 @@ public:
 	int32                                         Id;                                                // 0x00BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void InitTsVariables();
+	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 
 public:
 	static class UClass* StaticClass()

@@ -14,6 +14,28 @@
 namespace SDK::Params
 {
 
+// Function Ani_MissionPnlProcess_Start.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
+// 0x0008 (0x0008 - 0x0000)
+struct SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 final
+{
+public:
+	class AUIContainerActor*                      PnlParent;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0) == 0x000008, "Wrong alignment on SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0");
+static_assert(sizeof(SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0) == 0x000008, "Wrong size on SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0");
+static_assert(offsetof(SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0, PnlParent) == 0x000000, "Member 'SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0::PnlParent' has a wrong offset!");
+
+// Function Ani_MissionPnlProcess_Start.SequenceDirector_C.PnlParent_Event_0
+// 0x0008 (0x0008 - 0x0000)
+struct SequenceDirector_C_PnlParent_Event_0 final
+{
+public:
+	class AUIContainerActor*                      PnlParent;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(SequenceDirector_C_PnlParent_Event_0) == 0x000008, "Wrong alignment on SequenceDirector_C_PnlParent_Event_0");
+static_assert(sizeof(SequenceDirector_C_PnlParent_Event_0) == 0x000008, "Wrong size on SequenceDirector_C_PnlParent_Event_0");
+static_assert(offsetof(SequenceDirector_C_PnlParent_Event_0, PnlParent) == 0x000000, "Member 'SequenceDirector_C_PnlParent_Event_0::PnlParent' has a wrong offset!");
+
 // Function Ani_MissionPnlProcess_Start.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
 // 0x0020 (0x0020 - 0x0000)
 struct SequenceDirector_C_ExecuteUbergraph_SequenceDirector final
@@ -31,28 +53,6 @@ static_assert(offsetof(SequenceDirector_C_ExecuteUbergraph_SequenceDirector, Ent
 static_assert(offsetof(SequenceDirector_C_ExecuteUbergraph_SequenceDirector, K2Node_CustomEvent_PnlParent) == 0x000008, "Member 'SequenceDirector_C_ExecuteUbergraph_SequenceDirector::K2Node_CustomEvent_PnlParent' has a wrong offset!");
 static_assert(offsetof(SequenceDirector_C_ExecuteUbergraph_SequenceDirector, CallFunc_GetComponentByClass_ReturnValue) == 0x000010, "Member 'SequenceDirector_C_ExecuteUbergraph_SequenceDirector::CallFunc_GetComponentByClass_ReturnValue' has a wrong offset!");
 static_assert(offsetof(SequenceDirector_C_ExecuteUbergraph_SequenceDirector, CallFunc_IsValid_ReturnValue) == 0x000018, "Member 'SequenceDirector_C_ExecuteUbergraph_SequenceDirector::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-
-// Function Ani_MissionPnlProcess_Start.SequenceDirector_C.PnlParent_Event_0
-// 0x0008 (0x0008 - 0x0000)
-struct SequenceDirector_C_PnlParent_Event_0 final
-{
-public:
-	class AUIContainerActor*                      PnlParent;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(SequenceDirector_C_PnlParent_Event_0) == 0x000008, "Wrong alignment on SequenceDirector_C_PnlParent_Event_0");
-static_assert(sizeof(SequenceDirector_C_PnlParent_Event_0) == 0x000008, "Wrong size on SequenceDirector_C_PnlParent_Event_0");
-static_assert(offsetof(SequenceDirector_C_PnlParent_Event_0, PnlParent) == 0x000000, "Member 'SequenceDirector_C_PnlParent_Event_0::PnlParent' has a wrong offset!");
-
-// Function Ani_MissionPnlProcess_Start.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
-// 0x0008 (0x0008 - 0x0000)
-struct SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 final
-{
-public:
-	class AUIContainerActor*                      PnlParent;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0) == 0x000008, "Wrong alignment on SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0");
-static_assert(sizeof(SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0) == 0x000008, "Wrong size on SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0");
-static_assert(offsetof(SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0, PnlParent) == 0x000000, "Member 'SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0::PnlParent' has a wrong offset!");
 
 }
 

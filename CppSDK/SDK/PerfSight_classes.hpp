@@ -22,12 +22,10 @@ class UPerfSightHelper final : public UBlueprintFunctionLibrary
 {
 public:
 	static void BeginExclude();
-	static void BeginExtTag(const class FString& TagName);
 	static void BeginTag(const class FString& TagName);
 	static void BeginTupleWrap(const class FString& Key);
 	static void EnableDebugMode();
 	static void EndExclude();
-	static void EndExtTag(const class FString& TagName);
 	static void EndTag();
 	static void EndTupleWrap();
 	static int32 GetDeviceLevelByQcc(const class FString& ConfigName, const class FString& GpuFamily);
@@ -36,21 +34,20 @@ public:
 	static void MarkLevelLoad(const class FString& SceneName, int32 Quality);
 	static void MarkLevelLoadCompleted();
 	static void PostEvent(int32 Key, const class FString& Info);
-	static void PostFrame(float Deltatime, int32 FrameIdx);
+	static void PostFrame(float Deltatime);
 	static void PostNetworkLatency(int32 Latency, const class FString& CustomInfo, const class FString& IpAddress);
-	static void PostValueF1(const class FString& Catgory, const class FString& Key, float A, int32 FrameIdx);
-	static void PostValueF2(const class FString& Catgory, const class FString& Key, float A, float b, int32 FrameIdx);
-	static void PostValueF3(const class FString& Catgory, const class FString& Key, float A, float b, float C, int32 FrameIdx);
-	static void PostValueI1(const class FString& Catgory, const class FString& Key, int32 A, int32 FrameIdx);
-	static void PostValueI2(const class FString& Catgory, const class FString& Key, int32 A, int32 b, int32 FrameIdx);
-	static void PostValueI3(const class FString& Catgory, const class FString& Key, int32 A, int32 b, int32 C, int32 FrameIdx);
-	static void PostValueS(const class FString& Catgory, const class FString& Key, const class FString& Value, int32 FrameIdx);
+	static void PostValueF1(const class FString& Catgory, const class FString& Key, float A);
+	static void PostValueF2(const class FString& Catgory, const class FString& Key, float A, float b);
+	static void PostValueF3(const class FString& Catgory, const class FString& Key, float A, float b, float C);
+	static void PostValueI1(const class FString& Catgory, const class FString& Key, int32 A);
+	static void PostValueI2(const class FString& Catgory, const class FString& Key, int32 A, int32 b);
+	static void PostValueI3(const class FString& Catgory, const class FString& Key, int32 A, int32 b, int32 C);
+	static void PostValueS(const class FString& Catgory, const class FString& Key, const class FString& Value);
 	static void SetCustomizedDeviceClass(int32 DeviceLevel);
 	static void SetMatchId(const class FString& MatchId);
 	static void SetPCAppVersion(const class FString& AppVer);
 	static void SetPCServerURL(const class FString& Url);
 	static void SetQuality(int32 Quality);
-	static void SetStrategyById1(int32 Strategy_id, int32 Strategy_value);
 	static void SetTargetFrameRate(int32 Target);
 	static void SetUserId(const class FString& UserId);
 	static void SetVersionIden(const class FString& VersionName);

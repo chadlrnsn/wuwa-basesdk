@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "MovieScene_structs.hpp"
-#include "MovieScene_classes.hpp"
+#include "TemplateSequence_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "TemplateSequence_structs.hpp"
+#include "MovieScene_structs.hpp"
+#include "MovieScene_classes.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -175,17 +175,17 @@ static_assert(offsetof(USequenceCameraShakeSequencePlayer, Sequence) == 0x000490
 static_assert(offsetof(USequenceCameraShakeSequencePlayer, RootTemplateInstance) == 0x000498, "Member 'USequenceCameraShakeSequencePlayer::RootTemplateInstance' has a wrong offset!");
 
 // Class TemplateSequence.TemplateSequenceActor
-// 0x0058 (0x0300 - 0x02A8)
+// 0x0058 (0x0308 - 0x02B0)
 class ATemplateSequenceActor final : public AActor
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMovieSceneSequencePlaybackSettings    PlaybackSettings;                                  // 0x02B0(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C4[0x4];                                      // 0x02C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTemplateSequencePlayer*                SequencePlayer;                                    // 0x02C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        TemplateSequence;                                  // 0x02D0(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTemplateSequenceBindingOverrideData   BindingOverride;                                   // 0x02F0(0x000C)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2FC[0x4];                                      // 0x02FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B0[0x8];                                      // 0x02B0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMovieSceneSequencePlaybackSettings    PlaybackSettings;                                  // 0x02B8(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTemplateSequencePlayer*                SequencePlayer;                                    // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        TemplateSequence;                                  // 0x02D8(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTemplateSequenceBindingOverrideData   BindingOverride;                                   // 0x02F8(0x000C)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_304[0x4];                                      // 0x0304(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetBinding(class AActor* Actor);
@@ -206,11 +206,11 @@ public:
 	}
 };
 static_assert(alignof(ATemplateSequenceActor) == 0x000008, "Wrong alignment on ATemplateSequenceActor");
-static_assert(sizeof(ATemplateSequenceActor) == 0x000300, "Wrong size on ATemplateSequenceActor");
-static_assert(offsetof(ATemplateSequenceActor, PlaybackSettings) == 0x0002B0, "Member 'ATemplateSequenceActor::PlaybackSettings' has a wrong offset!");
-static_assert(offsetof(ATemplateSequenceActor, SequencePlayer) == 0x0002C8, "Member 'ATemplateSequenceActor::SequencePlayer' has a wrong offset!");
-static_assert(offsetof(ATemplateSequenceActor, TemplateSequence) == 0x0002D0, "Member 'ATemplateSequenceActor::TemplateSequence' has a wrong offset!");
-static_assert(offsetof(ATemplateSequenceActor, BindingOverride) == 0x0002F0, "Member 'ATemplateSequenceActor::BindingOverride' has a wrong offset!");
+static_assert(sizeof(ATemplateSequenceActor) == 0x000308, "Wrong size on ATemplateSequenceActor");
+static_assert(offsetof(ATemplateSequenceActor, PlaybackSettings) == 0x0002B8, "Member 'ATemplateSequenceActor::PlaybackSettings' has a wrong offset!");
+static_assert(offsetof(ATemplateSequenceActor, SequencePlayer) == 0x0002D0, "Member 'ATemplateSequenceActor::SequencePlayer' has a wrong offset!");
+static_assert(offsetof(ATemplateSequenceActor, TemplateSequence) == 0x0002D8, "Member 'ATemplateSequenceActor::TemplateSequence' has a wrong offset!");
+static_assert(offsetof(ATemplateSequenceActor, BindingOverride) == 0x0002F8, "Member 'ATemplateSequenceActor::BindingOverride' has a wrong offset!");
 
 // Class TemplateSequence.TemplateSequencePlayer
 // 0x0008 (0x06F8 - 0x06F0)

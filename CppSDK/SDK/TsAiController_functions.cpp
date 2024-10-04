@@ -1100,25 +1100,6 @@ void ATsAiController_C::GetDebugStateMachine(TArray<class FText>& Output)
 }
 
 
-// Function TsAiController.TsAiController_C.ChangeDebugDraw
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ATsAiController_C::ChangeDebugDraw()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsAiController_C", "ChangeDebugDraw");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function TsAiController.TsAiController_C.AicApplyBuffToTarget
 // (Native, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "EBulletLogicObstacles_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "LogicDataBase_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "EBulletLogicObstacles_structs.hpp"
 
 
 namespace SDK

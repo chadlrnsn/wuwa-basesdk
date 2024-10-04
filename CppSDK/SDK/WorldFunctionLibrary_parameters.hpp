@@ -10,35 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "EWeatherState_structs.hpp"
 #include "ERelation_structs.hpp"
-#include "EInputAction_structs.hpp"
-#include "EDetachType_structs.hpp"
 #include "Engine_structs.hpp"
+#include "EInputAction_structs.hpp"
 #include "EInputState_structs.hpp"
+#include "EDetachType_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "EPawnChannel_structs.hpp"
+#include "EWeatherState_structs.hpp"
 #include "EWuYinQuState_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemovePublicTags
-// 0x0020 (0x0020 - 0x0000)
-struct WorldFunctionLibrary_C_RemovePublicTags final
-{
-public:
-	float                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         Tags1;                                             // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WorldFunctionLibrary_C_RemovePublicTags) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RemovePublicTags");
-static_assert(sizeof(WorldFunctionLibrary_C_RemovePublicTags) == 0x000020, "Wrong size on WorldFunctionLibrary_C_RemovePublicTags");
-static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, EntityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_RemovePublicTags::EntityId1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, Tags1) == 0x000008, "Member 'WorldFunctionLibrary_C_RemovePublicTags::Tags1' has a wrong offset!");
-static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_RemovePublicTags::__WorldContext' has a wrong offset!");
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.AddPublicTags
 // 0x0020 (0x0020 - 0x0000)
@@ -55,6 +39,22 @@ static_assert(sizeof(WorldFunctionLibrary_C_AddPublicTags) == 0x000020, "Wrong s
 static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, EntityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_AddPublicTags::EntityId1' has a wrong offset!");
 static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, Tags1) == 0x000008, "Member 'WorldFunctionLibrary_C_AddPublicTags::Tags1' has a wrong offset!");
 static_assert(offsetof(WorldFunctionLibrary_C_AddPublicTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_AddPublicTags::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemovePublicTags
+// 0x0020 (0x0020 - 0x0000)
+struct WorldFunctionLibrary_C_RemovePublicTags final
+{
+public:
+	float                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         Tags1;                                             // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_RemovePublicTags) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_RemovePublicTags");
+static_assert(sizeof(WorldFunctionLibrary_C_RemovePublicTags) == 0x000020, "Wrong size on WorldFunctionLibrary_C_RemovePublicTags");
+static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, EntityId1) == 0x000000, "Member 'WorldFunctionLibrary_C_RemovePublicTags::EntityId1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, Tags1) == 0x000008, "Member 'WorldFunctionLibrary_C_RemovePublicTags::Tags1' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_RemovePublicTags, __WorldContext) == 0x000018, "Member 'WorldFunctionLibrary_C_RemovePublicTags::__WorldContext' has a wrong offset!");
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetIntValueByEntity
 // 0x0028 (0x0028 - 0x0000)

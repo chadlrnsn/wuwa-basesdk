@@ -61,6 +61,46 @@ void ABP_GlobalGI_C::ExecuteUbergraph_BP_GlobalGI(int32 EntryPoint)
 }
 
 
+// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroTickEditor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GlobalGI_C::OnKuroTickEditor(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroTickEditor");
+
+	Params::BP_GlobalGI_C_OnKuroTickEditor Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GlobalGI_C::OnKuroTick(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroTick");
+
+	Params::BP_GlobalGI_C_OnKuroTick Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_GlobalGI.BP_GlobalGI_C.OnKuroEndUiScene
 // (Event, Public, BlueprintEvent)
 
@@ -156,46 +196,6 @@ void ABP_GlobalGI_C::OnKuroInit()
 		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroInit");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GlobalGI_C::OnKuroTick(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroTick");
-
-	Params::BP_GlobalGI_C_OnKuroTick Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroTickEditor
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GlobalGI_C::OnKuroTickEditor(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroTickEditor");
-
-	Params::BP_GlobalGI_C_OnKuroTickEditor Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

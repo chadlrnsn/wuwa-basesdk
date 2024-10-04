@@ -108,14 +108,14 @@ static_assert(alignof(ULuminARImageTrackingFunctionLibrary) == 0x000008, "Wrong 
 static_assert(sizeof(ULuminARImageTrackingFunctionLibrary) == 0x000030, "Wrong size on ULuminARImageTrackingFunctionLibrary");
 
 // Class MagicLeapAR.LuminAROrigin
-// 0x00C0 (0x0368 - 0x02A8)
+// 0x00C0 (0x0370 - 0x02B0)
 class ALuminAROrigin final : public AAROriginActor
 {
 public:
-	class UMRMeshComponent*                       MRMeshComponent;                                   // 0x02A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMaterialInterface*                     PlaneSurfaceMaterial;                              // 0x02B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMaterialInterface*                     WireframeMaterial;                                 // 0x02B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2C0[0xA8];                                     // 0x02C0(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UMRMeshComponent*                       MRMeshComponent;                                   // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialInterface*                     PlaneSurfaceMaterial;                              // 0x02B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialInterface*                     WireframeMaterial;                                 // 0x02C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2C8[0xA8];                                     // 0x02C8(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -128,10 +128,10 @@ public:
 	}
 };
 static_assert(alignof(ALuminAROrigin) == 0x000008, "Wrong alignment on ALuminAROrigin");
-static_assert(sizeof(ALuminAROrigin) == 0x000368, "Wrong size on ALuminAROrigin");
-static_assert(offsetof(ALuminAROrigin, MRMeshComponent) == 0x0002A8, "Member 'ALuminAROrigin::MRMeshComponent' has a wrong offset!");
-static_assert(offsetof(ALuminAROrigin, PlaneSurfaceMaterial) == 0x0002B0, "Member 'ALuminAROrigin::PlaneSurfaceMaterial' has a wrong offset!");
-static_assert(offsetof(ALuminAROrigin, WireframeMaterial) == 0x0002B8, "Member 'ALuminAROrigin::WireframeMaterial' has a wrong offset!");
+static_assert(sizeof(ALuminAROrigin) == 0x000370, "Wrong size on ALuminAROrigin");
+static_assert(offsetof(ALuminAROrigin, MRMeshComponent) == 0x0002B0, "Member 'ALuminAROrigin::MRMeshComponent' has a wrong offset!");
+static_assert(offsetof(ALuminAROrigin, PlaneSurfaceMaterial) == 0x0002B8, "Member 'ALuminAROrigin::PlaneSurfaceMaterial' has a wrong offset!");
+static_assert(offsetof(ALuminAROrigin, WireframeMaterial) == 0x0002C0, "Member 'ALuminAROrigin::WireframeMaterial' has a wrong offset!");
 
 // Class MagicLeapAR.LuminARSessionConfig
 // 0x0098 (0x01B0 - 0x0118)

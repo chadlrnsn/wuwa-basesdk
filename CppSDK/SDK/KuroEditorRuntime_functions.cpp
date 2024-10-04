@@ -134,6 +134,116 @@ bool UEditorRuntimeOperations::IsPortInUse(int32 Port)
 }
 
 
+// Function KuroEditorRuntime.EditorRuntimeOperations.IsTcpPortInUse
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Port                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UEditorRuntimeOperations::IsTcpPortInUse(int32 Port)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EditorRuntimeOperations", "IsTcpPortInUse");
+
+	Params::EditorRuntimeOperations_IsTcpPortInUse Parms{};
+
+	Parms.Port = Port;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroEditorRuntime.EditorRuntimeOperations.IsUdpPortInUse
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Port                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UEditorRuntimeOperations::IsUdpPortInUse(int32 Port)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EditorRuntimeOperations", "IsUdpPortInUse");
+
+	Params::EditorRuntimeOperations_IsUdpPortInUse Parms{};
+
+	Parms.Port = Port;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroEditorRuntime.EditorRuntimeOperations.ReadBatchFilesAsync
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TArray<class FString>                   FilePaths                                              (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TDelegate<void(TArray<struct FReadFileData>& LoadedFiles, TArray<class FString>& ReadFailedFiles)>OnAllFilesRead                                         (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UEditorRuntimeOperations::ReadBatchFilesAsync(const TArray<class FString>& FilePaths, TDelegate<void(TArray<struct FReadFileData>& LoadedFiles, TArray<class FString>& ReadFailedFiles)> OnAllFilesRead)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EditorRuntimeOperations", "ReadBatchFilesAsync");
+
+	Params::EditorRuntimeOperations_ReadBatchFilesAsync Parms{};
+
+	Parms.FilePaths = std::move(FilePaths);
+	Parms.OnAllFilesRead = OnAllFilesRead;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroEditorRuntime.EditorRuntimeOperations.ReadFileAsync
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           FilePath                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(bool IsSuccess, const class FString& FileContent)>OnFileRead                                             (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UEditorRuntimeOperations::ReadFileAsync(const class FString& FilePath, TDelegate<void(bool IsSuccess, const class FString& FileContent)> OnFileRead)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EditorRuntimeOperations", "ReadFileAsync");
+
+	Params::EditorRuntimeOperations_ReadFileAsync Parms{};
+
+	Parms.FilePath = std::move(FilePath);
+	Parms.OnFileRead = OnFileRead;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroEditorRuntime.EditorRuntimeOperations.SendHttpRequest
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:

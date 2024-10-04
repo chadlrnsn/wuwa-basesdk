@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_classes.hpp"
+#include "KuroUtility_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "KuroUtility_structs.hpp"
 
 
 namespace SDK
@@ -80,7 +80,7 @@ static_assert(offsetof(UHoldPreloadObject, CommonAssets) == 0x000030, "Member 'U
 static_assert(offsetof(UHoldPreloadObject, EntityAssetMap) == 0x000040, "Member 'UHoldPreloadObject::EntityAssetMap' has a wrong offset!");
 
 // Class KuroUtility.KuroActor
-// 0x0000 (0x02A8 - 0x02A8)
+// 0x0000 (0x02B0 - 0x02B0)
 class AKuroActor : public AActor
 {
 public:
@@ -98,7 +98,7 @@ public:
 	}
 };
 static_assert(alignof(AKuroActor) == 0x000008, "Wrong alignment on AKuroActor");
-static_assert(sizeof(AKuroActor) == 0x0002A8, "Wrong size on AKuroActor");
+static_assert(sizeof(AKuroActor) == 0x0002B0, "Wrong size on AKuroActor");
 
 // Class KuroUtility.KuroActorComponent
 // 0x0000 (0x00C0 - 0x00C0)
@@ -201,12 +201,12 @@ static_assert(alignof(UKuroApplicationLibrary) == 0x000008, "Wrong alignment on 
 static_assert(sizeof(UKuroApplicationLibrary) == 0x000030, "Wrong size on UKuroApplicationLibrary");
 
 // Class KuroUtility.KuroBlockingVolume
-// 0x0010 (0x02F0 - 0x02E0)
+// 0x0010 (0x02F8 - 0x02E8)
 class AKuroBlockingVolume final : public AVolume
 {
 public:
-	class FName                                   VolumeId;                                          // 0x02E0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2EC[0x4];                                      // 0x02EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   VolumeId;                                          // 0x02E8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -219,8 +219,8 @@ public:
 	}
 };
 static_assert(alignof(AKuroBlockingVolume) == 0x000008, "Wrong alignment on AKuroBlockingVolume");
-static_assert(sizeof(AKuroBlockingVolume) == 0x0002F0, "Wrong size on AKuroBlockingVolume");
-static_assert(offsetof(AKuroBlockingVolume, VolumeId) == 0x0002E0, "Member 'AKuroBlockingVolume::VolumeId' has a wrong offset!");
+static_assert(sizeof(AKuroBlockingVolume) == 0x0002F8, "Wrong size on AKuroBlockingVolume");
+static_assert(offsetof(AKuroBlockingVolume, VolumeId) == 0x0002E8, "Member 'AKuroBlockingVolume::VolumeId' has a wrong offset!");
 
 // Class KuroUtility.KuroBooleanEventBinder
 // 0x0010 (0x0040 - 0x0030)
@@ -433,12 +433,12 @@ static_assert(alignof(UKuroCompressLibrary) == 0x000008, "Wrong alignment on UKu
 static_assert(sizeof(UKuroCompressLibrary) == 0x000030, "Wrong size on UKuroCompressLibrary");
 
 // Class KuroUtility.KuroEntityActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AKuroEntityActor final : public AKuroActor
 {
 public:
-	int32                                         EntityId;                                          // 0x02A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         EntityId;                                          // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B4[0x4];                                      // 0x02B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -451,8 +451,8 @@ public:
 	}
 };
 static_assert(alignof(AKuroEntityActor) == 0x000008, "Wrong alignment on AKuroEntityActor");
-static_assert(sizeof(AKuroEntityActor) == 0x0002B0, "Wrong size on AKuroEntityActor");
-static_assert(offsetof(AKuroEntityActor, EntityId) == 0x0002A8, "Member 'AKuroEntityActor::EntityId' has a wrong offset!");
+static_assert(sizeof(AKuroEntityActor) == 0x0002B8, "Wrong size on AKuroEntityActor");
+static_assert(offsetof(AKuroEntityActor, EntityId) == 0x0002B0, "Member 'AKuroEntityActor::EntityId' has a wrong offset!");
 
 // Class KuroUtility.KuroIntEventBinder
 // 0x0010 (0x0040 - 0x0030)
@@ -639,11 +639,11 @@ static_assert(alignof(UKuroPolypartition) == 0x000008, "Wrong alignment on UKuro
 static_assert(sizeof(UKuroPolypartition) == 0x000030, "Wrong size on UKuroPolypartition");
 
 // Class KuroUtility.KuroSilenceGameMode
-// 0x0008 (0x03A0 - 0x0398)
+// 0x0008 (0x03A8 - 0x03A0)
 class AKuroSilenceGameMode : public AGameMode
 {
 public:
-	uint8                                         Pad_398[0x8];                                      // 0x0398(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A0[0x8];                                      // 0x03A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void GameInitialized();
@@ -659,7 +659,7 @@ public:
 	}
 };
 static_assert(alignof(AKuroSilenceGameMode) == 0x000008, "Wrong alignment on AKuroSilenceGameMode");
-static_assert(sizeof(AKuroSilenceGameMode) == 0x0003A0, "Wrong size on AKuroSilenceGameMode");
+static_assert(sizeof(AKuroSilenceGameMode) == 0x0003A8, "Wrong size on AKuroSilenceGameMode");
 
 // Class KuroUtility.KuroStaticAndroidLibrary
 // 0x0000 (0x0030 - 0x0030)
@@ -715,7 +715,9 @@ public:
 	static void ApplyChangeToBlueprint(class AActor* Actor);
 	static class FString Base64Decode(const class FString& InString);
 	static class FString Base64Encode(const class FString& InString);
+	static class FString Base64EncodeWithConvertToUTF8(const class FString& InString);
 	static void BindCustomGetTimeBetweenGarbageCollectionPassesDelegate(const TDelegate<void(float MBFree, float ExtraDevelopmentMemorySize, int32 NumObjects)>& Delegate);
+	static void BindDeviceLangChangeDelegate(const TDelegate<void()>& Delegate);
 	static void ClearCustomGetTimeBetweenGarbageCollectionPassesDelegate();
 	static void ClearPlayerInputCache(class APlayerController** PC);
 	static EObjectTypeQuery ConvertToObjectType(const ECollisionChannel InCollisionChannel);
@@ -781,6 +783,7 @@ public:
 	static struct FRotator GetSplineRotationAtSplinePoint(class USplineComponent* Spline, int32 PointIndex, ESplineCoordinateSpace CoordinateSpace);
 	static class FString GetStatUnitInfo();
 	static int32 GetTotalMemoryGB();
+	static int64 GetTotalPhysicalMemory();
 	static class UMovieSceneTrack* GetTrackByClass(const TArray<class UMovieSceneTrack*>& Tracks, TSubclassOf<class UMovieSceneTrack> Class_0);
 	static float GetUsedMemoryGB();
 	static float GetUsedPhysicalGB();
@@ -790,11 +793,10 @@ public:
 	static class FString HashStringWithSHA1(const class FString& InString);
 	static void IcmpPing(const class FString& IpAddress, float Timeout, const TDelegate<void(const class FString& Address, float Time, int32 ResponseState)>& InDelegate);
 	static bool IsAsyncLoadingThreadEnabled();
-	static bool IsBuildShipping();
-	static bool IsBuildTest();
 	static bool IsEditor(const class UObject* WorldContextObject);
 	static bool IsForegroundWindow();
 	static bool IsImplementInterface(class UClass* InClass, class UClass* InInterfaceClass);
+	static bool IsLowMemoryDevice();
 	static bool IsModuleLoaded(const class FString& ModelName);
 	static bool IsObjectClassByName(class UObject* Object, class FName ClassName);
 	static bool IsViewportFocus();
@@ -832,7 +834,9 @@ public:
 	static void StopAllMontagesBySlotName(class UAnimInstance* UAnimInstance, const class FName InSlotName, const float InBlendOutTime);
 	static bool ToggleSequenceNodeActiveByTag(const class ALevelSequenceActor* Actor, class FName TagName, bool bActive);
 	static int32 ToUnixTimestamp(const struct FDateTime& InDataTime);
+	static void UnBindDeviceLangChangeDelegate();
 	static void UnRegisterCustomCommandProcessor(const class FString& Category);
+	static bool WriteStringToFile(const class FString& SaveText, const class FString& FileName, const bool bPublic, const bool bWithBom);
 
 public:
 	static class UClass* StaticClass()
@@ -852,19 +856,76 @@ static_assert(sizeof(UKuroStaticLibrary) == 0x000030, "Wrong size on UKuroStatic
 class UKuroStaticPS5Library final : public UBlueprintFunctionLibrary
 {
 public:
+	static void AbortTrophyHandleAsync(int32* Handle, const TDelegate<void(int32 Ret)>& Callback);
+	static int32 AbortUdsHandle(int32 Handle);
+	static void AddCacheMapElement(const class FString& Key, const class FString& Value);
+	static void AddJoinSessionDelegate(const TDelegate<void(const class FString& UserId, const class FString& PlayerSessionId)>& InDelegate);
+	static class FString CheckJoinSession();
+	static int32 CheckUserPremium(class FString* UserId);
+	static void ClearJoinSessionDelegate();
+	static class FString CreatePlayerSession(int32 JoinableUserType, class FString* PlayerId);
+	static void CreateTrophyContextAsync(const class FString& UserId, int32 ServiceLabel, const class FString& OptionsLong, const TDelegate<void(int32 Ret, int32 Result)>& Callback);
+	static void CreateTrophyHandleAsync(const TDelegate<void(int32 Ret, int32 Result)>& Callback);
+	static int32 CreateUdsContext(class FString* UserId, int32* Context);
+	static int32 CreateUdsEvent(class FString* EventName, int64* OutEventPtr, int64* OutProPtr);
+	static int32 CreateUdsHandle(int32* Handle);
+	static void DestroyTrophyContextAsync(int32* Context, const TDelegate<void(int32 Ret)>& Callback);
+	static void DestroyTrophyHandleAsync(int32* Handle, const TDelegate<void(int32 Ret)>& Callback);
+	static int32 DestroyUdsContext(int32 Context);
+	static int32 DestroyUdsEvent(int64 EventPtr);
+	static int32 DestroyUdsHandle(int32 Handle);
 	static class FString GetAccountIdByUserId(class FString* UserId);
 	static int32 GetAuthCode(class FString* ClientId, class FString* Scope, class FString* AuthCode, int32* IssuerId);
 	static TArray<struct FBasicPresenceData> GetBasicPresence(class FString* AccountId);
 	static struct FBlockUserData GetBlockUserList(int32* Offset, int32* Limit);
+	static void GetBlockUserListAsync(int32* Offset, int32* Limit, const TDelegate<void(const struct FBlockUserData& Data)>& Delegate);
+	static class FString GetCacheMapElement(const class FString& Key);
+	static void GetCommunicationRestrictionStatusAsync(class FString* AccountId, const TDelegate<void(int32 Ret, int32 Status)>& Callback);
 	static int32 GetIdToken(class FString* ClientId, class FString* ClientSecret, class FString* Scope, class FString* IdToken);
+	static void GetMessageDialogStateAsync(const TDelegate<void(int32 Ret)>& Callback);
 	static class FString GetOnlineIdByUserId(class FString* UserId);
+	static class FString GetPlayerIdByPlayerSessionId(class FString* PlayerSessionId);
+	static TArray<struct FProductData> GetStoreProducts();
 	static struct FTrophyInfoData GetTrophyList(class FString* UserId, int32* InputOffset, int32 Length);
+	static struct FTrophyInfoData GetTrophyListWithContextIdAndHandleId(int32 Context, int32 Handle, int32* InputOffset, int32 Length);
+	static void GetTrophyListWithContextIdAndHandleIdAsync(int32* InputOffset, int32 Length, int32 Context, int32 Handle, const TDelegate<void(const struct FTrophyInfoData& Data)>& Callback);
+	static class FString GetUserId();
+	static class FString GetUserIdByAccountId(class FString* AccountId);
 	static int32 HidePsStoreIcon();
+	static int32 InitNpUniversalDataSystem(int32 PoolSize);
 	static int32 InitWebApi(class FString* UserId);
+	static void JoinPlayerSession(class FString* PlayerSessionId);
+	static void LeavePlayerSession();
+	static void NotifyPremium(class FString* UserId);
+	static void NotifyPremiumFeature(class FString* UserId, bool IsPlayStationOnly);
+	static int32 OpenCheckoutDialog(class FString* ProductLabel);
+	static void OpenMessageDialog(class FString* UserId, int32 OpenMode, int32 MsgType, const TDelegate<void(int32 Ret)>& Callback);
 	static void OpenWebBrowser(class FString* Url);
+	static int32 OpenWebView(class FString* Url);
+	static int32 PollCheckoutDialogResult();
+	static bool PollWebBrowser();
+	static int32 PostUdsEvent(int32 Context, int32 Handle, int64 EventPtr);
+	static void RegisterTrophyContextAsync(int32* Context, int32* Handle, const class FString& OptionsLong, const TDelegate<void(int32 Ret)>& Callback);
+	static int32 RegisterUdsContext(int32 Context, int32 Handle);
+	static void RemoveCacheElement(const class FString& Key);
+	static int32 SceNpGetNpReachabilityState(class FString* UserId, int32* OutState);
+	static void SetPlayerSessionJoinableUserType(int32 JoinableUserType);
 	static int32 ShowPsStoreIcon(int32 Position);
+	static void TerminateMessageDialog();
+	static int32 UdsEventPropertyObjectSetBool(int64 ProPtr, class FString* Key, bool Value);
+	static int32 UdsEventPropertyObjectSetFloat32(int64 ProPtr, class FString* Key, float Value);
+	static int32 UdsEventPropertyObjectSetFloat64(int64 ProPtr, class FString* Key, double Value);
+	static int32 UdsEventPropertyObjectSetInt32(int64 ProPtr, class FString* Key, int32 Value);
+	static int32 UdsEventPropertyObjectSetInt64(int64 ProPtr, class FString* Key, int64 Value);
+	static int32 UdsEventPropertyObjectSetString(int64 ProPtr, class FString* Key, class FString* Value);
+	static int32 UdsEventPropertyObjectSetUInt32(int64 ProPtr, class FString* Key, int32 Value);
+	static int32 UdsEventPropertyObjectSetUInt64(int64 ProPtr, class FString* Key, int64 Value);
 	static int32 UnlockTrophy(class FString* UserId, int32 TrophyId);
+	static int32 UnlockTrophyWithContextIdAndHandleId(int32 ContextId, int32 Handle, int32 TrophyId);
+	static void UnlockTrophyWithContextIdAndHandleIdAsync(int32 ContextId, int32 Handle, int32 TrophyId, const TDelegate<void(int32 Ret)>& Callback);
 	static int32 UpdateTrophyProgress(class FString* UserId, int32 TrophyId, int32 Progress);
+	static int32 UpdateTrophyProgressWithContextIdAndHandleId(int32 Context, int32 Handle, int32 TrophyId, int32 Progress);
+	static void UpdateTrophyProgressWithContextIdAndHandleIdAsync(int32 Context, int32 Handle, int32 TrophyId, int32 Progress, const TDelegate<void(int32 Ret)>& Callback);
 
 public:
 	static class UClass* StaticClass()
@@ -938,12 +999,12 @@ static_assert(alignof(UKuroTickableManager) == 0x000008, "Wrong alignment on UKu
 static_assert(sizeof(UKuroTickableManager) == 0x000048, "Wrong size on UKuroTickableManager");
 
 // Class KuroUtility.KuroTriggerVolume
-// 0x0010 (0x02F0 - 0x02E0)
+// 0x0010 (0x02F8 - 0x02E8)
 class AKuroTriggerVolume final : public AVolume
 {
 public:
-	class FName                                   VolumeId;                                          // 0x02E0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2EC[0x4];                                      // 0x02EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   VolumeId;                                          // 0x02E8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -956,8 +1017,8 @@ public:
 	}
 };
 static_assert(alignof(AKuroTriggerVolume) == 0x000008, "Wrong alignment on AKuroTriggerVolume");
-static_assert(sizeof(AKuroTriggerVolume) == 0x0002F0, "Wrong size on AKuroTriggerVolume");
-static_assert(offsetof(AKuroTriggerVolume, VolumeId) == 0x0002E0, "Member 'AKuroTriggerVolume::VolumeId' has a wrong offset!");
+static_assert(sizeof(AKuroTriggerVolume) == 0x0002F8, "Wrong size on AKuroTriggerVolume");
+static_assert(offsetof(AKuroTriggerVolume, VolumeId) == 0x0002E8, "Member 'AKuroTriggerVolume::VolumeId' has a wrong offset!");
 
 // Class KuroUtility.KuroTriggerVolumeManager
 // 0x0070 (0x00A8 - 0x0038)
@@ -988,7 +1049,7 @@ static_assert(offsetof(UKuroTriggerVolumeManager, OnTriggerVolumeRemoveFromSubsy
 static_assert(offsetof(UKuroTriggerVolumeManager, KuroTriggerVolumeMap) == 0x000058, "Member 'UKuroTriggerVolumeManager::KuroTriggerVolumeMap' has a wrong offset!");
 
 // Class KuroUtility.KuroWaterVolume
-// 0x0000 (0x02E0 - 0x02E0)
+// 0x0000 (0x02E8 - 0x02E8)
 class AKuroWaterVolume final : public AVolume
 {
 public:
@@ -1002,7 +1063,7 @@ public:
 	}
 };
 static_assert(alignof(AKuroWaterVolume) == 0x000008, "Wrong alignment on AKuroWaterVolume");
-static_assert(sizeof(AKuroWaterVolume) == 0x0002E0, "Wrong size on AKuroWaterVolume");
+static_assert(sizeof(AKuroWaterVolume) == 0x0002E8, "Wrong size on AKuroWaterVolume");
 
 // Class KuroUtility.LoadMapNotify
 // 0x0158 (0x0188 - 0x0030)
@@ -1047,11 +1108,11 @@ public:
 public:
 	void AddPrerequisiteActorComponent(const ETickingGroup TickingGroup, class UActorComponent* ActorComp);
 	bool AddTick(const ETickingGroup TickingGroup, const TDelegate<void(float DeltaSeconds)> TickHandler);
-	void CleanSkeletalMeshProxyTickFunction(class USkeletalMeshComponent* SkelComp);
+	void CleanSkeletalMeshProxyTickFunction(class USkeletalMeshComponent* SkeletalComp);
 	void ClearTick();
 	void RemovePrerequisiteActorComponent(const ETickingGroup TickingGroup, class UActorComponent* ActorComp);
 	bool RemoveTick(const ETickingGroup TickingGroup);
-	void SetSkeletalMeshProxyTickFunction(const ETickingGroup TickingGroup, class USkeletalMeshComponent* SkelComp);
+	void SetSkeletalMeshProxyTickFunction(const ETickingGroup TickingGroup, class USkeletalMeshComponent* SkeletalComp);
 
 public:
 	static class UClass* StaticClass()

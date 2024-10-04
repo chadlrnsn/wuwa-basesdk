@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SSequenceCamera_Settings_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "SSequenceCamera_Settings_structs.hpp"
 
 
 namespace SDK
@@ -38,6 +38,7 @@ public:
 	bool                                          DisableMovementInput;                              // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          DisableLookAtInput;                                // 0x00C5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          DisableMotionBlur;                                 // 0x00C6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          _6__Sequence;                                      // 0x00C7(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
@@ -69,6 +70,7 @@ static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, IsIgnoreCharacterCol
 static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, DisableMovementInput) == 0x0000C4, "Member 'UTsAnimNotifySwitchSequenceCamera_C::DisableMovementInput' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, DisableLookAtInput) == 0x0000C5, "Member 'UTsAnimNotifySwitchSequenceCamera_C::DisableLookAtInput' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, DisableMotionBlur) == 0x0000C6, "Member 'UTsAnimNotifySwitchSequenceCamera_C::DisableMotionBlur' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifySwitchSequenceCamera_C, _6__Sequence) == 0x0000C7, "Member 'UTsAnimNotifySwitchSequenceCamera_C::_6__Sequence' has a wrong offset!");
 
 }
 

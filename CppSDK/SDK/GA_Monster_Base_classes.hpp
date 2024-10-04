@@ -26,9 +26,9 @@ public:
 	class ATsBaseCharacter_C*                     ____0;                                             // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_Monster_Base(int32 EntryPoint);
-	void K2_OnEndAbility(bool bWasCancelled);
 	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_Monster_Base(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

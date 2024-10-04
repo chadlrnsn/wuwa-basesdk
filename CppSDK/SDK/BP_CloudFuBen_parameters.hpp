@@ -212,7 +212,7 @@ static_assert(offsetof(BP_CloudFuBen_C_SunMoon_Parameters_Initial, CallFunc_IsVa
 static_assert(offsetof(BP_CloudFuBen_C_SunMoon_Parameters_Initial, CallFunc_K2_SetWorldRotation_SweepHitResult) == 0x000044, "Member 'BP_CloudFuBen_C_SunMoon_Parameters_Initial::CallFunc_K2_SetWorldRotation_SweepHitResult' has a wrong offset!");
 
 // Function BP_CloudFuBen.BP_CloudFuBen_C.Special Parameters Initial
-// 0x00E8 (0x00E8 - 0x0000)
+// 0x00F8 (0x00F8 - 0x0000)
 struct BP_CloudFuBen_C_Special_Parameters_Initial final
 {
 public:
@@ -227,11 +227,12 @@ public:
 	float                                         NoiseSpeed_0;                                      // 0x0040(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         NoiseStrength_0;                                   // 0x0044(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         NoiseTilling_0;                                    // 0x0048(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetWorldRotation_SweepHitResult;       // 0x004C(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FLinearColor                           Color_0;                                           // 0x004C(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetWorldRotation_SweepHitResult;       // 0x005C(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_CloudFuBen_C_Special_Parameters_Initial) == 0x000008, "Wrong alignment on BP_CloudFuBen_C_Special_Parameters_Initial");
-static_assert(sizeof(BP_CloudFuBen_C_Special_Parameters_Initial) == 0x0000E8, "Wrong size on BP_CloudFuBen_C_Special_Parameters_Initial");
+static_assert(sizeof(BP_CloudFuBen_C_Special_Parameters_Initial) == 0x0000F8, "Wrong size on BP_CloudFuBen_C_Special_Parameters_Initial");
 static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, DMI) == 0x000000, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::DMI' has a wrong offset!");
 static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, Mesh) == 0x000008, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::Mesh' has a wrong offset!");
 static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, Texture) == 0x000010, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::Texture' has a wrong offset!");
@@ -242,8 +243,9 @@ static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, NoiseTex) == 
 static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, NoiseSpeed_0) == 0x000040, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::NoiseSpeed_0' has a wrong offset!");
 static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, NoiseStrength_0) == 0x000044, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::NoiseStrength_0' has a wrong offset!");
 static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, NoiseTilling_0) == 0x000048, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::NoiseTilling_0' has a wrong offset!");
-static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, CallFunc_K2_SetWorldRotation_SweepHitResult) == 0x00004C, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::CallFunc_K2_SetWorldRotation_SweepHitResult' has a wrong offset!");
-static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, CallFunc_IsValid_ReturnValue) == 0x0000E0, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, Color_0) == 0x00004C, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::Color_0' has a wrong offset!");
+static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, CallFunc_K2_SetWorldRotation_SweepHitResult) == 0x00005C, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::CallFunc_K2_SetWorldRotation_SweepHitResult' has a wrong offset!");
+static_assert(offsetof(BP_CloudFuBen_C_Special_Parameters_Initial, CallFunc_IsValid_ReturnValue) == 0x0000F0, "Member 'BP_CloudFuBen_C_Special_Parameters_Initial::CallFunc_IsValid_ReturnValue' has a wrong offset!");
 
 // Function BP_CloudFuBen.BP_CloudFuBen_C.ChangeSky
 // 0x001C (0x001C - 0x0000)

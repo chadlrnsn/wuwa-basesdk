@@ -17,26 +17,153 @@
 namespace SDK
 {
 
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.ExecuteUbergraph_WuYinQuBattleActor
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0z¶
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void AWuYinQuBattleActor_C::ExecuteUbergraph_WuYinQuBattleActor(int32 EntryPoint)
+void AWuYinQuBattleActor_C::_b0_z__()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WuYinQuBattleActor_C", "ExecuteUbergraph_WuYinQuBattleActor");
-
-	Params::WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0z¶");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0Yb¶
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AWuYinQuBattleActor_C::_b0Yb__()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0Yb¶");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.>:Debug¿F
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AWuYinQuBattleActor_C::__Debug_F()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WuYinQuBattleActor_C", ">:Debug¿F");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.K¨Ë
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AWuYinQuBattleActor_C::K____()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WuYinQuBattleActor_C", "K¨Ë");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0—6µ3
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AWuYinQuBattleActor_C::_b0__6_3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0—6µ3");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0—6µ2
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AWuYinQuBattleActor_C::_b0__6_2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0—6µ2");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0—6µ1
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void AWuYinQuBattleActor_C::_b0__6_1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0—6µ1");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.ReceiveBeginPlay
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+
+void AWuYinQuBattleActor_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WuYinQuBattleActor_C", "ReceiveBeginPlay");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -67,153 +194,26 @@ void AWuYinQuBattleActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 }
 
 
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.ReceiveBeginPlay
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function WuYinQuBattleActor.WuYinQuBattleActor_C.ExecuteUbergraph_WuYinQuBattleActor
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AWuYinQuBattleActor_C::ReceiveBeginPlay()
+void AWuYinQuBattleActor_C::ExecuteUbergraph_WuYinQuBattleActor(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WuYinQuBattleActor_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("WuYinQuBattleActor_C", "ExecuteUbergraph_WuYinQuBattleActor");
+
+	Params::WuYinQuBattleActor_C_ExecuteUbergraph_WuYinQuBattleActor Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0—6µ1
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AWuYinQuBattleActor_C::_b0__6_1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0—6µ1");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0—6µ2
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AWuYinQuBattleActor_C::_b0__6_2()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0—6µ2");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0—6µ3
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AWuYinQuBattleActor_C::_b0__6_3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0—6µ3");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.K¨Ë
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AWuYinQuBattleActor_C::K____()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WuYinQuBattleActor_C", "K¨Ë");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.>:Debug¿F
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AWuYinQuBattleActor_C::__Debug_F()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WuYinQuBattleActor_C", ">:Debug¿F");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0Yb¶
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AWuYinQuBattleActor_C::_b0Yb__()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0Yb¶");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function WuYinQuBattleActor.WuYinQuBattleActor_C.b0z¶
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void AWuYinQuBattleActor_C::_b0_z__()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WuYinQuBattleActor_C", "b0z¶");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

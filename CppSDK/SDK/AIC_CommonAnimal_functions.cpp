@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function AIC_CommonAnimal.AIC_CommonAnimal_C.OnStart
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AAIC_CommonAnimal_C::OnStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_CommonAnimal_C", "OnStart");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AIC_CommonAnimal.AIC_CommonAnimal_C.ExecuteUbergraph_AIC_CommonAnimal
 // (Final, UbergraphFunction)
 // Parameters:
@@ -34,20 +48,6 @@ void AAIC_CommonAnimal_C::ExecuteUbergraph_AIC_CommonAnimal(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIC_CommonAnimal.AIC_CommonAnimal_C.OnStart
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void AAIC_CommonAnimal_C::OnStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_CommonAnimal_C", "OnStart");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

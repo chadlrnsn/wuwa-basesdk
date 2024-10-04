@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskPatrolPerformanceQuery_C;     // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_TsTaskPatrolPerformanceQuery(int32 EntryPoint);
 	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ExecuteUbergraph_TsTaskPatrolPerformanceQuery(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

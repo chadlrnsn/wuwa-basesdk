@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroCurve_structs.hpp"
 #include "SMaterialControllerFloatParameter_structs.hpp"
+#include "KuroCurve_structs.hpp"
 #include "SMaterialControllerColorParameter_structs.hpp"
 
 

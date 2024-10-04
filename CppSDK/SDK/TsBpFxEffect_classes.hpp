@@ -18,16 +18,16 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsBpFxEffect.TsBpFxEffect_C
-// 0x0020 (0x02C8 - 0x02A8)
+// 0x0020 (0x02D0 - 0x02B0)
 class ATsBpFxEffect_C : public AActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class ATsBpFxEffect_C*                        RecorderShadow;                                    // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsRecorderActor;                                   // 0x02C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, Interp, NoDestructor)
-	uint8                                         Pad_2C1[0x3];                                      // 0x02C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RecordTime;                                        // 0x02C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class ATsBpFxEffect_C*                        RecorderShadow;                                    // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsRecorderActor;                                   // 0x02C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, Interp, NoDestructor)
+	uint8                                         Pad_2C9[0x3];                                      // 0x02C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RecordTime;                                        // 0x02CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_TsBpFxEffect(int32 EntryPoint);
@@ -52,12 +52,12 @@ public:
 	}
 };
 static_assert(alignof(ATsBpFxEffect_C) == 0x000008, "Wrong alignment on ATsBpFxEffect_C");
-static_assert(sizeof(ATsBpFxEffect_C) == 0x0002C8, "Wrong size on ATsBpFxEffect_C");
-static_assert(offsetof(ATsBpFxEffect_C, UberGraphFrame) == 0x0002A8, "Member 'ATsBpFxEffect_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsBpFxEffect_C, DefaultSceneRoot) == 0x0002B0, "Member 'ATsBpFxEffect_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ATsBpFxEffect_C, RecorderShadow) == 0x0002B8, "Member 'ATsBpFxEffect_C::RecorderShadow' has a wrong offset!");
-static_assert(offsetof(ATsBpFxEffect_C, IsRecorderActor) == 0x0002C0, "Member 'ATsBpFxEffect_C::IsRecorderActor' has a wrong offset!");
-static_assert(offsetof(ATsBpFxEffect_C, RecordTime) == 0x0002C4, "Member 'ATsBpFxEffect_C::RecordTime' has a wrong offset!");
+static_assert(sizeof(ATsBpFxEffect_C) == 0x0002D0, "Wrong size on ATsBpFxEffect_C");
+static_assert(offsetof(ATsBpFxEffect_C, UberGraphFrame) == 0x0002B0, "Member 'ATsBpFxEffect_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ATsBpFxEffect_C, DefaultSceneRoot) == 0x0002B8, "Member 'ATsBpFxEffect_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ATsBpFxEffect_C, RecorderShadow) == 0x0002C0, "Member 'ATsBpFxEffect_C::RecorderShadow' has a wrong offset!");
+static_assert(offsetof(ATsBpFxEffect_C, IsRecorderActor) == 0x0002C8, "Member 'ATsBpFxEffect_C::IsRecorderActor' has a wrong offset!");
+static_assert(offsetof(ATsBpFxEffect_C, RecordTime) == 0x0002CC, "Member 'ATsBpFxEffect_C::RecordTime' has a wrong offset!");
 
 }
 

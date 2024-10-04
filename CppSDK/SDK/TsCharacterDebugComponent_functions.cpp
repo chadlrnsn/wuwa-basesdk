@@ -312,24 +312,5 @@ void UTsCharacterDebugComponent_C::SetMovementDebug(bool NewDebug)
 	Func->FunctionFlags = Flgs;
 }
 
-
-// Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.AiDebugDraw
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsCharacterDebugComponent_C::AiDebugDraw()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsCharacterDebugComponent_C", "AiDebugDraw");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
 }
 

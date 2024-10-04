@@ -36,31 +36,6 @@ void UPerfSightHelper::BeginExclude()
 }
 
 
-// Function PerfSight.PerfSightHelper.BeginExtTag
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class FString                           TagName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPerfSightHelper::BeginExtTag(const class FString& TagName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PerfSightHelper", "BeginExtTag");
-
-	Params::PerfSightHelper_BeginExtTag Parms{};
-
-	Parms.TagName = std::move(TagName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function PerfSight.PerfSightHelper.BeginTag
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -144,31 +119,6 @@ void UPerfSightHelper::EndExclude()
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PerfSight.PerfSightHelper.EndExtTag
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class FString                           TagName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPerfSightHelper::EndExtTag(const class FString& TagName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PerfSightHelper", "EndExtTag");
-
-	Params::PerfSightHelper_EndExtTag Parms{};
-
-	Parms.TagName = std::move(TagName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -363,9 +313,8 @@ void UPerfSightHelper::PostEvent(int32 Key, const class FString& Info)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // float                                   Deltatime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FrameIdx                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPerfSightHelper::PostFrame(float Deltatime, int32 FrameIdx)
+void UPerfSightHelper::PostFrame(float Deltatime)
 {
 	static class UFunction* Func = nullptr;
 
@@ -375,7 +324,6 @@ void UPerfSightHelper::PostFrame(float Deltatime, int32 FrameIdx)
 	Params::PerfSightHelper_PostFrame Parms{};
 
 	Parms.Deltatime = Deltatime;
-	Parms.FrameIdx = FrameIdx;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -421,9 +369,8 @@ void UPerfSightHelper::PostNetworkLatency(int32 Latency, const class FString& Cu
 // class FString                           Catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   A                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FrameIdx                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPerfSightHelper::PostValueF1(const class FString& Catgory, const class FString& Key, float A, int32 FrameIdx)
+void UPerfSightHelper::PostValueF1(const class FString& Catgory, const class FString& Key, float A)
 {
 	static class UFunction* Func = nullptr;
 
@@ -435,7 +382,6 @@ void UPerfSightHelper::PostValueF1(const class FString& Catgory, const class FSt
 	Parms.Catgory = std::move(Catgory);
 	Parms.Key = std::move(Key);
 	Parms.A = A;
-	Parms.FrameIdx = FrameIdx;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -453,9 +399,8 @@ void UPerfSightHelper::PostValueF1(const class FString& Catgory, const class FSt
 // class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   A                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   b                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FrameIdx                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPerfSightHelper::PostValueF2(const class FString& Catgory, const class FString& Key, float A, float b, int32 FrameIdx)
+void UPerfSightHelper::PostValueF2(const class FString& Catgory, const class FString& Key, float A, float b)
 {
 	static class UFunction* Func = nullptr;
 
@@ -468,7 +413,6 @@ void UPerfSightHelper::PostValueF2(const class FString& Catgory, const class FSt
 	Parms.Key = std::move(Key);
 	Parms.A = A;
 	Parms.b = b;
-	Parms.FrameIdx = FrameIdx;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -487,9 +431,8 @@ void UPerfSightHelper::PostValueF2(const class FString& Catgory, const class FSt
 // float                                   A                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   b                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   C                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FrameIdx                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPerfSightHelper::PostValueF3(const class FString& Catgory, const class FString& Key, float A, float b, float C, int32 FrameIdx)
+void UPerfSightHelper::PostValueF3(const class FString& Catgory, const class FString& Key, float A, float b, float C)
 {
 	static class UFunction* Func = nullptr;
 
@@ -503,7 +446,6 @@ void UPerfSightHelper::PostValueF3(const class FString& Catgory, const class FSt
 	Parms.A = A;
 	Parms.b = b;
 	Parms.C = C;
-	Parms.FrameIdx = FrameIdx;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -520,9 +462,8 @@ void UPerfSightHelper::PostValueF3(const class FString& Catgory, const class FSt
 // class FString                           Catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   A                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FrameIdx                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPerfSightHelper::PostValueI1(const class FString& Catgory, const class FString& Key, int32 A, int32 FrameIdx)
+void UPerfSightHelper::PostValueI1(const class FString& Catgory, const class FString& Key, int32 A)
 {
 	static class UFunction* Func = nullptr;
 
@@ -534,7 +475,6 @@ void UPerfSightHelper::PostValueI1(const class FString& Catgory, const class FSt
 	Parms.Catgory = std::move(Catgory);
 	Parms.Key = std::move(Key);
 	Parms.A = A;
-	Parms.FrameIdx = FrameIdx;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -552,9 +492,8 @@ void UPerfSightHelper::PostValueI1(const class FString& Catgory, const class FSt
 // class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   A                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   b                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FrameIdx                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPerfSightHelper::PostValueI2(const class FString& Catgory, const class FString& Key, int32 A, int32 b, int32 FrameIdx)
+void UPerfSightHelper::PostValueI2(const class FString& Catgory, const class FString& Key, int32 A, int32 b)
 {
 	static class UFunction* Func = nullptr;
 
@@ -567,7 +506,6 @@ void UPerfSightHelper::PostValueI2(const class FString& Catgory, const class FSt
 	Parms.Key = std::move(Key);
 	Parms.A = A;
 	Parms.b = b;
-	Parms.FrameIdx = FrameIdx;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -586,9 +524,8 @@ void UPerfSightHelper::PostValueI2(const class FString& Catgory, const class FSt
 // int32                                   A                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   b                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   C                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FrameIdx                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPerfSightHelper::PostValueI3(const class FString& Catgory, const class FString& Key, int32 A, int32 b, int32 C, int32 FrameIdx)
+void UPerfSightHelper::PostValueI3(const class FString& Catgory, const class FString& Key, int32 A, int32 b, int32 C)
 {
 	static class UFunction* Func = nullptr;
 
@@ -602,7 +539,6 @@ void UPerfSightHelper::PostValueI3(const class FString& Catgory, const class FSt
 	Parms.A = A;
 	Parms.b = b;
 	Parms.C = C;
-	Parms.FrameIdx = FrameIdx;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -619,9 +555,8 @@ void UPerfSightHelper::PostValueI3(const class FString& Catgory, const class FSt
 // class FString                           Catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FrameIdx                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPerfSightHelper::PostValueS(const class FString& Catgory, const class FString& Key, const class FString& Value, int32 FrameIdx)
+void UPerfSightHelper::PostValueS(const class FString& Catgory, const class FString& Key, const class FString& Value)
 {
 	static class UFunction* Func = nullptr;
 
@@ -633,7 +568,6 @@ void UPerfSightHelper::PostValueS(const class FString& Catgory, const class FStr
 	Parms.Catgory = std::move(Catgory);
 	Parms.Key = std::move(Key);
 	Parms.Value = std::move(Value);
-	Parms.FrameIdx = FrameIdx;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -759,33 +693,6 @@ void UPerfSightHelper::SetQuality(int32 Quality)
 	Params::PerfSightHelper_SetQuality Parms{};
 
 	Parms.Quality = Quality;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function PerfSight.PerfSightHelper.SetStrategyById1
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Strategy_id                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Strategy_value                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPerfSightHelper::SetStrategyById1(int32 Strategy_id, int32 Strategy_value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PerfSightHelper", "SetStrategyById1");
-
-	Params::PerfSightHelper_SetStrategyById1 Parms{};
-
-	Parms.Strategy_id = Strategy_id;
-	Parms.Strategy_value = Strategy_value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

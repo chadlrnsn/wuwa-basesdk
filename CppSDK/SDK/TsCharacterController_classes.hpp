@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsCharacterController.TsCharacterController_C
-// 0x0008 (0x0730 - 0x0728)
+// 0x0008 (0x0740 - 0x0738)
 class ATsCharacterController_C : public ATsBasePlayerController_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_TsCharacterController_C;            // 0x0728(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_TsCharacterController_C;            // 0x0738(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_TsCharacterController(int32 EntryPoint);
@@ -46,8 +46,8 @@ public:
 	}
 };
 static_assert(alignof(ATsCharacterController_C) == 0x000008, "Wrong alignment on ATsCharacterController_C");
-static_assert(sizeof(ATsCharacterController_C) == 0x000730, "Wrong size on ATsCharacterController_C");
-static_assert(offsetof(ATsCharacterController_C, UberGraphFrame_TsCharacterController_C) == 0x000728, "Member 'ATsCharacterController_C::UberGraphFrame_TsCharacterController_C' has a wrong offset!");
+static_assert(sizeof(ATsCharacterController_C) == 0x000740, "Wrong size on ATsCharacterController_C");
+static_assert(offsetof(ATsCharacterController_C, UberGraphFrame_TsCharacterController_C) == 0x000738, "Member 'ATsCharacterController_C::UberGraphFrame_TsCharacterController_C' has a wrong offset!");
 
 }
 

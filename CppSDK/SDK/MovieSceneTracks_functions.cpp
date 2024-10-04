@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
-// (Event, Protected, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FTransform IMovieSceneTransformOrigin::BP_GetTransformOrigin() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneTransformOrigin", "BP_GetTransformOrigin");
-
-	Params::MovieSceneTransformOrigin_BP_GetTransformOrigin Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function MovieSceneTracks.MovieSceneParameterSection.AddBoolParameterKey
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -405,6 +385,76 @@ void UMovieSceneParameterSection::GetParameterNames(TSet<class FName>* Parameter
 }
 
 
+// Function MovieSceneTracks.MovieSceneCameraCutSection.SetCameraBindingID
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FMovieSceneObjectBindingID       InCameraBindingID                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneCameraCutSection::SetCameraBindingID(const struct FMovieSceneObjectBindingID& InCameraBindingID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneCameraCutSection", "SetCameraBindingID");
+
+	Params::MovieSceneCameraCutSection_SetCameraBindingID Parms{};
+
+	Parms.InCameraBindingID = std::move(InCameraBindingID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieSceneTracks.MovieSceneCameraCutSection.GetCameraBindingID
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FMovieSceneObjectBindingID ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const struct FMovieSceneObjectBindingID UMovieSceneCameraCutSection::GetCameraBindingID() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneCameraCutSection", "GetCameraBindingID");
+
+	Params::MovieSceneCameraCutSection_GetCameraBindingID Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
+// (Event, Protected, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FTransform IMovieSceneTransformOrigin::BP_GetTransformOrigin() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneTransformOrigin", "BP_GetTransformOrigin");
+
+	Params::MovieSceneTransformOrigin_BP_GetTransformOrigin Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function MovieSceneTracks.MovieScene3DConstraintSection.SetConstraintBindingID
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -543,56 +593,6 @@ struct FFrameNumber UMovieSceneAudioSection::GetStartOffset() const
 		Func = Class->GetFunction("MovieSceneAudioSection", "GetStartOffset");
 
 	Params::MovieSceneAudioSection_GetStartOffset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieSceneTracks.MovieSceneCameraCutSection.SetCameraBindingID
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FMovieSceneObjectBindingID       InCameraBindingID                                      (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneCameraCutSection::SetCameraBindingID(const struct FMovieSceneObjectBindingID& InCameraBindingID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneCameraCutSection", "SetCameraBindingID");
-
-	Params::MovieSceneCameraCutSection_SetCameraBindingID Parms{};
-
-	Parms.InCameraBindingID = std::move(InCameraBindingID);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieSceneTracks.MovieSceneCameraCutSection.GetCameraBindingID
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FMovieSceneObjectBindingID ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const struct FMovieSceneObjectBindingID UMovieSceneCameraCutSection::GetCameraBindingID() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneCameraCutSection", "GetCameraBindingID");
-
-	Params::MovieSceneCameraCutSection_GetCameraBindingID Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

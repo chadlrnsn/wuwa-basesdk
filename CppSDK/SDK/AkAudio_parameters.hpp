@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "AkAudio_structs.hpp"
-#include "Engine_structs.hpp"
 #include "WwiseObjectUtils_structs.hpp"
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
 
@@ -140,38 +140,6 @@ static_assert(offsetof(AkGameObject_SetRTPCValue, RTPCValue) == 0x000000, "Membe
 static_assert(offsetof(AkGameObject_SetRTPCValue, Value) == 0x000008, "Member 'AkGameObject_SetRTPCValue::Value' has a wrong offset!");
 static_assert(offsetof(AkGameObject_SetRTPCValue, InterpolationTimeMs) == 0x00000C, "Member 'AkGameObject_SetRTPCValue::InterpolationTimeMs' has a wrong offset!");
 static_assert(offsetof(AkGameObject_SetRTPCValue, RTPC) == 0x000010, "Member 'AkGameObject_SetRTPCValue::RTPC' has a wrong offset!");
-
-// Function AkAudio.AkComponent.PostAkEventAndWaitForEnd
-// 0x0040 (0x0040 - 0x0000)
-struct AkComponent_PostAkEventAndWaitForEnd final
-{
-public:
-	class UAkAudioEvent*                          AkEvent;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 In_EventName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLatentActionInfo                      LatentInfo;                                        // 0x0018(0x0020)(Parm, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0038(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AkComponent_PostAkEventAndWaitForEnd) == 0x000008, "Wrong alignment on AkComponent_PostAkEventAndWaitForEnd");
-static_assert(sizeof(AkComponent_PostAkEventAndWaitForEnd) == 0x000040, "Wrong size on AkComponent_PostAkEventAndWaitForEnd");
-static_assert(offsetof(AkComponent_PostAkEventAndWaitForEnd, AkEvent) == 0x000000, "Member 'AkComponent_PostAkEventAndWaitForEnd::AkEvent' has a wrong offset!");
-static_assert(offsetof(AkComponent_PostAkEventAndWaitForEnd, In_EventName) == 0x000008, "Member 'AkComponent_PostAkEventAndWaitForEnd::In_EventName' has a wrong offset!");
-static_assert(offsetof(AkComponent_PostAkEventAndWaitForEnd, LatentInfo) == 0x000018, "Member 'AkComponent_PostAkEventAndWaitForEnd::LatentInfo' has a wrong offset!");
-static_assert(offsetof(AkComponent_PostAkEventAndWaitForEnd, ReturnValue) == 0x000038, "Member 'AkComponent_PostAkEventAndWaitForEnd::ReturnValue' has a wrong offset!");
-
-// Function AkAudio.AkComponent.PostAssociatedAkEventAndWaitForEnd
-// 0x0028 (0x0028 - 0x0000)
-struct AkComponent_PostAssociatedAkEventAndWaitForEnd final
-{
-public:
-	struct FLatentActionInfo                      LatentInfo;                                        // 0x0000(0x0020)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AkComponent_PostAssociatedAkEventAndWaitForEnd) == 0x000008, "Wrong alignment on AkComponent_PostAssociatedAkEventAndWaitForEnd");
-static_assert(sizeof(AkComponent_PostAssociatedAkEventAndWaitForEnd) == 0x000028, "Wrong size on AkComponent_PostAssociatedAkEventAndWaitForEnd");
-static_assert(offsetof(AkComponent_PostAssociatedAkEventAndWaitForEnd, LatentInfo) == 0x000000, "Member 'AkComponent_PostAssociatedAkEventAndWaitForEnd::LatentInfo' has a wrong offset!");
-static_assert(offsetof(AkComponent_PostAssociatedAkEventAndWaitForEnd, ReturnValue) == 0x000020, "Member 'AkComponent_PostAssociatedAkEventAndWaitForEnd::ReturnValue' has a wrong offset!");
 
 // Function AkAudio.AkComponent.PostTrigger
 // 0x0018 (0x0018 - 0x0000)

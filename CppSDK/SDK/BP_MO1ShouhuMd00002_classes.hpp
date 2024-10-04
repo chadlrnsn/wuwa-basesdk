@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MO1ShouhuMd00002.BP_MO1ShouhuMd00002_C
-// 0x0000 (0x0780 - 0x0780)
+// 0x0000 (0x0790 - 0x0790)
 class ABP_MO1ShouhuMd00002_C final : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_771[0x7];                                      // 0x0771(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCapsuleComponent*                      Joint1;                                            // 0x0778(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_781[0x7];                                      // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCapsuleComponent*                      Joint1;                                            // 0x0788(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -35,8 +35,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_MO1ShouhuMd00002_C) == 0x000010, "Wrong alignment on ABP_MO1ShouhuMd00002_C");
-static_assert(sizeof(ABP_MO1ShouhuMd00002_C) == 0x000780, "Wrong size on ABP_MO1ShouhuMd00002_C");
-static_assert(offsetof(ABP_MO1ShouhuMd00002_C, Joint1) == 0x000778, "Member 'ABP_MO1ShouhuMd00002_C::Joint1' has a wrong offset!");
+static_assert(sizeof(ABP_MO1ShouhuMd00002_C) == 0x000790, "Wrong size on ABP_MO1ShouhuMd00002_C");
+static_assert(offsetof(ABP_MO1ShouhuMd00002_C, Joint1) == 0x000788, "Member 'ABP_MO1ShouhuMd00002_C::Joint1' has a wrong offset!");
 
 }
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "MagicLeap_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MagicLeap_structs.hpp"
 
 
 namespace SDK::Params

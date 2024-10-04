@@ -1070,5 +1070,18 @@ static_assert(sizeof(UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent) == 
 static_assert(offsetof(UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent, Param) == 0x000000, "Member 'UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent::Param' has a wrong offset!");
 static_assert(offsetof(UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent, __WorldContext) == 0x000010, "Member 'UiBlueprintFunctionLibrary_C_ActivitySequenceEmitEvent::__WorldContext' has a wrong offset!");
 
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.GetUiWeaponEquippedRoleId
+// 0x0010 (0x0010 - 0x0000)
+struct UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId) == 0x000008, "Wrong alignment on UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId");
+static_assert(sizeof(UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId) == 0x000010, "Wrong size on UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId");
+static_assert(offsetof(UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId, __WorldContext) == 0x000000, "Member 'UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId::__WorldContext' has a wrong offset!");
+static_assert(offsetof(UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId, ReturnValue) == 0x000008, "Member 'UiBlueprintFunctionLibrary_C_GetUiWeaponEquippedRoleId::ReturnValue' has a wrong offset!");
+
 }
 

@@ -17,21 +17,44 @@
 namespace SDK
 {
 
-// Function TsTaskSkillWander.TsTaskSkillWander_C.ExecuteUbergraph_TsTaskSkillWander
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TsTaskSkillWander.TsTaskSkillWander_C.OnClear
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void UTsTaskSkillWander_C::ExecuteUbergraph_TsTaskSkillWander(int32 EntryPoint)
+void UTsTaskSkillWander_C::OnClear()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskSkillWander_C", "ExecuteUbergraph_TsTaskSkillWander");
+		Func = Class->GetFunction("TsTaskSkillWander_C", "OnClear");
 
-	Params::TsTaskSkillWander_C_ExecuteUbergraph_TsTaskSkillWander Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.EntryPoint = EntryPoint;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskSkillWander.TsTaskSkillWander_C.ReceiveTickAI
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsTaskSkillWander_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskSkillWander_C", "ReceiveTickAI");
+
+	Params::TsTaskSkillWander_C_ReceiveTickAI Parms{};
+
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -69,49 +92,26 @@ void UTsTaskSkillWander_C::ReceiveExecuteAI(class AAIController* OwnerController
 }
 
 
-// Function TsTaskSkillWander.TsTaskSkillWander_C.ReceiveTickAI
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsTaskSkillWander.TsTaskSkillWander_C.ExecuteUbergraph_TsTaskSkillWander
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskSkillWander_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
+void UTsTaskSkillWander_C::ExecuteUbergraph_TsTaskSkillWander(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskSkillWander_C", "ReceiveTickAI");
+		Func = Class->GetFunction("TsTaskSkillWander_C", "ExecuteUbergraph_TsTaskSkillWander");
 
-	Params::TsTaskSkillWander_C_ReceiveTickAI Parms{};
+	Params::TsTaskSkillWander_C_ExecuteUbergraph_TsTaskSkillWander Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTaskSkillWander.TsTaskSkillWander_C.OnClear
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsTaskSkillWander_C::OnClear()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskSkillWander_C", "OnClear");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

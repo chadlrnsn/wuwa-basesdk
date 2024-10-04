@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Miaozhunxian_Bullet.BP_Miaozhunxian_Bullet_C
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class ABP_Miaozhunxian_Bullet_C final : public AActor
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_Miaozhunxian_Bullet_C) == 0x000008, "Wrong alignment on ABP_Miaozhunxian_Bullet_C");
-static_assert(sizeof(ABP_Miaozhunxian_Bullet_C) == 0x0002B0, "Wrong size on ABP_Miaozhunxian_Bullet_C");
-static_assert(offsetof(ABP_Miaozhunxian_Bullet_C, DefaultSceneRoot) == 0x0002A8, "Member 'ABP_Miaozhunxian_Bullet_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(sizeof(ABP_Miaozhunxian_Bullet_C) == 0x0002B8, "Wrong size on ABP_Miaozhunxian_Bullet_C");
+static_assert(offsetof(ABP_Miaozhunxian_Bullet_C, DefaultSceneRoot) == 0x0002B0, "Member 'ABP_Miaozhunxian_Bullet_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

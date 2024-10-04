@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SInputHoldConfig_structs.hpp"
 #include "EInputAction_structs.hpp"
-#include "SInputCaches_structs.hpp"
 #include "BP_InputBase_classes.hpp"
+#include "SInputCaches_structs.hpp"
+#include "SInputHoldConfig_structs.hpp"
 #include "ECharViewDirectionState_structs.hpp"
 
 
@@ -34,13 +34,13 @@ public:
 	bool                                          ________0;                                         // 0x021C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          __e____;                                           // 0x021D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          ________1;                                         // 0x021E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          _____1_w;                                          // 0x021F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	struct FSInputCommand Func______16(float Time);
 	struct FSInputCommand ___w_6(float Time);
 	struct FSInputCommand Func______15(float Time);
 	struct FSInputCommand P__b___0(float Time);
-	struct FSInputCommand _______9(float Time);
 	void _______8(float Time);
 	struct FSInputCommand ___w_5(float Time);
 	struct FSInputCommand Func______14(float Time);
@@ -54,13 +54,15 @@ public:
 	void _____w__(float Time);
 	struct FSInputCommand Func______13(float Time);
 	struct FSInputCommand Func______12(float Time);
-	struct FSInputCommand _______7(float Time);
 	void ________(float Time);
 	struct FSInputCommand __1___0(float Time);
+	struct FSInputCommand __1_w(float Time);
 	struct FSInputCommand _a2_w(float Time);
-	struct FSInputCommand Func______11(float Time);
 	struct FSInputCommand _a2___0(float Time);
 	void _______6(float Time);
+	struct FSInputCommand _______9(float Time);
+	struct FSInputCommand _______7(float Time);
+	struct FSInputCommand Func______11(float Time);
 
 public:
 	static class UClass* StaticClass()
@@ -83,6 +85,7 @@ static_assert(offsetof(UBP_InputComponent_C, ___b) == 0x00021B, "Member 'UBP_Inp
 static_assert(offsetof(UBP_InputComponent_C, ________0) == 0x00021C, "Member 'UBP_InputComponent_C::________0' has a wrong offset!");
 static_assert(offsetof(UBP_InputComponent_C, __e____) == 0x00021D, "Member 'UBP_InputComponent_C::__e____' has a wrong offset!");
 static_assert(offsetof(UBP_InputComponent_C, ________1) == 0x00021E, "Member 'UBP_InputComponent_C::________1' has a wrong offset!");
+static_assert(offsetof(UBP_InputComponent_C, _____1_w) == 0x00021F, "Member 'UBP_InputComponent_C::_____1_w' has a wrong offset!");
 
 }
 

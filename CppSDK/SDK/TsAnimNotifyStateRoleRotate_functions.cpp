@@ -17,26 +17,45 @@
 namespace SDK
 {
 
-// Function TsAnimNotifyStateRoleRotate.TsAnimNotifyStateRoleRotate_C.K2_NotifyBegin
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+// Function TsAnimNotifyStateRoleRotate.TsAnimNotifyStateRoleRotate_C.Init
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-bool UTsAnimNotifyStateRoleRotate_C::K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration)
+void UTsAnimNotifyStateRoleRotate_C::Init()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyStateRoleRotate_C", "K2_NotifyBegin");
+		Func = Class->GetFunction("TsAnimNotifyStateRoleRotate_C", "Init");
 
-	Params::TsAnimNotifyStateRoleRotate_C_K2_NotifyBegin Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsAnimNotifyStateRoleRotate.TsAnimNotifyStateRoleRotate_C.K2_NotifyTick
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   FrameDeltaTime                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsAnimNotifyStateRoleRotate_C::K2_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAnimNotifyStateRoleRotate_C", "K2_NotifyTick");
+
+	Params::TsAnimNotifyStateRoleRotate_C_K2_NotifyTick Parms{};
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
-	Parms.TotalDuration = TotalDuration;
+	Parms.FrameDeltaTime = FrameDeltaTime;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -79,26 +98,26 @@ bool UTsAnimNotifyStateRoleRotate_C::K2_NotifyEnd(class USkeletalMeshComponent* 
 }
 
 
-// Function TsAnimNotifyStateRoleRotate.TsAnimNotifyStateRoleRotate_C.K2_NotifyTick
+// Function TsAnimNotifyStateRoleRotate.TsAnimNotifyStateRoleRotate_C.K2_NotifyBegin
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   FrameDeltaTime                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool UTsAnimNotifyStateRoleRotate_C::K2_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime)
+bool UTsAnimNotifyStateRoleRotate_C::K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyStateRoleRotate_C", "K2_NotifyTick");
+		Func = Class->GetFunction("TsAnimNotifyStateRoleRotate_C", "K2_NotifyBegin");
 
-	Params::TsAnimNotifyStateRoleRotate_C_K2_NotifyTick Parms{};
+	Params::TsAnimNotifyStateRoleRotate_C_K2_NotifyBegin Parms{};
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
-	Parms.FrameDeltaTime = FrameDeltaTime;
+	Parms.TotalDuration = TotalDuration;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -108,25 +127,6 @@ bool UTsAnimNotifyStateRoleRotate_C::K2_NotifyTick(class USkeletalMeshComponent*
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function TsAnimNotifyStateRoleRotate.TsAnimNotifyStateRoleRotate_C.Init
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsAnimNotifyStateRoleRotate_C::Init()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyStateRoleRotate_C", "Init");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

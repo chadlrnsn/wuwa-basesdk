@@ -16,6 +16,28 @@
 namespace SDK::Params
 {
 
+// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.OnDrawerEnd
+// 0x0001 (0x0001 - 0x0000)
+struct BP_TrailGrassDrawerComponent_C_OnDrawerEnd final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_TrailGrassDrawerComponent_C_OnDrawerEnd) == 0x000001, "Wrong alignment on BP_TrailGrassDrawerComponent_C_OnDrawerEnd");
+static_assert(sizeof(BP_TrailGrassDrawerComponent_C_OnDrawerEnd) == 0x000001, "Wrong size on BP_TrailGrassDrawerComponent_C_OnDrawerEnd");
+static_assert(offsetof(BP_TrailGrassDrawerComponent_C_OnDrawerEnd, EndPlayReason) == 0x000000, "Member 'BP_TrailGrassDrawerComponent_C_OnDrawerEnd::EndPlayReason' has a wrong offset!");
+
+// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.OnDrawerTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_TrailGrassDrawerComponent_C_OnDrawerTick final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_TrailGrassDrawerComponent_C_OnDrawerTick) == 0x000004, "Wrong alignment on BP_TrailGrassDrawerComponent_C_OnDrawerTick");
+static_assert(sizeof(BP_TrailGrassDrawerComponent_C_OnDrawerTick) == 0x000004, "Wrong size on BP_TrailGrassDrawerComponent_C_OnDrawerTick");
+static_assert(offsetof(BP_TrailGrassDrawerComponent_C_OnDrawerTick, DeltaTime) == 0x000000, "Member 'BP_TrailGrassDrawerComponent_C_OnDrawerTick::DeltaTime' has a wrong offset!");
+
 // Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.ExecuteUbergraph_BP_TrailGrassDrawerComponent
 // 0x000C (0x000C - 0x0000)
 struct BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGrassDrawerComponent final
@@ -30,28 +52,6 @@ static_assert(sizeof(BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGra
 static_assert(offsetof(BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGrassDrawerComponent, EntryPoint) == 0x000000, "Member 'BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGrassDrawerComponent::EntryPoint' has a wrong offset!");
 static_assert(offsetof(BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGrassDrawerComponent, K2Node_Event_DeltaTime) == 0x000004, "Member 'BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGrassDrawerComponent::K2Node_Event_DeltaTime' has a wrong offset!");
 static_assert(offsetof(BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGrassDrawerComponent, K2Node_Event_EndPlayReason) == 0x000008, "Member 'BP_TrailGrassDrawerComponent_C_ExecuteUbergraph_BP_TrailGrassDrawerComponent::K2Node_Event_EndPlayReason' has a wrong offset!");
-
-// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.OnDrawerTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_TrailGrassDrawerComponent_C_OnDrawerTick final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_TrailGrassDrawerComponent_C_OnDrawerTick) == 0x000004, "Wrong alignment on BP_TrailGrassDrawerComponent_C_OnDrawerTick");
-static_assert(sizeof(BP_TrailGrassDrawerComponent_C_OnDrawerTick) == 0x000004, "Wrong size on BP_TrailGrassDrawerComponent_C_OnDrawerTick");
-static_assert(offsetof(BP_TrailGrassDrawerComponent_C_OnDrawerTick, DeltaTime) == 0x000000, "Member 'BP_TrailGrassDrawerComponent_C_OnDrawerTick::DeltaTime' has a wrong offset!");
-
-// Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.OnDrawerEnd
-// 0x0001 (0x0001 - 0x0000)
-struct BP_TrailGrassDrawerComponent_C_OnDrawerEnd final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_TrailGrassDrawerComponent_C_OnDrawerEnd) == 0x000001, "Wrong alignment on BP_TrailGrassDrawerComponent_C_OnDrawerEnd");
-static_assert(sizeof(BP_TrailGrassDrawerComponent_C_OnDrawerEnd) == 0x000001, "Wrong size on BP_TrailGrassDrawerComponent_C_OnDrawerEnd");
-static_assert(offsetof(BP_TrailGrassDrawerComponent_C_OnDrawerEnd, EndPlayReason) == 0x000000, "Member 'BP_TrailGrassDrawerComponent_C_OnDrawerEnd::EndPlayReason' has a wrong offset!");
 
 }
 

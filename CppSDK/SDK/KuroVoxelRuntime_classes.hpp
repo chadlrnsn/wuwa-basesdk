@@ -19,11 +19,11 @@ namespace SDK
 {
 
 // Class KuroVoxelRuntime.KuroVoxelGlobalActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AKuroVoxelGlobalActor final : public AActor
 {
 public:
-	class UKuroVoxelGlobalComponent*              KuroVoxelGlobalComp;                               // 0x02A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroVoxelGlobalComponent*              KuroVoxelGlobalComp;                               // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -36,8 +36,8 @@ public:
 	}
 };
 static_assert(alignof(AKuroVoxelGlobalActor) == 0x000008, "Wrong alignment on AKuroVoxelGlobalActor");
-static_assert(sizeof(AKuroVoxelGlobalActor) == 0x0002B0, "Wrong size on AKuroVoxelGlobalActor");
-static_assert(offsetof(AKuroVoxelGlobalActor, KuroVoxelGlobalComp) == 0x0002A8, "Member 'AKuroVoxelGlobalActor::KuroVoxelGlobalComp' has a wrong offset!");
+static_assert(sizeof(AKuroVoxelGlobalActor) == 0x0002B8, "Wrong size on AKuroVoxelGlobalActor");
+static_assert(offsetof(AKuroVoxelGlobalActor, KuroVoxelGlobalComp) == 0x0002B0, "Member 'AKuroVoxelGlobalActor::KuroVoxelGlobalComp' has a wrong offset!");
 
 // Class KuroVoxelRuntime.KuroVoxelGlobalComponent
 // 0x0070 (0x0290 - 0x0220)
@@ -62,11 +62,11 @@ static_assert(sizeof(UKuroVoxelGlobalComponent) == 0x000290, "Wrong size on UKur
 static_assert(offsetof(UKuroVoxelGlobalComponent, Version) == 0x00028C, "Member 'UKuroVoxelGlobalComponent::Version' has a wrong offset!");
 
 // Class KuroVoxelRuntime.KuroVoxelPartitionActor
-// 0x0008 (0x02B8 - 0x02B0)
+// 0x0008 (0x02C0 - 0x02B8)
 class AKuroVoxelPartitionActor final : public AKuroWorldPartitionActor
 {
 public:
-	class UKuroVoxelPartitionComponent*           KuroVoxelPartitionComp;                            // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroVoxelPartitionComponent*           KuroVoxelPartitionComp;                            // 0x02B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -79,8 +79,8 @@ public:
 	}
 };
 static_assert(alignof(AKuroVoxelPartitionActor) == 0x000008, "Wrong alignment on AKuroVoxelPartitionActor");
-static_assert(sizeof(AKuroVoxelPartitionActor) == 0x0002B8, "Wrong size on AKuroVoxelPartitionActor");
-static_assert(offsetof(AKuroVoxelPartitionActor, KuroVoxelPartitionComp) == 0x0002B0, "Member 'AKuroVoxelPartitionActor::KuroVoxelPartitionComp' has a wrong offset!");
+static_assert(sizeof(AKuroVoxelPartitionActor) == 0x0002C0, "Wrong size on AKuroVoxelPartitionActor");
+static_assert(offsetof(AKuroVoxelPartitionActor, KuroVoxelPartitionComp) == 0x0002B8, "Member 'AKuroVoxelPartitionActor::KuroVoxelPartitionComp' has a wrong offset!");
 
 // Class KuroVoxelRuntime.KuroVoxelPartitionComponent
 // 0x0018 (0x00D8 - 0x00C0)

@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "InputCore_structs.hpp"
+#include "Slate_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -18,37 +19,97 @@ namespace SDK::Params
 {
 
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnPressActionCallback__DelegateSignature
-// 0x0020 (0x0020 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature final
 {
 public:
-	struct FKey                                   KeyName;                                           // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	bool                                          IsPress;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ActionName_0;                                      // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FKey                                   Key;                                               // 0x0018(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 };
 static_assert(alignof(TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature");
-static_assert(sizeof(TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature) == 0x000020, "Wrong size on TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature");
-static_assert(offsetof(TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature, KeyName) == 0x000000, "Member 'TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature::KeyName' has a wrong offset!");
+static_assert(sizeof(TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature) == 0x000038, "Wrong size on TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature");
+static_assert(offsetof(TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature, IsPress) == 0x000000, "Member 'TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature::IsPress' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature, ActionName_0) == 0x000008, "Member 'TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature::ActionName_0' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature, Key) == 0x000018, "Member 'TsHotFixActionHandle_C_OnPressActionCallback__DelegateSignature::Key' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnTouchActionCallback__DelegateSignature
+// 0x0010 (0x0010 - 0x0000)
+struct TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature final
+{
+public:
+	bool                                          IsPress;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	ETouchIndex                                   TouchIndex_0;                                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TouchPosition_0;                                   // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature) == 0x000004, "Wrong alignment on TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature");
+static_assert(sizeof(TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature) == 0x000010, "Wrong size on TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature");
+static_assert(offsetof(TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature, IsPress) == 0x000000, "Member 'TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature::IsPress' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature, TouchIndex_0) == 0x000001, "Member 'TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature::TouchIndex_0' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature, TouchPosition_0) == 0x000004, "Member 'TsHotFixActionHandle_C_OnTouchActionCallback__DelegateSignature::TouchPosition_0' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnTouchMovedActionCallback__DelegateSignature
+// 0x0010 (0x0010 - 0x0000)
+struct TsHotFixActionHandle_C_OnTouchMovedActionCallback__DelegateSignature final
+{
+public:
+	ETouchIndex                                   TouchIndex_0;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                TouchPosition_0;                                   // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_OnTouchMovedActionCallback__DelegateSignature) == 0x000004, "Wrong alignment on TsHotFixActionHandle_C_OnTouchMovedActionCallback__DelegateSignature");
+static_assert(sizeof(TsHotFixActionHandle_C_OnTouchMovedActionCallback__DelegateSignature) == 0x000010, "Wrong size on TsHotFixActionHandle_C_OnTouchMovedActionCallback__DelegateSignature");
+static_assert(offsetof(TsHotFixActionHandle_C_OnTouchMovedActionCallback__DelegateSignature, TouchIndex_0) == 0x000000, "Member 'TsHotFixActionHandle_C_OnTouchMovedActionCallback__DelegateSignature::TouchIndex_0' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_OnTouchMovedActionCallback__DelegateSignature, TouchPosition_0) == 0x000004, "Member 'TsHotFixActionHandle_C_OnTouchMovedActionCallback__DelegateSignature::TouchPosition_0' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnAxisCallback__DelegateSignature
+// 0x0018 (0x0018 - 0x0000)
+struct TsHotFixActionHandle_C_OnAxisCallback__DelegateSignature final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 AxisName_0;                                        // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_OnAxisCallback__DelegateSignature) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_OnAxisCallback__DelegateSignature");
+static_assert(sizeof(TsHotFixActionHandle_C_OnAxisCallback__DelegateSignature) == 0x000018, "Wrong size on TsHotFixActionHandle_C_OnAxisCallback__DelegateSignature");
+static_assert(offsetof(TsHotFixActionHandle_C_OnAxisCallback__DelegateSignature, Value) == 0x000000, "Member 'TsHotFixActionHandle_C_OnAxisCallback__DelegateSignature::Value' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_OnAxisCallback__DelegateSignature, AxisName_0) == 0x000008, "Member 'TsHotFixActionHandle_C_OnAxisCallback__DelegateSignature::AxisName_0' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnAnyKeyPressCallback__DelegateSignature
+// 0x0020 (0x0020 - 0x0000)
+struct TsHotFixActionHandle_C_OnAnyKeyPressCallback__DelegateSignature final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_OnAnyKeyPressCallback__DelegateSignature) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_OnAnyKeyPressCallback__DelegateSignature");
+static_assert(sizeof(TsHotFixActionHandle_C_OnAnyKeyPressCallback__DelegateSignature) == 0x000020, "Wrong size on TsHotFixActionHandle_C_OnAnyKeyPressCallback__DelegateSignature");
+static_assert(offsetof(TsHotFixActionHandle_C_OnAnyKeyPressCallback__DelegateSignature, Key) == 0x000000, "Member 'TsHotFixActionHandle_C_OnAnyKeyPressCallback__DelegateSignature::Key' has a wrong offset!");
 
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnPressAction
 // 0x0020 (0x0020 - 0x0000)
 struct TsHotFixActionHandle_C_OnPressAction final
 {
 public:
-	struct FKey                                   KeyName;                                           // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 };
 static_assert(alignof(TsHotFixActionHandle_C_OnPressAction) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_OnPressAction");
 static_assert(sizeof(TsHotFixActionHandle_C_OnPressAction) == 0x000020, "Wrong size on TsHotFixActionHandle_C_OnPressAction");
-static_assert(offsetof(TsHotFixActionHandle_C_OnPressAction, KeyName) == 0x000000, "Member 'TsHotFixActionHandle_C_OnPressAction::KeyName' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_OnPressAction, Key) == 0x000000, "Member 'TsHotFixActionHandle_C_OnPressAction::Key' has a wrong offset!");
 
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnReleaseAction
 // 0x0020 (0x0020 - 0x0000)
 struct TsHotFixActionHandle_C_OnReleaseAction final
 {
 public:
-	struct FKey                                   KeyName;                                           // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 };
 static_assert(alignof(TsHotFixActionHandle_C_OnReleaseAction) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_OnReleaseAction");
 static_assert(sizeof(TsHotFixActionHandle_C_OnReleaseAction) == 0x000020, "Wrong size on TsHotFixActionHandle_C_OnReleaseAction");
-static_assert(offsetof(TsHotFixActionHandle_C_OnReleaseAction, KeyName) == 0x000000, "Member 'TsHotFixActionHandle_C_OnReleaseAction::KeyName' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_OnReleaseAction, Key) == 0x000000, "Member 'TsHotFixActionHandle_C_OnReleaseAction::Key' has a wrong offset!");
 
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddPressBinding
 // 0x0028 (0x0028 - 0x0000)
@@ -165,6 +226,80 @@ public:
 static_assert(alignof(TsHotFixActionHandle_C_AddTouchMoveBinding) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_AddTouchMoveBinding");
 static_assert(sizeof(TsHotFixActionHandle_C_AddTouchMoveBinding) == 0x000008, "Wrong size on TsHotFixActionHandle_C_AddTouchMoveBinding");
 static_assert(offsetof(TsHotFixActionHandle_C_AddTouchMoveBinding, Controller) == 0x000000, "Member 'TsHotFixActionHandle_C_AddTouchMoveBinding::Controller' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddAxisBinding
+// 0x0028 (0x0028 - 0x0000)
+struct TsHotFixActionHandle_C_AddAxisBinding final
+{
+public:
+	class FString                                 AxisName_0;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class ABasePlayerController*                  Controller;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_AddAxisBinding) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_AddAxisBinding");
+static_assert(sizeof(TsHotFixActionHandle_C_AddAxisBinding) == 0x000028, "Wrong size on TsHotFixActionHandle_C_AddAxisBinding");
+static_assert(offsetof(TsHotFixActionHandle_C_AddAxisBinding, AxisName_0) == 0x000000, "Member 'TsHotFixActionHandle_C_AddAxisBinding::AxisName_0' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_AddAxisBinding, Controller) == 0x000010, "Member 'TsHotFixActionHandle_C_AddAxisBinding::Controller' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_AddAxisBinding, CallFunc_Conv_StringToName_ReturnValue) == 0x000018, "Member 'TsHotFixActionHandle_C_AddAxisBinding::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnAxisInput
+// 0x0004 (0x0004 - 0x0000)
+struct TsHotFixActionHandle_C_OnAxisInput final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_OnAxisInput) == 0x000004, "Wrong alignment on TsHotFixActionHandle_C_OnAxisInput");
+static_assert(sizeof(TsHotFixActionHandle_C_OnAxisInput) == 0x000004, "Wrong size on TsHotFixActionHandle_C_OnAxisInput");
+static_assert(offsetof(TsHotFixActionHandle_C_OnAxisInput, Value) == 0x000000, "Member 'TsHotFixActionHandle_C_OnAxisInput::Value' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.ClearAxisBinding
+// 0x0008 (0x0008 - 0x0000)
+struct TsHotFixActionHandle_C_ClearAxisBinding final
+{
+public:
+	class ABasePlayerController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_ClearAxisBinding) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_ClearAxisBinding");
+static_assert(sizeof(TsHotFixActionHandle_C_ClearAxisBinding) == 0x000008, "Wrong size on TsHotFixActionHandle_C_ClearAxisBinding");
+static_assert(offsetof(TsHotFixActionHandle_C_ClearAxisBinding, Controller) == 0x000000, "Member 'TsHotFixActionHandle_C_ClearAxisBinding::Controller' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddAnyKeyPress
+// 0x0040 (0x0040 - 0x0000)
+struct TsHotFixActionHandle_C_AddAnyKeyPress final
+{
+public:
+	class ABasePlayerController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FInputChord                            Chord;                                             // 0x0008(0x0028)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class FName                                   AnyKeyPressAction;                                 // 0x0030(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_AddAnyKeyPress) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_AddAnyKeyPress");
+static_assert(sizeof(TsHotFixActionHandle_C_AddAnyKeyPress) == 0x000040, "Wrong size on TsHotFixActionHandle_C_AddAnyKeyPress");
+static_assert(offsetof(TsHotFixActionHandle_C_AddAnyKeyPress, Controller) == 0x000000, "Member 'TsHotFixActionHandle_C_AddAnyKeyPress::Controller' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_AddAnyKeyPress, Chord) == 0x000008, "Member 'TsHotFixActionHandle_C_AddAnyKeyPress::Chord' has a wrong offset!");
+static_assert(offsetof(TsHotFixActionHandle_C_AddAnyKeyPress, AnyKeyPressAction) == 0x000030, "Member 'TsHotFixActionHandle_C_AddAnyKeyPress::AnyKeyPressAction' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.ClearKeyBinding
+// 0x0008 (0x0008 - 0x0000)
+struct TsHotFixActionHandle_C_ClearKeyBinding final
+{
+public:
+	class ABasePlayerController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_ClearKeyBinding) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_ClearKeyBinding");
+static_assert(sizeof(TsHotFixActionHandle_C_ClearKeyBinding) == 0x000008, "Wrong size on TsHotFixActionHandle_C_ClearKeyBinding");
+static_assert(offsetof(TsHotFixActionHandle_C_ClearKeyBinding, Controller) == 0x000000, "Member 'TsHotFixActionHandle_C_ClearKeyBinding::Controller' has a wrong offset!");
+
+// Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnAnyKeyPressAction
+// 0x0020 (0x0020 - 0x0000)
+struct TsHotFixActionHandle_C_OnAnyKeyPressAction final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+};
+static_assert(alignof(TsHotFixActionHandle_C_OnAnyKeyPressAction) == 0x000008, "Wrong alignment on TsHotFixActionHandle_C_OnAnyKeyPressAction");
+static_assert(sizeof(TsHotFixActionHandle_C_OnAnyKeyPressAction) == 0x000020, "Wrong size on TsHotFixActionHandle_C_OnAnyKeyPressAction");
+static_assert(offsetof(TsHotFixActionHandle_C_OnAnyKeyPressAction, Key) == 0x000000, "Member 'TsHotFixActionHandle_C_OnAnyKeyPressAction::Key' has a wrong offset!");
 
 }
 

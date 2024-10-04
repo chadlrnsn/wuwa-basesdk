@@ -17,26 +17,20 @@
 namespace SDK
 {
 
-// Function TsTaskAiGetItemInfo.TsTaskAiGetItemInfo_C.ExecuteUbergraph_TsTaskAiGetItemInfo
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TsTaskAiGetItemInfo.TsTaskAiGetItemInfo_C.InitTsVariables
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void UTsTaskAiGetItemInfo_C::ExecuteUbergraph_TsTaskAiGetItemInfo(int32 EntryPoint)
+void UTsTaskAiGetItemInfo_C::InitTsVariables()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskAiGetItemInfo_C", "ExecuteUbergraph_TsTaskAiGetItemInfo");
-
-	Params::TsTaskAiGetItemInfo_C_ExecuteUbergraph_TsTaskAiGetItemInfo Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+		Func = Class->GetFunction("TsTaskAiGetItemInfo_C", "InitTsVariables");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -69,20 +63,26 @@ void UTsTaskAiGetItemInfo_C::ReceiveExecuteAI(class AAIController* OwnerControll
 }
 
 
-// Function TsTaskAiGetItemInfo.TsTaskAiGetItemInfo_C.InitTsVariables
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Function TsTaskAiGetItemInfo.TsTaskAiGetItemInfo_C.ExecuteUbergraph_TsTaskAiGetItemInfo
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskAiGetItemInfo_C::InitTsVariables()
+void UTsTaskAiGetItemInfo_C::ExecuteUbergraph_TsTaskAiGetItemInfo(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskAiGetItemInfo_C", "InitTsVariables");
+		Func = Class->GetFunction("TsTaskAiGetItemInfo_C", "ExecuteUbergraph_TsTaskAiGetItemInfo");
+
+	Params::TsTaskAiGetItemInfo_C_ExecuteUbergraph_TsTaskAiGetItemInfo Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

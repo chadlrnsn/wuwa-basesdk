@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // Class T4MRuntime.T4MLandscapeActor
-// 0x0008 (0x02B0 - 0x02A8)
+// 0x0008 (0x02B8 - 0x02B0)
 class AT4MLandscapeActor final : public AActor
 {
 public:
-	class UT4MLandscapeComponent*                 T4MLandscapeComponent;                             // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UT4MLandscapeComponent*                 T4MLandscapeComponent;                             // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -35,21 +35,21 @@ public:
 	}
 };
 static_assert(alignof(AT4MLandscapeActor) == 0x000008, "Wrong alignment on AT4MLandscapeActor");
-static_assert(sizeof(AT4MLandscapeActor) == 0x0002B0, "Wrong size on AT4MLandscapeActor");
-static_assert(offsetof(AT4MLandscapeActor, T4MLandscapeComponent) == 0x0002A8, "Member 'AT4MLandscapeActor::T4MLandscapeComponent' has a wrong offset!");
+static_assert(sizeof(AT4MLandscapeActor) == 0x0002B8, "Wrong size on AT4MLandscapeActor");
+static_assert(offsetof(AT4MLandscapeActor, T4MLandscapeComponent) == 0x0002B0, "Member 'AT4MLandscapeActor::T4MLandscapeComponent' has a wrong offset!");
 
 // Class T4MRuntime.T4MLandscapeComponent
-// 0x00C0 (0x0650 - 0x0590)
+// 0x00B0 (0x0650 - 0x05A0)
 class UT4MLandscapeComponent final : public UStaticMeshComponent
 {
 public:
-	struct FGuid                                  MapBuildDataId;                                    // 0x0590(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SectionBaseX;                                      // 0x05A0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SectionBaseY;                                      // 0x05A4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ComponentSizeQuads;                                // 0x05A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SubsectionSizeQuads;                               // 0x05AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumSubsections;                                    // 0x05B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5B4[0xC];                                      // 0x05B4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  MapBuildDataId;                                    // 0x0598(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SectionBaseX;                                      // 0x05A8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SectionBaseY;                                      // 0x05AC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ComponentSizeQuads;                                // 0x05B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SubsectionSizeQuads;                               // 0x05B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumSubsections;                                    // 0x05B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5BC[0x4];                                      // 0x05BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector4                               WeightmapScaleBias;                                // 0x05C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         WeightmapSubsectionOffset;                         // 0x05D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         HeightmapSubsectionOffsetU;                        // 0x05D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -84,12 +84,12 @@ public:
 };
 static_assert(alignof(UT4MLandscapeComponent) == 0x000010, "Wrong alignment on UT4MLandscapeComponent");
 static_assert(sizeof(UT4MLandscapeComponent) == 0x000650, "Wrong size on UT4MLandscapeComponent");
-static_assert(offsetof(UT4MLandscapeComponent, MapBuildDataId) == 0x000590, "Member 'UT4MLandscapeComponent::MapBuildDataId' has a wrong offset!");
-static_assert(offsetof(UT4MLandscapeComponent, SectionBaseX) == 0x0005A0, "Member 'UT4MLandscapeComponent::SectionBaseX' has a wrong offset!");
-static_assert(offsetof(UT4MLandscapeComponent, SectionBaseY) == 0x0005A4, "Member 'UT4MLandscapeComponent::SectionBaseY' has a wrong offset!");
-static_assert(offsetof(UT4MLandscapeComponent, ComponentSizeQuads) == 0x0005A8, "Member 'UT4MLandscapeComponent::ComponentSizeQuads' has a wrong offset!");
-static_assert(offsetof(UT4MLandscapeComponent, SubsectionSizeQuads) == 0x0005AC, "Member 'UT4MLandscapeComponent::SubsectionSizeQuads' has a wrong offset!");
-static_assert(offsetof(UT4MLandscapeComponent, NumSubsections) == 0x0005B0, "Member 'UT4MLandscapeComponent::NumSubsections' has a wrong offset!");
+static_assert(offsetof(UT4MLandscapeComponent, MapBuildDataId) == 0x000598, "Member 'UT4MLandscapeComponent::MapBuildDataId' has a wrong offset!");
+static_assert(offsetof(UT4MLandscapeComponent, SectionBaseX) == 0x0005A8, "Member 'UT4MLandscapeComponent::SectionBaseX' has a wrong offset!");
+static_assert(offsetof(UT4MLandscapeComponent, SectionBaseY) == 0x0005AC, "Member 'UT4MLandscapeComponent::SectionBaseY' has a wrong offset!");
+static_assert(offsetof(UT4MLandscapeComponent, ComponentSizeQuads) == 0x0005B0, "Member 'UT4MLandscapeComponent::ComponentSizeQuads' has a wrong offset!");
+static_assert(offsetof(UT4MLandscapeComponent, SubsectionSizeQuads) == 0x0005B4, "Member 'UT4MLandscapeComponent::SubsectionSizeQuads' has a wrong offset!");
+static_assert(offsetof(UT4MLandscapeComponent, NumSubsections) == 0x0005B8, "Member 'UT4MLandscapeComponent::NumSubsections' has a wrong offset!");
 static_assert(offsetof(UT4MLandscapeComponent, WeightmapScaleBias) == 0x0005C0, "Member 'UT4MLandscapeComponent::WeightmapScaleBias' has a wrong offset!");
 static_assert(offsetof(UT4MLandscapeComponent, WeightmapSubsectionOffset) == 0x0005D0, "Member 'UT4MLandscapeComponent::WeightmapSubsectionOffset' has a wrong offset!");
 static_assert(offsetof(UT4MLandscapeComponent, HeightmapSubsectionOffsetU) == 0x0005D4, "Member 'UT4MLandscapeComponent::HeightmapSubsectionOffsetU' has a wrong offset!");

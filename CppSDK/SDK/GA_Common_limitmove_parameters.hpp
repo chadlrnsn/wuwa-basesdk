@@ -14,6 +14,17 @@
 namespace SDK::Params
 {
 
+// Function GA_Common_limitmove.GA_Common_limitmove_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Common_limitmove_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Common_limitmove_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Common_limitmove_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Common_limitmove_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Common_limitmove_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Common_limitmove_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Common_limitmove_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_Common_limitmove.GA_Common_limitmove_C.ExecuteUbergraph_GA_Common_limitmove
 // 0x0260 (0x0260 - 0x0000)
 struct GA_Common_limitmove_C_ExecuteUbergraph_GA_Common_limitmove final
@@ -119,17 +130,6 @@ static_assert(offsetof(GA_Common_limitmove_C_ExecuteUbergraph_GA_Common_limitmov
 static_assert(offsetof(GA_Common_limitmove_C_ExecuteUbergraph_GA_Common_limitmove, K2Node_DynamicCast_bSuccess) == 0x000240, "Member 'GA_Common_limitmove_C_ExecuteUbergraph_GA_Common_limitmove::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 static_assert(offsetof(GA_Common_limitmove_C_ExecuteUbergraph_GA_Common_limitmove, CallFunc_Conv_IntToString_ReturnValue) == 0x000248, "Member 'GA_Common_limitmove_C_ExecuteUbergraph_GA_Common_limitmove::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
 static_assert(offsetof(GA_Common_limitmove_C_ExecuteUbergraph_GA_Common_limitmove, K2Node_Event_bWasCancelled) == 0x000258, "Member 'GA_Common_limitmove_C_ExecuteUbergraph_GA_Common_limitmove::K2Node_Event_bWasCancelled' has a wrong offset!");
-
-// Function GA_Common_limitmove.GA_Common_limitmove_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Common_limitmove_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Common_limitmove_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Common_limitmove_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Common_limitmove_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Common_limitmove_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Common_limitmove_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Common_limitmove_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
 }
 

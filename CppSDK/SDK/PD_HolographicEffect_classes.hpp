@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PD_HolographicEffect.PD_HolographicEffect_C
-// 0x00B0 (0x00E8 - 0x0038)
+// 0x00C0 (0x00F8 - 0x0038)
 class UPD_HolographicEffect_C final : public UPrimaryDataAsset
 {
 public:
@@ -26,8 +26,8 @@ public:
 	float                                         Loop;                                              // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         End;                                               // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSHolographicData                      OutlineData;                                       // 0x0048(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FSHolographicData                      OtherData;                                         // 0x0098(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FSHolographicData                      OutlineData;                                       // 0x0048(0x0058)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FSHolographicData                      OtherData;                                         // 0x00A0(0x0058)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -40,12 +40,12 @@ public:
 	}
 };
 static_assert(alignof(UPD_HolographicEffect_C) == 0x000008, "Wrong alignment on UPD_HolographicEffect_C");
-static_assert(sizeof(UPD_HolographicEffect_C) == 0x0000E8, "Wrong size on UPD_HolographicEffect_C");
+static_assert(sizeof(UPD_HolographicEffect_C) == 0x0000F8, "Wrong size on UPD_HolographicEffect_C");
 static_assert(offsetof(UPD_HolographicEffect_C, Start) == 0x000038, "Member 'UPD_HolographicEffect_C::Start' has a wrong offset!");
 static_assert(offsetof(UPD_HolographicEffect_C, Loop) == 0x00003C, "Member 'UPD_HolographicEffect_C::Loop' has a wrong offset!");
 static_assert(offsetof(UPD_HolographicEffect_C, End) == 0x000040, "Member 'UPD_HolographicEffect_C::End' has a wrong offset!");
 static_assert(offsetof(UPD_HolographicEffect_C, OutlineData) == 0x000048, "Member 'UPD_HolographicEffect_C::OutlineData' has a wrong offset!");
-static_assert(offsetof(UPD_HolographicEffect_C, OtherData) == 0x000098, "Member 'UPD_HolographicEffect_C::OtherData' has a wrong offset!");
+static_assert(offsetof(UPD_HolographicEffect_C, OtherData) == 0x0000A0, "Member 'UPD_HolographicEffect_C::OtherData' has a wrong offset!");
 
 }
 

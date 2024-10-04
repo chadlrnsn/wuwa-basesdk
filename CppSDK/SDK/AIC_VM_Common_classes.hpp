@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "AIC_AICommon_classes.hpp"
-#include "SAiConditions_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SAiConditions_structs.hpp"
+#include "AIC_AICommon_classes.hpp"
 
 
 namespace SDK
@@ -33,12 +33,12 @@ public:
 	class ABP_BaseVision_C*                       As_BP_Base_Vision;                                 // 0x09C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_AIC_VM_Common(int32 EntryPoint);
-	void M_P9(bool bContent);
-	void Func______2(bool bContent);
-	void _______1();
-	void ____h_(bool bContent);
 	void OnStart();
+	void ____h_(bool bContent);
+	void _______1();
+	void Func______2(bool bContent);
+	void M_P9(bool bContent);
+	void ExecuteUbergraph_AIC_VM_Common(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

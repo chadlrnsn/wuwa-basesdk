@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "TsTaskAbortImmediatelyBase_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -24,20 +24,20 @@ class UTsTaskAiFindClosetItem_C final : public UTsTaskAbortImmediatelyBase_C
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskAiFindClosetItem_C;           // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	float                                         Range;                                             // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_3BA4[0x4];                                     // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ItemBlackboardKey;                                 // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 ItemDistanceBlackboardKey;                         // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 ItemLocationBlackboardKey;                         // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          SearchFilterIsMarkByAi;                            // 0x00F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3BA5[0x7];                                     // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         Tag;                                               // 0x0100(0x0010)(Edit, BlueprintVisible)
 	bool                                          UseNavigation;                                     // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          TsUseNavigation;                                   // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper)
 
 public:
-	void ExecuteUbergraph_TsTaskAiFindClosetItem(int32 EntryPoint);
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void InitTsVariables();
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ExecuteUbergraph_TsTaskAiFindClosetItem(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

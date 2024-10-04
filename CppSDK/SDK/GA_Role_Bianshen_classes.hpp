@@ -49,19 +49,19 @@ public:
 	class UObject*                                _a___P;                                            // 0x06B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_Role_Bianshen(int32 EntryPoint);
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
-	void ___apn(int32 _aID_0, struct FSVisionData* _apn_0);
-	void ______ID(int32 Param______0, class FName* Param______1);
-	void ____Skill_ID(class FString* Skill_ID);
-	void _r_____1P_(int32* MaterialDataID_0);
-	void _r______P_(int32* MaterialDataID_0);
-	void _______4();
-	void ___aMn(class ACharacter* ___a, struct FTransform* NewParam);
-	void _rs___();
-	void __();
 	void _______3(class UCharacterMovementComponent* Base, class UCharacterMovementComponent* Target);
+	void __();
+	void _rs___();
+	void ___aMn(class ACharacter* ___a, struct FTransform* NewParam);
+	void _______4();
+	void _r______P_(int32* MaterialDataID_0);
+	void _r_____1P_(int32* MaterialDataID_0);
+	void ____Skill_ID(class FString* Skill_ID);
+	void ______ID(int32 Param______0, class FName* Param______1);
+	void ___apn(int32 _aID_0, struct FSVisionData* _apn_0);
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_Role_Bianshen(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

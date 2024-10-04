@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ECharacterRenderingType.ECharacterRenderingType
-// NumValues: 0x000A
+// NumValues: 0x000B
 enum class ECharacterRenderingType : uint8
 {
 	NewEnumerator1                           = 0,
@@ -26,8 +26,9 @@ enum class ECharacterRenderingType : uint8
 	NewEnumerator8                           = 5,
 	NewEnumerator9                           = 6,
 	NewEnumerator10                          = 7,
-	NewEnumerator4                           = 8,
-	ECharacterRenderingType_MAX              = 9,
+	NewEnumerator11                          = 8,
+	NewEnumerator4                           = 9,
+	ECharacterRenderingType_MAX              = 10,
 };
 
 }

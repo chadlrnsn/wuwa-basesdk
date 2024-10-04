@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroAnim_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "KuroAnim_structs.hpp"
 
 
 namespace SDK
@@ -36,8 +36,8 @@ public:
 	float                                         OldAssistLimit;                                    // 0x009C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
 	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
+	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
 
 	class FString GetNotifyName() const;
 

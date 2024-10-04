@@ -16,6 +16,39 @@
 namespace SDK::Params
 {
 
+// Function TsTriggerVolume.TsTriggerVolume_C.AddBuffInner
+// 0x0008 (0x0008 - 0x0000)
+struct TsTriggerVolume_C_AddBuffInner final
+{
+public:
+	int64                                         buffId;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsTriggerVolume_C_AddBuffInner) == 0x000008, "Wrong alignment on TsTriggerVolume_C_AddBuffInner");
+static_assert(sizeof(TsTriggerVolume_C_AddBuffInner) == 0x000008, "Wrong size on TsTriggerVolume_C_AddBuffInner");
+static_assert(offsetof(TsTriggerVolume_C_AddBuffInner, buffId) == 0x000000, "Member 'TsTriggerVolume_C_AddBuffInner::buffId' has a wrong offset!");
+
+// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct TsTriggerVolume_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsTriggerVolume_C_ReceiveEndPlay) == 0x000001, "Wrong alignment on TsTriggerVolume_C_ReceiveEndPlay");
+static_assert(sizeof(TsTriggerVolume_C_ReceiveEndPlay) == 0x000001, "Wrong size on TsTriggerVolume_C_ReceiveEndPlay");
+static_assert(offsetof(TsTriggerVolume_C_ReceiveEndPlay, EndPlayReason) == 0x000000, "Member 'TsTriggerVolume_C_ReceiveEndPlay::EndPlayReason' has a wrong offset!");
+
+// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct TsTriggerVolume_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsTriggerVolume_C_ReceiveTick) == 0x000004, "Wrong alignment on TsTriggerVolume_C_ReceiveTick");
+static_assert(sizeof(TsTriggerVolume_C_ReceiveTick) == 0x000004, "Wrong size on TsTriggerVolume_C_ReceiveTick");
+static_assert(offsetof(TsTriggerVolume_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'TsTriggerVolume_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
+
 // Function TsTriggerVolume.TsTriggerVolume_C.ExecuteUbergraph_TsTriggerVolume
 // 0x000C (0x000C - 0x0000)
 struct TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume final
@@ -30,39 +63,6 @@ static_assert(sizeof(TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume) == 0x00
 static_assert(offsetof(TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume, EntryPoint) == 0x000000, "Member 'TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume::EntryPoint' has a wrong offset!");
 static_assert(offsetof(TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume, K2Node_Event_DeltaSeconds) == 0x000004, "Member 'TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume::K2Node_Event_DeltaSeconds' has a wrong offset!");
 static_assert(offsetof(TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume, K2Node_Event_EndPlayReason) == 0x000008, "Member 'TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume::K2Node_Event_EndPlayReason' has a wrong offset!");
-
-// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct TsTriggerVolume_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsTriggerVolume_C_ReceiveTick) == 0x000004, "Wrong alignment on TsTriggerVolume_C_ReceiveTick");
-static_assert(sizeof(TsTriggerVolume_C_ReceiveTick) == 0x000004, "Wrong size on TsTriggerVolume_C_ReceiveTick");
-static_assert(offsetof(TsTriggerVolume_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'TsTriggerVolume_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
-
-// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct TsTriggerVolume_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsTriggerVolume_C_ReceiveEndPlay) == 0x000001, "Wrong alignment on TsTriggerVolume_C_ReceiveEndPlay");
-static_assert(sizeof(TsTriggerVolume_C_ReceiveEndPlay) == 0x000001, "Wrong size on TsTriggerVolume_C_ReceiveEndPlay");
-static_assert(offsetof(TsTriggerVolume_C_ReceiveEndPlay, EndPlayReason) == 0x000000, "Member 'TsTriggerVolume_C_ReceiveEndPlay::EndPlayReason' has a wrong offset!");
-
-// Function TsTriggerVolume.TsTriggerVolume_C.AddBuffInner
-// 0x0008 (0x0008 - 0x0000)
-struct TsTriggerVolume_C_AddBuffInner final
-{
-public:
-	int64                                         buffId;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsTriggerVolume_C_AddBuffInner) == 0x000008, "Wrong alignment on TsTriggerVolume_C_AddBuffInner");
-static_assert(sizeof(TsTriggerVolume_C_AddBuffInner) == 0x000008, "Wrong size on TsTriggerVolume_C_AddBuffInner");
-static_assert(offsetof(TsTriggerVolume_C_AddBuffInner, buffId) == 0x000000, "Member 'TsTriggerVolume_C_AddBuffInner::buffId' has a wrong offset!");
 
 }
 

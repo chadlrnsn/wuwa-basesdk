@@ -27,8 +27,8 @@ public:
 	float                                         TurnSpeed;                                         // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_TsTaskTurnToTarget(int32 EntryPoint);
 	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ExecuteUbergraph_TsTaskTurnToTarget(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

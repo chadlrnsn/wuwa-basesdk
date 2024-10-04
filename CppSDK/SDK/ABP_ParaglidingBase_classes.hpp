@@ -50,15 +50,15 @@ public:
 	float                                         _________;                                         // 0x087C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_ABP_ParaglidingBase(int32 EntryPoint);
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void BlueprintInitializeAnimation();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC();
-	void SyncAnim(class UABP_ParaglidingBase_C* Other);
-	void SetOpenParagliding(bool bOpen);
-	void SetHover(bool Hover);
-	void SetDash(bool Dash);
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void SetDash(bool Dash);
+	void SetHover(bool Hover);
+	void SetOpenParagliding(bool bOpen);
+	void SyncAnim(class UABP_ParaglidingBase_C* Other);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC();
+	void BlueprintInitializeAnimation();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void ExecuteUbergraph_ABP_ParaglidingBase(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

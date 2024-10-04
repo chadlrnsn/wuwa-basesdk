@@ -59,34 +59,6 @@ void ABP_Droplets_C::UserConstructionScript()
 }
 
 
-// Function BP_Droplets.BP_Droplets_C.DropletTimeline__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_Droplets_C::DropletTimeline__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Droplets_C", "DropletTimeline__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Droplets.BP_Droplets_C.DropletTimeline__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_Droplets_C::DropletTimeline__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Droplets_C", "DropletTimeline__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Droplets.BP_Droplets_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -138,20 +110,6 @@ void ABP_Droplets_C::EditorTick(float DeltaSeconds)
 	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Droplets.BP_Droplets_C.Droplet
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Droplets_C::Droplet()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Droplets_C", "Droplet");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

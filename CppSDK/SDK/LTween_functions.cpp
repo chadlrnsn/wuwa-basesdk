@@ -2335,6 +2335,31 @@ class ULTweener* ULTweener::SetDelay(float NewDelay)
 }
 
 
+// Function LTween.LTweener.SetDuration
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewDuration                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULTweener::SetDuration(float NewDuration)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LTweener", "SetDuration");
+
+	Params::LTweener_SetDuration Parms{};
+
+	Parms.NewDuration = NewDuration;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LTween.LTweener.SetEase
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -2449,6 +2474,34 @@ class ULTweener* ULTweener::SetLoopType(ELTweenLoop NewLoopType)
 }
 
 
+// Function LTween.LTweener.SetSpeed
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewSpeed                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULTweener*                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULTweener* ULTweener::SetSpeed(float NewSpeed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LTweener", "SetSpeed");
+
+	Params::LTweener_SetSpeed Parms{};
+
+	Parms.NewSpeed = NewSpeed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LTween.LTweener.GetLoopCycleCount
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -2462,6 +2515,31 @@ int32 ULTweener::GetLoopCycleCount() const
 		Func = Class->GetFunction("LTweener", "GetLoopCycleCount");
 
 	Params::LTweener_GetLoopCycleCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LTween.LTweener.GetSpeed
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float ULTweener::GetSpeed() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LTweener", "GetSpeed");
+
+	Params::LTweener_GetSpeed Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

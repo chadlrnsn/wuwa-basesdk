@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "SNpcSetupPartInfo_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "EBodyPartName_structs.hpp"
-#include "SNpcSetupPartInfo_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -20,27 +20,27 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_NpcCombinedMesh.BP_NpcCombinedMesh_C
-// 0x0128 (0x03D0 - 0x02A8)
+// 0x0128 (0x03D8 - 0x02B0)
 class ABP_NpcCombinedMesh_C : public AActor
 {
 public:
-	class USkeletalMeshComponent*                 Skel_Main;                                         // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPD_NpcSetupData_C*                     NpcData;                                           // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          OriginalSkeletalVisible;                           // 0x02C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C1[0x7];                                      // 0x02C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FSNpcSetupPartInfo>  AllSubSkeletalComponents;                          // 0x02C8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, ContainsInstancedReference)
-	class UMaterialInstanceDynamic*               DIMat;                                             // 0x0318(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_NpcCombinedMesh_C*                  Target;                                            // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class FName, EBodyPartName>              AllBodyPartName;                                   // 0x0328(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
-	struct FLinearColor                           ColorNPC01;                                        // 0x0378(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           ColorNPC02;                                        // 0x0388(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Forced_LOD;                                        // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           SkinColor;                                         // 0x039C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3AC[0x4];                                      // 0x03AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class USkeletalMeshComponent*>         SkelMeshArray;                                     // 0x03B0(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
-	class UMaterialInstance*                      MINPC01;                                           // 0x03C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstance*                      MINPC02;                                           // 0x03C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 Skel_Main;                                         // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPD_NpcSetupData_C*                     NpcData;                                           // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          OriginalSkeletalVisible;                           // 0x02C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2C9[0x7];                                      // 0x02C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, struct FSNpcSetupPartInfo>  AllSubSkeletalComponents;                          // 0x02D0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, ContainsInstancedReference)
+	class UMaterialInstanceDynamic*               DIMat;                                             // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_NpcCombinedMesh_C*                  Target;                                            // 0x0328(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class FName, EBodyPartName>              AllBodyPartName;                                   // 0x0330(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance)
+	struct FLinearColor                           ColorNPC01;                                        // 0x0380(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           ColorNPC02;                                        // 0x0390(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Forced_LOD;                                        // 0x03A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           SkinColor;                                         // 0x03A4(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3B4[0x4];                                      // 0x03B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class USkeletalMeshComponent*>         SkelMeshArray;                                     // 0x03B8(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
+	class UMaterialInstance*                      MINPC01;                                           // 0x03C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstance*                      MINPC02;                                           // 0x03D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void SetupNpcMesh(class UPD_NpcSetupData_C* Data, bool bIgnoreSockets, bool* IsSuc, TArray<class USkeletalMeshComponent*>* SkleMain);
@@ -72,22 +72,22 @@ public:
 	}
 };
 static_assert(alignof(ABP_NpcCombinedMesh_C) == 0x000008, "Wrong alignment on ABP_NpcCombinedMesh_C");
-static_assert(sizeof(ABP_NpcCombinedMesh_C) == 0x0003D0, "Wrong size on ABP_NpcCombinedMesh_C");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, Skel_Main) == 0x0002A8, "Member 'ABP_NpcCombinedMesh_C::Skel_Main' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, DefaultSceneRoot) == 0x0002B0, "Member 'ABP_NpcCombinedMesh_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, NpcData) == 0x0002B8, "Member 'ABP_NpcCombinedMesh_C::NpcData' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, OriginalSkeletalVisible) == 0x0002C0, "Member 'ABP_NpcCombinedMesh_C::OriginalSkeletalVisible' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, AllSubSkeletalComponents) == 0x0002C8, "Member 'ABP_NpcCombinedMesh_C::AllSubSkeletalComponents' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, DIMat) == 0x000318, "Member 'ABP_NpcCombinedMesh_C::DIMat' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, Target) == 0x000320, "Member 'ABP_NpcCombinedMesh_C::Target' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, AllBodyPartName) == 0x000328, "Member 'ABP_NpcCombinedMesh_C::AllBodyPartName' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, ColorNPC01) == 0x000378, "Member 'ABP_NpcCombinedMesh_C::ColorNPC01' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, ColorNPC02) == 0x000388, "Member 'ABP_NpcCombinedMesh_C::ColorNPC02' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, Forced_LOD) == 0x000398, "Member 'ABP_NpcCombinedMesh_C::Forced_LOD' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, SkinColor) == 0x00039C, "Member 'ABP_NpcCombinedMesh_C::SkinColor' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, SkelMeshArray) == 0x0003B0, "Member 'ABP_NpcCombinedMesh_C::SkelMeshArray' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, MINPC01) == 0x0003C0, "Member 'ABP_NpcCombinedMesh_C::MINPC01' has a wrong offset!");
-static_assert(offsetof(ABP_NpcCombinedMesh_C, MINPC02) == 0x0003C8, "Member 'ABP_NpcCombinedMesh_C::MINPC02' has a wrong offset!");
+static_assert(sizeof(ABP_NpcCombinedMesh_C) == 0x0003D8, "Wrong size on ABP_NpcCombinedMesh_C");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, Skel_Main) == 0x0002B0, "Member 'ABP_NpcCombinedMesh_C::Skel_Main' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_NpcCombinedMesh_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, NpcData) == 0x0002C0, "Member 'ABP_NpcCombinedMesh_C::NpcData' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, OriginalSkeletalVisible) == 0x0002C8, "Member 'ABP_NpcCombinedMesh_C::OriginalSkeletalVisible' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, AllSubSkeletalComponents) == 0x0002D0, "Member 'ABP_NpcCombinedMesh_C::AllSubSkeletalComponents' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, DIMat) == 0x000320, "Member 'ABP_NpcCombinedMesh_C::DIMat' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, Target) == 0x000328, "Member 'ABP_NpcCombinedMesh_C::Target' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, AllBodyPartName) == 0x000330, "Member 'ABP_NpcCombinedMesh_C::AllBodyPartName' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, ColorNPC01) == 0x000380, "Member 'ABP_NpcCombinedMesh_C::ColorNPC01' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, ColorNPC02) == 0x000390, "Member 'ABP_NpcCombinedMesh_C::ColorNPC02' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, Forced_LOD) == 0x0003A0, "Member 'ABP_NpcCombinedMesh_C::Forced_LOD' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, SkinColor) == 0x0003A4, "Member 'ABP_NpcCombinedMesh_C::SkinColor' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, SkelMeshArray) == 0x0003B8, "Member 'ABP_NpcCombinedMesh_C::SkelMeshArray' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, MINPC01) == 0x0003C8, "Member 'ABP_NpcCombinedMesh_C::MINPC01' has a wrong offset!");
+static_assert(offsetof(ABP_NpcCombinedMesh_C, MINPC02) == 0x0003D0, "Member 'ABP_NpcCombinedMesh_C::MINPC02' has a wrong offset!");
 
 }
 

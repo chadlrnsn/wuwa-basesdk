@@ -17,6 +17,17 @@
 namespace SDK::Params
 {
 
+// Function GA_Role_ManipulateThrow.GA_Role_ManipulateThrow_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Role_ManipulateThrow_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Role_ManipulateThrow_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_ManipulateThrow_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Role_ManipulateThrow_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_ManipulateThrow_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Role_ManipulateThrow_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_ManipulateThrow_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_Role_ManipulateThrow.GA_Role_ManipulateThrow_C.ExecuteUbergraph_GA_Role_ManipulateThrow
 // 0x0430 (0x0430 - 0x0000)
 struct GA_Role_ManipulateThrow_C_ExecuteUbergraph_GA_Role_ManipulateThrow final
@@ -148,17 +159,6 @@ static_assert(offsetof(GA_Role_ManipulateThrow_C_ExecuteUbergraph_GA_Role_Manipu
 static_assert(offsetof(GA_Role_ManipulateThrow_C_ExecuteUbergraph_GA_Role_ManipulateThrow, CallFunc_ContainsTag_ReturnValue_1) == 0x000428, "Member 'GA_Role_ManipulateThrow_C_ExecuteUbergraph_GA_Role_ManipulateThrow::CallFunc_ContainsTag_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(GA_Role_ManipulateThrow_C_ExecuteUbergraph_GA_Role_ManipulateThrow, CallFunc_ContainsTag_ReturnValue_2) == 0x000429, "Member 'GA_Role_ManipulateThrow_C_ExecuteUbergraph_GA_Role_ManipulateThrow::CallFunc_ContainsTag_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(GA_Role_ManipulateThrow_C_ExecuteUbergraph_GA_Role_ManipulateThrow, CallFunc_ManipulateCast_ReturnValue) == 0x00042A, "Member 'GA_Role_ManipulateThrow_C_ExecuteUbergraph_GA_Role_ManipulateThrow::CallFunc_ManipulateCast_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_ManipulateThrow.GA_Role_ManipulateThrow_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Role_ManipulateThrow_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_ManipulateThrow_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_ManipulateThrow_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Role_ManipulateThrow_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_ManipulateThrow_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Role_ManipulateThrow_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_ManipulateThrow_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
 }
 

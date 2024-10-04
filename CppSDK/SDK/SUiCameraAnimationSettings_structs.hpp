@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "EUiCameraAnimationTargetType_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "EUiCameraAnimationLocationType_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "EUiCameraAnimationRotationType_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK

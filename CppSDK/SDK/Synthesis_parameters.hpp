@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Synthesis_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
@@ -1379,6 +1379,50 @@ static_assert(sizeof(SubmixEffectTapDelayPreset_SetTap) == 0x00001C, "Wrong size
 static_assert(offsetof(SubmixEffectTapDelayPreset_SetTap, TapId) == 0x000000, "Member 'SubmixEffectTapDelayPreset_SetTap::TapId' has a wrong offset!");
 static_assert(offsetof(SubmixEffectTapDelayPreset_SetTap, TapInfo) == 0x000004, "Member 'SubmixEffectTapDelayPreset_SetTap::TapInfo' has a wrong offset!");
 
+// Function Synthesis.SynthKnob.SetLocked
+// 0x0001 (0x0001 - 0x0000)
+struct SynthKnob_SetLocked final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SynthKnob_SetLocked) == 0x000001, "Wrong alignment on SynthKnob_SetLocked");
+static_assert(sizeof(SynthKnob_SetLocked) == 0x000001, "Wrong size on SynthKnob_SetLocked");
+static_assert(offsetof(SynthKnob_SetLocked, InValue) == 0x000000, "Member 'SynthKnob_SetLocked::InValue' has a wrong offset!");
+
+// Function Synthesis.SynthKnob.SetStepSize
+// 0x0004 (0x0004 - 0x0000)
+struct SynthKnob_SetStepSize final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SynthKnob_SetStepSize) == 0x000004, "Wrong alignment on SynthKnob_SetStepSize");
+static_assert(sizeof(SynthKnob_SetStepSize) == 0x000004, "Wrong size on SynthKnob_SetStepSize");
+static_assert(offsetof(SynthKnob_SetStepSize, InValue) == 0x000000, "Member 'SynthKnob_SetStepSize::InValue' has a wrong offset!");
+
+// Function Synthesis.SynthKnob.SetValue
+// 0x0004 (0x0004 - 0x0000)
+struct SynthKnob_SetValue final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SynthKnob_SetValue) == 0x000004, "Wrong alignment on SynthKnob_SetValue");
+static_assert(sizeof(SynthKnob_SetValue) == 0x000004, "Wrong size on SynthKnob_SetValue");
+static_assert(offsetof(SynthKnob_SetValue, InValue) == 0x000000, "Member 'SynthKnob_SetValue::InValue' has a wrong offset!");
+
+// Function Synthesis.SynthKnob.GetValue
+// 0x0004 (0x0004 - 0x0000)
+struct SynthKnob_GetValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SynthKnob_GetValue) == 0x000004, "Wrong alignment on SynthKnob_GetValue");
+static_assert(sizeof(SynthKnob_GetValue) == 0x000004, "Wrong size on SynthKnob_GetValue");
+static_assert(offsetof(SynthKnob_GetValue, ReturnValue) == 0x000000, "Member 'SynthKnob_GetValue::ReturnValue' has a wrong offset!");
+
 // Function Synthesis.Synth2DSlider.SetIndentHandle
 // 0x0001 (0x0001 - 0x0000)
 struct Synth2DSlider_SetIndentHandle final
@@ -2352,50 +2396,6 @@ static_assert(offsetof(SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequenc
 static_assert(offsetof(SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency, InRangeMin) == 0x00000C, "Member 'SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency::InRangeMin' has a wrong offset!");
 static_assert(offsetof(SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency, InRangeMax) == 0x000010, "Member 'SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency::InRangeMax' has a wrong offset!");
 static_assert(offsetof(SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency, ReturnValue) == 0x000014, "Member 'SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency::ReturnValue' has a wrong offset!");
-
-// Function Synthesis.SynthKnob.SetLocked
-// 0x0001 (0x0001 - 0x0000)
-struct SynthKnob_SetLocked final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SynthKnob_SetLocked) == 0x000001, "Wrong alignment on SynthKnob_SetLocked");
-static_assert(sizeof(SynthKnob_SetLocked) == 0x000001, "Wrong size on SynthKnob_SetLocked");
-static_assert(offsetof(SynthKnob_SetLocked, InValue) == 0x000000, "Member 'SynthKnob_SetLocked::InValue' has a wrong offset!");
-
-// Function Synthesis.SynthKnob.SetStepSize
-// 0x0004 (0x0004 - 0x0000)
-struct SynthKnob_SetStepSize final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SynthKnob_SetStepSize) == 0x000004, "Wrong alignment on SynthKnob_SetStepSize");
-static_assert(sizeof(SynthKnob_SetStepSize) == 0x000004, "Wrong size on SynthKnob_SetStepSize");
-static_assert(offsetof(SynthKnob_SetStepSize, InValue) == 0x000000, "Member 'SynthKnob_SetStepSize::InValue' has a wrong offset!");
-
-// Function Synthesis.SynthKnob.SetValue
-// 0x0004 (0x0004 - 0x0000)
-struct SynthKnob_SetValue final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SynthKnob_SetValue) == 0x000004, "Wrong alignment on SynthKnob_SetValue");
-static_assert(sizeof(SynthKnob_SetValue) == 0x000004, "Wrong size on SynthKnob_SetValue");
-static_assert(offsetof(SynthKnob_SetValue, InValue) == 0x000000, "Member 'SynthKnob_SetValue::InValue' has a wrong offset!");
-
-// Function Synthesis.SynthKnob.GetValue
-// 0x0004 (0x0004 - 0x0000)
-struct SynthKnob_GetValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SynthKnob_GetValue) == 0x000004, "Wrong alignment on SynthKnob_GetValue");
-static_assert(sizeof(SynthKnob_GetValue) == 0x000004, "Wrong size on SynthKnob_GetValue");
-static_assert(offsetof(SynthKnob_GetValue, ReturnValue) == 0x000000, "Member 'SynthKnob_GetValue::ReturnValue' has a wrong offset!");
 
 }
 

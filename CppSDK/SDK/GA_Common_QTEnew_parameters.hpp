@@ -16,6 +16,39 @@
 namespace SDK::Params
 {
 
+// Function GA_Common_QTEnew.GA_Common_QTEnew_C.EventReceived_18B59F5945020DB23C42FD88C6BCD2BE
+// 0x00B8 (0x00B8 - 0x0000)
+struct GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE final
+{
+public:
+	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+static_assert(alignof(GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE) == 0x000008, "Wrong alignment on GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE");
+static_assert(sizeof(GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE) == 0x0000B8, "Wrong size on GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE");
+static_assert(offsetof(GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE, Payload) == 0x000000, "Member 'GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE::Payload' has a wrong offset!");
+
+// Function GA_Common_QTEnew.GA_Common_QTEnew_C.EventReceived_E1111D36446963FA74DB968DBE3C7127
+// 0x00B8 (0x00B8 - 0x0000)
+struct GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127 final
+{
+public:
+	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+static_assert(alignof(GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127) == 0x000008, "Wrong alignment on GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127");
+static_assert(sizeof(GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127) == 0x0000B8, "Wrong size on GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127");
+static_assert(offsetof(GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127, Payload) == 0x000000, "Member 'GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127::Payload' has a wrong offset!");
+
+// Function GA_Common_QTEnew.GA_Common_QTEnew_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Common_QTEnew_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Common_QTEnew_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Common_QTEnew_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Common_QTEnew_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Common_QTEnew_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Common_QTEnew_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Common_QTEnew_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
 // Function GA_Common_QTEnew.GA_Common_QTEnew_C.ExecuteUbergraph_GA_Common_QTEnew
 // 0x05F8 (0x05F8 - 0x0000)
 struct GA_Common_QTEnew_C_ExecuteUbergraph_GA_Common_QTEnew final
@@ -179,39 +212,6 @@ static_assert(offsetof(GA_Common_QTEnew_C_ExecuteUbergraph_GA_Common_QTEnew, Cal
 static_assert(offsetof(GA_Common_QTEnew_C_ExecuteUbergraph_GA_Common_QTEnew, CallFunc_Conv_IntToString_ReturnValue_4) == 0x0005D0, "Member 'GA_Common_QTEnew_C_ExecuteUbergraph_GA_Common_QTEnew::CallFunc_Conv_IntToString_ReturnValue_4' has a wrong offset!");
 static_assert(offsetof(GA_Common_QTEnew_C_ExecuteUbergraph_GA_Common_QTEnew, CallFunc___________16) == 0x0005E0, "Member 'GA_Common_QTEnew_C_ExecuteUbergraph_GA_Common_QTEnew::CallFunc___________16' has a wrong offset!");
 static_assert(offsetof(GA_Common_QTEnew_C_ExecuteUbergraph_GA_Common_QTEnew, CallFunc_Conv_IntToString_ReturnValue_5) == 0x0005E8, "Member 'GA_Common_QTEnew_C_ExecuteUbergraph_GA_Common_QTEnew::CallFunc_Conv_IntToString_ReturnValue_5' has a wrong offset!");
-
-// Function GA_Common_QTEnew.GA_Common_QTEnew_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Common_QTEnew_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Common_QTEnew_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Common_QTEnew_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Common_QTEnew_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Common_QTEnew_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Common_QTEnew_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Common_QTEnew_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_Common_QTEnew.GA_Common_QTEnew_C.EventReceived_E1111D36446963FA74DB968DBE3C7127
-// 0x00B8 (0x00B8 - 0x0000)
-struct GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127 final
-{
-public:
-	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-static_assert(alignof(GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127) == 0x000008, "Wrong alignment on GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127");
-static_assert(sizeof(GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127) == 0x0000B8, "Wrong size on GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127");
-static_assert(offsetof(GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127, Payload) == 0x000000, "Member 'GA_Common_QTEnew_C_EventReceived_E1111D36446963FA74DB968DBE3C7127::Payload' has a wrong offset!");
-
-// Function GA_Common_QTEnew.GA_Common_QTEnew_C.EventReceived_18B59F5945020DB23C42FD88C6BCD2BE
-// 0x00B8 (0x00B8 - 0x0000)
-struct GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE final
-{
-public:
-	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-static_assert(alignof(GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE) == 0x000008, "Wrong alignment on GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE");
-static_assert(sizeof(GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE) == 0x0000B8, "Wrong size on GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE");
-static_assert(offsetof(GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE, Payload) == 0x000000, "Member 'GA_Common_QTEnew_C_EventReceived_18B59F5945020DB23C42FD88C6BCD2BE::Payload' has a wrong offset!");
 
 }
 

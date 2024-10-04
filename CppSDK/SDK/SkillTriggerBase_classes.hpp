@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SSkillBehaviorCondition_structs.hpp"
 #include "KuroUtility_classes.hpp"
+#include "SSkillBehaviorCondition_structs.hpp"
 
 
 namespace SDK

@@ -10,13 +10,157 @@
 
 #include "Basic.hpp"
 
-#include "SVisionData_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SVisionData_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.4i
+// 0x0038 (0x0038 - 0x0000)
+struct GA_Destroy_Zhaohuan_Vision_C___4_i final
+{
+public:
+	bool                                          ___bool_Variable;                                  // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Variable;                                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_____ID___ID;                              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetCustomEntityId_ReturnValue;            // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetEntityEnable_ReturnValue;              // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     CallFunc_____ID_______;                            // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_____ID___________;                        // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2A[0x2];                                       // 0x002A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_AddMaterialControllerDataGroup_ReturnValue; // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C___4_i) == 0x000008, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C___4_i");
+static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C___4_i) == 0x000038, "Wrong size on GA_Destroy_Zhaohuan_Vision_C___4_i");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, ___bool_Variable) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::___bool_Variable' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_Not_PreBool_ReturnValue) == 0x000001, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, ___int_Variable) == 0x000004, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::___int_Variable' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc__________) == 0x000008, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc__________' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_____ID___ID) == 0x000010, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_____ID___ID' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_Add_IntInt_ReturnValue) == 0x000014, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_GetCustomEntityId_ReturnValue) == 0x000018, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_GetCustomEntityId_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_GetEntityEnable_ReturnValue) == 0x00001C, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_GetEntityEnable_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_____ID_______) == 0x000020, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_____ID_______' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_____ID___________) == 0x000028, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_____ID___________' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_LessEqual_IntInt_ReturnValue) == 0x000029, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_LessEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_AddMaterialControllerDataGroup_ReturnValue) == 0x00002C, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_AddMaterialControllerDataGroup_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_BooleanAND_ReturnValue) == 0x000030, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+
+// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.Ó_ì$¶
+// 0x0090 (0x0090 - 0x0000)
+struct GA_Destroy_Zhaohuan_Vision_C________3 final
+{
+public:
+	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     CallFunc___________1;                              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_____ID___ID;                              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     CallFunc___________2;                              // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_____GA______________;                     // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     CallFunc___________3;                              // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScaledCapsuleHalfHeight_ReturnValue;   // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0050(0x0030)(IsPlainOldData, NoDestructor)
+	int32                                         CallFunc_CreateBulletFromGA_ReturnValue;           // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C_______) == 0x000010, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C_______");
+static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C_______) == 0x000090, "Wrong size on GA_Destroy_Zhaohuan_Vision_C_______");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc__________) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc__________' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc___________1) == 0x000008, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc___________1' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_____ID___ID) == 0x000010, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_____ID___ID' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc___________2) == 0x000018, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc___________2' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_____GA______________) == 0x000020, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_____GA______________' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc___________3) == 0x000030, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc___________3' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_GetScaledCapsuleHalfHeight_ReturnValue) == 0x000038, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_GetScaledCapsuleHalfHeight_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_MakeVector_ReturnValue) == 0x00003C, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_MakeVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_MakeTransform_ReturnValue) == 0x000050, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_MakeTransform_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_CreateBulletFromGA_ReturnValue) == 0x000080, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_CreateBulletFromGA_ReturnValue' has a wrong offset!");
+
+// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.·Ö{apn
+// 0x0220 (0x0220 - 0x0000)
+struct GA_Destroy_Zhaohuan_Vision_C____apn final
+{
+public:
+	class ATsBaseCharacter_C*                     Entity;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          __0;                                               // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSVisionData                           __L;                                               // 0x0010(0x00F0)(Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+	int32                                         CallFunc_GetIntValueByEntityWithCharacter_ReturnValue; // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSVisionData                           CallFunc_GetDataTableRowFromName_OutRow;           // 0x0128(0x00F0)(ContainsInstancedReference, HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C____apn) == 0x000008, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C____apn");
+static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C____apn) == 0x000220, "Wrong size on GA_Destroy_Zhaohuan_Vision_C____apn");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, Entity) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::Entity' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, __0) == 0x000008, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::__0' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, __L) == 0x000010, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::__L' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_GetIntValueByEntityWithCharacter_ReturnValue) == 0x000100, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_GetIntValueByEntityWithCharacter_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_Conv_IntToString_ReturnValue) == 0x000108, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_Conv_StringToName_ReturnValue) == 0x000118, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_GetDataTableRowFromName_OutRow) == 0x000128, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000218, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
+
+// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.ËÂp
+// 0x0030 (0x0030 - 0x0000)
+struct GA_Destroy_Zhaohuan_Vision_C_____p final
+{
+public:
+	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     CallFunc___________1;                              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_____ID___ID;                              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_____ID___ID_1;                            // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     CallFunc___________2;                              // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     CallFunc___________3;                              // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_____ID___ID_2;                            // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_____ID___ID_3;                            // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C_____p) == 0x000008, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C_____p");
+static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C_____p) == 0x000030, "Wrong size on GA_Destroy_Zhaohuan_Vision_C_____p");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc__________) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc__________' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc___________1) == 0x000008, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc___________1' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc_____ID___ID) == 0x000010, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc_____ID___ID' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc_____ID___ID_1) == 0x000014, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc_____ID___ID_1' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc___________2) == 0x000018, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc___________2' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc___________3) == 0x000020, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc___________3' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc_____ID___ID_2) == 0x000028, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc_____ID___ID_2' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc_____ID___ID_3) == 0x00002C, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc_____ID___ID_3' has a wrong offset!");
+
+// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.EventReceived_18B59F5945020DB23C42FD882782F9D4
+// 0x00B8 (0x00B8 - 0x0000)
+struct GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4 final
+{
+public:
+	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4) == 0x000008, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4");
+static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4) == 0x0000B8, "Wrong size on GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4, Payload) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4::Payload' has a wrong offset!");
+
+// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
 // Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.ExecuteUbergraph_GA_Destroy_Zhaohuan_Vision
 // 0x03F8 (0x03F8 - 0x0000)
@@ -164,150 +308,6 @@ static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_ExecuteUbergraph_GA_Destroy_
 static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_ExecuteUbergraph_GA_Destroy_Zhaohuan_Vision, CallFunc_BreakRotator_Yaw_1) == 0x0003E0, "Member 'GA_Destroy_Zhaohuan_Vision_C_ExecuteUbergraph_GA_Destroy_Zhaohuan_Vision::CallFunc_BreakRotator_Yaw_1' has a wrong offset!");
 static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_ExecuteUbergraph_GA_Destroy_Zhaohuan_Vision, CallFunc_MakeRotator_ReturnValue) == 0x0003E4, "Member 'GA_Destroy_Zhaohuan_Vision_C_ExecuteUbergraph_GA_Destroy_Zhaohuan_Vision::CallFunc_MakeRotator_ReturnValue' has a wrong offset!");
 static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_ExecuteUbergraph_GA_Destroy_Zhaohuan_Vision, CallFunc________ReturnValue) == 0x0003F0, "Member 'GA_Destroy_Zhaohuan_Vision_C_ExecuteUbergraph_GA_Destroy_Zhaohuan_Vision::CallFunc________ReturnValue' has a wrong offset!");
-
-// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.EventReceived_18B59F5945020DB23C42FD882782F9D4
-// 0x00B8 (0x00B8 - 0x0000)
-struct GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4 final
-{
-public:
-	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4) == 0x000008, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4");
-static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4) == 0x0000B8, "Wrong size on GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4, Payload) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C_EventReceived_18B59F5945020DB23C42FD882782F9D4::Payload' has a wrong offset!");
-
-// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.ËÂp
-// 0x0030 (0x0030 - 0x0000)
-struct GA_Destroy_Zhaohuan_Vision_C_____p final
-{
-public:
-	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     CallFunc___________1;                              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_____ID___ID;                              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_____ID___ID_1;                            // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     CallFunc___________2;                              // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     CallFunc___________3;                              // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_____ID___ID_2;                            // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_____ID___ID_3;                            // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C_____p) == 0x000008, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C_____p");
-static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C_____p) == 0x000030, "Wrong size on GA_Destroy_Zhaohuan_Vision_C_____p");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc__________) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc___________1) == 0x000008, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc___________1' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc_____ID___ID) == 0x000010, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc_____ID___ID' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc_____ID___ID_1) == 0x000014, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc_____ID___ID_1' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc___________2) == 0x000018, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc___________2' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc___________3) == 0x000020, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc___________3' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc_____ID___ID_2) == 0x000028, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc_____ID___ID_2' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_____p, CallFunc_____ID___ID_3) == 0x00002C, "Member 'GA_Destroy_Zhaohuan_Vision_C_____p::CallFunc_____ID___ID_3' has a wrong offset!");
-
-// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.·Ö{apn
-// 0x0220 (0x0220 - 0x0000)
-struct GA_Destroy_Zhaohuan_Vision_C____apn final
-{
-public:
-	class ATsBaseCharacter_C*                     Entity;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          __0;                                               // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSVisionData                           __L;                                               // 0x0010(0x00F0)(Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
-	int32                                         CallFunc_GetIntValueByEntityWithCharacter_ReturnValue; // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0108(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSVisionData                           CallFunc_GetDataTableRowFromName_OutRow;           // 0x0128(0x00F0)(ContainsInstancedReference, HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C____apn) == 0x000008, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C____apn");
-static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C____apn) == 0x000220, "Wrong size on GA_Destroy_Zhaohuan_Vision_C____apn");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, Entity) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::Entity' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, __0) == 0x000008, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::__0' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, __L) == 0x000010, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::__L' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_GetIntValueByEntityWithCharacter_ReturnValue) == 0x000100, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_GetIntValueByEntityWithCharacter_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_Conv_IntToString_ReturnValue) == 0x000108, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_Conv_StringToName_ReturnValue) == 0x000118, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_GetDataTableRowFromName_OutRow) == 0x000128, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C____apn, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000218, "Member 'GA_Destroy_Zhaohuan_Vision_C____apn::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
-
-// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.Ó_ì$¶
-// 0x0090 (0x0090 - 0x0000)
-struct GA_Destroy_Zhaohuan_Vision_C________3 final
-{
-public:
-	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     CallFunc___________1;                              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_____ID___ID;                              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     CallFunc___________2;                              // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_____GA______________;                     // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     CallFunc___________3;                              // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetScaledCapsuleHalfHeight_ReturnValue;   // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0050(0x0030)(IsPlainOldData, NoDestructor)
-	int32                                         CallFunc_CreateBulletFromGA_ReturnValue;           // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C_______) == 0x000010, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C_______");
-static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C_______) == 0x000090, "Wrong size on GA_Destroy_Zhaohuan_Vision_C_______");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc__________) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc___________1) == 0x000008, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc___________1' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_____ID___ID) == 0x000010, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_____ID___ID' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc___________2) == 0x000018, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc___________2' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_____GA______________) == 0x000020, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_____GA______________' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc___________3) == 0x000030, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc___________3' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_GetScaledCapsuleHalfHeight_ReturnValue) == 0x000038, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_GetScaledCapsuleHalfHeight_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_MakeVector_ReturnValue) == 0x00003C, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_MakeVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_MakeTransform_ReturnValue) == 0x000050, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_MakeTransform_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C_______, CallFunc_CreateBulletFromGA_ReturnValue) == 0x000080, "Member 'GA_Destroy_Zhaohuan_Vision_C_______::CallFunc_CreateBulletFromGA_ReturnValue' has a wrong offset!");
-
-// Function GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C.4i
-// 0x0038 (0x0038 - 0x0000)
-struct GA_Destroy_Zhaohuan_Vision_C___4_i final
-{
-public:
-	bool                                          ___bool_Variable;                                  // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Variable;                                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_____ID___ID;                              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetCustomEntityId_ReturnValue;            // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetEntityEnable_ReturnValue;              // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     CallFunc_____ID_______;                            // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_____ID___________;                        // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2A[0x2];                                       // 0x002A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_AddMaterialControllerDataGroup_ReturnValue; // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Destroy_Zhaohuan_Vision_C___4_i) == 0x000008, "Wrong alignment on GA_Destroy_Zhaohuan_Vision_C___4_i");
-static_assert(sizeof(GA_Destroy_Zhaohuan_Vision_C___4_i) == 0x000038, "Wrong size on GA_Destroy_Zhaohuan_Vision_C___4_i");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, ___bool_Variable) == 0x000000, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::___bool_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_Not_PreBool_ReturnValue) == 0x000001, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, ___int_Variable) == 0x000004, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::___int_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc__________) == 0x000008, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_____ID___ID) == 0x000010, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_____ID___ID' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_Add_IntInt_ReturnValue) == 0x000014, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_GetCustomEntityId_ReturnValue) == 0x000018, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_GetCustomEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_GetEntityEnable_ReturnValue) == 0x00001C, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_GetEntityEnable_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_____ID_______) == 0x000020, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_____ID_______' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_____ID___________) == 0x000028, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_____ID___________' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_LessEqual_IntInt_ReturnValue) == 0x000029, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_LessEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_AddMaterialControllerDataGroup_ReturnValue) == 0x00002C, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_AddMaterialControllerDataGroup_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Zhaohuan_Vision_C___4_i, CallFunc_BooleanAND_ReturnValue) == 0x000030, "Member 'GA_Destroy_Zhaohuan_Vision_C___4_i::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
 
 }
 

@@ -21,9 +21,9 @@ namespace SDK
 class IBPI_EffectInterface_C final : public IInterface
 {
 public:
-	void RemoveHandle();
-	void SetHandle(int32 Handle);
 	void GetHandle(int32* Handle);
+	void SetHandle(int32 Handle);
+	void RemoveHandle();
 
 public:
 	static class UClass* StaticClass()

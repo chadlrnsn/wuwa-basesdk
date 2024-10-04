@@ -27,10 +27,10 @@ public:
 	class ATsBaseCharacter_C*                     __BP;                                              // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_DeleteVision(int32 EntryPoint);
-	void K2_OnEndAbility(bool bWasCancelled);
-	void K2_ActivateAbility();
 	void _H_d__();
+	void K2_ActivateAbility();
+	void K2_OnEndAbility(bool bWasCancelled);
+	void ExecuteUbergraph_GA_DeleteVision(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

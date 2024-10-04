@@ -99,6 +99,7 @@ public:
 	static struct FVector TestSceneLoadBornLocation(class UObject* __WorldContext);
 	static class FString GetLocalGameDataPath(class UObject* __WorldContext);
 	static void ActivitySequenceEmitEvent(const class FString& Param, class UObject* __WorldContext);
+	static float GetUiWeaponEquippedRoleId(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

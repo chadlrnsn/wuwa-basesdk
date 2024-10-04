@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function TsTaskBlackBoardSetValues.TsTaskBlackBoardSetValues_C.ExecuteUbergraph_TsTaskBlackBoardSetValues
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsTaskBlackBoardSetValues_C::ExecuteUbergraph_TsTaskBlackBoardSetValues(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskBlackBoardSetValues_C", "ExecuteUbergraph_TsTaskBlackBoardSetValues");
-
-	Params::TsTaskBlackBoardSetValues_C_ExecuteUbergraph_TsTaskBlackBoardSetValues Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function TsTaskBlackBoardSetValues.TsTaskBlackBoardSetValues_C.ReceiveExecuteAI
 // (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -59,6 +34,31 @@ void UTsTaskBlackBoardSetValues_C::ReceiveExecuteAI(class AAIController* OwnerCo
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskBlackBoardSetValues.TsTaskBlackBoardSetValues_C.ExecuteUbergraph_TsTaskBlackBoardSetValues
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsTaskBlackBoardSetValues_C::ExecuteUbergraph_TsTaskBlackBoardSetValues(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskBlackBoardSetValues_C", "ExecuteUbergraph_TsTaskBlackBoardSetValues");
+
+	Params::TsTaskBlackBoardSetValues_C_ExecuteUbergraph_TsTaskBlackBoardSetValues Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

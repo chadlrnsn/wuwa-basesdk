@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroInput_classes.hpp"
 #include "Engine_structs.hpp"
+#include "KuroInput_classes.hpp"
 #include "InputCore_structs.hpp"
 
 
@@ -19,15 +19,15 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsBasePlayerController.TsBasePlayerController_C
-// 0x00B8 (0x0728 - 0x0670)
+// 0x00B8 (0x0738 - 0x0680)
 class ATsBasePlayerController_C : public ABasePlayerController
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0670(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UClass*                                 ActionHandleClass;                                 // 0x0678(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class FString, class UTsActionHandle_C*> ActionHandleMap;                                   // 0x0680(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UClass*                                 AxisHandleClass;                                   // 0x06D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class FString, class UTsAxisHandle_C*>   AxisHandleMap;                                     // 0x06D8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0680(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UClass*                                 ActionHandleClass;                                 // 0x0688(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class FString, class UTsActionHandle_C*> ActionHandleMap;                                   // 0x0690(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UClass*                                 AxisHandleClass;                                   // 0x06E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class FString, class UTsAxisHandle_C*>   AxisHandleMap;                                     // 0x06E8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_TsBasePlayerController(int32 EntryPoint);
@@ -63,12 +63,12 @@ public:
 	}
 };
 static_assert(alignof(ATsBasePlayerController_C) == 0x000008, "Wrong alignment on ATsBasePlayerController_C");
-static_assert(sizeof(ATsBasePlayerController_C) == 0x000728, "Wrong size on ATsBasePlayerController_C");
-static_assert(offsetof(ATsBasePlayerController_C, UberGraphFrame) == 0x000670, "Member 'ATsBasePlayerController_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ATsBasePlayerController_C, ActionHandleClass) == 0x000678, "Member 'ATsBasePlayerController_C::ActionHandleClass' has a wrong offset!");
-static_assert(offsetof(ATsBasePlayerController_C, ActionHandleMap) == 0x000680, "Member 'ATsBasePlayerController_C::ActionHandleMap' has a wrong offset!");
-static_assert(offsetof(ATsBasePlayerController_C, AxisHandleClass) == 0x0006D0, "Member 'ATsBasePlayerController_C::AxisHandleClass' has a wrong offset!");
-static_assert(offsetof(ATsBasePlayerController_C, AxisHandleMap) == 0x0006D8, "Member 'ATsBasePlayerController_C::AxisHandleMap' has a wrong offset!");
+static_assert(sizeof(ATsBasePlayerController_C) == 0x000738, "Wrong size on ATsBasePlayerController_C");
+static_assert(offsetof(ATsBasePlayerController_C, UberGraphFrame) == 0x000680, "Member 'ATsBasePlayerController_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ATsBasePlayerController_C, ActionHandleClass) == 0x000688, "Member 'ATsBasePlayerController_C::ActionHandleClass' has a wrong offset!");
+static_assert(offsetof(ATsBasePlayerController_C, ActionHandleMap) == 0x000690, "Member 'ATsBasePlayerController_C::ActionHandleMap' has a wrong offset!");
+static_assert(offsetof(ATsBasePlayerController_C, AxisHandleClass) == 0x0006E0, "Member 'ATsBasePlayerController_C::AxisHandleClass' has a wrong offset!");
+static_assert(offsetof(ATsBasePlayerController_C, AxisHandleMap) == 0x0006E8, "Member 'ATsBasePlayerController_C::AxisHandleMap' has a wrong offset!");
 
 }
 

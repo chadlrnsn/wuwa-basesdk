@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "SReBulletDataMain_structs.hpp"
-#include "SHitEffect_structs.hpp"
 #include "SBulletDataMain_structs.hpp"
+#include "SHitEffect_structs.hpp"
 
 
 namespace SDK::Params

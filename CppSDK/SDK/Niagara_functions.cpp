@@ -1575,6 +1575,31 @@ void UNiagaraComponent::SetVariableVec4(class FName InVariableName, const struct
 }
 
 
+// Function Niagara.NiagaraComponent.SetVisibleInRayTracing
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UNiagaraComponent::SetVisibleInRayTracing(bool NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NiagaraComponent", "SetVisibleInRayTracing");
+
+	Params::NiagaraComponent_SetVisibleInRayTracing Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Niagara.NiagaraComponent.GetAgeUpdateMode
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -2658,6 +2683,31 @@ void UNiagaraDataInterfaceGrid3DCollection::GetTextureSize(const class UNiagaraC
 }
 
 
+// Function Niagara.NiagaraFunctionLibrary.GetGlobalInfo
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// struct FNiagaraGlobalInfoInHUD          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FNiagaraGlobalInfoInHUD UNiagaraFunctionLibrary::GetGlobalInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NiagaraFunctionLibrary", "GetGlobalInfo");
+
+	Params::NiagaraFunctionLibrary_GetGlobalInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Niagara.NiagaraFunctionLibrary.GetNiagaraParameterCollection
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -2685,6 +2735,31 @@ class UNiagaraParameterCollectionInstance* UNiagaraFunctionLibrary::GetNiagaraPa
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Niagara.NiagaraFunctionLibrary.MarkNiagaraScalabilityNeedUpdate
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UNiagaraFunctionLibrary::MarkNiagaraScalabilityNeedUpdate(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("NiagaraFunctionLibrary", "MarkNiagaraScalabilityNeedUpdate");
+
+	Params::NiagaraFunctionLibrary_MarkNiagaraScalabilityNeedUpdate Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

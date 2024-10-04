@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -17,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SkiConfig.BP_SkiConfig_C
-// 0x0028 (0x0060 - 0x0038)
+// 0x0050 (0x0088 - 0x0038)
 class UBP_SkiConfig_C final : public UPrimaryDataAsset
 {
 public:
@@ -30,6 +31,10 @@ public:
 	float                                         _a______;                                          // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         __6___;                                            // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         __l____p;                                          // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ___z___p;                                          // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         _______p;                                          // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ______sb__;                                        // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTagContainer                  __Tag;                                             // 0x0068(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()
@@ -42,7 +47,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_SkiConfig_C) == 0x000008, "Wrong alignment on UBP_SkiConfig_C");
-static_assert(sizeof(UBP_SkiConfig_C) == 0x000060, "Wrong size on UBP_SkiConfig_C");
+static_assert(sizeof(UBP_SkiConfig_C) == 0x000088, "Wrong size on UBP_SkiConfig_C");
 static_assert(offsetof(UBP_SkiConfig_C, ____) == 0x000038, "Member 'UBP_SkiConfig_C::____' has a wrong offset!");
 static_assert(offsetof(UBP_SkiConfig_C, L___) == 0x00003C, "Member 'UBP_SkiConfig_C::L___' has a wrong offset!");
 static_assert(offsetof(UBP_SkiConfig_C, _____) == 0x000040, "Member 'UBP_SkiConfig_C::_____' has a wrong offset!");
@@ -52,6 +57,10 @@ static_assert(offsetof(UBP_SkiConfig_C, _a_____) == 0x00004C, "Member 'UBP_SkiCo
 static_assert(offsetof(UBP_SkiConfig_C, _a______) == 0x000050, "Member 'UBP_SkiConfig_C::_a______' has a wrong offset!");
 static_assert(offsetof(UBP_SkiConfig_C, __6___) == 0x000054, "Member 'UBP_SkiConfig_C::__6___' has a wrong offset!");
 static_assert(offsetof(UBP_SkiConfig_C, __l____p) == 0x000058, "Member 'UBP_SkiConfig_C::__l____p' has a wrong offset!");
+static_assert(offsetof(UBP_SkiConfig_C, ___z___p) == 0x00005C, "Member 'UBP_SkiConfig_C::___z___p' has a wrong offset!");
+static_assert(offsetof(UBP_SkiConfig_C, _______p) == 0x000060, "Member 'UBP_SkiConfig_C::_______p' has a wrong offset!");
+static_assert(offsetof(UBP_SkiConfig_C, ______sb__) == 0x000064, "Member 'UBP_SkiConfig_C::______sb__' has a wrong offset!");
+static_assert(offsetof(UBP_SkiConfig_C, __Tag) == 0x000068, "Member 'UBP_SkiConfig_C::__Tag' has a wrong offset!");
 
 }
 

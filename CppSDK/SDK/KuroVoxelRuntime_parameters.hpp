@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroVoxelRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroVoxelRuntime_structs.hpp"
 
 
 namespace SDK::Params

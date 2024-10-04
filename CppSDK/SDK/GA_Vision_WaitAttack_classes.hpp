@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
-#include "Engine_structs.hpp"
 #include "GA_Passive_classes.hpp"
+#include "Engine_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK
@@ -33,16 +33,16 @@ public:
 	struct FGameplayTag                           _____GA_Vision_WaitAttack_C_0;                     // 0x05AC(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_GA_Vision_WaitAttack(int32 EntryPoint);
-	void K2_ActivateAbility();
-	void Added_21071CB943CD992BF8EFD6A3CB2AA2EF(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A31BD89B52(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A3F86F70F6(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A3E7DDAD25(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A389E908C3(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A3F34E6080(const struct FGameplayTag& Tag);
-	void A___();
 	void K_____();
+	void A___();
+	void Added_21071CB943CD992BF8EFD6A3F34E6080(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A389E908C3(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A3E7DDAD25(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A3F86F70F6(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A31BD89B52(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A3CB2AA2EF(const struct FGameplayTag& Tag);
+	void K2_ActivateAbility();
+	void ExecuteUbergraph_GA_Vision_WaitAttack(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

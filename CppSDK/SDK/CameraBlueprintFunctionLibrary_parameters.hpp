@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "SCameraDebugTool_CameraModeInfo_structs.hpp"
-#include "SSequenceCamera_Settings_structs.hpp"
+#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "SCameraDebugTool_ControllerModification_structs.hpp"
+#include "SSequenceCamera_Settings_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SCameraDebugTool_SubCameraModification_structs.hpp"
 #include "EAimAssistMode_structs.hpp"
 #include "SCameraModifier_Settings_structs.hpp"
-#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
-#include "GameplayTags_structs.hpp"
-#include "ECameraAnsEffectiveClientType_structs.hpp"
-#include "SBaseCurve_structs.hpp"
 #include "SCameraModifier_Condition_structs.hpp"
+#include "SBaseCurve_structs.hpp"
+#include "ECameraAnsEffectiveClientType_structs.hpp"
 #include "ECustomCameraMode_structs.hpp"
 #include "Engine_structs.hpp"
 
@@ -703,6 +703,34 @@ public:
 static_assert(alignof(CameraBlueprintFunctionLibrary_C_PlaySettlementCamera) == 0x000008, "Wrong alignment on CameraBlueprintFunctionLibrary_C_PlaySettlementCamera");
 static_assert(sizeof(CameraBlueprintFunctionLibrary_C_PlaySettlementCamera) == 0x000008, "Wrong size on CameraBlueprintFunctionLibrary_C_PlaySettlementCamera");
 static_assert(offsetof(CameraBlueprintFunctionLibrary_C_PlaySettlementCamera, __WorldContext) == 0x000000, "Member 'CameraBlueprintFunctionLibrary_C_PlaySettlementCamera::__WorldContext' has a wrong offset!");
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetSequenceCameraCollisionState
+// 0x0010 (0x0010 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState final
+{
+public:
+	bool                                          bEnable;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState) == 0x000008, "Wrong alignment on CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState");
+static_assert(sizeof(CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState) == 0x000010, "Wrong size on CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState");
+static_assert(offsetof(CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState, bEnable) == 0x000000, "Member 'CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState::bEnable' has a wrong offset!");
+static_assert(offsetof(CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState, __WorldContext) == 0x000008, "Member 'CameraBlueprintFunctionLibrary_C_SetSequenceCameraCollisionState::__WorldContext' has a wrong offset!");
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetXRayState
+// 0x0010 (0x0010 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_SetXRayState final
+{
+public:
+	bool                                          IsEnable;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CameraBlueprintFunctionLibrary_C_SetXRayState) == 0x000008, "Wrong alignment on CameraBlueprintFunctionLibrary_C_SetXRayState");
+static_assert(sizeof(CameraBlueprintFunctionLibrary_C_SetXRayState) == 0x000010, "Wrong size on CameraBlueprintFunctionLibrary_C_SetXRayState");
+static_assert(offsetof(CameraBlueprintFunctionLibrary_C_SetXRayState, IsEnable) == 0x000000, "Member 'CameraBlueprintFunctionLibrary_C_SetXRayState::IsEnable' has a wrong offset!");
+static_assert(offsetof(CameraBlueprintFunctionLibrary_C_SetXRayState, __WorldContext) == 0x000008, "Member 'CameraBlueprintFunctionLibrary_C_SetXRayState::__WorldContext' has a wrong offset!");
 
 }
 

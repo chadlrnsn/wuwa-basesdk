@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SPanelQte.SPanelQte
-// 0x0088 (0x0088 - 0x0000)
+// 0x00C8 (0x00C8 - 0x0000)
 struct FSPanelQte final
 {
 public:
@@ -39,9 +39,11 @@ public:
 	bool                                          CameraShakeOnInput_35_05708E4743D60D91309FF1A4DBC40190; // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftClassPtr<class UClass>                   CameraShakeType_41_48B958D547C8585498DECB89BB9E8536; // 0x0058(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	class FString                                 Action_57_9BCCB1CD4843CE536C56AE8CEFF6B6DF;        // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	TSoftObjectPtr<class ULGUITexturePackerSpriteData> Icon_61_B9FC411C4C4579CB0686BE94D2ACD754;          // 0x0098(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSPanelQte) == 0x000008, "Wrong alignment on FSPanelQte");
-static_assert(sizeof(FSPanelQte) == 0x000088, "Wrong size on FSPanelQte");
+static_assert(sizeof(FSPanelQte) == 0x0000C8, "Wrong size on FSPanelQte");
 static_assert(offsetof(FSPanelQte, ViewType_6_30F290C549F8B08518D4999F98079171) == 0x000000, "Member 'FSPanelQte::ViewType_6_30F290C549F8B08518D4999F98079171' has a wrong offset!");
 static_assert(offsetof(FSPanelQte, Duration_2_8BE797FC4ECCC7B83368359F0DA20DA7) == 0x000004, "Member 'FSPanelQte::Duration_2_8BE797FC4ECCC7B83368359F0DA20DA7' has a wrong offset!");
 static_assert(offsetof(FSPanelQte, WorldTimeDilation_30_35AC006F4A84D1B00C8993987FB221EF) == 0x000008, "Member 'FSPanelQte::WorldTimeDilation_30_35AC006F4A84D1B00C8993987FB221EF' has a wrong offset!");
@@ -55,6 +57,8 @@ static_assert(offsetof(FSPanelQte, BuffOnInput_46_AA179276492FA25EC7D01EAAA4FE7C
 static_assert(offsetof(FSPanelQte, BuffCd_51_0D18113C4B6EFD44FB718CB4019163F5) == 0x000050, "Member 'FSPanelQte::BuffCd_51_0D18113C4B6EFD44FB718CB4019163F5' has a wrong offset!");
 static_assert(offsetof(FSPanelQte, CameraShakeOnInput_35_05708E4743D60D91309FF1A4DBC40190) == 0x000054, "Member 'FSPanelQte::CameraShakeOnInput_35_05708E4743D60D91309FF1A4DBC40190' has a wrong offset!");
 static_assert(offsetof(FSPanelQte, CameraShakeType_41_48B958D547C8585498DECB89BB9E8536) == 0x000058, "Member 'FSPanelQte::CameraShakeType_41_48B958D547C8585498DECB89BB9E8536' has a wrong offset!");
+static_assert(offsetof(FSPanelQte, Action_57_9BCCB1CD4843CE536C56AE8CEFF6B6DF) == 0x000088, "Member 'FSPanelQte::Action_57_9BCCB1CD4843CE536C56AE8CEFF6B6DF' has a wrong offset!");
+static_assert(offsetof(FSPanelQte, Icon_61_B9FC411C4C4579CB0686BE94D2ACD754) == 0x000098, "Member 'FSPanelQte::Icon_61_B9FC411C4C4579CB0686BE94D2ACD754' has a wrong offset!");
 
 }
 

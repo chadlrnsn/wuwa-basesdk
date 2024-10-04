@@ -18,19 +18,19 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseVision.BP_BaseVision_C
-// 0x0000 (0x0780 - 0x0780)
+// 0x0000 (0x0790 - 0x0790)
 class ABP_BaseVision_C : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_771[0x7];                                      // 0x0771(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseVision_C;                    // 0x0778(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	uint8                                         Pad_781[0x7];                                      // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseVision_C;                    // 0x0788(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_BP_BaseVision(int32 EntryPoint);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveBeginPlay();
-	void ___apn(struct FSVisionData* _apn);
 	void _____r(class ATsBaseCharacter_C** ___r);
+	void ___apn(struct FSVisionData* _apn);
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void ExecuteUbergraph_BP_BaseVision(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -43,8 +43,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_BaseVision_C) == 0x000010, "Wrong alignment on ABP_BaseVision_C");
-static_assert(sizeof(ABP_BaseVision_C) == 0x000780, "Wrong size on ABP_BaseVision_C");
-static_assert(offsetof(ABP_BaseVision_C, UberGraphFrame_BP_BaseVision_C) == 0x000778, "Member 'ABP_BaseVision_C::UberGraphFrame_BP_BaseVision_C' has a wrong offset!");
+static_assert(sizeof(ABP_BaseVision_C) == 0x000790, "Wrong size on ABP_BaseVision_C");
+static_assert(offsetof(ABP_BaseVision_C, UberGraphFrame_BP_BaseVision_C) == 0x000788, "Member 'ABP_BaseVision_C::UberGraphFrame_BP_BaseVision_C' has a wrong offset!");
 
 }
 

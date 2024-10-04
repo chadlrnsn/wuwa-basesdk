@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SConDitionGroupType_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "SConDitionGroupType_structs.hpp"
 #include "AIModule_classes.hpp"
 
 
@@ -27,7 +27,7 @@ public:
 	ESConditionGroupType                          Logic;                                             // 0x00F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 BlackboardKeyTarget;                               // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          IsBattleTag;                                       // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DebugLog;                                          // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
@@ -47,7 +47,7 @@ static_assert(sizeof(UTsDecoratorTagCheck_C) == 0x000118, "Wrong size on UTsDeco
 static_assert(offsetof(UTsDecoratorTagCheck_C, Checks) == 0x0000A8, "Member 'UTsDecoratorTagCheck_C::Checks' has a wrong offset!");
 static_assert(offsetof(UTsDecoratorTagCheck_C, Logic) == 0x0000F8, "Member 'UTsDecoratorTagCheck_C::Logic' has a wrong offset!");
 static_assert(offsetof(UTsDecoratorTagCheck_C, BlackboardKeyTarget) == 0x000100, "Member 'UTsDecoratorTagCheck_C::BlackboardKeyTarget' has a wrong offset!");
-static_assert(offsetof(UTsDecoratorTagCheck_C, IsBattleTag) == 0x000110, "Member 'UTsDecoratorTagCheck_C::IsBattleTag' has a wrong offset!");
+static_assert(offsetof(UTsDecoratorTagCheck_C, DebugLog) == 0x000110, "Member 'UTsDecoratorTagCheck_C::DebugLog' has a wrong offset!");
 
 }
 

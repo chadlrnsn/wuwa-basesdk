@@ -14,21 +14,6 @@
 namespace SDK::Params
 {
 
-// Function TsAnimNotifyAudioEvent.TsAnimNotifyAudioEvent_C.K2_Notify
-// 0x0018 (0x0018 - 0x0000)
-struct TsAnimNotifyAudioEvent_C_K2_Notify final
-{
-public:
-	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(TsAnimNotifyAudioEvent_C_K2_Notify) == 0x000008, "Wrong alignment on TsAnimNotifyAudioEvent_C_K2_Notify");
-static_assert(sizeof(TsAnimNotifyAudioEvent_C_K2_Notify) == 0x000018, "Wrong size on TsAnimNotifyAudioEvent_C_K2_Notify");
-static_assert(offsetof(TsAnimNotifyAudioEvent_C_K2_Notify, MeshComp) == 0x000000, "Member 'TsAnimNotifyAudioEvent_C_K2_Notify::MeshComp' has a wrong offset!");
-static_assert(offsetof(TsAnimNotifyAudioEvent_C_K2_Notify, Animation) == 0x000008, "Member 'TsAnimNotifyAudioEvent_C_K2_Notify::Animation' has a wrong offset!");
-static_assert(offsetof(TsAnimNotifyAudioEvent_C_K2_Notify, ReturnValue) == 0x000010, "Member 'TsAnimNotifyAudioEvent_C_K2_Notify::ReturnValue' has a wrong offset!");
-
 // Function TsAnimNotifyAudioEvent.TsAnimNotifyAudioEvent_C.PostAudioEventAsync
 // 0x0020 (0x0020 - 0x0000)
 struct TsAnimNotifyAudioEvent_C_PostAudioEventAsync final
@@ -43,6 +28,21 @@ static_assert(sizeof(TsAnimNotifyAudioEvent_C_PostAudioEventAsync) == 0x000020, 
 static_assert(offsetof(TsAnimNotifyAudioEvent_C_PostAudioEventAsync, AudioEventPath) == 0x000000, "Member 'TsAnimNotifyAudioEvent_C_PostAudioEventAsync::AudioEventPath' has a wrong offset!");
 static_assert(offsetof(TsAnimNotifyAudioEvent_C_PostAudioEventAsync, MeshComponent) == 0x000010, "Member 'TsAnimNotifyAudioEvent_C_PostAudioEventAsync::MeshComponent' has a wrong offset!");
 static_assert(offsetof(TsAnimNotifyAudioEvent_C_PostAudioEventAsync, AnimSequence) == 0x000018, "Member 'TsAnimNotifyAudioEvent_C_PostAudioEventAsync::AnimSequence' has a wrong offset!");
+
+// Function TsAnimNotifyAudioEvent.TsAnimNotifyAudioEvent_C.K2_Notify
+// 0x0018 (0x0018 - 0x0000)
+struct TsAnimNotifyAudioEvent_C_K2_Notify final
+{
+public:
+	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsAnimNotifyAudioEvent_C_K2_Notify) == 0x000008, "Wrong alignment on TsAnimNotifyAudioEvent_C_K2_Notify");
+static_assert(sizeof(TsAnimNotifyAudioEvent_C_K2_Notify) == 0x000018, "Wrong size on TsAnimNotifyAudioEvent_C_K2_Notify");
+static_assert(offsetof(TsAnimNotifyAudioEvent_C_K2_Notify, MeshComp) == 0x000000, "Member 'TsAnimNotifyAudioEvent_C_K2_Notify::MeshComp' has a wrong offset!");
+static_assert(offsetof(TsAnimNotifyAudioEvent_C_K2_Notify, Animation) == 0x000008, "Member 'TsAnimNotifyAudioEvent_C_K2_Notify::Animation' has a wrong offset!");
+static_assert(offsetof(TsAnimNotifyAudioEvent_C_K2_Notify, ReturnValue) == 0x000010, "Member 'TsAnimNotifyAudioEvent_C_K2_Notify::ReturnValue' has a wrong offset!");
 
 // Function TsAnimNotifyAudioEvent.TsAnimNotifyAudioEvent_C.GetNotifyName
 // 0x0010 (0x0010 - 0x0000)

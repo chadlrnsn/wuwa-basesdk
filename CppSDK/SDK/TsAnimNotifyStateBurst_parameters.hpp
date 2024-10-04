@@ -14,6 +14,21 @@
 namespace SDK::Params
 {
 
+// Function TsAnimNotifyStateBurst.TsAnimNotifyStateBurst_C.K2_NotifyEnd
+// 0x0018 (0x0018 - 0x0000)
+struct TsAnimNotifyStateBurst_C_K2_NotifyEnd final
+{
+public:
+	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsAnimNotifyStateBurst_C_K2_NotifyEnd) == 0x000008, "Wrong alignment on TsAnimNotifyStateBurst_C_K2_NotifyEnd");
+static_assert(sizeof(TsAnimNotifyStateBurst_C_K2_NotifyEnd) == 0x000018, "Wrong size on TsAnimNotifyStateBurst_C_K2_NotifyEnd");
+static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyEnd, MeshComp) == 0x000000, "Member 'TsAnimNotifyStateBurst_C_K2_NotifyEnd::MeshComp' has a wrong offset!");
+static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyEnd, Animation) == 0x000008, "Member 'TsAnimNotifyStateBurst_C_K2_NotifyEnd::Animation' has a wrong offset!");
+static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyEnd, ReturnValue) == 0x000010, "Member 'TsAnimNotifyStateBurst_C_K2_NotifyEnd::ReturnValue' has a wrong offset!");
+
 // Function TsAnimNotifyStateBurst.TsAnimNotifyStateBurst_C.K2_NotifyBegin
 // 0x0018 (0x0018 - 0x0000)
 struct TsAnimNotifyStateBurst_C_K2_NotifyBegin final
@@ -30,21 +45,6 @@ static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyBegin, MeshComp) == 0x0
 static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyBegin, Animation) == 0x000008, "Member 'TsAnimNotifyStateBurst_C_K2_NotifyBegin::Animation' has a wrong offset!");
 static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyBegin, TotalDuration) == 0x000010, "Member 'TsAnimNotifyStateBurst_C_K2_NotifyBegin::TotalDuration' has a wrong offset!");
 static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyBegin, ReturnValue) == 0x000014, "Member 'TsAnimNotifyStateBurst_C_K2_NotifyBegin::ReturnValue' has a wrong offset!");
-
-// Function TsAnimNotifyStateBurst.TsAnimNotifyStateBurst_C.K2_NotifyEnd
-// 0x0018 (0x0018 - 0x0000)
-struct TsAnimNotifyStateBurst_C_K2_NotifyEnd final
-{
-public:
-	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(TsAnimNotifyStateBurst_C_K2_NotifyEnd) == 0x000008, "Wrong alignment on TsAnimNotifyStateBurst_C_K2_NotifyEnd");
-static_assert(sizeof(TsAnimNotifyStateBurst_C_K2_NotifyEnd) == 0x000018, "Wrong size on TsAnimNotifyStateBurst_C_K2_NotifyEnd");
-static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyEnd, MeshComp) == 0x000000, "Member 'TsAnimNotifyStateBurst_C_K2_NotifyEnd::MeshComp' has a wrong offset!");
-static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyEnd, Animation) == 0x000008, "Member 'TsAnimNotifyStateBurst_C_K2_NotifyEnd::Animation' has a wrong offset!");
-static_assert(offsetof(TsAnimNotifyStateBurst_C_K2_NotifyEnd, ReturnValue) == 0x000010, "Member 'TsAnimNotifyStateBurst_C_K2_NotifyEnd::ReturnValue' has a wrong offset!");
 
 // Function TsAnimNotifyStateBurst.TsAnimNotifyStateBurst_C.GetNotifyName
 // 0x0010 (0x0010 - 0x0000)

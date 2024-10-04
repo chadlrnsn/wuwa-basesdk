@@ -11,21 +11,21 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "ESkillBehaviorActionType_structs.hpp"
+#include "ESkillBehaviorBuffTargetType_structs.hpp"
 #include "SSkillBehaviorCue_structs.hpp"
+#include "ESkillBehaviorRotationType_structs.hpp"
+#include "ESkillBehaviorActionType_structs.hpp"
 #include "ESkillBehaviorLocationType_structs.hpp"
 #include "ESkillBehaviorLocationForwardType_structs.hpp"
 #include "ESkillBehaviorRestrictType_structs.hpp"
-#include "Engine_structs.hpp"
-#include "ESkillBehaviorRotationType_structs.hpp"
 #include "SSkillBehaviorBullet_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "ECameraAnsEffectiveClientType_structs.hpp"
 #include "SCameraModifier_Condition_structs.hpp"
-#include "ESkillBehaviorBestSpotType_structs.hpp"
 #include "SCameraModifier_Settings_structs.hpp"
 #include "SSequenceCamera_Settings_structs.hpp"
-#include "ESkillBehaviorBuffTargetType_structs.hpp"
+#include "Engine_structs.hpp"
+#include "ESkillBehaviorBestSpotType_structs.hpp"
 
 
 namespace SDK
@@ -81,8 +81,8 @@ public:
 	int32                                         SummonSkillId_181_1FA5575B40D0B30D536CF8BE1D3F4ED3; // 0x021C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          StopSummonSkill_182_448527CA436CE3C791BBB0923C802CD7; // 0x0220(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	ESkillBehaviorBestSpotType                    Strategy_206_364E8199461F866DA1E738B909AF9BA3;     // 0x0221(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          DebugTrace_198_772A39284872AB2CF44366AE8AD28728;   // 0x0222(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_223[0x1];                                      // 0x0223(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          OnGround_231_915FC3974BAA519E7D883299AD2058F7;     // 0x0222(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DebugTrace_198_772A39284872AB2CF44366AE8AD28728;   // 0x0223(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         Navigation_201_3CAB915C492DDD5D14DC38A6527C52D1;   // 0x0224(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         BuffId_215_FC5579E6440CA752BF0A20A3D0291FCF;       // 0x0228(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ESkillBehaviorBuffTargetType                  BuffTarget_218_52829D6E4FDD50520D92D6BB2D3A0613;   // 0x0230(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -128,7 +128,8 @@ static_assert(offsetof(FSSkillBehaviorAction, FollowIndex_174_4B2308594A0BC5860E
 static_assert(offsetof(FSSkillBehaviorAction, SummonSkillId_181_1FA5575B40D0B30D536CF8BE1D3F4ED3) == 0x00021C, "Member 'FSSkillBehaviorAction::SummonSkillId_181_1FA5575B40D0B30D536CF8BE1D3F4ED3' has a wrong offset!");
 static_assert(offsetof(FSSkillBehaviorAction, StopSummonSkill_182_448527CA436CE3C791BBB0923C802CD7) == 0x000220, "Member 'FSSkillBehaviorAction::StopSummonSkill_182_448527CA436CE3C791BBB0923C802CD7' has a wrong offset!");
 static_assert(offsetof(FSSkillBehaviorAction, Strategy_206_364E8199461F866DA1E738B909AF9BA3) == 0x000221, "Member 'FSSkillBehaviorAction::Strategy_206_364E8199461F866DA1E738B909AF9BA3' has a wrong offset!");
-static_assert(offsetof(FSSkillBehaviorAction, DebugTrace_198_772A39284872AB2CF44366AE8AD28728) == 0x000222, "Member 'FSSkillBehaviorAction::DebugTrace_198_772A39284872AB2CF44366AE8AD28728' has a wrong offset!");
+static_assert(offsetof(FSSkillBehaviorAction, OnGround_231_915FC3974BAA519E7D883299AD2058F7) == 0x000222, "Member 'FSSkillBehaviorAction::OnGround_231_915FC3974BAA519E7D883299AD2058F7' has a wrong offset!");
+static_assert(offsetof(FSSkillBehaviorAction, DebugTrace_198_772A39284872AB2CF44366AE8AD28728) == 0x000223, "Member 'FSSkillBehaviorAction::DebugTrace_198_772A39284872AB2CF44366AE8AD28728' has a wrong offset!");
 static_assert(offsetof(FSSkillBehaviorAction, Navigation_201_3CAB915C492DDD5D14DC38A6527C52D1) == 0x000224, "Member 'FSSkillBehaviorAction::Navigation_201_3CAB915C492DDD5D14DC38A6527C52D1' has a wrong offset!");
 static_assert(offsetof(FSSkillBehaviorAction, BuffId_215_FC5579E6440CA752BF0A20A3D0291FCF) == 0x000228, "Member 'FSSkillBehaviorAction::BuffId_215_FC5579E6440CA752BF0A20A3D0291FCF' has a wrong offset!");
 static_assert(offsetof(FSSkillBehaviorAction, BuffTarget_218_52829D6E4FDD50520D92D6BB2D3A0613) == 0x000230, "Member 'FSSkillBehaviorAction::BuffTarget_218_52829D6E4FDD50520D92D6BB2D3A0613' has a wrong offset!");

@@ -10,6 +10,8 @@
 
 #include "Basic.hpp"
 
+#include "KuroEditorRuntime_structs.hpp"
+
 
 namespace SDK::Params
 {
@@ -60,6 +62,60 @@ static_assert(alignof(EditorRuntimeOperations_IsPortInUse) == 0x000004, "Wrong a
 static_assert(sizeof(EditorRuntimeOperations_IsPortInUse) == 0x000008, "Wrong size on EditorRuntimeOperations_IsPortInUse");
 static_assert(offsetof(EditorRuntimeOperations_IsPortInUse, Port) == 0x000000, "Member 'EditorRuntimeOperations_IsPortInUse::Port' has a wrong offset!");
 static_assert(offsetof(EditorRuntimeOperations_IsPortInUse, ReturnValue) == 0x000004, "Member 'EditorRuntimeOperations_IsPortInUse::ReturnValue' has a wrong offset!");
+
+// Function KuroEditorRuntime.EditorRuntimeOperations.IsTcpPortInUse
+// 0x0008 (0x0008 - 0x0000)
+struct EditorRuntimeOperations_IsTcpPortInUse final
+{
+public:
+	int32                                         Port;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(EditorRuntimeOperations_IsTcpPortInUse) == 0x000004, "Wrong alignment on EditorRuntimeOperations_IsTcpPortInUse");
+static_assert(sizeof(EditorRuntimeOperations_IsTcpPortInUse) == 0x000008, "Wrong size on EditorRuntimeOperations_IsTcpPortInUse");
+static_assert(offsetof(EditorRuntimeOperations_IsTcpPortInUse, Port) == 0x000000, "Member 'EditorRuntimeOperations_IsTcpPortInUse::Port' has a wrong offset!");
+static_assert(offsetof(EditorRuntimeOperations_IsTcpPortInUse, ReturnValue) == 0x000004, "Member 'EditorRuntimeOperations_IsTcpPortInUse::ReturnValue' has a wrong offset!");
+
+// Function KuroEditorRuntime.EditorRuntimeOperations.IsUdpPortInUse
+// 0x0008 (0x0008 - 0x0000)
+struct EditorRuntimeOperations_IsUdpPortInUse final
+{
+public:
+	int32                                         Port;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(EditorRuntimeOperations_IsUdpPortInUse) == 0x000004, "Wrong alignment on EditorRuntimeOperations_IsUdpPortInUse");
+static_assert(sizeof(EditorRuntimeOperations_IsUdpPortInUse) == 0x000008, "Wrong size on EditorRuntimeOperations_IsUdpPortInUse");
+static_assert(offsetof(EditorRuntimeOperations_IsUdpPortInUse, Port) == 0x000000, "Member 'EditorRuntimeOperations_IsUdpPortInUse::Port' has a wrong offset!");
+static_assert(offsetof(EditorRuntimeOperations_IsUdpPortInUse, ReturnValue) == 0x000004, "Member 'EditorRuntimeOperations_IsUdpPortInUse::ReturnValue' has a wrong offset!");
+
+// Function KuroEditorRuntime.EditorRuntimeOperations.ReadBatchFilesAsync
+// 0x0038 (0x0038 - 0x0000)
+struct EditorRuntimeOperations_ReadBatchFilesAsync final
+{
+public:
+	TArray<class FString>                         FilePaths;                                         // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(TArray<struct FReadFileData>& LoadedFiles, TArray<class FString>& ReadFailedFiles)> OnAllFilesRead;                                    // 0x0010(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditorRuntimeOperations_ReadBatchFilesAsync) == 0x000008, "Wrong alignment on EditorRuntimeOperations_ReadBatchFilesAsync");
+static_assert(sizeof(EditorRuntimeOperations_ReadBatchFilesAsync) == 0x000038, "Wrong size on EditorRuntimeOperations_ReadBatchFilesAsync");
+static_assert(offsetof(EditorRuntimeOperations_ReadBatchFilesAsync, FilePaths) == 0x000000, "Member 'EditorRuntimeOperations_ReadBatchFilesAsync::FilePaths' has a wrong offset!");
+static_assert(offsetof(EditorRuntimeOperations_ReadBatchFilesAsync, OnAllFilesRead) == 0x000010, "Member 'EditorRuntimeOperations_ReadBatchFilesAsync::OnAllFilesRead' has a wrong offset!");
+
+// Function KuroEditorRuntime.EditorRuntimeOperations.ReadFileAsync
+// 0x0038 (0x0038 - 0x0000)
+struct EditorRuntimeOperations_ReadFileAsync final
+{
+public:
+	class FString                                 FilePath;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(bool IsSuccess, const class FString& FileContent)> OnFileRead;                                        // 0x0010(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditorRuntimeOperations_ReadFileAsync) == 0x000008, "Wrong alignment on EditorRuntimeOperations_ReadFileAsync");
+static_assert(sizeof(EditorRuntimeOperations_ReadFileAsync) == 0x000038, "Wrong size on EditorRuntimeOperations_ReadFileAsync");
+static_assert(offsetof(EditorRuntimeOperations_ReadFileAsync, FilePath) == 0x000000, "Member 'EditorRuntimeOperations_ReadFileAsync::FilePath' has a wrong offset!");
+static_assert(offsetof(EditorRuntimeOperations_ReadFileAsync, OnFileRead) == 0x000010, "Member 'EditorRuntimeOperations_ReadFileAsync::OnFileRead' has a wrong offset!");
 
 // Function KuroEditorRuntime.EditorRuntimeOperations.SendHttpRequest
 // 0x00A8 (0x00A8 - 0x0000)

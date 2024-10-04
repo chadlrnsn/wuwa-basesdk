@@ -249,6 +249,20 @@ void AAIC_AICommon_C::__L__a_(bool bContent)
 }
 
 
+// Function AIC_AICommon.AIC_AICommon_C.OnStart
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AAIC_AICommon_C::OnStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_AICommon_C", "OnStart");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AIC_AICommon.AIC_AICommon_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -378,20 +392,6 @@ void AAIC_AICommon_C::_______p(const class FString& Param______0, const TDelegat
 	Parms.__ = __;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIC_AICommon.AIC_AICommon_C.OnStart
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void AAIC_AICommon_C::OnStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_AICommon_C", "OnStart");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
