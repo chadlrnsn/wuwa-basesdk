@@ -12,5 +12,4 @@ A basic sdk to exploiting another anime game
 #define static_assert(...)
 ```
 
-> [!INFO]
-> [Including the SDK into the project](https://github.com/Encryqed/Dumper-7/blob/main/UsingTheSDK.md#including-the-sdk-into-the-project)
+[Including the SDK into the project](https://github.com/Encryqed/Dumper-7/blob/main/UsingTheSDK.md#including-the-sdk-into-the-project)
