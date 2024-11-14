@@ -1,15 +1,16 @@
 # wuwa-basesdk
+
 A basic sdk to exploiting another anime game
 
-> Updated to 1.3.0
+> [!IMPORTANT]
+> Deprecated 1.4.1
 
-> [!WARNING]\
-> if u get static_assert error then write in Engine... and Basic.hpp code below
+> [!TIP]
+> if u get static_assert error then write in `Engine_classes.hpp` and `Basic.hpp` code below
 
 ```cpp
 #define static_assert(...)
 ```
 
-> [!IMPORTANT]\
-> include only theese files starts with: `Engine`, `CoreU`, `Basic.hpp & Basic.cpp`
-
+> [!INFO]
+> [Including the SDK into the project](https://github.com/Encryqed/Dumper-7/blob/main/UsingTheSDK.md#including-the-sdk-into-the-project)
