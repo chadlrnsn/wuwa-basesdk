@@ -17,219 +17,21 @@
 namespace SDK
 {
 
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.>:©¶!‹
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UGA_Comboo_Vision_C::_______3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", ">:©¶!‹");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.EventReceived_18B59F5945020DB23C42FD88D3AB825D
-// (BlueprintCallable, BlueprintEvent)
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.ExecuteUbergraph_GA_Comboo_Vision
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Comboo_Vision_C::EventReceived_18B59F5945020DB23C42FD88D3AB825D(const struct FGameplayEventData& Payload)
+void UGA_Comboo_Vision_C::ExecuteUbergraph_GA_Comboo_Vision(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "EventReceived_18B59F5945020DB23C42FD88D3AB825D");
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "ExecuteUbergraph_GA_Comboo_Vision");
 
-	Params::GA_Comboo_Vision_C_EventReceived_18B59F5945020DB23C42FD88D3AB825D Parms{};
+	Params::GA_Comboo_Vision_C_ExecuteUbergraph_GA_Comboo_Vision Parms{};
 
-	Parms.Payload = std::move(Payload);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.EventReceived_18B59F5945020DB23C42FD8807650D1C
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UGA_Comboo_Vision_C::EventReceived_18B59F5945020DB23C42FD8807650D1C(const struct FGameplayEventData& Payload)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "EventReceived_18B59F5945020DB23C42FD8807650D1C");
-
-	Params::GA_Comboo_Vision_C_EventReceived_18B59F5945020DB23C42FD8807650D1C Parms{};
-
-	Parms.Payload = std::move(Payload);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.Added_21071CB943CD992BF8EFD6A3031ED77E
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Comboo_Vision_C::Added_21071CB943CD992BF8EFD6A3031ED77E(const struct FGameplayTag& Tag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "Added_21071CB943CD992BF8EFD6A3031ED77E");
-
-	Params::GA_Comboo_Vision_C_Added_21071CB943CD992BF8EFD6A3031ED77E Parms{};
-
-	Parms.Tag = std::move(Tag);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnTick_5D118C384AE61F1C80292E811927A939
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Comboo_Vision_C::OnTick_5D118C384AE61F1C80292E811927A939()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnTick_5D118C384AE61F1C80292E811927A939");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnCancelled_5D118C384AE61F1C80292E811927A939
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Comboo_Vision_C::OnCancelled_5D118C384AE61F1C80292E811927A939()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnCancelled_5D118C384AE61F1C80292E811927A939");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnInterrupted_5D118C384AE61F1C80292E811927A939
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Comboo_Vision_C::OnInterrupted_5D118C384AE61F1C80292E811927A939()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnInterrupted_5D118C384AE61F1C80292E811927A939");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnBlendOut_5D118C384AE61F1C80292E811927A939
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Comboo_Vision_C::OnBlendOut_5D118C384AE61F1C80292E811927A939()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnBlendOut_5D118C384AE61F1C80292E811927A939");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnCompleted_5D118C384AE61F1C80292E811927A939
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Comboo_Vision_C::OnCompleted_5D118C384AE61F1C80292E811927A939()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnCompleted_5D118C384AE61F1C80292E811927A939");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.Added_21071CB943CD992BF8EFD6A39F485527
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Comboo_Vision_C::Added_21071CB943CD992BF8EFD6A39F485527(const struct FGameplayTag& Tag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "Added_21071CB943CD992BF8EFD6A39F485527");
-
-	Params::GA_Comboo_Vision_C_Added_21071CB943CD992BF8EFD6A39F485527 Parms{};
-
-	Parms.Tag = std::move(Tag);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.EventReceived_18B59F5945020DB23C42FD88BD385F36
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UGA_Comboo_Vision_C::EventReceived_18B59F5945020DB23C42FD88BD385F36(const struct FGameplayEventData& Payload)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "EventReceived_18B59F5945020DB23C42FD88BD385F36");
-
-	Params::GA_Comboo_Vision_C_EventReceived_18B59F5945020DB23C42FD88BD385F36 Parms{};
-
-	Parms.Payload = std::move(Payload);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Comboo_Vision_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Comboo_Vision_C::K2_OnEndAbility(bool bWasCancelled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "K2_OnEndAbility");
-
-	Params::GA_Comboo_Vision_C_K2_OnEndAbility Parms{};
-
-	Parms.bWasCancelled = bWasCancelled;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -257,23 +59,221 @@ void UGA_Comboo_Vision_C::_r__(class ATsBaseCharacter_C* _r, const struct FSHitI
 }
 
 
-// Function GA_Comboo_Vision.GA_Comboo_Vision_C.ExecuteUbergraph_GA_Comboo_Vision
-// (Final, UbergraphFunction, HasDefaults)
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Comboo_Vision_C::ExecuteUbergraph_GA_Comboo_Vision(int32 EntryPoint)
+void UGA_Comboo_Vision_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Comboo_Vision_C", "ExecuteUbergraph_GA_Comboo_Vision");
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "K2_OnEndAbility");
 
-	Params::GA_Comboo_Vision_C_ExecuteUbergraph_GA_Comboo_Vision Parms{};
+	Params::GA_Comboo_Vision_C_K2_OnEndAbility Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGA_Comboo_Vision_C::K2_ActivateAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "K2_ActivateAbility");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.EventReceived_18B59F5945020DB23C42FD88BD385F36
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_Comboo_Vision_C::EventReceived_18B59F5945020DB23C42FD88BD385F36(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "EventReceived_18B59F5945020DB23C42FD88BD385F36");
+
+	Params::GA_Comboo_Vision_C_EventReceived_18B59F5945020DB23C42FD88BD385F36 Parms{};
+
+	Parms.Payload = std::move(Payload);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.Added_21071CB943CD992BF8EFD6A39F485527
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Comboo_Vision_C::Added_21071CB943CD992BF8EFD6A39F485527(const struct FGameplayTag& Tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "Added_21071CB943CD992BF8EFD6A39F485527");
+
+	Params::GA_Comboo_Vision_C_Added_21071CB943CD992BF8EFD6A39F485527 Parms{};
+
+	Parms.Tag = std::move(Tag);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnCompleted_5D118C384AE61F1C80292E811927A939
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Comboo_Vision_C::OnCompleted_5D118C384AE61F1C80292E811927A939()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnCompleted_5D118C384AE61F1C80292E811927A939");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnBlendOut_5D118C384AE61F1C80292E811927A939
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Comboo_Vision_C::OnBlendOut_5D118C384AE61F1C80292E811927A939()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnBlendOut_5D118C384AE61F1C80292E811927A939");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnInterrupted_5D118C384AE61F1C80292E811927A939
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Comboo_Vision_C::OnInterrupted_5D118C384AE61F1C80292E811927A939()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnInterrupted_5D118C384AE61F1C80292E811927A939");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnCancelled_5D118C384AE61F1C80292E811927A939
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Comboo_Vision_C::OnCancelled_5D118C384AE61F1C80292E811927A939()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnCancelled_5D118C384AE61F1C80292E811927A939");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.OnTick_5D118C384AE61F1C80292E811927A939
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Comboo_Vision_C::OnTick_5D118C384AE61F1C80292E811927A939()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "OnTick_5D118C384AE61F1C80292E811927A939");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.Added_21071CB943CD992BF8EFD6A3031ED77E
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Comboo_Vision_C::Added_21071CB943CD992BF8EFD6A3031ED77E(const struct FGameplayTag& Tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "Added_21071CB943CD992BF8EFD6A3031ED77E");
+
+	Params::GA_Comboo_Vision_C_Added_21071CB943CD992BF8EFD6A3031ED77E Parms{};
+
+	Parms.Tag = std::move(Tag);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.EventReceived_18B59F5945020DB23C42FD8807650D1C
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_Comboo_Vision_C::EventReceived_18B59F5945020DB23C42FD8807650D1C(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "EventReceived_18B59F5945020DB23C42FD8807650D1C");
+
+	Params::GA_Comboo_Vision_C_EventReceived_18B59F5945020DB23C42FD8807650D1C Parms{};
+
+	Parms.Payload = std::move(Payload);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.EventReceived_18B59F5945020DB23C42FD88D3AB825D
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_Comboo_Vision_C::EventReceived_18B59F5945020DB23C42FD88D3AB825D(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", "EventReceived_18B59F5945020DB23C42FD88D3AB825D");
+
+	Params::GA_Comboo_Vision_C_EventReceived_18B59F5945020DB23C42FD88D3AB825D Parms{};
+
+	Parms.Payload = std::move(Payload);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Comboo_Vision.GA_Comboo_Vision_C.>:©¶!‹
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UGA_Comboo_Vision_C::_______3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Comboo_Vision_C", ">:©¶!‹");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

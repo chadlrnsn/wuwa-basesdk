@@ -17,62 +17,89 @@
 namespace SDK
 {
 
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.ExecuteUbergraph_ABP_ParaglidingBase
+// (Final, UbergraphFunction)
 // Parameters:
-// struct FPoseLink                        Param_AnimGraph                                        (Parm, OutParm, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_ParaglidingBase_C::AnimGraph(struct FPoseLink* Param_AnimGraph)
+void UABP_ParaglidingBase_C::ExecuteUbergraph_ABP_ParaglidingBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_ParaglidingBase_C", "AnimGraph");
+		Func = Class->GetFunction("ABP_ParaglidingBase_C", "ExecuteUbergraph_ABP_ParaglidingBase");
 
-	Params::ABP_ParaglidingBase_C_AnimGraph Parms{};
+	Params::ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBase Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Param_AnimGraph != nullptr)
-		*Param_AnimGraph = std::move(Parms.Param_AnimGraph);
-}
-
-
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetDash
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    Dash                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UABP_ParaglidingBase_C::SetDash(bool Dash)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_ParaglidingBase_C", "SetDash");
-
-	Params::ABP_ParaglidingBase_C_SetDash Parms{};
-
-	Parms.Dash = Dash;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetHover
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.BlueprintUpdateAnimation
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// bool                                    Hover                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_ParaglidingBase_C::SetHover(bool Hover)
+void UABP_ParaglidingBase_C::BlueprintUpdateAnimation(float DeltaTimeX)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_ParaglidingBase_C", "SetHover");
+		Func = Class->GetFunction("ABP_ParaglidingBase_C", "BlueprintUpdateAnimation");
 
-	Params::ABP_ParaglidingBase_C_SetHover Parms{};
+	Params::ABP_ParaglidingBase_C_BlueprintUpdateAnimation Parms{};
 
-	Parms.Hover = Hover;
+	Parms.DeltaTimeX = DeltaTimeX;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.BlueprintInitializeAnimation
+// (Event, Public, BlueprintEvent)
+
+void UABP_ParaglidingBase_C::BlueprintInitializeAnimation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_ParaglidingBase_C", "BlueprintInitializeAnimation");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC
+// (BlueprintEvent)
+
+void UABP_ParaglidingBase_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_ParaglidingBase_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SyncAnim
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UABP_ParaglidingBase_C*           Other                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_ParaglidingBase_C::SyncAnim(class UABP_ParaglidingBase_C* Other)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_ParaglidingBase_C", "SyncAnim");
+
+	Params::ABP_ParaglidingBase_C_SyncAnim Parms{};
+
+	Parms.Other = Other;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -98,91 +125,64 @@ void UABP_ParaglidingBase_C::SetOpenParagliding(bool bOpen)
 }
 
 
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SyncAnim
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetHover
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UABP_ParaglidingBase_C*           Other                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Hover                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UABP_ParaglidingBase_C::SyncAnim(class UABP_ParaglidingBase_C* Other)
+void UABP_ParaglidingBase_C::SetHover(bool Hover)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_ParaglidingBase_C", "SyncAnim");
+		Func = Class->GetFunction("ABP_ParaglidingBase_C", "SetHover");
 
-	Params::ABP_ParaglidingBase_C_SyncAnim Parms{};
+	Params::ABP_ParaglidingBase_C_SetHover Parms{};
 
-	Parms.Other = Other;
+	Parms.Hover = Hover;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC
-// (BlueprintEvent)
-
-void UABP_ParaglidingBase_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_ParaglidingBase_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.BlueprintInitializeAnimation
-// (Event, Public, BlueprintEvent)
-
-void UABP_ParaglidingBase_C::BlueprintInitializeAnimation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_ParaglidingBase_C", "BlueprintInitializeAnimation");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.BlueprintUpdateAnimation
-// (Event, Public, BlueprintEvent)
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.SetDash
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Dash                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UABP_ParaglidingBase_C::BlueprintUpdateAnimation(float DeltaTimeX)
+void UABP_ParaglidingBase_C::SetDash(bool Dash)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_ParaglidingBase_C", "BlueprintUpdateAnimation");
+		Func = Class->GetFunction("ABP_ParaglidingBase_C", "SetDash");
 
-	Params::ABP_ParaglidingBase_C_BlueprintUpdateAnimation Parms{};
+	Params::ABP_ParaglidingBase_C_SetDash Parms{};
 
-	Parms.DeltaTimeX = DeltaTimeX;
+	Parms.Dash = Dash;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.ExecuteUbergraph_ABP_ParaglidingBase
-// (Final, UbergraphFunction)
+// Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
-void UABP_ParaglidingBase_C::ExecuteUbergraph_ABP_ParaglidingBase(int32 EntryPoint)
+void UABP_ParaglidingBase_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_ParaglidingBase_C", "ExecuteUbergraph_ABP_ParaglidingBase");
+		Func = Class->GetFunction("ABP_ParaglidingBase_C", "AnimGraph");
 
-	Params::ABP_ParaglidingBase_C_ExecuteUbergraph_ABP_ParaglidingBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::ABP_ParaglidingBase_C_AnimGraph Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 }

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ESequenceCameraSpecificType_structs.hpp"
 #include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
+#include "ESequenceCameraSpecificType_structs.hpp"
 
 
 namespace SDK
@@ -23,7 +23,7 @@ struct FSSequenceCamera_SpecificConfig final
 {
 public:
 	ESequenceCameraSpecificType                   SpecificType_15_50AB36014A88C4E7CC96A0A34AEB7D72;  // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_10AB[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         OverrideSequenceTime_17_2399CDF14D0B86FADE36E7A7CFD0481B; // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         OverrideBlendOutTime_18_1D2DFCA140CDF02915E029891E4D4788; // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ESequenceCameraAnsEffectiveClientType         OverrideCondition_21_31248186440632D4E0F4CDA0B3511622; // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

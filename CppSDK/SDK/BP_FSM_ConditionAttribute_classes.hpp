@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "EAttributeType_structs.hpp"
 #include "KuroUtility_classes.hpp"
+#include "EAttributeType_structs.hpp"
 
 
 namespace SDK

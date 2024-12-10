@@ -24,7 +24,7 @@ class ALTweenActor final : public AActor
 {
 public:
 	TArray<class ULTweener*>                      TweenerList;                                       // 0x02B0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1433[0x38];                                    // 0x02C0(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C0[0x38];                                     // 0x02C0(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class ULTweener*>                      ReserveTweenerList;                                // 0x02F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 
 public:
@@ -124,11 +124,11 @@ static_assert(sizeof(ULTweenBPLibrary) == 0x000030, "Wrong size on ULTweenBPLibr
 class ULTweener : public UObject
 {
 public:
-	uint8                                         Pad_147D[0x78];                                    // 0x0030(0x0078)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x78];                                      // 0x0030(0x0078)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void()>                             OnStartCallBack;                                   // 0x00A8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
 	TDelegate<void()>                             OnUpdateCallBack;                                  // 0x00D0(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
 	TDelegate<void()>                             OnCompleteCallBack;                                // 0x00F8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_147E[0x18];                                    // 0x0120(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_120[0x18];                                     // 0x0120(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ForceComplete();
@@ -173,7 +173,7 @@ static_assert(offsetof(ULTweener, OnCompleteCallBack) == 0x0000F8, "Member 'ULTw
 class ULTweenerColor final : public ULTweener
 {
 public:
-	uint8                                         Pad_1484[0x30];                                    // 0x0138(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x30];                                     // 0x0138(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -193,7 +193,7 @@ static_assert(sizeof(ULTweenerColor) == 0x000168, "Wrong size on ULTweenerColor"
 class ULTweenerFloat final : public ULTweener
 {
 public:
-	uint8                                         Pad_1485[0x30];                                    // 0x0138(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x30];                                     // 0x0138(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -213,7 +213,7 @@ static_assert(sizeof(ULTweenerFloat) == 0x000168, "Wrong size on ULTweenerFloat"
 class ULTweenerFrame final : public ULTweener
 {
 public:
-	uint8                                         Pad_1486[0x8];                                     // 0x0138(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x8];                                      // 0x0138(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -233,7 +233,7 @@ static_assert(sizeof(ULTweenerFrame) == 0x000140, "Wrong size on ULTweenerFrame"
 class ULTweenerInteger final : public ULTweener
 {
 public:
-	uint8                                         Pad_1487[0x30];                                    // 0x0138(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x30];                                     // 0x0138(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -253,7 +253,7 @@ static_assert(sizeof(ULTweenerInteger) == 0x000168, "Wrong size on ULTweenerInte
 class ULTweenerLinearColor final : public ULTweener
 {
 public:
-	uint8                                         Pad_1488[0x48];                                    // 0x0138(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x48];                                     // 0x0138(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -273,7 +273,7 @@ static_assert(sizeof(ULTweenerLinearColor) == 0x000180, "Wrong size on ULTweener
 class ULTweenerMaterialScalar final : public ULTweener
 {
 public:
-	uint8                                         Pad_1489[0x30];                                    // 0x0138(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x30];                                     // 0x0138(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -293,7 +293,7 @@ static_assert(sizeof(ULTweenerMaterialScalar) == 0x000168, "Wrong size on ULTwee
 class ULTweenerMaterialVector final : public ULTweener
 {
 public:
-	uint8                                         Pad_148A[0x50];                                    // 0x0138(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x50];                                     // 0x0138(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -313,7 +313,7 @@ static_assert(sizeof(ULTweenerMaterialVector) == 0x000188, "Wrong size on ULTwee
 class ULTweenerPosition final : public ULTweener
 {
 public:
-	uint8                                         Pad_148B[0x58];                                    // 0x0138(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x58];                                     // 0x0138(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -333,7 +333,7 @@ static_assert(sizeof(ULTweenerPosition) == 0x000190, "Wrong size on ULTweenerPos
 class ULTweenerQuaternion final : public ULTweener
 {
 public:
-	uint8                                         Pad_148C[0x48];                                    // 0x0138(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x48];                                     // 0x0138(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -353,7 +353,7 @@ static_assert(sizeof(ULTweenerQuaternion) == 0x000180, "Wrong size on ULTweenerQ
 class ULTweenerRotationEuler final : public ULTweener
 {
 public:
-	uint8                                         Pad_148D[0x58];                                    // 0x0138(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x58];                                     // 0x0138(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -373,7 +373,7 @@ static_assert(sizeof(ULTweenerRotationEuler) == 0x000190, "Wrong size on ULTween
 class ULTweenerRotationQuat final : public ULTweener
 {
 public:
-	uint8                                         Pad_148E[0x68];                                    // 0x0138(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x68];                                     // 0x0138(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -393,7 +393,7 @@ static_assert(sizeof(ULTweenerRotationQuat) == 0x0001A0, "Wrong size on ULTweene
 class ULTweenerRotator final : public ULTweener
 {
 public:
-	uint8                                         Pad_148F[0x40];                                    // 0x0138(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x40];                                     // 0x0138(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -413,7 +413,7 @@ static_assert(sizeof(ULTweenerRotator) == 0x000178, "Wrong size on ULTweenerRota
 class ULTweenerScale final : public ULTweener
 {
 public:
-	uint8                                         Pad_1490[0x40];                                    // 0x0138(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x40];                                     // 0x0138(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -433,7 +433,7 @@ static_assert(sizeof(ULTweenerScale) == 0x000178, "Wrong size on ULTweenerScale"
 class ULTweenerVector final : public ULTweener
 {
 public:
-	uint8                                         Pad_1491[0x40];                                    // 0x0138(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x40];                                     // 0x0138(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -453,7 +453,7 @@ static_assert(sizeof(ULTweenerVector) == 0x000178, "Wrong size on ULTweenerVecto
 class ULTweenerVector2D final : public ULTweener
 {
 public:
-	uint8                                         Pad_1492[0x38];                                    // 0x0138(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x38];                                     // 0x0138(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -473,7 +473,7 @@ static_assert(sizeof(ULTweenerVector2D) == 0x000170, "Wrong size on ULTweenerVec
 class ULTweenerVector4 final : public ULTweener
 {
 public:
-	uint8                                         Pad_1493[0x48];                                    // 0x0138(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_138[0x48];                                     // 0x0138(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

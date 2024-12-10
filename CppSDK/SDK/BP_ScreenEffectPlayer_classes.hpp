@@ -28,21 +28,21 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UEffectScreenPlayData_C*                Data;                                              // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	E_SE_PlayState                                State;                                             // 0x02C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2B50[0x3];                                     // 0x02C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C9[0x3];                                      // 0x02C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TimeCounter;                                       // 0x02CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 TargetActor;                                       // 0x02D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UActorComponent*>                CachedComponents;                                  // 0x02D8(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
 	bool                                          bToHide;                                           // 0x02E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B51[0x3];                                     // 0x02E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2E9[0x3];                                      // 0x02E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Alpha;                                             // 0x02EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         FadeSpeed;                                         // 0x02F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2B52[0x4];                                     // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AActor*>                         CachedUIActors;                                    // 0x02F8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	bool                                          bVisible;                                          // 0x0308(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B53[0x7];                                     // 0x0309(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_309[0x7];                                      // 0x0309(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AUIContainerActor*                      ScreenEffectRoot;                                  // 0x0310(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bNeedToDestroy;                                    // 0x0318(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B54[0x3];                                     // 0x0319(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_319[0x3];                                      // 0x0319(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CacheEnvironmentFactor;                            // 0x031C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
@@ -56,9 +56,9 @@ public:
 	void UpdateComponents();
 	void UpdateComponentsAlpha();
 	void SetUIVisible(bool Visible);
-	void Set_Effect_Hidden(bool Param_bToHide, bool bOverrideFadeSpeed, float OverrideFadeSpeed);
+	void Set_Effect_Hidden(bool bToHide_0, bool bOverrideFadeSpeed, float OverrideFadeSpeed);
 	void BeforeStart();
-	void InitPlayer(class UEffectScreenPlayData_C* Param_Data, class AUIContainerActor* Param_ScreenEffectRoot);
+	void InitPlayer(class UEffectScreenPlayData_C* Data_0, class AUIContainerActor* ScreenEffectRoot_0);
 	void ClearPlayer();
 	void Destroy_Player();
 	void UpdatePlayerSEEnvironmentFactor(float EnvironmentFactor);

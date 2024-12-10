@@ -21,11 +21,11 @@ namespace SDK
 class UTsAnimNotifyStateSoftLock_C final : public UKuroAnimNotifyState
 {
 public:
-	void DisableSoftLock(class ATsBaseCharacter_C* Owner);
-	void EnableSoftLock(class ATsBaseCharacter_C* Owner);
-	bool K2_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime);
-	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
+	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
+	bool K2_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime);
+	void EnableSoftLock(class ATsBaseCharacter_C* Owner);
+	void DisableSoftLock(class ATsBaseCharacter_C* Owner);
 
 	class FString GetNotifyName() const;
 

@@ -23,7 +23,7 @@ namespace SDK
 class UABP_ParaglidingBase_C : public UAnimInstance
 {
 public:
-	uint8                                         Pad_3816[0x8];                                     // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_508[0x8];                                      // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0510(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0518(0x0038)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_5;                  // 0x0550(0x0028)()
@@ -40,25 +40,25 @@ public:
 	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0870(0x0148)()
 	class ATsBaseCharacter_C*                     _r__;                                              // 0x09B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __;                                                // 0x09C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3817[0x7];                                     // 0x09C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9C1[0x7];                                      // 0x09C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UEffectModelGroup_C*                    _cyH;                                              // 0x09C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ___z;                                              // 0x09D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ___G;                                              // 0x09D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3818[0x2];                                     // 0x09D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9D2[0x2];                                      // 0x09D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ____SM_;                                           // 0x09D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _______;                                           // 0x09D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _________;                                         // 0x09DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void SetDash(bool Dash);
-	void SetHover(bool Hover);
-	void SetOpenParagliding(bool bOpen);
-	void SyncAnim(class UABP_ParaglidingBase_C* Other);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC();
-	void BlueprintInitializeAnimation();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
 	void ExecuteUbergraph_ABP_ParaglidingBase(int32 EntryPoint);
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void BlueprintInitializeAnimation();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ParaglidingBase_AnimGraphNode_TransitionResult_A64E5D5C4CA3F0D40F80E095719CB0BC();
+	void SyncAnim(class UABP_ParaglidingBase_C* Other);
+	void SetOpenParagliding(bool bOpen);
+	void SetHover(bool Hover);
+	void SetDash(bool Dash);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "EWalkingPosture_structs.hpp"
+#include "ECharState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "KuroAnim_structs.hpp"
 #include "KuroAnim_classes.hpp"
-#include "ECharState_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "ECharParentMoveState_structs.hpp"
 #include "EMovementDirection_structs.hpp"
+#include "ECharParentMoveState_structs.hpp"
+#include "EWalkingPosture_structs.hpp"
 
 
 namespace SDK
@@ -44,7 +44,7 @@ public:
 	struct FAnimNode_UseCachedPose                AnimGraphNode_UseCachedPose_2;                     // 0x0D18(0x0030)()
 	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_11;                      // 0x0D48(0x0038)()
 	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_3;                      // 0x0D80(0x0148)()
-	uint8                                         Pad_388D[0x8];                                     // 0x0EC8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_EC8[0x8];                                      // 0x0EC8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_3;                    // 0x0ED0(0x01B0)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_20;                 // 0x1080(0x0028)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_19;                 // 0x10A8(0x0028)()
@@ -82,7 +82,7 @@ public:
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_2;                    // 0x1AD8(0x0090)()
 	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_3;                       // 0x1B68(0x0038)()
 	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_1;                      // 0x1BA0(0x0148)()
-	uint8                                         Pad_388E[0x8];                                     // 0x1CE8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1CE8[0x8];                                     // 0x1CE8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose_1;                    // 0x1CF0(0x01B0)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x1EA0(0x0028)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x1EC8(0x0028)()
@@ -97,17 +97,17 @@ public:
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose;                      // 0x2250(0x01B0)()
 	class ATsBaseCharacter_C*                     As_Base_Character;                                 // 0x2400(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          _60___;                                            // 0x2408(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_388F[0x3];                                     // 0x2409(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2409[0x3];                                     // 0x2409(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Delta_Time_X;                                      // 0x240C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __FK;                                              // 0x2410(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3890[0x7];                                     // 0x2411(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2411[0x7];                                     // 0x2411(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSkeletonGroup                         Skeleton_Block_Info;                               // 0x2418(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class UFK_Shake_AssestData_C*                 FKShakeData;                                       // 0x2438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	FMulticastInlineDelegateProperty_             NewEventDispatcher_0;                              // 0x2440(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	float                                         Delta;                                             // 0x2450(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ShakeAlpha;                                        // 0x2454(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ShakeRange;                                        // 0x2458(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3891[0x4];                                     // 0x245C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_245C[0x4];                                     // 0x245C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UPD_CharacterControllerData_C*>  HitMaterial;                                       // 0x2460(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<class FName>                           BeHitBones;                                        // 0x2470(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FVector                                BeHitLocation;                                     // 0x2480(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -115,50 +115,50 @@ public:
 	float                                         BeHitTime;                                         // 0x2498(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ToughDecreaseValue;                                // 0x249C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EMovementDirection                            ____;                                              // 0x24A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3892[0x3];                                     // 0x24A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24A1[0x3];                                     // 0x24A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         _aStar8a;                                          // 0x24A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECharState                                    CharMove;                                          // 0x24A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ECharParentMoveState                          CharPosition;                                      // 0x24A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EWalkingPosture                               Lp__;                                              // 0x24AA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ____Minus__3;                                      // 0x24AB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3893[0x4];                                     // 0x24AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24AC[0x4];                                     // 0x24AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBP_ABPLogicParams_C*                   Ts_____;                                           // 0x24B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void HitFk(const struct FPoseLink& InPose, struct FPoseLink* Param_HitFk);
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void ___p__();
-	void ______();
-	void ______Tag();
-	void _______0();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_Feedback_F7F9D443402E1DFF8A267EBE1B7A9842();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_F081664C4C3F23A9F777878955FB8D5A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_F263CB9243A94CC4BE5C3A8C2EB85B38();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_98445E3D4CDE8CDB637A6585BBF1A9BE();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_5351818C4D3DFF112C55E69968810DB2();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_D2E001C445FC3301D13F5DA8B32E3540();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_86A606294ABC09217DBA8CAD183C94C1();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_D12DDE404ED59447D9E16AAE61D5FF57();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_8D42FB4648FB96001BC976AD2D1C5BD2();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_389E80BF4F42F63944C347B2B19B4763();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_A62E321544F9C1255BB0CD9473C9B8B0();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_A9C1C8A74E930F3D7B4BDC9B1380CF3A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_FD4B710B49AE918855FBDAA6DB446ADA();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_765F6D9C4A48F3B534BEA1A26FEF5251();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_968992674153C6C6873DAC969B2CD72B();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_5F4247094A79D9F8B3ADA18884514005();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_3E3A6B3343741F764B5A4CB9359C9681();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void BlueprintInitializeAnimation();
-	void PlayShakeFX(int32 Section);
-	void AnimNotify__e__();
-	void OnComponentStart();
-	void AnimNotify______();
-	void AnimNotify_____();
-	void AnimNotify______0();
-	void AnimNotify______1();
-	void ExecuteUbergraph_ABP_VisionCommon(int32 EntryPoint);
 	void NewEventDispatcher_0__DelegateSignature();
+	void ExecuteUbergraph_ABP_VisionCommon(int32 EntryPoint);
+	void AnimNotify______1();
+	void AnimNotify______0();
+	void AnimNotify_____();
+	void AnimNotify______();
+	void OnComponentStart();
+	void AnimNotify__e__();
+	void PlayShakeFX(int32 Section);
+	void BlueprintInitializeAnimation();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_3E3A6B3343741F764B5A4CB9359C9681();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_5F4247094A79D9F8B3ADA18884514005();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_968992674153C6C6873DAC969B2CD72B();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_765F6D9C4A48F3B534BEA1A26FEF5251();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_FD4B710B49AE918855FBDAA6DB446ADA();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_A9C1C8A74E930F3D7B4BDC9B1380CF3A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_A62E321544F9C1255BB0CD9473C9B8B0();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_389E80BF4F42F63944C347B2B19B4763();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_8D42FB4648FB96001BC976AD2D1C5BD2();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_D12DDE404ED59447D9E16AAE61D5FF57();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_86A606294ABC09217DBA8CAD183C94C1();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_D2E001C445FC3301D13F5DA8B32E3540();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_5351818C4D3DFF112C55E69968810DB2();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_98445E3D4CDE8CDB637A6585BBF1A9BE();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_F263CB9243A94CC4BE5C3A8C2EB85B38();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_TransitionResult_F081664C4C3F23A9F777878955FB8D5A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_VisionCommon_AnimGraphNode_Feedback_F7F9D443402E1DFF8A267EBE1B7A9842();
+	void _______0();
+	void ______Tag();
+	void ______();
+	void ___p__();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void HitFk(const struct FPoseLink& InPose, struct FPoseLink* HitFk_0);
 
 public:
 	static class UClass* StaticClass()

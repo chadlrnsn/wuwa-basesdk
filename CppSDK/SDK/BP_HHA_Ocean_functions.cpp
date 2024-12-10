@@ -17,40 +17,6 @@
 namespace SDK
 {
 
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_HHA_Ocean_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HHA_Ocean_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.ExecuteUbergraph_BP_HHA_Ocean
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_HHA_Ocean_C::ExecuteUbergraph_BP_HHA_Ocean(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HHA_Ocean_C", "ExecuteUbergraph_BP_HHA_Ocean");
-
-	Params::BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_HHA_Ocean.BP_HHA_Ocean_C.WaterRipple
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
@@ -220,6 +186,40 @@ void ABP_HHA_Ocean_C::EditorTick()
 		Func = Class->GetFunction("BP_HHA_Ocean_C", "EditorTick");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_HHA_Ocean_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HHA_Ocean_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.ExecuteUbergraph_BP_HHA_Ocean
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_HHA_Ocean_C::ExecuteUbergraph_BP_HHA_Ocean(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HHA_Ocean_C", "ExecuteUbergraph_BP_HHA_Ocean");
+
+	Params::BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ECharViewDirectionState_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ESkillTargetDirection_structs.hpp"
+#include "EAimViewState_structs.hpp"
 #include "ECharacterLoadType_structs.hpp"
 #include "EVisionType_structs.hpp"
 #include "EHitAnim_structs.hpp"
-#include "EAimViewState_structs.hpp"
+#include "ECharViewDirectionState_structs.hpp"
+#include "ESkillTargetDirection_structs.hpp"
 #include "ECharParentMoveState_structs.hpp"
 #include "ECharState_structs.hpp"
 
@@ -64,7 +64,7 @@ public:
 	static void SetServerDebugInfoDirty(int32 EntityId, bool Val, class UObject* __WorldContext);
 	static void DebugResetBaseVal(int32 EntityId, float Id, float Val, class UObject* __WorldContext);
 	static void DebugResetFormationValue(int32 Id, float Val, class UObject* __WorldContext);
-	static class FString Record(int32 EntityId, bool Param_Record, class UObject* __WorldContext);
+	static class FString Record(int32 EntityId, bool Record_0, class UObject* __WorldContext);
 	static void RefreshEntityListView(class UListView* ListView, class UObject* __WorldContext);
 	static void RefreshEntityComboBox(class UComboBoxString* ComboBox, class UObject* __WorldContext);
 	static void SetEntityComboBox(class UComboBoxString* ComboBox, int32 EntityId, class UObject* __WorldContext);
@@ -160,7 +160,7 @@ public:
 	static void OnEndAbility(int32 EntityId, class UGameplayAbility* Ga, bool WasCancelled, class UObject* __WorldContext);
 	static float GetPriority(int32 EntityId, const class FString& SkillId, class UObject* __WorldContext);
 	static float GetActivePriority(int32 EntityId, const class FString& SkillId, class UObject* __WorldContext);
-	static class UAnimMontage* GetSkillMontageInstance(int32 EntityId, const class FString& SkillId, int32 Param_Index, class UObject* __WorldContext);
+	static class UAnimMontage* GetSkillMontageInstance(int32 EntityId, const class FString& SkillId, int32 Index_0, class UObject* __WorldContext);
 	static void SetSkillRotateLocation(int32 EntityId, const struct FVector& Location, class UObject* __WorldContext);
 	static void SetSkillRotateDirect(int32 EntityId, const struct FVector& Direct, class UObject* __WorldContext);
 	static void CallAnimBreakPoint(int32 EntityId, class UObject* __WorldContext);

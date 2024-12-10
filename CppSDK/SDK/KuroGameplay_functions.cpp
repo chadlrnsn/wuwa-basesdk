@@ -268,12 +268,12 @@ void UGameBudgetAllocator::UpdateMinUpdateFIFOBudgetTime(float Time)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           Param_Class                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USceneComponent*                  Parent                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bDeferredFinish                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USceneComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class USceneComponent* UKuroEffectLibrary::AddSceneComponent(class AActor* Actor, class UClass* Param_Class, class USceneComponent* Parent, bool bDeferredFinish)
+class USceneComponent* UKuroEffectLibrary::AddSceneComponent(class AActor* Actor, class UClass* Class_0, class USceneComponent* Parent, bool bDeferredFinish)
 {
 	static class UFunction* Func = nullptr;
 
@@ -283,7 +283,7 @@ class USceneComponent* UKuroEffectLibrary::AddSceneComponent(class AActor* Actor
 	Params::KuroEffectLibrary_AddSceneComponent Parms{};
 
 	Parms.Actor = Actor;
-	Parms.Param_Class = Param_Class;
+	Parms.Class_0 = Class_0;
 	Parms.Parent = Parent;
 	Parms.bDeferredFinish = bDeferredFinish;
 
@@ -302,13 +302,13 @@ class USceneComponent* UKuroEffectLibrary::AddSceneComponent(class AActor* Actor
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UClass*                           Param_Class                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UClass*                           Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USceneComponent*                  Parent                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bDeferredFinish                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                       Transform                                              (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // class USceneComponent*                  ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class USceneComponent* UKuroEffectLibrary::AddSceneComponentWithTransform(class AActor* Actor, class UClass* Param_Class, class USceneComponent* Parent, bool bDeferredFinish, const struct FTransform& Transform)
+class USceneComponent* UKuroEffectLibrary::AddSceneComponentWithTransform(class AActor* Actor, class UClass* Class_0, class USceneComponent* Parent, bool bDeferredFinish, const struct FTransform& Transform)
 {
 	static class UFunction* Func = nullptr;
 
@@ -318,7 +318,7 @@ class USceneComponent* UKuroEffectLibrary::AddSceneComponentWithTransform(class 
 	Params::KuroEffectLibrary_AddSceneComponentWithTransform Parms{};
 
 	Parms.Actor = Actor;
-	Parms.Param_Class = Param_Class;
+	Parms.Class_0 = Class_0;
 	Parms.Parent = Parent;
 	Parms.bDeferredFinish = bDeferredFinish;
 	Parms.Transform = std::move(Transform);

@@ -27,7 +27,7 @@ public:
 	float                                         RotateTime_20_75342653428D0F5597D2E5A666EE8135;    // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                ScabbardOffset_15_5F50836146517CF7BAC23991551C5FC8; // 0x0020(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ShowScabbard_18_CC76FA0D470815831819D2ADE0753C02;  // 0x002C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_36C5[0x3];                                     // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                AxisRotate_23_F5685CB54AFAA73871EA94B73BB81539;    // 0x0030(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSGachaWeaponTransform) == 0x000004, "Wrong alignment on FSGachaWeaponTransform");

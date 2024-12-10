@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_classes.hpp"
 #include "SimpleNpcFlowData_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_classes.hpp"
 
 
 namespace SDK

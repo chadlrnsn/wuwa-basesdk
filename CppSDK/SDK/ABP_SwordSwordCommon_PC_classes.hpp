@@ -23,7 +23,7 @@ namespace SDK
 class UABP_SwordSwordCommon_PC_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_37B6[0x8];                                     // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_508[0x8];                                      // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0510(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0518(0x0038)()
 	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x0550(0x0020)()
@@ -32,18 +32,18 @@ public:
 	struct FAnimNode_LinkedAnimGraph              AnimGraphNode_LinkedAnimGraph;                     // 0x0810(0x00A8)()
 	class ATsBaseCharacter_C*                     _r__;                                              // 0x08B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          WeaponOpen;                                        // 0x08C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_37B7[0x3];                                     // 0x08C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C1[0x3];                                      // 0x08C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Open_Delay;                                        // 0x08C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Delta_Time;                                        // 0x08C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Fh___;                                             // 0x08CC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          __s_fh;                                            // 0x08CD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          IsUI;                                              // 0x08CE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_37B8[0x1];                                     // 0x08CF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8CF[0x1];                                      // 0x08CF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Fh_4I_;                                            // 0x08D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
 	void ExecuteUbergraph_ABP_SwordSwordCommon_PC(int32 EntryPoint);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

@@ -25,17 +25,17 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Common_limitmove_C;              // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void OnFinish_8D96293640861CE3D30811B22B565508();
-	void OnTick_8D96293640861CE3D30811B22B565508();
-	void OnFinish_F2CA919F448E92C3D6CB10B2E283A637();
-	void OnTick_5D118C384AE61F1C80292E81BDAA9846();
-	void OnCancelled_5D118C384AE61F1C80292E81BDAA9846();
-	void OnInterrupted_5D118C384AE61F1C80292E81BDAA9846();
-	void OnBlendOut_5D118C384AE61F1C80292E81BDAA9846();
-	void OnCompleted_5D118C384AE61F1C80292E81BDAA9846();
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
 	void ExecuteUbergraph_GA_Common_limitmove(int32 EntryPoint);
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void OnCompleted_5D118C384AE61F1C80292E81BDAA9846();
+	void OnBlendOut_5D118C384AE61F1C80292E81BDAA9846();
+	void OnInterrupted_5D118C384AE61F1C80292E81BDAA9846();
+	void OnCancelled_5D118C384AE61F1C80292E81BDAA9846();
+	void OnTick_5D118C384AE61F1C80292E81BDAA9846();
+	void OnFinish_F2CA919F448E92C3D6CB10B2E283A637();
+	void OnTick_8D96293640861CE3D30811B22B565508();
+	void OnFinish_8D96293640861CE3D30811B22B565508();
 
 public:
 	static class UClass* StaticClass()

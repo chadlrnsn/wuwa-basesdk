@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function TsAnimNotifySwitchSequenceCamera.TsAnimNotifySwitchSequenceCamera_C.GetSpecificConfig
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FSSequenceCamera_SpecificConfig  ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-struct FSSequenceCamera_SpecificConfig UTsAnimNotifySwitchSequenceCamera_C::GetSpecificConfig()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifySwitchSequenceCamera_C", "GetSpecificConfig");
-
-	Params::TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function TsAnimNotifySwitchSequenceCamera.TsAnimNotifySwitchSequenceCamera_C.K2_Notify
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -60,6 +35,31 @@ bool UTsAnimNotifySwitchSequenceCamera_C::K2_Notify(class USkeletalMeshComponent
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsAnimNotifySwitchSequenceCamera.TsAnimNotifySwitchSequenceCamera_C.GetSpecificConfig
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSSequenceCamera_SpecificConfig  ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FSSequenceCamera_SpecificConfig UTsAnimNotifySwitchSequenceCamera_C::GetSpecificConfig()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAnimNotifySwitchSequenceCamera_C", "GetSpecificConfig");
+
+	Params::TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

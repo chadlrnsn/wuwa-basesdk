@@ -1083,11 +1083,11 @@ void UTsGameplayBlueprintFunctionLibrary_C::DebugResetFormationValue(int32 Id, f
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_Record                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    Record_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
-class FString UTsGameplayBlueprintFunctionLibrary_C::Record(int32 EntityId, bool Param_Record, class UObject* __WorldContext)
+class FString UTsGameplayBlueprintFunctionLibrary_C::Record(int32 EntityId, bool Record_0, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1097,7 +1097,7 @@ class FString UTsGameplayBlueprintFunctionLibrary_C::Record(int32 EntityId, bool
 	Params::TsGameplayBlueprintFunctionLibrary_C_Record Parms{};
 
 	Parms.EntityId = EntityId;
-	Parms.Param_Record = Param_Record;
+	Parms.Record_0 = Record_0;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -3980,11 +3980,11 @@ float UTsGameplayBlueprintFunctionLibrary_C::GetActivePriority(int32 EntityId, c
 // Parameters:
 // int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FString                           SkillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimMontage*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class UAnimMontage* UTsGameplayBlueprintFunctionLibrary_C::GetSkillMontageInstance(int32 EntityId, const class FString& SkillId, int32 Param_Index, class UObject* __WorldContext)
+class UAnimMontage* UTsGameplayBlueprintFunctionLibrary_C::GetSkillMontageInstance(int32 EntityId, const class FString& SkillId, int32 Index_0, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -3995,7 +3995,7 @@ class UAnimMontage* UTsGameplayBlueprintFunctionLibrary_C::GetSkillMontageInstan
 
 	Parms.EntityId = EntityId;
 	Parms.SkillId = std::move(SkillId);
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;

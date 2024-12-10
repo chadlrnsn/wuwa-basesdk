@@ -17,39 +17,39 @@
 namespace SDK
 {
 
-// Function SC_Zhezhi_Burst01.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_1
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function SC_Zhezhi_Burst01.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
+// (Final, UbergraphFunction)
 // Parameters:
-// class ABP_Zhezhi_C*                     BP_Zhezhi                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void SC_Zhezhi_Burst01::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_1(class ABP_Zhezhi_C* BP_Zhezhi)
+void SC_Zhezhi_Burst01::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_1");
+		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
 
-	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_1 Parms{};
+	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
 
-	Parms.BP_Zhezhi = BP_Zhezhi;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function SC_Zhezhi_Burst01.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function SC_Zhezhi_Burst01.SequenceDirector_C.BP_Zhezhi_Event_1
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ABP_Zhezhi_C*                     BP_Zhezhi                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void SC_Zhezhi_Burst01::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0(class ABP_Zhezhi_C* BP_Zhezhi)
+void SC_Zhezhi_Burst01::USequenceDirector_C::BP_Zhezhi_Event_1(class ABP_Zhezhi_C* BP_Zhezhi)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
+		Func = Class->GetFunction("SequenceDirector_C", "BP_Zhezhi_Event_1");
 
-	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 Parms{};
+	Params::SequenceDirector_C_BP_Zhezhi_Event_1 Parms{};
 
 	Parms.BP_Zhezhi = BP_Zhezhi;
 
@@ -77,19 +77,19 @@ void SC_Zhezhi_Burst01::USequenceDirector_C::BP_Zhezhi_Event_0(class ABP_Zhezhi_
 }
 
 
-// Function SC_Zhezhi_Burst01.SequenceDirector_C.BP_Zhezhi_Event_1
-// (BlueprintCallable, BlueprintEvent)
+// Function SC_Zhezhi_Burst01.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ABP_Zhezhi_C*                     BP_Zhezhi                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void SC_Zhezhi_Burst01::USequenceDirector_C::BP_Zhezhi_Event_1(class ABP_Zhezhi_C* BP_Zhezhi)
+void SC_Zhezhi_Burst01::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0(class ABP_Zhezhi_C* BP_Zhezhi)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "BP_Zhezhi_Event_1");
+		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
 
-	Params::SequenceDirector_C_BP_Zhezhi_Event_1 Parms{};
+	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 Parms{};
 
 	Parms.BP_Zhezhi = BP_Zhezhi;
 
@@ -97,21 +97,21 @@ void SC_Zhezhi_Burst01::USequenceDirector_C::BP_Zhezhi_Event_1(class ABP_Zhezhi_
 }
 
 
-// Function SC_Zhezhi_Burst01.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
-// (Final, UbergraphFunction)
+// Function SC_Zhezhi_Burst01.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_1
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABP_Zhezhi_C*                     BP_Zhezhi                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void SC_Zhezhi_Burst01::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
+void SC_Zhezhi_Burst01::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_1(class ABP_Zhezhi_C* BP_Zhezhi)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
+		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_1");
 
-	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
+	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_1 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.BP_Zhezhi = BP_Zhezhi;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

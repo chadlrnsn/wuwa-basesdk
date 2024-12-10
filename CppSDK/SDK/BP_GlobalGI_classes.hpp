@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "E_Cloud_Presents_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "KuroCurve_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "E_Cloud_Presents_structs.hpp"
 
 
 namespace SDK
@@ -57,13 +57,13 @@ public:
 	bool                                          EnableTODCycle;                                    // 0x2318(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          PauseTOD;                                          // 0x2319(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
 	bool                                          __h___;                                            // 0x231A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_319D[0x1];                                     // 0x231B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_231B[0x1];                                     // 0x231B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TODCycleTime;                                      // 0x231C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               SenenDirLightRot;                                  // 0x2320(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	float                                         MainLightAngleLimit;                               // 0x232C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsGIEnable;                                        // 0x2330(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ____________;                                      // 0x2331(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_319E[0x2];                                     // 0x2332(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2332[0x2];                                     // 0x2332(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         SM_______;                                         // 0x2334(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           Star3_r;                                           // 0x2338(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FVector2D>                      SunLightExistTime;                                 // 0x2348(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
@@ -79,14 +79,14 @@ public:
 	bool                                          __h_s_LensFlare;                                   // 0x2380(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor)
 	bool                                          S__H;                                              // 0x2381(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          RuntimeTimeEnable;                                 // 0x2382(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
-	uint8                                         Pad_319F[0x1];                                     // 0x2383(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2383[0x1];                                     // 0x2383(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MainLightTickSecond;                               // 0x2384(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	float                                         MainLightTickCounter;                              // 0x2388(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ForceUpdateMainLightDir;                           // 0x238C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31A0[0x3];                                     // 0x238D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_238D[0x3];                                     // 0x238D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         WindDir;                                           // 0x2390(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __4__H;                                            // 0x2394(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31A1[0x3];                                     // 0x2395(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2395[0x3];                                     // 0x2395(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstance*                      TempFogMaterial;                                   // 0x2398(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               TempFogDMI;                                        // 0x23A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      SkyboxMaterial;                                    // 0x23A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -103,21 +103,21 @@ public:
 	struct FLinearColor                           ST_TopColor;                                       // 0x2420(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           ST_DomeColorTint;                                  // 0x2430(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ST_TopWidth;                                       // 0x2440(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A2[0x4];                                     // 0x2444(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2444[0x4];                                     // 0x2444(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCurveFloat*                            CharMainLightCurve;                                // 0x2448(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UCurveFloat*                            CharSkyLightCurve;                                 // 0x2450(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseCharCustomLighting;                             // 0x2458(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31A3[0x3];                                     // 0x2459(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2459[0x3];                                     // 0x2459(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           CharAmbientColor;                                  // 0x245C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CharSkinAmbientColor;                              // 0x246C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A4[0x4];                                     // 0x247C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_247C[0x4];                                     // 0x247C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCurveFloat*                            CharShadowCurve;                                   // 0x2480(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      LightFunctionMaterial;                             // 0x2488(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         LightFunctionIntensity;                            // 0x2490(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A5[0x4];                                     // 0x2494(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2494[0x4];                                     // 0x2494(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstanceDynamic*               LightFunctionDMI;                                  // 0x2498(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ___y_0h;                                           // 0x24A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
-	uint8                                         Pad_31A6[0x7];                                     // 0x24A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24A1[0x7];                                     // 0x24A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstance*                      LensFlareMI;                                       // 0x24A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               LensFlareDMI;                                      // 0x24B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      MobileLensFlareMI_Ghost;                           // 0x24B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -125,20 +125,20 @@ public:
 	float                                         Nadir_Falloff;                                     // 0x24D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Sun_Scatter_Size;                                  // 0x24D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Moon_Scatter_Size;                                 // 0x24D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A7[0x4];                                     // 0x24DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24DC[0x4];                                     // 0x24DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstance*                      StarsMaterial;                                     // 0x24E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         MainDirectionLightUpdateThreshold_Mobile;          // 0x24E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         MainDirectionLightUpdateThreshold;                 // 0x24EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                GlobalWindDirection;                               // 0x24F0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                GlobalWindRightDirection;                          // 0x24FC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         DEBUG___y_0h__;                                    // 0x2508(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A8[0x4];                                     // 0x250C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_250C[0x4];                                     // 0x250C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_ControlTodTime_C*                   TodTimeController;                                 // 0x2510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         RealTimeOfDay;                                     // 0x2518(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31A9[0x4];                                     // 0x251C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_251C[0x4];                                     // 0x251C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_Clouds_C*                           DynamicCloudsActor;                                // 0x2520(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EKuroDynamicCloudType                         LocalDynamicCloudsType;                            // 0x2528(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31AA[0x3];                                     // 0x2529(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2529[0x3];                                     // 0x2529(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         RainDensityChangeSpeed;                            // 0x252C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         RainDensity;                                       // 0x2530(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         SnowDensity;                                       // 0x2534(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -147,7 +147,7 @@ public:
 	float                                         RainWindPower;                                     // 0x2540(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         RainWindPowerChangeSpeed;                          // 0x2544(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CanSpawnEffect;                                    // 0x2548(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31AB[0x3];                                     // 0x2549(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2549[0x3];                                     // 0x2549(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FinalSnowDensity;                                  // 0x254C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         FinalRainDensity;                                  // 0x2550(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         FinalRainGravity;                                  // 0x2554(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -158,10 +158,10 @@ public:
 	class UMaterialInstanceDynamic*               MobileLensFlareDMI_Halo;                           // 0x2570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UTexture2D*                             HeightMapTexture;                                  // 0x2578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          HeightMapUpdated;                                  // 0x2580(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31AC[0x3];                                     // 0x2581(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2581[0x3];                                     // 0x2581(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                SunLightDirection;                                 // 0x2584(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsComponentsEnable;                                // 0x2590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31AD[0x7];                                     // 0x2591(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2591[0x7];                                     // 0x2591(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               Last_LightFunction_Map;                            // 0x2598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UTexture*                               InitLightFunctionMap;                              // 0x25A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         TODLightLoadingWait;                               // 0x25A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -170,13 +170,13 @@ public:
 	int32                                         ComputeLightGridSkipFrames;                        // 0x25B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      MilkyWayMaterial;                                  // 0x25B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ____Mn;                                            // 0x25C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31AE[0x3];                                     // 0x25C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25C1[0x3];                                     // 0x25C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         DEBUG__r____I____;                                 // 0x25C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	FMulticastInlineDelegateProperty_             CallCloudChange;                                   // 0x25C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	struct FKuroCurveFloat                        FogTImeControl;                                    // 0x25D8(0x0090)(Edit, BlueprintVisible)
 	bool                                          Is_Editor_Update;                                  // 0x2668(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          EnableImposterUpdate;                              // 0x2669(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31AF[0x2];                                     // 0x266A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_266A[0x2];                                     // 0x266A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Clouds_Change_CD;                                  // 0x266C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Clouds_Change_Time;                                // 0x2670(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Clouds_Change_Time_0;                              // 0x2674(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -243,7 +243,7 @@ public:
 	struct FVector EulerToForward(float Pitch, float Yaw);
 	struct FLinearColor Clamp_Luminance(const struct FLinearColor& InColor, float Min, float Max);
 	void GetParallaxCorrectCachedShadowDirection(struct FRotator* NewParam);
-	void GetTODCharacterLighting(const struct FLinearColor& MainLight, float MainLightIntensity, const struct FLinearColor& Param_SkyLight, float SkyLightIntensity, struct FLinearColor* FrontSideLight, struct FLinearColor* BackSideLight);
+	void GetTODCharacterLighting(const struct FLinearColor& MainLight, float MainLightIntensity, const struct FLinearColor& SkyLight_0, float SkyLightIntensity, struct FLinearColor* FrontSideLight, struct FLinearColor* BackSideLight);
 	void GetParallaxCorrectCachedCrossFadeShadowDirection(struct FRotator* NewParam);
 	void UpdateLightFunctions();
 	void GetMilkyWayDMI(class UMaterialInstanceDynamic** DMIRet);

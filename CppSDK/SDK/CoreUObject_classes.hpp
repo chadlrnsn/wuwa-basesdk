@@ -16,7 +16,7 @@ namespace SDK
 
 // Class CoreUObject.Object
 // 0x0030 (0x0030 - 0x0000)
-class UObject
+class alignas(0x08) UObject
 {
 public:
 	static inline class TUObjectArrayWrapper      GObjects;                                          // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
@@ -26,7 +26,7 @@ public:
 	int32                                         Index;                                             // 0x000C(0x0004)(NOT AUTO-GENERATED PROPERTY)
 	class UClass*                                 Class;                                             // 0x0010(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	class FName                                   Name;                                              // 0x0018(0x000C)(NOT AUTO-GENERATED PROPERTY)
-	uint8                                         Pad_2E[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                Outer;                                             // 0x0028(0x0008)(NOT AUTO-GENERATED PROPERTY)
 
 public:
@@ -67,15 +67,6 @@ public:
 	{
 		InSDKUtils::CallGameFunction(InSDKUtils::GetVirtualFunction<void(*)(const UObject*, class UFunction*, void*)>(this, Offsets::ProcessEventIdx), this, Function, Parms);
 	}
-
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"Object">();
-	}
-	static class UObject* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UObject>();
-	}
 };
 static_assert(alignof(UObject) == 0x000008, "Wrong alignment on UObject");
 static_assert(sizeof(UObject) == 0x000030, "Wrong size on UObject");
@@ -112,7 +103,7 @@ static_assert(offsetof(UField, Next) == 0x000030, "Member 'UField::Next' has a w
 class UProperty : public UField
 {
 public:
-	uint8                                         Pad_2F[0x48];                                      // 0x0038(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x48];                                      // 0x0038(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -132,7 +123,7 @@ static_assert(sizeof(UProperty) == 0x000080, "Wrong size on UProperty");
 class UObjectPropertyBase : public UProperty
 {
 public:
-	uint8                                         Pad_30[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -169,13 +160,13 @@ static_assert(sizeof(USoftObjectProperty) == 0x000088, "Wrong size on USoftObjec
 class UStruct : public UField
 {
 public:
-	uint8                                         Pad_31[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStruct*                                Super;                                             // 0x0048(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	class UField*                                 Children;                                          // 0x0050(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	class FField*                                 ChildProperties;                                   // 0x0058(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	int32                                         Size;                                              // 0x0060(0x0004)(NOT AUTO-GENERATED PROPERTY)
 	int32                                         MinAlignemnt;                                      // 0x0064(0x0004)(NOT AUTO-GENERATED PROPERTY)
-	uint8                                         Pad_32[0x50];                                      // 0x0068(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68[0x50];                                      // 0x0068(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool IsSubclassOf(const UStruct* Base) const;
@@ -206,7 +197,7 @@ public:
 	using FNativeFuncPtr = void (*)(void* Context, void* TheStack, void* Result);                    // 0x0000(0x0000)(NOT AUTO-GENERATED PROPERTY)
 
 	uint32                                        FunctionFlags;                                     // 0x00B8(0x0008)(NOT AUTO-GENERATED PROPERTY)
-	uint8                                         Pad_33[0x20];                                      // 0x00C0(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x20];                                      // 0x00C0(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	FNativeFuncPtr                                ExecFunction;                                      // 0x00E0(0x0008)(NOT AUTO-GENERATED PROPERTY)
 
 public:
@@ -229,7 +220,7 @@ static_assert(offsetof(UFunction, ExecFunction) == 0x0000E0, "Member 'UFunction:
 class UInterfaceProperty final : public UProperty
 {
 public:
-	uint8                                         Pad_34[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -266,7 +257,7 @@ static_assert(sizeof(UObjectProperty) == 0x000088, "Wrong size on UObjectPropert
 class UClassProperty final : public UObjectProperty
 {
 public:
-	uint8                                         Pad_35[0x8];                                       // 0x0088(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_88[0x8];                                       // 0x0088(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -286,7 +277,7 @@ static_assert(sizeof(UClassProperty) == 0x000090, "Wrong size on UClassProperty"
 class UPackage final : public UObject
 {
 public:
-	uint8                                         Pad_36[0x78];                                      // 0x0030(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x78];                                      // 0x0030(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -323,7 +314,7 @@ static_assert(sizeof(IInterface) == 0x000030, "Wrong size on IInterface");
 class UScriptStruct : public UStruct
 {
 public:
-	uint8                                         Pad_37[0x10];                                      // 0x00B8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B8[0x10];                                      // 0x00B8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -343,7 +334,7 @@ static_assert(sizeof(UScriptStruct) == 0x0000C8, "Wrong size on UScriptStruct");
 class UMetaData final : public UObject
 {
 public:
-	uint8                                         Pad_38[0xF0];                                      // 0x0030(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xF0];                                      // 0x0030(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -363,11 +354,11 @@ static_assert(sizeof(UMetaData) == 0x000120, "Wrong size on UMetaData");
 class UClass : public UStruct
 {
 public:
-	uint8                                         Pad_39[0x20];                                      // 0x00B8(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B8[0x20];                                      // 0x00B8(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	enum class EClassCastFlags                    CastFlags;                                         // 0x00D8(0x0008)(NOT AUTO-GENERATED PROPERTY)
-	uint8                                         Pad_3A[0x48];                                      // 0x00E0(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E0[0x48];                                      // 0x00E0(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                DefaultObject;                                     // 0x0128(0x0008)(NOT AUTO-GENERATED PROPERTY)
-	uint8                                         Pad_3B[0x110];                                     // 0x0130(0x0110)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x110];                                    // 0x0130(0x0110)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UFunction* GetFunction(const std::string& ClassName, const std::string& FuncName) const;
@@ -392,7 +383,7 @@ static_assert(offsetof(UClass, DefaultObject) == 0x000128, "Member 'UClass::Defa
 class UGCObjectReferencer final : public UObject
 {
 public:
-	uint8                                         Pad_3C[0x48];                                      // 0x0030(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x48];                                      // 0x0030(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -412,7 +403,7 @@ static_assert(sizeof(UGCObjectReferencer) == 0x000078, "Wrong size on UGCObjectR
 class UTextBuffer final : public UObject
 {
 public:
-	uint8                                         Pad_3D[0x28];                                      // 0x0030(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x28];                                      // 0x0030(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -449,7 +440,7 @@ static_assert(sizeof(UDelegateFunction) == 0x0000E8, "Wrong size on UDelegateFun
 class USparseDelegateFunction final : public UDelegateFunction
 {
 public:
-	uint8                                         Pad_3E[0x18];                                      // 0x00E8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E8[0x18];                                      // 0x00E8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -469,7 +460,7 @@ static_assert(sizeof(USparseDelegateFunction) == 0x000100, "Wrong size on USpars
 class UDynamicClass final : public UClass
 {
 public:
-	uint8                                         Pad_3F[0x80];                                      // 0x0240(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_240[0x80];                                     // 0x0240(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -489,7 +480,7 @@ static_assert(sizeof(UDynamicClass) == 0x0002C0, "Wrong size on UDynamicClass");
 class UPackageMap : public UObject
 {
 public:
-	uint8                                         Pad_40[0xB8];                                      // 0x0030(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xB8];                                      // 0x0030(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -509,9 +500,9 @@ static_assert(sizeof(UPackageMap) == 0x0000E8, "Wrong size on UPackageMap");
 class UEnum : public UField
 {
 public:
-	uint8                                         Pad_41[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class TArray<class TPair<class FName, int64>> Names;                                             // 0x0048(0x0010)(NOT AUTO-GENERATED PROPERTY)
-	uint8                                         Pad_42[0x10];                                      // 0x0058(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_58[0x10];                                      // 0x0058(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -532,7 +523,7 @@ static_assert(offsetof(UEnum, Names) == 0x000048, "Member 'UEnum::Names' has a w
 class ULinkerPlaceholderClass final : public UClass
 {
 public:
-	uint8                                         Pad_43[0x1B8];                                     // 0x0240(0x01B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_240[0x1B8];                                    // 0x0240(0x01B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -552,7 +543,7 @@ static_assert(sizeof(ULinkerPlaceholderClass) == 0x0003F8, "Wrong size on ULinke
 class ULinkerPlaceholderExportObject final : public UObject
 {
 public:
-	uint8                                         Pad_44[0xC8];                                      // 0x0030(0x00C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xC8];                                      // 0x0030(0x00C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -572,7 +563,7 @@ static_assert(sizeof(ULinkerPlaceholderExportObject) == 0x0000F8, "Wrong size on
 class ULinkerPlaceholderFunction final : public UFunction
 {
 public:
-	uint8                                         Pad_45[0x1B8];                                     // 0x00E8(0x01B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E8[0x1B8];                                     // 0x00E8(0x01B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -592,7 +583,7 @@ static_assert(sizeof(ULinkerPlaceholderFunction) == 0x0002A0, "Wrong size on ULi
 class UObjectRedirector final : public UObject
 {
 public:
-	uint8                                         Pad_46[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -612,7 +603,7 @@ static_assert(sizeof(UObjectRedirector) == 0x000038, "Wrong size on UObjectRedir
 class UEnumProperty final : public UProperty
 {
 public:
-	uint8                                         Pad_47[0x10];                                      // 0x0080(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x10];                                      // 0x0080(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -632,7 +623,7 @@ static_assert(sizeof(UEnumProperty) == 0x000090, "Wrong size on UEnumProperty");
 class UArrayProperty final : public UProperty
 {
 public:
-	uint8                                         Pad_48[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -652,7 +643,7 @@ static_assert(sizeof(UArrayProperty) == 0x000088, "Wrong size on UArrayProperty"
 class UBoolProperty final : public UProperty
 {
 public:
-	uint8                                         Pad_49[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -689,7 +680,7 @@ static_assert(sizeof(UNumericProperty) == 0x000080, "Wrong size on UNumericPrope
 class UByteProperty final : public UNumericProperty
 {
 public:
-	uint8                                         Pad_4A[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -709,7 +700,7 @@ static_assert(sizeof(UByteProperty) == 0x000088, "Wrong size on UByteProperty");
 class UDelegateProperty final : public UProperty
 {
 public:
-	uint8                                         Pad_4B[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -848,7 +839,7 @@ static_assert(sizeof(ULazyObjectProperty) == 0x000088, "Wrong size on ULazyObjec
 class UMapProperty final : public UProperty
 {
 public:
-	uint8                                         Pad_4C[0x28];                                      // 0x0080(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x28];                                      // 0x0080(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -868,7 +859,7 @@ static_assert(sizeof(UMapProperty) == 0x0000A8, "Wrong size on UMapProperty");
 class UMulticastDelegateProperty : public UProperty
 {
 public:
-	uint8                                         Pad_4D[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -939,7 +930,7 @@ static_assert(sizeof(UNameProperty) == 0x000080, "Wrong size on UNameProperty");
 class USetProperty final : public UProperty
 {
 public:
-	uint8                                         Pad_4E[0x20];                                      // 0x0080(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x20];                                      // 0x0080(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -959,7 +950,7 @@ static_assert(sizeof(USetProperty) == 0x0000A0, "Wrong size on USetProperty");
 class USoftClassProperty final : public USoftObjectProperty
 {
 public:
-	uint8                                         Pad_4F[0x8];                                       // 0x0088(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_88[0x8];                                       // 0x0088(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -996,7 +987,7 @@ static_assert(sizeof(UStrProperty) == 0x000080, "Wrong size on UStrProperty");
 class UStructProperty final : public UProperty
 {
 public:
-	uint8                                         Pad_50[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1101,7 +1092,7 @@ static_assert(sizeof(UTextProperty) == 0x000080, "Wrong size on UTextProperty");
 class UPropertyWrapper : public UObject
 {
 public:
-	uint8                                         Pad_51[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

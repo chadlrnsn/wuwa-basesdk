@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SInputAction_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "SInputAction_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -25,7 +25,7 @@ class UBP_FollowShooterConfig_C final : public UPrimaryDataAsset
 public:
 	bool                                          AutoEnable;                                        // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          NeedUploadData;                                    // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2F63[0x6];                                     // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSInputAction>                  NeedInputActions;                                  // 0x0040(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<struct FGameplayTag>                   AddTagsWhenEnable;                                 // 0x0050(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<struct FGameplayTag>                   DisableWhenCurrentRoleHasTags;                     // 0x0060(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)

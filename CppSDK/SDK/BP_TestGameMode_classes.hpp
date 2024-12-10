@@ -29,16 +29,16 @@ public:
 	TArray<struct FWorldPartitionStreamingQuerySource> QuerySources;                                      // 0x03D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FTimerHandle                           Handler;                                           // 0x03E0(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsMovieRenderQueueMode;                            // 0x03E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1DAE[0x7];                                     // 0x03E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3E9[0x7];                                      // 0x03E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBP_MainGameInstance_C*                 BpMainGameInstance;                                // 0x03F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class AActor*                                 StreamingSourceActor;                              // 0x03F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsLoginServerReady;                                // 0x0400(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          IsWaitingLoginHttpResponse;                        // 0x0401(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1DAF[0x6];                                     // 0x0402(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_402[0x6];                                      // 0x0402(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 LoginUrl;                                          // 0x0408(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          IsWaitingApiHttpResponse;                          // 0x0418(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          IsApiServerReady;                                  // 0x0419(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1DB0[0x6];                                     // 0x041A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41A[0x6];                                      // 0x041A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ApiUrl;                                            // 0x0420(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          bTriggerLoginOnce;                                 // 0x0430(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
@@ -46,7 +46,7 @@ public:
 	void GetServerIpAndPort(class FString* ServerIp, class FString* ApiServerPort, class FString* LoginServerPort);
 	void DelayStreamingSource();
 	void StreamingCompleted();
-	void Get_Player_Starts(bool* Exist, TArray<class APlayerStart*>* Param_PlayerStarts);
+	void Get_Player_Starts(bool* Exist, TArray<class APlayerStart*>* PlayerStarts_0);
 	void CheckStreamingHandler();
 	void Check();
 	void ReceiveBeginPlay();

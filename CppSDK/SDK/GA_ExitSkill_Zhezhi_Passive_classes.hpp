@@ -27,8 +27,8 @@ public:
 	class FName                                   ___ID;                                             // 0x0570(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData);
 	void ExecuteUbergraph_GA_ExitSkill_Zhezhi_Passive(int32 EntryPoint);
+	void K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData);
 
 public:
 	static class UClass* StaticClass()

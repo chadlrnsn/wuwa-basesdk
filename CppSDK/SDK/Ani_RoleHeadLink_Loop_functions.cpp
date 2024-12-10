@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function Ani_RoleHeadLink_Loop.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function Ani_RoleHeadLink_Loop.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
+// (Final, UbergraphFunction)
 // Parameters:
-// class AUIContainerActor*                RoleQTEBar                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Ani_RoleHeadLink_Loop::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUIContainerActor* RoleQTEBar)
+void Ani_RoleHeadLink_Loop::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
+		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
 
-	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 Parms{};
+	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
 
-	Parms.RoleQTEBar = RoleQTEBar;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -61,21 +61,21 @@ void Ani_RoleHeadLink_Loop::USequenceDirector_C::RoleQTEBar_Event_0(class AUICon
 }
 
 
-// Function Ani_RoleHeadLink_Loop.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
-// (Final, UbergraphFunction)
+// Function Ani_RoleHeadLink_Loop.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AUIContainerActor*                RoleQTEBar                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Ani_RoleHeadLink_Loop::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
+void Ani_RoleHeadLink_Loop::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUIContainerActor* RoleQTEBar)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
+		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
 
-	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
+	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.RoleQTEBar = RoleQTEBar;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

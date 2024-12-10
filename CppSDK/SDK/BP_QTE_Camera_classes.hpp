@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "SCameraModifier_Condition_structs.hpp"
-#include "SCameraModifier_Settings_structs.hpp"
-#include "SBaseCurve_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "ECameraAnsEffectiveClientType_structs.hpp"
+#include "SCameraModifier_Settings_structs.hpp"
 #include "Engine_classes.hpp"
+#include "ECameraAnsEffectiveClientType_structs.hpp"
+#include "SBaseCurve_structs.hpp"
+#include "SCameraModifier_Condition_structs.hpp"
 
 
 namespace SDK
@@ -44,7 +44,7 @@ public:
 	float                                         QTE___4__add;                                      // 0x0190(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           Tag;                                               // 0x0194(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 	ECameraAnsEffectiveClientType                 _H_7___;                                           // 0x01A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_18C0[0x7];                                     // 0x01A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A1[0x7];                                      // 0x01A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CameraAttachSocket;                                // 0x01A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	TArray<struct FSCameraModifier_Condition>     A_;                                                // 0x01B8(0x0010)(Edit, BlueprintVisible)
 

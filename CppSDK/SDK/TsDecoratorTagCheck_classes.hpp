@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "SConDitionGroupType_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "AIModule_classes.hpp"
 
 
@@ -25,7 +25,7 @@ class UTsDecoratorTagCheck_C final : public UBTDecorator_BlueprintBase
 public:
 	TMap<struct FGameplayTag, bool>               Checks;                                            // 0x00A8(0x0050)(Edit, BlueprintVisible)
 	ESConditionGroupType                          Logic;                                             // 0x00F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1CBB[0x7];                                     // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 BlackboardKeyTarget;                               // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          DebugLog;                                          // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "EEffectPlay_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "EEffectPlay_structs.hpp"
 #include "EEffectType_structs.hpp"
 
 

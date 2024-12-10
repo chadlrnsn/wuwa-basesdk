@@ -17,31 +17,23 @@
 namespace SDK
 {
 
-// Function GA_DeleteVision.GA_DeleteVision_C.°H d;‘
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_DeleteVision.GA_DeleteVision_C.ExecuteUbergraph_GA_DeleteVision
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_DeleteVision_C::_H_d__()
+void UGA_DeleteVision_C::ExecuteUbergraph_GA_DeleteVision(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeleteVision_C", "°H d;‘");
+		Func = Class->GetFunction("GA_DeleteVision_C", "ExecuteUbergraph_GA_DeleteVision");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function GA_DeleteVision.GA_DeleteVision_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_DeleteVision_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeleteVision_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -65,23 +57,31 @@ void UGA_DeleteVision_C::K2_OnEndAbility(bool bWasCancelled)
 }
 
 
-// Function GA_DeleteVision.GA_DeleteVision_C.ExecuteUbergraph_GA_DeleteVision
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_DeleteVision.GA_DeleteVision_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_DeleteVision_C::ExecuteUbergraph_GA_DeleteVision(int32 EntryPoint)
+void UGA_DeleteVision_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeleteVision_C", "ExecuteUbergraph_GA_DeleteVision");
+		Func = Class->GetFunction("GA_DeleteVision_C", "K2_ActivateAbility");
 
-	Params::GA_DeleteVision_C_ExecuteUbergraph_GA_DeleteVision Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function GA_DeleteVision.GA_DeleteVision_C.°H d;‘
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UGA_DeleteVision_C::_H_d__()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_DeleteVision_C", "°H d;‘");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

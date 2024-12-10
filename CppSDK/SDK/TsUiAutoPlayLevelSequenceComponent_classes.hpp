@@ -25,11 +25,11 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0100(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void AwakeBP();
-	void UpdateBP(float DeltaTime);
-	void OnDestroyBP();
-	void OnUIActiveInHierarchyBP(bool ActiveOrInactive);
 	void ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent(int32 EntryPoint);
+	void OnUIActiveInHierarchyBP(bool ActiveOrInactive);
+	void OnDestroyBP();
+	void UpdateBP(float DeltaTime);
+	void AwakeBP();
 
 public:
 	static class UClass* StaticClass()

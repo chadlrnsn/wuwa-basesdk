@@ -17,65 +17,127 @@
 namespace SDK
 {
 
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.ÞdæÑ!p
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.ExecuteUbergraph_GA_Zhezhi_Skill03
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// int32                                   Selection                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Zhezhi_Skill03_C::_d___p__(int32 Selection)
+void UGA_Zhezhi_Skill03_C::ExecuteUbergraph_GA_Zhezhi_Skill03(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "ÞdæÑ!p");
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "ExecuteUbergraph_GA_Zhezhi_Skill03");
 
-	Params::GA_Zhezhi_Skill03_C__d___p__ Parms{};
+	Params::GA_Zhezhi_Skill03_C_ExecuteUbergraph_GA_Zhezhi_Skill03 Parms{};
 
-	Parms.Selection = Selection;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.ÞLyH
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_Zhezhi_Skill03_C::_LyH__()
+void UGA_Zhezhi_Skill03_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "ÞLyH");
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "K2_ActivateAbility");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.\4
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnCompleted_5D118C384AE61F1C80292E81F1E6F55F
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_Zhezhi_Skill03_C::_4__()
+void UGA_Zhezhi_Skill03_C::OnCompleted_5D118C384AE61F1C80292E81F1E6F55F()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "\4");
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnCompleted_5D118C384AE61F1C80292E81F1E6F55F");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.¾nP9ùa
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnBlendOut_5D118C384AE61F1C80292E81F1E6F55F
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_Zhezhi_Skill03_C::_nP9_a()
+void UGA_Zhezhi_Skill03_C::OnBlendOut_5D118C384AE61F1C80292E81F1E6F55F()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "¾nP9ùa");
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnBlendOut_5D118C384AE61F1C80292E81F1E6F55F");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnInterrupted_5D118C384AE61F1C80292E81F1E6F55F
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill03_C::OnInterrupted_5D118C384AE61F1C80292E81F1E6F55F()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnInterrupted_5D118C384AE61F1C80292E81F1E6F55F");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnCancelled_5D118C384AE61F1C80292E81F1E6F55F
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill03_C::OnCancelled_5D118C384AE61F1C80292E81F1E6F55F()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnCancelled_5D118C384AE61F1C80292E81F1E6F55F");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnTick_5D118C384AE61F1C80292E81F1E6F55F
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill03_C::OnTick_5D118C384AE61F1C80292E81F1E6F55F()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnTick_5D118C384AE61F1C80292E81F1E6F55F");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.EventReceived_18B59F5945020DB23C42FD88711A9140
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_Zhezhi_Skill03_C::EventReceived_18B59F5945020DB23C42FD88711A9140(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "EventReceived_18B59F5945020DB23C42FD88711A9140");
+
+	Params::GA_Zhezhi_Skill03_C_EventReceived_18B59F5945020DB23C42FD88711A9140 Parms{};
+
+	Parms.Payload = std::move(Payload);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -108,125 +170,63 @@ void UGA_Zhezhi_Skill03_C::___d_S(class ATsBaseCharacter_C** _a, bool* __0_a, in
 }
 
 
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.EventReceived_18B59F5945020DB23C42FD88711A9140
-// (BlueprintCallable, BlueprintEvent)
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.¾nP9ùa
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill03_C::_nP9_a()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "¾nP9ùa");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.\4
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill03_C::_4__()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "\4");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.ÞLyH
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill03_C::_LyH__()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "ÞLyH");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.ÞdæÑ!p
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// int32                                   Selection                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Zhezhi_Skill03_C::EventReceived_18B59F5945020DB23C42FD88711A9140(const struct FGameplayEventData& Payload)
+void UGA_Zhezhi_Skill03_C::_d___p__(int32 Selection)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "EventReceived_18B59F5945020DB23C42FD88711A9140");
+		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "ÞdæÑ!p");
 
-	Params::GA_Zhezhi_Skill03_C_EventReceived_18B59F5945020DB23C42FD88711A9140 Parms{};
+	Params::GA_Zhezhi_Skill03_C__d___p__ Parms{};
 
-	Parms.Payload = std::move(Payload);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnTick_5D118C384AE61F1C80292E81F1E6F55F
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill03_C::OnTick_5D118C384AE61F1C80292E81F1E6F55F()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnTick_5D118C384AE61F1C80292E81F1E6F55F");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnCancelled_5D118C384AE61F1C80292E81F1E6F55F
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill03_C::OnCancelled_5D118C384AE61F1C80292E81F1E6F55F()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnCancelled_5D118C384AE61F1C80292E81F1E6F55F");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnInterrupted_5D118C384AE61F1C80292E81F1E6F55F
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill03_C::OnInterrupted_5D118C384AE61F1C80292E81F1E6F55F()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnInterrupted_5D118C384AE61F1C80292E81F1E6F55F");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnBlendOut_5D118C384AE61F1C80292E81F1E6F55F
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill03_C::OnBlendOut_5D118C384AE61F1C80292E81F1E6F55F()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnBlendOut_5D118C384AE61F1C80292E81F1E6F55F");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.OnCompleted_5D118C384AE61F1C80292E81F1E6F55F
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill03_C::OnCompleted_5D118C384AE61F1C80292E81F1E6F55F()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "OnCompleted_5D118C384AE61F1C80292E81F1E6F55F");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Zhezhi_Skill03_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill03.GA_Zhezhi_Skill03_C.ExecuteUbergraph_GA_Zhezhi_Skill03
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Zhezhi_Skill03_C::ExecuteUbergraph_GA_Zhezhi_Skill03(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill03_C", "ExecuteUbergraph_GA_Zhezhi_Skill03");
-
-	Params::GA_Zhezhi_Skill03_C_ExecuteUbergraph_GA_Zhezhi_Skill03 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Parms.Selection = Selection;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

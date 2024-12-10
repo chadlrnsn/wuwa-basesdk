@@ -17,15 +17,35 @@
 namespace SDK
 {
 
-// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.UpdateVolumetricSphereLight
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ExecuteUbergraph_BP_VolumetricSphereLight
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_VolumetricSphereLight_C::UpdateVolumetricSphereLight()
+void ABP_VolumetricSphereLight_C::ExecuteUbergraph_BP_VolumetricSphereLight(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "UpdateVolumetricSphereLight");
+		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "ExecuteUbergraph_BP_VolumetricSphereLight");
+
+	Params::BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_VolumetricSphereLight_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -45,37 +65,17 @@ void ABP_VolumetricSphereLight_C::UserConstructionScript()
 }
 
 
-// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.UpdateVolumetricSphereLight
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_VolumetricSphereLight_C::ReceiveBeginPlay()
+void ABP_VolumetricSphereLight_C::UpdateVolumetricSphereLight()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "UpdateVolumetricSphereLight");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ExecuteUbergraph_BP_VolumetricSphereLight
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_VolumetricSphereLight_C::ExecuteUbergraph_BP_VolumetricSphereLight(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "ExecuteUbergraph_BP_VolumetricSphereLight");
-
-	Params::BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

@@ -37,14 +37,14 @@ public:
 	class UMaterialInstanceDynamic*               DMI_BigShape;                                      // 0x0310(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UpdatePerFourFrame01;                              // 0x0318(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          UpdatePerFourFrame02;                              // 0x0319(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2F89[0x6];                                     // 0x031A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31A[0x6];                                      // 0x031A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture2D*                             Top_Texture;                                       // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UTexture2D*                             POI_Texture;                                       // 0x0328(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               POI_Rotation;                                      // 0x0330(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2F8A[0x4];                                     // 0x033C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33C[0x4];                                      // 0x033C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstance*                      TOP_Material;                                      // 0x0340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UV1UV2_;                                           // 0x0348(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2F8B[0x3];                                     // 0x0349(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_349[0x3];                                      // 0x0349(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         UVTiling;                                          // 0x034C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CloudSpeed;                                        // 0x0350(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Top_Rotation;                                      // 0x0354(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
@@ -53,30 +53,30 @@ public:
 	struct FRotator                               Special_Rotation;                                  // 0x0368(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	float                                         Intensity;                                         // 0x0374(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TransSortNumber;                                   // 0x0378(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F8C[0x4];                                     // 0x037C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_37C[0x4];                                      // 0x037C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMesh*                            CloudSpecialMesh;                                  // 0x0380(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UTexture2D*                             Noise_Texture;                                     // 0x0388(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         NoiseStrength;                                     // 0x0390(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         NoiseSpeed;                                        // 0x0394(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         NoiseTilling;                                      // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F8D[0x4];                                     // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture2D*                             Anomalies_Texture;                                 // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           Color;                                             // 0x03A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               Anomalies_Rotation;                                // 0x03B8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	float                                         Anomalies_Intensity;                               // 0x03C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Anomalies_Scale;                                   // 0x03C8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F8E[0x4];                                     // 0x03D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D4[0x4];                                      // 0x03D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        Sky;                                               // 0x03D8(0x0090)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FKuroCurveFloat                        StarTrails;                                        // 0x0468(0x0090)(Edit, BlueprintVisible, DisableEditOnInstance)
 	float                                         Delta_Seconds;                                     // 0x04F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Time;                                              // 0x04FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Duration;                                          // 0x0500(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsTick;                                            // 0x0504(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
-	uint8                                         Pad_2F8F[0x3];                                     // 0x0505(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_505[0x3];                                      // 0x0505(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Anomalies_NoiseSpeed;                              // 0x0508(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Anomalies_NoiseStrength;                           // 0x050C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Anomalies_NoiseTilling;                            // 0x0510(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F90[0x4];                                     // 0x0514(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_514[0x4];                                      // 0x0514(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture2D*                             Anomalies_NoiseTex;                                // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 LevelLog;                                          // 0x0520(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 
@@ -86,13 +86,13 @@ public:
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveBeginPlay();
 	void UserConstructionScript();
-	void Single_Cloud_Parameters_Initial(class UMaterialInstanceDynamic* DMI, class UStaticMeshComponent* Mesh, class UTexture2D* Texture, bool Param_UV1UV2_, float Param_CloudSpeed, float Param_Top_Rotation, float Param_UVTiling, float Param_NoiseStrength, float Param_NoiseSpeed, float Param_NoiseTilling, class UTexture2D* NoiseTex);
+	void Single_Cloud_Parameters_Initial(class UMaterialInstanceDynamic* DMI, class UStaticMeshComponent* Mesh, class UTexture2D* Texture, bool UV1UV2__0, float CloudSpeed_0, float Top_Rotation_0, float UVTiling_0, float NoiseStrength_0, float NoiseSpeed_0, float NoiseTilling_0, class UTexture2D* NoiseTex);
 	void CreateDMI(class UStaticMeshComponent* Mesh, class UMaterialInstanceDynamic** DMI);
 	void UpdatePerFourFrame();
 	void Single_POI_Parameters_Initial(class UMaterialInstanceDynamic* DMI, class UStaticMeshComponent* Mesh, class UTexture2D* Texture, const struct FRotator& POIRotation);
-	void SunMoon_Parameters_Initial(class UMaterialInstanceDynamic* DMI, class UStaticMeshComponent* Mesh, class UTexture2D* Texture, const struct FRotator& POIRotation, float Param_Intensity);
-	void Special_Parameters_Initial(class UMaterialInstanceDynamic* DMI, class UStaticMeshComponent* Mesh, class UTexture2D* Texture, const struct FRotator& POIRotation, float Param_Intensity, const struct FVector& Scale, class UTexture2D* NoiseTex, float Param_NoiseSpeed, float Param_NoiseStrength, float Param_NoiseTilling, const struct FLinearColor& Param_Color);
-	void ChangeSky(bool Param_IsTick);
+	void SunMoon_Parameters_Initial(class UMaterialInstanceDynamic* DMI, class UStaticMeshComponent* Mesh, class UTexture2D* Texture, const struct FRotator& POIRotation, float Intensity_0);
+	void Special_Parameters_Initial(class UMaterialInstanceDynamic* DMI, class UStaticMeshComponent* Mesh, class UTexture2D* Texture, const struct FRotator& POIRotation, float Intensity_0, const struct FVector& Scale, class UTexture2D* NoiseTex, float NoiseSpeed_0, float NoiseStrength_0, float NoiseTilling_0, const struct FLinearColor& Color_0);
+	void ChangeSky(bool IsTick_0);
 	void Timer(float* ElapsedTime);
 
 public:

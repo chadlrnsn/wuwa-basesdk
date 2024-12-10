@@ -17,87 +17,23 @@
 namespace SDK
 {
 
-// Function GA_VisionCoordination.GA_VisionCoordination_C.OnTick_5D118C384AE61F1C80292E81C0F7E796
-// (BlueprintCallable, BlueprintEvent)
+// Function GA_VisionCoordination.GA_VisionCoordination_C.ExecuteUbergraph_GA_VisionCoordination
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_VisionCoordination_C::OnTick_5D118C384AE61F1C80292E81C0F7E796()
+void UGA_VisionCoordination_C::ExecuteUbergraph_GA_VisionCoordination(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_VisionCoordination_C", "OnTick_5D118C384AE61F1C80292E81C0F7E796");
+		Func = Class->GetFunction("GA_VisionCoordination_C", "ExecuteUbergraph_GA_VisionCoordination");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::GA_VisionCoordination_C_ExecuteUbergraph_GA_VisionCoordination Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function GA_VisionCoordination.GA_VisionCoordination_C.OnCancelled_5D118C384AE61F1C80292E81C0F7E796
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_VisionCoordination_C::OnCancelled_5D118C384AE61F1C80292E81C0F7E796()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_VisionCoordination_C", "OnCancelled_5D118C384AE61F1C80292E81C0F7E796");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_VisionCoordination.GA_VisionCoordination_C.OnInterrupted_5D118C384AE61F1C80292E81C0F7E796
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_VisionCoordination_C::OnInterrupted_5D118C384AE61F1C80292E81C0F7E796()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_VisionCoordination_C", "OnInterrupted_5D118C384AE61F1C80292E81C0F7E796");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_VisionCoordination.GA_VisionCoordination_C.OnBlendOut_5D118C384AE61F1C80292E81C0F7E796
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_VisionCoordination_C::OnBlendOut_5D118C384AE61F1C80292E81C0F7E796()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_VisionCoordination_C", "OnBlendOut_5D118C384AE61F1C80292E81C0F7E796");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_VisionCoordination.GA_VisionCoordination_C.OnCompleted_5D118C384AE61F1C80292E81C0F7E796
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_VisionCoordination_C::OnCompleted_5D118C384AE61F1C80292E81C0F7E796()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_VisionCoordination_C", "OnCompleted_5D118C384AE61F1C80292E81C0F7E796");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_VisionCoordination.GA_VisionCoordination_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_VisionCoordination_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_VisionCoordination_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -121,23 +57,87 @@ void UGA_VisionCoordination_C::K2_OnEndAbility(bool bWasCancelled)
 }
 
 
-// Function GA_VisionCoordination.GA_VisionCoordination_C.ExecuteUbergraph_GA_VisionCoordination
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_VisionCoordination.GA_VisionCoordination_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_VisionCoordination_C::ExecuteUbergraph_GA_VisionCoordination(int32 EntryPoint)
+void UGA_VisionCoordination_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_VisionCoordination_C", "ExecuteUbergraph_GA_VisionCoordination");
+		Func = Class->GetFunction("GA_VisionCoordination_C", "K2_ActivateAbility");
 
-	Params::GA_VisionCoordination_C_ExecuteUbergraph_GA_VisionCoordination Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function GA_VisionCoordination.GA_VisionCoordination_C.OnCompleted_5D118C384AE61F1C80292E81C0F7E796
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_VisionCoordination_C::OnCompleted_5D118C384AE61F1C80292E81C0F7E796()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_VisionCoordination_C", "OnCompleted_5D118C384AE61F1C80292E81C0F7E796");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_VisionCoordination.GA_VisionCoordination_C.OnBlendOut_5D118C384AE61F1C80292E81C0F7E796
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_VisionCoordination_C::OnBlendOut_5D118C384AE61F1C80292E81C0F7E796()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_VisionCoordination_C", "OnBlendOut_5D118C384AE61F1C80292E81C0F7E796");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_VisionCoordination.GA_VisionCoordination_C.OnInterrupted_5D118C384AE61F1C80292E81C0F7E796
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_VisionCoordination_C::OnInterrupted_5D118C384AE61F1C80292E81C0F7E796()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_VisionCoordination_C", "OnInterrupted_5D118C384AE61F1C80292E81C0F7E796");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_VisionCoordination.GA_VisionCoordination_C.OnCancelled_5D118C384AE61F1C80292E81C0F7E796
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_VisionCoordination_C::OnCancelled_5D118C384AE61F1C80292E81C0F7E796()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_VisionCoordination_C", "OnCancelled_5D118C384AE61F1C80292E81C0F7E796");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_VisionCoordination.GA_VisionCoordination_C.OnTick_5D118C384AE61F1C80292E81C0F7E796
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_VisionCoordination_C::OnTick_5D118C384AE61F1C80292E81C0F7E796()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_VisionCoordination_C", "OnTick_5D118C384AE61F1C80292E81C0F7E796");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

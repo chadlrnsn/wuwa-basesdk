@@ -25,10 +25,10 @@ struct FSSpecialEnergyBar final
 public:
 	class FString                                 Name_2_C39CDBBF409469DCF96974B4E03ED6F9;           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	ESpecialEnergyBarPrefabType                   PrefabType_115_34BDB3AE48638D5CF67EEC9A1B4378DA;   // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_363F[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ExtraType_169_36C378BE4256A36F272B87AB26132598;    // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         SlotNum_126_E7916B8C47391E6AAAF2178D79DC396F;      // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3640[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 ExtraFloatParams_130_F64FCDB74317682714A850A8BDF1E5E5; // 0x0020(0x0010)(Edit, BlueprintVisible)
 	TSoftObjectPtr<class UPrefabAsset>            PrefabPath_6_D3E0271649443A790645EFB3945D0903;     // 0x0030(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	int32                                         AttributeId_9_6C3F6EBD441A30C3C6EA09B019FCAEC5;    // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

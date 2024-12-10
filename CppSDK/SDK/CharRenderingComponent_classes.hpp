@@ -13,8 +13,8 @@
 #include "ECharacterRenderingType_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ECharacterDitherType_structs.hpp"
 #include "ECharacterControllerCaseType_structs.hpp"
+#include "ECharacterDitherType_structs.hpp"
 #include "ECharacterBodySpecifiedType_structs.hpp"
 #include "ECharacterSlotSpecifiedType_structs.hpp"
 
@@ -64,8 +64,8 @@ public:
 	float QuickInitAndAddDataGroupWithMeshComponent(class UObject* Data, class UMeshComponent* MeshComponent);
 	void SetDecalShadowEnabled(bool Enable);
 	void DisableAllShadowByDecalShadowComponent();
-	void AddComponentForDecalShadow(const class FString& Param_Name, class UPrimitiveComponent* Comp);
-	void RemoveComponentFromDecalShadow(const class FString& Param_Name);
+	void AddComponentForDecalShadow(const class FString& Name_0, class UPrimitiveComponent* Comp);
+	void RemoveComponentFromDecalShadow(const class FString& Name_0);
 	void ReceiveSeqTick(float DeltaSeconds);
 	void SetLogicOwner(class AActor* Owner);
 	float GetTimeDilation();

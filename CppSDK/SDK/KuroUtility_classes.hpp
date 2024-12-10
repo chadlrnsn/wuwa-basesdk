@@ -155,9 +155,9 @@ public:
 	static void InitActorManager();
 	static bool IsActorPoolEnable();
 	static bool IsPooledActor(const class AActor* Actor);
-	static void RegisterActorSkipProperties(class UClass* Param_Class, const TArray<struct FPropertyPair>& Properties);
+	static void RegisterActorSkipProperties(class UClass* Class_0, const TArray<struct FPropertyPair>& Properties);
 	static bool ResetActorToDefault(class AActor* Actor);
-	static void ResetClassPropertyCache(class UClass* Param_Class);
+	static void ResetClassPropertyCache(class UClass* Class_0);
 	static void ResetDelegates(class AActor* Actor);
 	static void ResetUberGraph(class UObject* Obj);
 	static void ResetUObjectByCDO(class UObject* Obj);
@@ -206,7 +206,7 @@ class AKuroBlockingVolume final : public AVolume
 {
 public:
 	class FName                                   VolumeId;                                          // 0x02E8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1AD4[0x4];                                     // 0x02F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -286,7 +286,7 @@ static_assert(offsetof(UKuroBpDataAssetGroup, Data) == 0x000038, "Member 'UKuroB
 class UKuroStateMachineBase : public UPrimaryDataAsset
 {
 public:
-	class FString                                 Name_KuroStateMachineBase;                         // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name_0;                                            // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FString, class UKuroStateMachineConditionBase*> Transitions;                                       // 0x0048(0x0050)(Edit, BlueprintVisible, ExportObject, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TArray<class UKuroStateMachineBase*>          Children;                                          // 0x0098(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
@@ -302,7 +302,7 @@ public:
 };
 static_assert(alignof(UKuroStateMachineBase) == 0x000008, "Wrong alignment on UKuroStateMachineBase");
 static_assert(sizeof(UKuroStateMachineBase) == 0x0000A8, "Wrong size on UKuroStateMachineBase");
-static_assert(offsetof(UKuroStateMachineBase, Name_KuroStateMachineBase) == 0x000038, "Member 'UKuroStateMachineBase::Name_KuroStateMachineBase' has a wrong offset!");
+static_assert(offsetof(UKuroStateMachineBase, Name_0) == 0x000038, "Member 'UKuroStateMachineBase::Name_0' has a wrong offset!");
 static_assert(offsetof(UKuroStateMachineBase, Transitions) == 0x000048, "Member 'UKuroStateMachineBase::Transitions' has a wrong offset!");
 static_assert(offsetof(UKuroStateMachineBase, Children) == 0x000098, "Member 'UKuroStateMachineBase::Children' has a wrong offset!");
 
@@ -392,7 +392,7 @@ class UKuroCollectActorComponent final : public UActorComponent
 {
 public:
 	ECollectActorType                             CollectActorType;                                  // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1AD5[0x7];                                     // 0x00C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class AActor* GetActorWithTag(class FName Tag, ECollectActorType Type);
@@ -438,7 +438,7 @@ class AKuroEntityActor final : public AKuroActor
 {
 public:
 	int32                                         EntityId;                                          // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1AD8[0x4];                                     // 0x02B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B4[0x4];                                      // 0x02B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -581,7 +581,7 @@ static_assert(sizeof(UKuroMeshTextureFunctionLibrary) == 0x000030, "Wrong size o
 class ULoadMapNotify final : public UObject
 {
 public:
-	uint8                                         Pad_1AE5[0x158];                                   // 0x0030(0x0158)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x158];                                     // 0x0030(0x0158)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void BindBeginLoadMap(TDelegate<void(const class FString& MapName)> BeginLoadMapHandler);
@@ -768,7 +768,7 @@ static_assert(sizeof(UKuroPolypartition) == 0x000030, "Wrong size on UKuroPolypa
 class AKuroSilenceGameMode : public AGameMode
 {
 public:
-	uint8                                         Pad_1B01[0x8];                                     // 0x03A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A0[0x8];                                      // 0x03A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void GameInitialized();
@@ -908,7 +908,7 @@ public:
 	static void GetCreatureGenDirectoryByMap(const class FString& Path, const int32 MapID, bool* Exist, class FString* Directory);
 	static class FString GetCultureRegion();
 	static float GetCurCPUFrequency();
-	static class UObject* GetDefaultObject(class UClass* Param_Class);
+	static class UObject* GetDefaultObject(class UClass* Class_0);
 	static class FString GetDeviceCPU();
 	static TArray<class FString> GetDirectories(const class FString& Path);
 	static TArray<class FString> GetFiles(const class FString& Path, const class FString& Extension);
@@ -939,7 +939,7 @@ public:
 	static class FString GetStatUnitInfo();
 	static int32 GetTotalMemoryGB();
 	static int64 GetTotalPhysicalMemory();
-	static class UMovieSceneTrack* GetTrackByClass(const TArray<class UMovieSceneTrack*>& Tracks, TSubclassOf<class UMovieSceneTrack> Param_Class);
+	static class UMovieSceneTrack* GetTrackByClass(const TArray<class UMovieSceneTrack*>& Tracks, TSubclassOf<class UMovieSceneTrack> Class_0);
 	static float GetUsedMemoryGB();
 	static float GetUsedPhysicalGB();
 	static float GetUsedVirtualGB();
@@ -1047,7 +1047,7 @@ static_assert(sizeof(UKuroTencentCOSLibrary) == 0x000030, "Wrong size on UKuroTe
 class UKuroTickableManager final : public UObject
 {
 public:
-	uint8                                         Pad_1B2A[0x18];                                    // 0x0030(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x18];                                      // 0x0030(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void CreateTickableFunc(class UObject* InOwner, TDelegate<void(float DeltaSeconds)> TickableHandler);
@@ -1072,7 +1072,7 @@ class AKuroTriggerVolume final : public AVolume
 {
 public:
 	class FName                                   VolumeId;                                          // 0x02E8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1B2B[0x4];                                     // 0x02F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1110,7 +1110,7 @@ static_assert(sizeof(AKuroWaterVolume) == 0x0002E8, "Wrong size on AKuroWaterVol
 class UKuroTickManager final : public UObject
 {
 public:
-	uint8                                         Pad_1B2C[0x48];                                    // 0x0030(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x48];                                      // 0x0030(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddPrerequisiteActorComponent(const ETickingGroup TickingGroup, class UActorComponent* ActorComp);

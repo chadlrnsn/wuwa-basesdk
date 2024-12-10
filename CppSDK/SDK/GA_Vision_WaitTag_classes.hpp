@@ -31,12 +31,12 @@ public:
 	TArray<class UAbilityTask_WaitGameplayTagRemoved*> Tag_d__;                                           // 0x0620(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void A___();
-	void Removed_DB9F64004F8908FEAD99D3815F1E8945(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A338ACB336(const struct FGameplayTag& Tag);
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
 	void ExecuteUbergraph_GA_Vision_WaitTag(int32 EntryPoint);
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void Added_21071CB943CD992BF8EFD6A338ACB336(const struct FGameplayTag& Tag);
+	void Removed_DB9F64004F8908FEAD99D3815F1E8945(const struct FGameplayTag& Tag);
+	void A___();
 
 public:
 	static class UClass* StaticClass()

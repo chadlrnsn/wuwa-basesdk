@@ -17,15 +17,35 @@
 namespace SDK
 {
 
-// Function GA_Zhezhi_He_ShowEffect_2.GA_Zhezhi_He_ShowEffect_2_C.buff
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_Zhezhi_He_ShowEffect_2.GA_Zhezhi_He_ShowEffect_2_C.ExecuteUbergraph_GA_Zhezhi_He_ShowEffect_2
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Zhezhi_He_ShowEffect_2_C::__buff()
+void UGA_Zhezhi_He_ShowEffect_2_C::ExecuteUbergraph_GA_Zhezhi_He_ShowEffect_2(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_He_ShowEffect_2_C", "buff");
+		Func = Class->GetFunction("GA_Zhezhi_He_ShowEffect_2_C", "ExecuteUbergraph_GA_Zhezhi_He_ShowEffect_2");
+
+	Params::GA_Zhezhi_He_ShowEffect_2_C_ExecuteUbergraph_GA_Zhezhi_He_ShowEffect_2 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Zhezhi_He_ShowEffect_2.GA_Zhezhi_He_ShowEffect_2_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGA_Zhezhi_He_ShowEffect_2_C::K2_ActivateAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_He_ShowEffect_2_C", "K2_ActivateAbility");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,37 +71,17 @@ void UGA_Zhezhi_He_ShowEffect_2_C::EventReceived_18B59F5945020DB23C42FD885310B74
 }
 
 
-// Function GA_Zhezhi_He_ShowEffect_2.GA_Zhezhi_He_ShowEffect_2_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_Zhezhi_He_ShowEffect_2.GA_Zhezhi_He_ShowEffect_2_C.buff
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UGA_Zhezhi_He_ShowEffect_2_C::K2_ActivateAbility()
+void UGA_Zhezhi_He_ShowEffect_2_C::__buff()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_He_ShowEffect_2_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("GA_Zhezhi_He_ShowEffect_2_C", "buff");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_He_ShowEffect_2.GA_Zhezhi_He_ShowEffect_2_C.ExecuteUbergraph_GA_Zhezhi_He_ShowEffect_2
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Zhezhi_He_ShowEffect_2_C::ExecuteUbergraph_GA_Zhezhi_He_ShowEffect_2(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_He_ShowEffect_2_C", "ExecuteUbergraph_GA_Zhezhi_He_ShowEffect_2");
-
-	Params::GA_Zhezhi_He_ShowEffect_2_C_ExecuteUbergraph_GA_Zhezhi_He_ShowEffect_2 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

@@ -26,24 +26,24 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_SE_UINiagaraController_C;           // 0x00C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	TArray<class UUINiagara*>                     CachedNiagara;                                     // 0x00D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	bool                                          HasAdapted;                                        // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_36A9[0x3];                                     // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E1[0x3];                                       // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              ViewportSize;                                      // 0x00E4(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          UseAspectRatio;                                    // 0x00EC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_36AA[0x3];                                     // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_ED[0x3];                                       // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AspectRatio;                                       // 0x00F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ControlByWidth;                                    // 0x00F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_SE_UINiagaraController(int32 EntryPoint);
-	void CaculatePoint(const struct FVector2D& LeftBottomPoint, const struct FVector2D& RightTopPoint, struct FVector2D* NewLeftBottomPoint, struct FVector2D* NewRightTopPoint);
-	void AdjustToScreenEditor();
-	void AdjustToScreen();
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
-	void ApplyAlpha(float Alpha);
-	void ApplyVisibility(bool Visibility);
-	void BeforeStart();
 	void ApplyEnvironmentFactor(float EnvironmentFactor);
+	void BeforeStart();
+	void ApplyVisibility(bool Visibility);
+	void ApplyAlpha(float Alpha);
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveBeginPlay();
+	void AdjustToScreen();
+	void AdjustToScreenEditor();
+	void CaculatePoint(const struct FVector2D& LeftBottomPoint, const struct FVector2D& RightTopPoint, struct FVector2D* NewLeftBottomPoint, struct FVector2D* NewRightTopPoint);
 
 public:
 	static class UClass* StaticClass()

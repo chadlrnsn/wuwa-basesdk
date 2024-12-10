@@ -26,11 +26,11 @@ public:
 	float                                         Float;                                             // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SequenceEvent__ENTRYPOINTSequenceDirector_1(class ABP_Zhezhi_C* BP_Zhezhi);
-	void SequenceEvent__ENTRYPOINTSequenceDirector_0(class ABP_Zhezhi_C* BP_Zhezhi);
-	void BP_Zhezhi_Event_0(class ABP_Zhezhi_C* BP_Zhezhi);
-	void BP_Zhezhi_Event_1(class ABP_Zhezhi_C* BP_Zhezhi);
 	void ExecuteUbergraph_SequenceDirector(int32 EntryPoint);
+	void BP_Zhezhi_Event_1(class ABP_Zhezhi_C* BP_Zhezhi);
+	void BP_Zhezhi_Event_0(class ABP_Zhezhi_C* BP_Zhezhi);
+	void SequenceEvent__ENTRYPOINTSequenceDirector_0(class ABP_Zhezhi_C* BP_Zhezhi);
+	void SequenceEvent__ENTRYPOINTSequenceDirector_1(class ABP_Zhezhi_C* BP_Zhezhi);
 
 public:
 	static class UClass* StaticClass()

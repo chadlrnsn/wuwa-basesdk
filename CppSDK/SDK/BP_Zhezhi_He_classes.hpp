@@ -22,12 +22,12 @@ namespace SDK
 class ABP_Zhezhi_He_C final : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_388B[0x7];                                     // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_781[0x7];                                      // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Zhezhi_He_C;                     // 0x0788(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_Zhezhi_He(int32 EntryPoint);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

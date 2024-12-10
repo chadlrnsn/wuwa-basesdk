@@ -18,20 +18,178 @@
 namespace SDK::Params
 {
 
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.WaterRipple
+// 0x0180 (0x0180 - 0x0000)
+struct BP_HHA_Ocean_C_WaterRipple final
+{
+public:
+	struct FVector                                CallFunc_GetLevelEditorCameraLocationAndForward_Position; // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_GetLevelEditorCameraLocationAndForward_Rotation; // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue; // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         ___object_Variable;                                // 0x0020(0x0010)(ConstParm, ReferenceParm)
+	struct FVector                                CallFunc_GetForwardVector_ReturnValue;             // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Multiply_VectorInt_ReturnValue;           // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Add_VectorVector_ReturnValue;             // 0x0048(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_LineTraceSingle_OutHit;                   // 0x0054(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          CallFunc_LineTraceSingle_ReturnValue;              // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BreakHitResult_bBlockingHit;              // 0x00E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BreakHitResult_bInitialOverlap;           // 0x00EA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_EB[0x1];                                       // 0x00EB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_BreakHitResult_Time;                      // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakHitResult_Distance;                  // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_BreakHitResult_Location;                  // 0x00F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_BreakHitResult_ImpactPoint;               // 0x0100(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_BreakHitResult_Normal;                    // 0x010C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_BreakHitResult_ImpactNormal;              // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPhysicalMaterial*                      CallFunc_BreakHitResult_PhysMat;                   // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_BreakHitResult_HitActor;                  // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    CallFunc_BreakHitResult_HitComponent;              // 0x0138(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_BreakHitResult_HitBoneName;               // 0x0140(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_BreakHitResult_HitItem;                   // 0x014C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_BreakHitResult_FaceIndex;                 // 0x0150(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_BreakHitResult_TraceStart;                // 0x0154(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_BreakHitResult_TraceEnd;                  // 0x0160(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue;     // 0x016C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_HHA_Ocean_C_WaterRipple) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_WaterRipple");
+static_assert(sizeof(BP_HHA_Ocean_C_WaterRipple) == 0x000180, "Wrong size on BP_HHA_Ocean_C_WaterRipple");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_GetLevelEditorCameraLocationAndForward_Position) == 0x000000, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_GetLevelEditorCameraLocationAndForward_Position' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_GetLevelEditorCameraLocationAndForward_Rotation) == 0x00000C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_GetLevelEditorCameraLocationAndForward_Rotation' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue) == 0x000018, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, ___object_Variable) == 0x000020, "Member 'BP_HHA_Ocean_C_WaterRipple::___object_Variable' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_GetForwardVector_ReturnValue) == 0x000030, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_GetForwardVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_Multiply_VectorInt_ReturnValue) == 0x00003C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_Multiply_VectorInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_Add_VectorVector_ReturnValue) == 0x000048, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_Add_VectorVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_LineTraceSingle_OutHit) == 0x000054, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_LineTraceSingle_OutHit' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_LineTraceSingle_ReturnValue) == 0x0000E8, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_LineTraceSingle_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_bBlockingHit) == 0x0000E9, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_bBlockingHit' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_bInitialOverlap) == 0x0000EA, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_bInitialOverlap' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_Time) == 0x0000EC, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_Time' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_Distance) == 0x0000F0, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_Distance' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_Location) == 0x0000F4, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_Location' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_ImpactPoint) == 0x000100, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_ImpactPoint' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_Normal) == 0x00010C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_Normal' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_ImpactNormal) == 0x000118, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_ImpactNormal' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_PhysMat) == 0x000128, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_PhysMat' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_HitActor) == 0x000130, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_HitActor' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_HitComponent) == 0x000138, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_HitComponent' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_HitBoneName) == 0x000140, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_HitBoneName' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_HitItem) == 0x00014C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_HitItem' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_FaceIndex) == 0x000150, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_FaceIndex' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_TraceStart) == 0x000154, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_TraceStart' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_TraceEnd) == 0x000160, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_TraceEnd' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_Conv_VectorToLinearColor_ReturnValue) == 0x00016C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_Conv_VectorToLinearColor_ReturnValue' has a wrong offset!");
+
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.UserConstructionScript
+// 0x0050 (0x0050 - 0x0000)
+struct BP_HHA_Ocean_C_UserConstructionScript final
+{
+public:
+	struct FTransform                             ___struct_Variable;                                // 0x0000(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
+	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UChildActorComponent*                   CallFunc_AddComponent_ReturnValue;                 // 0x0038(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_HHA_Ocean_C_UserConstructionScript) == 0x000010, "Wrong alignment on BP_HHA_Ocean_C_UserConstructionScript");
+static_assert(sizeof(BP_HHA_Ocean_C_UserConstructionScript) == 0x000050, "Wrong size on BP_HHA_Ocean_C_UserConstructionScript");
+static_assert(offsetof(BP_HHA_Ocean_C_UserConstructionScript, ___struct_Variable) == 0x000000, "Member 'BP_HHA_Ocean_C_UserConstructionScript::___struct_Variable' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_UserConstructionScript, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000030, "Member 'BP_HHA_Ocean_C_UserConstructionScript::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_UserConstructionScript, CallFunc_AddComponent_ReturnValue) == 0x000038, "Member 'BP_HHA_Ocean_C_UserConstructionScript::CallFunc_AddComponent_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_UserConstructionScript, CallFunc_NotEqual_ByteByte_ReturnValue) == 0x000040, "Member 'BP_HHA_Ocean_C_UserConstructionScript::CallFunc_NotEqual_ByteByte_ReturnValue' has a wrong offset!");
+
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.CustomEvent_0
+// 0x0010 (0x0010 - 0x0000)
+struct BP_HHA_Ocean_C_CustomEvent_0 final
+{
+public:
+	class AActor*                                 __i;                                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 Fourb;                                             // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_HHA_Ocean_C_CustomEvent_0) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_CustomEvent_0");
+static_assert(sizeof(BP_HHA_Ocean_C_CustomEvent_0) == 0x000010, "Wrong size on BP_HHA_Ocean_C_CustomEvent_0");
+static_assert(offsetof(BP_HHA_Ocean_C_CustomEvent_0, __i) == 0x000000, "Member 'BP_HHA_Ocean_C_CustomEvent_0::__i' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_CustomEvent_0, Fourb) == 0x000008, "Member 'BP_HHA_Ocean_C_CustomEvent_0::Fourb' has a wrong offset!");
+
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature
+// 0x0010 (0x0010 - 0x0000)
+struct BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature final
+{
+public:
+	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature");
+static_assert(sizeof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature) == 0x000010, "Wrong size on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature");
+static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature, OverlappedActor) == 0x000000, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature::OverlappedActor' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature, OtherActor) == 0x000008, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature::OtherActor' has a wrong offset!");
+
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature
+// 0x0010 (0x0010 - 0x0000)
+struct BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature final
+{
+public:
+	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature");
+static_assert(sizeof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature) == 0x000010, "Wrong size on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature");
+static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature, OverlappedActor) == 0x000000, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature::OverlappedActor' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature, OtherActor) == 0x000008, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature::OtherActor' has a wrong offset!");
+
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature
+// 0x0010 (0x0010 - 0x0000)
+struct BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature final
+{
+public:
+	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature");
+static_assert(sizeof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature) == 0x000010, "Wrong size on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature");
+static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature, OverlappedActor) == 0x000000, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature::OverlappedActor' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature, OtherActor) == 0x000008, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature::OtherActor' has a wrong offset!");
+
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature
+// 0x0010 (0x0010 - 0x0000)
+struct BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature final
+{
+public:
+	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature");
+static_assert(sizeof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature) == 0x000010, "Wrong size on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature");
+static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature, OverlappedActor) == 0x000000, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature::OverlappedActor' has a wrong offset!");
+static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature, OtherActor) == 0x000008, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature::OtherActor' has a wrong offset!");
+
+// Function BP_HHA_Ocean.BP_HHA_Ocean_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_HHA_Ocean_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_HHA_Ocean_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_HHA_Ocean_C_ReceiveTick");
+static_assert(sizeof(BP_HHA_Ocean_C_ReceiveTick) == 0x000004, "Wrong size on BP_HHA_Ocean_C_ReceiveTick");
+static_assert(offsetof(BP_HHA_Ocean_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_HHA_Ocean_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
+
 // Function BP_HHA_Ocean.BP_HHA_Ocean_C.ExecuteUbergraph_BP_HHA_Ocean
 // 0x02E8 (0x02E8 - 0x0000)
 struct BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3660[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(class AActor* __i, class AActor* Fourb)> K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0028)(ZeroConstructor)
 	struct FLinearColor                           CallFunc_LinearColorLerp_ReturnValue;              // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_LinearColorLerp_ReturnValue_1;            // 0x0040(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 CallFunc_GetGlobalGIActor_ReturnValue;             // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ABP_GlobalGI_C*                         K2Node_DynamicCast_AsBP_Global_GI;                 // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3661[0x3];                                     // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Lerp_ReturnValue;                         // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetGITime_ReturnValue;                    // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_MapRangeClamped_ReturnValue;              // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -42,32 +200,32 @@ public:
 	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0099(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x009A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3662[0x1];                                     // 0x009B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9B[0x1];                                       // 0x009B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           CallFunc_LinearColorLerp_ReturnValue_4;            // 0x009C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_LinearColorLerp_ReturnValue_5;            // 0x00AC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3663[0x4];                                     // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 K2Node_CustomEvent____;                            // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 K2Node_CustomEvent___;                             // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AStaticMeshActor*                       K2Node_DynamicCast_As_____actor;                   // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3664[0x7];                                     // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_InteractedBox_C*                    K2Node_DynamicCast_AsBP_Interacted_Box;            // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3665[0x7];                                     // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     CallFunc_GetMaterial_ReturnValue;                  // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x00F8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3666[0x4];                                     // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterial*                              CallFunc_GetBaseMaterial_ReturnValue;              // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue;     // 0x0110(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_GetPathName_ReturnValue;                  // 0x0120(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Split_LeftS;                              // 0x0130(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Split_RightS;                             // 0x0140(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Split_ReturnValue;                        // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3667[0x7];                                     // 0x0151(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                CallFunc_GetBpEventManager_ReturnValue;            // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UBP_EventManager_C*                     K2Node_DynamicCast_AsBP_Event_Manager;             // 0x0160(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3668[0x3];                                     // 0x0169(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_169[0x3];                                      // 0x0169(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           CallFunc_LinearColorLerp_ReturnValue_6;            // 0x016C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_LinearColorLerp_ReturnValue_7;            // 0x017C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_LinearColorLerp_ReturnValue_8;            // 0x018C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -80,7 +238,7 @@ public:
 	float                                         CallFunc_LinearColor_GetMin_ReturnValue;           // 0x01CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Lerp_ReturnValue_3;                       // 0x01D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x01D4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3669[0x3];                                     // 0x01D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D5[0x3];                                      // 0x01D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 K2Node_ComponentBoundEvent_OverlappedActor_3;      // 0x01D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 K2Node_ComponentBoundEvent_OtherActor_3;           // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 K2Node_ComponentBoundEvent_OverlappedActor_2;      // 0x01E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -105,7 +263,7 @@ public:
 	float                                         CallFunc_Lerp_ReturnValue_11;                      // 0x027C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Lerp_ReturnValue_12;                      // 0x0280(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0284(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_366A[0x3];                                     // 0x0285(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_285[0x3];                                      // 0x0285(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0288(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_MakeLiteralFloat_ReturnValue;             // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_MakeLiteralFloat_ReturnValue_1;           // 0x0290(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -205,164 +363,6 @@ static_assert(offsetof(BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean, K2Node_Make
 static_assert(offsetof(BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean, CallFunc_Percent_IntInt_ReturnValue) == 0x0002DC, "Member 'BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean::CallFunc_Percent_IntInt_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean, K2Node_SwitchInteger_CmpSuccess_1) == 0x0002E0, "Member 'BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean::K2Node_SwitchInteger_CmpSuccess_1' has a wrong offset!");
 static_assert(offsetof(BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean, CallFunc_Array_IsValidIndex_ReturnValue) == 0x0002E1, "Member 'BP_HHA_Ocean_C_ExecuteUbergraph_BP_HHA_Ocean::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
-
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.WaterRipple
-// 0x0180 (0x0180 - 0x0000)
-struct BP_HHA_Ocean_C_WaterRipple final
-{
-public:
-	struct FVector                                CallFunc_GetLevelEditorCameraLocationAndForward_Position; // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_GetLevelEditorCameraLocationAndForward_Rotation; // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue; // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_366B[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         ___object_Variable;                                // 0x0020(0x0010)(ConstParm, ReferenceParm)
-	struct FVector                                CallFunc_GetForwardVector_ReturnValue;             // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Multiply_VectorInt_ReturnValue;           // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Add_VectorVector_ReturnValue;             // 0x0048(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_LineTraceSingle_OutHit;                   // 0x0054(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	bool                                          CallFunc_LineTraceSingle_ReturnValue;              // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BreakHitResult_bBlockingHit;              // 0x00E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BreakHitResult_bInitialOverlap;           // 0x00EA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_366C[0x1];                                     // 0x00EB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_BreakHitResult_Time;                      // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakHitResult_Distance;                  // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_BreakHitResult_Location;                  // 0x00F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_BreakHitResult_ImpactPoint;               // 0x0100(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_BreakHitResult_Normal;                    // 0x010C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_BreakHitResult_ImpactNormal;              // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_366D[0x4];                                     // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPhysicalMaterial*                      CallFunc_BreakHitResult_PhysMat;                   // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_BreakHitResult_HitActor;                  // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    CallFunc_BreakHitResult_HitComponent;              // 0x0138(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_BreakHitResult_HitBoneName;               // 0x0140(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_BreakHitResult_HitItem;                   // 0x014C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_BreakHitResult_FaceIndex;                 // 0x0150(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_BreakHitResult_TraceStart;                // 0x0154(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_BreakHitResult_TraceEnd;                  // 0x0160(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue;     // 0x016C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_HHA_Ocean_C_WaterRipple) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_WaterRipple");
-static_assert(sizeof(BP_HHA_Ocean_C_WaterRipple) == 0x000180, "Wrong size on BP_HHA_Ocean_C_WaterRipple");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_GetLevelEditorCameraLocationAndForward_Position) == 0x000000, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_GetLevelEditorCameraLocationAndForward_Position' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_GetLevelEditorCameraLocationAndForward_Rotation) == 0x00000C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_GetLevelEditorCameraLocationAndForward_Rotation' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue) == 0x000018, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, ___object_Variable) == 0x000020, "Member 'BP_HHA_Ocean_C_WaterRipple::___object_Variable' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_GetForwardVector_ReturnValue) == 0x000030, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_GetForwardVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_Multiply_VectorInt_ReturnValue) == 0x00003C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_Multiply_VectorInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_Add_VectorVector_ReturnValue) == 0x000048, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_Add_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_LineTraceSingle_OutHit) == 0x000054, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_LineTraceSingle_OutHit' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_LineTraceSingle_ReturnValue) == 0x0000E8, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_LineTraceSingle_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_bBlockingHit) == 0x0000E9, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_bBlockingHit' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_bInitialOverlap) == 0x0000EA, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_bInitialOverlap' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_Time) == 0x0000EC, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_Time' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_Distance) == 0x0000F0, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_Distance' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_Location) == 0x0000F4, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_Location' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_ImpactPoint) == 0x000100, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_ImpactPoint' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_Normal) == 0x00010C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_Normal' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_ImpactNormal) == 0x000118, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_ImpactNormal' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_PhysMat) == 0x000128, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_PhysMat' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_HitActor) == 0x000130, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_HitActor' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_HitComponent) == 0x000138, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_HitComponent' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_HitBoneName) == 0x000140, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_HitBoneName' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_HitItem) == 0x00014C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_HitItem' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_FaceIndex) == 0x000150, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_FaceIndex' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_TraceStart) == 0x000154, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_TraceStart' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_BreakHitResult_TraceEnd) == 0x000160, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_BreakHitResult_TraceEnd' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_WaterRipple, CallFunc_Conv_VectorToLinearColor_ReturnValue) == 0x00016C, "Member 'BP_HHA_Ocean_C_WaterRipple::CallFunc_Conv_VectorToLinearColor_ReturnValue' has a wrong offset!");
-
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.UserConstructionScript
-// 0x0050 (0x0050 - 0x0000)
-struct BP_HHA_Ocean_C_UserConstructionScript final
-{
-public:
-	struct FTransform                             ___struct_Variable;                                // 0x0000(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
-	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_366E[0x7];                                     // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UChildActorComponent*                   CallFunc_AddComponent_ReturnValue;                 // 0x0038(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_HHA_Ocean_C_UserConstructionScript) == 0x000010, "Wrong alignment on BP_HHA_Ocean_C_UserConstructionScript");
-static_assert(sizeof(BP_HHA_Ocean_C_UserConstructionScript) == 0x000050, "Wrong size on BP_HHA_Ocean_C_UserConstructionScript");
-static_assert(offsetof(BP_HHA_Ocean_C_UserConstructionScript, ___struct_Variable) == 0x000000, "Member 'BP_HHA_Ocean_C_UserConstructionScript::___struct_Variable' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_UserConstructionScript, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000030, "Member 'BP_HHA_Ocean_C_UserConstructionScript::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_UserConstructionScript, CallFunc_AddComponent_ReturnValue) == 0x000038, "Member 'BP_HHA_Ocean_C_UserConstructionScript::CallFunc_AddComponent_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_UserConstructionScript, CallFunc_NotEqual_ByteByte_ReturnValue) == 0x000040, "Member 'BP_HHA_Ocean_C_UserConstructionScript::CallFunc_NotEqual_ByteByte_ReturnValue' has a wrong offset!");
-
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.CustomEvent_0
-// 0x0010 (0x0010 - 0x0000)
-struct BP_HHA_Ocean_C_CustomEvent_0 final
-{
-public:
-	class AActor*                                 __i;                                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 Fourb;                                             // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_HHA_Ocean_C_CustomEvent_0) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_CustomEvent_0");
-static_assert(sizeof(BP_HHA_Ocean_C_CustomEvent_0) == 0x000010, "Wrong size on BP_HHA_Ocean_C_CustomEvent_0");
-static_assert(offsetof(BP_HHA_Ocean_C_CustomEvent_0, __i) == 0x000000, "Member 'BP_HHA_Ocean_C_CustomEvent_0::__i' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_CustomEvent_0, Fourb) == 0x000008, "Member 'BP_HHA_Ocean_C_CustomEvent_0::Fourb' has a wrong offset!");
-
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature
-// 0x0010 (0x0010 - 0x0000)
-struct BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature final
-{
-public:
-	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature");
-static_assert(sizeof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature) == 0x000010, "Wrong size on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature");
-static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature, OverlappedActor) == 0x000000, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature::OverlappedActor' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature, OtherActor) == 0x000008, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_3_K2Node_ComponentBoundEvent_3_ActorBeginOverlapSignature__DelegateSignature::OtherActor' has a wrong offset!");
-
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature
-// 0x0010 (0x0010 - 0x0000)
-struct BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature final
-{
-public:
-	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature");
-static_assert(sizeof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature) == 0x000010, "Wrong size on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature");
-static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature, OverlappedActor) == 0x000000, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature::OverlappedActor' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature, OtherActor) == 0x000008, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_2_K2Node_ComponentBoundEvent_2_ActorBeginOverlapSignature__DelegateSignature::OtherActor' has a wrong offset!");
-
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature
-// 0x0010 (0x0010 - 0x0000)
-struct BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature final
-{
-public:
-	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature");
-static_assert(sizeof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature) == 0x000010, "Wrong size on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature");
-static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature, OverlappedActor) == 0x000000, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature::OverlappedActor' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature, OtherActor) == 0x000008, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_1_K2Node_ComponentBoundEvent_1_ActorBeginOverlapSignature__DelegateSignature::OtherActor' has a wrong offset!");
-
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature
-// 0x0010 (0x0010 - 0x0000)
-struct BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature final
-{
-public:
-	class AActor*                                 OverlappedActor;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature) == 0x000008, "Wrong alignment on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature");
-static_assert(sizeof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature) == 0x000010, "Wrong size on BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature");
-static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature, OverlappedActor) == 0x000000, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature::OverlappedActor' has a wrong offset!");
-static_assert(offsetof(BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature, OtherActor) == 0x000008, "Member 'BP_HHA_Ocean_C_BndEvt__BP_HHA_Ocean_OceanMeshActor_0_K2Node_ComponentBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature::OtherActor' has a wrong offset!");
-
-// Function BP_HHA_Ocean.BP_HHA_Ocean_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_HHA_Ocean_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_HHA_Ocean_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_HHA_Ocean_C_ReceiveTick");
-static_assert(sizeof(BP_HHA_Ocean_C_ReceiveTick) == 0x000004, "Wrong size on BP_HHA_Ocean_C_ReceiveTick");
-static_assert(offsetof(BP_HHA_Ocean_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_HHA_Ocean_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
 
 }
 

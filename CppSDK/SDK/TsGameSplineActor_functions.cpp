@@ -20,10 +20,10 @@ namespace SDK
 // Function TsGameSplineActor.TsGameSplineActor_C.GetPatrolSpeedByIndex
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-float ATsGameSplineActor_C::GetPatrolSpeedByIndex(int32 Param_Index)
+float ATsGameSplineActor_C::GetPatrolSpeedByIndex(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,7 +32,7 @@ float ATsGameSplineActor_C::GetPatrolSpeedByIndex(int32 Param_Index)
 
 	Params::TsGameSplineActor_C_GetPatrolSpeedByIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -43,10 +43,10 @@ float ATsGameSplineActor_C::GetPatrolSpeedByIndex(int32 Param_Index)
 // Function TsGameSplineActor.TsGameSplineActor_C.GetPointRotatorByIndex
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_Index                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-struct FRotator ATsGameSplineActor_C::GetPointRotatorByIndex(int32 Param_Index)
+struct FRotator ATsGameSplineActor_C::GetPointRotatorByIndex(int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -55,7 +55,7 @@ struct FRotator ATsGameSplineActor_C::GetPointRotatorByIndex(int32 Param_Index)
 
 	Params::TsGameSplineActor_C_GetPointRotatorByIndex Parms{};
 
-	Parms.Param_Index = Param_Index;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 

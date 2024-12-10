@@ -24,7 +24,7 @@ namespace SDK
 class UKuroClimbObject final : public UObject
 {
 public:
-	uint8                                         Pad_1866[0x1F0];                                   // 0x0030(0x01F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x1F0];                                     // 0x0030(0x01F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool ClimbBlock();
@@ -66,7 +66,7 @@ public:
 	int32                                         DrawDebugCount;                                    // 0x04F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bShowLog : 1;                                      // 0x04FC(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	EKDMDrawDebugType                             bDrawDebug;                                        // 0x04FD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1873[0x1A2];                                   // 0x04FE(0x01A2)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4FE[0x1A2];                                    // 0x04FE(0x01A2)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class FString KuroDebugMovementBaseRecordToString(const struct FBaseRecord& Record);
@@ -103,7 +103,7 @@ class AKuroMoveTrigger : public AActor
 {
 public:
 	ETriggerAreaType                              AreaType;                                          // 0x02B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1877[0x7];                                     // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);

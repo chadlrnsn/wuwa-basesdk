@@ -37,139 +37,55 @@ void UGA_Destroy_Bianshen_Vision_C::ExecuteUbergraph_GA_Destroy_Bianshen_Vision(
 }
 
 
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Ø«Ó__°žsû
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UGA_Destroy_Bianshen_Vision_C::_______s___()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "Ø«Ó__°žsû");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.>:©¶!‹
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UGA_Destroy_Bianshen_Vision_C::_______3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", ">:©¶!‹");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnTick_5D118C384AE61F1C80292E81E2A60EB1
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Destroy_Bianshen_Vision_C::OnTick_5D118C384AE61F1C80292E81E2A60EB1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnTick_5D118C384AE61F1C80292E81E2A60EB1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnCancelled_5D118C384AE61F1C80292E81E2A60EB1
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Destroy_Bianshen_Vision_C::OnCancelled_5D118C384AE61F1C80292E81E2A60EB1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnCancelled_5D118C384AE61F1C80292E81E2A60EB1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnInterrupted_5D118C384AE61F1C80292E81E2A60EB1
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Destroy_Bianshen_Vision_C::OnInterrupted_5D118C384AE61F1C80292E81E2A60EB1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnInterrupted_5D118C384AE61F1C80292E81E2A60EB1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnBlendOut_5D118C384AE61F1C80292E81E2A60EB1
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Destroy_Bianshen_Vision_C::OnBlendOut_5D118C384AE61F1C80292E81E2A60EB1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnBlendOut_5D118C384AE61F1C80292E81E2A60EB1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnCompleted_5D118C384AE61F1C80292E81E2A60EB1
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Destroy_Bianshen_Vision_C::OnCompleted_5D118C384AE61F1C80292E81E2A60EB1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnCompleted_5D118C384AE61F1C80292E81E2A60EB1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3CA2D8247
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Destroy_Bianshen_Vision_C::Added_21071CB943CD992BF8EFD6A3CA2D8247(const struct FGameplayTag& Tag)
+void UGA_Destroy_Bianshen_Vision_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "Added_21071CB943CD992BF8EFD6A3CA2D8247");
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "K2_OnEndAbility");
 
-	Params::GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247 Parms{};
+	Params::GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility Parms{};
 
-	Parms.Tag = std::move(Tag);
+	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3567B001E
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_Destroy_Bianshen_Vision_C::Added_21071CB943CD992BF8EFD6A3567B001E(const struct FGameplayTag& Tag)
+void UGA_Destroy_Bianshen_Vision_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "Added_21071CB943CD992BF8EFD6A3567B001E");
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "K2_ActivateAbility");
 
-	Params::GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Tag = std::move(Tag);
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD88740B0A0F
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_Destroy_Bianshen_Vision_C::EventReceived_18B59F5945020DB23C42FD88740B0A0F(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "EventReceived_18B59F5945020DB23C42FD88740B0A0F");
+
+	Params::GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F Parms{};
+
+	Parms.Payload = std::move(Payload);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -195,57 +111,141 @@ void UGA_Destroy_Bianshen_Vision_C::EventReceived_18B59F5945020DB23C42FD881A98D7
 }
 
 
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD88740B0A0F
-// (BlueprintCallable, BlueprintEvent)
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3567B001E
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Destroy_Bianshen_Vision_C::EventReceived_18B59F5945020DB23C42FD88740B0A0F(const struct FGameplayEventData& Payload)
+void UGA_Destroy_Bianshen_Vision_C::Added_21071CB943CD992BF8EFD6A3567B001E(const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "EventReceived_18B59F5945020DB23C42FD88740B0A0F");
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "Added_21071CB943CD992BF8EFD6A3567B001E");
 
-	Params::GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F Parms{};
+	Params::GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E Parms{};
 
-	Parms.Payload = std::move(Payload);
+	Parms.Tag = std::move(Tag);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3CA2D8247
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Destroy_Bianshen_Vision_C::K2_ActivateAbility()
+void UGA_Destroy_Bianshen_Vision_C::Added_21071CB943CD992BF8EFD6A3CA2D8247(const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "Added_21071CB943CD992BF8EFD6A3CA2D8247");
+
+	Params::GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247 Parms{};
+
+	Parms.Tag = std::move(Tag);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnCompleted_5D118C384AE61F1C80292E81E2A60EB1
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Destroy_Bianshen_Vision_C::OnCompleted_5D118C384AE61F1C80292E81E2A60EB1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnCompleted_5D118C384AE61F1C80292E81E2A60EB1");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnBlendOut_5D118C384AE61F1C80292E81E2A60EB1
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_Destroy_Bianshen_Vision_C::K2_OnEndAbility(bool bWasCancelled)
+void UGA_Destroy_Bianshen_Vision_C::OnBlendOut_5D118C384AE61F1C80292E81E2A60EB1()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "K2_OnEndAbility");
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnBlendOut_5D118C384AE61F1C80292E81E2A60EB1");
 
-	Params::GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.bWasCancelled = bWasCancelled;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnInterrupted_5D118C384AE61F1C80292E81E2A60EB1
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Destroy_Bianshen_Vision_C::OnInterrupted_5D118C384AE61F1C80292E81E2A60EB1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnInterrupted_5D118C384AE61F1C80292E81E2A60EB1");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnCancelled_5D118C384AE61F1C80292E81E2A60EB1
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Destroy_Bianshen_Vision_C::OnCancelled_5D118C384AE61F1C80292E81E2A60EB1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnCancelled_5D118C384AE61F1C80292E81E2A60EB1");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnTick_5D118C384AE61F1C80292E81E2A60EB1
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Destroy_Bianshen_Vision_C::OnTick_5D118C384AE61F1C80292E81E2A60EB1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "OnTick_5D118C384AE61F1C80292E81E2A60EB1");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.>:©¶!‹
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UGA_Destroy_Bianshen_Vision_C::_______3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", ">:©¶!‹");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Ø«Ó__°žsû
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UGA_Destroy_Bianshen_Vision_C::_______s___()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Destroy_Bianshen_Vision_C", "Ø«Ó__°žsû");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

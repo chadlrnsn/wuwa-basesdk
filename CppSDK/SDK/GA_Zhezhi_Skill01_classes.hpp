@@ -32,25 +32,25 @@ public:
 	bool                                          __S_;                                              // 0x0589(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void _n_dMnNew(class ATsBaseCharacter_C* _d_S, const struct FVector& TargetLocation, float AddRot, float Zerob_K__);
-	void __zMinus(int32 Pos, bool* InAir);
-	void NinenMn__v_n_d(const class FName& Key, class ATsBaseCharacter_C** Target, bool* FindTarget);
-	void _n_dMn(class ATsBaseCharacter_C* _d_S, const struct FVector& Offset, float AddRot, bool AddPosition);
-	void __v___d_S(int32 _d__, class ATsBaseCharacter_C** _d_S, bool* __0_S);
-	void EventReceived_18B59F5945020DB23C42FD887A29D0DA(const struct FGameplayEventData& Payload);
-	void OnTick_5D118C384AE61F1C80292E817998F983();
-	void OnCancelled_5D118C384AE61F1C80292E817998F983();
-	void OnInterrupted_5D118C384AE61F1C80292E817998F983();
-	void OnBlendOut_5D118C384AE61F1C80292E817998F983();
-	void OnCompleted_5D118C384AE61F1C80292E817998F983();
-	void EventReceived_18B59F5945020DB23C42FD88DCB75A45(const struct FGameplayEventData& Payload);
-	void OnTick_5D118C384AE61F1C80292E819B209F50();
-	void OnCancelled_5D118C384AE61F1C80292E819B209F50();
-	void OnInterrupted_5D118C384AE61F1C80292E819B209F50();
-	void OnBlendOut_5D118C384AE61F1C80292E819B209F50();
-	void OnCompleted_5D118C384AE61F1C80292E819B209F50();
-	void K2_ActivateAbility();
 	void ExecuteUbergraph_GA_Zhezhi_Skill01(int32 EntryPoint);
+	void K2_ActivateAbility();
+	void OnCompleted_5D118C384AE61F1C80292E819B209F50();
+	void OnBlendOut_5D118C384AE61F1C80292E819B209F50();
+	void OnInterrupted_5D118C384AE61F1C80292E819B209F50();
+	void OnCancelled_5D118C384AE61F1C80292E819B209F50();
+	void OnTick_5D118C384AE61F1C80292E819B209F50();
+	void EventReceived_18B59F5945020DB23C42FD88DCB75A45(const struct FGameplayEventData& Payload);
+	void OnCompleted_5D118C384AE61F1C80292E817998F983();
+	void OnBlendOut_5D118C384AE61F1C80292E817998F983();
+	void OnInterrupted_5D118C384AE61F1C80292E817998F983();
+	void OnCancelled_5D118C384AE61F1C80292E817998F983();
+	void OnTick_5D118C384AE61F1C80292E817998F983();
+	void EventReceived_18B59F5945020DB23C42FD887A29D0DA(const struct FGameplayEventData& Payload);
+	void __v___d_S(int32 _d__, class ATsBaseCharacter_C** _d_S, bool* __0_S);
+	void _n_dMn(class ATsBaseCharacter_C* _d_S, const struct FVector& Offset, float AddRot, bool AddPosition);
+	void NinenMn__v_n_d(const class FName& Key, class ATsBaseCharacter_C** Target, bool* FindTarget);
+	void __zMinus(int32 Pos, bool* InAir);
+	void _n_dMnNew(class ATsBaseCharacter_C* _d_S, const struct FVector& TargetLocation, float AddRot, float Zerob_K__);
 
 public:
 	static class UClass* StaticClass()

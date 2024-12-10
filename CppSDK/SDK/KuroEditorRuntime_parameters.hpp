@@ -56,7 +56,7 @@ struct EditorRuntimeOperations_IsPortInUse final
 public:
 	int32                                         Port;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E6[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(EditorRuntimeOperations_IsPortInUse) == 0x000004, "Wrong alignment on EditorRuntimeOperations_IsPortInUse");
 static_assert(sizeof(EditorRuntimeOperations_IsPortInUse) == 0x000008, "Wrong size on EditorRuntimeOperations_IsPortInUse");
@@ -70,7 +70,7 @@ struct EditorRuntimeOperations_IsTcpPortInUse final
 public:
 	int32                                         Port;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E7[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(EditorRuntimeOperations_IsTcpPortInUse) == 0x000004, "Wrong alignment on EditorRuntimeOperations_IsTcpPortInUse");
 static_assert(sizeof(EditorRuntimeOperations_IsTcpPortInUse) == 0x000008, "Wrong size on EditorRuntimeOperations_IsTcpPortInUse");
@@ -84,7 +84,7 @@ struct EditorRuntimeOperations_IsUdpPortInUse final
 public:
 	int32                                         Port;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E8[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(EditorRuntimeOperations_IsUdpPortInUse) == 0x000004, "Wrong alignment on EditorRuntimeOperations_IsUdpPortInUse");
 static_assert(sizeof(EditorRuntimeOperations_IsUdpPortInUse) == 0x000008, "Wrong size on EditorRuntimeOperations_IsUdpPortInUse");
@@ -145,7 +145,7 @@ public:
 	class FString                                 Ip;                                                // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Port;                                              // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0024(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17E9[0x3];                                     // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(EditorRuntimeOperations_SendMessage) == 0x000008, "Wrong alignment on EditorRuntimeOperations_SendMessage");
 static_assert(sizeof(EditorRuntimeOperations_SendMessage) == 0x000028, "Wrong size on EditorRuntimeOperations_SendMessage");

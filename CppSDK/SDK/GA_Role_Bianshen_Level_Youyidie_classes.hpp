@@ -30,45 +30,45 @@ public:
 	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0660(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         _aID;                                              // 0x0668(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         _aLevel;                                           // 0x066C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___SID;                                            // 0x0670(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ____;                                              // 0x0674(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_34BF[0x3];                                     // 0x0675(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___SID_GA_Role_Bianshen_Level_Youyidie_C;          // 0x0670(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          _____GA_Role_Bianshen_Level_Youyidie_C;            // 0x0674(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_675[0x3];                                      // 0x0675(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilityTask_WaitGameplayTagRemoved*    _e_______;                                         // 0x0678(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAbilityTask_WaitDelay*                 _e________0;                                       // 0x0680(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ZMinus____;                                        // 0x0688(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          GLzMinus__;                                        // 0x0689(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_34C0[0x2];                                     // 0x068A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68A[0x2];                                      // 0x068A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MaterialDataID;                                    // 0x068C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          _____0;                                            // 0x0690(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_34C1[0x7];                                     // 0x0691(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          _____GA_Role_Bianshen_Level_Youyidie_C_0;          // 0x0690(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_691[0x7];                                      // 0x0691(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                P_____1;                                           // 0x0698(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                P______;                                           // 0x06A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int64                                         ServerID;                                          // 0x06A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void S____S(int32 _SID, class AActor* Entity);
 	void ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie(int32 EntryPoint);
-	void _r______P_(int32* Param_MaterialDataID);
-	void _r_____1P_(int32* Param_MaterialDataID);
-	void _____a(class AActor* Entity, int32 _SID);
-	void ____Skill_ID(class FName* Skill_ID);
-	void ______ID(int32 Param_____, class FName* Param______0);
-	void ___apn(int32 Param__aID, struct FSVisionData* Param__apn);
-	void Added_21071CB943CD992BF8EFD6A3C3F21C2A(const struct FGameplayTag& Tag);
-	void Removed_34F9BAE944891AC1C495D9AB9F1436CD(const struct FGameplayTag& Tag);
-	void OnFinish_A56FA84F4FE577F6C95DA6813551A97C();
-	void OnTick_5D118C384AE61F1C80292E81908403EF();
-	void OnCancelled_5D118C384AE61F1C80292E81908403EF();
-	void OnInterrupted_5D118C384AE61F1C80292E81908403EF();
-	void OnBlendOut_5D118C384AE61F1C80292E81908403EF();
-	void OnCompleted_5D118C384AE61F1C80292E81908403EF();
-	void OnTick_5D118C384AE61F1C80292E81DEEC160B();
-	void OnCancelled_5D118C384AE61F1C80292E81DEEC160B();
-	void OnInterrupted_5D118C384AE61F1C80292E81DEEC160B();
-	void OnBlendOut_5D118C384AE61F1C80292E81DEEC160B();
-	void OnCompleted_5D118C384AE61F1C80292E81DEEC160B();
-	void K2_ActivateAbility();
+	void S____S(int32 _SID, class AActor* Entity);
 	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void OnCompleted_5D118C384AE61F1C80292E81DEEC160B();
+	void OnBlendOut_5D118C384AE61F1C80292E81DEEC160B();
+	void OnInterrupted_5D118C384AE61F1C80292E81DEEC160B();
+	void OnCancelled_5D118C384AE61F1C80292E81DEEC160B();
+	void OnTick_5D118C384AE61F1C80292E81DEEC160B();
+	void OnCompleted_5D118C384AE61F1C80292E81908403EF();
+	void OnBlendOut_5D118C384AE61F1C80292E81908403EF();
+	void OnInterrupted_5D118C384AE61F1C80292E81908403EF();
+	void OnCancelled_5D118C384AE61F1C80292E81908403EF();
+	void OnTick_5D118C384AE61F1C80292E81908403EF();
+	void OnFinish_A56FA84F4FE577F6C95DA6813551A97C();
+	void Removed_34F9BAE944891AC1C495D9AB9F1436CD(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A3C3F21C2A(const struct FGameplayTag& Tag);
+	void ___apn(int32 _aID_0, struct FSVisionData* _apn_0);
+	void ______ID(int32 Param______0, class FName* Param______1);
+	void ____Skill_ID(class FName* Skill_ID);
+	void _____a(class AActor* Entity, int32 _SID);
+	void _r_____1P_(int32* MaterialDataID_0);
+	void _r______P_(int32* MaterialDataID_0);
 
 public:
 	static class UClass* StaticClass()
@@ -89,14 +89,14 @@ static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, _apn) == 0x000570, "M
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, AbilitySystemComponent) == 0x000660, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::AbilitySystemComponent' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, _aID) == 0x000668, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::_aID' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, _aLevel) == 0x00066C, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::_aLevel' has a wrong offset!");
-static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, ___SID) == 0x000670, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::___SID' has a wrong offset!");
-static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, ____) == 0x000674, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::____' has a wrong offset!");
+static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, ___SID_GA_Role_Bianshen_Level_Youyidie_C) == 0x000670, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::___SID_GA_Role_Bianshen_Level_Youyidie_C' has a wrong offset!");
+static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, _____GA_Role_Bianshen_Level_Youyidie_C) == 0x000674, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::_____GA_Role_Bianshen_Level_Youyidie_C' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, _e_______) == 0x000678, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::_e_______' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, _e________0) == 0x000680, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::_e________0' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, ZMinus____) == 0x000688, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::ZMinus____' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, GLzMinus__) == 0x000689, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::GLzMinus__' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, MaterialDataID) == 0x00068C, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::MaterialDataID' has a wrong offset!");
-static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, _____0) == 0x000690, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::_____0' has a wrong offset!");
+static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, _____GA_Role_Bianshen_Level_Youyidie_C_0) == 0x000690, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::_____GA_Role_Bianshen_Level_Youyidie_C_0' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, P_____1) == 0x000698, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::P_____1' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, P______) == 0x0006A0, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::P______' has a wrong offset!");
 static_assert(offsetof(UGA_Role_Bianshen_Level_Youyidie_C, ServerID) == 0x0006A8, "Member 'UGA_Role_Bianshen_Level_Youyidie_C::ServerID' has a wrong offset!");

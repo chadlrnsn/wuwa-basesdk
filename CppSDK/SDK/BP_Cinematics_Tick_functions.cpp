@@ -217,11 +217,11 @@ void ABP_Cinematics_Tick_C::SetActorLight(class AActor* InActor, float LightYaw,
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           InActor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_IsHideMesh                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// bool                                    Param_IsHideEffect                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    IsHideMesh_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    IsHideEffect_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    IsDestroyed                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Cinematics_Tick_C::UpdateMeshAndEffectState(class AActor* InActor, bool Param_IsHideMesh, bool Param_IsHideEffect, bool IsDestroyed)
+void ABP_Cinematics_Tick_C::UpdateMeshAndEffectState(class AActor* InActor, bool IsHideMesh_0, bool IsHideEffect_0, bool IsDestroyed)
 {
 	static class UFunction* Func = nullptr;
 
@@ -231,8 +231,8 @@ void ABP_Cinematics_Tick_C::UpdateMeshAndEffectState(class AActor* InActor, bool
 	Params::BP_Cinematics_Tick_C_UpdateMeshAndEffectState Parms{};
 
 	Parms.InActor = InActor;
-	Parms.Param_IsHideMesh = Param_IsHideMesh;
-	Parms.Param_IsHideEffect = Param_IsHideEffect;
+	Parms.IsHideMesh_0 = IsHideMesh_0;
+	Parms.IsHideEffect_0 = IsHideEffect_0;
 	Parms.IsDestroyed = IsDestroyed;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -268,9 +268,9 @@ struct FVector ABP_Cinematics_Tick_C::EulerToForward(float Pitch, float Yaw)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           InActor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_IsDisableCameraCollision                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    IsDisableCameraCollision_0                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Cinematics_Tick_C::UpdateCameraCollision(class AActor* InActor, bool Param_IsDisableCameraCollision)
+void ABP_Cinematics_Tick_C::UpdateCameraCollision(class AActor* InActor, bool IsDisableCameraCollision_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -280,7 +280,7 @@ void ABP_Cinematics_Tick_C::UpdateCameraCollision(class AActor* InActor, bool Pa
 	Params::BP_Cinematics_Tick_C_UpdateCameraCollision Parms{};
 
 	Parms.InActor = InActor;
-	Parms.Param_IsDisableCameraCollision = Param_IsDisableCameraCollision;
+	Parms.IsDisableCameraCollision_0 = IsDisableCameraCollision_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

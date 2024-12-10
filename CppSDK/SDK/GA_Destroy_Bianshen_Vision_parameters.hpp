@@ -26,54 +26,54 @@ public:
 	struct FGameplayTag                           K2Node_CustomEvent_Tag;                            // 0x0004(0x000C)(ConstParm, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void(struct FGameplayTag& Tag)>     K2Node_CreateDelegate_OutputDelegate;              // 0x0010(0x0028)(ZeroConstructor)
 	struct FGameplayTag                           ___struct_Variable;                                // 0x0038(0x000C)(NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AF7[0x4];                                     // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x0048(0x0028)(ZeroConstructor)
 	struct FGameplayEventData                     K2Node_CustomEvent_Payload_1;                      // 0x0070(0x00B8)()
 	struct FGameplayEventData                     ___struct_Variable_1;                              // 0x0128(0x00B8)()
 	class UAbilityTask_WaitGameplayEvent*         CallFunc_WaitGameplayEvent_ReturnValue;            // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2AF8[0x7];                                     // 0x01E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E9[0x7];                                      // 0x01E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate_2;            // 0x01F0(0x0028)(ZeroConstructor)
 	struct FGameplayEventData                     K2Node_CustomEvent_Payload;                        // 0x0218(0x00B8)()
 	struct FGameplayEventData                     ___struct_Variable_2;                              // 0x02D0(0x00B8)()
 	class UAbilityTask_WaitGameplayEvent*         CallFunc_WaitGameplayEvent_ReturnValue_1;          // 0x0388(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0390(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2AF9[0x3];                                     // 0x0391(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_391[0x3];                                      // 0x0391(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc__________SpeedRatio;                      // 0x0394(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0398(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc______________;                            // 0x03A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2AFA[0x7];                                     // 0x03A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A1[0x7];                                      // 0x03A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc___________1;                              // 0x03A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc___________2;                              // 0x03B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_______________1;                          // 0x03B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2AFB[0x7];                                     // 0x03B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3B9[0x7];                                      // 0x03B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 CallFunc_GetOwningActorFromActorInfo_ReturnValue;  // 0x03C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x03C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x03D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2AFC[0x3];                                     // 0x03D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D1[0x3];                                      // 0x03D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           ___struct_Variable_3;                              // 0x03D4(0x000C)(NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x03E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AFD[0x4];                                     // 0x03E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3E4[0x4];                                      // 0x03E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimMontage*                           CallFunc___________3;                              // 0x03E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           K2Node_CustomEvent_Tag_1;                          // 0x03F0(0x000C)(ConstParm, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AFE[0x4];                                     // 0x03FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3FC[0x4];                                      // 0x03FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilityTask_PlayMontageAndWait*        CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue; // 0x0400(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0408(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2AFF[0x7];                                     // 0x0409(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_409[0x7];                                      // 0x0409(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x0410(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class UClass*                                 CallFunc_GetObjectClass_ReturnValue;               // 0x0420(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_ClassClass_ReturnValue;        // 0x0428(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B00[0x7];                                     // 0x0429(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_429[0x7];                                      // 0x0429(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(struct FGameplayTag& Tag)>     K2Node_CreateDelegate_OutputDelegate_3;            // 0x0430(0x0028)(ZeroConstructor)
 	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x0458(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_____GA______________;                     // 0x0468(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class UAnimMontage*                           CallFunc___________4;                              // 0x0478(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0480(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ___bool_IsClosed_Variable;                         // 0x0481(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B01[0x6];                                     // 0x0482(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_482[0x6];                                      // 0x0482(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_4;            // 0x0488(0x0028)(ZeroConstructor)
 	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x04B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B02[0x7];                                     // 0x04B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4B1[0x7];                                      // 0x04B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc___________5;                              // 0x04B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_5;            // 0x04C0(0x0028)(ZeroConstructor)
 	int32                                         CallFunc_____ID___ID;                              // 0x04E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -81,21 +81,21 @@ public:
 	class ATsBaseCharacter_C*                     CallFunc___________6;                              // 0x04F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc_____ID_______;                            // 0x04F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_____ID___________;                        // 0x0500(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B03[0x7];                                     // 0x0501(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_501[0x7];                                      // 0x0501(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 CallFunc____________;                              // 0x0508(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0510(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B04[0x7];                                     // 0x0511(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_511[0x7];                                      // 0x0511(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_6;            // 0x0518(0x0028)(ZeroConstructor)
 	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character_1;          // 0x0540(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0548(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B05[0x3];                                     // 0x0549(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_549[0x3];                                      // 0x0549(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_____ID___ID_1;                            // 0x054C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc___________7;                              // 0x0550(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_7;            // 0x0558(0x0028)(ZeroConstructor)
 	class ATsBaseCharacter_C*                     CallFunc___________8;                              // 0x0580(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_8;            // 0x0588(0x0028)(ZeroConstructor)
 	bool                                          K2Node_Event_bWasCancelled;                        // 0x05B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B06[0x3];                                     // 0x05B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5B1[0x3];                                      // 0x05B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_____ID___ID_2;                            // 0x05B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAbilityTask_WaitGameplayTagAdded*      CallFunc_WaitGameplayTagAdd_ReturnValue;           // 0x05B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAbilityTask_WaitGameplayTagAdded*      CallFunc_WaitGameplayTagAdd_ReturnValue_1;         // 0x05C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -168,52 +168,16 @@ static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_
 static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision, CallFunc_IsValid_ReturnValue_5) == 0x0005C8, "Member 'GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision::CallFunc_IsValid_ReturnValue_5' has a wrong offset!");
 static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision, CallFunc_IsValid_ReturnValue_6) == 0x0005C9, "Member 'GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision::CallFunc_IsValid_ReturnValue_6' has a wrong offset!");
 
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.>:©¶!‹
-// 0x0008 (0x0008 - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_______ final
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility final
 {
 public:
-	bool                                          CallFunc_GetIsInGame_ReturnValue;                  // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B07[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_____ID___ID;                              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_______) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_______");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_______) == 0x000008, "Wrong size on GA_Destroy_Bianshen_Vision_C_______");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_______, CallFunc_GetIsInGame_ReturnValue) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_______::CallFunc_GetIsInGame_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_______, CallFunc_____ID___ID) == 0x000004, "Member 'GA_Destroy_Bianshen_Vision_C_______::CallFunc_____ID___ID' has a wrong offset!");
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3CA2D8247
-// 0x000C (0x000C - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247 final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247) == 0x00000C, "Wrong size on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247, Tag) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247::Tag' has a wrong offset!");
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3567B001E
-// 0x000C (0x000C - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E) == 0x00000C, "Wrong size on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E, Tag) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E::Tag' has a wrong offset!");
-
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD881A98D764
-// 0x00B8 (0x00B8 - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764 final
-{
-public:
-	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764) == 0x000008, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764) == 0x0000B8, "Wrong size on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764, Payload) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764::Payload' has a wrong offset!");
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD88740B0A0F
 // 0x00B8 (0x00B8 - 0x0000)
@@ -226,16 +190,52 @@ static_assert(alignof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB
 static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F) == 0x0000B8, "Wrong size on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F");
 static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F, Payload) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD88740B0A0F::Payload' has a wrong offset!");
 
-// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility final
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD881A98D764
+// 0x00B8 (0x00B8 - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764 final
 {
 public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FGameplayEventData                     Payload;                                           // 0x0000(0x00B8)(BlueprintVisible, BlueprintReadOnly, Parm)
 };
-static_assert(alignof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764) == 0x000008, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764) == 0x0000B8, "Wrong size on GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764, Payload) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_EventReceived_18B59F5945020DB23C42FD881A98D764::Payload' has a wrong offset!");
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3567B001E
+// 0x000C (0x000C - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E) == 0x00000C, "Wrong size on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E, Tag) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3567B001E::Tag' has a wrong offset!");
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3CA2D8247
+// 0x000C (0x000C - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247 final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247) == 0x00000C, "Wrong size on GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247, Tag) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_Added_21071CB943CD992BF8EFD6A3CA2D8247::Tag' has a wrong offset!");
+
+// Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.>:©¶!‹
+// 0x0008 (0x0008 - 0x0000)
+struct GA_Destroy_Bianshen_Vision_C________3 final
+{
+public:
+	bool                                          CallFunc_GetIsInGame_ReturnValue;                  // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_____ID___ID;                              // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Destroy_Bianshen_Vision_C_______) == 0x000004, "Wrong alignment on GA_Destroy_Bianshen_Vision_C_______");
+static_assert(sizeof(GA_Destroy_Bianshen_Vision_C_______) == 0x000008, "Wrong size on GA_Destroy_Bianshen_Vision_C_______");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_______, CallFunc_GetIsInGame_ReturnValue) == 0x000000, "Member 'GA_Destroy_Bianshen_Vision_C_______::CallFunc_GetIsInGame_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Destroy_Bianshen_Vision_C_______, CallFunc_____ID___ID) == 0x000004, "Member 'GA_Destroy_Bianshen_Vision_C_______::CallFunc_____ID___ID' has a wrong offset!");
 
 }
 

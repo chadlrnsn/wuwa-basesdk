@@ -23,14 +23,14 @@ namespace SDK
 class UABP_Zhezhi_He_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_388C[0x8];                                     // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_508[0x8];                                      // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0510(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0518(0x0038)()
 	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x0550(0x0060)()
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
 	void ExecuteUbergraph_ABP_Zhezhi_He(int32 EntryPoint);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

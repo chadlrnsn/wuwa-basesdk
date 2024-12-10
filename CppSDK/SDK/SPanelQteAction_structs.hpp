@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EPanelQteCustomAction_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "EPanelQteCustomAction_structs.hpp"
 
 
 namespace SDK
@@ -23,7 +23,7 @@ struct FSPanelQteAction final
 {
 public:
 	int32                                         Target_2_B7DB0C4C437A26A5AE19FA82BB2EA1E9;         // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2A7F[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FGameplayTag>                   AddTags_15_9DEB844E43C37816AAC392AE33D9BEA5;       // 0x0008(0x0010)(Edit, BlueprintVisible)
 	TArray<struct FGameplayTag>                   RemoveTags_17_0DA0F25944D8CA5EC04061B9BD7F55C0;    // 0x0018(0x0010)(Edit, BlueprintVisible)
 	TArray<int64>                                 AddBuffs_24_72A8A69A4FCC1DC5FE00F9818DCD97AC;      // 0x0028(0x0010)(Edit, BlueprintVisible)

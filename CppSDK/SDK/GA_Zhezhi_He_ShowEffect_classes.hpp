@@ -26,10 +26,10 @@ public:
 	class ABP_Zhezhi_C*                           As_BP_Zhezhi;                                      // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void __buff();
-	void EventReceived_18B59F5945020DB23C42FD885317D05E(const struct FGameplayEventData& Payload);
-	void K2_ActivateAbility();
 	void ExecuteUbergraph_GA_Zhezhi_He_ShowEffect(int32 EntryPoint);
+	void K2_ActivateAbility();
+	void EventReceived_18B59F5945020DB23C42FD885317D05E(const struct FGameplayEventData& Payload);
+	void __buff();
 
 public:
 	static class UClass* StaticClass()

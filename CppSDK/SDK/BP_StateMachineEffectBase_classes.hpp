@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "STransitionLinearColorIndexGroup_structs.hpp"
 #include "STransitionFloatIndexGroup_structs.hpp"
+#include "STransitionLinearColorIndexGroup_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "EEffectState_structs.hpp"
 #include "SEffectStateInfo_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -35,7 +35,7 @@ public:
 	EEffectState                                  TargetState;                                       // 0x02D3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsInTransition;                                    // 0x02D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	EEffectState                                  TransitionTargetState;                             // 0x02D5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2A9B[0x2];                                     // 0x02D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2D6[0x2];                                      // 0x02D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TransitionCounter;                                 // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         TransitionTime;                                    // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMap<class FName, float>                      TransitionFloatStartMap;                           // 0x02E0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
@@ -44,18 +44,18 @@ public:
 	TMap<class FName, struct FLinearColor>        TransitionLinearColorEndMap;                       // 0x03D0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          IsInState;                                         // 0x0420(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          IsStatePreLoop;                                    // 0x0421(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2A9C[0x2];                                     // 0x0422(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_422[0x2];                                      // 0x0422(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         StateCounter;                                      // 0x0424(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UPD_StateMachineEffect_C*               Data;                                              // 0x0428(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UStaticMeshComponent*>           StaticMeshComponents;                              // 0x0430(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	TArray<class UMaterialInstanceDynamic*>       StaticMeshDMIs;                                    // 0x0440(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FSEffectStateInfo                      CurrentStateInfo;                                  // 0x0450(0x0150)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          IsFirstTickInfo;                                   // 0x05A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2A9D[0x7];                                     // 0x05A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5A1[0x7];                                      // 0x05A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, float>                      CurrentFloatMap;                                   // 0x05A8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FName, struct FLinearColor>        CurrentLinearColorMap;                             // 0x05F8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	EEffectState                                  InitState;                                         // 0x0648(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2A9E[0x7];                                     // 0x0649(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_649[0x7];                                      // 0x0649(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UNiagaraComponent*>              NiagaraComponents;                                 // 0x0650(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	TMap<int32, struct FSTransitionFloatIndexGroup> TransitionIndexFloatEndMap;                        // 0x0660(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<int32, struct FSTransitionLinearColorIndexGroup> TransitionIndexLinearColorEndMap;                  // 0x06B0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
@@ -67,22 +67,22 @@ public:
 	void EditorInit();
 	void EditorTick(float DeltaSeconds);
 	void UserConstructionScript();
-	void Init(EEffectState Param_TargetState);
+	void Init(EEffectState TargetState_0);
 	void Tick();
-	void PlayEffectState(class UPD_StateMachineEffect_C* InputData, EEffectState Param_TargetState);
+	void PlayEffectState(class UPD_StateMachineEffect_C* InputData, EEffectState TargetState_0);
 	void Reset();
 	void Update_Transition_State();
 	void UpdatePreLoopState();
 	void UpdateLoopState();
-	void UpdateParameters(class FName Param_Name, bool IsFloat, float FloatValue, bool IsLinearColor, const struct FLinearColor& LinearColorValue, int32 Param_Index);
-	void CreateTransitionState(EEffectState Param_TargetState);
+	void UpdateParameters(class FName Name_0, bool IsFloat, float FloatValue, bool IsLinearColor, const struct FLinearColor& LinearColorValue, int32 Index_0);
+	void CreateTransitionState(EEffectState TargetState_0);
 	void DEBUG_e__1();
 	void DEBUG_e__2();
 	void DEBUG_e__3();
 	void DEBUG_e__4();
 	void DEBUG_e__5();
 	void DEBUG____();
-	void SetState(EEffectState Param_TargetState);
+	void SetState(EEffectState TargetState_0);
 
 public:
 	static class UClass* StaticClass()

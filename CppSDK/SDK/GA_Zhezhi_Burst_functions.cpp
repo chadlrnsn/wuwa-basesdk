@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function GA_Zhezhi_Burst.GA_Zhezhi_Burst_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Zhezhi_Burst_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Burst_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function GA_Zhezhi_Burst.GA_Zhezhi_Burst_C.ExecuteUbergraph_GA_Zhezhi_Burst
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void UGA_Zhezhi_Burst_C::ExecuteUbergraph_GA_Zhezhi_Burst(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Zhezhi_Burst.GA_Zhezhi_Burst_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGA_Zhezhi_Burst_C::K2_ActivateAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Burst_C", "K2_ActivateAbility");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

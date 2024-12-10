@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function BP_Zhezhi_He.BP_Zhezhi_He_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Zhezhi_He_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Zhezhi_He_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_Zhezhi_He.BP_Zhezhi_He_C.ExecuteUbergraph_BP_Zhezhi_He
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void ABP_Zhezhi_He_C::ExecuteUbergraph_BP_Zhezhi_He(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Zhezhi_He.BP_Zhezhi_He_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Zhezhi_He_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Zhezhi_He_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

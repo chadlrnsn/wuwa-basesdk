@@ -25,7 +25,7 @@ class ATsBaseVehicle_C final : public AKuroBaseVehicle
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0680(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	int32                                         EntityId;                                          // 0x0688(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AE9[0x4];                                     // 0x068C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68C[0x4];                                      // 0x068C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSoftClassPath                         InputComponentClass;                               // 0x0690(0x0020)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:

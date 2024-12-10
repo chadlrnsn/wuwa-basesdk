@@ -26,7 +26,7 @@ public:
 	struct FGameplayTag                           QteTrigger_20_4B3DF12146F92E56D18B4BA71F5B99B3;    // 0x0018(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           ExitSkillTrigger_21_68EE210B4AF2B67F2FAED6BA2934459E; // 0x0024(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 	int32                                         Energy_41_FC17FD914D0812D53B8C83AFD1B333F6;        // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_363E[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int64>                                 QteBuffs_36_37822BAE497DC1D53C24C0B4D654CCEB;      // 0x0038(0x0010)(Edit, BlueprintVisible)
 	TArray<int64>                                 ConsumeBuffs_39_C666194F4D2F8AC76E2FB8B3253D1074;  // 0x0048(0x0010)(Edit, BlueprintVisible)
 	bool                                          ChangeRoleOnQte_11_A4CF2A3144F64CC45FD972BE95C973F8; // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)

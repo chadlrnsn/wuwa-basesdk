@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SCameraModifier_Settings_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SCameraModifier_Settings_structs.hpp"
 #include "GA_Base_classes.hpp"
 
 
@@ -32,14 +32,14 @@ public:
 
 public:
 	void ExecuteUbergraph_GA_Common_QTE(int32 EntryPoint);
-	void OnTick_5D118C384AE61F1C80292E81AB2AB65B();
-	void OnCancelled_5D118C384AE61F1C80292E81AB2AB65B();
-	void OnInterrupted_5D118C384AE61F1C80292E81AB2AB65B();
-	void OnBlendOut_5D118C384AE61F1C80292E81AB2AB65B();
-	void OnCompleted_5D118C384AE61F1C80292E81AB2AB65B();
-	void EventReceived_E8C2FC224B0A82D0076DE58540825291(const struct FGameplayEventData& Payload);
-	void K2_ActivateAbility();
 	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void EventReceived_E8C2FC224B0A82D0076DE58540825291(const struct FGameplayEventData& Payload);
+	void OnCompleted_5D118C384AE61F1C80292E81AB2AB65B();
+	void OnBlendOut_5D118C384AE61F1C80292E81AB2AB65B();
+	void OnInterrupted_5D118C384AE61F1C80292E81AB2AB65B();
+	void OnCancelled_5D118C384AE61F1C80292E81AB2AB65B();
+	void OnTick_5D118C384AE61F1C80292E81AB2AB65B();
 
 public:
 	static class UClass* StaticClass()

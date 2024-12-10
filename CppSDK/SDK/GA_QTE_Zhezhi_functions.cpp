@@ -17,57 +17,35 @@
 namespace SDK
 {
 
-// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.OnTick_5D118C384AE61F1C80292E81936B7564
-// (BlueprintCallable, BlueprintEvent)
+// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.ExecuteUbergraph_GA_QTE_Zhezhi
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_QTE_Zhezhi_C::OnTick_5D118C384AE61F1C80292E81936B7564()
+void UGA_QTE_Zhezhi_C::ExecuteUbergraph_GA_QTE_Zhezhi(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "OnTick_5D118C384AE61F1C80292E81936B7564");
+		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "ExecuteUbergraph_GA_QTE_Zhezhi");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::GA_QTE_Zhezhi_C_ExecuteUbergraph_GA_QTE_Zhezhi Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.OnCancelled_5D118C384AE61F1C80292E81936B7564
-// (BlueprintCallable, BlueprintEvent)
+// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_QTE_Zhezhi_C::OnCancelled_5D118C384AE61F1C80292E81936B7564()
+void UGA_QTE_Zhezhi_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "OnCancelled_5D118C384AE61F1C80292E81936B7564");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.OnInterrupted_5D118C384AE61F1C80292E81936B7564
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_QTE_Zhezhi_C::OnInterrupted_5D118C384AE61F1C80292E81936B7564()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "OnInterrupted_5D118C384AE61F1C80292E81936B7564");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.OnBlendOut_5D118C384AE61F1C80292E81936B7564
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_QTE_Zhezhi_C::OnBlendOut_5D118C384AE61F1C80292E81936B7564()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "OnBlendOut_5D118C384AE61F1C80292E81936B7564");
+		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "K2_ActivateAbility");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -87,37 +65,59 @@ void UGA_QTE_Zhezhi_C::OnCompleted_5D118C384AE61F1C80292E81936B7564()
 }
 
 
-// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.OnBlendOut_5D118C384AE61F1C80292E81936B7564
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_QTE_Zhezhi_C::K2_ActivateAbility()
+void UGA_QTE_Zhezhi_C::OnBlendOut_5D118C384AE61F1C80292E81936B7564()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "OnBlendOut_5D118C384AE61F1C80292E81936B7564");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.ExecuteUbergraph_GA_QTE_Zhezhi
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.OnInterrupted_5D118C384AE61F1C80292E81936B7564
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_QTE_Zhezhi_C::ExecuteUbergraph_GA_QTE_Zhezhi(int32 EntryPoint)
+void UGA_QTE_Zhezhi_C::OnInterrupted_5D118C384AE61F1C80292E81936B7564()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "ExecuteUbergraph_GA_QTE_Zhezhi");
+		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "OnInterrupted_5D118C384AE61F1C80292E81936B7564");
 
-	Params::GA_QTE_Zhezhi_C_ExecuteUbergraph_GA_QTE_Zhezhi Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.OnCancelled_5D118C384AE61F1C80292E81936B7564
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_QTE_Zhezhi_C::OnCancelled_5D118C384AE61F1C80292E81936B7564()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "OnCancelled_5D118C384AE61F1C80292E81936B7564");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_QTE_Zhezhi.GA_QTE_Zhezhi_C.OnTick_5D118C384AE61F1C80292E81936B7564
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_QTE_Zhezhi_C::OnTick_5D118C384AE61F1C80292E81936B7564()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_QTE_Zhezhi_C", "OnTick_5D118C384AE61F1C80292E81936B7564");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

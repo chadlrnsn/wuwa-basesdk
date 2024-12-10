@@ -22,7 +22,7 @@ struct FSFootprint final
 {
 public:
 	EPhysicalSurface                              SurfaceType_4_5D304F7143205F25F55A72A73B694F65;    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3334[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UEffectModelBase>        Effect_6_C3690C81487B2CBFB201CB806E4D5C24;         // 0x0008(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	bool                                          PriorToGlobal_8_8D5DBD494125FB49C992D4A38F2B3898;  // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 };

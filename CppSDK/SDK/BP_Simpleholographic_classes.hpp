@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "SHolographicMaterialsCache_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "SHolographicMaterialsCache_structs.hpp"
 #include "EHolographicState_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 namespace SDK
@@ -32,7 +32,7 @@ public:
 	TArray<class UMaterialInstanceDynamic*>       Other_Materials;                                   // 0x0320(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class UPD_HolographicEffect_C*                DATA;                                              // 0x0330(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	float                                         TimeCounter;                                       // 0x0338(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_25EB[0x4];                                     // 0x033C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_33C[0x4];                                      // 0x033C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 TargetRole;                                        // 0x0340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	EHolographicState                             State;                                             // 0x0348(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bCached;                                           // 0x0349(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -45,7 +45,7 @@ public:
 	void UpdateMaterialsWithDa(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData);
 	void RemoveNpcEffect();
 	void Clear();
-	void CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& Floats, TArray<struct FSMaterialControllerColorParameter>& Colors, class UMaterialInstanceDynamic* Material, bool bReplaceMaterial, int32 Param_Index, struct FSMaterialParamCache* Result);
+	void CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& Floats, TArray<struct FSMaterialControllerColorParameter>& Colors, class UMaterialInstanceDynamic* Material, bool bReplaceMaterial, int32 Index_0, struct FSMaterialParamCache* Result);
 	class UMaterialInstanceDynamic* CacheAndReplace(const struct FSHolographicData& SHolographicData, class UPrimitiveComponent* Self2, int32 ElementIndex, class UMaterialInstanceDynamic* Material, struct FSMaterialParamCache* CacheResult);
 	void RevertMaterialParamters(const struct FSMaterialParamCache& MaterialCache, class UMaterialInstanceDynamic** Result);
 

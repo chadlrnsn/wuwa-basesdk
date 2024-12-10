@@ -17,24 +17,45 @@
 namespace SDK
 {
 
-// Function TsAnimNotifyStatePositionBranchTarget.TsAnimNotifyStatePositionBranchTarget_C.K2_NotifyEnd
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+// Function TsAnimNotifyStatePositionBranchTarget.TsAnimNotifyStatePositionBranchTarget_C.Initialize
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-bool UTsAnimNotifyStatePositionBranchTarget_C::K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation)
+void UTsAnimNotifyStatePositionBranchTarget_C::Initialize()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyStatePositionBranchTarget_C", "K2_NotifyEnd");
+		Func = Class->GetFunction("TsAnimNotifyStatePositionBranchTarget_C", "Initialize");
 
-	Params::TsAnimNotifyStatePositionBranchTarget_C_K2_NotifyEnd Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsAnimNotifyStatePositionBranchTarget.TsAnimNotifyStatePositionBranchTarget_C.K2_NotifyBegin
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsAnimNotifyStatePositionBranchTarget_C::K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAnimNotifyStatePositionBranchTarget_C", "K2_NotifyBegin");
+
+	Params::TsAnimNotifyStatePositionBranchTarget_C_K2_NotifyBegin Parms{};
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
+	Parms.TotalDuration = TotalDuration;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -79,26 +100,24 @@ bool UTsAnimNotifyStatePositionBranchTarget_C::K2_NotifyTick(class USkeletalMesh
 }
 
 
-// Function TsAnimNotifyStatePositionBranchTarget.TsAnimNotifyStatePositionBranchTarget_C.K2_NotifyBegin
+// Function TsAnimNotifyStatePositionBranchTarget.TsAnimNotifyStatePositionBranchTarget_C.K2_NotifyEnd
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool UTsAnimNotifyStatePositionBranchTarget_C::K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration)
+bool UTsAnimNotifyStatePositionBranchTarget_C::K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyStatePositionBranchTarget_C", "K2_NotifyBegin");
+		Func = Class->GetFunction("TsAnimNotifyStatePositionBranchTarget_C", "K2_NotifyEnd");
 
-	Params::TsAnimNotifyStatePositionBranchTarget_C_K2_NotifyBegin Parms{};
+	Params::TsAnimNotifyStatePositionBranchTarget_C_K2_NotifyEnd Parms{};
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
-	Parms.TotalDuration = TotalDuration;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -108,25 +127,6 @@ bool UTsAnimNotifyStatePositionBranchTarget_C::K2_NotifyBegin(class USkeletalMes
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function TsAnimNotifyStatePositionBranchTarget.TsAnimNotifyStatePositionBranchTarget_C.Initialize
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsAnimNotifyStatePositionBranchTarget_C::Initialize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyStatePositionBranchTarget_C", "Initialize");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

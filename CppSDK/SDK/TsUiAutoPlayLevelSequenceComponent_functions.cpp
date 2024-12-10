@@ -17,15 +17,65 @@
 namespace SDK
 {
 
-// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.AwakeBP
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsUiAutoPlayLevelSequenceComponent_C::AwakeBP()
+void UTsUiAutoPlayLevelSequenceComponent_C::ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "AwakeBP");
+		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent");
+
+	Params::TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.OnUIActiveInHierarchyBP
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ActiveOrInactive                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UTsUiAutoPlayLevelSequenceComponent_C::OnUIActiveInHierarchyBP(bool ActiveOrInactive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "OnUIActiveInHierarchyBP");
+
+	Params::TsUiAutoPlayLevelSequenceComponent_C_OnUIActiveInHierarchyBP Parms{};
+
+	Parms.ActiveOrInactive = ActiveOrInactive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.OnDestroyBP
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+
+void UTsUiAutoPlayLevelSequenceComponent_C::OnDestroyBP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "OnDestroyBP");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -61,70 +111,20 @@ void UTsUiAutoPlayLevelSequenceComponent_C::UpdateBP(float DeltaTime)
 }
 
 
-// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.OnDestroyBP
+// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.AwakeBP
 // (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
-void UTsUiAutoPlayLevelSequenceComponent_C::OnDestroyBP()
+void UTsUiAutoPlayLevelSequenceComponent_C::AwakeBP()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "OnDestroyBP");
+		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "AwakeBP");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.OnUIActiveInHierarchyBP
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ActiveOrInactive                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UTsUiAutoPlayLevelSequenceComponent_C::OnUIActiveInHierarchyBP(bool ActiveOrInactive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "OnUIActiveInHierarchyBP");
-
-	Params::TsUiAutoPlayLevelSequenceComponent_C_OnUIActiveInHierarchyBP Parms{};
-
-	Parms.ActiveOrInactive = ActiveOrInactive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsUiAutoPlayLevelSequenceComponent_C::ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent");
-
-	Params::TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

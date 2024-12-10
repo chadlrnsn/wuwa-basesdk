@@ -62,19 +62,19 @@ public:
 	struct FTransform                             InTrans;                                           // 0x0000(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 	class AActor*                                 InActor;                                           // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsRole;                                            // 0x0038(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BAE[0x3];                                     // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRotator                               VelocityRotator;                                   // 0x003C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FVector                                Loc;                                               // 0x0048(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BAF[0xC];                                     // 0x0054(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_54[0xC];                                       // 0x0054(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             SourceTrans;                                       // 0x0060(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor)
 	struct FTransform                             TempTrans;                                         // 0x0090(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_BreakTransform_Location;                  // 0x00C0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_BreakTransform_Rotation;                  // 0x00CC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_BreakTransform_Scale;                     // 0x00D8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BB0[0x4];                                     // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BB1[0xF];                                     // 0x00F1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F1[0xF];                                       // 0x00F1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_MakeTransform_ReturnValue;                // 0x0100(0x0030)(IsPlainOldData, NoDestructor)
 	struct FTransform                             CallFunc_GetTransform_ReturnValue;                 // 0x0130(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
 	struct FTransform                             CallFunc_GetInverseTransform_ReturnValue;          // 0x0160(0x0030)(IsPlainOldData, NoDestructor)
@@ -86,13 +86,13 @@ public:
 	struct FMatrix                                CallFunc_Conv_TransformToMatrix_ReturnValue_2;     // 0x02A0(0x0040)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FTransform                             CallFunc_GetTransform_ReturnValue_3;               // 0x02E0(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_GetForwardVector_ReturnValue;             // 0x0310(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BB2[0x4];                                     // 0x031C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31C[0x4];                                      // 0x031C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_ComposeTransforms_ReturnValue;            // 0x0320(0x0030)(IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_Normal_ReturnValue;                       // 0x0350(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BB3[0x4];                                     // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_ComposeTransforms_ReturnValue_1;          // 0x0360(0x0030)(IsPlainOldData, NoDestructor)
 	struct FRotator                               CallFunc_K2_GetActorRotation_ReturnValue;          // 0x0390(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BB4[0x4];                                     // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_ComposeTransforms_ReturnValue_2;          // 0x03A0(0x0030)(IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_GetUpVector_ReturnValue;                  // 0x03D0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_BreakTransform_Location_1;                // 0x03DC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -110,20 +110,20 @@ public:
 	struct FRotator                               CallFunc_LookRotation_UpFirst_ReturnValue;         // 0x044C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0458(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_K2_KuroTeleportTo_ReturnValue;            // 0x0459(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BB5[0x2];                                     // 0x045A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_45A[0x2];                                      // 0x045A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FRotator                               CallFunc_LookRotation_UpFirst_ReturnValue_1;       // 0x045C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_GetForwardVector_ReturnValue_2;           // 0x0468(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BB6[0x4];                                     // 0x0474(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_474[0x4];                                      // 0x0474(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCharacterMovementComponent*            CallFunc_GetComponentByClass_ReturnValue;          // 0x0478(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_MakeRotFromYZ_ReturnValue;                // 0x0480(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_K2_KuroTeleportTo_ReturnValue_1;          // 0x048C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BB7[0x3];                                     // 0x048D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48D[0x3];                                      // 0x048D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_VSize_ReturnValue_2;                      // 0x0490(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue;         // 0x0494(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_BreakVector_X;                            // 0x04A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_BreakVector_Y;                            // 0x04A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_BreakVector_Z;                            // 0x04A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BB8[0x4];                                     // 0x04AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4AC[0x4];                                      // 0x04AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x04B0(0x0040)(HasGetValueTypeHash)
 	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_1;            // 0x04F0(0x0040)(HasGetValueTypeHash)
 	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_2;            // 0x0530(0x0040)(HasGetValueTypeHash)
@@ -132,14 +132,14 @@ public:
 	struct FVector                                CallFunc_BreakTransform_Location_2;                // 0x0598(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_BreakTransform_Rotation_2;                // 0x05A4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_BreakTransform_Scale_2;                   // 0x05B0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BB9[0x4];                                     // 0x05BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5BC[0x4];                                      // 0x05BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_MakeTransform_ReturnValue_2;              // 0x05C0(0x0030)(IsPlainOldData, NoDestructor)
 	class UStaticMeshComponent*                   CallFunc_GetComponentByClass_ReturnValue_1;        // 0x05F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_GetPhysicsLinearVelocity_ReturnValue;     // 0x05F8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_Matrix_InverseTransformVector_ReturnValue; // 0x0604(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector4                               CallFunc_Matrix_TransformVector_ReturnValue;       // 0x0610(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_Conv_Vector4ToVector_ReturnValue;         // 0x0620(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BBA[0x4];                                     // 0x062C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_62C[0x4];                                      // 0x062C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector4                               CallFunc_Matrix_TransformVector_ReturnValue_1;     // 0x0630(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FHitResult                             CallFunc_K2_SetWorldTransform_SweepHitResult;      // 0x0640(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
 	struct FVector                                CallFunc_Conv_Vector4ToVector_ReturnValue_1;       // 0x06D4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -178,7 +178,7 @@ public:
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_5;        // 0x0790(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_FTrunc_ReturnValue_5;                     // 0x0794(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_K2_KuroTeleportTo_ReturnValue_2;          // 0x0798(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2BBB[0x3];                                     // 0x0799(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_799[0x3];                                      // 0x0799(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Conv_IntToFloat_ReturnValue_5;            // 0x079C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Divide_FloatFloat_ReturnValue_5;          // 0x07A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_MakeVector_ReturnValue_1;                 // 0x07A4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -204,16 +204,16 @@ public:
 	struct FVector                                CallFunc_BreakTransform_Location_6;                // 0x08D0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_BreakTransform_Rotation_6;                // 0x08DC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_BreakTransform_Scale_6;                   // 0x08E8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BBC[0xC];                                     // 0x08F4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8F4[0xC];                                      // 0x08F4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_GetInverseTransform_ReturnValue_1;        // 0x0900(0x0030)(IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_GetForwardVector_ReturnValue_4;           // 0x0930(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BBD[0x4];                                     // 0x093C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_93C[0x4];                                      // 0x093C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_ComposeTransforms_ReturnValue_3;          // 0x0940(0x0030)(IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue_2;       // 0x0970(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BBE[0x4];                                     // 0x097C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_97C[0x4];                                      // 0x097C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_ComposeTransforms_ReturnValue_4;          // 0x0980(0x0030)(IsPlainOldData, NoDestructor)
 	struct FVector                                CallFunc_Add_VectorVector_ReturnValue_1;           // 0x09B0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2BBF[0x4];                                     // 0x09BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9BC[0x4];                                      // 0x09BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CallFunc_ComposeTransforms_ReturnValue_5;          // 0x09C0(0x0030)(IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x09F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
@@ -375,11 +375,11 @@ static_assert(offsetof(BP_KuroPortalCapture_C_SetPair, Pair) == 0x000000, "Membe
 struct BP_KuroPortalCapture_C_SetPbDataId final
 {
 public:
-	int32                                         Param_PbdataId;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         PbdataId_0;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_KuroPortalCapture_C_SetPbDataId) == 0x000004, "Wrong alignment on BP_KuroPortalCapture_C_SetPbDataId");
 static_assert(sizeof(BP_KuroPortalCapture_C_SetPbDataId) == 0x000004, "Wrong size on BP_KuroPortalCapture_C_SetPbDataId");
-static_assert(offsetof(BP_KuroPortalCapture_C_SetPbDataId, Param_PbdataId) == 0x000000, "Member 'BP_KuroPortalCapture_C_SetPbDataId::Param_PbdataId' has a wrong offset!");
+static_assert(offsetof(BP_KuroPortalCapture_C_SetPbDataId, PbdataId_0) == 0x000000, "Member 'BP_KuroPortalCapture_C_SetPbDataId::PbdataId_0' has a wrong offset!");
 
 // Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.GetPortalTrans
 // 0x0060 (0x0060 - 0x0000)
@@ -399,13 +399,13 @@ static_assert(offsetof(BP_KuroPortalCapture_C_GetPortalTrans, CallFunc_K2_GetCom
 struct BP_KuroPortalCapture_C_GetPair final
 {
 public:
-	class ABP_KuroPortalCapture_C*                Param_Target;                                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_KuroPortalCapture_C*                Target_0;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ABP_KuroPortalCapture_C*                K2Node_DynamicCast_AsBP_Kuro_Portal_Capture;       // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_KuroPortalCapture_C_GetPair) == 0x000008, "Wrong alignment on BP_KuroPortalCapture_C_GetPair");
 static_assert(sizeof(BP_KuroPortalCapture_C_GetPair) == 0x000018, "Wrong size on BP_KuroPortalCapture_C_GetPair");
-static_assert(offsetof(BP_KuroPortalCapture_C_GetPair, Param_Target) == 0x000000, "Member 'BP_KuroPortalCapture_C_GetPair::Param_Target' has a wrong offset!");
+static_assert(offsetof(BP_KuroPortalCapture_C_GetPair, Target_0) == 0x000000, "Member 'BP_KuroPortalCapture_C_GetPair::Target_0' has a wrong offset!");
 static_assert(offsetof(BP_KuroPortalCapture_C_GetPair, K2Node_DynamicCast_AsBP_Kuro_Portal_Capture) == 0x000008, "Member 'BP_KuroPortalCapture_C_GetPair::K2Node_DynamicCast_AsBP_Kuro_Portal_Capture' has a wrong offset!");
 static_assert(offsetof(BP_KuroPortalCapture_C_GetPair, K2Node_DynamicCast_bSuccess) == 0x000010, "Member 'BP_KuroPortalCapture_C_GetPair::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 

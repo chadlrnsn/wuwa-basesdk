@@ -138,9 +138,9 @@ void ABP_KuroPortalCapture_C::SetPair(class AActor* Pair)
 // Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.SetPbDataId
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_PbdataId                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   PbdataId_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroPortalCapture_C::SetPbDataId(int32 Param_PbdataId)
+void ABP_KuroPortalCapture_C::SetPbDataId(int32 PbdataId_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -149,7 +149,7 @@ void ABP_KuroPortalCapture_C::SetPbDataId(int32 Param_PbdataId)
 
 	Params::BP_KuroPortalCapture_C_SetPbDataId Parms{};
 
-	Parms.Param_PbdataId = Param_PbdataId;
+	Parms.PbdataId_0 = PbdataId_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -179,9 +179,9 @@ void ABP_KuroPortalCapture_C::GetPortalTrans(struct FTransform* NewParam)
 // Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.GetPair
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABP_KuroPortalCapture_C*          Param_Target                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABP_KuroPortalCapture_C*          Target_0                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroPortalCapture_C::GetPair(class ABP_KuroPortalCapture_C** Param_Target)
+void ABP_KuroPortalCapture_C::GetPair(class ABP_KuroPortalCapture_C** Target_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -192,8 +192,8 @@ void ABP_KuroPortalCapture_C::GetPair(class ABP_KuroPortalCapture_C** Param_Targ
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Param_Target != nullptr)
-		*Param_Target = Parms.Param_Target;
+	if (Target_0 != nullptr)
+		*Target_0 = Parms.Target_0;
 }
 
 

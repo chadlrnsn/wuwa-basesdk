@@ -21,7 +21,7 @@ namespace SDK
 class AKuroEffectProxyActor final : public AActor
 {
 public:
-	uint8                                         Pad_17EE[0x8];                                     // 0x02B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B0[0x8];                                      // 0x02B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

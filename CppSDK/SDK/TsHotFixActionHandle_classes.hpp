@@ -24,41 +24,41 @@ class UTsHotFixActionHandle_C final : public UObject
 {
 public:
 	class FName                                   FuncName;                                          // 0x0030(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2A5D[0x4];                                     // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __;                                                // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 ActionName;                                        // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          bPress;                                            // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2A5E[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnPressActionCallback;                             // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	ETouchIndex                                   TouchIndex;                                        // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2A5F[0x3];                                     // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                TouchPosition;                                     // 0x0074(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	FMulticastInlineDelegateProperty_             OnTouchActionCallback;                             // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	FMulticastInlineDelegateProperty_             OnTouchMovedActionCallback;                        // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	FMulticastInlineDelegateProperty_             OnAxisCallback;                                    // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	class FString                                 AxisName;                                          // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	class FName                                   Func_Name;                                         // 0x00C0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2A60[0x4];                                     // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnAnyKeyPressCallback;                             // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
-	void OnPressActionCallback__DelegateSignature(bool IsPress, const class FString& Param_ActionName, const struct FKey& Key);
-	void OnTouchActionCallback__DelegateSignature(bool IsPress, ETouchIndex Param_TouchIndex, const struct FVector& Param_TouchPosition);
-	void OnTouchMovedActionCallback__DelegateSignature(ETouchIndex Param_TouchIndex, const struct FVector& Param_TouchPosition);
-	void OnAxisCallback__DelegateSignature(float Value, const class FString& Param_AxisName);
+	void OnPressActionCallback__DelegateSignature(bool IsPress, const class FString& ActionName_0, const struct FKey& Key);
+	void OnTouchActionCallback__DelegateSignature(bool IsPress, ETouchIndex TouchIndex_0, const struct FVector& TouchPosition_0);
+	void OnTouchMovedActionCallback__DelegateSignature(ETouchIndex TouchIndex_0, const struct FVector& TouchPosition_0);
+	void OnAxisCallback__DelegateSignature(float Value, const class FString& AxisName_0);
 	void OnAnyKeyPressCallback__DelegateSignature(const struct FKey& Key);
 	void OnPressAction(const struct FKey& Key);
 	void OnReleaseAction(const struct FKey& Key);
-	void AddPressBinding(const class FString& Param_ActionName, class ABasePlayerController* Controller);
-	void AddReleaseBinding(const class FString& Param_ActionName, class ABasePlayerController* Controller);
+	void AddPressBinding(const class FString& ActionName_0, class ABasePlayerController* Controller);
+	void AddReleaseBinding(const class FString& ActionName_0, class ABasePlayerController* Controller);
 	void AddTouchPressBinding(class ABasePlayerController* Controller);
 	void AddTouchReleaseBinding(class ABasePlayerController* Controller);
-	void OnTouchPressAction(ETouchIndex Param_TouchIndex, const struct FVector& Position);
-	void OnTouchReleaseAction(ETouchIndex Param_TouchIndex, const struct FVector& Position);
+	void OnTouchPressAction(ETouchIndex TouchIndex_0, const struct FVector& Position);
+	void OnTouchReleaseAction(ETouchIndex TouchIndex_0, const struct FVector& Position);
 	void ClearActionBinding(class ABasePlayerController* Controller);
 	void OnTouchMoveAction(ETouchIndex Touchindex, const struct FVector& Position);
 	void AddTouchMoveBinding(class ABasePlayerController* Controller);
-	void AddAxisBinding(const class FString& Param_AxisName, class ABasePlayerController* Controller);
+	void AddAxisBinding(const class FString& AxisName_0, class ABasePlayerController* Controller);
 	void OnAxisInput(float Value);
 	void ClearAxisBinding(class ABasePlayerController* Controller);
 	void AddAnyKeyPress(class ABasePlayerController* Controller, const struct FInputChord& Chord);

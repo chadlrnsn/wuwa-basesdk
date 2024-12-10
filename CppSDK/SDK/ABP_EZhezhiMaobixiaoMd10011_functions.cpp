@@ -17,55 +17,6 @@
 namespace SDK
 {
 
-// Function ABP_EZhezhiMaobixiaoMd10011.ABP_EZhezhiMaobixiaoMd10011_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FPoseLink                        Param_AnimGraph                                        (Parm, OutParm, NoDestructor)
-
-void UABP_EZhezhiMaobixiaoMd10011_C::AnimGraph(struct FPoseLink* Param_AnimGraph)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_EZhezhiMaobixiaoMd10011_C", "AnimGraph");
-
-	Params::ABP_EZhezhiMaobixiaoMd10011_C_AnimGraph Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Param_AnimGraph != nullptr)
-		*Param_AnimGraph = std::move(Parms.Param_AnimGraph);
-}
-
-
-// Function ABP_EZhezhiMaobixiaoMd10011.ABP_EZhezhiMaobixiaoMd10011_C.OnComponentStart
-// (Event, Public, BlueprintEvent)
-
-void UABP_EZhezhiMaobixiaoMd10011_C::OnComponentStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_EZhezhiMaobixiaoMd10011_C", "OnComponentStart");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_EZhezhiMaobixiaoMd10011.ABP_EZhezhiMaobixiaoMd10011_C.BlueprintInitializeAnimation
-// (Event, Public, BlueprintEvent)
-
-void UABP_EZhezhiMaobixiaoMd10011_C::BlueprintInitializeAnimation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_EZhezhiMaobixiaoMd10011_C", "BlueprintInitializeAnimation");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ABP_EZhezhiMaobixiaoMd10011.ABP_EZhezhiMaobixiaoMd10011_C.ExecuteUbergraph_ABP_EZhezhiMaobixiaoMd10011
 // (Final, UbergraphFunction)
 // Parameters:
@@ -83,6 +34,55 @@ void UABP_EZhezhiMaobixiaoMd10011_C::ExecuteUbergraph_ABP_EZhezhiMaobixiaoMd1001
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_EZhezhiMaobixiaoMd10011.ABP_EZhezhiMaobixiaoMd10011_C.BlueprintInitializeAnimation
+// (Event, Public, BlueprintEvent)
+
+void UABP_EZhezhiMaobixiaoMd10011_C::BlueprintInitializeAnimation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_EZhezhiMaobixiaoMd10011_C", "BlueprintInitializeAnimation");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_EZhezhiMaobixiaoMd10011.ABP_EZhezhiMaobixiaoMd10011_C.OnComponentStart
+// (Event, Public, BlueprintEvent)
+
+void UABP_EZhezhiMaobixiaoMd10011_C::OnComponentStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_EZhezhiMaobixiaoMd10011_C", "OnComponentStart");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_EZhezhiMaobixiaoMd10011.ABP_EZhezhiMaobixiaoMd10011_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+
+void UABP_EZhezhiMaobixiaoMd10011_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_EZhezhiMaobixiaoMd10011_C", "AnimGraph");
+
+	Params::ABP_EZhezhiMaobixiaoMd10011_C_AnimGraph Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 }

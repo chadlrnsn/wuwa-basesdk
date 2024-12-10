@@ -17,28 +17,6 @@
 namespace SDK::Params
 {
 
-// Function ABP_Device_Common.ABP_Device_Common_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_Device_Common_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              Param_AnimGraph;                                   // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-static_assert(alignof(ABP_Device_Common_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_Device_Common_C_AnimGraph");
-static_assert(sizeof(ABP_Device_Common_C_AnimGraph) == 0x000010, "Wrong size on ABP_Device_Common_C_AnimGraph");
-static_assert(offsetof(ABP_Device_Common_C_AnimGraph, Param_AnimGraph) == 0x000000, "Member 'ABP_Device_Common_C_AnimGraph::Param_AnimGraph' has a wrong offset!");
-
-// Function ABP_Device_Common.ABP_Device_Common_C.BlueprintUpdateAnimation
-// 0x0004 (0x0004 - 0x0000)
-struct ABP_Device_Common_C_BlueprintUpdateAnimation final
-{
-public:
-	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(ABP_Device_Common_C_BlueprintUpdateAnimation) == 0x000004, "Wrong alignment on ABP_Device_Common_C_BlueprintUpdateAnimation");
-static_assert(sizeof(ABP_Device_Common_C_BlueprintUpdateAnimation) == 0x000004, "Wrong size on ABP_Device_Common_C_BlueprintUpdateAnimation");
-static_assert(offsetof(ABP_Device_Common_C_BlueprintUpdateAnimation, DeltaTimeX) == 0x000000, "Member 'ABP_Device_Common_C_BlueprintUpdateAnimation::DeltaTimeX' has a wrong offset!");
-
 // Function ABP_Device_Common.ABP_Device_Common_C.ExecuteUbergraph_ABP_Device_Common
 // 0x0118 (0x0118 - 0x0000)
 struct ABP_Device_Common_C_ExecuteUbergraph_ABP_Device_Common final
@@ -55,7 +33,7 @@ public:
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x000B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Not_PreBool_ReturnValue_3;                // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_2;        // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3741[0x2];                                     // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_GetInstanceAssetPlayerTimeFromEnd_ReturnValue; // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Not_PreBool_ReturnValue_4;                // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -74,7 +52,7 @@ public:
 	bool                                          CallFunc_Not_PreBool_ReturnValue_9;                // 0x0022(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanAND_ReturnValue_7;                 // 0x0023(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanAND_ReturnValue_8;                 // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3742[0x3];                                     // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_GetInstanceAssetPlayerTimeFromEnd_ReturnValue_1; // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_LessEqual_FloatFloat_ReturnValue;         // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanAND_ReturnValue_9;                 // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -101,7 +79,7 @@ public:
 	bool                                          CallFunc_Not_PreBool_ReturnValue_16;               // 0x0042(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanAND_ReturnValue_16;                // 0x0043(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Not_PreBool_ReturnValue_17;               // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3743[0x3];                                     // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_GetInstanceAssetPlayerTimeFromEnd_ReturnValue_2; // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Not_PreBool_ReturnValue_18;               // 0x004C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Less_FloatFloat_ReturnValue_1;            // 0x004D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -113,7 +91,7 @@ public:
 	bool                                          CallFunc_Not_PreBool_ReturnValue_20;               // 0x0053(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanAND_ReturnValue_20;                // 0x0054(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Not_PreBool_ReturnValue_21;               // 0x0055(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3744[0x2];                                     // 0x0056(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_56[0x2];                                       // 0x0056(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_GetInstanceAssetPlayerTimeFromEnd_ReturnValue_3; // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BooleanAND_ReturnValue_21;                // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_LessEqual_FloatFloat_ReturnValue_1;       // 0x005D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -161,7 +139,7 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue_31;                // 0x0087(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	float                                         K2Node_Event_DeltaTimeX;                           // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x008C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3745[0x3];                                     // 0x008D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_GetCurrentWeaponHangState_ReturnValue;    // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0094(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_26;       // 0x0095(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -174,35 +152,35 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue_32;                // 0x009C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanOR_ReturnValue_8;                  // 0x009D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Less_FloatFloat_ReturnValue_2;            // 0x009E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3746[0x1];                                     // 0x009F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9F[0x1];                                       // 0x009F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3747[0x4];                                     // 0x00A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 CallFunc_GetOwningComponent_ReturnValue;           // 0x00A8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_ContainsTag_ReturnValue;                  // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Not_PreBool_ReturnValue_37;               // 0x00B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3748[0x2];                                     // 0x00B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B2[0x2];                                       // 0x00B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_GetUiWeaponBreachLevel_ReturnValue;       // 0x00B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetWeaponBreachLevel_ReturnValue;         // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EWeaponViewName                               CallFunc_GetWeaponViewName_ReturnValue;            // 0x00BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3749[0x3];                                     // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                CallFunc_GetOuterObject_ReturnValue;               // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 K2Node_DynamicCast_As_______;                      // 0x00C8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_374A[0x7];                                     // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                CallFunc_GetOuterObject_ReturnValue_1;             // 0x00D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsShowUiWepaonEffect_ReturnValue;         // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_374B[0x7];                                     // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsUiSceneRoleActor_C*                  K2Node_DynamicCast_AsTs_Ui_Scene_Role_Actor;       // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_Not_PreBool_ReturnValue_38;               // 0x00F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x00F2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_27;       // 0x00F3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanOR_ReturnValue_9;                  // 0x00F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_374C[0x3];                                     // 0x00F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F5[0x3];                                       // 0x00F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 CallFunc_GetOwningActor_ReturnValue;               // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BooleanOR_ReturnValue_10;                 // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0101(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_374D[0x6];                                     // 0x0102(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_102[0x6];                                      // 0x0102(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
@@ -356,6 +334,28 @@ static_assert(offsetof(ABP_Device_Common_C_ExecuteUbergraph_ABP_Device_Common, C
 static_assert(offsetof(ABP_Device_Common_C_ExecuteUbergraph_ABP_Device_Common, CallFunc_IsValid_ReturnValue_2) == 0x000101, "Member 'ABP_Device_Common_C_ExecuteUbergraph_ABP_Device_Common::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(ABP_Device_Common_C_ExecuteUbergraph_ABP_Device_Common, K2Node_DynamicCast_AsTs_Base_Character) == 0x000108, "Member 'ABP_Device_Common_C_ExecuteUbergraph_ABP_Device_Common::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
 static_assert(offsetof(ABP_Device_Common_C_ExecuteUbergraph_ABP_Device_Common, K2Node_DynamicCast_bSuccess_2) == 0x000110, "Member 'ABP_Device_Common_C_ExecuteUbergraph_ABP_Device_Common::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+
+// Function ABP_Device_Common.ABP_Device_Common_C.BlueprintUpdateAnimation
+// 0x0004 (0x0004 - 0x0000)
+struct ABP_Device_Common_C_BlueprintUpdateAnimation final
+{
+public:
+	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(ABP_Device_Common_C_BlueprintUpdateAnimation) == 0x000004, "Wrong alignment on ABP_Device_Common_C_BlueprintUpdateAnimation");
+static_assert(sizeof(ABP_Device_Common_C_BlueprintUpdateAnimation) == 0x000004, "Wrong size on ABP_Device_Common_C_BlueprintUpdateAnimation");
+static_assert(offsetof(ABP_Device_Common_C_BlueprintUpdateAnimation, DeltaTimeX) == 0x000000, "Member 'ABP_Device_Common_C_BlueprintUpdateAnimation::DeltaTimeX' has a wrong offset!");
+
+// Function ABP_Device_Common.ABP_Device_Common_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_Device_Common_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+static_assert(alignof(ABP_Device_Common_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_Device_Common_C_AnimGraph");
+static_assert(sizeof(ABP_Device_Common_C_AnimGraph) == 0x000010, "Wrong size on ABP_Device_Common_C_AnimGraph");
+static_assert(offsetof(ABP_Device_Common_C_AnimGraph, AnimGraph_0) == 0x000000, "Member 'ABP_Device_Common_C_AnimGraph::AnimGraph_0' has a wrong offset!");
 
 }
 

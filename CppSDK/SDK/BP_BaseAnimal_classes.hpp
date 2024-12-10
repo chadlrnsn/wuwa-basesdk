@@ -21,7 +21,7 @@ namespace SDK
 class ABP_BaseAnimal_C : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_362A[0x7];                                     // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_781[0x7];                                      // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCurveFloat*                            TurnSpeedCurve;                                    // 0x0788(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:

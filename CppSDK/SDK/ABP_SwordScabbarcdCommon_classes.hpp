@@ -24,7 +24,7 @@ namespace SDK
 class UABP_SwordScabbarcdCommon_C : public UAnimInstance
 {
 public:
-	uint8                                         Pad_2F51[0x8];                                     // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_508[0x8];                                      // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0510(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0518(0x0038)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_39;                 // 0x0550(0x0028)()
@@ -112,7 +112,7 @@ public:
 	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x1D10(0x0148)()
 	class ATsBaseCharacter_C*                     _r__;                                              // 0x1E58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          WeaponOpen;                                        // 0x1E60(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2F52[0x3];                                     // 0x1E61(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E61[0x3];                                     // 0x1E61(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Open_Delay;                                        // 0x1E64(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Delta_Time;                                        // 0x1E68(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __s_fh;                                            // 0x1E6C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
@@ -126,38 +126,38 @@ public:
 	bool                                          _c_____yH;                                         // 0x1E81(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_0359E2234EBDBEF31CCEB0970132CFA1();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_5564B3AC47DA0EDCCAF082847FD13B53();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_EC01249D4172D395D5B8BDA0ABB12C8E();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_F1566B304355AC27F7B22FA8C6FE2660();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_3C4EAFD6401882863A283AA35F8C0836();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_CE8439D84D1DBE11E2AF99944D23858E();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_4DC7BAB44412E7F9CB0FBB86EC77561E();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_BF44640D412106701BE7818C40EC8836();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_861469E64CA68F604289A29F52957779();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_948277A0457037E51751EF80F57ECE0E();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_B656CD4C48A0FB2CD708C4B641023232();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_1D0051744B301420431041B80A871603();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_F2BC63A7446D4AADB29E8093E01230E7();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_28958A5646EAA30D586DA2A3B2219E96();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_73D412DE47BB2CC6C291A5BFBCE9A58F();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_22251D08423281B2C96078BA3493D5F8();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_0C8605904D1B20A921689987444DA0D0();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_3B14DCD949F0D28682EEF3AF215B7C88();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_C5D9C39D47564CFCA30F48848C801924();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_E060EB0545B3DC9906CF0988CB31CA5E();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_BA0F8FE8454D662D6D3A159E338D4192();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_5E35E85944D11EB2E66E959A3D1B7736();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_BB2EB9A94C64021CEE07D9890242972D();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_0912173A4151467FF8EA35A919EA669B();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_60E48CAF40555926DE89C683DAB10735();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_0B83C93C4704BD56331EC790C125D684();
-	void BlueprintInitializeAnimation();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void Clear_Open_Delay();
-	void Set_Open_Delay();
 	void ExecuteUbergraph_ABP_SwordScabbarcdCommon(int32 EntryPoint);
+	void Set_Open_Delay();
+	void Clear_Open_Delay();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void BlueprintInitializeAnimation();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_0B83C93C4704BD56331EC790C125D684();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_60E48CAF40555926DE89C683DAB10735();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_0912173A4151467FF8EA35A919EA669B();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_BB2EB9A94C64021CEE07D9890242972D();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_5E35E85944D11EB2E66E959A3D1B7736();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_BA0F8FE8454D662D6D3A159E338D4192();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_E060EB0545B3DC9906CF0988CB31CA5E();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_C5D9C39D47564CFCA30F48848C801924();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_3B14DCD949F0D28682EEF3AF215B7C88();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_0C8605904D1B20A921689987444DA0D0();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_22251D08423281B2C96078BA3493D5F8();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_73D412DE47BB2CC6C291A5BFBCE9A58F();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_28958A5646EAA30D586DA2A3B2219E96();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_F2BC63A7446D4AADB29E8093E01230E7();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_1D0051744B301420431041B80A871603();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_B656CD4C48A0FB2CD708C4B641023232();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_948277A0457037E51751EF80F57ECE0E();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_861469E64CA68F604289A29F52957779();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_BF44640D412106701BE7818C40EC8836();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_4DC7BAB44412E7F9CB0FBB86EC77561E();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_CE8439D84D1DBE11E2AF99944D23858E();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_3C4EAFD6401882863A283AA35F8C0836();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_F1566B304355AC27F7B22FA8C6FE2660();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_EC01249D4172D395D5B8BDA0ABB12C8E();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_5564B3AC47DA0EDCCAF082847FD13B53();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SwordScabbarcdCommon_AnimGraphNode_TransitionResult_0359E2234EBDBEF31CCEB0970132CFA1();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

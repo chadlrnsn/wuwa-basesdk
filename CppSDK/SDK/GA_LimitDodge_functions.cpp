@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function GA_LimitDodge.GA_LimitDodge_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_LimitDodge.GA_LimitDodge_C.ExecuteUbergraph_GA_LimitDodge
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_LimitDodge_C::K2_OnEndAbility(bool bWasCancelled)
+void UGA_LimitDodge_C::ExecuteUbergraph_GA_LimitDodge(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_LimitDodge_C", "K2_OnEndAbility");
+		Func = Class->GetFunction("GA_LimitDodge_C", "ExecuteUbergraph_GA_LimitDodge");
 
-	Params::GA_LimitDodge_C_K2_OnEndAbility Parms{};
+	Params::GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge Parms{};
 
-	Parms.bWasCancelled = bWasCancelled;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -51,21 +51,21 @@ void UGA_LimitDodge_C::K2_ActivateAbility()
 }
 
 
-// Function GA_LimitDodge.GA_LimitDodge_C.ExecuteUbergraph_GA_LimitDodge
-// (Final, UbergraphFunction, HasDefaults)
+// Function GA_LimitDodge.GA_LimitDodge_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_LimitDodge_C::ExecuteUbergraph_GA_LimitDodge(int32 EntryPoint)
+void UGA_LimitDodge_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_LimitDodge_C", "ExecuteUbergraph_GA_LimitDodge");
+		Func = Class->GetFunction("GA_LimitDodge_C", "K2_OnEndAbility");
 
-	Params::GA_LimitDodge_C_ExecuteUbergraph_GA_LimitDodge Parms{};
+	Params::GA_LimitDodge_C_K2_OnEndAbility Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

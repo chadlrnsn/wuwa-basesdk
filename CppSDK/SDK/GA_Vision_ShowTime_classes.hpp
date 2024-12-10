@@ -34,20 +34,20 @@ public:
 	class UObject*                                _____P_yH_0;                                       // 0x0680(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __P_;                                              // 0x0688(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         P_Handle;                                          // 0x0690(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2A82[0x4];                                     // 0x0694(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_694[0x4];                                      // 0x0694(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                _____P_yH_1;                                       // 0x0698(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _;                                                 // 0x06A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2A83[0x3];                                     // 0x06A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         _______;                                           // 0x06A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6A1[0x3];                                      // 0x06A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ________GA_Vision_ShowTime_C;                      // 0x06A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     ___a;                                              // 0x06A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Vision_ShowTime(int32 EntryPoint);
-	void _______3();
-	void EventReceived_18B59F5945020DB23C42FD88A68D9368(const struct FGameplayEventData& Payload);
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
 	void P___(int32 P_ID);
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void EventReceived_18B59F5945020DB23C42FD88A68D9368(const struct FGameplayEventData& Payload);
+	void _______3();
 
 public:
 	static class UClass* StaticClass()
@@ -74,7 +74,7 @@ static_assert(offsetof(UGA_Vision_ShowTime_C, __P_) == 0x000688, "Member 'UGA_Vi
 static_assert(offsetof(UGA_Vision_ShowTime_C, P_Handle) == 0x000690, "Member 'UGA_Vision_ShowTime_C::P_Handle' has a wrong offset!");
 static_assert(offsetof(UGA_Vision_ShowTime_C, _____P_yH_1) == 0x000698, "Member 'UGA_Vision_ShowTime_C::_____P_yH_1' has a wrong offset!");
 static_assert(offsetof(UGA_Vision_ShowTime_C, _) == 0x0006A0, "Member 'UGA_Vision_ShowTime_C::_' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, _______) == 0x0006A4, "Member 'UGA_Vision_ShowTime_C::_______' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, ________GA_Vision_ShowTime_C) == 0x0006A4, "Member 'UGA_Vision_ShowTime_C::________GA_Vision_ShowTime_C' has a wrong offset!");
 static_assert(offsetof(UGA_Vision_ShowTime_C, ___a) == 0x0006A8, "Member 'UGA_Vision_ShowTime_C::___a' has a wrong offset!");
 
 }

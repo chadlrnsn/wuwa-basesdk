@@ -21,14 +21,14 @@ namespace SDK
 class UBP_Input_Zhezhi_C final : public UBP_InputComponent_C
 {
 public:
-	void __1_w__(float Time);
-	void _d_zMinus(bool* _zMinus);
-	struct FSInputCommand Func______15(float Time);
-	void _dX__K(bool* X_);
-	struct FSInputCommand __1___0(float Time);
-	struct FSInputCommand Func______16(float Time);
+	struct FSInputCommand Func______18(float Time);
 	struct FSInputCommand __1___1(float Time);
 	struct FSInputCommand Func______17(float Time);
+	struct FSInputCommand __1___0(float Time);
+	void _dX__K(bool* X_);
+	struct FSInputCommand Func______16(float Time);
+	void _d_zMinus(bool* _zMinus);
+	void __1_w__(float Time);
 
 public:
 	static class UClass* StaticClass()

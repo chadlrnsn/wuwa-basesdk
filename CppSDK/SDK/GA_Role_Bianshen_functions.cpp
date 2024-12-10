@@ -37,51 +37,160 @@ void UGA_Role_Bianshen_C::ExecuteUbergraph_GA_Role_Bianshen(int32 EntryPoint)
 }
 
 
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.çû¨!
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UCharacterMovementComponent*      Base                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UCharacterMovementComponent*      Target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Role_Bianshen_C::_______3(class UCharacterMovementComponent* Base, class UCharacterMovementComponent* Target)
+void UGA_Role_Bianshen_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "çû¨!");
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "K2_OnEndAbility");
 
-	Params::GA_Role_Bianshen_C_______ Parms{};
+	Params::GA_Role_Bianshen_C_K2_OnEndAbility Parms{};
 
-	Parms.Base = Base;
-	Parms.Target = Target;
+	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.°ž
-// (Protected, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_Role_Bianshen_C::__()
+void UGA_Role_Bianshen_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "°ž");
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "K2_ActivateAbility");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.Òrsí°ž
-// (Protected, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.·Ö{apn
+// (Private, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   _aID_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSVisionData                     _apn_0                                                 (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
 
-void UGA_Role_Bianshen_C::_rs___()
+void UGA_Role_Bianshen_C::___apn(int32 _aID_0, struct FSVisionData* _apn_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "Òrsí°ž");
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "·Ö{apn");
+
+	Params::GA_Role_Bianshen_C____apn Parms{};
+
+	Parms._aID_0 = _aID_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (_apn_0 != nullptr)
+		*_apn_0 = std::move(Parms._apn_0);
+}
+
+
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.¡—½Õ€ýID
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   Param______0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             Param______1                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Role_Bianshen_C::______ID(int32 Param______0, class FName* Param______1)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "¡—½Õ€ýID");
+
+	Params::GA_Role_Bianshen_C_______ID Parms{};
+
+	Parms.Param______0 = Param______0;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Param______1 != nullptr)
+		*Param______1 = Parms.Param______1;
+}
+
+
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.·Ö½ÕSkill_ID
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class FString                           Skill_ID                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UGA_Role_Bianshen_C::____Skill_ID(class FString* Skill_ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "·Ö½ÕSkill_ID");
+
+	Params::GA_Role_Bianshen_C_____Skill_ID Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Skill_ID != nullptr)
+		*Skill_ID = std::move(Parms.Skill_ID);
+}
+
+
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.Òrû Øˆ1P(
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   MaterialDataID_0                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Role_Bianshen_C::_r_____1P_(int32* MaterialDataID_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "Òrû Øˆ1P(");
+
+	Params::GA_Role_Bianshen_C__r_____1P_ Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (MaterialDataID_0 != nullptr)
+		*MaterialDataID_0 = Parms.MaterialDataID_0;
+}
+
+
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.Òrû Ø>:P(
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   MaterialDataID_0                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Role_Bianshen_C::_r______P_(int32* MaterialDataID_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "Òrû Ø>:P(");
+
+	Params::GA_Role_Bianshen_C__r______P_ Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (MaterialDataID_0 != nullptr)
+		*MaterialDataID_0 = Parms.MaterialDataID_0;
+}
+
+
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.Ó_(;‘
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_Bianshen_C::_______4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "Ó_(;‘");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,160 +220,51 @@ void UGA_Role_Bianshen_C::___aMn(class ACharacter* ___a, struct FTransform* NewP
 }
 
 
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.Ó_(;‘
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.Òrsí°ž
+// (Protected, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_Bianshen_C::_rs___()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "Òrsí°ž");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.°ž
+// (Protected, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_Bianshen_C::__()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "°ž");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_Bianshen.GA_Role_Bianshen_C.çû¨!
 // (Public, BlueprintCallable, BlueprintEvent)
-
-void UGA_Role_Bianshen_C::_______4()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "Ó_(;‘");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.Òrû Ø>:P(
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Param_MaterialDataID                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UCharacterMovementComponent*      Base                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UCharacterMovementComponent*      Target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Role_Bianshen_C::_r______P_(int32* Param_MaterialDataID)
+void UGA_Role_Bianshen_C::_______3(class UCharacterMovementComponent* Base, class UCharacterMovementComponent* Target)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "Òrû Ø>:P(");
+		Func = Class->GetFunction("GA_Role_Bianshen_C", "çû¨!");
 
-	Params::GA_Role_Bianshen_C__r______P_ Parms{};
+	Params::GA_Role_Bianshen_C________3 Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Param_MaterialDataID != nullptr)
-		*Param_MaterialDataID = Parms.Param_MaterialDataID;
-}
-
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.Òrû Øˆ1P(
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Param_MaterialDataID                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Role_Bianshen_C::_r_____1P_(int32* Param_MaterialDataID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "Òrû Øˆ1P(");
-
-	Params::GA_Role_Bianshen_C__r_____1P_ Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Param_MaterialDataID != nullptr)
-		*Param_MaterialDataID = Parms.Param_MaterialDataID;
-}
-
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.·Ö½ÕSkill_ID
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class FString                           Skill_ID                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-
-void UGA_Role_Bianshen_C::____Skill_ID(class FString* Skill_ID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "·Ö½ÕSkill_ID");
-
-	Params::GA_Role_Bianshen_C_____Skill_ID Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Skill_ID != nullptr)
-		*Skill_ID = std::move(Parms.Skill_ID);
-}
-
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.¡—½Õ€ýID
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// int32                                   Param_____                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FName                             Param______0                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Role_Bianshen_C::______ID(int32 Param_____, class FName* Param______0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "¡—½Õ€ýID");
-
-	Params::GA_Role_Bianshen_C_______ID Parms{};
-
-	Parms.Param_____ = Param_____;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Param______0 != nullptr)
-		*Param______0 = Parms.Param______0;
-}
-
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.·Ö{apn
-// (Private, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// int32                                   Param__aID                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSVisionData                     Param__apn                                             (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
-
-void UGA_Role_Bianshen_C::___apn(int32 Param__aID, struct FSVisionData* Param__apn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "·Ö{apn");
-
-	Params::GA_Role_Bianshen_C____apn Parms{};
-
-	Parms.Param__aID = Param__aID;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Param__apn != nullptr)
-		*Param__apn = std::move(Parms.Param__apn);
-}
-
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Role_Bianshen_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Role_Bianshen_C::K2_OnEndAbility(bool bWasCancelled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_C", "K2_OnEndAbility");
-
-	Params::GA_Role_Bianshen_C_K2_OnEndAbility Parms{};
-
-	Parms.bWasCancelled = bWasCancelled;
+	Parms.Base = Base;
+	Parms.Target = Target;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

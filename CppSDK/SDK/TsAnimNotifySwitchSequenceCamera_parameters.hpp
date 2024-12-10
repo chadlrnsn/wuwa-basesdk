@@ -16,17 +16,6 @@
 namespace SDK::Params
 {
 
-// Function TsAnimNotifySwitchSequenceCamera.TsAnimNotifySwitchSequenceCamera_C.GetSpecificConfig
-// 0x0010 (0x0010 - 0x0000)
-struct TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig final
-{
-public:
-	struct FSSequenceCamera_SpecificConfig        ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig) == 0x000004, "Wrong alignment on TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig");
-static_assert(sizeof(TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig) == 0x000010, "Wrong size on TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig");
-static_assert(offsetof(TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig, ReturnValue) == 0x000000, "Member 'TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig::ReturnValue' has a wrong offset!");
-
 // Function TsAnimNotifySwitchSequenceCamera.TsAnimNotifySwitchSequenceCamera_C.K2_Notify
 // 0x0018 (0x0018 - 0x0000)
 struct TsAnimNotifySwitchSequenceCamera_C_K2_Notify final
@@ -41,6 +30,17 @@ static_assert(sizeof(TsAnimNotifySwitchSequenceCamera_C_K2_Notify) == 0x000018, 
 static_assert(offsetof(TsAnimNotifySwitchSequenceCamera_C_K2_Notify, MeshComp) == 0x000000, "Member 'TsAnimNotifySwitchSequenceCamera_C_K2_Notify::MeshComp' has a wrong offset!");
 static_assert(offsetof(TsAnimNotifySwitchSequenceCamera_C_K2_Notify, Animation) == 0x000008, "Member 'TsAnimNotifySwitchSequenceCamera_C_K2_Notify::Animation' has a wrong offset!");
 static_assert(offsetof(TsAnimNotifySwitchSequenceCamera_C_K2_Notify, ReturnValue) == 0x000010, "Member 'TsAnimNotifySwitchSequenceCamera_C_K2_Notify::ReturnValue' has a wrong offset!");
+
+// Function TsAnimNotifySwitchSequenceCamera.TsAnimNotifySwitchSequenceCamera_C.GetSpecificConfig
+// 0x0010 (0x0010 - 0x0000)
+struct TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig final
+{
+public:
+	struct FSSequenceCamera_SpecificConfig        ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig) == 0x000004, "Wrong alignment on TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig");
+static_assert(sizeof(TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig) == 0x000010, "Wrong size on TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig");
+static_assert(offsetof(TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig, ReturnValue) == 0x000000, "Member 'TsAnimNotifySwitchSequenceCamera_C_GetSpecificConfig::ReturnValue' has a wrong offset!");
 
 // Function TsAnimNotifySwitchSequenceCamera.TsAnimNotifySwitchSequenceCamera_C.GetNotifyName
 // 0x0010 (0x0010 - 0x0000)

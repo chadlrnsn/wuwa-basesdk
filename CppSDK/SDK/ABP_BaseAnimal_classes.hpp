@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "ECharState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "KuroAnim_structs.hpp"
 #include "KuroAnim_classes.hpp"
-#include "ECharState_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "EAnimalEcologicalState_structs.hpp"
 #include "GameplayTags_structs.hpp"
@@ -158,7 +158,7 @@ public:
 	struct FAnimNode_UseCachedPose                AnimGraphNode_UseCachedPose;                       // 0x30E8(0x0030)()
 	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x3118(0x0038)()
 	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x3150(0x0148)()
-	uint8                                         Pad_23D8[0x8];                                     // 0x3298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3298[0x8];                                     // 0x3298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose;                      // 0x32A0(0x01B0)()
 	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x3450(0x0060)()
 	struct FAnimNode_Inertialization              AnimGraphNode_Inertialization;                     // 0x34B0(0x0070)()
@@ -171,16 +171,16 @@ public:
 	class USkeletalMeshComponent*                 _rQ_S;                                             // 0x37B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EAnimalEcologicalState                        __h___;                                            // 0x37B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ______;                                            // 0x37B9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_23D9[0x2];                                     // 0x37BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_37BA[0x2];                                     // 0x37BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         IdleActionIndex;                                   // 0x37BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAnimSequence*                          IdleAnim;                                          // 0x37C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UAnimSequence*>                  __h_Mn_0;                                          // 0x37C8(0x0010)(Edit, BlueprintVisible)
 	int32                                         InteractActionIndex;                               // 0x37D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_23DA[0x4];                                     // 0x37DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_37DC[0x4];                                     // 0x37DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimSequence*                          InteractAnim;                                      // 0x37E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                SightDirect;                                       // 0x37E8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	ESightLockMode                                SightLockMode;                                     // 0x37F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_23DB[0x3];                                     // 0x37F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_37F5[0x3];                                     // 0x37F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         WalkRunParam;                                      // 0x37F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ____p;                                             // 0x37FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bHaveInput;                                        // 0x3800(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
@@ -192,10 +192,10 @@ public:
 	bool                                          _0__;                                              // 0x3806(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          W_;                                                // 0x3807(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          bSitDown;                                          // 0x3808(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_23DC[0x7];                                     // 0x3809(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3809[0x7];                                     // 0x3809(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FGameplayTag, class UAnimSequence*> V___Mn;                                            // 0x3810(0x0050)(Edit, BlueprintVisible)
 	float                                         ActionTime;                                        // 0x3860(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_23DD[0x4];                                     // 0x3864(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3864[0x4];                                     // 0x3864(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<struct FGameplayTag, TSoftObjectPtr<class UPD_CharacterControllerData_C>> P_Mn;                                              // 0x3868(0x0050)(Edit, BlueprintVisible)
 	TMap<struct FGameplayTag, class UAnimMontage*> _StarGh_Mn;                                        // 0x38B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          __l_;                                              // 0x3908(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -203,82 +203,82 @@ public:
 	bool                                          bGetDown;                                          // 0x390A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void GetCurrentActionTime(float* Param_ActionTime);
-	void __B(const struct FPoseLink& ____e, struct FPoseLink* Param___B);
-	void ___B(const struct FPoseLink& ___e, struct FPoseLink* Param____B);
-	void __B_0(struct FPoseLink* Param___B);
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void OnSystemUIStart();
-	void OnFeedStart(const struct FGameplayTag& GameplayTag);
-	void _____o();
-	void _____H_();
-	void OnUnderAttackStart();
-	void OnTakeOffStart();
-	void OnAlertStart();
-	void ____();
-	void OnInteractStart();
-	void __y___h_();
-	void ____h_();
-	void OnIdleStart();
-	void ____h__0();
-	void NoneStateEnd();
-	void InteractEnd();
-	void IdleEnd();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_6708632043AE1764C2B1A2BC8487CAA2();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_E971F2414D8A609D52454EBD86A29DDE();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_D76347B84F84143110867F87A063BC9A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_F2118EA4482961323A4284A5C757A6D4();
-	void UnderAttackEnd();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_AEAB655045E3052DFA6C2EB97F6BAEE4();
-	void AlertEnd();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_49945F8B4DD298D2ED4AE0B5BD3BFF51();
-	void TakeOffEnd();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_0A62643941C9F2534B1AF99C24980E2C();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_1769F6104A02243DD5C6589592A29465();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_416429BC4584FF707D49B1BF83556BF2();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_764CCFAC4D41871FBC3DA79A1C2573AB();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_DBE786244F0BB91CD41D8289371D7030();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_28773EEC4DFEA3865FF9E284E7CE5F47();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_3B0855934F908EBADF5C0E905BE5EBAD();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_3C432C1A4EAC4B8EEC7FAA9810D7964C();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_437CDAF94B84EB0EA0350A81D62C1333();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_9E2813C546DB12830090D0B49CAFCF8A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_00AF891944077B505E5628A5880DB881();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_E492EC01485375CFE000B0A5E11A31F8();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_7DF62BD6494255C57AF1CA838DF2F699();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_1FA99C764B6E9143E9A2EBBC467023D2();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_1BFEF6B2423BB23F3A743FA37CFEFB6E();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_9C995D5F413AB0D5EEC5B0B25BCA0B99();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_8D1F93424AA669264C48C4A3AD645001();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_274A99114D34CF70A381F6832E28301D();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_C4B06AF44285B268E642C280316C25BE();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_B7E4C2F643A351461514F3A4BB27FD57();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_8A402BC24A8BC234FA1647AE139FAFCA();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_B9970B3845ED2CF05C0CE2905CD1D9DA();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_0FDD922B45E34D982F8F85B15BF4E09D();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_DF17119740839C99CBDC5BB7A7ACF2FB();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_B5FA9C6847AB27EDF1D286A59C39E411();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_49F87C244E0713CE630B39AA9A563674();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_BDCAAEE64FE7F1405D8B77AE820B11F2();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_D33F159C49CF71493708D08A76E6E7CD();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_2F01251B4B4FE9EAA39B3D9247C31675();
-	void AnimNotify_Animal_IdleActionEnd();
-	void AnimNotify_Animal_InteractActionEnd();
-	void AnimNotify_Animal_AlertEnd();
-	void AnimNotify_Animal_UnderAttackEnd();
-	void BlueprintInitializeAnimation();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void StateMachineInitializationComplete();
-	void NoneStateStart();
-	void InteractStart();
-	void IdleStart();
-	void UnderAttackStart();
-	void AlertStart();
-	void TakeOffStart();
-	void FeedStart(const struct FGameplayTag& GameplayTag);
-	void SystemUiStart();
-	void SystemUiEnd();
 	void ExecuteUbergraph_ABP_BaseAnimal(int32 EntryPoint);
+	void SystemUiEnd();
+	void SystemUiStart();
+	void FeedStart(const struct FGameplayTag& GameplayTag);
+	void TakeOffStart();
+	void AlertStart();
+	void UnderAttackStart();
+	void IdleStart();
+	void InteractStart();
+	void NoneStateStart();
+	void StateMachineInitializationComplete();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void BlueprintInitializeAnimation();
+	void AnimNotify_Animal_UnderAttackEnd();
+	void AnimNotify_Animal_AlertEnd();
+	void AnimNotify_Animal_InteractActionEnd();
+	void AnimNotify_Animal_IdleActionEnd();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_2F01251B4B4FE9EAA39B3D9247C31675();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_D33F159C49CF71493708D08A76E6E7CD();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_BDCAAEE64FE7F1405D8B77AE820B11F2();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_49F87C244E0713CE630B39AA9A563674();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_B5FA9C6847AB27EDF1D286A59C39E411();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_DF17119740839C99CBDC5BB7A7ACF2FB();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_0FDD922B45E34D982F8F85B15BF4E09D();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_B9970B3845ED2CF05C0CE2905CD1D9DA();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_8A402BC24A8BC234FA1647AE139FAFCA();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_B7E4C2F643A351461514F3A4BB27FD57();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_C4B06AF44285B268E642C280316C25BE();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_274A99114D34CF70A381F6832E28301D();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_8D1F93424AA669264C48C4A3AD645001();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_9C995D5F413AB0D5EEC5B0B25BCA0B99();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_1BFEF6B2423BB23F3A743FA37CFEFB6E();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_1FA99C764B6E9143E9A2EBBC467023D2();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_7DF62BD6494255C57AF1CA838DF2F699();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_E492EC01485375CFE000B0A5E11A31F8();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_00AF891944077B505E5628A5880DB881();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_9E2813C546DB12830090D0B49CAFCF8A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_437CDAF94B84EB0EA0350A81D62C1333();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_3C432C1A4EAC4B8EEC7FAA9810D7964C();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_3B0855934F908EBADF5C0E905BE5EBAD();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_28773EEC4DFEA3865FF9E284E7CE5F47();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_DBE786244F0BB91CD41D8289371D7030();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_764CCFAC4D41871FBC3DA79A1C2573AB();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_416429BC4584FF707D49B1BF83556BF2();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_1769F6104A02243DD5C6589592A29465();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_0A62643941C9F2534B1AF99C24980E2C();
+	void TakeOffEnd();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_49945F8B4DD298D2ED4AE0B5BD3BFF51();
+	void AlertEnd();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_AEAB655045E3052DFA6C2EB97F6BAEE4();
+	void UnderAttackEnd();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_F2118EA4482961323A4284A5C757A6D4();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_D76347B84F84143110867F87A063BC9A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_E971F2414D8A609D52454EBD86A29DDE();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseAnimal_AnimGraphNode_TransitionResult_6708632043AE1764C2B1A2BC8487CAA2();
+	void IdleEnd();
+	void InteractEnd();
+	void NoneStateEnd();
+	void ____h__0();
+	void OnIdleStart();
+	void ____h_();
+	void __y___h_();
+	void OnInteractStart();
+	void ____();
+	void OnAlertStart();
+	void OnTakeOffStart();
+	void OnUnderAttackStart();
+	void _____H_();
+	void _____o();
+	void OnFeedStart(const struct FGameplayTag& GameplayTag);
+	void OnSystemUIStart();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void __B_0(struct FPoseLink* Param___B_0);
+	void ___B(const struct FPoseLink& ___e, struct FPoseLink* ___B_0);
+	void __B(const struct FPoseLink& ____e, struct FPoseLink* __B_0);
+	void GetCurrentActionTime(float* ActionTime_0);
 
 public:
 	static class UClass* StaticClass()

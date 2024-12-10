@@ -29,7 +29,7 @@ public:
 	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_192E[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroAnimNotify_K2_Notify) == 0x000008, "Wrong alignment on KuroAnimNotify_K2_Notify");
 static_assert(sizeof(KuroAnimNotify_K2_Notify) == 0x000018, "Wrong size on KuroAnimNotify_K2_Notify");
@@ -44,7 +44,7 @@ struct KuroAnimNotify_K2_PostChangeProperty final
 public:
 	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_192F[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroAnimNotify_K2_PostChangeProperty) == 0x000004, "Wrong alignment on KuroAnimNotify_K2_PostChangeProperty");
 static_assert(sizeof(KuroAnimNotify_K2_PostChangeProperty) == 0x000010, "Wrong size on KuroAnimNotify_K2_PostChangeProperty");
@@ -71,7 +71,7 @@ public:
 	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TotalDuration;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1932[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroAnimNotifyState_K2_NotifyBegin) == 0x000008, "Wrong alignment on KuroAnimNotifyState_K2_NotifyBegin");
 static_assert(sizeof(KuroAnimNotifyState_K2_NotifyBegin) == 0x000018, "Wrong size on KuroAnimNotifyState_K2_NotifyBegin");
@@ -88,7 +88,7 @@ public:
 	class USkeletalMeshComponent*                 MeshComp;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1933[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroAnimNotifyState_K2_NotifyEnd) == 0x000008, "Wrong alignment on KuroAnimNotifyState_K2_NotifyEnd");
 static_assert(sizeof(KuroAnimNotifyState_K2_NotifyEnd) == 0x000018, "Wrong size on KuroAnimNotifyState_K2_NotifyEnd");
@@ -105,7 +105,7 @@ public:
 	class UAnimSequenceBase*                      Animation;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FrameDeltaTime;                                    // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1934[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroAnimNotifyState_K2_NotifyTick) == 0x000008, "Wrong alignment on KuroAnimNotifyState_K2_NotifyTick");
 static_assert(sizeof(KuroAnimNotifyState_K2_NotifyTick) == 0x000018, "Wrong size on KuroAnimNotifyState_K2_NotifyTick");
@@ -121,7 +121,7 @@ struct KuroAnimNotifyState_K2_PostChangeProperty final
 public:
 	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1935[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroAnimNotifyState_K2_PostChangeProperty) == 0x000004, "Wrong alignment on KuroAnimNotifyState_K2_PostChangeProperty");
 static_assert(sizeof(KuroAnimNotifyState_K2_PostChangeProperty) == 0x000010, "Wrong size on KuroAnimNotifyState_K2_PostChangeProperty");
@@ -232,14 +232,14 @@ static_assert(offsetof(KuroBezierMeshComponent_GetPointsArray, ReturnValue) == 0
 struct KuroBezierMeshComponent_SetKeyPoint final
 {
 public:
-	int32                                         Param_Index;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         X;                                                 // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Y;                                                 // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Z;                                                 // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroBezierMeshComponent_SetKeyPoint) == 0x000004, "Wrong alignment on KuroBezierMeshComponent_SetKeyPoint");
 static_assert(sizeof(KuroBezierMeshComponent_SetKeyPoint) == 0x000010, "Wrong size on KuroBezierMeshComponent_SetKeyPoint");
-static_assert(offsetof(KuroBezierMeshComponent_SetKeyPoint, Param_Index) == 0x000000, "Member 'KuroBezierMeshComponent_SetKeyPoint::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroBezierMeshComponent_SetKeyPoint, Index_0) == 0x000000, "Member 'KuroBezierMeshComponent_SetKeyPoint::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroBezierMeshComponent_SetKeyPoint, X) == 0x000004, "Member 'KuroBezierMeshComponent_SetKeyPoint::X' has a wrong offset!");
 static_assert(offsetof(KuroBezierMeshComponent_SetKeyPoint, Y) == 0x000008, "Member 'KuroBezierMeshComponent_SetKeyPoint::Y' has a wrong offset!");
 static_assert(offsetof(KuroBezierMeshComponent_SetKeyPoint, Z) == 0x00000C, "Member 'KuroBezierMeshComponent_SetKeyPoint::Z' has a wrong offset!");
@@ -286,7 +286,7 @@ struct KuroChangeSkeletalMaterialsComponent_ChangeMaterialsWithTextures final
 public:
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ParameterName;                                     // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_193C[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<TSoftObjectPtr<class UTexture2D>>      Textures;                                          // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroChangeSkeletalMaterialsComponent_ChangeMaterialsWithTextures) == 0x000008, "Wrong alignment on KuroChangeSkeletalMaterialsComponent_ChangeMaterialsWithTextures");
@@ -332,14 +332,14 @@ struct KuroCharacterMaterialControllerCache_GetCustomColorParametersValue final
 public:
 	float                                         Factor;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Type;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           ReturnValue;                                       // 0x000C(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroCharacterMaterialControllerCache_GetCustomColorParametersValue) == 0x000004, "Wrong alignment on KuroCharacterMaterialControllerCache_GetCustomColorParametersValue");
 static_assert(sizeof(KuroCharacterMaterialControllerCache_GetCustomColorParametersValue) == 0x00001C, "Wrong size on KuroCharacterMaterialControllerCache_GetCustomColorParametersValue");
 static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomColorParametersValue, Factor) == 0x000000, "Member 'KuroCharacterMaterialControllerCache_GetCustomColorParametersValue::Factor' has a wrong offset!");
 static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomColorParametersValue, Type) == 0x000004, "Member 'KuroCharacterMaterialControllerCache_GetCustomColorParametersValue::Type' has a wrong offset!");
-static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomColorParametersValue, Param_Index) == 0x000008, "Member 'KuroCharacterMaterialControllerCache_GetCustomColorParametersValue::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomColorParametersValue, Index_0) == 0x000008, "Member 'KuroCharacterMaterialControllerCache_GetCustomColorParametersValue::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomColorParametersValue, ReturnValue) == 0x00000C, "Member 'KuroCharacterMaterialControllerCache_GetCustomColorParametersValue::ReturnValue' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroCharacterMaterialControllerCache.GetCustomFloatParametersValue
@@ -349,14 +349,14 @@ struct KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue final
 public:
 	float                                         Factor;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Type;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue) == 0x000004, "Wrong alignment on KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue");
 static_assert(sizeof(KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue) == 0x000010, "Wrong size on KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue");
 static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue, Factor) == 0x000000, "Member 'KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue::Factor' has a wrong offset!");
 static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue, Type) == 0x000004, "Member 'KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue::Type' has a wrong offset!");
-static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue, Param_Index) == 0x000008, "Member 'KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue, Index_0) == 0x000008, "Member 'KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue, ReturnValue) == 0x00000C, "Member 'KuroCharacterMaterialControllerCache_GetCustomFloatParametersValue::ReturnValue' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroCharacterMaterialControllerCache.GetDissolveColor
@@ -1270,10 +1270,10 @@ struct KuroCloudPrefabActor_SetGIParams final
 {
 public:
 	float                                         CurrentTime;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_193F[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           CloudCardCollection;                               // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ParameterName;                                     // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1940[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroCloudPrefabActor_SetGIParams) == 0x000008, "Wrong alignment on KuroCloudPrefabActor_SetGIParams");
 static_assert(sizeof(KuroCloudPrefabActor_SetGIParams) == 0x000020, "Wrong size on KuroCloudPrefabActor_SetGIParams");
@@ -1290,7 +1290,7 @@ public:
 	class UStaticMeshComponent*                   Mesh;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FAnomaliesParameters                   CloudStructParameter;                              // 0x0010(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         TransSortNumber;                                   // 0x0048(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1941[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           GloablShadingParameters;                           // 0x0050(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroCloudPrefabActor_SingleBuildingParametersInitial) == 0x000008, "Wrong alignment on KuroCloudPrefabActor_SingleBuildingParametersInitial");
@@ -1309,11 +1309,11 @@ public:
 	class UStaticMeshComponent*                   Mesh;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FCloudCover                            CloudStructParameter;                              // 0x0008(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         TransSortNumber;                                   // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1942[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           GloablShadingParameters;                           // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInstance*                      CurrentCoverMaterial;                              // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSetCoverMaterial;                                 // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1943[0x7];                                     // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           CloudParameters;                                   // 0x0030(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInstanceDynamic*               ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -1337,7 +1337,7 @@ public:
 	class UStaticMeshComponent*                   Mesh;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FCloudParameters                       CloudStructParameter;                              // 0x0010(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	int32                                         TransSortNumber;                                   // 0x00D0(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1944[0x4];                                     // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           GloablShadingParameters;                           // 0x00D8(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroCloudPrefabActor_SingleCloudParametersInitial) == 0x000008, "Wrong alignment on KuroCloudPrefabActor_SingleCloudParametersInitial");
@@ -1355,7 +1355,7 @@ struct KuroCloudPrefabActor_SingleMountainParametersInitial final
 public:
 	class UStaticMeshComponent*                   Mesh;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasMountain;                                      // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1945[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           GloablShadingParameters;                           // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroCloudPrefabActor_SingleMountainParametersInitial) == 0x000008, "Wrong alignment on KuroCloudPrefabActor_SingleMountainParametersInitial");
@@ -1373,11 +1373,11 @@ public:
 	class UStaticMeshComponent*                   Mesh;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FPOICloudParameters                    CloudStructParameter;                              // 0x0010(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         TransSortNumber;                                   // 0x0048(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1946[0x4];                                     // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           GloablShadingParameters;                           // 0x0050(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialParameterCollection*           CloudParameters;                                   // 0x0058(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Random;                                            // 0x0060(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1947[0x4];                                     // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroCloudPrefabActor_SinglePOICloudParametersInitial) == 0x000008, "Wrong alignment on KuroCloudPrefabActor_SinglePOICloudParametersInitial");
 static_assert(sizeof(KuroCloudPrefabActor_SinglePOICloudParametersInitial) == 0x000068, "Wrong size on KuroCloudPrefabActor_SinglePOICloudParametersInitial");
@@ -1395,7 +1395,7 @@ struct KuroCloudsActor_GetGIParams final
 {
 public:
 	bool                                          bCounting;                                         // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1948[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UChildActorComponent*                   Child01;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UChildActorComponent*                   Child02;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialParameterCollection*           CloudCardCollection;                               // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1516,7 +1516,7 @@ struct KuroGISystem_IsLastTickGIActor final
 public:
 	class AKuroGlobalGI*                          Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_195E[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroGISystem_IsLastTickGIActor) == 0x000008, "Wrong alignment on KuroGISystem_IsLastTickGIActor");
 static_assert(sizeof(KuroGISystem_IsLastTickGIActor) == 0x000010, "Wrong size on KuroGISystem_IsLastTickGIActor");
@@ -1541,7 +1541,7 @@ struct KuroGISystem_Start3DUISceneRendering final
 public:
 	class FString                                 InLevelName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_195F[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroGISystem_Start3DUISceneRendering) == 0x000008, "Wrong alignment on KuroGISystem_Start3DUISceneRendering");
 static_assert(sizeof(KuroGISystem_Start3DUISceneRendering) == 0x000018, "Wrong size on KuroGISystem_Start3DUISceneRendering");
@@ -1566,7 +1566,7 @@ struct KuroGlobalColorMapComponent_UpdateColorMap final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ViewLocation;                                      // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1961[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroGlobalColorMapComponent_UpdateColorMap) == 0x000008, "Wrong alignment on KuroGlobalColorMapComponent_UpdateColorMap");
 static_assert(sizeof(KuroGlobalColorMapComponent_UpdateColorMap) == 0x000018, "Wrong size on KuroGlobalColorMapComponent_UpdateColorMap");
@@ -1639,7 +1639,7 @@ public:
 	float                                         TimeOfDay;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DefaultShadowSupplement;                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DefaultReflectionAddIntensity;                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1973[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroGlobalGI_ApplyKuroSkyLight) == 0x000008, "Wrong alignment on KuroGlobalGI_ApplyKuroSkyLight");
 static_assert(sizeof(KuroGlobalGI_ApplyKuroSkyLight) == 0x000018, "Wrong size on KuroGlobalGI_ApplyKuroSkyLight");
@@ -1890,13 +1890,13 @@ struct KuroGlobalGI_UpdateCharLightHorizontal final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               SceneLightRot;                                     // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1974[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialParameterCollection*           Collection;                                        // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bDebugCharLightHorizontal;                         // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1975[0x3];                                     // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         DebugCharLightHorizontal;                          // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DebugCharLightVertical;                            // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1976[0x4];                                     // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroGlobalGI_UpdateCharLightHorizontal) == 0x000008, "Wrong alignment on KuroGlobalGI_UpdateCharLightHorizontal");
 static_assert(sizeof(KuroGlobalGI_UpdateCharLightHorizontal) == 0x000030, "Wrong size on KuroGlobalGI_UpdateCharLightHorizontal");
@@ -1956,7 +1956,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CurTime;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSkipLerpData;                                     // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1977[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroGlobalGI_UpdatePostProcessSettingData) == 0x000008, "Wrong alignment on KuroGlobalGI_UpdatePostProcessSettingData");
 static_assert(sizeof(KuroGlobalGI_UpdatePostProcessSettingData) == 0x000010, "Wrong size on KuroGlobalGI_UpdatePostProcessSettingData");
@@ -2001,7 +2001,7 @@ public:
 	class UExponentialHeightFogComponent*         HeightFog;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialParameterCollection*           Collection;                                        // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         WorldZOffset;                                      // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1978[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMeshComponent*                   CloudOcean;                                        // 0x0020(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroGlobalGI_ApplyFog) == 0x000008, "Wrong alignment on KuroGlobalGI_ApplyFog");
@@ -2168,7 +2168,7 @@ public:
 	class ALandscapeStreamingProxy*               Proxy;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ComponentIndex;                                    // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1986[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroHighResLandscapeActor_GetLandscapeComponentVisible) == 0x000008, "Wrong alignment on KuroHighResLandscapeActor_GetLandscapeComponentVisible");
 static_assert(sizeof(KuroHighResLandscapeActor_GetLandscapeComponentVisible) == 0x000010, "Wrong size on KuroHighResLandscapeActor_GetLandscapeComponentVisible");
@@ -2239,7 +2239,7 @@ public:
 	class ALandscapeStreamingProxy*               Proxy;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ComponentIndex;                                    // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsVisible;                                         // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1987[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroHighResLandscapeActor_SetLandscapeComponentVisible) == 0x000008, "Wrong alignment on KuroHighResLandscapeActor_SetLandscapeComponentVisible");
 static_assert(sizeof(KuroHighResLandscapeActor_SetLandscapeComponentVisible) == 0x000010, "Wrong size on KuroHighResLandscapeActor_SetLandscapeComponentVisible");
@@ -2361,7 +2361,7 @@ struct KuroLevelSequenceSubsystem_GetLevelSequence final
 {
 public:
 	class FName                                   Key;                                               // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_198A[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AKuroLevelSequenceActor*                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroLevelSequenceSubsystem_GetLevelSequence) == 0x000008, "Wrong alignment on KuroLevelSequenceSubsystem_GetLevelSequence");
@@ -2387,16 +2387,16 @@ static_assert(offsetof(KuroMaterialControllerComponent_AddOrGetMaterialControlle
 struct KuroMaterialControllerComponent_AddColorUpdateParamPermanent final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           Value;                                             // 0x000C(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x001D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharMeshPart                             MeshPart;                                          // 0x001E(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_198C[0x1];                                     // 0x001F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F[0x1];                                       // 0x001F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddColorUpdateParamPermanent) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_AddColorUpdateParamPermanent");
 static_assert(sizeof(KuroMaterialControllerComponent_AddColorUpdateParamPermanent) == 0x000020, "Wrong size on KuroMaterialControllerComponent_AddColorUpdateParamPermanent");
-static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanent, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanent::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanent, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanent::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanent, Value) == 0x00000C, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanent::Value' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanent, BodyType) == 0x00001C, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanent::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanent, SlotType) == 0x00001D, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanent::SlotType' has a wrong offset!");
@@ -2407,15 +2407,15 @@ static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPerman
 struct KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           Value;                                             // 0x000C(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x001D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_198D[0x2];                                     // 0x001E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon");
 static_assert(sizeof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon) == 0x000020, "Wrong size on KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon");
-static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon, Value) == 0x00000C, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon::Value' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon, BodyType) == 0x00001C, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon, SlotType) == 0x00001D, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCommon::SlotType' has a wrong offset!");
@@ -2425,16 +2425,16 @@ static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPerman
 struct KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           Value;                                             // 0x000C(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BodyName;                                          // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_198E[0x7];                                     // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CustomPartName;                                    // 0x0030(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom");
 static_assert(sizeof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom) == 0x000040, "Wrong size on KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom");
-static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom, Value) == 0x00000C, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom::Value' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom, BodyName) == 0x00001C, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom::BodyName' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom, SlotType) == 0x000028, "Member 'KuroMaterialControllerComponent_AddColorUpdateParamPermanentCustom::SlotType' has a wrong offset!");
@@ -2448,10 +2448,10 @@ public:
 	class UKuroMaterialControllerDataAsset*       DataAsset;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bLoop;                                             // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPause;                                            // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_198F[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 AnimObject;                                        // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1990[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddEffect) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_AddEffect");
 static_assert(sizeof(KuroMaterialControllerComponent_AddEffect) == 0x000020, "Wrong size on KuroMaterialControllerComponent_AddEffect");
@@ -2469,10 +2469,10 @@ public:
 	class UKuroMaterialControllerDataAsset*       DataAsset;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bLoop;                                             // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPause;                                            // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1991[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 AnimObject;                                        // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHiddenOnRemove;                                   // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1992[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddEffect_Ex) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_AddEffect_Ex");
@@ -2492,10 +2492,10 @@ public:
 	class UKuroMaterialContainerDataCache*        DataCache;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bLoop;                                             // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPause;                                            // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1993[0x6];                                     // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 AnimObject;                                        // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHiddenOnRemove;                                   // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1994[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddEffectRaw) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_AddEffectRaw");
@@ -2556,16 +2556,16 @@ static_assert(offsetof(KuroMaterialControllerComponent_AddExternalOutlineStencil
 struct KuroMaterialControllerComponent_AddFloatUpdateParamPermanent final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharMeshPart                             MeshPart;                                          // 0x0012(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1995[0x1];                                     // 0x0013(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanent) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_AddFloatUpdateParamPermanent");
 static_assert(sizeof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanent) == 0x000014, "Wrong size on KuroMaterialControllerComponent_AddFloatUpdateParamPermanent");
-static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanent, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanent::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanent, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanent::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanent, Value) == 0x00000C, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanent::Value' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanent, BodyType) == 0x000010, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanent::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanent, SlotType) == 0x000011, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanent::SlotType' has a wrong offset!");
@@ -2576,15 +2576,15 @@ static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPerman
 struct KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1996[0x2];                                     // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon");
 static_assert(sizeof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon) == 0x000014, "Wrong size on KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon");
-static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon, Value) == 0x00000C, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon::Value' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon, BodyType) == 0x000010, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon, SlotType) == 0x000011, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCommon::SlotType' has a wrong offset!");
@@ -2594,16 +2594,16 @@ static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPerman
 struct KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BodyName;                                          // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1997[0x3];                                     // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CustomPartName;                                    // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom");
 static_assert(sizeof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom) == 0x000030, "Wrong size on KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom");
-static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom, Value) == 0x00000C, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom::Value' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom, BodyName) == 0x000010, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom::BodyName' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom, SlotType) == 0x00001C, "Member 'KuroMaterialControllerComponent_AddFloatUpdateParamPermanentCustom::SlotType' has a wrong offset!");
@@ -2617,7 +2617,7 @@ public:
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BodyName;                                          // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseEmptyMaterial;                                 // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1998[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddSkeletalMeshComponent) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_AddSkeletalMeshComponent");
 static_assert(sizeof(KuroMaterialControllerComponent_AddSkeletalMeshComponent) == 0x000018, "Wrong size on KuroMaterialControllerComponent_AddSkeletalMeshComponent");
@@ -2630,17 +2630,17 @@ static_assert(offsetof(KuroMaterialControllerComponent_AddSkeletalMeshComponent,
 struct KuroMaterialControllerComponent_AddTextureUpdateParamPermanent final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1999[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               Value;                                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0019(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharMeshPart                             MeshPart;                                          // 0x001A(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_199A[0x5];                                     // 0x001B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1B[0x5];                                       // 0x001B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanent) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_AddTextureUpdateParamPermanent");
 static_assert(sizeof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanent) == 0x000020, "Wrong size on KuroMaterialControllerComponent_AddTextureUpdateParamPermanent");
-static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanent, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanent::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanent, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanent::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanent, Value) == 0x000010, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanent::Value' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanent, BodyType) == 0x000018, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanent::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanent, SlotType) == 0x000019, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanent::SlotType' has a wrong offset!");
@@ -2651,16 +2651,16 @@ static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPerm
 struct KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_199B[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               Value;                                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0019(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_199C[0x6];                                     // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon");
 static_assert(sizeof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon) == 0x000020, "Wrong size on KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon");
-static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon, Value) == 0x000010, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon::Value' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon, BodyType) == 0x000018, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon, SlotType) == 0x000019, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCommon::SlotType' has a wrong offset!");
@@ -2670,17 +2670,17 @@ static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPerm
 struct KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_199D[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               Value;                                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BodyName;                                          // 0x0018(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0024(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_199E[0x3];                                     // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CustomPartName;                                    // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom");
 static_assert(sizeof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom) == 0x000038, "Wrong size on KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom");
-static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom, Value) == 0x000010, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom::Value' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom, BodyName) == 0x000018, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom::BodyName' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom, SlotType) == 0x000024, "Member 'KuroMaterialControllerComponent_AddTextureUpdateParamPermanentCustom::SlotType' has a wrong offset!");
@@ -2706,7 +2706,7 @@ struct KuroMaterialControllerComponent_ManualTick final
 public:
 	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIncludePaused;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_199F[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_ManualTick) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_ManualTick");
 static_assert(sizeof(KuroMaterialControllerComponent_ManualTick) == 0x000008, "Wrong size on KuroMaterialControllerComponent_ManualTick");
@@ -2742,15 +2742,15 @@ static_assert(offsetof(KuroMaterialControllerComponent_RegisterEffectKey, Handle
 struct KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharMeshPart                             MeshPart;                                          // 0x000E(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A0[0x1];                                     // 0x000F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent");
 static_assert(sizeof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent) == 0x000010, "Wrong size on KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent");
-static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent, BodyType) == 0x00000C, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent, SlotType) == 0x00000D, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent::SlotType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent, MeshPart) == 0x00000E, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanent::MeshPart' has a wrong offset!");
@@ -2760,14 +2760,14 @@ static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPer
 struct KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A1[0x2];                                     // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon");
 static_assert(sizeof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon) == 0x000010, "Wrong size on KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon");
-static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon, BodyType) == 0x00000C, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon, SlotType) == 0x00000D, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCommon::SlotType' has a wrong offset!");
 
@@ -2776,15 +2776,15 @@ static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPer
 struct KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BodyName;                                          // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A2[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CustomPartName;                                    // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom");
 static_assert(sizeof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom) == 0x000030, "Wrong size on KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom");
-static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom, BodyName) == 0x00000C, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom::BodyName' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom, SlotType) == 0x000018, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom::SlotType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom, CustomPartName) == 0x000020, "Member 'KuroMaterialControllerComponent_RemoveColorUpdateParamPermanentCustom::CustomPartName' has a wrong offset!");
@@ -2888,15 +2888,15 @@ static_assert(offsetof(KuroMaterialControllerComponent_RemoveExternalOutlineSten
 struct KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharMeshPart                             MeshPart;                                          // 0x000E(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A3[0x1];                                     // 0x000F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent");
 static_assert(sizeof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent) == 0x000010, "Wrong size on KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent");
-static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent, BodyType) == 0x00000C, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent, SlotType) == 0x00000D, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent::SlotType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent, MeshPart) == 0x00000E, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanent::MeshPart' has a wrong offset!");
@@ -2906,14 +2906,14 @@ static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPer
 struct KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A4[0x2];                                     // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon");
 static_assert(sizeof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon) == 0x000010, "Wrong size on KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon");
-static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon, BodyType) == 0x00000C, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon, SlotType) == 0x00000D, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCommon::SlotType' has a wrong offset!");
 
@@ -2922,15 +2922,15 @@ static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPer
 struct KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BodyName;                                          // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A5[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CustomPartName;                                    // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom");
 static_assert(sizeof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom) == 0x000030, "Wrong size on KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom");
-static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom, BodyName) == 0x00000C, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom::BodyName' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom, SlotType) == 0x000018, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom::SlotType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom, CustomPartName) == 0x000020, "Member 'KuroMaterialControllerComponent_RemoveFloatUpdateParamPermanentCustom::CustomPartName' has a wrong offset!");
@@ -2951,15 +2951,15 @@ static_assert(offsetof(KuroMaterialControllerComponent_RemoveSkeletalMeshCompone
 struct KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharMeshPart                             MeshPart;                                          // 0x000E(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A6[0x1];                                     // 0x000F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F[0x1];                                        // 0x000F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent");
 static_assert(sizeof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent) == 0x000010, "Wrong size on KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent");
-static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent, BodyType) == 0x00000C, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent, SlotType) == 0x00000D, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent::SlotType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent, MeshPart) == 0x00000E, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanent::MeshPart' has a wrong offset!");
@@ -2969,14 +2969,14 @@ static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamP
 struct KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A7[0x2];                                     // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon");
 static_assert(sizeof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon) == 0x000010, "Wrong size on KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon");
-static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon, BodyType) == 0x00000C, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon::BodyType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon, SlotType) == 0x00000D, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCommon::SlotType' has a wrong offset!");
 
@@ -2985,15 +2985,15 @@ static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamP
 struct KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BodyName;                                          // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A8[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CustomPartName;                                    // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom");
 static_assert(sizeof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom) == 0x000030, "Wrong size on KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom");
-static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom, Param_Name) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom, Name_0) == 0x000000, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom, BodyName) == 0x00000C, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom::BodyName' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom, SlotType) == 0x000018, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom::SlotType' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom, CustomPartName) == 0x000020, "Member 'KuroMaterialControllerComponent_RemoveTextureUpdateParamPermanentCustom::CustomPartName' has a wrong offset!");
@@ -3005,7 +3005,7 @@ struct KuroMaterialControllerComponent_SeekFactor final
 public:
 	float                                         AbsoluteFactor;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIncludePaused;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19A9[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_SeekFactor) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_SeekFactor");
 static_assert(sizeof(KuroMaterialControllerComponent_SeekFactor) == 0x000008, "Wrong size on KuroMaterialControllerComponent_SeekFactor");
@@ -3034,7 +3034,7 @@ public:
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharMeshPart                             MeshPart;                                          // 0x000A(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AA[0x5];                                     // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_SetExternalMaterialReplace) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_SetExternalMaterialReplace");
 static_assert(sizeof(KuroMaterialControllerComponent_SetExternalMaterialReplace) == 0x000010, "Wrong size on KuroMaterialControllerComponent_SetExternalMaterialReplace");
@@ -3051,7 +3051,7 @@ public:
 	class UMaterialInterface*                     Mat;                                               // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharBodySpecifiedType                    BodyType;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCharSlotSpecifiedType                    SlotType;                                          // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AB[0x6];                                     // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_SetExternalMaterialReplaceCommon) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_SetExternalMaterialReplaceCommon");
 static_assert(sizeof(KuroMaterialControllerComponent_SetExternalMaterialReplaceCommon) == 0x000010, "Wrong size on KuroMaterialControllerComponent_SetExternalMaterialReplaceCommon");
@@ -3066,7 +3066,7 @@ struct KuroMaterialControllerComponent_SetHandleEnabled final
 public:
 	int32                                         HandleId;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnabled;                                          // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AC[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_SetHandleEnabled) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_SetHandleEnabled");
 static_assert(sizeof(KuroMaterialControllerComponent_SetHandleEnabled) == 0x000008, "Wrong size on KuroMaterialControllerComponent_SetHandleEnabled");
@@ -3081,7 +3081,7 @@ public:
 	int32                                         HandleId;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bLoop;                                             // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSeekToEnd;                                        // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AD[0x2];                                     // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_SetHandleLoop) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_SetHandleLoop");
 static_assert(sizeof(KuroMaterialControllerComponent_SetHandleLoop) == 0x000008, "Wrong size on KuroMaterialControllerComponent_SetHandleLoop");
@@ -3096,7 +3096,7 @@ struct KuroMaterialControllerComponent_SetHandlePause final
 public:
 	int32                                         HandleId;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPause;                                            // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AE[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_SetHandlePause) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_SetHandlePause");
 static_assert(sizeof(KuroMaterialControllerComponent_SetHandlePause) == 0x000008, "Wrong size on KuroMaterialControllerComponent_SetHandlePause");
@@ -3155,7 +3155,7 @@ struct KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponent final
 {
 public:
 	class FName                                   BodyName;                                          // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19AF[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMeshComponent*                 ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponent) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponent");
@@ -3169,14 +3169,14 @@ struct KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType 
 {
 public:
 	EKuroCharBodyType                             BodyType;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19B0[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Param_Index;                                       // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USkeletalMeshComponent*                 ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType");
 static_assert(sizeof(KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType) == 0x000010, "Wrong size on KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType");
 static_assert(offsetof(KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType, BodyType) == 0x000000, "Member 'KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType::BodyType' has a wrong offset!");
-static_assert(offsetof(KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType, Param_Index) == 0x000004, "Member 'KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType, Index_0) == 0x000004, "Member 'KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType, ReturnValue) == 0x000008, "Member 'KuroMaterialControllerComponent_GetRegisteredSkeletalMeshComponentByType::ReturnValue' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroMaterialControllerComponent.GetSkeletalMeshComponentBodyName
@@ -3186,7 +3186,7 @@ struct KuroMaterialControllerComponent_GetSkeletalMeshComponentBodyName final
 public:
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19B1[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_GetSkeletalMeshComponentBodyName) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_GetSkeletalMeshComponentBodyName");
 static_assert(sizeof(KuroMaterialControllerComponent_GetSkeletalMeshComponentBodyName) == 0x000018, "Wrong size on KuroMaterialControllerComponent_GetSkeletalMeshComponentBodyName");
@@ -3200,7 +3200,7 @@ struct KuroMaterialControllerComponent_HasSkeletalMeshComponent final
 public:
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19B2[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_HasSkeletalMeshComponent) == 0x000008, "Wrong alignment on KuroMaterialControllerComponent_HasSkeletalMeshComponent");
 static_assert(sizeof(KuroMaterialControllerComponent_HasSkeletalMeshComponent) == 0x000010, "Wrong size on KuroMaterialControllerComponent_HasSkeletalMeshComponent");
@@ -3214,7 +3214,7 @@ struct KuroMaterialControllerComponent_HasSkeletalMeshComponentName final
 public:
 	class FName                                   BodyName;                                          // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19B3[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialControllerComponent_HasSkeletalMeshComponentName) == 0x000004, "Wrong alignment on KuroMaterialControllerComponent_HasSkeletalMeshComponentName");
 static_assert(sizeof(KuroMaterialControllerComponent_HasSkeletalMeshComponentName) == 0x000010, "Wrong size on KuroMaterialControllerComponent_HasSkeletalMeshComponentName");
@@ -3256,7 +3256,7 @@ public:
 	float                                         Duration;                                          // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UWorld*                                 World;                                             // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          UseStartVal;                                       // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19BD[0x7];                                     // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialParameterCollectionManager_SetScalarParameterValueTimeCurve) == 0x000008, "Wrong alignment on KuroMaterialParameterCollectionManager_SetScalarParameterValueTimeCurve");
 static_assert(sizeof(KuroMaterialParameterCollectionManager_SetScalarParameterValueTimeCurve) == 0x000038, "Wrong size on KuroMaterialParameterCollectionManager_SetScalarParameterValueTimeCurve");
@@ -3277,7 +3277,7 @@ public:
 	class FName                                   PropertyName;                                      // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MaterialIndex;                                     // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19BF[0x3];                                     // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialVariationComponent_GetKeywordState) == 0x000004, "Wrong alignment on KuroMaterialVariationComponent_GetKeywordState");
 static_assert(sizeof(KuroMaterialVariationComponent_GetKeywordState) == 0x000014, "Wrong size on KuroMaterialVariationComponent_GetKeywordState");
@@ -3337,7 +3337,7 @@ struct KuroMaterialVariationComponent_InitWithSkeletalMeshComponent final
 public:
 	class USkeletalMeshComponent*                 InSkeletalMeshComponent;                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C0[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialVariationComponent_InitWithSkeletalMeshComponent) == 0x000008, "Wrong alignment on KuroMaterialVariationComponent_InitWithSkeletalMeshComponent");
 static_assert(sizeof(KuroMaterialVariationComponent_InitWithSkeletalMeshComponent) == 0x000010, "Wrong size on KuroMaterialVariationComponent_InitWithSkeletalMeshComponent");
@@ -3351,7 +3351,7 @@ struct KuroMaterialVariationComponent_InitWithStaticMeshComponent final
 public:
 	class UStaticMeshComponent*                   InStaticMeshComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C1[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialVariationComponent_InitWithStaticMeshComponent) == 0x000008, "Wrong alignment on KuroMaterialVariationComponent_InitWithStaticMeshComponent");
 static_assert(sizeof(KuroMaterialVariationComponent_InitWithStaticMeshComponent) == 0x000010, "Wrong size on KuroMaterialVariationComponent_InitWithStaticMeshComponent");
@@ -3377,7 +3377,7 @@ public:
 	class UMeshComponent*                         CheckMeshComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UKuroMaterialVariationCollection*> CheckCollection;                                   // 0x0008(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C2[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialVariationComponent_IsMaterialVariationDataValid) == 0x000008, "Wrong alignment on KuroMaterialVariationComponent_IsMaterialVariationDataValid");
 static_assert(sizeof(KuroMaterialVariationComponent_IsMaterialVariationDataValid) == 0x000020, "Wrong size on KuroMaterialVariationComponent_IsMaterialVariationDataValid");
@@ -3392,7 +3392,7 @@ struct KuroMaterialVariationComponent_ReplaceMaterial final
 public:
 	class UMaterialInterface*                     MatToReplace;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MaterialIndex;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C3[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialVariationComponent_ReplaceMaterial) == 0x000008, "Wrong alignment on KuroMaterialVariationComponent_ReplaceMaterial");
 static_assert(sizeof(KuroMaterialVariationComponent_ReplaceMaterial) == 0x000010, "Wrong size on KuroMaterialVariationComponent_ReplaceMaterial");
@@ -3489,7 +3489,7 @@ struct KuroMaterialVariationComponent_SetKeywordState final
 public:
 	class FName                                   Keyword;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InIsEnable;                                        // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C4[0x3];                                     // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MaterialIndex;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialVariationComponent_SetKeywordState) == 0x000004, "Wrong alignment on KuroMaterialVariationComponent_SetKeywordState");
@@ -3505,7 +3505,7 @@ struct KuroMaterialVariationComponent_SetKeywordStateAll final
 public:
 	class FName                                   Keyword;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          InIsEnable;                                        // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C5[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialVariationComponent_SetKeywordStateAll) == 0x000004, "Wrong alignment on KuroMaterialVariationComponent_SetKeywordStateAll");
 static_assert(sizeof(KuroMaterialVariationComponent_SetKeywordStateAll) == 0x000010, "Wrong size on KuroMaterialVariationComponent_SetKeywordStateAll");
@@ -3574,10 +3574,10 @@ struct KuroMaterialVariationComponent_SetMaterialTexture final
 {
 public:
 	class FName                                   PropertyName;                                      // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C6[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               InValue;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MaterialIndex;                                     // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C7[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroMaterialVariationComponent_SetMaterialTexture) == 0x000008, "Wrong alignment on KuroMaterialVariationComponent_SetMaterialTexture");
 static_assert(sizeof(KuroMaterialVariationComponent_SetMaterialTexture) == 0x000020, "Wrong size on KuroMaterialVariationComponent_SetMaterialTexture");
@@ -3591,7 +3591,7 @@ struct KuroMaterialVariationComponent_SetMaterialTextureAll final
 {
 public:
 	class FName                                   PropertyName;                                      // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19C8[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTexture*                               InValue;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroMaterialVariationComponent_SetMaterialTextureAll) == 0x000008, "Wrong alignment on KuroMaterialVariationComponent_SetMaterialTextureAll");
@@ -3662,7 +3662,7 @@ struct KuroPlayerPrefsSystem_HasKey final
 public:
 	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19CA[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPlayerPrefsSystem_HasKey) == 0x000008, "Wrong alignment on KuroPlayerPrefsSystem_HasKey");
 static_assert(sizeof(KuroPlayerPrefsSystem_HasKey) == 0x000018, "Wrong size on KuroPlayerPrefsSystem_HasKey");
@@ -3676,7 +3676,7 @@ struct KuroPlayerPrefsSystem_SetFloat final
 public:
 	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19CB[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPlayerPrefsSystem_SetFloat) == 0x000008, "Wrong alignment on KuroPlayerPrefsSystem_SetFloat");
 static_assert(sizeof(KuroPlayerPrefsSystem_SetFloat) == 0x000018, "Wrong size on KuroPlayerPrefsSystem_SetFloat");
@@ -3690,7 +3690,7 @@ struct KuroPlayerPrefsSystem_SetInt final
 public:
 	class FString                                 Key;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Value;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19CC[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroPlayerPrefsSystem_SetInt) == 0x000008, "Wrong alignment on KuroPlayerPrefsSystem_SetInt");
 static_assert(sizeof(KuroPlayerPrefsSystem_SetInt) == 0x000018, "Wrong size on KuroPlayerPrefsSystem_SetInt");
@@ -3811,12 +3811,12 @@ static_assert(offsetof(KuroRainActor_SetCurrentRain, InWindZ) == 0x000010, "Memb
 struct KuroRainActor_SetMaterialParameterOverrideColor final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           Value;                                             // 0x000C(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRainActor_SetMaterialParameterOverrideColor) == 0x000004, "Wrong alignment on KuroRainActor_SetMaterialParameterOverrideColor");
 static_assert(sizeof(KuroRainActor_SetMaterialParameterOverrideColor) == 0x00001C, "Wrong size on KuroRainActor_SetMaterialParameterOverrideColor");
-static_assert(offsetof(KuroRainActor_SetMaterialParameterOverrideColor, Param_Name) == 0x000000, "Member 'KuroRainActor_SetMaterialParameterOverrideColor::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroRainActor_SetMaterialParameterOverrideColor, Name_0) == 0x000000, "Member 'KuroRainActor_SetMaterialParameterOverrideColor::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroRainActor_SetMaterialParameterOverrideColor, Value) == 0x00000C, "Member 'KuroRainActor_SetMaterialParameterOverrideColor::Value' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRainActor.SetMaterialParameterOverrideFloat
@@ -3824,12 +3824,12 @@ static_assert(offsetof(KuroRainActor_SetMaterialParameterOverrideColor, Value) =
 struct KuroRainActor_SetMaterialParameterOverrideFloat final
 {
 public:
-	class FName                                   Param_Name;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRainActor_SetMaterialParameterOverrideFloat) == 0x000004, "Wrong alignment on KuroRainActor_SetMaterialParameterOverrideFloat");
 static_assert(sizeof(KuroRainActor_SetMaterialParameterOverrideFloat) == 0x000010, "Wrong size on KuroRainActor_SetMaterialParameterOverrideFloat");
-static_assert(offsetof(KuroRainActor_SetMaterialParameterOverrideFloat, Param_Name) == 0x000000, "Member 'KuroRainActor_SetMaterialParameterOverrideFloat::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroRainActor_SetMaterialParameterOverrideFloat, Name_0) == 0x000000, "Member 'KuroRainActor_SetMaterialParameterOverrideFloat::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroRainActor_SetMaterialParameterOverrideFloat, Value) == 0x00000C, "Member 'KuroRainActor_SetMaterialParameterOverrideFloat::Value' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRainActor.Update
@@ -3908,13 +3908,13 @@ struct KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor final
 {
 public:
 	struct FKuroCurveFloat                        Curve;                                             // 0x0000(0x0090)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0090(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0090(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0094(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor) == 0x000008, "Wrong alignment on KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor");
 static_assert(sizeof(KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor) == 0x000098, "Wrong size on KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor");
 static_assert(offsetof(KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor, Curve) == 0x000000, "Member 'KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor::Curve' has a wrong offset!");
-static_assert(offsetof(KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor, Param_Index) == 0x000090, "Member 'KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor, Index_0) == 0x000090, "Member 'KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor, ReturnValue) == 0x000094, "Member 'KuroRainComponent_AddCustomRandomByNormalizedAgeProcessor::ReturnValue' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRainComponent.AddCustomRandomByVelocityProcessor
@@ -3923,13 +3923,13 @@ struct KuroRainComponent_AddCustomRandomByVelocityProcessor final
 {
 public:
 	struct FKuroCurveFloat                        Curve;                                             // 0x0000(0x0090)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0090(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0090(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0094(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRainComponent_AddCustomRandomByVelocityProcessor) == 0x000008, "Wrong alignment on KuroRainComponent_AddCustomRandomByVelocityProcessor");
 static_assert(sizeof(KuroRainComponent_AddCustomRandomByVelocityProcessor) == 0x000098, "Wrong size on KuroRainComponent_AddCustomRandomByVelocityProcessor");
 static_assert(offsetof(KuroRainComponent_AddCustomRandomByVelocityProcessor, Curve) == 0x000000, "Member 'KuroRainComponent_AddCustomRandomByVelocityProcessor::Curve' has a wrong offset!");
-static_assert(offsetof(KuroRainComponent_AddCustomRandomByVelocityProcessor, Param_Index) == 0x000090, "Member 'KuroRainComponent_AddCustomRandomByVelocityProcessor::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroRainComponent_AddCustomRandomByVelocityProcessor, Index_0) == 0x000090, "Member 'KuroRainComponent_AddCustomRandomByVelocityProcessor::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroRainComponent_AddCustomRandomByVelocityProcessor, ReturnValue) == 0x000094, "Member 'KuroRainComponent_AddCustomRandomByVelocityProcessor::ReturnValue' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRainComponent.AddCustomRandomSetProcessor
@@ -3938,13 +3938,13 @@ struct KuroRainComponent_AddCustomRandomSetProcessor final
 {
 public:
 	float                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRainComponent_AddCustomRandomSetProcessor) == 0x000004, "Wrong alignment on KuroRainComponent_AddCustomRandomSetProcessor");
 static_assert(sizeof(KuroRainComponent_AddCustomRandomSetProcessor) == 0x00000C, "Wrong size on KuroRainComponent_AddCustomRandomSetProcessor");
 static_assert(offsetof(KuroRainComponent_AddCustomRandomSetProcessor, Value) == 0x000000, "Member 'KuroRainComponent_AddCustomRandomSetProcessor::Value' has a wrong offset!");
-static_assert(offsetof(KuroRainComponent_AddCustomRandomSetProcessor, Param_Index) == 0x000004, "Member 'KuroRainComponent_AddCustomRandomSetProcessor::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroRainComponent_AddCustomRandomSetProcessor, Index_0) == 0x000004, "Member 'KuroRainComponent_AddCustomRandomSetProcessor::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroRainComponent_AddCustomRandomSetProcessor, ReturnValue) == 0x000008, "Member 'KuroRainComponent_AddCustomRandomSetProcessor::ReturnValue' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRainComponent.AddCycleBoxProcessor
@@ -3955,7 +3955,7 @@ public:
 	struct FVector                                Min;                                               // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Max;                                               // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bKillOnZ;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19D7[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRainComponent_AddCycleBoxProcessor) == 0x000004, "Wrong alignment on KuroRainComponent_AddCycleBoxProcessor");
@@ -4190,16 +4190,16 @@ struct KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor final
 {
 public:
 	int32                                         ProcessorID;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19D8[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        Curve;                                             // 0x0008(0x0090)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0098(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19D9[0x4];                                     // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0098(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor) == 0x000008, "Wrong alignment on KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor");
 static_assert(sizeof(KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor) == 0x0000A0, "Wrong size on KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor");
 static_assert(offsetof(KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor, ProcessorID) == 0x000000, "Member 'KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor::ProcessorID' has a wrong offset!");
 static_assert(offsetof(KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor, Curve) == 0x000008, "Member 'KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor::Curve' has a wrong offset!");
-static_assert(offsetof(KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor, Param_Index) == 0x000098, "Member 'KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor, Index_0) == 0x000098, "Member 'KuroRainComponent_SetCustomRandomByNormalizedAgeProcessor::Index_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRainComponent.SetCustomRandomByVelocityProcessor
 // 0x00A0 (0x00A0 - 0x0000)
@@ -4207,16 +4207,16 @@ struct KuroRainComponent_SetCustomRandomByVelocityProcessor final
 {
 public:
 	int32                                         ProcessorID;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19DA[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        Curve;                                             // 0x0008(0x0090)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0098(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19DB[0x4];                                     // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0098(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRainComponent_SetCustomRandomByVelocityProcessor) == 0x000008, "Wrong alignment on KuroRainComponent_SetCustomRandomByVelocityProcessor");
 static_assert(sizeof(KuroRainComponent_SetCustomRandomByVelocityProcessor) == 0x0000A0, "Wrong size on KuroRainComponent_SetCustomRandomByVelocityProcessor");
 static_assert(offsetof(KuroRainComponent_SetCustomRandomByVelocityProcessor, ProcessorID) == 0x000000, "Member 'KuroRainComponent_SetCustomRandomByVelocityProcessor::ProcessorID' has a wrong offset!");
 static_assert(offsetof(KuroRainComponent_SetCustomRandomByVelocityProcessor, Curve) == 0x000008, "Member 'KuroRainComponent_SetCustomRandomByVelocityProcessor::Curve' has a wrong offset!");
-static_assert(offsetof(KuroRainComponent_SetCustomRandomByVelocityProcessor, Param_Index) == 0x000098, "Member 'KuroRainComponent_SetCustomRandomByVelocityProcessor::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroRainComponent_SetCustomRandomByVelocityProcessor, Index_0) == 0x000098, "Member 'KuroRainComponent_SetCustomRandomByVelocityProcessor::Index_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRainComponent.SetCustomRandomSetProcessor
 // 0x000C (0x000C - 0x0000)
@@ -4225,13 +4225,13 @@ struct KuroRainComponent_SetCustomRandomSetProcessor final
 public:
 	int32                                         ProcessorID;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRainComponent_SetCustomRandomSetProcessor) == 0x000004, "Wrong alignment on KuroRainComponent_SetCustomRandomSetProcessor");
 static_assert(sizeof(KuroRainComponent_SetCustomRandomSetProcessor) == 0x00000C, "Wrong size on KuroRainComponent_SetCustomRandomSetProcessor");
 static_assert(offsetof(KuroRainComponent_SetCustomRandomSetProcessor, ProcessorID) == 0x000000, "Member 'KuroRainComponent_SetCustomRandomSetProcessor::ProcessorID' has a wrong offset!");
 static_assert(offsetof(KuroRainComponent_SetCustomRandomSetProcessor, Value) == 0x000004, "Member 'KuroRainComponent_SetCustomRandomSetProcessor::Value' has a wrong offset!");
-static_assert(offsetof(KuroRainComponent_SetCustomRandomSetProcessor, Param_Index) == 0x000008, "Member 'KuroRainComponent_SetCustomRandomSetProcessor::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroRainComponent_SetCustomRandomSetProcessor, Index_0) == 0x000008, "Member 'KuroRainComponent_SetCustomRandomSetProcessor::Index_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRainComponent.SetCycleBoxProcessor
 // 0x001C (0x001C - 0x0000)
@@ -4378,7 +4378,7 @@ struct KuroRainComponent_SetVectorFieldForceProcessor_VectorField final
 {
 public:
 	int32                                         ProcessorID;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19DC[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UVectorFieldStatic*                     InVectorField;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRainComponent_SetVectorFieldForceProcessor_VectorField) == 0x000008, "Wrong alignment on KuroRainComponent_SetVectorFieldForceProcessor_VectorField");
@@ -4419,7 +4419,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_AddKuroCellLayer final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCellLayerType                            ControlType;                                       // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19DD[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_AddKuroCellLayer) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_AddKuroCellLayer");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_AddKuroCellLayer) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_AddKuroCellLayer");
@@ -4435,9 +4435,9 @@ public:
 	class UMaterialInterface*                     Material;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Priority;                                          // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsUiPostprocess;                                  // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19DE[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ReturnValue;                                       // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19DF[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_AddPostprocessMaterial) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_AddPostprocessMaterial");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_AddPostprocessMaterial) == 0x000020, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_AddPostprocessMaterial");
@@ -4454,10 +4454,10 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_AddWeatherDataType final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   Identifier;                                        // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E0[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UClass*                                 ClassType;                                         // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E1[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_AddWeatherDataType) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_AddWeatherDataType");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_AddWeatherDataType) == 0x000028, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_AddWeatherDataType");
@@ -4486,7 +4486,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_ClearKuroCellLayer final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroCellLayerType                            ControlType;                                       // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E2[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_ClearKuroCellLayer) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_ClearKuroCellLayer");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_ClearKuroCellLayer) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_ClearKuroCellLayer");
@@ -4499,13 +4499,13 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags final
 {
 public:
 	class UObject*                                Object;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_Flags;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E3[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Flags_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags");
 static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags, Object) == 0x000000, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags::Object' has a wrong offset!");
-static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags, Param_Flags) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags::Param_Flags' has a wrong offset!");
+static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags, Flags_0) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_ClearObjectFlags::Flags_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.ClearWorldPartitionRequiredDataLayers
 // 0x0008 (0x0008 - 0x0000)
@@ -4564,7 +4564,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_CopyKuroCharColorParameter final
 public:
 	struct FKuroCharMaterialControllerColorParameter Target;                                            // 0x0000(0x0230)(Parm, OutParm, NativeAccessSpecifierPublic)
 	class FName                                   ParameterName;                                     // 0x0230(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E4[0x4];                                     // 0x023C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_23C[0x4];                                      // 0x023C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveLinearColor                  ParameterValue;                                    // 0x0240(0x0220)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_CopyKuroCharColorParameter) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_CopyKuroCharColorParameter");
@@ -4614,7 +4614,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_CopyKuroCharFloatParameter final
 public:
 	struct FKuroCharMaterialControllerFloatParameter Target;                                            // 0x0000(0x00A0)(Parm, OutParm, NativeAccessSpecifierPublic)
 	class FName                                   ParameterName;                                     // 0x00A0(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E5[0x4];                                     // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        ParameterValue;                                    // 0x00B0(0x0090)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_CopyKuroCharFloatParameter) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_CopyKuroCharFloatParameter");
@@ -4649,9 +4649,9 @@ public:
 	class FName                                   IdName;                                            // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAttachToPlayer;                                   // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAttachToEditorCamera;                             // 0x0015(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E6[0x2];                                     // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   EditorFolderPath;                                  // 0x0018(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E7[0x4];                                     // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_CreateGITransientActor) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_CreateGITransientActor");
@@ -4694,7 +4694,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_DestroyGITransientActor final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   IdName;                                            // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E8[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_DestroyGITransientActor) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_DestroyGITransientActor");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_DestroyGITransientActor) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_DestroyGITransientActor");
@@ -4719,7 +4719,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetActorForwardVectorRef final
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                RefForwardVector;                                  // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19E9[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetActorForwardVectorRef) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetActorForwardVectorRef");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetActorForwardVectorRef) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetActorForwardVectorRef");
@@ -4735,7 +4735,7 @@ public:
 	float                                         X;                                                 // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Y;                                                 // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Z;                                                 // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19EA[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetActorForwardVectorRefXYZ) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetActorForwardVectorRefXYZ");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetActorForwardVectorRefXYZ) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetActorForwardVectorRefXYZ");
@@ -4751,7 +4751,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetActorLocationRef final
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                RefLocation;                                       // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19EB[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetActorLocationRef) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetActorLocationRef");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetActorLocationRef) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetActorLocationRef");
@@ -4767,7 +4767,7 @@ public:
 	float                                         X;                                                 // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Y;                                                 // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Z;                                                 // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19EC[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetActorLocationRefXYZ) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetActorLocationRefXYZ");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetActorLocationRefXYZ) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetActorLocationRefXYZ");
@@ -4817,7 +4817,7 @@ public:
 	float                                         Default;                                           // 0x009C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int64                                         OutHandle;                                         // 0x00A0(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x00A8(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19ED[0x4];                                     // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetAndAddCurveFloatSampleTask) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetAndAddCurveFloatSampleTask");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetAndAddCurveFloatSampleTask) == 0x0000B0, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetAndAddCurveFloatSampleTask");
@@ -4847,7 +4847,7 @@ public:
 	class FName                                   PackagePath;                                       // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bRecursive;                                        // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIncludeOnlyOnDiskAssets;                          // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19EE[0x2];                                     // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FAssetData>                     ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetAssetsByPath) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetAssetsByPath");
@@ -4875,7 +4875,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetBoneDirection final
 public:
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BoneName;                                          // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19EF[0xC];                                     // 0x0014(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FQuat                                  ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetBoneDirection) == 0x000010, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetBoneDirection");
@@ -4890,7 +4890,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetCacheCameraInfo final
 {
 public:
 	class APlayerCameraManager*                   Owner;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F0[0x8];                                     // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMinimalViewInfo                       Inout;                                             // 0x0010(0x0810)(Parm, OutParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetCacheCameraInfo) == 0x000010, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetCacheCameraInfo");
@@ -4907,10 +4907,10 @@ public:
 	class FString                                 EnClosetDataLayer;                                 // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 EnCloseSubDataLayer;                               // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ECaveOrRoomLoadType                           OutLoadType;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F1[0x3];                                     // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         OutLoadCoef;                                       // 0x002C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F2[0x7];                                     // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetCaveOrRoomState) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetCaveOrRoomState");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetCaveOrRoomState) == 0x000038, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetCaveOrRoomState");
@@ -4928,7 +4928,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetCharacterSectionCount final
 public:
 	class USkeletalMesh*                          Mesh;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F3[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetCharacterSectionCount) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetCharacterSectionCount");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetCharacterSectionCount) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetCharacterSectionCount");
@@ -4942,7 +4942,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetCharacterSectionInfo final
 public:
 	class USkeletalMesh*                          Mesh;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         SectionIndex;                                      // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F4[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetCharacterSectionInfo) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetCharacterSectionInfo");
@@ -5093,7 +5093,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetCVarFloat final
 public:
 	class FString                                 CVarKey;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F5[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetCVarFloat) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetCVarFloat");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetCVarFloat) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetCVarFloat");
@@ -5181,7 +5181,7 @@ public:
 	float                                         Factor;                                            // 0x01B0(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Type;                                              // 0x01B4(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x01B8(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F6[0x4];                                     // 0x01BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1BC[0x4];                                      // 0x01BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetFloatGromGroup) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetFloatGromGroup");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetFloatGromGroup) == 0x0001C0, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetFloatGromGroup");
@@ -5230,7 +5230,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetGITransientActor final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   IdName;                                            // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F7[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetGITransientActor) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetGITransientActor");
@@ -5328,7 +5328,7 @@ public:
 	struct FVector                                Position;                                          // 0x0008(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               Rotation;                                          // 0x0014(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F8[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetLevelEditorCameraLocationAndForward) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetLevelEditorCameraLocationAndForward");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetLevelEditorCameraLocationAndForward) == 0x000028, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetLevelEditorCameraLocationAndForward");
@@ -5345,7 +5345,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              ViewPortSize;                                      // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F9[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetLevelEditorViewPortSize) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetLevelEditorViewPortSize");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetLevelEditorViewPortSize) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetLevelEditorViewPortSize");
@@ -5404,7 +5404,7 @@ public:
 	struct FBox                                   Box;                                               // 0x0010(0x001C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         Max;                                               // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0030(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19FA[0x4];                                     // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetOverlappingBoxCountForAllFoliageActors) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetOverlappingBoxCountForAllFoliageActors");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetOverlappingBoxCountForAllFoliageActors) == 0x000038, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetOverlappingBoxCountForAllFoliageActors");
@@ -5451,11 +5451,11 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataDebugInfo final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                WorldPosition;                                     // 0x0008(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19FB[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FPostprocessGIDebugInfo>        OutDAResult;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FPostprocessGIDebugInfo>        OutOverrideResult;                                 // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19FC[0x7];                                     // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataDebugInfo) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataDebugInfo");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataDebugInfo) == 0x000040, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataDebugInfo");
@@ -5473,7 +5473,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class FName>                           OutDANames;                                        // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19FD[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataDebugNames) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataDebugNames");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataDebugNames) == 0x000020, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataDebugNames");
@@ -5488,10 +5488,10 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataNames final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                WorldPosition;                                     // 0x0008(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19FE[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FString>                         OutDANames;                                        // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19FF[0x7];                                     // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataNames) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataNames");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataNames) == 0x000030, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetPostProcessGIDataNames");
@@ -5608,7 +5608,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialCount final
 public:
 	class USkeletalMesh*                          Skel;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A00[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialCount) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialCount");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialCount) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialCount");
@@ -5622,7 +5622,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialInterface final
 public:
 	class USkeletalMesh*                          Skel;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MaterialIndex;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A01[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialInterface) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialInterface");
@@ -5638,7 +5638,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialSlotName final
 public:
 	class USkeletalMesh*                          Skel;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MaterialIndex;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A02[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialSlotName) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetSkeletalMaterialSlotName");
@@ -5655,11 +5655,11 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                InPoisition;                                       // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ECaveOrRoom                                   OutSpaceType;                                      // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A03[0x3];                                     // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 OutEnClosetDataLayer;                              // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 OutEnCloseSubDataLayer;                            // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A04[0x7];                                     // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetSpaceStateByPosition) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetSpaceStateByPosition");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetSpaceStateByPosition) == 0x000040, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetSpaceStateByPosition");
@@ -5679,7 +5679,7 @@ public:
 	struct FWorldPartitionStreamingQuerySource    QuerySource;                                       // 0x0008(0x00A0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	TArray<struct FWorldPartitionRuntimeSpatialHashCell> OutCells;                                          // 0x00A8(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x00B8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A05[0x7];                                     // 0x00B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetStreamingCells) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetStreamingCells");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetStreamingCells) == 0x0000C0, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetStreamingCells");
@@ -5740,7 +5740,7 @@ public:
 	class UMaterialParameterCollection*           Collection;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ParameterName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           RefLinearColor;                                    // 0x001C(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A06[0x4];                                     // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetVectorParameterValueRef) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetVectorParameterValueRef");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetVectorParameterValueRef) == 0x000030, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetVectorParameterValueRef");
@@ -5761,7 +5761,7 @@ public:
 	float                                         RefLinearColorG;                                   // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         RefLinearColorB;                                   // 0x0024(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         RefLinearColorA;                                   // 0x0028(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A07[0x4];                                     // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetVectorParameterValueRefRGBA) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetVectorParameterValueRefRGBA");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetVectorParameterValueRefRGBA) == 0x000030, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetVectorParameterValueRefRGBA");
@@ -5791,7 +5791,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetWeatherDataRef final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   Identifier;                                        // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A08[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetWeatherDataRef) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetWeatherDataRef");
@@ -5820,7 +5820,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetWorldFeatureLevel final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroFeatureLevel                             ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A09[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetWorldFeatureLevel) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetWorldFeatureLevel");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetWorldFeatureLevel) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetWorldFeatureLevel");
@@ -5918,7 +5918,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_GetWorldType final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EBP_EWorldType                                ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A0A[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_GetWorldType) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_GetWorldType");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_GetWorldType) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_GetWorldType");
@@ -5946,13 +5946,13 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags final
 {
 public:
 	class UObject*                                Object;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_Flags;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A0B[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Flags_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags");
 static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags, Object) == 0x000000, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags::Object' has a wrong offset!");
-static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags, Param_Flags) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags::Param_Flags' has a wrong offset!");
+static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags, Flags_0) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_HasAllObjectFlags::Flags_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.HasAnyObjectFlags
 // 0x0010 (0x0010 - 0x0000)
@@ -5960,13 +5960,13 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags final
 {
 public:
 	class UObject*                                Object;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_Flags;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A0C[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Flags_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags");
 static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags, Object) == 0x000000, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags::Object' has a wrong offset!");
-static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags, Param_Flags) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags::Param_Flags' has a wrong offset!");
+static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags, Flags_0) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_HasAnyObjectFlags::Flags_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.HasKey
 // 0x0020 (0x0020 - 0x0000)
@@ -5976,7 +5976,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A0D[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_HasKey) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_HasKey");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_HasKey) == 0x000020, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_HasKey");
@@ -6004,7 +6004,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_IsCurrentPlatformPC final
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A0E[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsCurrentPlatformPC) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsCurrentPlatformPC");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsCurrentPlatformPC) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsCurrentPlatformPC");
@@ -6020,7 +6020,7 @@ public:
 	class UNiagaraEffectType*                     EffectType;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Location;                                          // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A0F[0x3];                                     // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsDistanceCull) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsDistanceCull");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsDistanceCull) == 0x000020, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsDistanceCull");
@@ -6036,7 +6036,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_IsEditorOnlyActor final
 public:
 	const class AActor*                           Actor;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A10[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsEditorOnlyActor) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsEditorOnlyActor");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsEditorOnlyActor) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsEditorOnlyActor");
@@ -6050,7 +6050,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_IsNiagaraComplete final
 public:
 	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A11[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsNiagaraComplete) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsNiagaraComplete");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsNiagaraComplete) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsNiagaraComplete");
@@ -6064,7 +6064,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_IsParticleComplete final
 public:
 	class UParticleSystemComponent*               ParticleSystemComponent;                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A12[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsParticleComplete) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsParticleComplete");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsParticleComplete) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsParticleComplete");
@@ -6079,7 +6079,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                InPoisition;                                       // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A13[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsPositionInCaveOrRoom) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsPositionInCaveOrRoom");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsPositionInCaveOrRoom) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsPositionInCaveOrRoom");
@@ -6095,7 +6095,7 @@ public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Handle;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A14[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsPostprocessMaterialActive) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsPostprocessMaterialActive");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsPostprocessMaterialActive) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsPostprocessMaterialActive");
@@ -6110,11 +6110,11 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_IsStreamingSourceInSide final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EStreamingSourcePriority                      StreamingSourcePriority;                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A15[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Origin;                                            // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Extent;                                            // 0x0018(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0024(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A16[0x3];                                     // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsStreamingSourceInSide) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsStreamingSourceInSide");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsStreamingSourceInSide) == 0x000028, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsStreamingSourceInSide");
@@ -6165,7 +6165,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   DataLayerName;                                     // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A17[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsWorldPartitionDataLayerEnable) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsWorldPartitionDataLayerEnable");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsWorldPartitionDataLayerEnable) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsWorldPartitionDataLayerEnable");
@@ -6180,7 +6180,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_IsWorldPartitionWorld final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A18[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsWorldPartitionWorld) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsWorldPartitionWorld");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsWorldPartitionWorld) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsWorldPartitionWorld");
@@ -6194,7 +6194,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_IsWpPlayerInCaveOrRoom final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A19[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_IsWpPlayerInCaveOrRoom) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_IsWpPlayerInCaveOrRoom");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_IsWpPlayerInCaveOrRoom) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_IsWpPlayerInCaveOrRoom");
@@ -6219,7 +6219,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_MakeSequencePlayer final
 public:
 	class UActorSequenceComponent*                SequenceComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FMovieSceneSequencePlaybackSettings    PlaybackSettings;                                  // 0x0008(0x0014)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A1A[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UActorSequencePlayer*                   ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_MakeSequencePlayer) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_MakeSequencePlayer");
@@ -6236,7 +6236,7 @@ public:
 	class UMaterialInterface*                     MaterialInterface;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ParameterName;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A1B[0x7];                                     // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_MaterialHasParameter_EditorOnly) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_MaterialHasParameter_EditorOnly");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_MaterialHasParameter_EditorOnly) == 0x000020, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_MaterialHasParameter_EditorOnly");
@@ -6251,7 +6251,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_MessageNotify_EditorOnly final
 public:
 	class FText                                   Message;                                           // 0x0000(0x0018)(ConstParm, Parm, NativeAccessSpecifierPublic)
 	class FName                                   Tile;                                              // 0x0018(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A1C[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_MessageNotify_EditorOnly) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_MessageNotify_EditorOnly");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_MessageNotify_EditorOnly) == 0x000028, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_MessageNotify_EditorOnly");
@@ -6308,10 +6308,10 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_ProjectWorldToScreenWithLevelEditor
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                WorldPosition;                                     // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A1D[0xC];                                     // 0x0014(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0xC];                                       // 0x0014(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector4                               Result;                                            // 0x0020(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A1E[0xF];                                     // 0x0031(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0xF];                                       // 0x0031(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_ProjectWorldToScreenWithLevelEditorViewPort) == 0x000010, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_ProjectWorldToScreenWithLevelEditorViewPort");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_ProjectWorldToScreenWithLevelEditorViewPort) == 0x000040, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_ProjectWorldToScreenWithLevelEditorViewPort");
@@ -6332,7 +6332,7 @@ public:
 	float                                         ResultZ;                                           // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ResultW;                                           // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0024(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A1F[0x3];                                     // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_ProjectWorldToScreenWithLevelEditorViewPortFloatRef) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_ProjectWorldToScreenWithLevelEditorViewPortFloatRef");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_ProjectWorldToScreenWithLevelEditorViewPortFloatRef) == 0x000028, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_ProjectWorldToScreenWithLevelEditorViewPortFloatRef");
@@ -6364,7 +6364,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_RemovePostprocessMaterial final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Handle;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A20[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_RemovePostprocessMaterial) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_RemovePostprocessMaterial");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_RemovePostprocessMaterial) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_RemovePostprocessMaterial");
@@ -6435,7 +6435,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetActorUISceneRendering final
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsUISceneRendering;                                // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A21[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetActorUISceneRendering) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetActorUISceneRendering");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetActorUISceneRendering) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetActorUISceneRendering");
@@ -6449,7 +6449,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetClusteredStuffVisible final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Visible;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A22[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetClusteredStuffVisible) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetClusteredStuffVisible");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetClusteredStuffVisible) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetClusteredStuffVisible");
@@ -6463,7 +6463,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetCVarFloat final
 public:
 	class FString                                 CVarKey;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A23[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetCVarFloat) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetCVarFloat");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetCVarFloat) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetCVarFloat");
@@ -6477,7 +6477,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetCVarInt32 final
 public:
 	class FString                                 CVarKey;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Value;                                             // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A24[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetCVarInt32) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetCVarInt32");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetCVarInt32) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetCVarInt32");
@@ -6492,7 +6492,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Value;                                             // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A25[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetFloat) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetFloat");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetFloat) == 0x000020, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetFloat");
@@ -6509,7 +6509,7 @@ public:
 	class FName                                   IdName;                                            // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAttachToPlayer;                                   // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAttachToEditorCamera;                             // 0x0015(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A26[0x2];                                     // 0x0016(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetGITransientActorAttachment) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetGITransientActorAttachment");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetGITransientActorAttachment) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetGITransientActorAttachment");
@@ -6526,7 +6526,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Time;                                              // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A27[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetGlobalGITime) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetGlobalGITime");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetGlobalGITime) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetGlobalGITime");
@@ -6542,7 +6542,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 Key;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Value;                                             // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A28[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetInt) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetInt");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetInt) == 0x000020, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetInt");
@@ -6570,10 +6570,10 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetIsUsingInCaveOrIndoorShadow fina
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsUsing;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A29[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MobileCSMDistanceInCave;                           // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MobileCSMDistanceOutCave;                          // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A2A[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetIsUsingInCaveOrIndoorShadow) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetIsUsingInCaveOrIndoorShadow");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetIsUsingInCaveOrIndoorShadow) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetIsUsingInCaveOrIndoorShadow");
@@ -6590,7 +6590,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Position;                                          // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A2B[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetLevelEditorCameraLocation) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetLevelEditorCameraLocation");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetLevelEditorCameraLocation) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetLevelEditorCameraLocation");
@@ -6634,13 +6634,13 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags final
 {
 public:
 	class UObject*                                Object;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Param_Flags;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A2C[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         Flags_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags");
 static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags, Object) == 0x000000, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags::Object' has a wrong offset!");
-static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags, Param_Flags) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags::Param_Flags' has a wrong offset!");
+static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags, Flags_0) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SetObjectFlags::Flags_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.SetSceneKuroMainPlayerLocation
 // 0x0010 (0x0010 - 0x0000)
@@ -6649,7 +6649,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroMainPlayerLocation fina
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         PlayerIndex;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A2D[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroMainPlayerLocation) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroMainPlayerLocation");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroMainPlayerLocation) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroMainPlayerLocation");
@@ -6663,7 +6663,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroViewCenter final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Location;                                          // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A2E[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroViewCenter) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroViewCenter");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroViewCenter) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetSceneKuroViewCenter");
@@ -6677,7 +6677,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetSceneRenderingState final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSceneVisible;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A2F[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetSceneRenderingState) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetSceneRenderingState");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetSceneRenderingState) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetSceneRenderingState");
@@ -6706,7 +6706,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetSunLensflareEnabled final
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnabled;                                          // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A30[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetSunLensflareEnabled) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetSunLensflareEnabled");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetSunLensflareEnabled) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetSunLensflareEnabled");
@@ -6719,13 +6719,13 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray final
 {
 public:
 	TArray<struct FTransform>                     TransformArray;                                    // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         Param_Index;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Location;                                          // 0x0014(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray) == 0x000020, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray");
 static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray, TransformArray) == 0x000000, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray::TransformArray' has a wrong offset!");
-static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray, Param_Index) == 0x000010, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray::Param_Index' has a wrong offset!");
+static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray, Index_0) == 0x000010, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray::Index_0' has a wrong offset!");
 static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray, Location) == 0x000014, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SetTransformLocationInArray::Location' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroRenderingRuntimeBPPluginBPLibrary.SetupVolumeSize
@@ -6735,7 +6735,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetupVolumeSize final
 public:
 	class AVolume*                                Volume;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBox                                   Bounds;                                            // 0x0008(0x001C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A31[0x4];                                     // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetupVolumeSize) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetupVolumeSize");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetupVolumeSize) == 0x000028, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetupVolumeSize");
@@ -6749,10 +6749,10 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetUsingInCaveOrIndoorShadow final
 public:
 	class UDirectionalLightComponent*             LightComp;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsUsing;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A32[0x3];                                     // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MobileCSMDistanceOld;                              // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MobileCSMDistanceNew;                              // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A33[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetUsingInCaveOrIndoorShadow) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetUsingInCaveOrIndoorShadow");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetUsingInCaveOrIndoorShadow) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetUsingInCaveOrIndoorShadow");
@@ -6770,7 +6770,7 @@ public:
 	class UMaterialParameterCollection*           Collection;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   ParameterName;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           RefLinearColor;                                    // 0x001C(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A34[0x4];                                     // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetVectorParameterValueRef) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetVectorParameterValueRef");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetVectorParameterValueRef) == 0x000030, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetVectorParameterValueRef");
@@ -6786,7 +6786,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetWorldOrgin final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                InNewOrigin;                                       // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A35[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetWorldOrgin) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetWorldOrgin");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetWorldOrgin) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetWorldOrgin");
@@ -6801,7 +6801,7 @@ public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   DataLayerName;                                     // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          IsActivate;                                        // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A36[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetWorldPartitionDataLayerState) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetWorldPartitionDataLayerState");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetWorldPartitionDataLayerState) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetWorldPartitionDataLayerState");
@@ -6816,7 +6816,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SetWorldPartitionStreamingEnable fi
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bStreamingEnable;                                  // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A37[0x7];                                     // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SetWorldPartitionStreamingEnable) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SetWorldPartitionStreamingEnable");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SetWorldPartitionStreamingEnable) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SetWorldPartitionStreamingEnable");
@@ -6831,7 +6831,7 @@ public:
 	TArray<class FString>                         InStringArray;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	ESearchCase                                   SearchCase;                                        // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Descending;                                        // 0x0011(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A38[0x6];                                     // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SortStringArray) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SortStringArray");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SortStringArray) == 0x000018, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SortStringArray");
@@ -6848,13 +6848,13 @@ public:
 	TSubclassOf<class AActor>                     ActorClass;                                        // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FTransform                             SpawnTransform;                                    // 0x0010(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	ESpawnActorCollisionHandlingMethod            CollisionHandlingOverride;                         // 0x0040(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A39[0x7];                                     // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 Owner;                                             // 0x0048(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class APawn*                                  Instigator;                                        // 0x0050(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bTemporaryEditorActor;                             // 0x0058(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A3A[0x7];                                     // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 ReturnValue;                                       // 0x0060(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A3B[0x8];                                     // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SpawnActorFromClass) == 0x000010, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SpawnActorFromClass");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SpawnActorFromClass) == 0x000070, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SpawnActorFromClass");
@@ -6873,14 +6873,14 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   FolderPath;                                        // 0x0014(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AActor*                                 ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor) == 0x000028, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor");
 static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor, WorldContextObject) == 0x000000, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor, Param_Name) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor::Param_Name' has a wrong offset!");
+static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor, Name_0) == 0x000008, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor::Name_0' has a wrong offset!");
 static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor, FolderPath) == 0x000014, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor::FolderPath' has a wrong offset!");
 static_assert(offsetof(KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor, ReturnValue) == 0x000020, "Member 'KuroRenderingRuntimeBPPluginBPLibrary_SpawnTransientActor::ReturnValue' has a wrong offset!");
 
@@ -6901,7 +6901,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_StopSceneColorShotBeforeTonemap fin
 {
 public:
 	EKuroCaptureSceneColorType                    Type;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A3C[0x3];                                     // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         HoldSeconds;                                       // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_StopSceneColorShotBeforeTonemap) == 0x000004, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_StopSceneColorShotBeforeTonemap");
@@ -6950,13 +6950,13 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransform final
 {
 public:
 	bool                                          ForceUpdate;                                       // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A3D[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USceneComponent*                        SceneComponent;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FKuroCurveVector                       LocationCurve;                                     // 0x0010(0x01A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FKuroCurveVector                       RotationCurve;                                     // 0x01B8(0x01A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	struct FKuroCurveVector                       ScaleCurve;                                        // 0x0360(0x01A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                         Time;                                              // 0x0508(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A3E[0x4];                                     // 0x050C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50C[0x4];                                      // 0x050C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransform) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransform");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransform) == 0x000510, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransform");
@@ -6973,11 +6973,11 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransformLocation final
 {
 public:
 	bool                                          ForceUpdate;                                       // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A3F[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class USceneComponent*                        SceneComponent;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FKuroCurveVector                       LocationCurve;                                     // 0x0010(0x01A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	float                                         Time;                                              // 0x01B8(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A40[0x4];                                     // 0x01BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1BC[0x4];                                      // 0x01BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransformLocation) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransformLocation");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransformLocation) == 0x0001C0, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_UpdateEffectTransformLocation");
@@ -6993,7 +6993,7 @@ struct KuroRenderingRuntimeBPPluginBPLibrary_UpdateFoliageDataLayer final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         InMobileLevel;                                     // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A41[0x4];                                     // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_UpdateFoliageDataLayer) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_UpdateFoliageDataLayer");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_UpdateFoliageDataLayer) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_UpdateFoliageDataLayer");
@@ -7008,7 +7008,7 @@ public:
 	class UCurveLinearColor*                      Curve;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InTime;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           InValue;                                           // 0x000C(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A42[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_UpdateOrAddCurveColorValue) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_UpdateOrAddCurveColorValue");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_UpdateOrAddCurveColorValue) == 0x000020, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_UpdateOrAddCurveColorValue");
@@ -7040,7 +7040,7 @@ public:
 	float                                         InAdjustValue;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ECaveOrRoomLoadType                           InLoadType;                                        // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseCustomCoef;                                    // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A43[0x2];                                     // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_WpBeginAdjustLoadRange) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_WpBeginAdjustLoadRange");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_WpBeginAdjustLoadRange) == 0x000010, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_WpBeginAdjustLoadRange");
@@ -7101,7 +7101,7 @@ public:
 	float                                         InAdjustValue;                                     // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ECaveOrRoomLoadType                           LoadType;                                          // 0x0024(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseCustomCoef;                                    // 0x0025(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A44[0x2];                                     // 0x0026(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_26[0x2];                                       // 0x0026(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroRenderingRuntimeBPPluginBPLibrary_WpEnterCaveOrRoom) == 0x000008, "Wrong alignment on KuroRenderingRuntimeBPPluginBPLibrary_WpEnterCaveOrRoom");
 static_assert(sizeof(KuroRenderingRuntimeBPPluginBPLibrary_WpEnterCaveOrRoom) == 0x000028, "Wrong size on KuroRenderingRuntimeBPPluginBPLibrary_WpEnterCaveOrRoom");
@@ -7188,7 +7188,7 @@ struct KuroSceneInteractionActorSystem_CreateSceneInteractionLevel final
 public:
 	class FString                                 InLevelName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroSceneInteractionState                    InitState;                                         // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A4B[0x3];                                     // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                Location;                                          // 0x0014(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               Rotation;                                          // 0x0020(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         ReturnValue;                                       // 0x002C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7208,7 +7208,7 @@ struct KuroSceneInteractionActorSystem_DestroySceneInteractionLevel final
 public:
 	int32                                         HandleId;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A4C[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSceneInteractionActorSystem_DestroySceneInteractionLevel) == 0x000004, "Wrong alignment on KuroSceneInteractionActorSystem_DestroySceneInteractionLevel");
 static_assert(sizeof(KuroSceneInteractionActorSystem_DestroySceneInteractionLevel) == 0x000008, "Wrong size on KuroSceneInteractionActorSystem_DestroySceneInteractionLevel");
@@ -7222,7 +7222,7 @@ struct KuroSceneInteractionActorSystem_GetCurrentState final
 public:
 	int32                                         HandleId;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroSceneInteractionState                    ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A4D[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSceneInteractionActorSystem_GetCurrentState) == 0x000004, "Wrong alignment on KuroSceneInteractionActorSystem_GetCurrentState");
 static_assert(sizeof(KuroSceneInteractionActorSystem_GetCurrentState) == 0x000008, "Wrong size on KuroSceneInteractionActorSystem_GetCurrentState");
@@ -7253,7 +7253,7 @@ public:
 	EKuroSceneInteractionState                    TargetState;                                       // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          NeedTransition;                                    // 0x0005(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0006(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A4E[0x1];                                     // 0x0007(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroSceneInteractionActorSystem_SwitchToState) == 0x000004, "Wrong alignment on KuroSceneInteractionActorSystem_SwitchToState");
 static_assert(sizeof(KuroSceneInteractionActorSystem_SwitchToState) == 0x000008, "Wrong size on KuroSceneInteractionActorSystem_SwitchToState");
@@ -7424,7 +7424,7 @@ public:
 	class FString                                 InLevelName;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 OptionalName;                                      // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                InLocation;                                        // 0x0028(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A5B[0x4];                                     // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UWorld*                                 InWorld;                                           // 0x0038(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroUiSceneInfo_Init) == 0x000008, "Wrong alignment on KuroUiSceneInfo_Init");
@@ -7488,7 +7488,7 @@ struct KuroUiSceneSystem_GetUiSceneLoadingState final
 public:
 	class FString                                 ScenePath;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKuroUiSceneLoadingState                      ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A5D[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroUiSceneSystem_GetUiSceneLoadingState) == 0x000008, "Wrong alignment on KuroUiSceneSystem_GetUiSceneLoadingState");
 static_assert(sizeof(KuroUiSceneSystem_GetUiSceneLoadingState) == 0x000018, "Wrong size on KuroUiSceneSystem_GetUiSceneLoadingState");
@@ -7526,7 +7526,7 @@ struct KuroUiSceneSystem_GetUiSceneWorldPositionOffset final
 public:
 	class FString                                 ScenePath;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A5E[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroUiSceneSystem_GetUiSceneWorldPositionOffset) == 0x000008, "Wrong alignment on KuroUiSceneSystem_GetUiSceneWorldPositionOffset");
 static_assert(sizeof(KuroUiSceneSystem_GetUiSceneWorldPositionOffset) == 0x000020, "Wrong size on KuroUiSceneSystem_GetUiSceneWorldPositionOffset");
@@ -7551,7 +7551,7 @@ struct KuroUiSceneSystem_PreloadUiScene final
 public:
 	class FString                                 ScenePath;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                WorldPositionOffset;                               // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A5F[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroUiSceneSystem_PreloadUiScene) == 0x000008, "Wrong alignment on KuroUiSceneSystem_PreloadUiScene");
 static_assert(sizeof(KuroUiSceneSystem_PreloadUiScene) == 0x000020, "Wrong size on KuroUiSceneSystem_PreloadUiScene");
@@ -7565,7 +7565,7 @@ struct KuroUiSceneSystem_StartUiSceneRendering final
 public:
 	class FString                                 ScenePath;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A60[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroUiSceneSystem_StartUiSceneRendering) == 0x000008, "Wrong alignment on KuroUiSceneSystem_StartUiSceneRendering");
 static_assert(sizeof(KuroUiSceneSystem_StartUiSceneRendering) == 0x000018, "Wrong size on KuroUiSceneSystem_StartUiSceneRendering");
@@ -7579,7 +7579,7 @@ struct KuroUiSceneSystem_UnloadUiScene final
 public:
 	class FString                                 ScenePath;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A61[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(KuroUiSceneSystem_UnloadUiScene) == 0x000008, "Wrong alignment on KuroUiSceneSystem_UnloadUiScene");
 static_assert(sizeof(KuroUiSceneSystem_UnloadUiScene) == 0x000018, "Wrong size on KuroUiSceneSystem_UnloadUiScene");
@@ -7593,7 +7593,7 @@ struct KuroWorldInfo_BP_GetInstance final
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          AutoCreate;                                        // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A63[0x7];                                     // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AKuroWorldInfo*                         ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroWorldInfo_BP_GetInstance) == 0x000008, "Wrong alignment on KuroWorldInfo_BP_GetInstance");
@@ -7633,22 +7633,22 @@ static_assert(offsetof(KuroWorldInfo_GetLandscapeInfo, LandscapeInfo) == 0x00000
 struct KuroWorldPartitionPreviewManager_AddPreviewActorType final
 {
 public:
-	TSubclassOf<class AActor>                     Param_Class;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AActor>                     Class_0;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroWorldPartitionPreviewManager_AddPreviewActorType) == 0x000008, "Wrong alignment on KuroWorldPartitionPreviewManager_AddPreviewActorType");
 static_assert(sizeof(KuroWorldPartitionPreviewManager_AddPreviewActorType) == 0x000008, "Wrong size on KuroWorldPartitionPreviewManager_AddPreviewActorType");
-static_assert(offsetof(KuroWorldPartitionPreviewManager_AddPreviewActorType, Param_Class) == 0x000000, "Member 'KuroWorldPartitionPreviewManager_AddPreviewActorType::Param_Class' has a wrong offset!");
+static_assert(offsetof(KuroWorldPartitionPreviewManager_AddPreviewActorType, Class_0) == 0x000000, "Member 'KuroWorldPartitionPreviewManager_AddPreviewActorType::Class_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroWorldPartitionPreviewManager.RemovePreviewActorType
 // 0x0008 (0x0008 - 0x0000)
 struct KuroWorldPartitionPreviewManager_RemovePreviewActorType final
 {
 public:
-	TSubclassOf<class AActor>                     Param_Class;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AActor>                     Class_0;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroWorldPartitionPreviewManager_RemovePreviewActorType) == 0x000008, "Wrong alignment on KuroWorldPartitionPreviewManager_RemovePreviewActorType");
 static_assert(sizeof(KuroWorldPartitionPreviewManager_RemovePreviewActorType) == 0x000008, "Wrong size on KuroWorldPartitionPreviewManager_RemovePreviewActorType");
-static_assert(offsetof(KuroWorldPartitionPreviewManager_RemovePreviewActorType, Param_Class) == 0x000000, "Member 'KuroWorldPartitionPreviewManager_RemovePreviewActorType::Param_Class' has a wrong offset!");
+static_assert(offsetof(KuroWorldPartitionPreviewManager_RemovePreviewActorType, Class_0) == 0x000000, "Member 'KuroWorldPartitionPreviewManager_RemovePreviewActorType::Class_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.KuroWorldPartitionPreviewManager.SetPreviewMobile
 // 0x0001 (0x0001 - 0x0000)
@@ -7755,14 +7755,14 @@ struct NiagaraKuroParameterSystem_GetParameterFloat final
 {
 public:
 	class FName                                   Collection;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Default;                                           // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x001C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(NiagaraKuroParameterSystem_GetParameterFloat) == 0x000004, "Wrong alignment on NiagaraKuroParameterSystem_GetParameterFloat");
 static_assert(sizeof(NiagaraKuroParameterSystem_GetParameterFloat) == 0x000020, "Wrong size on NiagaraKuroParameterSystem_GetParameterFloat");
 static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterFloat, Collection) == 0x000000, "Member 'NiagaraKuroParameterSystem_GetParameterFloat::Collection' has a wrong offset!");
-static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterFloat, Param_Name) == 0x00000C, "Member 'NiagaraKuroParameterSystem_GetParameterFloat::Param_Name' has a wrong offset!");
+static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterFloat, Name_0) == 0x00000C, "Member 'NiagaraKuroParameterSystem_GetParameterFloat::Name_0' has a wrong offset!");
 static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterFloat, Default) == 0x000018, "Member 'NiagaraKuroParameterSystem_GetParameterFloat::Default' has a wrong offset!");
 static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterFloat, ReturnValue) == 0x00001C, "Member 'NiagaraKuroParameterSystem_GetParameterFloat::ReturnValue' has a wrong offset!");
 
@@ -7772,14 +7772,14 @@ struct NiagaraKuroParameterSystem_GetParameterLinearColor final
 {
 public:
 	class FName                                   Collection;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           Default;                                           // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           ReturnValue;                                       // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(NiagaraKuroParameterSystem_GetParameterLinearColor) == 0x000004, "Wrong alignment on NiagaraKuroParameterSystem_GetParameterLinearColor");
 static_assert(sizeof(NiagaraKuroParameterSystem_GetParameterLinearColor) == 0x000038, "Wrong size on NiagaraKuroParameterSystem_GetParameterLinearColor");
 static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterLinearColor, Collection) == 0x000000, "Member 'NiagaraKuroParameterSystem_GetParameterLinearColor::Collection' has a wrong offset!");
-static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterLinearColor, Param_Name) == 0x00000C, "Member 'NiagaraKuroParameterSystem_GetParameterLinearColor::Param_Name' has a wrong offset!");
+static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterLinearColor, Name_0) == 0x00000C, "Member 'NiagaraKuroParameterSystem_GetParameterLinearColor::Name_0' has a wrong offset!");
 static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterLinearColor, Default) == 0x000018, "Member 'NiagaraKuroParameterSystem_GetParameterLinearColor::Default' has a wrong offset!");
 static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterLinearColor, ReturnValue) == 0x000028, "Member 'NiagaraKuroParameterSystem_GetParameterLinearColor::ReturnValue' has a wrong offset!");
 
@@ -7789,14 +7789,14 @@ struct NiagaraKuroParameterSystem_GetParameterVector final
 {
 public:
 	class FName                                   Collection;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Default;                                           // 0x0018(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ReturnValue;                                       // 0x0024(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(NiagaraKuroParameterSystem_GetParameterVector) == 0x000004, "Wrong alignment on NiagaraKuroParameterSystem_GetParameterVector");
 static_assert(sizeof(NiagaraKuroParameterSystem_GetParameterVector) == 0x000030, "Wrong size on NiagaraKuroParameterSystem_GetParameterVector");
 static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterVector, Collection) == 0x000000, "Member 'NiagaraKuroParameterSystem_GetParameterVector::Collection' has a wrong offset!");
-static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterVector, Param_Name) == 0x00000C, "Member 'NiagaraKuroParameterSystem_GetParameterVector::Param_Name' has a wrong offset!");
+static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterVector, Name_0) == 0x00000C, "Member 'NiagaraKuroParameterSystem_GetParameterVector::Name_0' has a wrong offset!");
 static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterVector, Default) == 0x000018, "Member 'NiagaraKuroParameterSystem_GetParameterVector::Default' has a wrong offset!");
 static_assert(offsetof(NiagaraKuroParameterSystem_GetParameterVector, ReturnValue) == 0x000024, "Member 'NiagaraKuroParameterSystem_GetParameterVector::ReturnValue' has a wrong offset!");
 
@@ -7817,12 +7817,12 @@ struct NiagaraKuroParameterSystem_RemoveParameterFloat final
 {
 public:
 	class FName                                   Collection;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(NiagaraKuroParameterSystem_RemoveParameterFloat) == 0x000004, "Wrong alignment on NiagaraKuroParameterSystem_RemoveParameterFloat");
 static_assert(sizeof(NiagaraKuroParameterSystem_RemoveParameterFloat) == 0x000018, "Wrong size on NiagaraKuroParameterSystem_RemoveParameterFloat");
 static_assert(offsetof(NiagaraKuroParameterSystem_RemoveParameterFloat, Collection) == 0x000000, "Member 'NiagaraKuroParameterSystem_RemoveParameterFloat::Collection' has a wrong offset!");
-static_assert(offsetof(NiagaraKuroParameterSystem_RemoveParameterFloat, Param_Name) == 0x00000C, "Member 'NiagaraKuroParameterSystem_RemoveParameterFloat::Param_Name' has a wrong offset!");
+static_assert(offsetof(NiagaraKuroParameterSystem_RemoveParameterFloat, Name_0) == 0x00000C, "Member 'NiagaraKuroParameterSystem_RemoveParameterFloat::Name_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.NiagaraKuroParameterSystem.RemoveParameterLinearColor
 // 0x0018 (0x0018 - 0x0000)
@@ -7830,12 +7830,12 @@ struct NiagaraKuroParameterSystem_RemoveParameterLinearColor final
 {
 public:
 	class FName                                   Collection;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(NiagaraKuroParameterSystem_RemoveParameterLinearColor) == 0x000004, "Wrong alignment on NiagaraKuroParameterSystem_RemoveParameterLinearColor");
 static_assert(sizeof(NiagaraKuroParameterSystem_RemoveParameterLinearColor) == 0x000018, "Wrong size on NiagaraKuroParameterSystem_RemoveParameterLinearColor");
 static_assert(offsetof(NiagaraKuroParameterSystem_RemoveParameterLinearColor, Collection) == 0x000000, "Member 'NiagaraKuroParameterSystem_RemoveParameterLinearColor::Collection' has a wrong offset!");
-static_assert(offsetof(NiagaraKuroParameterSystem_RemoveParameterLinearColor, Param_Name) == 0x00000C, "Member 'NiagaraKuroParameterSystem_RemoveParameterLinearColor::Param_Name' has a wrong offset!");
+static_assert(offsetof(NiagaraKuroParameterSystem_RemoveParameterLinearColor, Name_0) == 0x00000C, "Member 'NiagaraKuroParameterSystem_RemoveParameterLinearColor::Name_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.NiagaraKuroParameterSystem.RemoveParameterVector
 // 0x0018 (0x0018 - 0x0000)
@@ -7843,12 +7843,12 @@ struct NiagaraKuroParameterSystem_RemoveParameterVector final
 {
 public:
 	class FName                                   Collection;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(NiagaraKuroParameterSystem_RemoveParameterVector) == 0x000004, "Wrong alignment on NiagaraKuroParameterSystem_RemoveParameterVector");
 static_assert(sizeof(NiagaraKuroParameterSystem_RemoveParameterVector) == 0x000018, "Wrong size on NiagaraKuroParameterSystem_RemoveParameterVector");
 static_assert(offsetof(NiagaraKuroParameterSystem_RemoveParameterVector, Collection) == 0x000000, "Member 'NiagaraKuroParameterSystem_RemoveParameterVector::Collection' has a wrong offset!");
-static_assert(offsetof(NiagaraKuroParameterSystem_RemoveParameterVector, Param_Name) == 0x00000C, "Member 'NiagaraKuroParameterSystem_RemoveParameterVector::Param_Name' has a wrong offset!");
+static_assert(offsetof(NiagaraKuroParameterSystem_RemoveParameterVector, Name_0) == 0x00000C, "Member 'NiagaraKuroParameterSystem_RemoveParameterVector::Name_0' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.NiagaraKuroParameterSystem.SetParameterFloat
 // 0x001C (0x001C - 0x0000)
@@ -7856,13 +7856,13 @@ struct NiagaraKuroParameterSystem_SetParameterFloat final
 {
 public:
 	class FName                                   Collection;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Val;                                               // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(NiagaraKuroParameterSystem_SetParameterFloat) == 0x000004, "Wrong alignment on NiagaraKuroParameterSystem_SetParameterFloat");
 static_assert(sizeof(NiagaraKuroParameterSystem_SetParameterFloat) == 0x00001C, "Wrong size on NiagaraKuroParameterSystem_SetParameterFloat");
 static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterFloat, Collection) == 0x000000, "Member 'NiagaraKuroParameterSystem_SetParameterFloat::Collection' has a wrong offset!");
-static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterFloat, Param_Name) == 0x00000C, "Member 'NiagaraKuroParameterSystem_SetParameterFloat::Param_Name' has a wrong offset!");
+static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterFloat, Name_0) == 0x00000C, "Member 'NiagaraKuroParameterSystem_SetParameterFloat::Name_0' has a wrong offset!");
 static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterFloat, Val) == 0x000018, "Member 'NiagaraKuroParameterSystem_SetParameterFloat::Val' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.NiagaraKuroParameterSystem.SetParameterLinearColor
@@ -7871,13 +7871,13 @@ struct NiagaraKuroParameterSystem_SetParameterLinearColor final
 {
 public:
 	class FName                                   Collection;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           Val;                                               // 0x0018(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(NiagaraKuroParameterSystem_SetParameterLinearColor) == 0x000004, "Wrong alignment on NiagaraKuroParameterSystem_SetParameterLinearColor");
 static_assert(sizeof(NiagaraKuroParameterSystem_SetParameterLinearColor) == 0x000028, "Wrong size on NiagaraKuroParameterSystem_SetParameterLinearColor");
 static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterLinearColor, Collection) == 0x000000, "Member 'NiagaraKuroParameterSystem_SetParameterLinearColor::Collection' has a wrong offset!");
-static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterLinearColor, Param_Name) == 0x00000C, "Member 'NiagaraKuroParameterSystem_SetParameterLinearColor::Param_Name' has a wrong offset!");
+static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterLinearColor, Name_0) == 0x00000C, "Member 'NiagaraKuroParameterSystem_SetParameterLinearColor::Name_0' has a wrong offset!");
 static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterLinearColor, Val) == 0x000018, "Member 'NiagaraKuroParameterSystem_SetParameterLinearColor::Val' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.NiagaraKuroParameterSystem.SetParameterVector
@@ -7886,13 +7886,13 @@ struct NiagaraKuroParameterSystem_SetParameterVector final
 {
 public:
 	class FName                                   Collection;                                        // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Param_Name;                                        // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Name_0;                                            // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Val;                                               // 0x0018(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(NiagaraKuroParameterSystem_SetParameterVector) == 0x000004, "Wrong alignment on NiagaraKuroParameterSystem_SetParameterVector");
 static_assert(sizeof(NiagaraKuroParameterSystem_SetParameterVector) == 0x000024, "Wrong size on NiagaraKuroParameterSystem_SetParameterVector");
 static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterVector, Collection) == 0x000000, "Member 'NiagaraKuroParameterSystem_SetParameterVector::Collection' has a wrong offset!");
-static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterVector, Param_Name) == 0x00000C, "Member 'NiagaraKuroParameterSystem_SetParameterVector::Param_Name' has a wrong offset!");
+static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterVector, Name_0) == 0x00000C, "Member 'NiagaraKuroParameterSystem_SetParameterVector::Name_0' has a wrong offset!");
 static_assert(offsetof(NiagaraKuroParameterSystem_SetParameterVector, Val) == 0x000018, "Member 'NiagaraKuroParameterSystem_SetParameterVector::Val' has a wrong offset!");
 
 // Function KuroRenderingRuntimeBPPlugin.ThunderGenerator.SpawnThunderInWorld
@@ -7903,7 +7903,7 @@ public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Location;                                          // 0x0008(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAttack;                                           // 0x0014(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A7E[0x3];                                     // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ThunderGenerator_SpawnThunderInWorld) == 0x000008, "Wrong alignment on ThunderGenerator_SpawnThunderInWorld");
 static_assert(sizeof(ThunderGenerator_SpawnThunderInWorld) == 0x000018, "Wrong size on ThunderGenerator_SpawnThunderInWorld");
@@ -7920,7 +7920,7 @@ public:
 	struct FVector                                OutPosition;                                       // 0x0030(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAttack;                                           // 0x003C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x003D(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A7F[0x2];                                     // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ThunderGenerator_CalculateThunderPosition) == 0x000010, "Wrong alignment on ThunderGenerator_CalculateThunderPosition");
 static_assert(sizeof(ThunderGenerator_CalculateThunderPosition) == 0x000040, "Wrong size on ThunderGenerator_CalculateThunderPosition");
@@ -7936,7 +7936,7 @@ struct ThunderGenerator_OnReceiveThunderAttack final
 public:
 	struct FVector                                Location;                                          // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAttack;                                           // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A80[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ThunderGenerator_OnReceiveThunderAttack) == 0x000004, "Wrong alignment on ThunderGenerator_OnReceiveThunderAttack");
 static_assert(sizeof(ThunderGenerator_OnReceiveThunderAttack) == 0x000010, "Wrong size on ThunderGenerator_OnReceiveThunderAttack");
@@ -7961,7 +7961,7 @@ struct ThunderGenerator_SpawnThunder final
 public:
 	struct FVector                                HitLocation;                                       // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAttack;                                           // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A81[0x3];                                     // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(ThunderGenerator_SpawnThunder) == 0x000004, "Wrong alignment on ThunderGenerator_SpawnThunder");
 static_assert(sizeof(ThunderGenerator_SpawnThunder) == 0x000010, "Wrong size on ThunderGenerator_SpawnThunder");

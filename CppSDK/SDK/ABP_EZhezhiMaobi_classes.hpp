@@ -27,26 +27,26 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x05F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x05F8(0x0020)()
 	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x0618(0x0020)()
-	uint8                                         Pad_3615[0x8];                                     // 0x0638(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_638[0x8];                                      // 0x0638(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_KawaiiPhysics                AnimGraphNode_KawaiiPhysics;                       // 0x0640(0x0280)()
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x08C0(0x0038)()
-	uint8                                         Pad_3616[0x8];                                     // 0x08F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8F8[0x8];                                      // 0x08F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_ExtraFollowAnims             AnimGraphNode_ExtraFollowAnims;                    // 0x0900(0x0A50)()
 	class ATsBaseCharacter_C*                     _r__;                                              // 0x1350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAnimInstance*                          AnimInstance;                                      // 0x1358(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 DaMaobi;                                           // 0x1360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ____Minus;                                         // 0x1368(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3617[0x7];                                     // 0x1369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1369[0x7];                                     // 0x1369(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPrimaryDataAsset*                      HideEffect;                                        // 0x1370(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     SM_r;                                              // 0x1378(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void ___();
-	void BlueprintInitializeAnimation();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void OnComponentStart();
 	void ExecuteUbergraph_ABP_EZhezhiMaobi(int32 EntryPoint);
+	void OnComponentStart();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void BlueprintInitializeAnimation();
+	void ___();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

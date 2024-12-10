@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "TsBaseItem_classes.hpp"
 #include "Engine_structs.hpp"
+#include "TsBaseItem_classes.hpp"
 
 
 namespace SDK
@@ -30,7 +30,7 @@ public:
 
 public:
 	void ExecuteUbergraph_BP_BaseItem(int32 EntryPoint);
-	void ApplyEntityId(int32 Param_EntityId);
+	void ApplyEntityId(int32 EntityId_0);
 	int32 GetEntityId();
 	void ReceiveBeginPlay();
 

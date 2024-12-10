@@ -26,19 +26,19 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	float                                         Float;                                             // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3636[0x4];                                     // 0x02C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C4[0x4];                                      // 0x02C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ScalarName;                                        // 0x02C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	TArray<class AActor*>                         Actor;                                             // 0x02D8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	class FString                                 VectorName;                                        // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	struct FLinearColor                           Vector;                                            // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ChangeVectorParameter(const struct FLinearColor& VectorParameter, const class FString& VectorParameterName);
-	void ChangeScalarParameter(float FloatParameter, const class FString& FloatParameterName);
-	void ForEach();
-	void Test();
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_InteractionMaterialController(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void Test();
+	void ForEach();
+	void ChangeScalarParameter(float FloatParameter, const class FString& FloatParameterName);
+	void ChangeVectorParameter(const struct FLinearColor& VectorParameter, const class FString& VectorParameterName);
 
 public:
 	static class UClass* StaticClass()

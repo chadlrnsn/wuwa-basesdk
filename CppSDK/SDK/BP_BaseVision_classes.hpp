@@ -22,7 +22,7 @@ namespace SDK
 class ABP_BaseVision_C : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_32E0[0x7];                                     // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_781[0x7];                                      // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseVision_C;                    // 0x0788(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:

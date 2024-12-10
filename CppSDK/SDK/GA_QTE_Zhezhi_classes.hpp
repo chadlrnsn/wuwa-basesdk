@@ -29,13 +29,13 @@ public:
 	int32                                         Qte_Type;                                          // 0x0578(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnTick_5D118C384AE61F1C80292E81936B7564();
-	void OnCancelled_5D118C384AE61F1C80292E81936B7564();
-	void OnInterrupted_5D118C384AE61F1C80292E81936B7564();
-	void OnBlendOut_5D118C384AE61F1C80292E81936B7564();
-	void OnCompleted_5D118C384AE61F1C80292E81936B7564();
-	void K2_ActivateAbility();
 	void ExecuteUbergraph_GA_QTE_Zhezhi(int32 EntryPoint);
+	void K2_ActivateAbility();
+	void OnCompleted_5D118C384AE61F1C80292E81936B7564();
+	void OnBlendOut_5D118C384AE61F1C80292E81936B7564();
+	void OnInterrupted_5D118C384AE61F1C80292E81936B7564();
+	void OnCancelled_5D118C384AE61F1C80292E81936B7564();
+	void OnTick_5D118C384AE61F1C80292E81936B7564();
 
 public:
 	static class UClass* StaticClass()

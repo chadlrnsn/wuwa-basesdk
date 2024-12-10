@@ -25,7 +25,7 @@ public:
 	struct FMagicLeapSharedWorldSharedData        SharedWorldData;                                   // 0x03A0(0x0010)(BlueprintVisible, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnNewLocalDataFromClients;                         // 0x03B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	float                                         PinSelectionConfidenceThreshold;                   // 0x03C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_258E[0xA4];                                    // 0x03C4(0x00A4)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C4[0xA4];                                     // 0x03C4(0x00A4)(Fixing Size After Last Property [ Dumper-7 ])
 	class AMagicLeapSharedWorldPlayerController*  ChosenOne;                                         // 0x0468(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
@@ -90,7 +90,7 @@ static_assert(offsetof(AMagicLeapSharedWorldGameState, OnAlignmentTransformsUpda
 class AMagicLeapSharedWorldPlayerController final : public APlayerController
 {
 public:
-	uint8                                         Pad_258F[0x18];                                    // 0x0660(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_660[0x18];                                     // 0x0660(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ClientMarkReadyForSendingLocalData();

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SEffectColorParameter_structs.hpp"
+#include "Engine_structs.hpp"
 #include "EEffectPlay_structs.hpp"
 #include "EEffectType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
@@ -34,7 +34,7 @@ public:
 	struct FSoftObjectPath                        EffectData;                                        // 0x0300(0x0020)(Edit, BlueprintVisible, ZeroConstructor, ExposeOnSpawn, HasGetValueTypeHash)
 	bool                                          DebugPrintOnConstruction;                          // 0x0320(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          EditorTickWithoutSelected;                         // 0x0321(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_30F7[0x2];                                     // 0x0322(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_322[0x2];                                      // 0x0322(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         EffectComponent;                                   // 0x0324(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EEffectPlay                                   PlayType;                                          // 0x0328(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EEffectType                                   EffectType;                                        // 0x0329(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -53,17 +53,17 @@ public:
 	bool                                          ForceStoppingTime;                                 // 0x0393(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IgnoreStoppingTime;                                // 0x0394(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          MobileOnly;                                        // 0x0395(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_30F8[0x2];                                     // 0x0396(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_396[0x2];                                      // 0x0396(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FloatParameter0;                                   // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	float                                         FloatParameter1;                                   // 0x039C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	float                                         FloatParameter2;                                   // 0x03A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsPublicToSequence;                                // 0x03A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_30F9[0x3];                                     // 0x03A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A5[0x3];                                      // 0x03A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 FloatParameterName0;                               // 0x03A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 FloatParameterName1;                               // 0x03B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 FloatParameterName2;                               // 0x03C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          IsSimulateFromSequence;                            // 0x03D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_30FA[0x3];                                     // 0x03D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D9[0x3];                                      // 0x03D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CustomProcess;                                     // 0x03DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 	EEffectPlay                                   EditorPlayType;                                    // 0x03E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -80,7 +80,7 @@ public:
 	void UserConstructionScript();
 	void Refresh();
 	void CalculateLifeTime();
-	void IsEditor(bool* Param_IsEditor);
+	void IsEditor(bool* IsEditor_0);
 	bool Stop(const class FString& Reason, bool Immediately);
 	void Play(const class FString& Reason);
 	void PlayEffect();

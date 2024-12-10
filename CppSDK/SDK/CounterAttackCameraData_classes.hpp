@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SCounterAttackCamera_structs.hpp"
 #include "STimeScale_structs.hpp"
+#include "SCounterAttackCamera_structs.hpp"
 #include "KuroUtility_classes.hpp"
 
 

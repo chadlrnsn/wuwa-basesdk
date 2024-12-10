@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SCloudThunderInfo_structs.hpp"
 #include "Engine_classes.hpp"
+#include "SCloudThunderInfo_structs.hpp"
 
 
 namespace SDK

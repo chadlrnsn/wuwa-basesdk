@@ -23,7 +23,7 @@ struct FSNavigationGroup final
 public:
 	class FString                                 GroupName_5_4A4352724F4FB7DCAC7B1E99DB409163;      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         GroupType_34_CF445B0640A4DABDD990CDB2BA9ADE72;     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_288E[0x4];                                     // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 PrevGroupName_2_C3E8149D474A89D8206FA2B12E32529D;  // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 NextGroupName_6_084CCE4C42A106023371A99997D409D6;  // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 InsideGroupName_55_A0683A7F4A1938CD21B3979FF0F50E22; // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)

@@ -17,105 +17,215 @@
 namespace SDK
 {
 
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.ænﬁdMnNew
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.ExecuteUbergraph_GA_Zhezhi_Skill01
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class ATsBaseCharacter_C*               _d_S                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          TargetLocation                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   AddRot                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Zerob_K__                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Zhezhi_Skill01_C::_n_dMnNew(class ATsBaseCharacter_C* _d_S, const struct FVector& TargetLocation, float AddRot, float Zerob_K__)
+void UGA_Zhezhi_Skill01_C::ExecuteUbergraph_GA_Zhezhi_Skill01(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "ænﬁdMnNew");
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "ExecuteUbergraph_GA_Zhezhi_Skill01");
 
-	Params::GA_Zhezhi_Skill01_C__n_dMnNew Parms{};
+	Params::GA_Zhezhi_Skill01_C_ExecuteUbergraph_GA_Zhezhi_Skill01 Parms{};
 
-	Parms._d_S = _d_S;
-	Parms.TargetLocation = std::move(TargetLocation);
-	Parms.AddRot = AddRot;
-	Parms.Zerob_K__ = Zerob_K__;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.&(z-
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   Pos                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    InAir                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_Zhezhi_Skill01_C::__zMinus(int32 Pos, bool* InAir)
+void UGA_Zhezhi_Skill01_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "&(z-");
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "K2_ActivateAbility");
 
-	Params::GA_Zhezhi_Skill01_C___zMinus Parms{};
-
-	Parms.Pos = Pos;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (InAir != nullptr)
-		*InAir = Parms.InAir;
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.9nMn¿;vænﬁd
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FName                             Key                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class ATsBaseCharacter_C*               Target                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    FindTarget                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnCompleted_5D118C384AE61F1C80292E819B209F50
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_Zhezhi_Skill01_C::NinenMn__v_n_d(const class FName& Key, class ATsBaseCharacter_C** Target, bool* FindTarget)
+void UGA_Zhezhi_Skill01_C::OnCompleted_5D118C384AE61F1C80292E819B209F50()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "9nMn¿;vænﬁd");
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnCompleted_5D118C384AE61F1C80292E819B209F50");
 
-	Params::GA_Zhezhi_Skill01_C_NinenMn__v_n_d Parms{};
-
-	Parms.Key = Key;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Target != nullptr)
-		*Target = Parms.Target;
-
-	if (FindTarget != nullptr)
-		*FindTarget = Parms.FindTarget;
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.ænﬁdMn
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ATsBaseCharacter_C*               _d_S                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Offset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   AddRot                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    AddPosition                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnBlendOut_5D118C384AE61F1C80292E819B209F50
+// (BlueprintCallable, BlueprintEvent)
 
-void UGA_Zhezhi_Skill01_C::_n_dMn(class ATsBaseCharacter_C* _d_S, const struct FVector& Offset, float AddRot, bool AddPosition)
+void UGA_Zhezhi_Skill01_C::OnBlendOut_5D118C384AE61F1C80292E819B209F50()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "ænﬁdMn");
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnBlendOut_5D118C384AE61F1C80292E819B209F50");
 
-	Params::GA_Zhezhi_Skill01_C__n_dMn Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms._d_S = _d_S;
-	Parms.Offset = std::move(Offset);
-	Parms.AddRot = AddRot;
-	Parms.AddPosition = AddPosition;
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnInterrupted_5D118C384AE61F1C80292E819B209F50
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill01_C::OnInterrupted_5D118C384AE61F1C80292E819B209F50()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnInterrupted_5D118C384AE61F1C80292E819B209F50");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnCancelled_5D118C384AE61F1C80292E819B209F50
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill01_C::OnCancelled_5D118C384AE61F1C80292E819B209F50()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnCancelled_5D118C384AE61F1C80292E819B209F50");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnTick_5D118C384AE61F1C80292E819B209F50
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill01_C::OnTick_5D118C384AE61F1C80292E819B209F50()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnTick_5D118C384AE61F1C80292E819B209F50");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.EventReceived_18B59F5945020DB23C42FD88DCB75A45
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_Zhezhi_Skill01_C::EventReceived_18B59F5945020DB23C42FD88DCB75A45(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "EventReceived_18B59F5945020DB23C42FD88DCB75A45");
+
+	Params::GA_Zhezhi_Skill01_C_EventReceived_18B59F5945020DB23C42FD88DCB75A45 Parms{};
+
+	Parms.Payload = std::move(Payload);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnCompleted_5D118C384AE61F1C80292E817998F983
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill01_C::OnCompleted_5D118C384AE61F1C80292E817998F983()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnCompleted_5D118C384AE61F1C80292E817998F983");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnBlendOut_5D118C384AE61F1C80292E817998F983
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill01_C::OnBlendOut_5D118C384AE61F1C80292E817998F983()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnBlendOut_5D118C384AE61F1C80292E817998F983");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnInterrupted_5D118C384AE61F1C80292E817998F983
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill01_C::OnInterrupted_5D118C384AE61F1C80292E817998F983()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnInterrupted_5D118C384AE61F1C80292E817998F983");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnCancelled_5D118C384AE61F1C80292E817998F983
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill01_C::OnCancelled_5D118C384AE61F1C80292E817998F983()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnCancelled_5D118C384AE61F1C80292E817998F983");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnTick_5D118C384AE61F1C80292E817998F983
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Zhezhi_Skill01_C::OnTick_5D118C384AE61F1C80292E817998F983()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnTick_5D118C384AE61F1C80292E817998F983");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.EventReceived_18B59F5945020DB23C42FD887A29D0DA
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_Zhezhi_Skill01_C::EventReceived_18B59F5945020DB23C42FD887A29D0DA(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "EventReceived_18B59F5945020DB23C42FD887A29D0DA");
+
+	Params::GA_Zhezhi_Skill01_C_EventReceived_18B59F5945020DB23C42FD887A29D0DA Parms{};
+
+	Parms.Payload = std::move(Payload);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -149,215 +259,105 @@ void UGA_Zhezhi_Skill01_C::__v___d_S(int32 _d__, class ATsBaseCharacter_C** _d_S
 }
 
 
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.EventReceived_18B59F5945020DB23C42FD887A29D0DA
-// (BlueprintCallable, BlueprintEvent)
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.ænﬁdMn
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// class ATsBaseCharacter_C*               _d_S                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          Offset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   AddRot                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    AddPosition                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Zhezhi_Skill01_C::EventReceived_18B59F5945020DB23C42FD887A29D0DA(const struct FGameplayEventData& Payload)
+void UGA_Zhezhi_Skill01_C::_n_dMn(class ATsBaseCharacter_C* _d_S, const struct FVector& Offset, float AddRot, bool AddPosition)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "EventReceived_18B59F5945020DB23C42FD887A29D0DA");
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "ænﬁdMn");
 
-	Params::GA_Zhezhi_Skill01_C_EventReceived_18B59F5945020DB23C42FD887A29D0DA Parms{};
+	Params::GA_Zhezhi_Skill01_C__n_dMn Parms{};
 
-	Parms.Payload = std::move(Payload);
+	Parms._d_S = _d_S;
+	Parms.Offset = std::move(Offset);
+	Parms.AddRot = AddRot;
+	Parms.AddPosition = AddPosition;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnTick_5D118C384AE61F1C80292E817998F983
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnTick_5D118C384AE61F1C80292E817998F983()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnTick_5D118C384AE61F1C80292E817998F983");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnCancelled_5D118C384AE61F1C80292E817998F983
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnCancelled_5D118C384AE61F1C80292E817998F983()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnCancelled_5D118C384AE61F1C80292E817998F983");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnInterrupted_5D118C384AE61F1C80292E817998F983
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnInterrupted_5D118C384AE61F1C80292E817998F983()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnInterrupted_5D118C384AE61F1C80292E817998F983");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnBlendOut_5D118C384AE61F1C80292E817998F983
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnBlendOut_5D118C384AE61F1C80292E817998F983()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnBlendOut_5D118C384AE61F1C80292E817998F983");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnCompleted_5D118C384AE61F1C80292E817998F983
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnCompleted_5D118C384AE61F1C80292E817998F983()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnCompleted_5D118C384AE61F1C80292E817998F983");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.EventReceived_18B59F5945020DB23C42FD88DCB75A45
-// (BlueprintCallable, BlueprintEvent)
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.9nMn¿;vænﬁd
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// class FName                             Key                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               Target                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    FindTarget                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Zhezhi_Skill01_C::EventReceived_18B59F5945020DB23C42FD88DCB75A45(const struct FGameplayEventData& Payload)
+void UGA_Zhezhi_Skill01_C::NinenMn__v_n_d(const class FName& Key, class ATsBaseCharacter_C** Target, bool* FindTarget)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "EventReceived_18B59F5945020DB23C42FD88DCB75A45");
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "9nMn¿;vænﬁd");
 
-	Params::GA_Zhezhi_Skill01_C_EventReceived_18B59F5945020DB23C42FD88DCB75A45 Parms{};
+	Params::GA_Zhezhi_Skill01_C_NinenMn__v_n_d Parms{};
 
-	Parms.Payload = std::move(Payload);
+	Parms.Key = Key;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (Target != nullptr)
+		*Target = Parms.Target;
+
+	if (FindTarget != nullptr)
+		*FindTarget = Parms.FindTarget;
 }
 
 
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnTick_5D118C384AE61F1C80292E819B209F50
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnTick_5D118C384AE61F1C80292E819B209F50()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnTick_5D118C384AE61F1C80292E819B209F50");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnCancelled_5D118C384AE61F1C80292E819B209F50
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnCancelled_5D118C384AE61F1C80292E819B209F50()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnCancelled_5D118C384AE61F1C80292E819B209F50");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnInterrupted_5D118C384AE61F1C80292E819B209F50
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnInterrupted_5D118C384AE61F1C80292E819B209F50()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnInterrupted_5D118C384AE61F1C80292E819B209F50");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnBlendOut_5D118C384AE61F1C80292E819B209F50
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnBlendOut_5D118C384AE61F1C80292E819B209F50()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnBlendOut_5D118C384AE61F1C80292E819B209F50");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.OnCompleted_5D118C384AE61F1C80292E819B209F50
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::OnCompleted_5D118C384AE61F1C80292E819B209F50()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "OnCompleted_5D118C384AE61F1C80292E819B209F50");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Zhezhi_Skill01_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.ExecuteUbergraph_GA_Zhezhi_Skill01
-// (Final, UbergraphFunction, HasDefaults)
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.&(z-
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Pos                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    InAir                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Zhezhi_Skill01_C::ExecuteUbergraph_GA_Zhezhi_Skill01(int32 EntryPoint)
+void UGA_Zhezhi_Skill01_C::__zMinus(int32 Pos, bool* InAir)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "ExecuteUbergraph_GA_Zhezhi_Skill01");
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "&(z-");
 
-	Params::GA_Zhezhi_Skill01_C_ExecuteUbergraph_GA_Zhezhi_Skill01 Parms{};
+	Params::GA_Zhezhi_Skill01_C___zMinus Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Pos = Pos;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (InAir != nullptr)
+		*InAir = Parms.InAir;
+}
+
+
+// Function GA_Zhezhi_Skill01.GA_Zhezhi_Skill01_C.ænﬁdMnNew
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               _d_S                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          TargetLocation                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   AddRot                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Zerob_K__                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Zhezhi_Skill01_C::_n_dMnNew(class ATsBaseCharacter_C* _d_S, const struct FVector& TargetLocation, float AddRot, float Zerob_K__)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Zhezhi_Skill01_C", "ænﬁdMnNew");
+
+	Params::GA_Zhezhi_Skill01_C__n_dMnNew Parms{};
+
+	Parms._d_S = _d_S;
+	Parms.TargetLocation = std::move(TargetLocation);
+	Parms.AddRot = AddRot;
+	Parms.Zerob_K__ = Zerob_K__;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

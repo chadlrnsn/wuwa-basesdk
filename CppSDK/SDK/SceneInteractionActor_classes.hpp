@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ESceneInteractionEffect_structs.hpp"
+#include "SSceneInteractionTags_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "SSceneInteractionTags_structs.hpp"
-#include "GameplayTags_structs.hpp"
+#include "ESceneInteractionEffect_structs.hpp"
 #include "SSceneInteractionitem_structs.hpp"
 #include "SScenePropertyEffect_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK
@@ -33,7 +33,7 @@ public:
 	TArray<class AActor*>                         CollisionActors;                                   // 0x0358(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	class FString                                 LevelName;                                         // 0x0368(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	float                                         HandleId;                                          // 0x0378(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2C9A[0x4];                                     // 0x037C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_37C[0x4];                                      // 0x037C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<ESceneInteractionEffect, class ABP_EffectActor_C*> EndEffects;                                        // 0x0380(0x0050)(Edit, BlueprintVisible)
 	TMap<ESceneInteractionEffect, struct FSScenePropertyEffect> Effects;                                           // 0x03D0(0x0050)(Edit, BlueprintVisible)
 	TArray<class AActor*>                         InteractionEffectHookActors;                       // 0x0420(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
@@ -47,15 +47,15 @@ public:
 	class ABP_InteractionMaterialController_C*    InteractionMaterialController;                     // 0x0510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void DestroySelf();
-	class ALevelSequenceActor* GetDirectorBySequence(class ULevelSequence* Sequence);
-	void StopExtraEffectOnTagsChange(const struct FGameplayTag& Tag);
-	void ResetTagActorHide(const struct FGameplayTag& Tag);
-	void AddMatrialDataForChildrenActor(class AActor* Actor, class UItemMaterialControllerActorData_C* MaterialData);
-	void AddNewEndEffect();
-	void UpdateTimeDilation();
-	void AddNewState();
 	void AddNewEffect();
+	void AddNewState();
+	void UpdateTimeDilation();
+	void AddNewEndEffect();
+	void AddMatrialDataForChildrenActor(class AActor* Actor, class UItemMaterialControllerActorData_C* MaterialData);
+	void ResetTagActorHide(const struct FGameplayTag& Tag);
+	void StopExtraEffectOnTagsChange(const struct FGameplayTag& Tag);
+	class ALevelSequenceActor* GetDirectorBySequence(class ULevelSequence* Sequence);
+	void DestroySelf();
 
 public:
 	static class UClass* StaticClass()

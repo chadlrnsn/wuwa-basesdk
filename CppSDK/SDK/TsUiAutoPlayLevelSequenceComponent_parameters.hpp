@@ -14,16 +14,21 @@
 namespace SDK::Params
 {
 
-// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.UpdateBP
-// 0x0004 (0x0004 - 0x0000)
-struct TsUiAutoPlayLevelSequenceComponent_C_UpdateBP final
+// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent
+// 0x000C (0x000C - 0x0000)
+struct TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent final
 {
 public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_activeOrInactive;                     // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_DeltaTime;                            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(TsUiAutoPlayLevelSequenceComponent_C_UpdateBP) == 0x000004, "Wrong alignment on TsUiAutoPlayLevelSequenceComponent_C_UpdateBP");
-static_assert(sizeof(TsUiAutoPlayLevelSequenceComponent_C_UpdateBP) == 0x000004, "Wrong size on TsUiAutoPlayLevelSequenceComponent_C_UpdateBP");
-static_assert(offsetof(TsUiAutoPlayLevelSequenceComponent_C_UpdateBP, DeltaTime) == 0x000000, "Member 'TsUiAutoPlayLevelSequenceComponent_C_UpdateBP::DeltaTime' has a wrong offset!");
+static_assert(alignof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent) == 0x000004, "Wrong alignment on TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent");
+static_assert(sizeof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent) == 0x00000C, "Wrong size on TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent");
+static_assert(offsetof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent, EntryPoint) == 0x000000, "Member 'TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent::EntryPoint' has a wrong offset!");
+static_assert(offsetof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent, K2Node_Event_activeOrInactive) == 0x000004, "Member 'TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent::K2Node_Event_activeOrInactive' has a wrong offset!");
+static_assert(offsetof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent, K2Node_Event_DeltaTime) == 0x000008, "Member 'TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent::K2Node_Event_DeltaTime' has a wrong offset!");
 
 // Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.OnUIActiveInHierarchyBP
 // 0x0001 (0x0001 - 0x0000)
@@ -36,21 +41,16 @@ static_assert(alignof(TsUiAutoPlayLevelSequenceComponent_C_OnUIActiveInHierarchy
 static_assert(sizeof(TsUiAutoPlayLevelSequenceComponent_C_OnUIActiveInHierarchyBP) == 0x000001, "Wrong size on TsUiAutoPlayLevelSequenceComponent_C_OnUIActiveInHierarchyBP");
 static_assert(offsetof(TsUiAutoPlayLevelSequenceComponent_C_OnUIActiveInHierarchyBP, ActiveOrInactive) == 0x000000, "Member 'TsUiAutoPlayLevelSequenceComponent_C_OnUIActiveInHierarchyBP::ActiveOrInactive' has a wrong offset!");
 
-// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent
-// 0x000C (0x000C - 0x0000)
-struct TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent final
+// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.UpdateBP
+// 0x0004 (0x0004 - 0x0000)
+struct TsUiAutoPlayLevelSequenceComponent_C_UpdateBP final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_activeOrInactive;                     // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_337E[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Event_DeltaTime;                            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent) == 0x000004, "Wrong alignment on TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent");
-static_assert(sizeof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent) == 0x00000C, "Wrong size on TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent");
-static_assert(offsetof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent, EntryPoint) == 0x000000, "Member 'TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent::EntryPoint' has a wrong offset!");
-static_assert(offsetof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent, K2Node_Event_activeOrInactive) == 0x000004, "Member 'TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent::K2Node_Event_activeOrInactive' has a wrong offset!");
-static_assert(offsetof(TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent, K2Node_Event_DeltaTime) == 0x000008, "Member 'TsUiAutoPlayLevelSequenceComponent_C_ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent::K2Node_Event_DeltaTime' has a wrong offset!");
+static_assert(alignof(TsUiAutoPlayLevelSequenceComponent_C_UpdateBP) == 0x000004, "Wrong alignment on TsUiAutoPlayLevelSequenceComponent_C_UpdateBP");
+static_assert(sizeof(TsUiAutoPlayLevelSequenceComponent_C_UpdateBP) == 0x000004, "Wrong size on TsUiAutoPlayLevelSequenceComponent_C_UpdateBP");
+static_assert(offsetof(TsUiAutoPlayLevelSequenceComponent_C_UpdateBP, DeltaTime) == 0x000000, "Member 'TsUiAutoPlayLevelSequenceComponent_C_UpdateBP::DeltaTime' has a wrong offset!");
 
 }
 

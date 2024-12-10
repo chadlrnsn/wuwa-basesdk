@@ -17,15 +17,99 @@
 namespace SDK
 {
 
+// Function BP_LensDropletManager.BP_LensDropletManager_C.GenerateOneDroplets
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_LensDropletManager_C::GenerateOneDroplets()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LensDropletManager_C", "GenerateOneDroplets");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_LensDropletManager.BP_LensDropletManager_C.Timer
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   Time_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    InOut_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_LensDropletManager_C::Timer(float Time_0, bool InOut_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LensDropletManager_C", "Timer");
+
+	Params::BP_LensDropletManager_C_Timer Parms{};
+
+	Parms.Time_0 = Time_0;
+	Parms.InOut_0 = InOut_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_LensDropletManager.BP_LensDropletManager_C.UpdateParameters
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_LensDropletManager_C::UpdateParameters()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LensDropletManager_C", "UpdateParameters");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_LensDropletManager.BP_LensDropletManager_C.Init
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_LensDropletManager_C::Init()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LensDropletManager_C", "Init");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_LensDropletManager.BP_LensDropletManager_C.ConstructPolyMesh
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   DropletAmount                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_LensDropletManager_C::ConstructPolyMesh(int32 DropletAmount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LensDropletManager_C", "ConstructPolyMesh");
+
+	Params::BP_LensDropletManager_C_ConstructPolyMesh Parms{};
+
+	Parms.DropletAmount = DropletAmount;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_LensDropletManager.BP_LensDropletManager_C.SetBasicDropletParameters
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   RainIntensity                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Param_Gravity                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EKuroRainType                           Param_RainType                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Gravity_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroRainType                           RainType_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsInCave                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_LensDropletManager_C::SetBasicDropletParameters(float RainIntensity, float Param_Gravity, EKuroRainType Param_RainType, bool IsInCave)
+void ABP_LensDropletManager_C::SetBasicDropletParameters(float RainIntensity, float Gravity_0, EKuroRainType RainType_0, bool IsInCave)
 {
 	static class UFunction* Func = nullptr;
 
@@ -35,8 +119,8 @@ void ABP_LensDropletManager_C::SetBasicDropletParameters(float RainIntensity, fl
 	Params::BP_LensDropletManager_C_SetBasicDropletParameters Parms{};
 
 	Parms.RainIntensity = RainIntensity;
-	Parms.Param_Gravity = Param_Gravity;
-	Parms.Param_RainType = Param_RainType;
+	Parms.Gravity_0 = Gravity_0;
+	Parms.RainType_0 = RainType_0;
 	Parms.IsInCave = IsInCave;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -110,90 +194,6 @@ void ABP_LensDropletManager_C::CleanMesh()
 		Func = Class->GetFunction("BP_LensDropletManager_C", "CleanMesh");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_LensDropletManager.BP_LensDropletManager_C.GenerateOneDroplets
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_LensDropletManager_C::GenerateOneDroplets()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LensDropletManager_C", "GenerateOneDroplets");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_LensDropletManager.BP_LensDropletManager_C.Timer
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   Param_Time                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Param_InOut                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_LensDropletManager_C::Timer(float Param_Time, bool Param_InOut)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LensDropletManager_C", "Timer");
-
-	Params::BP_LensDropletManager_C_Timer Parms{};
-
-	Parms.Param_Time = Param_Time;
-	Parms.Param_InOut = Param_InOut;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_LensDropletManager.BP_LensDropletManager_C.UpdateParameters
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_LensDropletManager_C::UpdateParameters()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LensDropletManager_C", "UpdateParameters");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_LensDropletManager.BP_LensDropletManager_C.Init
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_LensDropletManager_C::Init()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LensDropletManager_C", "Init");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_LensDropletManager.BP_LensDropletManager_C.ConstructPolyMesh
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   DropletAmount                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_LensDropletManager_C::ConstructPolyMesh(int32 DropletAmount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LensDropletManager_C", "ConstructPolyMesh");
-
-	Params::BP_LensDropletManager_C_ConstructPolyMesh Parms{};
-
-	Parms.DropletAmount = DropletAmount;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -293,20 +293,6 @@ void ABP_LensDropletManager_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_LensDropletManager.BP_LensDropletManager_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_LensDropletManager_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LensDropletManager_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_LensDropletManager.BP_LensDropletManager_C.ExecuteUbergraph_BP_LensDropletManager
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -324,6 +310,20 @@ void ABP_LensDropletManager_C::ExecuteUbergraph_BP_LensDropletManager(int32 Entr
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_LensDropletManager.BP_LensDropletManager_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_LensDropletManager_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LensDropletManager_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

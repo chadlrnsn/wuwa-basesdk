@@ -26,23 +26,23 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_WaitAttack_C;             // 0x0560(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class ATsBaseCharacter_C*                     ___r;                                              // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           N_;                                                // 0x0570(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           __;                                                // 0x057C(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           ___0;                                              // 0x0588(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           ____;                                              // 0x0594(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           ___1;                                              // 0x05A0(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           _____0;                                            // 0x05AC(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           ___GA_Vision_WaitAttack_C;                         // 0x057C(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           ___GA_Vision_WaitAttack_C_0;                       // 0x0588(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           _____GA_Vision_WaitAttack_C;                       // 0x0594(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           ___GA_Vision_WaitAttack_C_1;                       // 0x05A0(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           _____GA_Vision_WaitAttack_C_0;                     // 0x05AC(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void K_____();
-	void A___();
-	void Added_21071CB943CD992BF8EFD6A3F34E6080(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A389E908C3(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A3E7DDAD25(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A3F86F70F6(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A31BD89B52(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A3CB2AA2EF(const struct FGameplayTag& Tag);
-	void K2_ActivateAbility();
 	void ExecuteUbergraph_GA_Vision_WaitAttack(int32 EntryPoint);
+	void K2_ActivateAbility();
+	void Added_21071CB943CD992BF8EFD6A3CB2AA2EF(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A31BD89B52(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A3F86F70F6(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A3E7DDAD25(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A389E908C3(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A3F34E6080(const struct FGameplayTag& Tag);
+	void A___();
+	void K_____();
 
 public:
 	static class UClass* StaticClass()
@@ -59,11 +59,11 @@ static_assert(sizeof(UGA_Vision_WaitAttack_C) == 0x0005B8, "Wrong size on UGA_Vi
 static_assert(offsetof(UGA_Vision_WaitAttack_C, UberGraphFrame_GA_Vision_WaitAttack_C) == 0x000560, "Member 'UGA_Vision_WaitAttack_C::UberGraphFrame_GA_Vision_WaitAttack_C' has a wrong offset!");
 static_assert(offsetof(UGA_Vision_WaitAttack_C, ___r) == 0x000568, "Member 'UGA_Vision_WaitAttack_C::___r' has a wrong offset!");
 static_assert(offsetof(UGA_Vision_WaitAttack_C, N_) == 0x000570, "Member 'UGA_Vision_WaitAttack_C::N_' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, __) == 0x00057C, "Member 'UGA_Vision_WaitAttack_C::__' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, ___0) == 0x000588, "Member 'UGA_Vision_WaitAttack_C::___0' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, ____) == 0x000594, "Member 'UGA_Vision_WaitAttack_C::____' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, ___1) == 0x0005A0, "Member 'UGA_Vision_WaitAttack_C::___1' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, _____0) == 0x0005AC, "Member 'UGA_Vision_WaitAttack_C::_____0' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, ___GA_Vision_WaitAttack_C) == 0x00057C, "Member 'UGA_Vision_WaitAttack_C::___GA_Vision_WaitAttack_C' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, ___GA_Vision_WaitAttack_C_0) == 0x000588, "Member 'UGA_Vision_WaitAttack_C::___GA_Vision_WaitAttack_C_0' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, _____GA_Vision_WaitAttack_C) == 0x000594, "Member 'UGA_Vision_WaitAttack_C::_____GA_Vision_WaitAttack_C' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, ___GA_Vision_WaitAttack_C_1) == 0x0005A0, "Member 'UGA_Vision_WaitAttack_C::___GA_Vision_WaitAttack_C_1' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, _____GA_Vision_WaitAttack_C_0) == 0x0005AC, "Member 'UGA_Vision_WaitAttack_C::_____GA_Vision_WaitAttack_C_0' has a wrong offset!");
 
 }
 

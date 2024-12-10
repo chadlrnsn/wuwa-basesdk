@@ -27,14 +27,14 @@ public:
 	class ATsBaseCharacter_C*                     ___r;                                              // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnTick_5D118C384AE61F1C80292E813CFD910C();
-	void OnCancelled_5D118C384AE61F1C80292E813CFD910C();
-	void OnInterrupted_5D118C384AE61F1C80292E813CFD910C();
-	void OnBlendOut_5D118C384AE61F1C80292E813CFD910C();
-	void OnCompleted_5D118C384AE61F1C80292E813CFD910C();
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
 	void ExecuteUbergraph_GA_Qunnie_Role(int32 EntryPoint);
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void OnCompleted_5D118C384AE61F1C80292E813CFD910C();
+	void OnBlendOut_5D118C384AE61F1C80292E813CFD910C();
+	void OnInterrupted_5D118C384AE61F1C80292E813CFD910C();
+	void OnCancelled_5D118C384AE61F1C80292E813CFD910C();
+	void OnTick_5D118C384AE61F1C80292E813CFD910C();
 
 public:
 	static class UClass* StaticClass()

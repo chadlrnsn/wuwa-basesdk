@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0038(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUINiagaraActor* NiaUp);
-	void NiaUp_Event_0(class AUINiagaraActor* NiaUp);
 	void ExecuteUbergraph_SequenceDirector(int32 EntryPoint);
+	void NiaUp_Event_0(class AUINiagaraActor* NiaUp);
+	void SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUINiagaraActor* NiaUp);
 
 public:
 	static class UClass* StaticClass()

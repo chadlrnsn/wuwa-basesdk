@@ -22,7 +22,7 @@ namespace SDK
 class ABP_Zhezhi_C final : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_35F5[0x7];                                     // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_781[0x7];                                      // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Zhezhi_C;                        // 0x0788(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UKuroAdjustableCapsuleComponent*        Bip001Spine2;                                      // 0x0790(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UKuroAdjustableCapsuleComponent*        Bip001LThighTwist;                                 // 0x0798(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
@@ -33,17 +33,17 @@ public:
 	TArray<int32>                                 ActiveHe;                                          // 0x07C0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<int32>                                 HeEntityID;                                        // 0x07D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	float                                         HeLength;                                          // 0x07E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_35F6[0x4];                                     // 0x07E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7E4[0x4];                                      // 0x07E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UClass*                                 __yH;                                              // 0x07E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ABP_Fx_Hook_Beam_C*                     As_BP_Fx_Hook_Beam;                                // 0x07F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UEffectModelGroup_C*                    __DA;                                              // 0x07F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          _d_OUMinus;                                        // 0x0800(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void _d____();
-	void ______d_Sid(int32* EntityID);
-	void FightCommand(bool IsInAir);
 	void ExecuteUbergraph_BP_Zhezhi(int32 EntryPoint);
+	void FightCommand(bool IsInAir);
+	void ______d_Sid(int32* EntityID);
+	void _d____();
 
 public:
 	static class UClass* StaticClass()

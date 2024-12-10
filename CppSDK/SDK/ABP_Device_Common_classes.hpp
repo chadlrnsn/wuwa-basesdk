@@ -24,7 +24,7 @@ namespace SDK
 class UABP_Device_Common_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_373D[0x8];                                     // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_508[0x8];                                      // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0510(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0518(0x0038)()
 	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_39;                 // 0x0550(0x0028)()
@@ -112,15 +112,15 @@ public:
 	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x1D10(0x0148)()
 	class ATsBaseCharacter_C*                     _r__;                                              // 0x1E58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          Weapon_Fire;                                       // 0x1E60(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_373E[0x3];                                     // 0x1E61(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E61[0x3];                                     // 0x1E61(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         BlendSpacePriority;                                // 0x1E64(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ____;                                              // 0x1E68(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          IsUI;                                              // 0x1E69(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_373F[0x2];                                     // 0x1E6A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E6A[0x2];                                     // 0x1E6A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Open_delay;                                        // 0x1E6C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Delta_Time;                                        // 0x1E70(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          __s_fh;                                            // 0x1E74(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3740[0x3];                                     // 0x1E75(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E75[0x3];                                     // 0x1E75(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Fh_____4I_;                                        // 0x1E78(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         SMfh_4I_;                                          // 0x1E7C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsUiSceneRoleActor_C*                  UILb__;                                            // 0x1E80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
@@ -128,43 +128,43 @@ public:
 	bool                                          _c_____yH;                                         // 0x1E89(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_496F3339419C67DBA9B833A822499DED();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_75C781B3411C24D24B7D5FAF66DFA385();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_A3D57B3647D01CAB257E349D1291CC9A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_F5DA0AB14BAE650CC9429A95FE081CF9();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_90D0EFAA41EA7FEDDC95AE936D982F81();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_721E50794DDB9A79D4100EAB7E35F299();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_5ECEA32A4BDD5F2AF07D60BCD9E35B43();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_B4ACD33441820EAD393E08ADF51E225B();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_D89A6FCA4FF2DAAA1CB2069005BF68E4();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_1294B2C4411BA21C085A62B6B010F013();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_56A4CFBB4212CCC969B0F1A9C778E0B5();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_DA0A1C8845A28BA88991BCAAA1324C83();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_4B9697574747B66C9A2ADCBE0587698F();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_8A2185A841A6505A705C1495FA24D054();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_ECC111D047D595675620C381CD364F46();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_9B68E29F49854555551F8F9B640BC309();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_D4A72CC8490E8FBF64E54F955CA235E6();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_4C21884D46658354CD8FA491AB22C799();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_8475FEA042D7FFBC5FAC35A7100F5BAA();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_0384BD3F4874F7BD9189C78138933669();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_293259C743DE0A8F263870B4C29BAA3A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_221B77704AC52D156BA19CA86207F990();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_179FC3464D4423EC0D9F40BD5EB39C4A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_650FE42B4AF795C762BB629A58D6D6F3();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_AF95079347D05829D2D25CAA047A1BA4();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_02EBA3A24EC79133BF3F66847E091ABF();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_F3B7B59B414C0E84144368B72062FB09();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_39E6A5094AB60E03BE2089B0D0887B00();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_E7FA0AEA4F4D9515AB5BF5AC37FD3ECF();
-	void BlueprintInitializeAnimation();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_2739CE434DBE2083A39FD69B495EB3F2();
-	void Clear_Open_Delay();
-	void Set_Open_Delay();
-	void CustomEvent();
 	void ExecuteUbergraph_ABP_Device_Common(int32 EntryPoint);
+	void CustomEvent();
+	void Set_Open_Delay();
+	void Clear_Open_Delay();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_2739CE434DBE2083A39FD69B495EB3F2();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void BlueprintInitializeAnimation();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_E7FA0AEA4F4D9515AB5BF5AC37FD3ECF();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_39E6A5094AB60E03BE2089B0D0887B00();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_F3B7B59B414C0E84144368B72062FB09();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_02EBA3A24EC79133BF3F66847E091ABF();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_AF95079347D05829D2D25CAA047A1BA4();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_650FE42B4AF795C762BB629A58D6D6F3();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_179FC3464D4423EC0D9F40BD5EB39C4A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_221B77704AC52D156BA19CA86207F990();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_293259C743DE0A8F263870B4C29BAA3A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_0384BD3F4874F7BD9189C78138933669();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_8475FEA042D7FFBC5FAC35A7100F5BAA();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_4C21884D46658354CD8FA491AB22C799();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_D4A72CC8490E8FBF64E54F955CA235E6();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_9B68E29F49854555551F8F9B640BC309();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_ECC111D047D595675620C381CD364F46();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_8A2185A841A6505A705C1495FA24D054();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_56A4CFBB4212CCC969B0F1A9C778E0B5();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_4B9697574747B66C9A2ADCBE0587698F();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_DA0A1C8845A28BA88991BCAAA1324C83();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_1294B2C4411BA21C085A62B6B010F013();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_D89A6FCA4FF2DAAA1CB2069005BF68E4();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_B4ACD33441820EAD393E08ADF51E225B();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_5ECEA32A4BDD5F2AF07D60BCD9E35B43();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_721E50794DDB9A79D4100EAB7E35F299();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_90D0EFAA41EA7FEDDC95AE936D982F81();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_F5DA0AB14BAE650CC9429A95FE081CF9();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_A3D57B3647D01CAB257E349D1291CC9A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_75C781B3411C24D24B7D5FAF66DFA385();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Device_Common_AnimGraphNode_TransitionResult_496F3339419C67DBA9B833A822499DED();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

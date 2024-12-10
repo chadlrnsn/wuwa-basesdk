@@ -17,36 +17,65 @@
 namespace SDK
 {
 
-// Function BP_HaloPointLight.BP_HaloPointLight_C.GetHaloDrawParameters
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function BP_HaloPointLight.BP_HaloPointLight_C.ExecuteUbergraph_BP_HaloPointLight
+// (Final, UbergraphFunction)
 // Parameters:
-// float                                   Param_MinDrawDistance                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Param_MaxDrawDistance                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Param_MinDrawRange                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Param_MaxDrawRange                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_HaloPointLight_C::GetHaloDrawParameters(float* Param_MinDrawDistance, float* Param_MaxDrawDistance, float* Param_MinDrawRange, float* Param_MaxDrawRange)
+void ABP_HaloPointLight_C::ExecuteUbergraph_BP_HaloPointLight(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "GetHaloDrawParameters");
+		Func = Class->GetFunction("BP_HaloPointLight_C", "ExecuteUbergraph_BP_HaloPointLight");
 
-	Params::BP_HaloPointLight_C_GetHaloDrawParameters Parms{};
+	Params::BP_HaloPointLight_C_ExecuteUbergraph_BP_HaloPointLight Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
 
-	if (Param_MinDrawDistance != nullptr)
-		*Param_MinDrawDistance = Parms.Param_MinDrawDistance;
 
-	if (Param_MaxDrawDistance != nullptr)
-		*Param_MaxDrawDistance = Parms.Param_MaxDrawDistance;
+// Function BP_HaloPointLight.BP_HaloPointLight_C.HaloPointParaUpdate
+// (Event, Public, BlueprintEvent)
 
-	if (Param_MinDrawRange != nullptr)
-		*Param_MinDrawRange = Parms.Param_MinDrawRange;
+void ABP_HaloPointLight_C::HaloPointParaUpdate()
+{
+	static class UFunction* Func = nullptr;
 
-	if (Param_MaxDrawRange != nullptr)
-		*Param_MaxDrawRange = Parms.Param_MaxDrawRange;
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "HaloPointParaUpdate");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_HaloPointLight.BP_HaloPointLight_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_HaloPointLight_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_HaloPointLight.BP_HaloPointLight_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_HaloPointLight_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -70,65 +99,36 @@ void ABP_HaloPointLight_C::UpdateHaloParameter(bool UpdateComponent)
 }
 
 
-// Function BP_HaloPointLight.BP_HaloPointLight_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_HaloPointLight_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_HaloPointLight.BP_HaloPointLight_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_HaloPointLight_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_HaloPointLight.BP_HaloPointLight_C.HaloPointParaUpdate
-// (Event, Public, BlueprintEvent)
-
-void ABP_HaloPointLight_C::HaloPointParaUpdate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "HaloPointParaUpdate");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_HaloPointLight.BP_HaloPointLight_C.ExecuteUbergraph_BP_HaloPointLight
-// (Final, UbergraphFunction)
+// Function BP_HaloPointLight.BP_HaloPointLight_C.GetHaloDrawParameters
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   MinDrawDistance_0                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   MaxDrawDistance_0                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   MinDrawRange_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   MaxDrawRange_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_HaloPointLight_C::ExecuteUbergraph_BP_HaloPointLight(int32 EntryPoint)
+void ABP_HaloPointLight_C::GetHaloDrawParameters(float* MinDrawDistance_0, float* MaxDrawDistance_0, float* MinDrawRange_0, float* MaxDrawRange_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "ExecuteUbergraph_BP_HaloPointLight");
+		Func = Class->GetFunction("BP_HaloPointLight_C", "GetHaloDrawParameters");
 
-	Params::BP_HaloPointLight_C_ExecuteUbergraph_BP_HaloPointLight Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::BP_HaloPointLight_C_GetHaloDrawParameters Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (MinDrawDistance_0 != nullptr)
+		*MinDrawDistance_0 = Parms.MinDrawDistance_0;
+
+	if (MaxDrawDistance_0 != nullptr)
+		*MaxDrawDistance_0 = Parms.MaxDrawDistance_0;
+
+	if (MinDrawRange_0 != nullptr)
+		*MinDrawRange_0 = Parms.MinDrawRange_0;
+
+	if (MaxDrawRange_0 != nullptr)
+		*MaxDrawRange_0 = Parms.MaxDrawRange_0;
 }
 
 }

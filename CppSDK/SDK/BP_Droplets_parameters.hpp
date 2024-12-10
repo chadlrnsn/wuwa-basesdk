@@ -48,16 +48,16 @@ struct BP_Droplets_C_ExecuteUbergraph_BP_Droplets final
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_336F[0x3];                                     // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Abs_ReturnValue;                          // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ___bool_IsClosed_Variable;                         // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3370[0x2];                                     // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Abs_ReturnValue_1;                        // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3371[0x3];                                     // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_2;        // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -69,11 +69,11 @@ public:
 	float                                         CallFunc_GetScalarParameterValue_ReturnValue_1;    // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_2;         // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3372[0x3];                                     // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_FMax_ReturnValue_1;                       // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3373[0x2];                                     // 0x0052(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_52[0x2];                                       // 0x0052(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_6;        // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_7;        // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -111,52 +111,35 @@ static_assert(offsetof(BP_Droplets_C_ExecuteUbergraph_BP_Droplets, CallFunc_Add_
 static_assert(offsetof(BP_Droplets_C_ExecuteUbergraph_BP_Droplets, CallFunc_Add_FloatFloat_ReturnValue_1) == 0x000060, "Member 'BP_Droplets_C_ExecuteUbergraph_BP_Droplets::CallFunc_Add_FloatFloat_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_Droplets_C_ExecuteUbergraph_BP_Droplets, CallFunc_Multiply_FloatFloat_ReturnValue_8) == 0x000064, "Member 'BP_Droplets_C_ExecuteUbergraph_BP_Droplets::CallFunc_Multiply_FloatFloat_ReturnValue_8' has a wrong offset!");
 
-// Function BP_Droplets.BP_Droplets_C.UpdateParameters
-// 0x01B8 (0x01B8 - 0x0000)
-struct BP_Droplets_C_UpdateParameters final
+// Function BP_Droplets.BP_Droplets_C.UserConstructionScript
+// 0x0050 (0x0050 - 0x0000)
+struct BP_Droplets_C_UserConstructionScript final
 {
 public:
-	float                                         CallFunc_Vector_Distance_ReturnValue;              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_FClamp_ReturnValue;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetLevelEditorCameraLocationAndForward_Position; // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_GetLevelEditorCameraLocationAndForward_Rotation; // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue; // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3374[0x3];                                     // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GreaterGreater_VectorRotator_ReturnValue; // 0x002C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_FInterpTo_ReturnValue;                    // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue;         // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Add_VectorVector_ReturnValue;             // 0x0048(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3375[0x4];                                     // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerCameraManager*                   CallFunc_GetPlayerCameraManager_ReturnValue;       // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetWorldLocation_SweepHitResult;       // 0x0060(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FVector                                CallFunc_GetActorForwardVector_ReturnValue;        // 0x00F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetCameraLocation_ReturnValue;            // 0x0100(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue_1;       // 0x010C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Add_VectorVector_ReturnValue_1;           // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_K2_SetWorldLocation_SweepHitResult_1;     // 0x0124(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	EKuroRainType                                 ___byte_Variable;                                  // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     ___object_Variable;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     ___object_Variable_1;                              // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     ___object_Variable_2;                              // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     ___object_Variable_3;                              // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     ___object_Variable_4;                              // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     ___object_Variable_5;                              // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     ___object_Variable_6;                              // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     K2Node_Select_Default;                             // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(BP_Droplets_C_UpdateParameters) == 0x000008, "Wrong alignment on BP_Droplets_C_UpdateParameters");
-static_assert(sizeof(BP_Droplets_C_UpdateParameters) == 0x0001B8, "Wrong size on BP_Droplets_C_UpdateParameters");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Vector_Distance_ReturnValue) == 0x000000, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Vector_Distance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000004, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_FClamp_ReturnValue) == 0x000008, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_FClamp_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetLevelEditorCameraLocationAndForward_Position) == 0x00000C, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetLevelEditorCameraLocationAndForward_Position' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetLevelEditorCameraLocationAndForward_Rotation) == 0x000018, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetLevelEditorCameraLocationAndForward_Rotation' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue) == 0x000024, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x000028, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GreaterGreater_VectorRotator_ReturnValue) == 0x00002C, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GreaterGreater_VectorRotator_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_FInterpTo_ReturnValue) == 0x000038, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_FInterpTo_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Multiply_VectorFloat_ReturnValue) == 0x00003C, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Multiply_VectorFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Add_VectorVector_ReturnValue) == 0x000048, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Add_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetPlayerCameraManager_ReturnValue) == 0x000058, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetPlayerCameraManager_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_K2_SetWorldLocation_SweepHitResult) == 0x000060, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_K2_SetWorldLocation_SweepHitResult' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetActorForwardVector_ReturnValue) == 0x0000F4, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetActorForwardVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetCameraLocation_ReturnValue) == 0x000100, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetCameraLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Multiply_VectorFloat_ReturnValue_1) == 0x00010C, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Multiply_VectorFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Add_VectorVector_ReturnValue_1) == 0x000118, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Add_VectorVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_K2_SetWorldLocation_SweepHitResult_1) == 0x000124, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_K2_SetWorldLocation_SweepHitResult_1' has a wrong offset!");
+static_assert(alignof(BP_Droplets_C_UserConstructionScript) == 0x000008, "Wrong alignment on BP_Droplets_C_UserConstructionScript");
+static_assert(sizeof(BP_Droplets_C_UserConstructionScript) == 0x000050, "Wrong size on BP_Droplets_C_UserConstructionScript");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___byte_Variable) == 0x000000, "Member 'BP_Droplets_C_UserConstructionScript::___byte_Variable' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable) == 0x000008, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_1) == 0x000010, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_2) == 0x000018, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_3) == 0x000020, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_3' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_4) == 0x000028, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_4' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_5) == 0x000030, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_5' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_6) == 0x000038, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_6' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, K2Node_Select_Default) == 0x000040, "Member 'BP_Droplets_C_UserConstructionScript::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000048, "Member 'BP_Droplets_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
 
 // Function BP_Droplets.BP_Droplets_C.MakeOneDroplet
 // 0x0238 (0x0238 - 0x0000)
@@ -166,7 +149,7 @@ public:
 	TArray<struct FVector2D>                      ___struct_Variable;                                // 0x0000(0x0010)(ConstParm, ReferenceParm)
 	struct FVector2D                              CallFunc_Conv_VectorToVector2D_ReturnValue;        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3376[0x4];                                     // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FProcMeshTangent>               ___struct_Variable_1;                              // 0x0020(0x0010)(ConstParm, ReferenceParm)
 	float                                         CallFunc_Subtract_FloatFloat_ReturnValue_1;        // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Subtract_FloatFloat_ReturnValue_2;        // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -176,7 +159,7 @@ public:
 	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x004C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3377[0x3];                                     // 0x004D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Subtract_FloatFloat_ReturnValue_4;        // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FVector>                        ___struct_Variable_2;                              // 0x0058(0x0010)(ConstParm, ReferenceParm)
@@ -192,7 +175,7 @@ public:
 	struct FVector2D                              CallFunc_Array_Get_Item;                           // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FVector2D>                      ___struct_Variable_4;                              // 0x00C8(0x0010)(ConstParm, ReferenceParm)
 	float                                         CallFunc_Subtract_FloatFloat_ReturnValue_5;        // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3378[0x4];                                     // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FVector>                        K2Node_MakeArray_Array_2;                          // 0x00E0(0x0010)(ReferenceParm)
 	struct FVector                                CallFunc_Array_Get_Item_1;                         // 0x00F0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_RandomFloatFromStream_ReturnValue_1;      // 0x00FC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -201,7 +184,7 @@ public:
 	float                                         CallFunc_RandomFloatFromStream_ReturnValue_3;      // 0x0110(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x0114(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3379[0x3];                                     // 0x0121(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_121[0x3];                                      // 0x0121(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_RandomInteger_ReturnValue;                // 0x0124(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_1;               // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              CallFunc_Min_ReturnValue;                          // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -371,35 +354,52 @@ static_assert(offsetof(BP_Droplets_C_MakeOneDroplet, CallFunc_Subtract_FloatFloa
 static_assert(offsetof(BP_Droplets_C_MakeOneDroplet, CallFunc_Multiply_FloatFloat_ReturnValue_32) == 0x00022C, "Member 'BP_Droplets_C_MakeOneDroplet::CallFunc_Multiply_FloatFloat_ReturnValue_32' has a wrong offset!");
 static_assert(offsetof(BP_Droplets_C_MakeOneDroplet, CallFunc_Greater_FloatFloat_ReturnValue) == 0x000230, "Member 'BP_Droplets_C_MakeOneDroplet::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
 
-// Function BP_Droplets.BP_Droplets_C.UserConstructionScript
-// 0x0050 (0x0050 - 0x0000)
-struct BP_Droplets_C_UserConstructionScript final
+// Function BP_Droplets.BP_Droplets_C.UpdateParameters
+// 0x01B8 (0x01B8 - 0x0000)
+struct BP_Droplets_C_UpdateParameters final
 {
 public:
-	EKuroRainType                                 ___byte_Variable;                                  // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_337A[0x7];                                     // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInterface*                     ___object_Variable;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     ___object_Variable_1;                              // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     ___object_Variable_2;                              // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     ___object_Variable_3;                              // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     ___object_Variable_4;                              // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     ___object_Variable_5;                              // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     ___object_Variable_6;                              // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     K2Node_Select_Default;                             // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Vector_Distance_ReturnValue;              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FClamp_ReturnValue;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetLevelEditorCameraLocationAndForward_Position; // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_GetLevelEditorCameraLocationAndForward_Rotation; // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue; // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GreaterGreater_VectorRotator_ReturnValue; // 0x002C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FInterpTo_ReturnValue;                    // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue;         // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Add_VectorVector_ReturnValue;             // 0x0048(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerCameraManager*                   CallFunc_GetPlayerCameraManager_ReturnValue;       // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetWorldLocation_SweepHitResult;       // 0x0060(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FVector                                CallFunc_GetActorForwardVector_ReturnValue;        // 0x00F4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetCameraLocation_ReturnValue;            // 0x0100(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Multiply_VectorFloat_ReturnValue_1;       // 0x010C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Add_VectorVector_ReturnValue_1;           // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_K2_SetWorldLocation_SweepHitResult_1;     // 0x0124(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
-static_assert(alignof(BP_Droplets_C_UserConstructionScript) == 0x000008, "Wrong alignment on BP_Droplets_C_UserConstructionScript");
-static_assert(sizeof(BP_Droplets_C_UserConstructionScript) == 0x000050, "Wrong size on BP_Droplets_C_UserConstructionScript");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___byte_Variable) == 0x000000, "Member 'BP_Droplets_C_UserConstructionScript::___byte_Variable' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable) == 0x000008, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_1) == 0x000010, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_2) == 0x000018, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_2' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_3) == 0x000020, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_3' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_4) == 0x000028, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_4' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_5) == 0x000030, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_5' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, ___object_Variable_6) == 0x000038, "Member 'BP_Droplets_C_UserConstructionScript::___object_Variable_6' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, K2Node_Select_Default) == 0x000040, "Member 'BP_Droplets_C_UserConstructionScript::K2Node_Select_Default' has a wrong offset!");
-static_assert(offsetof(BP_Droplets_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000048, "Member 'BP_Droplets_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+static_assert(alignof(BP_Droplets_C_UpdateParameters) == 0x000008, "Wrong alignment on BP_Droplets_C_UpdateParameters");
+static_assert(sizeof(BP_Droplets_C_UpdateParameters) == 0x0001B8, "Wrong size on BP_Droplets_C_UpdateParameters");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Vector_Distance_ReturnValue) == 0x000000, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Vector_Distance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000004, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_FClamp_ReturnValue) == 0x000008, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_FClamp_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetLevelEditorCameraLocationAndForward_Position) == 0x00000C, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetLevelEditorCameraLocationAndForward_Position' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetLevelEditorCameraLocationAndForward_Rotation) == 0x000018, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetLevelEditorCameraLocationAndForward_Rotation' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue) == 0x000024, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x000028, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GreaterGreater_VectorRotator_ReturnValue) == 0x00002C, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GreaterGreater_VectorRotator_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_FInterpTo_ReturnValue) == 0x000038, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_FInterpTo_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Multiply_VectorFloat_ReturnValue) == 0x00003C, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Multiply_VectorFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Add_VectorVector_ReturnValue) == 0x000048, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Add_VectorVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetPlayerCameraManager_ReturnValue) == 0x000058, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetPlayerCameraManager_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_K2_SetWorldLocation_SweepHitResult) == 0x000060, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_K2_SetWorldLocation_SweepHitResult' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetActorForwardVector_ReturnValue) == 0x0000F4, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetActorForwardVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_GetCameraLocation_ReturnValue) == 0x000100, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_GetCameraLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Multiply_VectorFloat_ReturnValue_1) == 0x00010C, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Multiply_VectorFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_Add_VectorVector_ReturnValue_1) == 0x000118, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_Add_VectorVector_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_Droplets_C_UpdateParameters, CallFunc_K2_SetWorldLocation_SweepHitResult_1) == 0x000124, "Member 'BP_Droplets_C_UpdateParameters::CallFunc_K2_SetWorldLocation_SweepHitResult_1' has a wrong offset!");
 
 }
 

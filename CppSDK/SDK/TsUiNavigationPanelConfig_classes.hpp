@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "SNavigationGroup_structs.hpp"
 #include "SNavigationDynamicListenerConfig_structs.hpp"
+#include "SNavigationGroup_structs.hpp"
+#include "Engine_structs.hpp"
 #include "LGUI_classes.hpp"
 
 
@@ -27,14 +27,14 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0100(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class FString                                 ViewName;                                          // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	bool                                          Independent;                                       // 0x0118(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_2C34[0x7];                                     // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSNavigationGroup>              NormalGroup;                                       // 0x0120(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
 	TArray<struct FSNavigationGroup>              BookmarkGroup;                                     // 0x0130(0x0010)(Edit, BlueprintVisible, ContainsInstancedReference)
 	struct FSNavigationGroup                      ScrollBarGroup;                                    // 0x0140(0x00A0)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
 	TArray<class AActor*>                         DefaultNavigationActor;                            // 0x01E0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	bool                                          IsChildPanel;                                      // 0x01F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          AllowNavigateInKeyBoard;                           // 0x01F1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2C35[0x6];                                     // 0x01F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F2[0x6];                                      // 0x01F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FString, struct FSNavigationDynamicListenerConfig> DynamicListenerConfigMap;                          // 0x01F8(0x0050)(Edit, BlueprintVisible)
 	class FString                                 InteractiveTag;                                    // 0x0248(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class AActor*                                 GamepadMouseActor;                                 // 0x0258(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

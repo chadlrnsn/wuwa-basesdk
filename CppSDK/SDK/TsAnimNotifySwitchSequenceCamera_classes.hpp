@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SSequenceCamera_SpecificConfig_structs.hpp"
 #include "SSequenceCamera_Settings_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SSequenceCamera_SpecificConfig_structs.hpp"
 #include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
@@ -27,7 +27,7 @@ class UTsAnimNotifySwitchSequenceCamera_C final : public UKuroAnimNotify
 public:
 	struct FSSequenceCamera_Settings              Y__4Mn;                                            // 0x0048(0x0038)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	struct FRotator                               AdditiveRotation;                                  // 0x0080(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3560[0x4];                                     // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CameraAttachSocket;                                // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CameraDetectSocket;                                // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	float                                         ExtraDetectSphereRadius;                           // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -41,12 +41,12 @@ public:
 	bool                                          DisableMotionBlur;                                 // 0x00C6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          _6__Sequence;                                      // 0x00C7(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          _y______4Mn;                                       // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3561[0x7];                                     // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FSSequenceCamera_SpecificConfig> Y______4Mn;                                        // 0x00D0(0x0010)(Edit, BlueprintVisible)
 
 public:
-	struct FSSequenceCamera_SpecificConfig GetSpecificConfig();
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
+	struct FSSequenceCamera_SpecificConfig GetSpecificConfig();
 
 	class FString GetNotifyName() const;
 

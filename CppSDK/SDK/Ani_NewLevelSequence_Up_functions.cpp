@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function Ani_NewLevelSequence_Up.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function Ani_NewLevelSequence_Up.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
+// (Final, UbergraphFunction)
 // Parameters:
-// class AUINiagaraActor*                  NiaUp                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Ani_NewLevelSequence_Up::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUINiagaraActor* NiaUp)
+void Ani_NewLevelSequence_Up::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
+		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
 
-	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 Parms{};
+	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
 
-	Parms.NiaUp = NiaUp;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void Ani_NewLevelSequence_Up::USequenceDirector_C::NiaUp_Event_0(class AUINiagar
 }
 
 
-// Function Ani_NewLevelSequence_Up.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
-// (Final, UbergraphFunction)
+// Function Ani_NewLevelSequence_Up.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AUINiagaraActor*                  NiaUp                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Ani_NewLevelSequence_Up::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
+void Ani_NewLevelSequence_Up::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUINiagaraActor* NiaUp)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
+		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
 
-	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
+	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.NiaUp = NiaUp;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

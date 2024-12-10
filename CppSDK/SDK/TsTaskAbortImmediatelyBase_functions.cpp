@@ -17,6 +17,31 @@
 namespace SDK
 {
 
+// Function TsTaskAbortImmediatelyBase.TsTaskAbortImmediatelyBase_C.ExecuteUbergraph_TsTaskAbortImmediatelyBase
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsTaskAbortImmediatelyBase_C::ExecuteUbergraph_TsTaskAbortImmediatelyBase(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskAbortImmediatelyBase_C", "ExecuteUbergraph_TsTaskAbortImmediatelyBase");
+
+	Params::TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortImmediatelyBase Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function TsTaskAbortImmediatelyBase.TsTaskAbortImmediatelyBase_C.ReceiveAbortAI
 // (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -34,31 +59,6 @@ void UTsTaskAbortImmediatelyBase_C::ReceiveAbortAI(class AAIController* OwnerCon
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTaskAbortImmediatelyBase.TsTaskAbortImmediatelyBase_C.ExecuteUbergraph_TsTaskAbortImmediatelyBase
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsTaskAbortImmediatelyBase_C::ExecuteUbergraph_TsTaskAbortImmediatelyBase(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskAbortImmediatelyBase_C", "ExecuteUbergraph_TsTaskAbortImmediatelyBase");
-
-	Params::TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortImmediatelyBase Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

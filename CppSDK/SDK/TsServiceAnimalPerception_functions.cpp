@@ -17,25 +17,21 @@
 namespace SDK
 {
 
-// Function TsServiceAnimalPerception.TsServiceAnimalPerception_C.ReceiveTickAI
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsServiceAnimalPerception.TsServiceAnimalPerception_C.ExecuteUbergraph_TsServiceAnimalPerception
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsServiceAnimalPerception_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
+void UTsServiceAnimalPerception_C::ExecuteUbergraph_TsServiceAnimalPerception(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsServiceAnimalPerception_C", "ReceiveTickAI");
+		Func = Class->GetFunction("TsServiceAnimalPerception_C", "ExecuteUbergraph_TsServiceAnimalPerception");
 
-	Params::TsServiceAnimalPerception_C_ReceiveTickAI Parms{};
+	Params::TsServiceAnimalPerception_C_ExecuteUbergraph_TsServiceAnimalPerception Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -73,21 +69,25 @@ void UTsServiceAnimalPerception_C::ReceiveActivationAI(class AAIController* Owne
 }
 
 
-// Function TsServiceAnimalPerception.TsServiceAnimalPerception_C.ExecuteUbergraph_TsServiceAnimalPerception
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Function TsServiceAnimalPerception.TsServiceAnimalPerception_C.ReceiveTickAI
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsServiceAnimalPerception_C::ExecuteUbergraph_TsServiceAnimalPerception(int32 EntryPoint)
+void UTsServiceAnimalPerception_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsServiceAnimalPerception_C", "ExecuteUbergraph_TsServiceAnimalPerception");
+		Func = Class->GetFunction("TsServiceAnimalPerception_C", "ReceiveTickAI");
 
-	Params::TsServiceAnimalPerception_C_ExecuteUbergraph_TsServiceAnimalPerception Parms{};
+	Params::TsServiceAnimalPerception_C_ReceiveTickAI Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

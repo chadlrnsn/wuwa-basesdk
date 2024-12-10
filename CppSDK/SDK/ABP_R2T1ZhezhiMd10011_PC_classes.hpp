@@ -24,13 +24,13 @@ namespace SDK
 class UABP_R2T1ZhezhiMd10011_PC_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_3605[0x8];                                     // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_508[0x8];                                      // 0x0508(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0510(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	struct FAnimNode_Root                         AnimGraphNode_Root_1;                              // 0x0518(0x0038)()
 	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x0550(0x0138)()
 	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x0688(0x0020)()
 	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x06A8(0x0020)()
-	uint8                                         Pad_3606[0x8];                                     // 0x06C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6C8[0x8];                                      // 0x06C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FAnimNode_MountBuffer                  AnimGraphNode_MountBuffer;                         // 0x06D0(0x01D0)()
 	struct FAnimNode_KawaiiPhysicsGroup           AnimGraphNode_KawaiiPhysicsGroup_8;                // 0x08A0(0x0280)()
 	struct FAnimNode_KawaiiPhysicsGroup           AnimGraphNode_KawaiiPhysicsGroup_7;                // 0x0B20(0x0280)()
@@ -45,13 +45,13 @@ public:
 	struct FAnimNode_LinkedAnimGraph              AnimGraphNode_LinkedAnimGraph;                     // 0x1F58(0x00A8)()
 	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer;                     // 0x2000(0x00C0)()
 	bool                                          PhysicsClothSimulateEnable;                        // 0x20C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3607[0x3];                                     // 0x20C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_20C1[0x3];                                     // 0x20C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         PhysicsClothSimulateScale;                         // 0x20C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void PhyCloth(const struct FPoseLink& InPose, struct FPoseLink* Param_PhyCloth);
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
 	void ExecuteUbergraph_ABP_R2T1ZhezhiMd10011_PC(int32 EntryPoint);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void PhyCloth(const struct FPoseLink& InPose, struct FPoseLink* PhyCloth_0);
 
 public:
 	static class UClass* StaticClass()

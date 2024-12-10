@@ -26,8 +26,8 @@ public:
 	int64                                         _K_dS_Bp;                                          // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void K2_ActivateAbility();
 	void ExecuteUbergraph_GA_Zhezhi_Burst(int32 EntryPoint);
+	void K2_ActivateAbility();
 
 public:
 	static class UClass* StaticClass()

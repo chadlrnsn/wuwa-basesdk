@@ -23,22 +23,22 @@ class UTsAnimNotifyReSkillEvent_C final : public UKuroAnimNotify
 {
 public:
 	bool                                          __P9idp_;                                          // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_30F3[0x3];                                     // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   P9pn_;                                             // 0x004C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class FString>                         P9idp_;                                            // 0x0058(0x0010)(Edit, BlueprintVisible)
 	bool                                          _____P9;                                           // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_30F4[0x7];                                     // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<float>                                 __P9C_p_;                                          // 0x0070(0x0010)(Edit, BlueprintVisible)
 	struct FVector                                P9__MnO_;                                          // 0x0080(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30F5[0x4];                                     // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FVector>                        P9__MnO_p_;                                        // 0x0090(0x0010)(Edit, BlueprintVisible)
 	struct FRotator                               P9___O_;                                           // 0x00A0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_30F6[0x4];                                     // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FRotator>                       P9___O_p_;                                         // 0x00B0(0x0010)(Edit, BlueprintVisible)
 
 public:
-	float GetRandomIndex();
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
+	float GetRandomIndex();
 
 	class FString GetNotifyName() const;
 

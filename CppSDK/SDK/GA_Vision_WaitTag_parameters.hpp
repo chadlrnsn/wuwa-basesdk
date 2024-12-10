@@ -10,45 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "SVisionData_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "SVisionData_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Removed_DB9F64004F8908FEAD99D3815F1E8945
-// 0x000C (0x000C - 0x0000)
-struct GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945 final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945) == 0x000004, "Wrong alignment on GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945");
-static_assert(sizeof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945) == 0x00000C, "Wrong size on GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945");
-static_assert(offsetof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945, Tag) == 0x000000, "Member 'GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945::Tag' has a wrong offset!");
-
-// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Added_21071CB943CD992BF8EFD6A338ACB336
-// 0x000C (0x000C - 0x0000)
-struct GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336 final
-{
-public:
-	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336) == 0x000004, "Wrong alignment on GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336");
-static_assert(sizeof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336) == 0x00000C, "Wrong size on GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336");
-static_assert(offsetof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336, Tag) == 0x000000, "Member 'GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336::Tag' has a wrong offset!");
-
-// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Vision_WaitTag_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Vision_WaitTag_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Vision_WaitTag_C_K2_OnEndAbility");
-static_assert(sizeof(GA_Vision_WaitTag_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Vision_WaitTag_C_K2_OnEndAbility");
-static_assert(offsetof(GA_Vision_WaitTag_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Vision_WaitTag_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
 // Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.ExecuteUbergraph_GA_Vision_WaitTag
 // 0x0218 (0x0218 - 0x0000)
@@ -61,16 +28,16 @@ public:
 	struct FGameplayTag                           K2Node_CustomEvent_Tag;                            // 0x0030(0x000C)(ConstParm, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           ___struct_Variable;                                // 0x003C(0x000C)(NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_bWasCancelled;                        // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3087[0x3];                                     // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ___int_Array_Index_Variable;                       // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAbilityTask_WaitGameplayTagRemoved*    CallFunc_Array_Get_Item;                           // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc__________;                                // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3088[0x3];                                     // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ___int_Array_Index_Variable_1;                     // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Loop_Counter_Variable;                      // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           ___struct_Variable_1;                              // 0x0064(0x000C)(NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3089[0x3];                                     // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x0078(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Array_Index_Variable_2;                     // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -81,7 +48,7 @@ public:
 	class AActor*                                 CallFunc_GetOwningActorFromActorInfo_ReturnValue;  // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ABP_BaseVision_C*                       K2Node_DynamicCast_AsBP_Base_Vision;               // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_308A[0x7];                                     // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(struct FGameplayTag& Tag)>     K2Node_CreateDelegate_OutputDelegate_1;            // 0x00B0(0x0028)(ZeroConstructor)
 	struct FSVisionData                           CallFunc____________;                              // 0x00D8(0x00F0)(ContainsInstancedReference, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc_____________1;                            // 0x01C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -90,11 +57,11 @@ public:
 	class UAbilityTask_WaitGameplayTagAdded*      CallFunc_WaitGameplayTagAdd_ReturnValue;           // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_308B[0x6];                                     // 0x01EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1EA[0x6];                                      // 0x01EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilityTask_WaitGameplayTagRemoved*    CallFunc_WaitGameplayTagRemove_ReturnValue;        // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x01F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x01FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_308C[0x3];                                     // 0x01FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1FD[0x3];                                      // 0x01FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0200(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0204(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAbilityTask_WaitGameplayTagAdded*      CallFunc_Array_Get_Item_2;                         // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -142,6 +109,39 @@ static_assert(offsetof(GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag, C
 static_assert(offsetof(GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag, CallFunc_Array_Get_Item_2) == 0x000208, "Member 'GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag::CallFunc_Array_Get_Item_2' has a wrong offset!");
 static_assert(offsetof(GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag, CallFunc_Less_IntInt_ReturnValue_2) == 0x000210, "Member 'GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag, CallFunc___________1) == 0x000211, "Member 'GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag::CallFunc___________1' has a wrong offset!");
+
+// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Vision_WaitTag_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Vision_WaitTag_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Vision_WaitTag_C_K2_OnEndAbility");
+static_assert(sizeof(GA_Vision_WaitTag_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Vision_WaitTag_C_K2_OnEndAbility");
+static_assert(offsetof(GA_Vision_WaitTag_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Vision_WaitTag_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
+
+// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Added_21071CB943CD992BF8EFD6A338ACB336
+// 0x000C (0x000C - 0x0000)
+struct GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336 final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336) == 0x000004, "Wrong alignment on GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336");
+static_assert(sizeof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336) == 0x00000C, "Wrong size on GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336");
+static_assert(offsetof(GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336, Tag) == 0x000000, "Member 'GA_Vision_WaitTag_C_Added_21071CB943CD992BF8EFD6A338ACB336::Tag' has a wrong offset!");
+
+// Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Removed_DB9F64004F8908FEAD99D3815F1E8945
+// 0x000C (0x000C - 0x0000)
+struct GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945 final
+{
+public:
+	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945) == 0x000004, "Wrong alignment on GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945");
+static_assert(sizeof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945) == 0x00000C, "Wrong size on GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945");
+static_assert(offsetof(GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945, Tag) == 0x000000, "Member 'GA_Vision_WaitTag_C_Removed_DB9F64004F8908FEAD99D3815F1E8945::Tag' has a wrong offset!");
 
 }
 

@@ -23,35 +23,35 @@ class UGA_Comboo_Vision_C final : public UGA_Base_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Comboo_Vision_C;                 // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class AActor*                                 ____;                                              // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 _____GA_Comboo_Vision_C;                           // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     ___;                                               // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___ID;                                             // 0x0570(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_36D5[0x4];                                     // 0x0574(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_574[0x4];                                      // 0x0574(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     ___a;                                              // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                _____P_yH;                                         // 0x0580(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                ______PyH;                                         // 0x0588(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          _____;                                             // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper)
-	bool                                          _____0;                                            // 0x0591(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_36D6[0x2];                                     // 0x0592(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          ______GA_Comboo_Vision_C;                          // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper)
+	bool                                          _____GA_Comboo_Vision_C_0;                         // 0x0591(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_592[0x2];                                      // 0x0592(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         P_Handle;                                          // 0x0594(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ____0;                                             // 0x0598(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void _______3();
-	void EventReceived_18B59F5945020DB23C42FD88D3AB825D(const struct FGameplayEventData& Payload);
-	void EventReceived_18B59F5945020DB23C42FD8807650D1C(const struct FGameplayEventData& Payload);
-	void Added_21071CB943CD992BF8EFD6A3031ED77E(const struct FGameplayTag& Tag);
-	void OnTick_5D118C384AE61F1C80292E811927A939();
-	void OnCancelled_5D118C384AE61F1C80292E811927A939();
-	void OnInterrupted_5D118C384AE61F1C80292E811927A939();
-	void OnBlendOut_5D118C384AE61F1C80292E811927A939();
-	void OnCompleted_5D118C384AE61F1C80292E811927A939();
-	void Added_21071CB943CD992BF8EFD6A39F485527(const struct FGameplayTag& Tag);
-	void EventReceived_18B59F5945020DB23C42FD88BD385F36(const struct FGameplayEventData& Payload);
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
-	void _r__(class ATsBaseCharacter_C* _r, const struct FSHitInformation& __pn);
 	void ExecuteUbergraph_GA_Comboo_Vision(int32 EntryPoint);
+	void _r__(class ATsBaseCharacter_C* _r, const struct FSHitInformation& __pn);
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void EventReceived_18B59F5945020DB23C42FD88BD385F36(const struct FGameplayEventData& Payload);
+	void Added_21071CB943CD992BF8EFD6A39F485527(const struct FGameplayTag& Tag);
+	void OnCompleted_5D118C384AE61F1C80292E811927A939();
+	void OnBlendOut_5D118C384AE61F1C80292E811927A939();
+	void OnInterrupted_5D118C384AE61F1C80292E811927A939();
+	void OnCancelled_5D118C384AE61F1C80292E811927A939();
+	void OnTick_5D118C384AE61F1C80292E811927A939();
+	void Added_21071CB943CD992BF8EFD6A3031ED77E(const struct FGameplayTag& Tag);
+	void EventReceived_18B59F5945020DB23C42FD8807650D1C(const struct FGameplayEventData& Payload);
+	void EventReceived_18B59F5945020DB23C42FD88D3AB825D(const struct FGameplayEventData& Payload);
+	void _______3();
 
 public:
 	static class UClass* StaticClass()
@@ -66,14 +66,14 @@ public:
 static_assert(alignof(UGA_Comboo_Vision_C) == 0x000008, "Wrong alignment on UGA_Comboo_Vision_C");
 static_assert(sizeof(UGA_Comboo_Vision_C) == 0x0005A0, "Wrong size on UGA_Comboo_Vision_C");
 static_assert(offsetof(UGA_Comboo_Vision_C, UberGraphFrame_GA_Comboo_Vision_C) == 0x000558, "Member 'UGA_Comboo_Vision_C::UberGraphFrame_GA_Comboo_Vision_C' has a wrong offset!");
-static_assert(offsetof(UGA_Comboo_Vision_C, ____) == 0x000560, "Member 'UGA_Comboo_Vision_C::____' has a wrong offset!");
+static_assert(offsetof(UGA_Comboo_Vision_C, _____GA_Comboo_Vision_C) == 0x000560, "Member 'UGA_Comboo_Vision_C::_____GA_Comboo_Vision_C' has a wrong offset!");
 static_assert(offsetof(UGA_Comboo_Vision_C, ___) == 0x000568, "Member 'UGA_Comboo_Vision_C::___' has a wrong offset!");
 static_assert(offsetof(UGA_Comboo_Vision_C, ___ID) == 0x000570, "Member 'UGA_Comboo_Vision_C::___ID' has a wrong offset!");
 static_assert(offsetof(UGA_Comboo_Vision_C, ___a) == 0x000578, "Member 'UGA_Comboo_Vision_C::___a' has a wrong offset!");
 static_assert(offsetof(UGA_Comboo_Vision_C, _____P_yH) == 0x000580, "Member 'UGA_Comboo_Vision_C::_____P_yH' has a wrong offset!");
 static_assert(offsetof(UGA_Comboo_Vision_C, ______PyH) == 0x000588, "Member 'UGA_Comboo_Vision_C::______PyH' has a wrong offset!");
-static_assert(offsetof(UGA_Comboo_Vision_C, _____) == 0x000590, "Member 'UGA_Comboo_Vision_C::_____' has a wrong offset!");
-static_assert(offsetof(UGA_Comboo_Vision_C, _____0) == 0x000591, "Member 'UGA_Comboo_Vision_C::_____0' has a wrong offset!");
+static_assert(offsetof(UGA_Comboo_Vision_C, ______GA_Comboo_Vision_C) == 0x000590, "Member 'UGA_Comboo_Vision_C::______GA_Comboo_Vision_C' has a wrong offset!");
+static_assert(offsetof(UGA_Comboo_Vision_C, _____GA_Comboo_Vision_C_0) == 0x000591, "Member 'UGA_Comboo_Vision_C::_____GA_Comboo_Vision_C_0' has a wrong offset!");
 static_assert(offsetof(UGA_Comboo_Vision_C, P_Handle) == 0x000594, "Member 'UGA_Comboo_Vision_C::P_Handle' has a wrong offset!");
 static_assert(offsetof(UGA_Comboo_Vision_C, ____0) == 0x000598, "Member 'UGA_Comboo_Vision_C::____0' has a wrong offset!");
 

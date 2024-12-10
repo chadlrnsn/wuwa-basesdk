@@ -39,15 +39,15 @@ static_assert(sizeof(UKuroImposterCommandlet) == 0x000088, "Wrong size on UKuroI
 class UKuroImposterComponent final : public USceneComponent
 {
 public:
-	uint8                                         Pad_1F3E[0xC];                                     // 0x0218(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_218[0xC];                                      // 0x0218(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bPreview;                                          // 0x0224(0x0001)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F3F[0x3];                                     // 0x0225(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_225[0x3];                                      // 0x0225(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPerPlatformFloat                      ImposterScreenSizeScaleLod0;                       // 0x0228(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FPerPlatformFloat                      ImposterScreenSizeScaleLod1;                       // 0x022C(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          ImposterUseComtomBelowThr;                         // 0x0230(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F40[0x3];                                     // 0x0231(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_231[0x3];                                      // 0x0231(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPerPlatformFloat                      ImposterBelowThr;                                  // 0x0234(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F41[0x28];                                    // 0x0238(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_238[0x28];                                     // 0x0238(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -74,7 +74,7 @@ class AKuroImposterUpdater final : public AActor
 public:
 	bool                                          bEnabled;                                          // 0x02B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSearchMainLight;                                  // 0x02B1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F42[0x6];                                     // 0x02B2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B2[0x6];                                      // 0x02B2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void FillAllInstGlobalColor();

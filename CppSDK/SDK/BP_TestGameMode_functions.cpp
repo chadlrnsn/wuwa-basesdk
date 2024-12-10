@@ -78,9 +78,9 @@ void ABP_TestGameMode_C::StreamingCompleted()
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    Exist                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// TArray<class APlayerStart*>             Param_PlayerStarts                                     (Parm, OutParm)
+// TArray<class APlayerStart*>             PlayerStarts_0                                         (Parm, OutParm)
 
-void ABP_TestGameMode_C::Get_Player_Starts(bool* Exist, TArray<class APlayerStart*>* Param_PlayerStarts)
+void ABP_TestGameMode_C::Get_Player_Starts(bool* Exist, TArray<class APlayerStart*>* PlayerStarts_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -94,8 +94,8 @@ void ABP_TestGameMode_C::Get_Player_Starts(bool* Exist, TArray<class APlayerStar
 	if (Exist != nullptr)
 		*Exist = Parms.Exist;
 
-	if (Param_PlayerStarts != nullptr)
-		*Param_PlayerStarts = std::move(Parms.Param_PlayerStarts);
+	if (PlayerStarts_0 != nullptr)
+		*PlayerStarts_0 = std::move(Parms.PlayerStarts_0);
 }
 
 

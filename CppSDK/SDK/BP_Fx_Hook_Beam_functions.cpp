@@ -17,42 +17,23 @@
 namespace SDK
 {
 
-// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.CalculateTangents
-// (Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.ExecuteUbergraph_BP_Fx_Hook_Beam
+// (Final, UbergraphFunction)
 // Parameters:
-// struct FVector                          ControllerTangent                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          ItemTangent                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Fx_Hook_Beam_C::CalculateTangents(struct FVector* ControllerTangent, struct FVector* ItemTangent)
+void ABP_Fx_Hook_Beam_C::ExecuteUbergraph_BP_Fx_Hook_Beam(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Fx_Hook_Beam_C", "CalculateTangents");
+		Func = Class->GetFunction("BP_Fx_Hook_Beam_C", "ExecuteUbergraph_BP_Fx_Hook_Beam");
 
-	Params::BP_Fx_Hook_Beam_C_CalculateTangents Parms{};
+	Params::BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (ControllerTangent != nullptr)
-		*ControllerTangent = std::move(Parms.ControllerTangent);
-
-	if (ItemTangent != nullptr)
-		*ItemTangent = std::move(Parms.ItemTangent);
-}
-
-
-// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Fx_Hook_Beam_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Fx_Hook_Beam_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -76,23 +57,42 @@ void ABP_Fx_Hook_Beam_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.ExecuteUbergraph_BP_Fx_Hook_Beam
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_Fx_Hook_Beam_C::ExecuteUbergraph_BP_Fx_Hook_Beam(int32 EntryPoint)
+void ABP_Fx_Hook_Beam_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Fx_Hook_Beam_C", "ExecuteUbergraph_BP_Fx_Hook_Beam");
+		Func = Class->GetFunction("BP_Fx_Hook_Beam_C", "UserConstructionScript");
 
-	Params::BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.CalculateTangents
+// (Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVector                          ControllerTangent                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          ItemTangent                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Fx_Hook_Beam_C::CalculateTangents(struct FVector* ControllerTangent, struct FVector* ItemTangent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Fx_Hook_Beam_C", "CalculateTangents");
+
+	Params::BP_Fx_Hook_Beam_C_CalculateTangents Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (ControllerTangent != nullptr)
+		*ControllerTangent = std::move(Parms.ControllerTangent);
+
+	if (ItemTangent != nullptr)
+		*ItemTangent = std::move(Parms.ItemTangent);
 }
 
 }

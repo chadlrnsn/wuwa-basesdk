@@ -25,7 +25,7 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CharacterController_C;           // 0x0780(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class ATsBaseCharacter_C*                     SM___r;                                            // 0x0788(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          GmIsOpen;                                          // 0x0790(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_32F0[0x7];                                     // 0x0791(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_791[0x7];                                      // 0x0791(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBP_KuroCheatManager_C*                 KuroCheatManager;                                  // 0x0798(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:

@@ -20,7 +20,7 @@ struct TsEntityDebugInfoManager_C_GetInteractionDebugInfos final
 {
 public:
 	int32                                         EntityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_29B6[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
 static_assert(alignof(TsEntityDebugInfoManager_C_GetInteractionDebugInfos) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetInteractionDebugInfos");
@@ -45,7 +45,7 @@ struct TsEntityDebugInfoManager_C_GetDebugEntityName final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_29B7[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
 static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugEntityName) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugEntityName");
@@ -59,7 +59,7 @@ struct TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_29B8[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
 static_assert(alignof(TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetEntityCommonTagDebugString");
@@ -99,7 +99,7 @@ struct TsEntityDebugInfoManager_C_GetDebugBaseInfo final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_29B9[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 };
 static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugBaseInfo) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugBaseInfo");
@@ -113,7 +113,7 @@ struct TsEntityDebugInfoManager_C_GetDebugEntityActor final
 {
 public:
 	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_29BA[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(TsEntityDebugInfoManager_C_GetDebugEntityActor) == 0x000008, "Wrong alignment on TsEntityDebugInfoManager_C_GetDebugEntityActor");

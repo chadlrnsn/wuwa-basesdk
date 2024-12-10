@@ -28,14 +28,14 @@ public:
 	int32                                         ____SID;                                           // 0x0570(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnTick_5D118C384AE61F1C80292E81C0F7E796();
-	void OnCancelled_5D118C384AE61F1C80292E81C0F7E796();
-	void OnInterrupted_5D118C384AE61F1C80292E81C0F7E796();
-	void OnBlendOut_5D118C384AE61F1C80292E81C0F7E796();
-	void OnCompleted_5D118C384AE61F1C80292E81C0F7E796();
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
 	void ExecuteUbergraph_GA_VisionCoordination(int32 EntryPoint);
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void OnCompleted_5D118C384AE61F1C80292E81C0F7E796();
+	void OnBlendOut_5D118C384AE61F1C80292E81C0F7E796();
+	void OnInterrupted_5D118C384AE61F1C80292E81C0F7E796();
+	void OnCancelled_5D118C384AE61F1C80292E81C0F7E796();
+	void OnTick_5D118C384AE61F1C80292E81C0F7E796();
 
 public:
 	static class UClass* StaticClass()

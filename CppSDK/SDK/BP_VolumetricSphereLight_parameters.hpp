@@ -16,6 +16,17 @@
 namespace SDK::Params
 {
 
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ExecuteUbergraph_BP_VolumetricSphereLight
+// 0x0004 (0x0004 - 0x0000)
+struct BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight) == 0x000004, "Wrong alignment on BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight");
+static_assert(sizeof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight) == 0x000004, "Wrong size on BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, EntryPoint) == 0x000000, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::EntryPoint' has a wrong offset!");
+
 // Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.UserConstructionScript
 // 0x0060 (0x0060 - 0x0000)
 struct BP_VolumetricSphereLight_C_UserConstructionScript final
@@ -38,17 +49,6 @@ static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFu
 static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue_2) == 0x000048, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue_3) == 0x000050, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue_3' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_SetStaticMesh_ReturnValue) == 0x000058, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_SetStaticMesh_ReturnValue' has a wrong offset!");
-
-// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ExecuteUbergraph_BP_VolumetricSphereLight
-// 0x0004 (0x0004 - 0x0000)
-struct BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight) == 0x000004, "Wrong alignment on BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight");
-static_assert(sizeof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight) == 0x000004, "Wrong size on BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight");
-static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, EntryPoint) == 0x000000, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::EntryPoint' has a wrong offset!");
 
 }
 

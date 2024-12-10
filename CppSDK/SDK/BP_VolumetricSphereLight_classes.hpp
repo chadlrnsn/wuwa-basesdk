@@ -48,10 +48,10 @@ public:
 	class UMaterialInstance*                      SphereLightMatWithOutDFWithOutFog;                 // 0x0330(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateVolumetricSphereLight();
-	void UserConstructionScript();
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_VolumetricSphereLight(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void UserConstructionScript();
+	void UpdateVolumetricSphereLight();
 
 public:
 	static class UClass* StaticClass()

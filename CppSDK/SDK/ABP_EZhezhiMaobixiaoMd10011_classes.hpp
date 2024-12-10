@@ -34,10 +34,10 @@ public:
 	class ATsBaseCharacter_C*                     SM_r;                                              // 0x15C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* Param_AnimGraph);
-	void OnComponentStart();
-	void BlueprintInitializeAnimation();
 	void ExecuteUbergraph_ABP_EZhezhiMaobixiaoMd10011(int32 EntryPoint);
+	void BlueprintInitializeAnimation();
+	void OnComponentStart();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

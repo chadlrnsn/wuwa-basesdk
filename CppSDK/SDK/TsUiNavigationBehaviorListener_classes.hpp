@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "SNavigationMode_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SNavigationCursor_structs.hpp"
+#include "SNavigationMode_structs.hpp"
+#include "EHotKeyNameStateType_structs.hpp"
 #include "LGUI_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "EHotKeyNameStateType_structs.hpp"
-#include "SNavigationCursor_structs.hpp"
 
 
 namespace SDK
@@ -42,7 +42,7 @@ public:
 	class FString                                 DynamicTag;                                        // 0x0210(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	TMap<class FString, class AActor*>            InsideActorMap;                                    // 0x0220(0x0050)(Edit, BlueprintVisible)
 	bool                                          OpenAdsorbed;                                      // 0x0270(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_306C[0x3];                                     // 0x0271(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_271[0x3];                                      // 0x0271(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AdsorbedDistance;                                  // 0x0274(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              AdsorbedPivot;                                     // 0x0278(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AUIBaseActor*                           GridBaseActor;                                     // 0x0280(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

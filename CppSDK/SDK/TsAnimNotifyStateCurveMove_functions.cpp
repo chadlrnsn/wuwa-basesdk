@@ -17,24 +17,26 @@
 namespace SDK
 {
 
-// Function TsAnimNotifyStateCurveMove.TsAnimNotifyStateCurveMove_C.K2_NotifyEnd
+// Function TsAnimNotifyStateCurveMove.TsAnimNotifyStateCurveMove_C.K2_NotifyBegin
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool UTsAnimNotifyStateCurveMove_C::K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation)
+bool UTsAnimNotifyStateCurveMove_C::K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyStateCurveMove_C", "K2_NotifyEnd");
+		Func = Class->GetFunction("TsAnimNotifyStateCurveMove_C", "K2_NotifyBegin");
 
-	Params::TsAnimNotifyStateCurveMove_C_K2_NotifyEnd Parms{};
+	Params::TsAnimNotifyStateCurveMove_C_K2_NotifyBegin Parms{};
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
+	Parms.TotalDuration = TotalDuration;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -79,26 +81,24 @@ bool UTsAnimNotifyStateCurveMove_C::K2_NotifyTick(class USkeletalMeshComponent* 
 }
 
 
-// Function TsAnimNotifyStateCurveMove.TsAnimNotifyStateCurveMove_C.K2_NotifyBegin
+// Function TsAnimNotifyStateCurveMove.TsAnimNotifyStateCurveMove_C.K2_NotifyEnd
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TotalDuration                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool UTsAnimNotifyStateCurveMove_C::K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration)
+bool UTsAnimNotifyStateCurveMove_C::K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyStateCurveMove_C", "K2_NotifyBegin");
+		Func = Class->GetFunction("TsAnimNotifyStateCurveMove_C", "K2_NotifyEnd");
 
-	Params::TsAnimNotifyStateCurveMove_C_K2_NotifyBegin Parms{};
+	Params::TsAnimNotifyStateCurveMove_C_K2_NotifyEnd Parms{};
 
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
-	Parms.TotalDuration = TotalDuration;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

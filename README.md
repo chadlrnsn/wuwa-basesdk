@@ -3,7 +3,7 @@
 A basic sdk to exploiting another anime game
 
 > [!IMPORTANT]
-> Updated to 1.4.1
+> Updated to 1.4.2
 
 > [!TIP]
 > if u get static_assert error then write in `Engine_classes.hpp` and `Basic.hpp` code below

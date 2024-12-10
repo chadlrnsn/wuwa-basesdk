@@ -28,19 +28,19 @@ public:
 	class UEffectModelGroup_C*                    _LyH;                                              // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void _d___p__(int32 Selection);
-	void _LyH__();
-	void _4__();
-	void _nP9_a();
-	void ___d_S(class ATsBaseCharacter_C** _a, bool* __0_a, int32* Four_i___);
-	void EventReceived_18B59F5945020DB23C42FD88711A9140(const struct FGameplayEventData& Payload);
-	void OnTick_5D118C384AE61F1C80292E81F1E6F55F();
-	void OnCancelled_5D118C384AE61F1C80292E81F1E6F55F();
-	void OnInterrupted_5D118C384AE61F1C80292E81F1E6F55F();
-	void OnBlendOut_5D118C384AE61F1C80292E81F1E6F55F();
-	void OnCompleted_5D118C384AE61F1C80292E81F1E6F55F();
-	void K2_ActivateAbility();
 	void ExecuteUbergraph_GA_Zhezhi_Skill03(int32 EntryPoint);
+	void K2_ActivateAbility();
+	void OnCompleted_5D118C384AE61F1C80292E81F1E6F55F();
+	void OnBlendOut_5D118C384AE61F1C80292E81F1E6F55F();
+	void OnInterrupted_5D118C384AE61F1C80292E81F1E6F55F();
+	void OnCancelled_5D118C384AE61F1C80292E81F1E6F55F();
+	void OnTick_5D118C384AE61F1C80292E81F1E6F55F();
+	void EventReceived_18B59F5945020DB23C42FD88711A9140(const struct FGameplayEventData& Payload);
+	void ___d_S(class ATsBaseCharacter_C** _a, bool* __0_a, int32* Four_i___);
+	void _nP9_a();
+	void _4__();
+	void _LyH__();
+	void _d___p__(int32 Selection);
 
 public:
 	static class UClass* StaticClass()

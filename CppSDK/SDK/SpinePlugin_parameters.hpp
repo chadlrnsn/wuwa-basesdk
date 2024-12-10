@@ -241,11 +241,11 @@ static_assert(offsetof(TrackEntry_SetAlpha, Alpha) == 0x000000, "Member 'TrackEn
 struct TrackEntry_SetAnimationEnd final
 {
 public:
-	float                                         Param_AnimationEnd;                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimationEnd_0;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(TrackEntry_SetAnimationEnd) == 0x000004, "Wrong alignment on TrackEntry_SetAnimationEnd");
 static_assert(sizeof(TrackEntry_SetAnimationEnd) == 0x000004, "Wrong size on TrackEntry_SetAnimationEnd");
-static_assert(offsetof(TrackEntry_SetAnimationEnd, Param_AnimationEnd) == 0x000000, "Member 'TrackEntry_SetAnimationEnd::Param_AnimationEnd' has a wrong offset!");
+static_assert(offsetof(TrackEntry_SetAnimationEnd, AnimationEnd_0) == 0x000000, "Member 'TrackEntry_SetAnimationEnd::AnimationEnd_0' has a wrong offset!");
 
 // Function SpinePlugin.TrackEntry.SetAnimationLast
 // 0x0004 (0x0004 - 0x0000)
@@ -263,11 +263,11 @@ static_assert(offsetof(TrackEntry_SetAnimationLast, AnimationLast) == 0x000000, 
 struct TrackEntry_SetAnimationStart final
 {
 public:
-	float                                         Param_AnimationStart;                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimationStart_0;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(TrackEntry_SetAnimationStart) == 0x000004, "Wrong alignment on TrackEntry_SetAnimationStart");
 static_assert(sizeof(TrackEntry_SetAnimationStart) == 0x000004, "Wrong size on TrackEntry_SetAnimationStart");
-static_assert(offsetof(TrackEntry_SetAnimationStart, Param_AnimationStart) == 0x000000, "Member 'TrackEntry_SetAnimationStart::Param_AnimationStart' has a wrong offset!");
+static_assert(offsetof(TrackEntry_SetAnimationStart, AnimationStart_0) == 0x000000, "Member 'TrackEntry_SetAnimationStart::AnimationStart_0' has a wrong offset!");
 
 // Function SpinePlugin.TrackEntry.SetAttachmentThreshold
 // 0x0004 (0x0004 - 0x0000)
@@ -386,7 +386,7 @@ struct SpineSkeletonComponent_GetAnimationDuration final
 public:
 	class FString                                 AnimationName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2519[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_GetAnimationDuration) == 0x000008, "Wrong alignment on SpineSkeletonComponent_GetAnimationDuration");
 static_assert(sizeof(SpineSkeletonComponent_GetAnimationDuration) == 0x000018, "Wrong size on SpineSkeletonComponent_GetAnimationDuration");
@@ -479,7 +479,7 @@ struct SpineSkeletonComponent_HasAnimation final
 public:
 	class FString                                 AnimationName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251A[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_HasAnimation) == 0x000008, "Wrong alignment on SpineSkeletonComponent_HasAnimation");
 static_assert(sizeof(SpineSkeletonComponent_HasAnimation) == 0x000018, "Wrong size on SpineSkeletonComponent_HasAnimation");
@@ -493,7 +493,7 @@ struct SpineSkeletonComponent_HasBone final
 public:
 	class FString                                 BoneName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251B[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_HasBone) == 0x000008, "Wrong alignment on SpineSkeletonComponent_HasBone");
 static_assert(sizeof(SpineSkeletonComponent_HasBone) == 0x000018, "Wrong size on SpineSkeletonComponent_HasBone");
@@ -507,7 +507,7 @@ struct SpineSkeletonComponent_HasSkin final
 public:
 	class FString                                 SkinName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251C[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_HasSkin) == 0x000008, "Wrong alignment on SpineSkeletonComponent_HasSkin");
 static_assert(sizeof(SpineSkeletonComponent_HasSkin) == 0x000018, "Wrong size on SpineSkeletonComponent_HasSkin");
@@ -521,7 +521,7 @@ struct SpineSkeletonComponent_HasSlot final
 public:
 	class FString                                 SlotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251D[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_HasSlot) == 0x000008, "Wrong alignment on SpineSkeletonComponent_HasSlot");
 static_assert(sizeof(SpineSkeletonComponent_HasSlot) == 0x000018, "Wrong size on SpineSkeletonComponent_HasSlot");
@@ -536,7 +536,7 @@ public:
 	class FString                                 SlotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 AttachmentName;                                    // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251E[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_SetAttachment) == 0x000008, "Wrong alignment on SpineSkeletonComponent_SetAttachment");
 static_assert(sizeof(SpineSkeletonComponent_SetAttachment) == 0x000028, "Wrong size on SpineSkeletonComponent_SetAttachment");
@@ -551,7 +551,7 @@ struct SpineSkeletonComponent_SetBoneWorldPosition final
 public:
 	class FString                                 BoneName;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Position;                                          // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_251F[0x4];                                     // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_SetBoneWorldPosition) == 0x000008, "Wrong alignment on SpineSkeletonComponent_SetBoneWorldPosition");
 static_assert(sizeof(SpineSkeletonComponent_SetBoneWorldPosition) == 0x000020, "Wrong size on SpineSkeletonComponent_SetBoneWorldPosition");
@@ -587,7 +587,7 @@ struct SpineSkeletonComponent_SetSkin final
 public:
 	class FString                                 SkinName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2520[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_SetSkin) == 0x000008, "Wrong alignment on SpineSkeletonComponent_SetSkin");
 static_assert(sizeof(SpineSkeletonComponent_SetSkin) == 0x000018, "Wrong size on SpineSkeletonComponent_SetSkin");
@@ -601,7 +601,7 @@ struct SpineSkeletonComponent_SetSkins final
 public:
 	TArray<class FString>                         SkinNames;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2521[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_SetSkins) == 0x000008, "Wrong alignment on SpineSkeletonComponent_SetSkins");
 static_assert(sizeof(SpineSkeletonComponent_SetSkins) == 0x000018, "Wrong size on SpineSkeletonComponent_SetSkins");
@@ -615,7 +615,7 @@ struct SpineSkeletonComponent_SetSlotColor final
 public:
 	class FString                                 SlotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FColor                                 Color;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2522[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonComponent_SetSlotColor) == 0x000008, "Wrong alignment on SpineSkeletonComponent_SetSlotColor");
 static_assert(sizeof(SpineSkeletonComponent_SetSlotColor) == 0x000018, "Wrong size on SpineSkeletonComponent_SetSlotColor");
@@ -628,10 +628,10 @@ struct SpineSkeletonAnimationComponent_AddAnimation final
 {
 public:
 	int32                                         TrackIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2525[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AnimationName;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Loop;                                              // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2526[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Delay;                                             // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTrackEntry*                            ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -651,7 +651,7 @@ public:
 	int32                                         TrackIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MixDuration;                                       // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2527[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTrackEntry*                            ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(SpineSkeletonAnimationComponent_AddEmptyAnimation) == 0x000008, "Wrong alignment on SpineSkeletonAnimationComponent_AddEmptyAnimation");
@@ -678,7 +678,7 @@ struct SpineSkeletonAnimationComponent_GetCurrent final
 {
 public:
 	int32                                         TrackIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2528[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTrackEntry*                            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(SpineSkeletonAnimationComponent_GetCurrent) == 0x000008, "Wrong alignment on SpineSkeletonAnimationComponent_GetCurrent");
@@ -703,10 +703,10 @@ struct SpineSkeletonAnimationComponent_SetAnimation final
 {
 public:
 	int32                                         TrackIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2529[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AnimationName;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Loop;                                              // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_252A[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTrackEntry*                            ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(SpineSkeletonAnimationComponent_SetAnimation) == 0x000008, "Wrong alignment on SpineSkeletonAnimationComponent_SetAnimation");
@@ -749,7 +749,7 @@ struct SpineSkeletonAnimationComponent_SetPlaybackTime final
 public:
 	float                                         InPlaybackTime;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCallDelegates;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_252B[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineSkeletonAnimationComponent_SetPlaybackTime) == 0x000004, "Wrong alignment on SpineSkeletonAnimationComponent_SetPlaybackTime");
 static_assert(sizeof(SpineSkeletonAnimationComponent_SetPlaybackTime) == 0x000008, "Wrong size on SpineSkeletonAnimationComponent_SetPlaybackTime");
@@ -773,10 +773,10 @@ struct SpineWidget_AddAnimation final
 {
 public:
 	int32                                         TrackIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2535[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AnimationName;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Loop;                                              // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2536[0x3];                                     // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Delay;                                             // 0x001C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTrackEntry*                            ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
@@ -796,7 +796,7 @@ public:
 	int32                                         TrackIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MixDuration;                                       // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Delay;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2537[0x4];                                     // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTrackEntry*                            ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(SpineWidget_AddEmptyAnimation) == 0x000008, "Wrong alignment on SpineWidget_AddEmptyAnimation");
@@ -824,7 +824,7 @@ struct SpineWidget_GetAnimationDuration final
 public:
 	class FString                                 AnimationName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2538[0x4];                                     // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_GetAnimationDuration) == 0x000008, "Wrong alignment on SpineWidget_GetAnimationDuration");
 static_assert(sizeof(SpineWidget_GetAnimationDuration) == 0x000018, "Wrong size on SpineWidget_GetAnimationDuration");
@@ -872,7 +872,7 @@ struct SpineWidget_GetCurrent final
 {
 public:
 	int32                                         TrackIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2539[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTrackEntry*                            ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(SpineWidget_GetCurrent) == 0x000008, "Wrong alignment on SpineWidget_GetCurrent");
@@ -942,7 +942,7 @@ struct SpineWidget_HasAnimation final
 public:
 	class FString                                 AnimationName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_253A[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_HasAnimation) == 0x000008, "Wrong alignment on SpineWidget_HasAnimation");
 static_assert(sizeof(SpineWidget_HasAnimation) == 0x000018, "Wrong size on SpineWidget_HasAnimation");
@@ -956,7 +956,7 @@ struct SpineWidget_HasBone final
 public:
 	class FString                                 BoneName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_253B[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_HasBone) == 0x000008, "Wrong alignment on SpineWidget_HasBone");
 static_assert(sizeof(SpineWidget_HasBone) == 0x000018, "Wrong size on SpineWidget_HasBone");
@@ -970,7 +970,7 @@ struct SpineWidget_HasSkin final
 public:
 	class FString                                 SkinName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_253C[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_HasSkin) == 0x000008, "Wrong alignment on SpineWidget_HasSkin");
 static_assert(sizeof(SpineWidget_HasSkin) == 0x000018, "Wrong size on SpineWidget_HasSkin");
@@ -984,7 +984,7 @@ struct SpineWidget_HasSlot final
 public:
 	class FString                                 SlotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_253D[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_HasSlot) == 0x000008, "Wrong alignment on SpineWidget_HasSlot");
 static_assert(sizeof(SpineWidget_HasSlot) == 0x000018, "Wrong size on SpineWidget_HasSlot");
@@ -997,10 +997,10 @@ struct SpineWidget_SetAnimation final
 {
 public:
 	int32                                         TrackIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_253E[0x4];                                     // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AnimationName;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Loop;                                              // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_253F[0x7];                                     // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTrackEntry*                            ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(SpineWidget_SetAnimation) == 0x000008, "Wrong alignment on SpineWidget_SetAnimation");
@@ -1018,7 +1018,7 @@ public:
 	class FString                                 SlotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 AttachmentName;                                    // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2540[0x7];                                     // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_SetAttachment) == 0x000008, "Wrong alignment on SpineWidget_SetAttachment");
 static_assert(sizeof(SpineWidget_SetAttachment) == 0x000028, "Wrong size on SpineWidget_SetAttachment");
@@ -1059,7 +1059,7 @@ struct SpineWidget_SetPlaybackTime final
 public:
 	float                                         InPlaybackTime;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCallDelegates;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2541[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_SetPlaybackTime) == 0x000004, "Wrong alignment on SpineWidget_SetPlaybackTime");
 static_assert(sizeof(SpineWidget_SetPlaybackTime) == 0x000008, "Wrong size on SpineWidget_SetPlaybackTime");
@@ -1095,7 +1095,7 @@ struct SpineWidget_SetSkin final
 public:
 	class FString                                 SkinName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2542[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_SetSkin) == 0x000008, "Wrong alignment on SpineWidget_SetSkin");
 static_assert(sizeof(SpineWidget_SetSkin) == 0x000018, "Wrong size on SpineWidget_SetSkin");
@@ -1109,7 +1109,7 @@ struct SpineWidget_SetSkins final
 public:
 	TArray<class FString>                         SkinNames;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2543[0x7];                                     // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_SetSkins) == 0x000008, "Wrong alignment on SpineWidget_SetSkins");
 static_assert(sizeof(SpineWidget_SetSkins) == 0x000018, "Wrong size on SpineWidget_SetSkins");
@@ -1134,7 +1134,7 @@ struct SpineWidget_Tick final
 public:
 	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          CallDelegates;                                     // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2544[0x3];                                     // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(SpineWidget_Tick) == 0x000004, "Wrong alignment on SpineWidget_Tick");
 static_assert(sizeof(SpineWidget_Tick) == 0x000008, "Wrong size on SpineWidget_Tick");

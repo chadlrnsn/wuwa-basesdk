@@ -26,15 +26,15 @@ public:
 	int32                                         Entity_Id;                                         // 0x0560(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
-	void OnTick_5D118C384AE61F1C80292E81ECC61D57();
-	void OnCancelled_5D118C384AE61F1C80292E81ECC61D57();
-	void OnInterrupted_5D118C384AE61F1C80292E81ECC61D57();
-	void OnBlendOut_5D118C384AE61F1C80292E81ECC61D57();
-	void OnCompleted_5D118C384AE61F1C80292E81ECC61D57();
-	void OnFinish_AF1BF1C04B887958A892F295ED5B1B60();
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
 	void ExecuteUbergraph_GA_Role_ManipulateThrow(int32 EntryPoint);
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void OnFinish_AF1BF1C04B887958A892F295ED5B1B60();
+	void OnCompleted_5D118C384AE61F1C80292E81ECC61D57();
+	void OnBlendOut_5D118C384AE61F1C80292E81ECC61D57();
+	void OnInterrupted_5D118C384AE61F1C80292E81ECC61D57();
+	void OnCancelled_5D118C384AE61F1C80292E81ECC61D57();
+	void OnTick_5D118C384AE61F1C80292E81ECC61D57();
 
 public:
 	static class UClass* StaticClass()

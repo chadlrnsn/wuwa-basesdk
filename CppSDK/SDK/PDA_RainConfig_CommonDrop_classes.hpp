@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "KuroCurve_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_classes.hpp"
 #include "SCommonRainSpawnerConfig_structs.hpp"
+#include "KuroCurve_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -30,7 +30,7 @@ public:
 	struct FVector                                Gravity;                                           // 0x0068(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                Wind;                                              // 0x0074(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Drag;                                              // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_36A8[0x4];                                     // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveFloat                        OpacityCurve;                                      // 0x0088(0x0090)(Edit, BlueprintVisible)
 	struct FKuroCurveFloat                        StretchCurve;                                      // 0x0118(0x0090)(Edit, BlueprintVisible)
 	float                                         CycleBoxX;                                         // 0x01A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

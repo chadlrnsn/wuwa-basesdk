@@ -57,7 +57,7 @@ public:
 	class UAbilitySystemComponent*                AbilityComp;                                       // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
-	static class UAsyncTaskAnyEffectInhibitionChanged* ListenForAnyEffectInhibitionChanged(class UAbilitySystemComponent* Param_AbilityComp);
+	static class UAsyncTaskAnyEffectInhibitionChanged* ListenForAnyEffectInhibitionChanged(class UAbilitySystemComponent* AbilityComp_0);
 
 	void EndTask();
 
@@ -83,7 +83,7 @@ class UAsyncTaskAnyEffectRemoved final : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_             OnEffectRemoved;                                   // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17F2[0x18];                                    // 0x0050(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UAsyncTaskAnyEffectRemoved* ListenForAnyEffectRemoved(class UAbilitySystemComponent* AbilitySystemComponent);
@@ -112,10 +112,10 @@ class UAsyncTaskAnyEffectStackChanged final : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_             OnStackChanged;                                    // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                AbilityComp;                                       // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17F3[0x18];                                    // 0x0050(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static class UAsyncTaskAnyEffectStackChanged* ListenForAnyEffectStackChanged(class UAbilitySystemComponent* Param_AbilityComp);
+	static class UAsyncTaskAnyEffectStackChanged* ListenForAnyEffectStackChanged(class UAbilitySystemComponent* AbilityComp_0);
 
 	void EndTask();
 
@@ -141,7 +141,7 @@ class UAsyncTaskEffectApplied final : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_             OnEffectApplied;                                   // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17F4[0x18];                                    // 0x0050(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UAsyncTaskEffectApplied* ListenForEffectApplied(class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayTag& EffectGameplayTag, const struct FGameplayTag& IgnoreGameplayTag);
@@ -197,7 +197,7 @@ class UAsyncTaskEffectInhibitionChanged final : public UBlueprintAsyncActionBase
 {
 public:
 	FMulticastInlineDelegateProperty_             OnInhibitionChanged;                               // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F5[0x10];                                    // 0x0048(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x10];                                      // 0x0048(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UAsyncTaskEffectInhibitionChanged* ListenForInhibitionChanged(const struct FActiveGameplayEffectHandle& Handle);
@@ -224,7 +224,7 @@ class UAsyncTaskEffectStackChanged final : public UBlueprintAsyncActionBase
 {
 public:
 	FMulticastInlineDelegateProperty_             OnStackChanged;                                    // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17F6[0x10];                                    // 0x0048(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x10];                                      // 0x0048(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UAsyncTaskEffectStackChanged* ListenForStackChanged(const struct FActiveGameplayEffectHandle& Handle);
@@ -280,13 +280,13 @@ class UAsyncTaskPlayMontageAndWait final : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_             EndCallback;                                       // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	bool                                          bShouldEmitOnEndedEvent;                           // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_17F7[0x7];                                     // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimInstance*                          AnimInstance;                                      // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UAnimMontage*                           MontageToPlay;                                     // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17F8[0x20];                                    // 0x0060(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0x20];                                      // 0x0060(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static class UAsyncTaskPlayMontageAndWait* ListenForPlayMontage(class UAnimInstance* Param_AnimInstance, class UAnimMontage* Param_MontageToPlay, float PlayRate, float StartingPosition, class FName StartingSection);
+	static class UAsyncTaskPlayMontageAndWait* ListenForPlayMontage(class UAnimInstance* AnimInstance_0, class UAnimMontage* MontageToPlay_0, float PlayRate, float StartingPosition, class FName StartingSection);
 
 	void EndTask();
 	void StopMontage();
@@ -315,7 +315,7 @@ class UAsyncTaskTagCountChanged final : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_             OnTagCountChanged;                                 // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17FA[0x10];                                    // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x10];                                      // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UAsyncTaskTagCountChanged* ListenForTagCountChanged(class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayTag& Tag);
@@ -344,7 +344,7 @@ class UAsyncTaskTagSignificantChanged final : public UBlueprintAsyncActionBase
 public:
 	FMulticastInlineDelegateProperty_             OnTagSignificantChanged;                           // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17FC[0x10];                                    // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_50[0x10];                                      // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UAsyncTaskTagSignificantChanged* ListenForTagSignificantChanged(class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayTag& Tag);
@@ -375,7 +375,7 @@ public:
 	class UAbilitySystemComponent*                AbilitySystemComponent;                            // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
-	static class UAsyncTaskWaitGameplayEvent* ListenForGameplayEvent(class UAbilitySystemComponent* Param_AbilitySystemComponent);
+	static class UAsyncTaskWaitGameplayEvent* ListenForGameplayEvent(class UAbilitySystemComponent* AbilitySystemComponent_0);
 
 	void EndTask();
 
@@ -581,7 +581,7 @@ public:
 	struct FGameplayAttributeData                 RageChange;                                        // 0x0C68(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 	struct FGameplayAttributeData                 RageReduce;                                        // 0x0C80(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 	struct FGameplayAttributeData                 ToughRecoverDelayTime;                             // 0x0C98(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1817[0x60];                                    // 0x0CB0(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_CB0[0x60];                                     // 0x0CB0(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void SetAttackSpeedMax(float InMaxSpeed);
@@ -749,16 +749,16 @@ class alignas(0x10) ABaseCharacter : public ACharacter
 public:
 	struct FVector                                CachedActorLocation;                               // 0x05B0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               CachedActorRotation;                               // 0x05BC(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_181C[0x8];                                     // 0x05C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5C8[0x8];                                      // 0x05C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FQuat                                  CachedActorQuat;                                   // 0x05D0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                                CachedActorScale;                                  // 0x05E0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_181D[0x4];                                     // 0x05EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5EC[0x4];                                      // 0x05EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CachedActorTransform;                              // 0x05F0(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                                CachedActorUp;                                     // 0x0620(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                CachedActorForward;                                // 0x062C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                CachedActorVelocity;                               // 0x0638(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInitializeAttributes;                             // 0x0644(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_181E[0x3];                                     // 0x0645(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_645[0x3];                                      // 0x0645(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBaseAttributeSet*                      AttributeSet;                                      // 0x0648(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0650(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
@@ -806,7 +806,7 @@ class UBaseGameplayAbility : public UGameplayAbility
 {
 public:
 	bool                                          StartOnGiven;                                      // 0x03C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1826[0x7];                                     // 0x03C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3C1[0x7];                                      // 0x03C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	float GetCallerMagnitudeByTag(const struct FGameplayTag& Tag);
@@ -888,7 +888,7 @@ static_assert(sizeof(UDamageExecCalculation) == 0x000048, "Wrong size on UDamage
 class UGASBPLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	static bool AddDataTableRowByName_EditorOnly(class UDataTable* DataTable, class FName Param_Name, class UStruct* Data);
+	static bool AddDataTableRowByName_EditorOnly(class UDataTable* DataTable, class FName Name_0, class UStruct* Data);
 	static void AddEffectContextTarget(const struct FGameplayEffectContextHandle& EffectContext, class AActor* Actor);
 	static void AddGameplayTag(struct FGameplayTagContainer& TagContainer, int32 TagHash);
 	static struct FGameplayEffectSpecHandle AddGrantedTag(const struct FGameplayEffectSpecHandle& SpecHandle, int32 TagHash);
@@ -963,7 +963,7 @@ class UAbilityTask_WaitDelayForNextTick final : public UAbilityTask
 {
 public:
 	FMulticastInlineDelegateProperty_             OnFinish;                                          // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183F[0x8];                                     // 0x0098(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UAbilityTask_WaitDelayForNextTick* WaitDelayForNextTick(class UGameplayAbility* OwningAbility);

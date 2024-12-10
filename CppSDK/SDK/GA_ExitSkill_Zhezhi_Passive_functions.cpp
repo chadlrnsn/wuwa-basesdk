@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function GA_ExitSkill_Zhezhi_Passive.GA_ExitSkill_Zhezhi_Passive_C.K2_ActivateAbilityFromEvent
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// struct FGameplayEventData               EventData                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UGA_ExitSkill_Zhezhi_Passive_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ExitSkill_Zhezhi_Passive_C", "K2_ActivateAbilityFromEvent");
-
-	Params::GA_ExitSkill_Zhezhi_Passive_C_K2_ActivateAbilityFromEvent Parms{};
-
-	Parms.EventData = std::move(EventData);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function GA_ExitSkill_Zhezhi_Passive.GA_ExitSkill_Zhezhi_Passive_C.ExecuteUbergraph_GA_ExitSkill_Zhezhi_Passive
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -52,6 +32,26 @@ void UGA_ExitSkill_Zhezhi_Passive_C::ExecuteUbergraph_GA_ExitSkill_Zhezhi_Passiv
 	Params::GA_ExitSkill_Zhezhi_Passive_C_ExecuteUbergraph_GA_ExitSkill_Zhezhi_Passive Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_ExitSkill_Zhezhi_Passive.GA_ExitSkill_Zhezhi_Passive_C.K2_ActivateAbilityFromEvent
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// struct FGameplayEventData               EventData                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UGA_ExitSkill_Zhezhi_Passive_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_ExitSkill_Zhezhi_Passive_C", "K2_ActivateAbilityFromEvent");
+
+	Params::GA_ExitSkill_Zhezhi_Passive_C_K2_ActivateAbilityFromEvent Parms{};
+
+	Parms.EventData = std::move(EventData);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

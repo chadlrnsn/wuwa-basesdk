@@ -17,63 +17,21 @@
 namespace SDK
 {
 
-// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.UpdateVolumetricSphereLight
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_VolumetricSphereLightSuperFar_C::UpdateVolumetricSphereLight()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "UpdateVolumetricSphereLight");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_VolumetricSphereLightSuperFar_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_VolumetricSphereLightSuperFar_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ExecuteUbergraph_BP_VolumetricSphereLightSuperFar
+// (Final, UbergraphFunction)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_VolumetricSphereLightSuperFar_C::ReceiveTick(float DeltaSeconds)
+void ABP_VolumetricSphereLightSuperFar_C::ExecuteUbergraph_BP_VolumetricSphereLightSuperFar(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "ReceiveTick");
+		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "ExecuteUbergraph_BP_VolumetricSphereLightSuperFar");
 
-	Params::BP_VolumetricSphereLightSuperFar_C_ReceiveTick Parms{};
+	Params::BP_VolumetricSphereLightSuperFar_C_ExecuteUbergraph_BP_VolumetricSphereLightSuperFar Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -99,23 +57,65 @@ void ABP_VolumetricSphereLightSuperFar_C::EditorTick(float DeltaSeconds)
 }
 
 
-// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ExecuteUbergraph_BP_VolumetricSphereLightSuperFar
-// (Final, UbergraphFunction)
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_VolumetricSphereLightSuperFar_C::ExecuteUbergraph_BP_VolumetricSphereLightSuperFar(int32 EntryPoint)
+void ABP_VolumetricSphereLightSuperFar_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "ExecuteUbergraph_BP_VolumetricSphereLightSuperFar");
+		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "ReceiveTick");
 
-	Params::BP_VolumetricSphereLightSuperFar_C_ExecuteUbergraph_BP_VolumetricSphereLightSuperFar Parms{};
+	Params::BP_VolumetricSphereLightSuperFar_C_ReceiveTick Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_VolumetricSphereLightSuperFar_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_VolumetricSphereLightSuperFar_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.UpdateVolumetricSphereLight
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_VolumetricSphereLightSuperFar_C::UpdateVolumetricSphereLight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_VolumetricSphereLightSuperFar_C", "UpdateVolumetricSphereLight");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

@@ -77,29 +77,15 @@ void ABP_Droplets_C::ExecuteUbergraph_BP_Droplets(int32 EntryPoint)
 }
 
 
-// Function BP_Droplets.BP_Droplets_C.UpdateParameters
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_Droplets.BP_Droplets_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_Droplets_C::UpdateParameters()
+void ABP_Droplets_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Droplets_C", "UpdateParameters");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Droplets.BP_Droplets_C.MakeOneDroplet
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_Droplets_C::MakeOneDroplet()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Droplets_C", "MakeOneDroplet");
+		Func = Class->GetFunction("BP_Droplets_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -119,15 +105,29 @@ void ABP_Droplets_C::UserConstructionScript()
 }
 
 
-// Function BP_Droplets.BP_Droplets_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Droplets.BP_Droplets_C.MakeOneDroplet
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_Droplets_C::ReceiveBeginPlay()
+void ABP_Droplets_C::MakeOneDroplet()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Droplets_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Droplets_C", "MakeOneDroplet");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Droplets.BP_Droplets_C.UpdateParameters
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_Droplets_C::UpdateParameters()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Droplets_C", "UpdateParameters");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -16,6 +16,32 @@
 namespace SDK::Params
 {
 
+// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.ExecuteUbergraph_BP_Fx_Hook_Beam
+// 0x0014 (0x0014 - 0x0000)
+struct BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam) == 0x000004, "Wrong alignment on BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam");
+static_assert(sizeof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam) == 0x000014, "Wrong size on BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam");
+static_assert(offsetof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam, EntryPoint) == 0x000000, "Member 'BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam::EntryPoint' has a wrong offset!");
+static_assert(offsetof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000004, "Member 'BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam, K2Node_Event_DeltaSeconds) == 0x000010, "Member 'BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam::K2Node_Event_DeltaSeconds' has a wrong offset!");
+
+// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Fx_Hook_Beam_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_Fx_Hook_Beam_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_Fx_Hook_Beam_C_ReceiveTick");
+static_assert(sizeof(BP_Fx_Hook_Beam_C_ReceiveTick) == 0x000004, "Wrong size on BP_Fx_Hook_Beam_C_ReceiveTick");
+static_assert(offsetof(BP_Fx_Hook_Beam_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_Fx_Hook_Beam_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
+
 // Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.CalculateTangents
 // 0x00BC (0x00BC - 0x0000)
 struct BP_Fx_Hook_Beam_C_CalculateTangents final
@@ -66,32 +92,6 @@ static_assert(offsetof(BP_Fx_Hook_Beam_C_CalculateTangents, CallFunc_Multiply_Fl
 static_assert(offsetof(BP_Fx_Hook_Beam_C_CalculateTangents, CallFunc_Multiply_VectorFloat_ReturnValue_1) == 0x000098, "Member 'BP_Fx_Hook_Beam_C_CalculateTangents::CallFunc_Multiply_VectorFloat_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_Fx_Hook_Beam_C_CalculateTangents, CallFunc_Multiply_VectorFloat_ReturnValue_2) == 0x0000A4, "Member 'BP_Fx_Hook_Beam_C_CalculateTangents::CallFunc_Multiply_VectorFloat_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(BP_Fx_Hook_Beam_C_CalculateTangents, CallFunc_Subtract_VectorVector_ReturnValue_1) == 0x0000B0, "Member 'BP_Fx_Hook_Beam_C_CalculateTangents::CallFunc_Subtract_VectorVector_ReturnValue_1' has a wrong offset!");
-
-// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Fx_Hook_Beam_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_Fx_Hook_Beam_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_Fx_Hook_Beam_C_ReceiveTick");
-static_assert(sizeof(BP_Fx_Hook_Beam_C_ReceiveTick) == 0x000004, "Wrong size on BP_Fx_Hook_Beam_C_ReceiveTick");
-static_assert(offsetof(BP_Fx_Hook_Beam_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_Fx_Hook_Beam_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
-
-// Function BP_Fx_Hook_Beam.BP_Fx_Hook_Beam_C.ExecuteUbergraph_BP_Fx_Hook_Beam
-// 0x0014 (0x0014 - 0x0000)
-struct BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_K2_GetActorLocation_ReturnValue;          // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam) == 0x000004, "Wrong alignment on BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam");
-static_assert(sizeof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam) == 0x000014, "Wrong size on BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam");
-static_assert(offsetof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam, EntryPoint) == 0x000000, "Member 'BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam, CallFunc_K2_GetActorLocation_ReturnValue) == 0x000004, "Member 'BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam::CallFunc_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam, K2Node_Event_DeltaSeconds) == 0x000010, "Member 'BP_Fx_Hook_Beam_C_ExecuteUbergraph_BP_Fx_Hook_Beam::K2Node_Event_DeltaSeconds' has a wrong offset!");
 
 }
 

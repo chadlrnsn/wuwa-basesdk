@@ -41,7 +41,7 @@ static_assert(sizeof(UMovieSceneAutoTransformSection) == 0x0000F8, "Wrong size o
 class UMovieSceneAutoTransformTrack final : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                         Pad_24BD[0x8];                                     // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 
 public:
@@ -65,7 +65,7 @@ class UMovieSceneDialogueAudioSection final : public UMovieSceneSection
 public:
 	class FString                                 AudioKey;                                          // 0x00F8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         AudioTransitionDuration;                           // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_24BE[0x4];                                     // 0x010C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -87,7 +87,7 @@ static_assert(offsetof(UMovieSceneDialogueAudioSection, AudioTransitionDuration)
 class UMovieSceneDialogueAudioTrack final : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                         Pad_24BF[0x8];                                     // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 
 public:
@@ -110,11 +110,11 @@ class UMovieSceneDialogueSection final : public UMovieSceneSection
 {
 public:
 	class FText                                   DialogueInfo;                                      // 0x00F8(0x0018)(Edit, NativeAccessSpecifierPrivate)
-	int32                                         Index_MovieSceneDialogueSection;                   // 0x0110(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_24C0[0x4];                                     // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0110(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   SpeakerName;                                       // 0x0118(0x0018)(Edit, NativeAccessSpecifierPrivate)
 	int32                                         SpeakerID;                                         // 0x0130(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_24C1[0x4];                                     // 0x0134(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_134[0x4];                                      // 0x0134(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   DialogueID;                                        // 0x0138(0x0018)(Edit, NativeAccessSpecifierPrivate)
 	TArray<class FText>                           DialogueInfos;                                     // 0x0150(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<class FText>                           OptionInfos;                                       // 0x0160(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
@@ -123,7 +123,7 @@ public:
 	int32                                         AudioTransitionDuration;                           // 0x0178(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	ELanguageAudio                                LanguageType;                                      // 0x017C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          EnableGuardTime;                                   // 0x017D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_24C2[0x2];                                     // 0x017E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_17E[0x2];                                      // 0x017E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -138,7 +138,7 @@ public:
 static_assert(alignof(UMovieSceneDialogueSection) == 0x000008, "Wrong alignment on UMovieSceneDialogueSection");
 static_assert(sizeof(UMovieSceneDialogueSection) == 0x000180, "Wrong size on UMovieSceneDialogueSection");
 static_assert(offsetof(UMovieSceneDialogueSection, DialogueInfo) == 0x0000F8, "Member 'UMovieSceneDialogueSection::DialogueInfo' has a wrong offset!");
-static_assert(offsetof(UMovieSceneDialogueSection, Index_MovieSceneDialogueSection) == 0x000110, "Member 'UMovieSceneDialogueSection::Index_MovieSceneDialogueSection' has a wrong offset!");
+static_assert(offsetof(UMovieSceneDialogueSection, Index_0) == 0x000110, "Member 'UMovieSceneDialogueSection::Index_0' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSection, SpeakerName) == 0x000118, "Member 'UMovieSceneDialogueSection::SpeakerName' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSection, SpeakerID) == 0x000130, "Member 'UMovieSceneDialogueSection::SpeakerID' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSection, DialogueID) == 0x000138, "Member 'UMovieSceneDialogueSection::DialogueID' has a wrong offset!");
@@ -156,7 +156,7 @@ class UMovieSceneDialogueStateSection final : public UMovieSceneSection
 {
 public:
 	struct FDialogueStateStruct                   SectionData;                                       // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_24C3[0x7];                                     // 0x00F9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -177,7 +177,7 @@ static_assert(offsetof(UMovieSceneDialogueStateSection, SectionData) == 0x0000F8
 class UMovieSceneDialogueStateTrack final : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                         Pad_24C4[0x8];                                     // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 
 public:
@@ -199,13 +199,13 @@ static_assert(offsetof(UMovieSceneDialogueStateTrack, Sections) == 0x000088, "Me
 class UMovieSceneDialogueSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_24C5[0x8];                                     // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	FMulticastInlineDelegateProperty_             OnShowDialogue;                                    // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	FMulticastInlineDelegateProperty_             OnShowDialogueAudio;                               // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24C6[0x10];                                    // 0x0060(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0x10];                                      // 0x0060(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 AutoTransformActor;                                // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMovieScene3DTransformTrack*            AutoTransformDataTrack;                            // 0x0078(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_24C7[0x20];                                    // 0x0080(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x20];                                      // 0x0080(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ShowDialogue(bool bShow, const class FText& DialogueID, const int32 GuardTime, const int32 AudioDelay, const int32 AudioTransitionDuration, const ELanguageAudio LanguageType);
@@ -234,10 +234,10 @@ static_assert(offsetof(UMovieSceneDialogueSubsystem, AutoTransformDataTrack) == 
 class UMovieSceneDialogueTrack final : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                         Pad_24CD[0x8];                                     // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	ELanguageAudio                                LanguageType;                                      // 0x0098(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_24CE[0x7];                                     // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -291,7 +291,7 @@ static_assert(offsetof(UMovieSceneSeqAnimDataSection, VectorNameAndCurves) == 0x
 class UMovieSceneSeqAnimDataTrack final : public UMovieSceneNameableTrack
 {
 public:
-	uint8                                         Pad_24D4[0x8];                                     // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 
 public:

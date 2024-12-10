@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ECharacterState_structs.hpp"
 #include "KuroGameplay_classes.hpp"
 #include "Engine_structs.hpp"
-#include "ECharacterState_structs.hpp"
 
 
 namespace SDK
@@ -38,7 +38,7 @@ public:
 	class FText GetDebugText();
 	void ChangeHatred(int32 EntityId, float Rate, float Abs);
 	void ClearHatred(int32 EntityId);
-	void SetBattleWanderIndex(int32 Param_Index);
+	void SetBattleWanderIndex(int32 Index_0);
 	void AddBattleWanderEndTime(float AddTime);
 	void TestChangeAi(const class FString& Id);
 	void AicApplyBuff(int64 buffId);
@@ -47,7 +47,7 @@ public:
 	void AicRemoveTag(const struct FGameplayTag& Tag);
 	void SetAiEnable(bool Enable, const class FString& Key);
 	void LogReport(int32 LogId);
-	void SetAiSenseEnable(int32 Param_Index, bool Enable);
+	void SetAiSenseEnable(int32 Index_0, bool Enable);
 	void AddOrRemoveAiSense(int32 AiSenseId, bool Add);
 	void EnableAiSenseByType(int32 Type, bool Enable);
 	void AddHateEventBinder(class UKuroPerceptionEventBinder* Handler1);
@@ -66,7 +66,7 @@ public:
 	bool _____0();
 	bool ____();
 	void ___6C_();
-	void ___b_(ECharacterState OldState, ECharacterState NewState, bool Param_IsAutonomousProxy);
+	void ___b_(ECharacterState OldState, ECharacterState NewState, bool IsAutonomousProxy_0);
 	bool _______(TArray<class FString>& States);
 	void _b_____(TArray<class FString>& States);
 	void GetDebugStateMachine(TArray<class FText>& Output);

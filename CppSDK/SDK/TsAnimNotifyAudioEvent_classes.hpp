@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SAudioEventProbabilityCooldownInfo_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "SAudioEventProbabilityCooldownInfo_structs.hpp"
 
 
 namespace SDK
@@ -25,7 +25,7 @@ public:
 	TSoftObjectPtr<class UAkAudioEvent>           AudioEvent;                                        // 0x0048(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class FName                                   SocketName;                                        // 0x0078(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Follow;                                            // 0x0084(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_364D[0x3];                                     // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSAudioEventProbabilityCooldownInfo    TagProbabilityInfo;                                // 0x0088(0x0018)(Edit, BlueprintVisible, HasGetValueTypeHash)
 
 public:

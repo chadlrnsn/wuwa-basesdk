@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
-#include "SCameraModifier_Condition_structs.hpp"
 #include "SCameraModifier_Settings_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "ECameraAnsEffectiveClientType_structs.hpp"
+#include "SCameraModifier_Condition_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
@@ -30,10 +30,10 @@ public:
 	float                                         _e__;                                              // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         _____0;                                            // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         S_____;                                            // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3649[0x4];                                     // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSCameraModifier_Settings              ___9Mn;                                            // 0x0068(0x0118)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	ECameraAnsEffectiveClientType                 _H_7___;                                           // 0x0180(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_364A[0x7];                                     // 0x0181(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_181[0x7];                                      // 0x0181(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CameraAttachSocket;                                // 0x0188(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	TArray<struct FSCameraModifier_Condition>     A_;                                                // 0x0198(0x0010)(Edit, BlueprintVisible)
 
