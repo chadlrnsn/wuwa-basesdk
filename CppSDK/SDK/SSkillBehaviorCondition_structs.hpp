@@ -25,8 +25,8 @@ struct FSSkillBehaviorCondition final
 public:
 	ESkillBehaviorConditionType                   ConditionType_31_FDE61D77427DCD4BC0F2A7AA3D27695C; // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IgnoreZ_37_F6CCC57746F2CC2ECC2C2C8B8697BAE3;       // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	ESkillBehaviorComparisonLogic                 ComparisonLogic_41_BFD626EA4ADC6ECB646CA6B4C474889C; // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          Sign_72_F5B15D704A9FA4243D4D888D6E838352;          // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESkillBehaviorComparisonLogic                 ComparisonLogic_41_BFD626EA4ADC6ECB646CA6B4C474889C; // 0x0003(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Value_45_2649759445759C286E73938D5318AA99;         // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         RangeL_47_7B13704A41AF164405A70085BB8683AB;        // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         RangeR_49_6D00959F40FAE4F69CAF15A1F177BDD9;        // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -42,7 +42,8 @@ static_assert(alignof(FSSkillBehaviorCondition) == 0x000008, "Wrong alignment on
 static_assert(sizeof(FSSkillBehaviorCondition) == 0x000048, "Wrong size on FSSkillBehaviorCondition");
 static_assert(offsetof(FSSkillBehaviorCondition, ConditionType_31_FDE61D77427DCD4BC0F2A7AA3D27695C) == 0x000000, "Member 'FSSkillBehaviorCondition::ConditionType_31_FDE61D77427DCD4BC0F2A7AA3D27695C' has a wrong offset!");
 static_assert(offsetof(FSSkillBehaviorCondition, IgnoreZ_37_F6CCC57746F2CC2ECC2C2C8B8697BAE3) == 0x000001, "Member 'FSSkillBehaviorCondition::IgnoreZ_37_F6CCC57746F2CC2ECC2C2C8B8697BAE3' has a wrong offset!");
-static_assert(offsetof(FSSkillBehaviorCondition, ComparisonLogic_41_BFD626EA4ADC6ECB646CA6B4C474889C) == 0x000002, "Member 'FSSkillBehaviorCondition::ComparisonLogic_41_BFD626EA4ADC6ECB646CA6B4C474889C' has a wrong offset!");
+static_assert(offsetof(FSSkillBehaviorCondition, Sign_72_F5B15D704A9FA4243D4D888D6E838352) == 0x000002, "Member 'FSSkillBehaviorCondition::Sign_72_F5B15D704A9FA4243D4D888D6E838352' has a wrong offset!");
+static_assert(offsetof(FSSkillBehaviorCondition, ComparisonLogic_41_BFD626EA4ADC6ECB646CA6B4C474889C) == 0x000003, "Member 'FSSkillBehaviorCondition::ComparisonLogic_41_BFD626EA4ADC6ECB646CA6B4C474889C' has a wrong offset!");
 static_assert(offsetof(FSSkillBehaviorCondition, Value_45_2649759445759C286E73938D5318AA99) == 0x000004, "Member 'FSSkillBehaviorCondition::Value_45_2649759445759C286E73938D5318AA99' has a wrong offset!");
 static_assert(offsetof(FSSkillBehaviorCondition, RangeL_47_7B13704A41AF164405A70085BB8683AB) == 0x000008, "Member 'FSSkillBehaviorCondition::RangeL_47_7B13704A41AF164405A70085BB8683AB' has a wrong offset!");
 static_assert(offsetof(FSSkillBehaviorCondition, RangeR_49_6D00959F40FAE4F69CAF15A1F177BDD9) == 0x00000C, "Member 'FSSkillBehaviorCondition::RangeR_49_6D00959F40FAE4F69CAF15A1F177BDD9' has a wrong offset!");

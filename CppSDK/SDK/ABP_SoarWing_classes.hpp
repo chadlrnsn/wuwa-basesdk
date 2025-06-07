@@ -10,43 +10,44 @@
 
 #include "Basic.hpp"
 
-#include "AnimGraphRuntime_structs.hpp"
 #include "KuroAnim_classes.hpp"
 #include "Engine_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 
 
 namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_SoarWing.ABP_SoarWing_C
-// 0x07E0 (0x0EE0 - 0x0700)
+// 0x07E0 (0x0F30 - 0x0750)
 class UABP_SoarWing_C final : public UKuroAnimInstance
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0700(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0708(0x0038)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x0740(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x0768(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x0790(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x07B8(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x07E0(0x0028)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x0808(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x0840(0x0090)()
-	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer_1;                  // 0x08D0(0x00F8)()
-	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer;                    // 0x09C8(0x00F8)()
-	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive_1;                     // 0x0AC0(0x00D8)()
-	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive;                       // 0x0B98(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x0C70(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0CA8(0x0090)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0D38(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0D70(0x0148)()
-	class UABP_BaseRole_C*                        ABP_BaseRole;                                      // 0x0EB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 Mesh;                                              // 0x0EC0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         XA_UD混合;                                         // 0x0EC8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         XA_RL混合;                                         // 0x0ECC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         速度;                                              // 0x0ED0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          状态__XA;                                          // 0x0ED4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          Is_in_Plot_Blend;                                  // 0x0ED5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_748[0x8];                                      // 0x0748(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0750(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0758(0x0038)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x0790(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x07B8(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x07E0(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x0808(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x0830(0x0028)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x0858(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x0890(0x0090)()
+	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer_1;                  // 0x0920(0x00F8)()
+	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer;                    // 0x0A18(0x00F8)()
+	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive_1;                     // 0x0B10(0x00D8)()
+	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive;                       // 0x0BE8(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x0CC0(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0CF8(0x0090)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0D88(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0DC0(0x0148)()
+	class UABP_BaseRole_C*                        ABP_BaseRole;                                      // 0x0F08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 Mesh;                                              // 0x0F10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         XA_UD混合;                                         // 0x0F18(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         XA_RL混合;                                         // 0x0F1C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         速度;                                              // 0x0F20(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          状态__XA;                                          // 0x0F24(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          Is_in_Plot_Blend;                                  // 0x0F25(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_ABP_SoarWing(int32 EntryPoint);
@@ -66,31 +67,31 @@ public:
 	}
 };
 static_assert(alignof(UABP_SoarWing_C) == 0x000010, "Wrong alignment on UABP_SoarWing_C");
-static_assert(sizeof(UABP_SoarWing_C) == 0x000EE0, "Wrong size on UABP_SoarWing_C");
-static_assert(offsetof(UABP_SoarWing_C, UberGraphFrame) == 0x000700, "Member 'UABP_SoarWing_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_Root) == 0x000708, "Member 'UABP_SoarWing_C::AnimGraphNode_Root' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult_4) == 0x000740, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult_4' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult_3) == 0x000768, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult_3' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult_2) == 0x000790, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult_2' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult_1) == 0x0007B8, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult_1' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult) == 0x0007E0, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_StateResult_2) == 0x000808, "Member 'UABP_SoarWing_C::AnimGraphNode_StateResult_2' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_SequencePlayer_1) == 0x000840, "Member 'UABP_SoarWing_C::AnimGraphNode_SequencePlayer_1' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_BlendSpacePlayer_1) == 0x0008D0, "Member 'UABP_SoarWing_C::AnimGraphNode_BlendSpacePlayer_1' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_BlendSpacePlayer) == 0x0009C8, "Member 'UABP_SoarWing_C::AnimGraphNode_BlendSpacePlayer' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_ApplyAdditive_1) == 0x000AC0, "Member 'UABP_SoarWing_C::AnimGraphNode_ApplyAdditive_1' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_ApplyAdditive) == 0x000B98, "Member 'UABP_SoarWing_C::AnimGraphNode_ApplyAdditive' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_StateResult_1) == 0x000C70, "Member 'UABP_SoarWing_C::AnimGraphNode_StateResult_1' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_SequencePlayer) == 0x000CA8, "Member 'UABP_SoarWing_C::AnimGraphNode_SequencePlayer' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_StateResult) == 0x000D38, "Member 'UABP_SoarWing_C::AnimGraphNode_StateResult' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_StateMachine) == 0x000D70, "Member 'UABP_SoarWing_C::AnimGraphNode_StateMachine' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, ABP_BaseRole) == 0x000EB8, "Member 'UABP_SoarWing_C::ABP_BaseRole' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, Mesh) == 0x000EC0, "Member 'UABP_SoarWing_C::Mesh' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, XA_UD混合) == 0x000EC8, "Member 'UABP_SoarWing_C::XA_UD混合' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, XA_RL混合) == 0x000ECC, "Member 'UABP_SoarWing_C::XA_RL混合' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, 速度) == 0x000ED0, "Member 'UABP_SoarWing_C::速度' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, 状态__XA) == 0x000ED4, "Member 'UABP_SoarWing_C::状态__XA' has a wrong offset!");
-static_assert(offsetof(UABP_SoarWing_C, Is_in_Plot_Blend) == 0x000ED5, "Member 'UABP_SoarWing_C::Is_in_Plot_Blend' has a wrong offset!");
+static_assert(sizeof(UABP_SoarWing_C) == 0x000F30, "Wrong size on UABP_SoarWing_C");
+static_assert(offsetof(UABP_SoarWing_C, UberGraphFrame) == 0x000750, "Member 'UABP_SoarWing_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_Root) == 0x000758, "Member 'UABP_SoarWing_C::AnimGraphNode_Root' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult_4) == 0x000790, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult_4' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult_3) == 0x0007B8, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult_3' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult_2) == 0x0007E0, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult_2' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult_1) == 0x000808, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult_1' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_TransitionResult) == 0x000830, "Member 'UABP_SoarWing_C::AnimGraphNode_TransitionResult' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_StateResult_2) == 0x000858, "Member 'UABP_SoarWing_C::AnimGraphNode_StateResult_2' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_SequencePlayer_1) == 0x000890, "Member 'UABP_SoarWing_C::AnimGraphNode_SequencePlayer_1' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_BlendSpacePlayer_1) == 0x000920, "Member 'UABP_SoarWing_C::AnimGraphNode_BlendSpacePlayer_1' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_BlendSpacePlayer) == 0x000A18, "Member 'UABP_SoarWing_C::AnimGraphNode_BlendSpacePlayer' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_ApplyAdditive_1) == 0x000B10, "Member 'UABP_SoarWing_C::AnimGraphNode_ApplyAdditive_1' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_ApplyAdditive) == 0x000BE8, "Member 'UABP_SoarWing_C::AnimGraphNode_ApplyAdditive' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_StateResult_1) == 0x000CC0, "Member 'UABP_SoarWing_C::AnimGraphNode_StateResult_1' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_SequencePlayer) == 0x000CF8, "Member 'UABP_SoarWing_C::AnimGraphNode_SequencePlayer' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_StateResult) == 0x000D88, "Member 'UABP_SoarWing_C::AnimGraphNode_StateResult' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, AnimGraphNode_StateMachine) == 0x000DC0, "Member 'UABP_SoarWing_C::AnimGraphNode_StateMachine' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, ABP_BaseRole) == 0x000F08, "Member 'UABP_SoarWing_C::ABP_BaseRole' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, Mesh) == 0x000F10, "Member 'UABP_SoarWing_C::Mesh' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, XA_UD混合) == 0x000F18, "Member 'UABP_SoarWing_C::XA_UD混合' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, XA_RL混合) == 0x000F1C, "Member 'UABP_SoarWing_C::XA_RL混合' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, 速度) == 0x000F20, "Member 'UABP_SoarWing_C::速度' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, 状态__XA) == 0x000F24, "Member 'UABP_SoarWing_C::状态__XA' has a wrong offset!");
+static_assert(offsetof(UABP_SoarWing_C, Is_in_Plot_Blend) == 0x000F25, "Member 'UABP_SoarWing_C::Is_in_Plot_Blend' has a wrong offset!");
 
 }
 

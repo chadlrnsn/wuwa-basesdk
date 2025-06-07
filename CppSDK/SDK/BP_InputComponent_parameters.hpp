@@ -81,22 +81,22 @@ public:
 	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSInputCommand                         ReturnValue;                                       // 0x0004(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
 	struct FSInputCommand                         K2Node_MakeStruct_SInputCommand;                   // 0x0018(0x0014)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_ContainsTag_ReturnValue;                  // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_ContainsTag_ReturnValue_1;                // 0x002E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x002F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_CanClimbPress_ReturnValue;                // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CanClimbPress_ReturnValue;                // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_ContainsTag_ReturnValue;                  // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x002E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_ContainsTag_ReturnValue_1;                // 0x002F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_InputComponent_C_攀爬按下) == 0x000004, "Wrong alignment on BP_InputComponent_C_攀爬按下");
 static_assert(sizeof(BP_InputComponent_C_攀爬按下) == 0x000034, "Wrong size on BP_InputComponent_C_攀爬按下");
 static_assert(offsetof(BP_InputComponent_C_攀爬按下, time) == 0x000000, "Member 'BP_InputComponent_C_攀爬按下::time' has a wrong offset!");
 static_assert(offsetof(BP_InputComponent_C_攀爬按下, ReturnValue) == 0x000004, "Member 'BP_InputComponent_C_攀爬按下::ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_InputComponent_C_攀爬按下, K2Node_MakeStruct_SInputCommand) == 0x000018, "Member 'BP_InputComponent_C_攀爬按下::K2Node_MakeStruct_SInputCommand' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_ContainsTag_ReturnValue) == 0x00002C, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_ContainsTag_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_Not_PreBool_ReturnValue) == 0x00002D, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_ContainsTag_ReturnValue_1) == 0x00002E, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_ContainsTag_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_BooleanOR_ReturnValue) == 0x00002F, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_CanClimbPress_ReturnValue) == 0x000030, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_CanClimbPress_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_CanClimbPress_ReturnValue) == 0x00002C, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_CanClimbPress_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_ContainsTag_ReturnValue) == 0x00002D, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_ContainsTag_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_Not_PreBool_ReturnValue) == 0x00002E, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_ContainsTag_ReturnValue_1) == 0x00002F, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_ContainsTag_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬按下, CallFunc_BooleanOR_ReturnValue) == 0x000030, "Member 'BP_InputComponent_C_攀爬按下::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
 
 // Function BP_InputComponent.BP_InputComponent_C.走跑切换按下
 // 0x0030 (0x0030 - 0x0000)
@@ -168,148 +168,157 @@ public:
 	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSInputCommand                         ReturnValue;                                       // 0x0004(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
 	struct FSInputCommand                         K2Node_MakeStruct_SInputCommand;                   // 0x0018(0x0014)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_ContainsTag_ReturnValue;                  // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_ContainsTag_ReturnValue_1;                // 0x002E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x002F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_CanClimbPress_ReturnValue;                // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CanClimbPress_ReturnValue;                // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_ContainsTag_ReturnValue;                  // 0x002D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x002E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_ContainsTag_ReturnValue_1;                // 0x002F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_InputComponent_C_攀爬抬起) == 0x000004, "Wrong alignment on BP_InputComponent_C_攀爬抬起");
 static_assert(sizeof(BP_InputComponent_C_攀爬抬起) == 0x000034, "Wrong size on BP_InputComponent_C_攀爬抬起");
 static_assert(offsetof(BP_InputComponent_C_攀爬抬起, time) == 0x000000, "Member 'BP_InputComponent_C_攀爬抬起::time' has a wrong offset!");
 static_assert(offsetof(BP_InputComponent_C_攀爬抬起, ReturnValue) == 0x000004, "Member 'BP_InputComponent_C_攀爬抬起::ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_InputComponent_C_攀爬抬起, K2Node_MakeStruct_SInputCommand) == 0x000018, "Member 'BP_InputComponent_C_攀爬抬起::K2Node_MakeStruct_SInputCommand' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_ContainsTag_ReturnValue) == 0x00002C, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_ContainsTag_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_Not_PreBool_ReturnValue) == 0x00002D, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_ContainsTag_ReturnValue_1) == 0x00002E, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_ContainsTag_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_BooleanOR_ReturnValue) == 0x00002F, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_CanClimbPress_ReturnValue) == 0x000030, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_CanClimbPress_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_CanClimbPress_ReturnValue) == 0x00002C, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_CanClimbPress_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_ContainsTag_ReturnValue) == 0x00002D, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_ContainsTag_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_Not_PreBool_ReturnValue) == 0x00002E, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_ContainsTag_ReturnValue_1) == 0x00002F, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_ContainsTag_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_攀爬抬起, CallFunc_BooleanOR_ReturnValue) == 0x000030, "Member 'BP_InputComponent_C_攀爬抬起::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
 
 // Function BP_InputComponent.BP_InputComponent_C.闪避按下
-// 0x02D8 (0x02D8 - 0x0000)
+// 0x02F0 (0x02F0 - 0x0000)
 struct BP_InputComponent_C_闪避按下 final
 {
 public:
 	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSInputCommand                         ReturnValue;                                       // 0x0004(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
-	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue;           // 0x0018(0x0014)(NoDestructor, HasGetValueTypeHash)
-	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_1;         // 0x002C(0x0014)(NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue; // 0x0040(0x0020)()
-	bool                                          CallFunc_CanResponseInput_ReturnValue;             // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_2;         // 0x0064(0x0014)(NoDestructor, HasGetValueTypeHash)
-	class UAbilitySystemComponent*                CallFunc_GetAbilitySystemComponent_ReturnValue;    // 0x0078(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_3;         // 0x0080(0x0014)(NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetTagCount_ReturnValue;                  // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput;    // 0x00A0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue;       // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_1; // 0x00B8(0x0020)()
-	bool                                          CallFunc_HasMoveAxisInput_ReturnValue;             // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_D9[0x7];                                       // 0x00D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_2; // 0x00E0(0x0020)()
-	bool                                          CallFunc_HasMoveAxisInput_ReturnValue_1;           // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_3; // 0x0108(0x0020)()
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput; // 0x0128(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue;   // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_139[0x7];                                      // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_4; // 0x0140(0x0020)()
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_1;  // 0x0160(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_1;     // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_171[0x3];                                      // 0x0171(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_4;         // 0x0174(0x0014)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_CanResponseInput_ReturnValue_1;           // 0x0188(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_189[0x7];                                      // 0x0189(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_2;  // 0x0190(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_2;     // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1A1[0x3];                                      // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue; // 0x0018(0x0020)()
+	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue;           // 0x0038(0x0014)(NoDestructor, HasGetValueTypeHash)
+	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_1;         // 0x004C(0x0014)(NoDestructor, HasGetValueTypeHash)
+	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_2;         // 0x0060(0x0014)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_CanResponseInput_ReturnValue;             // 0x0074(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_75[0x3];                                       // 0x0075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_3;         // 0x0078(0x0014)(NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput;    // 0x0090(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue;       // 0x00A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilitySystemComponent*                CallFunc_GetAbilitySystemComponent_ReturnValue;    // 0x00A8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_1; // 0x00B0(0x0020)()
+	int32                                         CallFunc_GetTagCount_ReturnValue;                  // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x00D4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_D5[0x3];                                       // 0x00D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_2; // 0x00D8(0x0020)()
+	bool                                          CallFunc_HasMoveAxisInput_ReturnValue;             // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMoveAxisInput_ReturnValue_1;           // 0x00F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_FA[0x6];                                       // 0x00FA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_1;  // 0x0100(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_1;     // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_2;  // 0x0118(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_2;     // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_129[0x3];                                      // 0x0129(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_4;         // 0x012C(0x0014)(NoDestructor, HasGetValueTypeHash)
+	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_5;         // 0x0140(0x0014)(NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_154[0x4];                                      // 0x0154(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_3;  // 0x0158(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_3;     // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_3; // 0x0170(0x0020)()
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_4;  // 0x0190(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_4;     // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CanResponseInput_ReturnValue_1;           // 0x01A1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A2[0x2];                                      // 0x01A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSInputCommand                         K2Node_MakeStruct_SInputCommand;                   // 0x01A4(0x0014)(NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_5; // 0x01B8(0x0020)()
-	struct FSInputCommand                         CallFunc_CreateSkillCommand_ReturnValue_5;         // 0x01D8(0x0014)(NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1EC[0x4];                                      // 0x01EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_1; // 0x01F0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_1; // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_201[0x7];                                      // 0x0201(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_2; // 0x0208(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_2; // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0219(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsMovingOnGround_ReturnValue;             // 0x021A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x021B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FSInputCommand                         CallFunc______ReturnValue;                         // 0x021C(0x0014)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0230(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0231(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_232[0x6];                                      // 0x0232(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_6; // 0x0238(0x0020)()
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_3; // 0x0258(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_3; // 0x0268(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_269[0x7];                                      // 0x0269(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_4; // 0x0270(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_4; // 0x0280(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_281[0x3];                                      // 0x0281(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSInputCommand                         K2Node_MakeStruct_SInputCommand_1;                 // 0x0284(0x0014)(NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_5; // 0x0298(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_5; // 0x02A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2A9[0x3];                                      // 0x02A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSInputCommand                         K2Node_MakeStruct_SInputCommand_2;                 // 0x02AC(0x0014)(NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_6; // 0x02C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_6; // 0x02D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_4; // 0x01B8(0x0020)()
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput; // 0x01D8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue;   // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1E9[0x7];                                      // 0x01E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_5; // 0x01F0(0x0020)()
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_1; // 0x0210(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_1; // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0221(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsMovingOnGround_ReturnValue;             // 0x0222(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0223(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0224(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0225(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_226[0x2];                                      // 0x0226(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_2; // 0x0228(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_2; // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_239[0x3];                                      // 0x0239(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSInputCommand                         CallFunc______ReturnValue;                         // 0x023C(0x0014)(NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_6; // 0x0250(0x0020)()
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_3; // 0x0270(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_3; // 0x0280(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_281[0x7];                                      // 0x0281(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_4; // 0x0288(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_4; // 0x0298(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_299[0x3];                                      // 0x0299(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSInputCommand                         K2Node_MakeStruct_SInputCommand_1;                 // 0x029C(0x0014)(NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_5; // 0x02B0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_5; // 0x02C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2C1[0x3];                                      // 0x02C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSInputCommand                         K2Node_MakeStruct_SInputCommand_2;                 // 0x02C4(0x0014)(NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_6; // 0x02D8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_6; // 0x02E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_InputComponent_C_闪避按下) == 0x000008, "Wrong alignment on BP_InputComponent_C_闪避按下");
-static_assert(sizeof(BP_InputComponent_C_闪避按下) == 0x0002D8, "Wrong size on BP_InputComponent_C_闪避按下");
+static_assert(sizeof(BP_InputComponent_C_闪避按下) == 0x0002F0, "Wrong size on BP_InputComponent_C_闪避按下");
 static_assert(offsetof(BP_InputComponent_C_闪避按下, time) == 0x000000, "Member 'BP_InputComponent_C_闪避按下::time' has a wrong offset!");
 static_assert(offsetof(BP_InputComponent_C_闪避按下, ReturnValue) == 0x000004, "Member 'BP_InputComponent_C_闪避按下::ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue) == 0x000018, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_1) == 0x00002C, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue) == 0x000040, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CanResponseInput_ReturnValue) == 0x000060, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CanResponseInput_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_2) == 0x000064, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_GetAbilitySystemComponent_ReturnValue) == 0x000078, "Member 'BP_InputComponent_C_闪避按下::CallFunc_GetAbilitySystemComponent_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_3) == 0x000080, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_GetTagCount_ReturnValue) == 0x000094, "Member 'BP_InputComponent_C_闪避按下::CallFunc_GetTagCount_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x000098, "Member 'BP_InputComponent_C_闪避按下::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_self_CastInput) == 0x0000A0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_self_CastInput' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_ReturnValue) == 0x0000B0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_1) == 0x0000B8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMoveAxisInput_ReturnValue) == 0x0000D8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMoveAxisInput_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_2) == 0x0000E0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMoveAxisInput_ReturnValue_1) == 0x000100, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMoveAxisInput_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_3) == 0x000108, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput) == 0x000128, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue) == 0x000138, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_4) == 0x000140, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_self_CastInput_1) == 0x000160, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_self_CastInput_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_ReturnValue_1) == 0x000170, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_4) == 0x000174, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CanResponseInput_ReturnValue_1) == 0x000188, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CanResponseInput_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_self_CastInput_2) == 0x000190, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_self_CastInput_2' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_ReturnValue_2) == 0x0001A0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue) == 0x000018, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue) == 0x000038, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_1) == 0x00004C, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_2) == 0x000060, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CanResponseInput_ReturnValue) == 0x000074, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CanResponseInput_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_3) == 0x000078, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_self_CastInput) == 0x000090, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_self_CastInput' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_ReturnValue) == 0x0000A0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_GetAbilitySystemComponent_ReturnValue) == 0x0000A8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_GetAbilitySystemComponent_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_1) == 0x0000B0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_GetTagCount_ReturnValue) == 0x0000D0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_GetTagCount_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_EqualEqual_IntInt_ReturnValue) == 0x0000D4, "Member 'BP_InputComponent_C_闪避按下::CallFunc_EqualEqual_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_2) == 0x0000D8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMoveAxisInput_ReturnValue) == 0x0000F8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMoveAxisInput_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMoveAxisInput_ReturnValue_1) == 0x0000F9, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMoveAxisInput_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_self_CastInput_1) == 0x000100, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_self_CastInput_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_ReturnValue_1) == 0x000110, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_self_CastInput_2) == 0x000118, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_self_CastInput_2' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_ReturnValue_2) == 0x000128, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_4) == 0x00012C, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_5) == 0x000140, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_self_CastInput_3) == 0x000158, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_self_CastInput_3' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_ReturnValue_3) == 0x000168, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_3) == 0x000170, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_self_CastInput_4) == 0x000190, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_self_CastInput_4' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasMatchingGameplayTag_ReturnValue_4) == 0x0001A0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasMatchingGameplayTag_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CanResponseInput_ReturnValue_1) == 0x0001A1, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CanResponseInput_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_InputComponent_C_闪避按下, K2Node_MakeStruct_SInputCommand) == 0x0001A4, "Member 'BP_InputComponent_C_闪避按下::K2Node_MakeStruct_SInputCommand' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_5) == 0x0001B8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_CreateSkillCommand_ReturnValue_5) == 0x0001D8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_CreateSkillCommand_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_1) == 0x0001F0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_1) == 0x000200, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_2) == 0x000208, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_2' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_2) == 0x000218, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000219, "Member 'BP_InputComponent_C_闪避按下::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_IsMovingOnGround_ReturnValue) == 0x00021A, "Member 'BP_InputComponent_C_闪避按下::CallFunc_IsMovingOnGround_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x00021B, "Member 'BP_InputComponent_C_闪避按下::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc______ReturnValue) == 0x00021C, "Member 'BP_InputComponent_C_闪避按下::CallFunc______ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_BooleanAND_ReturnValue) == 0x000230, "Member 'BP_InputComponent_C_闪避按下::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_BooleanOR_ReturnValue) == 0x000231, "Member 'BP_InputComponent_C_闪避按下::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_6) == 0x000238, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_3) == 0x000258, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_3' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_3) == 0x000268, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_4) == 0x000270, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_4' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_4) == 0x000280, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, K2Node_MakeStruct_SInputCommand_1) == 0x000284, "Member 'BP_InputComponent_C_闪避按下::K2Node_MakeStruct_SInputCommand_1' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_5) == 0x000298, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_5' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_5) == 0x0002A8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, K2Node_MakeStruct_SInputCommand_2) == 0x0002AC, "Member 'BP_InputComponent_C_闪避按下::K2Node_MakeStruct_SInputCommand_2' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_6) == 0x0002C0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_6' has a wrong offset!");
-static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_6) == 0x0002D0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_4) == 0x0001B8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput) == 0x0001D8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue) == 0x0001E8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_5) == 0x0001F0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_1) == 0x000210, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_1) == 0x000220, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000221, "Member 'BP_InputComponent_C_闪避按下::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_IsMovingOnGround_ReturnValue) == 0x000222, "Member 'BP_InputComponent_C_闪避按下::CallFunc_IsMovingOnGround_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x000223, "Member 'BP_InputComponent_C_闪避按下::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_BooleanAND_ReturnValue) == 0x000224, "Member 'BP_InputComponent_C_闪避按下::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_BooleanOR_ReturnValue) == 0x000225, "Member 'BP_InputComponent_C_闪避按下::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_2) == 0x000228, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_2' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_2) == 0x000238, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc______ReturnValue) == 0x00023C, "Member 'BP_InputComponent_C_闪避按下::CallFunc______ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_6) == 0x000250, "Member 'BP_InputComponent_C_闪避按下::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_3) == 0x000270, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_3' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_3) == 0x000280, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_4) == 0x000288, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_4' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_4) == 0x000298, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, K2Node_MakeStruct_SInputCommand_1) == 0x00029C, "Member 'BP_InputComponent_C_闪避按下::K2Node_MakeStruct_SInputCommand_1' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_5) == 0x0002B0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_5' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_5) == 0x0002C0, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, K2Node_MakeStruct_SInputCommand_2) == 0x0002C4, "Member 'BP_InputComponent_C_闪避按下::K2Node_MakeStruct_SInputCommand_2' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_6) == 0x0002D8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_6' has a wrong offset!");
+static_assert(offsetof(BP_InputComponent_C_闪避按下, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_6) == 0x0002E8, "Member 'BP_InputComponent_C_闪避按下::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_6' has a wrong offset!");
 
 // Function BP_InputComponent.BP_InputComponent_C.闪避抬起
 // 0x0090 (0x0090 - 0x0000)
@@ -350,7 +359,7 @@ public:
 	ERoleInteractType                             交互类型;                                          // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         战斗幻象ID;                                        // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     施法者;                                            // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABaseCharacter*                         施法者;                                            // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Skill_ID;                                          // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSVisionData                           VisionData;                                        // 0x0030(0x0098)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
@@ -380,7 +389,7 @@ public:
 	struct FSInputCommand                         ReturnValue;                                       // 0x0004(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
 	int32                                         战斗幻象ID;                                        // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     施法者;                                            // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABaseCharacter*                         施法者;                                            // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Skill_ID;                                          // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSVisionData                           VisionData;                                        // 0x0030(0x0098)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
@@ -424,7 +433,7 @@ public:
 	struct FSInputCommand                         ReturnValue;                                       // 0x0004(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
 	bool                                          空中能否施法;                                      // 0x0018(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     当前玩家;                                          // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABaseCharacter*                         当前玩家;                                          // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TempVisionLevel;                                   // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TempArrayIndex;                                    // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TempVisionID;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

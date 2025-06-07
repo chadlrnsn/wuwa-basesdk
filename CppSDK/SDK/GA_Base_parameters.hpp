@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "EAimViewState_structs.hpp"
-#include "EPawnChannel_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "EPawnChannel_structs.hpp"
+#include "EAimViewState_structs.hpp"
 #include "SSkillInfo_structs.hpp"
 
 
@@ -624,53 +624,32 @@ static_assert(offsetof(GA_Base_C_设置技能目标, SkillTarget) == 0x000000, "
 static_assert(offsetof(GA_Base_C_设置技能目标, CallFunc__________) == 0x000008, "Member 'GA_Base_C_设置技能目标::CallFunc__________' has a wrong offset!");
 
 // Function GA_Base.GA_Base_C.面向目标
-// 0x00C0 (0x00C0 - 0x0000)
+// 0x0088 (0x0088 - 0x0000)
 struct GA_Base_C_面向目标 final
 {
 public:
 	class ATsBaseCharacter_C*                     目标;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 面向目标_0;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_1;      // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x0040(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue_1;  // 0x004C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc____Z_OutVec;                              // 0x0058(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc____Z_OutVec_1;                            // 0x0064(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Subtract_VectorVector_ReturnValue;        // 0x0070(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_K2_GetActorRotation_ReturnValue;          // 0x007C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_Vector_Normal2D_ReturnValue;              // 0x0088(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakRotator_Roll;                        // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakRotator_Pitch;                       // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakRotator_Yaw;                         // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector_X;                            // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector_Y;                            // 0x00A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector_Z;                            // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_DegAtan2_ReturnValue;                     // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_MakeRotator_ReturnValue;                  // 0x00B0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetActorRotationWithContext_ReturnValue;  // 0x00BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FVector                                CallFunc_GetActorUpVector_ReturnValue;             // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_1;      // 0x0038(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_Subtract_VectorVector_ReturnValue;      // 0x0050(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x0068(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_LookRotation_UpFirst_ReturnValue;         // 0x0074(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetActorRotationWithContext_ReturnValue;  // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(GA_Base_C_面向目标) == 0x000008, "Wrong alignment on GA_Base_C_面向目标");
-static_assert(sizeof(GA_Base_C_面向目标) == 0x0000C0, "Wrong size on GA_Base_C_面向目标");
+static_assert(sizeof(GA_Base_C_面向目标) == 0x000088, "Wrong size on GA_Base_C_面向目标");
 static_assert(offsetof(GA_Base_C_面向目标, 目标) == 0x000000, "Member 'GA_Base_C_面向目标::目标' has a wrong offset!");
 static_assert(offsetof(GA_Base_C_面向目标, 面向目标_0) == 0x000008, "Member 'GA_Base_C_面向目标::面向目标_0' has a wrong offset!");
 static_assert(offsetof(GA_Base_C_面向目标, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000010, "Member 'GA_Base_C_面向目标::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_D_K2_GetActorLocation_ReturnValue_1) == 0x000028, "Member 'GA_Base_C_面向目标::CallFunc_D_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x000040, "Member 'GA_Base_C_面向目标::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_Conv_VectorDoubleToVector_ReturnValue_1) == 0x00004C, "Member 'GA_Base_C_面向目标::CallFunc_Conv_VectorDoubleToVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc____Z_OutVec) == 0x000058, "Member 'GA_Base_C_面向目标::CallFunc____Z_OutVec' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc____Z_OutVec_1) == 0x000064, "Member 'GA_Base_C_面向目标::CallFunc____Z_OutVec_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_Subtract_VectorVector_ReturnValue) == 0x000070, "Member 'GA_Base_C_面向目标::CallFunc_Subtract_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_K2_GetActorRotation_ReturnValue) == 0x00007C, "Member 'GA_Base_C_面向目标::CallFunc_K2_GetActorRotation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_Vector_Normal2D_ReturnValue) == 0x000088, "Member 'GA_Base_C_面向目标::CallFunc_Vector_Normal2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_BreakRotator_Roll) == 0x000094, "Member 'GA_Base_C_面向目标::CallFunc_BreakRotator_Roll' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_BreakRotator_Pitch) == 0x000098, "Member 'GA_Base_C_面向目标::CallFunc_BreakRotator_Pitch' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_BreakRotator_Yaw) == 0x00009C, "Member 'GA_Base_C_面向目标::CallFunc_BreakRotator_Yaw' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_BreakVector_X) == 0x0000A0, "Member 'GA_Base_C_面向目标::CallFunc_BreakVector_X' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_BreakVector_Y) == 0x0000A4, "Member 'GA_Base_C_面向目标::CallFunc_BreakVector_Y' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_BreakVector_Z) == 0x0000A8, "Member 'GA_Base_C_面向目标::CallFunc_BreakVector_Z' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_DegAtan2_ReturnValue) == 0x0000AC, "Member 'GA_Base_C_面向目标::CallFunc_DegAtan2_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_MakeRotator_ReturnValue) == 0x0000B0, "Member 'GA_Base_C_面向目标::CallFunc_MakeRotator_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_面向目标, CallFunc_SetActorRotationWithContext_ReturnValue) == 0x0000BC, "Member 'GA_Base_C_面向目标::CallFunc_SetActorRotationWithContext_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_面向目标, CallFunc_GetActorUpVector_ReturnValue) == 0x000028, "Member 'GA_Base_C_面向目标::CallFunc_GetActorUpVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_面向目标, CallFunc_D_K2_GetActorLocation_ReturnValue_1) == 0x000038, "Member 'GA_Base_C_面向目标::CallFunc_D_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_面向目标, CallFunc_D_Subtract_VectorVector_ReturnValue) == 0x000050, "Member 'GA_Base_C_面向目标::CallFunc_D_Subtract_VectorVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_面向目标, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x000068, "Member 'GA_Base_C_面向目标::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_面向目标, CallFunc_LookRotation_UpFirst_ReturnValue) == 0x000074, "Member 'GA_Base_C_面向目标::CallFunc_LookRotation_UpFirst_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_面向目标, CallFunc_SetActorRotationWithContext_ReturnValue) == 0x000080, "Member 'GA_Base_C_面向目标::CallFunc_SetActorRotationWithContext_ReturnValue' has a wrong offset!");
 
 // Function GA_Base.GA_Base_C.销毁特定子弹
 // 0x00C0 (0x00C0 - 0x0000)

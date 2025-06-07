@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function AudioMixer.SubmixEffectSubmixEQPreset.SetSettings
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FSubmixEffectSubmixEQSettings    InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void USubmixEffectSubmixEQPreset::SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectSubmixEQPreset", "SetSettings");
-
-	Params::SubmixEffectSubmixEQPreset_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function AudioMixer.SynthComponent.SetLowPassFilterEnabled
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -204,6 +179,31 @@ bool USynthComponent::IsPlaying() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function AudioMixer.SubmixEffectSubmixEQPreset.SetSettings
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FSubmixEffectSubmixEQSettings    InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void USubmixEffectSubmixEQPreset::SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectSubmixEQPreset", "SetSettings");
+
+	Params::SubmixEffectSubmixEQPreset_SetSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

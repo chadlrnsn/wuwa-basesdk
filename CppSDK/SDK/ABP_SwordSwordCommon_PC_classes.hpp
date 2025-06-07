@@ -19,27 +19,26 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_SwordSwordCommon_PC.ABP_SwordSwordCommon_PC_C
-// 0x03D0 (0x09F0 - 0x0620)
+// 0x03E0 (0x0A40 - 0x0660)
 class UABP_SwordSwordCommon_PC_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_618[0x8];                                      // 0x0618(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0620(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0628(0x0038)()
-	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x0660(0x0020)()
-	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x0680(0x0020)()
-	struct FAnimNode_KawaiiPhysics                AnimGraphNode_KawaiiPhysics;                       // 0x06A0(0x0280)()
-	struct FAnimNode_LinkedAnimGraph              AnimGraphNode_LinkedAnimGraph;                     // 0x0920(0x00A8)()
-	class ATsBaseCharacter_C*                     角色蓝图;                                          // 0x09C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          WeaponOpen;                                        // 0x09D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9D1[0x3];                                      // 0x09D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Open_Delay;                                        // 0x09D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Delta_Time;                                        // 0x09D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          武器在背后;                                        // 0x09DC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          主动关闭武器;                                      // 0x09DD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          IsUI;                                              // 0x09DE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9DF[0x1];                                      // 0x09DF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         武器突破等级;                                      // 0x09E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0660(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0668(0x0038)()
+	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x06A0(0x0020)()
+	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x06C0(0x0020)()
+	struct FAnimNode_KawaiiPhysics                AnimGraphNode_KawaiiPhysics;                       // 0x06E0(0x0290)()
+	struct FAnimNode_LinkedAnimGraph              AnimGraphNode_LinkedAnimGraph;                     // 0x0970(0x00A8)()
+	class ATsBaseCharacter_C*                     角色蓝图;                                          // 0x0A18(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          WeaponOpen;                                        // 0x0A20(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A21[0x3];                                      // 0x0A21(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Open_Delay;                                        // 0x0A24(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Delta_Time;                                        // 0x0A28(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          武器在背后;                                        // 0x0A2C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          主动关闭武器;                                      // 0x0A2D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsUI;                                              // 0x0A2E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A2F[0x1];                                      // 0x0A2F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         武器突破等级;                                      // 0x0A30(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ABP_SwordSwordCommon_PC(int32 EntryPoint);
@@ -56,21 +55,21 @@ public:
 	}
 };
 static_assert(alignof(UABP_SwordSwordCommon_PC_C) == 0x000010, "Wrong alignment on UABP_SwordSwordCommon_PC_C");
-static_assert(sizeof(UABP_SwordSwordCommon_PC_C) == 0x0009F0, "Wrong size on UABP_SwordSwordCommon_PC_C");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, UberGraphFrame) == 0x000620, "Member 'UABP_SwordSwordCommon_PC_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_Root) == 0x000628, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_Root' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_LocalToComponentSpace) == 0x000660, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_LocalToComponentSpace' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_ComponentToLocalSpace) == 0x000680, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_ComponentToLocalSpace' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_KawaiiPhysics) == 0x0006A0, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_KawaiiPhysics' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_LinkedAnimGraph) == 0x000920, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_LinkedAnimGraph' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, 角色蓝图) == 0x0009C8, "Member 'UABP_SwordSwordCommon_PC_C::角色蓝图' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, WeaponOpen) == 0x0009D0, "Member 'UABP_SwordSwordCommon_PC_C::WeaponOpen' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, Open_Delay) == 0x0009D4, "Member 'UABP_SwordSwordCommon_PC_C::Open_Delay' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, Delta_Time) == 0x0009D8, "Member 'UABP_SwordSwordCommon_PC_C::Delta_Time' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, 武器在背后) == 0x0009DC, "Member 'UABP_SwordSwordCommon_PC_C::武器在背后' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, 主动关闭武器) == 0x0009DD, "Member 'UABP_SwordSwordCommon_PC_C::主动关闭武器' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, IsUI) == 0x0009DE, "Member 'UABP_SwordSwordCommon_PC_C::IsUI' has a wrong offset!");
-static_assert(offsetof(UABP_SwordSwordCommon_PC_C, 武器突破等级) == 0x0009E0, "Member 'UABP_SwordSwordCommon_PC_C::武器突破等级' has a wrong offset!");
+static_assert(sizeof(UABP_SwordSwordCommon_PC_C) == 0x000A40, "Wrong size on UABP_SwordSwordCommon_PC_C");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, UberGraphFrame) == 0x000660, "Member 'UABP_SwordSwordCommon_PC_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_Root) == 0x000668, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_Root' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_LocalToComponentSpace) == 0x0006A0, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_LocalToComponentSpace' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_ComponentToLocalSpace) == 0x0006C0, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_ComponentToLocalSpace' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_KawaiiPhysics) == 0x0006E0, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_KawaiiPhysics' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, AnimGraphNode_LinkedAnimGraph) == 0x000970, "Member 'UABP_SwordSwordCommon_PC_C::AnimGraphNode_LinkedAnimGraph' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, 角色蓝图) == 0x000A18, "Member 'UABP_SwordSwordCommon_PC_C::角色蓝图' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, WeaponOpen) == 0x000A20, "Member 'UABP_SwordSwordCommon_PC_C::WeaponOpen' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, Open_Delay) == 0x000A24, "Member 'UABP_SwordSwordCommon_PC_C::Open_Delay' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, Delta_Time) == 0x000A28, "Member 'UABP_SwordSwordCommon_PC_C::Delta_Time' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, 武器在背后) == 0x000A2C, "Member 'UABP_SwordSwordCommon_PC_C::武器在背后' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, 主动关闭武器) == 0x000A2D, "Member 'UABP_SwordSwordCommon_PC_C::主动关闭武器' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, IsUI) == 0x000A2E, "Member 'UABP_SwordSwordCommon_PC_C::IsUI' has a wrong offset!");
+static_assert(offsetof(UABP_SwordSwordCommon_PC_C, 武器突破等级) == 0x000A30, "Member 'UABP_SwordSwordCommon_PC_C::武器突破等级' has a wrong offset!");
 
 }
 

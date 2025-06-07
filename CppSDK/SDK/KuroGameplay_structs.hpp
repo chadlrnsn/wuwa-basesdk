@@ -52,7 +52,7 @@ enum class EEffectModelGhostCppComponent : uint8
 
 // Enum KuroGameplay.EMultiEffectType
 // NumValues: 0x0002
-enum class KuroGameplay::EMultiEffectType : uint8
+enum class EMultiEffectType : uint8
 {
 	BuffBall                                 = 0,
 	EMultiEffectType_MAX                     = 1,
@@ -113,6 +113,28 @@ enum class EGameBudgetAllocatorGlobalMode : uint8
 	GBA_GlobalMode_Cutscene                  = 2,
 	GBA_GlobalMode_Num                       = 3,
 	GBA_GlobalMode_MAX                       = 4,
+};
+
+// Enum KuroGameplay.EKuroEasingFuncType
+// NumValues: 0x0010
+enum class EKuroEasingFuncType : uint8
+{
+	KEF_Linear                               = 0,
+	KEF_EaseIn                               = 1,
+	KEF_EaseOut                              = 2,
+	KEF_EaseInOut                            = 3,
+	KEF_SinIn                                = 4,
+	KEF_SinOut                               = 5,
+	KEF_SinInOut                             = 6,
+	KEF_ExpoIn                               = 7,
+	KEF_ExpoOut                              = 8,
+	KEF_ExpoInOut                            = 9,
+	KEF_CircularIn                           = 10,
+	KEF_CircularOut                          = 11,
+	KEF_CircularInOut                        = 12,
+	KEF_FloatCurve                           = 13,
+	KEF_CustomFunc                           = 14,
+	KEF_MAX                                  = 15,
 };
 
 // ScriptStruct KuroGameplay.KuroGASMessageParams

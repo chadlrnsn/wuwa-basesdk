@@ -18,23 +18,112 @@
 namespace SDK::Params
 {
 
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.ExecuteUbergraph_BP_KuroCheatManager
-// 0x0020 (0x0020 - 0x0000)
-struct BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager final
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.强化或还原角色
+// 0x0028 (0x0028 - 0x0000)
+struct BP_KuroCheatManager_C_强化或还原角色 final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                CallFunc_GetOuterObject_ReturnValue;               // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_CharacterController_C*              K2Node_DynamicCast_AsBP_Character_Controller;      // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          是否需要强化;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     PlayerAsTsBaseCharacter;                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue;           // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager) == 0x000008, "Wrong alignment on BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager");
-static_assert(sizeof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager) == 0x000020, "Wrong size on BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager");
-static_assert(offsetof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager, EntryPoint) == 0x000000, "Member 'BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager, CallFunc_GetOuterObject_ReturnValue) == 0x000008, "Member 'BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager::CallFunc_GetOuterObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager, K2Node_DynamicCast_AsBP_Character_Controller) == 0x000010, "Member 'BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager::K2Node_DynamicCast_AsBP_Character_Controller' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager, K2Node_DynamicCast_bSuccess) == 0x000018, "Member 'BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(alignof(BP_KuroCheatManager_C_强化或还原角色) == 0x000008, "Wrong alignment on BP_KuroCheatManager_C_强化或还原角色");
+static_assert(sizeof(BP_KuroCheatManager_C_强化或还原角色) == 0x000028, "Wrong size on BP_KuroCheatManager_C_强化或还原角色");
+static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, 是否需要强化) == 0x000000, "Member 'BP_KuroCheatManager_C_强化或还原角色::是否需要强化' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, PlayerAsTsBaseCharacter) == 0x000008, "Member 'BP_KuroCheatManager_C_强化或还原角色::PlayerAsTsBaseCharacter' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, CallFunc_GetPlayerCharacter_ReturnValue) == 0x000010, "Member 'BP_KuroCheatManager_C_强化或还原角色::CallFunc_GetPlayerCharacter_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, K2Node_DynamicCast_AsTs_Base_Character) == 0x000018, "Member 'BP_KuroCheatManager_C_强化或还原角色::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, K2Node_DynamicCast_bSuccess) == 0x000020, "Member 'BP_KuroCheatManager_C_强化或还原角色::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.TouchDebug
+// 0x0044 (0x0044 - 0x0000)
+struct BP_KuroCheatManager_C_TouchDebug final
+{
+public:
+	float                                         CallFunc_GetInputTouchState_LocationX;             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetInputTouchState_LocationY;             // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetInputTouchState_bIsCurrentlyPressed;   // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetInputTouchState_LocationX_1;           // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetInputTouchState_LocationY_1;           // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetInputTouchState_bIsCurrentlyPressed_1; // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue_1;            // 0x0016(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue_2;            // 0x0017(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              CallFunc_GetViewportSize_ReturnValue;              // 0x001C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_X;                          // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_Y;                          // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetTimeSeconds_ReturnValue;               // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_36[0x2];                                       // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetTimeSeconds_ReturnValue_1;             // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Subtract_FloatFloat_ReturnValue_1;        // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_KuroCheatManager_C_TouchDebug) == 0x000004, "Wrong alignment on BP_KuroCheatManager_C_TouchDebug");
+static_assert(sizeof(BP_KuroCheatManager_C_TouchDebug) == 0x000044, "Wrong size on BP_KuroCheatManager_C_TouchDebug");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_LocationX) == 0x000000, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_LocationX' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_LocationY) == 0x000004, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_LocationY' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_bIsCurrentlyPressed) == 0x000008, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_bIsCurrentlyPressed' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_LocationX_1) == 0x00000C, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_LocationX_1' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_LocationY_1) == 0x000010, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_LocationY_1' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_bIsCurrentlyPressed_1) == 0x000014, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_bIsCurrentlyPressed_1' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Less_FloatFloat_ReturnValue) == 0x000015, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Less_FloatFloat_ReturnValue_1) == 0x000016, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Less_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Less_FloatFloat_ReturnValue_2) == 0x000017, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Less_FloatFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_BooleanAND_ReturnValue) == 0x000018, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetViewportSize_ReturnValue) == 0x00001C, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetViewportSize_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_BreakVector2D_X) == 0x000024, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_BreakVector2D_X' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_BreakVector2D_Y) == 0x000028, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_BreakVector2D_Y' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetTimeSeconds_ReturnValue) == 0x00002C, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetTimeSeconds_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x000030, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Greater_FloatFloat_ReturnValue) == 0x000034, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_BooleanAND_ReturnValue_1) == 0x000035, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_BooleanAND_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetTimeSeconds_ReturnValue_1) == 0x000038, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetTimeSeconds_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Subtract_FloatFloat_ReturnValue_1) == 0x00003C, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Subtract_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Greater_FloatFloat_ReturnValue_1) == 0x000040, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Greater_FloatFloat_ReturnValue_1' has a wrong offset!");
+
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.PrintTimeScale
+// 0x0080 (0x0080 - 0x0000)
+struct BP_KuroCheatManager_C_PrintTimeScale final
+{
+public:
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0008(0x0040)(HasGetValueTypeHash)
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0048(0x0010)(ReferenceParm)
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0058(0x0018)()
+	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_KuroCheatManager_C_PrintTimeScale) == 0x000008, "Wrong alignment on BP_KuroCheatManager_C_PrintTimeScale");
+static_assert(sizeof(BP_KuroCheatManager_C_PrintTimeScale) == 0x000080, "Wrong size on BP_KuroCheatManager_C_PrintTimeScale");
+static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000000, "Member 'BP_KuroCheatManager_C_PrintTimeScale::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, K2Node_MakeStruct_FormatArgumentData) == 0x000008, "Member 'BP_KuroCheatManager_C_PrintTimeScale::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, K2Node_MakeArray_Array) == 0x000048, "Member 'BP_KuroCheatManager_C_PrintTimeScale::K2Node_MakeArray_Array' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, CallFunc_Format_ReturnValue) == 0x000058, "Member 'BP_KuroCheatManager_C_PrintTimeScale::CallFunc_Format_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, CallFunc_Conv_TextToString_ReturnValue) == 0x000070, "Member 'BP_KuroCheatManager_C_PrintTimeScale::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
+
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.UpdateFunctionKey
+// 0x0003 (0x0003 - 0x0000)
+struct BP_KuroCheatManager_C_UpdateFunctionKey final
+{
+public:
+	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue_1;          // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue_2;          // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_KuroCheatManager_C_UpdateFunctionKey) == 0x000001, "Wrong alignment on BP_KuroCheatManager_C_UpdateFunctionKey");
+static_assert(sizeof(BP_KuroCheatManager_C_UpdateFunctionKey) == 0x000003, "Wrong size on BP_KuroCheatManager_C_UpdateFunctionKey");
+static_assert(offsetof(BP_KuroCheatManager_C_UpdateFunctionKey, CallFunc_EqualEqual_KeyKey_ReturnValue) == 0x000000, "Member 'BP_KuroCheatManager_C_UpdateFunctionKey::CallFunc_EqualEqual_KeyKey_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_UpdateFunctionKey, CallFunc_EqualEqual_KeyKey_ReturnValue_1) == 0x000001, "Member 'BP_KuroCheatManager_C_UpdateFunctionKey::CallFunc_EqualEqual_KeyKey_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_UpdateFunctionKey, CallFunc_EqualEqual_KeyKey_ReturnValue_2) == 0x000002, "Member 'BP_KuroCheatManager_C_UpdateFunctionKey::CallFunc_EqualEqual_KeyKey_ReturnValue_2' has a wrong offset!");
 
 // Function BP_KuroCheatManager.BP_KuroCheatManager_C.作弊指令
 // 0x0120 (0x0120 - 0x0000)
@@ -171,112 +260,23 @@ static_assert(offsetof(BP_KuroCheatManager_C_作弊指令, CallFunc_EqualEqual_B
 static_assert(offsetof(BP_KuroCheatManager_C_作弊指令, CallFunc_EqualEqual_KeyKey_ReturnValue_13) == 0x000119, "Member 'BP_KuroCheatManager_C_作弊指令::CallFunc_EqualEqual_KeyKey_ReturnValue_13' has a wrong offset!");
 static_assert(offsetof(BP_KuroCheatManager_C_作弊指令, CallFunc_BooleanAND_ReturnValue_13) == 0x00011A, "Member 'BP_KuroCheatManager_C_作弊指令::CallFunc_BooleanAND_ReturnValue_13' has a wrong offset!");
 
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.UpdateFunctionKey
-// 0x0003 (0x0003 - 0x0000)
-struct BP_KuroCheatManager_C_UpdateFunctionKey final
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.ExecuteUbergraph_BP_KuroCheatManager
+// 0x0020 (0x0020 - 0x0000)
+struct BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager final
 {
 public:
-	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue_1;          // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_KeyKey_ReturnValue_2;          // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_KuroCheatManager_C_UpdateFunctionKey) == 0x000001, "Wrong alignment on BP_KuroCheatManager_C_UpdateFunctionKey");
-static_assert(sizeof(BP_KuroCheatManager_C_UpdateFunctionKey) == 0x000003, "Wrong size on BP_KuroCheatManager_C_UpdateFunctionKey");
-static_assert(offsetof(BP_KuroCheatManager_C_UpdateFunctionKey, CallFunc_EqualEqual_KeyKey_ReturnValue) == 0x000000, "Member 'BP_KuroCheatManager_C_UpdateFunctionKey::CallFunc_EqualEqual_KeyKey_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_UpdateFunctionKey, CallFunc_EqualEqual_KeyKey_ReturnValue_1) == 0x000001, "Member 'BP_KuroCheatManager_C_UpdateFunctionKey::CallFunc_EqualEqual_KeyKey_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_UpdateFunctionKey, CallFunc_EqualEqual_KeyKey_ReturnValue_2) == 0x000002, "Member 'BP_KuroCheatManager_C_UpdateFunctionKey::CallFunc_EqualEqual_KeyKey_ReturnValue_2' has a wrong offset!");
-
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.PrintTimeScale
-// 0x0080 (0x0080 - 0x0000)
-struct BP_KuroCheatManager_C_PrintTimeScale final
-{
-public:
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0008(0x0040)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0048(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0058(0x0018)()
-	class FString                                 CallFunc_Conv_TextToString_ReturnValue;            // 0x0070(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                CallFunc_GetOuterObject_ReturnValue;               // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_CharacterController_C*              K2Node_DynamicCast_AsBP_Character_Controller;      // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(BP_KuroCheatManager_C_PrintTimeScale) == 0x000008, "Wrong alignment on BP_KuroCheatManager_C_PrintTimeScale");
-static_assert(sizeof(BP_KuroCheatManager_C_PrintTimeScale) == 0x000080, "Wrong size on BP_KuroCheatManager_C_PrintTimeScale");
-static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000000, "Member 'BP_KuroCheatManager_C_PrintTimeScale::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, K2Node_MakeStruct_FormatArgumentData) == 0x000008, "Member 'BP_KuroCheatManager_C_PrintTimeScale::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, K2Node_MakeArray_Array) == 0x000048, "Member 'BP_KuroCheatManager_C_PrintTimeScale::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, CallFunc_Format_ReturnValue) == 0x000058, "Member 'BP_KuroCheatManager_C_PrintTimeScale::CallFunc_Format_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_PrintTimeScale, CallFunc_Conv_TextToString_ReturnValue) == 0x000070, "Member 'BP_KuroCheatManager_C_PrintTimeScale::CallFunc_Conv_TextToString_ReturnValue' has a wrong offset!");
-
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.TouchDebug
-// 0x0044 (0x0044 - 0x0000)
-struct BP_KuroCheatManager_C_TouchDebug final
-{
-public:
-	float                                         CallFunc_GetInputTouchState_LocationX;             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetInputTouchState_LocationY;             // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetInputTouchState_bIsCurrentlyPressed;   // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_GetInputTouchState_LocationX_1;           // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetInputTouchState_LocationY_1;           // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetInputTouchState_bIsCurrentlyPressed_1; // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_FloatFloat_ReturnValue_1;            // 0x0016(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_FloatFloat_ReturnValue_2;            // 0x0017(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              CallFunc_GetViewportSize_ReturnValue;              // 0x001C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_X;                          // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y;                          // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetTimeSeconds_ReturnValue;               // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_36[0x2];                                       // 0x0036(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_GetTimeSeconds_ReturnValue_1;             // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Subtract_FloatFloat_ReturnValue_1;        // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_KuroCheatManager_C_TouchDebug) == 0x000004, "Wrong alignment on BP_KuroCheatManager_C_TouchDebug");
-static_assert(sizeof(BP_KuroCheatManager_C_TouchDebug) == 0x000044, "Wrong size on BP_KuroCheatManager_C_TouchDebug");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_LocationX) == 0x000000, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_LocationX' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_LocationY) == 0x000004, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_LocationY' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_bIsCurrentlyPressed) == 0x000008, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_bIsCurrentlyPressed' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_LocationX_1) == 0x00000C, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_LocationX_1' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_LocationY_1) == 0x000010, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_LocationY_1' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetInputTouchState_bIsCurrentlyPressed_1) == 0x000014, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetInputTouchState_bIsCurrentlyPressed_1' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Less_FloatFloat_ReturnValue) == 0x000015, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Less_FloatFloat_ReturnValue_1) == 0x000016, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Less_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Less_FloatFloat_ReturnValue_2) == 0x000017, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Less_FloatFloat_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_BooleanAND_ReturnValue) == 0x000018, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetViewportSize_ReturnValue) == 0x00001C, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetViewportSize_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_BreakVector2D_X) == 0x000024, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_BreakVector2D_X' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_BreakVector2D_Y) == 0x000028, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_BreakVector2D_Y' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetTimeSeconds_ReturnValue) == 0x00002C, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetTimeSeconds_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x000030, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Greater_FloatFloat_ReturnValue) == 0x000034, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_BooleanAND_ReturnValue_1) == 0x000035, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_BooleanAND_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_GetTimeSeconds_ReturnValue_1) == 0x000038, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_GetTimeSeconds_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Subtract_FloatFloat_ReturnValue_1) == 0x00003C, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Subtract_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_TouchDebug, CallFunc_Greater_FloatFloat_ReturnValue_1) == 0x000040, "Member 'BP_KuroCheatManager_C_TouchDebug::CallFunc_Greater_FloatFloat_ReturnValue_1' has a wrong offset!");
-
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.强化或还原角色
-// 0x0028 (0x0028 - 0x0000)
-struct BP_KuroCheatManager_C_强化或还原角色 final
-{
-public:
-	bool                                          是否需要强化;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     PlayerAsTsBaseCharacter;                           // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue;           // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_KuroCheatManager_C_强化或还原角色) == 0x000008, "Wrong alignment on BP_KuroCheatManager_C_强化或还原角色");
-static_assert(sizeof(BP_KuroCheatManager_C_强化或还原角色) == 0x000028, "Wrong size on BP_KuroCheatManager_C_强化或还原角色");
-static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, 是否需要强化) == 0x000000, "Member 'BP_KuroCheatManager_C_强化或还原角色::是否需要强化' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, PlayerAsTsBaseCharacter) == 0x000008, "Member 'BP_KuroCheatManager_C_强化或还原角色::PlayerAsTsBaseCharacter' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, CallFunc_GetPlayerCharacter_ReturnValue) == 0x000010, "Member 'BP_KuroCheatManager_C_强化或还原角色::CallFunc_GetPlayerCharacter_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, K2Node_DynamicCast_AsTs_Base_Character) == 0x000018, "Member 'BP_KuroCheatManager_C_强化或还原角色::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(BP_KuroCheatManager_C_强化或还原角色, K2Node_DynamicCast_bSuccess) == 0x000020, "Member 'BP_KuroCheatManager_C_强化或还原角色::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(alignof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager) == 0x000008, "Wrong alignment on BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager");
+static_assert(sizeof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager) == 0x000020, "Wrong size on BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager");
+static_assert(offsetof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager, EntryPoint) == 0x000000, "Member 'BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager::EntryPoint' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager, CallFunc_GetOuterObject_ReturnValue) == 0x000008, "Member 'BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager::CallFunc_GetOuterObject_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager, K2Node_DynamicCast_AsBP_Character_Controller) == 0x000010, "Member 'BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager::K2Node_DynamicCast_AsBP_Character_Controller' has a wrong offset!");
+static_assert(offsetof(BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager, K2Node_DynamicCast_bSuccess) == 0x000018, "Member 'BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 
 }
 

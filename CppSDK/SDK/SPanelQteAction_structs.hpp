@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EPanelQteCustomAction_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "EPanelQteCustomAction_structs.hpp"
 
 
 namespace SDK

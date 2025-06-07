@@ -1898,6 +1898,17 @@ static_assert(alignof(UIItem_GetCalculatedParentAlpha) == 0x000004, "Wrong align
 static_assert(sizeof(UIItem_GetCalculatedParentAlpha) == 0x000004, "Wrong size on UIItem_GetCalculatedParentAlpha");
 static_assert(offsetof(UIItem_GetCalculatedParentAlpha, ReturnValue) == 0x000000, "Member 'UIItem_GetCalculatedParentAlpha::ReturnValue' has a wrong offset!");
 
+// Function LGUI.UIItem.GetCalculatedParentColor
+// 0x000C (0x000C - 0x0000)
+struct UIItem_GetCalculatedParentColor final
+{
+public:
+	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIItem_GetCalculatedParentColor) == 0x000004, "Wrong alignment on UIItem_GetCalculatedParentColor");
+static_assert(sizeof(UIItem_GetCalculatedParentColor) == 0x00000C, "Wrong size on UIItem_GetCalculatedParentColor");
+static_assert(offsetof(UIItem_GetCalculatedParentColor, ReturnValue) == 0x000000, "Member 'UIItem_GetCalculatedParentColor::ReturnValue' has a wrong offset!");
+
 // Function LGUI.UIItem.GetCanvasScaler
 // 0x0008 (0x0008 - 0x0000)
 struct UIItem_GetCanvasScaler final
@@ -2750,6 +2761,17 @@ static_assert(sizeof(LGUI_PointerInputModule_RegisterInputChangeEvent) == 0x0000
 static_assert(offsetof(LGUI_PointerInputModule_RegisterInputChangeEvent, pointerInputChange) == 0x000000, "Member 'LGUI_PointerInputModule_RegisterInputChangeEvent::pointerInputChange' has a wrong offset!");
 static_assert(offsetof(LGUI_PointerInputModule_RegisterInputChangeEvent, ReturnValue) == 0x000028, "Member 'LGUI_PointerInputModule_RegisterInputChangeEvent::ReturnValue' has a wrong offset!");
 
+// Function LGUI.LGUI_PointerInputModule.SetClickThreshold
+// 0x0004 (0x0004 - 0x0000)
+struct LGUI_PointerInputModule_SetClickThreshold final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LGUI_PointerInputModule_SetClickThreshold) == 0x000004, "Wrong alignment on LGUI_PointerInputModule_SetClickThreshold");
+static_assert(sizeof(LGUI_PointerInputModule_SetClickThreshold) == 0x000004, "Wrong size on LGUI_PointerInputModule_SetClickThreshold");
+static_assert(offsetof(LGUI_PointerInputModule_SetClickThreshold, Value) == 0x000000, "Member 'LGUI_PointerInputModule_SetClickThreshold::Value' has a wrong offset!");
+
 // Function LGUI.LGUI_PointerInputModule.SetCurrentInputKeyType
 // 0x0001 (0x0001 - 0x0000)
 struct LGUI_PointerInputModule_SetCurrentInputKeyType final
@@ -3301,6 +3323,21 @@ static_assert(offsetof(LGUIBPLibrary_ColorTo, delay) == 0x000010, "Member 'LGUIB
 static_assert(offsetof(LGUIBPLibrary_ColorTo, ease) == 0x000014, "Member 'LGUIBPLibrary_ColorTo::ease' has a wrong offset!");
 static_assert(offsetof(LGUIBPLibrary_ColorTo, ReturnValue) == 0x000018, "Member 'LGUIBPLibrary_ColorTo::ReturnValue' has a wrong offset!");
 
+// Function LGUI.LGUIBPLibrary.ConvertWorldPosToLGUIPos
+// 0x0028 (0x0028 - 0x0000)
+struct LGUIBPLibrary_ConvertWorldPosToLGUIPos final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVectorDouble                          WorldPosition;                                     // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LGUIBPLibrary_ConvertWorldPosToLGUIPos) == 0x000008, "Wrong alignment on LGUIBPLibrary_ConvertWorldPosToLGUIPos");
+static_assert(sizeof(LGUIBPLibrary_ConvertWorldPosToLGUIPos) == 0x000028, "Wrong size on LGUIBPLibrary_ConvertWorldPosToLGUIPos");
+static_assert(offsetof(LGUIBPLibrary_ConvertWorldPosToLGUIPos, PlayerController) == 0x000000, "Member 'LGUIBPLibrary_ConvertWorldPosToLGUIPos::PlayerController' has a wrong offset!");
+static_assert(offsetof(LGUIBPLibrary_ConvertWorldPosToLGUIPos, WorldPosition) == 0x000008, "Member 'LGUIBPLibrary_ConvertWorldPosToLGUIPos::WorldPosition' has a wrong offset!");
+static_assert(offsetof(LGUIBPLibrary_ConvertWorldPosToLGUIPos, ReturnValue) == 0x000020, "Member 'LGUIBPLibrary_ConvertWorldPosToLGUIPos::ReturnValue' has a wrong offset!");
+
 // Function LGUI.LGUIBPLibrary.CopySequenceBindingFromParent
 // 0x0028 (0x0028 - 0x0000)
 struct LGUIBPLibrary_CopySequenceBindingFromParent final
@@ -3313,6 +3350,23 @@ static_assert(alignof(LGUIBPLibrary_CopySequenceBindingFromParent) == 0x000008, 
 static_assert(sizeof(LGUIBPLibrary_CopySequenceBindingFromParent) == 0x000028, "Wrong size on LGUIBPLibrary_CopySequenceBindingFromParent");
 static_assert(offsetof(LGUIBPLibrary_CopySequenceBindingFromParent, Target) == 0x000000, "Member 'LGUIBPLibrary_CopySequenceBindingFromParent::Target' has a wrong offset!");
 static_assert(offsetof(LGUIBPLibrary_CopySequenceBindingFromParent, LevelSequencePath) == 0x000008, "Member 'LGUIBPLibrary_CopySequenceBindingFromParent::LevelSequencePath' has a wrong offset!");
+
+// Function LGUI.LGUIBPLibrary.CreateTexture2DFromColors
+// 0x0020 (0x0020 - 0x0000)
+struct LGUIBPLibrary_CreateTexture2DFromColors final
+{
+public:
+	int32                                         Width;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Height;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FColor>                         Colors;                                            // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	class UTexture2D*                             ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LGUIBPLibrary_CreateTexture2DFromColors) == 0x000008, "Wrong alignment on LGUIBPLibrary_CreateTexture2DFromColors");
+static_assert(sizeof(LGUIBPLibrary_CreateTexture2DFromColors) == 0x000020, "Wrong size on LGUIBPLibrary_CreateTexture2DFromColors");
+static_assert(offsetof(LGUIBPLibrary_CreateTexture2DFromColors, Width) == 0x000000, "Member 'LGUIBPLibrary_CreateTexture2DFromColors::Width' has a wrong offset!");
+static_assert(offsetof(LGUIBPLibrary_CreateTexture2DFromColors, Height) == 0x000004, "Member 'LGUIBPLibrary_CreateTexture2DFromColors::Height' has a wrong offset!");
+static_assert(offsetof(LGUIBPLibrary_CreateTexture2DFromColors, Colors) == 0x000008, "Member 'LGUIBPLibrary_CreateTexture2DFromColors::Colors' has a wrong offset!");
+static_assert(offsetof(LGUIBPLibrary_CreateTexture2DFromColors, ReturnValue) == 0x000018, "Member 'LGUIBPLibrary_CreateTexture2DFromColors::ReturnValue' has a wrong offset!");
 
 // Function LGUI.LGUIBPLibrary.CreateTexture2DFromPath
 // 0x0030 (0x0030 - 0x0000)
@@ -8626,7 +8680,7 @@ static_assert(offsetof(UIText_SetLocalTextDelegate, Delegate) == 0x000000, "Memb
 struct UIText_SetLocalTextNewDelegate final
 {
 public:
-	TDelegate<void(class FString& TextKey, class UUIText* uiText)> Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class FString& TextKey, class UUIText* uiText, bool isMainText)> Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(UIText_SetLocalTextNewDelegate) == 0x000004, "Wrong alignment on UIText_SetLocalTextNewDelegate");
 static_assert(sizeof(UIText_SetLocalTextNewDelegate) == 0x000028, "Wrong size on UIText_SetLocalTextNewDelegate");
@@ -8848,6 +8902,28 @@ static_assert(alignof(UIText_SetAdjustWidth) == 0x000001, "Wrong alignment on UI
 static_assert(sizeof(UIText_SetAdjustWidth) == 0x000001, "Wrong size on UIText_SetAdjustWidth");
 static_assert(offsetof(UIText_SetAdjustWidth, newAdjustWidth) == 0x000000, "Member 'UIText_SetAdjustWidth::newAdjustWidth' has a wrong offset!");
 
+// Function LGUI.UIText.SetEnableHyperLinksHighlight
+// 0x0001 (0x0001 - 0x0000)
+struct UIText_SetEnableHyperLinksHighlight final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIText_SetEnableHyperLinksHighlight) == 0x000001, "Wrong alignment on UIText_SetEnableHyperLinksHighlight");
+static_assert(sizeof(UIText_SetEnableHyperLinksHighlight) == 0x000001, "Wrong size on UIText_SetEnableHyperLinksHighlight");
+static_assert(offsetof(UIText_SetEnableHyperLinksHighlight, bEnabled) == 0x000000, "Member 'UIText_SetEnableHyperLinksHighlight::bEnabled' has a wrong offset!");
+
+// Function LGUI.UIText.SetFilterAnoRichTag
+// 0x0001 (0x0001 - 0x0000)
+struct UIText_SetFilterAnoRichTag final
+{
+public:
+	bool                                          bFilter;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIText_SetFilterAnoRichTag) == 0x000001, "Wrong alignment on UIText_SetFilterAnoRichTag");
+static_assert(sizeof(UIText_SetFilterAnoRichTag) == 0x000001, "Wrong size on UIText_SetFilterAnoRichTag");
+static_assert(offsetof(UIText_SetFilterAnoRichTag, bFilter) == 0x000000, "Member 'UIText_SetFilterAnoRichTag::bFilter' has a wrong offset!");
+
 // Function LGUI.UIText.SetFont
 // 0x0008 (0x0008 - 0x0000)
 struct UIText_SetFont final
@@ -8913,6 +8989,17 @@ public:
 static_assert(alignof(UIText_SetGameRichText) == 0x000001, "Wrong alignment on UIText_SetGameRichText");
 static_assert(sizeof(UIText_SetGameRichText) == 0x000001, "Wrong size on UIText_SetGameRichText");
 static_assert(offsetof(UIText_SetGameRichText, value) == 0x000000, "Member 'UIText_SetGameRichText::value' has a wrong offset!");
+
+// Function LGUI.UIText.SetHyperLinksHoverSpiteActive
+// 0x0001 (0x0001 - 0x0000)
+struct UIText_SetHyperLinksHoverSpiteActive final
+{
+public:
+	bool                                          bActive;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIText_SetHyperLinksHoverSpiteActive) == 0x000001, "Wrong alignment on UIText_SetHyperLinksHoverSpiteActive");
+static_assert(sizeof(UIText_SetHyperLinksHoverSpiteActive) == 0x000001, "Wrong size on UIText_SetHyperLinksHoverSpiteActive");
+static_assert(offsetof(UIText_SetHyperLinksHoverSpiteActive, bActive) == 0x000000, "Member 'UIText_SetHyperLinksHoverSpiteActive::bActive' has a wrong offset!");
 
 // Function LGUI.UIText.SetMaxHeight
 // 0x0004 (0x0004 - 0x0000)
@@ -9085,6 +9172,28 @@ static_assert(alignof(UIText_GetFont) == 0x000008, "Wrong alignment on UIText_Ge
 static_assert(sizeof(UIText_GetFont) == 0x000008, "Wrong size on UIText_GetFont");
 static_assert(offsetof(UIText_GetFont, ReturnValue) == 0x000000, "Member 'UIText_GetFont::ReturnValue' has a wrong offset!");
 
+// Function LGUI.UIText.GetFontGlowColor
+// 0x0004 (0x0004 - 0x0000)
+struct UIText_GetFontGlowColor final
+{
+public:
+	struct FColor                                 ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIText_GetFontGlowColor) == 0x000004, "Wrong alignment on UIText_GetFontGlowColor");
+static_assert(sizeof(UIText_GetFontGlowColor) == 0x000004, "Wrong size on UIText_GetFontGlowColor");
+static_assert(offsetof(UIText_GetFontGlowColor, ReturnValue) == 0x000000, "Member 'UIText_GetFontGlowColor::ReturnValue' has a wrong offset!");
+
+// Function LGUI.UIText.GetFontGlowSize
+// 0x0004 (0x0004 - 0x0000)
+struct UIText_GetFontGlowSize final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIText_GetFontGlowSize) == 0x000004, "Wrong alignment on UIText_GetFontGlowSize");
+static_assert(sizeof(UIText_GetFontGlowSize) == 0x000004, "Wrong size on UIText_GetFontGlowSize");
+static_assert(offsetof(UIText_GetFontGlowSize, ReturnValue) == 0x000000, "Member 'UIText_GetFontGlowSize::ReturnValue' has a wrong offset!");
+
 // Function LGUI.UIText.GetFontOutlineColor
 // 0x0004 (0x0004 - 0x0000)
 struct UIText_GetFontOutlineColor final
@@ -9227,6 +9336,28 @@ public:
 static_assert(alignof(UIText_GetText) == 0x000008, "Wrong alignment on UIText_GetText");
 static_assert(sizeof(UIText_GetText) == 0x000010, "Wrong size on UIText_GetText");
 static_assert(offsetof(UIText_GetText, ReturnValue) == 0x000000, "Member 'UIText_GetText::ReturnValue' has a wrong offset!");
+
+// Function LGUI.UIText.IsEnableHyperLinksHighlight
+// 0x0001 (0x0001 - 0x0000)
+struct UIText_IsEnableHyperLinksHighlight final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIText_IsEnableHyperLinksHighlight) == 0x000001, "Wrong alignment on UIText_IsEnableHyperLinksHighlight");
+static_assert(sizeof(UIText_IsEnableHyperLinksHighlight) == 0x000001, "Wrong size on UIText_IsEnableHyperLinksHighlight");
+static_assert(offsetof(UIText_IsEnableHyperLinksHighlight, ReturnValue) == 0x000000, "Member 'UIText_IsEnableHyperLinksHighlight::ReturnValue' has a wrong offset!");
+
+// Function LGUI.UIText.IsFilterAnoRichTag
+// 0x0001 (0x0001 - 0x0000)
+struct UIText_IsFilterAnoRichTag final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIText_IsFilterAnoRichTag) == 0x000001, "Wrong alignment on UIText_IsFilterAnoRichTag");
+static_assert(sizeof(UIText_IsFilterAnoRichTag) == 0x000001, "Wrong size on UIText_IsFilterAnoRichTag");
+static_assert(offsetof(UIText_IsFilterAnoRichTag, ReturnValue) == 0x000000, "Member 'UIText_IsFilterAnoRichTag::ReturnValue' has a wrong offset!");
 
 // Function LGUI.UI2DLineRaw.SetPoints
 // 0x0018 (0x0018 - 0x0000)
@@ -10475,6 +10606,17 @@ static_assert(offsetof(UICustomMesh_CreateMeshSection, UV7) == 0x0000A8, "Member
 static_assert(offsetof(UICustomMesh_CreateMeshSection, VertexColors) == 0x0000B8, "Member 'UICustomMesh_CreateMeshSection::VertexColors' has a wrong offset!");
 static_assert(offsetof(UICustomMesh_CreateMeshSection, Tangents) == 0x0000C8, "Member 'UICustomMesh_CreateMeshSection::Tangents' has a wrong offset!");
 
+// Function LGUI.UICustomMesh.ReadStaticMeshData
+// 0x0008 (0x0008 - 0x0000)
+struct UICustomMesh_ReadStaticMeshData final
+{
+public:
+	class UStaticMesh*                            MeshComponent;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UICustomMesh_ReadStaticMeshData) == 0x000008, "Wrong alignment on UICustomMesh_ReadStaticMeshData");
+static_assert(sizeof(UICustomMesh_ReadStaticMeshData) == 0x000008, "Wrong size on UICustomMesh_ReadStaticMeshData");
+static_assert(offsetof(UICustomMesh_ReadStaticMeshData, MeshComponent) == 0x000000, "Member 'UICustomMesh_ReadStaticMeshData::MeshComponent' has a wrong offset!");
+
 // Function LGUI.UIToggleComponent.RegisterToggleEvent
 // 0x0030 (0x0030 - 0x0000)
 struct UIToggleComponent_RegisterToggleEvent final
@@ -10788,6 +10930,17 @@ public:
 static_assert(alignof(UIScrollViewComponent_SetVertical) == 0x000001, "Wrong alignment on UIScrollViewComponent_SetVertical");
 static_assert(sizeof(UIScrollViewComponent_SetVertical) == 0x000001, "Wrong size on UIScrollViewComponent_SetVertical");
 static_assert(offsetof(UIScrollViewComponent_SetVertical, Value) == 0x000000, "Member 'UIScrollViewComponent_SetVertical::Value' has a wrong offset!");
+
+// Function LGUI.UIScrollViewComponent.CheckContentUnderSize
+// 0x0001 (0x0001 - 0x0000)
+struct UIScrollViewComponent_CheckContentUnderSize final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIScrollViewComponent_CheckContentUnderSize) == 0x000001, "Wrong alignment on UIScrollViewComponent_CheckContentUnderSize");
+static_assert(sizeof(UIScrollViewComponent_CheckContentUnderSize) == 0x000001, "Wrong size on UIScrollViewComponent_CheckContentUnderSize");
+static_assert(offsetof(UIScrollViewComponent_CheckContentUnderSize, ReturnValue) == 0x000000, "Member 'UIScrollViewComponent_CheckContentUnderSize::ReturnValue' has a wrong offset!");
 
 // Function LGUI.UIScrollViewComponent.GetCanScroll
 // 0x0001 (0x0001 - 0x0000)

@@ -527,8 +527,9 @@ void IAssetRegistry::ScanModifiedAssetFiles(const TArray<class FString>& InFileP
 // TArray<class FString>                   InPaths                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    bForceRescan                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIgnoreBlackListScanFilters                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUseParallelScan                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void IAssetRegistry::ScanPathsSynchronous(const TArray<class FString>& InPaths, bool bForceRescan, bool bIgnoreBlackListScanFilters)
+void IAssetRegistry::ScanPathsSynchronous(const TArray<class FString>& InPaths, bool bForceRescan, bool bIgnoreBlackListScanFilters, bool bUseParallelScan)
 {
 	static class UFunction* Func = nullptr;
 
@@ -540,6 +541,7 @@ void IAssetRegistry::ScanPathsSynchronous(const TArray<class FString>& InPaths, 
 	Parms.InPaths = std::move(InPaths);
 	Parms.bForceRescan = bForceRescan;
 	Parms.bIgnoreBlackListScanFilters = bIgnoreBlackListScanFilters;
+	Parms.bUseParallelScan = bUseParallelScan;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

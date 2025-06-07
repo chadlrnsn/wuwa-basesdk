@@ -12,9 +12,9 @@
 
 #include "SlateCore_structs.hpp"
 #include "AkAudio_structs.hpp"
-#include "WwiseObjectUtils_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "WwiseObjectUtils_structs.hpp"
 
 
 namespace SDK::Params
@@ -1239,42 +1239,6 @@ static_assert(sizeof(AkGameplayStatics_SetGameObjectToPortalObstruction) == 0x00
 static_assert(offsetof(AkGameplayStatics_SetGameObjectToPortalObstruction, GameObjectAkComponent) == 0x000000, "Member 'AkGameplayStatics_SetGameObjectToPortalObstruction::GameObjectAkComponent' has a wrong offset!");
 static_assert(offsetof(AkGameplayStatics_SetGameObjectToPortalObstruction, PortalComponent) == 0x000008, "Member 'AkGameplayStatics_SetGameObjectToPortalObstruction::PortalComponent' has a wrong offset!");
 static_assert(offsetof(AkGameplayStatics_SetGameObjectToPortalObstruction, ObstructionValue) == 0x000010, "Member 'AkGameplayStatics_SetGameObjectToPortalObstruction::ObstructionValue' has a wrong offset!");
-
-// Function AkAudio.AkGameplayStatics.SetMultipleChannelEmitterPositions
-// 0x0030 (0x0030 - 0x0000)
-struct AkGameplayStatics_SetMultipleChannelEmitterPositions final
-{
-public:
-	class UAkComponent*                           GameObjectAkComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<EAkChannelConfiguration>               ChannelMasks;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FTransform>                     Positions;                                         // 0x0018(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	EAkMultiPositionType                          MultiPositionType;                                 // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AkGameplayStatics_SetMultipleChannelEmitterPositions) == 0x000008, "Wrong alignment on AkGameplayStatics_SetMultipleChannelEmitterPositions");
-static_assert(sizeof(AkGameplayStatics_SetMultipleChannelEmitterPositions) == 0x000030, "Wrong size on AkGameplayStatics_SetMultipleChannelEmitterPositions");
-static_assert(offsetof(AkGameplayStatics_SetMultipleChannelEmitterPositions, GameObjectAkComponent) == 0x000000, "Member 'AkGameplayStatics_SetMultipleChannelEmitterPositions::GameObjectAkComponent' has a wrong offset!");
-static_assert(offsetof(AkGameplayStatics_SetMultipleChannelEmitterPositions, ChannelMasks) == 0x000008, "Member 'AkGameplayStatics_SetMultipleChannelEmitterPositions::ChannelMasks' has a wrong offset!");
-static_assert(offsetof(AkGameplayStatics_SetMultipleChannelEmitterPositions, Positions) == 0x000018, "Member 'AkGameplayStatics_SetMultipleChannelEmitterPositions::Positions' has a wrong offset!");
-static_assert(offsetof(AkGameplayStatics_SetMultipleChannelEmitterPositions, MultiPositionType) == 0x000028, "Member 'AkGameplayStatics_SetMultipleChannelEmitterPositions::MultiPositionType' has a wrong offset!");
-
-// Function AkAudio.AkGameplayStatics.SetMultipleChannelMaskEmitterPositions
-// 0x0030 (0x0030 - 0x0000)
-struct AkGameplayStatics_SetMultipleChannelMaskEmitterPositions final
-{
-public:
-	class UAkComponent*                           GameObjectAkComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FAkChannelMask>                 ChannelMasks;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FTransform>                     Positions;                                         // 0x0018(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	EAkMultiPositionType                          MultiPositionType;                                 // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AkGameplayStatics_SetMultipleChannelMaskEmitterPositions) == 0x000008, "Wrong alignment on AkGameplayStatics_SetMultipleChannelMaskEmitterPositions");
-static_assert(sizeof(AkGameplayStatics_SetMultipleChannelMaskEmitterPositions) == 0x000030, "Wrong size on AkGameplayStatics_SetMultipleChannelMaskEmitterPositions");
-static_assert(offsetof(AkGameplayStatics_SetMultipleChannelMaskEmitterPositions, GameObjectAkComponent) == 0x000000, "Member 'AkGameplayStatics_SetMultipleChannelMaskEmitterPositions::GameObjectAkComponent' has a wrong offset!");
-static_assert(offsetof(AkGameplayStatics_SetMultipleChannelMaskEmitterPositions, ChannelMasks) == 0x000008, "Member 'AkGameplayStatics_SetMultipleChannelMaskEmitterPositions::ChannelMasks' has a wrong offset!");
-static_assert(offsetof(AkGameplayStatics_SetMultipleChannelMaskEmitterPositions, Positions) == 0x000018, "Member 'AkGameplayStatics_SetMultipleChannelMaskEmitterPositions::Positions' has a wrong offset!");
-static_assert(offsetof(AkGameplayStatics_SetMultipleChannelMaskEmitterPositions, MultiPositionType) == 0x000028, "Member 'AkGameplayStatics_SetMultipleChannelMaskEmitterPositions::MultiPositionType' has a wrong offset!");
 
 // Function AkAudio.AkGameplayStatics.SetMultiplePositions
 // 0x0020 (0x0020 - 0x0000)

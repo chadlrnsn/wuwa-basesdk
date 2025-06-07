@@ -249,20 +249,6 @@ void AAIC_AICommon_C::通用行为树条件(bool bContent)
 }
 
 
-// Function AIC_AICommon.AIC_AICommon_C.OnStart
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void AAIC_AICommon_C::OnStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_AICommon_C", "OnStart");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function AIC_AICommon.AIC_AICommon_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -413,6 +399,46 @@ void AAIC_AICommon_C::角色怪射线检测(bool* 可以钩锁)
 
 	if (可以钩锁 != nullptr)
 		*可以钩锁 = Parms.可以钩锁;
+}
+
+
+// Function AIC_AICommon.AIC_AICommon_C.通用关卡变量切换监听
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EAiLevelVarSource                       关卡变量监听类型                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           关卡变量名称                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32                                   关卡副本行为树id                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TDelegate<void(bool bContent)>          事件                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+
+void AAIC_AICommon_C::通用关卡变量切换监听(EAiLevelVarSource 关卡变量监听类型, const class FString& 关卡变量名称, int32 关卡副本行为树id, const TDelegate<void(bool bContent)>& 事件)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_AICommon_C", "通用关卡变量切换监听");
+
+	Params::AIC_AICommon_C_通用关卡变量切换监听 Parms{};
+
+	Parms.关卡变量监听类型 = 关卡变量监听类型;
+	Parms.关卡变量名称 = std::move(关卡变量名称);
+	Parms.关卡副本行为树id = 关卡副本行为树id;
+	Parms.事件 = 事件;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIC_AICommon.AIC_AICommon_C.OnStart
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AAIC_AICommon_C::OnStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_AICommon_C", "OnStart");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

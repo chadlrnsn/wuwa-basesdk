@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "GameplayTags_structs.hpp"
-#include "ECamp_structs.hpp"
 #include "LogicDataBase_classes.hpp"
+#include "ECamp_structs.hpp"
 
 
 namespace SDK

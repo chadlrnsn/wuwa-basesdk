@@ -18,22 +18,22 @@
 namespace SDK
 {
 
-// Class LiveLinkInterface.LiveLinkRole
+// Class LiveLinkInterface.LiveLinkController
 // 0x0000 (0x0030 - 0x0030)
-class ULiveLinkRole : public UObject
+class ULiveLinkController final : public UObject
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"LiveLinkRole">();
+		return StaticClassImpl<"LiveLinkController">();
 	}
-	static class ULiveLinkRole* GetDefaultObj()
+	static class ULiveLinkController* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULiveLinkRole>();
+		return GetDefaultObjImpl<ULiveLinkController>();
 	}
 };
-static_assert(alignof(ULiveLinkRole) == 0x000008, "Wrong alignment on ULiveLinkRole");
-static_assert(sizeof(ULiveLinkRole) == 0x000030, "Wrong size on ULiveLinkRole");
+static_assert(alignof(ULiveLinkController) == 0x000008, "Wrong alignment on ULiveLinkController");
+static_assert(sizeof(ULiveLinkController) == 0x000030, "Wrong size on ULiveLinkController");
 
 // Class LiveLinkInterface.LiveLinkSourceFactory
 // 0x0000 (0x0030 - 0x0030)
@@ -51,6 +51,23 @@ public:
 };
 static_assert(alignof(ULiveLinkSourceFactory) == 0x000008, "Wrong alignment on ULiveLinkSourceFactory");
 static_assert(sizeof(ULiveLinkSourceFactory) == 0x000030, "Wrong size on ULiveLinkSourceFactory");
+
+// Class LiveLinkInterface.LiveLinkRole
+// 0x0000 (0x0030 - 0x0030)
+class ULiveLinkRole : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LiveLinkRole">();
+	}
+	static class ULiveLinkRole* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULiveLinkRole>();
+	}
+};
+static_assert(alignof(ULiveLinkRole) == 0x000008, "Wrong alignment on ULiveLinkRole");
+static_assert(sizeof(ULiveLinkRole) == 0x000030, "Wrong size on ULiveLinkRole");
 
 // Class LiveLinkInterface.LiveLinkBasicRole
 // 0x0000 (0x0030 - 0x0030)
@@ -119,23 +136,6 @@ public:
 };
 static_assert(alignof(ULiveLinkCameraRole) == 0x000008, "Wrong alignment on ULiveLinkCameraRole");
 static_assert(sizeof(ULiveLinkCameraRole) == 0x000030, "Wrong size on ULiveLinkCameraRole");
-
-// Class LiveLinkInterface.LiveLinkController
-// 0x0000 (0x0030 - 0x0030)
-class ULiveLinkController final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LiveLinkController">();
-	}
-	static class ULiveLinkController* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULiveLinkController>();
-	}
-};
-static_assert(alignof(ULiveLinkController) == 0x000008, "Wrong alignment on ULiveLinkController");
-static_assert(sizeof(ULiveLinkController) == 0x000030, "Wrong size on ULiveLinkController");
 
 // Class LiveLinkInterface.LiveLinkSourceSettings
 // 0x0078 (0x00A8 - 0x0030)

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SNpcHookPart_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "ENpcSetupType_structs.hpp"
+#include "SNpcHookPart_structs.hpp"
 #include "Engine_classes.hpp"
 
 

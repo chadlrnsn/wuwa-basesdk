@@ -15,14 +15,15 @@ namespace SDK
 {
 
 // UserDefinedEnum ESkillBehaviorBestSpotType.ESkillBehaviorBestSpotType
-// NumValues: 0x0005
+// NumValues: 0x0006
 enum class ESkillBehaviorBestSpotType : uint8
 {
 	NewEnumerator12                          = 0,
 	NewEnumerator13                          = 1,
 	NewEnumerator15                          = 2,
 	NewEnumerator16                          = 3,
-	ESkillBehaviorBestSpotType_MAX           = 4,
+	NewEnumerator17                          = 4,
+	ESkillBehaviorBestSpotType_MAX           = 5,
 };
 
 }

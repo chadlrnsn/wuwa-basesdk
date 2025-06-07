@@ -21,11 +21,11 @@ namespace SDK
 class UBPF_CameraHelper_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform);
-	static void GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location);
-	static void GetCameraRotator(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FRotator* Rotator);
-	static void D_GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location);
 	static void D_GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform);
+	static void D_GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location);
+	static void GetCameraRotator(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FRotator* Rotator);
+	static void GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location);
+	static void GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform);
 
 public:
 	static class UClass* StaticClass()

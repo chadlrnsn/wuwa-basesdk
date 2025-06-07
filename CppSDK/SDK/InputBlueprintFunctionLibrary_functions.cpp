@@ -629,5 +629,37 @@ struct FSInputCommand UInputBlueprintFunctionLibrary_C::CreateFishingBoatSprintC
 	return Parms.ReturnValue;
 }
 
+
+// Function InputBlueprintFunctionLibrary.InputBlueprintFunctionLibrary_C.GetCommandInterval
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ECommandType                            commandType                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   defaultInterval                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UInputBlueprintFunctionLibrary_C::GetCommandInterval(ECommandType commandType, float defaultInterval, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InputBlueprintFunctionLibrary_C", "GetCommandInterval");
+
+	Params::InputBlueprintFunctionLibrary_C_GetCommandInterval Parms{};
+
+	Parms.commandType = commandType;
+	Parms.defaultInterval = defaultInterval;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
 }
 

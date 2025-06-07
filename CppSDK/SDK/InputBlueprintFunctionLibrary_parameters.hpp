@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "ECommandType_structs.hpp"
 #include "sInputCommand_structs.hpp"
 
 
@@ -338,6 +339,24 @@ static_assert(sizeof(InputBlueprintFunctionLibrary_C_CreateFishingBoatSprintComm
 static_assert(offsetof(InputBlueprintFunctionLibrary_C_CreateFishingBoatSprintCommand, skillId) == 0x000000, "Member 'InputBlueprintFunctionLibrary_C_CreateFishingBoatSprintCommand::skillId' has a wrong offset!");
 static_assert(offsetof(InputBlueprintFunctionLibrary_C_CreateFishingBoatSprintCommand, __WorldContext) == 0x000008, "Member 'InputBlueprintFunctionLibrary_C_CreateFishingBoatSprintCommand::__WorldContext' has a wrong offset!");
 static_assert(offsetof(InputBlueprintFunctionLibrary_C_CreateFishingBoatSprintCommand, ReturnValue) == 0x000010, "Member 'InputBlueprintFunctionLibrary_C_CreateFishingBoatSprintCommand::ReturnValue' has a wrong offset!");
+
+// Function InputBlueprintFunctionLibrary.InputBlueprintFunctionLibrary_C.GetCommandInterval
+// 0x0018 (0x0018 - 0x0000)
+struct InputBlueprintFunctionLibrary_C_GetCommandInterval final
+{
+public:
+	ECommandType                                  commandType;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         defaultInterval;                                   // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(InputBlueprintFunctionLibrary_C_GetCommandInterval) == 0x000008, "Wrong alignment on InputBlueprintFunctionLibrary_C_GetCommandInterval");
+static_assert(sizeof(InputBlueprintFunctionLibrary_C_GetCommandInterval) == 0x000018, "Wrong size on InputBlueprintFunctionLibrary_C_GetCommandInterval");
+static_assert(offsetof(InputBlueprintFunctionLibrary_C_GetCommandInterval, commandType) == 0x000000, "Member 'InputBlueprintFunctionLibrary_C_GetCommandInterval::commandType' has a wrong offset!");
+static_assert(offsetof(InputBlueprintFunctionLibrary_C_GetCommandInterval, defaultInterval) == 0x000004, "Member 'InputBlueprintFunctionLibrary_C_GetCommandInterval::defaultInterval' has a wrong offset!");
+static_assert(offsetof(InputBlueprintFunctionLibrary_C_GetCommandInterval, __WorldContext) == 0x000008, "Member 'InputBlueprintFunctionLibrary_C_GetCommandInterval::__WorldContext' has a wrong offset!");
+static_assert(offsetof(InputBlueprintFunctionLibrary_C_GetCommandInterval, ReturnValue) == 0x000010, "Member 'InputBlueprintFunctionLibrary_C_GetCommandInterval::ReturnValue' has a wrong offset!");
 
 }
 

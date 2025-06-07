@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PD_CloudPreset.PD_CloudPreset_C
-// 0x08A0 (0x08D8 - 0x0038)
+// 0x0990 (0x09C8 - 0x0038)
 class UPD_CloudPreset_C final : public UPrimaryDataAsset
 {
 public:
@@ -67,6 +67,11 @@ public:
 	TSoftObjectPtr<class UPD_CloudPrefab_C>       颠倒塔白天;                                        // 0x0848(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	TSoftObjectPtr<class UPD_CloudPrefab_C>       颠倒塔夜晚;                                        // 0x0878(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	TSoftObjectPtr<class UPD_CloudPrefab_C>       颠倒塔流星;                                        // 0x08A8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       七丘;                                              // 0x08D8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       七丘阴天;                                          // 0x0908(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       残破竞技场;                                        // 0x0938(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       尖刺山;                                            // 0x0968(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       观测塔;                                            // 0x0998(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -79,7 +84,7 @@ public:
 	}
 };
 static_assert(alignof(UPD_CloudPreset_C) == 0x000008, "Wrong alignment on UPD_CloudPreset_C");
-static_assert(sizeof(UPD_CloudPreset_C) == 0x0008D8, "Wrong size on UPD_CloudPreset_C");
+static_assert(sizeof(UPD_CloudPreset_C) == 0x0009C8, "Wrong size on UPD_CloudPreset_C");
 static_assert(offsetof(UPD_CloudPreset_C, 天城) == 0x000038, "Member 'UPD_CloudPreset_C::天城' has a wrong offset!");
 static_assert(offsetof(UPD_CloudPreset_C, 遗落原乡) == 0x000068, "Member 'UPD_CloudPreset_C::遗落原乡' has a wrong offset!");
 static_assert(offsetof(UPD_CloudPreset_C, 无光之森) == 0x000098, "Member 'UPD_CloudPreset_C::无光之森' has a wrong offset!");
@@ -126,6 +131,11 @@ static_assert(offsetof(UPD_CloudPreset_C, 彩虹天气) == 0x000818, "Member 'UP
 static_assert(offsetof(UPD_CloudPreset_C, 颠倒塔白天) == 0x000848, "Member 'UPD_CloudPreset_C::颠倒塔白天' has a wrong offset!");
 static_assert(offsetof(UPD_CloudPreset_C, 颠倒塔夜晚) == 0x000878, "Member 'UPD_CloudPreset_C::颠倒塔夜晚' has a wrong offset!");
 static_assert(offsetof(UPD_CloudPreset_C, 颠倒塔流星) == 0x0008A8, "Member 'UPD_CloudPreset_C::颠倒塔流星' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, 七丘) == 0x0008D8, "Member 'UPD_CloudPreset_C::七丘' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, 七丘阴天) == 0x000908, "Member 'UPD_CloudPreset_C::七丘阴天' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, 残破竞技场) == 0x000938, "Member 'UPD_CloudPreset_C::残破竞技场' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, 尖刺山) == 0x000968, "Member 'UPD_CloudPreset_C::尖刺山' has a wrong offset!");
+static_assert(offsetof(UPD_CloudPreset_C, 观测塔) == 0x000998, "Member 'UPD_CloudPreset_C::观测塔' has a wrong offset!");
 
 }
 

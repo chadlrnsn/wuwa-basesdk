@@ -37,29 +37,15 @@ void ABP_KuroSkeletalMeshDestructibleActor_C::ExecuteUbergraph_BP_KuroSkeletalMe
 }
 
 
-// Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.CustomEvent_1
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_KuroSkeletalMeshDestructibleActor_C::CustomEvent_1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroSkeletalMeshDestructibleActor_C", "CustomEvent_1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.PlayDestruction
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FVector                          HurtDirection                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          HurtOrigin_0                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Impluse_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    IsZeroImpluse                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVector                          HurtDirection                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          HurtOrigin_0                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Impulse_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsZeroImpulse                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_KuroSkeletalMeshDestructibleActor_C::PlayDestruction(const struct FVector& HurtDirection, const struct FVector& HurtOrigin_0, float Impluse_0, bool IsZeroImpluse)
+void ABP_KuroSkeletalMeshDestructibleActor_C::PlayDestruction(const struct FVector& HurtDirection, const struct FVector& HurtOrigin_0, float Impulse_0, bool IsZeroImpulse)
 {
 	static class UFunction* Func = nullptr;
 
@@ -70,8 +56,8 @@ void ABP_KuroSkeletalMeshDestructibleActor_C::PlayDestruction(const struct FVect
 
 	Parms.HurtDirection = std::move(HurtDirection);
 	Parms.HurtOrigin_0 = std::move(HurtOrigin_0);
-	Parms.Impluse_0 = Impluse_0;
-	Parms.IsZeroImpluse = IsZeroImpluse;
+	Parms.Impulse_0 = Impulse_0;
+	Parms.IsZeroImpulse = IsZeroImpulse;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -119,30 +105,6 @@ void ABP_KuroSkeletalMeshDestructibleActor_C::UserConstructionScript()
 }
 
 
-// Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.ApplyDamage
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FVector                          HurtOrigin_0                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          SpeedDirection                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   index                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_KuroSkeletalMeshDestructibleActor_C::ApplyDamage(const struct FVector& HurtOrigin_0, const struct FVector& SpeedDirection, int32 index)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroSkeletalMeshDestructibleActor_C", "ApplyDamage");
-
-	Params::BP_KuroSkeletalMeshDestructibleActor_C_ApplyDamage Parms{};
-
-	Parms.HurtOrigin_0 = std::move(HurtOrigin_0);
-	Parms.SpeedDirection = std::move(SpeedDirection);
-	Parms.index = index;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.SetStaticMeshChunkListVisiblity
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -158,30 +120,6 @@ void ABP_KuroSkeletalMeshDestructibleActor_C::SetStaticMeshChunkListVisiblity(bo
 	Params::BP_KuroSkeletalMeshDestructibleActor_C_SetStaticMeshChunkListVisiblity Parms{};
 
 	Parms.visiblity = visiblity;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.Apply Radius Impluse 1
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FVector                          HurtOrigin_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Impluse_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Attenuation                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_KuroSkeletalMeshDestructibleActor_C::Apply_Radius_Impluse_1(const struct FVector& HurtOrigin_0, float Impluse_0, float Attenuation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroSkeletalMeshDestructibleActor_C", "Apply Radius Impluse 1");
-
-	Params::BP_KuroSkeletalMeshDestructibleActor_C_Apply_Radius_Impluse_1 Parms{};
-
-	Parms.HurtOrigin_0 = std::move(HurtOrigin_0);
-	Parms.Impluse_0 = Impluse_0;
-	Parms.Attenuation = Attenuation;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

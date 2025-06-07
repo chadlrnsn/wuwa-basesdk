@@ -215,20 +215,6 @@ void UBP_NPCMaterialController_C::UpdateMaterialsWithDa(TArray<class UMaterialIn
 }
 
 
-// Function BP_NPCMaterialController.BP_NPCMaterialController_C.EndEffect
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UBP_NPCMaterialController_C::EndEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_NPCMaterialController_C", "EndEffect");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.StartEffect
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
@@ -238,6 +224,20 @@ void UBP_NPCMaterialController_C::StartEffect()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_NPCMaterialController_C", "StartEffect");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_NPCMaterialController.BP_NPCMaterialController_C.EndEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UBP_NPCMaterialController_C::EndEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_NPCMaterialController_C", "EndEffect");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -264,6 +264,50 @@ void UBP_NPCMaterialController_C::MaterialPretreatment(TArray<class UMaterialIns
 	UObject::ProcessEvent(Func, &Parms);
 
 	Materials = std::move(Parms.Materials);
+}
+
+
+// Function BP_NPCMaterialController.BP_NPCMaterialController_C.ApplyMaterialsWithDa
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSHolographicData                SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// EKuroCharSlotSpecifiedType              SlotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_NPCMaterialController_C::ApplyMaterialsWithDa(const struct FSHolographicData& SHolographicData, EKuroCharSlotSpecifiedType SlotType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_NPCMaterialController_C", "ApplyMaterialsWithDa");
+
+	Params::BP_NPCMaterialController_C_ApplyMaterialsWithDa Parms{};
+
+	Parms.SHolographicData = std::move(SHolographicData);
+	Parms.SlotType = SlotType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_NPCMaterialController.BP_NPCMaterialController_C.ApplyMaterialAndTexture
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSHolographicData                SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// EKuroCharSlotSpecifiedType              SlotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_NPCMaterialController_C::ApplyMaterialAndTexture(const struct FSHolographicData& SHolographicData, EKuroCharSlotSpecifiedType SlotType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_NPCMaterialController_C", "ApplyMaterialAndTexture");
+
+	Params::BP_NPCMaterialController_C_ApplyMaterialAndTexture Parms{};
+
+	Parms.SHolographicData = std::move(SHolographicData);
+	Parms.SlotType = SlotType;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

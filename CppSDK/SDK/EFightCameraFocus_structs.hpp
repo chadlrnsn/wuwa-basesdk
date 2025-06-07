@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EFightCameraFocus.EFightCameraFocus
-// NumValues: 0x0029
+// NumValues: 0x002A
 enum class EFightCameraFocus : uint8
 {
 	NewEnumerator1                           = 0,
@@ -58,7 +58,8 @@ enum class EFightCameraFocus : uint8
 	NewEnumerator43                          = 37,
 	NewEnumerator44                          = 38,
 	NewEnumerator45                          = 39,
-	EFightCameraFocus_MAX                    = 40,
+	NewEnumerator46                          = 40,
+	EFightCameraFocus_MAX                    = 41,
 };
 
 }

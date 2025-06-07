@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "EPanelQteViewType_structs.hpp"
-#include "SPanelQteAction_structs.hpp"
 #include "EBattleUIChild_structs.hpp"
+#include "SPanelQteAction_structs.hpp"
 
 
 namespace SDK

@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "UMG_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
-#include "SpinePlugin_structs.hpp"
 #include "ProceduralMeshComponent_classes.hpp"
+#include "SpinePlugin_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK
@@ -329,29 +329,29 @@ static_assert(offsetof(USpineSkeletonDataAsset, rawData) == 0x000098, "Member 'U
 static_assert(offsetof(USpineSkeletonDataAsset, skeletonDataFileName) == 0x0000A8, "Member 'USpineSkeletonDataAsset::skeletonDataFileName' has a wrong offset!");
 
 // Class SpinePlugin.SpineSkeletonRendererComponent
-// 0x02D0 (0x0860 - 0x0590)
+// 0x02D0 (0x0870 - 0x05A0)
 class USpineSkeletonRendererComponent final : public UProceduralMeshComponent
 {
 public:
-	class UMaterialInterface*                     NormalBlendMaterial;                               // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     AdditiveBlendMaterial;                             // 0x0598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     MultiplyBlendMaterial;                             // 0x05A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     ScreenBlendMaterial;                               // 0x05A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInstanceDynamic*>       atlasNormalBlendMaterials;                         // 0x05B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInstanceDynamic*>       atlasAdditiveBlendMaterials;                       // 0x05C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInstanceDynamic*>       atlasMultiplyBlendMaterials;                       // 0x05D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInstanceDynamic*>       atlasScreenBlendMaterials;                         // 0x05E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         DepthOffset;                                       // 0x05F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   TextureParameterName;                              // 0x05F4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Color;                                             // 0x0600(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCreateCollision;                                  // 0x0610(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_611[0x1F7];                                    // 0x0611(0x01F7)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        vertices;                                          // 0x0808(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<int32>                                 indices;                                           // 0x0818(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FVector>                        normals;                                           // 0x0828(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FVector2D>                      uvs;                                               // 0x0838(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FColor>                         colors;                                            // 0x0848(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_858[0x8];                                      // 0x0858(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     NormalBlendMaterial;                               // 0x05A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     AdditiveBlendMaterial;                             // 0x05A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     MultiplyBlendMaterial;                             // 0x05B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     ScreenBlendMaterial;                               // 0x05B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInstanceDynamic*>       atlasNormalBlendMaterials;                         // 0x05C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInstanceDynamic*>       atlasAdditiveBlendMaterials;                       // 0x05D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInstanceDynamic*>       atlasMultiplyBlendMaterials;                       // 0x05E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInstanceDynamic*>       atlasScreenBlendMaterials;                         // 0x05F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         DepthOffset;                                       // 0x0600(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   TextureParameterName;                              // 0x0604(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Color;                                             // 0x0610(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCreateCollision;                                  // 0x0620(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_621[0x1F7];                                    // 0x0621(0x01F7)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        vertices;                                          // 0x0818(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 indices;                                           // 0x0828(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector>                        normals;                                           // 0x0838(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector2D>                      uvs;                                               // 0x0848(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FColor>                         colors;                                            // 0x0858(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_868[0x8];                                      // 0x0868(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -364,24 +364,24 @@ public:
 	}
 };
 static_assert(alignof(USpineSkeletonRendererComponent) == 0x000010, "Wrong alignment on USpineSkeletonRendererComponent");
-static_assert(sizeof(USpineSkeletonRendererComponent) == 0x000860, "Wrong size on USpineSkeletonRendererComponent");
-static_assert(offsetof(USpineSkeletonRendererComponent, NormalBlendMaterial) == 0x000590, "Member 'USpineSkeletonRendererComponent::NormalBlendMaterial' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, AdditiveBlendMaterial) == 0x000598, "Member 'USpineSkeletonRendererComponent::AdditiveBlendMaterial' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, MultiplyBlendMaterial) == 0x0005A0, "Member 'USpineSkeletonRendererComponent::MultiplyBlendMaterial' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, ScreenBlendMaterial) == 0x0005A8, "Member 'USpineSkeletonRendererComponent::ScreenBlendMaterial' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, atlasNormalBlendMaterials) == 0x0005B0, "Member 'USpineSkeletonRendererComponent::atlasNormalBlendMaterials' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, atlasAdditiveBlendMaterials) == 0x0005C0, "Member 'USpineSkeletonRendererComponent::atlasAdditiveBlendMaterials' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, atlasMultiplyBlendMaterials) == 0x0005D0, "Member 'USpineSkeletonRendererComponent::atlasMultiplyBlendMaterials' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, atlasScreenBlendMaterials) == 0x0005E0, "Member 'USpineSkeletonRendererComponent::atlasScreenBlendMaterials' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, DepthOffset) == 0x0005F0, "Member 'USpineSkeletonRendererComponent::DepthOffset' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, TextureParameterName) == 0x0005F4, "Member 'USpineSkeletonRendererComponent::TextureParameterName' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, Color) == 0x000600, "Member 'USpineSkeletonRendererComponent::Color' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, bCreateCollision) == 0x000610, "Member 'USpineSkeletonRendererComponent::bCreateCollision' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, vertices) == 0x000808, "Member 'USpineSkeletonRendererComponent::vertices' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, indices) == 0x000818, "Member 'USpineSkeletonRendererComponent::indices' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, normals) == 0x000828, "Member 'USpineSkeletonRendererComponent::normals' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, uvs) == 0x000838, "Member 'USpineSkeletonRendererComponent::uvs' has a wrong offset!");
-static_assert(offsetof(USpineSkeletonRendererComponent, colors) == 0x000848, "Member 'USpineSkeletonRendererComponent::colors' has a wrong offset!");
+static_assert(sizeof(USpineSkeletonRendererComponent) == 0x000870, "Wrong size on USpineSkeletonRendererComponent");
+static_assert(offsetof(USpineSkeletonRendererComponent, NormalBlendMaterial) == 0x0005A0, "Member 'USpineSkeletonRendererComponent::NormalBlendMaterial' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, AdditiveBlendMaterial) == 0x0005A8, "Member 'USpineSkeletonRendererComponent::AdditiveBlendMaterial' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, MultiplyBlendMaterial) == 0x0005B0, "Member 'USpineSkeletonRendererComponent::MultiplyBlendMaterial' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, ScreenBlendMaterial) == 0x0005B8, "Member 'USpineSkeletonRendererComponent::ScreenBlendMaterial' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, atlasNormalBlendMaterials) == 0x0005C0, "Member 'USpineSkeletonRendererComponent::atlasNormalBlendMaterials' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, atlasAdditiveBlendMaterials) == 0x0005D0, "Member 'USpineSkeletonRendererComponent::atlasAdditiveBlendMaterials' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, atlasMultiplyBlendMaterials) == 0x0005E0, "Member 'USpineSkeletonRendererComponent::atlasMultiplyBlendMaterials' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, atlasScreenBlendMaterials) == 0x0005F0, "Member 'USpineSkeletonRendererComponent::atlasScreenBlendMaterials' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, DepthOffset) == 0x000600, "Member 'USpineSkeletonRendererComponent::DepthOffset' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, TextureParameterName) == 0x000604, "Member 'USpineSkeletonRendererComponent::TextureParameterName' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, Color) == 0x000610, "Member 'USpineSkeletonRendererComponent::Color' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, bCreateCollision) == 0x000620, "Member 'USpineSkeletonRendererComponent::bCreateCollision' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, vertices) == 0x000818, "Member 'USpineSkeletonRendererComponent::vertices' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, indices) == 0x000828, "Member 'USpineSkeletonRendererComponent::indices' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, normals) == 0x000838, "Member 'USpineSkeletonRendererComponent::normals' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, uvs) == 0x000848, "Member 'USpineSkeletonRendererComponent::uvs' has a wrong offset!");
+static_assert(offsetof(USpineSkeletonRendererComponent, colors) == 0x000858, "Member 'USpineSkeletonRendererComponent::colors' has a wrong offset!");
 
 // Class SpinePlugin.SpineWidget
 // 0x0578 (0x06E8 - 0x0170)

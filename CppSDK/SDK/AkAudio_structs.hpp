@@ -559,26 +559,78 @@ enum class EAkFitToGeometryMode : uint8
 	EAkFitToGeometryMode_MAX                 = 3,
 };
 
-// ScriptStruct AkAudio.AkExternalSourceInfo
-// 0x0038 (0x0038 - 0x0000)
-struct FAkExternalSourceInfo final
+// ScriptStruct AkAudio.AkAudioSession
+// 0x000C (0x000C - 0x0000)
+struct FAkAudioSession final
 {
 public:
-	class FString                                 ExternalSrcName;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAkCodecId                                    CodecID;                                           // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 FileName;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAkExternalMediaAsset*                  ExternalSourceAsset;                               // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsStreamed;                                        // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EAkAudioSessionCategory                       AudioSessionCategory;                              // 0x0000(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        AudioSessionCategoryOptions;                       // 0x0004(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAkAudioSessionMode                           AudioSessionMode;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FAkExternalSourceInfo) == 0x000008, "Wrong alignment on FAkExternalSourceInfo");
-static_assert(sizeof(FAkExternalSourceInfo) == 0x000038, "Wrong size on FAkExternalSourceInfo");
-static_assert(offsetof(FAkExternalSourceInfo, ExternalSrcName) == 0x000000, "Member 'FAkExternalSourceInfo::ExternalSrcName' has a wrong offset!");
-static_assert(offsetof(FAkExternalSourceInfo, CodecID) == 0x000010, "Member 'FAkExternalSourceInfo::CodecID' has a wrong offset!");
-static_assert(offsetof(FAkExternalSourceInfo, FileName) == 0x000018, "Member 'FAkExternalSourceInfo::FileName' has a wrong offset!");
-static_assert(offsetof(FAkExternalSourceInfo, ExternalSourceAsset) == 0x000028, "Member 'FAkExternalSourceInfo::ExternalSourceAsset' has a wrong offset!");
-static_assert(offsetof(FAkExternalSourceInfo, IsStreamed) == 0x000030, "Member 'FAkExternalSourceInfo::IsStreamed' has a wrong offset!");
+static_assert(alignof(FAkAudioSession) == 0x000004, "Wrong alignment on FAkAudioSession");
+static_assert(sizeof(FAkAudioSession) == 0x00000C, "Wrong size on FAkAudioSession");
+static_assert(offsetof(FAkAudioSession, AudioSessionCategory) == 0x000000, "Member 'FAkAudioSession::AudioSessionCategory' has a wrong offset!");
+static_assert(offsetof(FAkAudioSession, AudioSessionCategoryOptions) == 0x000004, "Member 'FAkAudioSession::AudioSessionCategoryOptions' has a wrong offset!");
+static_assert(offsetof(FAkAudioSession, AudioSessionMode) == 0x000008, "Member 'FAkAudioSession::AudioSessionMode' has a wrong offset!");
+
+// ScriptStruct AkAudio.AKWaapiJsonObject
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FAKWaapiJsonObject final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FAKWaapiJsonObject) == 0x000008, "Wrong alignment on FAKWaapiJsonObject");
+static_assert(sizeof(FAKWaapiJsonObject) == 0x000010, "Wrong size on FAKWaapiJsonObject");
+
+// ScriptStruct AkAudio.MovieSceneTangentDataSerializationHelper
+// 0x0014 (0x0014 - 0x0000)
+struct FMovieSceneTangentDataSerializationHelper final
+{
+public:
+	float                                         ArriveTangent;                                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LeaveTangent;                                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERichCurveTangentWeightMode                   TangentWeightMode;                                 // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ArriveTangentWeight;                               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LeaveTangentWeight;                                // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FMovieSceneTangentDataSerializationHelper) == 0x000004, "Wrong alignment on FMovieSceneTangentDataSerializationHelper");
+static_assert(sizeof(FMovieSceneTangentDataSerializationHelper) == 0x000014, "Wrong size on FMovieSceneTangentDataSerializationHelper");
+static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, ArriveTangent) == 0x000000, "Member 'FMovieSceneTangentDataSerializationHelper::ArriveTangent' has a wrong offset!");
+static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, LeaveTangent) == 0x000004, "Member 'FMovieSceneTangentDataSerializationHelper::LeaveTangent' has a wrong offset!");
+static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, TangentWeightMode) == 0x000008, "Member 'FMovieSceneTangentDataSerializationHelper::TangentWeightMode' has a wrong offset!");
+static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, ArriveTangentWeight) == 0x00000C, "Member 'FMovieSceneTangentDataSerializationHelper::ArriveTangentWeight' has a wrong offset!");
+static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, LeaveTangentWeight) == 0x000010, "Member 'FMovieSceneTangentDataSerializationHelper::LeaveTangentWeight' has a wrong offset!");
+
+// ScriptStruct AkAudio.MovieSceneFloatValueSerializationHelper
+// 0x001C (0x001C - 0x0000)
+struct FMovieSceneFloatValueSerializationHelper final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERichCurveInterpMode                          InterpMode;                                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERichCurveTangentMode                         TangentMode;                                       // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMovieSceneTangentDataSerializationHelper Tangent;                                           // 0x0008(0x0014)(NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FMovieSceneFloatValueSerializationHelper) == 0x000004, "Wrong alignment on FMovieSceneFloatValueSerializationHelper");
+static_assert(sizeof(FMovieSceneFloatValueSerializationHelper) == 0x00001C, "Wrong size on FMovieSceneFloatValueSerializationHelper");
+static_assert(offsetof(FMovieSceneFloatValueSerializationHelper, Value) == 0x000000, "Member 'FMovieSceneFloatValueSerializationHelper::Value' has a wrong offset!");
+static_assert(offsetof(FMovieSceneFloatValueSerializationHelper, InterpMode) == 0x000004, "Member 'FMovieSceneFloatValueSerializationHelper::InterpMode' has a wrong offset!");
+static_assert(offsetof(FMovieSceneFloatValueSerializationHelper, TangentMode) == 0x000005, "Member 'FMovieSceneFloatValueSerializationHelper::TangentMode' has a wrong offset!");
+static_assert(offsetof(FMovieSceneFloatValueSerializationHelper, Tangent) == 0x000008, "Member 'FMovieSceneFloatValueSerializationHelper::Tangent' has a wrong offset!");
+
+// ScriptStruct AkAudio.AkWaapiSubscriptionId
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FAkWaapiSubscriptionId final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FAkWaapiSubscriptionId) == 0x000008, "Wrong alignment on FAkWaapiSubscriptionId");
+static_assert(sizeof(FAkWaapiSubscriptionId) == 0x000008, "Wrong size on FAkWaapiSubscriptionId");
 
 // ScriptStruct AkAudio.AkAdvancedInitializationSettings
 // 0x0044 (0x0044 - 0x0000)
@@ -644,38 +696,6 @@ static_assert(offsetof(FAkAdvancedInitializationSettingsWithMultiCoreRendering, 
 static_assert(offsetof(FAkAdvancedInitializationSettingsWithMultiCoreRendering, MaxNumJobWorkers) == 0x000048, "Member 'FAkAdvancedInitializationSettingsWithMultiCoreRendering::MaxNumJobWorkers' has a wrong offset!");
 static_assert(offsetof(FAkAdvancedInitializationSettingsWithMultiCoreRendering, JobWorkerMaxExecutionTimeUSec) == 0x00004C, "Member 'FAkAdvancedInitializationSettingsWithMultiCoreRendering::JobWorkerMaxExecutionTimeUSec' has a wrong offset!");
 
-// ScriptStruct AkAudio.AkHololensAdvancedInitializationSettings
-// 0x0004 (0x0054 - 0x0050)
-struct FAkHololensAdvancedInitializationSettings final : public FAkAdvancedInitializationSettingsWithMultiCoreRendering
-{
-public:
-	bool                                          UseHeadMountedDisplayAudioDevice;                  // 0x0050(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FAkHololensAdvancedInitializationSettings) == 0x000004, "Wrong alignment on FAkHololensAdvancedInitializationSettings");
-static_assert(sizeof(FAkHololensAdvancedInitializationSettings) == 0x000054, "Wrong size on FAkHololensAdvancedInitializationSettings");
-static_assert(offsetof(FAkHololensAdvancedInitializationSettings, UseHeadMountedDisplayAudioDevice) == 0x000050, "Member 'FAkHololensAdvancedInitializationSettings::UseHeadMountedDisplayAudioDevice' has a wrong offset!");
-
-// ScriptStruct AkAudio.AKWaapiJsonObject
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FAKWaapiJsonObject final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FAKWaapiJsonObject) == 0x000008, "Wrong alignment on FAKWaapiJsonObject");
-static_assert(sizeof(FAKWaapiJsonObject) == 0x000010, "Wrong size on FAKWaapiJsonObject");
-
-// ScriptStruct AkAudio.AkWaapiSubscriptionId
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FAkWaapiSubscriptionId final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FAkWaapiSubscriptionId) == 0x000008, "Wrong alignment on FAkWaapiSubscriptionId");
-static_assert(sizeof(FAkWaapiSubscriptionId) == 0x000008, "Wrong size on FAkWaapiSubscriptionId");
-
 // ScriptStruct AkAudio.AkAndroidAdvancedInitializationSettings
 // 0x0008 (0x0058 - 0x0050)
 struct FAkAndroidAdvancedInitializationSettings final : public FAkAdvancedInitializationSettingsWithMultiCoreRendering
@@ -690,20 +710,26 @@ static_assert(sizeof(FAkAndroidAdvancedInitializationSettings) == 0x000058, "Wro
 static_assert(offsetof(FAkAndroidAdvancedInitializationSettings, AudioAPI) == 0x000050, "Member 'FAkAndroidAdvancedInitializationSettings::AudioAPI' has a wrong offset!");
 static_assert(offsetof(FAkAndroidAdvancedInitializationSettings, RoundFrameSizeToHardwareSize) == 0x000054, "Member 'FAkAndroidAdvancedInitializationSettings::RoundFrameSizeToHardwareSize' has a wrong offset!");
 
-// ScriptStruct AkAudio.AkAudioSession
-// 0x000C (0x000C - 0x0000)
-struct FAkAudioSession final
+// ScriptStruct AkAudio.AkExternalSourceInfo
+// 0x0038 (0x0038 - 0x0000)
+struct FAkExternalSourceInfo final
 {
 public:
-	EAkAudioSessionCategory                       AudioSessionCategory;                              // 0x0000(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        AudioSessionCategoryOptions;                       // 0x0004(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAkAudioSessionMode                           AudioSessionMode;                                  // 0x0008(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ExternalSrcName;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAkCodecId                                    CodecID;                                           // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 FileName;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAkExternalMediaAsset*                  ExternalSourceAsset;                               // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsStreamed;                                        // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FAkAudioSession) == 0x000004, "Wrong alignment on FAkAudioSession");
-static_assert(sizeof(FAkAudioSession) == 0x00000C, "Wrong size on FAkAudioSession");
-static_assert(offsetof(FAkAudioSession, AudioSessionCategory) == 0x000000, "Member 'FAkAudioSession::AudioSessionCategory' has a wrong offset!");
-static_assert(offsetof(FAkAudioSession, AudioSessionCategoryOptions) == 0x000004, "Member 'FAkAudioSession::AudioSessionCategoryOptions' has a wrong offset!");
-static_assert(offsetof(FAkAudioSession, AudioSessionMode) == 0x000008, "Member 'FAkAudioSession::AudioSessionMode' has a wrong offset!");
+static_assert(alignof(FAkExternalSourceInfo) == 0x000008, "Wrong alignment on FAkExternalSourceInfo");
+static_assert(sizeof(FAkExternalSourceInfo) == 0x000038, "Wrong size on FAkExternalSourceInfo");
+static_assert(offsetof(FAkExternalSourceInfo, ExternalSrcName) == 0x000000, "Member 'FAkExternalSourceInfo::ExternalSrcName' has a wrong offset!");
+static_assert(offsetof(FAkExternalSourceInfo, CodecID) == 0x000010, "Member 'FAkExternalSourceInfo::CodecID' has a wrong offset!");
+static_assert(offsetof(FAkExternalSourceInfo, FileName) == 0x000018, "Member 'FAkExternalSourceInfo::FileName' has a wrong offset!");
+static_assert(offsetof(FAkExternalSourceInfo, ExternalSourceAsset) == 0x000028, "Member 'FAkExternalSourceInfo::ExternalSourceAsset' has a wrong offset!");
+static_assert(offsetof(FAkExternalSourceInfo, IsStreamed) == 0x000030, "Member 'FAkExternalSourceInfo::IsStreamed' has a wrong offset!");
 
 // ScriptStruct AkAudio.AkSegmentInfo
 // 0x0024 (0x0024 - 0x0000)
@@ -932,6 +958,18 @@ static_assert(offsetof(FAkGeometryData, Surfaces) == 0x000010, "Member 'FAkGeome
 static_assert(offsetof(FAkGeometryData, Triangles) == 0x000020, "Member 'FAkGeometryData::Triangles' has a wrong offset!");
 static_assert(offsetof(FAkGeometryData, ToOverrideAcousticTexture) == 0x000030, "Member 'FAkGeometryData::ToOverrideAcousticTexture' has a wrong offset!");
 static_assert(offsetof(FAkGeometryData, ToOverrideOcclusion) == 0x000040, "Member 'FAkGeometryData::ToOverrideOcclusion' has a wrong offset!");
+
+// ScriptStruct AkAudio.AkHololensAdvancedInitializationSettings
+// 0x0004 (0x0054 - 0x0050)
+struct FAkHololensAdvancedInitializationSettings final : public FAkAdvancedInitializationSettingsWithMultiCoreRendering
+{
+public:
+	bool                                          UseHeadMountedDisplayAudioDevice;                  // 0x0050(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FAkHololensAdvancedInitializationSettings) == 0x000004, "Wrong alignment on FAkHololensAdvancedInitializationSettings");
+static_assert(sizeof(FAkHololensAdvancedInitializationSettings) == 0x000054, "Wrong size on FAkHololensAdvancedInitializationSettings");
+static_assert(offsetof(FAkHololensAdvancedInitializationSettings, UseHeadMountedDisplayAudioDevice) == 0x000050, "Member 'FAkHololensAdvancedInitializationSettings::UseHeadMountedDisplayAudioDevice' has a wrong offset!");
 
 // ScriptStruct AkAudio.AkMainOutputSettings
 // 0x0028 (0x0028 - 0x0000)
@@ -1289,44 +1327,6 @@ public:
 static_assert(alignof(FMovieSceneAkAudioRTPCTemplate) == 0x000008, "Wrong alignment on FMovieSceneAkAudioRTPCTemplate");
 static_assert(sizeof(FMovieSceneAkAudioRTPCTemplate) == 0x000028, "Wrong size on FMovieSceneAkAudioRTPCTemplate");
 static_assert(offsetof(FMovieSceneAkAudioRTPCTemplate, Section) == 0x000020, "Member 'FMovieSceneAkAudioRTPCTemplate::Section' has a wrong offset!");
-
-// ScriptStruct AkAudio.MovieSceneTangentDataSerializationHelper
-// 0x0014 (0x0014 - 0x0000)
-struct FMovieSceneTangentDataSerializationHelper final
-{
-public:
-	float                                         ArriveTangent;                                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LeaveTangent;                                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERichCurveTangentWeightMode                   TangentWeightMode;                                 // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ArriveTangentWeight;                               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LeaveTangentWeight;                                // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FMovieSceneTangentDataSerializationHelper) == 0x000004, "Wrong alignment on FMovieSceneTangentDataSerializationHelper");
-static_assert(sizeof(FMovieSceneTangentDataSerializationHelper) == 0x000014, "Wrong size on FMovieSceneTangentDataSerializationHelper");
-static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, ArriveTangent) == 0x000000, "Member 'FMovieSceneTangentDataSerializationHelper::ArriveTangent' has a wrong offset!");
-static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, LeaveTangent) == 0x000004, "Member 'FMovieSceneTangentDataSerializationHelper::LeaveTangent' has a wrong offset!");
-static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, TangentWeightMode) == 0x000008, "Member 'FMovieSceneTangentDataSerializationHelper::TangentWeightMode' has a wrong offset!");
-static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, ArriveTangentWeight) == 0x00000C, "Member 'FMovieSceneTangentDataSerializationHelper::ArriveTangentWeight' has a wrong offset!");
-static_assert(offsetof(FMovieSceneTangentDataSerializationHelper, LeaveTangentWeight) == 0x000010, "Member 'FMovieSceneTangentDataSerializationHelper::LeaveTangentWeight' has a wrong offset!");
-
-// ScriptStruct AkAudio.MovieSceneFloatValueSerializationHelper
-// 0x001C (0x001C - 0x0000)
-struct FMovieSceneFloatValueSerializationHelper final
-{
-public:
-	float                                         Value;                                             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERichCurveInterpMode                          InterpMode;                                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERichCurveTangentMode                         TangentMode;                                       // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMovieSceneTangentDataSerializationHelper Tangent;                                           // 0x0008(0x0014)(NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FMovieSceneFloatValueSerializationHelper) == 0x000004, "Wrong alignment on FMovieSceneFloatValueSerializationHelper");
-static_assert(sizeof(FMovieSceneFloatValueSerializationHelper) == 0x00001C, "Wrong size on FMovieSceneFloatValueSerializationHelper");
-static_assert(offsetof(FMovieSceneFloatValueSerializationHelper, Value) == 0x000000, "Member 'FMovieSceneFloatValueSerializationHelper::Value' has a wrong offset!");
-static_assert(offsetof(FMovieSceneFloatValueSerializationHelper, InterpMode) == 0x000004, "Member 'FMovieSceneFloatValueSerializationHelper::InterpMode' has a wrong offset!");
-static_assert(offsetof(FMovieSceneFloatValueSerializationHelper, TangentMode) == 0x000005, "Member 'FMovieSceneFloatValueSerializationHelper::TangentMode' has a wrong offset!");
-static_assert(offsetof(FMovieSceneFloatValueSerializationHelper, Tangent) == 0x000008, "Member 'FMovieSceneFloatValueSerializationHelper::Tangent' has a wrong offset!");
 
 // ScriptStruct AkAudio.MovieSceneFloatChannelSerializationHelper
 // 0x0030 (0x0030 - 0x0000)

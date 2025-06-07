@@ -10,36 +10,36 @@
 
 #include "Basic.hpp"
 
-#include "KuroGAS_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "KuroVehicle_structs.hpp"
 #include "KuroAnim_classes.hpp"
+#include "KuroGAS_classes.hpp"
 
 
 namespace SDK
 {
 
 // Class KuroVehicle.KuroAnimInstanceVehicle
-// 0x0070 (0x0770 - 0x0700)
+// 0x0060 (0x07B0 - 0x0750)
 class UKuroAnimInstanceVehicle final : public UKuroAnimInstance
 {
 public:
-	uint8                                         Pad_700[0x8];                                      // 0x0700(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbpLogicParams*                        LogicParams;                                       // 0x0708(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AKuroBaseVehicle*                       BaseVehicle;                                       // 0x0710(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DeltaTime;                                         // 0x0718(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EntityId;                                          // 0x071C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsAutonomousProxy;                                // 0x0720(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_721[0x3];                                      // 0x0721(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Velocity;                                          // 0x0724(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_730[0xC];                                      // 0x0730(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bIsMovedLocation;                                  // 0x073C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_73D[0xF];                                      // 0x073D(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Acceleration;                                      // 0x074C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ActorForward;                                      // 0x0758(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_764[0xC];                                      // 0x0764(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_748[0x8];                                      // 0x0748(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbpLogicParams*                        LogicParams;                                       // 0x0750(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AKuroBaseVehicle*                       BaseVehicle;                                       // 0x0758(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeltaTime;                                         // 0x0760(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EntityId;                                          // 0x0764(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsAutonomousProxy;                                // 0x0768(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_769[0x3];                                      // 0x0769(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Velocity;                                          // 0x076C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_778[0xC];                                      // 0x0778(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIsMovedLocation;                                  // 0x0784(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_785[0xF];                                      // 0x0785(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Acceleration;                                      // 0x0794(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ActorForward;                                      // 0x07A0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7AC[0x4];                                      // 0x07AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -52,25 +52,26 @@ public:
 	}
 };
 static_assert(alignof(UKuroAnimInstanceVehicle) == 0x000010, "Wrong alignment on UKuroAnimInstanceVehicle");
-static_assert(sizeof(UKuroAnimInstanceVehicle) == 0x000770, "Wrong size on UKuroAnimInstanceVehicle");
-static_assert(offsetof(UKuroAnimInstanceVehicle, LogicParams) == 0x000708, "Member 'UKuroAnimInstanceVehicle::LogicParams' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceVehicle, BaseVehicle) == 0x000710, "Member 'UKuroAnimInstanceVehicle::BaseVehicle' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceVehicle, DeltaTime) == 0x000718, "Member 'UKuroAnimInstanceVehicle::DeltaTime' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceVehicle, EntityId) == 0x00071C, "Member 'UKuroAnimInstanceVehicle::EntityId' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceVehicle, bIsAutonomousProxy) == 0x000720, "Member 'UKuroAnimInstanceVehicle::bIsAutonomousProxy' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceVehicle, Velocity) == 0x000724, "Member 'UKuroAnimInstanceVehicle::Velocity' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceVehicle, bIsMovedLocation) == 0x00073C, "Member 'UKuroAnimInstanceVehicle::bIsMovedLocation' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceVehicle, Acceleration) == 0x00074C, "Member 'UKuroAnimInstanceVehicle::Acceleration' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceVehicle, ActorForward) == 0x000758, "Member 'UKuroAnimInstanceVehicle::ActorForward' has a wrong offset!");
+static_assert(sizeof(UKuroAnimInstanceVehicle) == 0x0007B0, "Wrong size on UKuroAnimInstanceVehicle");
+static_assert(offsetof(UKuroAnimInstanceVehicle, LogicParams) == 0x000750, "Member 'UKuroAnimInstanceVehicle::LogicParams' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceVehicle, BaseVehicle) == 0x000758, "Member 'UKuroAnimInstanceVehicle::BaseVehicle' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceVehicle, DeltaTime) == 0x000760, "Member 'UKuroAnimInstanceVehicle::DeltaTime' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceVehicle, EntityId) == 0x000764, "Member 'UKuroAnimInstanceVehicle::EntityId' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceVehicle, bIsAutonomousProxy) == 0x000768, "Member 'UKuroAnimInstanceVehicle::bIsAutonomousProxy' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceVehicle, Velocity) == 0x00076C, "Member 'UKuroAnimInstanceVehicle::Velocity' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceVehicle, bIsMovedLocation) == 0x000784, "Member 'UKuroAnimInstanceVehicle::bIsMovedLocation' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceVehicle, Acceleration) == 0x000794, "Member 'UKuroAnimInstanceVehicle::Acceleration' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceVehicle, ActorForward) == 0x0007A0, "Member 'UKuroAnimInstanceVehicle::ActorForward' has a wrong offset!");
 
 // Class KuroVehicle.KuroBaseVehicle
-// 0x0020 (0x06A0 - 0x0680)
+// 0x0030 (0x06B0 - 0x0680)
 class AKuroBaseVehicle : public ABaseCharacter
 {
 public:
-	class UKuroVehicleMovementComponent*          VehicleMovementComponent;                          // 0x0678(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AKuroBaseVehicle* Vehicle, EKuroVehicleMovementMode PrevMovementMode, uint8 PreviousCustomMode)> VehicleMovementModeChangedDelegate;                // 0x0680(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)> OnVehicleMovementUpdated;                          // 0x0690(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class UKuroVehicleMovementComponent*          VehicleMovementComponent;                          // 0x0680(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AKuroBaseVehicle* Vehicle, EKuroVehicleMovementMode PrevMovementMode, uint8 PreviousCustomMode)> VehicleMovementModeChangedDelegate;                // 0x0688(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)> OnVehicleMovementUpdated;                          // 0x0698(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6A8[0x8];                                      // 0x06A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void K2_OnVehicleMovementModeChanged(EKuroVehicleMovementMode PrevMovementMode, EKuroVehicleMovementMode NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode);
@@ -87,13 +88,13 @@ public:
 	}
 };
 static_assert(alignof(AKuroBaseVehicle) == 0x000010, "Wrong alignment on AKuroBaseVehicle");
-static_assert(sizeof(AKuroBaseVehicle) == 0x0006A0, "Wrong size on AKuroBaseVehicle");
-static_assert(offsetof(AKuroBaseVehicle, VehicleMovementComponent) == 0x000678, "Member 'AKuroBaseVehicle::VehicleMovementComponent' has a wrong offset!");
-static_assert(offsetof(AKuroBaseVehicle, VehicleMovementModeChangedDelegate) == 0x000680, "Member 'AKuroBaseVehicle::VehicleMovementModeChangedDelegate' has a wrong offset!");
-static_assert(offsetof(AKuroBaseVehicle, OnVehicleMovementUpdated) == 0x000690, "Member 'AKuroBaseVehicle::OnVehicleMovementUpdated' has a wrong offset!");
+static_assert(sizeof(AKuroBaseVehicle) == 0x0006B0, "Wrong size on AKuroBaseVehicle");
+static_assert(offsetof(AKuroBaseVehicle, VehicleMovementComponent) == 0x000680, "Member 'AKuroBaseVehicle::VehicleMovementComponent' has a wrong offset!");
+static_assert(offsetof(AKuroBaseVehicle, VehicleMovementModeChangedDelegate) == 0x000688, "Member 'AKuroBaseVehicle::VehicleMovementModeChangedDelegate' has a wrong offset!");
+static_assert(offsetof(AKuroBaseVehicle, OnVehicleMovementUpdated) == 0x000698, "Member 'AKuroBaseVehicle::OnVehicleMovementUpdated' has a wrong offset!");
 
 // Class KuroVehicle.KuroVehicleMovementComponent
-// 0x0300 (0x0450 - 0x0150)
+// 0x0330 (0x0480 - 0x0150)
 class UKuroVehicleMovementComponent final : public UPawnMovementComponent
 {
 public:
@@ -141,40 +142,48 @@ public:
 	float                                         SpeedImpactHorizontalFactor;                       // 0x021C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         RotationImpactFactor;                              // 0x0220(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxExtrutionDistance;                              // 0x0224(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WaterDepth;                                        // 0x0228(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOrientRotationToMovement : 1;                     // 0x022C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bUseControllerDesiredRotation : 1;                 // 0x022C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	float                                         ExtrusionSpeed;                                    // 0x0228(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableRotationExtrusion;                          // 0x022C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_22D[0x3];                                      // 0x022D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               RotationRate;                                      // 0x0230(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Acceleration;                                      // 0x023C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_248[0x8];                                      // 0x0248(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  LastUpdateRotation;                                // 0x0250(0x0010)(IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FVector                                LastUpdateLocation;                                // 0x0260(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                LastUpdateVelocity;                                // 0x026C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FRotator                               LastUpdateRotationVelocity;                        // 0x0278(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FVector                                PendingImpulseToApply;                             // 0x0284(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                PendingForceToApply;                               // 0x0290(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FRotator                               PendingRotImpluseToApply;                          // 0x029C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	float                                         AnalogInputModifier;                               // 0x02A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2AC[0xB0];                                     // 0x02AC(0x00B0)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MaxSimulationTimeStep;                             // 0x035C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxSimulationIterations;                           // 0x0360(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxSimulationRotationIterations;                   // 0x0364(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxDepenetrationWithGeometry;                      // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxDepenetrationWithGeometryAsProxy;               // 0x036C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxDepenetrationWithPawn;                          // 0x0370(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxDepenetrationWithPawnAsProxy;                   // 0x0374(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_378[0x10];                                     // 0x0378(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVehicleRootMotionSourceGroup          CurrentRootMotion;                                 // 0x0388(0x0038)(Transient, NativeAccessSpecifierPublic)
-	struct FRootMotionMovementParams              RootMotionParams;                                  // 0x03C0(0x0040)(Transient, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                AnimRootMotionVelocity;                            // 0x0400(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_40C[0x24];                                     // 0x040C(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bDeferUpdateMoveComponent : 1;                     // 0x0430(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_431[0x7];                                      // 0x0431(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USceneComponent*                        DeferredUpdatedMoveComponent;                      // 0x0438(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bForbiddenTickPose;                                // 0x0440(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bMovementInProgress : 1;                           // 0x0441(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_442[0xE];                                      // 0x0442(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         RotationExtrusionSpeed;                            // 0x0230(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxSafeWaterGravityAngle;                          // 0x0234(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotPitchFrictionRatio;                             // 0x0238(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxRotationPitchAcceleration;                      // 0x023C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WaterDepth;                                        // 0x0240(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaterNormal;                                       // 0x0244(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOrientRotationToMovement : 1;                     // 0x0250(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bUseControllerDesiredRotation : 1;                 // 0x0250(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_251[0x3];                                      // 0x0251(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               RotationRate;                                      // 0x0254(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Acceleration;                                      // 0x0260(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_26C[0x4];                                      // 0x026C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  LastUpdateRotation;                                // 0x0270(0x0010)(IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FVector                                LastUpdateLocation;                                // 0x0280(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                LastUpdateVelocity;                                // 0x028C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FRotator                               LastUpdateRotationVelocity;                        // 0x0298(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FVector                                PendingImpulseToApply;                             // 0x02A4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                PendingForceToApply;                               // 0x02B0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FRotator                               PendingRotImpluseToApply;                          // 0x02BC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	float                                         AnalogInputModifier;                               // 0x02C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2CC[0xC0];                                     // 0x02CC(0x00C0)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxSimulationTimeStep;                             // 0x038C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxSimulationIterations;                           // 0x0390(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxSimulationRotationIterations;                   // 0x0394(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxDepenetrationWithGeometry;                      // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxDepenetrationWithGeometryAsProxy;               // 0x039C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxDepenetrationWithPawn;                          // 0x03A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxDepenetrationWithPawnAsProxy;                   // 0x03A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A8[0x10];                                     // 0x03A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVehicleRootMotionSourceGroup          CurrentRootMotion;                                 // 0x03B8(0x0038)(Transient, NativeAccessSpecifierPublic)
+	struct FRootMotionMovementParams              RootMotionParams;                                  // 0x03F0(0x0040)(Transient, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                AnimRootMotionVelocity;                            // 0x0430(0x000C)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_43C[0x24];                                     // 0x043C(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bDeferUpdateMoveComponent : 1;                     // 0x0460(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_461[0x7];                                      // 0x0461(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        DeferredUpdatedMoveComponent;                      // 0x0468(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForbiddenTickPose;                                // 0x0470(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bMovementInProgress : 1;                           // 0x0471(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_472[0xE];                                      // 0x0472(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void IgnoreMoveFriction(float Duration);
@@ -198,7 +207,7 @@ public:
 	}
 };
 static_assert(alignof(UKuroVehicleMovementComponent) == 0x000010, "Wrong alignment on UKuroVehicleMovementComponent");
-static_assert(sizeof(UKuroVehicleMovementComponent) == 0x000450, "Wrong size on UKuroVehicleMovementComponent");
+static_assert(sizeof(UKuroVehicleMovementComponent) == 0x000480, "Wrong size on UKuroVehicleMovementComponent");
 static_assert(offsetof(UKuroVehicleMovementComponent, VehicleOwner) == 0x000150, "Member 'UKuroVehicleMovementComponent::VehicleOwner' has a wrong offset!");
 static_assert(offsetof(UKuroVehicleMovementComponent, VehicleShapes) == 0x000158, "Member 'UKuroVehicleMovementComponent::VehicleShapes' has a wrong offset!");
 static_assert(offsetof(UKuroVehicleMovementComponent, VehicleShapeBounds) == 0x000168, "Member 'UKuroVehicleMovementComponent::VehicleShapeBounds' has a wrong offset!");
@@ -238,29 +247,36 @@ static_assert(offsetof(UKuroVehicleMovementComponent, SpeedImpactFactor) == 0x00
 static_assert(offsetof(UKuroVehicleMovementComponent, SpeedImpactHorizontalFactor) == 0x00021C, "Member 'UKuroVehicleMovementComponent::SpeedImpactHorizontalFactor' has a wrong offset!");
 static_assert(offsetof(UKuroVehicleMovementComponent, RotationImpactFactor) == 0x000220, "Member 'UKuroVehicleMovementComponent::RotationImpactFactor' has a wrong offset!");
 static_assert(offsetof(UKuroVehicleMovementComponent, MaxExtrutionDistance) == 0x000224, "Member 'UKuroVehicleMovementComponent::MaxExtrutionDistance' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, WaterDepth) == 0x000228, "Member 'UKuroVehicleMovementComponent::WaterDepth' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, RotationRate) == 0x000230, "Member 'UKuroVehicleMovementComponent::RotationRate' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, Acceleration) == 0x00023C, "Member 'UKuroVehicleMovementComponent::Acceleration' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, LastUpdateRotation) == 0x000250, "Member 'UKuroVehicleMovementComponent::LastUpdateRotation' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, LastUpdateLocation) == 0x000260, "Member 'UKuroVehicleMovementComponent::LastUpdateLocation' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, LastUpdateVelocity) == 0x00026C, "Member 'UKuroVehicleMovementComponent::LastUpdateVelocity' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, LastUpdateRotationVelocity) == 0x000278, "Member 'UKuroVehicleMovementComponent::LastUpdateRotationVelocity' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, PendingImpulseToApply) == 0x000284, "Member 'UKuroVehicleMovementComponent::PendingImpulseToApply' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, PendingForceToApply) == 0x000290, "Member 'UKuroVehicleMovementComponent::PendingForceToApply' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, PendingRotImpluseToApply) == 0x00029C, "Member 'UKuroVehicleMovementComponent::PendingRotImpluseToApply' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, AnalogInputModifier) == 0x0002A8, "Member 'UKuroVehicleMovementComponent::AnalogInputModifier' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, MaxSimulationTimeStep) == 0x00035C, "Member 'UKuroVehicleMovementComponent::MaxSimulationTimeStep' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, MaxSimulationIterations) == 0x000360, "Member 'UKuroVehicleMovementComponent::MaxSimulationIterations' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, MaxSimulationRotationIterations) == 0x000364, "Member 'UKuroVehicleMovementComponent::MaxSimulationRotationIterations' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, MaxDepenetrationWithGeometry) == 0x000368, "Member 'UKuroVehicleMovementComponent::MaxDepenetrationWithGeometry' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, MaxDepenetrationWithGeometryAsProxy) == 0x00036C, "Member 'UKuroVehicleMovementComponent::MaxDepenetrationWithGeometryAsProxy' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, MaxDepenetrationWithPawn) == 0x000370, "Member 'UKuroVehicleMovementComponent::MaxDepenetrationWithPawn' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, MaxDepenetrationWithPawnAsProxy) == 0x000374, "Member 'UKuroVehicleMovementComponent::MaxDepenetrationWithPawnAsProxy' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, CurrentRootMotion) == 0x000388, "Member 'UKuroVehicleMovementComponent::CurrentRootMotion' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, RootMotionParams) == 0x0003C0, "Member 'UKuroVehicleMovementComponent::RootMotionParams' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, AnimRootMotionVelocity) == 0x000400, "Member 'UKuroVehicleMovementComponent::AnimRootMotionVelocity' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, DeferredUpdatedMoveComponent) == 0x000438, "Member 'UKuroVehicleMovementComponent::DeferredUpdatedMoveComponent' has a wrong offset!");
-static_assert(offsetof(UKuroVehicleMovementComponent, bForbiddenTickPose) == 0x000440, "Member 'UKuroVehicleMovementComponent::bForbiddenTickPose' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, ExtrusionSpeed) == 0x000228, "Member 'UKuroVehicleMovementComponent::ExtrusionSpeed' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, bEnableRotationExtrusion) == 0x00022C, "Member 'UKuroVehicleMovementComponent::bEnableRotationExtrusion' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, RotationExtrusionSpeed) == 0x000230, "Member 'UKuroVehicleMovementComponent::RotationExtrusionSpeed' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, MaxSafeWaterGravityAngle) == 0x000234, "Member 'UKuroVehicleMovementComponent::MaxSafeWaterGravityAngle' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, RotPitchFrictionRatio) == 0x000238, "Member 'UKuroVehicleMovementComponent::RotPitchFrictionRatio' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, MaxRotationPitchAcceleration) == 0x00023C, "Member 'UKuroVehicleMovementComponent::MaxRotationPitchAcceleration' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, WaterDepth) == 0x000240, "Member 'UKuroVehicleMovementComponent::WaterDepth' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, WaterNormal) == 0x000244, "Member 'UKuroVehicleMovementComponent::WaterNormal' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, RotationRate) == 0x000254, "Member 'UKuroVehicleMovementComponent::RotationRate' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, Acceleration) == 0x000260, "Member 'UKuroVehicleMovementComponent::Acceleration' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, LastUpdateRotation) == 0x000270, "Member 'UKuroVehicleMovementComponent::LastUpdateRotation' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, LastUpdateLocation) == 0x000280, "Member 'UKuroVehicleMovementComponent::LastUpdateLocation' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, LastUpdateVelocity) == 0x00028C, "Member 'UKuroVehicleMovementComponent::LastUpdateVelocity' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, LastUpdateRotationVelocity) == 0x000298, "Member 'UKuroVehicleMovementComponent::LastUpdateRotationVelocity' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, PendingImpulseToApply) == 0x0002A4, "Member 'UKuroVehicleMovementComponent::PendingImpulseToApply' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, PendingForceToApply) == 0x0002B0, "Member 'UKuroVehicleMovementComponent::PendingForceToApply' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, PendingRotImpluseToApply) == 0x0002BC, "Member 'UKuroVehicleMovementComponent::PendingRotImpluseToApply' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, AnalogInputModifier) == 0x0002C8, "Member 'UKuroVehicleMovementComponent::AnalogInputModifier' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, MaxSimulationTimeStep) == 0x00038C, "Member 'UKuroVehicleMovementComponent::MaxSimulationTimeStep' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, MaxSimulationIterations) == 0x000390, "Member 'UKuroVehicleMovementComponent::MaxSimulationIterations' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, MaxSimulationRotationIterations) == 0x000394, "Member 'UKuroVehicleMovementComponent::MaxSimulationRotationIterations' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, MaxDepenetrationWithGeometry) == 0x000398, "Member 'UKuroVehicleMovementComponent::MaxDepenetrationWithGeometry' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, MaxDepenetrationWithGeometryAsProxy) == 0x00039C, "Member 'UKuroVehicleMovementComponent::MaxDepenetrationWithGeometryAsProxy' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, MaxDepenetrationWithPawn) == 0x0003A0, "Member 'UKuroVehicleMovementComponent::MaxDepenetrationWithPawn' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, MaxDepenetrationWithPawnAsProxy) == 0x0003A4, "Member 'UKuroVehicleMovementComponent::MaxDepenetrationWithPawnAsProxy' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, CurrentRootMotion) == 0x0003B8, "Member 'UKuroVehicleMovementComponent::CurrentRootMotion' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, RootMotionParams) == 0x0003F0, "Member 'UKuroVehicleMovementComponent::RootMotionParams' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, AnimRootMotionVelocity) == 0x000430, "Member 'UKuroVehicleMovementComponent::AnimRootMotionVelocity' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, DeferredUpdatedMoveComponent) == 0x000468, "Member 'UKuroVehicleMovementComponent::DeferredUpdatedMoveComponent' has a wrong offset!");
+static_assert(offsetof(UKuroVehicleMovementComponent, bForbiddenTickPose) == 0x000470, "Member 'UKuroVehicleMovementComponent::bForbiddenTickPose' has a wrong offset!");
 
 }
 

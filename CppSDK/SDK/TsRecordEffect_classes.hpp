@@ -28,7 +28,7 @@ public:
 	int32                                         LifeTimeType;                                      // 0x02C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_2CC[0x4];                                      // 0x02CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 EffectModelDataPath;                               // 0x02D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Interp, HasGetValueTypeHash)
-	float                                         ManualProcessTime;                                 // 0x02E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ManualProcessTime;                                 // 0x02E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_TsRecordEffect(int32 EntryPoint);

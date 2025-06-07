@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FSoftClassPath                   InBurnInClass                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULevelSequenceBurnInOptions::SetBurnIn(const struct FSoftClassPath& InBurnInClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceBurnInOptions", "SetBurnIn");
-
-	Params::LevelSequenceBurnInOptions_SetBurnIn Parms{};
-
-	Parms.InBurnInClass = std::move(InBurnInClass);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function LevelSequence.LevelSequenceActor.AddBinding
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -710,6 +685,31 @@ class UObject* ULevelSequence::FindOrAddMetaDataByClass(TSubclassOf<class UObjec
 }
 
 
+// Function LevelSequence.LevelSequence.GetAnimAudio
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULevelSequence::GetAnimAudio()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequence", "GetAnimAudio");
+
+	Params::LevelSequence_GetAnimAudio Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LevelSequence.LevelSequence.GetCenterOffset
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -754,6 +754,31 @@ void ULevelSequence::RemoveMetaDataByClass(TSubclassOf<class UObject> InClass)
 	Params::LevelSequence_RemoveMetaDataByClass Parms{};
 
 	Parms.InClass = InClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LevelSequence.LevelSequence.SetAnimAudio
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULevelSequence::SetAnimAudio(bool Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequence", "SetAnimAudio");
+
+	Params::LevelSequence_SetAnimAudio Parms{};
+
+	Parms.Value = Value;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -839,6 +864,31 @@ class UMovieScene* ULevelSequence::GetMovieScene() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FSoftClassPath                   InBurnInClass                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULevelSequenceBurnInOptions::SetBurnIn(const struct FSoftClassPath& InBurnInClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequenceBurnInOptions", "SetBurnIn");
+
+	Params::LevelSequenceBurnInOptions_SetBurnIn Parms{};
+
+	Parms.InBurnInClass = std::move(InBurnInClass);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -937,22 +987,38 @@ class ULevelSequencePlayer* ULevelSequencePlayer::CreateLevelSequencePlayer(clas
 }
 
 
-// Function LevelSequence.LevelSequencePlayer.GetSpawnedActorByGuid
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FGuid                            Guid                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function LevelSequence.LevelSequencePlayer.CleanUnboundSpawnable
+// (Final, Native, Public, BlueprintCallable)
 
-class AActor* ULevelSequencePlayer::GetSpawnedActorByGuid(const struct FGuid& Guid)
+void ULevelSequencePlayer::CleanUnboundSpawnable()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequencePlayer", "GetSpawnedActorByGuid");
+		Func = Class->GetFunction("LevelSequencePlayer", "CleanUnboundSpawnable");
 
-	Params::LevelSequencePlayer_GetSpawnedActorByGuid Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.Guid = std::move(Guid);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LevelSequence.LevelSequencePlayer.GetAllSpawnedObjects
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TArray<class UObject*>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class UObject*> ULevelSequencePlayer::GetAllSpawnedObjects()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequencePlayer", "GetAllSpawnedObjects");
+
+	Params::LevelSequencePlayer_GetAllSpawnedObjects Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -978,6 +1044,36 @@ class UCameraComponent* ULevelSequencePlayer::GetActiveCameraComponent() const
 		Func = Class->GetFunction("LevelSequencePlayer", "GetActiveCameraComponent");
 
 	Params::LevelSequencePlayer_GetActiveCameraComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LevelSequence.LevelSequencePlayer.GetSpawnedActorByGuid
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGuid                            Guid                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIncludeSubSequence                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* ULevelSequencePlayer::GetSpawnedActorByGuid(const struct FGuid& Guid, bool bIncludeSubSequence) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequencePlayer", "GetSpawnedActorByGuid");
+
+	Params::LevelSequencePlayer_GetSpawnedActorByGuid Parms{};
+
+	Parms.Guid = std::move(Guid);
+	Parms.bIncludeSubSequence = bIncludeSubSequence;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

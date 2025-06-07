@@ -20,7 +20,7 @@ namespace SDK
 
 // BlueprintGeneratedClass GA_LimitDodge.GA_LimitDodge_C
 // 0x0040 (0x05A0 - 0x0560)
-class UGA_LimitDodge_C : public UGa_Passive_C
+class UGA_LimitDodge_C final : public UGa_Passive_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_GA_LimitDodge_C;                    // 0x0560(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

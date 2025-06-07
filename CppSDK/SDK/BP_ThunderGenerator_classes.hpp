@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "AkAudio_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
@@ -54,9 +54,10 @@ public:
 	void UpdateAudio2D();
 	void UserConstructionScript();
 	void OnReceiveThunderAttack(const struct FVector& Location, bool bAttack);
-	void OnThunderTypeChanged();
 	void OnUpdateThunderEffect(float DeltaSeconds);
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void OnReceiveThunderTrigger(class AThunderTrigger* Trigger, const struct FTransform& CameraTransform);
+	void OnThunderTypeChanged();
 	void ExecuteUbergraph_BP_ThunderGenerator(int32 EntryPoint);
 
 public:

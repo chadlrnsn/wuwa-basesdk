@@ -14,9 +14,9 @@
 #include "Engine_structs.hpp"
 #include "SPointsRow_structs.hpp"
 #include "SNpcPathPoint_structs.hpp"
-#include "SCamp_structs.hpp"
-#include "ECamp_structs.hpp"
 #include "ERelation_structs.hpp"
+#include "ECamp_structs.hpp"
+#include "SCamp_structs.hpp"
 
 
 namespace SDK::Params
@@ -346,28 +346,23 @@ static_assert(offsetof(KFC_AICommon_C_设置黑板Int, CallFunc_GetEntityId_self
 static_assert(offsetof(KFC_AICommon_C_设置黑板Int, CallFunc_GetEntityId_ReturnValue) == 0x000038, "Member 'KFC_AICommon_C_设置黑板Int::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
 
 // Function KFC_AICommon.KFC_AICommon_C.获取黑板 Int
-// 0x0040 (0x0040 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct KFC_AICommon_C_获取黑板_Int final
 {
 public:
-	class ATsBaseCharacter_C*                     角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABaseCharacter*                         角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         值;                                                // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetIntValueByEntity_ReturnValue;          // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetIntValueByEntity_ReturnValue;          // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(KFC_AICommon_C_获取黑板_Int) == 0x000008, "Wrong alignment on KFC_AICommon_C_获取黑板_Int");
-static_assert(sizeof(KFC_AICommon_C_获取黑板_Int) == 0x000040, "Wrong size on KFC_AICommon_C_获取黑板_Int");
+static_assert(sizeof(KFC_AICommon_C_获取黑板_Int) == 0x000028, "Wrong size on KFC_AICommon_C_获取黑板_Int");
 static_assert(offsetof(KFC_AICommon_C_获取黑板_Int, 角色) == 0x000000, "Member 'KFC_AICommon_C_获取黑板_Int::角色' has a wrong offset!");
 static_assert(offsetof(KFC_AICommon_C_获取黑板_Int, Key) == 0x000008, "Member 'KFC_AICommon_C_获取黑板_Int::Key' has a wrong offset!");
 static_assert(offsetof(KFC_AICommon_C_获取黑板_Int, __WorldContext) == 0x000018, "Member 'KFC_AICommon_C_获取黑板_Int::__WorldContext' has a wrong offset!");
 static_assert(offsetof(KFC_AICommon_C_获取黑板_Int, 值) == 0x000020, "Member 'KFC_AICommon_C_获取黑板_Int::值' has a wrong offset!");
-static_assert(offsetof(KFC_AICommon_C_获取黑板_Int, CallFunc_GetEntityId_self_CastInput) == 0x000028, "Member 'KFC_AICommon_C_获取黑板_Int::CallFunc_GetEntityId_self_CastInput' has a wrong offset!");
-static_assert(offsetof(KFC_AICommon_C_获取黑板_Int, CallFunc_GetEntityId_ReturnValue) == 0x000038, "Member 'KFC_AICommon_C_获取黑板_Int::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
-static_assert(offsetof(KFC_AICommon_C_获取黑板_Int, CallFunc_GetIntValueByEntity_ReturnValue) == 0x00003C, "Member 'KFC_AICommon_C_获取黑板_Int::CallFunc_GetIntValueByEntity_ReturnValue' has a wrong offset!");
+static_assert(offsetof(KFC_AICommon_C_获取黑板_Int, CallFunc_GetIntValueByEntity_ReturnValue) == 0x000024, "Member 'KFC_AICommon_C_获取黑板_Int::CallFunc_GetIntValueByEntity_ReturnValue' has a wrong offset!");
 
 // Function KFC_AICommon.KFC_AICommon_C.获取自身距离坐标角度
 // 0x00B8 (0x00B8 - 0x0000)
@@ -1421,7 +1416,7 @@ static_assert(offsetof(KFC_AICommon_C_获取_Base属性值, CallFunc_GetAttribut
 struct KFC_AICommon_C_获取Current属性值 final
 {
 public:
-	class ATsBaseCharacter_C*                     目标;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABaseCharacter*                         目标;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         属性id;                                            // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

@@ -710,14 +710,15 @@ enum class ELGUILayoutDirectionType : uint8
 };
 
 // Enum LGUI.UINavigationPriorityMode
-// NumValues: 0x0005
+// NumValues: 0x0006
 enum class EUINavigationPriorityMode : uint8
 {
 	Distance                                 = 0,
 	Direction                                = 1,
 	DistanceDirection                        = 2,
 	DirectionAngle                           = 3,
-	UINavigationPriorityMode_MAX             = 4,
+	DistanceOnlySameScroll                   = 4,
+	UINavigationPriorityMode_MAX             = 5,
 };
 
 // Enum LGUI.UINavigationWrapMode
@@ -1016,6 +1017,19 @@ enum class EUIAnchorHorizontalAlign : uint8
 	UIAnchorHorizontalAlign_MAX              = 5,
 };
 
+// ScriptStruct LGUI.LGUIPrefabOverrideParameterData
+// 0x0058 (0x0058 - 0x0000)
+struct FLGUIPrefabOverrideParameterData final
+{
+public:
+	TWeakObjectPtr<class UObject>                 Object;                                            // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FGuid>               MemberPropertyInfoMap;                             // 0x0008(0x0050)(Edit, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FLGUIPrefabOverrideParameterData) == 0x000008, "Wrong alignment on FLGUIPrefabOverrideParameterData");
+static_assert(sizeof(FLGUIPrefabOverrideParameterData) == 0x000058, "Wrong size on FLGUIPrefabOverrideParameterData");
+static_assert(offsetof(FLGUIPrefabOverrideParameterData, Object) == 0x000000, "Member 'FLGUIPrefabOverrideParameterData::Object' has a wrong offset!");
+static_assert(offsetof(FLGUIPrefabOverrideParameterData, MemberPropertyInfoMap) == 0x000008, "Member 'FLGUIPrefabOverrideParameterData::MemberPropertyInfoMap' has a wrong offset!");
+
 // ScriptStruct LGUI.UIArtTextInfo
 // 0x0018 (0x0018 - 0x0000)
 struct FUIArtTextInfo final
@@ -1028,6 +1042,67 @@ static_assert(alignof(FUIArtTextInfo) == 0x000008, "Wrong alignment on FUIArtTex
 static_assert(sizeof(FUIArtTextInfo) == 0x000018, "Wrong size on FUIArtTextInfo");
 static_assert(offsetof(FUIArtTextInfo, Character) == 0x000000, "Member 'FUIArtTextInfo::Character' has a wrong offset!");
 static_assert(offsetof(FUIArtTextInfo, SpriteData) == 0x000010, "Member 'FUIArtTextInfo::SpriteData' has a wrong offset!");
+
+// ScriptStruct LGUI.LGUIDrawableEventData
+// 0x0080 (0x0080 - 0x0000)
+struct FLGUIDrawableEventData final
+{
+public:
+	class AActor*                                 targetActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                 componentClass;                                    // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   componentName;                                     // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   functionName;                                      // 0x001C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELGUIDrawableEventParameterType               ParamType;                                         // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 ParamBuffer;                                       // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	class UObject*                                ReferenceObject;                                   // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 ReferenceActor;                                    // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UClass*                                 ReferenceClass;                                    // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReferenceString;                                   // 0x0058(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseNativeParameter;                                // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UFunction*                              CacheFunction;                                     // 0x0070(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UObject*                                CacheTarget;                                       // 0x0078(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+static_assert(alignof(FLGUIDrawableEventData) == 0x000008, "Wrong alignment on FLGUIDrawableEventData");
+static_assert(sizeof(FLGUIDrawableEventData) == 0x000080, "Wrong size on FLGUIDrawableEventData");
+static_assert(offsetof(FLGUIDrawableEventData, targetActor) == 0x000000, "Member 'FLGUIDrawableEventData::targetActor' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, componentClass) == 0x000008, "Member 'FLGUIDrawableEventData::componentClass' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, componentName) == 0x000010, "Member 'FLGUIDrawableEventData::componentName' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, functionName) == 0x00001C, "Member 'FLGUIDrawableEventData::functionName' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, ParamType) == 0x000028, "Member 'FLGUIDrawableEventData::ParamType' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, ParamBuffer) == 0x000030, "Member 'FLGUIDrawableEventData::ParamBuffer' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, ReferenceObject) == 0x000040, "Member 'FLGUIDrawableEventData::ReferenceObject' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, ReferenceActor) == 0x000048, "Member 'FLGUIDrawableEventData::ReferenceActor' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, ReferenceClass) == 0x000050, "Member 'FLGUIDrawableEventData::ReferenceClass' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, ReferenceString) == 0x000058, "Member 'FLGUIDrawableEventData::ReferenceString' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, UseNativeParameter) == 0x000068, "Member 'FLGUIDrawableEventData::UseNativeParameter' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, CacheFunction) == 0x000070, "Member 'FLGUIDrawableEventData::CacheFunction' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEventData, CacheTarget) == 0x000078, "Member 'FLGUIDrawableEventData::CacheTarget' has a wrong offset!");
+
+// ScriptStruct LGUI.LGUIDrawableEvent
+// 0x0018 (0x0018 - 0x0000)
+struct FLGUIDrawableEvent
+{
+public:
+	TArray<struct FLGUIDrawableEventData>         eventList;                                         // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	ELGUIDrawableEventParameterType               supportParameterType;                              // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FLGUIDrawableEvent) == 0x000008, "Wrong alignment on FLGUIDrawableEvent");
+static_assert(sizeof(FLGUIDrawableEvent) == 0x000018, "Wrong size on FLGUIDrawableEvent");
+static_assert(offsetof(FLGUIDrawableEvent, eventList) == 0x000000, "Member 'FLGUIDrawableEvent::eventList' has a wrong offset!");
+static_assert(offsetof(FLGUIDrawableEvent, supportParameterType) == 0x000010, "Member 'FLGUIDrawableEvent::supportParameterType' has a wrong offset!");
+
+// ScriptStruct LGUI.LGUIDrawableEvent_Int64
+// 0x0018 (0x0030 - 0x0018)
+struct FLGUIDrawableEvent_Int64 final : public FLGUIDrawableEvent
+{
+public:
+	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FLGUIDrawableEvent_Int64) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Int64");
+static_assert(sizeof(FLGUIDrawableEvent_Int64) == 0x000030, "Wrong size on FLGUIDrawableEvent_Int64");
 
 // ScriptStruct LGUI.LGUIAtlasData
 // 0x0070 (0x0070 - 0x0000)
@@ -1075,26 +1150,6 @@ static_assert(offsetof(FLGUIComponentReference, targetComponentClass) == 0x00000
 static_assert(offsetof(FLGUIComponentReference, targetComonentName) == 0x000010, "Member 'FLGUIComponentReference::targetComonentName' has a wrong offset!");
 static_assert(offsetof(FLGUIComponentReference, componentInstance) == 0x00001C, "Member 'FLGUIComponentReference::componentInstance' has a wrong offset!");
 
-// ScriptStruct LGUI.SequenceInfo
-// 0x0038 (0x0038 - 0x0000)
-struct FSequenceInfo final
-{
-public:
-	struct FSoftObjectPath                        LevelSequence;                                     // 0x0000(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseAsHardRef;                                     // 0x0020(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ChildrenInteractiveDuringPlaying;                  // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BlockAllEventWhilePlaying;                         // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23[0x1];                                       // 0x0023(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMovieSceneSequencePlaybackSettings    PlaySetting;                                       // 0x0024(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSequenceInfo) == 0x000008, "Wrong alignment on FSequenceInfo");
-static_assert(sizeof(FSequenceInfo) == 0x000038, "Wrong size on FSequenceInfo");
-static_assert(offsetof(FSequenceInfo, LevelSequence) == 0x000000, "Member 'FSequenceInfo::LevelSequence' has a wrong offset!");
-static_assert(offsetof(FSequenceInfo, bUseAsHardRef) == 0x000020, "Member 'FSequenceInfo::bUseAsHardRef' has a wrong offset!");
-static_assert(offsetof(FSequenceInfo, ChildrenInteractiveDuringPlaying) == 0x000021, "Member 'FSequenceInfo::ChildrenInteractiveDuringPlaying' has a wrong offset!");
-static_assert(offsetof(FSequenceInfo, BlockAllEventWhilePlaying) == 0x000022, "Member 'FSequenceInfo::BlockAllEventWhilePlaying' has a wrong offset!");
-static_assert(offsetof(FSequenceInfo, PlaySetting) == 0x000024, "Member 'FSequenceInfo::PlaySetting' has a wrong offset!");
-
 // ScriptStruct LGUI.UIItemInfo
 // 0x0001 (0x0001 - 0x0000)
 struct FUIItemInfo final
@@ -1104,29 +1159,6 @@ public:
 };
 static_assert(alignof(FUIItemInfo) == 0x000001, "Wrong alignment on FUIItemInfo");
 static_assert(sizeof(FUIItemInfo) == 0x000001, "Wrong size on FUIItemInfo");
-
-// ScriptStruct LGUI.RenderableSlot
-// 0x0020 (0x0020 - 0x0000)
-struct FRenderableSlot final
-{
-public:
-	class UUIBatchGeometryRenderable*             Renderable;                                        // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x18];                                       // 0x0008(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FRenderableSlot) == 0x000008, "Wrong alignment on FRenderableSlot");
-static_assert(sizeof(FRenderableSlot) == 0x000020, "Wrong size on FRenderableSlot");
-static_assert(offsetof(FRenderableSlot, Renderable) == 0x000000, "Member 'FRenderableSlot::Renderable' has a wrong offset!");
-
-// ScriptStruct LGUI.RenderableCollection
-// 0x0010 (0x0010 - 0x0000)
-struct FRenderableCollection final
-{
-public:
-	TArray<struct FRenderableSlot>                RenderableSlots;                                   // 0x0000(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRenderableCollection) == 0x000008, "Wrong alignment on FRenderableCollection");
-static_assert(sizeof(FRenderableCollection) == 0x000010, "Wrong size on FRenderableCollection");
-static_assert(offsetof(FRenderableCollection, RenderableSlots) == 0x000000, "Member 'FRenderableCollection::RenderableSlots' has a wrong offset!");
 
 // ScriptStruct LGUI.RegisterRuntimeData
 // 0x0020 (0x0020 - 0x0000)
@@ -1182,82 +1214,6 @@ public:
 static_assert(alignof(FLGUIDelegateHandleWrapper) == 0x000008, "Wrong alignment on FLGUIDelegateHandleWrapper");
 static_assert(sizeof(FLGUIDelegateHandleWrapper) == 0x000008, "Wrong size on FLGUIDelegateHandleWrapper");
 
-// ScriptStruct LGUI.LGUIGeometryVertex
-// 0x0048 (0x0048 - 0x0000)
-struct FLGUIGeometryVertex final
-{
-public:
-	struct FVector                                position;                                          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 color;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              uv0;                                               // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              uv1;                                               // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              uv2;                                               // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              uv3;                                               // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                normal;                                            // 0x0030(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                tagent;                                            // 0x003C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FLGUIGeometryVertex) == 0x000004, "Wrong alignment on FLGUIGeometryVertex");
-static_assert(sizeof(FLGUIGeometryVertex) == 0x000048, "Wrong size on FLGUIGeometryVertex");
-static_assert(offsetof(FLGUIGeometryVertex, position) == 0x000000, "Member 'FLGUIGeometryVertex::position' has a wrong offset!");
-static_assert(offsetof(FLGUIGeometryVertex, color) == 0x00000C, "Member 'FLGUIGeometryVertex::color' has a wrong offset!");
-static_assert(offsetof(FLGUIGeometryVertex, uv0) == 0x000010, "Member 'FLGUIGeometryVertex::uv0' has a wrong offset!");
-static_assert(offsetof(FLGUIGeometryVertex, uv1) == 0x000018, "Member 'FLGUIGeometryVertex::uv1' has a wrong offset!");
-static_assert(offsetof(FLGUIGeometryVertex, uv2) == 0x000020, "Member 'FLGUIGeometryVertex::uv2' has a wrong offset!");
-static_assert(offsetof(FLGUIGeometryVertex, uv3) == 0x000028, "Member 'FLGUIGeometryVertex::uv3' has a wrong offset!");
-static_assert(offsetof(FLGUIGeometryVertex, normal) == 0x000030, "Member 'FLGUIGeometryVertex::normal' has a wrong offset!");
-static_assert(offsetof(FLGUIGeometryVertex, tagent) == 0x00003C, "Member 'FLGUIGeometryVertex::tagent' has a wrong offset!");
-
-// ScriptStruct LGUI.LGUIDrawableEventData
-// 0x0080 (0x0080 - 0x0000)
-struct FLGUIDrawableEventData final
-{
-public:
-	class AActor*                                 targetActor;                                       // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                 componentClass;                                    // 0x0008(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   componentName;                                     // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   functionName;                                      // 0x001C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELGUIDrawableEventParameterType               ParamType;                                         // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<uint8>                                 ParamBuffer;                                       // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	class UObject*                                ReferenceObject;                                   // 0x0040(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 ReferenceActor;                                    // 0x0048(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UClass*                                 ReferenceClass;                                    // 0x0050(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ReferenceString;                                   // 0x0058(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseNativeParameter;                                // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UFunction*                              CacheFunction;                                     // 0x0070(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UObject*                                CacheTarget;                                       // 0x0078(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-};
-static_assert(alignof(FLGUIDrawableEventData) == 0x000008, "Wrong alignment on FLGUIDrawableEventData");
-static_assert(sizeof(FLGUIDrawableEventData) == 0x000080, "Wrong size on FLGUIDrawableEventData");
-static_assert(offsetof(FLGUIDrawableEventData, targetActor) == 0x000000, "Member 'FLGUIDrawableEventData::targetActor' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, componentClass) == 0x000008, "Member 'FLGUIDrawableEventData::componentClass' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, componentName) == 0x000010, "Member 'FLGUIDrawableEventData::componentName' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, functionName) == 0x00001C, "Member 'FLGUIDrawableEventData::functionName' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, ParamType) == 0x000028, "Member 'FLGUIDrawableEventData::ParamType' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, ParamBuffer) == 0x000030, "Member 'FLGUIDrawableEventData::ParamBuffer' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, ReferenceObject) == 0x000040, "Member 'FLGUIDrawableEventData::ReferenceObject' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, ReferenceActor) == 0x000048, "Member 'FLGUIDrawableEventData::ReferenceActor' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, ReferenceClass) == 0x000050, "Member 'FLGUIDrawableEventData::ReferenceClass' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, ReferenceString) == 0x000058, "Member 'FLGUIDrawableEventData::ReferenceString' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, UseNativeParameter) == 0x000068, "Member 'FLGUIDrawableEventData::UseNativeParameter' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, CacheFunction) == 0x000070, "Member 'FLGUIDrawableEventData::CacheFunction' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEventData, CacheTarget) == 0x000078, "Member 'FLGUIDrawableEventData::CacheTarget' has a wrong offset!");
-
-// ScriptStruct LGUI.LGUIDrawableEvent
-// 0x0018 (0x0018 - 0x0000)
-struct FLGUIDrawableEvent
-{
-public:
-	TArray<struct FLGUIDrawableEventData>         eventList;                                         // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	ELGUIDrawableEventParameterType               supportParameterType;                              // 0x0010(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FLGUIDrawableEvent) == 0x000008, "Wrong alignment on FLGUIDrawableEvent");
-static_assert(sizeof(FLGUIDrawableEvent) == 0x000018, "Wrong size on FLGUIDrawableEvent");
-static_assert(offsetof(FLGUIDrawableEvent, eventList) == 0x000000, "Member 'FLGUIDrawableEvent::eventList' has a wrong offset!");
-static_assert(offsetof(FLGUIDrawableEvent, supportParameterType) == 0x000010, "Member 'FLGUIDrawableEvent::supportParameterType' has a wrong offset!");
-
 // ScriptStruct LGUI.LGUIDrawableEvent_Rotator
 // 0x0018 (0x0030 - 0x0018)
 struct FLGUIDrawableEvent_Rotator final : public FLGUIDrawableEvent
@@ -1298,24 +1254,6 @@ public:
 static_assert(alignof(FLGUIDrawableEvent_Actor) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Actor");
 static_assert(sizeof(FLGUIDrawableEvent_Actor) == 0x000030, "Wrong size on FLGUIDrawableEvent_Actor");
 
-// ScriptStruct LGUI.UIDropdownOptionData
-// 0x0030 (0x0030 - 0x0000)
-struct FUIDropdownOptionData final
-{
-public:
-	class FString                                 TextOrConfigTableName;                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ULGUISpriteData_BaseObject*             Sprite;                                            // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TextId;                                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 SecondText;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FUIDropdownOptionData) == 0x000008, "Wrong alignment on FUIDropdownOptionData");
-static_assert(sizeof(FUIDropdownOptionData) == 0x000030, "Wrong size on FUIDropdownOptionData");
-static_assert(offsetof(FUIDropdownOptionData, TextOrConfigTableName) == 0x000000, "Member 'FUIDropdownOptionData::TextOrConfigTableName' has a wrong offset!");
-static_assert(offsetof(FUIDropdownOptionData, Sprite) == 0x000010, "Member 'FUIDropdownOptionData::Sprite' has a wrong offset!");
-static_assert(offsetof(FUIDropdownOptionData, TextId) == 0x000018, "Member 'FUIDropdownOptionData::TextId' has a wrong offset!");
-static_assert(offsetof(FUIDropdownOptionData, SecondText) == 0x000020, "Member 'FUIDropdownOptionData::SecondText' has a wrong offset!");
-
 // ScriptStruct LGUI.LGUIDrawableEvent_Object
 // 0x0018 (0x0030 - 0x0018)
 struct FLGUIDrawableEvent_Object final : public FLGUIDrawableEvent
@@ -1335,41 +1273,6 @@ public:
 };
 static_assert(alignof(FLGUIDrawableEvent_String) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_String");
 static_assert(sizeof(FLGUIDrawableEvent_String) == 0x000030, "Wrong size on FLGUIDrawableEvent_String");
-
-// ScriptStruct LGUI.ToggleAnimationPlayInfo
-// 0x0048 (0x0048 - 0x0000)
-struct FToggleAnimationPlayInfo final
-{
-public:
-	struct FSequenceInfo                          Animation;                                         // 0x0000(0x0038)(Edit, NativeAccessSpecifierPublic)
-	float                                         PlayRate;                                          // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayReverse;                                      // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         JumpToFrame;                                       // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FToggleAnimationPlayInfo) == 0x000008, "Wrong alignment on FToggleAnimationPlayInfo");
-static_assert(sizeof(FToggleAnimationPlayInfo) == 0x000048, "Wrong size on FToggleAnimationPlayInfo");
-static_assert(offsetof(FToggleAnimationPlayInfo, Animation) == 0x000000, "Member 'FToggleAnimationPlayInfo::Animation' has a wrong offset!");
-static_assert(offsetof(FToggleAnimationPlayInfo, PlayRate) == 0x000038, "Member 'FToggleAnimationPlayInfo::PlayRate' has a wrong offset!");
-static_assert(offsetof(FToggleAnimationPlayInfo, bPlayReverse) == 0x00003C, "Member 'FToggleAnimationPlayInfo::bPlayReverse' has a wrong offset!");
-static_assert(offsetof(FToggleAnimationPlayInfo, JumpToFrame) == 0x000040, "Member 'FToggleAnimationPlayInfo::JumpToFrame' has a wrong offset!");
-
-// ScriptStruct LGUI.ToggleStateAnimation
-// 0x00A0 (0x00A0 - 0x0000)
-struct FToggleStateAnimation final
-{
-public:
-	TMap<EToggleStateInAnimation, struct FToggleAnimationPlayInfo> StateToAnimation;                                  // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
-	bool                                          bDifferSelectedState;                              // 0x0050(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FToggleAnimationPlayInfo               UniAnimation;                                      // 0x0058(0x0048)(Edit, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FToggleStateAnimation) == 0x000008, "Wrong alignment on FToggleStateAnimation");
-static_assert(sizeof(FToggleStateAnimation) == 0x0000A0, "Wrong size on FToggleStateAnimation");
-static_assert(offsetof(FToggleStateAnimation, StateToAnimation) == 0x000000, "Member 'FToggleStateAnimation::StateToAnimation' has a wrong offset!");
-static_assert(offsetof(FToggleStateAnimation, bDifferSelectedState) == 0x000050, "Member 'FToggleStateAnimation::bDifferSelectedState' has a wrong offset!");
-static_assert(offsetof(FToggleStateAnimation, UniAnimation) == 0x000058, "Member 'FToggleStateAnimation::UniAnimation' has a wrong offset!");
 
 // ScriptStruct LGUI.LGUIDrawableEvent_Quaternion
 // 0x0018 (0x0030 - 0x0018)
@@ -1411,25 +1314,6 @@ public:
 static_assert(alignof(FLGUIDrawableEvent_Vector4) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Vector4");
 static_assert(sizeof(FLGUIDrawableEvent_Vector4) == 0x000030, "Wrong size on FLGUIDrawableEvent_Vector4");
 
-// ScriptStruct LGUI.AnimationPlayInfo
-// 0x0048 (0x0048 - 0x0000)
-struct FAnimationPlayInfo final
-{
-public:
-	EAnimationPlayMode                            PlayMode;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EStateTransferType                            ReverseType;                                       // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSequenceInfo                          Animation;                                         // 0x0008(0x0038)(Edit, NativeAccessSpecifierPublic)
-	float                                         PlayRate;                                          // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FAnimationPlayInfo) == 0x000008, "Wrong alignment on FAnimationPlayInfo");
-static_assert(sizeof(FAnimationPlayInfo) == 0x000048, "Wrong size on FAnimationPlayInfo");
-static_assert(offsetof(FAnimationPlayInfo, PlayMode) == 0x000000, "Member 'FAnimationPlayInfo::PlayMode' has a wrong offset!");
-static_assert(offsetof(FAnimationPlayInfo, ReverseType) == 0x000001, "Member 'FAnimationPlayInfo::ReverseType' has a wrong offset!");
-static_assert(offsetof(FAnimationPlayInfo, Animation) == 0x000008, "Member 'FAnimationPlayInfo::Animation' has a wrong offset!");
-static_assert(offsetof(FAnimationPlayInfo, PlayRate) == 0x000040, "Member 'FAnimationPlayInfo::PlayRate' has a wrong offset!");
-
 // ScriptStruct LGUI.LGUIDrawableEvent_Vector3
 // 0x0018 (0x0030 - 0x0018)
 struct FLGUIDrawableEvent_Vector3 final : public FLGUIDrawableEvent
@@ -1459,95 +1343,6 @@ public:
 };
 static_assert(alignof(FLGUIDrawableEvent_UInt64) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_UInt64");
 static_assert(sizeof(FLGUIDrawableEvent_UInt64) == 0x000030, "Wrong size on FLGUIDrawableEvent_UInt64");
-
-// ScriptStruct LGUI.RenderableAdditionalInfo
-// 0x000C (0x000C - 0x0000)
-struct FRenderableAdditionalInfo final
-{
-public:
-	uint8                                         bIsGray : 1;                                       // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bIsColorRevert : 1;                                // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bUseChangeColor : 1;                               // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 ChangeColor;                                       // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SpriteRotation;                                    // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRenderableAdditionalInfo) == 0x000004, "Wrong alignment on FRenderableAdditionalInfo");
-static_assert(sizeof(FRenderableAdditionalInfo) == 0x00000C, "Wrong size on FRenderableAdditionalInfo");
-static_assert(offsetof(FRenderableAdditionalInfo, ChangeColor) == 0x000004, "Member 'FRenderableAdditionalInfo::ChangeColor' has a wrong offset!");
-static_assert(offsetof(FRenderableAdditionalInfo, SpriteRotation) == 0x000008, "Member 'FRenderableAdditionalInfo::SpriteRotation' has a wrong offset!");
-
-// ScriptStruct LGUI.SpriteTransitionOfState
-// 0x0020 (0x0020 - 0x0000)
-struct FSpriteTransitionOfState final
-{
-public:
-	class ULGUISpriteData_BaseObject*             Sprite;                                            // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 Color;                                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bSnapSize : 1;                                     // 0x000C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRenderableAdditionalInfo              AdditionInfo;                                      // 0x0010(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSpriteTransitionOfState) == 0x000008, "Wrong alignment on FSpriteTransitionOfState");
-static_assert(sizeof(FSpriteTransitionOfState) == 0x000020, "Wrong size on FSpriteTransitionOfState");
-static_assert(offsetof(FSpriteTransitionOfState, Sprite) == 0x000000, "Member 'FSpriteTransitionOfState::Sprite' has a wrong offset!");
-static_assert(offsetof(FSpriteTransitionOfState, Color) == 0x000008, "Member 'FSpriteTransitionOfState::Color' has a wrong offset!");
-static_assert(offsetof(FSpriteTransitionOfState, AdditionInfo) == 0x000010, "Member 'FSpriteTransitionOfState::AdditionInfo' has a wrong offset!");
-
-// ScriptStruct LGUI.ToggleTransitionEditSetting
-// 0x0001 (0x0001 - 0x0000)
-struct FToggleTransitionEditSetting
-{
-public:
-	uint8                                         bEnableUnDetermined : 1;                           // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCustomUnCheckedHover : 1;                         // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCustomUnCheckedPressed : 1;                       // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCustomCheckedHover : 1;                           // 0x0000(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCustomCheckedPressed : 1;                         // 0x0000(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCustomUnDeterminedHover : 1;                      // 0x0000(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCustomUnDeterminePressed : 1;                     // 0x0000(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-};
-static_assert(alignof(FToggleTransitionEditSetting) == 0x000001, "Wrong alignment on FToggleTransitionEditSetting");
-static_assert(sizeof(FToggleTransitionEditSetting) == 0x000001, "Wrong size on FToggleTransitionEditSetting");
-
-// ScriptStruct LGUI.ExtendToggleSpriteTransitionState
-// 0x0127 (0x0128 - 0x0001)
-struct FExtendToggleSpriteTransitionState final : public FToggleTransitionEditSetting
-{
-public:
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSpriteTransitionOfState               UnCheckedUnHoverState;                             // 0x0008(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSpriteTransitionOfState               UnCheckedHoverState;                               // 0x0028(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSpriteTransitionOfState               UnCheckedPressedState;                             // 0x0048(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSpriteTransitionOfState               CheckedUnHoverState;                               // 0x0068(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSpriteTransitionOfState               CheckedHoverState;                                 // 0x0088(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSpriteTransitionOfState               CheckedPressedState;                               // 0x00A8(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSpriteTransitionOfState               UnDetermineUnHoverState;                           // 0x00C8(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSpriteTransitionOfState               UnDetermineHoverState;                             // 0x00E8(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSpriteTransitionOfState               UnDeterminePressedState;                           // 0x0108(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FExtendToggleSpriteTransitionState) == 0x000008, "Wrong alignment on FExtendToggleSpriteTransitionState");
-static_assert(sizeof(FExtendToggleSpriteTransitionState) == 0x000128, "Wrong size on FExtendToggleSpriteTransitionState");
-static_assert(offsetof(FExtendToggleSpriteTransitionState, UnCheckedUnHoverState) == 0x000008, "Member 'FExtendToggleSpriteTransitionState::UnCheckedUnHoverState' has a wrong offset!");
-static_assert(offsetof(FExtendToggleSpriteTransitionState, UnCheckedHoverState) == 0x000028, "Member 'FExtendToggleSpriteTransitionState::UnCheckedHoverState' has a wrong offset!");
-static_assert(offsetof(FExtendToggleSpriteTransitionState, UnCheckedPressedState) == 0x000048, "Member 'FExtendToggleSpriteTransitionState::UnCheckedPressedState' has a wrong offset!");
-static_assert(offsetof(FExtendToggleSpriteTransitionState, CheckedUnHoverState) == 0x000068, "Member 'FExtendToggleSpriteTransitionState::CheckedUnHoverState' has a wrong offset!");
-static_assert(offsetof(FExtendToggleSpriteTransitionState, CheckedHoverState) == 0x000088, "Member 'FExtendToggleSpriteTransitionState::CheckedHoverState' has a wrong offset!");
-static_assert(offsetof(FExtendToggleSpriteTransitionState, CheckedPressedState) == 0x0000A8, "Member 'FExtendToggleSpriteTransitionState::CheckedPressedState' has a wrong offset!");
-static_assert(offsetof(FExtendToggleSpriteTransitionState, UnDetermineUnHoverState) == 0x0000C8, "Member 'FExtendToggleSpriteTransitionState::UnDetermineUnHoverState' has a wrong offset!");
-static_assert(offsetof(FExtendToggleSpriteTransitionState, UnDetermineHoverState) == 0x0000E8, "Member 'FExtendToggleSpriteTransitionState::UnDetermineHoverState' has a wrong offset!");
-static_assert(offsetof(FExtendToggleSpriteTransitionState, UnDeterminePressedState) == 0x000108, "Member 'FExtendToggleSpriteTransitionState::UnDeterminePressedState' has a wrong offset!");
-
-// ScriptStruct LGUI.LGUIDrawableEvent_Int64
-// 0x0018 (0x0030 - 0x0018)
-struct FLGUIDrawableEvent_Int64 final : public FLGUIDrawableEvent
-{
-public:
-	uint8                                         Pad_18[0x18];                                      // 0x0018(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FLGUIDrawableEvent_Int64) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Int64");
-static_assert(sizeof(FLGUIDrawableEvent_Int64) == 0x000030, "Wrong size on FLGUIDrawableEvent_Int64");
 
 // ScriptStruct LGUI.LGUIDrawableEvent_UInt32
 // 0x0018 (0x0030 - 0x0018)
@@ -1599,20 +1394,6 @@ public:
 static_assert(alignof(FLGUIDrawableEvent_UInt8) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_UInt8");
 static_assert(sizeof(FLGUIDrawableEvent_UInt8) == 0x000030, "Wrong size on FLGUIDrawableEvent_UInt8");
 
-// ScriptStruct LGUI.LevelSequencerActor
-// 0x0020 (0x0020 - 0x0000)
-struct FLevelSequencerActor final
-{
-public:
-	TArray<class AUIBaseActor*>                   TargetActors;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class ALevelSequenceActor*                    LvlSequencerActor;                                 // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FLevelSequencerActor) == 0x000008, "Wrong alignment on FLevelSequencerActor");
-static_assert(sizeof(FLevelSequencerActor) == 0x000020, "Wrong size on FLevelSequencerActor");
-static_assert(offsetof(FLevelSequencerActor, TargetActors) == 0x000000, "Member 'FLevelSequencerActor::TargetActors' has a wrong offset!");
-static_assert(offsetof(FLevelSequencerActor, LvlSequencerActor) == 0x000010, "Member 'FLevelSequencerActor::LvlSequencerActor' has a wrong offset!");
-
 // ScriptStruct LGUI.LGUIDrawableEvent_Int8
 // 0x0018 (0x0030 - 0x0018)
 struct FLGUIDrawableEvent_Int8 final : public FLGUIDrawableEvent
@@ -1623,24 +1404,6 @@ public:
 static_assert(alignof(FLGUIDrawableEvent_Int8) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Int8");
 static_assert(sizeof(FLGUIDrawableEvent_Int8) == 0x000030, "Wrong size on FLGUIDrawableEvent_Int8");
 
-// ScriptStruct LGUI.CircleClipParameters
-// 0x0010 (0x0010 - 0x0000)
-struct FCircleClipParameters final
-{
-public:
-	float                                         ClipTextureHideThreshhold;                         // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ClipTextureHideFeather;                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ClipAngle;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseTwoWayClip;                                     // 0x000C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FCircleClipParameters) == 0x000004, "Wrong alignment on FCircleClipParameters");
-static_assert(sizeof(FCircleClipParameters) == 0x000010, "Wrong size on FCircleClipParameters");
-static_assert(offsetof(FCircleClipParameters, ClipTextureHideThreshhold) == 0x000000, "Member 'FCircleClipParameters::ClipTextureHideThreshhold' has a wrong offset!");
-static_assert(offsetof(FCircleClipParameters, ClipTextureHideFeather) == 0x000004, "Member 'FCircleClipParameters::ClipTextureHideFeather' has a wrong offset!");
-static_assert(offsetof(FCircleClipParameters, ClipAngle) == 0x000008, "Member 'FCircleClipParameters::ClipAngle' has a wrong offset!");
-static_assert(offsetof(FCircleClipParameters, UseTwoWayClip) == 0x00000C, "Member 'FCircleClipParameters::UseTwoWayClip' has a wrong offset!");
-
 // ScriptStruct LGUI.LGUIDrawableEvent_Double
 // 0x0018 (0x0030 - 0x0018)
 struct FLGUIDrawableEvent_Double final : public FLGUIDrawableEvent
@@ -1650,19 +1413,6 @@ public:
 };
 static_assert(alignof(FLGUIDrawableEvent_Double) == 0x000008, "Wrong alignment on FLGUIDrawableEvent_Double");
 static_assert(sizeof(FLGUIDrawableEvent_Double) == 0x000030, "Wrong size on FLGUIDrawableEvent_Double");
-
-// ScriptStruct LGUI.AudioPlayInfo
-// 0x0048 (0x0048 - 0x0000)
-struct FAudioPlayInfo final
-{
-public:
-	struct FSoftObjectPath                        AkAudioEvent;                                      // 0x0000(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& eventName)> OnPostAudioEvent;                                  // 0x0020(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FAudioPlayInfo) == 0x000008, "Wrong alignment on FAudioPlayInfo");
-static_assert(sizeof(FAudioPlayInfo) == 0x000048, "Wrong size on FAudioPlayInfo");
-static_assert(offsetof(FAudioPlayInfo, AkAudioEvent) == 0x000000, "Member 'FAudioPlayInfo::AkAudioEvent' has a wrong offset!");
-static_assert(offsetof(FAudioPlayInfo, OnPostAudioEvent) == 0x000020, "Member 'FAudioPlayInfo::OnPostAudioEvent' has a wrong offset!");
 
 // ScriptStruct LGUI.LGUIDrawableEvent_Float
 // 0x0018 (0x0030 - 0x0018)
@@ -1757,17 +1507,6 @@ public:
 static_assert(alignof(FLGUIPostTickFunction) == 0x000008, "Wrong alignment on FLGUIPostTickFunction");
 static_assert(sizeof(FLGUIPostTickFunction) == 0x000030, "Wrong size on FLGUIPostTickFunction");
 
-// ScriptStruct LGUI.LoadingPathRenderableMap
-// 0x0050 (0x0050 - 0x0000)
-struct FLoadingPathRenderableMap final
-{
-public:
-	TMap<struct FSoftObjectPath, struct FRenderableCollection> LoadingPathRenderableMap;                          // 0x0000(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FLoadingPathRenderableMap) == 0x000008, "Wrong alignment on FLoadingPathRenderableMap");
-static_assert(sizeof(FLoadingPathRenderableMap) == 0x000050, "Wrong size on FLoadingPathRenderableMap");
-static_assert(offsetof(FLoadingPathRenderableMap, LoadingPathRenderableMap) == 0x000000, "Member 'FLoadingPathRenderableMap::LoadingPathRenderableMap' has a wrong offset!");
-
 // ScriptStruct LGUI.LGUIBehaviourArrayContainer
 // 0x0010 (0x0010 - 0x0000)
 struct FLGUIBehaviourArrayContainer final
@@ -1778,51 +1517,6 @@ public:
 static_assert(alignof(FLGUIBehaviourArrayContainer) == 0x000008, "Wrong alignment on FLGUIBehaviourArrayContainer");
 static_assert(sizeof(FLGUIBehaviourArrayContainer) == 0x000010, "Wrong size on FLGUIBehaviourArrayContainer");
 static_assert(offsetof(FLGUIBehaviourArrayContainer, LGUIBehaviourArray) == 0x000000, "Member 'FLGUIBehaviourArrayContainer::LGUIBehaviourArray' has a wrong offset!");
-
-// ScriptStruct LGUI.UIWidget
-// 0x0040 (0x0040 - 0x0000)
-struct FUIWidget final
-{
-public:
-	int32                                         depth;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 color;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              pivot;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EUIAnchorHorizontalAlign                      anchorHAlign;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EUIAnchorVerticalAlign                        anchorVAlign;                                      // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         anchorOffsetX;                                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         anchorOffsetY;                                     // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         width;                                             // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         height;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         stretchLeft;                                       // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         stretchRight;                                      // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         stretchTop;                                        // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         stretchBottom;                                     // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnchorXPercent;                                    // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnchorYPercent;                                    // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ShowXPercent;                                      // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ShowYPercent;                                      // 0x003D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FUIWidget) == 0x000004, "Wrong alignment on FUIWidget");
-static_assert(sizeof(FUIWidget) == 0x000040, "Wrong size on FUIWidget");
-static_assert(offsetof(FUIWidget, depth) == 0x000000, "Member 'FUIWidget::depth' has a wrong offset!");
-static_assert(offsetof(FUIWidget, color) == 0x000004, "Member 'FUIWidget::color' has a wrong offset!");
-static_assert(offsetof(FUIWidget, pivot) == 0x000008, "Member 'FUIWidget::pivot' has a wrong offset!");
-static_assert(offsetof(FUIWidget, anchorHAlign) == 0x000010, "Member 'FUIWidget::anchorHAlign' has a wrong offset!");
-static_assert(offsetof(FUIWidget, anchorVAlign) == 0x000011, "Member 'FUIWidget::anchorVAlign' has a wrong offset!");
-static_assert(offsetof(FUIWidget, anchorOffsetX) == 0x000014, "Member 'FUIWidget::anchorOffsetX' has a wrong offset!");
-static_assert(offsetof(FUIWidget, anchorOffsetY) == 0x000018, "Member 'FUIWidget::anchorOffsetY' has a wrong offset!");
-static_assert(offsetof(FUIWidget, width) == 0x00001C, "Member 'FUIWidget::width' has a wrong offset!");
-static_assert(offsetof(FUIWidget, height) == 0x000020, "Member 'FUIWidget::height' has a wrong offset!");
-static_assert(offsetof(FUIWidget, stretchLeft) == 0x000024, "Member 'FUIWidget::stretchLeft' has a wrong offset!");
-static_assert(offsetof(FUIWidget, stretchRight) == 0x000028, "Member 'FUIWidget::stretchRight' has a wrong offset!");
-static_assert(offsetof(FUIWidget, stretchTop) == 0x00002C, "Member 'FUIWidget::stretchTop' has a wrong offset!");
-static_assert(offsetof(FUIWidget, stretchBottom) == 0x000030, "Member 'FUIWidget::stretchBottom' has a wrong offset!");
-static_assert(offsetof(FUIWidget, AnchorXPercent) == 0x000034, "Member 'FUIWidget::AnchorXPercent' has a wrong offset!");
-static_assert(offsetof(FUIWidget, AnchorYPercent) == 0x000038, "Member 'FUIWidget::AnchorYPercent' has a wrong offset!");
-static_assert(offsetof(FUIWidget, ShowXPercent) == 0x00003C, "Member 'FUIWidget::ShowXPercent' has a wrong offset!");
-static_assert(offsetof(FUIWidget, ShowYPercent) == 0x00003D, "Member 'FUIWidget::ShowYPercent' has a wrong offset!");
 
 // ScriptStruct LGUI.ActorGuidAndPrefabContainer
 // 0x0058 (0x0058 - 0x0000)
@@ -1836,19 +1530,6 @@ static_assert(alignof(FActorGuidAndPrefabContainer) == 0x000008, "Wrong alignmen
 static_assert(sizeof(FActorGuidAndPrefabContainer) == 0x000058, "Wrong size on FActorGuidAndPrefabContainer");
 static_assert(offsetof(FActorGuidAndPrefabContainer, Prefab) == 0x000000, "Member 'FActorGuidAndPrefabContainer::Prefab' has a wrong offset!");
 static_assert(offsetof(FActorGuidAndPrefabContainer, GuidFromPrefabToInstance) == 0x000008, "Member 'FActorGuidAndPrefabContainer::GuidFromPrefabToInstance' has a wrong offset!");
-
-// ScriptStruct LGUI.LGUIPrefabOverrideParameterData
-// 0x0058 (0x0058 - 0x0000)
-struct FLGUIPrefabOverrideParameterData final
-{
-public:
-	TWeakObjectPtr<class UObject>                 Object;                                            // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FGuid>               MemberPropertyInfoMap;                             // 0x0008(0x0050)(Edit, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FLGUIPrefabOverrideParameterData) == 0x000008, "Wrong alignment on FLGUIPrefabOverrideParameterData");
-static_assert(sizeof(FLGUIPrefabOverrideParameterData) == 0x000058, "Wrong size on FLGUIPrefabOverrideParameterData");
-static_assert(offsetof(FLGUIPrefabOverrideParameterData, Object) == 0x000000, "Member 'FLGUIPrefabOverrideParameterData::Object' has a wrong offset!");
-static_assert(offsetof(FLGUIPrefabOverrideParameterData, MemberPropertyInfoMap) == 0x000008, "Member 'FLGUIPrefabOverrideParameterData::MemberPropertyInfoMap' has a wrong offset!");
 
 // ScriptStruct LGUI.LGUISubPrefabData
 // 0x00D8 (0x00D8 - 0x0000)
@@ -1998,6 +1679,20 @@ static_assert(alignof(FLGUITextRuleItem) == 0x000008, "Wrong alignment on FLGUIT
 static_assert(sizeof(FLGUITextRuleItem) == 0x000018, "Wrong size on FLGUITextRuleItem");
 static_assert(offsetof(FLGUITextRuleItem, KeyWord) == 0x000008, "Member 'FLGUITextRuleItem::KeyWord' has a wrong offset!");
 
+// ScriptStruct LGUI.LevelSequencerActor
+// 0x0020 (0x0020 - 0x0000)
+struct FLevelSequencerActor final
+{
+public:
+	TArray<class AUIBaseActor*>                   TargetActors;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class ALevelSequenceActor*                    LvlSequencerActor;                                 // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FLevelSequencerActor) == 0x000008, "Wrong alignment on FLevelSequencerActor");
+static_assert(sizeof(FLevelSequencerActor) == 0x000020, "Wrong size on FLevelSequencerActor");
+static_assert(offsetof(FLevelSequencerActor, TargetActors) == 0x000000, "Member 'FLevelSequencerActor::TargetActors' has a wrong offset!");
+static_assert(offsetof(FLevelSequencerActor, LvlSequencerActor) == 0x000010, "Member 'FLevelSequencerActor::LvlSequencerActor' has a wrong offset!");
+
 // ScriptStruct LGUI.LGUILevelSequenceBindings
 // 0x0050 (0x0050 - 0x0000)
 struct FLGUILevelSequenceBindings final
@@ -2008,6 +1703,132 @@ public:
 static_assert(alignof(FLGUILevelSequenceBindings) == 0x000008, "Wrong alignment on FLGUILevelSequenceBindings");
 static_assert(sizeof(FLGUILevelSequenceBindings) == 0x000050, "Wrong size on FLGUILevelSequenceBindings");
 static_assert(offsetof(FLGUILevelSequenceBindings, BindingsMap) == 0x000000, "Member 'FLGUILevelSequenceBindings::BindingsMap' has a wrong offset!");
+
+// ScriptStruct LGUI.SequenceInfo
+// 0x0038 (0x0038 - 0x0000)
+struct FSequenceInfo final
+{
+public:
+	struct FSoftObjectPath                        LevelSequence;                                     // 0x0000(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseAsHardRef;                                     // 0x0020(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ChildrenInteractiveDuringPlaying;                  // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BlockAllEventWhilePlaying;                         // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23[0x1];                                       // 0x0023(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMovieSceneSequencePlaybackSettings    PlaySetting;                                       // 0x0024(0x0014)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSequenceInfo) == 0x000008, "Wrong alignment on FSequenceInfo");
+static_assert(sizeof(FSequenceInfo) == 0x000038, "Wrong size on FSequenceInfo");
+static_assert(offsetof(FSequenceInfo, LevelSequence) == 0x000000, "Member 'FSequenceInfo::LevelSequence' has a wrong offset!");
+static_assert(offsetof(FSequenceInfo, bUseAsHardRef) == 0x000020, "Member 'FSequenceInfo::bUseAsHardRef' has a wrong offset!");
+static_assert(offsetof(FSequenceInfo, ChildrenInteractiveDuringPlaying) == 0x000021, "Member 'FSequenceInfo::ChildrenInteractiveDuringPlaying' has a wrong offset!");
+static_assert(offsetof(FSequenceInfo, BlockAllEventWhilePlaying) == 0x000022, "Member 'FSequenceInfo::BlockAllEventWhilePlaying' has a wrong offset!");
+static_assert(offsetof(FSequenceInfo, PlaySetting) == 0x000024, "Member 'FSequenceInfo::PlaySetting' has a wrong offset!");
+
+// ScriptStruct LGUI.LGUIGeometryVertex
+// 0x0048 (0x0048 - 0x0000)
+struct FLGUIGeometryVertex final
+{
+public:
+	struct FVector                                position;                                          // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 color;                                             // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              uv0;                                               // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              uv1;                                               // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              uv2;                                               // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              uv3;                                               // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                normal;                                            // 0x0030(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                tagent;                                            // 0x003C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FLGUIGeometryVertex) == 0x000004, "Wrong alignment on FLGUIGeometryVertex");
+static_assert(sizeof(FLGUIGeometryVertex) == 0x000048, "Wrong size on FLGUIGeometryVertex");
+static_assert(offsetof(FLGUIGeometryVertex, position) == 0x000000, "Member 'FLGUIGeometryVertex::position' has a wrong offset!");
+static_assert(offsetof(FLGUIGeometryVertex, color) == 0x00000C, "Member 'FLGUIGeometryVertex::color' has a wrong offset!");
+static_assert(offsetof(FLGUIGeometryVertex, uv0) == 0x000010, "Member 'FLGUIGeometryVertex::uv0' has a wrong offset!");
+static_assert(offsetof(FLGUIGeometryVertex, uv1) == 0x000018, "Member 'FLGUIGeometryVertex::uv1' has a wrong offset!");
+static_assert(offsetof(FLGUIGeometryVertex, uv2) == 0x000020, "Member 'FLGUIGeometryVertex::uv2' has a wrong offset!");
+static_assert(offsetof(FLGUIGeometryVertex, uv3) == 0x000028, "Member 'FLGUIGeometryVertex::uv3' has a wrong offset!");
+static_assert(offsetof(FLGUIGeometryVertex, normal) == 0x000030, "Member 'FLGUIGeometryVertex::normal' has a wrong offset!");
+static_assert(offsetof(FLGUIGeometryVertex, tagent) == 0x00003C, "Member 'FLGUIGeometryVertex::tagent' has a wrong offset!");
+
+// ScriptStruct LGUI.AudioPlayInfo
+// 0x0048 (0x0048 - 0x0000)
+struct FAudioPlayInfo final
+{
+public:
+	struct FSoftObjectPath                        AkAudioEvent;                                      // 0x0000(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& eventName)> OnPostAudioEvent;                                  // 0x0020(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FAudioPlayInfo) == 0x000008, "Wrong alignment on FAudioPlayInfo");
+static_assert(sizeof(FAudioPlayInfo) == 0x000048, "Wrong size on FAudioPlayInfo");
+static_assert(offsetof(FAudioPlayInfo, AkAudioEvent) == 0x000000, "Member 'FAudioPlayInfo::AkAudioEvent' has a wrong offset!");
+static_assert(offsetof(FAudioPlayInfo, OnPostAudioEvent) == 0x000020, "Member 'FAudioPlayInfo::OnPostAudioEvent' has a wrong offset!");
+
+// ScriptStruct LGUI.UIDropdownOptionData
+// 0x0030 (0x0030 - 0x0000)
+struct FUIDropdownOptionData final
+{
+public:
+	class FString                                 TextOrConfigTableName;                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ULGUISpriteData_BaseObject*             Sprite;                                            // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TextId;                                            // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SecondText;                                        // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FUIDropdownOptionData) == 0x000008, "Wrong alignment on FUIDropdownOptionData");
+static_assert(sizeof(FUIDropdownOptionData) == 0x000030, "Wrong size on FUIDropdownOptionData");
+static_assert(offsetof(FUIDropdownOptionData, TextOrConfigTableName) == 0x000000, "Member 'FUIDropdownOptionData::TextOrConfigTableName' has a wrong offset!");
+static_assert(offsetof(FUIDropdownOptionData, Sprite) == 0x000010, "Member 'FUIDropdownOptionData::Sprite' has a wrong offset!");
+static_assert(offsetof(FUIDropdownOptionData, TextId) == 0x000018, "Member 'FUIDropdownOptionData::TextId' has a wrong offset!");
+static_assert(offsetof(FUIDropdownOptionData, SecondText) == 0x000020, "Member 'FUIDropdownOptionData::SecondText' has a wrong offset!");
+
+// ScriptStruct LGUI.RenderableSlot
+// 0x0020 (0x0020 - 0x0000)
+struct FRenderableSlot final
+{
+public:
+	class UUIBatchGeometryRenderable*             Renderable;                                        // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x18];                                       // 0x0008(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FRenderableSlot) == 0x000008, "Wrong alignment on FRenderableSlot");
+static_assert(sizeof(FRenderableSlot) == 0x000020, "Wrong size on FRenderableSlot");
+static_assert(offsetof(FRenderableSlot, Renderable) == 0x000000, "Member 'FRenderableSlot::Renderable' has a wrong offset!");
+
+// ScriptStruct LGUI.RenderableCollection
+// 0x0010 (0x0010 - 0x0000)
+struct FRenderableCollection final
+{
+public:
+	TArray<struct FRenderableSlot>                RenderableSlots;                                   // 0x0000(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRenderableCollection) == 0x000008, "Wrong alignment on FRenderableCollection");
+static_assert(sizeof(FRenderableCollection) == 0x000010, "Wrong size on FRenderableCollection");
+static_assert(offsetof(FRenderableCollection, RenderableSlots) == 0x000000, "Member 'FRenderableCollection::RenderableSlots' has a wrong offset!");
+
+// ScriptStruct LGUI.LoadingPathRenderableMap
+// 0x0050 (0x0050 - 0x0000)
+struct FLoadingPathRenderableMap final
+{
+public:
+	TMap<struct FSoftObjectPath, struct FRenderableCollection> LoadingPathRenderableMap;                          // 0x0000(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FLoadingPathRenderableMap) == 0x000008, "Wrong alignment on FLoadingPathRenderableMap");
+static_assert(sizeof(FLoadingPathRenderableMap) == 0x000050, "Wrong size on FLoadingPathRenderableMap");
+static_assert(offsetof(FLoadingPathRenderableMap, LoadingPathRenderableMap) == 0x000000, "Member 'FLoadingPathRenderableMap::LoadingPathRenderableMap' has a wrong offset!");
+
+// ScriptStruct LGUI.ToggleTransitionEditSetting
+// 0x0001 (0x0001 - 0x0000)
+struct FToggleTransitionEditSetting
+{
+public:
+	uint8                                         bEnableUnDetermined : 1;                           // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCustomUnCheckedHover : 1;                         // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCustomUnCheckedPressed : 1;                       // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCustomCheckedHover : 1;                           // 0x0000(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCustomCheckedPressed : 1;                         // 0x0000(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCustomUnDeterminedHover : 1;                      // 0x0000(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCustomUnDeterminePressed : 1;                     // 0x0000(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+};
+static_assert(alignof(FToggleTransitionEditSetting) == 0x000001, "Wrong alignment on FToggleTransitionEditSetting");
+static_assert(sizeof(FToggleTransitionEditSetting) == 0x000001, "Wrong size on FToggleTransitionEditSetting");
 
 // ScriptStruct LGUI.ExtendToggleColorTransition
 // 0x0027 (0x0028 - 0x0001)
@@ -2036,6 +1857,104 @@ static_assert(offsetof(FExtendToggleColorTransition, CheckedPressedColor) == 0x0
 static_assert(offsetof(FExtendToggleColorTransition, UnDeterminedUnHoverColor) == 0x00001C, "Member 'FExtendToggleColorTransition::UnDeterminedUnHoverColor' has a wrong offset!");
 static_assert(offsetof(FExtendToggleColorTransition, UnDeterminedHoverColor) == 0x000020, "Member 'FExtendToggleColorTransition::UnDeterminedHoverColor' has a wrong offset!");
 static_assert(offsetof(FExtendToggleColorTransition, UnDeterminedPressedColor) == 0x000024, "Member 'FExtendToggleColorTransition::UnDeterminedPressedColor' has a wrong offset!");
+
+// ScriptStruct LGUI.ToggleAnimationPlayInfo
+// 0x0048 (0x0048 - 0x0000)
+struct FToggleAnimationPlayInfo final
+{
+public:
+	struct FSequenceInfo                          Animation;                                         // 0x0000(0x0038)(Edit, NativeAccessSpecifierPublic)
+	float                                         PlayRate;                                          // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayReverse;                                      // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         JumpToFrame;                                       // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FToggleAnimationPlayInfo) == 0x000008, "Wrong alignment on FToggleAnimationPlayInfo");
+static_assert(sizeof(FToggleAnimationPlayInfo) == 0x000048, "Wrong size on FToggleAnimationPlayInfo");
+static_assert(offsetof(FToggleAnimationPlayInfo, Animation) == 0x000000, "Member 'FToggleAnimationPlayInfo::Animation' has a wrong offset!");
+static_assert(offsetof(FToggleAnimationPlayInfo, PlayRate) == 0x000038, "Member 'FToggleAnimationPlayInfo::PlayRate' has a wrong offset!");
+static_assert(offsetof(FToggleAnimationPlayInfo, bPlayReverse) == 0x00003C, "Member 'FToggleAnimationPlayInfo::bPlayReverse' has a wrong offset!");
+static_assert(offsetof(FToggleAnimationPlayInfo, JumpToFrame) == 0x000040, "Member 'FToggleAnimationPlayInfo::JumpToFrame' has a wrong offset!");
+
+// ScriptStruct LGUI.ToggleStateAnimation
+// 0x00A0 (0x00A0 - 0x0000)
+struct FToggleStateAnimation final
+{
+public:
+	TMap<EToggleStateInAnimation, struct FToggleAnimationPlayInfo> StateToAnimation;                                  // 0x0000(0x0050)(Edit, NativeAccessSpecifierPublic)
+	bool                                          bDifferSelectedState;                              // 0x0050(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FToggleAnimationPlayInfo               UniAnimation;                                      // 0x0058(0x0048)(Edit, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FToggleStateAnimation) == 0x000008, "Wrong alignment on FToggleStateAnimation");
+static_assert(sizeof(FToggleStateAnimation) == 0x0000A0, "Wrong size on FToggleStateAnimation");
+static_assert(offsetof(FToggleStateAnimation, StateToAnimation) == 0x000000, "Member 'FToggleStateAnimation::StateToAnimation' has a wrong offset!");
+static_assert(offsetof(FToggleStateAnimation, bDifferSelectedState) == 0x000050, "Member 'FToggleStateAnimation::bDifferSelectedState' has a wrong offset!");
+static_assert(offsetof(FToggleStateAnimation, UniAnimation) == 0x000058, "Member 'FToggleStateAnimation::UniAnimation' has a wrong offset!");
+
+// ScriptStruct LGUI.RenderableAdditionalInfo
+// 0x000C (0x000C - 0x0000)
+struct FRenderableAdditionalInfo final
+{
+public:
+	uint8                                         bIsGray : 1;                                       // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bIsColorRevert : 1;                                // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bUseChangeColor : 1;                               // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 ChangeColor;                                       // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpriteRotation;                                    // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRenderableAdditionalInfo) == 0x000004, "Wrong alignment on FRenderableAdditionalInfo");
+static_assert(sizeof(FRenderableAdditionalInfo) == 0x00000C, "Wrong size on FRenderableAdditionalInfo");
+static_assert(offsetof(FRenderableAdditionalInfo, ChangeColor) == 0x000004, "Member 'FRenderableAdditionalInfo::ChangeColor' has a wrong offset!");
+static_assert(offsetof(FRenderableAdditionalInfo, SpriteRotation) == 0x000008, "Member 'FRenderableAdditionalInfo::SpriteRotation' has a wrong offset!");
+
+// ScriptStruct LGUI.SpriteTransitionOfState
+// 0x0020 (0x0020 - 0x0000)
+struct FSpriteTransitionOfState final
+{
+public:
+	class ULGUISpriteData_BaseObject*             Sprite;                                            // 0x0000(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 Color;                                             // 0x0008(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bSnapSize : 1;                                     // 0x000C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRenderableAdditionalInfo              AdditionInfo;                                      // 0x0010(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSpriteTransitionOfState) == 0x000008, "Wrong alignment on FSpriteTransitionOfState");
+static_assert(sizeof(FSpriteTransitionOfState) == 0x000020, "Wrong size on FSpriteTransitionOfState");
+static_assert(offsetof(FSpriteTransitionOfState, Sprite) == 0x000000, "Member 'FSpriteTransitionOfState::Sprite' has a wrong offset!");
+static_assert(offsetof(FSpriteTransitionOfState, Color) == 0x000008, "Member 'FSpriteTransitionOfState::Color' has a wrong offset!");
+static_assert(offsetof(FSpriteTransitionOfState, AdditionInfo) == 0x000010, "Member 'FSpriteTransitionOfState::AdditionInfo' has a wrong offset!");
+
+// ScriptStruct LGUI.ExtendToggleSpriteTransitionState
+// 0x0127 (0x0128 - 0x0001)
+struct FExtendToggleSpriteTransitionState final : public FToggleTransitionEditSetting
+{
+public:
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSpriteTransitionOfState               UnCheckedUnHoverState;                             // 0x0008(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSpriteTransitionOfState               UnCheckedHoverState;                               // 0x0028(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSpriteTransitionOfState               UnCheckedPressedState;                             // 0x0048(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSpriteTransitionOfState               CheckedUnHoverState;                               // 0x0068(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSpriteTransitionOfState               CheckedHoverState;                                 // 0x0088(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSpriteTransitionOfState               CheckedPressedState;                               // 0x00A8(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSpriteTransitionOfState               UnDetermineUnHoverState;                           // 0x00C8(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSpriteTransitionOfState               UnDetermineHoverState;                             // 0x00E8(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSpriteTransitionOfState               UnDeterminePressedState;                           // 0x0108(0x0020)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FExtendToggleSpriteTransitionState) == 0x000008, "Wrong alignment on FExtendToggleSpriteTransitionState");
+static_assert(sizeof(FExtendToggleSpriteTransitionState) == 0x000128, "Wrong size on FExtendToggleSpriteTransitionState");
+static_assert(offsetof(FExtendToggleSpriteTransitionState, UnCheckedUnHoverState) == 0x000008, "Member 'FExtendToggleSpriteTransitionState::UnCheckedUnHoverState' has a wrong offset!");
+static_assert(offsetof(FExtendToggleSpriteTransitionState, UnCheckedHoverState) == 0x000028, "Member 'FExtendToggleSpriteTransitionState::UnCheckedHoverState' has a wrong offset!");
+static_assert(offsetof(FExtendToggleSpriteTransitionState, UnCheckedPressedState) == 0x000048, "Member 'FExtendToggleSpriteTransitionState::UnCheckedPressedState' has a wrong offset!");
+static_assert(offsetof(FExtendToggleSpriteTransitionState, CheckedUnHoverState) == 0x000068, "Member 'FExtendToggleSpriteTransitionState::CheckedUnHoverState' has a wrong offset!");
+static_assert(offsetof(FExtendToggleSpriteTransitionState, CheckedHoverState) == 0x000088, "Member 'FExtendToggleSpriteTransitionState::CheckedHoverState' has a wrong offset!");
+static_assert(offsetof(FExtendToggleSpriteTransitionState, CheckedPressedState) == 0x0000A8, "Member 'FExtendToggleSpriteTransitionState::CheckedPressedState' has a wrong offset!");
+static_assert(offsetof(FExtendToggleSpriteTransitionState, UnDetermineUnHoverState) == 0x0000C8, "Member 'FExtendToggleSpriteTransitionState::UnDetermineUnHoverState' has a wrong offset!");
+static_assert(offsetof(FExtendToggleSpriteTransitionState, UnDetermineHoverState) == 0x0000E8, "Member 'FExtendToggleSpriteTransitionState::UnDetermineHoverState' has a wrong offset!");
+static_assert(offsetof(FExtendToggleSpriteTransitionState, UnDeterminePressedState) == 0x000108, "Member 'FExtendToggleSpriteTransitionState::UnDeterminePressedState' has a wrong offset!");
 
 // ScriptStruct LGUI.TextTransitionInfoOfState
 // 0x000C (0x000C - 0x0000)
@@ -2147,6 +2066,24 @@ static_assert(sizeof(FPredefColor) == 0x000020, "Wrong size on FPredefColor");
 static_assert(offsetof(FPredefColor, Color) == 0x000008, "Member 'FPredefColor::Color' has a wrong offset!");
 static_assert(offsetof(FPredefColor, Comment) == 0x000010, "Member 'FPredefColor::Comment' has a wrong offset!");
 
+// ScriptStruct LGUI.CircleClipParameters
+// 0x0010 (0x0010 - 0x0000)
+struct FCircleClipParameters final
+{
+public:
+	float                                         ClipTextureHideThreshhold;                         // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ClipTextureHideFeather;                            // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ClipAngle;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseTwoWayClip;                                     // 0x000C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FCircleClipParameters) == 0x000004, "Wrong alignment on FCircleClipParameters");
+static_assert(sizeof(FCircleClipParameters) == 0x000010, "Wrong size on FCircleClipParameters");
+static_assert(offsetof(FCircleClipParameters, ClipTextureHideThreshhold) == 0x000000, "Member 'FCircleClipParameters::ClipTextureHideThreshhold' has a wrong offset!");
+static_assert(offsetof(FCircleClipParameters, ClipTextureHideFeather) == 0x000004, "Member 'FCircleClipParameters::ClipTextureHideFeather' has a wrong offset!");
+static_assert(offsetof(FCircleClipParameters, ClipAngle) == 0x000008, "Member 'FCircleClipParameters::ClipAngle' has a wrong offset!");
+static_assert(offsetof(FCircleClipParameters, UseTwoWayClip) == 0x00000C, "Member 'FCircleClipParameters::UseTwoWayClip' has a wrong offset!");
+
 // ScriptStruct LGUI.FoldableMargins
 // 0x0020 (0x0020 - 0x0000)
 struct FFoldableMargins final
@@ -2159,6 +2096,25 @@ static_assert(alignof(FFoldableMargins) == 0x000004, "Wrong alignment on FFoldab
 static_assert(sizeof(FFoldableMargins) == 0x000020, "Wrong size on FFoldableMargins");
 static_assert(offsetof(FFoldableMargins, SquareMargin) == 0x000000, "Member 'FFoldableMargins::SquareMargin' has a wrong offset!");
 static_assert(offsetof(FFoldableMargins, NarrowMargin) == 0x000010, "Member 'FFoldableMargins::NarrowMargin' has a wrong offset!");
+
+// ScriptStruct LGUI.AnimationPlayInfo
+// 0x0048 (0x0048 - 0x0000)
+struct FAnimationPlayInfo final
+{
+public:
+	EAnimationPlayMode                            PlayMode;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EStateTransferType                            ReverseType;                                       // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSequenceInfo                          Animation;                                         // 0x0008(0x0038)(Edit, NativeAccessSpecifierPublic)
+	float                                         PlayRate;                                          // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FAnimationPlayInfo) == 0x000008, "Wrong alignment on FAnimationPlayInfo");
+static_assert(sizeof(FAnimationPlayInfo) == 0x000048, "Wrong size on FAnimationPlayInfo");
+static_assert(offsetof(FAnimationPlayInfo, PlayMode) == 0x000000, "Member 'FAnimationPlayInfo::PlayMode' has a wrong offset!");
+static_assert(offsetof(FAnimationPlayInfo, ReverseType) == 0x000001, "Member 'FAnimationPlayInfo::ReverseType' has a wrong offset!");
+static_assert(offsetof(FAnimationPlayInfo, Animation) == 0x000008, "Member 'FAnimationPlayInfo::Animation' has a wrong offset!");
+static_assert(offsetof(FAnimationPlayInfo, PlayRate) == 0x000040, "Member 'FAnimationPlayInfo::PlayRate' has a wrong offset!");
 
 // ScriptStruct LGUI.AnchorInfo
 // 0x0020 (0x0020 - 0x0000)
@@ -2225,6 +2181,51 @@ static_assert(offsetof(FTextureTransitionInfo, NormalTransition) == 0x000000, "M
 static_assert(offsetof(FTextureTransitionInfo, HighlightedTransition) == 0x000020, "Member 'FTextureTransitionInfo::HighlightedTransition' has a wrong offset!");
 static_assert(offsetof(FTextureTransitionInfo, PressedTransition) == 0x000040, "Member 'FTextureTransitionInfo::PressedTransition' has a wrong offset!");
 static_assert(offsetof(FTextureTransitionInfo, DisabledTransition) == 0x000060, "Member 'FTextureTransitionInfo::DisabledTransition' has a wrong offset!");
+
+// ScriptStruct LGUI.UIWidget
+// 0x0040 (0x0040 - 0x0000)
+struct FUIWidget final
+{
+public:
+	int32                                         depth;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 color;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              pivot;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EUIAnchorHorizontalAlign                      anchorHAlign;                                      // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EUIAnchorVerticalAlign                        anchorVAlign;                                      // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x2];                                       // 0x0012(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         anchorOffsetX;                                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         anchorOffsetY;                                     // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         width;                                             // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         height;                                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         stretchLeft;                                       // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         stretchRight;                                      // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         stretchTop;                                        // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         stretchBottom;                                     // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnchorXPercent;                                    // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnchorYPercent;                                    // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShowXPercent;                                      // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShowYPercent;                                      // 0x003D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FUIWidget) == 0x000004, "Wrong alignment on FUIWidget");
+static_assert(sizeof(FUIWidget) == 0x000040, "Wrong size on FUIWidget");
+static_assert(offsetof(FUIWidget, depth) == 0x000000, "Member 'FUIWidget::depth' has a wrong offset!");
+static_assert(offsetof(FUIWidget, color) == 0x000004, "Member 'FUIWidget::color' has a wrong offset!");
+static_assert(offsetof(FUIWidget, pivot) == 0x000008, "Member 'FUIWidget::pivot' has a wrong offset!");
+static_assert(offsetof(FUIWidget, anchorHAlign) == 0x000010, "Member 'FUIWidget::anchorHAlign' has a wrong offset!");
+static_assert(offsetof(FUIWidget, anchorVAlign) == 0x000011, "Member 'FUIWidget::anchorVAlign' has a wrong offset!");
+static_assert(offsetof(FUIWidget, anchorOffsetX) == 0x000014, "Member 'FUIWidget::anchorOffsetX' has a wrong offset!");
+static_assert(offsetof(FUIWidget, anchorOffsetY) == 0x000018, "Member 'FUIWidget::anchorOffsetY' has a wrong offset!");
+static_assert(offsetof(FUIWidget, width) == 0x00001C, "Member 'FUIWidget::width' has a wrong offset!");
+static_assert(offsetof(FUIWidget, height) == 0x000020, "Member 'FUIWidget::height' has a wrong offset!");
+static_assert(offsetof(FUIWidget, stretchLeft) == 0x000024, "Member 'FUIWidget::stretchLeft' has a wrong offset!");
+static_assert(offsetof(FUIWidget, stretchRight) == 0x000028, "Member 'FUIWidget::stretchRight' has a wrong offset!");
+static_assert(offsetof(FUIWidget, stretchTop) == 0x00002C, "Member 'FUIWidget::stretchTop' has a wrong offset!");
+static_assert(offsetof(FUIWidget, stretchBottom) == 0x000030, "Member 'FUIWidget::stretchBottom' has a wrong offset!");
+static_assert(offsetof(FUIWidget, AnchorXPercent) == 0x000034, "Member 'FUIWidget::AnchorXPercent' has a wrong offset!");
+static_assert(offsetof(FUIWidget, AnchorYPercent) == 0x000038, "Member 'FUIWidget::AnchorYPercent' has a wrong offset!");
+static_assert(offsetof(FUIWidget, ShowXPercent) == 0x00003C, "Member 'FUIWidget::ShowXPercent' has a wrong offset!");
+static_assert(offsetof(FUIWidget, ShowYPercent) == 0x00003D, "Member 'FUIWidget::ShowYPercent' has a wrong offset!");
 
 // ScriptStruct LGUI.WidgetTransitionInfo
 // 0x0104 (0x0104 - 0x0000)

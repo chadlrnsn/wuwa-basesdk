@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_KuroDestructibleActor.BP_KuroDestructibleActor_C
-// 0x00A0 (0x0368 - 0x02C8)
+// 0x00B8 (0x0380 - 0x02C8)
 class ABP_KuroDestructibleActor_C final : public ADestructibleActor
 {
 public:
@@ -39,15 +39,21 @@ public:
 	bool                                          IgnoreBullet;                                      // 0x0358(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_359[0x3];                                      // 0x0359(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                HurtOrigin;                                        // 0x035C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsFakeGravity;                                     // 0x0368(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_369[0x3];                                      // 0x0369(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                FakeGravityValueInternal;                          // 0x036C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          BeginFakeGravity;                                  // 0x0378(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_KuroDestructibleActor(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds);
 	void PlayDestruction(const struct FVector& HurtOrigin_0, float Impluse_0, bool IsZeroImpluse);
 	void OnFractureEvent(const struct FVector& HitPoint, const struct FVector& HitDirection);
 	void ReceiveBeginPlay();
 	void ApplyDamage(const struct FVector& HurtOrigin_0, const struct FVector& SpeedDirection);
 	void ModifiedCollison();
 	bool IsMobile();
+	void EnableFakeGravityDirect(bool Enable, const struct FVector& FakeGravityValue);
 
 public:
 	static class UClass* StaticClass()
@@ -60,7 +66,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_KuroDestructibleActor_C) == 0x000008, "Wrong alignment on ABP_KuroDestructibleActor_C");
-static_assert(sizeof(ABP_KuroDestructibleActor_C) == 0x000368, "Wrong size on ABP_KuroDestructibleActor_C");
+static_assert(sizeof(ABP_KuroDestructibleActor_C) == 0x000380, "Wrong size on ABP_KuroDestructibleActor_C");
 static_assert(offsetof(ABP_KuroDestructibleActor_C, UberGraphFrame) == 0x0002C8, "Member 'ABP_KuroDestructibleActor_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_KuroDestructibleActor_C, ProxyMesh) == 0x0002D0, "Member 'ABP_KuroDestructibleActor_C::ProxyMesh' has a wrong offset!");
 static_assert(offsetof(ABP_KuroDestructibleActor_C, CharRenderingComponent) == 0x0002D8, "Member 'ABP_KuroDestructibleActor_C::CharRenderingComponent' has a wrong offset!");
@@ -75,6 +81,9 @@ static_assert(offsetof(ABP_KuroDestructibleActor_C, OriginOffset) == 0x000348, "
 static_assert(offsetof(ABP_KuroDestructibleActor_C, BaseForce) == 0x000354, "Member 'ABP_KuroDestructibleActor_C::BaseForce' has a wrong offset!");
 static_assert(offsetof(ABP_KuroDestructibleActor_C, IgnoreBullet) == 0x000358, "Member 'ABP_KuroDestructibleActor_C::IgnoreBullet' has a wrong offset!");
 static_assert(offsetof(ABP_KuroDestructibleActor_C, HurtOrigin) == 0x00035C, "Member 'ABP_KuroDestructibleActor_C::HurtOrigin' has a wrong offset!");
+static_assert(offsetof(ABP_KuroDestructibleActor_C, IsFakeGravity) == 0x000368, "Member 'ABP_KuroDestructibleActor_C::IsFakeGravity' has a wrong offset!");
+static_assert(offsetof(ABP_KuroDestructibleActor_C, FakeGravityValueInternal) == 0x00036C, "Member 'ABP_KuroDestructibleActor_C::FakeGravityValueInternal' has a wrong offset!");
+static_assert(offsetof(ABP_KuroDestructibleActor_C, BeginFakeGravity) == 0x000378, "Member 'ABP_KuroDestructibleActor_C::BeginFakeGravity' has a wrong offset!");
 
 }
 

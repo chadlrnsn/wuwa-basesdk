@@ -131,6 +131,22 @@ static_assert(sizeof(FPropertyPair) == 0x000010, "Wrong size on FPropertyPair");
 static_assert(offsetof(FPropertyPair, Name) == 0x000000, "Member 'FPropertyPair::Name' has a wrong offset!");
 static_assert(offsetof(FPropertyPair, bBelongsToActor) == 0x00000C, "Member 'FPropertyPair::bBelongsToActor' has a wrong offset!");
 
+// ScriptStruct KuroUtility.BasicPresenceData
+// 0x0018 (0x0018 - 0x0000)
+struct FBasicPresenceData final
+{
+public:
+	class FString                                 accountId;                                         // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OnlineState;                                       // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Context;                                           // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FBasicPresenceData) == 0x000008, "Wrong alignment on FBasicPresenceData");
+static_assert(sizeof(FBasicPresenceData) == 0x000018, "Wrong size on FBasicPresenceData");
+static_assert(offsetof(FBasicPresenceData, accountId) == 0x000000, "Member 'FBasicPresenceData::accountId' has a wrong offset!");
+static_assert(offsetof(FBasicPresenceData, OnlineState) == 0x000010, "Member 'FBasicPresenceData::OnlineState' has a wrong offset!");
+static_assert(offsetof(FBasicPresenceData, Context) == 0x000014, "Member 'FBasicPresenceData::Context' has a wrong offset!");
+
 // ScriptStruct KuroUtility.BlockUserData
 // 0x0018 (0x0018 - 0x0000)
 struct FBlockUserData final
@@ -171,22 +187,6 @@ static_assert(offsetof(FProductData, description) == 0x000040, "Member 'FProduct
 static_assert(offsetof(FProductData, displayName) == 0x000058, "Member 'FProductData::displayName' has a wrong offset!");
 static_assert(offsetof(FProductData, label) == 0x000070, "Member 'FProductData::label' has a wrong offset!");
 static_assert(offsetof(FProductData, endData) == 0x000088, "Member 'FProductData::endData' has a wrong offset!");
-
-// ScriptStruct KuroUtility.BasicPresenceData
-// 0x0018 (0x0018 - 0x0000)
-struct FBasicPresenceData final
-{
-public:
-	class FString                                 accountId;                                         // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OnlineState;                                       // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Context;                                           // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FBasicPresenceData) == 0x000008, "Wrong alignment on FBasicPresenceData");
-static_assert(sizeof(FBasicPresenceData) == 0x000018, "Wrong size on FBasicPresenceData");
-static_assert(offsetof(FBasicPresenceData, accountId) == 0x000000, "Member 'FBasicPresenceData::accountId' has a wrong offset!");
-static_assert(offsetof(FBasicPresenceData, OnlineState) == 0x000010, "Member 'FBasicPresenceData::OnlineState' has a wrong offset!");
-static_assert(offsetof(FBasicPresenceData, Context) == 0x000014, "Member 'FBasicPresenceData::Context' has a wrong offset!");
 
 }
 

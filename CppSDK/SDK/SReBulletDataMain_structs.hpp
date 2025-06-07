@@ -10,25 +10,25 @@
 
 #include "Basic.hpp"
 
-#include "SReBulletDataEntity_structs.hpp"
-#include "SReBulletDataAimed_structs.hpp"
-#include "SReBulletDataTime_structs.hpp"
+#include "SReBulletDataInteraction_structs.hpp"
 #include "SReBulletDataBase_structs.hpp"
 #include "SReBulletDataLogic_structs.hpp"
-#include "SReBulletDataObstacles_structs.hpp"
-#include "SReBulletDataPerformance_structs.hpp"
-#include "SReBulletDataMove_structs.hpp"
 #include "SReBulletDataChildren_structs.hpp"
-#include "SReBulletDataExe_structs.hpp"
 #include "SReBulletDataScale_structs.hpp"
-#include "SReBulletDataInteraction_structs.hpp"
+#include "SReBulletDataPerformance_structs.hpp"
+#include "SReBulletDataAimed_structs.hpp"
+#include "SReBulletDataMove_structs.hpp"
+#include "SReBulletDataTime_structs.hpp"
+#include "SReBulletDataExe_structs.hpp"
+#include "SReBulletDataEntity_structs.hpp"
+#include "SReBulletDataObstacles_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SReBulletDataMain.SReBulletDataMain
-// 0x0760 (0x0760 - 0x0000)
+// 0x0790 (0x0790 - 0x0000)
 struct FSReBulletDataMain final
 {
 public:
@@ -46,10 +46,10 @@ public:
 	struct FSReBulletDataEntity                   召唤实体_40_0029109543752FEC7353FBAFC4EC9AB8;      // 0x0708(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FSReBulletDataChildren>         子子弹设置_36_B42C5C6E49483C9DC367D89449F8B0A6;    // 0x0710(0x0010)(Edit, BlueprintVisible)
 	struct FSReBulletDataObstacles                障碍检测_43_CBF3D15645D9FE6F375A9D9C345833BC;      // 0x0720(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSReBulletDataInteraction              环境交互_46_E0FE1D47416E043AB7702EB50F8F168A;      // 0x0730(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSReBulletDataInteraction              环境交互_46_E0FE1D47416E043AB7702EB50F8F168A;      // 0x0730(0x0060)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSReBulletDataMain) == 0x000008, "Wrong alignment on FSReBulletDataMain");
-static_assert(sizeof(FSReBulletDataMain) == 0x000760, "Wrong size on FSReBulletDataMain");
+static_assert(sizeof(FSReBulletDataMain) == 0x000790, "Wrong size on FSReBulletDataMain");
 static_assert(offsetof(FSReBulletDataMain, 子弹名称_7_6540B50A408454F29A76BE82C9E7A7EE) == 0x000000, "Member 'FSReBulletDataMain::子弹名称_7_6540B50A408454F29A76BE82C9E7A7EE' has a wrong offset!");
 static_assert(offsetof(FSReBulletDataMain, 基础设置_4_79DD8853421793BB64AFC1AF40E367EE) == 0x000010, "Member 'FSReBulletDataMain::基础设置_4_79DD8853421793BB64AFC1AF40E367EE' has a wrong offset!");
 static_assert(offsetof(FSReBulletDataMain, 逻辑设置_10_E48A858741AECD2050D8DF96A1724561) == 0x000200, "Member 'FSReBulletDataMain::逻辑设置_10_E48A858741AECD2050D8DF96A1724561' has a wrong offset!");

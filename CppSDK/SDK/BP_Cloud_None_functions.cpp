@@ -37,6 +37,20 @@ void ABP_Cloud_None_C::ExecuteUbergraph_BP_Cloud_None(int32 EntryPoint)
 }
 
 
+// Function BP_Cloud_None.BP_Cloud_None_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Cloud_None_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Cloud_None_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Cloud_None.BP_Cloud_None_C.EditorTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -74,20 +88,6 @@ void ABP_Cloud_None_C::ReceiveTick(float DeltaSeconds)
 	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Cloud_None.BP_Cloud_None_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_Cloud_None_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Cloud_None_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -11,11 +11,12 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "ECharacterBodySpecifiedType_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "ECharacterControllerCaseType_structs.hpp"
 #include "ECharacterDitherType_structs.hpp"
-#include "ECharacterBodySpecifiedType_structs.hpp"
 #include "ECharacterSlotSpecifiedType_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "ECharacterRenderingType_structs.hpp"
 
 
@@ -604,6 +605,87 @@ static_assert(sizeof(CharRenderingComponent_C_AddMaterialControllerDataGroupWith
 static_assert(offsetof(CharRenderingComponent_C_AddMaterialControllerDataGroupWithAnimObject, data1) == 0x000000, "Member 'CharRenderingComponent_C_AddMaterialControllerDataGroupWithAnimObject::data1' has a wrong offset!");
 static_assert(offsetof(CharRenderingComponent_C_AddMaterialControllerDataGroupWithAnimObject, animObject) == 0x000008, "Member 'CharRenderingComponent_C_AddMaterialControllerDataGroupWithAnimObject::animObject' has a wrong offset!");
 static_assert(offsetof(CharRenderingComponent_C_AddMaterialControllerDataGroupWithAnimObject, ReturnValue) == 0x000010, "Member 'CharRenderingComponent_C_AddMaterialControllerDataGroupWithAnimObject::ReturnValue' has a wrong offset!");
+
+// Function CharRenderingComponent.CharRenderingComponent_C.ShouldTickAfterGoDown
+// 0x0001 (0x0001 - 0x0000)
+struct CharRenderingComponent_C_ShouldTickAfterGoDown final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(CharRenderingComponent_C_ShouldTickAfterGoDown) == 0x000001, "Wrong alignment on CharRenderingComponent_C_ShouldTickAfterGoDown");
+static_assert(sizeof(CharRenderingComponent_C_ShouldTickAfterGoDown) == 0x000001, "Wrong size on CharRenderingComponent_C_ShouldTickAfterGoDown");
+static_assert(offsetof(CharRenderingComponent_C_ShouldTickAfterGoDown, ReturnValue) == 0x000000, "Member 'CharRenderingComponent_C_ShouldTickAfterGoDown::ReturnValue' has a wrong offset!");
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetMaterialPropertyFloatV2
+// 0x0014 (0x0014 - 0x0000)
+struct CharRenderingComponent_C_SetMaterialPropertyFloatV2 final
+{
+public:
+	class FName                                   name;                                              // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         value;                                             // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharBodySpecifiedType                    bodyType;                                          // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharSlotSpecifiedType                    slotType;                                          // 0x0011(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharMeshPart                             meshPart;                                          // 0x0012(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CharRenderingComponent_C_SetMaterialPropertyFloatV2) == 0x000004, "Wrong alignment on CharRenderingComponent_C_SetMaterialPropertyFloatV2");
+static_assert(sizeof(CharRenderingComponent_C_SetMaterialPropertyFloatV2) == 0x000014, "Wrong size on CharRenderingComponent_C_SetMaterialPropertyFloatV2");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyFloatV2, name) == 0x000000, "Member 'CharRenderingComponent_C_SetMaterialPropertyFloatV2::name' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyFloatV2, value) == 0x00000C, "Member 'CharRenderingComponent_C_SetMaterialPropertyFloatV2::value' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyFloatV2, bodyType) == 0x000010, "Member 'CharRenderingComponent_C_SetMaterialPropertyFloatV2::bodyType' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyFloatV2, slotType) == 0x000011, "Member 'CharRenderingComponent_C_SetMaterialPropertyFloatV2::slotType' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyFloatV2, meshPart) == 0x000012, "Member 'CharRenderingComponent_C_SetMaterialPropertyFloatV2::meshPart' has a wrong offset!");
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetMaterialPropertyColorV2
+// 0x0020 (0x0020 - 0x0000)
+struct CharRenderingComponent_C_SetMaterialPropertyColorV2 final
+{
+public:
+	class FName                                   name;                                              // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           value;                                             // 0x000C(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharBodySpecifiedType                    bodyType;                                          // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharSlotSpecifiedType                    slotType;                                          // 0x001D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharMeshPart                             meshPart;                                          // 0x001E(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CharRenderingComponent_C_SetMaterialPropertyColorV2) == 0x000004, "Wrong alignment on CharRenderingComponent_C_SetMaterialPropertyColorV2");
+static_assert(sizeof(CharRenderingComponent_C_SetMaterialPropertyColorV2) == 0x000020, "Wrong size on CharRenderingComponent_C_SetMaterialPropertyColorV2");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyColorV2, name) == 0x000000, "Member 'CharRenderingComponent_C_SetMaterialPropertyColorV2::name' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyColorV2, value) == 0x00000C, "Member 'CharRenderingComponent_C_SetMaterialPropertyColorV2::value' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyColorV2, bodyType) == 0x00001C, "Member 'CharRenderingComponent_C_SetMaterialPropertyColorV2::bodyType' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyColorV2, slotType) == 0x00001D, "Member 'CharRenderingComponent_C_SetMaterialPropertyColorV2::slotType' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialPropertyColorV2, meshPart) == 0x00001E, "Member 'CharRenderingComponent_C_SetMaterialPropertyColorV2::meshPart' has a wrong offset!");
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetMaterialReplaceV2
+// 0x0010 (0x0010 - 0x0000)
+struct CharRenderingComponent_C_SetMaterialReplaceV2 final
+{
+public:
+	class UMaterialInterface*                     material;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharBodySpecifiedType                    bodyType;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharSlotSpecifiedType                    slotType;                                          // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharMeshPart                             meshPart;                                          // 0x000A(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CharRenderingComponent_C_SetMaterialReplaceV2) == 0x000008, "Wrong alignment on CharRenderingComponent_C_SetMaterialReplaceV2");
+static_assert(sizeof(CharRenderingComponent_C_SetMaterialReplaceV2) == 0x000010, "Wrong size on CharRenderingComponent_C_SetMaterialReplaceV2");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialReplaceV2, material) == 0x000000, "Member 'CharRenderingComponent_C_SetMaterialReplaceV2::material' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialReplaceV2, bodyType) == 0x000008, "Member 'CharRenderingComponent_C_SetMaterialReplaceV2::bodyType' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialReplaceV2, slotType) == 0x000009, "Member 'CharRenderingComponent_C_SetMaterialReplaceV2::slotType' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_SetMaterialReplaceV2, meshPart) == 0x00000A, "Member 'CharRenderingComponent_C_SetMaterialReplaceV2::meshPart' has a wrong offset!");
+
+// Function CharRenderingComponent.CharRenderingComponent_C.RemoveExternalMaterialReplaceV2
+// 0x0003 (0x0003 - 0x0000)
+struct CharRenderingComponent_C_RemoveExternalMaterialReplaceV2 final
+{
+public:
+	EKuroCharBodySpecifiedType                    bodyType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharSlotSpecifiedType                    slotType;                                          // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroCharMeshPart                             meshPart;                                          // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CharRenderingComponent_C_RemoveExternalMaterialReplaceV2) == 0x000001, "Wrong alignment on CharRenderingComponent_C_RemoveExternalMaterialReplaceV2");
+static_assert(sizeof(CharRenderingComponent_C_RemoveExternalMaterialReplaceV2) == 0x000003, "Wrong size on CharRenderingComponent_C_RemoveExternalMaterialReplaceV2");
+static_assert(offsetof(CharRenderingComponent_C_RemoveExternalMaterialReplaceV2, bodyType) == 0x000000, "Member 'CharRenderingComponent_C_RemoveExternalMaterialReplaceV2::bodyType' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_RemoveExternalMaterialReplaceV2, slotType) == 0x000001, "Member 'CharRenderingComponent_C_RemoveExternalMaterialReplaceV2::slotType' has a wrong offset!");
+static_assert(offsetof(CharRenderingComponent_C_RemoveExternalMaterialReplaceV2, meshPart) == 0x000002, "Member 'CharRenderingComponent_C_RemoveExternalMaterialReplaceV2::meshPart' has a wrong offset!");
 
 }
 

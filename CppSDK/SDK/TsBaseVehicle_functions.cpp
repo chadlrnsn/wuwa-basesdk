@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsBaseVehicle.TsBaseVehicle_C.ExecuteUbergraph_TsBaseVehicle
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// (Final, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -33,17 +33,12 @@ void ATsBaseVehicle_C::ExecuteUbergraph_TsBaseVehicle(int32 EntryPoint)
 
 	Parms.EntryPoint = EntryPoint;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsBaseVehicle.TsBaseVehicle_C.ReceiveDestroyed
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
 void ATsBaseVehicle_C::ReceiveDestroyed()
 {
@@ -52,17 +47,12 @@ void ATsBaseVehicle_C::ReceiveDestroyed()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsBaseVehicle_C", "ReceiveDestroyed");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsBaseVehicle.TsBaseVehicle_C.SetDitherEffect
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   dither                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // ECharacterDitherType                    ditherType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -79,17 +69,12 @@ void ATsBaseVehicle_C::SetDitherEffect(float dither, ECharacterDitherType dither
 	Parms.dither = dither;
 	Parms.ditherType = ditherType;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsBaseVehicle.TsBaseVehicle_C.GetEntityId
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -102,12 +87,7 @@ int32 ATsBaseVehicle_C::GetEntityId()
 
 	Params::TsBaseVehicle_C_GetEntityId Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }

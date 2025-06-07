@@ -10,16 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "EVisionType_structs.hpp"
-#include "ESkillTargetDirection_structs.hpp"
-#include "ECharViewDirectionState_structs.hpp"
-#include "Engine_classes.hpp"
 #include "EFishingSkillType_structs.hpp"
-#include "EHitAnim_structs.hpp"
-#include "ECharacterLoadType_structs.hpp"
-#include "EHookInteractTypeBp_structs.hpp"
-#include "EAimViewState_structs.hpp"
 #include "ECharParentMoveState_structs.hpp"
+#include "Engine_classes.hpp"
+#include "ECharacterLoadType_structs.hpp"
+#include "EHitAnim_structs.hpp"
+#include "EMorphType_structs.hpp"
+#include "ESkillTargetDirection_structs.hpp"
+#include "EHookInteractTypeBp_structs.hpp"
+#include "EVisionType_structs.hpp"
+#include "EAimViewState_structs.hpp"
+#include "ECharViewDirectionState_structs.hpp"
 #include "ECharState_structs.hpp"
 
 
@@ -264,11 +265,21 @@ public:
 	static bool GetHookInteractTargetCanInteract(int32 entityId, class UObject* __WorldContext);
 	static float GetEntityDeltaMillisecond(int32 entityId, class UObject* __WorldContext);
 	static void AddBuffFromGA(int32 entityId, class ATsBaseCharacter_C* target, int64 buffId, const class FString& skillId, int32 addCount, class UObject* __WorldContext);
+	static void SyncTwoEntityLocationAndRotation(int32 fromEntityId, int32 toEntityId, class UObject* __WorldContext);
+	static void SetActorVisible(int32 entityId, bool visible, bool collision, bool movable, const class FString& reason, bool sync, class UObject* __WorldContext);
 	static class AActor* GetFishingBoat(class UObject* __WorldContext);
 	static void FishingBoatSprint(int32 entityId, float maxSpeedRatio, int32 exceedLimitDuration, int32 duration, class UObject* __WorldContext);
 	static bool GetHookInteractTargetIsIgnorePlayerCollision(int32 entityId, class UObject* __WorldContext);
 	static bool FixHookIsNormalPoint(int32 entityId, class UObject* __WorldContext);
 	static void FishingBoatSkill(EFishingSkillType type, class UObject* __WorldContext);
+	static EMorphType GetCharacterMorphType(int32 entityId, class UObject* __WorldContext);
+	static void SetCharacterMorphType(int32 entityId, EMorphType morphType, class UObject* __WorldContext);
+	static int32 GetNextMultiSkillIdNew(int32 entityId, int32 skillId, class UObject* __WorldContext);
+	static void SetSpecialEnergyAttrValue(int32 entityId, int32 attrId, int32 value, class UObject* __WorldContext);
+	static void BeginAddMoveByInputDirect(int32 entityId, float maxSpeed, float accelerationTime, float decelerationTime, float delayTime, class UObject* __WorldContext);
+	static void EndAddMoveByInputDirect(int32 entityId, class UObject* __WorldContext);
+	static void StartBattleQte(int32 entityId, int32 skillId, int32 battleQteId, class UObject* __WorldContext);
+	static void StopGroup1Skill(int32 entityId, const class FString& reason, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

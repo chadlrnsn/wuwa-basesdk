@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseAnimal.BP_BaseAnimal_C
-// 0x0000 (0x07B0 - 0x07B0)
-class ABP_BaseAnimal_C : public ATsBaseCharacter_C
+// 0x0010 (0x0760 - 0x0750)
+#pragma pack(push, 0x1)
+class alignas(0x10) ABP_BaseAnimal_C : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_7A1[0x7];                                      // 0x07A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            TurnSpeedCurve;                                    // 0x07A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCurveFloat*                            TurnSpeedCurve;                                    // 0x0750(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,9 +34,10 @@ public:
 		return GetDefaultObjImpl<ABP_BaseAnimal_C>();
 	}
 };
+#pragma pack(pop)
 static_assert(alignof(ABP_BaseAnimal_C) == 0x000010, "Wrong alignment on ABP_BaseAnimal_C");
-static_assert(sizeof(ABP_BaseAnimal_C) == 0x0007B0, "Wrong size on ABP_BaseAnimal_C");
-static_assert(offsetof(ABP_BaseAnimal_C, TurnSpeedCurve) == 0x0007A8, "Member 'ABP_BaseAnimal_C::TurnSpeedCurve' has a wrong offset!");
+static_assert(sizeof(ABP_BaseAnimal_C) == 0x000760, "Wrong size on ABP_BaseAnimal_C");
+static_assert(offsetof(ABP_BaseAnimal_C, TurnSpeedCurve) == 0x000750, "Member 'ABP_BaseAnimal_C::TurnSpeedCurve' has a wrong offset!");
 
 }
 

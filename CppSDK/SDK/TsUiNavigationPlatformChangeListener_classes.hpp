@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0100(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_TsUiNavigationPlatformChangeListener(int32 EntryPoint);
-	void OnDestroyBP();
 	void AwakeBP();
+	void OnDestroyBP();
+	void ExecuteUbergraph_TsUiNavigationPlatformChangeListener(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

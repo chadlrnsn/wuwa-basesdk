@@ -136,6 +136,33 @@ public:
 static_assert(alignof(UKuroConfigPatcher) == 0x000008, "Wrong alignment on UKuroConfigPatcher");
 static_assert(sizeof(UKuroConfigPatcher) == 0x000030, "Wrong size on UKuroConfigPatcher");
 
+// Class KuroHotPatch.KuroBinPatch
+// 0x0030 (0x0060 - 0x0030)
+class UKuroBinPatch final : public UObject
+{
+public:
+	TMulticastInlineDelegate<void(int64 CurrentSize)> ProgressDelegate;                                  // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 ResultCode, const TArray<class FString>& SucFiles)> CompleteDelegate;                                  // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_50[0x10];                                      // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void BeginPatch(const class FString& Diff, const class FString& OldDir, const class FString& NewDir);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroBinPatch">();
+	}
+	static class UKuroBinPatch* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroBinPatch>();
+	}
+};
+static_assert(alignof(UKuroBinPatch) == 0x000008, "Wrong alignment on UKuroBinPatch");
+static_assert(sizeof(UKuroBinPatch) == 0x000060, "Wrong size on UKuroBinPatch");
+static_assert(offsetof(UKuroBinPatch, ProgressDelegate) == 0x000030, "Member 'UKuroBinPatch::ProgressDelegate' has a wrong offset!");
+static_assert(offsetof(UKuroBinPatch, CompleteDelegate) == 0x000040, "Member 'UKuroBinPatch::CompleteDelegate' has a wrong offset!");
+
 // Class KuroHotPatch.KuroLauncherLibrary
 // 0x0050 (0x0080 - 0x0030)
 class UKuroLauncherLibrary final : public UBlueprintFunctionLibrary
@@ -145,7 +172,9 @@ public:
 
 public:
 	static bool CheckFileSha1(const class FString& FilePath, const class FString& CheckSha1Hash);
+	static void ClearPatchPaks();
 	static void CloseShaderLibrary();
+	static bool CopyFile(const class FString& DstPath, const class FString& SrcPath);
 	static bool Decrypt(const class FString& InCipher, class FString* OutPlain);
 	static bool DeleteDirectory(const class FString& DirPath);
 	static bool DeleteFile(const class FString& FilePath);
@@ -162,12 +191,15 @@ public:
 	static bool GetGConfigString(const class FString& Section, const class FString& Key, class FString* OutStr);
 	static uint8 GetNetworkConnectionType();
 	static int32 GetRemainPrecompileShaders();
+	static int64 GetTotalAndFreeSpace(const class FString& CheckPath, int64* FreeSize);
 	static int32 GetTotalPrecompileShaders();
 	static bool IsFirstIntoLauncher();
 	static bool IsLocalPackaging();
+	static bool IsStartupMountSuccess();
 	static void LogoutToLauncher();
 	static bool MakeDirectory(const class FString& DirPath);
 	static bool MoveFile(const class FString& DstPath, const class FString& SrcPath);
+	static bool NeedClearPatchPaks();
 	static bool NeedHotPatch();
 	static uint8 NeedRestartApp();
 	static void PreloadRequiredBp();
@@ -177,6 +209,7 @@ public:
 	static void ResumeCompileShader();
 	static void SetPrecompileShaderBatchMode(int32 Mode);
 	static void SetRestartApp(uint8 RestartType);
+	static void WillClearPatchPaks();
 
 public:
 	static class UClass* StaticClass()

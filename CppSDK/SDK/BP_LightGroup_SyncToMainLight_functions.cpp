@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function BP_LightGroup_SyncToMainLight.BP_LightGroup_SyncToMainLight_C.Update
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ABP_LightGroup_SyncToMainLight_C::Update()
 {
@@ -45,6 +45,20 @@ void ABP_LightGroup_SyncToMainLight_C::UserConstructionScript()
 }
 
 
+// Function BP_LightGroup_SyncToMainLight.BP_LightGroup_SyncToMainLight_C.EditorTick
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_LightGroup_SyncToMainLight_C::EditorTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LightGroup_SyncToMainLight_C", "EditorTick");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_LightGroup_SyncToMainLight.BP_LightGroup_SyncToMainLight_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -54,6 +68,20 @@ void ABP_LightGroup_SyncToMainLight_C::ReceiveBeginPlay()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_LightGroup_SyncToMainLight_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_LightGroup_SyncToMainLight.BP_LightGroup_SyncToMainLight_C.TimeSlicedTick
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_LightGroup_SyncToMainLight_C::TimeSlicedTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LightGroup_SyncToMainLight_C", "TimeSlicedTick");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,22 +107,8 @@ void ABP_LightGroup_SyncToMainLight_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_LightGroup_SyncToMainLight.BP_LightGroup_SyncToMainLight_C.EditorTick
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_LightGroup_SyncToMainLight_C::EditorTick()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LightGroup_SyncToMainLight_C", "EditorTick");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_LightGroup_SyncToMainLight.BP_LightGroup_SyncToMainLight_C.ExecuteUbergraph_BP_LightGroup_SyncToMainLight
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

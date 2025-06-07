@@ -17,23 +17,175 @@
 namespace SDK
 {
 
-// Function KuroGameplay.KuroSplineCylinderTriggerActor.GenerateMesh
-// (Final, Native, Public, BlueprintCallable)
+// Function KuroGameplay.KuroInputManager.OnActorDestroy
+// (Final, Native, Private)
 // Parameters:
-// class USplineComponent*                 Spline                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   CircleRadius                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AKuroSplineCylinderTriggerActor::GenerateMesh(class USplineComponent* Spline, float CircleRadius)
+void UKuroInputManager::OnActorDestroy(class AActor* Actor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSplineCylinderTriggerActor", "GenerateMesh");
+		Func = Class->GetFunction("KuroInputManager", "OnActorDestroy");
 
-	Params::KuroSplineCylinderTriggerActor_GenerateMesh Parms{};
+	Params::KuroInputManager_OnActorDestroy Parms{};
 
-	Parms.Spline = Spline;
-	Parms.CircleRadius = CircleRadius;
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.EffectSystemActor.SetOwnerEntityId
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   EntityId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AEffectSystemActor::SetOwnerEntityId(int32 EntityId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EffectSystemActor", "SetOwnerEntityId");
+
+	Params::EffectSystemActor_SetOwnerEntityId Parms{};
+
+	Parms.EntityId = EntityId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.EffectSystemActor.GetEffectType
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AEffectSystemActor::GetEffectType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EffectSystemActor", "GetEffectType");
+
+	Params::EffectSystemActor_GetEffectType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.EffectSystemActor.GetHandle
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AEffectSystemActor::GetHandle() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EffectSystemActor", "GetHandle");
+
+	Params::EffectSystemActor_GetHandle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.EffectSystemActor.GetOwnerEntityId
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AEffectSystemActor::GetOwnerEntityId() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EffectSystemActor", "GetOwnerEntityId");
+
+	Params::EffectSystemActor_GetOwnerEntityId Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.EffectSystemActor.GetTimeScale
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AEffectSystemActor::GetTimeScale() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EffectSystemActor", "GetTimeScale");
+
+	Params::EffectSystemActor_GetTimeScale Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.EffectSystemActor.StopEffect
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             Reason                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Immediately                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    DestroyActor                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AEffectSystemActor::StopEffect(const class FName& Reason, bool Immediately, bool DestroyActor) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EffectSystemActor", "StopEffect");
+
+	Params::EffectSystemActor_StopEffect Parms{};
+
+	Parms.Reason = Reason;
+	Parms.Immediately = Immediately;
+	Parms.DestroyActor = DestroyActor;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -291,33 +443,6 @@ void UGameBudgetAllocator::UpdateMinUpdateFIFOBudgetTime(float Time)
 }
 
 
-// Function KuroGameplay.KuroStaticMeshLibrary.MergeSimpleCollisions
-// (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
-// Parameters:
-// class UStaticMeshComponent*             TemplateComponent                                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FTransform>               LocalTransforms                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UKuroStaticMeshLibrary::MergeSimpleCollisions(class UStaticMeshComponent* TemplateComponent, const TArray<struct FTransform>& LocalTransforms)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticMeshLibrary", "MergeSimpleCollisions");
-
-	Params::KuroStaticMeshLibrary_MergeSimpleCollisions Parms{};
-
-	Parms.TemplateComponent = TemplateComponent;
-	Parms.LocalTransforms = std::move(LocalTransforms);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function KuroGameplay.KuroEffectLibrary.AddSceneComponent
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -499,6 +624,31 @@ float UKuroEffectLibrary::GetNiagaraEffectRegularTypeScalabilitySettingsMaxDista
 }
 
 
+// Function KuroGameplay.KuroEffectLibrary.GetNiagaraQualityLevel
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroEffectLibrary::GetNiagaraQualityLevel()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroEffectLibrary", "GetNiagaraQualityLevel");
+
+	Params::KuroEffectLibrary_GetNiagaraQualityLevel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroGameplay.KuroEffectLibrary.GetNiagaraSystemEffectRegularType
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -580,6 +730,31 @@ void UKuroEffectLibrary::InitModelNiagaraSpec(class UNiagaraComponent* NiagaraCo
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroEffectLibrary.IsEffectSystemInEditorNoPIE
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroEffectLibrary::IsEffectSystemInEditorNoPIE()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroEffectLibrary", "IsEffectSystemInEditorNoPIE");
+
+	Params::KuroEffectLibrary_IsEffectSystemInEditorNoPIE Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -1040,21 +1215,19 @@ void UKuroInputEvent::DoTouchCallback(const ETouchIndex touchIndex, const struct
 }
 
 
-// Function KuroGameplay.KuroInputManager.OnActorDestroy
-// (Final, Native, Private)
+// Function KuroGameplay.KuroLevelPlayCustomCollisionComponent.CanEnableCollision
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroInputManager::OnActorDestroy(class AActor* Actor)
+bool UKuroLevelPlayCustomCollisionComponent::CanEnableCollision() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroInputManager", "OnActorDestroy");
+		Func = Class->GetFunction("KuroLevelPlayCustomCollisionComponent", "CanEnableCollision");
 
-	Params::KuroInputManager_OnActorDestroy Parms{};
-
-	Parms.Actor = Actor;
+	Params::KuroLevelPlayCustomCollisionComponent_CanEnableCollision Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1062,6 +1235,33 @@ void UKuroInputManager::OnActorDestroy(class AActor* Actor)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroLevelPlayInterface.ProcessPhysics
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool IKuroLevelPlayInterface::ProcessPhysics()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroLevelPlayInterface", "ProcessPhysics");
+
+	Params::KuroLevelPlayInterface_ProcessPhysics Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -1213,6 +1413,75 @@ void UKuroLevelPlayLibrary::RegisterBaseItemInfo(class UClass* BaseItemClass, co
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroLevelPlaySubsystem.ProcessAllItems
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroLevelPlaySubsystem::ProcessAllItems()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroLevelPlaySubsystem", "ProcessAllItems");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroLevelPlaySubsystem.RegisterObject
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InKuroLevelPlayObject                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroLevelPlaySubsystem::RegisterObject(class UObject* InKuroLevelPlayObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroLevelPlaySubsystem", "RegisterObject");
+
+	Params::KuroLevelPlaySubsystem_RegisterObject Parms{};
+
+	Parms.InKuroLevelPlayObject = InKuroLevelPlayObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroLevelPlaySubsystem.UnregisterObject
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          InKuroLevelPlayObject                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroLevelPlaySubsystem::UnregisterObject(class UObject* InKuroLevelPlayObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroLevelPlaySubsystem", "UnregisterObject");
+
+	Params::KuroLevelPlaySubsystem_UnregisterObject Parms{};
+
+	Parms.InKuroLevelPlayObject = InKuroLevelPlayObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -1503,6 +1772,164 @@ class UObject* UKuroResourceManager::GetLoadedAsset(const class FString& Path) c
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroSequenceEaseExecutor.StopEase
+// (Native, Public, BlueprintCallable)
+
+void UKuroSequenceEaseExecutor::StopEase()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSequenceEaseExecutor", "StopEase");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroSequenceEaseExecutor.UpdateEase
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroSequenceEaseExecutor::UpdateEase(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSequenceEaseExecutor", "UpdateEase");
+
+	Params::KuroSequenceEaseExecutor_UpdateEase Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetDuration
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKuroSequenceEaseFloatExecutor::GetDuration() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSequenceEaseFloatExecutor", "GetDuration");
+
+	Params::KuroSequenceEaseFloatExecutor_GetDuration Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetStartValue
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKuroSequenceEaseFloatExecutor::GetStartValue() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSequenceEaseFloatExecutor", "GetStartValue");
+
+	Params::KuroSequenceEaseFloatExecutor_GetStartValue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroSequenceEaseFloatExecutor.GetTargetValue
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKuroSequenceEaseFloatExecutor::GetTargetValue() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSequenceEaseFloatExecutor", "GetTargetValue");
+
+	Params::KuroSequenceEaseFloatExecutor_GetTargetValue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.EasePlayRateTo
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class ALevelSequenceActor*              SequenceActor                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TargetPlayRate                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EKuroEasingFuncType                     EaseType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Exp                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroSequenceRuntimeFunctionLibrary::EasePlayRateTo(class ALevelSequenceActor* SequenceActor, float TargetPlayRate, EKuroEasingFuncType EaseType, float Duration, float Exp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSequenceRuntimeFunctionLibrary", "EasePlayRateTo");
+
+	Params::KuroSequenceRuntimeFunctionLibrary_EasePlayRateTo Parms{};
+
+	Parms.SequenceActor = SequenceActor;
+	Parms.TargetPlayRate = TargetPlayRate;
+	Parms.EaseType = EaseType;
+	Parms.Duration = Duration;
+	Parms.Exp = Exp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -2118,6 +2545,92 @@ bool UKuroSequenceRuntimeFunctionLibrary::SetSequenceInUiScene(class UMovieScene
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.StopEasingPlayRate
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class ALevelSequenceActor*              SequenceActor                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   HandleId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    JumpToTarget                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroSequenceRuntimeFunctionLibrary::StopEasingPlayRate(class ALevelSequenceActor* SequenceActor, int32 HandleId, bool JumpToTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSequenceRuntimeFunctionLibrary", "StopEasingPlayRate");
+
+	Params::KuroSequenceRuntimeFunctionLibrary_StopEasingPlayRate Parms{};
+
+	Parms.SequenceActor = SequenceActor;
+	Parms.HandleId = HandleId;
+	Parms.JumpToTarget = JumpToTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameplay.KuroSplineCylinderTriggerActor.GenerateMesh
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USplineComponent*                 Spline                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   CircleRadius                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroSplineCylinderTriggerActor::GenerateMesh(class USplineComponent* Spline, float CircleRadius)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSplineCylinderTriggerActor", "GenerateMesh");
+
+	Params::KuroSplineCylinderTriggerActor_GenerateMesh Parms{};
+
+	Parms.Spline = Spline;
+	Parms.CircleRadius = CircleRadius;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplay.KuroStaticMeshLibrary.MergeSimpleCollisions
+// (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
+// Parameters:
+// class UStaticMeshComponent*             TemplateComponent                                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FTransform>               LocalTransforms                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UKuroStaticMeshLibrary::MergeSimpleCollisions(class UStaticMeshComponent* TemplateComponent, const TArray<struct FTransform>& LocalTransforms)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroStaticMeshLibrary", "MergeSimpleCollisions");
+
+	Params::KuroStaticMeshLibrary_MergeSimpleCollisions Parms{};
+
+	Parms.TemplateComponent = TemplateComponent;
+	Parms.LocalTransforms = std::move(LocalTransforms);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

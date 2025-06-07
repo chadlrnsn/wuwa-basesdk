@@ -1188,5 +1188,19 @@ void ABP_GlobalGI_C::UpdateOcean()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
+
+// Function BP_GlobalGI.BP_GlobalGI_C.IsPerformanceLightExist
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::IsPerformanceLightExist()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "IsPerformanceLightExist");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

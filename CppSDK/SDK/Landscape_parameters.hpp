@@ -150,6 +150,17 @@ static_assert(offsetof(LandscapeProxy_EditorApplySpline, bLowerHeights) == 0x000
 static_assert(offsetof(LandscapeProxy_EditorApplySpline, PaintLayer) == 0x000028, "Member 'LandscapeProxy_EditorApplySpline::PaintLayer' has a wrong offset!");
 static_assert(offsetof(LandscapeProxy_EditorApplySpline, EditLayerName) == 0x000030, "Member 'LandscapeProxy_EditorApplySpline::EditLayerName' has a wrong offset!");
 
+// Function Landscape.LandscapeProxy.EditorSetKuroColormapTexture
+// 0x0008 (0x0008 - 0x0000)
+struct LandscapeProxy_EditorSetKuroColormapTexture final
+{
+public:
+	class UTexture2D*                             NewKuroColormapTexture;                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LandscapeProxy_EditorSetKuroColormapTexture) == 0x000008, "Wrong alignment on LandscapeProxy_EditorSetKuroColormapTexture");
+static_assert(sizeof(LandscapeProxy_EditorSetKuroColormapTexture) == 0x000008, "Wrong size on LandscapeProxy_EditorSetKuroColormapTexture");
+static_assert(offsetof(LandscapeProxy_EditorSetKuroColormapTexture, NewKuroColormapTexture) == 0x000000, "Member 'LandscapeProxy_EditorSetKuroColormapTexture::NewKuroColormapTexture' has a wrong offset!");
+
 // Function Landscape.LandscapeProxy.EditorSetLandscapeMaterial
 // 0x0008 (0x0008 - 0x0000)
 struct LandscapeProxy_EditorSetLandscapeMaterial final

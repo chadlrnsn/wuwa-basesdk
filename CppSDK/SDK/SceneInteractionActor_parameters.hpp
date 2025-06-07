@@ -112,5 +112,29 @@ static_assert(alignof(SceneInteractionActor_C_UpdateProjectionActorTransform) ==
 static_assert(sizeof(SceneInteractionActor_C_UpdateProjectionActorTransform) == 0x000040, "Wrong size on SceneInteractionActor_C_UpdateProjectionActorTransform");
 static_assert(offsetof(SceneInteractionActor_C_UpdateProjectionActorTransform, transform1) == 0x000000, "Member 'SceneInteractionActor_C_UpdateProjectionActorTransform::transform1' has a wrong offset!");
 
+// Function SceneInteractionActor.SceneInteractionActor_C.ApplyAnimOptimizationParams
+// 0x0001 (0x0001 - 0x0000)
+struct SceneInteractionActor_C_ApplyAnimOptimizationParams final
+{
+public:
+	bool                                          bUseDistanceMap;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(SceneInteractionActor_C_ApplyAnimOptimizationParams) == 0x000001, "Wrong alignment on SceneInteractionActor_C_ApplyAnimOptimizationParams");
+static_assert(sizeof(SceneInteractionActor_C_ApplyAnimOptimizationParams) == 0x000001, "Wrong size on SceneInteractionActor_C_ApplyAnimOptimizationParams");
+static_assert(offsetof(SceneInteractionActor_C_ApplyAnimOptimizationParams, bUseDistanceMap) == 0x000000, "Member 'SceneInteractionActor_C_ApplyAnimOptimizationParams::bUseDistanceMap' has a wrong offset!");
+
+// Function SceneInteractionActor.SceneInteractionActor_C.PlayKuroSkeletalMeshDestruction
+// 0x0010 (0x0010 - 0x0000)
+struct SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction final
+{
+public:
+	class AActor*                                 actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          isJumpToEnd;                                       // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction) == 0x000008, "Wrong alignment on SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction");
+static_assert(sizeof(SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction) == 0x000010, "Wrong size on SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction");
+static_assert(offsetof(SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction, actor) == 0x000000, "Member 'SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction::actor' has a wrong offset!");
+static_assert(offsetof(SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction, isJumpToEnd) == 0x000008, "Member 'SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction::isJumpToEnd' has a wrong offset!");
+
 }
 

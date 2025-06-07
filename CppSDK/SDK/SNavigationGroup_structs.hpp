@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SNavigationGroup.SNavigationGroup
-// 0x00A0 (0x00A0 - 0x0000)
+// 0x00A8 (0x00A8 - 0x0000)
 struct FSNavigationGroup final
 {
 public:
@@ -36,9 +36,11 @@ public:
 	bool                                          AllowNavigationInSelfDynamic_58_B0CB45D44CCE272844B17F84E032F4B3; // 0x009D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          RefreshNavigation_71_063A142F4E9EE8A94E59478317E22ADE; // 0x009E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          SuitableListenerByNoDynamic_73_6A9C22AC4AEBD5FBED8A56949F348D31; // 0x009F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          SlideToLeftOrTop_80_63C5FE8F41E05692709BD1A3D98B0D41; // 0x00A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          SlideToRightOrDown_79_46E6936D4A0CD3430D6D05AABF8AAB69; // 0x00A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(FSNavigationGroup) == 0x000008, "Wrong alignment on FSNavigationGroup");
-static_assert(sizeof(FSNavigationGroup) == 0x0000A0, "Wrong size on FSNavigationGroup");
+static_assert(sizeof(FSNavigationGroup) == 0x0000A8, "Wrong size on FSNavigationGroup");
 static_assert(offsetof(FSNavigationGroup, GroupName_5_4A4352724F4FB7DCAC7B1E99DB409163) == 0x000000, "Member 'FSNavigationGroup::GroupName_5_4A4352724F4FB7DCAC7B1E99DB409163' has a wrong offset!");
 static_assert(offsetof(FSNavigationGroup, GroupType_34_CF445B0640A4DABDD990CDB2BA9ADE72) == 0x000010, "Member 'FSNavigationGroup::GroupType_34_CF445B0640A4DABDD990CDB2BA9ADE72' has a wrong offset!");
 static_assert(offsetof(FSNavigationGroup, PrevGroupName_2_C3E8149D474A89D8206FA2B12E32529D) == 0x000018, "Member 'FSNavigationGroup::PrevGroupName_2_C3E8149D474A89D8206FA2B12E32529D' has a wrong offset!");
@@ -53,6 +55,8 @@ static_assert(offsetof(FSNavigationGroup, SelectableMemory_49_B4EED11F416769180D
 static_assert(offsetof(FSNavigationGroup, AllowNavigationInSelfDynamic_58_B0CB45D44CCE272844B17F84E032F4B3) == 0x00009D, "Member 'FSNavigationGroup::AllowNavigationInSelfDynamic_58_B0CB45D44CCE272844B17F84E032F4B3' has a wrong offset!");
 static_assert(offsetof(FSNavigationGroup, RefreshNavigation_71_063A142F4E9EE8A94E59478317E22ADE) == 0x00009E, "Member 'FSNavigationGroup::RefreshNavigation_71_063A142F4E9EE8A94E59478317E22ADE' has a wrong offset!");
 static_assert(offsetof(FSNavigationGroup, SuitableListenerByNoDynamic_73_6A9C22AC4AEBD5FBED8A56949F348D31) == 0x00009F, "Member 'FSNavigationGroup::SuitableListenerByNoDynamic_73_6A9C22AC4AEBD5FBED8A56949F348D31' has a wrong offset!");
+static_assert(offsetof(FSNavigationGroup, SlideToLeftOrTop_80_63C5FE8F41E05692709BD1A3D98B0D41) == 0x0000A0, "Member 'FSNavigationGroup::SlideToLeftOrTop_80_63C5FE8F41E05692709BD1A3D98B0D41' has a wrong offset!");
+static_assert(offsetof(FSNavigationGroup, SlideToRightOrDown_79_46E6936D4A0CD3430D6D05AABF8AAB69) == 0x0000A1, "Member 'FSNavigationGroup::SlideToRightOrDown_79_46E6936D4A0CD3430D6D05AABF8AAB69' has a wrong offset!");
 
 }
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SWeaponMesh_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SWeaponMesh_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 

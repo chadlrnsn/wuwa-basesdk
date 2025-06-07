@@ -12,24 +12,29 @@
 
 #include "ECommonQteViewType_SingleButton_structs.hpp"
 #include "SCommonQteButton_structs.hpp"
+#include "ECommonQteInteractiveTiming_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SCommonQte_SingleClick.SCommonQte_SingleClick
-// 0x0050 (0x0050 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct FSCommonQte_SingleClick final
 {
 public:
 	ECommonQteViewType_SingleButton               ViewType_8_8011A49748943EDEB8F749BACCEA6435;       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSCommonQteButton                      UIConfig_15_7D1814F047F7875E71D239BB5D624892;      // 0x0008(0x0048)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	ECommonQteInteractiveTiming                   InteractiveTiming_18_7C5C080A4B88CC87AC782C99C278E96B; // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsShowBorder_21_B251E67244444D5D80F9A09705858DA4;  // 0x0051(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(FSCommonQte_SingleClick) == 0x000008, "Wrong alignment on FSCommonQte_SingleClick");
-static_assert(sizeof(FSCommonQte_SingleClick) == 0x000050, "Wrong size on FSCommonQte_SingleClick");
+static_assert(sizeof(FSCommonQte_SingleClick) == 0x000058, "Wrong size on FSCommonQte_SingleClick");
 static_assert(offsetof(FSCommonQte_SingleClick, ViewType_8_8011A49748943EDEB8F749BACCEA6435) == 0x000000, "Member 'FSCommonQte_SingleClick::ViewType_8_8011A49748943EDEB8F749BACCEA6435' has a wrong offset!");
 static_assert(offsetof(FSCommonQte_SingleClick, UIConfig_15_7D1814F047F7875E71D239BB5D624892) == 0x000008, "Member 'FSCommonQte_SingleClick::UIConfig_15_7D1814F047F7875E71D239BB5D624892' has a wrong offset!");
+static_assert(offsetof(FSCommonQte_SingleClick, InteractiveTiming_18_7C5C080A4B88CC87AC782C99C278E96B) == 0x000050, "Member 'FSCommonQte_SingleClick::InteractiveTiming_18_7C5C080A4B88CC87AC782C99C278E96B' has a wrong offset!");
+static_assert(offsetof(FSCommonQte_SingleClick, IsShowBorder_21_B251E67244444D5D80F9A09705858DA4) == 0x000051, "Member 'FSCommonQte_SingleClick::IsShowBorder_21_B251E67244444D5D80F9A09705858DA4' has a wrong offset!");
 
 }
 

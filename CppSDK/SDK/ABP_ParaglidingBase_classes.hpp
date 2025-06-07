@@ -19,35 +19,34 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_ParaglidingBase.ABP_ParaglidingBase_C
-// 0x04D0 (0x0AF0 - 0x0620)
+// 0x04D0 (0x0B30 - 0x0660)
 class UABP_ParaglidingBase_C : public UAnimInstance
 {
 public:
-	uint8                                         Pad_618[0x8];                                      // 0x0618(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0620(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0628(0x0038)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_5;                  // 0x0660(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x0688(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x06B0(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x06D8(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x0700(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x0728(0x0028)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x0750(0x0038)()
-	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer;                    // 0x0788(0x00F8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x0880(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x08B8(0x0090)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0948(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0980(0x0148)()
-	class ATsBaseCharacter_C*                     角色蓝图;                                          // 0x0AC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          开伞;                                              // 0x0AD0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_AD1[0x7];                                      // 0x0AD1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelGroup_C*                    消散特效;                                          // 0x0AD8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          滑翔滞空;                                          // 0x0AE0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          滑翔上升;                                          // 0x0AE1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_AE2[0x2];                                      // 0x0AE2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         滑翔混合当前值;                                    // 0x0AE4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         滑翔混合目标值;                                    // 0x0AE8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         滑翔混合插值值速度;                                // 0x0AEC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0660(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0668(0x0038)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_5;                  // 0x06A0(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x06C8(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x06F0(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x0718(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x0740(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x0768(0x0028)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x0790(0x0038)()
+	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer;                    // 0x07C8(0x00F8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x08C0(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x08F8(0x0090)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0988(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x09C0(0x0148)()
+	class ATsBaseCharacter_C*                     角色蓝图;                                          // 0x0B08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          开伞;                                              // 0x0B10(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B11[0x7];                                      // 0x0B11(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelGroup_C*                    消散特效;                                          // 0x0B18(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          滑翔滞空;                                          // 0x0B20(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          滑翔上升;                                          // 0x0B21(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B22[0x2];                                      // 0x0B22(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         滑翔混合当前值;                                    // 0x0B24(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         滑翔混合目标值;                                    // 0x0B28(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         滑翔混合插值值速度;                                // 0x0B2C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ABP_ParaglidingBase(int32 EntryPoint);
@@ -71,29 +70,29 @@ public:
 	}
 };
 static_assert(alignof(UABP_ParaglidingBase_C) == 0x000010, "Wrong alignment on UABP_ParaglidingBase_C");
-static_assert(sizeof(UABP_ParaglidingBase_C) == 0x000AF0, "Wrong size on UABP_ParaglidingBase_C");
-static_assert(offsetof(UABP_ParaglidingBase_C, UberGraphFrame) == 0x000620, "Member 'UABP_ParaglidingBase_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_Root) == 0x000628, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_Root' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_5) == 0x000660, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_5' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_4) == 0x000688, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_4' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_3) == 0x0006B0, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_3' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_2) == 0x0006D8, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_2' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_1) == 0x000700, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_1' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult) == 0x000728, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_StateResult_2) == 0x000750, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_StateResult_2' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_BlendSpacePlayer) == 0x000788, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_BlendSpacePlayer' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_StateResult_1) == 0x000880, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_StateResult_1' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_SequencePlayer) == 0x0008B8, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_SequencePlayer' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_StateResult) == 0x000948, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_StateResult' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_StateMachine) == 0x000980, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_StateMachine' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, 角色蓝图) == 0x000AC8, "Member 'UABP_ParaglidingBase_C::角色蓝图' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, 开伞) == 0x000AD0, "Member 'UABP_ParaglidingBase_C::开伞' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, 消散特效) == 0x000AD8, "Member 'UABP_ParaglidingBase_C::消散特效' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔滞空) == 0x000AE0, "Member 'UABP_ParaglidingBase_C::滑翔滞空' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔上升) == 0x000AE1, "Member 'UABP_ParaglidingBase_C::滑翔上升' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔混合当前值) == 0x000AE4, "Member 'UABP_ParaglidingBase_C::滑翔混合当前值' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔混合目标值) == 0x000AE8, "Member 'UABP_ParaglidingBase_C::滑翔混合目标值' has a wrong offset!");
-static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔混合插值值速度) == 0x000AEC, "Member 'UABP_ParaglidingBase_C::滑翔混合插值值速度' has a wrong offset!");
+static_assert(sizeof(UABP_ParaglidingBase_C) == 0x000B30, "Wrong size on UABP_ParaglidingBase_C");
+static_assert(offsetof(UABP_ParaglidingBase_C, UberGraphFrame) == 0x000660, "Member 'UABP_ParaglidingBase_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_Root) == 0x000668, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_Root' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_5) == 0x0006A0, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_5' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_4) == 0x0006C8, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_4' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_3) == 0x0006F0, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_3' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_2) == 0x000718, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_2' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult_1) == 0x000740, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult_1' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_TransitionResult) == 0x000768, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_TransitionResult' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_StateResult_2) == 0x000790, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_StateResult_2' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_BlendSpacePlayer) == 0x0007C8, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_BlendSpacePlayer' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_StateResult_1) == 0x0008C0, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_StateResult_1' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_SequencePlayer) == 0x0008F8, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_SequencePlayer' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_StateResult) == 0x000988, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_StateResult' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, AnimGraphNode_StateMachine) == 0x0009C0, "Member 'UABP_ParaglidingBase_C::AnimGraphNode_StateMachine' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, 角色蓝图) == 0x000B08, "Member 'UABP_ParaglidingBase_C::角色蓝图' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, 开伞) == 0x000B10, "Member 'UABP_ParaglidingBase_C::开伞' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, 消散特效) == 0x000B18, "Member 'UABP_ParaglidingBase_C::消散特效' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔滞空) == 0x000B20, "Member 'UABP_ParaglidingBase_C::滑翔滞空' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔上升) == 0x000B21, "Member 'UABP_ParaglidingBase_C::滑翔上升' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔混合当前值) == 0x000B24, "Member 'UABP_ParaglidingBase_C::滑翔混合当前值' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔混合目标值) == 0x000B28, "Member 'UABP_ParaglidingBase_C::滑翔混合目标值' has a wrong offset!");
+static_assert(offsetof(UABP_ParaglidingBase_C, 滑翔混合插值值速度) == 0x000B2C, "Member 'UABP_ParaglidingBase_C::滑翔混合插值值速度' has a wrong offset!");
 
 }
 

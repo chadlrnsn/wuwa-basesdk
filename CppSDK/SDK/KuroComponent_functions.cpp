@@ -430,11 +430,11 @@ void UKuroSceneItemGuidePathComponent::StartTick(const struct FLinearColor& Norm
 // class UCurveFloat*                      Curve                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   TargetValue                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ResultTime                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MaxSearchDepth                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   MaxSearchDepth                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Tolerance                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroSceneItemMoveComponent::FindTimeByValueIn01Curve(const class UCurveFloat* Curve, const float TargetValue, float* ResultTime, const int32 MaxSearchDepth, const float Tolerance)
+bool UKuroSceneItemMoveComponent::FindTimeByValueIn01Curve(const class UCurveFloat* Curve, const float TargetValue, float* ResultTime, int32 MaxSearchDepth, const float Tolerance)
 {
 	static class UFunction* Func = nullptr;
 
@@ -619,6 +619,56 @@ void UKuroSceneItemMoveComponent::Kuro_SetGravityDirect(const struct FVector& In
 }
 
 
+// Function KuroComponent.KuroSceneItemMoveComponent.SetEnableDebugForMove
+// (Final, Native, Public)
+// Parameters:
+// bool                                    Enable                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSceneItemMoveComponent::SetEnableDebugForMove(bool Enable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "SetEnableDebugForMove");
+
+	Params::KuroSceneItemMoveComponent_SetEnableDebugForMove Parms{};
+
+	Parms.Enable = Enable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroComponent.KuroSceneItemMoveComponent.SetMaxDeltaDegreePerSecondForUpdatingLookAt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   MaxDegreePerSecond                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSceneItemMoveComponent::SetMaxDeltaDegreePerSecondForUpdatingLookAt(const float MaxDegreePerSecond)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "SetMaxDeltaDegreePerSecondForUpdatingLookAt");
+
+	Params::KuroSceneItemMoveComponent_SetMaxDeltaDegreePerSecondForUpdatingLookAt Parms{};
+
+	Parms.MaxDegreePerSecond = MaxDegreePerSecond;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroComponent.KuroSceneItemMoveComponent.SetTickingMoveEnable
 // (Final, Native, Public)
 // Parameters:
@@ -669,48 +719,6 @@ void UKuroSceneItemMoveComponent::SetTickingRotateEnable(bool bEnabled)
 }
 
 
-// Function KuroComponent.KuroSceneItemMoveComponent.StartMoveWithSpline
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class USplineComponent*                 SplineComponent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Repeat                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Cycle                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    KeepLookAt                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<float>                           Speeds                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<float>                           WaitTimes                                              (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// float                                   StartDis                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   EndDis                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroSceneItemMoveComponent::StartMoveWithSpline(class USplineComponent* SplineComponent, bool Repeat, bool Cycle, bool KeepLookAt, const TArray<float>& Speeds, const TArray<float>& WaitTimes, float StartDis, float EndDis)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroSceneItemMoveComponent", "StartMoveWithSpline");
-
-	Params::KuroSceneItemMoveComponent_StartMoveWithSpline Parms{};
-
-	Parms.SplineComponent = SplineComponent;
-	Parms.Repeat = Repeat;
-	Parms.Cycle = Cycle;
-	Parms.KeepLookAt = KeepLookAt;
-	Parms.Speeds = std::move(Speeds);
-	Parms.WaitTimes = std::move(WaitTimes);
-	Parms.StartDis = StartDis;
-	Parms.EndDis = EndDis;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function KuroComponent.KuroSceneItemMoveComponent.StartMoveWithSplineAtConstantTime
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -755,6 +763,50 @@ bool UKuroSceneItemMoveComponent::StartMoveWithSplineAtConstantTime(class USplin
 }
 
 
+// Function KuroComponent.KuroSceneItemMoveComponent.StartMoveWithSplineAtDynamicSpeed
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USplineComponent*                 SplineComponent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   MaxMoveTimes                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Cycle                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    KeepLookAt                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InitSpeed                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Acceleration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TargetSpeed                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   StartDis                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   EndDis                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroSceneItemMoveComponent::StartMoveWithSplineAtDynamicSpeed(class USplineComponent* SplineComponent, const int32 MaxMoveTimes, bool Cycle, bool KeepLookAt, const float InitSpeed, const float Acceleration, const float TargetSpeed, const float StartDis, const float EndDis)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "StartMoveWithSplineAtDynamicSpeed");
+
+	Params::KuroSceneItemMoveComponent_StartMoveWithSplineAtDynamicSpeed Parms{};
+
+	Parms.SplineComponent = SplineComponent;
+	Parms.MaxMoveTimes = MaxMoveTimes;
+	Parms.Cycle = Cycle;
+	Parms.KeepLookAt = KeepLookAt;
+	Parms.InitSpeed = InitSpeed;
+	Parms.Acceleration = Acceleration;
+	Parms.TargetSpeed = TargetSpeed;
+	Parms.StartDis = StartDis;
+	Parms.EndDis = EndDis;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroComponent.KuroSceneItemMoveComponent.StartRotate
 // (Final, Native, Public)
 // Parameters:
@@ -783,10 +835,10 @@ bool UKuroSceneItemMoveComponent::StartRotate()
 // Function KuroComponent.KuroSceneItemMoveComponent.StopAllMove
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    BroadcastCallback                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    BroadcastStopCallback                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    BroadcastIndexCallback                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroSceneItemMoveComponent::StopAllMove(bool BroadcastCallback, bool BroadcastIndexCallback)
+void UKuroSceneItemMoveComponent::StopAllMove(bool BroadcastStopCallback, bool BroadcastIndexCallback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -795,7 +847,7 @@ void UKuroSceneItemMoveComponent::StopAllMove(bool BroadcastCallback, bool Broad
 
 	Params::KuroSceneItemMoveComponent_StopAllMove Parms{};
 
-	Parms.BroadcastCallback = BroadcastCallback;
+	Parms.BroadcastStopCallback = BroadcastStopCallback;
 	Parms.BroadcastIndexCallback = BroadcastIndexCallback;
 
 	auto Flgs = Func->FunctionFlags;
@@ -823,6 +875,94 @@ bool UKuroSceneItemMoveComponent::StopRotate(EKuroSceneItemStopRotateMethod Stop
 	Params::KuroSceneItemMoveComponent_StopRotate Parms{};
 
 	Parms.StopMethod = StopMethod;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroComponent.KuroSceneItemMoveComponent.UpdateDynamicSpeedSplineMoveParams
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   CurrentSpeed                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Acceleration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TargetSpeed                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroSceneItemMoveComponent::UpdateDynamicSpeedSplineMoveParams(const float CurrentSpeed, const float Acceleration, const float TargetSpeed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "UpdateDynamicSpeedSplineMoveParams");
+
+	Params::KuroSceneItemMoveComponent_UpdateDynamicSpeedSplineMoveParams Parms{};
+
+	Parms.CurrentSpeed = CurrentSpeed;
+	Parms.Acceleration = Acceleration;
+	Parms.TargetSpeed = TargetSpeed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroComponent.KuroSceneItemMoveComponent.UpdateSplineMoveDistance
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewDistanceAloneSpline                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroSceneItemMoveComponent::UpdateSplineMoveDistance(const float NewDistanceAloneSpline)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "UpdateSplineMoveDistance");
+
+	Params::KuroSceneItemMoveComponent_UpdateSplineMoveDistance Parms{};
+
+	Parms.NewDistanceAloneSpline = NewDistanceAloneSpline;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroComponent.KuroSceneItemMoveComponent.UpdateSplineMoveDistanceByPosition
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVectorDouble                    NewPosition                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroSceneItemMoveComponent::UpdateSplineMoveDistanceByPosition(const struct FVectorDouble& NewPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSceneItemMoveComponent", "UpdateSplineMoveDistanceByPosition");
+
+	Params::KuroSceneItemMoveComponent_UpdateSplineMoveDistanceByPosition Parms{};
+
+	Parms.NewPosition = std::move(NewPosition);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

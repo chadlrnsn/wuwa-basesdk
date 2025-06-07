@@ -11,13 +11,14 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 namespace SDK::Params
 {
 
 // Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.UserConstructionScript
-// 0x0070 (0x0070 - 0x0000)
+// 0x0080 (0x0080 - 0x0000)
 struct BP_VolumetricSphereLight_C_UserConstructionScript final
 {
 public:
@@ -28,11 +29,16 @@ public:
 	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_2; // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_3; // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_4; // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_5; // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         ___float_Variable;                                 // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ___float_Variable_1;                               // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ___bool_Variable;                                  // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Select_Default;                             // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_5; // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_VolumetricSphereLight_C_UserConstructionScript) == 0x000010, "Wrong alignment on BP_VolumetricSphereLight_C_UserConstructionScript");
-static_assert(sizeof(BP_VolumetricSphereLight_C_UserConstructionScript) == 0x000070, "Wrong size on BP_VolumetricSphereLight_C_UserConstructionScript");
+static_assert(sizeof(BP_VolumetricSphereLight_C_UserConstructionScript) == 0x000080, "Wrong size on BP_VolumetricSphereLight_C_UserConstructionScript");
 static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, ___struct_Variable) == 0x000000, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::___struct_Variable' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_AddComponent_ReturnValue) == 0x000030, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_AddComponent_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000038, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
@@ -40,19 +46,106 @@ static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFu
 static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue_2) == 0x000048, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue_3) == 0x000050, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue_3' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue_4) == 0x000058, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue_5) == 0x000060, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_SetStaticMesh_ReturnValue) == 0x000068, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_SetStaticMesh_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, ___float_Variable) == 0x000060, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::___float_Variable' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, ___float_Variable_1) == 0x000064, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::___float_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, ___bool_Variable) == 0x000068, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::___bool_Variable' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, K2Node_Select_Default) == 0x00006C, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue_5) == 0x000070, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_UserConstructionScript, CallFunc_SetStaticMesh_ReturnValue) == 0x000078, "Member 'BP_VolumetricSphereLight_C_UserConstructionScript::CallFunc_SetStaticMesh_ReturnValue' has a wrong offset!");
+
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_VolumetricSphereLight_C_EditorTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_VolumetricSphereLight_C_EditorTick) == 0x000004, "Wrong alignment on BP_VolumetricSphereLight_C_EditorTick");
+static_assert(sizeof(BP_VolumetricSphereLight_C_EditorTick) == 0x000004, "Wrong size on BP_VolumetricSphereLight_C_EditorTick");
+static_assert(offsetof(BP_VolumetricSphereLight_C_EditorTick, DeltaSeconds) == 0x000000, "Member 'BP_VolumetricSphereLight_C_EditorTick::DeltaSeconds' has a wrong offset!");
+
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_VolumetricSphereLight_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_VolumetricSphereLight_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_VolumetricSphereLight_C_ReceiveTick");
+static_assert(sizeof(BP_VolumetricSphereLight_C_ReceiveTick) == 0x000004, "Wrong size on BP_VolumetricSphereLight_C_ReceiveTick");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_VolumetricSphereLight_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
 
 // Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ExecuteUbergraph_BP_VolumetricSphereLight
-// 0x0004 (0x0004 - 0x0000)
+// 0x00E0 (0x00E0 - 0x0000)
 struct BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_K2_GetComponentLocation_ReturnValue;    // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBP_EWorldType                                CallFunc_GetWorldType_ReturnValue;                 // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_GetLevelEditorCameraLocationAndForward_Position; // 0x0024(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_GetLevelEditorCameraLocationAndForward_Rotation; // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue; // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x003D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_Conv_VectorToVectorDouble_ReturnValue;    // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_D_Vector_Distance_ReturnValue;            // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_FloatToDouble_ReturnValue;           // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_D_Multiply_FloatFloat_ReturnValue;        // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue_1;             // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_FloatToDouble_ReturnValue_1;         // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue_2;             // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_D_MapRangeClamped_ReturnValue;            // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_FloatToDouble_ReturnValue_2;         // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_FloatToDouble_ReturnValue_3;         // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_D_MapRangeClamped_ReturnValue_1;          // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_D_Subtract_FloatFloat_ReturnValue;        // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Conv_DoubleToFloat_ReturnValue;           // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_FloatFloat_ReturnValue;        // 0x00B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x00B5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B6[0x2];                                       // 0x00B6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_D_GetCameraLocation_Success;              // 0x00BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_GetCameraLocation_Location;             // 0x00C0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_D_EqualEqual_VectorVector_ReturnValue;    // 0x00D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_D_EqualEqual_VectorVector_ReturnValue_1;  // 0x00D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight) == 0x000004, "Wrong alignment on BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight");
-static_assert(sizeof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight) == 0x000004, "Wrong size on BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight");
+static_assert(alignof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight) == 0x000008, "Wrong alignment on BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight");
+static_assert(sizeof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight) == 0x0000E0, "Wrong size on BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight");
 static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, EntryPoint) == 0x000000, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::EntryPoint' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, K2Node_Event_DeltaSeconds_1) == 0x000004, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::K2Node_Event_DeltaSeconds_1' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_K2_GetComponentLocation_ReturnValue) == 0x000008, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_GetWorldType_ReturnValue) == 0x000020, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_GetWorldType_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_GetLevelEditorCameraLocationAndForward_Position) == 0x000024, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_GetLevelEditorCameraLocationAndForward_Position' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_GetLevelEditorCameraLocationAndForward_Rotation) == 0x000030, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_GetLevelEditorCameraLocationAndForward_Rotation' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue) == 0x00003C, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_GetLevelEditorCameraLocationAndForward_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x00003D, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Conv_VectorToVectorDouble_ReturnValue) == 0x000040, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Conv_VectorToVectorDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_Vector_Distance_ReturnValue) == 0x000058, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_Vector_Distance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Conv_FloatToDouble_ReturnValue) == 0x000060, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Conv_FloatToDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_Multiply_FloatFloat_ReturnValue) == 0x000068, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Add_FloatFloat_ReturnValue) == 0x000070, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Add_FloatFloat_ReturnValue_1) == 0x000074, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Add_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Conv_FloatToDouble_ReturnValue_1) == 0x000078, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Conv_FloatToDouble_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Add_FloatFloat_ReturnValue_2) == 0x000080, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Add_FloatFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_MapRangeClamped_ReturnValue) == 0x000088, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_MapRangeClamped_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Conv_FloatToDouble_ReturnValue_2) == 0x000090, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Conv_FloatToDouble_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Conv_FloatToDouble_ReturnValue_3) == 0x000098, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Conv_FloatToDouble_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_MapRangeClamped_ReturnValue_1) == 0x0000A0, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_MapRangeClamped_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_Subtract_FloatFloat_ReturnValue) == 0x0000A8, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Conv_DoubleToFloat_ReturnValue) == 0x0000B0, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Conv_DoubleToFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_EqualEqual_FloatFloat_ReturnValue) == 0x0000B4, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_EqualEqual_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_Greater_FloatFloat_ReturnValue) == 0x0000B5, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, K2Node_Event_DeltaSeconds) == 0x0000B8, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_GetCameraLocation_Success) == 0x0000BC, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_GetCameraLocation_Success' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_GetCameraLocation_Location) == 0x0000C0, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_GetCameraLocation_Location' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_EqualEqual_VectorVector_ReturnValue) == 0x0000D8, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_EqualEqual_VectorVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight, CallFunc_D_EqualEqual_VectorVector_ReturnValue_1) == 0x0000D9, "Member 'BP_VolumetricSphereLight_C_ExecuteUbergraph_BP_VolumetricSphereLight::CallFunc_D_EqualEqual_VectorVector_ReturnValue_1' has a wrong offset!");
 
 }
 

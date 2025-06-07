@@ -17,35 +17,63 @@
 namespace SDK
 {
 
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.ExecuteUbergraph_BP_KuroCheatManager
-// (Final, UbergraphFunction)
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.强化或还原角色
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    是否需要强化                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UBP_KuroCheatManager_C::ExecuteUbergraph_BP_KuroCheatManager(int32 EntryPoint)
+void UBP_KuroCheatManager_C::强化或还原角色(bool 是否需要强化)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroCheatManager_C", "ExecuteUbergraph_BP_KuroCheatManager");
+		Func = Class->GetFunction("BP_KuroCheatManager_C", "强化或还原角色");
 
-	Params::BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager Parms{};
+	Params::BP_KuroCheatManager_C_强化或还原角色 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.是否需要强化 = 是否需要强化;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.ReceiveInitCheatManager
-// (Event, Public, BlueprintEvent)
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.TouchDebug
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UBP_KuroCheatManager_C::ReceiveInitCheatManager()
+void UBP_KuroCheatManager_C::TouchDebug()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroCheatManager_C", "ReceiveInitCheatManager");
+		Func = Class->GetFunction("BP_KuroCheatManager_C", "TouchDebug");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.PrintTimeScale
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UBP_KuroCheatManager_C::PrintTimeScale()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroCheatManager_C", "PrintTimeScale");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.UpdateFunctionKey
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UBP_KuroCheatManager_C::UpdateFunctionKey()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroCheatManager_C", "UpdateFunctionKey");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -73,63 +101,35 @@ void UBP_KuroCheatManager_C::作弊指令(const struct FKey& 输入按键_0, boo
 }
 
 
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.UpdateFunctionKey
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.ReceiveInitCheatManager
+// (Event, Public, BlueprintEvent)
 
-void UBP_KuroCheatManager_C::UpdateFunctionKey()
+void UBP_KuroCheatManager_C::ReceiveInitCheatManager()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroCheatManager_C", "UpdateFunctionKey");
+		Func = Class->GetFunction("BP_KuroCheatManager_C", "ReceiveInitCheatManager");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.PrintTimeScale
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UBP_KuroCheatManager_C::PrintTimeScale()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroCheatManager_C", "PrintTimeScale");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.TouchDebug
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UBP_KuroCheatManager_C::TouchDebug()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroCheatManager_C", "TouchDebug");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_KuroCheatManager.BP_KuroCheatManager_C.强化或还原角色
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroCheatManager.BP_KuroCheatManager_C.ExecuteUbergraph_BP_KuroCheatManager
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    是否需要强化                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBP_KuroCheatManager_C::强化或还原角色(bool 是否需要强化)
+void UBP_KuroCheatManager_C::ExecuteUbergraph_BP_KuroCheatManager(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroCheatManager_C", "强化或还原角色");
+		Func = Class->GetFunction("BP_KuroCheatManager_C", "ExecuteUbergraph_BP_KuroCheatManager");
 
-	Params::BP_KuroCheatManager_C_强化或还原角色 Parms{};
+	Params::BP_KuroCheatManager_C_ExecuteUbergraph_BP_KuroCheatManager Parms{};
 
-	Parms.是否需要强化 = 是否需要强化;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

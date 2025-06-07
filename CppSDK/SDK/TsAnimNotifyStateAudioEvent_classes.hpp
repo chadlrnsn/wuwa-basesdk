@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SAudioEventProbabilityCooldownInfo_structs.hpp"
 #include "KuroAudio_structs.hpp"
+#include "SAudioEventProbabilityCooldownInfo_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 

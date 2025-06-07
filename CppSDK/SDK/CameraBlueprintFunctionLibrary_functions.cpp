@@ -1383,5 +1383,359 @@ void UCameraBlueprintFunctionLibrary_C::SetXRayState(bool isEnable, class UObjec
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetUiCameraDebugToolEnabled
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    enabled                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::SetUiCameraDebugToolEnabled(bool enabled, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SetUiCameraDebugToolEnabled");
+
+	Params::CameraBlueprintFunctionLibrary_C_SetUiCameraDebugToolEnabled Parms{};
+
+	Parms.enabled = enabled;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SwitchUiCameraDtSync
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::SwitchUiCameraDtSync(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SwitchUiCameraDtSync");
+
+	Params::CameraBlueprintFunctionLibrary_C_SwitchUiCameraDtSync Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetDebugToolUiCameraProps
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TMap<class FString, class FString>      ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+TMap<class FString, class FString> UCameraBlueprintFunctionLibrary_C::GetDebugToolUiCameraProps(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetDebugToolUiCameraProps");
+
+	Params::CameraBlueprintFunctionLibrary_C_GetDebugToolUiCameraProps Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SwitchUiCameraArmLengthSync
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::SwitchUiCameraArmLengthSync(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SwitchUiCameraArmLengthSync");
+
+	Params::CameraBlueprintFunctionLibrary_C_SwitchUiCameraArmLengthSync Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.OnDebugToolUiCameraArmLengthInputChanged
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           armLengthStr                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::OnDebugToolUiCameraArmLengthInputChanged(const class FString& armLengthStr, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "OnDebugToolUiCameraArmLengthInputChanged");
+
+	Params::CameraBlueprintFunctionLibrary_C_OnDebugToolUiCameraArmLengthInputChanged Parms{};
+
+	Parms.armLengthStr = std::move(armLengthStr);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetCameraGravityMode
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECameraGravityMode                      gravityMode                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    gravityDirect                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::SetCameraGravityMode(ECameraGravityMode gravityMode, const struct FVectorDouble& gravityDirect, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SetCameraGravityMode");
+
+	Params::CameraBlueprintFunctionLibrary_C_SetCameraGravityMode Parms{};
+
+	Parms.gravityMode = gravityMode;
+	Parms.gravityDirect = std::move(gravityDirect);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetCameraGravityMode
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECameraGravityMode                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+ECameraGravityMode UCameraBlueprintFunctionLibrary_C::GetCameraGravityMode(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetCameraGravityMode");
+
+	Params::CameraBlueprintFunctionLibrary_C_GetCameraGravityMode Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetCameraGravityDirect
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVectorDouble UCameraBlueprintFunctionLibrary_C::GetCameraGravityDirect(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetCameraGravityDirect");
+
+	Params::CameraBlueprintFunctionLibrary_C_GetCameraGravityDirect Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetCameraGravityUp
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVectorDouble UCameraBlueprintFunctionLibrary_C::GetCameraGravityUp(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetCameraGravityUp");
+
+	Params::CameraBlueprintFunctionLibrary_C_GetCameraGravityUp Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetCameraRotationInGravity
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+struct FRotator UCameraBlueprintFunctionLibrary_C::GetCameraRotationInGravity(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetCameraRotationInGravity");
+
+	Params::CameraBlueprintFunctionLibrary_C_GetCameraRotationInGravity Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetPlayerLocationInGravity
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVectorDouble UCameraBlueprintFunctionLibrary_C::GetPlayerLocationInGravity(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetPlayerLocationInGravity");
+
+	Params::CameraBlueprintFunctionLibrary_C_GetPlayerLocationInGravity Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetPlayerRotatorInGravity
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+struct FRotator UCameraBlueprintFunctionLibrary_C::GetPlayerRotatorInGravity(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "GetPlayerRotatorInGravity");
+
+	Params::CameraBlueprintFunctionLibrary_C_GetPlayerRotatorInGravity Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SwitchCameraDebugRotatorEnabled
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::SwitchCameraDebugRotatorEnabled(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SwitchCameraDebugRotatorEnabled");
+
+	Params::CameraBlueprintFunctionLibrary_C_SwitchCameraDebugRotatorEnabled Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

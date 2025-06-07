@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "EMovementDirection_structs.hpp"
-#include "SBulletDataMain_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SVisionData_structs.hpp"
 #include "SCaughtInfo_structs.hpp"
 #include "SReBulletDataMain_structs.hpp"
-#include "SMovementSetting_State_structs.hpp"
-#include "SVisionData_structs.hpp"
-#include "SCharacterPart_structs.hpp"
+#include "EMovementDirection_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SCharacterPart_structs.hpp"
 #include "SSkillInfo_structs.hpp"
 #include "SEffectData_structs.hpp"
 #include "SAttributeModifierData_structs.hpp"
 #include "SDamageData_structs.hpp"
 #include "SHitEffect_structs.hpp"
+#include "SBulletDataMain_structs.hpp"
+#include "SMovementSetting_State_structs.hpp"
 
 
 namespace SDK::Params
@@ -232,7 +232,7 @@ static_assert(offsetof(BPL_CharacterUtility_C_DtGetEffectData, CallFunc_GetDataT
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetEffectData, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000048, "Member 'BPL_CharacterUtility_C_DtGetEffectData::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetNewBulletData
-// 0x0EF0 (0x0EF0 - 0x0000)
+// 0x0F50 (0x0F50 - 0x0000)
 struct BPL_CharacterUtility_C_DtGetNewBulletData final
 {
 public:
@@ -240,21 +240,21 @@ public:
 	class FName                                   rowName;                                           // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSReBulletDataMain                     data;                                              // 0x0020(0x0760)(Parm, OutParm, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0780(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_781[0x7];                                      // 0x0781(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSReBulletDataMain                     CallFunc_GetDataTableRowFromName_OutRow;           // 0x0788(0x0760)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0EE8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSReBulletDataMain                     data;                                              // 0x0020(0x0790)(Parm, OutParm, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x07B0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7B1[0x7];                                      // 0x07B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSReBulletDataMain                     CallFunc_GetDataTableRowFromName_OutRow;           // 0x07B8(0x0790)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0F48(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BPL_CharacterUtility_C_DtGetNewBulletData) == 0x000008, "Wrong alignment on BPL_CharacterUtility_C_DtGetNewBulletData");
-static_assert(sizeof(BPL_CharacterUtility_C_DtGetNewBulletData) == 0x000EF0, "Wrong size on BPL_CharacterUtility_C_DtGetNewBulletData");
+static_assert(sizeof(BPL_CharacterUtility_C_DtGetNewBulletData) == 0x000F50, "Wrong size on BPL_CharacterUtility_C_DtGetNewBulletData");
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, dataTable) == 0x000000, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::dataTable' has a wrong offset!");
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, rowName) == 0x000008, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::rowName' has a wrong offset!");
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, __WorldContext) == 0x000018, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::__WorldContext' has a wrong offset!");
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, data) == 0x000020, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::data' has a wrong offset!");
-static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, ReturnValue) == 0x000780, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, CallFunc_GetDataTableRowFromName_OutRow) == 0x000788, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000EE8, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, ReturnValue) == 0x0007B0, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, CallFunc_GetDataTableRowFromName_OutRow) == 0x0007B8, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
+static_assert(offsetof(BPL_CharacterUtility_C_DtGetNewBulletData, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000F48, "Member 'BPL_CharacterUtility_C_DtGetNewBulletData::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetAllSkillInfos
 // 0x01E0 (0x01E0 - 0x0000)
@@ -407,7 +407,7 @@ static_assert(offsetof(BPL_CharacterUtility_C_DtGetCaughtInfo, CallFunc_GetDataT
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetCaughtInfo, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x000208, "Member 'BPL_CharacterUtility_C_DtGetCaughtInfo::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetAllBulletData
-// 0x07D0 (0x07D0 - 0x0000)
+// 0x0800 (0x0800 - 0x0000)
 struct BPL_CharacterUtility_C_DtGetAllBulletData final
 {
 public:
@@ -420,17 +420,17 @@ public:
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Array_Get_Item;                           // 0x0048(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSReBulletDataMain                     CallFunc_GetDataTableRowFromName_OutRow;           // 0x0058(0x0760)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x07B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7B9[0x3];                                      // 0x07B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x07BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x07C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7C1[0x3];                                      // 0x07C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x07C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x07C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSReBulletDataMain                     CallFunc_GetDataTableRowFromName_OutRow;           // 0x0058(0x0790)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x07E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7E9[0x3];                                      // 0x07E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x07EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x07F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7F1[0x3];                                      // 0x07F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x07F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x07F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BPL_CharacterUtility_C_DtGetAllBulletData) == 0x000008, "Wrong alignment on BPL_CharacterUtility_C_DtGetAllBulletData");
-static_assert(sizeof(BPL_CharacterUtility_C_DtGetAllBulletData) == 0x0007D0, "Wrong size on BPL_CharacterUtility_C_DtGetAllBulletData");
+static_assert(sizeof(BPL_CharacterUtility_C_DtGetAllBulletData) == 0x000800, "Wrong size on BPL_CharacterUtility_C_DtGetAllBulletData");
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, dataTable) == 0x000000, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::dataTable' has a wrong offset!");
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, __WorldContext) == 0x000008, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::__WorldContext' has a wrong offset!");
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, NewParam) == 0x000010, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::NewParam' has a wrong offset!");
@@ -440,11 +440,11 @@ static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, ___int_Array_I
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_Array_Length_ReturnValue) == 0x000044, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_Array_Get_Item) == 0x000048, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_Array_Get_Item' has a wrong offset!");
 static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_GetDataTableRowFromName_OutRow) == 0x000058, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x0007B8, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, ___int_Loop_Counter_Variable) == 0x0007BC, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_Less_IntInt_ReturnValue) == 0x0007C0, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_Add_IntInt_ReturnValue) == 0x0007C4, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_Array_Add_ReturnValue) == 0x0007C8, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x0007E8, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, ___int_Loop_Counter_Variable) == 0x0007EC, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_Less_IntInt_ReturnValue) == 0x0007F0, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_Add_IntInt_ReturnValue) == 0x0007F4, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BPL_CharacterUtility_C_DtGetAllBulletData, CallFunc_Array_Add_ReturnValue) == 0x0007F8, "Member 'BPL_CharacterUtility_C_DtGetAllBulletData::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetBlockObjectType
 // 0x0038 (0x0038 - 0x0000)

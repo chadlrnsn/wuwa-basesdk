@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ECharacterState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "KuroGameplay_classes.hpp"
-#include "ECharacterState_structs.hpp"
 
 
 namespace SDK
@@ -71,6 +71,8 @@ public:
 	void 切换状态机状态(TArray<class FString>& states);
 	void GetDebugStateMachine(TArray<class FText>& output);
 	void AicApplyBuffToTarget(int32 targetId, int64 buffId);
+	void AddLevelVarBoolEventBinder(const struct FSAiLevelVar& levelVar, class UKuroBooleanEventBinder* eventBinder);
+	void AddLevelVarIntEventBinder(const struct FSAiLevelVar& levelVar, class UKuroIntEventBinder* eventBinder);
 
 public:
 	static class UClass* StaticClass()

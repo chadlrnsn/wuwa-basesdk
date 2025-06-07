@@ -17,6 +17,54 @@
 namespace SDK
 {
 
+// Function BP_RippleSwim.BP_RippleSwim_C.Change Ripple Preset
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UBP_RippleWater_Data_C*           NewRippleState                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_RippleSwim_C::Change_Ripple_Preset(class UBP_RippleWater_Data_C* NewRippleState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RippleSwim_C", "Change Ripple Preset");
+
+	Params::BP_RippleSwim_C_Change_Ripple_Preset Parms{};
+
+	Parms.NewRippleState = NewRippleState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_RippleSwim.BP_RippleSwim_C.CalcTexCoord
+// (Private, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FVectorDouble                    RippleCenter                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    RipplePointLocation                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   CaptureSize                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          TexCoord                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_RippleSwim_C::CalcTexCoord(const struct FVectorDouble& RippleCenter, const struct FVectorDouble& RipplePointLocation, float CaptureSize, struct FVector* TexCoord)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RippleSwim_C", "CalcTexCoord");
+
+	Params::BP_RippleSwim_C_CalcTexCoord Parms{};
+
+	Parms.RippleCenter = std::move(RippleCenter);
+	Parms.RipplePointLocation = std::move(RipplePointLocation);
+	Parms.CaptureSize = CaptureSize;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TexCoord != nullptr)
+		*TexCoord = std::move(Parms.TexCoord);
+}
+
+
 // Function BP_RippleSwim.BP_RippleSwim_C.Clear_RT
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -107,6 +155,32 @@ void ABP_RippleSwim_C::BeforeCookForMobile()
 }
 
 
+// Function BP_RippleSwim.BP_RippleSwim_C.OnBulletHitWater
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVectorDouble                    ImpactPoint                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UBP_SceneBattleInteract_C*        Config                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    OriginPoint                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_RippleSwim_C::OnBulletHitWater(const struct FVectorDouble& ImpactPoint, class UBP_SceneBattleInteract_C* Config, const struct FVectorDouble& OriginPoint, int32 Id)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RippleSwim_C", "OnBulletHitWater");
+
+	Params::BP_RippleSwim_C_OnBulletHitWater Parms{};
+
+	Parms.ImpactPoint = std::move(ImpactPoint);
+	Parms.Config = Config;
+	Parms.OriginPoint = std::move(OriginPoint);
+	Parms.Id = Id;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_RippleSwim.BP_RippleSwim_C.EditorTick
 // (BlueprintCallable, BlueprintEvent)
 
@@ -116,6 +190,20 @@ void ABP_RippleSwim_C::EditorTick()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_RippleSwim_C", "EditorTick");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_RippleSwim.BP_RippleSwim_C.SetBulletUV
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_RippleSwim_C::SetBulletUV()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RippleSwim_C", "SetBulletUV");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -152,6 +240,20 @@ void ABP_RippleSwim_C::ReceiveTick(float DeltaSeconds)
 	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_RippleSwim.BP_RippleSwim_C.ResetBulletUV
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_RippleSwim_C::ResetBulletUV()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_RippleSwim_C", "ResetBulletUV");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

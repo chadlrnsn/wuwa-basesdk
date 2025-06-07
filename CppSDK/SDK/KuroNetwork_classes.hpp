@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "KuroNetwork_structs.hpp"
 #include "JsEnv_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "KuroNetwork_structs.hpp"
 
 
 namespace SDK
@@ -197,21 +197,44 @@ static_assert(alignof(UKuroNetworkChange) == 0x000008, "Wrong alignment on UKuro
 static_assert(sizeof(UKuroNetworkChange) == 0x000050, "Wrong size on UKuroNetworkChange");
 static_assert(offsetof(UKuroNetworkChange, NetworkChangeDelegate) == 0x000030, "Member 'UKuroNetworkChange::NetworkChangeDelegate' has a wrong offset!");
 
+// Class KuroNetwork.KuroNetworkDetection
+// 0x0000 (0x0030 - 0x0030)
+class UKuroNetworkDetection final : public UObject
+{
+public:
+	static void DetectionFinish(bool bSuccess);
+	static class FString GetCurrentProxyAddress();
+	static class FString GetDetectionConfig(const class FString& ServerName);
+	static int32 ResolveDomainName(const class FString& DomainName);
+	static void SetCDNConfig(const class FString& CDNConfig);
+	static void TestUdpReachable(const class FString& IpAddress, const TArray<int32>& Ports, TDelegate<void(int32 SuccessCount, int32 ErrorCode)> ResultDelegate);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroNetworkDetection">();
+	}
+	static class UKuroNetworkDetection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroNetworkDetection>();
+	}
+};
+static_assert(alignof(UKuroNetworkDetection) == 0x000008, "Wrong alignment on UKuroNetworkDetection");
+static_assert(sizeof(UKuroNetworkDetection) == 0x000030, "Wrong size on UKuroNetworkDetection");
+
 // Class KuroNetwork.KuroNetworkSetting
-// 0x00A8 (0x00D8 - 0x0030)
+// 0x0058 (0x0088 - 0x0030)
 class UKuroNetworkSetting final : public UObject
 {
 public:
-	struct FKuroPublicKey                         ServerPublicKey;                                   // 0x0030(0x0020)(Edit, Config, AdvancedDisplay, NativeAccessSpecifierPublic)
-	struct FKuroPrivateKey                        ClientPrivateKey;                                  // 0x0050(0x0030)(Edit, Config, AdvancedDisplay, NativeAccessSpecifierPublic)
-	class FString                                 AlAki;                                             // 0x0080(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AlAks;                                             // 0x0090(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 RptPub;                                            // 0x00A0(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 RptUrl;                                            // 0x00B0(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 RptUrlGlobal;                                      // 0x00C0(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          EnableDump;                                        // 0x00D0(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseNativeMethod;                                   // 0x00D1(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D2[0x6];                                       // 0x00D2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 AlAki;                                             // 0x0030(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AlAks;                                             // 0x0040(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RptPub;                                            // 0x0050(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RptUrl;                                            // 0x0060(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RptUrlGlobal;                                      // 0x0070(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          EnableDump;                                        // 0x0080(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseNativeMethod;                                   // 0x0081(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -224,16 +247,14 @@ public:
 	}
 };
 static_assert(alignof(UKuroNetworkSetting) == 0x000008, "Wrong alignment on UKuroNetworkSetting");
-static_assert(sizeof(UKuroNetworkSetting) == 0x0000D8, "Wrong size on UKuroNetworkSetting");
-static_assert(offsetof(UKuroNetworkSetting, ServerPublicKey) == 0x000030, "Member 'UKuroNetworkSetting::ServerPublicKey' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, ClientPrivateKey) == 0x000050, "Member 'UKuroNetworkSetting::ClientPrivateKey' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, AlAki) == 0x000080, "Member 'UKuroNetworkSetting::AlAki' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, AlAks) == 0x000090, "Member 'UKuroNetworkSetting::AlAks' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, RptPub) == 0x0000A0, "Member 'UKuroNetworkSetting::RptPub' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, RptUrl) == 0x0000B0, "Member 'UKuroNetworkSetting::RptUrl' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, RptUrlGlobal) == 0x0000C0, "Member 'UKuroNetworkSetting::RptUrlGlobal' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, EnableDump) == 0x0000D0, "Member 'UKuroNetworkSetting::EnableDump' has a wrong offset!");
-static_assert(offsetof(UKuroNetworkSetting, UseNativeMethod) == 0x0000D1, "Member 'UKuroNetworkSetting::UseNativeMethod' has a wrong offset!");
+static_assert(sizeof(UKuroNetworkSetting) == 0x000088, "Wrong size on UKuroNetworkSetting");
+static_assert(offsetof(UKuroNetworkSetting, AlAki) == 0x000030, "Member 'UKuroNetworkSetting::AlAki' has a wrong offset!");
+static_assert(offsetof(UKuroNetworkSetting, AlAks) == 0x000040, "Member 'UKuroNetworkSetting::AlAks' has a wrong offset!");
+static_assert(offsetof(UKuroNetworkSetting, RptPub) == 0x000050, "Member 'UKuroNetworkSetting::RptPub' has a wrong offset!");
+static_assert(offsetof(UKuroNetworkSetting, RptUrl) == 0x000060, "Member 'UKuroNetworkSetting::RptUrl' has a wrong offset!");
+static_assert(offsetof(UKuroNetworkSetting, RptUrlGlobal) == 0x000070, "Member 'UKuroNetworkSetting::RptUrlGlobal' has a wrong offset!");
+static_assert(offsetof(UKuroNetworkSetting, EnableDump) == 0x000080, "Member 'UKuroNetworkSetting::EnableDump' has a wrong offset!");
+static_assert(offsetof(UKuroNetworkSetting, UseNativeMethod) == 0x000081, "Member 'UKuroNetworkSetting::UseNativeMethod' has a wrong offset!");
 
 // Class KuroNetwork.SendHttpRequest
 // 0x0020 (0x0058 - 0x0038)

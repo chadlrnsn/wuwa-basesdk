@@ -20,81 +20,56 @@ namespace SDK::Params
 {
 
 // Function BP_EffectActor.BP_EffectActor_C.ExecuteUbergraph_BP_EffectActor
-// 0x0088 (0x0088 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Stop_ReturnValue;                         // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Array_Index_Variable;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Event_Handle;                               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EffectHandleIsValid_ReturnValue;          // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x001A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1B[0x5];                                       // 0x001B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class USceneComponent*                        CallFunc_K2_GetRootComponent_ReturnValue;          // 0x0020(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bValue;                               // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkComponent*                           K2Node_DynamicCast_AsAk_Component;                 // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Stop_ReturnValue_1;                       // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EffectHandleIsValid_ReturnValue_1;        // 0x003A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EffectHandleIsValid_ReturnValue_2;        // 0x003B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EffectHandleIsValid_ReturnValue_3;        // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class USceneComponent*                        CallFunc_K2_GetRootComponent_ReturnValue_1;        // 0x0040(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class USceneComponent*>                CallFunc_GetChildrenComponents_Children;           // 0x0048(0x0010)(ReferenceParm, ContainsInstancedReference)
-	class USceneComponent*                        CallFunc_Array_Get_Item;                           // 0x0058(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USplineComponent*                       K2Node_DynamicCast_As____;                         // 0x0060(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsVisible_ReturnValue;                    // 0x0071(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0072(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_73[0x1];                                       // 0x0073(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EffectHandleIsValid_ReturnValue_4;        // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_Event_Handle;                               // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EffectHandleIsValid_ReturnValue;          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_13[0x5];                                       // 0x0013(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        CallFunc_K2_GetRootComponent_ReturnValue;          // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_bValue;                               // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAkComponent*                           K2Node_DynamicCast_AsAk_Component;                 // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Stop_ReturnValue_1;                       // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EffectHandleIsValid_ReturnValue_1;        // 0x0032(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EffectHandleIsValid_ReturnValue_2;        // 0x0033(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EffectHandleIsValid_ReturnValue_3;        // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsVisible_ReturnValue;                    // 0x0036(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0037(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EffectHandleIsValid_ReturnValue_4;        // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor) == 0x000008, "Wrong alignment on BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor");
-static_assert(sizeof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor) == 0x000088, "Wrong size on BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor");
+static_assert(sizeof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor) == 0x000040, "Wrong size on BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor");
 static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, EntryPoint) == 0x000000, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::EntryPoint' has a wrong offset!");
 static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_Stop_ReturnValue) == 0x000004, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_Stop_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, ___int_Array_Index_Variable) == 0x000008, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_Event_Handle) == 0x00000C, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_Event_Handle' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_Event_EndPlayReason) == 0x000010, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_Event_EndPlayReason' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_Event_DeltaSeconds) == 0x000014, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_Event_DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue) == 0x000018, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_Not_PreBool_ReturnValue) == 0x000019, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_SwitchEnum_CmpSuccess) == 0x00001A, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_K2_GetRootComponent_ReturnValue) == 0x000020, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_K2_GetRootComponent_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_Event_bValue) == 0x000028, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_Event_bValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_DynamicCast_AsAk_Component) == 0x000030, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_DynamicCast_AsAk_Component' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_DynamicCast_bSuccess) == 0x000038, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_Stop_ReturnValue_1) == 0x000039, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_Stop_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue_1) == 0x00003A, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue_2) == 0x00003B, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue_3) == 0x00003C, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_K2_GetRootComponent_ReturnValue_1) == 0x000040, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_K2_GetRootComponent_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_GetChildrenComponents_Children) == 0x000048, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_GetChildrenComponents_Children' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_Array_Get_Item) == 0x000058, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_DynamicCast_As____) == 0x000060, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_DynamicCast_As____' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_DynamicCast_bSuccess_1) == 0x000068, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_Array_Length_ReturnValue) == 0x00006C, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000070, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_IsVisible_ReturnValue) == 0x000071, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_IsVisible_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000072, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, ___int_Loop_Counter_Variable) == 0x000074, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_Less_IntInt_ReturnValue) == 0x000078, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_Add_IntInt_ReturnValue) == 0x00007C, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue_4) == 0x000080, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_Event_EndPlayReason) == 0x000005, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_Event_EndPlayReason' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_Event_Handle) == 0x000008, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_Event_Handle' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_Event_DeltaSeconds) == 0x00000C, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue) == 0x000010, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_Not_PreBool_ReturnValue) == 0x000011, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_SwitchEnum_CmpSuccess) == 0x000012, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_K2_GetRootComponent_ReturnValue) == 0x000018, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_K2_GetRootComponent_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_Event_bValue) == 0x000020, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_Event_bValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_DynamicCast_AsAk_Component) == 0x000028, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_DynamicCast_AsAk_Component' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, K2Node_DynamicCast_bSuccess) == 0x000030, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_Stop_ReturnValue_1) == 0x000031, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_Stop_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue_1) == 0x000032, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue_2) == 0x000033, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue_3) == 0x000034, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000035, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_IsVisible_ReturnValue) == 0x000036, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_IsVisible_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000037, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor, CallFunc_EffectHandleIsValid_ReturnValue_4) == 0x000038, "Member 'BP_EffectActor_C_ExecuteUbergraph_BP_EffectActor::CallFunc_EffectHandleIsValid_ReturnValue_4' has a wrong offset!");
 
 // Function BP_EffectActor.BP_EffectActor_C.DoHiddenInGame
 // 0x0001 (0x0001 - 0x0000)
@@ -181,23 +156,17 @@ static_assert(offsetof(BP_EffectActor_C_Refresh, CallFunc_GetOuterObject_ReturnV
 static_assert(offsetof(BP_EffectActor_C_Refresh, CallFunc_InitializeWithPreview_Success) == 0x000010, "Member 'BP_EffectActor_C_Refresh::CallFunc_InitializeWithPreview_Success' has a wrong offset!");
 
 // Function BP_EffectActor.BP_EffectActor_C.IsEditor
-// 0x0005 (0x0005 - 0x0000)
+// 0x0002 (0x0002 - 0x0000)
 struct BP_EffectActor_C_IsEditor final
 {
 public:
 	bool                                          IsEditor_0;                                        // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	EBP_EWorldType                                CallFunc_GetWorldType_ReturnValue;                 // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsEffectSystemInEditorNoPIE_ReturnValue;  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_EffectActor_C_IsEditor) == 0x000001, "Wrong alignment on BP_EffectActor_C_IsEditor");
-static_assert(sizeof(BP_EffectActor_C_IsEditor) == 0x000005, "Wrong size on BP_EffectActor_C_IsEditor");
+static_assert(sizeof(BP_EffectActor_C_IsEditor) == 0x000002, "Wrong size on BP_EffectActor_C_IsEditor");
 static_assert(offsetof(BP_EffectActor_C_IsEditor, IsEditor_0) == 0x000000, "Member 'BP_EffectActor_C_IsEditor::IsEditor_0' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_IsEditor, CallFunc_GetWorldType_ReturnValue) == 0x000001, "Member 'BP_EffectActor_C_IsEditor::CallFunc_GetWorldType_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_IsEditor, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000002, "Member 'BP_EffectActor_C_IsEditor::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_IsEditor, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x000003, "Member 'BP_EffectActor_C_IsEditor::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_EffectActor_C_IsEditor, CallFunc_BooleanOR_ReturnValue) == 0x000004, "Member 'BP_EffectActor_C_IsEditor::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_EffectActor_C_IsEditor, CallFunc_IsEffectSystemInEditorNoPIE_ReturnValue) == 0x000001, "Member 'BP_EffectActor_C_IsEditor::CallFunc_IsEffectSystemInEditorNoPIE_ReturnValue' has a wrong offset!");
 
 // Function BP_EffectActor.BP_EffectActor_C.Stop
 // 0x0018 (0x0018 - 0x0000)

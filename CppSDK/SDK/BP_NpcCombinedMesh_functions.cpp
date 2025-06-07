@@ -432,5 +432,40 @@ void ABP_NpcCombinedMesh_C::Test(class USkeletalMeshComponent* SKMesh, class UMa
 	UObject::ProcessEvent(Func, &Parms);
 }
 
+
+// Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.预览MorphTarget
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_NpcCombinedMesh_C::预览MorphTarget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_NpcCombinedMesh_C", "预览MorphTarget");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.GetFaceMeshComponent
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USkeletalMeshComponent*           SkeletalMeshComp                                       (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_NpcCombinedMesh_C::GetFaceMeshComponent(class USkeletalMeshComponent** SkeletalMeshComp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_NpcCombinedMesh_C", "GetFaceMeshComponent");
+
+	Params::BP_NpcCombinedMesh_C_GetFaceMeshComponent Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (SkeletalMeshComp != nullptr)
+		*SkeletalMeshComp = Parms.SkeletalMeshComp;
+}
+
 }
 

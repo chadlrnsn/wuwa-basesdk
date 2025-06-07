@@ -12,8 +12,8 @@
 
 #include "SSceneInteractionMaterialController_structs.hpp"
 #include "SSceneInteractionitemIndestructibleEffectsParameters_structs.hpp"
-#include "SSceneInteractionSequence_structs.hpp"
 #include "SSceneInteractionAudio_structs.hpp"
+#include "SSceneInteractionSequence_structs.hpp"
 
 
 namespace SDK

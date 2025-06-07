@@ -508,5 +508,27 @@ void ABP_KuroMasterSeqEvent_C::关闭Spine动画_数组_(TArray<class FString>& 
 	spineArray = std::move(Parms.spineArray);
 }
 
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.背景Icon
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    显示                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UTexture2D*                       Icon                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_KuroMasterSeqEvent_C::背景Icon(bool 显示, class UTexture2D* Icon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroMasterSeqEvent_C", "背景Icon");
+
+	Params::BP_KuroMasterSeqEvent_C_背景Icon Parms{};
+
+	Parms.显示 = 显示;
+	Parms.Icon = Icon;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
 }
 

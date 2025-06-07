@@ -2968,5 +2968,39 @@ void UTsMoveBlueprintFunctionLibrary_C::AddActorWorldOffsetWithContextAndReset(i
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.SetActorLookAtWithContext
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    targetPoint                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsMoveBlueprintFunctionLibrary_C::SetActorLookAtWithContext(int32 entityId, const struct FVectorDouble& targetPoint, const class FString& context, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsMoveBlueprintFunctionLibrary_C", "SetActorLookAtWithContext");
+
+	Params::TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext Parms{};
+
+	Parms.entityId = entityId;
+	Parms.targetPoint = std::move(targetPoint);
+	Parms.context = std::move(context);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
 }
 

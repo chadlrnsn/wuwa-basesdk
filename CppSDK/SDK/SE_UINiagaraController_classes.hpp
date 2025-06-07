@@ -34,16 +34,16 @@ public:
 	bool                                          ControlByWidth;                                    // 0x00F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_SE_UINiagaraController(int32 EntryPoint);
-	void ApplyEnvironmentFactor(float EnvironmentFactor);
-	void BeforeStart();
-	void ApplyVisibility(bool visibility);
-	void ApplyAlpha(float alpha);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveBeginPlay();
-	void AdjustToScreen();
-	void AdjustToScreenEditor();
 	void CaculatePoint(const struct FVector2D& LeftBottomPoint, const struct FVector2D& RightTopPoint, struct FVector2D* NewLeftBottomPoint, struct FVector2D* NewRightTopPoint);
+	void AdjustToScreenEditor();
+	void AdjustToScreen();
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void ApplyAlpha(float alpha);
+	void ApplyVisibility(bool visibility);
+	void BeforeStart();
+	void ApplyEnvironmentFactor(float EnvironmentFactor);
+	void ExecuteUbergraph_SE_UINiagaraController(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

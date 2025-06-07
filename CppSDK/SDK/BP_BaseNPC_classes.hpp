@@ -19,25 +19,24 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseNPC.BP_BaseNPC_C
-// 0x0050 (0x0800 - 0x07B0)
-class ABP_BaseNPC_C : public ATsBaseCharacter_C
+// 0x0060 (0x07B0 - 0x0750)
+class ABP_BaseNPC_C final : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_7A1[0x7];                                      // 0x07A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseNPC_C;                       // 0x07A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBoxComponent*                          HitCollision;                                      // 0x07B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNavigationInvokerComponent*            NavigationInvoker_0;                               // 0x07B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsBeingImpacted;                                   // 0x07C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7C1[0x3];                                      // 0x07C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Direction;                                         // 0x07C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Strength;                                          // 0x07C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsBeingAttacked;                                   // 0x07CC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          CanPlayerImpact;                                   // 0x07CD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
-	bool                                          CanPlayerAttack;                                   // 0x07CE(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
-	bool                                          CanLookAtPlayer;                                   // 0x07CF(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
-	struct FSoftObjectPath                        BornEffect;                                        // 0x07D0(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 CombineFaceMesh;                                   // 0x07F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CanUpdateTextureFace;                              // 0x07F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseNPC_C;                       // 0x0750(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBoxComponent*                          HitCollision;                                      // 0x0758(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNavigationInvokerComponent*            NavigationInvoker_0;                               // 0x0760(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsBeingImpacted;                                   // 0x0768(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_769[0x3];                                      // 0x0769(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Direction;                                         // 0x076C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Strength;                                          // 0x0770(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsBeingAttacked;                                   // 0x0774(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          CanPlayerImpact;                                   // 0x0775(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
+	bool                                          CanPlayerAttack;                                   // 0x0776(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
+	bool                                          CanLookAtPlayer;                                   // 0x0777(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn)
+	struct FSoftObjectPath                        BornEffect;                                        // 0x0778(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 CombineFaceMesh;                                   // 0x0798(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CanUpdateTextureFace;                              // 0x07A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_BaseNPC(int32 EntryPoint);
@@ -64,20 +63,20 @@ public:
 	}
 };
 static_assert(alignof(ABP_BaseNPC_C) == 0x000010, "Wrong alignment on ABP_BaseNPC_C");
-static_assert(sizeof(ABP_BaseNPC_C) == 0x000800, "Wrong size on ABP_BaseNPC_C");
-static_assert(offsetof(ABP_BaseNPC_C, UberGraphFrame_BP_BaseNPC_C) == 0x0007A8, "Member 'ABP_BaseNPC_C::UberGraphFrame_BP_BaseNPC_C' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, HitCollision) == 0x0007B0, "Member 'ABP_BaseNPC_C::HitCollision' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, NavigationInvoker_0) == 0x0007B8, "Member 'ABP_BaseNPC_C::NavigationInvoker_0' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, IsBeingImpacted) == 0x0007C0, "Member 'ABP_BaseNPC_C::IsBeingImpacted' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, Direction) == 0x0007C4, "Member 'ABP_BaseNPC_C::Direction' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, Strength) == 0x0007C8, "Member 'ABP_BaseNPC_C::Strength' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, IsBeingAttacked) == 0x0007CC, "Member 'ABP_BaseNPC_C::IsBeingAttacked' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CanPlayerImpact) == 0x0007CD, "Member 'ABP_BaseNPC_C::CanPlayerImpact' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CanPlayerAttack) == 0x0007CE, "Member 'ABP_BaseNPC_C::CanPlayerAttack' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CanLookAtPlayer) == 0x0007CF, "Member 'ABP_BaseNPC_C::CanLookAtPlayer' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, BornEffect) == 0x0007D0, "Member 'ABP_BaseNPC_C::BornEffect' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CombineFaceMesh) == 0x0007F0, "Member 'ABP_BaseNPC_C::CombineFaceMesh' has a wrong offset!");
-static_assert(offsetof(ABP_BaseNPC_C, CanUpdateTextureFace) == 0x0007F8, "Member 'ABP_BaseNPC_C::CanUpdateTextureFace' has a wrong offset!");
+static_assert(sizeof(ABP_BaseNPC_C) == 0x0007B0, "Wrong size on ABP_BaseNPC_C");
+static_assert(offsetof(ABP_BaseNPC_C, UberGraphFrame_BP_BaseNPC_C) == 0x000750, "Member 'ABP_BaseNPC_C::UberGraphFrame_BP_BaseNPC_C' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, HitCollision) == 0x000758, "Member 'ABP_BaseNPC_C::HitCollision' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, NavigationInvoker_0) == 0x000760, "Member 'ABP_BaseNPC_C::NavigationInvoker_0' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, IsBeingImpacted) == 0x000768, "Member 'ABP_BaseNPC_C::IsBeingImpacted' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, Direction) == 0x00076C, "Member 'ABP_BaseNPC_C::Direction' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, Strength) == 0x000770, "Member 'ABP_BaseNPC_C::Strength' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, IsBeingAttacked) == 0x000774, "Member 'ABP_BaseNPC_C::IsBeingAttacked' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, CanPlayerImpact) == 0x000775, "Member 'ABP_BaseNPC_C::CanPlayerImpact' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, CanPlayerAttack) == 0x000776, "Member 'ABP_BaseNPC_C::CanPlayerAttack' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, CanLookAtPlayer) == 0x000777, "Member 'ABP_BaseNPC_C::CanLookAtPlayer' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, BornEffect) == 0x000778, "Member 'ABP_BaseNPC_C::BornEffect' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, CombineFaceMesh) == 0x000798, "Member 'ABP_BaseNPC_C::CombineFaceMesh' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, CanUpdateTextureFace) == 0x0007A0, "Member 'ABP_BaseNPC_C::CanUpdateTextureFace' has a wrong offset!");
 
 }
 

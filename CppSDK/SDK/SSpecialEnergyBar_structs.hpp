@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "ESpecialEnergyBarPrefabType_structs.hpp"
 #include "SSpecialEnergyBarKey_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK

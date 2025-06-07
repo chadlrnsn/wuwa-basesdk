@@ -721,5 +721,90 @@ void UCharacterBlueprintFunctionLibrary_C::DetachFromHost(int32 id1, bool isDeta
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.GetCharacterGravityDirect
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVectorDouble UCharacterBlueprintFunctionLibrary_C::GetCharacterGravityDirect(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CharacterBlueprintFunctionLibrary_C", "GetCharacterGravityDirect");
+
+	Params::CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.GetCharacterGravityUp
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVectorDouble UCharacterBlueprintFunctionLibrary_C::GetCharacterGravityUp(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CharacterBlueprintFunctionLibrary_C", "GetCharacterGravityUp");
+
+	Params::CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.SetGravityDirect
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    gravityDirect                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCharacterBlueprintFunctionLibrary_C::SetGravityDirect(int32 entityId, const struct FVectorDouble& gravityDirect, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CharacterBlueprintFunctionLibrary_C", "SetGravityDirect");
+
+	Params::CharacterBlueprintFunctionLibrary_C_SetGravityDirect Parms{};
+
+	Parms.entityId = entityId;
+	Parms.gravityDirect = std::move(gravityDirect);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

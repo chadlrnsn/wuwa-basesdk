@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SNpcHookPart_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "EBodyPartName_structs.hpp"
 #include "SNpcSetupPartInfo_structs.hpp"
-#include "Engine_structs.hpp"
+#include "SNpcHookPart_structs.hpp"
 
 
 namespace SDK::Params
@@ -624,6 +624,26 @@ static_assert(sizeof(BP_NpcCombinedMesh_C_Test) == 0x000018, "Wrong size on BP_N
 static_assert(offsetof(BP_NpcCombinedMesh_C_Test, SKMesh) == 0x000000, "Member 'BP_NpcCombinedMesh_C_Test::SKMesh' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_Test, MI) == 0x000008, "Member 'BP_NpcCombinedMesh_C_Test::MI' has a wrong offset!");
 static_assert(offsetof(BP_NpcCombinedMesh_C_Test, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000010, "Member 'BP_NpcCombinedMesh_C_Test::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+
+// Function BP_NpcCombinedMesh.BP_NpcCombinedMesh_C.GetFaceMeshComponent
+// 0x0028 (0x0028 - 0x0000)
+struct BP_NpcCombinedMesh_C_GetFaceMeshComponent final
+{
+public:
+	class USkeletalMeshComponent*                 SkeletalMeshComp;                                  // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class USkeletalMeshComponent*>         CallFunc_GetPartMeshComponent_Comps;               // 0x0008(0x0010)(ReferenceParm, ContainsInstancedReference)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_NpcCombinedMesh_C_GetFaceMeshComponent) == 0x000008, "Wrong alignment on BP_NpcCombinedMesh_C_GetFaceMeshComponent");
+static_assert(sizeof(BP_NpcCombinedMesh_C_GetFaceMeshComponent) == 0x000028, "Wrong size on BP_NpcCombinedMesh_C_GetFaceMeshComponent");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetFaceMeshComponent, SkeletalMeshComp) == 0x000000, "Member 'BP_NpcCombinedMesh_C_GetFaceMeshComponent::SkeletalMeshComp' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetFaceMeshComponent, CallFunc_GetPartMeshComponent_Comps) == 0x000008, "Member 'BP_NpcCombinedMesh_C_GetFaceMeshComponent::CallFunc_GetPartMeshComponent_Comps' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetFaceMeshComponent, CallFunc_Array_IsValidIndex_ReturnValue) == 0x000018, "Member 'BP_NpcCombinedMesh_C_GetFaceMeshComponent::CallFunc_Array_IsValidIndex_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetFaceMeshComponent, CallFunc_Array_Length_ReturnValue) == 0x00001C, "Member 'BP_NpcCombinedMesh_C_GetFaceMeshComponent::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NpcCombinedMesh_C_GetFaceMeshComponent, CallFunc_Greater_IntInt_ReturnValue) == 0x000020, "Member 'BP_NpcCombinedMesh_C_GetFaceMeshComponent::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
 
 }
 

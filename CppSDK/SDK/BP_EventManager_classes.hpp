@@ -10,10 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SHitInformation_structs.hpp"
-#include "ECaughtResultType_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "ECharacterState_structs.hpp"
+#include "SHitInformation_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "ECaughtResultType_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "BP_ManagerBase_classes.hpp"
 
 
@@ -21,7 +22,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_EventManager.BP_EventManager_C
-// 0x01B0 (0x01F8 - 0x0048)
+// 0x01D0 (0x0218 - 0x0048)
 class UBP_EventManager_C final : public UBP_ManagerBase_C
 {
 public:
@@ -52,6 +53,8 @@ public:
 	TMulticastInlineDelegate<void(int32 EntityId)> 开始吸取污染物;                                    // 0x01C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void(int32 EntityId)> 停止吸取污染物;                                    // 0x01D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void(class AActor* fishingBoat)> 当捕鱼船创建时;                                    // 0x01E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(const struct FVectorDouble& ImpactPoint, class UBP_SceneBattleInteract_C* Config, const struct FVectorDouble& OriginPoint, int32 Id)> 子弹撞到水面时;                                    // 0x01F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class ATsBaseCharacter_C* 角色)> 当有角色复活时;                                    // 0x0208(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	static class UClass* StaticClass()
@@ -64,7 +67,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_EventManager_C) == 0x000008, "Wrong alignment on UBP_EventManager_C");
-static_assert(sizeof(UBP_EventManager_C) == 0x0001F8, "Wrong size on UBP_EventManager_C");
+static_assert(sizeof(UBP_EventManager_C) == 0x000218, "Wrong size on UBP_EventManager_C");
 static_assert(offsetof(UBP_EventManager_C, 界面生命周期改变) == 0x000048, "Member 'UBP_EventManager_C::界面生命周期改变' has a wrong offset!");
 static_assert(offsetof(UBP_EventManager_C, 当有角色受击时) == 0x000058, "Member 'UBP_EventManager_C::当有角色受击时' has a wrong offset!");
 static_assert(offsetof(UBP_EventManager_C, 当解密界面打开时) == 0x000068, "Member 'UBP_EventManager_C::当解密界面打开时' has a wrong offset!");
@@ -92,6 +95,8 @@ static_assert(offsetof(UBP_EventManager_C, 被控物撞到水面时) == 0x0001B8
 static_assert(offsetof(UBP_EventManager_C, 开始吸取污染物) == 0x0001C8, "Member 'UBP_EventManager_C::开始吸取污染物' has a wrong offset!");
 static_assert(offsetof(UBP_EventManager_C, 停止吸取污染物) == 0x0001D8, "Member 'UBP_EventManager_C::停止吸取污染物' has a wrong offset!");
 static_assert(offsetof(UBP_EventManager_C, 当捕鱼船创建时) == 0x0001E8, "Member 'UBP_EventManager_C::当捕鱼船创建时' has a wrong offset!");
+static_assert(offsetof(UBP_EventManager_C, 子弹撞到水面时) == 0x0001F8, "Member 'UBP_EventManager_C::子弹撞到水面时' has a wrong offset!");
+static_assert(offsetof(UBP_EventManager_C, 当有角色复活时) == 0x000208, "Member 'UBP_EventManager_C::当有角色复活时' has a wrong offset!");
 
 }
 

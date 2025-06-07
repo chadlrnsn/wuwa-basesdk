@@ -17,6 +17,33 @@
 namespace SDK
 {
 
+// Function ApexDestruction.DestructibleComponent.AddForceToChunk
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// struct FVector                          Force                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAccelChange                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UDestructibleComponent::AddForceToChunk(const struct FVector& Force, bool bAccelChange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DestructibleComponent", "AddForceToChunk");
+
+	Params::DestructibleComponent_AddForceToChunk Parms{};
+
+	Parms.Force = std::move(Force);
+	Parms.bAccelChange = bAccelChange;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ApexDestruction.DestructibleComponent.ApplyDamage
 // (Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:

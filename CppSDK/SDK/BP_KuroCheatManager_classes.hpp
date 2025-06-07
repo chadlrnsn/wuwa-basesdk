@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "InputCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "InputCore_structs.hpp"
 
 
 namespace SDK
@@ -43,13 +43,13 @@ public:
 	class UObject*                                DebugWin;                                          // 0x0118(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_KuroCheatManager(int32 EntryPoint);
-	void ReceiveInitCheatManager();
-	void 作弊指令(const struct FKey& 输入按键_0, bool 按下_0);
-	void UpdateFunctionKey();
-	void PrintTimeScale();
-	void TouchDebug();
 	void 强化或还原角色(bool 是否需要强化);
+	void TouchDebug();
+	void PrintTimeScale();
+	void UpdateFunctionKey();
+	void 作弊指令(const struct FKey& 输入按键_0, bool 按下_0);
+	void ReceiveInitCheatManager();
+	void ExecuteUbergraph_BP_KuroCheatManager(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

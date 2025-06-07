@@ -19,7 +19,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_VehicleConfig.BP_VehicleConfig_C
 // 0x00A0 (0x00D8 - 0x0038)
-class UBP_VehicleConfig_C : public UPrimaryDataAsset
+class UBP_VehicleConfig_C final : public UPrimaryDataAsset
 {
 public:
 	struct FGameplayTagContainer                  载具出生Tag;                                       // 0x0038(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance)

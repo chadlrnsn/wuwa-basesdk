@@ -10,29 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "KuroGameplay_classes.hpp"
-#include "KuroAudio_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelAudio.EffectModelAudio_C
-// 0x0038 (0x0098 - 0x0060)
-class UEffectModelAudio_C final : public UEffectModelBase
+// 0x0000 (0x0088 - 0x0088)
+class UEffectModelAudio_C final : public UEffectModelAudio
 {
-public:
-	int32                                         FadeOutTime;                                       // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkAudioEvent*                          AudioEvent;                                        // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          KeepAlive;                                         // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkAudioEvent*                          TrailingAudioEvent;                                // 0x0078(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	EAudioFadeCurve                               FadeOutCurve;                                      // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_81[0x7];                                       // 0x0081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        LocationOffsets;                                   // 0x0088(0x0010)(Edit, BlueprintVisible)
-
 public:
 	static class UClass* StaticClass()
 	{
@@ -44,13 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UEffectModelAudio_C) == 0x000008, "Wrong alignment on UEffectModelAudio_C");
-static_assert(sizeof(UEffectModelAudio_C) == 0x000098, "Wrong size on UEffectModelAudio_C");
-static_assert(offsetof(UEffectModelAudio_C, FadeOutTime) == 0x000060, "Member 'UEffectModelAudio_C::FadeOutTime' has a wrong offset!");
-static_assert(offsetof(UEffectModelAudio_C, AudioEvent) == 0x000068, "Member 'UEffectModelAudio_C::AudioEvent' has a wrong offset!");
-static_assert(offsetof(UEffectModelAudio_C, KeepAlive) == 0x000070, "Member 'UEffectModelAudio_C::KeepAlive' has a wrong offset!");
-static_assert(offsetof(UEffectModelAudio_C, TrailingAudioEvent) == 0x000078, "Member 'UEffectModelAudio_C::TrailingAudioEvent' has a wrong offset!");
-static_assert(offsetof(UEffectModelAudio_C, FadeOutCurve) == 0x000080, "Member 'UEffectModelAudio_C::FadeOutCurve' has a wrong offset!");
-static_assert(offsetof(UEffectModelAudio_C, LocationOffsets) == 0x000088, "Member 'UEffectModelAudio_C::LocationOffsets' has a wrong offset!");
+static_assert(sizeof(UEffectModelAudio_C) == 0x000088, "Wrong size on UEffectModelAudio_C");
 
 }
 

@@ -11,30 +11,35 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
 
 // Function BP_Portal.BP_Portal_C.ExecuteUbergraph_BP_Portal
-// 0x0010 (0x0010 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct BP_Portal_C_ExecuteUbergraph_BP_Portal final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetPlatformName_ReturnValue;              // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(BP_Portal_C_ExecuteUbergraph_BP_Portal) == 0x000004, "Wrong alignment on BP_Portal_C_ExecuteUbergraph_BP_Portal");
-static_assert(sizeof(BP_Portal_C_ExecuteUbergraph_BP_Portal) == 0x000010, "Wrong size on BP_Portal_C_ExecuteUbergraph_BP_Portal");
+static_assert(alignof(BP_Portal_C_ExecuteUbergraph_BP_Portal) == 0x000008, "Wrong alignment on BP_Portal_C_ExecuteUbergraph_BP_Portal");
+static_assert(sizeof(BP_Portal_C_ExecuteUbergraph_BP_Portal) == 0x000028, "Wrong size on BP_Portal_C_ExecuteUbergraph_BP_Portal");
 static_assert(offsetof(BP_Portal_C_ExecuteUbergraph_BP_Portal, EntryPoint) == 0x000000, "Member 'BP_Portal_C_ExecuteUbergraph_BP_Portal::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BP_Portal_C_ExecuteUbergraph_BP_Portal, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000004, "Member 'BP_Portal_C_ExecuteUbergraph_BP_Portal::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_Portal_C_ExecuteUbergraph_BP_Portal, K2Node_Event_DeltaSeconds) == 0x000008, "Member 'BP_Portal_C_ExecuteUbergraph_BP_Portal::K2Node_Event_DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(BP_Portal_C_ExecuteUbergraph_BP_Portal, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x00000C, "Member 'BP_Portal_C_ExecuteUbergraph_BP_Portal::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Portal_C_ExecuteUbergraph_BP_Portal, CallFunc_GetPlatformName_ReturnValue) == 0x000008, "Member 'BP_Portal_C_ExecuteUbergraph_BP_Portal::CallFunc_GetPlatformName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Portal_C_ExecuteUbergraph_BP_Portal, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000018, "Member 'BP_Portal_C_ExecuteUbergraph_BP_Portal::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Portal_C_ExecuteUbergraph_BP_Portal, K2Node_Event_DeltaSeconds) == 0x00001C, "Member 'BP_Portal_C_ExecuteUbergraph_BP_Portal::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(BP_Portal_C_ExecuteUbergraph_BP_Portal, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000020, "Member 'BP_Portal_C_ExecuteUbergraph_BP_Portal::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_Portal_C_ExecuteUbergraph_BP_Portal, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000021, "Member 'BP_Portal_C_ExecuteUbergraph_BP_Portal::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
 
 // Function BP_Portal.BP_Portal_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)

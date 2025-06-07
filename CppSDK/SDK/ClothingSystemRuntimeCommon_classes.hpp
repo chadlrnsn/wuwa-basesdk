@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_classes.hpp"
 #include "ClothingSystemRuntimeInterface_structs.hpp"
 #include "ClothingSystemRuntimeInterface_classes.hpp"
-#include "CoreUObject_classes.hpp"
 #include "ClothingSystemRuntimeCommon_structs.hpp"
 
 
@@ -36,23 +36,6 @@ public:
 static_assert(alignof(UClothConfigCommon) == 0x000008, "Wrong alignment on UClothConfigCommon");
 static_assert(sizeof(UClothConfigCommon) == 0x000030, "Wrong size on UClothConfigCommon");
 
-// Class ClothingSystemRuntimeCommon.ClothingAssetCustomData
-// 0x0000 (0x0030 - 0x0030)
-class UClothingAssetCustomData final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ClothingAssetCustomData">();
-	}
-	static class UClothingAssetCustomData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UClothingAssetCustomData>();
-	}
-};
-static_assert(alignof(UClothingAssetCustomData) == 0x000008, "Wrong alignment on UClothingAssetCustomData");
-static_assert(sizeof(UClothingAssetCustomData) == 0x000030, "Wrong size on UClothingAssetCustomData");
-
 // Class ClothingSystemRuntimeCommon.ClothSharedConfigCommon
 // 0x0000 (0x0030 - 0x0030)
 class UClothSharedConfigCommon : public UClothConfigCommon
@@ -69,6 +52,23 @@ public:
 };
 static_assert(alignof(UClothSharedConfigCommon) == 0x000008, "Wrong alignment on UClothSharedConfigCommon");
 static_assert(sizeof(UClothSharedConfigCommon) == 0x000030, "Wrong size on UClothSharedConfigCommon");
+
+// Class ClothingSystemRuntimeCommon.ClothingAssetCustomData
+// 0x0000 (0x0030 - 0x0030)
+class UClothingAssetCustomData final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ClothingAssetCustomData">();
+	}
+	static class UClothingAssetCustomData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UClothingAssetCustomData>();
+	}
+};
+static_assert(alignof(UClothingAssetCustomData) == 0x000008, "Wrong alignment on UClothingAssetCustomData");
+static_assert(sizeof(UClothingAssetCustomData) == 0x000030, "Wrong size on UClothingAssetCustomData");
 
 // Class ClothingSystemRuntimeCommon.ClothingAssetCommon
 // 0x01A8 (0x01F8 - 0x0050)

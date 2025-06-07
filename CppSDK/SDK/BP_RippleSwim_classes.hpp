@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_RippleSwim.BP_RippleSwim_C
-// 0x0118 (0x03C8 - 0x02B0)
+// 0x0160 (0x0410 - 0x02B0)
 class ABP_RippleSwim_C final : public AUKuroCustomCookActor
 {
 public:
@@ -62,21 +62,44 @@ public:
 	uint8                                         Pad_391[0x7];                                      // 0x0391(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBP_RippleWater_Data_C*                 Swim_Ripple;                                       // 0x0398(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UBP_RippleWater_Data_C*                 Gongduola_Ripple;                                  // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          InFixedRippleArea;                                 // 0x03A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3A9[0x7];                                      // 0x03A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTextureRenderTarget2D*                 PersistRT;                                         // 0x03B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UTextureRenderTarget2D*                 FinalRT;                                           // 0x03B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bCustomRippleState;                                // 0x03C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UBP_RippleWater_Data_C*                 Fly_Ripple;                                        // 0x03A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InFixedRippleArea;                                 // 0x03B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3B1[0x7];                                      // 0x03B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTextureRenderTarget2D*                 PersistRT;                                         // 0x03B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UTextureRenderTarget2D*                 FinalRT;                                           // 0x03C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bCustomRippleState;                                // 0x03C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3C9[0x7];                                      // 0x03C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBP_SceneBattleInteract_C*              BulletConfig;                                      // 0x03D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              BulletUV;                                          // 0x03D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTimerHandle                           BulletTimerHandle;                                 // 0x03E0(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          bSetUV;                                            // 0x03E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bSelfRipple;                                       // 0x03E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3EA[0x2];                                      // 0x03EA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BulletRadius;                                      // 0x03EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BulletHitInterval;                                 // 0x03F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BulletHitTimeLast;                                 // 0x03F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CurrBulletIntensity;                               // 0x03F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BulletIntensity;                                   // 0x03FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BulletDensity;                                     // 0x0400(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BulletAttenuation_;                                // 0x0404(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bShowDebugData;                                    // 0x0408(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_409[0x3];                                      // 0x0409(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         State;                                             // 0x040C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void Change_Ripple_Preset(class UBP_RippleWater_Data_C* NewRippleState);
+	void CalcTexCoord(const struct FVectorDouble& RippleCenter, const struct FVectorDouble& RipplePointLocation, float CaptureSize, struct FVector* TexCoord);
 	void Clear_RT();
 	void SetWaterRippleData(class UBP_RippleWater_Data_C* InputPin, bool* NewParam);
 	void AboveWater(const struct FVector& Location, bool* bAboveWater);
 	void UserConstructionScript();
 	void BeforeCookForMobile();
+	void OnBulletHitWater(const struct FVectorDouble& ImpactPoint, class UBP_SceneBattleInteract_C* Config, const struct FVectorDouble& OriginPoint, int32 Id);
 	void EditorTick();
+	void SetBulletUV();
 	void Refresh();
 	void ReceiveTick(float DeltaSeconds);
+	void ResetBulletUV();
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_RippleSwim(int32 EntryPoint);
 
@@ -91,7 +114,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_RippleSwim_C) == 0x000008, "Wrong alignment on ABP_RippleSwim_C");
-static_assert(sizeof(ABP_RippleSwim_C) == 0x0003C8, "Wrong size on ABP_RippleSwim_C");
+static_assert(sizeof(ABP_RippleSwim_C) == 0x000410, "Wrong size on ABP_RippleSwim_C");
 static_assert(offsetof(ABP_RippleSwim_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_RippleSwim_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_RippleSwim_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_RippleSwim_C::DefaultSceneRoot' has a wrong offset!");
 static_assert(offsetof(ABP_RippleSwim_C, AddNewMaterial) == 0x0002C0, "Member 'ABP_RippleSwim_C::AddNewMaterial' has a wrong offset!");
@@ -126,10 +149,25 @@ static_assert(offsetof(ABP_RippleSwim_C, LastRipplePastTime) == 0x00038C, "Membe
 static_assert(offsetof(ABP_RippleSwim_C, bInWater) == 0x000390, "Member 'ABP_RippleSwim_C::bInWater' has a wrong offset!");
 static_assert(offsetof(ABP_RippleSwim_C, Swim_Ripple) == 0x000398, "Member 'ABP_RippleSwim_C::Swim_Ripple' has a wrong offset!");
 static_assert(offsetof(ABP_RippleSwim_C, Gongduola_Ripple) == 0x0003A0, "Member 'ABP_RippleSwim_C::Gongduola_Ripple' has a wrong offset!");
-static_assert(offsetof(ABP_RippleSwim_C, InFixedRippleArea) == 0x0003A8, "Member 'ABP_RippleSwim_C::InFixedRippleArea' has a wrong offset!");
-static_assert(offsetof(ABP_RippleSwim_C, PersistRT) == 0x0003B0, "Member 'ABP_RippleSwim_C::PersistRT' has a wrong offset!");
-static_assert(offsetof(ABP_RippleSwim_C, FinalRT) == 0x0003B8, "Member 'ABP_RippleSwim_C::FinalRT' has a wrong offset!");
-static_assert(offsetof(ABP_RippleSwim_C, bCustomRippleState) == 0x0003C0, "Member 'ABP_RippleSwim_C::bCustomRippleState' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, Fly_Ripple) == 0x0003A8, "Member 'ABP_RippleSwim_C::Fly_Ripple' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, InFixedRippleArea) == 0x0003B0, "Member 'ABP_RippleSwim_C::InFixedRippleArea' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, PersistRT) == 0x0003B8, "Member 'ABP_RippleSwim_C::PersistRT' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, FinalRT) == 0x0003C0, "Member 'ABP_RippleSwim_C::FinalRT' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, bCustomRippleState) == 0x0003C8, "Member 'ABP_RippleSwim_C::bCustomRippleState' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, BulletConfig) == 0x0003D0, "Member 'ABP_RippleSwim_C::BulletConfig' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, BulletUV) == 0x0003D8, "Member 'ABP_RippleSwim_C::BulletUV' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, BulletTimerHandle) == 0x0003E0, "Member 'ABP_RippleSwim_C::BulletTimerHandle' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, bSetUV) == 0x0003E8, "Member 'ABP_RippleSwim_C::bSetUV' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, bSelfRipple) == 0x0003E9, "Member 'ABP_RippleSwim_C::bSelfRipple' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, BulletRadius) == 0x0003EC, "Member 'ABP_RippleSwim_C::BulletRadius' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, BulletHitInterval) == 0x0003F0, "Member 'ABP_RippleSwim_C::BulletHitInterval' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, BulletHitTimeLast) == 0x0003F4, "Member 'ABP_RippleSwim_C::BulletHitTimeLast' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, CurrBulletIntensity) == 0x0003F8, "Member 'ABP_RippleSwim_C::CurrBulletIntensity' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, BulletIntensity) == 0x0003FC, "Member 'ABP_RippleSwim_C::BulletIntensity' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, BulletDensity) == 0x000400, "Member 'ABP_RippleSwim_C::BulletDensity' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, BulletAttenuation_) == 0x000404, "Member 'ABP_RippleSwim_C::BulletAttenuation_' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, bShowDebugData) == 0x000408, "Member 'ABP_RippleSwim_C::bShowDebugData' has a wrong offset!");
+static_assert(offsetof(ABP_RippleSwim_C, State) == 0x00040C, "Member 'ABP_RippleSwim_C::State' has a wrong offset!");
 
 }
 

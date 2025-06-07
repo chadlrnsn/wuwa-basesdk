@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsPhotographer.TsPhotographer_C.ExecuteUbergraph_TsPhotographer
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// (Final, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -33,17 +33,12 @@ void ATsPhotographer_C::ExecuteUbergraph_TsPhotographer(int32 EntryPoint)
 
 	Parms.EntryPoint = EntryPoint;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.ReceiveTick
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -58,17 +53,12 @@ void ATsPhotographer_C::ReceiveTick(float DeltaSeconds)
 
 	Parms.DeltaSeconds = DeltaSeconds;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.ReceiveDestroyed
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
 void ATsPhotographer_C::ReceiveDestroyed()
 {
@@ -77,17 +67,12 @@ void ATsPhotographer_C::ReceiveDestroyed()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsPhotographer_C", "ReceiveDestroyed");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.AddSourceYawInput
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   yaw                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -102,17 +87,12 @@ void ATsPhotographer_C::AddSourceYawInput(float yaw)
 
 	Parms.yaw = yaw;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.SetCameraInitializeTransform
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FTransform                       transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 
@@ -127,17 +107,12 @@ void ATsPhotographer_C::SetCameraInitializeTransform(const struct FTransform& tr
 
 	Parms.transform = std::move(transform);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.GetCameraInitializeTransform
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
 
@@ -150,19 +125,14 @@ struct FTransform ATsPhotographer_C::GetCameraInitializeTransform()
 
 	Params::TsPhotographer_C_GetCameraInitializeTransform Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.SetFov
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   length                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -177,17 +147,12 @@ void ATsPhotographer_C::SetFov(float length)
 
 	Parms.length = length;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.GetFov
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -200,19 +165,14 @@ float ATsPhotographer_C::GetFov()
 
 	Params::TsPhotographer_C_GetFov Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.ResetCamera
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsPhotographer_C::ResetCamera()
 {
@@ -221,17 +181,12 @@ void ATsPhotographer_C::ResetCamera()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsPhotographer_C", "ResetCamera");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.AddSourcePitchInput
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   pitch                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -246,17 +201,12 @@ void ATsPhotographer_C::AddSourcePitchInput(float pitch)
 
 	Parms.pitch = pitch;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.SetPlayerSourceLocation
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // struct FVector                          location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -271,17 +221,12 @@ void ATsPhotographer_C::SetPlayerSourceLocation(const struct FVector& location)
 
 	Parms.location = std::move(location);
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.Initialize
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsPhotographer_C::Initialize()
 {
@@ -290,17 +235,12 @@ void ATsPhotographer_C::Initialize()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsPhotographer_C", "Initialize");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsPhotographer.TsPhotographer_C.RefreshDitherEffect
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsPhotographer_C::RefreshDitherEffect()
 {
@@ -309,12 +249,7 @@ void ATsPhotographer_C::RefreshDitherEffect()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsPhotographer_C", "RefreshDitherEffect");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

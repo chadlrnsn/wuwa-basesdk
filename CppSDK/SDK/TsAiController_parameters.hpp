@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "SAiLevelVar_structs.hpp"
 #include "ECharacterState_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "SAiConditions_structs.hpp"
@@ -505,6 +506,32 @@ static_assert(alignof(TsAiController_C_AicApplyBuffToTarget) == 0x000008, "Wrong
 static_assert(sizeof(TsAiController_C_AicApplyBuffToTarget) == 0x000010, "Wrong size on TsAiController_C_AicApplyBuffToTarget");
 static_assert(offsetof(TsAiController_C_AicApplyBuffToTarget, targetId) == 0x000000, "Member 'TsAiController_C_AicApplyBuffToTarget::targetId' has a wrong offset!");
 static_assert(offsetof(TsAiController_C_AicApplyBuffToTarget, buffId) == 0x000008, "Member 'TsAiController_C_AicApplyBuffToTarget::buffId' has a wrong offset!");
+
+// Function TsAiController.TsAiController_C.AddLevelVarBoolEventBinder
+// 0x0028 (0x0028 - 0x0000)
+struct TsAiController_C_AddLevelVarBoolEventBinder final
+{
+public:
+	struct FSAiLevelVar                           levelVar;                                          // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UKuroBooleanEventBinder*                eventBinder;                                       // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsAiController_C_AddLevelVarBoolEventBinder) == 0x000008, "Wrong alignment on TsAiController_C_AddLevelVarBoolEventBinder");
+static_assert(sizeof(TsAiController_C_AddLevelVarBoolEventBinder) == 0x000028, "Wrong size on TsAiController_C_AddLevelVarBoolEventBinder");
+static_assert(offsetof(TsAiController_C_AddLevelVarBoolEventBinder, levelVar) == 0x000000, "Member 'TsAiController_C_AddLevelVarBoolEventBinder::levelVar' has a wrong offset!");
+static_assert(offsetof(TsAiController_C_AddLevelVarBoolEventBinder, eventBinder) == 0x000020, "Member 'TsAiController_C_AddLevelVarBoolEventBinder::eventBinder' has a wrong offset!");
+
+// Function TsAiController.TsAiController_C.AddLevelVarIntEventBinder
+// 0x0028 (0x0028 - 0x0000)
+struct TsAiController_C_AddLevelVarIntEventBinder final
+{
+public:
+	struct FSAiLevelVar                           levelVar;                                          // 0x0000(0x0020)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UKuroIntEventBinder*                    eventBinder;                                       // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsAiController_C_AddLevelVarIntEventBinder) == 0x000008, "Wrong alignment on TsAiController_C_AddLevelVarIntEventBinder");
+static_assert(sizeof(TsAiController_C_AddLevelVarIntEventBinder) == 0x000028, "Wrong size on TsAiController_C_AddLevelVarIntEventBinder");
+static_assert(offsetof(TsAiController_C_AddLevelVarIntEventBinder, levelVar) == 0x000000, "Member 'TsAiController_C_AddLevelVarIntEventBinder::levelVar' has a wrong offset!");
+static_assert(offsetof(TsAiController_C_AddLevelVarIntEventBinder, eventBinder) == 0x000020, "Member 'TsAiController_C_AddLevelVarIntEventBinder::eventBinder' has a wrong offset!");
 
 }
 

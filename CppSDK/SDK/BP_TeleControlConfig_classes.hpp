@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_TeleControlConfig.BP_TeleControlConfig_C
-// 0x0210 (0x0248 - 0x0038)
+// 0x0260 (0x0298 - 0x0038)
 class UBP_TeleControlConfig_C final : public UPrimaryDataAsset
 {
 public:
@@ -87,6 +87,7 @@ public:
 	float                                         抛物瞄准模式重力加速度;                            // 0x0220(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         投掷锁定范围;                                      // 0x0224(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSoftObjectPath                        归位消失特效;                                      // 0x0228(0x0020)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	TMap<int32, float>                            投掷状态CueId;                                     // 0x0248(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()
@@ -99,7 +100,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_TeleControlConfig_C) == 0x000008, "Wrong alignment on UBP_TeleControlConfig_C");
-static_assert(sizeof(UBP_TeleControlConfig_C) == 0x000248, "Wrong size on UBP_TeleControlConfig_C");
+static_assert(sizeof(UBP_TeleControlConfig_C) == 0x000298, "Wrong size on UBP_TeleControlConfig_C");
 static_assert(offsetof(UBP_TeleControlConfig_C, 读条时间) == 0x000038, "Member 'UBP_TeleControlConfig_C::读条时间' has a wrong offset!");
 static_assert(offsetof(UBP_TeleControlConfig_C, 未锁定目标时不可投掷) == 0x00003C, "Member 'UBP_TeleControlConfig_C::未锁定目标时不可投掷' has a wrong offset!");
 static_assert(offsetof(UBP_TeleControlConfig_C, 摆动频率) == 0x000040, "Member 'UBP_TeleControlConfig_C::摆动频率' has a wrong offset!");
@@ -154,6 +155,7 @@ static_assert(offsetof(UBP_TeleControlConfig_C, 抛物瞄准模式终点特效) 
 static_assert(offsetof(UBP_TeleControlConfig_C, 抛物瞄准模式重力加速度) == 0x000220, "Member 'UBP_TeleControlConfig_C::抛物瞄准模式重力加速度' has a wrong offset!");
 static_assert(offsetof(UBP_TeleControlConfig_C, 投掷锁定范围) == 0x000224, "Member 'UBP_TeleControlConfig_C::投掷锁定范围' has a wrong offset!");
 static_assert(offsetof(UBP_TeleControlConfig_C, 归位消失特效) == 0x000228, "Member 'UBP_TeleControlConfig_C::归位消失特效' has a wrong offset!");
+static_assert(offsetof(UBP_TeleControlConfig_C, 投掷状态CueId) == 0x000248, "Member 'UBP_TeleControlConfig_C::投掷状态CueId' has a wrong offset!");
 
 }
 

@@ -10,17 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "E_Cloud_Presents_structs.hpp"
-#include "AkAudio_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "Engine_structs.hpp"
+#include "AkAudio_structs.hpp"
+#include "E_Cloud_Presents_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Clouds.BP_Clouds_C
-// 0x00A8 (0x0368 - 0x02C0)
+// 0x00B0 (0x0370 - 0x02C0)
 class ABP_Clouds_C final : public AKuroCloudsActor
 {
 public:
@@ -45,6 +46,10 @@ public:
 	uint8                                         Pad_359[0x3];                                      // 0x0359(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Cloud_Speed;                                       // 0x035C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         Cloud_Offset;                                      // 0x0360(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsReversed_;                                       // 0x0364(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_365[0x3];                                      // 0x0365(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReversedZHeightBias;                               // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroFeatureLevel                             FeatureLevel;                                      // 0x036C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Clouds(int32 EntryPoint);
@@ -105,6 +110,16 @@ public:
 	void 罗墓岛夜晚();
 	void 金库上解密后();
 	void 费洛洛出场();
+	void CloudMainParamsUpdate();
+	void 彩虹天气();
+	void 颠倒塔白天();
+	void 颠倒塔夜晚();
+	void 颠倒塔流星();
+	void 七丘();
+	void 七丘阴天();
+	void 残破竞技场();
+	void 尖刺山();
+	void 观测塔();
 
 public:
 	static class UClass* StaticClass()
@@ -117,7 +132,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_Clouds_C) == 0x000008, "Wrong alignment on ABP_Clouds_C");
-static_assert(sizeof(ABP_Clouds_C) == 0x000368, "Wrong size on ABP_Clouds_C");
+static_assert(sizeof(ABP_Clouds_C) == 0x000370, "Wrong size on ABP_Clouds_C");
 static_assert(offsetof(ABP_Clouds_C, UberGraphFrame) == 0x0002C0, "Member 'ABP_Clouds_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_Clouds_C, Cloud02) == 0x0002C8, "Member 'ABP_Clouds_C::Cloud02' has a wrong offset!");
 static_assert(offsetof(ABP_Clouds_C, Cloud01) == 0x0002D0, "Member 'ABP_Clouds_C::Cloud01' has a wrong offset!");
@@ -135,6 +150,9 @@ static_assert(offsetof(ABP_Clouds_C, SkyOceanAudio) == 0x000350, "Member 'ABP_Cl
 static_assert(offsetof(ABP_Clouds_C, Override_Cloud_Rotation) == 0x000358, "Member 'ABP_Clouds_C::Override_Cloud_Rotation' has a wrong offset!");
 static_assert(offsetof(ABP_Clouds_C, Cloud_Speed) == 0x00035C, "Member 'ABP_Clouds_C::Cloud_Speed' has a wrong offset!");
 static_assert(offsetof(ABP_Clouds_C, Cloud_Offset) == 0x000360, "Member 'ABP_Clouds_C::Cloud_Offset' has a wrong offset!");
+static_assert(offsetof(ABP_Clouds_C, IsReversed_) == 0x000364, "Member 'ABP_Clouds_C::IsReversed_' has a wrong offset!");
+static_assert(offsetof(ABP_Clouds_C, ReversedZHeightBias) == 0x000368, "Member 'ABP_Clouds_C::ReversedZHeightBias' has a wrong offset!");
+static_assert(offsetof(ABP_Clouds_C, FeatureLevel) == 0x00036C, "Member 'ABP_Clouds_C::FeatureLevel' has a wrong offset!");
 
 }
 

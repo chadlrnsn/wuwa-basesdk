@@ -12,29 +12,33 @@
 
 #include "ECommonQteType_structs.hpp"
 #include "SCommonQte_SingleClick_structs.hpp"
+#include "SCommonQte_ContinuousClick_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SCommonQte_Base.SCommonQte_Base
-// 0x0060 (0x0060 - 0x0000)
+// 0x00E8 (0x00E8 - 0x0000)
 struct FSCommonQte_Base final
 {
 public:
 	ECommonQteType                                QteType_2_47DD64E942D8877B8EDFD98AD49BBABA;        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Duration_10_42900054479C54A92E052EBFFE3505C2;      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         TimeDilation_11_F065BDBA4006E0F671964D86B2B690A1;  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSCommonQte_SingleClick                SingleClickConfig_5_65D6E75040CF4B488DEE9BB14F9AC700; // 0x0010(0x0050)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	float                                         LeastDuration_33_E0125F8643C14F58545A0AB03CC3B3B3; // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         TimeDilation_11_F065BDBA4006E0F671964D86B2B690A1;  // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCommonQte_SingleClick                SingleClickConfig_5_65D6E75040CF4B488DEE9BB14F9AC700; // 0x0010(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSCommonQte_ContinuousClick            ContinuousClickConfig_29_56A22B244D8A0DB107A2A099420F783C; // 0x0068(0x0080)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSCommonQte_Base) == 0x000008, "Wrong alignment on FSCommonQte_Base");
-static_assert(sizeof(FSCommonQte_Base) == 0x000060, "Wrong size on FSCommonQte_Base");
+static_assert(sizeof(FSCommonQte_Base) == 0x0000E8, "Wrong size on FSCommonQte_Base");
 static_assert(offsetof(FSCommonQte_Base, QteType_2_47DD64E942D8877B8EDFD98AD49BBABA) == 0x000000, "Member 'FSCommonQte_Base::QteType_2_47DD64E942D8877B8EDFD98AD49BBABA' has a wrong offset!");
 static_assert(offsetof(FSCommonQte_Base, Duration_10_42900054479C54A92E052EBFFE3505C2) == 0x000004, "Member 'FSCommonQte_Base::Duration_10_42900054479C54A92E052EBFFE3505C2' has a wrong offset!");
-static_assert(offsetof(FSCommonQte_Base, TimeDilation_11_F065BDBA4006E0F671964D86B2B690A1) == 0x000008, "Member 'FSCommonQte_Base::TimeDilation_11_F065BDBA4006E0F671964D86B2B690A1' has a wrong offset!");
+static_assert(offsetof(FSCommonQte_Base, LeastDuration_33_E0125F8643C14F58545A0AB03CC3B3B3) == 0x000008, "Member 'FSCommonQte_Base::LeastDuration_33_E0125F8643C14F58545A0AB03CC3B3B3' has a wrong offset!");
+static_assert(offsetof(FSCommonQte_Base, TimeDilation_11_F065BDBA4006E0F671964D86B2B690A1) == 0x00000C, "Member 'FSCommonQte_Base::TimeDilation_11_F065BDBA4006E0F671964D86B2B690A1' has a wrong offset!");
 static_assert(offsetof(FSCommonQte_Base, SingleClickConfig_5_65D6E75040CF4B488DEE9BB14F9AC700) == 0x000010, "Member 'FSCommonQte_Base::SingleClickConfig_5_65D6E75040CF4B488DEE9BB14F9AC700' has a wrong offset!");
+static_assert(offsetof(FSCommonQte_Base, ContinuousClickConfig_29_56A22B244D8A0DB107A2A099420F783C) == 0x000068, "Member 'FSCommonQte_Base::ContinuousClickConfig_29_56A22B244D8A0DB107A2A099420F783C' has a wrong offset!");
 
 }
 

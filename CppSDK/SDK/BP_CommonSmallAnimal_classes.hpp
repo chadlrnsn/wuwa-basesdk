@@ -17,8 +17,9 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CommonSmallAnimal.BP_CommonSmallAnimal_C
-// 0x0000 (0x07B0 - 0x07B0)
-class ABP_CommonSmallAnimal_C : public ABP_BaseAnimal_C
+// 0x0000 (0x0760 - 0x0760)
+#pragma pack(push, 0x1)
+class alignas(0x10) ABP_CommonSmallAnimal_C : public ABP_BaseAnimal_C
 {
 public:
 	static class UClass* StaticClass()
@@ -30,8 +31,9 @@ public:
 		return GetDefaultObjImpl<ABP_CommonSmallAnimal_C>();
 	}
 };
+#pragma pack(pop)
 static_assert(alignof(ABP_CommonSmallAnimal_C) == 0x000010, "Wrong alignment on ABP_CommonSmallAnimal_C");
-static_assert(sizeof(ABP_CommonSmallAnimal_C) == 0x0007B0, "Wrong size on ABP_CommonSmallAnimal_C");
+static_assert(sizeof(ABP_CommonSmallAnimal_C) == 0x000760, "Wrong size on ABP_CommonSmallAnimal_C");
 
 }
 

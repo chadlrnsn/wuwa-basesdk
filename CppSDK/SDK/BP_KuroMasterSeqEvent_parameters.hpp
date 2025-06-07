@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SpineThingsInfo_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SpineThingsInfo_structs.hpp"
 
 
 namespace SDK::Params
@@ -269,6 +269,20 @@ public:
 static_assert(alignof(BP_KuroMasterSeqEvent_C_关闭Spine动画_数组_) == 0x000008, "Wrong alignment on BP_KuroMasterSeqEvent_C_关闭Spine动画_数组_");
 static_assert(sizeof(BP_KuroMasterSeqEvent_C_关闭Spine动画_数组_) == 0x000010, "Wrong size on BP_KuroMasterSeqEvent_C_关闭Spine动画_数组_");
 static_assert(offsetof(BP_KuroMasterSeqEvent_C_关闭Spine动画_数组_, spineArray) == 0x000000, "Member 'BP_KuroMasterSeqEvent_C_关闭Spine动画_数组_::spineArray' has a wrong offset!");
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.背景Icon
+// 0x0010 (0x0010 - 0x0000)
+struct BP_KuroMasterSeqEvent_C_背景Icon final
+{
+public:
+	bool                                          显示;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             Icon;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_KuroMasterSeqEvent_C_背景Icon) == 0x000008, "Wrong alignment on BP_KuroMasterSeqEvent_C_背景Icon");
+static_assert(sizeof(BP_KuroMasterSeqEvent_C_背景Icon) == 0x000010, "Wrong size on BP_KuroMasterSeqEvent_C_背景Icon");
+static_assert(offsetof(BP_KuroMasterSeqEvent_C_背景Icon, 显示) == 0x000000, "Member 'BP_KuroMasterSeqEvent_C_背景Icon::显示' has a wrong offset!");
+static_assert(offsetof(BP_KuroMasterSeqEvent_C_背景Icon, Icon) == 0x000008, "Member 'BP_KuroMasterSeqEvent_C_背景Icon::Icon' has a wrong offset!");
 
 }
 

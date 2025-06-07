@@ -10,39 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "AudioMixer_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
-#include "AudioMixer_structs.hpp"
 
 
 namespace SDK
 {
-
-// Class AudioMixer.SubmixEffectSubmixEQPreset
-// 0x0048 (0x00B8 - 0x0070)
-class USubmixEffectSubmixEQPreset final : public USoundEffectSubmixPreset
-{
-public:
-	uint8                                         Pad_70[0x38];                                      // 0x0070(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSubmixEffectSubmixEQSettings          Settings;                                          // 0x00A8(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-
-public:
-	void SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"SubmixEffectSubmixEQPreset">();
-	}
-	static class USubmixEffectSubmixEQPreset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USubmixEffectSubmixEQPreset>();
-	}
-};
-static_assert(alignof(USubmixEffectSubmixEQPreset) == 0x000008, "Wrong alignment on USubmixEffectSubmixEQPreset");
-static_assert(sizeof(USubmixEffectSubmixEQPreset) == 0x0000B8, "Wrong size on USubmixEffectSubmixEQPreset");
-static_assert(offsetof(USubmixEffectSubmixEQPreset, Settings) == 0x0000A8, "Member 'USubmixEffectSubmixEQPreset::Settings' has a wrong offset!");
 
 // Class AudioMixer.SynthComponent
 // 0x04C0 (0x06E0 - 0x0220)
@@ -116,6 +91,31 @@ static_assert(offsetof(USynthComponent, EnvelopeFollowerReleaseTime) == 0x000670
 static_assert(offsetof(USynthComponent, OnAudioEnvelopeValue) == 0x000678, "Member 'USynthComponent::OnAudioEnvelopeValue' has a wrong offset!");
 static_assert(offsetof(USynthComponent, Synth) == 0x0006A8, "Member 'USynthComponent::Synth' has a wrong offset!");
 static_assert(offsetof(USynthComponent, AudioComponent) == 0x0006B0, "Member 'USynthComponent::AudioComponent' has a wrong offset!");
+
+// Class AudioMixer.SubmixEffectSubmixEQPreset
+// 0x0048 (0x00B8 - 0x0070)
+class USubmixEffectSubmixEQPreset final : public USoundEffectSubmixPreset
+{
+public:
+	uint8                                         Pad_70[0x38];                                      // 0x0070(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSubmixEffectSubmixEQSettings          Settings;                                          // 0x00A8(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
+public:
+	void SetSettings(const struct FSubmixEffectSubmixEQSettings& InSettings);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"SubmixEffectSubmixEQPreset">();
+	}
+	static class USubmixEffectSubmixEQPreset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USubmixEffectSubmixEQPreset>();
+	}
+};
+static_assert(alignof(USubmixEffectSubmixEQPreset) == 0x000008, "Wrong alignment on USubmixEffectSubmixEQPreset");
+static_assert(sizeof(USubmixEffectSubmixEQPreset) == 0x0000B8, "Wrong size on USubmixEffectSubmixEQPreset");
+static_assert(offsetof(USubmixEffectSubmixEQPreset, Settings) == 0x0000A8, "Member 'USubmixEffectSubmixEQPreset::Settings' has a wrong offset!");
 
 // Class AudioMixer.AudioGenerator
 // 0x0080 (0x00B0 - 0x0030)

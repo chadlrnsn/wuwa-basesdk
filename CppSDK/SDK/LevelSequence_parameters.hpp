@@ -17,17 +17,6 @@
 namespace SDK::Params
 {
 
-// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
-// 0x0020 (0x0020 - 0x0000)
-struct LevelSequenceBurnInOptions_SetBurnIn final
-{
-public:
-	struct FSoftClassPath                         InBurnInClass;                                     // 0x0000(0x0020)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000008, "Wrong alignment on LevelSequenceBurnInOptions_SetBurnIn");
-static_assert(sizeof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000020, "Wrong size on LevelSequenceBurnInOptions_SetBurnIn");
-static_assert(offsetof(LevelSequenceBurnInOptions_SetBurnIn, InBurnInClass) == 0x000000, "Member 'LevelSequenceBurnInOptions_SetBurnIn::InBurnInClass' has a wrong offset!");
-
 // Function LevelSequence.LevelSequenceActor.AddBinding
 // 0x0028 (0x0028 - 0x0000)
 struct LevelSequenceActor_AddBinding final
@@ -335,6 +324,17 @@ static_assert(sizeof(LevelSequence_FindOrAddMetaDataByClass) == 0x000010, "Wrong
 static_assert(offsetof(LevelSequence_FindOrAddMetaDataByClass, InClass) == 0x000000, "Member 'LevelSequence_FindOrAddMetaDataByClass::InClass' has a wrong offset!");
 static_assert(offsetof(LevelSequence_FindOrAddMetaDataByClass, ReturnValue) == 0x000008, "Member 'LevelSequence_FindOrAddMetaDataByClass::ReturnValue' has a wrong offset!");
 
+// Function LevelSequence.LevelSequence.GetAnimAudio
+// 0x0001 (0x0001 - 0x0000)
+struct LevelSequence_GetAnimAudio final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequence_GetAnimAudio) == 0x000001, "Wrong alignment on LevelSequence_GetAnimAudio");
+static_assert(sizeof(LevelSequence_GetAnimAudio) == 0x000001, "Wrong size on LevelSequence_GetAnimAudio");
+static_assert(offsetof(LevelSequence_GetAnimAudio, ReturnValue) == 0x000000, "Member 'LevelSequence_GetAnimAudio::ReturnValue' has a wrong offset!");
+
 // Function LevelSequence.LevelSequence.GetCenterOffset
 // 0x0010 (0x0010 - 0x0000)
 struct LevelSequence_GetCenterOffset final
@@ -359,6 +359,17 @@ public:
 static_assert(alignof(LevelSequence_RemoveMetaDataByClass) == 0x000008, "Wrong alignment on LevelSequence_RemoveMetaDataByClass");
 static_assert(sizeof(LevelSequence_RemoveMetaDataByClass) == 0x000008, "Wrong size on LevelSequence_RemoveMetaDataByClass");
 static_assert(offsetof(LevelSequence_RemoveMetaDataByClass, InClass) == 0x000000, "Member 'LevelSequence_RemoveMetaDataByClass::InClass' has a wrong offset!");
+
+// Function LevelSequence.LevelSequence.SetAnimAudio
+// 0x0001 (0x0001 - 0x0000)
+struct LevelSequence_SetAnimAudio final
+{
+public:
+	bool                                          Value;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequence_SetAnimAudio) == 0x000001, "Wrong alignment on LevelSequence_SetAnimAudio");
+static_assert(sizeof(LevelSequence_SetAnimAudio) == 0x000001, "Wrong size on LevelSequence_SetAnimAudio");
+static_assert(offsetof(LevelSequence_SetAnimAudio, Value) == 0x000000, "Member 'LevelSequence_SetAnimAudio::Value' has a wrong offset!");
 
 // Function LevelSequence.LevelSequence.SetCenterOffset
 // 0x000C (0x000C - 0x0000)
@@ -394,6 +405,17 @@ public:
 static_assert(alignof(LevelSequence_GetMovieScene) == 0x000008, "Wrong alignment on LevelSequence_GetMovieScene");
 static_assert(sizeof(LevelSequence_GetMovieScene) == 0x000008, "Wrong size on LevelSequence_GetMovieScene");
 static_assert(offsetof(LevelSequence_GetMovieScene, ReturnValue) == 0x000000, "Member 'LevelSequence_GetMovieScene::ReturnValue' has a wrong offset!");
+
+// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
+// 0x0020 (0x0020 - 0x0000)
+struct LevelSequenceBurnInOptions_SetBurnIn final
+{
+public:
+	struct FSoftClassPath                         InBurnInClass;                                     // 0x0000(0x0020)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000008, "Wrong alignment on LevelSequenceBurnInOptions_SetBurnIn");
+static_assert(sizeof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000020, "Wrong size on LevelSequenceBurnInOptions_SetBurnIn");
+static_assert(offsetof(LevelSequenceBurnInOptions_SetBurnIn, InBurnInClass) == 0x000000, "Member 'LevelSequenceBurnInOptions_SetBurnIn::InBurnInClass' has a wrong offset!");
 
 // Function LevelSequence.LevelSequenceBurnIn.SetSettings
 // 0x0008 (0x0008 - 0x0000)
@@ -437,18 +459,16 @@ static_assert(offsetof(LevelSequencePlayer_CreateLevelSequencePlayer, Settings) 
 static_assert(offsetof(LevelSequencePlayer_CreateLevelSequencePlayer, OutActor) == 0x000028, "Member 'LevelSequencePlayer_CreateLevelSequencePlayer::OutActor' has a wrong offset!");
 static_assert(offsetof(LevelSequencePlayer_CreateLevelSequencePlayer, ReturnValue) == 0x000030, "Member 'LevelSequencePlayer_CreateLevelSequencePlayer::ReturnValue' has a wrong offset!");
 
-// Function LevelSequence.LevelSequencePlayer.GetSpawnedActorByGuid
-// 0x0018 (0x0018 - 0x0000)
-struct LevelSequencePlayer_GetSpawnedActorByGuid final
+// Function LevelSequence.LevelSequencePlayer.GetAllSpawnedObjects
+// 0x0010 (0x0010 - 0x0000)
+struct LevelSequencePlayer_GetAllSpawnedObjects final
 {
 public:
-	struct FGuid                                  Guid;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UObject*>                        ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(LevelSequencePlayer_GetSpawnedActorByGuid) == 0x000008, "Wrong alignment on LevelSequencePlayer_GetSpawnedActorByGuid");
-static_assert(sizeof(LevelSequencePlayer_GetSpawnedActorByGuid) == 0x000018, "Wrong size on LevelSequencePlayer_GetSpawnedActorByGuid");
-static_assert(offsetof(LevelSequencePlayer_GetSpawnedActorByGuid, Guid) == 0x000000, "Member 'LevelSequencePlayer_GetSpawnedActorByGuid::Guid' has a wrong offset!");
-static_assert(offsetof(LevelSequencePlayer_GetSpawnedActorByGuid, ReturnValue) == 0x000010, "Member 'LevelSequencePlayer_GetSpawnedActorByGuid::ReturnValue' has a wrong offset!");
+static_assert(alignof(LevelSequencePlayer_GetAllSpawnedObjects) == 0x000008, "Wrong alignment on LevelSequencePlayer_GetAllSpawnedObjects");
+static_assert(sizeof(LevelSequencePlayer_GetAllSpawnedObjects) == 0x000010, "Wrong size on LevelSequencePlayer_GetAllSpawnedObjects");
+static_assert(offsetof(LevelSequencePlayer_GetAllSpawnedObjects, ReturnValue) == 0x000000, "Member 'LevelSequencePlayer_GetAllSpawnedObjects::ReturnValue' has a wrong offset!");
 
 // Function LevelSequence.LevelSequencePlayer.GetActiveCameraComponent
 // 0x0008 (0x0008 - 0x0000)
@@ -460,6 +480,22 @@ public:
 static_assert(alignof(LevelSequencePlayer_GetActiveCameraComponent) == 0x000008, "Wrong alignment on LevelSequencePlayer_GetActiveCameraComponent");
 static_assert(sizeof(LevelSequencePlayer_GetActiveCameraComponent) == 0x000008, "Wrong size on LevelSequencePlayer_GetActiveCameraComponent");
 static_assert(offsetof(LevelSequencePlayer_GetActiveCameraComponent, ReturnValue) == 0x000000, "Member 'LevelSequencePlayer_GetActiveCameraComponent::ReturnValue' has a wrong offset!");
+
+// Function LevelSequence.LevelSequencePlayer.GetSpawnedActorByGuid
+// 0x0020 (0x0020 - 0x0000)
+struct LevelSequencePlayer_GetSpawnedActorByGuid final
+{
+public:
+	struct FGuid                                  Guid;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeSubSequence;                               // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequencePlayer_GetSpawnedActorByGuid) == 0x000008, "Wrong alignment on LevelSequencePlayer_GetSpawnedActorByGuid");
+static_assert(sizeof(LevelSequencePlayer_GetSpawnedActorByGuid) == 0x000020, "Wrong size on LevelSequencePlayer_GetSpawnedActorByGuid");
+static_assert(offsetof(LevelSequencePlayer_GetSpawnedActorByGuid, Guid) == 0x000000, "Member 'LevelSequencePlayer_GetSpawnedActorByGuid::Guid' has a wrong offset!");
+static_assert(offsetof(LevelSequencePlayer_GetSpawnedActorByGuid, bIncludeSubSequence) == 0x000010, "Member 'LevelSequencePlayer_GetSpawnedActorByGuid::bIncludeSubSequence' has a wrong offset!");
+static_assert(offsetof(LevelSequencePlayer_GetSpawnedActorByGuid, ReturnValue) == 0x000018, "Member 'LevelSequencePlayer_GetSpawnedActorByGuid::ReturnValue' has a wrong offset!");
 
 // Function LevelSequence.LevelSequenceMediaController.SynchronizeToServer
 // 0x0004 (0x0004 - 0x0000)

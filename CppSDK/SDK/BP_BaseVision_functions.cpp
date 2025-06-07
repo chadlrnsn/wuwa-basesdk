@@ -37,6 +37,34 @@ void ABP_BaseVision_C::ExecuteUbergraph_BP_BaseVision(int32 EntryPoint)
 }
 
 
+// Function BP_BaseVision.BP_BaseVision_C.显像缩小
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_BaseVision_C::显像缩小()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseVision_C", "显像缩小");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BaseVision.BP_BaseVision_C.显像放大
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_BaseVision_C::显像放大()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseVision_C", "显像放大");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_BaseVision.BP_BaseVision_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:

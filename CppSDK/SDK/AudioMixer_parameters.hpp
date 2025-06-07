@@ -10,23 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "AudioMixer_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function AudioMixer.SubmixEffectSubmixEQPreset.SetSettings
-// 0x0010 (0x0010 - 0x0000)
-struct SubmixEffectSubmixEQPreset_SetSettings final
-{
-public:
-	struct FSubmixEffectSubmixEQSettings          InSettings;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SubmixEffectSubmixEQPreset_SetSettings) == 0x000008, "Wrong alignment on SubmixEffectSubmixEQPreset_SetSettings");
-static_assert(sizeof(SubmixEffectSubmixEQPreset_SetSettings) == 0x000010, "Wrong size on SubmixEffectSubmixEQPreset_SetSettings");
-static_assert(offsetof(SubmixEffectSubmixEQPreset_SetSettings, InSettings) == 0x000000, "Member 'SubmixEffectSubmixEQPreset_SetSettings::InSettings' has a wrong offset!");
 
 // Function AudioMixer.SynthComponent.SetLowPassFilterEnabled
 // 0x0001 (0x0001 - 0x0000)
@@ -85,6 +74,17 @@ public:
 static_assert(alignof(SynthComponent_IsPlaying) == 0x000001, "Wrong alignment on SynthComponent_IsPlaying");
 static_assert(sizeof(SynthComponent_IsPlaying) == 0x000001, "Wrong size on SynthComponent_IsPlaying");
 static_assert(offsetof(SynthComponent_IsPlaying, ReturnValue) == 0x000000, "Member 'SynthComponent_IsPlaying::ReturnValue' has a wrong offset!");
+
+// Function AudioMixer.SubmixEffectSubmixEQPreset.SetSettings
+// 0x0010 (0x0010 - 0x0000)
+struct SubmixEffectSubmixEQPreset_SetSettings final
+{
+public:
+	struct FSubmixEffectSubmixEQSettings          InSettings;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SubmixEffectSubmixEQPreset_SetSettings) == 0x000008, "Wrong alignment on SubmixEffectSubmixEQPreset_SetSettings");
+static_assert(sizeof(SubmixEffectSubmixEQPreset_SetSettings) == 0x000010, "Wrong size on SubmixEffectSubmixEQPreset_SetSettings");
+static_assert(offsetof(SubmixEffectSubmixEQPreset_SetSettings, InSettings) == 0x000000, "Member 'SubmixEffectSubmixEQPreset_SetSettings::InSettings' has a wrong offset!");
 
 // Function AudioMixer.AudioMixerBlueprintLibrary.AddMasterSubmixEffect
 // 0x0010 (0x0010 - 0x0000)

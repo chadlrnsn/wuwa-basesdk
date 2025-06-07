@@ -17,6 +17,46 @@
 namespace SDK
 {
 
+// Function BP_SeqNPC.BP_SeqNPC_C.ExecuteUbergraph_BP_SeqNPC
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqNPC_C::ExecuteUbergraph_BP_SeqNPC(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqNPC_C", "ExecuteUbergraph_BP_SeqNPC");
+
+	Params::BP_SeqNPC_C_ExecuteUbergraph_BP_SeqNPC Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_SeqNPC.BP_SeqNPC_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqNPC_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqNPC_C", "ReceiveTick");
+
+	Params::BP_SeqNPC_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_SeqNPC.BP_SeqNPC_C.UserConstructionScript
 // (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
@@ -26,6 +66,20 @@ void ABP_SeqNPC_C::UserConstructionScript()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_SeqNPC_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SeqNPC.BP_SeqNPC_C.UpdateNpcByDa
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_SeqNPC_C::UpdateNpcByDa()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqNPC_C", "UpdateNpcByDa");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

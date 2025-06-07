@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsEffectActor.TsEffectActor_C.ExecuteUbergraph_TsEffectActor
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// (Final, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -33,17 +33,12 @@ void ATsEffectActor_C::ExecuteUbergraph_TsEffectActor(int32 EntryPoint)
 
 	Parms.EntryPoint = EntryPoint;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsEffectActor.TsEffectActor_C.ReceiveEndPlay
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -58,17 +53,12 @@ void ATsEffectActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 	Parms.EndPlayReason = EndPlayReason;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsEffectActor.TsEffectActor_C.RemoveHandle
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 
 void ATsEffectActor_C::RemoveHandle()
 {
@@ -77,17 +67,12 @@ void ATsEffectActor_C::RemoveHandle()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsEffectActor_C", "RemoveHandle");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsEffectActor.TsEffectActor_C.SetHandle
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   Handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -102,17 +87,12 @@ void ATsEffectActor_C::SetHandle(int32 Handle)
 
 	Parms.Handle = Handle;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsEffectActor.TsEffectActor_C.GetEffectPath
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
@@ -125,19 +105,14 @@ class FString ATsEffectActor_C::GetEffectPath()
 
 	Params::TsEffectActor_C_GetEffectPath Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsEffectActor.TsEffectActor_C.GetHandle
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -150,12 +125,7 @@ void ATsEffectActor_C::GetHandle(int32* Handle)
 
 	Params::TsEffectActor_C_GetHandle Parms{};
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	if (Handle != nullptr)
 		*Handle = Parms.Handle;

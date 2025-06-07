@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "MovieScene_classes.hpp"
-#include "CoreUObject_classes.hpp"
 #include "SequenceDialogue_structs.hpp"
+#include "MovieScene_classes.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK
@@ -105,7 +105,7 @@ static_assert(sizeof(UMovieSceneDialogueAudioTrack) == 0x000098, "Wrong size on 
 static_assert(offsetof(UMovieSceneDialogueAudioTrack, Sections) == 0x000088, "Member 'UMovieSceneDialogueAudioTrack::Sections' has a wrong offset!");
 
 // Class SequenceDialogue.MovieSceneDialogueSection
-// 0x0088 (0x0180 - 0x00F8)
+// 0x0090 (0x0188 - 0x00F8)
 class UMovieSceneDialogueSection final : public UMovieSceneSection
 {
 public:
@@ -121,9 +121,11 @@ public:
 	int32                                         GuardTime;                                         // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         AudioDelay;                                        // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         AudioTransitionDuration;                           // 0x0178(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	ELanguageAudio                                LanguageType;                                      // 0x017C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          EnableGuardTime;                                   // 0x017D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_17E[0x2];                                      // 0x017E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ELanguageAudio                                LanguageType;                                      // 0x017C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         QteId;                                             // 0x0180(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          EnableGuardTime;                                   // 0x0184(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_185[0x3];                                      // 0x0185(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -136,7 +138,7 @@ public:
 	}
 };
 static_assert(alignof(UMovieSceneDialogueSection) == 0x000008, "Wrong alignment on UMovieSceneDialogueSection");
-static_assert(sizeof(UMovieSceneDialogueSection) == 0x000180, "Wrong size on UMovieSceneDialogueSection");
+static_assert(sizeof(UMovieSceneDialogueSection) == 0x000188, "Wrong size on UMovieSceneDialogueSection");
 static_assert(offsetof(UMovieSceneDialogueSection, DialogueInfo) == 0x0000F8, "Member 'UMovieSceneDialogueSection::DialogueInfo' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSection, Index_0) == 0x000110, "Member 'UMovieSceneDialogueSection::Index_0' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSection, SpeakerName) == 0x000118, "Member 'UMovieSceneDialogueSection::SpeakerName' has a wrong offset!");
@@ -148,7 +150,8 @@ static_assert(offsetof(UMovieSceneDialogueSection, GuardTime) == 0x000170, "Memb
 static_assert(offsetof(UMovieSceneDialogueSection, AudioDelay) == 0x000174, "Member 'UMovieSceneDialogueSection::AudioDelay' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSection, AudioTransitionDuration) == 0x000178, "Member 'UMovieSceneDialogueSection::AudioTransitionDuration' has a wrong offset!");
 static_assert(offsetof(UMovieSceneDialogueSection, LanguageType) == 0x00017C, "Member 'UMovieSceneDialogueSection::LanguageType' has a wrong offset!");
-static_assert(offsetof(UMovieSceneDialogueSection, EnableGuardTime) == 0x00017D, "Member 'UMovieSceneDialogueSection::EnableGuardTime' has a wrong offset!");
+static_assert(offsetof(UMovieSceneDialogueSection, QteId) == 0x000180, "Member 'UMovieSceneDialogueSection::QteId' has a wrong offset!");
+static_assert(offsetof(UMovieSceneDialogueSection, EnableGuardTime) == 0x000184, "Member 'UMovieSceneDialogueSection::EnableGuardTime' has a wrong offset!");
 
 // Class SequenceDialogue.MovieSceneDialogueStateSection
 // 0x0008 (0x0100 - 0x00F8)

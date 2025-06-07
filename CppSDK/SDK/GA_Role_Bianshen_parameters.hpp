@@ -10,38 +10,31 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "SVisionData_structs.hpp"
-
 
 namespace SDK::Params
 {
 
 // Function GA_Role_Bianshen.GA_Role_Bianshen_C.ExecuteUbergraph_GA_Role_Bianshen
-// 0x0028 (0x0028 - 0x0000)
+// 0x0018 (0x0018 - 0x0000)
 struct GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          K2Node_Event_bWasCancelled;                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bWasCancelled;                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     CallFunc___________1;                              // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_____ID___ID;                              // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EndAbilityVision_ReturnValue;             // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_ActivateAbilityVision_ReturnValue;        // 0x0025(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         CallFunc_____ID___ID;                              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_ActivateAbilityVision_ReturnValue;        // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EndAbilityVision_ReturnValue;             // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen) == 0x000008, "Wrong alignment on GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen");
-static_assert(sizeof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen) == 0x000028, "Wrong size on GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen");
+static_assert(sizeof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen) == 0x000018, "Wrong size on GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen");
 static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, EntryPoint) == 0x000000, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::EntryPoint' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, K2Node_Event_bWasCancelled) == 0x000004, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::K2Node_Event_bWasCancelled' has a wrong offset!");
 static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, CallFunc__________) == 0x000008, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, K2Node_Event_bWasCancelled) == 0x000010, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::K2Node_Event_bWasCancelled' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, CallFunc___________1) == 0x000018, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::CallFunc___________1' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, CallFunc_____ID___ID) == 0x000020, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::CallFunc_____ID___ID' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, CallFunc_EndAbilityVision_ReturnValue) == 0x000024, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::CallFunc_EndAbilityVision_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, CallFunc_ActivateAbilityVision_ReturnValue) == 0x000025, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::CallFunc_ActivateAbilityVision_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, CallFunc_____ID___ID) == 0x000010, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::CallFunc_____ID___ID' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, CallFunc_ActivateAbilityVision_ReturnValue) == 0x000014, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::CallFunc_ActivateAbilityVision_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen, CallFunc_EndAbilityVision_ReturnValue) == 0x000015, "Member 'GA_Role_Bianshen_C_ExecuteUbergraph_GA_Role_Bianshen::CallFunc_EndAbilityVision_ReturnValue' has a wrong offset!");
 
 // Function GA_Role_Bianshen.GA_Role_Bianshen_C.K2_OnEndAbility
 // 0x0001 (0x0001 - 0x0000)
@@ -53,198 +46,6 @@ public:
 static_assert(alignof(GA_Role_Bianshen_C_K2_OnEndAbility) == 0x000001, "Wrong alignment on GA_Role_Bianshen_C_K2_OnEndAbility");
 static_assert(sizeof(GA_Role_Bianshen_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Bianshen_C_K2_OnEndAbility");
 static_assert(offsetof(GA_Role_Bianshen_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Bianshen_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.获取幻象数据
-// 0x01F8 (0x01F8 - 0x0000)
-struct GA_Role_Bianshen_C_获取幻象数据 final
-{
-public:
-	int32                                         幻象ID_0;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSVisionData                           幻象数据_0;                                        // 0x0008(0x0098)(Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
-	struct FSVisionData                           找到的幻象数据;                                    // 0x00A0(0x0098)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0138(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0148(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_154[0x4];                                      // 0x0154(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSVisionData                           CallFunc_GetDataTableRowFromName_OutRow;           // 0x0158(0x0098)(ContainsInstancedReference, HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_Bianshen_C_获取幻象数据) == 0x000008, "Wrong alignment on GA_Role_Bianshen_C_获取幻象数据");
-static_assert(sizeof(GA_Role_Bianshen_C_获取幻象数据) == 0x0001F8, "Wrong size on GA_Role_Bianshen_C_获取幻象数据");
-static_assert(offsetof(GA_Role_Bianshen_C_获取幻象数据, 幻象ID_0) == 0x000000, "Member 'GA_Role_Bianshen_C_获取幻象数据::幻象ID_0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_获取幻象数据, 幻象数据_0) == 0x000008, "Member 'GA_Role_Bianshen_C_获取幻象数据::幻象数据_0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_获取幻象数据, 找到的幻象数据) == 0x0000A0, "Member 'GA_Role_Bianshen_C_获取幻象数据::找到的幻象数据' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_获取幻象数据, CallFunc_Conv_IntToString_ReturnValue) == 0x000138, "Member 'GA_Role_Bianshen_C_获取幻象数据::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_获取幻象数据, CallFunc_Conv_StringToName_ReturnValue) == 0x000148, "Member 'GA_Role_Bianshen_C_获取幻象数据::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_获取幻象数据, CallFunc_GetDataTableRowFromName_OutRow) == 0x000158, "Member 'GA_Role_Bianshen_C_获取幻象数据::CallFunc_GetDataTableRowFromName_OutRow' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_获取幻象数据, CallFunc_GetDataTableRowFromName_ReturnValue) == 0x0001F0, "Member 'GA_Role_Bianshen_C_获取幻象数据::CallFunc_GetDataTableRowFromName_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.计算施法技能ID
-// 0x0038 (0x0038 - 0x0000)
-struct GA_Role_Bianshen_C_计算施法技能ID final
-{
-public:
-	int32                                         技能序号;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   计算结果;                                          // 0x0004(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Multiply_IntInt_ReturnValue;              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_C_计算施法技能ID) == 0x000008, "Wrong alignment on GA_Role_Bianshen_C_计算施法技能ID");
-static_assert(sizeof(GA_Role_Bianshen_C_计算施法技能ID) == 0x000038, "Wrong size on GA_Role_Bianshen_C_计算施法技能ID");
-static_assert(offsetof(GA_Role_Bianshen_C_计算施法技能ID, 技能序号) == 0x000000, "Member 'GA_Role_Bianshen_C_计算施法技能ID::技能序号' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算施法技能ID, 计算结果) == 0x000004, "Member 'GA_Role_Bianshen_C_计算施法技能ID::计算结果' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算施法技能ID, CallFunc_Multiply_IntInt_ReturnValue) == 0x000010, "Member 'GA_Role_Bianshen_C_计算施法技能ID::CallFunc_Multiply_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算施法技能ID, CallFunc_Add_IntInt_ReturnValue) == 0x000014, "Member 'GA_Role_Bianshen_C_计算施法技能ID::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算施法技能ID, CallFunc_Conv_IntToString_ReturnValue) == 0x000018, "Member 'GA_Role_Bianshen_C_计算施法技能ID::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算施法技能ID, CallFunc_Conv_StringToName_ReturnValue) == 0x000028, "Member 'GA_Role_Bianshen_C_计算施法技能ID::CallFunc_Conv_StringToName_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.获取施法Skill_ID
-// 0x0020 (0x0020 - 0x0000)
-struct GA_Role_Bianshen_C_获取施法Skill_ID final
-{
-public:
-	class FString                                 Skill_ID;                                          // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_C_获取施法Skill_ID) == 0x000008, "Wrong alignment on GA_Role_Bianshen_C_获取施法Skill_ID");
-static_assert(sizeof(GA_Role_Bianshen_C_获取施法Skill_ID) == 0x000020, "Wrong size on GA_Role_Bianshen_C_获取施法Skill_ID");
-static_assert(offsetof(GA_Role_Bianshen_C_获取施法Skill_ID, Skill_ID) == 0x000000, "Member 'GA_Role_Bianshen_C_获取施法Skill_ID::Skill_ID' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_获取施法Skill_ID, CallFunc_Conv_IntToString_ReturnValue) == 0x000010, "Member 'GA_Role_Bianshen_C_获取施法Skill_ID::CallFunc_Conv_IntToString_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.角色添加渐变消失材质
-// 0x0008 (0x0008 - 0x0000)
-struct GA_Role_Bianshen_C_角色添加渐变消失材质 final
-{
-public:
-	int32                                         MaterialDataID_0;                                  // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_AddMaterialControllerData_ReturnValue;    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_C_角色添加渐变消失材质) == 0x000004, "Wrong alignment on GA_Role_Bianshen_C_角色添加渐变消失材质");
-static_assert(sizeof(GA_Role_Bianshen_C_角色添加渐变消失材质) == 0x000008, "Wrong size on GA_Role_Bianshen_C_角色添加渐变消失材质");
-static_assert(offsetof(GA_Role_Bianshen_C_角色添加渐变消失材质, MaterialDataID_0) == 0x000000, "Member 'GA_Role_Bianshen_C_角色添加渐变消失材质::MaterialDataID_0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色添加渐变消失材质, CallFunc_AddMaterialControllerData_ReturnValue) == 0x000004, "Member 'GA_Role_Bianshen_C_角色添加渐变消失材质::CallFunc_AddMaterialControllerData_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.角色添加渐变显示材质
-// 0x0008 (0x0008 - 0x0000)
-struct GA_Role_Bianshen_C_角色添加渐变显示材质 final
-{
-public:
-	int32                                         MaterialDataID_0;                                  // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_AddMaterialControllerData_ReturnValue;    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_C_角色添加渐变显示材质) == 0x000004, "Wrong alignment on GA_Role_Bianshen_C_角色添加渐变显示材质");
-static_assert(sizeof(GA_Role_Bianshen_C_角色添加渐变显示材质) == 0x000008, "Wrong size on GA_Role_Bianshen_C_角色添加渐变显示材质");
-static_assert(offsetof(GA_Role_Bianshen_C_角色添加渐变显示材质, MaterialDataID_0) == 0x000000, "Member 'GA_Role_Bianshen_C_角色添加渐变显示材质::MaterialDataID_0' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色添加渐变显示材质, CallFunc_AddMaterialControllerData_ReturnValue) == 0x000004, "Member 'GA_Role_Bianshen_C_角色添加渐变显示材质::CallFunc_AddMaterialControllerData_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.计算幻象位置
-// 0x0170 (0x0170 - 0x0000)
-struct GA_Role_Bianshen_C_计算幻象位置 final
-{
-public:
-	class ACharacter*                             目标幻象;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransformDouble                       NewParam;                                          // 0x0010(0x0040)(Parm, OutParm, IsPlainOldData, NoDestructor)
-	struct FTransformDouble                       CallFunc_D_GetTransform_ReturnValue;               // 0x0050(0x0040)(IsPlainOldData, NoDestructor)
-	double                                        CallFunc_D_GetScaledCapsuleHalfHeight_ReturnValue; // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_BreakTransformDouble_Location;            // 0x0098(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_BreakTransformDouble_Rotation;            // 0x00B0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_BreakTransformDouble_Scale;               // 0x00BC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x00C8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVectorDouble_X;                      // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVectorDouble_Y;                      // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_BreakVectorDouble_Z;                      // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_D_GetScaledCapsuleHalfHeight_ReturnValue_1; // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_D_Subtract_FloatFloat_ReturnValue;        // 0x0100(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_D_Add_FloatFloat_ReturnValue;             // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_MakeVectorDouble_ReturnValue;             // 0x0110(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_128[0x8];                                      // 0x0128(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransformDouble                       CallFunc_MakeTransformDouble_ReturnValue;          // 0x0130(0x0040)(IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(GA_Role_Bianshen_C_计算幻象位置) == 0x000010, "Wrong alignment on GA_Role_Bianshen_C_计算幻象位置");
-static_assert(sizeof(GA_Role_Bianshen_C_计算幻象位置) == 0x000170, "Wrong size on GA_Role_Bianshen_C_计算幻象位置");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, 目标幻象) == 0x000000, "Member 'GA_Role_Bianshen_C_计算幻象位置::目标幻象' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, NewParam) == 0x000010, "Member 'GA_Role_Bianshen_C_计算幻象位置::NewParam' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_D_GetTransform_ReturnValue) == 0x000050, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_D_GetTransform_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_D_GetScaledCapsuleHalfHeight_ReturnValue) == 0x000090, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_D_GetScaledCapsuleHalfHeight_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_BreakTransformDouble_Location) == 0x000098, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_BreakTransformDouble_Location' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_BreakTransformDouble_Rotation) == 0x0000B0, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_BreakTransformDouble_Rotation' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_BreakTransformDouble_Scale) == 0x0000BC, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_BreakTransformDouble_Scale' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x0000C8, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_BreakVectorDouble_X) == 0x0000E0, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_BreakVectorDouble_X' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_BreakVectorDouble_Y) == 0x0000E8, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_BreakVectorDouble_Y' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_BreakVectorDouble_Z) == 0x0000F0, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_BreakVectorDouble_Z' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_D_GetScaledCapsuleHalfHeight_ReturnValue_1) == 0x0000F8, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_D_GetScaledCapsuleHalfHeight_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_D_Subtract_FloatFloat_ReturnValue) == 0x000100, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_D_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_D_Add_FloatFloat_ReturnValue) == 0x000108, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_D_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_MakeVectorDouble_ReturnValue) == 0x000110, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_MakeVectorDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_计算幻象位置, CallFunc_MakeTransformDouble_ReturnValue) == 0x000130, "Member 'GA_Role_Bianshen_C_计算幻象位置::CallFunc_MakeTransformDouble_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.角色关闭碰撞
-// 0x0098 (0x0098 - 0x0000)
-struct GA_Role_Bianshen_C_角色关闭碰撞 final
-{
-public:
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0018(0x0018)()
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0030(0x0040)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0070(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0080(0x0018)()
-};
-static_assert(alignof(GA_Role_Bianshen_C_角色关闭碰撞) == 0x000008, "Wrong alignment on GA_Role_Bianshen_C_角色关闭碰撞");
-static_assert(sizeof(GA_Role_Bianshen_C_角色关闭碰撞) == 0x000098, "Wrong size on GA_Role_Bianshen_C_角色关闭碰撞");
-static_assert(offsetof(GA_Role_Bianshen_C_角色关闭碰撞, CallFunc_IsValid_ReturnValue) == 0x000000, "Member 'GA_Role_Bianshen_C_角色关闭碰撞::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色关闭碰撞, CallFunc_GetObjectName_ReturnValue) == 0x000008, "Member 'GA_Role_Bianshen_C_角色关闭碰撞::CallFunc_GetObjectName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色关闭碰撞, CallFunc_Conv_StringToText_ReturnValue) == 0x000018, "Member 'GA_Role_Bianshen_C_角色关闭碰撞::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色关闭碰撞, K2Node_MakeStruct_FormatArgumentData) == 0x000030, "Member 'GA_Role_Bianshen_C_角色关闭碰撞::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色关闭碰撞, K2Node_MakeArray_Array) == 0x000070, "Member 'GA_Role_Bianshen_C_角色关闭碰撞::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色关闭碰撞, CallFunc_Format_ReturnValue) == 0x000080, "Member 'GA_Role_Bianshen_C_角色关闭碰撞::CallFunc_Format_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.角色开启碰撞
-// 0x0098 (0x0098 - 0x0000)
-struct GA_Role_Bianshen_C_角色开启碰撞 final
-{
-public:
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0018(0x0018)()
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0030(0x0040)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0070(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0080(0x0018)()
-};
-static_assert(alignof(GA_Role_Bianshen_C_角色开启碰撞) == 0x000008, "Wrong alignment on GA_Role_Bianshen_C_角色开启碰撞");
-static_assert(sizeof(GA_Role_Bianshen_C_角色开启碰撞) == 0x000098, "Wrong size on GA_Role_Bianshen_C_角色开启碰撞");
-static_assert(offsetof(GA_Role_Bianshen_C_角色开启碰撞, CallFunc_IsValid_ReturnValue) == 0x000000, "Member 'GA_Role_Bianshen_C_角色开启碰撞::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色开启碰撞, CallFunc_GetObjectName_ReturnValue) == 0x000008, "Member 'GA_Role_Bianshen_C_角色开启碰撞::CallFunc_GetObjectName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色开启碰撞, CallFunc_Conv_StringToText_ReturnValue) == 0x000018, "Member 'GA_Role_Bianshen_C_角色开启碰撞::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色开启碰撞, K2Node_MakeStruct_FormatArgumentData) == 0x000030, "Member 'GA_Role_Bianshen_C_角色开启碰撞::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色开启碰撞, K2Node_MakeArray_Array) == 0x000070, "Member 'GA_Role_Bianshen_C_角色开启碰撞::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_角色开启碰撞, CallFunc_Format_ReturnValue) == 0x000080, "Member 'GA_Role_Bianshen_C_角色开启碰撞::CallFunc_Format_ReturnValue' has a wrong offset!");
-
-// Function GA_Role_Bianshen.GA_Role_Bianshen_C.继承移动模式
-// 0x0020 (0x0020 - 0x0000)
-struct GA_Role_Bianshen_C_继承移动模式 final
-{
-public:
-	class UCharacterMovementComponent*            Base;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UCharacterMovementComponent*            Target;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPrimitiveComponent*                    CallFunc_GetMovementBase_ReturnValue;              // 0x0018(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(GA_Role_Bianshen_C_继承移动模式) == 0x000008, "Wrong alignment on GA_Role_Bianshen_C_继承移动模式");
-static_assert(sizeof(GA_Role_Bianshen_C_继承移动模式) == 0x000020, "Wrong size on GA_Role_Bianshen_C_继承移动模式");
-static_assert(offsetof(GA_Role_Bianshen_C_继承移动模式, Base) == 0x000000, "Member 'GA_Role_Bianshen_C_继承移动模式::Base' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_继承移动模式, Target) == 0x000008, "Member 'GA_Role_Bianshen_C_继承移动模式::Target' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_继承移动模式, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000010, "Member 'GA_Role_Bianshen_C_继承移动模式::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_继承移动模式, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x000011, "Member 'GA_Role_Bianshen_C_继承移动模式::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Role_Bianshen_C_继承移动模式, CallFunc_GetMovementBase_ReturnValue) == 0x000018, "Member 'GA_Role_Bianshen_C_继承移动模式::CallFunc_GetMovementBase_ReturnValue' has a wrong offset!");
 
 }
 

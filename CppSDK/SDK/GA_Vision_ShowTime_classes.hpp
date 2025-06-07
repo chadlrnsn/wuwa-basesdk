@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "SVisionData_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GA_Base_classes.hpp"
 
 
@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Vision_ShowTime.GA_Vision_ShowTime_C
-// 0x0100 (0x0658 - 0x0558)
+// 0x0108 (0x0660 - 0x0558)
 class UGA_Vision_ShowTime_C final : public UGA_Base_C
 {
 public:
@@ -40,6 +40,7 @@ public:
 	uint8                                         Pad_649[0x3];                                      // 0x0649(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         声骸和目标距离;                                    // 0x064C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     跟随对象;                                          // 0x0650(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Id;                                                // 0x0658(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Vision_ShowTime(int32 EntryPoint);
@@ -60,7 +61,7 @@ public:
 	}
 };
 static_assert(alignof(UGA_Vision_ShowTime_C) == 0x000008, "Wrong alignment on UGA_Vision_ShowTime_C");
-static_assert(sizeof(UGA_Vision_ShowTime_C) == 0x000658, "Wrong size on UGA_Vision_ShowTime_C");
+static_assert(sizeof(UGA_Vision_ShowTime_C) == 0x000660, "Wrong size on UGA_Vision_ShowTime_C");
 static_assert(offsetof(UGA_Vision_ShowTime_C, UberGraphFrame_GA_Vision_ShowTime_C) == 0x000558, "Member 'UGA_Vision_ShowTime_C::UberGraphFrame_GA_Vision_ShowTime_C' has a wrong offset!");
 static_assert(offsetof(UGA_Vision_ShowTime_C, Async_Task) == 0x000560, "Member 'UGA_Vision_ShowTime_C::Async_Task' has a wrong offset!");
 static_assert(offsetof(UGA_Vision_ShowTime_C, 召唤开始_材质特效) == 0x000568, "Member 'UGA_Vision_ShowTime_C::召唤开始_材质特效' has a wrong offset!");
@@ -76,6 +77,7 @@ static_assert(offsetof(UGA_Vision_ShowTime_C, 变身结束_材质特效) == 0x00
 static_assert(offsetof(UGA_Vision_ShowTime_C, 错误启动) == 0x000648, "Member 'UGA_Vision_ShowTime_C::错误启动' has a wrong offset!");
 static_assert(offsetof(UGA_Vision_ShowTime_C, 声骸和目标距离) == 0x00064C, "Member 'UGA_Vision_ShowTime_C::声骸和目标距离' has a wrong offset!");
 static_assert(offsetof(UGA_Vision_ShowTime_C, 跟随对象) == 0x000650, "Member 'UGA_Vision_ShowTime_C::跟随对象' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, Id) == 0x000658, "Member 'UGA_Vision_ShowTime_C::Id' has a wrong offset!");
 
 }
 

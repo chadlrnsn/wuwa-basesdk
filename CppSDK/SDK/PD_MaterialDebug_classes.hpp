@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SMaterialDebugInfo_structs.hpp"
 #include "Engine_classes.hpp"
+#include "SMaterialDebugInfo_structs.hpp"
 
 
 namespace SDK

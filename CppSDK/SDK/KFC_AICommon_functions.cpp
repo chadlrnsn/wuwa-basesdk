@@ -299,12 +299,12 @@ void UKFC_AICommon_C::设置黑板Int(class ATsBaseCharacter_C* 角色, const cl
 // Function KFC_AICommon.KFC_AICommon_C.获取黑板 Int
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABaseCharacter*                   角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UKFC_AICommon_C::获取黑板_Int(class ATsBaseCharacter_C* 角色, const class FString& Key, class UObject* __WorldContext, int32* 值)
+void UKFC_AICommon_C::获取黑板_Int(class ABaseCharacter* 角色, const class FString& Key, class UObject* __WorldContext, int32* 值)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1019,12 +1019,12 @@ void UKFC_AICommon_C::获取_Base属性值(class ATsBaseCharacter_C* 目标, int
 // Function KFC_AICommon.KFC_AICommon_C.获取Current属性值
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABaseCharacter*                   目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   属性id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UKFC_AICommon_C::获取Current属性值(class ATsBaseCharacter_C* 目标, int32 属性id, class UObject* __WorldContext, float* 属性值)
+void UKFC_AICommon_C::获取Current属性值(class ABaseCharacter* 目标, int32 属性id, class UObject* __WorldContext, float* 属性值)
 {
 	static class UFunction* Func = nullptr;
 
