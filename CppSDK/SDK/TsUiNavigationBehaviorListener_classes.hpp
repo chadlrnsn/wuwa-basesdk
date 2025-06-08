@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "SNavigationCursor_structs.hpp"
 #include "Engine_structs.hpp"
-#include "EHotKeyNameStateType_structs.hpp"
 #include "LGUI_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "EHotKeyNameStateType_structs.hpp"
 #include "SNavigationMode_structs.hpp"
-#include "SNavigationCursor_structs.hpp"
 
 
 namespace SDK
@@ -47,6 +47,7 @@ public:
 	struct FVector2D                              AdsorbedPivot;                                     // 0x0278(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AUIBaseActor*                           GridBaseActor;                                     // 0x0280(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ExitTagPriority;                                   // 0x0288(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsUsePool;                                         // 0x028C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_TsUiNavigationBehaviorListener(int32 EntryPoint);
@@ -94,6 +95,7 @@ static_assert(offsetof(UTsUiNavigationBehaviorListener_C, AdsorbedDistance) == 0
 static_assert(offsetof(UTsUiNavigationBehaviorListener_C, AdsorbedPivot) == 0x000278, "Member 'UTsUiNavigationBehaviorListener_C::AdsorbedPivot' has a wrong offset!");
 static_assert(offsetof(UTsUiNavigationBehaviorListener_C, GridBaseActor) == 0x000280, "Member 'UTsUiNavigationBehaviorListener_C::GridBaseActor' has a wrong offset!");
 static_assert(offsetof(UTsUiNavigationBehaviorListener_C, ExitTagPriority) == 0x000288, "Member 'UTsUiNavigationBehaviorListener_C::ExitTagPriority' has a wrong offset!");
+static_assert(offsetof(UTsUiNavigationBehaviorListener_C, IsUsePool) == 0x00028C, "Member 'UTsUiNavigationBehaviorListener_C::IsUsePool' has a wrong offset!");
 
 }
 

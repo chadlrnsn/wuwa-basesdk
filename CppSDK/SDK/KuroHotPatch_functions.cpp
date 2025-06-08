@@ -336,6 +336,35 @@ void UKuroConfigPatcher::UpdateConfigs(const class FString& ConfigListPath)
 }
 
 
+// Function KuroHotPatch.KuroBinPatch.BeginPatch
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Diff                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           OldDir                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           NewDir                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroBinPatch::BeginPatch(const class FString& Diff, const class FString& OldDir, const class FString& NewDir)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroBinPatch", "BeginPatch");
+
+	Params::KuroBinPatch_BeginPatch Parms{};
+
+	Parms.Diff = std::move(Diff);
+	Parms.OldDir = std::move(OldDir);
+	Parms.NewDir = std::move(NewDir);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroHotPatch.KuroLauncherLibrary.CheckFileSha1
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -366,6 +395,25 @@ bool UKuroLauncherLibrary::CheckFileSha1(const class FString& FilePath, const cl
 }
 
 
+// Function KuroHotPatch.KuroLauncherLibrary.ClearPatchPaks
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UKuroLauncherLibrary::ClearPatchPaks()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "ClearPatchPaks");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroHotPatch.KuroLauncherLibrary.CloseShaderLibrary
 // (Final, Native, Static, Public, BlueprintCallable)
 
@@ -382,6 +430,36 @@ void UKuroLauncherLibrary::CloseShaderLibrary()
 	GetDefaultObj()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroHotPatch.KuroLauncherLibrary.CopyFile
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           DstPath                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           SrcPath                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroLauncherLibrary::CopyFile(const class FString& DstPath, const class FString& SrcPath)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "CopyFile");
+
+	Params::KuroLauncherLibrary_CopyFile Parms{};
+
+	Parms.DstPath = std::move(DstPath);
+	Parms.SrcPath = std::move(SrcPath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -831,6 +909,38 @@ int32 UKuroLauncherLibrary::GetRemainPrecompileShaders()
 }
 
 
+// Function KuroHotPatch.KuroLauncherLibrary.GetTotalAndFreeSpace
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FString                           CheckPath                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                                   FreeSize                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int64 UKuroLauncherLibrary::GetTotalAndFreeSpace(const class FString& CheckPath, int64* FreeSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "GetTotalAndFreeSpace");
+
+	Params::KuroLauncherLibrary_GetTotalAndFreeSpace Parms{};
+
+	Parms.CheckPath = std::move(CheckPath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (FreeSize != nullptr)
+		*FreeSize = Parms.FreeSize;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroHotPatch.KuroLauncherLibrary.GetTotalPrecompileShaders
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -894,6 +1004,31 @@ bool UKuroLauncherLibrary::IsLocalPackaging()
 		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "IsLocalPackaging");
 
 	Params::KuroLauncherLibrary_IsLocalPackaging Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroHotPatch.KuroLauncherLibrary.IsStartupMountSuccess
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroLauncherLibrary::IsStartupMountSuccess()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "IsStartupMountSuccess");
+
+	Params::KuroLauncherLibrary_IsStartupMountSuccess Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -971,6 +1106,31 @@ bool UKuroLauncherLibrary::MoveFile(const class FString& DstPath, const class FS
 
 	Parms.DstPath = std::move(DstPath);
 	Parms.SrcPath = std::move(SrcPath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroHotPatch.KuroLauncherLibrary.NeedClearPatchPaks
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroLauncherLibrary::NeedClearPatchPaks()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "NeedClearPatchPaks");
+
+	Params::KuroLauncherLibrary_NeedClearPatchPaks Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1179,6 +1339,25 @@ void UKuroLauncherLibrary::SetRestartApp(uint8 RestartType)
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroHotPatch.KuroLauncherLibrary.WillClearPatchPaks
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UKuroLauncherLibrary::WillClearPatchPaks()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "WillClearPatchPaks");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

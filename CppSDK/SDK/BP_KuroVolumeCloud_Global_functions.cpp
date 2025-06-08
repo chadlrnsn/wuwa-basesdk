@@ -143,41 +143,29 @@ void ABP_KuroVolumeCloud_Global_C::UserConstructionScript()
 
 // Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.UpdateCloudTransform
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UStaticMeshComponent*             CloudCube                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroVolumeCloud_Global_C::UpdateCloudTransform(const class UStaticMeshComponent* CloudCube)
+void ABP_KuroVolumeCloud_Global_C::UpdateCloudTransform()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "UpdateCloudTransform");
 
-	Params::BP_KuroVolumeCloud_Global_C_UpdateCloudTransform Parms{};
-
-	Parms.CloudCube = CloudCube;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
 // Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.UpdateCloudLighting
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UMaterialInstanceDynamic*         Material                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroVolumeCloud_Global_C::UpdateCloudLighting(class UMaterialInstanceDynamic* Material)
+void ABP_KuroVolumeCloud_Global_C::UpdateCloudLighting()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "UpdateCloudLighting");
 
-	Params::BP_KuroVolumeCloud_Global_C_UpdateCloudLighting Parms{};
-
-	Parms.Material = Material;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

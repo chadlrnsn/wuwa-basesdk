@@ -2791,14 +2791,14 @@ static_assert(offsetof(UHoudiniStaticMesh, MaterialIDsPerTriangle) == 0x0000B0, 
 static_assert(offsetof(UHoudiniStaticMesh, StaticMaterials) == 0x0000C0, "Member 'UHoudiniStaticMesh::StaticMaterials' has a wrong offset!");
 
 // Class HoudiniEngineRuntime.HoudiniStaticMeshComponent
-// 0x0020 (0x0550 - 0x0530)
+// 0x0020 (0x0560 - 0x0540)
 class UHoudiniStaticMeshComponent final : public UMeshComponent
 {
 public:
-	class UHoudiniStaticMesh*                     Mesh;                                              // 0x0528(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FBox                                   LocalBounds;                                       // 0x0530(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bHoudiniIconVisible;                               // 0x054C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_54D[0x3];                                      // 0x054D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UHoudiniStaticMesh*                     Mesh;                                              // 0x0538(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FBox                                   LocalBounds;                                       // 0x0540(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bHoudiniIconVisible;                               // 0x055C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_55D[0x3];                                      // 0x055D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UHoudiniStaticMesh* GetMesh();
@@ -2819,10 +2819,10 @@ public:
 	}
 };
 static_assert(alignof(UHoudiniStaticMeshComponent) == 0x000010, "Wrong alignment on UHoudiniStaticMeshComponent");
-static_assert(sizeof(UHoudiniStaticMeshComponent) == 0x000550, "Wrong size on UHoudiniStaticMeshComponent");
-static_assert(offsetof(UHoudiniStaticMeshComponent, Mesh) == 0x000528, "Member 'UHoudiniStaticMeshComponent::Mesh' has a wrong offset!");
-static_assert(offsetof(UHoudiniStaticMeshComponent, LocalBounds) == 0x000530, "Member 'UHoudiniStaticMeshComponent::LocalBounds' has a wrong offset!");
-static_assert(offsetof(UHoudiniStaticMeshComponent, bHoudiniIconVisible) == 0x00054C, "Member 'UHoudiniStaticMeshComponent::bHoudiniIconVisible' has a wrong offset!");
+static_assert(sizeof(UHoudiniStaticMeshComponent) == 0x000560, "Wrong size on UHoudiniStaticMeshComponent");
+static_assert(offsetof(UHoudiniStaticMeshComponent, Mesh) == 0x000538, "Member 'UHoudiniStaticMeshComponent::Mesh' has a wrong offset!");
+static_assert(offsetof(UHoudiniStaticMeshComponent, LocalBounds) == 0x000540, "Member 'UHoudiniStaticMeshComponent::LocalBounds' has a wrong offset!");
+static_assert(offsetof(UHoudiniStaticMeshComponent, bHoudiniIconVisible) == 0x00055C, "Member 'UHoudiniStaticMeshComponent::bHoudiniIconVisible' has a wrong offset!");
 
 // Class HoudiniEngineRuntime.HoudiniAssetStateEvents
 // 0x0000 (0x0030 - 0x0030)

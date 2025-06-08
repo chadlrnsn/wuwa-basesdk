@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ECameraModifyConditionType.ECameraModifyConditionType
-// NumValues: 0x000A
+// NumValues: 0x000C
 enum class ECameraModifyConditionType : uint8
 {
 	NewEnumerator0                           = 0,
@@ -27,7 +27,9 @@ enum class ECameraModifyConditionType : uint8
 	NewEnumerator5                           = 6,
 	NewEnumerator8                           = 7,
 	NewEnumerator9                           = 8,
-	ECameraModifyConditionType_MAX           = 9,
+	NewEnumerator10                          = 9,
+	NewEnumerator11                          = 10,
+	ECameraModifyConditionType_MAX           = 11,
 };
 
 }

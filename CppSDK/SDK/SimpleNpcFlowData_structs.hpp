@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ESimpleNpcFlowCheckType_structs.hpp"
 #include "ESimpleNpcFlowIndex_structs.hpp"
+#include "ESimpleNpcFlowCheckType_structs.hpp"
 #include "SimplpNpcStateData_structs.hpp"
 
 

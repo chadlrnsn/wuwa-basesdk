@@ -20,9 +20,12 @@ namespace SDK
 {
 
 // Class AnimGraphRuntime.AnimSequencerInstance
-// 0x0000 (0x0620 - 0x0620)
+// 0x0010 (0x0670 - 0x0660)
 class UAnimSequencerInstance : public UAnimInstance
 {
+public:
+	uint8                                         Pad_660[0x10];                                     // 0x0660(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -34,7 +37,7 @@ public:
 	}
 };
 static_assert(alignof(UAnimSequencerInstance) == 0x000010, "Wrong alignment on UAnimSequencerInstance");
-static_assert(sizeof(UAnimSequencerInstance) == 0x000620, "Wrong size on UAnimSequencerInstance");
+static_assert(sizeof(UAnimSequencerInstance) == 0x000670, "Wrong size on UAnimSequencerInstance");
 
 // Class AnimGraphRuntime.AnimNotify_PlayMontageNotify
 // 0x0010 (0x0050 - 0x0040)
@@ -57,6 +60,28 @@ public:
 static_assert(alignof(UAnimNotify_PlayMontageNotify) == 0x000008, "Wrong alignment on UAnimNotify_PlayMontageNotify");
 static_assert(sizeof(UAnimNotify_PlayMontageNotify) == 0x000050, "Wrong size on UAnimNotify_PlayMontageNotify");
 static_assert(offsetof(UAnimNotify_PlayMontageNotify, NotifyName) == 0x000040, "Member 'UAnimNotify_PlayMontageNotify::NotifyName' has a wrong offset!");
+
+// Class AnimGraphRuntime.AnimNotify_PlayMontageNotifyWindow
+// 0x0010 (0x0050 - 0x0040)
+class UAnimNotify_PlayMontageNotifyWindow final : public UAnimNotifyState
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0040(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"AnimNotify_PlayMontageNotifyWindow">();
+	}
+	static class UAnimNotify_PlayMontageNotifyWindow* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAnimNotify_PlayMontageNotifyWindow>();
+	}
+};
+static_assert(alignof(UAnimNotify_PlayMontageNotifyWindow) == 0x000008, "Wrong alignment on UAnimNotify_PlayMontageNotifyWindow");
+static_assert(sizeof(UAnimNotify_PlayMontageNotifyWindow) == 0x000050, "Wrong size on UAnimNotify_PlayMontageNotifyWindow");
+static_assert(offsetof(UAnimNotify_PlayMontageNotifyWindow, NotifyName) == 0x000040, "Member 'UAnimNotify_PlayMontageNotifyWindow::NotifyName' has a wrong offset!");
 
 // Class AnimGraphRuntime.KismetAnimationLibrary
 // 0x0000 (0x0030 - 0x0030)
@@ -86,28 +111,6 @@ public:
 };
 static_assert(alignof(UKismetAnimationLibrary) == 0x000008, "Wrong alignment on UKismetAnimationLibrary");
 static_assert(sizeof(UKismetAnimationLibrary) == 0x000030, "Wrong size on UKismetAnimationLibrary");
-
-// Class AnimGraphRuntime.AnimNotify_PlayMontageNotifyWindow
-// 0x0010 (0x0050 - 0x0040)
-class UAnimNotify_PlayMontageNotifyWindow final : public UAnimNotifyState
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0040(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"AnimNotify_PlayMontageNotifyWindow">();
-	}
-	static class UAnimNotify_PlayMontageNotifyWindow* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAnimNotify_PlayMontageNotifyWindow>();
-	}
-};
-static_assert(alignof(UAnimNotify_PlayMontageNotifyWindow) == 0x000008, "Wrong alignment on UAnimNotify_PlayMontageNotifyWindow");
-static_assert(sizeof(UAnimNotify_PlayMontageNotifyWindow) == 0x000050, "Wrong size on UAnimNotify_PlayMontageNotifyWindow");
-static_assert(offsetof(UAnimNotify_PlayMontageNotifyWindow, NotifyName) == 0x000040, "Member 'UAnimNotify_PlayMontageNotifyWindow::NotifyName' has a wrong offset!");
 
 // Class AnimGraphRuntime.PlayMontageCallbackProxy
 // 0x0080 (0x00B0 - 0x0030)

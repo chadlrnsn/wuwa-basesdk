@@ -48,6 +48,10 @@ public:
 	static void PlaySpineAnimForGenderInArray(TArray<struct FSpineThingsInfo>& maleSpineArray1, TArray<struct FSpineThingsInfo>& femaleSpineArray1, class UObject* __WorldContext);
 	static void CloseSpineAnim(const class FString& spineName, class UObject* __WorldContext);
 	static void CloseSpineAnimInArray(TArray<class FString>& spineArray, class UObject* __WorldContext);
+	static void AddInteractTagToInteractingGravityMachine(class UObject* __WorldContext);
+	static void RemoveInteractTagFromInteractingGravityMachine(class UObject* __WorldContext);
+	static void TriggerTagToInteractingGravityMachine(const struct FGameplayTag& Tag, class UObject* __WorldContext);
+	static void ShowBgIcon(bool bShow, class UTexture2D* texture, class ABP_KuroMasterSeqEvent_C* obj, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

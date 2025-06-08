@@ -3277,34 +3277,6 @@ int64 UGASBPLibrary::GetNetworkGameplayTagNodeIndexHash()
 }
 
 
-// Function KuroGAS.GASBPLibrary.GetOriginalGameplayTag
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class FString                           Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UGASBPLibrary::GetOriginalGameplayTag(const class FString& Str)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GASBPLibrary", "GetOriginalGameplayTag");
-
-	Params::GASBPLibrary_GetOriginalGameplayTag Parms{};
-
-	Parms.Str = std::move(Str);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function KuroGAS.GASBPLibrary.GetOwnedGameplayTags
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -3331,6 +3303,34 @@ void UGASBPLibrary::GetOwnedGameplayTags(const class UAbilitySystemComponent* AS
 
 	if (TargetContainer != nullptr)
 		*TargetContainer = std::move(Parms.TargetContainer);
+}
+
+
+// Function KuroGAS.GASBPLibrary.GetUglyTag
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UGASBPLibrary::GetUglyTag(const class FString& Str)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GASBPLibrary", "GetUglyTag");
+
+	Params::GASBPLibrary_GetUglyTag Parms{};
+
+	Parms.Str = std::move(Str);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

@@ -1126,5 +1126,59 @@ void ATsAiController_C::AicApplyBuffToTarget(int32 targetId, int64 buffId)
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function TsAiController.TsAiController_C.AddLevelVarBoolEventBinder
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UKuroBooleanEventBinder*          eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsAiController_C::AddLevelVarBoolEventBinder(const struct FSAiLevelVar& levelVar, class UKuroBooleanEventBinder* eventBinder)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAiController_C", "AddLevelVarBoolEventBinder");
+
+	Params::TsAiController_C_AddLevelVarBoolEventBinder Parms{};
+
+	Parms.levelVar = std::move(levelVar);
+	Parms.eventBinder = eventBinder;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsAiController.TsAiController_C.AddLevelVarIntEventBinder
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UKuroIntEventBinder*              eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsAiController_C::AddLevelVarIntEventBinder(const struct FSAiLevelVar& levelVar, class UKuroIntEventBinder* eventBinder)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAiController_C", "AddLevelVarIntEventBinder");
+
+	Params::TsAiController_C_AddLevelVarIntEventBinder Parms{};
+
+	Parms.levelVar = std::move(levelVar);
+	Parms.eventBinder = eventBinder;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

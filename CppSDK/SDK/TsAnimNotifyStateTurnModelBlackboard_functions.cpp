@@ -111,6 +111,25 @@ bool UTsAnimNotifyStateTurnModelBlackboard_C::K2_NotifyEnd(class USkeletalMeshCo
 }
 
 
+// Function TsAnimNotifyStateTurnModelBlackboard.TsAnimNotifyStateTurnModelBlackboard_C.Init
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UTsAnimNotifyStateTurnModelBlackboard_C::Init()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAnimNotifyStateTurnModelBlackboard_C", "Init");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function TsAnimNotifyStateTurnModelBlackboard.TsAnimNotifyStateTurnModelBlackboard_C.GetNotifyName
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:

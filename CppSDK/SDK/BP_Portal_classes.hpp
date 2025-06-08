@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Portal.BP_Portal_C
-// 0x0320 (0x05D0 - 0x02B0)
+// 0x0330 (0x05E0 - 0x02B0)
 class ABP_Portal_C final : public AActor
 {
 public:
@@ -85,6 +85,7 @@ public:
 	float                                         CapturePerf_Lv2_MaxDist;                           // 0x052C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMap<class FString, bool>                     Capture1InitShowFlags;                             // 0x0530(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FString, bool>                     Capture2InitShowFlags;                             // 0x0580(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          IsMac;                                             // 0x05D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_Portal(int32 EntryPoint);
@@ -128,7 +129,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_Portal_C) == 0x000010, "Wrong alignment on ABP_Portal_C");
-static_assert(sizeof(ABP_Portal_C) == 0x0005D0, "Wrong size on ABP_Portal_C");
+static_assert(sizeof(ABP_Portal_C) == 0x0005E0, "Wrong size on ABP_Portal_C");
 static_assert(offsetof(ABP_Portal_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_Portal_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_Portal_C, CapturePosition1) == 0x0002B8, "Member 'ABP_Portal_C::CapturePosition1' has a wrong offset!");
 static_assert(offsetof(ABP_Portal_C, CapturePosition2) == 0x0002C0, "Member 'ABP_Portal_C::CapturePosition2' has a wrong offset!");
@@ -183,6 +184,7 @@ static_assert(offsetof(ABP_Portal_C, CapturePerf_Lv1_MaxDist) == 0x000528, "Memb
 static_assert(offsetof(ABP_Portal_C, CapturePerf_Lv2_MaxDist) == 0x00052C, "Member 'ABP_Portal_C::CapturePerf_Lv2_MaxDist' has a wrong offset!");
 static_assert(offsetof(ABP_Portal_C, Capture1InitShowFlags) == 0x000530, "Member 'ABP_Portal_C::Capture1InitShowFlags' has a wrong offset!");
 static_assert(offsetof(ABP_Portal_C, Capture2InitShowFlags) == 0x000580, "Member 'ABP_Portal_C::Capture2InitShowFlags' has a wrong offset!");
+static_assert(offsetof(ABP_Portal_C, IsMac) == 0x0005D0, "Member 'ABP_Portal_C::IsMac' has a wrong offset!");
 
 }
 

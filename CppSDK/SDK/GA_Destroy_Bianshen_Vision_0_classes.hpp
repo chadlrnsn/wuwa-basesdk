@@ -38,15 +38,15 @@ public:
 	void ExecuteUbergraph_GA_Destroy_Bianshen_Vision(int32 EntryPoint);
 	void K2_OnEndAbility(bool bWasCancelled);
 	void K2_ActivateAbility();
-	void EventReceived_18B59F5945020DB23C42FD8854B1645B(const struct FGameplayEventData& Payload);
-	void EventReceived_18B59F5945020DB23C42FD883A22B930(const struct FGameplayEventData& Payload);
-	void Added_21071CB943CD992BF8EFD6A376C16E4A(const struct FGameplayTag& Tag);
-	void Added_21071CB943CD992BF8EFD6A3EA97EC13(const struct FGameplayTag& Tag);
-	void OnCompleted_5D118C384AE61F1C80292E81D062667B();
-	void OnBlendOut_5D118C384AE61F1C80292E81D062667B();
-	void OnInterrupted_5D118C384AE61F1C80292E81D062667B();
-	void OnCancelled_5D118C384AE61F1C80292E81D062667B();
-	void OnTick_5D118C384AE61F1C80292E81D062667B();
+	void EventReceived_18B59F5945020DB23C42FD88740B0A0F(const struct FGameplayEventData& Payload);
+	void EventReceived_18B59F5945020DB23C42FD881A98D764(const struct FGameplayEventData& Payload);
+	void Added_21071CB943CD992BF8EFD6A3567B001E(const struct FGameplayTag& Tag);
+	void Added_21071CB943CD992BF8EFD6A3CA2D8247(const struct FGameplayTag& Tag);
+	void OnCompleted_5D118C384AE61F1C80292E81E2A60EB1();
+	void OnBlendOut_5D118C384AE61F1C80292E81E2A60EB1();
+	void OnInterrupted_5D118C384AE61F1C80292E81E2A60EB1();
+	void OnCancelled_5D118C384AE61F1C80292E81E2A60EB1();
+	void OnTick_5D118C384AE61F1C80292E81E2A60EB1();
 	void 显示玩家模型();
 	void 变身结束_碰撞关系处理();
 

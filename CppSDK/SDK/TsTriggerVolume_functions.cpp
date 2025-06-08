@@ -17,90 +17,15 @@
 namespace SDK
 {
 
-// Function TsTriggerVolume.TsTriggerVolume_C.ExecuteUbergraph_TsTriggerVolume
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TsTriggerVolume.TsTriggerVolume_C.TryReportSelfBuffDamageLog
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ATsTriggerVolume_C::ExecuteUbergraph_TsTriggerVolume(int32 EntryPoint)
+void ATsTriggerVolume_C::TryReportSelfBuffDamageLog()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTriggerVolume_C", "ExecuteUbergraph_TsTriggerVolume");
-
-	Params::TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveTick
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ATsTriggerVolume_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTriggerVolume_C", "ReceiveTick");
-
-	Params::TsTriggerVolume_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveEndPlay
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ATsTriggerVolume_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTriggerVolume_C", "ReceiveEndPlay");
-
-	Params::TsTriggerVolume_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveBeginPlay
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
-
-void ATsTriggerVolume_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTriggerVolume_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("TsTriggerVolume_C", "TryReportSelfBuffDamageLog");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -136,20 +61,95 @@ void ATsTriggerVolume_C::AddBuffInner(int64 buffId)
 }
 
 
-// Function TsTriggerVolume.TsTriggerVolume_C.TryReportSelfBuffDamageLog
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveBeginPlay
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
-void ATsTriggerVolume_C::TryReportSelfBuffDamageLog()
+void ATsTriggerVolume_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTriggerVolume_C", "TryReportSelfBuffDamageLog");
+		Func = Class->GetFunction("TsTriggerVolume_C", "ReceiveBeginPlay");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveEndPlay
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsTriggerVolume_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTriggerVolume_C", "ReceiveEndPlay");
+
+	Params::TsTriggerVolume_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTriggerVolume.TsTriggerVolume_C.ReceiveTick
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsTriggerVolume_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTriggerVolume_C", "ReceiveTick");
+
+	Params::TsTriggerVolume_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTriggerVolume.TsTriggerVolume_C.ExecuteUbergraph_TsTriggerVolume
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsTriggerVolume_C::ExecuteUbergraph_TsTriggerVolume(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTriggerVolume_C", "ExecuteUbergraph_TsTriggerVolume");
+
+	Params::TsTriggerVolume_C_ExecuteUbergraph_TsTriggerVolume Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -37,6 +37,60 @@ void ATsRecordGameplayCue_C::ExecuteUbergraph_TsRecordGameplayCue(int32 EntryPoi
 }
 
 
+// Function TsRecordGameplayCue.TsRecordGameplayCue_C.ReceiveBeginPlay
+// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+
+void ATsRecordGameplayCue_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsRecordGameplayCue_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function TsRecordGameplayCue.TsRecordGameplayCue_C.ReceiveTick
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsRecordGameplayCue_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsRecordGameplayCue_C", "ReceiveTick");
+
+	Params::TsRecordGameplayCue_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function TsRecordGameplayCue.TsRecordGameplayCue_C.ReceiveEndPlay
+// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsRecordGameplayCue_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsRecordGameplayCue_C", "ReceiveEndPlay");
+
+	Params::TsRecordGameplayCue_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function TsRecordGameplayCue.TsRecordGameplayCue_C.OnStop
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 

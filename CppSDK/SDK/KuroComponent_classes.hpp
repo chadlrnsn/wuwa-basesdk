@@ -79,34 +79,34 @@ static_assert(offsetof(UKuroAnimPerfTestComponent, RandSkelMeshAniSeqs) == 0x000
 static_assert(offsetof(UKuroAnimPerfTestComponent, GeneratedSkelMeshActors) == 0x000150, "Member 'UKuroAnimPerfTestComponent::GeneratedSkelMeshActors' has a wrong offset!");
 
 // Class KuroComponent.KuroChainComponent
-// 0x0100 (0x0630 - 0x0530)
+// 0x0100 (0x0640 - 0x0540)
 class UKuroChainComponent : public UMeshComponent
 {
 public:
-	class UStaticMesh*                            ChainMesh;                                         // 0x0528(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Scale;                                             // 0x0530(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Segments;                                          // 0x053C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AdditiveRotation;                                  // 0x0540(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ChainLength;                                       // 0x054C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                EndPoint;                                          // 0x0550(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AttachStart;                                       // 0x055C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_55D[0x3];                                      // 0x055D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FComponentReference                    AttachStartTo;                                     // 0x0560(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FName                                   AttachStartToSocket;                               // 0x0590(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AttachEnd;                                         // 0x059C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59D[0x3];                                      // 0x059D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FComponentReference                    AttachEndTo;                                       // 0x05A0(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FName                                   AttachEndToSocket;                                 // 0x05D0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Gravity;                                           // 0x05DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Stiffness;                                         // 0x05E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SelfCollision;                                     // 0x05E4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5E5[0x3];                                      // 0x05E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SelfCollisionWidth;                                // 0x05E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SelfCollisionThreshold;                            // 0x05EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FrameSkip;                                         // 0x05F0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5F4[0x4];                                      // 0x05F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInstancedStaticMeshComponent*          InstanceComponent;                                 // 0x05F8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_600[0x30];                                     // 0x0600(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UStaticMesh*                            ChainMesh;                                         // 0x0538(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Scale;                                             // 0x0540(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Segments;                                          // 0x054C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AdditiveRotation;                                  // 0x0550(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ChainLength;                                       // 0x055C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                EndPoint;                                          // 0x0560(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AttachStart;                                       // 0x056C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_56D[0x3];                                      // 0x056D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FComponentReference                    AttachStartTo;                                     // 0x0570(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FName                                   AttachStartToSocket;                               // 0x05A0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AttachEnd;                                         // 0x05AC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5AD[0x3];                                      // 0x05AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FComponentReference                    AttachEndTo;                                       // 0x05B0(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FName                                   AttachEndToSocket;                                 // 0x05E0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Gravity;                                           // 0x05EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Stiffness;                                         // 0x05F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SelfCollision;                                     // 0x05F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5F5[0x3];                                      // 0x05F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SelfCollisionWidth;                                // 0x05F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SelfCollisionThreshold;                            // 0x05FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FrameSkip;                                         // 0x0600(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_604[0x4];                                      // 0x0604(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInstancedStaticMeshComponent*          InstanceComponent;                                 // 0x0608(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_610[0x30];                                     // 0x0610(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void InitChain();
@@ -122,26 +122,26 @@ public:
 	}
 };
 static_assert(alignof(UKuroChainComponent) == 0x000010, "Wrong alignment on UKuroChainComponent");
-static_assert(sizeof(UKuroChainComponent) == 0x000630, "Wrong size on UKuroChainComponent");
-static_assert(offsetof(UKuroChainComponent, ChainMesh) == 0x000528, "Member 'UKuroChainComponent::ChainMesh' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, Scale) == 0x000530, "Member 'UKuroChainComponent::Scale' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, Segments) == 0x00053C, "Member 'UKuroChainComponent::Segments' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, AdditiveRotation) == 0x000540, "Member 'UKuroChainComponent::AdditiveRotation' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, ChainLength) == 0x00054C, "Member 'UKuroChainComponent::ChainLength' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, EndPoint) == 0x000550, "Member 'UKuroChainComponent::EndPoint' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, AttachStart) == 0x00055C, "Member 'UKuroChainComponent::AttachStart' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, AttachStartTo) == 0x000560, "Member 'UKuroChainComponent::AttachStartTo' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, AttachStartToSocket) == 0x000590, "Member 'UKuroChainComponent::AttachStartToSocket' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, AttachEnd) == 0x00059C, "Member 'UKuroChainComponent::AttachEnd' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, AttachEndTo) == 0x0005A0, "Member 'UKuroChainComponent::AttachEndTo' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, AttachEndToSocket) == 0x0005D0, "Member 'UKuroChainComponent::AttachEndToSocket' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, Gravity) == 0x0005DC, "Member 'UKuroChainComponent::Gravity' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, Stiffness) == 0x0005E0, "Member 'UKuroChainComponent::Stiffness' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, SelfCollision) == 0x0005E4, "Member 'UKuroChainComponent::SelfCollision' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, SelfCollisionWidth) == 0x0005E8, "Member 'UKuroChainComponent::SelfCollisionWidth' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, SelfCollisionThreshold) == 0x0005EC, "Member 'UKuroChainComponent::SelfCollisionThreshold' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, FrameSkip) == 0x0005F0, "Member 'UKuroChainComponent::FrameSkip' has a wrong offset!");
-static_assert(offsetof(UKuroChainComponent, InstanceComponent) == 0x0005F8, "Member 'UKuroChainComponent::InstanceComponent' has a wrong offset!");
+static_assert(sizeof(UKuroChainComponent) == 0x000640, "Wrong size on UKuroChainComponent");
+static_assert(offsetof(UKuroChainComponent, ChainMesh) == 0x000538, "Member 'UKuroChainComponent::ChainMesh' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, Scale) == 0x000540, "Member 'UKuroChainComponent::Scale' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, Segments) == 0x00054C, "Member 'UKuroChainComponent::Segments' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, AdditiveRotation) == 0x000550, "Member 'UKuroChainComponent::AdditiveRotation' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, ChainLength) == 0x00055C, "Member 'UKuroChainComponent::ChainLength' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, EndPoint) == 0x000560, "Member 'UKuroChainComponent::EndPoint' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, AttachStart) == 0x00056C, "Member 'UKuroChainComponent::AttachStart' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, AttachStartTo) == 0x000570, "Member 'UKuroChainComponent::AttachStartTo' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, AttachStartToSocket) == 0x0005A0, "Member 'UKuroChainComponent::AttachStartToSocket' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, AttachEnd) == 0x0005AC, "Member 'UKuroChainComponent::AttachEnd' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, AttachEndTo) == 0x0005B0, "Member 'UKuroChainComponent::AttachEndTo' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, AttachEndToSocket) == 0x0005E0, "Member 'UKuroChainComponent::AttachEndToSocket' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, Gravity) == 0x0005EC, "Member 'UKuroChainComponent::Gravity' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, Stiffness) == 0x0005F0, "Member 'UKuroChainComponent::Stiffness' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, SelfCollision) == 0x0005F4, "Member 'UKuroChainComponent::SelfCollision' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, SelfCollisionWidth) == 0x0005F8, "Member 'UKuroChainComponent::SelfCollisionWidth' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, SelfCollisionThreshold) == 0x0005FC, "Member 'UKuroChainComponent::SelfCollisionThreshold' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, FrameSkip) == 0x000600, "Member 'UKuroChainComponent::FrameSkip' has a wrong offset!");
+static_assert(offsetof(UKuroChainComponent, InstanceComponent) == 0x000608, "Member 'UKuroChainComponent::InstanceComponent' has a wrong offset!");
 
 // Class KuroComponent.KuroCharacterAnimationComponent
 // 0x0150 (0x0210 - 0x00C0)
@@ -376,33 +376,38 @@ static_assert(offsetof(UKuroSceneItemGuidePathComponent, HasActiveTag) == 0x0000
 static_assert(offsetof(UKuroSceneItemGuidePathComponent, NiagaraComponent) == 0x0000C8, "Member 'UKuroSceneItemGuidePathComponent::NiagaraComponent' has a wrong offset!");
 
 // Class KuroComponent.KuroSceneItemMoveComponent
-// 0x0160 (0x0220 - 0x00C0)
-class UKuroSceneItemMoveComponent final : public UActorComponent
+// 0x01A0 (0x0260 - 0x00C0)
+class alignas(0x10) UKuroSceneItemMoveComponent final : public UActorComponent
 {
 public:
 	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void()>              OnStopCallback;                                    // 0x00D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(int32 Index)>   OnArrivePointCallback;                             // 0x00E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F8[0xB0];                                      // 0x00F8(0x00B0)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSplineMoveConfig                      SplineMoveConfig;                                  // 0x01A8(0x0028)(ZeroConstructor, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1D0[0x18];                                     // 0x01D0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTargetRotationData                    TargetRotationData;                                // 0x01E8(0x0038)(NativeAccessSpecifierPrivate)
+	uint8                                         Pad_F8[0x38];                                      // 0x00F8(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSimpleMoveData                        SimpleMoveData;                                    // 0x0130(0x0090)(NativeAccessSpecifierPrivate)
+	struct FSplineMoveData                        SplineMoveData;                                    // 0x01C0(0x0068)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	struct FTargetRotationData                    TargetRotationData;                                // 0x0228(0x0038)(NativeAccessSpecifierPrivate)
 
 public:
-	static bool FindTimeByValueIn01Curve(const class UCurveFloat* Curve, const float TargetValue, float* ResultTime, const int32 MaxSearchDepth, const float Tolerance);
+	static bool FindTimeByValueIn01Curve(const class UCurveFloat* Curve, const float TargetValue, float* ResultTime, int32 MaxSearchDepth, const float Tolerance);
 
 	void AddMoveTarget(const struct FVectorDouble& Loc, float MoveTime, float WaitTime, float MaxSpeed, float Acceleration);
 	bool AddRotationStep(const struct FRotator& BeginRotation, const struct FRotator& EndRotation, float TimeSec, float CdSec, class UCurveFloat* RotateCurve);
 	bool GetNextMoveTarget(struct FVectorDouble* NextTarget, struct FVectorDouble* CurrentVelocity);
 	bool InitRotationData(class AActor* TargetActor, bool IsLoop);
 	void Kuro_SetGravityDirect(const struct FVector& InGravityDirect);
+	void SetEnableDebugForMove(bool Enable);
+	void SetMaxDeltaDegreePerSecondForUpdatingLookAt(const float MaxDegreePerSecond);
 	void SetTickingMoveEnable(bool bEnabled);
 	void SetTickingRotateEnable(bool bEnabled);
-	bool StartMoveWithSpline(class USplineComponent* SplineComponent, bool Repeat, bool Cycle, bool KeepLookAt, const TArray<float>& Speeds, const TArray<float>& WaitTimes, float StartDis, float EndDis);
 	bool StartMoveWithSplineAtConstantTime(class USplineComponent* SplineComponent, bool Repeat, bool Cycle, bool KeepLookAt, const float TimeSec, class UCurveFloat* TimeDisCurve, const float StartTimeOffset, float StartDis, float EndDis);
+	bool StartMoveWithSplineAtDynamicSpeed(class USplineComponent* SplineComponent, const int32 MaxMoveTimes, bool Cycle, bool KeepLookAt, const float InitSpeed, const float Acceleration, const float TargetSpeed, const float StartDis, const float EndDis);
 	bool StartRotate();
-	void StopAllMove(bool BroadcastCallback, bool BroadcastIndexCallback);
+	void StopAllMove(bool BroadcastStopCallback, bool BroadcastIndexCallback);
 	bool StopRotate(EKuroSceneItemStopRotateMethod StopMethod);
+	bool UpdateDynamicSpeedSplineMoveParams(const float CurrentSpeed, const float Acceleration, const float TargetSpeed);
+	bool UpdateSplineMoveDistance(const float NewDistanceAloneSpline);
+	bool UpdateSplineMoveDistanceByPosition(const struct FVectorDouble& NewPosition);
 
 	float GetDistanceAlongSpline() const;
 	ESimpleRunState GetSimpleRunState() const;
@@ -421,26 +426,27 @@ public:
 		return GetDefaultObjImpl<UKuroSceneItemMoveComponent>();
 	}
 };
-static_assert(alignof(UKuroSceneItemMoveComponent) == 0x000008, "Wrong alignment on UKuroSceneItemMoveComponent");
-static_assert(sizeof(UKuroSceneItemMoveComponent) == 0x000220, "Wrong size on UKuroSceneItemMoveComponent");
+static_assert(alignof(UKuroSceneItemMoveComponent) == 0x000010, "Wrong alignment on UKuroSceneItemMoveComponent");
+static_assert(sizeof(UKuroSceneItemMoveComponent) == 0x000260, "Wrong size on UKuroSceneItemMoveComponent");
 static_assert(offsetof(UKuroSceneItemMoveComponent, OnStopCallback) == 0x0000D8, "Member 'UKuroSceneItemMoveComponent::OnStopCallback' has a wrong offset!");
 static_assert(offsetof(UKuroSceneItemMoveComponent, OnArrivePointCallback) == 0x0000E8, "Member 'UKuroSceneItemMoveComponent::OnArrivePointCallback' has a wrong offset!");
-static_assert(offsetof(UKuroSceneItemMoveComponent, SplineMoveConfig) == 0x0001A8, "Member 'UKuroSceneItemMoveComponent::SplineMoveConfig' has a wrong offset!");
-static_assert(offsetof(UKuroSceneItemMoveComponent, TargetRotationData) == 0x0001E8, "Member 'UKuroSceneItemMoveComponent::TargetRotationData' has a wrong offset!");
+static_assert(offsetof(UKuroSceneItemMoveComponent, SimpleMoveData) == 0x000130, "Member 'UKuroSceneItemMoveComponent::SimpleMoveData' has a wrong offset!");
+static_assert(offsetof(UKuroSceneItemMoveComponent, SplineMoveData) == 0x0001C0, "Member 'UKuroSceneItemMoveComponent::SplineMoveData' has a wrong offset!");
+static_assert(offsetof(UKuroSceneItemMoveComponent, TargetRotationData) == 0x000228, "Member 'UKuroSceneItemMoveComponent::TargetRotationData' has a wrong offset!");
 
 // Class KuroComponent.KuroSplineChainComponent
-// 0x0030 (0x0660 - 0x0630)
+// 0x0030 (0x0670 - 0x0640)
 class UKuroSplineChainComponent final : public UKuroChainComponent
 {
 public:
-	float                                         SplineMaxLength;                                   // 0x0630(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MeshMinScale;                                      // 0x0634(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MeshMaxScale;                                      // 0x0638(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MeshXYScaleRatio;                                  // 0x063C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SegmentLengthMinScale;                             // 0x0640(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SegmentLengthMaxScale;                             // 0x0644(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USplineComponent*                       SplineComponent;                                   // 0x0648(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_650[0x10];                                     // 0x0650(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         SplineMaxLength;                                   // 0x0640(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MeshMinScale;                                      // 0x0644(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MeshMaxScale;                                      // 0x0648(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MeshXYScaleRatio;                                  // 0x064C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SegmentLengthMinScale;                             // 0x0650(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SegmentLengthMaxScale;                             // 0x0654(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USplineComponent*                       SplineComponent;                                   // 0x0658(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_660[0x10];                                     // 0x0660(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void UpdateSplineChainIndex();
@@ -456,14 +462,14 @@ public:
 	}
 };
 static_assert(alignof(UKuroSplineChainComponent) == 0x000010, "Wrong alignment on UKuroSplineChainComponent");
-static_assert(sizeof(UKuroSplineChainComponent) == 0x000660, "Wrong size on UKuroSplineChainComponent");
-static_assert(offsetof(UKuroSplineChainComponent, SplineMaxLength) == 0x000630, "Member 'UKuroSplineChainComponent::SplineMaxLength' has a wrong offset!");
-static_assert(offsetof(UKuroSplineChainComponent, MeshMinScale) == 0x000634, "Member 'UKuroSplineChainComponent::MeshMinScale' has a wrong offset!");
-static_assert(offsetof(UKuroSplineChainComponent, MeshMaxScale) == 0x000638, "Member 'UKuroSplineChainComponent::MeshMaxScale' has a wrong offset!");
-static_assert(offsetof(UKuroSplineChainComponent, MeshXYScaleRatio) == 0x00063C, "Member 'UKuroSplineChainComponent::MeshXYScaleRatio' has a wrong offset!");
-static_assert(offsetof(UKuroSplineChainComponent, SegmentLengthMinScale) == 0x000640, "Member 'UKuroSplineChainComponent::SegmentLengthMinScale' has a wrong offset!");
-static_assert(offsetof(UKuroSplineChainComponent, SegmentLengthMaxScale) == 0x000644, "Member 'UKuroSplineChainComponent::SegmentLengthMaxScale' has a wrong offset!");
-static_assert(offsetof(UKuroSplineChainComponent, SplineComponent) == 0x000648, "Member 'UKuroSplineChainComponent::SplineComponent' has a wrong offset!");
+static_assert(sizeof(UKuroSplineChainComponent) == 0x000670, "Wrong size on UKuroSplineChainComponent");
+static_assert(offsetof(UKuroSplineChainComponent, SplineMaxLength) == 0x000640, "Member 'UKuroSplineChainComponent::SplineMaxLength' has a wrong offset!");
+static_assert(offsetof(UKuroSplineChainComponent, MeshMinScale) == 0x000644, "Member 'UKuroSplineChainComponent::MeshMinScale' has a wrong offset!");
+static_assert(offsetof(UKuroSplineChainComponent, MeshMaxScale) == 0x000648, "Member 'UKuroSplineChainComponent::MeshMaxScale' has a wrong offset!");
+static_assert(offsetof(UKuroSplineChainComponent, MeshXYScaleRatio) == 0x00064C, "Member 'UKuroSplineChainComponent::MeshXYScaleRatio' has a wrong offset!");
+static_assert(offsetof(UKuroSplineChainComponent, SegmentLengthMinScale) == 0x000650, "Member 'UKuroSplineChainComponent::SegmentLengthMinScale' has a wrong offset!");
+static_assert(offsetof(UKuroSplineChainComponent, SegmentLengthMaxScale) == 0x000654, "Member 'UKuroSplineChainComponent::SegmentLengthMaxScale' has a wrong offset!");
+static_assert(offsetof(UKuroSplineChainComponent, SplineComponent) == 0x000658, "Member 'UKuroSplineChainComponent::SplineComponent' has a wrong offset!");
 
 }
 

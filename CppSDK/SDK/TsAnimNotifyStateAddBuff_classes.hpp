@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ESkillBehaviorBuffTargetType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "ESkillBehaviorBuffTargetType_structs.hpp"
 
 
 namespace SDK

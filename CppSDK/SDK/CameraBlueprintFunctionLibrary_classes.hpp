@@ -12,10 +12,11 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "ECameraGravityMode_structs.hpp"
 #include "EAimAssistMode_structs.hpp"
-#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
-#include "ECameraAnsEffectiveClientType_structs.hpp"
 #include "ECustomCameraMode_structs.hpp"
+#include "ECameraAnsEffectiveClientType_structs.hpp"
+#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 
 
 namespace SDK
@@ -73,6 +74,19 @@ public:
 	static void SetSequenceCameraCollisionState(bool bEnable, class UObject* __WorldContext);
 	static void SwitchCameraDebugToolDrawCameraZone(class UObject* __WorldContext);
 	static void SetXRayState(bool isEnable, class UObject* __WorldContext);
+	static void SetUiCameraDebugToolEnabled(bool enabled, class UObject* __WorldContext);
+	static void SwitchUiCameraDtSync(class UObject* __WorldContext);
+	static TMap<class FString, class FString> GetDebugToolUiCameraProps(class UObject* __WorldContext);
+	static void SwitchUiCameraArmLengthSync(class UObject* __WorldContext);
+	static void OnDebugToolUiCameraArmLengthInputChanged(const class FString& armLengthStr, class UObject* __WorldContext);
+	static void SetCameraGravityMode(ECameraGravityMode gravityMode, const struct FVectorDouble& gravityDirect, class UObject* __WorldContext);
+	static ECameraGravityMode GetCameraGravityMode(class UObject* __WorldContext);
+	static struct FVectorDouble GetCameraGravityDirect(class UObject* __WorldContext);
+	static struct FVectorDouble GetCameraGravityUp(class UObject* __WorldContext);
+	static struct FRotator GetCameraRotationInGravity(class UObject* __WorldContext);
+	static struct FVectorDouble GetPlayerLocationInGravity(class UObject* __WorldContext);
+	static struct FRotator GetPlayerRotatorInGravity(class UObject* __WorldContext);
+	static void SwitchCameraDebugRotatorEnabled(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

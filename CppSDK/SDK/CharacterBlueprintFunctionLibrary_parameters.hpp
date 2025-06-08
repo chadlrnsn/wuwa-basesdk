@@ -386,5 +386,47 @@ static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_DetachFromHost, isDet
 static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_DetachFromHost, isRecursion) == 0x000005, "Member 'CharacterBlueprintFunctionLibrary_C_DetachFromHost::isRecursion' has a wrong offset!");
 static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_DetachFromHost, __WorldContext) == 0x000008, "Member 'CharacterBlueprintFunctionLibrary_C_DetachFromHost::__WorldContext' has a wrong offset!");
 
+// Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.GetCharacterGravityDirect
+// 0x0020 (0x0020 - 0x0000)
+struct CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect");
+static_assert(sizeof(CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect) == 0x000020, "Wrong size on CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect");
+static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect, __WorldContext) == 0x000000, "Member 'CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect::__WorldContext' has a wrong offset!");
+static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect, ReturnValue) == 0x000008, "Member 'CharacterBlueprintFunctionLibrary_C_GetCharacterGravityDirect::ReturnValue' has a wrong offset!");
+
+// Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.GetCharacterGravityUp
+// 0x0020 (0x0020 - 0x0000)
+struct CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp");
+static_assert(sizeof(CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp) == 0x000020, "Wrong size on CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp");
+static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp, __WorldContext) == 0x000000, "Member 'CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp::__WorldContext' has a wrong offset!");
+static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp, ReturnValue) == 0x000008, "Member 'CharacterBlueprintFunctionLibrary_C_GetCharacterGravityUp::ReturnValue' has a wrong offset!");
+
+// Function CharacterBlueprintFunctionLibrary.CharacterBlueprintFunctionLibrary_C.SetGravityDirect
+// 0x0028 (0x0028 - 0x0000)
+struct CharacterBlueprintFunctionLibrary_C_SetGravityDirect final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          gravityDirect;                                     // 0x0008(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(CharacterBlueprintFunctionLibrary_C_SetGravityDirect) == 0x000008, "Wrong alignment on CharacterBlueprintFunctionLibrary_C_SetGravityDirect");
+static_assert(sizeof(CharacterBlueprintFunctionLibrary_C_SetGravityDirect) == 0x000028, "Wrong size on CharacterBlueprintFunctionLibrary_C_SetGravityDirect");
+static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_SetGravityDirect, entityId) == 0x000000, "Member 'CharacterBlueprintFunctionLibrary_C_SetGravityDirect::entityId' has a wrong offset!");
+static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_SetGravityDirect, gravityDirect) == 0x000008, "Member 'CharacterBlueprintFunctionLibrary_C_SetGravityDirect::gravityDirect' has a wrong offset!");
+static_assert(offsetof(CharacterBlueprintFunctionLibrary_C_SetGravityDirect, __WorldContext) == 0x000020, "Member 'CharacterBlueprintFunctionLibrary_C_SetGravityDirect::__WorldContext' has a wrong offset!");
+
 }
 

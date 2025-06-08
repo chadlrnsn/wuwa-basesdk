@@ -777,5 +777,113 @@ void UPlotBlueprintFunctionLibrary_C::CloseSpineAnimInArray(TArray<class FString
 	spineArray = std::move(Parms.spineArray);
 }
 
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.AddInteractTagToInteractingGravityMachine
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::AddInteractTagToInteractingGravityMachine(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "AddInteractTagToInteractingGravityMachine");
+
+	Params::PlotBlueprintFunctionLibrary_C_AddInteractTagToInteractingGravityMachine Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.RemoveInteractTagFromInteractingGravityMachine
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::RemoveInteractTagFromInteractingGravityMachine(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "RemoveInteractTagFromInteractingGravityMachine");
+
+	Params::PlotBlueprintFunctionLibrary_C_RemoveInteractTagFromInteractingGravityMachine Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.TriggerTagToInteractingGravityMachine
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FGameplayTag                     Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::TriggerTagToInteractingGravityMachine(const struct FGameplayTag& Tag, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "TriggerTagToInteractingGravityMachine");
+
+	Params::PlotBlueprintFunctionLibrary_C_TriggerTagToInteractingGravityMachine Parms{};
+
+	Parms.Tag = std::move(Tag);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.ShowBgIcon
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bShow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UTexture2D*                       texture                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABP_KuroMasterSeqEvent_C*         obj                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::ShowBgIcon(bool bShow, class UTexture2D* texture, class ABP_KuroMasterSeqEvent_C* obj, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "ShowBgIcon");
+
+	Params::PlotBlueprintFunctionLibrary_C_ShowBgIcon Parms{};
+
+	Parms.bShow = bShow;
+	Parms.texture = texture;
+	Parms.obj = obj;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

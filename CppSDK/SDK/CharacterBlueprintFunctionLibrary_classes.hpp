@@ -45,6 +45,9 @@ public:
 	static void SetActorExtraSkeletalMeshComponent(int32 entityId, class USkeletalMeshComponent* skeletalMeshComponent, class UObject* __WorldContext);
 	static bool CanCharacterMonsterOrSummonedDisplayEffect(class ATsBaseCharacter_C* owner, class UObject* __WorldContext);
 	static void DetachFromHost(int32 id1, bool isDetachFollower, bool isRecursion, class UObject* __WorldContext);
+	static struct FVectorDouble GetCharacterGravityDirect(class UObject* __WorldContext);
+	static struct FVectorDouble GetCharacterGravityUp(class UObject* __WorldContext);
+	static void SetGravityDirect(int32 entityId, const struct FVectorDouble& gravityDirect, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

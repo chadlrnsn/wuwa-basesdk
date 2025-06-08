@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function BP_EffectActor.BP_EffectActor_C.ExecuteUbergraph_BP_EffectActor
-// (Final, UbergraphFunction, HasDefaults)
+// (Final, UbergraphFunction)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

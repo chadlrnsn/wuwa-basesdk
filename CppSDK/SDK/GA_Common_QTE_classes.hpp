@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "SCameraModifier_Settings_structs.hpp"
 #include "GA_Base_classes.hpp"
+#include "SCameraModifier_Settings_structs.hpp"
 
 
 namespace SDK

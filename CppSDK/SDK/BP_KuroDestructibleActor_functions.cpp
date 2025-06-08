@@ -37,6 +37,26 @@ void ABP_KuroDestructibleActor_C::ExecuteUbergraph_BP_KuroDestructibleActor(int3
 }
 
 
+// Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_KuroDestructibleActor_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroDestructibleActor_C", "ReceiveTick");
+
+	Params::BP_KuroDestructibleActor_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.PlayDestruction
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -150,6 +170,28 @@ bool ABP_KuroDestructibleActor_C::IsMobile()
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.EnableFakeGravityDirect
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    Enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVector                          FakeGravityValue                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_KuroDestructibleActor_C::EnableFakeGravityDirect(bool Enable, const struct FVector& FakeGravityValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroDestructibleActor_C", "EnableFakeGravityDirect");
+
+	Params::BP_KuroDestructibleActor_C_EnableFakeGravityDirect Parms{};
+
+	Parms.Enable = Enable;
+	Parms.FakeGravityValue = std::move(FakeGravityValue);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

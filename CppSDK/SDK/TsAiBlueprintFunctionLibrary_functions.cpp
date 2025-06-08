@@ -17,25 +17,25 @@
 namespace SDK
 {
 
-// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetQuestState
+// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.CheckPlayerGameplayTag
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// float                                   questId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EQuestStepState                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-EQuestStepState UTsAiBlueprintFunctionLibrary_C::GetQuestState(int32 entityId, float questId, class UObject* __WorldContext)
+bool UTsAiBlueprintFunctionLibrary_C::CheckPlayerGameplayTag(int32 entityId, const struct FGameplayTag& tag, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "GetQuestState");
+		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "CheckPlayerGameplayTag");
 
-	Params::TsAiBlueprintFunctionLibrary_C_GetQuestState Parms{};
+	Params::TsAiBlueprintFunctionLibrary_C_CheckPlayerGameplayTag Parms{};
 
 	Parms.entityId = entityId;
-	Parms.questId = questId;
+	Parms.tag = std::move(tag);
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -79,25 +79,25 @@ float UTsAiBlueprintFunctionLibrary_C::GetDistanceByPlayer(int32 entityId, class
 }
 
 
-// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.CheckPlayerGameplayTag
+// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetQuestState
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// float                                   questId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+// EQuestStepState                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UTsAiBlueprintFunctionLibrary_C::CheckPlayerGameplayTag(int32 entityId, const struct FGameplayTag& tag, class UObject* __WorldContext)
+EQuestStepState UTsAiBlueprintFunctionLibrary_C::GetQuestState(int32 entityId, float questId, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "CheckPlayerGameplayTag");
+		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "GetQuestState");
 
-	Params::TsAiBlueprintFunctionLibrary_C_CheckPlayerGameplayTag Parms{};
+	Params::TsAiBlueprintFunctionLibrary_C_GetQuestState Parms{};
 
 	Parms.entityId = entityId;
-	Parms.tag = std::move(tag);
+	Parms.questId = questId;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -692,6 +692,156 @@ void UTsAiBlueprintFunctionLibrary_C::UpdateNpcPerformData(int32 entityId, bool&
 	isImpacted = Parms.isImpacted;
 	direction = Parms.direction;
 	strength = Parms.strength;
+}
+
+
+// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelIntVar
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 UTsAiBlueprintFunctionLibrary_C::GetLevelIntVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "GetLevelIntVar");
+
+	Params::TsAiBlueprintFunctionLibrary_C_GetLevelIntVar Parms{};
+
+	Parms.levelVar = std::move(levelVar);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelStringVar
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString UTsAiBlueprintFunctionLibrary_C::GetLevelStringVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "GetLevelStringVar");
+
+	Params::TsAiBlueprintFunctionLibrary_C_GetLevelStringVar Parms{};
+
+	Parms.levelVar = std::move(levelVar);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelFloatVar
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UTsAiBlueprintFunctionLibrary_C::GetLevelFloatVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "GetLevelFloatVar");
+
+	Params::TsAiBlueprintFunctionLibrary_C_GetLevelFloatVar Parms{};
+
+	Parms.levelVar = std::move(levelVar);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelPosVar
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVector UTsAiBlueprintFunctionLibrary_C::GetLevelPosVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "GetLevelPosVar");
+
+	Params::TsAiBlueprintFunctionLibrary_C_GetLevelPosVar Parms{};
+
+	Parms.levelVar = std::move(levelVar);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelBoolVar
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsAiBlueprintFunctionLibrary_C::GetLevelBoolVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "GetLevelBoolVar");
+
+	Params::TsAiBlueprintFunctionLibrary_C_GetLevelBoolVar Parms{};
+
+	Parms.levelVar = std::move(levelVar);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 }

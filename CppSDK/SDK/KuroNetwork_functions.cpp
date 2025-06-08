@@ -675,6 +675,166 @@ uint8 UKuroNetworkChange::GetNetworkType()
 }
 
 
+// Function KuroNetwork.KuroNetworkDetection.DetectionFinish
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bSuccess                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroNetworkDetection::DetectionFinish(bool bSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroNetworkDetection", "DetectionFinish");
+
+	Params::KuroNetworkDetection_DetectionFinish Parms{};
+
+	Parms.bSuccess = bSuccess;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroNetwork.KuroNetworkDetection.GetCurrentProxyAddress
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKuroNetworkDetection::GetCurrentProxyAddress()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroNetworkDetection", "GetCurrentProxyAddress");
+
+	Params::KuroNetworkDetection_GetCurrentProxyAddress Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroNetwork.KuroNetworkDetection.GetDetectionConfig
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ServerName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKuroNetworkDetection::GetDetectionConfig(const class FString& ServerName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroNetworkDetection", "GetDetectionConfig");
+
+	Params::KuroNetworkDetection_GetDetectionConfig Parms{};
+
+	Parms.ServerName = std::move(ServerName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroNetwork.KuroNetworkDetection.ResolveDomainName
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           DomainName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroNetworkDetection::ResolveDomainName(const class FString& DomainName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroNetworkDetection", "ResolveDomainName");
+
+	Params::KuroNetworkDetection_ResolveDomainName Parms{};
+
+	Parms.DomainName = std::move(DomainName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroNetwork.KuroNetworkDetection.SetCDNConfig
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           CDNConfig                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroNetworkDetection::SetCDNConfig(const class FString& CDNConfig)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroNetworkDetection", "SetCDNConfig");
+
+	Params::KuroNetworkDetection_SetCDNConfig Parms{};
+
+	Parms.CDNConfig = std::move(CDNConfig);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroNetwork.KuroNetworkDetection.TestUdpReachable
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FString                           IpAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<int32>                           Ports                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(int32 SuccessCount, int32 ErrorCode)>ResultDelegate                                         (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroNetworkDetection::TestUdpReachable(const class FString& IpAddress, const TArray<int32>& Ports, TDelegate<void(int32 SuccessCount, int32 ErrorCode)> ResultDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroNetworkDetection", "TestUdpReachable");
+
+	Params::KuroNetworkDetection_TestUdpReachable Parms{};
+
+	Parms.IpAddress = std::move(IpAddress);
+	Parms.Ports = std::move(Ports);
+	Parms.ResultDelegate = ResultDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroNetwork.SendHttpRequest.HttpRequest
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

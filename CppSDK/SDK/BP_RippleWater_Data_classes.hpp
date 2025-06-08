@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -17,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_RippleWater_Data.BP_RippleWater_Data_C
-// 0x0018 (0x0050 - 0x0038)
+// 0x0030 (0x0068 - 0x0038)
 class UBP_RippleWater_Data_C final : public UPrimaryDataAsset
 {
 public:
@@ -27,6 +28,10 @@ public:
 	float                                         RippleDistanceNormal;                              // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         RippleDistanceFluo;                                // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         SwimRippleOffset;                                  // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              ExtraRipplePoint1;                                 // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              ExtraRipplePoint2;                                 // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         PlayerSize_Mul;                                    // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ExtraPlayerSize_Mul;                               // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -39,13 +44,17 @@ public:
 	}
 };
 static_assert(alignof(UBP_RippleWater_Data_C) == 0x000008, "Wrong alignment on UBP_RippleWater_Data_C");
-static_assert(sizeof(UBP_RippleWater_Data_C) == 0x000050, "Wrong size on UBP_RippleWater_Data_C");
+static_assert(sizeof(UBP_RippleWater_Data_C) == 0x000068, "Wrong size on UBP_RippleWater_Data_C");
 static_assert(offsetof(UBP_RippleWater_Data_C, Step) == 0x000038, "Member 'UBP_RippleWater_Data_C::Step' has a wrong offset!");
 static_assert(offsetof(UBP_RippleWater_Data_C, captureSize) == 0x00003C, "Member 'UBP_RippleWater_Data_C::captureSize' has a wrong offset!");
 static_assert(offsetof(UBP_RippleWater_Data_C, PlayerSize) == 0x000040, "Member 'UBP_RippleWater_Data_C::PlayerSize' has a wrong offset!");
 static_assert(offsetof(UBP_RippleWater_Data_C, RippleDistanceNormal) == 0x000044, "Member 'UBP_RippleWater_Data_C::RippleDistanceNormal' has a wrong offset!");
 static_assert(offsetof(UBP_RippleWater_Data_C, RippleDistanceFluo) == 0x000048, "Member 'UBP_RippleWater_Data_C::RippleDistanceFluo' has a wrong offset!");
 static_assert(offsetof(UBP_RippleWater_Data_C, SwimRippleOffset) == 0x00004C, "Member 'UBP_RippleWater_Data_C::SwimRippleOffset' has a wrong offset!");
+static_assert(offsetof(UBP_RippleWater_Data_C, ExtraRipplePoint1) == 0x000050, "Member 'UBP_RippleWater_Data_C::ExtraRipplePoint1' has a wrong offset!");
+static_assert(offsetof(UBP_RippleWater_Data_C, ExtraRipplePoint2) == 0x000058, "Member 'UBP_RippleWater_Data_C::ExtraRipplePoint2' has a wrong offset!");
+static_assert(offsetof(UBP_RippleWater_Data_C, PlayerSize_Mul) == 0x000060, "Member 'UBP_RippleWater_Data_C::PlayerSize_Mul' has a wrong offset!");
+static_assert(offsetof(UBP_RippleWater_Data_C, ExtraPlayerSize_Mul) == 0x000064, "Member 'UBP_RippleWater_Data_C::ExtraPlayerSize_Mul' has a wrong offset!");
 
 }
 

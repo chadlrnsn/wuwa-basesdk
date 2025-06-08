@@ -10,11 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "ECharacterState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "TsAiController_classes.hpp"
 #include "SAiConditions_structs.hpp"
-#include "ECharacterState_structs.hpp"
+#include "EAiLevelVarSource_structs.hpp"
+#include "TsAiController_classes.hpp"
 
 
 namespace SDK
@@ -61,7 +62,6 @@ public:
 	void 通用战斗AI(bool bContent);
 	void 默认感知保底事件(bool bContent);
 	void 通用行为树条件(bool bContent);
-	void OnStart();
 	void ReceiveTick(float DeltaSeconds);
 	void 状态切换函数(class UObject* 角色, ECharacterState 老状态, ECharacterState 新状态, bool 主控, class UObject** 角色返回, ECharacterState* 老状态返回, ECharacterState* 新状态返回, bool* 主控返回);
 	void 感知到仇恨目标();
@@ -69,6 +69,8 @@ public:
 	void 区域(const TDelegate<void()>& 换人监听);
 	void 区域监听事件函数(const class FString& 区域名称, const TDelegate<void(bool IsInRegion, class AActor* Target)>& 事件);
 	void 角色怪射线检测(bool* 可以钩锁);
+	void 通用关卡变量切换监听(EAiLevelVarSource 关卡变量监听类型, const class FString& 关卡变量名称, int32 关卡副本行为树id, const TDelegate<void(bool bContent)>& 事件);
+	void OnStart();
 	void 状态切换时(ECharacterState oldState, ECharacterState newState, bool isAutonomousProxy);
 	void 获取控制权时();
 

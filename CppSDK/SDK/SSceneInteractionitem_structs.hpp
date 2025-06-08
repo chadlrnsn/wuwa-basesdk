@@ -10,21 +10,22 @@
 
 #include "Basic.hpp"
 
-#include "SSceneInteractionSequence_structs.hpp"
-#include "SSceneInteractionMontage_structs.hpp"
-#include "SSceneInteractionitemIndestructibleEffectsParameters_structs.hpp"
-#include "SStateBasedEffect_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "SSceneInteractionMaterialController_structs.hpp"
 #include "SSceneInteractionAudio_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "SSceneInteractionSequence_structs.hpp"
 #include "SSceneInteractionCrossStateEffect_structs.hpp"
+#include "SSceneInteractionitemIndestructibleEffectsParameters_structs.hpp"
+#include "SSceneInteractionMontage_structs.hpp"
+#include "SSceneInteractionMaterialController_structs.hpp"
+#include "SStateBasedEffect_structs.hpp"
+#include "SSceneInteractionActorSkeletalmeshDestructible_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SSceneInteractionitem.SSceneInteractionitem
-// 0x0148 (0x0148 - 0x0000)
+// 0x0158 (0x0158 - 0x0000)
 struct FSSceneInteractionitem final
 {
 public:
@@ -45,12 +46,13 @@ public:
 	TArray<class ADestructibleActor*>             DestructibleActors_99_A07716B4422E6A54621BEDB3F449F6E9; // 0x0108(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	TArray<struct FSSceneInteractionCrossStateEffect> CrossStateEffects_109_5016CE794DA6206622021E974D237C3F; // 0x0118(0x0010)(Edit, BlueprintVisible)
 	float                                         TransitionTime_112_12FA0D394CCB866377EB3CAF50BC4FCF; // 0x0128(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12C[0x4];                                      // 0x012C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ABP_KuroSkeletalMeshDestructibleActor_C*> SkeletalMeshDestructibleActors_120_8B9618B14C5C83E4C7087183D8DE5DBD; // 0x0130(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	bool                                          NeedExpressionAnyway_124_E922E35944150267116058B40F3428FE; // 0x0140(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          NeedExpressionAnyway_124_E922E35944150267116058B40F3428FE; // 0x012C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_12D[0x3];                                      // 0x012D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_MaterialRuntimeParUpdate_C*         BP_MaterialRuntimeParUpdate_127_9A0CC7B346E88F894D52DB86AA793A1A; // 0x0130(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSceneInteractionActorSkeletalMeshDestructible SkeletalMeshDestructible_130_3EEAC93A44C8ED181B770F9E64CC1407; // 0x0138(0x0020)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSSceneInteractionitem) == 0x000008, "Wrong alignment on FSSceneInteractionitem");
-static_assert(sizeof(FSSceneInteractionitem) == 0x000148, "Wrong size on FSSceneInteractionitem");
+static_assert(sizeof(FSSceneInteractionitem) == 0x000158, "Wrong size on FSSceneInteractionitem");
 static_assert(offsetof(FSSceneInteractionitem, Name_115_FFED5F8840F2D109EC72A8B694552791) == 0x000000, "Member 'FSSceneInteractionitem::Name_115_FFED5F8840F2D109EC72A8B694552791' has a wrong offset!");
 static_assert(offsetof(FSSceneInteractionitem, Sequence_36_B8940AC64CC949B03180C8B44D27357D) == 0x000010, "Member 'FSSceneInteractionitem::Sequence_36_B8940AC64CC949B03180C8B44D27357D' has a wrong offset!");
 static_assert(offsetof(FSSceneInteractionitem, AnimMontage_35_18248B464237B126EE78CBBD099741AF) == 0x000020, "Member 'FSSceneInteractionitem::AnimMontage_35_18248B464237B126EE78CBBD099741AF' has a wrong offset!");
@@ -67,8 +69,9 @@ static_assert(offsetof(FSSceneInteractionitem, IndestructibleEffectsParameters_8
 static_assert(offsetof(FSSceneInteractionitem, DestructibleActors_99_A07716B4422E6A54621BEDB3F449F6E9) == 0x000108, "Member 'FSSceneInteractionitem::DestructibleActors_99_A07716B4422E6A54621BEDB3F449F6E9' has a wrong offset!");
 static_assert(offsetof(FSSceneInteractionitem, CrossStateEffects_109_5016CE794DA6206622021E974D237C3F) == 0x000118, "Member 'FSSceneInteractionitem::CrossStateEffects_109_5016CE794DA6206622021E974D237C3F' has a wrong offset!");
 static_assert(offsetof(FSSceneInteractionitem, TransitionTime_112_12FA0D394CCB866377EB3CAF50BC4FCF) == 0x000128, "Member 'FSSceneInteractionitem::TransitionTime_112_12FA0D394CCB866377EB3CAF50BC4FCF' has a wrong offset!");
-static_assert(offsetof(FSSceneInteractionitem, SkeletalMeshDestructibleActors_120_8B9618B14C5C83E4C7087183D8DE5DBD) == 0x000130, "Member 'FSSceneInteractionitem::SkeletalMeshDestructibleActors_120_8B9618B14C5C83E4C7087183D8DE5DBD' has a wrong offset!");
-static_assert(offsetof(FSSceneInteractionitem, NeedExpressionAnyway_124_E922E35944150267116058B40F3428FE) == 0x000140, "Member 'FSSceneInteractionitem::NeedExpressionAnyway_124_E922E35944150267116058B40F3428FE' has a wrong offset!");
+static_assert(offsetof(FSSceneInteractionitem, NeedExpressionAnyway_124_E922E35944150267116058B40F3428FE) == 0x00012C, "Member 'FSSceneInteractionitem::NeedExpressionAnyway_124_E922E35944150267116058B40F3428FE' has a wrong offset!");
+static_assert(offsetof(FSSceneInteractionitem, BP_MaterialRuntimeParUpdate_127_9A0CC7B346E88F894D52DB86AA793A1A) == 0x000130, "Member 'FSSceneInteractionitem::BP_MaterialRuntimeParUpdate_127_9A0CC7B346E88F894D52DB86AA793A1A' has a wrong offset!");
+static_assert(offsetof(FSSceneInteractionitem, SkeletalMeshDestructible_130_3EEAC93A44C8ED181B770F9E64CC1407) == 0x000138, "Member 'FSSceneInteractionitem::SkeletalMeshDestructible_130_3EEAC93A44C8ED181B770F9E64CC1407' has a wrong offset!");
 
 }
 

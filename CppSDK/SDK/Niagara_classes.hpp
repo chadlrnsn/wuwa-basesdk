@@ -2074,8 +2074,9 @@ class UNiagaraMeshRendererProperties final : public UNiagaraRendererProperties
 {
 public:
 	class UStaticMesh*                            ParticleMesh;                                      // 0x0088(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ENiagaraSortMode                              SortMode;                                          // 0x0090(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_91[0x3];                                       // 0x0091(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	ENiagaraRendererSourceDataMode                SourceMode;                                        // 0x0090(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ENiagaraSortMode                              SortMode;                                          // 0x0091(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_92[0x2];                                       // 0x0092(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	uint8                                         bOverrideMaterials : 1;                            // 0x0094(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bSortOnlyWhenTranslucent : 1;                      // 0x0094(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -2131,7 +2132,8 @@ public:
 static_assert(alignof(UNiagaraMeshRendererProperties) == 0x000008, "Wrong alignment on UNiagaraMeshRendererProperties");
 static_assert(sizeof(UNiagaraMeshRendererProperties) == 0x0006A0, "Wrong size on UNiagaraMeshRendererProperties");
 static_assert(offsetof(UNiagaraMeshRendererProperties, ParticleMesh) == 0x000088, "Member 'UNiagaraMeshRendererProperties::ParticleMesh' has a wrong offset!");
-static_assert(offsetof(UNiagaraMeshRendererProperties, SortMode) == 0x000090, "Member 'UNiagaraMeshRendererProperties::SortMode' has a wrong offset!");
+static_assert(offsetof(UNiagaraMeshRendererProperties, SourceMode) == 0x000090, "Member 'UNiagaraMeshRendererProperties::SourceMode' has a wrong offset!");
+static_assert(offsetof(UNiagaraMeshRendererProperties, SortMode) == 0x000091, "Member 'UNiagaraMeshRendererProperties::SortMode' has a wrong offset!");
 static_assert(offsetof(UNiagaraMeshRendererProperties, OverrideMaterials) == 0x000098, "Member 'UNiagaraMeshRendererProperties::OverrideMaterials' has a wrong offset!");
 static_assert(offsetof(UNiagaraMeshRendererProperties, SubImageSize) == 0x0000A8, "Member 'UNiagaraMeshRendererProperties::SubImageSize' has a wrong offset!");
 static_assert(offsetof(UNiagaraMeshRendererProperties, FacingMode) == 0x0000B4, "Member 'UNiagaraMeshRendererProperties::FacingMode' has a wrong offset!");

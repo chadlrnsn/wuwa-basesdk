@@ -1176,6 +1176,25 @@ void UUISelectableComponent::NotifyFocusListener()
 }
 
 
+// Function LGUI.UISelectableComponent.NotifyUnFocusListener
+// (Final, Native, Public, BlueprintCallable)
+
+void UUISelectableComponent::NotifyUnFocusListener()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UISelectableComponent", "NotifyUnFocusListener");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LGUI.UISelectableComponent.PlayUIAnimationByPlayInfo
 // (Final, Native, Public)
 // Parameters:
@@ -3782,7 +3801,7 @@ void UUIItem::SetUIItemAlpha(float Value)
 
 
 // Function LGUI.UIItem.SetUIItemScale
-// (Final, Native, Private, HasDefaults)
+// (Final, Native, Private, HasDefaults, BlueprintCallable)
 // Parameters:
 // struct FVector                          Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -4349,6 +4368,31 @@ float UUIItem::GetCalculatedParentAlpha() const
 		Func = Class->GetFunction("UIItem", "GetCalculatedParentAlpha");
 
 	Params::UIItem_GetCalculatedParentAlpha Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIItem.GetCalculatedParentColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UUIItem::GetCalculatedParentColor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIItem", "GetCalculatedParentColor");
+
+	Params::UIItem_GetCalculatedParentColor Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6263,6 +6307,31 @@ struct FLGUIDelegateHandleWrapper ULGUI_PointerInputModule::RegisterInputChangeE
 }
 
 
+// Function LGUI.LGUI_PointerInputModule.SetClickThreshold
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULGUI_PointerInputModule::SetClickThreshold(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LGUI_PointerInputModule", "SetClickThreshold");
+
+	Params::LGUI_PointerInputModule_SetClickThreshold Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LGUI.LGUI_PointerInputModule.SetCurrentInputKeyType
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -7423,6 +7492,36 @@ class ULTweener* ULGUIBPLibrary::ColorTo(class UUIItem* target, const struct FCo
 }
 
 
+// Function LGUI.LGUIBPLibrary.ConvertWorldPosToLGUIPos
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble                    WorldPosition                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D ULGUIBPLibrary::ConvertWorldPosToLGUIPos(class APlayerController* PlayerController, const struct FVectorDouble& WorldPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "ConvertWorldPosToLGUIPos");
+
+	Params::LGUIBPLibrary_ConvertWorldPosToLGUIPos Parms{};
+
+	Parms.PlayerController = PlayerController;
+	Parms.WorldPosition = std::move(WorldPosition);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.LGUIBPLibrary.CopySequenceBindingFromParent
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -7447,6 +7546,38 @@ void ULGUIBPLibrary::CopySequenceBindingFromParent(class UUIItem* Target, const 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.LGUIBPLibrary.CreateTexture2DFromColors
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// int32                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FColor>                   Colors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// class UTexture2D*                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTexture2D* ULGUIBPLibrary::CreateTexture2DFromColors(int32 Width, int32 Height, const TArray<struct FColor>& Colors)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("LGUIBPLibrary", "CreateTexture2DFromColors");
+
+	Params::LGUIBPLibrary_CreateTexture2DFromColors Parms{};
+
+	Parms.Width = Width;
+	Parms.Height = Height;
+	Parms.Colors = std::move(Colors);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -19366,9 +19497,9 @@ void UUIText::SetLocalTextDelegate(const TDelegate<void(class FString& TableName
 // Function LGUI.UIText.SetLocalTextNewDelegate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(class FString& TextKey, class UUIText* uiText)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(class FString& TextKey, class UUIText* uiText, bool isMainText)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UUIText::SetLocalTextNewDelegate(const TDelegate<void(class FString& TextKey, class UUIText* uiText)>& Delegate)
+void UUIText::SetLocalTextNewDelegate(const TDelegate<void(class FString& TextKey, class UUIText* uiText, bool isMainText)>& Delegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -19891,6 +20022,56 @@ void UUIText::SetAdjustWidth(bool newAdjustWidth)
 }
 
 
+// Function LGUI.UIText.SetEnableHyperLinksHighlight
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIText::SetEnableHyperLinksHighlight(bool bEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIText", "SetEnableHyperLinksHighlight");
+
+	Params::UIText_SetEnableHyperLinksHighlight Parms{};
+
+	Parms.bEnabled = bEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIText.SetFilterAnoRichTag
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bFilter                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIText::SetFilterAnoRichTag(bool bFilter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIText", "SetFilterAnoRichTag");
+
+	Params::UIText_SetFilterAnoRichTag Parms{};
+
+	Parms.bFilter = bFilter;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LGUI.UIText.SetFont
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -20031,6 +20212,31 @@ void UUIText::SetGameRichText(bool value)
 	Params::UIText_SetGameRichText Parms{};
 
 	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIText.SetHyperLinksHoverSpiteActive
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUIText::SetHyperLinksHoverSpiteActive(bool bActive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIText", "SetHyperLinksHoverSpiteActive");
+
+	Params::UIText_SetHyperLinksHoverSpiteActive Parms{};
+
+	Parms.bActive = bActive;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -20420,6 +20626,56 @@ class ULGUIFontData_BaseObject* UUIText::GetFont() const
 }
 
 
+// Function LGUI.UIText.GetFontGlowColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FColor UUIText::GetFontGlowColor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIText", "GetFontGlowColor");
+
+	Params::UIText_GetFontGlowColor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIText.GetFontGlowSize
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UUIText::GetFontGlowSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIText", "GetFontGlowSize");
+
+	Params::UIText_GetFontGlowSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LGUI.UIText.GetFontOutlineColor
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -20733,6 +20989,56 @@ class FString UUIText::GetText() const
 		Func = Class->GetFunction("UIText", "GetText");
 
 	Params::UIText_GetText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIText.IsEnableHyperLinksHighlight
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIText::IsEnableHyperLinksHighlight() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIText", "IsEnableHyperLinksHighlight");
+
+	Params::UIText_IsEnableHyperLinksHighlight Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function LGUI.UIText.IsFilterAnoRichTag
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIText::IsFilterAnoRichTag() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIText", "IsFilterAnoRichTag");
+
+	Params::UIText_IsFilterAnoRichTag Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23663,6 +23969,31 @@ void UUICustomMesh::CreateMeshSection(int32 SectionIndex, const TArray<struct FV
 }
 
 
+// Function LGUI.UICustomMesh.ReadStaticMeshData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UStaticMesh*                      MeshComponent                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUICustomMesh::ReadStaticMeshData(class UStaticMesh* MeshComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UICustomMesh", "ReadStaticMeshData");
+
+	Params::UICustomMesh_ReadStaticMeshData Parms{};
+
+	Parms.MeshComponent = MeshComponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LGUI.UIToggleComponent.RegisterToggleEvent
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -24424,6 +24755,31 @@ void UUIScrollViewComponent::StopMovement()
 	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UIScrollViewComponent.CheckContentUnderSize
+// (Final, Native, Protected, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIScrollViewComponent::CheckContentUnderSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UIScrollViewComponent", "CheckContentUnderSize");
+
+	Params::UIScrollViewComponent_CheckContentUnderSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -30623,6 +30979,44 @@ void UUINiagara::ReinitializeSystem()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("UINiagara", "ReinitializeSystem");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.ResetOverrideParameters
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINiagara::ResetOverrideParameters()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "ResetOverrideParameters");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function LGUI.UINiagara.ResetOverrideParametersAndActivate
+// (Final, Native, Public, BlueprintCallable)
+
+void UUINiagara::ResetOverrideParametersAndActivate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UINiagara", "ResetOverrideParametersAndActivate");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

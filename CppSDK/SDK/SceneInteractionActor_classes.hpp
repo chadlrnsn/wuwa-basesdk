@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "ESceneInteractionEffect_structs.hpp"
-#include "SSceneInteractionitem_structs.hpp"
-#include "Engine_structs.hpp"
-#include "SSceneInteractionTags_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "GameplayTags_structs.hpp"
+#include "Engine_structs.hpp"
 #include "SScenePropertyEffect_structs.hpp"
+#include "SSceneInteractionitem_structs.hpp"
+#include "ESceneInteractionEffect_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "SSceneInteractionTags_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass SceneInteractionActor.SceneInteractionActor_C
-// 0x02A0 (0x0550 - 0x02B0)
+// 0x02C0 (0x0570 - 0x02B0)
 class ASceneInteractionActor_C final : public AKuroSceneInteractionActor
 {
 public:
@@ -56,6 +56,10 @@ public:
 	EKuroSceneInteractionState                    模拟状态;                                          // 0x0542(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_543[0x1];                                      // 0x0543(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           模拟Tag;                                           // 0x0544(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
+	TArray<class ASkeletalMeshActor*>             AllSkeletalMeshActors;                             // 0x0550(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	bool                                          IsAnimtionMotagePlayed;                            // 0x0560(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_561[0x7];                                      // 0x0561(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 OverrideEffectActor;                               // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_SceneInteractionActor(int32 EntryPoint);
@@ -87,6 +91,14 @@ public:
 	void 模拟Tag添加();
 	void 模拟Tag移除();
 	void 重置();
+	void ApplyAnimOptimizationParams(bool bUseDistanceMap);
+	void PendingPlayStateEffect();
+	void RemovePendingStateEffectTick();
+	void PendingPlayCrossStateEffect();
+	void RemovePendingCrossStateEffectTick();
+	void PendingPlayTagEffect();
+	void RemovePendingTagEffectTick();
+	void PlayKuroSkeletalMeshDestruction(class AActor* actor, bool isJumpToEnd);
 
 public:
 	static class UClass* StaticClass()
@@ -99,7 +111,7 @@ public:
 	}
 };
 static_assert(alignof(ASceneInteractionActor_C) == 0x000008, "Wrong alignment on ASceneInteractionActor_C");
-static_assert(sizeof(ASceneInteractionActor_C) == 0x000550, "Wrong size on ASceneInteractionActor_C");
+static_assert(sizeof(ASceneInteractionActor_C) == 0x000570, "Wrong size on ASceneInteractionActor_C");
 static_assert(offsetof(ASceneInteractionActor_C, UberGraphFrame) == 0x0002B0, "Member 'ASceneInteractionActor_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ASceneInteractionActor_C, DefaultSceneRoot) == 0x0002B8, "Member 'ASceneInteractionActor_C::DefaultSceneRoot' has a wrong offset!");
 static_assert(offsetof(ASceneInteractionActor_C, States) == 0x0002C0, "Member 'ASceneInteractionActor_C::States' has a wrong offset!");
@@ -125,6 +137,9 @@ static_assert(offsetof(ASceneInteractionActor_C, 需要过渡状态) == 0x000540
 static_assert(offsetof(ASceneInteractionActor_C, 跳过表现过程) == 0x000541, "Member 'ASceneInteractionActor_C::跳过表现过程' has a wrong offset!");
 static_assert(offsetof(ASceneInteractionActor_C, 模拟状态) == 0x000542, "Member 'ASceneInteractionActor_C::模拟状态' has a wrong offset!");
 static_assert(offsetof(ASceneInteractionActor_C, 模拟Tag) == 0x000544, "Member 'ASceneInteractionActor_C::模拟Tag' has a wrong offset!");
+static_assert(offsetof(ASceneInteractionActor_C, AllSkeletalMeshActors) == 0x000550, "Member 'ASceneInteractionActor_C::AllSkeletalMeshActors' has a wrong offset!");
+static_assert(offsetof(ASceneInteractionActor_C, IsAnimtionMotagePlayed) == 0x000560, "Member 'ASceneInteractionActor_C::IsAnimtionMotagePlayed' has a wrong offset!");
+static_assert(offsetof(ASceneInteractionActor_C, OverrideEffectActor) == 0x000568, "Member 'ASceneInteractionActor_C::OverrideEffectActor' has a wrong offset!");
 
 }
 

@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "EExitClimb_structs.hpp"
-#include "SClimbState_structs.hpp"
 #include "EEnterClimb_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "EMovementDirection_structs.hpp"
-#include "SMovementSetting_structs.hpp"
 #include "SClimbInfo_structs.hpp"
+#include "EExitClimb_structs.hpp"
+#include "EMovementDirection_structs.hpp"
 #include "EClimbState_structs.hpp"
+#include "SMovementSetting_structs.hpp"
+#include "SClimbState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SMovementSetting_State_structs.hpp"
 
@@ -1675,6 +1675,26 @@ static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_AddActorWorldOffsetWithC
 static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_AddActorWorldOffsetWithContextAndReset, sweep) == 0x000020, "Member 'TsMoveBlueprintFunctionLibrary_C_AddActorWorldOffsetWithContextAndReset::sweep' has a wrong offset!");
 static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_AddActorWorldOffsetWithContextAndReset, context) == 0x000028, "Member 'TsMoveBlueprintFunctionLibrary_C_AddActorWorldOffsetWithContextAndReset::context' has a wrong offset!");
 static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_AddActorWorldOffsetWithContextAndReset, __WorldContext) == 0x000038, "Member 'TsMoveBlueprintFunctionLibrary_C_AddActorWorldOffsetWithContextAndReset::__WorldContext' has a wrong offset!");
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.SetActorLookAtWithContext
+// 0x0040 (0x0040 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          targetPoint;                                       // 0x0008(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 context;                                           // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext) == 0x000008, "Wrong alignment on TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext");
+static_assert(sizeof(TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext) == 0x000040, "Wrong size on TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext, entityId) == 0x000000, "Member 'TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext::entityId' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext, targetPoint) == 0x000008, "Member 'TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext::targetPoint' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext, context) == 0x000020, "Member 'TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext::context' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext, __WorldContext) == 0x000030, "Member 'TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext, ReturnValue) == 0x000038, "Member 'TsMoveBlueprintFunctionLibrary_C_SetActorLookAtWithContext::ReturnValue' has a wrong offset!");
 
 }
 

@@ -22,9 +22,9 @@ namespace SDK
 class UTsAiBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static EQuestStepState GetQuestState(int32 entityId, float questId, class UObject* __WorldContext);
-	static float GetDistanceByPlayer(int32 entityId, class UObject* __WorldContext);
 	static bool CheckPlayerGameplayTag(int32 entityId, const struct FGameplayTag& tag, class UObject* __WorldContext);
+	static float GetDistanceByPlayer(int32 entityId, class UObject* __WorldContext);
+	static EQuestStepState GetQuestState(int32 entityId, float questId, class UObject* __WorldContext);
 	static void RestartBehaviorTree(int32 entityId, class UObject* __WorldContext);
 	static void SetAiEnabled(int32 entityId, bool value, const class FString& key, class UObject* __WorldContext);
 	static bool NeedCheckPlayerImpact(int32 entityId, class UObject* __WorldContext);
@@ -45,6 +45,11 @@ public:
 	static void OnPlayerAttackBegin(int32 entityId, class UObject* __WorldContext);
 	static void OnPlayerImpactBegin(int32 entityId, class UObject* __WorldContext);
 	static void UpdateNpcPerformData(int32 entityId, bool& isAttacked1, bool& isImpacted, float& direction, float& strength, class UObject* __WorldContext);
+	static int32 GetLevelIntVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
+	static class FString GetLevelStringVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
+	static float GetLevelFloatVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
+	static struct FVector GetLevelPosVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
+	static bool GetLevelBoolVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

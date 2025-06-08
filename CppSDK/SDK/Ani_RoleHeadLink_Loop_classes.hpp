@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0038(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_SequenceDirector(int32 EntryPoint);
-	void RoleQTEBar_Event_0(class AUIContainerActor* RoleQTEBar, const class FString& sequenceName, const class FString& eventName);
 	void SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUIContainerActor* RoleQTEBar);
+	void RoleQTEBar_Event_0(class AUIContainerActor* RoleQTEBar, const class FString& sequenceName, const class FString& eventName);
+	void ExecuteUbergraph_SequenceDirector(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -168,17 +168,17 @@ static_assert(offsetof(BP_ActorBulletPreview_C_形状初始化, CallFunc_GetActo
 static_assert(offsetof(BP_ActorBulletPreview_C_形状初始化, ___struct_Variable_13) == 0x0003A8, "Member 'BP_ActorBulletPreview_C_形状初始化::___struct_Variable_13' has a wrong offset!");
 
 // Function BP_ActorBulletPreview.BP_ActorBulletPreview_C.初始化
-// 0x0768 (0x0768 - 0x0000)
+// 0x0798 (0x0798 - 0x0000)
 struct BP_ActorBulletPreview_C_初始化 final
 {
 public:
-	struct FSReBulletDataMain                     配置_0;                                            // 0x0000(0x0760)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	class AActor*                                 发射者_0;                                          // 0x0760(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSReBulletDataMain                     配置_0;                                            // 0x0000(0x0790)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class AActor*                                 发射者_0;                                          // 0x0790(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_ActorBulletPreview_C_初始化) == 0x000008, "Wrong alignment on BP_ActorBulletPreview_C_初始化");
-static_assert(sizeof(BP_ActorBulletPreview_C_初始化) == 0x000768, "Wrong size on BP_ActorBulletPreview_C_初始化");
+static_assert(sizeof(BP_ActorBulletPreview_C_初始化) == 0x000798, "Wrong size on BP_ActorBulletPreview_C_初始化");
 static_assert(offsetof(BP_ActorBulletPreview_C_初始化, 配置_0) == 0x000000, "Member 'BP_ActorBulletPreview_C_初始化::配置_0' has a wrong offset!");
-static_assert(offsetof(BP_ActorBulletPreview_C_初始化, 发射者_0) == 0x000760, "Member 'BP_ActorBulletPreview_C_初始化::发射者_0' has a wrong offset!");
+static_assert(offsetof(BP_ActorBulletPreview_C_初始化, 发射者_0) == 0x000790, "Member 'BP_ActorBulletPreview_C_初始化::发射者_0' has a wrong offset!");
 
 // Function BP_ActorBulletPreview.BP_ActorBulletPreview_C.OnTick
 // 0x00C8 (0x00C8 - 0x0000)

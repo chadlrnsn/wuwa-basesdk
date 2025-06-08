@@ -2578,68 +2578,6 @@ void UAkGameplayStatics::SetGameObjectToPortalObstruction(class UAkComponent* Ga
 }
 
 
-// Function AkAudio.AkGameplayStatics.SetMultipleChannelEmitterPositions
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UAkComponent*                     GameObjectAkComponent                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<EAkChannelConfiguration>         ChannelMasks                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FTransform>               Positions                                              (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// EAkMultiPositionType                    MultiPositionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAkGameplayStatics::SetMultipleChannelEmitterPositions(class UAkComponent* GameObjectAkComponent, const TArray<EAkChannelConfiguration>& ChannelMasks, const TArray<struct FTransform>& Positions, EAkMultiPositionType MultiPositionType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AkGameplayStatics", "SetMultipleChannelEmitterPositions");
-
-	Params::AkGameplayStatics_SetMultipleChannelEmitterPositions Parms{};
-
-	Parms.GameObjectAkComponent = GameObjectAkComponent;
-	Parms.ChannelMasks = std::move(ChannelMasks);
-	Parms.Positions = std::move(Positions);
-	Parms.MultiPositionType = MultiPositionType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function AkAudio.AkGameplayStatics.SetMultipleChannelMaskEmitterPositions
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UAkComponent*                     GameObjectAkComponent                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FAkChannelMask>           ChannelMasks                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FTransform>               Positions                                              (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// EAkMultiPositionType                    MultiPositionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAkGameplayStatics::SetMultipleChannelMaskEmitterPositions(class UAkComponent* GameObjectAkComponent, const TArray<struct FAkChannelMask>& ChannelMasks, const TArray<struct FTransform>& Positions, EAkMultiPositionType MultiPositionType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("AkGameplayStatics", "SetMultipleChannelMaskEmitterPositions");
-
-	Params::AkGameplayStatics_SetMultipleChannelMaskEmitterPositions Parms{};
-
-	Parms.GameObjectAkComponent = GameObjectAkComponent;
-	Parms.ChannelMasks = std::move(ChannelMasks);
-	Parms.Positions = std::move(Positions);
-	Parms.MultiPositionType = MultiPositionType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function AkAudio.AkGameplayStatics.SetMultiplePositions
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

@@ -17,6 +17,50 @@
 namespace SDK::Params
 {
 
+// Function KuroAudio.KuroAmbientSoundComponent.IsPlaying
+// 0x0001 (0x0001 - 0x0000)
+struct KuroAmbientSoundComponent_IsPlaying final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroAmbientSoundComponent_IsPlaying) == 0x000001, "Wrong alignment on KuroAmbientSoundComponent_IsPlaying");
+static_assert(sizeof(KuroAmbientSoundComponent_IsPlaying) == 0x000001, "Wrong size on KuroAmbientSoundComponent_IsPlaying");
+static_assert(offsetof(KuroAmbientSoundComponent_IsPlaying, ReturnValue) == 0x000000, "Member 'KuroAmbientSoundComponent_IsPlaying::ReturnValue' has a wrong offset!");
+
+// Function KuroAudio.KuroAmbientSoundComponent.StopSound
+// 0x0004 (0x0004 - 0x0000)
+struct KuroAmbientSoundComponent_StopSound final
+{
+public:
+	int32                                         FadeDuration;                                      // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroAmbientSoundComponent_StopSound) == 0x000004, "Wrong alignment on KuroAmbientSoundComponent_StopSound");
+static_assert(sizeof(KuroAmbientSoundComponent_StopSound) == 0x000004, "Wrong size on KuroAmbientSoundComponent_StopSound");
+static_assert(offsetof(KuroAmbientSoundComponent_StopSound, FadeDuration) == 0x000000, "Member 'KuroAmbientSoundComponent_StopSound::FadeDuration' has a wrong offset!");
+
+// Function KuroAudio.KuroAudioDelegates.SetAudioPauseDelegate
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAudioDelegates_SetAudioPauseDelegate final
+{
+public:
+	TDelegate<void()>                             InDelegate;                                        // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroAudioDelegates_SetAudioPauseDelegate) == 0x000004, "Wrong alignment on KuroAudioDelegates_SetAudioPauseDelegate");
+static_assert(sizeof(KuroAudioDelegates_SetAudioPauseDelegate) == 0x000028, "Wrong size on KuroAudioDelegates_SetAudioPauseDelegate");
+static_assert(offsetof(KuroAudioDelegates_SetAudioPauseDelegate, InDelegate) == 0x000000, "Member 'KuroAudioDelegates_SetAudioPauseDelegate::InDelegate' has a wrong offset!");
+
+// Function KuroAudio.KuroAudioDelegates.SetAudioResumeDelegate
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAudioDelegates_SetAudioResumeDelegate final
+{
+public:
+	TDelegate<void()>                             InDelegate;                                        // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroAudioDelegates_SetAudioResumeDelegate) == 0x000004, "Wrong alignment on KuroAudioDelegates_SetAudioResumeDelegate");
+static_assert(sizeof(KuroAudioDelegates_SetAudioResumeDelegate) == 0x000028, "Wrong size on KuroAudioDelegates_SetAudioResumeDelegate");
+static_assert(offsetof(KuroAudioDelegates_SetAudioResumeDelegate, InDelegate) == 0x000000, "Member 'KuroAudioDelegates_SetAudioResumeDelegate::InDelegate' has a wrong offset!");
+
 // Function KuroAudio.KuroAudioEnvironmentSubsystem.D_DynamicReverbTrace
 // 0x0020 (0x0020 - 0x0000)
 struct KuroAudioEnvironmentSubsystem_D_DynamicReverbTrace final
@@ -103,28 +147,6 @@ static_assert(alignof(KuroAudioEnvironmentSubsystem_GetEnvironmentStates) == 0x0
 static_assert(sizeof(KuroAudioEnvironmentSubsystem_GetEnvironmentStates) == 0x000060, "Wrong size on KuroAudioEnvironmentSubsystem_GetEnvironmentStates");
 static_assert(offsetof(KuroAudioEnvironmentSubsystem_GetEnvironmentStates, Location) == 0x000000, "Member 'KuroAudioEnvironmentSubsystem_GetEnvironmentStates::Location' has a wrong offset!");
 static_assert(offsetof(KuroAudioEnvironmentSubsystem_GetEnvironmentStates, ReturnValue) == 0x000010, "Member 'KuroAudioEnvironmentSubsystem_GetEnvironmentStates::ReturnValue' has a wrong offset!");
-
-// Function KuroAudio.KuroAmbientSoundComponent.IsPlaying
-// 0x0001 (0x0001 - 0x0000)
-struct KuroAmbientSoundComponent_IsPlaying final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroAmbientSoundComponent_IsPlaying) == 0x000001, "Wrong alignment on KuroAmbientSoundComponent_IsPlaying");
-static_assert(sizeof(KuroAmbientSoundComponent_IsPlaying) == 0x000001, "Wrong size on KuroAmbientSoundComponent_IsPlaying");
-static_assert(offsetof(KuroAmbientSoundComponent_IsPlaying, ReturnValue) == 0x000000, "Member 'KuroAmbientSoundComponent_IsPlaying::ReturnValue' has a wrong offset!");
-
-// Function KuroAudio.KuroAmbientSoundComponent.StopSound
-// 0x0004 (0x0004 - 0x0000)
-struct KuroAmbientSoundComponent_StopSound final
-{
-public:
-	int32                                         FadeDuration;                                      // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroAmbientSoundComponent_StopSound) == 0x000004, "Wrong alignment on KuroAmbientSoundComponent_StopSound");
-static_assert(sizeof(KuroAmbientSoundComponent_StopSound) == 0x000004, "Wrong size on KuroAmbientSoundComponent_StopSound");
-static_assert(offsetof(KuroAmbientSoundComponent_StopSound, FadeDuration) == 0x000000, "Member 'KuroAmbientSoundComponent_StopSound::FadeDuration' has a wrong offset!");
 
 // Function KuroAudio.KuroAudioStatics.ExecuteActionOnEvent
 // 0x0020 (0x0020 - 0x0000)
@@ -357,28 +379,6 @@ public:
 static_assert(alignof(KuroAudioStatics_StopAll) == 0x000008, "Wrong alignment on KuroAudioStatics_StopAll");
 static_assert(sizeof(KuroAudioStatics_StopAll) == 0x000008, "Wrong size on KuroAudioStatics_StopAll");
 static_assert(offsetof(KuroAudioStatics_StopAll, Actor) == 0x000000, "Member 'KuroAudioStatics_StopAll::Actor' has a wrong offset!");
-
-// Function KuroAudio.KuroAudioDelegates.SetAudioPauseDelegate
-// 0x0028 (0x0028 - 0x0000)
-struct KuroAudioDelegates_SetAudioPauseDelegate final
-{
-public:
-	TDelegate<void()>                             InDelegate;                                        // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroAudioDelegates_SetAudioPauseDelegate) == 0x000004, "Wrong alignment on KuroAudioDelegates_SetAudioPauseDelegate");
-static_assert(sizeof(KuroAudioDelegates_SetAudioPauseDelegate) == 0x000028, "Wrong size on KuroAudioDelegates_SetAudioPauseDelegate");
-static_assert(offsetof(KuroAudioDelegates_SetAudioPauseDelegate, InDelegate) == 0x000000, "Member 'KuroAudioDelegates_SetAudioPauseDelegate::InDelegate' has a wrong offset!");
-
-// Function KuroAudio.KuroAudioDelegates.SetAudioResumeDelegate
-// 0x0028 (0x0028 - 0x0000)
-struct KuroAudioDelegates_SetAudioResumeDelegate final
-{
-public:
-	TDelegate<void()>                             InDelegate;                                        // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroAudioDelegates_SetAudioResumeDelegate) == 0x000004, "Wrong alignment on KuroAudioDelegates_SetAudioResumeDelegate");
-static_assert(sizeof(KuroAudioDelegates_SetAudioResumeDelegate) == 0x000028, "Wrong size on KuroAudioDelegates_SetAudioResumeDelegate");
-static_assert(offsetof(KuroAudioDelegates_SetAudioResumeDelegate, InDelegate) == 0x000000, "Member 'KuroAudioDelegates_SetAudioResumeDelegate::InDelegate' has a wrong offset!");
 
 }
 

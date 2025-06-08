@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function Ani_Ui_ItemBaseB_SelectedEnd.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
-// (Final, UbergraphFunction)
+// Function Ani_Ui_ItemBaseB_SelectedEnd.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AUIContainerActor*                UiItem_ItemBaseB                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Ani_Ui_ItemBaseB_SelectedEnd::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
+void Ani_Ui_ItemBaseB_SelectedEnd::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUIContainerActor* UiItem_ItemBaseB)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
+		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
 
-	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
+	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.UiItem_ItemBaseB = UiItem_ItemBaseB;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void Ani_Ui_ItemBaseB_SelectedEnd::USequenceDirector_C::Stop(class AUIContainerA
 }
 
 
-// Function Ani_Ui_ItemBaseB_SelectedEnd.SequenceDirector_C.SequenceEvent__ENTRYPOINTSequenceDirector_0
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function Ani_Ui_ItemBaseB_SelectedEnd.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
+// (Final, UbergraphFunction)
 // Parameters:
-// class AUIContainerActor*                UiItem_ItemBaseB                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void Ani_Ui_ItemBaseB_SelectedEnd::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequenceDirector_0(class AUIContainerActor* UiItem_ItemBaseB)
+void Ani_Ui_ItemBaseB_SelectedEnd::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SequenceDirector_C", "SequenceEvent__ENTRYPOINTSequenceDirector_0");
+		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
 
-	Params::SequenceDirector_C_SequenceEvent__ENTRYPOINTSequenceDirector_0 Parms{};
+	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
 
-	Parms.UiItem_ItemBaseB = UiItem_ItemBaseB;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "SD_KuroTraceCloudData_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "SD_KuroTraceCloudData_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C
-// 0x00C0 (0x0370 - 0x02B0)
+// 0x01E0 (0x0490 - 0x02B0)
 class ABP_KuroVolumeCloud_Global_C final : public AUKuroCustomCookActor
 {
 public:
@@ -44,6 +44,16 @@ public:
 	struct FLinearColor                           LocalSpeed;                                        // 0x0354(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         FadeGroup_0_2_;                                    // 0x0364(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         LocalOpacity;                                      // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           ThunderColor;                                      // 0x036C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ThunderSpeed;                                      // 0x037C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ThunderTimeCounter;                                // 0x0380(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_384[0x4];                                      // 0x0384(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            ThunderCurve;                                      // 0x0388(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCurveFloat*                            ThunderCurve2;                                     // 0x0390(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCurveFloat*                            ThunderCurve3;                                     // 0x0398(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class FName, float>                      Scalar_Parameters;                                 // 0x03A0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class FName, struct FLinearColor>        Vector_Parameters;                                 // 0x03F0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class FName, class UTexture*>            Texture_Parameters;                                // 0x0440(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_BP_KuroVolumeCloud_Global(int32 EntryPoint);
@@ -54,8 +64,8 @@ public:
 	void ReceiveTick(float DeltaSeconds);
 	void EditorTick();
 	void UserConstructionScript();
-	void UpdateCloudTransform(const class UStaticMeshComponent* CloudCube);
-	void UpdateCloudLighting(class UMaterialInstanceDynamic* Material);
+	void UpdateCloudTransform();
+	void UpdateCloudLighting();
 	void GetLerpGIData(float Time, struct FSD_KuroTraceCloudData* LerpData_0);
 	void Update();
 	void CheckNeed_Update();
@@ -72,7 +82,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_KuroVolumeCloud_Global_C) == 0x000008, "Wrong alignment on ABP_KuroVolumeCloud_Global_C");
-static_assert(sizeof(ABP_KuroVolumeCloud_Global_C) == 0x000370, "Wrong size on ABP_KuroVolumeCloud_Global_C");
+static_assert(sizeof(ABP_KuroVolumeCloud_Global_C) == 0x000490, "Wrong size on ABP_KuroVolumeCloud_Global_C");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_KuroVolumeCloud_Global_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, Cube) == 0x0002B8, "Member 'ABP_KuroVolumeCloud_Global_C::Cube' has a wrong offset!");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, CloudRange) == 0x0002C0, "Member 'ABP_KuroVolumeCloud_Global_C::CloudRange' has a wrong offset!");
@@ -90,6 +100,15 @@ static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, CloudSpeed) == 0x000344, "M
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, LocalSpeed) == 0x000354, "Member 'ABP_KuroVolumeCloud_Global_C::LocalSpeed' has a wrong offset!");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, FadeGroup_0_2_) == 0x000364, "Member 'ABP_KuroVolumeCloud_Global_C::FadeGroup_0_2_' has a wrong offset!");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, LocalOpacity) == 0x000368, "Member 'ABP_KuroVolumeCloud_Global_C::LocalOpacity' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, ThunderColor) == 0x00036C, "Member 'ABP_KuroVolumeCloud_Global_C::ThunderColor' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, ThunderSpeed) == 0x00037C, "Member 'ABP_KuroVolumeCloud_Global_C::ThunderSpeed' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, ThunderTimeCounter) == 0x000380, "Member 'ABP_KuroVolumeCloud_Global_C::ThunderTimeCounter' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, ThunderCurve) == 0x000388, "Member 'ABP_KuroVolumeCloud_Global_C::ThunderCurve' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, ThunderCurve2) == 0x000390, "Member 'ABP_KuroVolumeCloud_Global_C::ThunderCurve2' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, ThunderCurve3) == 0x000398, "Member 'ABP_KuroVolumeCloud_Global_C::ThunderCurve3' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, Scalar_Parameters) == 0x0003A0, "Member 'ABP_KuroVolumeCloud_Global_C::Scalar_Parameters' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, Vector_Parameters) == 0x0003F0, "Member 'ABP_KuroVolumeCloud_Global_C::Vector_Parameters' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, Texture_Parameters) == 0x000440, "Member 'ABP_KuroVolumeCloud_Global_C::Texture_Parameters' has a wrong offset!");
 
 }
 

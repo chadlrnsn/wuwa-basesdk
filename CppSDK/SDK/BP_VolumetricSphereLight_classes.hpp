@@ -10,8 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -19,43 +20,51 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_VolumetricSphereLight.BP_VolumetricSphereLight_C
-// 0x00A0 (0x0350 - 0x02B0)
-class ABP_VolumetricSphereLight_C final : public AActor
+// 0x00D0 (0x0390 - 0x02C0)
+class ABP_VolumetricSphereLight_C final : public AKuroEditorTickActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMesh*                            SphereLightStaticMesh;                             // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstance*                      SphereLightMat;                                    // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsReverseCulling;                                  // 0x02D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          BlackDown;                                         // 0x02D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          IsWholeDay;                                        // 0x02D2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          OutDistanceFade;                                   // 0x02D3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          ApplyFog;                                          // 0x02D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D5[0x3];                                      // 0x02D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FogInt;                                            // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
-	float                                         FogPower;                                          // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         SkyLightInt;                                       // 0x02E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         SkyLightOffset;                                    // 0x02E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           InsideColor;                                       // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           OutSideColor;                                      // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         SphereRadius;                                      // 0x0308(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         LightStart;                                        // 0x030C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         NearFadeStart;                                     // 0x0310(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         FullIntLength;                                     // 0x0314(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         FarFadeLength;                                     // 0x0318(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_31C[0x4];                                      // 0x031C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               MaterialInstanceDynamic;                           // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstance*                      SphereLightMatWithOutDF;                           // 0x0328(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstance*                      SphereLightMatWithOutFog;                          // 0x0330(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstance*                      SphereLightMatWithOutDFWithOutFog;                 // 0x0338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstance*                      SphereLightBlackDown;                              // 0x0340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstance*                      SphereLightBlackDownWithOutDF;                     // 0x0348(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMesh*                            SphereLightStaticMesh;                             // 0x02D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstance*                      SphereLightMat;                                    // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsReverseCulling;                                  // 0x02E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          BlackDown;                                         // 0x02E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsWholeDay;                                        // 0x02E2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          OutDistanceFade;                                   // 0x02E3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ApplyFog;                                          // 0x02E4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2E5[0x3];                                      // 0x02E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FogInt;                                            // 0x02E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	float                                         FogPower;                                          // 0x02EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         SkyLightInt;                                       // 0x02F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         SkyLightOffset;                                    // 0x02F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           InsideColor;                                       // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           OutSideColor;                                      // 0x0308(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         SphereRadius;                                      // 0x0318(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         LightStart;                                        // 0x031C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         NearFadeStart;                                     // 0x0320(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         FullIntLength;                                     // 0x0324(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         FarFadeLength;                                     // 0x0328(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_32C[0x4];                                      // 0x032C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               MaterialInstanceDynamic;                           // 0x0330(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstance*                      SphereLightMatWithOutDF;                           // 0x0338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstance*                      SphereLightMatWithOutFog;                          // 0x0340(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstance*                      SphereLightMatWithOutDFWithOutFog;                 // 0x0348(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstance*                      SphereLightBlackDown;                              // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstance*                      SphereLightBlackDownWithOutDF;                     // 0x0358(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Editor;                                            // 0x0360(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_361[0x7];                                      // 0x0361(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CameraPosition;                                    // 0x0368(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   MeshComp;                                          // 0x0380(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DistanceFade;                                      // 0x0388(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bUseCPUDitanceFade;                                // 0x038C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void UpdateVolumetricSphereLight();
 	void UserConstructionScript();
 	void ReceiveBeginPlay();
+	void EditorTick(float DeltaSeconds);
+	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_BP_VolumetricSphereLight(int32 EntryPoint);
 
 public:
@@ -69,33 +78,38 @@ public:
 	}
 };
 static_assert(alignof(ABP_VolumetricSphereLight_C) == 0x000008, "Wrong alignment on ABP_VolumetricSphereLight_C");
-static_assert(sizeof(ABP_VolumetricSphereLight_C) == 0x000350, "Wrong size on ABP_VolumetricSphereLight_C");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_VolumetricSphereLight_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_VolumetricSphereLight_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightStaticMesh) == 0x0002C0, "Member 'ABP_VolumetricSphereLight_C::SphereLightStaticMesh' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightMat) == 0x0002C8, "Member 'ABP_VolumetricSphereLight_C::SphereLightMat' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, IsReverseCulling) == 0x0002D0, "Member 'ABP_VolumetricSphereLight_C::IsReverseCulling' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, BlackDown) == 0x0002D1, "Member 'ABP_VolumetricSphereLight_C::BlackDown' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, IsWholeDay) == 0x0002D2, "Member 'ABP_VolumetricSphereLight_C::IsWholeDay' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, OutDistanceFade) == 0x0002D3, "Member 'ABP_VolumetricSphereLight_C::OutDistanceFade' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, ApplyFog) == 0x0002D4, "Member 'ABP_VolumetricSphereLight_C::ApplyFog' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, FogInt) == 0x0002D8, "Member 'ABP_VolumetricSphereLight_C::FogInt' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, FogPower) == 0x0002DC, "Member 'ABP_VolumetricSphereLight_C::FogPower' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SkyLightInt) == 0x0002E0, "Member 'ABP_VolumetricSphereLight_C::SkyLightInt' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SkyLightOffset) == 0x0002E4, "Member 'ABP_VolumetricSphereLight_C::SkyLightOffset' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, InsideColor) == 0x0002E8, "Member 'ABP_VolumetricSphereLight_C::InsideColor' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, OutSideColor) == 0x0002F8, "Member 'ABP_VolumetricSphereLight_C::OutSideColor' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereRadius) == 0x000308, "Member 'ABP_VolumetricSphereLight_C::SphereRadius' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, LightStart) == 0x00030C, "Member 'ABP_VolumetricSphereLight_C::LightStart' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, NearFadeStart) == 0x000310, "Member 'ABP_VolumetricSphereLight_C::NearFadeStart' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, FullIntLength) == 0x000314, "Member 'ABP_VolumetricSphereLight_C::FullIntLength' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, FarFadeLength) == 0x000318, "Member 'ABP_VolumetricSphereLight_C::FarFadeLength' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, MaterialInstanceDynamic) == 0x000320, "Member 'ABP_VolumetricSphereLight_C::MaterialInstanceDynamic' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightMatWithOutDF) == 0x000328, "Member 'ABP_VolumetricSphereLight_C::SphereLightMatWithOutDF' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightMatWithOutFog) == 0x000330, "Member 'ABP_VolumetricSphereLight_C::SphereLightMatWithOutFog' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightMatWithOutDFWithOutFog) == 0x000338, "Member 'ABP_VolumetricSphereLight_C::SphereLightMatWithOutDFWithOutFog' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightBlackDown) == 0x000340, "Member 'ABP_VolumetricSphereLight_C::SphereLightBlackDown' has a wrong offset!");
-static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightBlackDownWithOutDF) == 0x000348, "Member 'ABP_VolumetricSphereLight_C::SphereLightBlackDownWithOutDF' has a wrong offset!");
+static_assert(sizeof(ABP_VolumetricSphereLight_C) == 0x000390, "Wrong size on ABP_VolumetricSphereLight_C");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, UberGraphFrame) == 0x0002C0, "Member 'ABP_VolumetricSphereLight_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, DefaultSceneRoot) == 0x0002C8, "Member 'ABP_VolumetricSphereLight_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightStaticMesh) == 0x0002D0, "Member 'ABP_VolumetricSphereLight_C::SphereLightStaticMesh' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightMat) == 0x0002D8, "Member 'ABP_VolumetricSphereLight_C::SphereLightMat' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, IsReverseCulling) == 0x0002E0, "Member 'ABP_VolumetricSphereLight_C::IsReverseCulling' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, BlackDown) == 0x0002E1, "Member 'ABP_VolumetricSphereLight_C::BlackDown' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, IsWholeDay) == 0x0002E2, "Member 'ABP_VolumetricSphereLight_C::IsWholeDay' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, OutDistanceFade) == 0x0002E3, "Member 'ABP_VolumetricSphereLight_C::OutDistanceFade' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, ApplyFog) == 0x0002E4, "Member 'ABP_VolumetricSphereLight_C::ApplyFog' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, FogInt) == 0x0002E8, "Member 'ABP_VolumetricSphereLight_C::FogInt' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, FogPower) == 0x0002EC, "Member 'ABP_VolumetricSphereLight_C::FogPower' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SkyLightInt) == 0x0002F0, "Member 'ABP_VolumetricSphereLight_C::SkyLightInt' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SkyLightOffset) == 0x0002F4, "Member 'ABP_VolumetricSphereLight_C::SkyLightOffset' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, InsideColor) == 0x0002F8, "Member 'ABP_VolumetricSphereLight_C::InsideColor' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, OutSideColor) == 0x000308, "Member 'ABP_VolumetricSphereLight_C::OutSideColor' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereRadius) == 0x000318, "Member 'ABP_VolumetricSphereLight_C::SphereRadius' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, LightStart) == 0x00031C, "Member 'ABP_VolumetricSphereLight_C::LightStart' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, NearFadeStart) == 0x000320, "Member 'ABP_VolumetricSphereLight_C::NearFadeStart' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, FullIntLength) == 0x000324, "Member 'ABP_VolumetricSphereLight_C::FullIntLength' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, FarFadeLength) == 0x000328, "Member 'ABP_VolumetricSphereLight_C::FarFadeLength' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, MaterialInstanceDynamic) == 0x000330, "Member 'ABP_VolumetricSphereLight_C::MaterialInstanceDynamic' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightMatWithOutDF) == 0x000338, "Member 'ABP_VolumetricSphereLight_C::SphereLightMatWithOutDF' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightMatWithOutFog) == 0x000340, "Member 'ABP_VolumetricSphereLight_C::SphereLightMatWithOutFog' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightMatWithOutDFWithOutFog) == 0x000348, "Member 'ABP_VolumetricSphereLight_C::SphereLightMatWithOutDFWithOutFog' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightBlackDown) == 0x000350, "Member 'ABP_VolumetricSphereLight_C::SphereLightBlackDown' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, SphereLightBlackDownWithOutDF) == 0x000358, "Member 'ABP_VolumetricSphereLight_C::SphereLightBlackDownWithOutDF' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, Editor) == 0x000360, "Member 'ABP_VolumetricSphereLight_C::Editor' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, CameraPosition) == 0x000368, "Member 'ABP_VolumetricSphereLight_C::CameraPosition' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, MeshComp) == 0x000380, "Member 'ABP_VolumetricSphereLight_C::MeshComp' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, DistanceFade) == 0x000388, "Member 'ABP_VolumetricSphereLight_C::DistanceFade' has a wrong offset!");
+static_assert(offsetof(ABP_VolumetricSphereLight_C, bUseCPUDitanceFade) == 0x00038C, "Member 'ABP_VolumetricSphereLight_C::bUseCPUDitanceFade' has a wrong offset!");
 
 }
 

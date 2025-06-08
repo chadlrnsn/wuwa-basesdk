@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
+#include "EAnsBranchTargetBlackboardType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
@@ -18,7 +19,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStatePositionBranchTarget.TsAnimNotifyStatePositionBranchTarget_C
-// 0x0058 (0x00A0 - 0x0048)
+// 0x0050 (0x0098 - 0x0048)
 class UTsAnimNotifyStatePositionBranchTarget_C final : public UKuroAnimNotifyState
 {
 public:
@@ -36,8 +37,9 @@ public:
 	bool                                          允许反向移动;                                      // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          允许正向移动;                                      // 0x0079(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   黑板值;                                            // 0x0080(0x0018)(Edit, BlueprintVisible)
-	float                                         MinHeightFromTargetFloor;                          // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 黑板值;                                            // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	float                                         MinHeightFromTargetFloor;                          // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAnsBranchTargetBlackboardType                黑板类型;                                          // 0x0094(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Initialize();
@@ -58,7 +60,7 @@ public:
 	}
 };
 static_assert(alignof(UTsAnimNotifyStatePositionBranchTarget_C) == 0x000008, "Wrong alignment on UTsAnimNotifyStatePositionBranchTarget_C");
-static_assert(sizeof(UTsAnimNotifyStatePositionBranchTarget_C) == 0x0000A0, "Wrong size on UTsAnimNotifyStatePositionBranchTarget_C");
+static_assert(sizeof(UTsAnimNotifyStatePositionBranchTarget_C) == 0x000098, "Wrong size on UTsAnimNotifyStatePositionBranchTarget_C");
 static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, MoveCurve) == 0x000048, "Member 'UTsAnimNotifyStatePositionBranchTarget_C::MoveCurve' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, Distance) == 0x000050, "Member 'UTsAnimNotifyStatePositionBranchTarget_C::Distance' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, MaxSpeed) == 0x000054, "Member 'UTsAnimNotifyStatePositionBranchTarget_C::MaxSpeed' has a wrong offset!");
@@ -72,7 +74,8 @@ static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, TargetRotation)
 static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, 允许反向移动) == 0x000078, "Member 'UTsAnimNotifyStatePositionBranchTarget_C::允许反向移动' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, 允许正向移动) == 0x000079, "Member 'UTsAnimNotifyStatePositionBranchTarget_C::允许正向移动' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, 黑板值) == 0x000080, "Member 'UTsAnimNotifyStatePositionBranchTarget_C::黑板值' has a wrong offset!");
-static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, MinHeightFromTargetFloor) == 0x000098, "Member 'UTsAnimNotifyStatePositionBranchTarget_C::MinHeightFromTargetFloor' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, MinHeightFromTargetFloor) == 0x000090, "Member 'UTsAnimNotifyStatePositionBranchTarget_C::MinHeightFromTargetFloor' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyStatePositionBranchTarget_C, 黑板类型) == 0x000094, "Member 'UTsAnimNotifyStatePositionBranchTarget_C::黑板类型' has a wrong offset!");
 
 }
 

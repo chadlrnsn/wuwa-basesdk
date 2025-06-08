@@ -196,20 +196,6 @@ void ABP_ThunderGenerator_C::OnReceiveThunderAttack(const struct FVector& Locati
 }
 
 
-// Function BP_ThunderGenerator.BP_ThunderGenerator_C.OnThunderTypeChanged
-// (Event, Protected, BlueprintEvent)
-
-void ABP_ThunderGenerator_C::OnThunderTypeChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ThunderGenerator_C", "OnThunderTypeChanged");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_ThunderGenerator.BP_ThunderGenerator_C.OnUpdateThunderEffect
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -250,8 +236,44 @@ void ABP_ThunderGenerator_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 }
 
 
+// Function BP_ThunderGenerator.BP_ThunderGenerator_C.OnReceiveThunderTrigger
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AThunderTrigger*                  Trigger                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FTransform                       CameraTransform                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
+
+void ABP_ThunderGenerator_C::OnReceiveThunderTrigger(class AThunderTrigger* Trigger, const struct FTransform& CameraTransform)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ThunderGenerator_C", "OnReceiveThunderTrigger");
+
+	Params::BP_ThunderGenerator_C_OnReceiveThunderTrigger Parms{};
+
+	Parms.Trigger = Trigger;
+	Parms.CameraTransform = std::move(CameraTransform);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ThunderGenerator.BP_ThunderGenerator_C.OnThunderTypeChanged
+// (Event, Protected, BlueprintEvent)
+
+void ABP_ThunderGenerator_C::OnThunderTypeChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ThunderGenerator_C", "OnThunderTypeChanged");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_ThunderGenerator.BP_ThunderGenerator_C.ExecuteUbergraph_BP_ThunderGenerator
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

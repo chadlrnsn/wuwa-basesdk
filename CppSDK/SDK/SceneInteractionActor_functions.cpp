@@ -620,5 +620,171 @@ void ASceneInteractionActor_C::重置()
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ApplyAnimOptimizationParams
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bUseDistanceMap                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ASceneInteractionActor_C::ApplyAnimOptimizationParams(bool bUseDistanceMap)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ApplyAnimOptimizationParams");
+
+	Params::SceneInteractionActor_C_ApplyAnimOptimizationParams Parms{};
+
+	Parms.bUseDistanceMap = bUseDistanceMap;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.PendingPlayStateEffect
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::PendingPlayStateEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "PendingPlayStateEffect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.RemovePendingStateEffectTick
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::RemovePendingStateEffectTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "RemovePendingStateEffectTick");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.PendingPlayCrossStateEffect
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::PendingPlayCrossStateEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "PendingPlayCrossStateEffect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.RemovePendingCrossStateEffectTick
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::RemovePendingCrossStateEffectTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "RemovePendingCrossStateEffectTick");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.PendingPlayTagEffect
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::PendingPlayTagEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "PendingPlayTagEffect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.RemovePendingTagEffectTick
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::RemovePendingTagEffectTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "RemovePendingTagEffectTick");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.PlayKuroSkeletalMeshDestruction
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    isJumpToEnd                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ASceneInteractionActor_C::PlayKuroSkeletalMeshDestruction(class AActor* actor, bool isJumpToEnd)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "PlayKuroSkeletalMeshDestruction");
+
+	Params::SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction Parms{};
+
+	Parms.actor = actor;
+	Parms.isJumpToEnd = isJumpToEnd;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

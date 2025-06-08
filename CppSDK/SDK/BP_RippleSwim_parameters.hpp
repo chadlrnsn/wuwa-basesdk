@@ -17,6 +17,68 @@
 namespace SDK::Params
 {
 
+// Function BP_RippleSwim.BP_RippleSwim_C.Change Ripple Preset
+// 0x0030 (0x0030 - 0x0000)
+struct BP_RippleSwim_C_Change_Ripple_Preset final
+{
+public:
+	class UBP_RippleWater_Data_C*                 NewRippleState;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_X;                          // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_Y;                          // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_X_1;                        // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_Y_1;                        // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x0018(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SetWaterRippleData_NewParam;              // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x0029(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_RippleSwim_C_Change_Ripple_Preset) == 0x000008, "Wrong alignment on BP_RippleSwim_C_Change_Ripple_Preset");
+static_assert(sizeof(BP_RippleSwim_C_Change_Ripple_Preset) == 0x000030, "Wrong size on BP_RippleSwim_C_Change_Ripple_Preset");
+static_assert(offsetof(BP_RippleSwim_C_Change_Ripple_Preset, NewRippleState) == 0x000000, "Member 'BP_RippleSwim_C_Change_Ripple_Preset::NewRippleState' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_Change_Ripple_Preset, CallFunc_BreakVector2D_X) == 0x000008, "Member 'BP_RippleSwim_C_Change_Ripple_Preset::CallFunc_BreakVector2D_X' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_Change_Ripple_Preset, CallFunc_BreakVector2D_Y) == 0x00000C, "Member 'BP_RippleSwim_C_Change_Ripple_Preset::CallFunc_BreakVector2D_Y' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_Change_Ripple_Preset, CallFunc_BreakVector2D_X_1) == 0x000010, "Member 'BP_RippleSwim_C_Change_Ripple_Preset::CallFunc_BreakVector2D_X_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_Change_Ripple_Preset, CallFunc_BreakVector2D_Y_1) == 0x000014, "Member 'BP_RippleSwim_C_Change_Ripple_Preset::CallFunc_BreakVector2D_Y_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_Change_Ripple_Preset, K2Node_MakeStruct_LinearColor) == 0x000018, "Member 'BP_RippleSwim_C_Change_Ripple_Preset::K2Node_MakeStruct_LinearColor' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_Change_Ripple_Preset, CallFunc_SetWaterRippleData_NewParam) == 0x000028, "Member 'BP_RippleSwim_C_Change_Ripple_Preset::CallFunc_SetWaterRippleData_NewParam' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_Change_Ripple_Preset, CallFunc_EqualEqual_ObjectObject_ReturnValue) == 0x000029, "Member 'BP_RippleSwim_C_Change_Ripple_Preset::CallFunc_EqualEqual_ObjectObject_ReturnValue' has a wrong offset!");
+
+// Function BP_RippleSwim.BP_RippleSwim_C.CalcTexCoord
+// 0x00B0 (0x00B0 - 0x0000)
+struct BP_RippleSwim_C_CalcTexCoord final
+{
+public:
+	struct FVectorDouble                          RippleCenter;                                      // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          RipplePointLocation;                               // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CaptureSize;                                       // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                TexCoord;                                          // 0x0034(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_Subtract_VectorVector_ReturnValue;      // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_FloatToDouble_ReturnValue;           // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_Divide_VectorFloat_ReturnValue;         // 0x0060(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x0078(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Add_VectorFloat_ReturnValue;              // 0x0084(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_X;                            // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_Y;                            // 0x0094(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_Z;                            // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x00A0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_RippleSwim_C_CalcTexCoord) == 0x000008, "Wrong alignment on BP_RippleSwim_C_CalcTexCoord");
+static_assert(sizeof(BP_RippleSwim_C_CalcTexCoord) == 0x0000B0, "Wrong size on BP_RippleSwim_C_CalcTexCoord");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, RippleCenter) == 0x000000, "Member 'BP_RippleSwim_C_CalcTexCoord::RippleCenter' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, RipplePointLocation) == 0x000018, "Member 'BP_RippleSwim_C_CalcTexCoord::RipplePointLocation' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CaptureSize) == 0x000030, "Member 'BP_RippleSwim_C_CalcTexCoord::CaptureSize' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, TexCoord) == 0x000034, "Member 'BP_RippleSwim_C_CalcTexCoord::TexCoord' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_D_Subtract_VectorVector_ReturnValue) == 0x000040, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_D_Subtract_VectorVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_Conv_FloatToDouble_ReturnValue) == 0x000058, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_Conv_FloatToDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_D_Divide_VectorFloat_ReturnValue) == 0x000060, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_D_Divide_VectorFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x000078, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_Add_VectorFloat_ReturnValue) == 0x000084, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_Add_VectorFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_BreakVector_X) == 0x000090, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_BreakVector_X' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_BreakVector_Y) == 0x000094, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_BreakVector_Y' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_BreakVector_Z) == 0x000098, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_BreakVector_Z' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x00009C, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_CalcTexCoord, CallFunc_MakeVector_ReturnValue) == 0x0000A0, "Member 'BP_RippleSwim_C_CalcTexCoord::CallFunc_MakeVector_ReturnValue' has a wrong offset!");
+
 // Function BP_RippleSwim.BP_RippleSwim_C.SetWaterRippleData
 // 0x0018 (0x0018 - 0x0000)
 struct BP_RippleSwim_C_SetWaterRippleData final
@@ -77,6 +139,23 @@ static_assert(alignof(BP_RippleSwim_C_UserConstructionScript) == 0x000001, "Wron
 static_assert(sizeof(BP_RippleSwim_C_UserConstructionScript) == 0x000001, "Wrong size on BP_RippleSwim_C_UserConstructionScript");
 static_assert(offsetof(BP_RippleSwim_C_UserConstructionScript, CallFunc_IsCurrentPlatformPC_ReturnValue) == 0x000000, "Member 'BP_RippleSwim_C_UserConstructionScript::CallFunc_IsCurrentPlatformPC_ReturnValue' has a wrong offset!");
 
+// Function BP_RippleSwim.BP_RippleSwim_C.OnBulletHitWater
+// 0x0040 (0x0040 - 0x0000)
+struct BP_RippleSwim_C_OnBulletHitWater final
+{
+public:
+	struct FVectorDouble                          ImpactPoint;                                       // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBP_SceneBattleInteract_C*              Config;                                            // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          OriginPoint;                                       // 0x0020(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Id;                                                // 0x0038(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_RippleSwim_C_OnBulletHitWater) == 0x000008, "Wrong alignment on BP_RippleSwim_C_OnBulletHitWater");
+static_assert(sizeof(BP_RippleSwim_C_OnBulletHitWater) == 0x000040, "Wrong size on BP_RippleSwim_C_OnBulletHitWater");
+static_assert(offsetof(BP_RippleSwim_C_OnBulletHitWater, ImpactPoint) == 0x000000, "Member 'BP_RippleSwim_C_OnBulletHitWater::ImpactPoint' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_OnBulletHitWater, Config) == 0x000018, "Member 'BP_RippleSwim_C_OnBulletHitWater::Config' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_OnBulletHitWater, OriginPoint) == 0x000020, "Member 'BP_RippleSwim_C_OnBulletHitWater::OriginPoint' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_OnBulletHitWater, Id) == 0x000038, "Member 'BP_RippleSwim_C_OnBulletHitWater::Id' has a wrong offset!");
+
 // Function BP_RippleSwim.BP_RippleSwim_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)
 struct BP_RippleSwim_C_ReceiveTick final
@@ -89,254 +168,350 @@ static_assert(sizeof(BP_RippleSwim_C_ReceiveTick) == 0x000004, "Wrong size on BP
 static_assert(offsetof(BP_RippleSwim_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_RippleSwim_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
 
 // Function BP_RippleSwim.BP_RippleSwim_C.ExecuteUbergraph_BP_RippleSwim
-// 0x04D0 (0x04D0 - 0x0000)
+// 0x06A0 (0x06A0 - 0x0000)
 struct BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          CallFunc_Conv_VectorToVectorDouble_ReturnValue;    // 0x0008(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_D_K2_SetActorLocation_SweepHitResult;     // 0x0020(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	bool                                          CallFunc_D_K2_SetActorLocation_ReturnValue;        // 0x00B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00B5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsCurrentPlatformPC_ReturnValue;          // 0x00B6(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsCurrentPlatformPC_ReturnValue_1;        // 0x00B7(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	class UGameUserSettings*                      CallFunc_GetGameUserSettings_ReturnValue;          // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetGameQualitySettingLevel_ReturnValue;   // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SetWaterRippleData_NewParam;              // 0x00C4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x00C5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C6[0x2];                                       // 0x00C6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue;           // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAbilitySystemComponent*                CallFunc_GetComponentByClass_ReturnValue;          // 0x00D0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput;    // 0x00D8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue;       // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x00E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_EA[0x6];                                       // 0x00EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_1;  // 0x00F0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_1;     // 0x0100(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0101(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetWaterRippleData_NewParam_1;            // 0x0102(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetWaterRippleData_NewParam_2;            // 0x0103(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue_1;    // 0x0104(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_105[0x3];                                      // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_1;         // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0111(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0112(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0113(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0118(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x0120(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_2; // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_3; // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsEditor_ReturnValue;                     // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_139[0x3];                                      // 0x0139(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_BreakVector2D_X;                          // 0x013C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y;                          // 0x0140(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_144[0x4];                                      // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Conv_FloatToDouble_ReturnValue;           // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Conv_FloatToDouble_ReturnValue_1;         // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_MakeVectorDouble_ReturnValue;             // 0x0158(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_D_K2_AddActorWorldOffset_SweepHitResult;  // 0x0170(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          CallFunc_D_K2_GetComponentLocation_ReturnValue;    // 0x0208(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_224[0x4];                                      // 0x0224(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        CallFunc_Conv_FloatToDouble_ReturnValue_2;         // 0x0228(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_MakeVectorDouble_ReturnValue_1;           // 0x0230(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_Divide_Vector2DFloat_ReturnValue;         // 0x0248(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_X_1;                        // 0x0250(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y_1;                        // 0x0254(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x0258(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0268(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_269[0x3];                                      // 0x0269(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_BreakVector2D_X_2;                        // 0x026C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y_2;                        // 0x0270(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_X_3;                        // 0x0274(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y_3;                        // 0x0278(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           K2Node_MakeStruct_LinearColor_1;                   // 0x027C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_Divide_Vector2DFloat_ReturnValue_1;       // 0x028C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_X_4;                        // 0x0294(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y_4;                        // 0x0298(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           K2Node_MakeStruct_LinearColor_2;                   // 0x029C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x02B0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x02C8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x02D4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Subtract_VectorVector_ReturnValue;        // 0x02E0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetVectorParameterValue_ReturnValue;      // 0x02EC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector_X;                            // 0x02FC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector_Y;                            // 0x0300(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector_Z;                            // 0x0304(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_LinearColorToVector_ReturnValue;     // 0x0308(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x0314(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_Multiply_Vector2DFloat_ReturnValue;       // 0x031C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_Multiply_Vector2DVector2D_ReturnValue;    // 0x0324(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x032C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_Add_Vector2DFloat_ReturnValue;            // 0x0330(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0338(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_MakeLiteralName_ReturnValue_1;            // 0x033C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetVectorParameterValue_ReturnValue_1;    // 0x0348(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_2;         // 0x0358(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_LinearColorToVector_ReturnValue_1;   // 0x0360(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_36C[0x4];                                      // 0x036C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0370(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0378(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_379[0x3];                                      // 0x0379(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Vector_Distance2D_ReturnValue;            // 0x037C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetInWater_ReturnValue;                   // 0x0380(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0381(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue_2;                 // 0x0382(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_NotEqual_BoolBool_ReturnValue;            // 0x0383(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         CallFunc_Vector_Distance2D_ReturnValue_1;          // 0x0384(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x0388(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x0389(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue_3;                 // 0x038A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_2;                  // 0x038B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_38C[0x4];                                      // 0x038C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             ___struct_Variable;                                // 0x0390(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
-	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_1;      // 0x03C0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UChildActorComponent*                   CallFunc_AddComponent_ReturnValue;                 // 0x03D8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue_1;  // 0x03E0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Subtract_VectorVector_ReturnValue_1;      // 0x03EC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector_X_1;                          // 0x03F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector_Y_1;                          // 0x03FC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector_Z_1;                          // 0x0400(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_1;               // 0x0404(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Divide_FloatFloat_ReturnValue_1;          // 0x040C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_K2_GetComponentLocation_ReturnValue_1;  // 0x0410(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Conv_FloatToDouble_ReturnValue_3;         // 0x0428(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_MakeVectorDouble_ReturnValue_2;           // 0x0430(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_2;      // 0x0448(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue_2;  // 0x0460(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue;     // 0x046C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_Multiply_Vector2DFloat_ReturnValue_1;     // 0x047C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_Multiply_Vector2DVector2D_ReturnValue_1;  // 0x0484(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_MakeLiteralName_ReturnValue_2;            // 0x048C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_Add_Vector2DFloat_ReturnValue_1;          // 0x0498(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetVectorParameterValue_ReturnValue_2;    // 0x04A0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_LinearColorToVector_ReturnValue_2;   // 0x04B0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Vector_Distance2D_ReturnValue_2;          // 0x04BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_2;         // 0x04C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4C1[0x3];                                      // 0x04C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Vector_Distance2D_ReturnValue_3;          // 0x04C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_3;         // 0x04C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TDelegate<void(const struct FVectorDouble& ImpactPoint, class UBP_SceneBattleInteract_C* Config, const struct FVectorDouble& OriginPoint, int32 Id)> K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0028)(ZeroConstructor)
+	struct FVectorDouble                          CallFunc_Conv_VectorToVectorDouble_ReturnValue;    // 0x0030(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_D_K2_SetActorLocation_SweepHitResult;     // 0x0048(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          CallFunc_D_K2_SetActorLocation_ReturnValue;        // 0x00DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x00DD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_DE[0x2];                                       // 0x00DE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                CallFunc_GetBpEventManager_ReturnValue;            // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          K2Node_CustomEvent_ImpactPoint;                    // 0x00E8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBP_SceneBattleInteract_C*              K2Node_CustomEvent_Config;                         // 0x0100(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          K2Node_CustomEvent_OriginPoint;                    // 0x0108(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_CustomEvent_Id;                             // 0x0120(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBP_EventManager_C*                     K2Node_DynamicCast_AsBP_Event_Manager;             // 0x0128(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_131[0x7];                                      // 0x0131(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue;           // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x0140(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_CalcTexCoord_TexCoord;                    // 0x0158(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_X;                            // 0x0164(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_Y;                            // 0x0168(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_Z;                            // 0x016C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_VectorToString_ReturnValue;          // 0x0170(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x0180(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0188(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsEditor_ReturnValue;                     // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0199(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19A[0x2];                                      // 0x019A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_BreakVector2D_X;                          // 0x019C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_Y;                          // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1A4[0x4];                                      // 0x01A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Conv_FloatToDouble_ReturnValue;           // 0x01A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1B1[0x7];                                      // 0x01B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Conv_FloatToDouble_ReturnValue_1;         // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_MakeVectorDouble_ReturnValue;             // 0x01C0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_1;         // 0x01D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_D_K2_AddActorWorldOffset_SweepHitResult;  // 0x01E0(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	uint8                                         Pad_274[0x4];                                      // 0x0274(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilitySystemComponent*                CallFunc_GetComponentByClass_ReturnValue;          // 0x0278(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput;    // 0x0280(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue;       // 0x0290(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_291[0x7];                                      // 0x0291(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_2;         // 0x0298(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x02A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x02A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x02A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetInWater_ReturnValue;                   // 0x02AA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	uint8                                         Pad_2AB[0x5];                                      // 0x02AB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x02B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x02B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_2; // 0x02C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_3; // 0x02C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             ___struct_Variable;                                // 0x02D0(0x0030)(ConstParm, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsCurrentPlatformPC_ReturnValue;          // 0x0300(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_301[0x7];                                      // 0x0301(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UChildActorComponent*                   CallFunc_AddComponent_ReturnValue;                 // 0x0308(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x0310(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_1;                   // 0x0320(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsEditor_ReturnValue_1;                   // 0x0330(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0331(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_332[0x6];                                      // 0x0332(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_K2_GetComponentLocation_ReturnValue;    // 0x0338(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0350(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_354[0x4];                                      // 0x0354(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        CallFunc_Conv_FloatToDouble_ReturnValue_2;         // 0x0358(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_MakeVectorDouble_ReturnValue_1;           // 0x0360(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_Divide_Vector2DFloat_ReturnValue;         // 0x0378(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_X_1;                        // 0x0380(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_Y_1;                        // 0x0384(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_2;                   // 0x0388(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0398(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetVectorParameterValue_ReturnValue;      // 0x03A4(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_3;                   // 0x03B4(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_X_2;                        // 0x03C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_Y_2;                        // 0x03C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_X_3;                        // 0x03CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_Y_3;                        // 0x03D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_4;                   // 0x03D4(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_Divide_Vector2DFloat_ReturnValue_1;       // 0x03E4(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_X_4;                        // 0x03EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_Y_4;                        // 0x03F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_5;                   // 0x03F4(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_X_5;                        // 0x0404(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector2D_Y_5;                        // 0x0408(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_6;                   // 0x040C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41C[0x4];                                      // 0x041C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_3;         // 0x0420(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0428(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0429(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_2;                 // 0x042A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_42B[0x1];                                      // 0x042B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x042C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_4;         // 0x0430(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAbilitySystemComponent*                CallFunc_GetComponentByClass_ReturnValue_1;        // 0x0438(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_1;  // 0x0440(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_1;     // 0x0450(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_451[0x3];                                      // 0x0451(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0454(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UGameUserSettings*                      CallFunc_GetGameUserSettings_ReturnValue;          // 0x0458(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SetWaterRippleData_NewParam;              // 0x0460(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_461[0x3];                                      // 0x0461(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_GetGameQualitySettingLevel_ReturnValue;   // 0x0464(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x0468(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsCurrentPlatformPC_ReturnValue_1;        // 0x0469(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_3;                 // 0x046A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x046B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_46C[0x4];                                      // 0x046C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_5;         // 0x0470(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAbilitySystemComponent*                CallFunc_GetComponentByClass_ReturnValue_2;        // 0x0478(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_1;      // 0x0480(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_2;  // 0x0498(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_2;     // 0x04A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4A9[0x3];                                      // 0x04A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x04AC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasMatchingGameplayTag_self_CastInput_3;  // 0x04B8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasMatchingGameplayTag_ReturnValue_3;     // 0x04C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4C9[0x3];                                      // 0x04C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_Subtract_VectorVector_ReturnValue;        // 0x04CC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x04D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4D9[0x3];                                      // 0x04D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_BreakVector_X_1;                          // 0x04DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_Y_1;                          // 0x04E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_Z_1;                          // 0x04E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_1;            // 0x04E8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_1;               // 0x04F4(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetVectorParameterValue_ReturnValue_1;    // 0x04FC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_LinearColorToVector_ReturnValue;     // 0x050C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0518(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_Multiply_Vector2DFloat_ReturnValue;       // 0x051C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_Multiply_Vector2DVector2D_ReturnValue;    // 0x0524(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_2;            // 0x052C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_Add_Vector2DFloat_ReturnValue;            // 0x0538(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetVectorParameterValue_ReturnValue_2;    // 0x0540(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_LinearColorToVector_ReturnValue_1;   // 0x0550(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Vector_Distance2D_ReturnValue;            // 0x055C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Vector_Distance2D_ReturnValue_1;          // 0x0560(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0564(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x0565(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_566[0x2];                                      // 0x0566(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue_6;         // 0x0568(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ___bool_IsClosed_Variable;                         // 0x0570(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_571[0x7];                                      // 0x0571(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character_1;          // 0x0578(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0580(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsEditor_ReturnValue_2;                   // 0x0581(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_GetInWater_ReturnValue_1;                 // 0x0582(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x0583(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_4;                 // 0x0584(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_5;                 // 0x0585(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_NotEqual_BoolBool_ReturnValue;            // 0x0586(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue_6;                 // 0x0587(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_2;                  // 0x0588(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_3;                  // 0x0589(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_58A[0x6];                                      // 0x058A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_2;      // 0x0590(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue_1;  // 0x05A8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Subtract_VectorVector_ReturnValue_1;      // 0x05B4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_X_2;                          // 0x05C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_Y_2;                          // 0x05C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakVector_Z_2;                          // 0x05C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_2;               // 0x05CC(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue_1;          // 0x05D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_K2_GetComponentLocation_ReturnValue_1;  // 0x05D8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Conv_FloatToDouble_ReturnValue_3;         // 0x05F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_MakeVectorDouble_ReturnValue_2;           // 0x05F8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_3;      // 0x0610(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue_2;  // 0x0628(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue;     // 0x0634(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_Multiply_Vector2DFloat_ReturnValue_1;     // 0x0644(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_Multiply_Vector2DVector2D_ReturnValue_1;  // 0x064C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_3;            // 0x0654(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_Add_Vector2DFloat_ReturnValue_1;          // 0x0660(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetVectorParameterValue_ReturnValue_3;    // 0x0668(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_LinearColorToVector_ReturnValue_2;   // 0x0678(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Vector_Distance2D_ReturnValue_2;          // 0x0684(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_2;         // 0x0688(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_689[0x3];                                      // 0x0689(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Vector_Distance2D_ReturnValue_3;          // 0x068C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_3;         // 0x0690(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim) == 0x000010, "Wrong alignment on BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim");
-static_assert(sizeof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim) == 0x0004D0, "Wrong size on BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim");
+static_assert(sizeof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim) == 0x0006A0, "Wrong size on BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim");
 static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, EntryPoint) == 0x000000, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorToVectorDouble_ReturnValue) == 0x000008, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorToVectorDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_SetActorLocation_SweepHitResult) == 0x000020, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_SetActorLocation_SweepHitResult' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_SetActorLocation_ReturnValue) == 0x0000B4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_SetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsValid_ReturnValue) == 0x0000B5, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsCurrentPlatformPC_ReturnValue) == 0x0000B6, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsCurrentPlatformPC_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsCurrentPlatformPC_ReturnValue_1) == 0x0000B7, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsCurrentPlatformPC_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetGameUserSettings_ReturnValue) == 0x0000B8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetGameUserSettings_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetGameQualitySettingLevel_ReturnValue) == 0x0000C0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetGameQualitySettingLevel_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_SetWaterRippleData_NewParam) == 0x0000C4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_SetWaterRippleData_NewParam' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_IntInt_ReturnValue) == 0x0000C5, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue) == 0x0000C8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetComponentByClass_ReturnValue) == 0x0000D0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetComponentByClass_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_self_CastInput) == 0x0000D8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_self_CastInput' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_ReturnValue) == 0x0000E8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_EqualEqual_ObjectObject_ReturnValue) == 0x0000E9, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_EqualEqual_ObjectObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_self_CastInput_1) == 0x0000F0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_self_CastInput_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_ReturnValue_1) == 0x000100, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanOR_ReturnValue) == 0x000101, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_SetWaterRippleData_NewParam_1) == 0x000102, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_SetWaterRippleData_NewParam_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_SetWaterRippleData_NewParam_2) == 0x000103, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_SetWaterRippleData_NewParam_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_EqualEqual_ObjectObject_ReturnValue_1) == 0x000104, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_EqualEqual_ObjectObject_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue_1) == 0x000108, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsValid_ReturnValue_1) == 0x000110, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue) == 0x000111, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Not_PreBool_ReturnValue) == 0x000112, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue_1) == 0x000113, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000118, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_CreateDynamicMaterialInstance_ReturnValue_1) == 0x000120, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_CreateDynamicMaterialInstance_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_CreateDynamicMaterialInstance_ReturnValue_2) == 0x000128, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_CreateDynamicMaterialInstance_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_CreateDynamicMaterialInstance_ReturnValue_3) == 0x000130, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_CreateDynamicMaterialInstance_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsEditor_ReturnValue) == 0x000138, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsEditor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X) == 0x00013C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y) == 0x000140, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_FloatToDouble_ReturnValue) == 0x000148, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_FloatToDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_FloatToDouble_ReturnValue_1) == 0x000150, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_FloatToDouble_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVectorDouble_ReturnValue) == 0x000158, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVectorDouble_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_AddActorWorldOffset_SweepHitResult) == 0x000170, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_AddActorWorldOffset_SweepHitResult' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetComponentLocation_ReturnValue) == 0x000208, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000220, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_FloatToDouble_ReturnValue_2) == 0x000228, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_FloatToDouble_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVectorDouble_ReturnValue_1) == 0x000230, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVectorDouble_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Divide_Vector2DFloat_ReturnValue) == 0x000248, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Divide_Vector2DFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X_1) == 0x000250, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y_1) == 0x000254, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor) == 0x000258, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Less_FloatFloat_ReturnValue) == 0x000268, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X_2) == 0x00026C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y_2) == 0x000270, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X_3) == 0x000274, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X_3' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y_3) == 0x000278, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y_3' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor_1) == 0x00027C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Divide_Vector2DFloat_ReturnValue_1) == 0x00028C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Divide_Vector2DFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X_4) == 0x000294, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X_4' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y_4) == 0x000298, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y_4' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor_2) == 0x00029C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x0002B0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeLiteralName_ReturnValue) == 0x0002C8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeLiteralName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x0002D4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Subtract_VectorVector_ReturnValue) == 0x0002E0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Subtract_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetVectorParameterValue_ReturnValue) == 0x0002EC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetVectorParameterValue_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_X) == 0x0002FC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_X' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Y) == 0x000300, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Y' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Z) == 0x000304, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Z' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_LinearColorToVector_ReturnValue) == 0x000308, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_LinearColorToVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVector2D_ReturnValue) == 0x000314, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVector2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Multiply_Vector2DFloat_ReturnValue) == 0x00031C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Multiply_Vector2DFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Multiply_Vector2DVector2D_ReturnValue) == 0x000324, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Multiply_Vector2DVector2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_Event_DeltaSeconds) == 0x00032C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_Event_DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Add_Vector2DFloat_ReturnValue) == 0x000330, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Add_Vector2DFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Add_FloatFloat_ReturnValue) == 0x000338, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeLiteralName_ReturnValue_1) == 0x00033C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeLiteralName_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetVectorParameterValue_ReturnValue_1) == 0x000348, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetVectorParameterValue_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue_2) == 0x000358, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_LinearColorToVector_ReturnValue_1) == 0x000360, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_LinearColorToVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_DynamicCast_AsTs_Base_Character) == 0x000370, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_DynamicCast_bSuccess) == 0x000378, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Vector_Distance2D_ReturnValue) == 0x00037C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Vector_Distance2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetInWater_ReturnValue) == 0x000380, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetInWater_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_FloatFloat_ReturnValue) == 0x000381, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue_2) == 0x000382, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_NotEqual_BoolBool_ReturnValue) == 0x000383, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_NotEqual_BoolBool_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Vector_Distance2D_ReturnValue_1) == 0x000384, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Vector_Distance2D_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanOR_ReturnValue_1) == 0x000388, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanOR_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_FloatFloat_ReturnValue_1) == 0x000389, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue_3) == 0x00038A, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanOR_ReturnValue_2) == 0x00038B, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanOR_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, ___struct_Variable) == 0x000390, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::___struct_Variable' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetActorLocation_ReturnValue_1) == 0x0003C0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_AddComponent_ReturnValue) == 0x0003D8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_AddComponent_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorDoubleToVector_ReturnValue_1) == 0x0003E0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorDoubleToVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Subtract_VectorVector_ReturnValue_1) == 0x0003EC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Subtract_VectorVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_X_1) == 0x0003F8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_X_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Y_1) == 0x0003FC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Y_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Z_1) == 0x000400, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Z_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVector2D_ReturnValue_1) == 0x000404, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVector2D_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Divide_FloatFloat_ReturnValue_1) == 0x00040C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Divide_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetComponentLocation_ReturnValue_1) == 0x000410, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetComponentLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_FloatToDouble_ReturnValue_3) == 0x000428, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_FloatToDouble_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVectorDouble_ReturnValue_2) == 0x000430, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVectorDouble_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetActorLocation_ReturnValue_2) == 0x000448, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetActorLocation_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorDoubleToVector_ReturnValue_2) == 0x000460, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorDoubleToVector_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorToLinearColor_ReturnValue) == 0x00046C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorToLinearColor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Multiply_Vector2DFloat_ReturnValue_1) == 0x00047C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Multiply_Vector2DFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Multiply_Vector2DVector2D_ReturnValue_1) == 0x000484, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Multiply_Vector2DVector2D_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeLiteralName_ReturnValue_2) == 0x00048C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeLiteralName_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Add_Vector2DFloat_ReturnValue_1) == 0x000498, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Add_Vector2DFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetVectorParameterValue_ReturnValue_2) == 0x0004A0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetVectorParameterValue_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_LinearColorToVector_ReturnValue_2) == 0x0004B0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_LinearColorToVector_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Vector_Distance2D_ReturnValue_2) == 0x0004BC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Vector_Distance2D_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_FloatFloat_ReturnValue_2) == 0x0004C0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_FloatFloat_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Vector_Distance2D_ReturnValue_3) == 0x0004C4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Vector_Distance2D_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_FloatFloat_ReturnValue_3) == 0x0004C8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_FloatFloat_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_CreateDelegate_OutputDelegate) == 0x000008, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorToVectorDouble_ReturnValue) == 0x000030, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorToVectorDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_SetActorLocation_SweepHitResult) == 0x000048, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_SetActorLocation_SweepHitResult' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_SetActorLocation_ReturnValue) == 0x0000DC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_SetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Not_PreBool_ReturnValue) == 0x0000DD, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetBpEventManager_ReturnValue) == 0x0000E0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetBpEventManager_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_CustomEvent_ImpactPoint) == 0x0000E8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_CustomEvent_ImpactPoint' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_CustomEvent_Config) == 0x000100, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_CustomEvent_Config' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_CustomEvent_OriginPoint) == 0x000108, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_CustomEvent_OriginPoint' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_CustomEvent_Id) == 0x000120, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_CustomEvent_Id' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_DynamicCast_AsBP_Event_Manager) == 0x000128, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_DynamicCast_AsBP_Event_Manager' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_DynamicCast_bSuccess) == 0x000130, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue) == 0x000138, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000140, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_CalcTexCoord_TexCoord) == 0x000158, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_CalcTexCoord_TexCoord' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_X) == 0x000164, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_X' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Y) == 0x000168, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Y' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Z) == 0x00016C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Z' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorToString_ReturnValue) == 0x000170, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVector2D_ReturnValue) == 0x000180, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVector2D_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Concat_StrStr_ReturnValue) == 0x000188, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Concat_StrStr_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsEditor_ReturnValue) == 0x000198, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsEditor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue) == 0x000199, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X) == 0x00019C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y) == 0x0001A0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_FloatToDouble_ReturnValue) == 0x0001A8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_FloatToDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Less_FloatFloat_ReturnValue) == 0x0001B0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_FloatToDouble_ReturnValue_1) == 0x0001B8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_FloatToDouble_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVectorDouble_ReturnValue) == 0x0001C0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVectorDouble_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue_1) == 0x0001D8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_AddActorWorldOffset_SweepHitResult) == 0x0001E0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_AddActorWorldOffset_SweepHitResult' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetComponentByClass_ReturnValue) == 0x000278, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetComponentByClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_self_CastInput) == 0x000280, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_self_CastInput' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_ReturnValue) == 0x000290, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue_2) == 0x000298, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_DynamicCast_AsTs_Base_Character) == 0x0002A0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_DynamicCast_bSuccess_1) == 0x0002A8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_SwitchInteger_CmpSuccess) == 0x0002A9, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_SwitchInteger_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetInWater_ReturnValue) == 0x0002AA, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetInWater_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x0002B0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_CreateDynamicMaterialInstance_ReturnValue_1) == 0x0002B8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_CreateDynamicMaterialInstance_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_CreateDynamicMaterialInstance_ReturnValue_2) == 0x0002C0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_CreateDynamicMaterialInstance_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_CreateDynamicMaterialInstance_ReturnValue_3) == 0x0002C8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_CreateDynamicMaterialInstance_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, ___struct_Variable) == 0x0002D0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::___struct_Variable' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsCurrentPlatformPC_ReturnValue) == 0x000300, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsCurrentPlatformPC_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_AddComponent_ReturnValue) == 0x000308, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_AddComponent_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor) == 0x000310, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor_1) == 0x000320, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsEditor_ReturnValue_1) == 0x000330, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsEditor_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue_1) == 0x000331, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetComponentLocation_ReturnValue) == 0x000338, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000350, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_FloatToDouble_ReturnValue_2) == 0x000358, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_FloatToDouble_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVectorDouble_ReturnValue_1) == 0x000360, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVectorDouble_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Divide_Vector2DFloat_ReturnValue) == 0x000378, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Divide_Vector2DFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X_1) == 0x000380, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y_1) == 0x000384, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor_2) == 0x000388, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeLiteralName_ReturnValue) == 0x000398, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeLiteralName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetVectorParameterValue_ReturnValue) == 0x0003A4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetVectorParameterValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor_3) == 0x0003B4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X_2) == 0x0003C4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y_2) == 0x0003C8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X_3) == 0x0003CC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y_3) == 0x0003D0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor_4) == 0x0003D4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor_4' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Divide_Vector2DFloat_ReturnValue_1) == 0x0003E4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Divide_Vector2DFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X_4) == 0x0003EC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X_4' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y_4) == 0x0003F0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y_4' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor_5) == 0x0003F4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor_5' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_X_5) == 0x000404, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_X_5' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector2D_Y_5) == 0x000408, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector2D_Y_5' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_MakeStruct_LinearColor_6) == 0x00040C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_MakeStruct_LinearColor_6' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue_3) == 0x000420, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsValid_ReturnValue) == 0x000428, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsValid_ReturnValue_1) == 0x000429, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue_2) == 0x00042A, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x00042C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue_4) == 0x000430, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetComponentByClass_ReturnValue_1) == 0x000438, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetComponentByClass_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_self_CastInput_1) == 0x000440, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_self_CastInput_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_ReturnValue_1) == 0x000450, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_Event_DeltaSeconds) == 0x000454, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetGameUserSettings_ReturnValue) == 0x000458, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetGameUserSettings_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_SetWaterRippleData_NewParam) == 0x000460, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_SetWaterRippleData_NewParam' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetGameQualitySettingLevel_ReturnValue) == 0x000464, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetGameQualitySettingLevel_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_IntInt_ReturnValue) == 0x000468, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsCurrentPlatformPC_ReturnValue_1) == 0x000469, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsCurrentPlatformPC_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue_3) == 0x00046A, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, ___bool_Has_Been_Initd_Variable) == 0x00046B, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::___bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue_5) == 0x000470, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetComponentByClass_ReturnValue_2) == 0x000478, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetComponentByClass_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetActorLocation_ReturnValue_1) == 0x000480, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_self_CastInput_2) == 0x000498, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_self_CastInput_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_ReturnValue_2) == 0x0004A8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x0004AC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_self_CastInput_3) == 0x0004B8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_self_CastInput_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_HasMatchingGameplayTag_ReturnValue_3) == 0x0004C8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_HasMatchingGameplayTag_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Subtract_VectorVector_ReturnValue) == 0x0004CC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Subtract_VectorVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanOR_ReturnValue) == 0x0004D8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_X_1) == 0x0004DC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_X_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Y_1) == 0x0004E0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Y_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Z_1) == 0x0004E4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Z_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeLiteralName_ReturnValue_1) == 0x0004E8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeLiteralName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVector2D_ReturnValue_1) == 0x0004F4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVector2D_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetVectorParameterValue_ReturnValue_1) == 0x0004FC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetVectorParameterValue_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_LinearColorToVector_ReturnValue) == 0x00050C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_LinearColorToVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Add_FloatFloat_ReturnValue) == 0x000518, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Multiply_Vector2DFloat_ReturnValue) == 0x00051C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Multiply_Vector2DFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Multiply_Vector2DVector2D_ReturnValue) == 0x000524, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Multiply_Vector2DVector2D_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeLiteralName_ReturnValue_2) == 0x00052C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeLiteralName_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Add_Vector2DFloat_ReturnValue) == 0x000538, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Add_Vector2DFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetVectorParameterValue_ReturnValue_2) == 0x000540, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetVectorParameterValue_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_LinearColorToVector_ReturnValue_1) == 0x000550, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_LinearColorToVector_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Vector_Distance2D_ReturnValue) == 0x00055C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Vector_Distance2D_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Vector_Distance2D_ReturnValue_1) == 0x000560, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Vector_Distance2D_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_FloatFloat_ReturnValue) == 0x000564, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_FloatFloat_ReturnValue_1) == 0x000565, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetPlayerCharacter_ReturnValue_6) == 0x000568, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetPlayerCharacter_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, ___bool_IsClosed_Variable) == 0x000570, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::___bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_DynamicCast_AsTs_Base_Character_1) == 0x000578, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_DynamicCast_AsTs_Base_Character_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, K2Node_DynamicCast_bSuccess_2) == 0x000580, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_IsEditor_ReturnValue_2) == 0x000581, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_IsEditor_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetInWater_ReturnValue_1) == 0x000582, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetInWater_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanOR_ReturnValue_1) == 0x000583, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanOR_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue_4) == 0x000584, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue_5) == 0x000585, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_NotEqual_BoolBool_ReturnValue) == 0x000586, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_NotEqual_BoolBool_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanAND_ReturnValue_6) == 0x000587, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanAND_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanOR_ReturnValue_2) == 0x000588, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanOR_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BooleanOR_ReturnValue_3) == 0x000589, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BooleanOR_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetActorLocation_ReturnValue_2) == 0x000590, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetActorLocation_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorDoubleToVector_ReturnValue_1) == 0x0005A8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorDoubleToVector_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Subtract_VectorVector_ReturnValue_1) == 0x0005B4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Subtract_VectorVector_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_X_2) == 0x0005C0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_X_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Y_2) == 0x0005C4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Y_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_BreakVector_Z_2) == 0x0005C8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_BreakVector_Z_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVector2D_ReturnValue_2) == 0x0005CC, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVector2D_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Divide_FloatFloat_ReturnValue_1) == 0x0005D4, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Divide_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetComponentLocation_ReturnValue_1) == 0x0005D8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetComponentLocation_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_FloatToDouble_ReturnValue_3) == 0x0005F0, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_FloatToDouble_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeVectorDouble_ReturnValue_2) == 0x0005F8, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeVectorDouble_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_D_K2_GetActorLocation_ReturnValue_3) == 0x000610, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_D_K2_GetActorLocation_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorDoubleToVector_ReturnValue_2) == 0x000628, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorDoubleToVector_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_VectorToLinearColor_ReturnValue) == 0x000634, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_VectorToLinearColor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Multiply_Vector2DFloat_ReturnValue_1) == 0x000644, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Multiply_Vector2DFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Multiply_Vector2DVector2D_ReturnValue_1) == 0x00064C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Multiply_Vector2DVector2D_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_MakeLiteralName_ReturnValue_3) == 0x000654, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_MakeLiteralName_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Add_Vector2DFloat_ReturnValue_1) == 0x000660, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Add_Vector2DFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_GetVectorParameterValue_ReturnValue_3) == 0x000668, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_GetVectorParameterValue_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Conv_LinearColorToVector_ReturnValue_2) == 0x000678, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Conv_LinearColorToVector_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Vector_Distance2D_ReturnValue_2) == 0x000684, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Vector_Distance2D_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_FloatFloat_ReturnValue_2) == 0x000688, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_FloatFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Vector_Distance2D_ReturnValue_3) == 0x00068C, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Vector_Distance2D_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim, CallFunc_Greater_FloatFloat_ReturnValue_3) == 0x000690, "Member 'BP_RippleSwim_C_ExecuteUbergraph_BP_RippleSwim::CallFunc_Greater_FloatFloat_ReturnValue_3' has a wrong offset!");
 
 }
 

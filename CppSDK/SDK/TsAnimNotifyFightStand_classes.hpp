@@ -17,9 +17,12 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyFightStand.TsAnimNotifyFightStand_C
-// 0x0000 (0x0048 - 0x0048)
+// 0x0008 (0x0050 - 0x0048)
 class UTsAnimNotifyFightStand_C final : public UKuroAnimNotify
 {
+public:
+	int32                                         BattleIdleTime;                                    // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 
@@ -36,7 +39,8 @@ public:
 	}
 };
 static_assert(alignof(UTsAnimNotifyFightStand_C) == 0x000008, "Wrong alignment on UTsAnimNotifyFightStand_C");
-static_assert(sizeof(UTsAnimNotifyFightStand_C) == 0x000048, "Wrong size on UTsAnimNotifyFightStand_C");
+static_assert(sizeof(UTsAnimNotifyFightStand_C) == 0x000050, "Wrong size on UTsAnimNotifyFightStand_C");
+static_assert(offsetof(UTsAnimNotifyFightStand_C, BattleIdleTime) == 0x000048, "Member 'UTsAnimNotifyFightStand_C::BattleIdleTime' has a wrong offset!");
 
 }
 

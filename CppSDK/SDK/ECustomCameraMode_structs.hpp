@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ECustomCameraMode.ECustomCameraMode
-// NumValues: 0x0006
+// NumValues: 0x0007
 enum class ECustomCameraMode : uint8
 {
 	NewEnumerator2                           = 0,
@@ -23,7 +23,8 @@ enum class ECustomCameraMode : uint8
 	NewEnumerator4                           = 2,
 	NewEnumerator5                           = 3,
 	NewEnumerator6                           = 4,
-	ECustomCameraMode_MAX                    = 5,
+	NewEnumerator7                           = 5,
+	ECustomCameraMode_MAX                    = 6,
 };
 
 }

@@ -17,7 +17,7 @@ namespace SDK::Params
 {
 
 // Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.UpdateVolumetricSphereLight
-// 0x0048 (0x0048 - 0x0000)
+// 0x0068 (0x0068 - 0x0000)
 struct BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight final
 {
 public:
@@ -27,20 +27,23 @@ public:
 	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x0024(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetActorLocationRef_RefLocation;          // 0x0034(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Vector_Distance_ReturnValue;              // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue;      // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x0038(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue_1;  // 0x0050(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Vector_Distance_ReturnValue;              // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue;      // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight) == 0x000008, "Wrong alignment on BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight");
-static_assert(sizeof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight) == 0x000048, "Wrong size on BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight");
+static_assert(sizeof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight) == 0x000068, "Wrong size on BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight");
 static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_GetWorld_ReturnValue) == 0x000000, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_GetWorld_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_D_GetWorldCameraLocation_OutCameraLocation) == 0x000008, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_D_GetWorldCameraLocation_OutCameraLocation' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_D_GetWorldCameraLocation_ReturnValue) == 0x000020, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_D_GetWorldCameraLocation_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x000024, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000030, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_GetActorLocationRef_RefLocation) == 0x000034, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_GetActorLocationRef_RefLocation' has a wrong offset!");
-static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_Vector_Distance_ReturnValue) == 0x000040, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_Vector_Distance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_GreaterEqual_FloatFloat_ReturnValue) == 0x000044, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_GreaterEqual_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000038, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_Conv_VectorDoubleToVector_ReturnValue_1) == 0x000050, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_Conv_VectorDoubleToVector_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_Vector_Distance_ReturnValue) == 0x00005C, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_Vector_Distance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight, CallFunc_GreaterEqual_FloatFloat_ReturnValue) == 0x000060, "Member 'BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight::CallFunc_GreaterEqual_FloatFloat_ReturnValue' has a wrong offset!");
 
 // Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.UserConstructionScript
 // 0x0048 (0x0048 - 0x0000)

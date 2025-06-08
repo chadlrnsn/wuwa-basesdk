@@ -803,6 +803,217 @@ void UKuroActorManager::UnregisterComponent(class UActorComponent* Componet)
 }
 
 
+// Function KuroUtility.KuroApplicationLibrary.AddApplicationLifetimeDelegate
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(int32 Type)>             InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroApplicationLibrary::AddApplicationLifetimeDelegate(const TDelegate<void(int32 Type)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroApplicationLibrary", "AddApplicationLifetimeDelegate");
+
+	Params::KuroApplicationLibrary_AddApplicationLifetimeDelegate Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroUtility.KuroApplicationLibrary.AddEditorPreEndPIEDelegate
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TDelegate<void(bool bSimulateInEditor)> InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroApplicationLibrary::AddEditorPreEndPIEDelegate(const TDelegate<void(bool bSimulateInEditor)>& InDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroApplicationLibrary", "AddEditorPreEndPIEDelegate");
+
+	Params::KuroApplicationLibrary_AddEditorPreEndPIEDelegate Parms{};
+
+	Parms.InDelegate = InDelegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroUtility.KuroApplicationLibrary.Test
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroApplicationLibrary::Test(int32 Type)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroApplicationLibrary", "Test");
+
+	Params::KuroApplicationLibrary_Test Parms{};
+
+	Parms.Type = Type;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroUtility.KuroApplicationLibrary.UnBind
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroApplicationLibrary::UnBind()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroApplicationLibrary", "UnBind");
+
+	Params::KuroApplicationLibrary_UnBind Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroUtility.KuroCollectActorComponent.GetActorWithTag
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Tag                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECollectActorType                       Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* UKuroCollectActorComponent::GetActorWithTag(class FName Tag, ECollectActorType Type)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroCollectActorComponent", "GetActorWithTag");
+
+	Params::KuroCollectActorComponent_GetActorWithTag Parms{};
+
+	Parms.Tag = Tag;
+	Parms.Type = Type;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroUtility.KuroCompressLibrary.CompressFileOrFolder
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           DestPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(float Rate)>             OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(TArray<class FString>& SuccessedPaths)>OnCompressComplete                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void()>                       OnFail                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// int64                                   MaxSingleFileReadSize                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroCompressLibrary::CompressFileOrFolder(const class FString& Path, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, int64 MaxSingleFileReadSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroCompressLibrary", "CompressFileOrFolder");
+
+	Params::KuroCompressLibrary_CompressFileOrFolder Parms{};
+
+	Parms.Path = std::move(Path);
+	Parms.DestPath = std::move(DestPath);
+	Parms.OnProgress = OnProgress;
+	Parms.OnCompressComplete = OnCompressComplete;
+	Parms.OnFail = OnFail;
+	Parms.MaxSingleFileReadSize = MaxSingleFileReadSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroUtility.KuroCompressLibrary.CompressFilesOrFoldersAsync
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class FString>                   Paths                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// class FString                           DestPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(float Rate)>             OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void(TArray<class FString>& SuccessedPaths)>OnCompressComplete                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TDelegate<void()>                       OnFail                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bAutoIncludeFilesUnderFolder                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64                                   MaxSingleFileReadSize                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroCompressLibrary::CompressFilesOrFoldersAsync(const TArray<class FString>& Paths, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, bool bAutoIncludeFilesUnderFolder, int64 MaxSingleFileReadSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroCompressLibrary", "CompressFilesOrFoldersAsync");
+
+	Params::KuroCompressLibrary_CompressFilesOrFoldersAsync Parms{};
+
+	Parms.Paths = std::move(Paths);
+	Parms.DestPath = std::move(DestPath);
+	Parms.OnProgress = OnProgress;
+	Parms.OnCompressComplete = OnCompressComplete;
+	Parms.OnFail = OnFail;
+	Parms.bAutoIncludeFilesUnderFolder = bAutoIncludeFilesUnderFolder;
+	Parms.MaxSingleFileReadSize = MaxSingleFileReadSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroUtility.KuroMathLibrary.BitwiseLeftShift
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -1184,217 +1395,6 @@ struct FVector2D UKuroMathLibrary::Min(const struct FVector2D& A, const struct F
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroApplicationLibrary.AddApplicationLifetimeDelegate
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(int32 Type)>             InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroApplicationLibrary::AddApplicationLifetimeDelegate(const TDelegate<void(int32 Type)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroApplicationLibrary", "AddApplicationLifetimeDelegate");
-
-	Params::KuroApplicationLibrary_AddApplicationLifetimeDelegate Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroApplicationLibrary.AddEditorPreEndPIEDelegate
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TDelegate<void(bool bSimulateInEditor)> InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroApplicationLibrary::AddEditorPreEndPIEDelegate(const TDelegate<void(bool bSimulateInEditor)>& InDelegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroApplicationLibrary", "AddEditorPreEndPIEDelegate");
-
-	Params::KuroApplicationLibrary_AddEditorPreEndPIEDelegate Parms{};
-
-	Parms.InDelegate = InDelegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroApplicationLibrary.Test
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroApplicationLibrary::Test(int32 Type)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroApplicationLibrary", "Test");
-
-	Params::KuroApplicationLibrary_Test Parms{};
-
-	Parms.Type = Type;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroApplicationLibrary.UnBind
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroApplicationLibrary::UnBind()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroApplicationLibrary", "UnBind");
-
-	Params::KuroApplicationLibrary_UnBind Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroCollectActorComponent.GetActorWithTag
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class FName                             Tag                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECollectActorType                       Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* UKuroCollectActorComponent::GetActorWithTag(class FName Tag, ECollectActorType Type)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroCollectActorComponent", "GetActorWithTag");
-
-	Params::KuroCollectActorComponent_GetActorWithTag Parms{};
-
-	Parms.Tag = Tag;
-	Parms.Type = Type;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroCompressLibrary.CompressFileOrFolder
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           DestPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(float Rate)>             OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void(TArray<class FString>& SuccessedPaths)>OnCompressComplete                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void()>                       OnFail                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// int64                                   MaxSingleFileReadSize                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKuroCompressLibrary::CompressFileOrFolder(const class FString& Path, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, int64 MaxSingleFileReadSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroCompressLibrary", "CompressFileOrFolder");
-
-	Params::KuroCompressLibrary_CompressFileOrFolder Parms{};
-
-	Parms.Path = std::move(Path);
-	Parms.DestPath = std::move(DestPath);
-	Parms.OnProgress = OnProgress;
-	Parms.OnCompressComplete = OnCompressComplete;
-	Parms.OnFail = OnFail;
-	Parms.MaxSingleFileReadSize = MaxSingleFileReadSize;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroUtility.KuroCompressLibrary.CompressFilesOrFoldersAsync
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<class FString>                   Paths                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           DestPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(float Rate)>             OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void(TArray<class FString>& SuccessedPaths)>OnCompressComplete                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void()>                       OnFail                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bAutoIncludeFilesUnderFolder                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   MaxSingleFileReadSize                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKuroCompressLibrary::CompressFilesOrFoldersAsync(const TArray<class FString>& Paths, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, bool bAutoIncludeFilesUnderFolder, int64 MaxSingleFileReadSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroCompressLibrary", "CompressFilesOrFoldersAsync");
-
-	Params::KuroCompressLibrary_CompressFilesOrFoldersAsync Parms{};
-
-	Parms.Paths = std::move(Paths);
-	Parms.DestPath = std::move(DestPath);
-	Parms.OnProgress = OnProgress;
-	Parms.OnCompressComplete = OnCompressComplete;
-	Parms.OnFail = OnFail;
-	Parms.bAutoIncludeFilesUnderFolder = bAutoIncludeFilesUnderFolder;
-	Parms.MaxSingleFileReadSize = MaxSingleFileReadSize;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -2512,50 +2512,6 @@ bool UKuroStaticLibrary::CopyFile(const class FString& SourcePath, const class F
 }
 
 
-// Function KuroUtility.KuroStaticLibrary.CountCurFrame
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroStaticLibrary::CountCurFrame()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "CountCurFrame");
-
-	Params::KuroStaticLibrary_CountCurFrame Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.CountCurMemory
-// (Final, Native, Static, Public, BlueprintCallable)
-
-void UKuroStaticLibrary::CountCurMemory()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "CountCurMemory");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function KuroUtility.KuroStaticLibrary.D_GetFirstLocationFromSeqTrack
 // (Final, Native, Static, Private, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -2893,6 +2849,36 @@ bool UKuroStaticLibrary::FileExists(const class FString& Path)
 }
 
 
+// Function KuroUtility.KuroStaticLibrary.FindFilesSorted
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           Extension                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> UKuroStaticLibrary::FindFilesSorted(const class FString& Path, const class FString& Extension)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroStaticLibrary", "FindFilesSorted");
+
+	Params::KuroStaticLibrary_FindFilesSorted Parms{};
+
+	Parms.Path = std::move(Path);
+	Parms.Extension = std::move(Extension);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroUtility.KuroStaticLibrary.ForceGarbageCollection
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
@@ -2934,31 +2920,6 @@ struct FDateTime UKuroStaticLibrary::FromUnixTimestamp(const int32 Timestamp)
 	Params::KuroStaticLibrary_FromUnixTimestamp Parms{};
 
 	Parms.Timestamp = Timestamp;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetActorCount
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UKuroStaticLibrary::GetActorCount()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetActorCount");
-
-	Params::KuroStaticLibrary_GetActorCount Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3203,44 +3164,19 @@ void UKuroStaticLibrary::GetAnimSequencesByAnimMontage(const class UAnimMontage*
 }
 
 
-// Function KuroUtility.KuroStaticLibrary.GetAvailablePhysicalGB
+// Function KuroUtility.KuroStaticLibrary.GetBaseBoardInfo
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKuroStaticLibrary::GetAvailablePhysicalGB()
+class FString UKuroStaticLibrary::GetBaseBoardInfo()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetAvailablePhysicalGB");
+		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetBaseBoardInfo");
 
-	Params::KuroStaticLibrary_GetAvailablePhysicalGB Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetAvailableVirtualGB
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetAvailableVirtualGB()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetAvailableVirtualGB");
-
-	Params::KuroStaticLibrary_GetAvailableVirtualGB Parms{};
+	Params::KuroStaticLibrary_GetBaseBoardInfo Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3530,6 +3466,31 @@ TArray<class FString> UKuroStaticLibrary::GetDirectories(const class FString& Pa
 }
 
 
+// Function KuroUtility.KuroStaticLibrary.GetDiskSerialNo
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKuroStaticLibrary::GetDiskSerialNo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetDiskSerialNo");
+
+	Params::KuroStaticLibrary_GetDiskSerialNo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroUtility.KuroStaticLibrary.GetFiles
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
@@ -3622,31 +3583,6 @@ struct FVector UKuroStaticLibrary::GetFirstLocationFromSeqTrack(class UMovieScen
 }
 
 
-// Function KuroUtility.KuroStaticLibrary.GetFrameInfo
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector UKuroStaticLibrary::GetFrameInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetFrameInfo");
-
-	Params::KuroStaticLibrary_GetFrameInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function KuroUtility.KuroStaticLibrary.GetGameViewPort
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -3660,31 +3596,6 @@ class UGameViewportClient* UKuroStaticLibrary::GetGameViewPort()
 		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetGameViewPort");
 
 	Params::KuroStaticLibrary_GetGameViewPort Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetGPUFrameTime
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetGPUFrameTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetGPUFrameTime");
-
-	Params::KuroStaticLibrary_GetGPUFrameTime Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3766,31 +3677,6 @@ class AActor* UKuroStaticLibrary::GetLevelPrefabShowActor(class AActor* Actor)
 	Params::KuroStaticLibrary_GetLevelPrefabShowActor Parms{};
 
 	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetLLMInfo
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UKuroStaticLibrary::GetLLMInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetLLMInfo");
-
-	Params::KuroStaticLibrary_GetLLMInfo Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3899,56 +3785,6 @@ TArray<struct FVector> UKuroStaticLibrary::GetNavPointData(class UObject* WorldC
 }
 
 
-// Function KuroUtility.KuroStaticLibrary.GetPeakUsedPhysicalGB
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetPeakUsedPhysicalGB()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetPeakUsedPhysicalGB");
-
-	Params::KuroStaticLibrary_GetPeakUsedPhysicalGB Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetPeakUsedVirtualGB
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetPeakUsedVirtualGB()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetPeakUsedVirtualGB");
-
-	Params::KuroStaticLibrary_GetPeakUsedVirtualGB Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function KuroUtility.KuroStaticLibrary.GetPIEStartTimeInSeconds
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -3999,94 +3835,19 @@ float UKuroStaticLibrary::GetPlatformTimeInSeconds()
 }
 
 
-// Function KuroUtility.KuroStaticLibrary.GetRawFrameTime
+// Function KuroUtility.KuroStaticLibrary.GetProcessorId
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UKuroStaticLibrary::GetRawFrameTime()
+class FString UKuroStaticLibrary::GetProcessorId()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetRawFrameTime");
+		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetProcessorId");
 
-	Params::KuroStaticLibrary_GetRawFrameTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetRawGameThreadTime
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetRawGameThreadTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetRawGameThreadTime");
-
-	Params::KuroStaticLibrary_GetRawGameThreadTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetRawRenderThreadTime
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetRawRenderThreadTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetRawRenderThreadTime");
-
-	Params::KuroStaticLibrary_GetRawRenderThreadTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetRawRHITTime
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetRawRHITTime()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetRawRHITTime");
-
-	Params::KuroStaticLibrary_GetRawRHITTime Parms{};
+	Params::KuroStaticLibrary_GetProcessorId Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4240,19 +4001,19 @@ class FString UKuroStaticLibrary::GetStatUnitInfo()
 }
 
 
-// Function KuroUtility.KuroStaticLibrary.GetTotalMemoryGB
+// Function KuroUtility.KuroStaticLibrary.GetSysUUID
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UKuroStaticLibrary::GetTotalMemoryGB()
+class FString UKuroStaticLibrary::GetSysUUID()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetTotalMemoryGB");
+		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetSysUUID");
 
-	Params::KuroStaticLibrary_GetTotalMemoryGB Parms{};
+	Params::KuroStaticLibrary_GetSysUUID Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4308,106 +4069,6 @@ class UMovieSceneTrack* UKuroStaticLibrary::GetTrackByClass(const TArray<class U
 
 	Parms.Tracks = std::move(Tracks);
 	Parms.Class_0 = Class_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetUsedMemoryGB
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetUsedMemoryGB()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetUsedMemoryGB");
-
-	Params::KuroStaticLibrary_GetUsedMemoryGB Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetUsedPhysicalGB
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetUsedPhysicalGB()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetUsedPhysicalGB");
-
-	Params::KuroStaticLibrary_GetUsedPhysicalGB Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetUsedVirtualGB
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetUsedVirtualGB()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetUsedVirtualGB");
-
-	Params::KuroStaticLibrary_GetUsedVirtualGB Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.GetUseMemoryProportion
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UKuroStaticLibrary::GetUseMemoryProportion()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetUseMemoryProportion");
-
-	Params::KuroStaticLibrary_GetUseMemoryProportion Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4524,31 +4185,6 @@ void UKuroStaticLibrary::IcmpPing(const class FString& IpAddress, float Timeout,
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroUtility.KuroStaticLibrary.IsAsyncLoadingThreadEnabled
-// (Final, Native, Static, Private, BlueprintCallable)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UKuroStaticLibrary::IsAsyncLoadingThreadEnabled()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroStaticLibrary", "IsAsyncLoadingThreadEnabled");
-
-	Params::KuroStaticLibrary_IsAsyncLoadingThreadEnabled Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -8171,6 +7807,143 @@ void UKuroStaticPS5Library::UpdateTrophyProgressWithContextIdAndHandleIdAsync(in
 }
 
 
+// Function KuroUtility.KuroSubLevelVisibleSubsystem.GetSubSystem
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UGameInstance*                    GameInstance                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UKuroSubLevelVisibleSubsystem*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UKuroSubLevelVisibleSubsystem* UKuroSubLevelVisibleSubsystem::GetSubSystem(const class UGameInstance* GameInstance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroSubLevelVisibleSubsystem", "GetSubSystem");
+
+	Params::KuroSubLevelVisibleSubsystem_GetSubSystem Parms{};
+
+	Parms.GameInstance = GameInstance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroUtility.KuroSubLevelVisibleSubsystem.AddLevel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   LinkId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULevel*                           Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSubLevelVisibleSubsystem::AddLevel(int32 LinkId, class ULevel* Level)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSubLevelVisibleSubsystem", "AddLevel");
+
+	Params::KuroSubLevelVisibleSubsystem_AddLevel Parms{};
+
+	Parms.LinkId = LinkId;
+	Parms.Level = Level;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroUtility.KuroSubLevelVisibleSubsystem.RemoveLevel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   LinkId                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSubLevelVisibleSubsystem::RemoveLevel(int32 LinkId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSubLevelVisibleSubsystem", "RemoveLevel");
+
+	Params::KuroSubLevelVisibleSubsystem_RemoveLevel Parms{};
+
+	Parms.LinkId = LinkId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroUtility.KuroSubLevelVisibleSubsystem.SetLevelActorsVisible
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   LinkId                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    Visible                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(int32 LinkId)>           FinishCallback                                         (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroSubLevelVisibleSubsystem::SetLevelActorsVisible(const int32 LinkId, const bool Visible, const TDelegate<void(int32 LinkId)> FinishCallback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSubLevelVisibleSubsystem", "SetLevelActorsVisible");
+
+	Params::KuroSubLevelVisibleSubsystem_SetLevelActorsVisible Parms{};
+
+	Parms.LinkId = LinkId;
+	Parms.Visible = Visible;
+	Parms.FinishCallback = FinishCallback;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroUtility.KuroSubLevelVisibleSubsystem.SetOneFrameExecuteCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroSubLevelVisibleSubsystem::SetOneFrameExecuteCount(const int32 Count)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroSubLevelVisibleSubsystem", "SetOneFrameExecuteCount");
+
+	Params::KuroSubLevelVisibleSubsystem_SetOneFrameExecuteCount Parms{};
+
+	Parms.Count = Count;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroUtility.KuroTencentCOSLibrary.ClearAllProgressCallback
 // (Final, Native, Static, Public, BlueprintCallable)
 
@@ -9199,6 +8972,33 @@ void UKuroTickManager::SetSkeletalMeshProxyTickFunction(const ETickingGroup Tick
 
 	Parms.TickingGroup = TickingGroup;
 	Parms.SkeletalComp = SkeletalComp;
+	Parms.Priority = Priority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroUtility.KuroTickManager.SetTickFunctionCompletionCallbackInMainThread
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroTickManager::SetTickFunctionCompletionCallbackInMainThread(const ETickingGroup TickingGroup, int32 Priority)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroTickManager", "SetTickFunctionCompletionCallbackInMainThread");
+
+	Params::KuroTickManager_SetTickFunctionCompletionCallbackInMainThread Parms{};
+
+	Parms.TickingGroup = TickingGroup;
 	Parms.Priority = Priority;
 
 	auto Flgs = Func->FunctionFlags;

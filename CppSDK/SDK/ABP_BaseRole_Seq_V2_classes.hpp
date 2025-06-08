@@ -21,75 +21,75 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C
-// 0x1CF0 (0x2310 - 0x0620)
+// 0x1DF0 (0x2450 - 0x0660)
 class UABP_BaseRole_Seq_V2_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_618[0x8];                                      // 0x0618(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0620(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root_4;                              // 0x0628(0x0038)()
-	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_2;                   // 0x0660(0x0138)()
-	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace_1;             // 0x0798(0x0020)()
-	uint8                                         Pad_7B8[0x8];                                      // 0x07B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAnimNode_RBF                          AnimGraphNode_RBF;                                 // 0x07C0(0x0150)()
-	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace_1;             // 0x0910(0x0020)()
-	struct FAnimNode_Root                         AnimGraphNode_Root_3;                              // 0x0930(0x0038)()
-	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_1;                   // 0x0968(0x0138)()
-	struct FAnimNode_CurveSource                  AnimGraphNode_CurveSource;                         // 0x0AA0(0x0040)()
-	struct FAnimNode_CurveFix                     AnimGraphNode_CurveFix;                            // 0x0AE0(0x0030)()
-	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves_1;                     // 0x0B10(0x0060)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_3;                              // 0x0B70(0x0060)()
-	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves;                       // 0x0BD0(0x0060)()
-	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x0C30(0x00B0)()
-	struct FAnimNode_PoseSnapshot                 AnimGraphNode_PoseSnapshot;                        // 0x0CE0(0x00B0)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_2;                              // 0x0D90(0x0060)()
-	struct FAnimNode_Root                         AnimGraphNode_Root_2;                              // 0x0DF0(0x0038)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x0E28(0x0060)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x0E88(0x0060)()
-	struct FAnimNode_TwoWayBlend                  AnimGraphNode_TwoWayBlend;                         // 0x0EE8(0x00C8)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0FB0(0x0090)()
-	struct FAnimNode_Root                         AnimGraphNode_Root_1;                              // 0x1040(0x0038)()
-	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x1078(0x0138)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_9;                        // 0x11B0(0x0118)()
-	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x12C8(0x0020)()
-	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x12E8(0x0020)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_8;                        // 0x1308(0x0118)()
-	struct FAnimNode_RotationOffsetBlendSpace     AnimGraphNode_RotationOffsetBlendSpace;            // 0x1420(0x01A8)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_7;                        // 0x15C8(0x0118)()
-	struct FAnimNode_MorphTargetModifier          AnimGraphNode_MorphTargetModifier;                 // 0x16E0(0x0060)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_6;                        // 0x1740(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_5;                        // 0x1858(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_4;                        // 0x1970(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_3;                        // 0x1A88(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_2;                        // 0x1BA0(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_1;                        // 0x1CB8(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone;                          // 0x1DD0(0x0118)()
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x1EE8(0x0038)()
-	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer_3;                   // 0x1F20(0x00C0)()
-	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer_2;                   // 0x1FE0(0x00C0)()
-	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer_1;                   // 0x20A0(0x00C0)()
-	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer;                     // 0x2160(0x00C0)()
-	struct FVector2D                              LookXY;                                            // 0x2220(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               LookFixHead;                                       // 0x2228(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               LookFixNeck;                                       // 0x2234(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          Enable_AimOffset;                                  // 0x2240(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2241[0x3];                                     // 0x2241(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               LookFixSpine;                                      // 0x2244(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	class UAimOffsetBlendSpace*                   AimOffset;                                         // 0x2250(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Enable_Stand;                                      // 0x2258(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2259[0x7];                                     // 0x2259(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimSequenceBase*                      Stand;                                             // 0x2260(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          EnableSwitchPose;                                  // 0x2268(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2269[0x7];                                     // 0x2269(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPoseSnapshot                          CachePose;                                         // 0x2270(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance)
-	float                                         SwitchPoseTime;                                    // 0x22B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               Add_Bip_001LClavicle;                              // 0x22B4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Bip_001LUpper_Arm;                             // 0x22C0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Bip_001LForearm;                               // 0x22CC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Bip_001RClavicle;                              // 0x22D8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Bip_001RUpper_Arm;                             // 0x22E4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Bip_001RForearm;                               // 0x22F0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Bip_001Spine_1;                                // 0x22FC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0660(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root_4;                              // 0x0668(0x0038)()
+	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_2;                   // 0x06A0(0x0138)()
+	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace_1;             // 0x07D8(0x0020)()
+	uint8                                         Pad_7F8[0x8];                                      // 0x07F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAnimNode_RBF                          AnimGraphNode_RBF;                                 // 0x0800(0x0150)()
+	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace_1;             // 0x0950(0x0020)()
+	struct FAnimNode_Root                         AnimGraphNode_Root_3;                              // 0x0970(0x0038)()
+	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose_1;                   // 0x09A8(0x0138)()
+	struct FAnimNode_CurveSource                  AnimGraphNode_CurveSource;                         // 0x0AE0(0x0040)()
+	struct FAnimNode_CurveFix                     AnimGraphNode_CurveFix;                            // 0x0B20(0x0030)()
+	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves_1;                     // 0x0B50(0x0060)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_4;                              // 0x0BB0(0x0060)()
+	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves;                       // 0x0C10(0x0060)()
+	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x0C70(0x00B0)()
+	struct FAnimNode_PoseSnapshot                 AnimGraphNode_PoseSnapshot;                        // 0x0D20(0x00B0)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_3;                              // 0x0DD0(0x0060)()
+	struct FAnimNode_Root                         AnimGraphNode_Root_2;                              // 0x0E30(0x0038)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_2;                              // 0x0E68(0x0060)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x0EC8(0x0060)()
+	struct FAnimNode_TwoWayBlend                  AnimGraphNode_TwoWayBlend;                         // 0x0F28(0x00C8)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0FF0(0x0090)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x1080(0x0060)()
+	struct FAnimNode_Root                         AnimGraphNode_Root_1;                              // 0x10E0(0x0038)()
+	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x1118(0x0138)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_9;                        // 0x1250(0x0128)()
+	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x1378(0x0020)()
+	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x1398(0x0020)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_8;                        // 0x13B8(0x0128)()
+	struct FAnimNode_RotationOffsetBlendSpace     AnimGraphNode_RotationOffsetBlendSpace;            // 0x14E0(0x01A8)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_7;                        // 0x1688(0x0128)()
+	struct FAnimNode_MorphTargetModifier          AnimGraphNode_MorphTargetModifier;                 // 0x17B0(0x0060)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_6;                        // 0x1810(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_5;                        // 0x1938(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_4;                        // 0x1A60(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_3;                        // 0x1B88(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_2;                        // 0x1CB0(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_1;                        // 0x1DD8(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone;                          // 0x1F00(0x0128)()
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x2028(0x0038)()
+	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer_3;                   // 0x2060(0x00C0)()
+	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer_2;                   // 0x2120(0x00C0)()
+	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer_1;                   // 0x21E0(0x00C0)()
+	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer;                     // 0x22A0(0x00C0)()
+	struct FVector2D                              LookXY;                                            // 0x2360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               LookFixHead;                                       // 0x2368(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               LookFixNeck;                                       // 0x2374(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          Enable_AimOffset;                                  // 0x2380(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2381[0x3];                                     // 0x2381(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               LookFixSpine;                                      // 0x2384(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	class UAimOffsetBlendSpace*                   AimOffset;                                         // 0x2390(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Enable_Stand;                                      // 0x2398(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2399[0x7];                                     // 0x2399(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimSequenceBase*                      Stand;                                             // 0x23A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          EnableSwitchPose;                                  // 0x23A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_23A9[0x7];                                     // 0x23A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPoseSnapshot                          CachePose;                                         // 0x23B0(0x0040)(Edit, BlueprintVisible, DisableEditOnInstance)
+	float                                         SwitchPoseTime;                                    // 0x23F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               Add_Bip_001LClavicle;                              // 0x23F4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Bip_001LUpper_Arm;                             // 0x2400(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Bip_001LForearm;                               // 0x240C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Bip_001RClavicle;                              // 0x2418(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Bip_001RUpper_Arm;                             // 0x2424(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Bip_001RForearm;                               // 0x2430(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Bip_001Spine_1;                                // 0x243C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_ABP_BaseRole_Seq_V2(int32 EntryPoint);
@@ -111,67 +111,68 @@ public:
 	}
 };
 static_assert(alignof(UABP_BaseRole_Seq_V2_C) == 0x000010, "Wrong alignment on UABP_BaseRole_Seq_V2_C");
-static_assert(sizeof(UABP_BaseRole_Seq_V2_C) == 0x002310, "Wrong size on UABP_BaseRole_Seq_V2_C");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, UberGraphFrame) == 0x000620, "Member 'UABP_BaseRole_Seq_V2_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root_4) == 0x000628, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root_4' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedInputPose_2) == 0x000660, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedInputPose_2' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ComponentToLocalSpace_1) == 0x000798, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ComponentToLocalSpace_1' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_RBF) == 0x0007C0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_RBF' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LocalToComponentSpace_1) == 0x000910, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LocalToComponentSpace_1' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root_3) == 0x000930, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root_3' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedInputPose_1) == 0x000968, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedInputPose_1' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_CurveSource) == 0x000AA0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_CurveSource' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_CurveFix) == 0x000AE0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_CurveFix' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_CombineCurves_1) == 0x000B10, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_CombineCurves_1' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Slot_3) == 0x000B70, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Slot_3' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_CombineCurves) == 0x000BD0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_CombineCurves' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_BlendListByBool) == 0x000C30, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_BlendListByBool' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_PoseSnapshot) == 0x000CE0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_PoseSnapshot' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Slot_2) == 0x000D90, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Slot_2' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root_2) == 0x000DF0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root_2' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Slot_1) == 0x000E28, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Slot_1' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Slot) == 0x000E88, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Slot' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_TwoWayBlend) == 0x000EE8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_TwoWayBlend' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_SequencePlayer) == 0x000FB0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_SequencePlayer' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root_1) == 0x001040, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root_1' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedInputPose) == 0x001078, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedInputPose' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_9) == 0x0011B0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_9' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LocalToComponentSpace) == 0x0012C8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LocalToComponentSpace' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ComponentToLocalSpace) == 0x0012E8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ComponentToLocalSpace' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_8) == 0x001308, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_8' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_RotationOffsetBlendSpace) == 0x001420, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_RotationOffsetBlendSpace' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_7) == 0x0015C8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_7' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_MorphTargetModifier) == 0x0016E0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_MorphTargetModifier' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_6) == 0x001740, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_6' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_5) == 0x001858, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_5' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_4) == 0x001970, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_4' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_3) == 0x001A88, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_3' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_2) == 0x001BA0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_2' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_1) == 0x001CB8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_1' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone) == 0x001DD0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root) == 0x001EE8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedAnimLayer_3) == 0x001F20, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedAnimLayer_3' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedAnimLayer_2) == 0x001FE0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedAnimLayer_2' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedAnimLayer_1) == 0x0020A0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedAnimLayer_1' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedAnimLayer) == 0x002160, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedAnimLayer' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, LookXY) == 0x002220, "Member 'UABP_BaseRole_Seq_V2_C::LookXY' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, LookFixHead) == 0x002228, "Member 'UABP_BaseRole_Seq_V2_C::LookFixHead' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, LookFixNeck) == 0x002234, "Member 'UABP_BaseRole_Seq_V2_C::LookFixNeck' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Enable_AimOffset) == 0x002240, "Member 'UABP_BaseRole_Seq_V2_C::Enable_AimOffset' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, LookFixSpine) == 0x002244, "Member 'UABP_BaseRole_Seq_V2_C::LookFixSpine' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AimOffset) == 0x002250, "Member 'UABP_BaseRole_Seq_V2_C::AimOffset' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Enable_Stand) == 0x002258, "Member 'UABP_BaseRole_Seq_V2_C::Enable_Stand' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Stand) == 0x002260, "Member 'UABP_BaseRole_Seq_V2_C::Stand' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, EnableSwitchPose) == 0x002268, "Member 'UABP_BaseRole_Seq_V2_C::EnableSwitchPose' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, CachePose) == 0x002270, "Member 'UABP_BaseRole_Seq_V2_C::CachePose' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, SwitchPoseTime) == 0x0022B0, "Member 'UABP_BaseRole_Seq_V2_C::SwitchPoseTime' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001LClavicle) == 0x0022B4, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001LClavicle' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001LUpper_Arm) == 0x0022C0, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001LUpper_Arm' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001LForearm) == 0x0022CC, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001LForearm' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001RClavicle) == 0x0022D8, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001RClavicle' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001RUpper_Arm) == 0x0022E4, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001RUpper_Arm' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001RForearm) == 0x0022F0, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001RForearm' has a wrong offset!");
-static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001Spine_1) == 0x0022FC, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001Spine_1' has a wrong offset!");
+static_assert(sizeof(UABP_BaseRole_Seq_V2_C) == 0x002450, "Wrong size on UABP_BaseRole_Seq_V2_C");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, UberGraphFrame) == 0x000660, "Member 'UABP_BaseRole_Seq_V2_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root_4) == 0x000668, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root_4' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedInputPose_2) == 0x0006A0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedInputPose_2' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ComponentToLocalSpace_1) == 0x0007D8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ComponentToLocalSpace_1' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_RBF) == 0x000800, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_RBF' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LocalToComponentSpace_1) == 0x000950, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LocalToComponentSpace_1' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root_3) == 0x000970, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root_3' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedInputPose_1) == 0x0009A8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedInputPose_1' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_CurveSource) == 0x000AE0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_CurveSource' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_CurveFix) == 0x000B20, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_CurveFix' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_CombineCurves_1) == 0x000B50, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_CombineCurves_1' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Slot_4) == 0x000BB0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Slot_4' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_CombineCurves) == 0x000C10, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_CombineCurves' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_BlendListByBool) == 0x000C70, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_BlendListByBool' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_PoseSnapshot) == 0x000D20, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_PoseSnapshot' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Slot_3) == 0x000DD0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Slot_3' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root_2) == 0x000E30, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root_2' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Slot_2) == 0x000E68, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Slot_2' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Slot_1) == 0x000EC8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Slot_1' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_TwoWayBlend) == 0x000F28, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_TwoWayBlend' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_SequencePlayer) == 0x000FF0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_SequencePlayer' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Slot) == 0x001080, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Slot' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root_1) == 0x0010E0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root_1' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedInputPose) == 0x001118, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedInputPose' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_9) == 0x001250, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_9' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LocalToComponentSpace) == 0x001378, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LocalToComponentSpace' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ComponentToLocalSpace) == 0x001398, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ComponentToLocalSpace' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_8) == 0x0013B8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_8' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_RotationOffsetBlendSpace) == 0x0014E0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_RotationOffsetBlendSpace' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_7) == 0x001688, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_7' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_MorphTargetModifier) == 0x0017B0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_MorphTargetModifier' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_6) == 0x001810, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_6' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_5) == 0x001938, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_5' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_4) == 0x001A60, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_4' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_3) == 0x001B88, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_3' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_2) == 0x001CB0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_2' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone_1) == 0x001DD8, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone_1' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_ModifyBone) == 0x001F00, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_ModifyBone' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_Root) == 0x002028, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_Root' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedAnimLayer_3) == 0x002060, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedAnimLayer_3' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedAnimLayer_2) == 0x002120, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedAnimLayer_2' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedAnimLayer_1) == 0x0021E0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedAnimLayer_1' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AnimGraphNode_LinkedAnimLayer) == 0x0022A0, "Member 'UABP_BaseRole_Seq_V2_C::AnimGraphNode_LinkedAnimLayer' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, LookXY) == 0x002360, "Member 'UABP_BaseRole_Seq_V2_C::LookXY' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, LookFixHead) == 0x002368, "Member 'UABP_BaseRole_Seq_V2_C::LookFixHead' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, LookFixNeck) == 0x002374, "Member 'UABP_BaseRole_Seq_V2_C::LookFixNeck' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Enable_AimOffset) == 0x002380, "Member 'UABP_BaseRole_Seq_V2_C::Enable_AimOffset' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, LookFixSpine) == 0x002384, "Member 'UABP_BaseRole_Seq_V2_C::LookFixSpine' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, AimOffset) == 0x002390, "Member 'UABP_BaseRole_Seq_V2_C::AimOffset' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Enable_Stand) == 0x002398, "Member 'UABP_BaseRole_Seq_V2_C::Enable_Stand' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Stand) == 0x0023A0, "Member 'UABP_BaseRole_Seq_V2_C::Stand' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, EnableSwitchPose) == 0x0023A8, "Member 'UABP_BaseRole_Seq_V2_C::EnableSwitchPose' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, CachePose) == 0x0023B0, "Member 'UABP_BaseRole_Seq_V2_C::CachePose' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, SwitchPoseTime) == 0x0023F0, "Member 'UABP_BaseRole_Seq_V2_C::SwitchPoseTime' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001LClavicle) == 0x0023F4, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001LClavicle' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001LUpper_Arm) == 0x002400, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001LUpper_Arm' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001LForearm) == 0x00240C, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001LForearm' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001RClavicle) == 0x002418, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001RClavicle' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001RUpper_Arm) == 0x002424, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001RUpper_Arm' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001RForearm) == 0x002430, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001RForearm' has a wrong offset!");
+static_assert(offsetof(UABP_BaseRole_Seq_V2_C, Add_Bip_001Spine_1) == 0x00243C, "Member 'UABP_BaseRole_Seq_V2_C::Add_Bip_001Spine_1' has a wrong offset!");
 
 }
 

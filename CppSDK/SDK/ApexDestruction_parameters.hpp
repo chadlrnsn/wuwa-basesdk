@@ -16,6 +16,20 @@
 namespace SDK::Params
 {
 
+// Function ApexDestruction.DestructibleComponent.AddForceToChunk
+// 0x0010 (0x0010 - 0x0000)
+struct DestructibleComponent_AddForceToChunk final
+{
+public:
+	struct FVector                                Force;                                             // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAccelChange;                                      // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(DestructibleComponent_AddForceToChunk) == 0x000004, "Wrong alignment on DestructibleComponent_AddForceToChunk");
+static_assert(sizeof(DestructibleComponent_AddForceToChunk) == 0x000010, "Wrong size on DestructibleComponent_AddForceToChunk");
+static_assert(offsetof(DestructibleComponent_AddForceToChunk, Force) == 0x000000, "Member 'DestructibleComponent_AddForceToChunk::Force' has a wrong offset!");
+static_assert(offsetof(DestructibleComponent_AddForceToChunk, bAccelChange) == 0x00000C, "Member 'DestructibleComponent_AddForceToChunk::bAccelChange' has a wrong offset!");
+
 // Function ApexDestruction.DestructibleComponent.ApplyDamage
 // 0x0020 (0x0020 - 0x0000)
 struct DestructibleComponent_ApplyDamage final

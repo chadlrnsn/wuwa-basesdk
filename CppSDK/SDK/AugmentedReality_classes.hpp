@@ -1233,15 +1233,15 @@ static_assert(sizeof(AARSkyLight) == 0x0002D0, "Wrong size on AARSkyLight");
 static_assert(offsetof(AARSkyLight, CaptureProbe) == 0x0002C0, "Member 'AARSkyLight::CaptureProbe' has a wrong offset!");
 
 // Class AugmentedReality.ARTexture
-// 0x0020 (0x0128 - 0x0108)
+// 0x0020 (0x0158 - 0x0138)
 class UARTexture : public UTexture
 {
 public:
-	EARTextureType                                TextureType;                                       // 0x0108(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Timestamp;                                         // 0x010C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  ExternalTextureGuid;                               // 0x0110(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              Size;                                              // 0x0120(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EARTextureType                                TextureType;                                       // 0x0138(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_139[0x3];                                      // 0x0139(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Timestamp;                                         // 0x013C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  ExternalTextureGuid;                               // 0x0140(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Size;                                              // 0x0150(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1254,14 +1254,14 @@ public:
 	}
 };
 static_assert(alignof(UARTexture) == 0x000008, "Wrong alignment on UARTexture");
-static_assert(sizeof(UARTexture) == 0x000128, "Wrong size on UARTexture");
-static_assert(offsetof(UARTexture, TextureType) == 0x000108, "Member 'UARTexture::TextureType' has a wrong offset!");
-static_assert(offsetof(UARTexture, Timestamp) == 0x00010C, "Member 'UARTexture::Timestamp' has a wrong offset!");
-static_assert(offsetof(UARTexture, ExternalTextureGuid) == 0x000110, "Member 'UARTexture::ExternalTextureGuid' has a wrong offset!");
-static_assert(offsetof(UARTexture, Size) == 0x000120, "Member 'UARTexture::Size' has a wrong offset!");
+static_assert(sizeof(UARTexture) == 0x000158, "Wrong size on UARTexture");
+static_assert(offsetof(UARTexture, TextureType) == 0x000138, "Member 'UARTexture::TextureType' has a wrong offset!");
+static_assert(offsetof(UARTexture, Timestamp) == 0x00013C, "Member 'UARTexture::Timestamp' has a wrong offset!");
+static_assert(offsetof(UARTexture, ExternalTextureGuid) == 0x000140, "Member 'UARTexture::ExternalTextureGuid' has a wrong offset!");
+static_assert(offsetof(UARTexture, Size) == 0x000150, "Member 'UARTexture::Size' has a wrong offset!");
 
 // Class AugmentedReality.ARTextureCameraImage
-// 0x0000 (0x0128 - 0x0128)
+// 0x0000 (0x0158 - 0x0158)
 class UARTextureCameraImage final : public UARTexture
 {
 public:
@@ -1275,17 +1275,17 @@ public:
 	}
 };
 static_assert(alignof(UARTextureCameraImage) == 0x000008, "Wrong alignment on UARTextureCameraImage");
-static_assert(sizeof(UARTextureCameraImage) == 0x000128, "Wrong size on UARTextureCameraImage");
+static_assert(sizeof(UARTextureCameraImage) == 0x000158, "Wrong size on UARTextureCameraImage");
 
 // Class AugmentedReality.ARTextureCameraDepth
-// 0x0008 (0x0130 - 0x0128)
+// 0x0008 (0x0160 - 0x0158)
 class UARTextureCameraDepth final : public UARTexture
 {
 public:
-	EARDepthQuality                               DepthQuality;                                      // 0x0128(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EARDepthAccuracy                              DepthAccuracy;                                     // 0x0129(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsTemporallySmoothed;                             // 0x012A(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12B[0x5];                                      // 0x012B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EARDepthQuality                               DepthQuality;                                      // 0x0158(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EARDepthAccuracy                              DepthAccuracy;                                     // 0x0159(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsTemporallySmoothed;                             // 0x015A(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15B[0x5];                                      // 0x015B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1298,21 +1298,21 @@ public:
 	}
 };
 static_assert(alignof(UARTextureCameraDepth) == 0x000008, "Wrong alignment on UARTextureCameraDepth");
-static_assert(sizeof(UARTextureCameraDepth) == 0x000130, "Wrong size on UARTextureCameraDepth");
-static_assert(offsetof(UARTextureCameraDepth, DepthQuality) == 0x000128, "Member 'UARTextureCameraDepth::DepthQuality' has a wrong offset!");
-static_assert(offsetof(UARTextureCameraDepth, DepthAccuracy) == 0x000129, "Member 'UARTextureCameraDepth::DepthAccuracy' has a wrong offset!");
-static_assert(offsetof(UARTextureCameraDepth, bIsTemporallySmoothed) == 0x00012A, "Member 'UARTextureCameraDepth::bIsTemporallySmoothed' has a wrong offset!");
+static_assert(sizeof(UARTextureCameraDepth) == 0x000160, "Wrong size on UARTextureCameraDepth");
+static_assert(offsetof(UARTextureCameraDepth, DepthQuality) == 0x000158, "Member 'UARTextureCameraDepth::DepthQuality' has a wrong offset!");
+static_assert(offsetof(UARTextureCameraDepth, DepthAccuracy) == 0x000159, "Member 'UARTextureCameraDepth::DepthAccuracy' has a wrong offset!");
+static_assert(offsetof(UARTextureCameraDepth, bIsTemporallySmoothed) == 0x00015A, "Member 'UARTextureCameraDepth::bIsTemporallySmoothed' has a wrong offset!");
 
 // Class AugmentedReality.AREnvironmentCaptureProbeTexture
-// 0x0020 (0x0180 - 0x0160)
+// 0x0020 (0x01B0 - 0x0190)
 class UAREnvironmentCaptureProbeTexture final : public UTextureCube
 {
 public:
-	EARTextureType                                TextureType;                                       // 0x0160(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_161[0x3];                                      // 0x0161(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Timestamp;                                         // 0x0164(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  ExternalTextureGuid;                               // 0x0168(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              Size;                                              // 0x0178(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EARTextureType                                TextureType;                                       // 0x0190(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_191[0x3];                                      // 0x0191(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Timestamp;                                         // 0x0194(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  ExternalTextureGuid;                               // 0x0198(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Size;                                              // 0x01A8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1325,11 +1325,11 @@ public:
 	}
 };
 static_assert(alignof(UAREnvironmentCaptureProbeTexture) == 0x000008, "Wrong alignment on UAREnvironmentCaptureProbeTexture");
-static_assert(sizeof(UAREnvironmentCaptureProbeTexture) == 0x000180, "Wrong size on UAREnvironmentCaptureProbeTexture");
-static_assert(offsetof(UAREnvironmentCaptureProbeTexture, TextureType) == 0x000160, "Member 'UAREnvironmentCaptureProbeTexture::TextureType' has a wrong offset!");
-static_assert(offsetof(UAREnvironmentCaptureProbeTexture, Timestamp) == 0x000164, "Member 'UAREnvironmentCaptureProbeTexture::Timestamp' has a wrong offset!");
-static_assert(offsetof(UAREnvironmentCaptureProbeTexture, ExternalTextureGuid) == 0x000168, "Member 'UAREnvironmentCaptureProbeTexture::ExternalTextureGuid' has a wrong offset!");
-static_assert(offsetof(UAREnvironmentCaptureProbeTexture, Size) == 0x000178, "Member 'UAREnvironmentCaptureProbeTexture::Size' has a wrong offset!");
+static_assert(sizeof(UAREnvironmentCaptureProbeTexture) == 0x0001B0, "Wrong size on UAREnvironmentCaptureProbeTexture");
+static_assert(offsetof(UAREnvironmentCaptureProbeTexture, TextureType) == 0x000190, "Member 'UAREnvironmentCaptureProbeTexture::TextureType' has a wrong offset!");
+static_assert(offsetof(UAREnvironmentCaptureProbeTexture, Timestamp) == 0x000194, "Member 'UAREnvironmentCaptureProbeTexture::Timestamp' has a wrong offset!");
+static_assert(offsetof(UAREnvironmentCaptureProbeTexture, ExternalTextureGuid) == 0x000198, "Member 'UAREnvironmentCaptureProbeTexture::ExternalTextureGuid' has a wrong offset!");
+static_assert(offsetof(UAREnvironmentCaptureProbeTexture, Size) == 0x0001A8, "Member 'UAREnvironmentCaptureProbeTexture::Size' has a wrong offset!");
 
 // Class AugmentedReality.ARTraceResultDummy
 // 0x0000 (0x0030 - 0x0030)

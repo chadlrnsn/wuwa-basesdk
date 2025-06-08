@@ -17,7 +17,7 @@
 namespace SDK
 {
 
-// Function BPF_CameraHelper.BPF_CameraHelper_C.GetCameraTransform
+// Function BPF_CameraHelper.BPF_CameraHelper_C.D_GetCameraTransform
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -25,14 +25,14 @@ namespace SDK
 // bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // struct FTransformDouble                 Transform                                              (Parm, OutParm, IsPlainOldData, NoDestructor)
 
-void UBPF_CameraHelper_C::GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform)
+void UBPF_CameraHelper_C::D_GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BPF_CameraHelper_C", "GetCameraTransform");
+		Func = StaticClass()->GetFunction("BPF_CameraHelper_C", "D_GetCameraTransform");
 
-	Params::BPF_CameraHelper_C_GetCameraTransform Parms{};
+	Params::BPF_CameraHelper_C_D_GetCameraTransform Parms{};
 
 	Parms.PlayerIndex = PlayerIndex;
 	Parms.__WorldContext = __WorldContext;
@@ -47,7 +47,7 @@ void UBPF_CameraHelper_C::GetCameraTransform(int32 PlayerIndex, class UObject* _
 }
 
 
-// Function BPF_CameraHelper.BPF_CameraHelper_C.GetCameraLocation
+// Function BPF_CameraHelper.BPF_CameraHelper_C.D_GetCameraLocation
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -55,14 +55,14 @@ void UBPF_CameraHelper_C::GetCameraTransform(int32 PlayerIndex, class UObject* _
 // bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // struct FVectorDouble                    Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPF_CameraHelper_C::GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location)
+void UBPF_CameraHelper_C::D_GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BPF_CameraHelper_C", "GetCameraLocation");
+		Func = StaticClass()->GetFunction("BPF_CameraHelper_C", "D_GetCameraLocation");
 
-	Params::BPF_CameraHelper_C_GetCameraLocation Parms{};
+	Params::BPF_CameraHelper_C_D_GetCameraLocation Parms{};
 
 	Parms.PlayerIndex = PlayerIndex;
 	Parms.__WorldContext = __WorldContext;
@@ -107,7 +107,7 @@ void UBPF_CameraHelper_C::GetCameraRotator(int32 PlayerIndex, class UObject* __W
 }
 
 
-// Function BPF_CameraHelper.BPF_CameraHelper_C.D_GetCameraLocation
+// Function BPF_CameraHelper.BPF_CameraHelper_C.GetCameraLocation
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -115,14 +115,14 @@ void UBPF_CameraHelper_C::GetCameraRotator(int32 PlayerIndex, class UObject* __W
 // bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // struct FVectorDouble                    Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPF_CameraHelper_C::D_GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location)
+void UBPF_CameraHelper_C::GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BPF_CameraHelper_C", "D_GetCameraLocation");
+		Func = StaticClass()->GetFunction("BPF_CameraHelper_C", "GetCameraLocation");
 
-	Params::BPF_CameraHelper_C_D_GetCameraLocation Parms{};
+	Params::BPF_CameraHelper_C_GetCameraLocation Parms{};
 
 	Parms.PlayerIndex = PlayerIndex;
 	Parms.__WorldContext = __WorldContext;
@@ -137,7 +137,7 @@ void UBPF_CameraHelper_C::D_GetCameraLocation(int32 PlayerIndex, class UObject* 
 }
 
 
-// Function BPF_CameraHelper.BPF_CameraHelper_C.D_GetCameraTransform
+// Function BPF_CameraHelper.BPF_CameraHelper_C.GetCameraTransform
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -145,14 +145,14 @@ void UBPF_CameraHelper_C::D_GetCameraLocation(int32 PlayerIndex, class UObject* 
 // bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // struct FTransformDouble                 Transform                                              (Parm, OutParm, IsPlainOldData, NoDestructor)
 
-void UBPF_CameraHelper_C::D_GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform)
+void UBPF_CameraHelper_C::GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BPF_CameraHelper_C", "D_GetCameraTransform");
+		Func = StaticClass()->GetFunction("BPF_CameraHelper_C", "GetCameraTransform");
 
-	Params::BPF_CameraHelper_C_D_GetCameraTransform Parms{};
+	Params::BPF_CameraHelper_C_GetCameraTransform Parms{};
 
 	Parms.PlayerIndex = PlayerIndex;
 	Parms.__WorldContext = __WorldContext;

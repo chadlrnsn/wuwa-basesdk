@@ -12,8 +12,8 @@
 
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroGAS_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "KuroGAS_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -1492,19 +1492,6 @@ static_assert(alignof(GASBPLibrary_GetNetworkGameplayTagNodeIndexHash) == 0x0000
 static_assert(sizeof(GASBPLibrary_GetNetworkGameplayTagNodeIndexHash) == 0x000008, "Wrong size on GASBPLibrary_GetNetworkGameplayTagNodeIndexHash");
 static_assert(offsetof(GASBPLibrary_GetNetworkGameplayTagNodeIndexHash, ReturnValue) == 0x000000, "Member 'GASBPLibrary_GetNetworkGameplayTagNodeIndexHash::ReturnValue' has a wrong offset!");
 
-// Function KuroGAS.GASBPLibrary.GetOriginalGameplayTag
-// 0x0020 (0x0020 - 0x0000)
-struct GASBPLibrary_GetOriginalGameplayTag final
-{
-public:
-	class FString                                 Str;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GASBPLibrary_GetOriginalGameplayTag) == 0x000008, "Wrong alignment on GASBPLibrary_GetOriginalGameplayTag");
-static_assert(sizeof(GASBPLibrary_GetOriginalGameplayTag) == 0x000020, "Wrong size on GASBPLibrary_GetOriginalGameplayTag");
-static_assert(offsetof(GASBPLibrary_GetOriginalGameplayTag, Str) == 0x000000, "Member 'GASBPLibrary_GetOriginalGameplayTag::Str' has a wrong offset!");
-static_assert(offsetof(GASBPLibrary_GetOriginalGameplayTag, ReturnValue) == 0x000010, "Member 'GASBPLibrary_GetOriginalGameplayTag::ReturnValue' has a wrong offset!");
-
 // Function KuroGAS.GASBPLibrary.GetOwnedGameplayTags
 // 0x0028 (0x0028 - 0x0000)
 struct GASBPLibrary_GetOwnedGameplayTags final
@@ -1517,6 +1504,19 @@ static_assert(alignof(GASBPLibrary_GetOwnedGameplayTags) == 0x000008, "Wrong ali
 static_assert(sizeof(GASBPLibrary_GetOwnedGameplayTags) == 0x000028, "Wrong size on GASBPLibrary_GetOwnedGameplayTags");
 static_assert(offsetof(GASBPLibrary_GetOwnedGameplayTags, ASC) == 0x000000, "Member 'GASBPLibrary_GetOwnedGameplayTags::ASC' has a wrong offset!");
 static_assert(offsetof(GASBPLibrary_GetOwnedGameplayTags, TargetContainer) == 0x000008, "Member 'GASBPLibrary_GetOwnedGameplayTags::TargetContainer' has a wrong offset!");
+
+// Function KuroGAS.GASBPLibrary.GetUglyTag
+// 0x0020 (0x0020 - 0x0000)
+struct GASBPLibrary_GetUglyTag final
+{
+public:
+	class FString                                 Str;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GASBPLibrary_GetUglyTag) == 0x000008, "Wrong alignment on GASBPLibrary_GetUglyTag");
+static_assert(sizeof(GASBPLibrary_GetUglyTag) == 0x000020, "Wrong size on GASBPLibrary_GetUglyTag");
+static_assert(offsetof(GASBPLibrary_GetUglyTag, Str) == 0x000000, "Member 'GASBPLibrary_GetUglyTag::Str' has a wrong offset!");
+static_assert(offsetof(GASBPLibrary_GetUglyTag, ReturnValue) == 0x000010, "Member 'GASBPLibrary_GetUglyTag::ReturnValue' has a wrong offset!");
 
 // Function KuroGAS.GASBPLibrary.IsActiveBuffInhibited
 // 0x0008 (0x0008 - 0x0000)

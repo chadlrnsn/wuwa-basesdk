@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EBulletEffectParam.EBulletEffectParam
-// NumValues: 0x0006
+// NumValues: 0x0007
 enum class EBulletEffectParam : uint8
 {
 	NewEnumerator1                           = 0,
@@ -23,7 +23,8 @@ enum class EBulletEffectParam : uint8
 	NewEnumerator2                           = 2,
 	NewEnumerator3                           = 3,
 	NewEnumerator4                           = 4,
-	EBulletEffectParam_MAX                   = 5,
+	NewEnumerator5                           = 5,
+	EBulletEffectParam_MAX                   = 6,
 };
 
 }

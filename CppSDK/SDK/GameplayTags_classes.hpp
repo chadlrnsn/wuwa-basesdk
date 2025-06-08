@@ -262,7 +262,7 @@ static_assert(sizeof(UEditableGameplayTagQueryExpression_NoExprMatch) == 0x00004
 static_assert(offsetof(UEditableGameplayTagQueryExpression_NoExprMatch, Expressions) == 0x000030, "Member 'UEditableGameplayTagQueryExpression_NoExprMatch::Expressions' has a wrong offset!");
 
 // Class GameplayTags.GameplayTagsManager
-// 0x0328 (0x0358 - 0x0030)
+// 0x02D8 (0x0308 - 0x0030)
 class UGameplayTagsManager final : public UObject
 {
 public:
@@ -270,7 +270,7 @@ public:
 	TArray<struct FGameplayTagSource>             TagSources;                                        // 0x00C8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_D8[0xE0];                                      // 0x00D8(0x00E0)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UDataTable*>                     GameplayTagTables;                                 // 0x01B8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1C8[0x190];                                    // 0x01C8(0x0190)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C8[0x140];                                    // 0x01C8(0x0140)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -283,7 +283,7 @@ public:
 	}
 };
 static_assert(alignof(UGameplayTagsManager) == 0x000008, "Wrong alignment on UGameplayTagsManager");
-static_assert(sizeof(UGameplayTagsManager) == 0x000358, "Wrong size on UGameplayTagsManager");
+static_assert(sizeof(UGameplayTagsManager) == 0x000308, "Wrong size on UGameplayTagsManager");
 static_assert(offsetof(UGameplayTagsManager, TagSources) == 0x0000C8, "Member 'UGameplayTagsManager::TagSources' has a wrong offset!");
 static_assert(offsetof(UGameplayTagsManager, GameplayTagTables) == 0x0001B8, "Member 'UGameplayTagsManager::GameplayTagTables' has a wrong offset!");
 

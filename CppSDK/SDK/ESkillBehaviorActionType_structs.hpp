@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ESkillBehaviorActionType.ESkillBehaviorActionType
-// NumValues: 0x000E
+// NumValues: 0x0010
 enum class ESkillBehaviorActionType : uint8
 {
 	NewEnumerator0                           = 0,
@@ -31,7 +31,9 @@ enum class ESkillBehaviorActionType : uint8
 	NewEnumerator10                          = 10,
 	NewEnumerator11                          = 11,
 	NewEnumerator12                          = 12,
-	ESkillBehaviorActionType_MAX             = 13,
+	NewEnumerator13                          = 13,
+	NewEnumerator14                          = 14,
+	ESkillBehaviorActionType_MAX             = 15,
 };
 
 }

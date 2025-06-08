@@ -15,11 +15,12 @@ namespace SDK
 {
 
 // UserDefinedEnum ECommonQteType.ECommonQteType
-// NumValues: 0x0002
+// NumValues: 0x0003
 enum class ECommonQteType : uint8
 {
 	NewEnumerator0                           = 0,
-	ECommonQteType_MAX                       = 1,
+	NewEnumerator2                           = 1,
+	ECommonQteType_MAX                       = 2,
 };
 
 }

@@ -44,21 +44,22 @@ static_assert(offsetof(ADestructibleActor, DestructibleComponent) == 0x0002B0, "
 static_assert(offsetof(ADestructibleActor, OnActorFracture) == 0x0002B8, "Member 'ADestructibleActor::OnActorFracture' has a wrong offset!");
 
 // Class ApexDestruction.DestructibleComponent
-// 0x00E0 (0x08E0 - 0x0800)
+// 0x00E0 (0x08F0 - 0x0810)
 class UDestructibleComponent final : public USkinnedMeshComponent
 {
 public:
-	uint8                                         bFractureEffectOverride : 1;                       // 0x0800(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_801[0x7];                                      // 0x0801(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FFractureEffect>                FractureEffects;                                   // 0x0808(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, EditFixedSize, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bEnableHardSleeping;                               // 0x0818(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_819[0x3];                                      // 0x0819(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LargeChunkThreshold;                               // 0x081C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_820[0x10];                                     // 0x0820(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(struct FVector& HitPoint, struct FVector& HitDirection)> OnComponentFracture;                               // 0x0830(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_840[0xA0];                                     // 0x0840(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         bFractureEffectOverride : 1;                       // 0x0810(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_811[0x7];                                      // 0x0811(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FFractureEffect>                FractureEffects;                                   // 0x0818(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, EditFixedSize, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bEnableHardSleeping;                               // 0x0828(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_829[0x3];                                      // 0x0829(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LargeChunkThreshold;                               // 0x082C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_830[0x10];                                     // 0x0830(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(struct FVector& HitPoint, struct FVector& HitDirection)> OnComponentFracture;                               // 0x0840(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_850[0xA0];                                     // 0x0850(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	void AddForceToChunk(const struct FVector& Force, bool bAccelChange);
 	void ApplyDamage(float DamageAmount, const struct FVector& HitLocation, const struct FVector& ImpulseDir, float ImpulseStrength);
 	void ApplyRadiusDamage(float BaseDamage, const struct FVector& HurtOrigin, float DamageRadius, float ImpulseStrength, bool bFullDamage);
 	void D_ApplyDamage(float DamageAmount, const struct FVectorDouble& HitLocation, const struct FVectorDouble& ImpulseDir, float ImpulseStrength);
@@ -77,11 +78,11 @@ public:
 	}
 };
 static_assert(alignof(UDestructibleComponent) == 0x000010, "Wrong alignment on UDestructibleComponent");
-static_assert(sizeof(UDestructibleComponent) == 0x0008E0, "Wrong size on UDestructibleComponent");
-static_assert(offsetof(UDestructibleComponent, FractureEffects) == 0x000808, "Member 'UDestructibleComponent::FractureEffects' has a wrong offset!");
-static_assert(offsetof(UDestructibleComponent, bEnableHardSleeping) == 0x000818, "Member 'UDestructibleComponent::bEnableHardSleeping' has a wrong offset!");
-static_assert(offsetof(UDestructibleComponent, LargeChunkThreshold) == 0x00081C, "Member 'UDestructibleComponent::LargeChunkThreshold' has a wrong offset!");
-static_assert(offsetof(UDestructibleComponent, OnComponentFracture) == 0x000830, "Member 'UDestructibleComponent::OnComponentFracture' has a wrong offset!");
+static_assert(sizeof(UDestructibleComponent) == 0x0008F0, "Wrong size on UDestructibleComponent");
+static_assert(offsetof(UDestructibleComponent, FractureEffects) == 0x000818, "Member 'UDestructibleComponent::FractureEffects' has a wrong offset!");
+static_assert(offsetof(UDestructibleComponent, bEnableHardSleeping) == 0x000828, "Member 'UDestructibleComponent::bEnableHardSleeping' has a wrong offset!");
+static_assert(offsetof(UDestructibleComponent, LargeChunkThreshold) == 0x00082C, "Member 'UDestructibleComponent::LargeChunkThreshold' has a wrong offset!");
+static_assert(offsetof(UDestructibleComponent, OnComponentFracture) == 0x000840, "Member 'UDestructibleComponent::OnComponentFracture' has a wrong offset!");
 
 // Class ApexDestruction.DestructibleFractureSettings
 // 0x0090 (0x00C0 - 0x0030)
@@ -120,14 +121,14 @@ static_assert(offsetof(UDestructibleFractureSettings, Materials) == 0x000078, "M
 static_assert(offsetof(UDestructibleFractureSettings, ChunkParameters) == 0x000088, "Member 'UDestructibleFractureSettings::ChunkParameters' has a wrong offset!");
 
 // Class ApexDestruction.DestructibleMesh
-// 0x00A8 (0x0520 - 0x0478)
+// 0x00A8 (0x0548 - 0x04A0)
 class UDestructibleMesh final : public USkeletalMesh
 {
 public:
-	struct FDestructibleParameters                DefaultDestructibleParameters;                     // 0x0478(0x0088)(Edit, NativeAccessSpecifierPublic)
-	TArray<struct FFractureEffect>                FractureEffects;                                   // 0x0500(0x0010)(Edit, EditFixedSize, ZeroConstructor, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            StaticMeshProxy;                                   // 0x0510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_518[0x8];                                      // 0x0518(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FDestructibleParameters                DefaultDestructibleParameters;                     // 0x04A0(0x0088)(Edit, NativeAccessSpecifierPublic)
+	TArray<struct FFractureEffect>                FractureEffects;                                   // 0x0528(0x0010)(Edit, EditFixedSize, ZeroConstructor, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            StaticMeshProxy;                                   // 0x0538(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_540[0x8];                                      // 0x0540(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -140,10 +141,10 @@ public:
 	}
 };
 static_assert(alignof(UDestructibleMesh) == 0x000008, "Wrong alignment on UDestructibleMesh");
-static_assert(sizeof(UDestructibleMesh) == 0x000520, "Wrong size on UDestructibleMesh");
-static_assert(offsetof(UDestructibleMesh, DefaultDestructibleParameters) == 0x000478, "Member 'UDestructibleMesh::DefaultDestructibleParameters' has a wrong offset!");
-static_assert(offsetof(UDestructibleMesh, FractureEffects) == 0x000500, "Member 'UDestructibleMesh::FractureEffects' has a wrong offset!");
-static_assert(offsetof(UDestructibleMesh, StaticMeshProxy) == 0x000510, "Member 'UDestructibleMesh::StaticMeshProxy' has a wrong offset!");
+static_assert(sizeof(UDestructibleMesh) == 0x000548, "Wrong size on UDestructibleMesh");
+static_assert(offsetof(UDestructibleMesh, DefaultDestructibleParameters) == 0x0004A0, "Member 'UDestructibleMesh::DefaultDestructibleParameters' has a wrong offset!");
+static_assert(offsetof(UDestructibleMesh, FractureEffects) == 0x000528, "Member 'UDestructibleMesh::FractureEffects' has a wrong offset!");
+static_assert(offsetof(UDestructibleMesh, StaticMeshProxy) == 0x000538, "Member 'UDestructibleMesh::StaticMeshProxy' has a wrong offset!");
 
 }
 

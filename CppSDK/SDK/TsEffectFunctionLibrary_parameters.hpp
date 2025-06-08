@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "SEffectVectorParameter_structs.hpp"
 #include "EEffectPlay_structs.hpp"
 #include "EEffectType_structs.hpp"
-#include "SEffectColorParameter_structs.hpp"
+#include "SEffectFloatParameter_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "SEffectFloatParameter_structs.hpp"
+#include "SEffectColorParameter_structs.hpp"
+#include "SEffectVectorParameter_structs.hpp"
 
 
 namespace SDK::Params

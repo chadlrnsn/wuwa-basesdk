@@ -10,15 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_FloatingStaticMesh.BP_FloatingStaticMesh_C
-// 0x0020 (0x0350 - 0x0330)
+// 0x00F0 (0x0420 - 0x0330)
 class ABP_FloatingStaticMesh_C final : public AKuroFloatingStaticMesh
 {
 public:
@@ -26,11 +27,19 @@ public:
 	class UKuroVirtualAttachmentParentComponent*  KuroVirtualAttachmentParent;                       // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UStaticMeshComponent*                   StaticMeshComp;                                    // 0x0340(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        Scene;                                             // 0x0348(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          使用材质参数;                                      // 0x0350(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_351[0x7];                                      // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, float>                      FloatParameters;                                   // 0x0358(0x0050)(Edit, BlueprintVisible)
+	TMap<class FName, struct FLinearColor>        ColorParameters;                                   // 0x03A8(0x0050)(Edit, BlueprintVisible)
+	struct FLinearColor                           EmissionDayColor;                                  // 0x03F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           EmissionColor;                                     // 0x0408(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseWholeDayEmission;                               // 0x0418(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_FloatingStaticMesh(int32 EntryPoint);
 	void ReceiveBeginPlay();
 	void UserConstructionScript();
+	void SetMaterialParams();
 
 public:
 	static class UClass* StaticClass()
@@ -43,11 +52,17 @@ public:
 	}
 };
 static_assert(alignof(ABP_FloatingStaticMesh_C) == 0x000008, "Wrong alignment on ABP_FloatingStaticMesh_C");
-static_assert(sizeof(ABP_FloatingStaticMesh_C) == 0x000350, "Wrong size on ABP_FloatingStaticMesh_C");
+static_assert(sizeof(ABP_FloatingStaticMesh_C) == 0x000420, "Wrong size on ABP_FloatingStaticMesh_C");
 static_assert(offsetof(ABP_FloatingStaticMesh_C, UberGraphFrame) == 0x000330, "Member 'ABP_FloatingStaticMesh_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_FloatingStaticMesh_C, KuroVirtualAttachmentParent) == 0x000338, "Member 'ABP_FloatingStaticMesh_C::KuroVirtualAttachmentParent' has a wrong offset!");
 static_assert(offsetof(ABP_FloatingStaticMesh_C, StaticMeshComp) == 0x000340, "Member 'ABP_FloatingStaticMesh_C::StaticMeshComp' has a wrong offset!");
 static_assert(offsetof(ABP_FloatingStaticMesh_C, Scene) == 0x000348, "Member 'ABP_FloatingStaticMesh_C::Scene' has a wrong offset!");
+static_assert(offsetof(ABP_FloatingStaticMesh_C, 使用材质参数) == 0x000350, "Member 'ABP_FloatingStaticMesh_C::使用材质参数' has a wrong offset!");
+static_assert(offsetof(ABP_FloatingStaticMesh_C, FloatParameters) == 0x000358, "Member 'ABP_FloatingStaticMesh_C::FloatParameters' has a wrong offset!");
+static_assert(offsetof(ABP_FloatingStaticMesh_C, ColorParameters) == 0x0003A8, "Member 'ABP_FloatingStaticMesh_C::ColorParameters' has a wrong offset!");
+static_assert(offsetof(ABP_FloatingStaticMesh_C, EmissionDayColor) == 0x0003F8, "Member 'ABP_FloatingStaticMesh_C::EmissionDayColor' has a wrong offset!");
+static_assert(offsetof(ABP_FloatingStaticMesh_C, EmissionColor) == 0x000408, "Member 'ABP_FloatingStaticMesh_C::EmissionColor' has a wrong offset!");
+static_assert(offsetof(ABP_FloatingStaticMesh_C, UseWholeDayEmission) == 0x000418, "Member 'ABP_FloatingStaticMesh_C::UseWholeDayEmission' has a wrong offset!");
 
 }
 

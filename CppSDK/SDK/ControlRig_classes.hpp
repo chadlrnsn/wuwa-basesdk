@@ -11,15 +11,15 @@
 #include "Basic.hpp"
 
 #include "ControlRig_structs.hpp"
-#include "PropertyPath_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "PropertyPath_structs.hpp"
+#include "MovieSceneTracks_structs.hpp"
+#include "MovieSceneTracks_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "LevelSequence_classes.hpp"
 #include "AnimGraphRuntime_classes.hpp"
-#include "MovieSceneTracks_structs.hpp"
-#include "MovieSceneTracks_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
@@ -107,7 +107,7 @@ static_assert(alignof(UAdditiveControlRig) == 0x000008, "Wrong alignment on UAdd
 static_assert(sizeof(UAdditiveControlRig) == 0x000670, "Wrong size on UAdditiveControlRig");
 
 // Class ControlRig.ControlRigAnimInstance
-// 0x0000 (0x0620 - 0x0620)
+// 0x0000 (0x0660 - 0x0660)
 class UControlRigAnimInstance final : public UAnimInstance
 {
 public:
@@ -121,7 +121,7 @@ public:
 	}
 };
 static_assert(alignof(UControlRigAnimInstance) == 0x000010, "Wrong alignment on UControlRigAnimInstance");
-static_assert(sizeof(UControlRigAnimInstance) == 0x000620, "Wrong size on UControlRigAnimInstance");
+static_assert(sizeof(UControlRigAnimInstance) == 0x000660, "Wrong size on UControlRigAnimInstance");
 
 // Class ControlRig.ControlRigBlueprintGeneratedClass
 // 0x0000 (0x0338 - 0x0338)
@@ -368,9 +368,12 @@ static_assert(offsetof(UControlRigGizmoLibrary, MaterialColorParameter) == 0x000
 static_assert(offsetof(UControlRigGizmoLibrary, Gizmos) == 0x0000E0, "Member 'UControlRigGizmoLibrary::Gizmos' has a wrong offset!");
 
 // Class ControlRig.ControlRigLayerInstance
-// 0x0000 (0x0620 - 0x0620)
+// 0x0010 (0x0670 - 0x0660)
 class UControlRigLayerInstance final : public UAnimInstance
 {
+public:
+	uint8                                         Pad_660[0x10];                                     // 0x0660(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -382,7 +385,7 @@ public:
 	}
 };
 static_assert(alignof(UControlRigLayerInstance) == 0x000010, "Wrong alignment on UControlRigLayerInstance");
-static_assert(sizeof(UControlRigLayerInstance) == 0x000620, "Wrong size on UControlRigLayerInstance");
+static_assert(sizeof(UControlRigLayerInstance) == 0x000670, "Wrong size on UControlRigLayerInstance");
 
 // Class ControlRig.ControlRigValidationPass
 // 0x0000 (0x0030 - 0x0030)
@@ -464,14 +467,14 @@ static_assert(sizeof(UControlRigObjectHolder) == 0x000040, "Wrong size on UContr
 static_assert(offsetof(UControlRigObjectHolder, Objects) == 0x000030, "Member 'UControlRigObjectHolder::Objects' has a wrong offset!");
 
 // Class ControlRig.ControlRigSequence
-// 0x0068 (0x02A8 - 0x0240)
+// 0x0068 (0x02B0 - 0x0248)
 class UControlRigSequence final : public ULevelSequence
 {
 public:
-	TSoftObjectPtr<class UAnimSequence>           LastExportedToAnimationSequence;                   // 0x0240(0x0030)(AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class USkeletalMesh>           LastExportedUsingSkeletalMesh;                     // 0x0270(0x0030)(AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LastExportedFrameRate;                             // 0x02A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UAnimSequence>           LastExportedToAnimationSequence;                   // 0x0248(0x0030)(AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class USkeletalMesh>           LastExportedUsingSkeletalMesh;                     // 0x0278(0x0030)(AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LastExportedFrameRate;                             // 0x02A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -484,18 +487,15 @@ public:
 	}
 };
 static_assert(alignof(UControlRigSequence) == 0x000008, "Wrong alignment on UControlRigSequence");
-static_assert(sizeof(UControlRigSequence) == 0x0002A8, "Wrong size on UControlRigSequence");
-static_assert(offsetof(UControlRigSequence, LastExportedToAnimationSequence) == 0x000240, "Member 'UControlRigSequence::LastExportedToAnimationSequence' has a wrong offset!");
-static_assert(offsetof(UControlRigSequence, LastExportedUsingSkeletalMesh) == 0x000270, "Member 'UControlRigSequence::LastExportedUsingSkeletalMesh' has a wrong offset!");
-static_assert(offsetof(UControlRigSequence, LastExportedFrameRate) == 0x0002A0, "Member 'UControlRigSequence::LastExportedFrameRate' has a wrong offset!");
+static_assert(sizeof(UControlRigSequence) == 0x0002B0, "Wrong size on UControlRigSequence");
+static_assert(offsetof(UControlRigSequence, LastExportedToAnimationSequence) == 0x000248, "Member 'UControlRigSequence::LastExportedToAnimationSequence' has a wrong offset!");
+static_assert(offsetof(UControlRigSequence, LastExportedUsingSkeletalMesh) == 0x000278, "Member 'UControlRigSequence::LastExportedUsingSkeletalMesh' has a wrong offset!");
+static_assert(offsetof(UControlRigSequence, LastExportedFrameRate) == 0x0002A8, "Member 'UControlRigSequence::LastExportedFrameRate' has a wrong offset!");
 
 // Class ControlRig.ControlRigSequencerAnimInstance
-// 0x0010 (0x0630 - 0x0620)
+// 0x0000 (0x0670 - 0x0670)
 class UControlRigSequencerAnimInstance final : public UAnimSequencerInstance
 {
-public:
-	uint8                                         Pad_620[0x10];                                     // 0x0620(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
@@ -507,7 +507,7 @@ public:
 	}
 };
 static_assert(alignof(UControlRigSequencerAnimInstance) == 0x000010, "Wrong alignment on UControlRigSequencerAnimInstance");
-static_assert(sizeof(UControlRigSequencerAnimInstance) == 0x000630, "Wrong size on UControlRigSequencerAnimInstance");
+static_assert(sizeof(UControlRigSequencerAnimInstance) == 0x000670, "Wrong size on UControlRigSequencerAnimInstance");
 
 // Class ControlRig.ControlRigSettings
 // 0x0000 (0x0048 - 0x0048)

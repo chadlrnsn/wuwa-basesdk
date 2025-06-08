@@ -29,17 +29,6 @@ static_assert(offsetof(TsAnimNotifyReSkillEvent_C_K2_Notify, MeshComp) == 0x0000
 static_assert(offsetof(TsAnimNotifyReSkillEvent_C_K2_Notify, Animation) == 0x000008, "Member 'TsAnimNotifyReSkillEvent_C_K2_Notify::Animation' has a wrong offset!");
 static_assert(offsetof(TsAnimNotifyReSkillEvent_C_K2_Notify, ReturnValue) == 0x000010, "Member 'TsAnimNotifyReSkillEvent_C_K2_Notify::ReturnValue' has a wrong offset!");
 
-// Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.GetRandomIndex
-// 0x0004 (0x0004 - 0x0000)
-struct TsAnimNotifyReSkillEvent_C_GetRandomIndex final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsAnimNotifyReSkillEvent_C_GetRandomIndex) == 0x000004, "Wrong alignment on TsAnimNotifyReSkillEvent_C_GetRandomIndex");
-static_assert(sizeof(TsAnimNotifyReSkillEvent_C_GetRandomIndex) == 0x000004, "Wrong size on TsAnimNotifyReSkillEvent_C_GetRandomIndex");
-static_assert(offsetof(TsAnimNotifyReSkillEvent_C_GetRandomIndex, ReturnValue) == 0x000000, "Member 'TsAnimNotifyReSkillEvent_C_GetRandomIndex::ReturnValue' has a wrong offset!");
-
 // Function TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C.GetNotifyName
 // 0x0010 (0x0010 - 0x0000)
 struct TsAnimNotifyReSkillEvent_C_GetNotifyName final

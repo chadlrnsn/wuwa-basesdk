@@ -59,6 +59,46 @@ void ABP_VolumetricSphereLight_C::ReceiveBeginPlay()
 }
 
 
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.EditorTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_VolumetricSphereLight_C::EditorTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "EditorTick");
+
+	Params::BP_VolumetricSphereLight_C_EditorTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_VolumetricSphereLight_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "ReceiveTick");
+
+	Params::BP_VolumetricSphereLight_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ExecuteUbergraph_BP_VolumetricSphereLight
 // (Final, UbergraphFunction)
 // Parameters:

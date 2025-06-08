@@ -1339,5 +1339,213 @@ float UCharRenderingComponent_C::AddMaterialControllerDataGroupWithAnimObject(cl
 	return Parms.ReturnValue;
 }
 
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetDitherApplyAll
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UCharRenderingComponent_C::SetDitherApplyAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "SetDitherApplyAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetDitherApplyHeadsOnly
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UCharRenderingComponent_C::SetDitherApplyHeadsOnly()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "SetDitherApplyHeadsOnly");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.RefreshMaterialController
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UCharRenderingComponent_C::RefreshMaterialController()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "RefreshMaterialController");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.ShouldTickAfterGoDown
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UCharRenderingComponent_C::ShouldTickAfterGoDown()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "ShouldTickAfterGoDown");
+
+	Params::CharRenderingComponent_C_ShouldTickAfterGoDown Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetMaterialPropertyFloatV2
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             name                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharBodySpecifiedType              bodyType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharSlotSpecifiedType              slotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharMeshPart                       meshPart                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCharRenderingComponent_C::SetMaterialPropertyFloatV2(class FName name, float value, EKuroCharBodySpecifiedType bodyType, EKuroCharSlotSpecifiedType slotType, EKuroCharMeshPart meshPart)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "SetMaterialPropertyFloatV2");
+
+	Params::CharRenderingComponent_C_SetMaterialPropertyFloatV2 Parms{};
+
+	Parms.name = name;
+	Parms.value = value;
+	Parms.bodyType = bodyType;
+	Parms.slotType = slotType;
+	Parms.meshPart = meshPart;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetMaterialPropertyColorV2
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             name                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor                     value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharBodySpecifiedType              bodyType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharSlotSpecifiedType              slotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharMeshPart                       meshPart                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCharRenderingComponent_C::SetMaterialPropertyColorV2(class FName name, const struct FLinearColor& value, EKuroCharBodySpecifiedType bodyType, EKuroCharSlotSpecifiedType slotType, EKuroCharMeshPart meshPart)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "SetMaterialPropertyColorV2");
+
+	Params::CharRenderingComponent_C_SetMaterialPropertyColorV2 Parms{};
+
+	Parms.name = name;
+	Parms.value = std::move(value);
+	Parms.bodyType = bodyType;
+	Parms.slotType = slotType;
+	Parms.meshPart = meshPart;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetMaterialReplaceV2
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UMaterialInterface*               material                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharBodySpecifiedType              bodyType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharSlotSpecifiedType              slotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharMeshPart                       meshPart                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCharRenderingComponent_C::SetMaterialReplaceV2(class UMaterialInterface* material, EKuroCharBodySpecifiedType bodyType, EKuroCharSlotSpecifiedType slotType, EKuroCharMeshPart meshPart)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "SetMaterialReplaceV2");
+
+	Params::CharRenderingComponent_C_SetMaterialReplaceV2 Parms{};
+
+	Parms.material = material;
+	Parms.bodyType = bodyType;
+	Parms.slotType = slotType;
+	Parms.meshPart = meshPart;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CharRenderingComponent.CharRenderingComponent_C.RemoveExternalMaterialReplaceV2
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EKuroCharBodySpecifiedType              bodyType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharSlotSpecifiedType              slotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EKuroCharMeshPart                       meshPart                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCharRenderingComponent_C::RemoveExternalMaterialReplaceV2(EKuroCharBodySpecifiedType bodyType, EKuroCharSlotSpecifiedType slotType, EKuroCharMeshPart meshPart)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CharRenderingComponent_C", "RemoveExternalMaterialReplaceV2");
+
+	Params::CharRenderingComponent_C_RemoveExternalMaterialReplaceV2 Parms{};
+
+	Parms.bodyType = bodyType;
+	Parms.slotType = slotType;
+	Parms.meshPart = meshPart;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

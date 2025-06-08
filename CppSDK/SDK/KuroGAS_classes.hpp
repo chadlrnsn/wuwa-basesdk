@@ -12,10 +12,10 @@
 
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroGAS_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayAbilities_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "KuroGAS_structs.hpp"
 
 
 namespace SDK
@@ -744,8 +744,7 @@ static_assert(offsetof(UBaseAttributeSet, ToughRecoverDelayTime) == 0x000C98, "M
 
 // Class KuroGAS.BaseCharacter
 // 0x00D0 (0x0680 - 0x05B0)
-#pragma pack(push, 0x1)
-class alignas(0x10) ABaseCharacter : public ACharacter
+class ABaseCharacter : public ACharacter
 {
 public:
 	struct FVectorDouble                          CachedActorLocation;                               // 0x05B0(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -758,10 +757,11 @@ public:
 	struct FVector                                CachedActorUp;                                     // 0x0640(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                CachedActorForward;                                // 0x064C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                CachedActorVelocity;                               // 0x0658(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInitializeAttributes;                             // 0x0664(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_665[0x3];                                      // 0x0665(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBaseAttributeSet*                      AttributeSet;                                      // 0x0668(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0670(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         EntityIdInternal;                                  // 0x0664(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInitializeAttributes;                             // 0x0668(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_669[0x7];                                      // 0x0669(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBaseAttributeSet*                      AttributeSet;                                      // 0x0670(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0678(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	void CreateAttribute();
@@ -786,7 +786,6 @@ public:
 		return GetDefaultObjImpl<ABaseCharacter>();
 	}
 };
-#pragma pack(pop)
 static_assert(alignof(ABaseCharacter) == 0x000010, "Wrong alignment on ABaseCharacter");
 static_assert(sizeof(ABaseCharacter) == 0x000680, "Wrong size on ABaseCharacter");
 static_assert(offsetof(ABaseCharacter, CachedActorLocation) == 0x0005B0, "Member 'ABaseCharacter::CachedActorLocation' has a wrong offset!");
@@ -797,9 +796,10 @@ static_assert(offsetof(ABaseCharacter, CachedActorTransform) == 0x000600, "Membe
 static_assert(offsetof(ABaseCharacter, CachedActorUp) == 0x000640, "Member 'ABaseCharacter::CachedActorUp' has a wrong offset!");
 static_assert(offsetof(ABaseCharacter, CachedActorForward) == 0x00064C, "Member 'ABaseCharacter::CachedActorForward' has a wrong offset!");
 static_assert(offsetof(ABaseCharacter, CachedActorVelocity) == 0x000658, "Member 'ABaseCharacter::CachedActorVelocity' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, bInitializeAttributes) == 0x000664, "Member 'ABaseCharacter::bInitializeAttributes' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, AttributeSet) == 0x000668, "Member 'ABaseCharacter::AttributeSet' has a wrong offset!");
-static_assert(offsetof(ABaseCharacter, AbilitySystemComponent) == 0x000670, "Member 'ABaseCharacter::AbilitySystemComponent' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, EntityIdInternal) == 0x000664, "Member 'ABaseCharacter::EntityIdInternal' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, bInitializeAttributes) == 0x000668, "Member 'ABaseCharacter::bInitializeAttributes' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, AttributeSet) == 0x000670, "Member 'ABaseCharacter::AttributeSet' has a wrong offset!");
+static_assert(offsetof(ABaseCharacter, AbilitySystemComponent) == 0x000678, "Member 'ABaseCharacter::AbilitySystemComponent' has a wrong offset!");
 
 // Class KuroGAS.BaseGameplayAbility
 // 0x0008 (0x03C8 - 0x03C0)
@@ -930,8 +930,8 @@ public:
 	static int32 GetGameplayTagId(const struct FGameplayTag& Tag);
 	static void GetGameplayTags(TMap<int32, struct FGameplayTag>* Tags);
 	static int64 GetNetworkGameplayTagNodeIndexHash();
-	static class FString GetOriginalGameplayTag(const class FString& Str);
 	static void GetOwnedGameplayTags(const class UAbilitySystemComponent* ASC, struct FGameplayTagContainer* TargetContainer);
+	static class FString GetUglyTag(const class FString& Str);
 	static bool IsActiveBuffInhibited(int32 HandleId);
 	static bool IsActiveGameplayEffectInhibited(const struct FActiveGameplayEffectHandle& ActiveHandle);
 	static void IterateStructAndAssignAttributeSet(class UBaseAttributeSet* AttributeSet, class UStruct* Data);

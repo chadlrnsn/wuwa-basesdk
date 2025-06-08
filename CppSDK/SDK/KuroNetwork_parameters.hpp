@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroNetwork_structs.hpp"
 #include "JsEnv_structs.hpp"
+#include "KuroNetwork_structs.hpp"
 
 
 namespace SDK::Params
@@ -331,6 +331,81 @@ public:
 static_assert(alignof(KuroNetworkChange_GetNetworkType) == 0x000001, "Wrong alignment on KuroNetworkChange_GetNetworkType");
 static_assert(sizeof(KuroNetworkChange_GetNetworkType) == 0x000001, "Wrong size on KuroNetworkChange_GetNetworkType");
 static_assert(offsetof(KuroNetworkChange_GetNetworkType, ReturnValue) == 0x000000, "Member 'KuroNetworkChange_GetNetworkType::ReturnValue' has a wrong offset!");
+
+// Function KuroNetwork.KuroNetworkDetection.DetectionFinish
+// 0x0001 (0x0001 - 0x0000)
+struct KuroNetworkDetection_DetectionFinish final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroNetworkDetection_DetectionFinish) == 0x000001, "Wrong alignment on KuroNetworkDetection_DetectionFinish");
+static_assert(sizeof(KuroNetworkDetection_DetectionFinish) == 0x000001, "Wrong size on KuroNetworkDetection_DetectionFinish");
+static_assert(offsetof(KuroNetworkDetection_DetectionFinish, bSuccess) == 0x000000, "Member 'KuroNetworkDetection_DetectionFinish::bSuccess' has a wrong offset!");
+
+// Function KuroNetwork.KuroNetworkDetection.GetCurrentProxyAddress
+// 0x0010 (0x0010 - 0x0000)
+struct KuroNetworkDetection_GetCurrentProxyAddress final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroNetworkDetection_GetCurrentProxyAddress) == 0x000008, "Wrong alignment on KuroNetworkDetection_GetCurrentProxyAddress");
+static_assert(sizeof(KuroNetworkDetection_GetCurrentProxyAddress) == 0x000010, "Wrong size on KuroNetworkDetection_GetCurrentProxyAddress");
+static_assert(offsetof(KuroNetworkDetection_GetCurrentProxyAddress, ReturnValue) == 0x000000, "Member 'KuroNetworkDetection_GetCurrentProxyAddress::ReturnValue' has a wrong offset!");
+
+// Function KuroNetwork.KuroNetworkDetection.GetDetectionConfig
+// 0x0020 (0x0020 - 0x0000)
+struct KuroNetworkDetection_GetDetectionConfig final
+{
+public:
+	class FString                                 ServerName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroNetworkDetection_GetDetectionConfig) == 0x000008, "Wrong alignment on KuroNetworkDetection_GetDetectionConfig");
+static_assert(sizeof(KuroNetworkDetection_GetDetectionConfig) == 0x000020, "Wrong size on KuroNetworkDetection_GetDetectionConfig");
+static_assert(offsetof(KuroNetworkDetection_GetDetectionConfig, ServerName) == 0x000000, "Member 'KuroNetworkDetection_GetDetectionConfig::ServerName' has a wrong offset!");
+static_assert(offsetof(KuroNetworkDetection_GetDetectionConfig, ReturnValue) == 0x000010, "Member 'KuroNetworkDetection_GetDetectionConfig::ReturnValue' has a wrong offset!");
+
+// Function KuroNetwork.KuroNetworkDetection.ResolveDomainName
+// 0x0018 (0x0018 - 0x0000)
+struct KuroNetworkDetection_ResolveDomainName final
+{
+public:
+	class FString                                 DomainName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroNetworkDetection_ResolveDomainName) == 0x000008, "Wrong alignment on KuroNetworkDetection_ResolveDomainName");
+static_assert(sizeof(KuroNetworkDetection_ResolveDomainName) == 0x000018, "Wrong size on KuroNetworkDetection_ResolveDomainName");
+static_assert(offsetof(KuroNetworkDetection_ResolveDomainName, DomainName) == 0x000000, "Member 'KuroNetworkDetection_ResolveDomainName::DomainName' has a wrong offset!");
+static_assert(offsetof(KuroNetworkDetection_ResolveDomainName, ReturnValue) == 0x000010, "Member 'KuroNetworkDetection_ResolveDomainName::ReturnValue' has a wrong offset!");
+
+// Function KuroNetwork.KuroNetworkDetection.SetCDNConfig
+// 0x0010 (0x0010 - 0x0000)
+struct KuroNetworkDetection_SetCDNConfig final
+{
+public:
+	class FString                                 CDNConfig;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroNetworkDetection_SetCDNConfig) == 0x000008, "Wrong alignment on KuroNetworkDetection_SetCDNConfig");
+static_assert(sizeof(KuroNetworkDetection_SetCDNConfig) == 0x000010, "Wrong size on KuroNetworkDetection_SetCDNConfig");
+static_assert(offsetof(KuroNetworkDetection_SetCDNConfig, CDNConfig) == 0x000000, "Member 'KuroNetworkDetection_SetCDNConfig::CDNConfig' has a wrong offset!");
+
+// Function KuroNetwork.KuroNetworkDetection.TestUdpReachable
+// 0x0048 (0x0048 - 0x0000)
+struct KuroNetworkDetection_TestUdpReachable final
+{
+public:
+	class FString                                 IpAddress;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Ports;                                             // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 SuccessCount, int32 ErrorCode)> ResultDelegate;                                    // 0x0020(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroNetworkDetection_TestUdpReachable) == 0x000008, "Wrong alignment on KuroNetworkDetection_TestUdpReachable");
+static_assert(sizeof(KuroNetworkDetection_TestUdpReachable) == 0x000048, "Wrong size on KuroNetworkDetection_TestUdpReachable");
+static_assert(offsetof(KuroNetworkDetection_TestUdpReachable, IpAddress) == 0x000000, "Member 'KuroNetworkDetection_TestUdpReachable::IpAddress' has a wrong offset!");
+static_assert(offsetof(KuroNetworkDetection_TestUdpReachable, Ports) == 0x000010, "Member 'KuroNetworkDetection_TestUdpReachable::Ports' has a wrong offset!");
+static_assert(offsetof(KuroNetworkDetection_TestUdpReachable, ResultDelegate) == 0x000020, "Member 'KuroNetworkDetection_TestUdpReachable::ResultDelegate' has a wrong offset!");
 
 // Function KuroNetwork.SendHttpRequest.HttpRequest
 // 0x0030 (0x0030 - 0x0000)

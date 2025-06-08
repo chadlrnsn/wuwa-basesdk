@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C
-// 0x0078 (0x00C0 - 0x0048)
+// 0x0088 (0x00D0 - 0x0048)
 class UTsAnimNotifyReSkillEvent_C final : public UKuroAnimNotify
 {
 public:
@@ -35,10 +35,12 @@ public:
 	struct FRotator                               子弹初速度偏移;                                    // 0x00A0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FRotator>                       子弹初速度偏移数组;                                // 0x00B0(0x0010)(Edit, BlueprintVisible)
+	bool                                          传入当前实体位置;                                  // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   骨骼名字;                                          // 0x00C4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
-	float GetRandomIndex();
 
 	class FString GetNotifyName() const;
 
@@ -53,7 +55,7 @@ public:
 	}
 };
 static_assert(alignof(UTsAnimNotifyReSkillEvent_C) == 0x000008, "Wrong alignment on UTsAnimNotifyReSkillEvent_C");
-static_assert(sizeof(UTsAnimNotifyReSkillEvent_C) == 0x0000C0, "Wrong size on UTsAnimNotifyReSkillEvent_C");
+static_assert(sizeof(UTsAnimNotifyReSkillEvent_C) == 0x0000D0, "Wrong size on UTsAnimNotifyReSkillEvent_C");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, 使用子弹id数组) == 0x000048, "Member 'UTsAnimNotifyReSkillEvent_C::使用子弹id数组' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, 子弹数据名) == 0x00004C, "Member 'UTsAnimNotifyReSkillEvent_C::子弹数据名' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, 子弹id数组) == 0x000058, "Member 'UTsAnimNotifyReSkillEvent_C::子弹id数组' has a wrong offset!");
@@ -63,6 +65,8 @@ static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, 子弹出生位置偏移) ==
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, 子弹出生位置偏移数组) == 0x000090, "Member 'UTsAnimNotifyReSkillEvent_C::子弹出生位置偏移数组' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, 子弹初速度偏移) == 0x0000A0, "Member 'UTsAnimNotifyReSkillEvent_C::子弹初速度偏移' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, 子弹初速度偏移数组) == 0x0000B0, "Member 'UTsAnimNotifyReSkillEvent_C::子弹初速度偏移数组' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, 传入当前实体位置) == 0x0000C0, "Member 'UTsAnimNotifyReSkillEvent_C::传入当前实体位置' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyReSkillEvent_C, 骨骼名字) == 0x0000C4, "Member 'UTsAnimNotifyReSkillEvent_C::骨骼名字' has a wrong offset!");
 
 }
 

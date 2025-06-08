@@ -90,6 +90,19 @@ enum class ETransitionPredictionType : uint8
 	Prediction_MAX                           = 3,
 };
 
+// ScriptStruct SMSystem.SMReferenceContainer
+// 0x0018 (0x0018 - 0x0000)
+struct FSMReferenceContainer final
+{
+public:
+	struct FGuid                                  PathGuid;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USMInstance*                            Reference;                                         // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FSMReferenceContainer) == 0x000008, "Wrong alignment on FSMReferenceContainer");
+static_assert(sizeof(FSMReferenceContainer) == 0x000018, "Wrong size on FSMReferenceContainer");
+static_assert(offsetof(FSMReferenceContainer, PathGuid) == 0x000000, "Member 'FSMReferenceContainer::PathGuid' has a wrong offset!");
+static_assert(offsetof(FSMReferenceContainer, Reference) == 0x000010, "Member 'FSMReferenceContainer::Reference' has a wrong offset!");
+
 // ScriptStruct SMSystem.SMInfo_Base
 // 0x0060 (0x0060 - 0x0000)
 struct FSMInfo_Base
@@ -111,6 +124,25 @@ static_assert(offsetof(FSMInfo_Base, OwnerGuid) == 0x000028, "Member 'FSMInfo_Ba
 static_assert(offsetof(FSMInfo_Base, NodeGuid) == 0x000038, "Member 'FSMInfo_Base::NodeGuid' has a wrong offset!");
 static_assert(offsetof(FSMInfo_Base, OwnerNodeGuid) == 0x000048, "Member 'FSMInfo_Base::OwnerNodeGuid' has a wrong offset!");
 static_assert(offsetof(FSMInfo_Base, NodeInstance) == 0x000058, "Member 'FSMInfo_Base::NodeInstance' has a wrong offset!");
+
+// ScriptStruct SMSystem.SMTransitionInfo
+// 0x0038 (0x0098 - 0x0060)
+struct FSMTransitionInfo final : public FSMInfo_Base
+{
+public:
+	struct FGuid                                  FromStateGuid;                                     // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  ToStateGuid;                                       // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0080(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDateTime                              LastNetworkTimestamp;                              // 0x0088(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_90[0x8];                                       // 0x0090(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FSMTransitionInfo) == 0x000008, "Wrong alignment on FSMTransitionInfo");
+static_assert(sizeof(FSMTransitionInfo) == 0x000098, "Wrong size on FSMTransitionInfo");
+static_assert(offsetof(FSMTransitionInfo, FromStateGuid) == 0x000060, "Member 'FSMTransitionInfo::FromStateGuid' has a wrong offset!");
+static_assert(offsetof(FSMTransitionInfo, ToStateGuid) == 0x000070, "Member 'FSMTransitionInfo::ToStateGuid' has a wrong offset!");
+static_assert(offsetof(FSMTransitionInfo, Priority) == 0x000080, "Member 'FSMTransitionInfo::Priority' has a wrong offset!");
+static_assert(offsetof(FSMTransitionInfo, LastNetworkTimestamp) == 0x000088, "Member 'FSMTransitionInfo::LastNetworkTimestamp' has a wrong offset!");
 
 // ScriptStruct SMSystem.SMExposedFunctionHandler
 // 0x0028 (0x0028 - 0x0000)
@@ -193,25 +225,6 @@ public:
 static_assert(alignof(FSMState_Base) == 0x000008, "Wrong alignment on FSMState_Base");
 static_assert(sizeof(FSMState_Base) == 0x000120, "Wrong size on FSMState_Base");
 
-// ScriptStruct SMSystem.SMTransitionInfo
-// 0x0038 (0x0098 - 0x0060)
-struct FSMTransitionInfo final : public FSMInfo_Base
-{
-public:
-	struct FGuid                                  FromStateGuid;                                     // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  ToStateGuid;                                       // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0080(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDateTime                              LastNetworkTimestamp;                              // 0x0088(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_90[0x8];                                       // 0x0090(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSMTransitionInfo) == 0x000008, "Wrong alignment on FSMTransitionInfo");
-static_assert(sizeof(FSMTransitionInfo) == 0x000098, "Wrong size on FSMTransitionInfo");
-static_assert(offsetof(FSMTransitionInfo, FromStateGuid) == 0x000060, "Member 'FSMTransitionInfo::FromStateGuid' has a wrong offset!");
-static_assert(offsetof(FSMTransitionInfo, ToStateGuid) == 0x000070, "Member 'FSMTransitionInfo::ToStateGuid' has a wrong offset!");
-static_assert(offsetof(FSMTransitionInfo, Priority) == 0x000080, "Member 'FSMTransitionInfo::Priority' has a wrong offset!");
-static_assert(offsetof(FSMTransitionInfo, LastNetworkTimestamp) == 0x000088, "Member 'FSMTransitionInfo::LastNetworkTimestamp' has a wrong offset!");
-
 // ScriptStruct SMSystem.SMConduit
 // 0x0030 (0x0150 - 0x0120)
 struct FSMConduit final : public FSMState_Base
@@ -245,19 +258,6 @@ static_assert(alignof(FSMStateInfo) == 0x000008, "Wrong alignment on FSMStateInf
 static_assert(sizeof(FSMStateInfo) == 0x000080, "Wrong size on FSMStateInfo");
 static_assert(offsetof(FSMStateInfo, OutgoingTransitions) == 0x000060, "Member 'FSMStateInfo::OutgoingTransitions' has a wrong offset!");
 static_assert(offsetof(FSMStateInfo, bIsEndState) == 0x000070, "Member 'FSMStateInfo::bIsEndState' has a wrong offset!");
-
-// ScriptStruct SMSystem.SMReferenceContainer
-// 0x0018 (0x0018 - 0x0000)
-struct FSMReferenceContainer final
-{
-public:
-	struct FGuid                                  PathGuid;                                          // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USMInstance*                            Reference;                                         // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FSMReferenceContainer) == 0x000008, "Wrong alignment on FSMReferenceContainer");
-static_assert(sizeof(FSMReferenceContainer) == 0x000018, "Wrong size on FSMReferenceContainer");
-static_assert(offsetof(FSMReferenceContainer, PathGuid) == 0x000000, "Member 'FSMReferenceContainer::PathGuid' has a wrong offset!");
-static_assert(offsetof(FSMReferenceContainer, Reference) == 0x000010, "Member 'FSMReferenceContainer::Reference' has a wrong offset!");
 
 // ScriptStruct SMSystem.SMDebugStateMachine
 // 0x0001 (0x0001 - 0x0000)

@@ -24,11 +24,14 @@ class UKuroPakKeyLibrary final : public UBlueprintFunctionLibrary
 public:
 	static int32 GetUpdateInterval();
 	static bool HasPendingEncryptedPaks();
+	static void LoadKeys(const class FString& RSAPubKey, const class FString& FilePath, const class FString& Tag);
 	static void LoadPakKeysFromFile(const class FString& FilePath);
 	static bool NeedExtPakKeys();
 	static void SetCompleteCallback(TDelegate<void(bool Success)> Callback);
+	static void SetLoadCallback(TDelegate<void(bool Success, const class FString& Tag)> Callback);
 	static void SetRSAPublicKey(const class FString& PublicKey);
 	static void UnbindCallback();
+	static void UnbindLoadCallback();
 
 public:
 	static class UClass* StaticClass()

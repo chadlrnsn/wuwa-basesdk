@@ -12,8 +12,8 @@
 
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroGAS_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "KuroGAS_structs.hpp"
 #include "SGEData_structs.hpp"
 #include "Engine_structs.hpp"
 

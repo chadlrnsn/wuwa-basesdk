@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "KuroCurve_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 namespace SDK

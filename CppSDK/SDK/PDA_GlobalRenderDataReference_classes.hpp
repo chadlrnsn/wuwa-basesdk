@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PDA_GlobalRenderDataReference.PDA_GlobalRenderDataReference_C
-// 0x0038 (0x0070 - 0x0038)
+// 0x0048 (0x0080 - 0x0038)
 class UPDA_GlobalRenderDataReference_C final : public UPrimaryDataAsset
 {
 public:
@@ -28,6 +28,8 @@ public:
 	class UPDA_DecalShadowConfig_C*               DefaultDecalShadow;                                // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialParameterCollection*           EyesParameters;                                    // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInterface*                     EmptyMaterial;                                     // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialParameterCollection*           MPC_ShowColorSetting;                              // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialParameterCollection*           MPC_GroundFogMask;                                 // 0x0078(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -40,7 +42,7 @@ public:
 	}
 };
 static_assert(alignof(UPDA_GlobalRenderDataReference_C) == 0x000008, "Wrong alignment on UPDA_GlobalRenderDataReference_C");
-static_assert(sizeof(UPDA_GlobalRenderDataReference_C) == 0x000070, "Wrong size on UPDA_GlobalRenderDataReference_C");
+static_assert(sizeof(UPDA_GlobalRenderDataReference_C) == 0x000080, "Wrong size on UPDA_GlobalRenderDataReference_C");
 static_assert(offsetof(UPDA_GlobalRenderDataReference_C, GlobalShaderParameters) == 0x000038, "Member 'UPDA_GlobalRenderDataReference_C::GlobalShaderParameters' has a wrong offset!");
 static_assert(offsetof(UPDA_GlobalRenderDataReference_C, SceneInteractionShaderParameters) == 0x000040, "Member 'UPDA_GlobalRenderDataReference_C::SceneInteractionShaderParameters' has a wrong offset!");
 static_assert(offsetof(UPDA_GlobalRenderDataReference_C, GlobalLensFlareConfig) == 0x000048, "Member 'UPDA_GlobalRenderDataReference_C::GlobalLensFlareConfig' has a wrong offset!");
@@ -48,6 +50,8 @@ static_assert(offsetof(UPDA_GlobalRenderDataReference_C, MPC_ShowBrightness) == 
 static_assert(offsetof(UPDA_GlobalRenderDataReference_C, DefaultDecalShadow) == 0x000058, "Member 'UPDA_GlobalRenderDataReference_C::DefaultDecalShadow' has a wrong offset!");
 static_assert(offsetof(UPDA_GlobalRenderDataReference_C, EyesParameters) == 0x000060, "Member 'UPDA_GlobalRenderDataReference_C::EyesParameters' has a wrong offset!");
 static_assert(offsetof(UPDA_GlobalRenderDataReference_C, EmptyMaterial) == 0x000068, "Member 'UPDA_GlobalRenderDataReference_C::EmptyMaterial' has a wrong offset!");
+static_assert(offsetof(UPDA_GlobalRenderDataReference_C, MPC_ShowColorSetting) == 0x000070, "Member 'UPDA_GlobalRenderDataReference_C::MPC_ShowColorSetting' has a wrong offset!");
+static_assert(offsetof(UPDA_GlobalRenderDataReference_C, MPC_GroundFogMask) == 0x000078, "Member 'UPDA_GlobalRenderDataReference_C::MPC_GroundFogMask' has a wrong offset!");
 
 }
 

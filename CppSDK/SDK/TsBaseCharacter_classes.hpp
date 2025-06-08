@@ -10,24 +10,22 @@
 
 #include "Basic.hpp"
 
-#include "KuroGAS_classes.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "ECharacterRenderingType_structs.hpp"
-#include "ECharacterDitherType_structs.hpp"
 #include "ECamp_structs.hpp"
+#include "ECharacterRenderingType_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "KuroGAS_classes.hpp"
+#include "ECharacterDitherType_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsBaseCharacter.TsBaseCharacter_C
-// 0x0130 (0x07B0 - 0x0680)
-#pragma pack(push, 0x1)
-class alignas(0x10) ATsBaseCharacter_C : public ABaseCharacter
+// 0x00D0 (0x0750 - 0x0680)
+class ATsBaseCharacter_C : public ABaseCharacter
 {
 public:
-	uint8                                         Pad_678[0x8];                                      // 0x0678(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0680(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UNavigationInvokerComponent*            NavigationInvoker;                                 // 0x0688(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UTsCharacterDebugComponent_C*           TsCharacterDebugComponent;                         // 0x0690(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
@@ -46,17 +44,16 @@ public:
 	class UPrimaryDataAsset*                      FkData;                                            // 0x0718(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UEffectModelBase*                       WeaponHideEffect;                                  // 0x0720(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	class UPrimaryDataAsset*                      CharacterData;                                     // 0x0728(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class FName, class UAkComponent*>        AkComponentMap;                                    // 0x0730(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	bool                                          PhysicsClothSimulateEnable;                        // 0x0780(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          PhysicsClothSimulateDisableOneFrame;               // 0x0781(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	bool                                          CachePoseEnableOneFrame;                           // 0x0782(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_783[0x1];                                      // 0x0783(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CacheTime;                                         // 0x0784(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class UDataTable*                             DtCameraConfig;                                    // 0x0788(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	int32                                         EntityId;                                          // 0x0790(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_794[0x4];                                      // 0x0794(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_BasePlatform_C*                     BasePlatform;                                      // 0x0798(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	ECamp                                         Camp;                                              // 0x07A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          PhysicsClothSimulateEnable;                        // 0x0730(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          PhysicsClothSimulateDisableOneFrame;               // 0x0731(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	bool                                          CachePoseEnableOneFrame;                           // 0x0732(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	uint8                                         Pad_733[0x1];                                      // 0x0733(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CacheTime;                                         // 0x0734(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class UDataTable*                             DtCameraConfig;                                    // 0x0738(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class ABP_BasePlatform_C*                     BasePlatform;                                      // 0x0740(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	ECamp                                         Camp;                                              // 0x0748(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_749[0x3];                                      // 0x0749(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         EntityId;                                          // 0x074C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_TsBaseCharacter(int32 EntryPoint);
@@ -80,9 +77,8 @@ public:
 		return GetDefaultObjImpl<ATsBaseCharacter_C>();
 	}
 };
-#pragma pack(pop)
 static_assert(alignof(ATsBaseCharacter_C) == 0x000010, "Wrong alignment on ATsBaseCharacter_C");
-static_assert(sizeof(ATsBaseCharacter_C) == 0x0007B0, "Wrong size on ATsBaseCharacter_C");
+static_assert(sizeof(ATsBaseCharacter_C) == 0x000750, "Wrong size on ATsBaseCharacter_C");
 static_assert(offsetof(ATsBaseCharacter_C, UberGraphFrame) == 0x000680, "Member 'ATsBaseCharacter_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ATsBaseCharacter_C, NavigationInvoker) == 0x000688, "Member 'ATsBaseCharacter_C::NavigationInvoker' has a wrong offset!");
 static_assert(offsetof(ATsBaseCharacter_C, TsCharacterDebugComponent) == 0x000690, "Member 'ATsBaseCharacter_C::TsCharacterDebugComponent' has a wrong offset!");
@@ -100,15 +96,14 @@ static_assert(offsetof(ATsBaseCharacter_C, InputComponentClass) == 0x0006F8, "Me
 static_assert(offsetof(ATsBaseCharacter_C, FkData) == 0x000718, "Member 'ATsBaseCharacter_C::FkData' has a wrong offset!");
 static_assert(offsetof(ATsBaseCharacter_C, WeaponHideEffect) == 0x000720, "Member 'ATsBaseCharacter_C::WeaponHideEffect' has a wrong offset!");
 static_assert(offsetof(ATsBaseCharacter_C, CharacterData) == 0x000728, "Member 'ATsBaseCharacter_C::CharacterData' has a wrong offset!");
-static_assert(offsetof(ATsBaseCharacter_C, AkComponentMap) == 0x000730, "Member 'ATsBaseCharacter_C::AkComponentMap' has a wrong offset!");
-static_assert(offsetof(ATsBaseCharacter_C, PhysicsClothSimulateEnable) == 0x000780, "Member 'ATsBaseCharacter_C::PhysicsClothSimulateEnable' has a wrong offset!");
-static_assert(offsetof(ATsBaseCharacter_C, PhysicsClothSimulateDisableOneFrame) == 0x000781, "Member 'ATsBaseCharacter_C::PhysicsClothSimulateDisableOneFrame' has a wrong offset!");
-static_assert(offsetof(ATsBaseCharacter_C, CachePoseEnableOneFrame) == 0x000782, "Member 'ATsBaseCharacter_C::CachePoseEnableOneFrame' has a wrong offset!");
-static_assert(offsetof(ATsBaseCharacter_C, CacheTime) == 0x000784, "Member 'ATsBaseCharacter_C::CacheTime' has a wrong offset!");
-static_assert(offsetof(ATsBaseCharacter_C, DtCameraConfig) == 0x000788, "Member 'ATsBaseCharacter_C::DtCameraConfig' has a wrong offset!");
-static_assert(offsetof(ATsBaseCharacter_C, EntityId) == 0x000790, "Member 'ATsBaseCharacter_C::EntityId' has a wrong offset!");
-static_assert(offsetof(ATsBaseCharacter_C, BasePlatform) == 0x000798, "Member 'ATsBaseCharacter_C::BasePlatform' has a wrong offset!");
-static_assert(offsetof(ATsBaseCharacter_C, Camp) == 0x0007A0, "Member 'ATsBaseCharacter_C::Camp' has a wrong offset!");
+static_assert(offsetof(ATsBaseCharacter_C, PhysicsClothSimulateEnable) == 0x000730, "Member 'ATsBaseCharacter_C::PhysicsClothSimulateEnable' has a wrong offset!");
+static_assert(offsetof(ATsBaseCharacter_C, PhysicsClothSimulateDisableOneFrame) == 0x000731, "Member 'ATsBaseCharacter_C::PhysicsClothSimulateDisableOneFrame' has a wrong offset!");
+static_assert(offsetof(ATsBaseCharacter_C, CachePoseEnableOneFrame) == 0x000732, "Member 'ATsBaseCharacter_C::CachePoseEnableOneFrame' has a wrong offset!");
+static_assert(offsetof(ATsBaseCharacter_C, CacheTime) == 0x000734, "Member 'ATsBaseCharacter_C::CacheTime' has a wrong offset!");
+static_assert(offsetof(ATsBaseCharacter_C, DtCameraConfig) == 0x000738, "Member 'ATsBaseCharacter_C::DtCameraConfig' has a wrong offset!");
+static_assert(offsetof(ATsBaseCharacter_C, BasePlatform) == 0x000740, "Member 'ATsBaseCharacter_C::BasePlatform' has a wrong offset!");
+static_assert(offsetof(ATsBaseCharacter_C, Camp) == 0x000748, "Member 'ATsBaseCharacter_C::Camp' has a wrong offset!");
+static_assert(offsetof(ATsBaseCharacter_C, EntityId) == 0x00074C, "Member 'ATsBaseCharacter_C::EntityId' has a wrong offset!");
 
 }
 

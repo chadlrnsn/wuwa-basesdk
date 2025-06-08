@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function AnimNotifyAddMaterialControllerDataGroup.AnimNotifyAddMaterialControllerDataGroup_C.K2_Notify
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -36,14 +36,19 @@ bool UAnimNotifyAddMaterialControllerDataGroup_C::K2_Notify(class USkeletalMeshC
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function AnimNotifyAddMaterialControllerDataGroup.AnimNotifyAddMaterialControllerDataGroup_C.GetNotifyName
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
@@ -56,7 +61,12 @@ class FString UAnimNotifyAddMaterialControllerDataGroup_C::GetNotifyName() const
 
 	Params::AnimNotifyAddMaterialControllerDataGroup_C_GetNotifyName Parms{};
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }

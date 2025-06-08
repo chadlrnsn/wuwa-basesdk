@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "TsBaseCharacter_classes.hpp"
 
 
@@ -18,15 +19,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseVision.BP_BaseVision_C
-// 0x0000 (0x07B0 - 0x07B0)
+// 0x0020 (0x0770 - 0x0750)
 class ABP_BaseVision_C : public ATsBaseCharacter_C
 {
 public:
-	uint8                                         Pad_7A1[0x7];                                      // 0x07A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseVision_C;                    // 0x07A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseVision_C;                    // 0x0750(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FVector                                显像放大比例;                                      // 0x0758(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                显像缩小比例;                                      // 0x0764(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_BaseVision(int32 EntryPoint);
+	void 显像缩小();
+	void 显像放大();
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveBeginPlay();
 	void 获取幻象数据(struct FSVisionData* 幻象数据);
@@ -43,8 +47,10 @@ public:
 	}
 };
 static_assert(alignof(ABP_BaseVision_C) == 0x000010, "Wrong alignment on ABP_BaseVision_C");
-static_assert(sizeof(ABP_BaseVision_C) == 0x0007B0, "Wrong size on ABP_BaseVision_C");
-static_assert(offsetof(ABP_BaseVision_C, UberGraphFrame_BP_BaseVision_C) == 0x0007A8, "Member 'ABP_BaseVision_C::UberGraphFrame_BP_BaseVision_C' has a wrong offset!");
+static_assert(sizeof(ABP_BaseVision_C) == 0x000770, "Wrong size on ABP_BaseVision_C");
+static_assert(offsetof(ABP_BaseVision_C, UberGraphFrame_BP_BaseVision_C) == 0x000750, "Member 'ABP_BaseVision_C::UberGraphFrame_BP_BaseVision_C' has a wrong offset!");
+static_assert(offsetof(ABP_BaseVision_C, 显像放大比例) == 0x000758, "Member 'ABP_BaseVision_C::显像放大比例' has a wrong offset!");
+static_assert(offsetof(ABP_BaseVision_C, 显像缩小比例) == 0x000764, "Member 'ABP_BaseVision_C::显像缩小比例' has a wrong offset!");
 
 }
 

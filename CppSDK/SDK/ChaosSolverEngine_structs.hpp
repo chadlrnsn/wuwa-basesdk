@@ -29,18 +29,6 @@ enum class EClusterConnectionTypeEnum : uint8
 	Chaos_MAX                                = 6,
 };
 
-// ScriptStruct ChaosSolverEngine.ChaosHandlerSet
-// 0x0058 (0x0058 - 0x0000)
-struct FChaosHandlerSet final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class UObject*>                          ChaosHandlers;                                     // 0x0008(0x0050)(NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FChaosHandlerSet) == 0x000008, "Wrong alignment on FChaosHandlerSet");
-static_assert(sizeof(FChaosHandlerSet) == 0x000058, "Wrong size on FChaosHandlerSet");
-static_assert(offsetof(FChaosHandlerSet, ChaosHandlers) == 0x000008, "Member 'FChaosHandlerSet::ChaosHandlers' has a wrong offset!");
-
 // ScriptStruct ChaosSolverEngine.ChaosPhysicsCollisionInfo
 // 0x0070 (0x0070 - 0x0000)
 struct FChaosPhysicsCollisionInfo final
@@ -72,6 +60,18 @@ static_assert(offsetof(FChaosPhysicsCollisionInfo, AngularVelocity) == 0x00004C,
 static_assert(offsetof(FChaosPhysicsCollisionInfo, OtherAngularVelocity) == 0x000058, "Member 'FChaosPhysicsCollisionInfo::OtherAngularVelocity' has a wrong offset!");
 static_assert(offsetof(FChaosPhysicsCollisionInfo, Mass) == 0x000064, "Member 'FChaosPhysicsCollisionInfo::Mass' has a wrong offset!");
 static_assert(offsetof(FChaosPhysicsCollisionInfo, OtherMass) == 0x000068, "Member 'FChaosPhysicsCollisionInfo::OtherMass' has a wrong offset!");
+
+// ScriptStruct ChaosSolverEngine.ChaosHandlerSet
+// 0x0058 (0x0058 - 0x0000)
+struct FChaosHandlerSet final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class UObject*>                          ChaosHandlers;                                     // 0x0008(0x0050)(NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FChaosHandlerSet) == 0x000008, "Wrong alignment on FChaosHandlerSet");
+static_assert(sizeof(FChaosHandlerSet) == 0x000058, "Wrong size on FChaosHandlerSet");
+static_assert(offsetof(FChaosHandlerSet, ChaosHandlers) == 0x000008, "Member 'FChaosHandlerSet::ChaosHandlers' has a wrong offset!");
 
 // ScriptStruct ChaosSolverEngine.ChaosBreakEvent
 // 0x0030 (0x0030 - 0x0000)

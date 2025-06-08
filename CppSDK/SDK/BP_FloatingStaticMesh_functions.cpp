@@ -64,5 +64,19 @@ void ABP_FloatingStaticMesh_C::UserConstructionScript()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
+
+// Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.SetMaterialParams
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_FloatingStaticMesh_C::SetMaterialParams()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FloatingStaticMesh_C", "SetMaterialParams");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

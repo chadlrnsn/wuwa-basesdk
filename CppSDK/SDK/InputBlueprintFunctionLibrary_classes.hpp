@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
+#include "ECommandType_structs.hpp"
 
 
 namespace SDK
@@ -41,6 +42,7 @@ public:
 	static struct FSInputCommand FishingBoatVisionSkill1OnPress(float time, const struct FSInputCommand& parentCommand, class UObject* __WorldContext);
 	static struct FSInputCommand FishingBoatVisionSkill1OnRelease(float time, const struct FSInputCommand& parentCommand, class UObject* __WorldContext);
 	static struct FSInputCommand CreateFishingBoatSprintCommand(int32 skillId, class UObject* __WorldContext);
+	static float GetCommandInterval(ECommandType commandType, float defaultInterval, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

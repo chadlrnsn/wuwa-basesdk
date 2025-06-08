@@ -15,13 +15,14 @@ namespace SDK
 {
 
 // UserDefinedEnum ECharacterLoadType.ECharacterLoadType
-// NumValues: 0x0004
+// NumValues: 0x0005
 enum class ECharacterLoadType : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
 	NewEnumerator2                           = 2,
-	ECharacterLoadType_MAX                   = 3,
+	NewEnumerator3                           = 3,
+	ECharacterLoadType_MAX                   = 4,
 };
 
 }

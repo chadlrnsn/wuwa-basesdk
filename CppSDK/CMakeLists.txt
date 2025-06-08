@@ -1,19 +1,19 @@
-cmake_minimum_required(VERSION 3.15)
-
+cmake_minimum_required(VERSION 3.15...4.0)
 project(SDK)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m64")
-
-file(GLOB SOURCE_FILES
-    "${CMAKE_CURRENT_SOURCE_DIR}/SDK/*.cpp"
+set(SOURCES_SDK 
+    SDK/Basic.cpp
+    SDK/Engine_functions.cpp
+    SDK/CoreUObject_functions.cpp
+    SDK/KuroUtility_functions.cpp
 )
 
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/SDK
+add_library(SDK STATIC ${SOURCES_SDK})
+
+target_include_directories(SDK PUBLIC 
+    ${CMAKE_CURRENT_SOURCE_DIR}/SDK/
     ${CMAKE_CURRENT_SOURCE_DIR}/
 )
-
-add_library(SDK STATIC ${SOURCE_FILES})

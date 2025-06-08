@@ -10,7 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_BaseVision_classes.hpp"
 
 
@@ -18,34 +17,28 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Vision_ML1GuLong.BP_Vision_ML1GuLong_C
-// 0x00A0 (0x0850 - 0x07B0)
+// 0x0090 (0x0800 - 0x0770)
 class ABP_Vision_ML1GuLong_C final : public ABP_BaseVision_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Vision_ML1GuLong_C;              // 0x07B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCapsuleComponent*                      Bone_Tail007;                                      // 0x07B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bone_Tail005;                                      // 0x07C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bone_Tail002;                                      // 0x07C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001RFoot;                                       // 0x07D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001RThigh;                                      // 0x07D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001LFoot;                                       // 0x07E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001LThigh;                                      // 0x07E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001RHand;                                       // 0x07F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001RForearm;                                    // 0x07F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001RUpperArm;                                   // 0x0800(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001LHand;                                       // 0x0808(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001LForearm;                                    // 0x0810(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001LUpperArm;                                   // 0x0818(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001Spine;                                       // 0x0820(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001Neck3;                                       // 0x0828(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001Neck1;                                       // 0x0830(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UCapsuleComponent*                      Bip001Head;                                        // 0x0838(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 SkeletalMesh;                                      // 0x0840(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-
-public:
-	void ExecuteUbergraph_BP_Vision_ML1GuLong(int32 EntryPoint);
-	void 显像缩小();
-	void 显像放大();
+	class UCapsuleComponent*                      Bone_Tail007;                                      // 0x0770(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bone_Tail005;                                      // 0x0778(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bone_Tail002;                                      // 0x0780(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001RFoot;                                       // 0x0788(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001RThigh;                                      // 0x0790(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001LFoot;                                       // 0x0798(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001LThigh;                                      // 0x07A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001RHand;                                       // 0x07A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001RForearm;                                    // 0x07B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001RUpperArm;                                   // 0x07B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001LHand;                                       // 0x07C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001LForearm;                                    // 0x07C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001LUpperArm;                                   // 0x07D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001Spine;                                       // 0x07D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001Neck3;                                       // 0x07E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001Neck1;                                       // 0x07E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Bip001Head;                                        // 0x07F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 SkeletalMesh;                                      // 0x07F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -58,26 +51,25 @@ public:
 	}
 };
 static_assert(alignof(ABP_Vision_ML1GuLong_C) == 0x000010, "Wrong alignment on ABP_Vision_ML1GuLong_C");
-static_assert(sizeof(ABP_Vision_ML1GuLong_C) == 0x000850, "Wrong size on ABP_Vision_ML1GuLong_C");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, UberGraphFrame_BP_Vision_ML1GuLong_C) == 0x0007B0, "Member 'ABP_Vision_ML1GuLong_C::UberGraphFrame_BP_Vision_ML1GuLong_C' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bone_Tail007) == 0x0007B8, "Member 'ABP_Vision_ML1GuLong_C::Bone_Tail007' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bone_Tail005) == 0x0007C0, "Member 'ABP_Vision_ML1GuLong_C::Bone_Tail005' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bone_Tail002) == 0x0007C8, "Member 'ABP_Vision_ML1GuLong_C::Bone_Tail002' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RFoot) == 0x0007D0, "Member 'ABP_Vision_ML1GuLong_C::Bip001RFoot' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RThigh) == 0x0007D8, "Member 'ABP_Vision_ML1GuLong_C::Bip001RThigh' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LFoot) == 0x0007E0, "Member 'ABP_Vision_ML1GuLong_C::Bip001LFoot' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LThigh) == 0x0007E8, "Member 'ABP_Vision_ML1GuLong_C::Bip001LThigh' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RHand) == 0x0007F0, "Member 'ABP_Vision_ML1GuLong_C::Bip001RHand' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RForearm) == 0x0007F8, "Member 'ABP_Vision_ML1GuLong_C::Bip001RForearm' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RUpperArm) == 0x000800, "Member 'ABP_Vision_ML1GuLong_C::Bip001RUpperArm' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LHand) == 0x000808, "Member 'ABP_Vision_ML1GuLong_C::Bip001LHand' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LForearm) == 0x000810, "Member 'ABP_Vision_ML1GuLong_C::Bip001LForearm' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LUpperArm) == 0x000818, "Member 'ABP_Vision_ML1GuLong_C::Bip001LUpperArm' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001Spine) == 0x000820, "Member 'ABP_Vision_ML1GuLong_C::Bip001Spine' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001Neck3) == 0x000828, "Member 'ABP_Vision_ML1GuLong_C::Bip001Neck3' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001Neck1) == 0x000830, "Member 'ABP_Vision_ML1GuLong_C::Bip001Neck1' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001Head) == 0x000838, "Member 'ABP_Vision_ML1GuLong_C::Bip001Head' has a wrong offset!");
-static_assert(offsetof(ABP_Vision_ML1GuLong_C, SkeletalMesh) == 0x000840, "Member 'ABP_Vision_ML1GuLong_C::SkeletalMesh' has a wrong offset!");
+static_assert(sizeof(ABP_Vision_ML1GuLong_C) == 0x000800, "Wrong size on ABP_Vision_ML1GuLong_C");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bone_Tail007) == 0x000770, "Member 'ABP_Vision_ML1GuLong_C::Bone_Tail007' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bone_Tail005) == 0x000778, "Member 'ABP_Vision_ML1GuLong_C::Bone_Tail005' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bone_Tail002) == 0x000780, "Member 'ABP_Vision_ML1GuLong_C::Bone_Tail002' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RFoot) == 0x000788, "Member 'ABP_Vision_ML1GuLong_C::Bip001RFoot' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RThigh) == 0x000790, "Member 'ABP_Vision_ML1GuLong_C::Bip001RThigh' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LFoot) == 0x000798, "Member 'ABP_Vision_ML1GuLong_C::Bip001LFoot' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LThigh) == 0x0007A0, "Member 'ABP_Vision_ML1GuLong_C::Bip001LThigh' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RHand) == 0x0007A8, "Member 'ABP_Vision_ML1GuLong_C::Bip001RHand' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RForearm) == 0x0007B0, "Member 'ABP_Vision_ML1GuLong_C::Bip001RForearm' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001RUpperArm) == 0x0007B8, "Member 'ABP_Vision_ML1GuLong_C::Bip001RUpperArm' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LHand) == 0x0007C0, "Member 'ABP_Vision_ML1GuLong_C::Bip001LHand' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LForearm) == 0x0007C8, "Member 'ABP_Vision_ML1GuLong_C::Bip001LForearm' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001LUpperArm) == 0x0007D0, "Member 'ABP_Vision_ML1GuLong_C::Bip001LUpperArm' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001Spine) == 0x0007D8, "Member 'ABP_Vision_ML1GuLong_C::Bip001Spine' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001Neck3) == 0x0007E0, "Member 'ABP_Vision_ML1GuLong_C::Bip001Neck3' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001Neck1) == 0x0007E8, "Member 'ABP_Vision_ML1GuLong_C::Bip001Neck1' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, Bip001Head) == 0x0007F0, "Member 'ABP_Vision_ML1GuLong_C::Bip001Head' has a wrong offset!");
+static_assert(offsetof(ABP_Vision_ML1GuLong_C, SkeletalMesh) == 0x0007F8, "Member 'ABP_Vision_ML1GuLong_C::SkeletalMesh' has a wrong offset!");
 
 }
 

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "EMovementDirection_structs.hpp"
 #include "Engine_classes.hpp"
-#include "EEnterClimb_structs.hpp"
 #include "EExitClimb_structs.hpp"
+#include "EMovementDirection_structs.hpp"
+#include "EEnterClimb_structs.hpp"
 #include "EClimbState_structs.hpp"
 
 
@@ -122,6 +122,7 @@ public:
 	static void TurnOnAutomaticFlightMode(int32 entityId, class UICM_AutomaticFlight_DataBase_C* dataAsset, class UObject* __WorldContext);
 	static void TurnOnCameraDrivenAutoFlightMode(int32 entityId, class UBP_CameraDrivenAutoFlightData_C* dataAsset, class UObject* __WorldContext);
 	static void AddActorWorldOffsetWithContextAndReset(int32 entityId, const struct FVectorDouble& offset, bool sweep, const class FString& context, class UObject* __WorldContext);
+	static bool SetActorLookAtWithContext(int32 entityId, const struct FVectorDouble& targetPoint, const class FString& context, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

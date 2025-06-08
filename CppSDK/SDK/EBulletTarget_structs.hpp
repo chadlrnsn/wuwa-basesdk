@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EBulletTarget.EBulletTarget
-// NumValues: 0x000C
+// NumValues: 0x000D
 enum class EBulletTarget : uint8
 {
 	NewEnumerator0                           = 0,
@@ -29,7 +29,8 @@ enum class EBulletTarget : uint8
 	NewEnumerator8                           = 8,
 	NewEnumerator9                           = 9,
 	NewEnumerator10                          = 10,
-	EBulletTarget_MAX                        = 11,
+	NewEnumerator11                          = 11,
+	EBulletTarget_MAX                        = 12,
 };
 
 }

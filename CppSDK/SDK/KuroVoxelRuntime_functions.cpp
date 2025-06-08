@@ -48,13 +48,15 @@ uint8 UKuroVoxelSystem::D_GetMaterialIDAtPos(class UWorld* World, const struct F
 
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.D_GetVoxelInfoAtPos
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVectorDouble                    UEPos                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ErrorCode                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double                                  SearchStep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKuroVoxelInfo                   ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FKuroVoxelInfo UKuroVoxelSystem::D_GetVoxelInfoAtPos(class UWorld* World, const struct FVectorDouble& UEPos)
+struct FKuroVoxelInfo UKuroVoxelSystem::D_GetVoxelInfoAtPos(class UWorld* World, const struct FVectorDouble& UEPos, int32* ErrorCode, double SearchStep)
 {
 	static class UFunction* Func = nullptr;
 
@@ -65,6 +67,7 @@ struct FKuroVoxelInfo UKuroVoxelSystem::D_GetVoxelInfoAtPos(class UWorld* World,
 
 	Parms.World = World;
 	Parms.UEPos = std::move(UEPos);
+	Parms.SearchStep = SearchStep;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -72,6 +75,9 @@ struct FKuroVoxelInfo UKuroVoxelSystem::D_GetVoxelInfoAtPos(class UWorld* World,
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	if (ErrorCode != nullptr)
+		*ErrorCode = Parms.ErrorCode;
 
 	return Parms.ReturnValue;
 }
@@ -113,9 +119,11 @@ bool UKuroVoxelSystem::D_IsCavernAtPos(class UWorld* World, const struct FVector
 // class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVectorDouble                    UEPos                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKuroVoxelInfo                   OutVoxelInfo                                           (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   ErrorCode                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// double                                  SearchStep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroVoxelSystem::D_TryGetVoxelInfoAtPos(class UWorld* World, const struct FVectorDouble& UEPos, struct FKuroVoxelInfo* OutVoxelInfo)
+bool UKuroVoxelSystem::D_TryGetVoxelInfoAtPos(class UWorld* World, const struct FVectorDouble& UEPos, struct FKuroVoxelInfo* OutVoxelInfo, int32* ErrorCode, double SearchStep)
 {
 	static class UFunction* Func = nullptr;
 
@@ -126,6 +134,7 @@ bool UKuroVoxelSystem::D_TryGetVoxelInfoAtPos(class UWorld* World, const struct 
 
 	Parms.World = World;
 	Parms.UEPos = std::move(UEPos);
+	Parms.SearchStep = SearchStep;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -136,6 +145,9 @@ bool UKuroVoxelSystem::D_TryGetVoxelInfoAtPos(class UWorld* World, const struct 
 
 	if (OutVoxelInfo != nullptr)
 		*OutVoxelInfo = std::move(Parms.OutVoxelInfo);
+
+	if (ErrorCode != nullptr)
+		*ErrorCode = Parms.ErrorCode;
 
 	return Parms.ReturnValue;
 }
@@ -200,13 +212,15 @@ class FString UKuroVoxelSystem::GetMtlNameByID(uint8 MtlID)
 
 
 // Function KuroVoxelRuntime.KuroVoxelSystem.GetVoxelInfoAtPos
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          UEPos                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ErrorCode                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   SearchStep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKuroVoxelInfo                   ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FKuroVoxelInfo UKuroVoxelSystem::GetVoxelInfoAtPos(class UWorld* World, const struct FVector& UEPos)
+struct FKuroVoxelInfo UKuroVoxelSystem::GetVoxelInfoAtPos(class UWorld* World, const struct FVector& UEPos, int32* ErrorCode, float SearchStep)
 {
 	static class UFunction* Func = nullptr;
 
@@ -217,6 +231,7 @@ struct FKuroVoxelInfo UKuroVoxelSystem::GetVoxelInfoAtPos(class UWorld* World, c
 
 	Parms.World = World;
 	Parms.UEPos = std::move(UEPos);
+	Parms.SearchStep = SearchStep;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -224,6 +239,9 @@ struct FKuroVoxelInfo UKuroVoxelSystem::GetVoxelInfoAtPos(class UWorld* World, c
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	if (ErrorCode != nullptr)
+		*ErrorCode = Parms.ErrorCode;
 
 	return Parms.ReturnValue;
 }
@@ -293,9 +311,11 @@ bool UKuroVoxelSystem::IsVoxelSystemInitialized(class UWorld* World)
 // class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          UEPos                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKuroVoxelInfo                   OutVoxelInfo                                           (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   ErrorCode                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   SearchStep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroVoxelSystem::TryGetVoxelInfoAtPos(class UWorld* World, const struct FVector& UEPos, struct FKuroVoxelInfo* OutVoxelInfo)
+bool UKuroVoxelSystem::TryGetVoxelInfoAtPos(class UWorld* World, const struct FVector& UEPos, struct FKuroVoxelInfo* OutVoxelInfo, int32* ErrorCode, float SearchStep)
 {
 	static class UFunction* Func = nullptr;
 
@@ -306,6 +326,7 @@ bool UKuroVoxelSystem::TryGetVoxelInfoAtPos(class UWorld* World, const struct FV
 
 	Parms.World = World;
 	Parms.UEPos = std::move(UEPos);
+	Parms.SearchStep = SearchStep;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -316,6 +337,9 @@ bool UKuroVoxelSystem::TryGetVoxelInfoAtPos(class UWorld* World, const struct FV
 
 	if (OutVoxelInfo != nullptr)
 		*OutVoxelInfo = std::move(Parms.OutVoxelInfo);
+
+	if (ErrorCode != nullptr)
+		*ErrorCode = Parms.ErrorCode;
 
 	return Parms.ReturnValue;
 }

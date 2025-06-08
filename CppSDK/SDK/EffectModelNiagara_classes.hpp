@@ -17,13 +17,9 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelNiagara.EffectModelNiagara_C
-// 0x0008 (0x0678 - 0x0670)
+// 0x0000 (0x0670 - 0x0670)
 class UEffectModelNiagara_C final : public UEffectModelNiagara
 {
-public:
-	bool                                          CastToonShadow;                                    // 0x0670(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          CastShadow;                                        // 0x0671(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-
 public:
 	static class UClass* StaticClass()
 	{
@@ -35,9 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UEffectModelNiagara_C) == 0x000008, "Wrong alignment on UEffectModelNiagara_C");
-static_assert(sizeof(UEffectModelNiagara_C) == 0x000678, "Wrong size on UEffectModelNiagara_C");
-static_assert(offsetof(UEffectModelNiagara_C, CastToonShadow) == 0x000670, "Member 'UEffectModelNiagara_C::CastToonShadow' has a wrong offset!");
-static_assert(offsetof(UEffectModelNiagara_C, CastShadow) == 0x000671, "Member 'UEffectModelNiagara_C::CastShadow' has a wrong offset!");
+static_assert(sizeof(UEffectModelNiagara_C) == 0x000670, "Wrong size on UEffectModelNiagara_C");
 
 }
 

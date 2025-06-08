@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_EmptyCharacter.BP_EmptyCharacter_C
-// 0x0000 (0x07B0 - 0x07B0)
+// 0x0000 (0x0750 - 0x0750)
 class ABP_EmptyCharacter_C final : public ATsBaseCharacter_C
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_EmptyCharacter_C) == 0x000010, "Wrong alignment on ABP_EmptyCharacter_C");
-static_assert(sizeof(ABP_EmptyCharacter_C) == 0x0007B0, "Wrong size on ABP_EmptyCharacter_C");
+static_assert(sizeof(ABP_EmptyCharacter_C) == 0x000750, "Wrong size on ABP_EmptyCharacter_C");
 
 }
 

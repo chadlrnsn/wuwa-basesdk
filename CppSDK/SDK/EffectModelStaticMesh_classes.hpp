@@ -17,12 +17,9 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelStaticMesh.EffectModelStaticMesh_C
-// 0x0008 (0x0638 - 0x0630)
+// 0x0000 (0x0638 - 0x0638)
 class UEffectModelStaticMesh_C final : public UEffectModelStaticMesh
 {
-public:
-	bool                                          AcceptExternalNiagaraParameter;                    // 0x0630(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-
 public:
 	static class UClass* StaticClass()
 	{
@@ -35,7 +32,6 @@ public:
 };
 static_assert(alignof(UEffectModelStaticMesh_C) == 0x000008, "Wrong alignment on UEffectModelStaticMesh_C");
 static_assert(sizeof(UEffectModelStaticMesh_C) == 0x000638, "Wrong size on UEffectModelStaticMesh_C");
-static_assert(offsetof(UEffectModelStaticMesh_C, AcceptExternalNiagaraParameter) == 0x000630, "Member 'UEffectModelStaticMesh_C::AcceptExternalNiagaraParameter' has a wrong offset!");
 
 }
 

@@ -10,9 +10,7 @@
 
 #include "Basic.hpp"
 
-#include "EEffectStatisticsSortType_structs.hpp"
 #include "Engine_classes.hpp"
-#include "AkAudio_structs.hpp"
 
 
 namespace SDK
@@ -24,19 +22,9 @@ class UEffectBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
 	static void RecycleEffect(class UEffectViewComponent_C* view, class UObject* __WorldContext);
-	static float GetEffectStatisticsCurrentCount(class UObject* __WorldContext);
-	static float GetEffectStatisticsTickCount(class UObject* __WorldContext);
-	static float GetEffectStatisticsRegisteredInterval(class UObject* __WorldContext);
-	static float GetEffectStatisticsReleasedInterval(class UObject* __WorldContext);
-	static void RefreshEffectStatisticsData(EEffectStatisticsSortType sortType, class UObject* __WorldContext);
-	static float GetEffectStatisticsEntryCount(class UObject* __WorldContext);
-	static class UUEffectStatisticsEntryData_C* GetEffectStatisticsEntry(int32 index1, class UObject* __WorldContext);
 	static float AddDebugLineFromPlayer(const struct FVector& location, const struct FLinearColor& color, float width, class UObject* __WorldContext);
 	static void ClearDebugDraw(class UObject* __WorldContext);
-	static void SetClusteredStuffDensities(class UWorld* world, int32 index1, class UEffectClusteredStuffSettings_C* overrideData1, float density1, class UObject* __WorldContext);
 	static void SetMaterialControllerDataSync(int32 entityId, const class FString& materialDataPath, bool isGroup, class UObject* __WorldContext);
-	static void DisableGlobalInteractionEffect(class UObject* __WorldContext);
-	static void EnableGlobalInteractionEffect(class UItemMaterialControllerGlobalData_C* globalMaterialData, class UObject* __WorldContext);
 	static bool ValidateKuroAnimNotify(class UKuroAnimNotify* asset, class UObject* __WorldContext);
 	static bool ValidateKuroAnimNotifyState(class UKuroAnimNotifyState* asset, class UObject* __WorldContext);
 	static void SetEffectSpawnLogEnabled(bool enabled, class UObject* __WorldContext);
@@ -46,23 +34,11 @@ public:
 	static void SetVisualizeCharacterWaterEffectTrace(bool enable, class UObject* __WorldContext);
 	static void SetEffectInPoolEnabled(bool enable, class UObject* __WorldContext);
 	static void SetEffectOutPoolEnabled(bool enable, class UObject* __WorldContext);
-	static float GetNumEffectUpdateNonRearrange(class UObject* __WorldContext);
-	static float GetNumEffectUpdateArbitrary(class UObject* __WorldContext);
-	static float GetNumEffectUpdateHigh(class UObject* __WorldContext);
-	static float GetNumEffectUpdateLow(class UObject* __WorldContext);
-	static float GetNumEffectUpdateNearlyPaused(class UObject* __WorldContext);
-	static float GetNumEffectAll(class UObject* __WorldContext);
-	static float GetNumEffectTickThisFrame(class UObject* __WorldContext);
 	static void EnableSceneObjectWaterEffectShowDebugTrace(bool enable, class UObject* __WorldContext);
 	static void SetTsWriteTimeToCollectionEnabled(bool enable, class UObject* __WorldContext);
-	static void AudioVisualizationInstanceStart(class AAudioVisualizationInstanceBase_C* actor, class UObject* __WorldContext);
-	static void AudioVisualizationInstanceEnd(class AAudioVisualizationInstanceBase_C* actor, class UObject* __WorldContext);
-	static void AudioVisualizationInstanceCallback(class AAudioVisualizationInstanceBase_C* actor, class UAkCallbackInfo* callbackInfo, EAkCallbackType callbackType, const class FString& state, class UObject* __WorldContext);
 	static void EffectCgMode(bool enable, class UObject* __WorldContext);
 	static class ABP_ScreenEffectSystem_C* GetScreenEffectSystem(class UObject* __WorldContext);
-	static void GiTickLensFlare(class UObject* worldContextObject, float deltaSeconds, class UPDA_ModelLensFlareConfig_C* config, const struct FLinearColor& color, float rampIndex, class UObject* __WorldContext);
-	static void TickClusteredStuff(class UWorld* world, float delta1, class UObject* __WorldContext);
-	static void EditorManualTickClusteredStuffEffects(class UWorld* world, float delta1, class UObject* __WorldContext);
+	static void ChangeMaterialTextures(class AActor* actor1, const class FString& assetPath1, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

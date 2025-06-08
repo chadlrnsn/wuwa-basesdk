@@ -21,16 +21,16 @@ namespace SDK
 {
 
 // Class Foliage.FoliageInstancedStaticMeshComponent
-// 0x0030 (0x07A0 - 0x0770)
+// 0x0030 (0x07B0 - 0x0780)
 class UFoliageInstancedStaticMeshComponent final : public UHierarchicalInstancedStaticMeshComponent
 {
 public:
-	TMulticastInlineDelegate<void(int32 InstanceIndex, float Damage, class AController* InstigatedBy, const struct FVector& HitLocation, const struct FVector& ShotFromDirection, class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakePointDamage;                         // 0x0768(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(TArray<int32>& Instances, TArray<float>& Damages, class AController* InstigatedBy, const struct FVector& Origin, float MaxRadius, class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakeRadialDamage;                        // 0x0778(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	bool                                          bEnableDiscardOnLoad;                              // 0x0788(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_789[0x3];                                      // 0x0789(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGuid                                  GenerationGuid;                                    // 0x078C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_79C[0x4];                                      // 0x079C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(int32 InstanceIndex, float Damage, class AController* InstigatedBy, const struct FVector& HitLocation, const struct FVector& ShotFromDirection, class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakePointDamage;                         // 0x0778(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(TArray<int32>& Instances, TArray<float>& Damages, class AController* InstigatedBy, const struct FVector& Origin, float MaxRadius, class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakeRadialDamage;                        // 0x0788(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	bool                                          bEnableDiscardOnLoad;                              // 0x0798(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_799[0x3];                                      // 0x0799(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  GenerationGuid;                                    // 0x079C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_7AC[0x4];                                      // 0x07AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -43,11 +43,11 @@ public:
 	}
 };
 static_assert(alignof(UFoliageInstancedStaticMeshComponent) == 0x000010, "Wrong alignment on UFoliageInstancedStaticMeshComponent");
-static_assert(sizeof(UFoliageInstancedStaticMeshComponent) == 0x0007A0, "Wrong size on UFoliageInstancedStaticMeshComponent");
-static_assert(offsetof(UFoliageInstancedStaticMeshComponent, OnInstanceTakePointDamage) == 0x000768, "Member 'UFoliageInstancedStaticMeshComponent::OnInstanceTakePointDamage' has a wrong offset!");
-static_assert(offsetof(UFoliageInstancedStaticMeshComponent, OnInstanceTakeRadialDamage) == 0x000778, "Member 'UFoliageInstancedStaticMeshComponent::OnInstanceTakeRadialDamage' has a wrong offset!");
-static_assert(offsetof(UFoliageInstancedStaticMeshComponent, bEnableDiscardOnLoad) == 0x000788, "Member 'UFoliageInstancedStaticMeshComponent::bEnableDiscardOnLoad' has a wrong offset!");
-static_assert(offsetof(UFoliageInstancedStaticMeshComponent, GenerationGuid) == 0x00078C, "Member 'UFoliageInstancedStaticMeshComponent::GenerationGuid' has a wrong offset!");
+static_assert(sizeof(UFoliageInstancedStaticMeshComponent) == 0x0007B0, "Wrong size on UFoliageInstancedStaticMeshComponent");
+static_assert(offsetof(UFoliageInstancedStaticMeshComponent, OnInstanceTakePointDamage) == 0x000778, "Member 'UFoliageInstancedStaticMeshComponent::OnInstanceTakePointDamage' has a wrong offset!");
+static_assert(offsetof(UFoliageInstancedStaticMeshComponent, OnInstanceTakeRadialDamage) == 0x000788, "Member 'UFoliageInstancedStaticMeshComponent::OnInstanceTakeRadialDamage' has a wrong offset!");
+static_assert(offsetof(UFoliageInstancedStaticMeshComponent, bEnableDiscardOnLoad) == 0x000798, "Member 'UFoliageInstancedStaticMeshComponent::bEnableDiscardOnLoad' has a wrong offset!");
+static_assert(offsetof(UFoliageInstancedStaticMeshComponent, GenerationGuid) == 0x00079C, "Member 'UFoliageInstancedStaticMeshComponent::GenerationGuid' has a wrong offset!");
 
 // Class Foliage.InteractiveFoliageActor
 // 0x0060 (0x0320 - 0x02C0)
@@ -122,11 +122,11 @@ static_assert(alignof(UFoliageStatistics) == 0x000008, "Wrong alignment on UFoli
 static_assert(sizeof(UFoliageStatistics) == 0x000030, "Wrong size on UFoliageStatistics");
 
 // Class Foliage.InteractiveFoliageComponent
-// 0x0010 (0x05C0 - 0x05B0)
+// 0x0010 (0x05D0 - 0x05C0)
 class UInteractiveFoliageComponent final : public UStaticMeshComponent
 {
 public:
-	uint8                                         Pad_5B0[0x10];                                     // 0x05B0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5C0[0x10];                                     // 0x05C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -139,7 +139,7 @@ public:
 	}
 };
 static_assert(alignof(UInteractiveFoliageComponent) == 0x000010, "Wrong alignment on UInteractiveFoliageComponent");
-static_assert(sizeof(UInteractiveFoliageComponent) == 0x0005C0, "Wrong size on UInteractiveFoliageComponent");
+static_assert(sizeof(UInteractiveFoliageComponent) == 0x0005D0, "Wrong size on UInteractiveFoliageComponent");
 
 // Class Foliage.FoliageType
 // 0x0448 (0x0478 - 0x0030)

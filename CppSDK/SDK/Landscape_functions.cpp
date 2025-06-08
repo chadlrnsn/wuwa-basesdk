@@ -289,6 +289,31 @@ void ALandscapeProxy::EditorApplySpline(class USplineComponent* InSplineComponen
 }
 
 
+// Function Landscape.LandscapeProxy.EditorSetKuroColormapTexture
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UTexture2D*                       NewKuroColormapTexture                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ALandscapeProxy::EditorSetKuroColormapTexture(class UTexture2D* NewKuroColormapTexture)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LandscapeProxy", "EditorSetKuroColormapTexture");
+
+	Params::LandscapeProxy_EditorSetKuroColormapTexture Parms{};
+
+	Parms.NewKuroColormapTexture = NewKuroColormapTexture;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Landscape.LandscapeProxy.EditorSetLandscapeMaterial
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:

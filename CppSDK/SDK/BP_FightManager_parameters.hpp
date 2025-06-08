@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "SHitMapping_structs.hpp"
 #include "SCamp_structs.hpp"
-#include "ECamp_structs.hpp"
+#include "SHitMapping_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ERelation_structs.hpp"
+#include "ECamp_structs.hpp"
 
 
 namespace SDK::Params

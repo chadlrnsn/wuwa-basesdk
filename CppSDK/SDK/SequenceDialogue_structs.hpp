@@ -127,7 +127,7 @@ static_assert(alignof(FMovieSceneDialogueSharedTrack) == 0x000008, "Wrong alignm
 static_assert(sizeof(FMovieSceneDialogueSharedTrack) == 0x000020, "Wrong size on FMovieSceneDialogueSharedTrack");
 
 // ScriptStruct SequenceDialogue.MovieSceneDialogueSectionTemplate
-// 0x0088 (0x00A8 - 0x0020)
+// 0x0090 (0x00B0 - 0x0020)
 struct FMovieSceneDialogueSectionTemplate final : public FMovieSceneEvalTemplate
 {
 public:
@@ -142,10 +142,12 @@ public:
 	class FText                                   DialogueKey;                                       // 0x0088(0x0018)(NativeAccessSpecifierPrivate)
 	int32                                         SpeakerID;                                         // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	ELanguageAudio                                LanguageType;                                      // 0x00A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         QteId;                                             // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FMovieSceneDialogueSectionTemplate) == 0x000008, "Wrong alignment on FMovieSceneDialogueSectionTemplate");
-static_assert(sizeof(FMovieSceneDialogueSectionTemplate) == 0x0000A8, "Wrong size on FMovieSceneDialogueSectionTemplate");
+static_assert(sizeof(FMovieSceneDialogueSectionTemplate) == 0x0000B0, "Wrong size on FMovieSceneDialogueSectionTemplate");
 static_assert(offsetof(FMovieSceneDialogueSectionTemplate, DialogueInfo) == 0x000020, "Member 'FMovieSceneDialogueSectionTemplate::DialogueInfo' has a wrong offset!");
 static_assert(offsetof(FMovieSceneDialogueSectionTemplate, SpeakerName) == 0x000038, "Member 'FMovieSceneDialogueSectionTemplate::SpeakerName' has a wrong offset!");
 static_assert(offsetof(FMovieSceneDialogueSectionTemplate, DialogueID) == 0x000050, "Member 'FMovieSceneDialogueSectionTemplate::DialogueID' has a wrong offset!");
@@ -156,6 +158,7 @@ static_assert(offsetof(FMovieSceneDialogueSectionTemplate, Options) == 0x000078,
 static_assert(offsetof(FMovieSceneDialogueSectionTemplate, DialogueKey) == 0x000088, "Member 'FMovieSceneDialogueSectionTemplate::DialogueKey' has a wrong offset!");
 static_assert(offsetof(FMovieSceneDialogueSectionTemplate, SpeakerID) == 0x0000A0, "Member 'FMovieSceneDialogueSectionTemplate::SpeakerID' has a wrong offset!");
 static_assert(offsetof(FMovieSceneDialogueSectionTemplate, LanguageType) == 0x0000A4, "Member 'FMovieSceneDialogueSectionTemplate::LanguageType' has a wrong offset!");
+static_assert(offsetof(FMovieSceneDialogueSectionTemplate, QteId) == 0x0000A8, "Member 'FMovieSceneDialogueSectionTemplate::QteId' has a wrong offset!");
 
 // ScriptStruct SequenceDialogue.VectorNameAndCurve
 // 0x0208 (0x0208 - 0x0000)

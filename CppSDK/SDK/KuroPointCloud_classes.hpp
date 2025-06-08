@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroPointCloud_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroPointCloud_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Niagara_classes.hpp"

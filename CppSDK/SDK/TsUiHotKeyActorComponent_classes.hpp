@@ -25,6 +25,7 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0100(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class FString                                 Mode;                                              // 0x0108(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 	int32                                         Index_0;                                           // 0x0118(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsUsePool;                                         // 0x011C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_TsUiHotKeyActorComponent(int32 EntryPoint);
@@ -49,6 +50,7 @@ static_assert(sizeof(UTsUiHotKeyActorComponent_C) == 0x000120, "Wrong size on UT
 static_assert(offsetof(UTsUiHotKeyActorComponent_C, UberGraphFrame) == 0x000100, "Member 'UTsUiHotKeyActorComponent_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UTsUiHotKeyActorComponent_C, Mode) == 0x000108, "Member 'UTsUiHotKeyActorComponent_C::Mode' has a wrong offset!");
 static_assert(offsetof(UTsUiHotKeyActorComponent_C, Index_0) == 0x000118, "Member 'UTsUiHotKeyActorComponent_C::Index_0' has a wrong offset!");
+static_assert(offsetof(UTsUiHotKeyActorComponent_C, IsUsePool) == 0x00011C, "Member 'UTsUiHotKeyActorComponent_C::IsUsePool' has a wrong offset!");
 
 }
 

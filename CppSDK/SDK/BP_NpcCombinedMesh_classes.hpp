@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "SNpcSetupPartInfo_structs.hpp"
-#include "EBodyPartName_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
+#include "EBodyPartName_structs.hpp"
+#include "SNpcSetupPartInfo_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -60,6 +60,8 @@ public:
 	void SetSkeletonMeshDI(class USkeletalMeshComponent* SKMesh, class FName ParamName01, class FName ParamName02, EBodyPartName BodyType, class FName SkinColorName, class UMaterialInstance* MI01);
 	void GetHeadTransform(const struct FTransform& InTransform, int32 Index_0, struct FTransform* OutTransform);
 	void Test(class USkeletalMeshComponent* SKMesh, class UMaterialInstance* MI);
+	void 预览MorphTarget();
+	void GetFaceMeshComponent(class USkeletalMeshComponent** SkeletalMeshComp);
 
 public:
 	static class UClass* StaticClass()

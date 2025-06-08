@@ -133,6 +133,21 @@ static_assert(alignof(KuroConfigPatcher_UpdateConfigs) == 0x000008, "Wrong align
 static_assert(sizeof(KuroConfigPatcher_UpdateConfigs) == 0x000010, "Wrong size on KuroConfigPatcher_UpdateConfigs");
 static_assert(offsetof(KuroConfigPatcher_UpdateConfigs, ConfigListPath) == 0x000000, "Member 'KuroConfigPatcher_UpdateConfigs::ConfigListPath' has a wrong offset!");
 
+// Function KuroHotPatch.KuroBinPatch.BeginPatch
+// 0x0030 (0x0030 - 0x0000)
+struct KuroBinPatch_BeginPatch final
+{
+public:
+	class FString                                 Diff;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OldDir;                                            // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 NewDir;                                            // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroBinPatch_BeginPatch) == 0x000008, "Wrong alignment on KuroBinPatch_BeginPatch");
+static_assert(sizeof(KuroBinPatch_BeginPatch) == 0x000030, "Wrong size on KuroBinPatch_BeginPatch");
+static_assert(offsetof(KuroBinPatch_BeginPatch, Diff) == 0x000000, "Member 'KuroBinPatch_BeginPatch::Diff' has a wrong offset!");
+static_assert(offsetof(KuroBinPatch_BeginPatch, OldDir) == 0x000010, "Member 'KuroBinPatch_BeginPatch::OldDir' has a wrong offset!");
+static_assert(offsetof(KuroBinPatch_BeginPatch, NewDir) == 0x000020, "Member 'KuroBinPatch_BeginPatch::NewDir' has a wrong offset!");
+
 // Function KuroHotPatch.KuroLauncherLibrary.CheckFileSha1
 // 0x0028 (0x0028 - 0x0000)
 struct KuroLauncherLibrary_CheckFileSha1 final
@@ -148,6 +163,22 @@ static_assert(sizeof(KuroLauncherLibrary_CheckFileSha1) == 0x000028, "Wrong size
 static_assert(offsetof(KuroLauncherLibrary_CheckFileSha1, FilePath) == 0x000000, "Member 'KuroLauncherLibrary_CheckFileSha1::FilePath' has a wrong offset!");
 static_assert(offsetof(KuroLauncherLibrary_CheckFileSha1, CheckSha1Hash) == 0x000010, "Member 'KuroLauncherLibrary_CheckFileSha1::CheckSha1Hash' has a wrong offset!");
 static_assert(offsetof(KuroLauncherLibrary_CheckFileSha1, ReturnValue) == 0x000020, "Member 'KuroLauncherLibrary_CheckFileSha1::ReturnValue' has a wrong offset!");
+
+// Function KuroHotPatch.KuroLauncherLibrary.CopyFile
+// 0x0028 (0x0028 - 0x0000)
+struct KuroLauncherLibrary_CopyFile final
+{
+public:
+	class FString                                 DstPath;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SrcPath;                                           // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroLauncherLibrary_CopyFile) == 0x000008, "Wrong alignment on KuroLauncherLibrary_CopyFile");
+static_assert(sizeof(KuroLauncherLibrary_CopyFile) == 0x000028, "Wrong size on KuroLauncherLibrary_CopyFile");
+static_assert(offsetof(KuroLauncherLibrary_CopyFile, DstPath) == 0x000000, "Member 'KuroLauncherLibrary_CopyFile::DstPath' has a wrong offset!");
+static_assert(offsetof(KuroLauncherLibrary_CopyFile, SrcPath) == 0x000010, "Member 'KuroLauncherLibrary_CopyFile::SrcPath' has a wrong offset!");
+static_assert(offsetof(KuroLauncherLibrary_CopyFile, ReturnValue) == 0x000020, "Member 'KuroLauncherLibrary_CopyFile::ReturnValue' has a wrong offset!");
 
 // Function KuroHotPatch.KuroLauncherLibrary.Decrypt
 // 0x0028 (0x0028 - 0x0000)
@@ -362,6 +393,21 @@ static_assert(alignof(KuroLauncherLibrary_GetRemainPrecompileShaders) == 0x00000
 static_assert(sizeof(KuroLauncherLibrary_GetRemainPrecompileShaders) == 0x000004, "Wrong size on KuroLauncherLibrary_GetRemainPrecompileShaders");
 static_assert(offsetof(KuroLauncherLibrary_GetRemainPrecompileShaders, ReturnValue) == 0x000000, "Member 'KuroLauncherLibrary_GetRemainPrecompileShaders::ReturnValue' has a wrong offset!");
 
+// Function KuroHotPatch.KuroLauncherLibrary.GetTotalAndFreeSpace
+// 0x0020 (0x0020 - 0x0000)
+struct KuroLauncherLibrary_GetTotalAndFreeSpace final
+{
+public:
+	class FString                                 CheckPath;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         FreeSize;                                          // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLauncherLibrary_GetTotalAndFreeSpace) == 0x000008, "Wrong alignment on KuroLauncherLibrary_GetTotalAndFreeSpace");
+static_assert(sizeof(KuroLauncherLibrary_GetTotalAndFreeSpace) == 0x000020, "Wrong size on KuroLauncherLibrary_GetTotalAndFreeSpace");
+static_assert(offsetof(KuroLauncherLibrary_GetTotalAndFreeSpace, CheckPath) == 0x000000, "Member 'KuroLauncherLibrary_GetTotalAndFreeSpace::CheckPath' has a wrong offset!");
+static_assert(offsetof(KuroLauncherLibrary_GetTotalAndFreeSpace, FreeSize) == 0x000010, "Member 'KuroLauncherLibrary_GetTotalAndFreeSpace::FreeSize' has a wrong offset!");
+static_assert(offsetof(KuroLauncherLibrary_GetTotalAndFreeSpace, ReturnValue) == 0x000018, "Member 'KuroLauncherLibrary_GetTotalAndFreeSpace::ReturnValue' has a wrong offset!");
+
 // Function KuroHotPatch.KuroLauncherLibrary.GetTotalPrecompileShaders
 // 0x0004 (0x0004 - 0x0000)
 struct KuroLauncherLibrary_GetTotalPrecompileShaders final
@@ -395,6 +441,17 @@ static_assert(alignof(KuroLauncherLibrary_IsLocalPackaging) == 0x000001, "Wrong 
 static_assert(sizeof(KuroLauncherLibrary_IsLocalPackaging) == 0x000001, "Wrong size on KuroLauncherLibrary_IsLocalPackaging");
 static_assert(offsetof(KuroLauncherLibrary_IsLocalPackaging, ReturnValue) == 0x000000, "Member 'KuroLauncherLibrary_IsLocalPackaging::ReturnValue' has a wrong offset!");
 
+// Function KuroHotPatch.KuroLauncherLibrary.IsStartupMountSuccess
+// 0x0001 (0x0001 - 0x0000)
+struct KuroLauncherLibrary_IsStartupMountSuccess final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLauncherLibrary_IsStartupMountSuccess) == 0x000001, "Wrong alignment on KuroLauncherLibrary_IsStartupMountSuccess");
+static_assert(sizeof(KuroLauncherLibrary_IsStartupMountSuccess) == 0x000001, "Wrong size on KuroLauncherLibrary_IsStartupMountSuccess");
+static_assert(offsetof(KuroLauncherLibrary_IsStartupMountSuccess, ReturnValue) == 0x000000, "Member 'KuroLauncherLibrary_IsStartupMountSuccess::ReturnValue' has a wrong offset!");
+
 // Function KuroHotPatch.KuroLauncherLibrary.MakeDirectory
 // 0x0018 (0x0018 - 0x0000)
 struct KuroLauncherLibrary_MakeDirectory final
@@ -424,6 +481,17 @@ static_assert(sizeof(KuroLauncherLibrary_MoveFile) == 0x000028, "Wrong size on K
 static_assert(offsetof(KuroLauncherLibrary_MoveFile, DstPath) == 0x000000, "Member 'KuroLauncherLibrary_MoveFile::DstPath' has a wrong offset!");
 static_assert(offsetof(KuroLauncherLibrary_MoveFile, SrcPath) == 0x000010, "Member 'KuroLauncherLibrary_MoveFile::SrcPath' has a wrong offset!");
 static_assert(offsetof(KuroLauncherLibrary_MoveFile, ReturnValue) == 0x000020, "Member 'KuroLauncherLibrary_MoveFile::ReturnValue' has a wrong offset!");
+
+// Function KuroHotPatch.KuroLauncherLibrary.NeedClearPatchPaks
+// 0x0001 (0x0001 - 0x0000)
+struct KuroLauncherLibrary_NeedClearPatchPaks final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLauncherLibrary_NeedClearPatchPaks) == 0x000001, "Wrong alignment on KuroLauncherLibrary_NeedClearPatchPaks");
+static_assert(sizeof(KuroLauncherLibrary_NeedClearPatchPaks) == 0x000001, "Wrong size on KuroLauncherLibrary_NeedClearPatchPaks");
+static_assert(offsetof(KuroLauncherLibrary_NeedClearPatchPaks, ReturnValue) == 0x000000, "Member 'KuroLauncherLibrary_NeedClearPatchPaks::ReturnValue' has a wrong offset!");
 
 // Function KuroHotPatch.KuroLauncherLibrary.NeedHotPatch
 // 0x0001 (0x0001 - 0x0000)

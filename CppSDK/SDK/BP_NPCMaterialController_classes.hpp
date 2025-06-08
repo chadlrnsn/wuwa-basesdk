@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "EHolographicState_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "EHolographicState_structs.hpp"
 #include "SHolographicMaterialsCache_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_NPCMaterialController.BP_NPCMaterialController_C
-// 0x0090 (0x0150 - 0x00C0)
+// 0x00A0 (0x0160 - 0x00C0)
 class UBP_NPCMaterialController_C final : public UActorComponent
 {
 public:
@@ -36,6 +36,9 @@ public:
 	TMap<class USkeletalMeshComponent*, struct FSHolographicMaterialsCache> ComponentMaterialsCache;                           // 0x00F8(0x0050)(Edit, BlueprintVisible, ContainsInstancedReference)
 	bool                                          EnableBattle;                                      // 0x0148(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          EnableMask;                                        // 0x0149(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_14A[0x6];                                      // 0x014A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroMaterialControllerComponent*       MaterialController;                                // 0x0150(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsOnMobile;                                        // 0x0158(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_NPCMaterialController(int32 EntryPoint);
@@ -47,9 +50,11 @@ public:
 	void Clear();
 	void RemoveNpcEffect();
 	void UpdateMaterialsWithDa(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData);
-	void EndEffect();
 	void StartEffect();
+	void EndEffect();
 	void MaterialPretreatment(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData);
+	void ApplyMaterialsWithDa(const struct FSHolographicData& SHolographicData, EKuroCharSlotSpecifiedType SlotType);
+	void ApplyMaterialAndTexture(const struct FSHolographicData& SHolographicData, EKuroCharSlotSpecifiedType SlotType);
 
 public:
 	static class UClass* StaticClass()
@@ -62,7 +67,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_NPCMaterialController_C) == 0x000008, "Wrong alignment on UBP_NPCMaterialController_C");
-static_assert(sizeof(UBP_NPCMaterialController_C) == 0x000150, "Wrong size on UBP_NPCMaterialController_C");
+static_assert(sizeof(UBP_NPCMaterialController_C) == 0x000160, "Wrong size on UBP_NPCMaterialController_C");
 static_assert(offsetof(UBP_NPCMaterialController_C, UberGraphFrame) == 0x0000C0, "Member 'UBP_NPCMaterialController_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UBP_NPCMaterialController_C, OL_Materials) == 0x0000C8, "Member 'UBP_NPCMaterialController_C::OL_Materials' has a wrong offset!");
 static_assert(offsetof(UBP_NPCMaterialController_C, Other_Materials) == 0x0000D8, "Member 'UBP_NPCMaterialController_C::Other_Materials' has a wrong offset!");
@@ -73,6 +78,8 @@ static_assert(offsetof(UBP_NPCMaterialController_C, bCached) == 0x0000F5, "Membe
 static_assert(offsetof(UBP_NPCMaterialController_C, ComponentMaterialsCache) == 0x0000F8, "Member 'UBP_NPCMaterialController_C::ComponentMaterialsCache' has a wrong offset!");
 static_assert(offsetof(UBP_NPCMaterialController_C, EnableBattle) == 0x000148, "Member 'UBP_NPCMaterialController_C::EnableBattle' has a wrong offset!");
 static_assert(offsetof(UBP_NPCMaterialController_C, EnableMask) == 0x000149, "Member 'UBP_NPCMaterialController_C::EnableMask' has a wrong offset!");
+static_assert(offsetof(UBP_NPCMaterialController_C, MaterialController) == 0x000150, "Member 'UBP_NPCMaterialController_C::MaterialController' has a wrong offset!");
+static_assert(offsetof(UBP_NPCMaterialController_C, IsOnMobile) == 0x000158, "Member 'UBP_NPCMaterialController_C::IsOnMobile' has a wrong offset!");
 
 }
 

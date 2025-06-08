@@ -17,7 +17,7 @@ namespace SDK::Params
 {
 
 // Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.ExecuteUbergraph_BP_KuroDestructibleActor
-// 0x01A0 (0x01A0 - 0x0000)
+// 0x01B0 (0x01B0 - 0x0000)
 struct BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor final
 {
 public:
@@ -56,9 +56,12 @@ public:
 	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x0180(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_Add_VectorVector_ReturnValue_1;           // 0x018C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_199[0x3];                                      // 0x0199(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x019C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor) == 0x000010, "Wrong alignment on BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor");
-static_assert(sizeof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor) == 0x0001A0, "Wrong size on BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor");
+static_assert(sizeof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor) == 0x0001B0, "Wrong size on BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor, EntryPoint) == 0x000000, "Member 'BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor::EntryPoint' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor, K2Node_CustomEvent_HitPoint) == 0x000004, "Member 'BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor::K2Node_CustomEvent_HitPoint' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor, K2Node_CustomEvent_HitDirection) == 0x000010, "Member 'BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor::K2Node_CustomEvent_HitDirection' has a wrong offset!");
@@ -87,6 +90,19 @@ static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestru
 static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x000180, "Member 'BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor, CallFunc_Add_VectorVector_ReturnValue_1) == 0x00018C, "Member 'BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor::CallFunc_Add_VectorVector_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor, CallFunc_BooleanOR_ReturnValue) == 0x000198, "Member 'BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor, K2Node_Event_DeltaSeconds) == 0x00019C, "Member 'BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor, CallFunc_BooleanAND_ReturnValue) == 0x0001A0, "Member 'BP_KuroDestructibleActor_C_ExecuteUbergraph_BP_KuroDestructibleActor::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+
+// Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_KuroDestructibleActor_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_KuroDestructibleActor_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_KuroDestructibleActor_C_ReceiveTick");
+static_assert(sizeof(BP_KuroDestructibleActor_C_ReceiveTick) == 0x000004, "Wrong size on BP_KuroDestructibleActor_C_ReceiveTick");
+static_assert(offsetof(BP_KuroDestructibleActor_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_KuroDestructibleActor_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
 
 // Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.PlayDestruction
 // 0x0014 (0x0014 - 0x0000)
@@ -168,6 +184,22 @@ static_assert(offsetof(BP_KuroDestructibleActor_C_IsMobile, CallFunc_GetPlatform
 static_assert(offsetof(BP_KuroDestructibleActor_C_IsMobile, CallFunc_EqualEqual_StrStr_ReturnValue) == 0x000018, "Member 'BP_KuroDestructibleActor_C_IsMobile::CallFunc_EqualEqual_StrStr_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_IsMobile, CallFunc_EqualEqual_StrStr_ReturnValue_1) == 0x000019, "Member 'BP_KuroDestructibleActor_C_IsMobile::CallFunc_EqualEqual_StrStr_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_KuroDestructibleActor_C_IsMobile, CallFunc_BooleanOR_ReturnValue) == 0x00001A, "Member 'BP_KuroDestructibleActor_C_IsMobile::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
+
+// Function BP_KuroDestructibleActor.BP_KuroDestructibleActor_C.EnableFakeGravityDirect
+// 0x0014 (0x0014 - 0x0000)
+struct BP_KuroDestructibleActor_C_EnableFakeGravityDirect final
+{
+public:
+	bool                                          Enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                FakeGravityValue;                                  // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_KuroDestructibleActor_C_EnableFakeGravityDirect) == 0x000004, "Wrong alignment on BP_KuroDestructibleActor_C_EnableFakeGravityDirect");
+static_assert(sizeof(BP_KuroDestructibleActor_C_EnableFakeGravityDirect) == 0x000014, "Wrong size on BP_KuroDestructibleActor_C_EnableFakeGravityDirect");
+static_assert(offsetof(BP_KuroDestructibleActor_C_EnableFakeGravityDirect, Enable) == 0x000000, "Member 'BP_KuroDestructibleActor_C_EnableFakeGravityDirect::Enable' has a wrong offset!");
+static_assert(offsetof(BP_KuroDestructibleActor_C_EnableFakeGravityDirect, FakeGravityValue) == 0x000004, "Member 'BP_KuroDestructibleActor_C_EnableFakeGravityDirect::FakeGravityValue' has a wrong offset!");
+static_assert(offsetof(BP_KuroDestructibleActor_C_EnableFakeGravityDirect, CallFunc_Not_PreBool_ReturnValue) == 0x000010, "Member 'BP_KuroDestructibleActor_C_EnableFakeGravityDirect::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
 
 }
 

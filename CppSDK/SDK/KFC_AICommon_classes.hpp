@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ECamp_structs.hpp"
 #include "ERelation_structs.hpp"
+#include "ECamp_structs.hpp"
 
 
 namespace SDK
@@ -33,7 +33,7 @@ public:
 	static void 停止移动(class ATsBaseCharacter_C* Character, class UObject* __WorldContext);
 	static void 游荡强制转向开始(class ATsBaseCharacter_C* 自身Character, float 旋转速度, class ATsBaseCharacter_C* 仇恨对象, class UObject* __WorldContext, bool* 自动朝向开始);
 	static void 设置黑板Int(class ATsBaseCharacter_C* 角色, const class FString& Key, int32 值, class UObject* __WorldContext);
-	static void 获取黑板_Int(class ATsBaseCharacter_C* 角色, const class FString& Key, class UObject* __WorldContext, int32* 值);
+	static void 获取黑板_Int(class ABaseCharacter* 角色, const class FString& Key, class UObject* __WorldContext, int32* 值);
 	static void 获取自身距离坐标角度(const struct FVectorDouble& 目标坐标, class AActor* 原点角色, class UObject* __WorldContext, float* 返回角度);
 	static void 使用技能关卡封装(bool 外部方向输入清0, class ATsBaseCharacter_C* 自身Character, class FName 技能随机结果, class AActor* 技能目标, class UObject* __WorldContext);
 	static void 获取自身距离目标角度2D(class AActor* 目标角色, class AActor* 原点角色, class UObject* __WorldContext, float* 返回角度);
@@ -58,7 +58,7 @@ public:
 	static void 抛物线位移函数(float 激发时长, float 激发力度, float 发射角度, class UObject* __WorldContext, float* 返回高度, float* 返回位置, float* 高度速度, float* 距离速度);
 	static void 获取自身对于目标仰角(class ACharacter* 目标对象, class ACharacter* 原点对象, bool 忽略胶囊体, class UObject* __WorldContext, float* 返回角度);
 	static void 获取_Base属性值(class ATsBaseCharacter_C* 目标, int32 属性id, class UObject* __WorldContext, float* 属性值);
-	static void 获取Current属性值(class ATsBaseCharacter_C* 目标, int32 属性id, class UObject* __WorldContext, float* 属性值);
+	static void 获取Current属性值(class ABaseCharacter* 目标, int32 属性id, class UObject* __WorldContext, float* 属性值);
 	static void 忽略_Z_Double(const struct FVectorDouble& InVec, class UObject* __WorldContext, struct FVectorDouble* OutVec);
 	static void 获取黑板坐标(class ATsBaseCharacter_C* 角色, const class FString& Key, class UObject* __WorldContext, struct FVectorDouble* 位置);
 

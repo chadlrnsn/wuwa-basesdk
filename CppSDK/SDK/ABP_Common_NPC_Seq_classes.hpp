@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "AnimGraphRuntime_structs.hpp"
 #include "KuroAnim_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -21,49 +21,49 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Common_NPC_Seq.ABP_Common_NPC_Seq_C
-// 0x0F80 (0x15A0 - 0x0620)
+// 0x1080 (0x16E0 - 0x0660)
 class UABP_Common_NPC_Seq_C final : public UAnimInstance
 {
 public:
-	uint8                                         Pad_618[0x8];                                      // 0x0618(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0620(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0628(0x0038)()
-	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x0660(0x0138)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_2;                              // 0x0798(0x0060)()
-	struct FAnimNode_CurveSource                  AnimGraphNode_CurveSource;                         // 0x07F8(0x0040)()
-	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x0838(0x0020)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_9;                        // 0x0858(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_8;                        // 0x0970(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_7;                        // 0x0A88(0x0118)()
-	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x0BA0(0x0020)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x0BC0(0x0060)()
-	struct FAnimNode_CurveFix                     AnimGraphNode_CurveFix;                            // 0x0C20(0x0030)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x0C50(0x0060)()
-	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves_1;                     // 0x0CB0(0x0060)()
-	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves;                       // 0x0D10(0x0060)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_6;                        // 0x0D70(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_5;                        // 0x0E88(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_4;                        // 0x0FA0(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_3;                        // 0x10B8(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_2;                        // 0x11D0(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_1;                        // 0x12E8(0x0118)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone;                          // 0x1400(0x0118)()
-	struct FRotator                               Add_Bip_001Head;                                   // 0x1518(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Bip_001Neck;                                   // 0x1524(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Bip_001Spine_2;                                // 0x1530(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	float                                         MouthAlpha;                                        // 0x153C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               AddBip001LClavicle;                                // 0x1540(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               AddBip001LUpperArm;                                // 0x154C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               AddBip001LForearm;                                 // 0x1558(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               AddBip001RClavicle;                                // 0x1564(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               AddBip001RUpperArm;                                // 0x1570(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               AddBip001RForearm;                                 // 0x157C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Bip_001Spine_1;                                // 0x1588(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0660(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0668(0x0038)()
+	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x06A0(0x0138)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_3;                              // 0x07D8(0x0060)()
+	struct FAnimNode_CurveSource                  AnimGraphNode_CurveSource;                         // 0x0838(0x0040)()
+	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x0878(0x0020)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_9;                        // 0x0898(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_8;                        // 0x09C0(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_7;                        // 0x0AE8(0x0128)()
+	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x0C10(0x0020)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_2;                              // 0x0C30(0x0060)()
+	struct FAnimNode_CurveFix                     AnimGraphNode_CurveFix;                            // 0x0C90(0x0030)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x0CC0(0x0060)()
+	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves_1;                     // 0x0D20(0x0060)()
+	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves;                       // 0x0D80(0x0060)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_6;                        // 0x0DE0(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_5;                        // 0x0F08(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_4;                        // 0x1030(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_3;                        // 0x1158(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_2;                        // 0x1280(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_1;                        // 0x13A8(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone;                          // 0x14D0(0x0128)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x15F8(0x0060)()
+	struct FRotator                               Add_Bip_001Head;                                   // 0x1658(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Bip_001Neck;                                   // 0x1664(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Bip_001Spine_2;                                // 0x1670(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	float                                         MouthAlpha;                                        // 0x167C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               AddBip001LClavicle;                                // 0x1680(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               AddBip001LUpperArm;                                // 0x168C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               AddBip001LForearm;                                 // 0x1698(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               AddBip001RClavicle;                                // 0x16A4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               AddBip001RUpperArm;                                // 0x16B0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               AddBip001RForearm;                                 // 0x16BC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Bip_001Spine_1;                                // 0x16C8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_ABP_Common_NPC_Seq(int32 EntryPoint);
-	void BlueprintUpdateAnimation(float DeltaTimeX);
 	void AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* AnimGraph_0);
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void ExecuteUbergraph_ABP_Common_NPC_Seq(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -76,40 +76,41 @@ public:
 	}
 };
 static_assert(alignof(UABP_Common_NPC_Seq_C) == 0x000010, "Wrong alignment on UABP_Common_NPC_Seq_C");
-static_assert(sizeof(UABP_Common_NPC_Seq_C) == 0x0015A0, "Wrong size on UABP_Common_NPC_Seq_C");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, UberGraphFrame) == 0x000620, "Member 'UABP_Common_NPC_Seq_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_Root) == 0x000628, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_Root' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_LinkedInputPose) == 0x000660, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_LinkedInputPose' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_Slot_2) == 0x000798, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_Slot_2' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_CurveSource) == 0x0007F8, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_CurveSource' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_LocalToComponentSpace) == 0x000838, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_LocalToComponentSpace' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_9) == 0x000858, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_9' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_8) == 0x000970, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_8' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_7) == 0x000A88, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_7' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ComponentToLocalSpace) == 0x000BA0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ComponentToLocalSpace' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_Slot_1) == 0x000BC0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_Slot_1' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_CurveFix) == 0x000C20, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_CurveFix' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_Slot) == 0x000C50, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_Slot' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_CombineCurves_1) == 0x000CB0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_CombineCurves_1' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_CombineCurves) == 0x000D10, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_CombineCurves' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_6) == 0x000D70, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_6' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_5) == 0x000E88, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_5' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_4) == 0x000FA0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_4' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_3) == 0x0010B8, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_3' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_2) == 0x0011D0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_2' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_1) == 0x0012E8, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_1' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone) == 0x001400, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, Add_Bip_001Head) == 0x001518, "Member 'UABP_Common_NPC_Seq_C::Add_Bip_001Head' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, Add_Bip_001Neck) == 0x001524, "Member 'UABP_Common_NPC_Seq_C::Add_Bip_001Neck' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, Add_Bip_001Spine_2) == 0x001530, "Member 'UABP_Common_NPC_Seq_C::Add_Bip_001Spine_2' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, MouthAlpha) == 0x00153C, "Member 'UABP_Common_NPC_Seq_C::MouthAlpha' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001LClavicle) == 0x001540, "Member 'UABP_Common_NPC_Seq_C::AddBip001LClavicle' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001LUpperArm) == 0x00154C, "Member 'UABP_Common_NPC_Seq_C::AddBip001LUpperArm' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001LForearm) == 0x001558, "Member 'UABP_Common_NPC_Seq_C::AddBip001LForearm' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001RClavicle) == 0x001564, "Member 'UABP_Common_NPC_Seq_C::AddBip001RClavicle' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001RUpperArm) == 0x001570, "Member 'UABP_Common_NPC_Seq_C::AddBip001RUpperArm' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001RForearm) == 0x00157C, "Member 'UABP_Common_NPC_Seq_C::AddBip001RForearm' has a wrong offset!");
-static_assert(offsetof(UABP_Common_NPC_Seq_C, Add_Bip_001Spine_1) == 0x001588, "Member 'UABP_Common_NPC_Seq_C::Add_Bip_001Spine_1' has a wrong offset!");
+static_assert(sizeof(UABP_Common_NPC_Seq_C) == 0x0016E0, "Wrong size on UABP_Common_NPC_Seq_C");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, UberGraphFrame) == 0x000660, "Member 'UABP_Common_NPC_Seq_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_Root) == 0x000668, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_Root' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_LinkedInputPose) == 0x0006A0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_LinkedInputPose' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_Slot_3) == 0x0007D8, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_Slot_3' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_CurveSource) == 0x000838, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_CurveSource' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_LocalToComponentSpace) == 0x000878, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_LocalToComponentSpace' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_9) == 0x000898, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_9' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_8) == 0x0009C0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_8' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_7) == 0x000AE8, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_7' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ComponentToLocalSpace) == 0x000C10, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ComponentToLocalSpace' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_Slot_2) == 0x000C30, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_Slot_2' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_CurveFix) == 0x000C90, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_CurveFix' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_Slot_1) == 0x000CC0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_Slot_1' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_CombineCurves_1) == 0x000D20, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_CombineCurves_1' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_CombineCurves) == 0x000D80, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_CombineCurves' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_6) == 0x000DE0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_6' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_5) == 0x000F08, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_5' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_4) == 0x001030, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_4' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_3) == 0x001158, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_3' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_2) == 0x001280, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_2' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone_1) == 0x0013A8, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone_1' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_ModifyBone) == 0x0014D0, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_ModifyBone' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AnimGraphNode_Slot) == 0x0015F8, "Member 'UABP_Common_NPC_Seq_C::AnimGraphNode_Slot' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, Add_Bip_001Head) == 0x001658, "Member 'UABP_Common_NPC_Seq_C::Add_Bip_001Head' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, Add_Bip_001Neck) == 0x001664, "Member 'UABP_Common_NPC_Seq_C::Add_Bip_001Neck' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, Add_Bip_001Spine_2) == 0x001670, "Member 'UABP_Common_NPC_Seq_C::Add_Bip_001Spine_2' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, MouthAlpha) == 0x00167C, "Member 'UABP_Common_NPC_Seq_C::MouthAlpha' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001LClavicle) == 0x001680, "Member 'UABP_Common_NPC_Seq_C::AddBip001LClavicle' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001LUpperArm) == 0x00168C, "Member 'UABP_Common_NPC_Seq_C::AddBip001LUpperArm' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001LForearm) == 0x001698, "Member 'UABP_Common_NPC_Seq_C::AddBip001LForearm' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001RClavicle) == 0x0016A4, "Member 'UABP_Common_NPC_Seq_C::AddBip001RClavicle' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001RUpperArm) == 0x0016B0, "Member 'UABP_Common_NPC_Seq_C::AddBip001RUpperArm' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, AddBip001RForearm) == 0x0016BC, "Member 'UABP_Common_NPC_Seq_C::AddBip001RForearm' has a wrong offset!");
+static_assert(offsetof(UABP_Common_NPC_Seq_C, Add_Bip_001Spine_1) == 0x0016C8, "Member 'UABP_Common_NPC_Seq_C::Add_Bip_001Spine_1' has a wrong offset!");
 
 }
 

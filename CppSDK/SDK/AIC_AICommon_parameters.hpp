@@ -10,9 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
+#include "EAiLevelVarSource_structs.hpp"
+#include "SAiLevelVar_structs.hpp"
 #include "ECharacterState_structs.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
@@ -388,33 +390,21 @@ static_assert(offsetof(AIC_AICommon_C_状态切换函数, 角色临时) == 0x000
 static_assert(offsetof(AIC_AICommon_C_状态切换函数, K2Node_SwitchEnum_CmpSuccess) == 0x000028, "Member 'AIC_AICommon_C_状态切换函数::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
 
 // Function AIC_AICommon.AIC_AICommon_C.感知到仇恨目标
-// 0x0088 (0x0088 - 0x0000)
+// 0x0020 (0x0020 - 0x0000)
 struct AIC_AICommon_C_感知到仇恨目标 final
 {
 public:
 	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_ContainsTag_ReturnValue;                  // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          CallFunc____Z_Double_OutVec;                       // 0x0020(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue_1;      // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc____Z_Double_OutVec_1;                     // 0x0058(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               CallFunc_D_FindLookAtRotation_ReturnValue;         // 0x0074(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetActorRotationWithContext_ReturnValue;  // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetActorLookAtWithContext_ReturnValue;    // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x001A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(AIC_AICommon_C_感知到仇恨目标) == 0x000008, "Wrong alignment on AIC_AICommon_C_感知到仇恨目标");
-static_assert(sizeof(AIC_AICommon_C_感知到仇恨目标) == 0x000088, "Wrong size on AIC_AICommon_C_感知到仇恨目标");
+static_assert(sizeof(AIC_AICommon_C_感知到仇恨目标) == 0x000020, "Wrong size on AIC_AICommon_C_感知到仇恨目标");
 static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000000, "Member 'AIC_AICommon_C_感知到仇恨目标::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
 static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, CallFunc_ContainsTag_ReturnValue) == 0x000018, "Member 'AIC_AICommon_C_感知到仇恨目标::CallFunc_ContainsTag_ReturnValue' has a wrong offset!");
-static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, CallFunc____Z_Double_OutVec) == 0x000020, "Member 'AIC_AICommon_C_感知到仇恨目标::CallFunc____Z_Double_OutVec' has a wrong offset!");
-static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, CallFunc_Array_Get_Item) == 0x000038, "Member 'AIC_AICommon_C_感知到仇恨目标::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, CallFunc_D_K2_GetActorLocation_ReturnValue_1) == 0x000040, "Member 'AIC_AICommon_C_感知到仇恨目标::CallFunc_D_K2_GetActorLocation_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, CallFunc____Z_Double_OutVec_1) == 0x000058, "Member 'AIC_AICommon_C_感知到仇恨目标::CallFunc____Z_Double_OutVec_1' has a wrong offset!");
-static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, K2Node_SwitchInteger_CmpSuccess) == 0x000070, "Member 'AIC_AICommon_C_感知到仇恨目标::K2Node_SwitchInteger_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, CallFunc_D_FindLookAtRotation_ReturnValue) == 0x000074, "Member 'AIC_AICommon_C_感知到仇恨目标::CallFunc_D_FindLookAtRotation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, CallFunc_SetActorRotationWithContext_ReturnValue) == 0x000080, "Member 'AIC_AICommon_C_感知到仇恨目标::CallFunc_SetActorRotationWithContext_ReturnValue' has a wrong offset!");
+static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, CallFunc_SetActorLookAtWithContext_ReturnValue) == 0x000019, "Member 'AIC_AICommon_C_感知到仇恨目标::CallFunc_SetActorLookAtWithContext_ReturnValue' has a wrong offset!");
+static_assert(offsetof(AIC_AICommon_C_感知到仇恨目标, K2Node_SwitchInteger_CmpSuccess) == 0x00001A, "Member 'AIC_AICommon_C_感知到仇恨目标::K2Node_SwitchInteger_CmpSuccess' has a wrong offset!");
 
 // Function AIC_AICommon.AIC_AICommon_C.设置区域监听对象
 // 0x0020 (0x0020 - 0x0000)
@@ -551,6 +541,29 @@ static_assert(offsetof(AIC_AICommon_C_角色怪射线检测, CallFunc_BreakHitRe
 static_assert(offsetof(AIC_AICommon_C_角色怪射线检测, CallFunc_BreakHitResult_TraceStart) == 0x000184, "Member 'AIC_AICommon_C_角色怪射线检测::CallFunc_BreakHitResult_TraceStart' has a wrong offset!");
 static_assert(offsetof(AIC_AICommon_C_角色怪射线检测, CallFunc_BreakHitResult_TraceEnd) == 0x000190, "Member 'AIC_AICommon_C_角色怪射线检测::CallFunc_BreakHitResult_TraceEnd' has a wrong offset!");
 static_assert(offsetof(AIC_AICommon_C_角色怪射线检测, CallFunc_GetCollisionProfileName_ReturnValue) == 0x00019C, "Member 'AIC_AICommon_C_角色怪射线检测::CallFunc_GetCollisionProfileName_ReturnValue' has a wrong offset!");
+
+// Function AIC_AICommon.AIC_AICommon_C.通用关卡变量切换监听
+// 0x0070 (0x0070 - 0x0000)
+struct AIC_AICommon_C_通用关卡变量切换监听 final
+{
+public:
+	EAiLevelVarSource                             关卡变量监听类型;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 关卡变量名称;                                      // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	int32                                         关卡副本行为树id;                                  // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(bool bContent)>                事件;                                              // 0x0020(0x0028)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	struct FSAiLevelVar                           K2Node_MakeStruct_SAiLevelVar;                     // 0x0048(0x0020)(ZeroConstructor, HasGetValueTypeHash)
+	class UKuroBooleanEventBinder*                CallFunc_SpawnObject_ReturnValue;                  // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(AIC_AICommon_C_通用关卡变量切换监听) == 0x000008, "Wrong alignment on AIC_AICommon_C_通用关卡变量切换监听");
+static_assert(sizeof(AIC_AICommon_C_通用关卡变量切换监听) == 0x000070, "Wrong size on AIC_AICommon_C_通用关卡变量切换监听");
+static_assert(offsetof(AIC_AICommon_C_通用关卡变量切换监听, 关卡变量监听类型) == 0x000000, "Member 'AIC_AICommon_C_通用关卡变量切换监听::关卡变量监听类型' has a wrong offset!");
+static_assert(offsetof(AIC_AICommon_C_通用关卡变量切换监听, 关卡变量名称) == 0x000008, "Member 'AIC_AICommon_C_通用关卡变量切换监听::关卡变量名称' has a wrong offset!");
+static_assert(offsetof(AIC_AICommon_C_通用关卡变量切换监听, 关卡副本行为树id) == 0x000018, "Member 'AIC_AICommon_C_通用关卡变量切换监听::关卡副本行为树id' has a wrong offset!");
+static_assert(offsetof(AIC_AICommon_C_通用关卡变量切换监听, 事件) == 0x000020, "Member 'AIC_AICommon_C_通用关卡变量切换监听::事件' has a wrong offset!");
+static_assert(offsetof(AIC_AICommon_C_通用关卡变量切换监听, K2Node_MakeStruct_SAiLevelVar) == 0x000048, "Member 'AIC_AICommon_C_通用关卡变量切换监听::K2Node_MakeStruct_SAiLevelVar' has a wrong offset!");
+static_assert(offsetof(AIC_AICommon_C_通用关卡变量切换监听, CallFunc_SpawnObject_ReturnValue) == 0x000068, "Member 'AIC_AICommon_C_通用关卡变量切换监听::CallFunc_SpawnObject_ReturnValue' has a wrong offset!");
 
 // Function AIC_AICommon.AIC_AICommon_C.状态切换时
 // 0x0018 (0x0018 - 0x0000)
