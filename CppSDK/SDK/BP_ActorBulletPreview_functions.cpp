@@ -60,7 +60,7 @@ void ABP_ActorBulletPreview_C::形状初始化(EBulletShape 形状)
 // Function BP_ActorBulletPreview.BP_ActorBulletPreview_C.初始化
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSReBulletDataMain               配置_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FSReBulletDataMain&        配置_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class AActor*                           发射者_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_ActorBulletPreview_C::初始化(const struct FSReBulletDataMain& 配置_0, class AActor* 发射者_0)

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C
-// 0x0008 (0x0560 - 0x0558)
-class UGA_Role_LandEnd_Net_C final : public UGA_Base_C
+// 0x0008 (0x0570 - 0x0568)
+class GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_LandEnd_Net_C;              // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_LandEnd_Net_C;              // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_GA_Role_LandEnd_Net(int32 EntryPoint);
@@ -40,16 +40,16 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"GA_Role_LandEnd_Net_C">();
+		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C", true, "GA_Role_LandEnd_Net_C">();
 	}
-	static class UGA_Role_LandEnd_Net_C* GetDefaultObj()
+	static class GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UGA_Role_LandEnd_Net_C>();
+		return GetDefaultObjImpl<GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C>();
 	}
 };
-static_assert(alignof(UGA_Role_LandEnd_Net_C) == 0x000008, "Wrong alignment on UGA_Role_LandEnd_Net_C");
-static_assert(sizeof(UGA_Role_LandEnd_Net_C) == 0x000560, "Wrong size on UGA_Role_LandEnd_Net_C");
-static_assert(offsetof(UGA_Role_LandEnd_Net_C, UberGraphFrame_GA_Role_LandEnd_Net_C) == 0x000558, "Member 'UGA_Role_LandEnd_Net_C::UberGraphFrame_GA_Role_LandEnd_Net_C' has a wrong offset!");
+static_assert(alignof(GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C) == 0x000008, "Wrong alignment on GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C");
+static_assert(sizeof(GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C) == 0x000570, "Wrong size on GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C");
+static_assert(offsetof(GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C, UberGraphFrame_GA_Role_LandEnd_Net_C) == 0x000568, "Member 'GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::UberGraphFrame_GA_Role_LandEnd_Net_C' has a wrong offset!");
 
 }
 

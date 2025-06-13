@@ -31,9 +31,9 @@ public:
 	struct FSAiConditions                         激活电锯;                                          // 0x0A70(0x00B8)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void 狙击枪技能组(bool bContent);
-	void OnStart();
 	void ExecuteUbergraph_AIC_MO1LiufangzhewomanMd00001(int32 EntryPoint);
+	void OnStart();
+	void 狙击枪技能组(bool bContent);
 
 public:
 	static class UClass* StaticClass()

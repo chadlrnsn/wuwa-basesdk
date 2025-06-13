@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BPI_NpcEcological.BPI_NpcEcological_C
-// 0x0000 (0x0030 - 0x0030)
-class IBPI_NpcEcological_C final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IBPI_NpcEcological_C final
 {
 public:
 	void HandleWeatherChanged();
@@ -40,9 +40,18 @@ public:
 	{
 		return GetDefaultObjImpl<IBPI_NpcEcological_C>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IBPI_NpcEcological_C) == 0x000008, "Wrong alignment on IBPI_NpcEcological_C");
-static_assert(sizeof(IBPI_NpcEcological_C) == 0x000030, "Wrong size on IBPI_NpcEcological_C");
+static_assert(alignof(IBPI_NpcEcological_C) == 0x000001, "Wrong alignment on IBPI_NpcEcological_C");
+static_assert(sizeof(IBPI_NpcEcological_C) == 0x000001, "Wrong size on IBPI_NpcEcological_C");
 
 }
 

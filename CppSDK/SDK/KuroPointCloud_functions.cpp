@@ -58,7 +58,7 @@ void AKuroPointCloudActor::ClearMark()
 // Function KuroPointCloud.KuroPointCloudActor.MarkPointsInBox
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FBox                             BoxWS                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FBox&                      BoxWS                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void AKuroPointCloudActor::MarkPointsInBox(const struct FBox& BoxWS)
 {
@@ -99,12 +99,178 @@ void AKuroPointCloudActor::UpdateIsm()
 }
 
 
+// Function KuroPointCloud.KuroPointCloudCache.GetMetaDataFloat
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKuroPointCloudCache::GetMetaDataFloat(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "GetMetaDataFloat");
+
+	Params::KuroPointCloudCache_GetMetaDataFloat Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.GetMetaDataInt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UKuroPointCloudCache::GetMetaDataInt(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "GetMetaDataInt");
+
+	Params::KuroPointCloudCache_GetMetaDataInt Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.HasMetaDataFloat
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPointCloudCache::HasMetaDataFloat(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "HasMetaDataFloat");
+
+	Params::KuroPointCloudCache_HasMetaDataFloat Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.HasMetaDataInt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroPointCloudCache::HasMetaDataInt(class FName Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "HasMetaDataInt");
+
+	Params::KuroPointCloudCache_HasMetaDataInt Parms{};
+
+	Parms.Name_0 = Name_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.SetMetaDataFloat
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroPointCloudCache::SetMetaDataFloat(class FName Name_0, float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "SetMetaDataFloat");
+
+	Params::KuroPointCloudCache_SetMetaDataFloat Parms{};
+
+	Parms.Name_0 = Name_0;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPointCloud.KuroPointCloudCache.SetMetaDataInt
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             Name_0                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroPointCloudCache::SetMetaDataInt(class FName Name_0, int32 Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroPointCloudCache", "SetMetaDataInt");
+
+	Params::KuroPointCloudCache_SetMetaDataInt Parms{};
+
+	Parms.Name_0 = Name_0;
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroPointCloud.KuroPointCloudCache.UpdateFromData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FVector>                  Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FQuat>                    Rotations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  Scales                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FQuat>&             Rotations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Scales                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroPointCloudCache::UpdateFromData(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales)
 {
@@ -131,10 +297,10 @@ void UKuroPointCloudCache::UpdateFromData(const TArray<struct FVector>& Position
 // Function KuroPointCloud.KuroPointCloudCache.UpdateFromDataWithIndices
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FVector>                  Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FQuat>                    Rotations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  Scales                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<int32>                           Indices                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FQuat>&             Rotations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Scales                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    Indices                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroPointCloudCache::UpdateFromDataWithIndices(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales, const TArray<int32>& Indices)
 {
@@ -162,8 +328,8 @@ void UKuroPointCloudCache::UpdateFromDataWithIndices(const TArray<struct FVector
 // Function KuroPointCloud.KuroPointCloudInstance.BuildFrom2DPoints
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// TArray<struct FIntPoint>                InPoints                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FTransform                       InPlaneToWorld                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const TArray<struct FIntPoint>&         InPoints                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FTransform&                InPlaneToWorld                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // int32                                   MaxHeight                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPointCloudInstance::BuildFrom2DPoints(const TArray<struct FIntPoint>& InPoints, const struct FTransform& InPlaneToWorld, int32 MaxHeight)
@@ -191,9 +357,9 @@ void UKuroPointCloudInstance::BuildFrom2DPoints(const TArray<struct FIntPoint>& 
 // Function KuroPointCloud.KuroPointCloudInstance.BuildFromPointCloudData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FVector>                  Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FQuat>                    Rotations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  Scales                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Positions                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FQuat>&             Rotations                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Scales                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroPointCloudInstance::BuildFromPointCloudData(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales)
 {
@@ -264,7 +430,7 @@ struct FBox UKuroPointCloudInstance::GetBound() const
 // Function KuroPointCloud.KuroPointCloudInstance.GetQueryPointsNum
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FKuroPointCloudInstanceQueryResultQueryResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroPointCloudInstanceQueryResult&QueryResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroPointCloudInstance::GetQueryPointsNum(const struct FKuroPointCloudInstanceQueryResult& QueryResult) const
@@ -292,11 +458,11 @@ int32 UKuroPointCloudInstance::GetQueryPointsNum(const struct FKuroPointCloudIns
 // Function KuroPointCloud.KuroPointCloudInstance.GetQueryPointTransform
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FKuroPointCloudInstanceQueryResultQueryResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroPointCloudInstanceQueryResult&QueryResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OutPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FQuat                            OutRotation                                            (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FVector                          OutScale                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FQuat*                           OutRotation                                            (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FVector*                         OutScale                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroPointCloudInstance::GetQueryPointTransform(const struct FKuroPointCloudInstanceQueryResult& QueryResult, int32 Index_0, struct FVector* OutPosition, struct FQuat* OutRotation, struct FVector* OutScale) const
@@ -334,7 +500,7 @@ bool UKuroPointCloudInstance::GetQueryPointTransform(const struct FKuroPointClou
 // Function KuroPointCloud.KuroPointCloudInstance.SphereQuery
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVector                          SphereCenter                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SphereCenter                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   SphereRadius                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKuroPointCloudInstanceQueryResultReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -414,7 +580,7 @@ void UKuroPointCloudStreamingConfig::SetInstanceData(int32 CellX, int32 CellY, c
 // Function KuroPointCloud.KuroPointCloudWorldActor.DeleteAllActorsInGroup
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             TargetGroupName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             TargetSubGroupName                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -542,8 +708,8 @@ void UKuroPointCloudWorldSystem::SetStreamingConfig(class UKuroPointCloudStreami
 // Function KuroPointCloud.KuroVirtualPointCloud2DQTree.BuildFromPointData
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// TArray<struct FIntPoint>                InPoints                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FTransform                       InPlaneToWorld                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const TArray<struct FIntPoint>&         InPoints                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FTransform&                InPlaneToWorld                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // int32                                   MaxHeight                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroVirtualPointCloud2DQTree::BuildFromPointData(const TArray<struct FIntPoint>& InPoints, const struct FTransform& InPlaneToWorld, int32 MaxHeight)
@@ -640,9 +806,9 @@ struct FBox UKuroVirtualPointCloud2DQTree::GetWorldBound() const
 // Function KuroPointCloud.KuroVirtualPointCloud2DQTree.SphereQuery
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVector                          SphereCenter                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SphereCenter                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   SphereRadius                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FIntPoint>                OutResult                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FIntPoint>*               OutResult                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UKuroVirtualPointCloud2DQTree::SphereQuery(const struct FVector& SphereCenter, float SphereRadius, TArray<struct FIntPoint>* OutResult) const
 {
@@ -671,7 +837,7 @@ void UKuroVirtualPointCloud2DQTree::SphereQuery(const struct FVector& SphereCent
 // Function KuroPointCloud.KuroVirtualPointCloud2DQTree.TransformPointToWorld
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FIntPoint                        Point                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FIntPoint&                 Point                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector UKuroVirtualPointCloud2DQTree::TransformPointToWorld(const struct FIntPoint& Point) const

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroCurve_structs.hpp"
 #include "Engine_structs.hpp"
+#include "KuroCurve_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
@@ -115,6 +115,19 @@ enum class EGameBudgetAllocatorGlobalMode : uint8
 	GBA_GlobalMode_MAX                       = 4,
 };
 
+// Enum KuroGameplay.ELockAxis
+// NumValues: 0x0007
+enum class ELockAxis : uint8
+{
+	Forward                                  = 0,
+	Back                                     = 1,
+	Right                                    = 2,
+	Left                                     = 3,
+	Up                                       = 4,
+	Down                                     = 5,
+	ELockAxis_MAX                            = 6,
+};
+
 // Enum KuroGameplay.EKuroEasingFuncType
 // NumValues: 0x0010
 enum class EKuroEasingFuncType : uint8
@@ -153,7 +166,7 @@ struct FEffectModelNiagaraExtraState final
 {
 public:
 	TMap<class FName, struct FKuroCurveFloat>     FloatParameters;                                   // 0x0000(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FKuroCurveLinearColor> ColorParameters;                                   // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FKuroCurveLinearColor> ColorParameters;                                 // 0x0050(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TMap<class FName, struct FKuroCurveVector>    VectorParameters;                                  // 0x00A0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FEffectModelNiagaraExtraState) == 0x000008, "Wrong alignment on FEffectModelNiagaraExtraState");
@@ -249,6 +262,20 @@ static_assert(sizeof(FSequencerBindingRuntimeProxy) == 0x000018, "Wrong size on 
 static_assert(offsetof(FSequencerBindingRuntimeProxy, BindingID) == 0x000000, "Member 'FSequencerBindingRuntimeProxy::BindingID' has a wrong offset!");
 static_assert(offsetof(FSequencerBindingRuntimeProxy, Sequence) == 0x000010, "Member 'FSequencerBindingRuntimeProxy::Sequence' has a wrong offset!");
 
+// ScriptStruct KuroGameplay.KuroSplineParams
+// 0x0018 (0x0018 - 0x0000)
+struct FKuroSplineParams final
+{
+public:
+	TArray<struct FVector>                        Points;                                            // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bClosedLoop;                                       // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FKuroSplineParams) == 0x000008, "Wrong alignment on FKuroSplineParams");
+static_assert(sizeof(FKuroSplineParams) == 0x000018, "Wrong size on FKuroSplineParams");
+static_assert(offsetof(FKuroSplineParams, Points) == 0x000000, "Member 'FKuroSplineParams::Points' has a wrong offset!");
+static_assert(offsetof(FKuroSplineParams, bClosedLoop) == 0x000010, "Member 'FKuroSplineParams::bClosedLoop' has a wrong offset!");
+
 // ScriptStruct KuroGameplay.PerformanceStatisticsTagTreeNodeSerialize
 // 0x0028 (0x0028 - 0x0000)
 struct FPerformanceStatisticsTagTreeNodeSerialize final
@@ -273,8 +300,8 @@ static_assert(offsetof(FPerformanceStatisticsTagTreeNodeSerialize, UserDefineMes
 struct FPerformanceStatisticsTagTreeSerialize final
 {
 public:
-	struct FPerformanceStatisticsTagTreeNodeSerialize NodeSerialize;                                     // 0x0000(0x0028)(NativeAccessSpecifierPublic)
-	TArray<struct FPerformanceStatisticsTagTreeNodeSerialize> ChildTags;                                         // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FPerformanceStatisticsTagTreeNodeSerialize NodeSerialize;                                 // 0x0000(0x0028)(NativeAccessSpecifierPublic)
+	TArray<struct FPerformanceStatisticsTagTreeNodeSerialize> ChildTags;                             // 0x0028(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FPerformanceStatisticsTagTreeSerialize) == 0x000008, "Wrong alignment on FPerformanceStatisticsTagTreeSerialize");
 static_assert(sizeof(FPerformanceStatisticsTagTreeSerialize) == 0x000038, "Wrong size on FPerformanceStatisticsTagTreeSerialize");
@@ -307,7 +334,7 @@ struct FPerformanceStatisticsSectionRecordSerialize final
 public:
 	class FName                                   SectionName;                                       // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FPerformanceStatisticsUnitRecord> UnitRecordValues;                                  // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FPerformanceStatisticsUnitRecord> UnitRecordValues;                                // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FPerformanceStatisticsSectionRecordSerialize) == 0x000008, "Wrong alignment on FPerformanceStatisticsSectionRecordSerialize");
 static_assert(sizeof(FPerformanceStatisticsSectionRecordSerialize) == 0x000020, "Wrong size on FPerformanceStatisticsSectionRecordSerialize");
@@ -319,7 +346,7 @@ static_assert(offsetof(FPerformanceStatisticsSectionRecordSerialize, UnitRecordV
 struct FPerformanceStatisticsSectionsSerialize final
 {
 public:
-	TArray<struct FPerformanceStatisticsSectionRecordSerialize> SectionRecords;                                    // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FPerformanceStatisticsSectionRecordSerialize> SectionRecords;                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FPerformanceStatisticsSectionsSerialize) == 0x000008, "Wrong alignment on FPerformanceStatisticsSectionsSerialize");
 static_assert(sizeof(FPerformanceStatisticsSectionsSerialize) == 0x000010, "Wrong size on FPerformanceStatisticsSectionsSerialize");

@@ -20,7 +20,7 @@ namespace SDK
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnPressAction
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FKey&                      key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::OnPressAction(const struct FKey& key)
 {
@@ -40,7 +40,7 @@ void UTsHotFixActionHandle_C::OnPressAction(const struct FKey& key)
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnReleaseAction
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::OnReleaseAction(const struct FKey& Key)
 {
@@ -60,7 +60,7 @@ void UTsHotFixActionHandle_C::OnReleaseAction(const struct FKey& Key)
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddPressBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           actionName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    actionName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::AddPressBinding(const class FString& actionName, class ABasePlayerController* controller)
@@ -82,7 +82,7 @@ void UTsHotFixActionHandle_C::AddPressBinding(const class FString& actionName, c
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddReleaseBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           actionName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    actionName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::AddReleaseBinding(const class FString& actionName, class ABasePlayerController* controller)
@@ -145,7 +145,7 @@ void UTsHotFixActionHandle_C::AddTouchReleaseBinding(class ABasePlayerController
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // ETouchIndex                             touchIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::OnTouchPressAction(ETouchIndex touchIndex, const struct FVector& position)
 {
@@ -167,7 +167,7 @@ void UTsHotFixActionHandle_C::OnTouchPressAction(ETouchIndex touchIndex, const s
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // ETouchIndex                             touchIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::OnTouchReleaseAction(ETouchIndex touchIndex, const struct FVector& position)
 {
@@ -209,7 +209,7 @@ void UTsHotFixActionHandle_C::ClearActionBinding(class ABasePlayerController* co
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // ETouchIndex                             touchindex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   position                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::OnTouchMoveAction(ETouchIndex touchindex, const struct FVector& position)
 {
@@ -250,7 +250,7 @@ void UTsHotFixActionHandle_C::AddTouchMoveBinding(class ABasePlayerController* c
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddAxisBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           axisName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    axisName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::AddAxisBinding(const class FString& axisName, class ABasePlayerController* controller)
@@ -313,7 +313,7 @@ void UTsHotFixActionHandle_C::ClearAxisBinding(class ABasePlayerController* cont
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FInputChord                      chord                                                  (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputChord&               chord                                                  (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::AddAnyKeyPress(class ABasePlayerController* controller, const struct FInputChord& chord)
 {
@@ -354,7 +354,7 @@ void UTsHotFixActionHandle_C::ClearKeyBinding(class ABasePlayerController* contr
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.OnAnyKeyPressAction
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FKey&                      key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
 void UTsHotFixActionHandle_C::OnAnyKeyPressAction(const struct FKey& key)
 {

@@ -466,7 +466,7 @@ void UABP_SwordScabbarcdCommon_C::EvaluateGraphExposedInputs_ExecuteUbergraph_AB
 // Function ABP_SwordScabbarcdCommon.ABP_SwordScabbarcdCommon_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_SwordScabbarcdCommon_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {

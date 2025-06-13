@@ -30,27 +30,27 @@ public:
 	TMap<class FString, class UTsAxisHandle_C*>   AxisHandleMap;                                     // 0x0728(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void ExecuteUbergraph_TsBasePlayerController(int32 EntryPoint);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveBeginPlay();
-	void ReceiveDestroyed();
-	void ReceiveSetupInputComponent();
-	class UTsActionHandle_C* GetActionHandle(const class FString& actionName);
-	void RemoveActionHandle(const class FString& actionName);
-	void RemoveAxisHandle(const class FString& axisName);
-	class UTsAxisHandle_C* GetAxisHandle(const class FString& actionName);
-	void BindTouchHandle();
-	void OnTouchBegin(ETouchIndex touchIndex, const struct FVector& position);
-	void OnTouchEnd(ETouchIndex touchIndex, const struct FVector& position);
-	void OnTouchMove(ETouchIndex touchIndex, const struct FVector& position);
-	void OnSetupInputComponent();
-	void OnPressAnyKey(const struct FKey& key);
-	bool IsInTouch(float touchId);
-	void ClearInputBinding();
-	void AddInputBinding();
-	void OnReleaseAnyKey(const struct FKey& key);
-	void SetIsPrintKeyName(bool bPrintKeyName);
 	void InitInputHandle();
+	void SetIsPrintKeyName(bool bPrintKeyName);
+	void OnReleaseAnyKey(const struct FKey& key);
+	void AddInputBinding();
+	void ClearInputBinding();
+	bool IsInTouch(float touchId);
+	void OnPressAnyKey(const struct FKey& key);
+	void OnSetupInputComponent();
+	void OnTouchMove(ETouchIndex touchIndex, const struct FVector& position);
+	void OnTouchEnd(ETouchIndex touchIndex, const struct FVector& position);
+	void OnTouchBegin(ETouchIndex touchIndex, const struct FVector& position);
+	void BindTouchHandle();
+	class UTsAxisHandle_C* GetAxisHandle(const class FString& actionName);
+	void RemoveAxisHandle(const class FString& axisName);
+	void RemoveActionHandle(const class FString& actionName);
+	class UTsActionHandle_C* GetActionHandle(const class FString& actionName);
+	void ReceiveSetupInputComponent();
+	void ReceiveDestroyed();
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void ExecuteUbergraph_TsBasePlayerController(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

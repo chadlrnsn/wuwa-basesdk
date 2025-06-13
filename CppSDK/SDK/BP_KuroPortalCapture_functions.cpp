@@ -74,7 +74,7 @@ void ABP_KuroPortalCapture_C::ReceiveBeginPlay()
 // Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.Teleport
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransformDouble                 InTrans                                                (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          InTrans                                                (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // class AActor*                           InActor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsRole                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
@@ -138,7 +138,7 @@ void ABP_KuroPortalCapture_C::SetPbDataId(int32 PbdataId_0)
 // Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.GetPortalTrans
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransformDouble                 NewParam                                               (Parm, OutParm, IsPlainOldData, NoDestructor)
+// struct FTransformDouble*                NewParam                                               (Parm, OutParm, IsPlainOldData, NoDestructor)
 
 void ABP_KuroPortalCapture_C::GetPortalTrans(struct FTransformDouble* NewParam)
 {
@@ -159,7 +159,7 @@ void ABP_KuroPortalCapture_C::GetPortalTrans(struct FTransformDouble* NewParam)
 // Function BP_KuroPortalCapture.BP_KuroPortalCapture_C.GetPair
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABP_KuroPortalCapture_C*          Target_0                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABP_KuroPortalCapture_C**         Target_0                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_KuroPortalCapture_C::GetPair(class ABP_KuroPortalCapture_C** Target_0)
 {

@@ -10,39 +10,39 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "AkAudio_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ThunderGenerator.BP_ThunderGenerator_C
-// 0x00A0 (0x05A0 - 0x0500)
+// 0x00A0 (0x05C0 - 0x0520)
 class ABP_ThunderGenerator_C final : public AThunderGenerator
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0500(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UKuroPostProcessComponent*              KuroPostProcess_Vignette;                          // 0x0508(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPDA_ThunderConfigMap_C*                ThunderConfigMap;                                  // 0x0510(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPDA_ThunderConfig_C*                   ThunderConfig;                                     // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAkAudioEvent*                          CachedAudioEvent2D;                                // 0x0520(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CachedTransition;                                  // 0x0528(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          PartialCloudFlash;                                 // 0x052C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_52D[0x3];                                      // 0x052D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CloudThunderHeight;                                // 0x0530(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_534[0xC];                                      // 0x0534(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CachedCameraTransform;                             // 0x0540(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	class UPDA_CloudThunderData_C*                CloudThunderConfigData;                            // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         PartialThunderIndex;                               // 0x0578(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CachedPartialEmissionScale;                        // 0x057C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CachedThunderPlaySpeedScale;                       // 0x0580(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          DebugPartitialThunder;                             // 0x0584(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_585[0x3];                                      // 0x0585(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DebugPartitialThunderDensity;                      // 0x0588(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                ThunderVectorCameraSpace;                          // 0x058C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0520(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UKuroPostProcessComponent*              KuroPostProcess_Vignette;                          // 0x0528(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPDA_ThunderConfigMap_C*                ThunderConfigMap;                                  // 0x0530(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPDA_ThunderConfig_C*                   ThunderConfig;                                     // 0x0538(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAkAudioEvent*                          CachedAudioEvent2D;                                // 0x0540(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CachedTransition;                                  // 0x0548(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          PartialCloudFlash;                                 // 0x054C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_54D[0x3];                                      // 0x054D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CloudThunderHeight;                                // 0x0550(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_554[0xC];                                      // 0x0554(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CachedCameraTransform;                             // 0x0560(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	class UPDA_CloudThunderData_C*                CloudThunderConfigData;                            // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         PartialThunderIndex;                               // 0x0598(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CachedPartialEmissionScale;                        // 0x059C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CachedThunderPlaySpeedScale;                       // 0x05A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          DebugPartitialThunder;                             // 0x05A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5A5[0x3];                                      // 0x05A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DebugPartitialThunderDensity;                      // 0x05A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                ThunderVectorCameraSpace;                          // 0x05AC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UpdateCloudThunderParameter();
@@ -71,23 +71,23 @@ public:
 	}
 };
 static_assert(alignof(ABP_ThunderGenerator_C) == 0x000010, "Wrong alignment on ABP_ThunderGenerator_C");
-static_assert(sizeof(ABP_ThunderGenerator_C) == 0x0005A0, "Wrong size on ABP_ThunderGenerator_C");
-static_assert(offsetof(ABP_ThunderGenerator_C, UberGraphFrame) == 0x000500, "Member 'ABP_ThunderGenerator_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, KuroPostProcess_Vignette) == 0x000508, "Member 'ABP_ThunderGenerator_C::KuroPostProcess_Vignette' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, ThunderConfigMap) == 0x000510, "Member 'ABP_ThunderGenerator_C::ThunderConfigMap' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, ThunderConfig) == 0x000518, "Member 'ABP_ThunderGenerator_C::ThunderConfig' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, CachedAudioEvent2D) == 0x000520, "Member 'ABP_ThunderGenerator_C::CachedAudioEvent2D' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, CachedTransition) == 0x000528, "Member 'ABP_ThunderGenerator_C::CachedTransition' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, PartialCloudFlash) == 0x00052C, "Member 'ABP_ThunderGenerator_C::PartialCloudFlash' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, CloudThunderHeight) == 0x000530, "Member 'ABP_ThunderGenerator_C::CloudThunderHeight' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, CachedCameraTransform) == 0x000540, "Member 'ABP_ThunderGenerator_C::CachedCameraTransform' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, CloudThunderConfigData) == 0x000570, "Member 'ABP_ThunderGenerator_C::CloudThunderConfigData' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, PartialThunderIndex) == 0x000578, "Member 'ABP_ThunderGenerator_C::PartialThunderIndex' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, CachedPartialEmissionScale) == 0x00057C, "Member 'ABP_ThunderGenerator_C::CachedPartialEmissionScale' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, CachedThunderPlaySpeedScale) == 0x000580, "Member 'ABP_ThunderGenerator_C::CachedThunderPlaySpeedScale' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, DebugPartitialThunder) == 0x000584, "Member 'ABP_ThunderGenerator_C::DebugPartitialThunder' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, DebugPartitialThunderDensity) == 0x000588, "Member 'ABP_ThunderGenerator_C::DebugPartitialThunderDensity' has a wrong offset!");
-static_assert(offsetof(ABP_ThunderGenerator_C, ThunderVectorCameraSpace) == 0x00058C, "Member 'ABP_ThunderGenerator_C::ThunderVectorCameraSpace' has a wrong offset!");
+static_assert(sizeof(ABP_ThunderGenerator_C) == 0x0005C0, "Wrong size on ABP_ThunderGenerator_C");
+static_assert(offsetof(ABP_ThunderGenerator_C, UberGraphFrame) == 0x000520, "Member 'ABP_ThunderGenerator_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, KuroPostProcess_Vignette) == 0x000528, "Member 'ABP_ThunderGenerator_C::KuroPostProcess_Vignette' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, ThunderConfigMap) == 0x000530, "Member 'ABP_ThunderGenerator_C::ThunderConfigMap' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, ThunderConfig) == 0x000538, "Member 'ABP_ThunderGenerator_C::ThunderConfig' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, CachedAudioEvent2D) == 0x000540, "Member 'ABP_ThunderGenerator_C::CachedAudioEvent2D' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, CachedTransition) == 0x000548, "Member 'ABP_ThunderGenerator_C::CachedTransition' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, PartialCloudFlash) == 0x00054C, "Member 'ABP_ThunderGenerator_C::PartialCloudFlash' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, CloudThunderHeight) == 0x000550, "Member 'ABP_ThunderGenerator_C::CloudThunderHeight' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, CachedCameraTransform) == 0x000560, "Member 'ABP_ThunderGenerator_C::CachedCameraTransform' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, CloudThunderConfigData) == 0x000590, "Member 'ABP_ThunderGenerator_C::CloudThunderConfigData' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, PartialThunderIndex) == 0x000598, "Member 'ABP_ThunderGenerator_C::PartialThunderIndex' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, CachedPartialEmissionScale) == 0x00059C, "Member 'ABP_ThunderGenerator_C::CachedPartialEmissionScale' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, CachedThunderPlaySpeedScale) == 0x0005A0, "Member 'ABP_ThunderGenerator_C::CachedThunderPlaySpeedScale' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, DebugPartitialThunder) == 0x0005A4, "Member 'ABP_ThunderGenerator_C::DebugPartitialThunder' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, DebugPartitialThunderDensity) == 0x0005A8, "Member 'ABP_ThunderGenerator_C::DebugPartitialThunderDensity' has a wrong offset!");
+static_assert(offsetof(ABP_ThunderGenerator_C, ThunderVectorCameraSpace) == 0x0005AC, "Member 'ABP_ThunderGenerator_C::ThunderVectorCameraSpace' has a wrong offset!");
 
 }
 

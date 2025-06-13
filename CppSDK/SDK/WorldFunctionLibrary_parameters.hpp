@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "EInputState_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "EInputAction_structs.hpp"
 #include "Engine_structs.hpp"
-#include "EInputState_structs.hpp"
 #include "EDetachType_structs.hpp"
 #include "ERelation_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "EPawnChannel_structs.hpp"
 #include "EWeatherState_structs.hpp"
 #include "EWuYinQuState_structs.hpp"
@@ -2295,6 +2295,46 @@ static_assert(sizeof(WorldFunctionLibrary_C_UnregisterToBpActorController) == 0x
 static_assert(offsetof(WorldFunctionLibrary_C_UnregisterToBpActorController, groupTag) == 0x000000, "Member 'WorldFunctionLibrary_C_UnregisterToBpActorController::groupTag' has a wrong offset!");
 static_assert(offsetof(WorldFunctionLibrary_C_UnregisterToBpActorController, sceneBp) == 0x000010, "Member 'WorldFunctionLibrary_C_UnregisterToBpActorController::sceneBp' has a wrong offset!");
 static_assert(offsetof(WorldFunctionLibrary_C_UnregisterToBpActorController, __WorldContext) == 0x000020, "Member 'WorldFunctionLibrary_C_UnregisterToBpActorController::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SummonRandomRequest
+// 0x0060 (0x0060 - 0x0000)
+struct WorldFunctionLibrary_C_SummonRandomRequest final
+{
+public:
+	int32                                         summonerId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         index;                                             // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       transform;                                         // 0x0010(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	int32                                         skillId;                                           // 0x0050(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          isVisible;                                         // 0x0054(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0058(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_SummonRandomRequest) == 0x000010, "Wrong alignment on WorldFunctionLibrary_C_SummonRandomRequest");
+static_assert(sizeof(WorldFunctionLibrary_C_SummonRandomRequest) == 0x000060, "Wrong size on WorldFunctionLibrary_C_SummonRandomRequest");
+static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, summonerId) == 0x000000, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::summonerId' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, index) == 0x000004, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::index' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, transform) == 0x000010, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::transform' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, skillId) == 0x000050, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::skillId' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, isVisible) == 0x000054, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::isVisible' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_SummonRandomRequest, __WorldContext) == 0x000058, "Member 'WorldFunctionLibrary_C_SummonRandomRequest::__WorldContext' has a wrong offset!");
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetSummonRandomEntity
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_GetSummonRandomEntity final
+{
+public:
+	int32                                         summonerId;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         index;                                             // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WorldFunctionLibrary_C_GetSummonRandomEntity) == 0x000008, "Wrong alignment on WorldFunctionLibrary_C_GetSummonRandomEntity");
+static_assert(sizeof(WorldFunctionLibrary_C_GetSummonRandomEntity) == 0x000018, "Wrong size on WorldFunctionLibrary_C_GetSummonRandomEntity");
+static_assert(offsetof(WorldFunctionLibrary_C_GetSummonRandomEntity, summonerId) == 0x000000, "Member 'WorldFunctionLibrary_C_GetSummonRandomEntity::summonerId' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_GetSummonRandomEntity, index) == 0x000004, "Member 'WorldFunctionLibrary_C_GetSummonRandomEntity::index' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_GetSummonRandomEntity, __WorldContext) == 0x000008, "Member 'WorldFunctionLibrary_C_GetSummonRandomEntity::__WorldContext' has a wrong offset!");
+static_assert(offsetof(WorldFunctionLibrary_C_GetSummonRandomEntity, ReturnValue) == 0x000010, "Member 'WorldFunctionLibrary_C_GetSummonRandomEntity::ReturnValue' has a wrong offset!");
 
 }
 

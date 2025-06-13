@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "SBaseCurve_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "EDangoPerformType_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "SDangoPerformData_structs.hpp"
 #include "Engine_classes.hpp"
 
@@ -47,7 +47,7 @@ public:
 	int32                                         跳跃前镜头远距离追踪时间;                          // 0x00A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         跳跃前镜头FOV;                                     // 0x00AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSBaseCurve                            跳跃前镜头曲线;                                    // 0x00B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<EDangoPerformType, struct FSDangoPerformData> 动作表现;                                          // 0x00B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EDangoPerformType, struct FSDangoPerformData> 动作表现;                                     // 0x00B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class FName                                   堆叠绑定骨骼名称;                                  // 0x0108(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         堆叠间隔;                                          // 0x0114(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

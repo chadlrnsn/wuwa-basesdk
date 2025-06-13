@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Bulante.ABP_Bulante_C
-// 0x0000 (0x21970 - 0x21970)
+// 0x0000 (0x23480 - 0x23480)
 class UABP_Bulante_C final : public UABP_BaseRole_C
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UABP_Bulante_C) == 0x000010, "Wrong alignment on UABP_Bulante_C");
-static_assert(sizeof(UABP_Bulante_C) == 0x021970, "Wrong size on UABP_Bulante_C");
+static_assert(sizeof(UABP_Bulante_C) == 0x023480, "Wrong size on UABP_Bulante_C");
 
 }
 

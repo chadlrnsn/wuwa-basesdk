@@ -17,17 +17,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SE_ControllerInterface.SE_ControllerInterface_C
-// 0x0000 (0x0030 - 0x0030)
-class ISE_ControllerInterface_C final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ISE_ControllerInterface_C final
 {
 public:
-	void Start(float time);
-	void Loop(float time);
-	void End(float time);
-	void ApplyAlpha(float alpha);
-	void ApplyVisibility(bool visibility);
-	void BeforeStart();
 	void ApplyEnvironmentFactor(float EnvironmentFactor);
+	void BeforeStart();
+	void ApplyVisibility(bool visibility);
+	void ApplyAlpha(float alpha);
+	void End(float time);
+	void Loop(float time);
+	void Start(float time);
 
 public:
 	static class UClass* StaticClass()
@@ -38,9 +38,18 @@ public:
 	{
 		return GetDefaultObjImpl<ISE_ControllerInterface_C>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ISE_ControllerInterface_C) == 0x000008, "Wrong alignment on ISE_ControllerInterface_C");
-static_assert(sizeof(ISE_ControllerInterface_C) == 0x000030, "Wrong size on ISE_ControllerInterface_C");
+static_assert(alignof(ISE_ControllerInterface_C) == 0x000001, "Wrong alignment on ISE_ControllerInterface_C");
+static_assert(sizeof(ISE_ControllerInterface_C) == 0x000001, "Wrong size on ISE_ControllerInterface_C");
 
 }
 

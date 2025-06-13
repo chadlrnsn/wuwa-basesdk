@@ -145,7 +145,7 @@ void ATsAiController_C::SetBattleWanderTime(float min_0, float max_0)
 // Function TsAiController.TsAiController_C.AddComplicatedEventBinder
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSAiConditions                   conditions                                             (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FSAiConditions&            conditions                                             (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class UKuroBooleanEventBinder*          eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ATsAiController_C::AddComplicatedEventBinder(const struct FSAiConditions& conditions, class UKuroBooleanEventBinder* eventBinder)
@@ -320,7 +320,7 @@ void ATsAiController_C::AddBattleWanderEndTime(float addTime)
 // Function TsAiController.TsAiController_C.TestChangeAi
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ATsAiController_C::TestChangeAi(const class FString& id)
 {
@@ -395,7 +395,7 @@ void ATsAiController_C::AicRemoveBuff(int64 buffId)
 // Function TsAiController.TsAiController_C.AicAddTag
 // (Native, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void ATsAiController_C::AicAddTag(const struct FGameplayTag& tag)
 {
@@ -420,7 +420,7 @@ void ATsAiController_C::AicAddTag(const struct FGameplayTag& tag)
 // Function TsAiController.TsAiController_C.AicRemoveTag
 // (Native, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void ATsAiController_C::AicRemoveTag(const struct FGameplayTag& tag)
 {
@@ -446,7 +446,7 @@ void ATsAiController_C::AicRemoveTag(const struct FGameplayTag& tag)
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ATsAiController_C::SetAiEnable(bool enable, const class FString& key)
 {
@@ -709,7 +709,7 @@ void ATsAiController_C::AddSceneItemDestroyEventBinder(float distance, class UKu
 // Function TsAiController.TsAiController_C.SetAiHateConfig
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           configId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    configId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ATsAiController_C::SetAiHateConfig(const class FString& configId)
 {
@@ -759,7 +759,7 @@ void ATsAiController_C::AddAlertEventBinder(class UKuroBooleanEventBinder* event
 // Function TsAiController.TsAiController_C.SetAiAlertConfig
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           configId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    configId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ATsAiController_C::SetAiAlertConfig(const class FString& configId)
 {
@@ -1019,7 +1019,7 @@ void ATsAiController_C::状态切换时(ECharacterState oldState, ECharacterStat
 // Function TsAiController.TsAiController_C.检查状态机状态
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   states                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class FString>&                  states                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ATsAiController_C::检查状态机状态(TArray<class FString>& states)
@@ -1049,7 +1049,7 @@ bool ATsAiController_C::检查状态机状态(TArray<class FString>& states)
 // Function TsAiController.TsAiController_C.切换状态机状态
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class FString>                   states                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class FString>&                  states                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void ATsAiController_C::切换状态机状态(TArray<class FString>& states)
 {
@@ -1076,7 +1076,7 @@ void ATsAiController_C::切换状态机状态(TArray<class FString>& states)
 // Function TsAiController.TsAiController_C.GetDebugStateMachine
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class FText>                     output                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class FText>&                    output                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void ATsAiController_C::GetDebugStateMachine(TArray<class FText>& output)
 {
@@ -1130,7 +1130,7 @@ void ATsAiController_C::AicApplyBuffToTarget(int32 targetId, int64 buffId)
 // Function TsAiController.TsAiController_C.AddLevelVarBoolEventBinder
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FSAiLevelVar&              levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UKuroBooleanEventBinder*          eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ATsAiController_C::AddLevelVarBoolEventBinder(const struct FSAiLevelVar& levelVar, class UKuroBooleanEventBinder* eventBinder)
@@ -1157,7 +1157,7 @@ void ATsAiController_C::AddLevelVarBoolEventBinder(const struct FSAiLevelVar& le
 // Function TsAiController.TsAiController_C.AddLevelVarIntEventBinder
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FSAiLevelVar&              levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UKuroIntEventBinder*              eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ATsAiController_C::AddLevelVarIntEventBinder(const struct FSAiLevelVar& levelVar, class UKuroIntEventBinder* eventBinder)

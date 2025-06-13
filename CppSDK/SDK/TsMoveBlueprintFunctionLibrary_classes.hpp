@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
-#include "EExitClimb_structs.hpp"
-#include "EMovementDirection_structs.hpp"
 #include "EEnterClimb_structs.hpp"
+#include "Engine_classes.hpp"
+#include "EMovementDirection_structs.hpp"
+#include "EExitClimb_structs.hpp"
 #include "EClimbState_structs.hpp"
 
 

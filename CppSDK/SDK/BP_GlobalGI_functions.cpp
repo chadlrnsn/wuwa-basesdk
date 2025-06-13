@@ -94,7 +94,7 @@ void ABP_GlobalGI_C::OnKuroEndUiScene()
 // Function BP_GlobalGI.BP_GlobalGI_C.OnKuroStartUiScene
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// class FString                           InName                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    InName                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class ULevel*                           InUILevel                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_GlobalGI_C::OnKuroStartUiScene(const class FString& InName, class ULevel* InUILevel)
@@ -257,7 +257,7 @@ void ABP_GlobalGI_C::Update_Env()
 // float                                   startSetting                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   EndSetting                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   CurrentTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Weight                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  Weight                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_GlobalGI_C::Get2SkyboxLerpWeight(float startSetting, float EndSetting, float CurrentTime, float* Weight)
 {
@@ -324,7 +324,7 @@ void ABP_GlobalGI_C::InitGICompoemnt()
 // Function BP_GlobalGI.BP_GlobalGI_C.Get Scene Light Direction
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          LightDir                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         LightDir                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_GlobalGI_C::Get_Scene_Light_Direction(struct FVector* LightDir)
 {
@@ -376,7 +376,7 @@ void ABP_GlobalGI_C::UpdateAtmosphere()
 // float                                   Vertical                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   Horizontal                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   Time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FRotator*                        NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_GlobalGI_C::CalculateLightDirection(float Vertical, float Horizontal, float Time, struct FRotator* NewParam)
 {
@@ -404,7 +404,7 @@ void ABP_GlobalGI_C::CalculateLightDirection(float Vertical, float Horizontal, f
 // float                                   V                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   H                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   Time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FRotator*                        NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_GlobalGI_C::CalculateLightDirectionWithLimit(float V, float H, float Time, struct FRotator* NewParam)
 {
@@ -443,8 +443,8 @@ void ABP_GlobalGI_C::InitFeature()
 // Function BP_GlobalGI.BP_GlobalGI_C.GetViewLocation
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          WorldPosition                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Suc                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVector*                         WorldPosition                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Suc                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_GlobalGI_C::GetViewLocation(struct FVector* WorldPosition, bool* Suc)
 {
@@ -554,7 +554,7 @@ void ABP_GlobalGI_C::UpdatePostProcessVolume()
 // Parameters:
 // float                                   Vertical                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   Horizontal                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FRotator*                        Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_GlobalGI_C::GetLightDirectionFromVH(float Vertical, float Horizontal, struct FRotator* Result)
 {
@@ -724,7 +724,7 @@ void ABP_GlobalGI_C::夜晚()
 // Function BP_GlobalGI.BP_GlobalGI_C.UpdateCloudCard
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKuroCloudCardSetting            CloudCardSetting                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// struct FKuroCloudCardSetting&           CloudCardSetting                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void ABP_GlobalGI_C::UpdateCloudCard(struct FKuroCloudCardSetting& CloudCardSetting)
 {
@@ -858,7 +858,7 @@ void ABP_GlobalGI_C::UpdateSkybox()
 // Function BP_GlobalGI.BP_GlobalGI_C.GetSkyboxDMI
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic*         DMIRet                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic**        DMIRet                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_GlobalGI_C::GetSkyboxDMI(class UMaterialInstanceDynamic** DMIRet)
 {
@@ -893,7 +893,7 @@ void ABP_GlobalGI_C::UpdateClusteredStuff()
 // Function BP_GlobalGI.BP_GlobalGI_C.GetStarsDMI
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic*         DMIRet                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic**        DMIRet                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_GlobalGI_C::GetStarsDMI(class UMaterialInstanceDynamic** DMIRet)
 {
@@ -973,7 +973,7 @@ struct FVector ABP_GlobalGI_C::EulerToForward(float Pitch, float Yaw)
 // Function BP_GlobalGI.BP_GlobalGI_C.Clamp Luminance
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     InColor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              InColor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   Min                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   Max                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1000,7 +1000,7 @@ struct FLinearColor ABP_GlobalGI_C::Clamp_Luminance(const struct FLinearColor& I
 // Function BP_GlobalGI.BP_GlobalGI_C.GetParallaxCorrectCachedShadowDirection
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FRotator                         NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FRotator*                        NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_GlobalGI_C::GetParallaxCorrectCachedShadowDirection(struct FRotator* NewParam)
 {
@@ -1021,12 +1021,12 @@ void ABP_GlobalGI_C::GetParallaxCorrectCachedShadowDirection(struct FRotator* Ne
 // Function BP_GlobalGI.BP_GlobalGI_C.GetTODCharacterLighting
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     mainLight                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              mainLight                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   mainLightIntensity                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     skyLight                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              skyLight                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   skyLightIntensity                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     FrontSideLight                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     BackSideLight                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor*                    FrontSideLight                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor*                    BackSideLight                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_GlobalGI_C::GetTODCharacterLighting(const struct FLinearColor& mainLight, float mainLightIntensity, const struct FLinearColor& skyLight, float skyLightIntensity, struct FLinearColor* FrontSideLight, struct FLinearColor* BackSideLight)
 {
@@ -1055,7 +1055,7 @@ void ABP_GlobalGI_C::GetTODCharacterLighting(const struct FLinearColor& mainLigh
 // Function BP_GlobalGI.BP_GlobalGI_C.GetParallaxCorrectCachedCrossFadeShadowDirection
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FRotator                         NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FRotator*                        NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_GlobalGI_C::GetParallaxCorrectCachedCrossFadeShadowDirection(struct FRotator* NewParam)
 {
@@ -1090,7 +1090,7 @@ void ABP_GlobalGI_C::updateLightFunctions()
 // Function BP_GlobalGI.BP_GlobalGI_C.GetMilkyWayDMI
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic*         DMIRet                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic**        DMIRet                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_GlobalGI_C::GetMilkyWayDMI(class UMaterialInstanceDynamic** DMIRet)
 {
@@ -1111,8 +1111,8 @@ void ABP_GlobalGI_C::GetMilkyWayDMI(class UMaterialInstanceDynamic** DMIRet)
 // Function BP_GlobalGI.BP_GlobalGI_C.UpdateMilkWay
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UMaterialInstanceDynamic*         MilkyWay_DMI                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FKuroMilkyWaySetting             CloudCardSetting                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// class UMaterialInstanceDynamic*&        MilkyWay_DMI                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FKuroMilkyWaySetting&            CloudCardSetting                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void ABP_GlobalGI_C::UpdateMilkWay(class UMaterialInstanceDynamic*& MilkyWay_DMI, struct FKuroMilkyWaySetting& CloudCardSetting)
 {
@@ -1198,6 +1198,20 @@ void ABP_GlobalGI_C::IsPerformanceLightExist()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_GlobalGI_C", "IsPerformanceLightExist");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UpdateVolumeCloudLightWeight
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::UpdateVolumeCloudLightWeight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateVolumeCloudLightWeight");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

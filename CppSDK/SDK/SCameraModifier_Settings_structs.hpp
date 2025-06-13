@@ -58,7 +58,8 @@ public:
 	bool                                          IsLerpArmLocation_111_5A5B00E645FAC54E063E8A93C1764D62; // 0x0069(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsSwitchModifier_113_0BCB940D4AB7A06EB3485D98E853EC0A; // 0x006A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsForcePlayModify_177_F5B3348F48031F5374647B85AB011967; // 0x006B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          StopModifyOnZoomInput_225_FDE50C654DD3E283ABF86C82C125979E; // 0x006C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_6D[0x3];                                       // 0x006D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSCameraModifier_SettingsAdditional    ModifySettingsAdditional_222_7DE2E3E64B6017435B7C1A8AA32C25C1; // 0x0070(0x00A8)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 };
 static_assert(alignof(FSCameraModifier_Settings) == 0x000008, "Wrong alignment on FSCameraModifier_Settings");
@@ -95,6 +96,7 @@ static_assert(offsetof(FSCameraModifier_Settings, IsLockInput_86_CDDE4FA4418F23E
 static_assert(offsetof(FSCameraModifier_Settings, IsLerpArmLocation_111_5A5B00E645FAC54E063E8A93C1764D62) == 0x000069, "Member 'FSCameraModifier_Settings::IsLerpArmLocation_111_5A5B00E645FAC54E063E8A93C1764D62' has a wrong offset!");
 static_assert(offsetof(FSCameraModifier_Settings, IsSwitchModifier_113_0BCB940D4AB7A06EB3485D98E853EC0A) == 0x00006A, "Member 'FSCameraModifier_Settings::IsSwitchModifier_113_0BCB940D4AB7A06EB3485D98E853EC0A' has a wrong offset!");
 static_assert(offsetof(FSCameraModifier_Settings, IsForcePlayModify_177_F5B3348F48031F5374647B85AB011967) == 0x00006B, "Member 'FSCameraModifier_Settings::IsForcePlayModify_177_F5B3348F48031F5374647B85AB011967' has a wrong offset!");
+static_assert(offsetof(FSCameraModifier_Settings, StopModifyOnZoomInput_225_FDE50C654DD3E283ABF86C82C125979E) == 0x00006C, "Member 'FSCameraModifier_Settings::StopModifyOnZoomInput_225_FDE50C654DD3E283ABF86C82C125979E' has a wrong offset!");
 static_assert(offsetof(FSCameraModifier_Settings, ModifySettingsAdditional_222_7DE2E3E64B6017435B7C1A8AA32C25C1) == 0x000070, "Member 'FSCameraModifier_Settings::ModifySettingsAdditional_222_7DE2E3E64B6017435B7C1A8AA32C25C1' has a wrong offset!");
 
 }

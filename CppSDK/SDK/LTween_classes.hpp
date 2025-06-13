@@ -56,14 +56,14 @@ class ULTweenBPLibrary final : public UBlueprintFunctionLibrary
 {
 public:
 	static void ArrayKillIfIsTweening(class UObject* WorldContextObject, const TArray<class ULTweener*>& inTweenerArray, bool callComplete);
-	static class ULTweener* ColorTo(class UObject* WorldContextObject, TDelegate<void(struct FColor& value)> setter, const struct FColor& startValue, const struct FColor& endValue, float duration, float delay, ELTweenEase ease);
+	static class ULTweener* ColorTo(class UObject* WorldContextObject, TDelegate<void(const struct FColor& value)> setter, const struct FColor& startValue, const struct FColor& endValue, float duration, float delay, ELTweenEase ease);
 	static class ULTweener* DelayCall(class UObject* WorldContextObject, float delayTime, TDelegate<void()> delayComplete);
 	static class ULTweener* DelayFrameCall(class UObject* WorldContextObject, int32 frameCount, TDelegate<void()> delayComplete);
 	static class ULTweener* FloatTo(class UObject* WorldContextObject, TDelegate<void(float value)> setter, float startValue, float endValue, float duration, float delay, ELTweenEase ease);
 	static class ULTweener* IntTo(class UObject* WorldContextObject, TDelegate<void(int32 value)> setter, int32 startValue, int32 endValue, float duration, float delay, ELTweenEase ease);
 	static bool IsTweening(class UObject* WorldContextObject, class ULTweener* inTweener);
 	static void KillIfIsTweening(class UObject* WorldContextObject, class ULTweener* inTweener, bool callComplete);
-	static class ULTweener* LinearColorTo(class UObject* WorldContextObject, TDelegate<void(struct FLinearColor& value)> setter, const struct FLinearColor& startValue, const struct FLinearColor& endValue, float duration, float delay, ELTweenEase ease);
+	static class ULTweener* LinearColorTo(class UObject* WorldContextObject, TDelegate<void(const struct FLinearColor& value)> setter, const struct FLinearColor& startValue, const struct FLinearColor& endValue, float duration, float delay, ELTweenEase ease);
 	static class ULTweener* LocalPositionTo(class USceneComponent* target, const struct FVector& endValue, float duration, float delay, ELTweenEase ease);
 	static class ULTweener* LocalPositionTo_Sweep(class USceneComponent* target, const struct FVector& endValue, struct FHitResult* sweepHitResult, bool sweep, bool teleport, float duration, float delay, ELTweenEase ease);
 	static class ULTweener* LocalPositionXTo(class USceneComponent* target, float endValue, float duration, float delay, ELTweenEase ease);
@@ -83,13 +83,13 @@ public:
 	static class ULTweener* MaterialVectorParameterTo(class UMaterialInstanceDynamic* target, class FName parameterName, const struct FLinearColor& endValue, float duration, float delay, ELTweenEase ease);
 	static class ULTweener* MeshMaterialScalarParameterTo(class UMeshComponent* target, int32 materialIndex, class FName parameterName, float endValue, float duration, float delay, ELTweenEase ease);
 	static class ULTweener* MeshMaterialVectorParameterTo(class UMeshComponent* target, int32 materialIndex, class FName parameterName, const struct FLinearColor& endValue, float duration, float delay, ELTweenEase ease);
-	static class ULTweener* QuaternionTo(class UObject* WorldContextObject, TDelegate<void(struct FQuat& value)> setter, const struct FQuat& startValue, const struct FQuat& endValue, float duration, float delay, ELTweenEase ease);
+	static class ULTweener* QuaternionTo(class UObject* WorldContextObject, TDelegate<void(const struct FQuat& value)> setter, const struct FQuat& startValue, const struct FQuat& endValue, float duration, float delay, ELTweenEase ease);
 	static struct FLTweenDelegateHandleWrapper RegisterUpdateEvent(class UObject* WorldContextObject, const TDelegate<void(float InProgress)>& update);
-	static class ULTweener* RotatorTo(class UObject* WorldContextObject, TDelegate<void(struct FRotator& value)> setter, const struct FRotator& startValue, const struct FRotator& endValue, float duration, float delay, ELTweenEase ease);
+	static class ULTweener* RotatorTo(class UObject* WorldContextObject, TDelegate<void(const struct FRotator& value)> setter, const struct FRotator& startValue, const struct FRotator& endValue, float duration, float delay, ELTweenEase ease);
 	static void UnregisterUpdateEvent(class UObject* WorldContextObject, const struct FLTweenDelegateHandleWrapper& delegateHandle);
-	static class ULTweener* Vector2To(class UObject* WorldContextObject, TDelegate<void(struct FVector2D& value)> setter, const struct FVector2D& startValue, const struct FVector2D& endValue, float duration, float delay, ELTweenEase ease);
-	static class ULTweener* Vector3To(class UObject* WorldContextObject, TDelegate<void(struct FVector& value)> setter, const struct FVector& startValue, const struct FVector& endValue, float duration, float delay, ELTweenEase ease);
-	static class ULTweener* Vector4To(class UObject* WorldContextObject, TDelegate<void(struct FVector4& value)> setter, const struct FVector4& startValue, const struct FVector4& endValue, float duration, float delay, ELTweenEase ease);
+	static class ULTweener* Vector2To(class UObject* WorldContextObject, TDelegate<void(const struct FVector2D& value)> setter, const struct FVector2D& startValue, const struct FVector2D& endValue, float duration, float delay, ELTweenEase ease);
+	static class ULTweener* Vector3To(class UObject* WorldContextObject, TDelegate<void(const struct FVector& value)> setter, const struct FVector& startValue, const struct FVector& endValue, float duration, float delay, ELTweenEase ease);
+	static class ULTweener* Vector4To(class UObject* WorldContextObject, TDelegate<void(const struct FVector4& value)> setter, const struct FVector4& startValue, const struct FVector4& endValue, float duration, float delay, ELTweenEase ease);
 	static class ULTweener* VirtualCall(class UObject* WorldContextObject, float duration, float delay, TDelegate<void()> start, TDelegate<void(float InProgress)> update, TDelegate<void()> complete);
 	static class ULTweener* WorldPositionTo(class USceneComponent* target, const struct FVector& endValue, float duration, float delay, ELTweenEase ease);
 	static class ULTweener* WorldPositionTo_Sweep(class USceneComponent* target, const struct FVector& endValue, struct FHitResult* sweepHitResult, bool sweep, bool teleport, float duration, float delay, ELTweenEase ease);

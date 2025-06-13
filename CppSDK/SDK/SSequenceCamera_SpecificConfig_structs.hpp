@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ESequenceCameraSpecificType_structs.hpp"
 #include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
+#include "ESequenceCameraSpecificType_structs.hpp"
 
 
 namespace SDK

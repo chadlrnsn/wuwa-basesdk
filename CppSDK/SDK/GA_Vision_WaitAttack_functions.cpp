@@ -54,7 +54,7 @@ void UGA_Vision_WaitAttack_C::K2_ActivateAbility()
 // Function GA_Vision_WaitAttack.GA_Vision_WaitAttack_C.Added_21071CB943CD992BF8EFD6A3CB2AA2EF
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A3CB2AA2EF(const struct FGameplayTag& Tag)
 {
@@ -74,7 +74,7 @@ void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A3CB2AA2EF(const struc
 // Function GA_Vision_WaitAttack.GA_Vision_WaitAttack_C.Added_21071CB943CD992BF8EFD6A31BD89B52
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A31BD89B52(const struct FGameplayTag& Tag)
 {
@@ -94,7 +94,7 @@ void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A31BD89B52(const struc
 // Function GA_Vision_WaitAttack.GA_Vision_WaitAttack_C.Added_21071CB943CD992BF8EFD6A3F86F70F6
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A3F86F70F6(const struct FGameplayTag& Tag)
 {
@@ -114,7 +114,7 @@ void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A3F86F70F6(const struc
 // Function GA_Vision_WaitAttack.GA_Vision_WaitAttack_C.Added_21071CB943CD992BF8EFD6A3E7DDAD25
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A3E7DDAD25(const struct FGameplayTag& Tag)
 {
@@ -134,7 +134,7 @@ void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A3E7DDAD25(const struc
 // Function GA_Vision_WaitAttack.GA_Vision_WaitAttack_C.Added_21071CB943CD992BF8EFD6A389E908C3
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A389E908C3(const struct FGameplayTag& Tag)
 {
@@ -154,7 +154,7 @@ void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A389E908C3(const struc
 // Function GA_Vision_WaitAttack.GA_Vision_WaitAttack_C.Added_21071CB943CD992BF8EFD6A3F34E6080
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Vision_WaitAttack_C::Added_21071CB943CD992BF8EFD6A3F34E6080(const struct FGameplayTag& Tag)
 {

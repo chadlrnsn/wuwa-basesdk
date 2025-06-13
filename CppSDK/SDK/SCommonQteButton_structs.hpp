@@ -25,7 +25,7 @@ struct FSCommonQteButton final
 public:
 	ECommonQteInputAction                         Action_22_BEE201624F8C42CD7E3068B4405D79DC;        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class ULGUITexturePackerSpriteData> Icon_12_9597A3ED443AEFEB19F47F8EDCB774E4;          // 0x0008(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class ULGUITexturePackerSpriteData> Icon_12_9597A3ED443AEFEB19F47F8EDCB774E4;     // 0x0008(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	EUIAnchorHorizontalAlign                      AnchorHAlign_13_4BBFAE1242753435D28254BFDF81A27D;  // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EUIAnchorVerticalAlign                        AnchorVAlign_14_6C94AAEE40FD1863900CC6B2F6F9A2E2;  // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])

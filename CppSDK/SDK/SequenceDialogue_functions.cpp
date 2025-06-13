@@ -21,11 +21,11 @@ namespace SDK
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText                             DialogueID                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   GuardTime                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   AudioDelay                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   AudioTransitionDuration                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ELanguageAudio                          LanguageType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      DialogueID                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             GuardTime                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             AudioDelay                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             AudioTransitionDuration                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ELanguageAudio                    LanguageType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneDialogueSubsystem::ShowDialogue(bool bShow, const class FText& DialogueID, const int32 GuardTime, const int32 AudioDelay, const int32 AudioTransitionDuration, const ELanguageAudio LanguageType)
 {
@@ -56,8 +56,8 @@ void UMovieSceneDialogueSubsystem::ShowDialogue(bool bShow, const class FText& D
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           AudioKey                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   AudioTransitionDuration                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AudioKey                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             AudioTransitionDuration                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneDialogueSubsystem::ShowDialogueAudio(bool bShow, const class FString& AudioKey, const int32 AudioTransitionDuration)
 {
@@ -84,7 +84,7 @@ void UMovieSceneDialogueSubsystem::ShowDialogueAudio(bool bShow, const class FSt
 // Function SequenceDialogue.MovieSceneDialogueSubsystem.TryGetAutoTransformByOffsetTime
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransform                       OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransform*                      OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   OffsetTime                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -117,7 +117,7 @@ bool UMovieSceneDialogueSubsystem::TryGetAutoTransformByOffsetTime(struct FTrans
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneSeqAnimDataSection::AddScalarParameterKey(class FName InParameterName, const struct FFrameNumber& InTime, float InValue)
@@ -146,8 +146,8 @@ void UMovieSceneSeqAnimDataSection::AddScalarParameterKey(class FName InParamete
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMovieSceneSeqAnimDataSection::AddVectorParameterKey(class FName InParameterName, const struct FFrameNumber& InTime, const struct FVector& InValue)
 {
@@ -193,8 +193,8 @@ void UMovieSceneSeqAnimDataSection::EmptyParameters()
 // Function SequenceDialogue.MovieSceneSeqAnimDataSection.GetScalarParameters
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TMap<class FName, float>                Floats                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TMap<class FName, float>*               Floats                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieSceneSeqAnimDataSection::GetScalarParameters(const struct FFrameNumber& InTime, TMap<class FName, float>* Floats)
@@ -226,8 +226,8 @@ bool UMovieSceneSeqAnimDataSection::GetScalarParameters(const struct FFrameNumbe
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             InParameterName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FFrameNumber                     InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFrameNumber&              InTime                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMovieSceneSeqAnimDataSection::GetVectorParameter(class FName InParameterName, const struct FFrameNumber& InTime, struct FVector* Value)
@@ -315,7 +315,7 @@ bool UMovieSceneSeqAnimDataSection::RemoveScalarParameter(class FName InParamete
 // Function SequenceDialogue.SeqAnimDataInterface.GetAnimDataFloat
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         FloatCurveData                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FNamedCurveValue>*        FloatCurveData                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ISeqAnimDataInterface::GetAnimDataFloat(TArray<struct FNamedCurveValue>* FloatCurveData)
@@ -323,14 +323,14 @@ bool ISeqAnimDataInterface::GetAnimDataFloat(TArray<struct FNamedCurveValue>* Fl
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SeqAnimDataInterface", "GetAnimDataFloat");
+		Func = AsUObject()->Class->GetFunction("SeqAnimDataInterface", "GetAnimDataFloat");
 
 	Params::SeqAnimDataInterface_GetAnimDataFloat Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -344,7 +344,7 @@ bool ISeqAnimDataInterface::GetAnimDataFloat(TArray<struct FNamedCurveValue>* Fl
 // Function SequenceDialogue.SeqAnimDataInterface.GetAnimDataVector
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TMap<class FName, struct FVector>       VectorCurveData                                        (Parm, OutParm, NativeAccessSpecifierPublic)
+// TMap<class FName, struct FVector>*      VectorCurveData                                        (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ISeqAnimDataInterface::GetAnimDataVector(TMap<class FName, struct FVector>* VectorCurveData)
@@ -352,14 +352,14 @@ bool ISeqAnimDataInterface::GetAnimDataVector(TMap<class FName, struct FVector>*
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SeqAnimDataInterface", "GetAnimDataVector");
+		Func = AsUObject()->Class->GetFunction("SeqAnimDataInterface", "GetAnimDataVector");
 
 	Params::SeqAnimDataInterface_GetAnimDataVector Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -380,14 +380,14 @@ TArray<class FName> ISeqAnimDataInterface::GetSupportGroupNames()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SeqAnimDataInterface", "GetSupportGroupNames");
+		Func = AsUObject()->Class->GetFunction("SeqAnimDataInterface", "GetSupportGroupNames");
 
 	Params::SeqAnimDataInterface_GetSupportGroupNames Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -398,7 +398,7 @@ TArray<class FName> ISeqAnimDataInterface::GetSupportGroupNames()
 // Function SequenceDialogue.SeqAnimDataInterface.SetAnimDataFloat
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         FloatCurveData                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FNamedCurveValue>&  FloatCurveData                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ISeqAnimDataInterface::SetAnimDataFloat(const TArray<struct FNamedCurveValue>& FloatCurveData)
@@ -406,7 +406,7 @@ bool ISeqAnimDataInterface::SetAnimDataFloat(const TArray<struct FNamedCurveValu
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SeqAnimDataInterface", "SetAnimDataFloat");
+		Func = AsUObject()->Class->GetFunction("SeqAnimDataInterface", "SetAnimDataFloat");
 
 	Params::SeqAnimDataInterface_SetAnimDataFloat Parms{};
 
@@ -415,7 +415,7 @@ bool ISeqAnimDataInterface::SetAnimDataFloat(const TArray<struct FNamedCurveValu
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -426,7 +426,7 @@ bool ISeqAnimDataInterface::SetAnimDataFloat(const TArray<struct FNamedCurveValu
 // Function SequenceDialogue.SeqAnimDataInterface.SetAnimDataVector
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TMap<class FName, struct FVector>       VectorCurveData                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TMap<class FName, struct FVector>&VectorCurveData                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ISeqAnimDataInterface::SetAnimDataVector(const TMap<class FName, struct FVector>& VectorCurveData)
@@ -434,7 +434,7 @@ bool ISeqAnimDataInterface::SetAnimDataVector(const TMap<class FName, struct FVe
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SeqAnimDataInterface", "SetAnimDataVector");
+		Func = AsUObject()->Class->GetFunction("SeqAnimDataInterface", "SetAnimDataVector");
 
 	Params::SeqAnimDataInterface_SetAnimDataVector Parms{};
 
@@ -443,7 +443,7 @@ bool ISeqAnimDataInterface::SetAnimDataVector(const TMap<class FName, struct FVe
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -461,7 +461,7 @@ void ISeqAutoTransformInterface::BeginAutoTransform(float TimeLength)
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SeqAutoTransformInterface", "BeginAutoTransform");
+		Func = AsUObject()->Class->GetFunction("SeqAutoTransformInterface", "BeginAutoTransform");
 
 	Params::SeqAutoTransformInterface_BeginAutoTransform Parms{};
 
@@ -470,7 +470,7 @@ void ISeqAutoTransformInterface::BeginAutoTransform(float TimeLength)
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -484,12 +484,12 @@ void ISeqAutoTransformInterface::EndAutoTransform()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SeqAutoTransformInterface", "EndAutoTransform");
+		Func = AsUObject()->Class->GetFunction("SeqAutoTransformInterface", "EndAutoTransform");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -97,6 +97,27 @@ enum class EKuroBoostFlags : uint8
 	Boost_MAX                                = 16,
 };
 
+// ScriptStruct KuroPerformance.KuroGameConfig
+// 0x000C (0x000C - 0x0000)
+struct FKuroGameConfig final
+{
+public:
+	int32                                         FPS;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Resolution;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMSAA;                                             // 0x0008(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroGameConfigLevel                          RenderLevel;                                       // 0x0009(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroGameConfigLevel                          ModelLevel;                                        // 0x000A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSceneTransition;                                  // 0x000B(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroGameConfig) == 0x000004, "Wrong alignment on FKuroGameConfig");
+static_assert(sizeof(FKuroGameConfig) == 0x00000C, "Wrong size on FKuroGameConfig");
+static_assert(offsetof(FKuroGameConfig, FPS) == 0x000000, "Member 'FKuroGameConfig::FPS' has a wrong offset!");
+static_assert(offsetof(FKuroGameConfig, Resolution) == 0x000004, "Member 'FKuroGameConfig::Resolution' has a wrong offset!");
+static_assert(offsetof(FKuroGameConfig, bMSAA) == 0x000008, "Member 'FKuroGameConfig::bMSAA' has a wrong offset!");
+static_assert(offsetof(FKuroGameConfig, RenderLevel) == 0x000009, "Member 'FKuroGameConfig::RenderLevel' has a wrong offset!");
+static_assert(offsetof(FKuroGameConfig, ModelLevel) == 0x00000A, "Member 'FKuroGameConfig::ModelLevel' has a wrong offset!");
+static_assert(offsetof(FKuroGameConfig, bSceneTransition) == 0x00000B, "Member 'FKuroGameConfig::bSceneTransition' has a wrong offset!");
+
 // ScriptStruct KuroPerformance.KuroPerformanceReport
 // 0x0034 (0x0034 - 0x0000)
 struct FKuroPerformanceReport final
@@ -153,27 +174,6 @@ static_assert(offsetof(FKuroBoostQueryResult, mode) == 0x000000, "Member 'FKuroB
 static_assert(offsetof(FKuroBoostQueryResult, target) == 0x000004, "Member 'FKuroBoostQueryResult::target' has a wrong offset!");
 static_assert(offsetof(FKuroBoostQueryResult, percentage) == 0x000008, "Member 'FKuroBoostQueryResult::percentage' has a wrong offset!");
 static_assert(offsetof(FKuroBoostQueryResult, durationLeftInMillisecond) == 0x00000C, "Member 'FKuroBoostQueryResult::durationLeftInMillisecond' has a wrong offset!");
-
-// ScriptStruct KuroPerformance.KuroGameConfig
-// 0x000C (0x000C - 0x0000)
-struct FKuroGameConfig final
-{
-public:
-	int32                                         FPS;                                               // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Resolution;                                        // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMSAA;                                             // 0x0008(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKuroGameConfigLevel                          RenderLevel;                                       // 0x0009(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKuroGameConfigLevel                          ModelLevel;                                        // 0x000A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSceneTransition;                                  // 0x000B(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroGameConfig) == 0x000004, "Wrong alignment on FKuroGameConfig");
-static_assert(sizeof(FKuroGameConfig) == 0x00000C, "Wrong size on FKuroGameConfig");
-static_assert(offsetof(FKuroGameConfig, FPS) == 0x000000, "Member 'FKuroGameConfig::FPS' has a wrong offset!");
-static_assert(offsetof(FKuroGameConfig, Resolution) == 0x000004, "Member 'FKuroGameConfig::Resolution' has a wrong offset!");
-static_assert(offsetof(FKuroGameConfig, bMSAA) == 0x000008, "Member 'FKuroGameConfig::bMSAA' has a wrong offset!");
-static_assert(offsetof(FKuroGameConfig, RenderLevel) == 0x000009, "Member 'FKuroGameConfig::RenderLevel' has a wrong offset!");
-static_assert(offsetof(FKuroGameConfig, ModelLevel) == 0x00000A, "Member 'FKuroGameConfig::ModelLevel' has a wrong offset!");
-static_assert(offsetof(FKuroGameConfig, bSceneTransition) == 0x00000B, "Member 'FKuroGameConfig::bSceneTransition' has a wrong offset!");
 
 }
 

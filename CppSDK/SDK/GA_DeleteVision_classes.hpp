@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_DeleteVision.GA_DeleteVision_C
-// 0x0018 (0x0570 - 0x0558)
+// 0x0018 (0x0580 - 0x0568)
 class UGA_DeleteVision_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_DeleteVision_C;                  // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ABP_BaseVision_C*                       幻象BP;                                            // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     玩家BP;                                            // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_DeleteVision_C;                  // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ABP_BaseVision_C*                       幻象BP;                                            // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     玩家BP;                                            // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_DeleteVision(int32 EntryPoint);
@@ -43,10 +43,10 @@ public:
 	}
 };
 static_assert(alignof(UGA_DeleteVision_C) == 0x000008, "Wrong alignment on UGA_DeleteVision_C");
-static_assert(sizeof(UGA_DeleteVision_C) == 0x000570, "Wrong size on UGA_DeleteVision_C");
-static_assert(offsetof(UGA_DeleteVision_C, UberGraphFrame_GA_DeleteVision_C) == 0x000558, "Member 'UGA_DeleteVision_C::UberGraphFrame_GA_DeleteVision_C' has a wrong offset!");
-static_assert(offsetof(UGA_DeleteVision_C, 幻象BP) == 0x000560, "Member 'UGA_DeleteVision_C::幻象BP' has a wrong offset!");
-static_assert(offsetof(UGA_DeleteVision_C, 玩家BP) == 0x000568, "Member 'UGA_DeleteVision_C::玩家BP' has a wrong offset!");
+static_assert(sizeof(UGA_DeleteVision_C) == 0x000580, "Wrong size on UGA_DeleteVision_C");
+static_assert(offsetof(UGA_DeleteVision_C, UberGraphFrame_GA_DeleteVision_C) == 0x000568, "Member 'UGA_DeleteVision_C::UberGraphFrame_GA_DeleteVision_C' has a wrong offset!");
+static_assert(offsetof(UGA_DeleteVision_C, 幻象BP) == 0x000570, "Member 'UGA_DeleteVision_C::幻象BP' has a wrong offset!");
+static_assert(offsetof(UGA_DeleteVision_C, 玩家BP) == 0x000578, "Member 'UGA_DeleteVision_C::玩家BP' has a wrong offset!");
 
 }
 

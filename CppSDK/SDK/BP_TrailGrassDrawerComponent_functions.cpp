@@ -60,7 +60,7 @@ void UBP_TrailGrassDrawerComponent_C::OnDrawerTick(float DeltaTime)
 // Function BP_TrailGrassDrawerComponent.BP_TrailGrassDrawerComponent_C.OnDrawerEnd
 // (BlueprintEvent)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const EEndPlayReason                    EndPlayReason                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_TrailGrassDrawerComponent_C::OnDrawerEnd(const EEndPlayReason EndPlayReason)
 {

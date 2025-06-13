@@ -46,70 +46,70 @@ struct BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController final
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AActor*>                         ___object_Variable;                                // 0x0008(0x0010)(ConstParm, ReferenceParm)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0018(0x0028)(ZeroConstructor)
-	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x0048(0x0008)(NoDestructor, HasGetValueTypeHash)
-	bool                                          ___bool_IsClosed_Variable;                         // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0052(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_53[0x1];                                       // 0x0053(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_LensDropletManager_C*               K2Node_DynamicCast_AsBP_Lens_Droplet_Manager;      // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 CallFunc_GetGlobalGIActor_ReturnValue;             // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_GlobalGI_C*                         K2Node_DynamicCast_AsBP_Global_GI;                 // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue;           // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0099(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x00A0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_Add_VectorVector_ReturnValue;           // 0x00B8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_D_Vector_Distance_ReturnValue;            // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FHitResult>                     CallFunc_D_LineTraceMulti_OutHits;                 // 0x00D8(0x0010)(ReferenceParm, ContainsInstancedReference)
-	bool                                          CallFunc_D_LineTraceMulti_ReturnValue;             // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_D_Greater_FloatFloat_ReturnValue;         // 0x00E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_EA[0x6];                                       // 0x00EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_SurfaceRipple_C*                    K2Node_DynamicCast_AsBP_Surface_Ripple;            // 0x00F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0028)(ZeroConstructor)
+	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x0030(0x0008)(NoDestructor, HasGetValueTypeHash)
+	bool                                          ___bool_IsClosed_Variable;                         // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x003A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3B[0x1];                                       // 0x003B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_LensDropletManager_C*               K2Node_DynamicCast_AsBP_Lens_Droplet_Manager;      // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 CallFunc_GetGlobalGIActor_ReturnValue;             // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_GlobalGI_C*                         K2Node_DynamicCast_AsBP_Global_GI;                 // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACharacter*                             CallFunc_GetPlayerCharacter_ReturnValue;           // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0081(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_K2_GetActorLocation_ReturnValue;        // 0x0088(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_Add_VectorVector_ReturnValue;           // 0x00A0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_D_Vector_Distance_ReturnValue;            // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_D_Greater_FloatFloat_ReturnValue;         // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x00C1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_SurfaceRipple_C*                    K2Node_DynamicCast_AsBP_Surface_Ripple;            // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         ___object_Variable;                                // 0x00D8(0x0010)(ConstParm, ReferenceParm)
+	TArray<struct FHitResult>                     CallFunc_D_LineTraceMulti_OutHits;                 // 0x00E8(0x0010)(ReferenceParm, ContainsInstancedReference)
+	bool                                          CallFunc_D_LineTraceMulti_ReturnValue;             // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController) == 0x000008, "Wrong alignment on BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController");
 static_assert(sizeof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController) == 0x000100, "Wrong size on BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController");
 static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, EntryPoint) == 0x000000, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, ___object_Variable) == 0x000008, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::___object_Variable' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_CreateDelegate_OutputDelegate) == 0x000018, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, ___bool_Has_Been_Initd_Variable) == 0x000040, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::___bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_K2_SetTimerDelegate_ReturnValue) == 0x000048, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_K2_SetTimerDelegate_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, ___bool_IsClosed_Variable) == 0x000050, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::___bool_IsClosed_Variable' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_IsValid_ReturnValue) == 0x000051, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_SwitchEnum_CmpSuccess) == 0x000052, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_Event_DeltaSeconds_1) == 0x000054, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_Event_DeltaSeconds_1' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_Event_DeltaSeconds) == 0x000058, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_Event_DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_AsBP_Lens_Droplet_Manager) == 0x000060, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_AsBP_Lens_Droplet_Manager' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_bSuccess) == 0x000068, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_GetGlobalGIActor_ReturnValue) == 0x000070, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_GetGlobalGIActor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_IsValid_ReturnValue_1) == 0x000078, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_AsBP_Global_GI) == 0x000080, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_AsBP_Global_GI' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_bSuccess_1) == 0x000088, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_GetPlayerCharacter_ReturnValue) == 0x000090, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_GetPlayerCharacter_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_IsValid_ReturnValue_2) == 0x000098, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_Greater_FloatFloat_ReturnValue) == 0x000099, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x0000A0, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_Add_VectorVector_ReturnValue) == 0x0000B8, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_Add_VectorVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_Vector_Distance_ReturnValue) == 0x0000D0, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_Vector_Distance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_LineTraceMulti_OutHits) == 0x0000D8, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_LineTraceMulti_OutHits' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_LineTraceMulti_ReturnValue) == 0x0000E8, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_LineTraceMulti_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_Greater_FloatFloat_ReturnValue) == 0x0000E9, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_Greater_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_AsBP_Surface_Ripple) == 0x0000F0, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_AsBP_Surface_Ripple' has a wrong offset!");
-static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_bSuccess_2) == 0x0000F8, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_CreateDelegate_OutputDelegate) == 0x000008, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_K2_SetTimerDelegate_ReturnValue) == 0x000030, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_K2_SetTimerDelegate_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, ___bool_IsClosed_Variable) == 0x000038, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::___bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_IsValid_ReturnValue) == 0x000039, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_SwitchEnum_CmpSuccess) == 0x00003A, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_Event_DeltaSeconds_1) == 0x00003C, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_Event_DeltaSeconds_1' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_Event_DeltaSeconds) == 0x000040, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_AsBP_Lens_Droplet_Manager) == 0x000048, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_AsBP_Lens_Droplet_Manager' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_bSuccess) == 0x000050, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_GetGlobalGIActor_ReturnValue) == 0x000058, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_GetGlobalGIActor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_IsValid_ReturnValue_1) == 0x000060, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_AsBP_Global_GI) == 0x000068, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_AsBP_Global_GI' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_bSuccess_1) == 0x000070, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_GetPlayerCharacter_ReturnValue) == 0x000078, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_GetPlayerCharacter_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_IsValid_ReturnValue_2) == 0x000080, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_Greater_FloatFloat_ReturnValue) == 0x000081, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_K2_GetActorLocation_ReturnValue) == 0x000088, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_K2_GetActorLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_Add_VectorVector_ReturnValue) == 0x0000A0, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_Add_VectorVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_Vector_Distance_ReturnValue) == 0x0000B8, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_Vector_Distance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_Greater_FloatFloat_ReturnValue) == 0x0000C0, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_Greater_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, ___bool_Has_Been_Initd_Variable) == 0x0000C1, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::___bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_AsBP_Surface_Ripple) == 0x0000C8, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_AsBP_Surface_Ripple' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, K2Node_DynamicCast_bSuccess_2) == 0x0000D0, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, ___object_Variable) == 0x0000D8, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::___object_Variable' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_LineTraceMulti_OutHits) == 0x0000E8, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_LineTraceMulti_OutHits' has a wrong offset!");
+static_assert(offsetof(BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController, CallFunc_D_LineTraceMulti_ReturnValue) == 0x0000F8, "Member 'BP_WeatherController_C_ExecuteUbergraph_BP_WeatherController::CallFunc_D_LineTraceMulti_ReturnValue' has a wrong offset!");
 
 }
 

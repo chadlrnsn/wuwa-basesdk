@@ -114,7 +114,7 @@ class FString ATsEffectActor_C::GetEffectPath()
 // Function TsEffectActor.TsEffectActor_C.GetHandle
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ATsEffectActor_C::GetHandle(int32* Handle)
 {

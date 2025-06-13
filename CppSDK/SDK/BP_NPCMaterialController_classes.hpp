@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "SHolographicMaterialsCache_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EHolographicState_structs.hpp"
-#include "SHolographicMaterialsCache_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 namespace SDK
@@ -33,7 +33,7 @@ public:
 	EHolographicState                             State;                                             // 0x00F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bCached;                                           // 0x00F5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_F6[0x2];                                       // 0x00F6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class USkeletalMeshComponent*, struct FSHolographicMaterialsCache> ComponentMaterialsCache;                           // 0x00F8(0x0050)(Edit, BlueprintVisible, ContainsInstancedReference)
+	TMap<class USkeletalMeshComponent*, struct FSHolographicMaterialsCache> ComponentMaterialsCache; // 0x00F8(0x0050)(Edit, BlueprintVisible, ContainsInstancedReference)
 	bool                                          EnableBattle;                                      // 0x0148(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          EnableMask;                                        // 0x0149(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_14A[0x6];                                      // 0x014A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])

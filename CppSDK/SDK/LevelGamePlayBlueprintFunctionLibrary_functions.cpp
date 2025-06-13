@@ -46,8 +46,8 @@ void ULevelGamePlayBlueprintFunctionLibrary_C::ClearAllScanEffects(class UObject
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class FString                           seqName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
-// class FString                           eventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    seqName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    eventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ULevelGamePlayBlueprintFunctionLibrary_C::SceneInteractionBind(class AActor* actor, const class FString& seqName, const class FString& eventName, class UObject* __WorldContext)
@@ -133,10 +133,11 @@ int32 ULevelGamePlayBlueprintFunctionLibrary_C::GetScanInteractionEffectMaxDista
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           inActor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   type                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool ULevelGamePlayBlueprintFunctionLibrary_C::ApplyScanEffect(class AActor* inActor, class UObject* __WorldContext)
+bool ULevelGamePlayBlueprintFunctionLibrary_C::ApplyScanEffect(class AActor* inActor, int32 type, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -146,6 +147,7 @@ bool ULevelGamePlayBlueprintFunctionLibrary_C::ApplyScanEffect(class AActor* inA
 	Params::LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect Parms{};
 
 	Parms.inActor = inActor;
+	Parms.type = type;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;

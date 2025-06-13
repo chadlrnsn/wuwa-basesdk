@@ -77,7 +77,7 @@ static_assert(offsetof(BlueprintGameplayTagLibrary_DoesContainerMatchTagQuery, R
 struct BlueprintGameplayTagLibrary_DoesTagAssetInterfaceHaveTag final
 {
 public:
-	TScriptInterface<class IGameplayTagAssetInterface> TagContainerInterface;                             // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class IGameplayTagAssetInterface> TagContainerInterface;                        // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	struct FGameplayTag                           Tag;                                               // 0x0010(0x000C)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -196,7 +196,7 @@ static_assert(offsetof(BlueprintGameplayTagLibrary_GetTagName, ReturnValue) == 0
 struct BlueprintGameplayTagLibrary_HasAllMatchingGameplayTags final
 {
 public:
-	TScriptInterface<class IGameplayTagAssetInterface> TagContainerInterface;                             // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class IGameplayTagAssetInterface> TagContainerInterface;                        // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	struct FGameplayTagContainer                  OtherContainer;                                    // 0x0010(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])

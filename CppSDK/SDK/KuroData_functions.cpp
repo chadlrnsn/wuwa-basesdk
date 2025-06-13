@@ -65,10 +65,10 @@ int32 UKuroHitResult::GetHitCount() const
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UTraceBoxElement*                 Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// double                                  Frame                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// double                                  Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const double                            Frame                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const double                            Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroTraceLibrary::AsyncBoxTrace(class UTraceBoxElement* Element, const class FString& ProfileKey, const TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>& Delegate, const double Frame, const double Index_0)
 {
@@ -98,10 +98,10 @@ void UKuroTraceLibrary::AsyncBoxTrace(class UTraceBoxElement* Element, const cla
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UTraceCapsuleElement*             Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// double                                  Frame                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// double                                  Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const double                            Frame                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const double                            Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroTraceLibrary::AsyncCapsuleTrace(class UTraceCapsuleElement* Element, const class FString& ProfileKey, const TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>& Delegate, const double Frame, const double Index_0)
 {
@@ -131,10 +131,10 @@ void UKuroTraceLibrary::AsyncCapsuleTrace(class UTraceCapsuleElement* Element, c
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UTraceLineElement*                Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// double                                  Frame                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// double                                  Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const double                            Frame                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const double                            Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroTraceLibrary::AsyncLineTrace(class UTraceLineElement* Element, const class FString& ProfileKey, const TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>& Delegate, const double Frame, const double Index_0)
 {
@@ -164,10 +164,10 @@ void UKuroTraceLibrary::AsyncLineTrace(class UTraceLineElement* Element, const c
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UTraceSphereElement*              Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// double                                  Frame                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// double                                  Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const double                            Frame                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const double                            Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroTraceLibrary::AsyncSphereTrace(class UTraceSphereElement* Element, const class FString& ProfileKey, const TDelegate<void(bool Result, class UTraceBaseElement* Element, double Frame, double Index)>& Delegate, const double Frame, const double Index_0)
 {
@@ -197,7 +197,7 @@ void UKuroTraceLibrary::AsyncSphereTrace(class UTraceSphereElement* Element, con
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UTraceBoxElement*                 Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroTraceLibrary::BoxTrace(class UTraceBoxElement* Element, const class FString& ProfileKey)
@@ -227,7 +227,7 @@ bool UKuroTraceLibrary::BoxTrace(class UTraceBoxElement* Element, const class FS
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UTraceCapsuleElement*             Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroTraceLibrary::CapsuleTrace(class UTraceCapsuleElement* Element, const class FString& ProfileKey)
@@ -257,7 +257,7 @@ bool UKuroTraceLibrary::CapsuleTrace(class UTraceCapsuleElement* Element, const 
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UTraceLineElement*                Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroTraceLibrary::LineTrace(class UTraceLineElement* Element, const class FString& ProfileKey)
@@ -288,8 +288,8 @@ bool UKuroTraceLibrary::LineTrace(class UTraceLineElement* Element, const class 
 // Parameters:
 // class UShapeComponent*                  InShapeComp                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTraceBaseElement*                Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             TraceTagName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      TraceTagName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroTraceLibrary::ShapeTrace(class UShapeComponent* InShapeComp, class UTraceBaseElement* Element, const class FName& TraceTagName, const class FString& ProfileKey)
@@ -321,7 +321,7 @@ bool UKuroTraceLibrary::ShapeTrace(class UShapeComponent* InShapeComp, class UTr
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UTraceSphereElement*              Element                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ProfileKey                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroTraceLibrary::SphereTrace(class UTraceSphereElement* Element, const class FString& ProfileKey)
@@ -473,7 +473,7 @@ void UTraceBaseElement::SetEndLocation(double X, double Y, double Z)
 // Function KuroData.TraceBaseElement.SetObjectTypesQuery
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<EObjectTypeQuery>                ObjectTypes                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<EObjectTypeQuery>*               ObjectTypes                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UTraceBaseElement::SetObjectTypesQuery(TArray<EObjectTypeQuery>* ObjectTypes)
 {

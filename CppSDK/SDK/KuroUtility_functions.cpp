@@ -20,7 +20,7 @@ namespace SDK
 // Function KuroUtility.AsyncLoadState.AsyncLoadClass
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          UserData                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAsyncLoadState::AsyncLoadClass(const class FString& InPath, class UObject* UserData)
@@ -47,7 +47,7 @@ void UAsyncLoadState::AsyncLoadClass(const class FString& InPath, class UObject*
 // Function KuroUtility.AsyncLoadState.AsyncLoadObject
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          UserData                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UAsyncLoadState::AsyncLoadObject(const class FString& InPath, class UObject* UserData)
@@ -99,7 +99,7 @@ void UHoldPreloadObject::AddCommonAsset(class UObject* InObject)
 // Function KuroUtility.HoldPreloadObject.AddEntityAsset
 // (Final, Native, Public)
 // Parameters:
-// int32                                   EntityId                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             EntityId                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          InObject                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -211,8 +211,8 @@ TArray<class UObject*> UHoldPreloadObject::GetCommonAssetArray()
 // Function KuroUtility.HoldPreloadObject.GetEntityAssetArray
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// int32                                   EntityId                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UObject*>                  OutAssets                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const int32                             EntityId                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UObject*>*                 OutAssets                                              (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UHoldPreloadObject::GetEntityAssetArray(const int32 EntityId, TArray<class UObject*>* OutAssets)
@@ -243,7 +243,7 @@ bool UHoldPreloadObject::GetEntityAssetArray(const int32 EntityId, TArray<class 
 // Function KuroUtility.HoldPreloadObject.RemoveEntityAssets
 // (Final, Native, Public)
 // Parameters:
-// int32                                   EntityId                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             EntityId                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UHoldPreloadObject::RemoveEntityAssets(const int32 EntityId)
@@ -366,9 +366,9 @@ bool UKuroActorManager::ClearAcquiredComponents(class AActor* Actor)
 // Function KuroUtility.KuroActorManager.D_SpawnActor
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class AActor>               ActorClass                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransformDouble                 SpawnTransform                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSubclassOf<class AActor>         ActorClass                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransformDouble&          SpawnTransform                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // ESpawnActorCollisionHandlingMethod      CollisionHandlingOverride                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Owner                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class APawn*                            Instigator                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -558,7 +558,7 @@ bool UKuroActorManager::IsActorPoolEnable()
 // Function KuroUtility.KuroActorManager.IsPooledActor
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroActorManager::IsPooledActor(const class AActor* Actor)
@@ -587,7 +587,7 @@ bool UKuroActorManager::IsPooledActor(const class AActor* Actor)
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UClass*                           Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FPropertyPair>            Properties                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FPropertyPair>&     Properties                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroActorManager::RegisterActorSkipProperties(class UClass* Class_0, const TArray<struct FPropertyPair>& Properties)
 {
@@ -741,9 +741,9 @@ void UKuroActorManager::ResetUObjectByCDO(class UObject* Obj)
 // Function KuroUtility.KuroActorManager.SpawnActor
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class AActor>               ActorClass                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       SpawnTransform                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSubclassOf<class AActor>         ActorClass                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                SpawnTransform                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // ESpawnActorCollisionHandlingMethod      CollisionHandlingOverride                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Owner                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class APawn*                            Instigator                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -806,7 +806,7 @@ void UKuroActorManager::UnregisterComponent(class UActorComponent* Componet)
 // Function KuroUtility.KuroApplicationLibrary.AddApplicationLifetimeDelegate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(int32 Type)>             InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 Type)>&      InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroApplicationLibrary::AddApplicationLifetimeDelegate(const TDelegate<void(int32 Type)>& InDelegate)
@@ -834,7 +834,7 @@ bool UKuroApplicationLibrary::AddApplicationLifetimeDelegate(const TDelegate<voi
 // Function KuroUtility.KuroApplicationLibrary.AddEditorPreEndPIEDelegate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(bool bSimulateInEditor)> InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(bool bSimulateInEditor)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroApplicationLibrary::AddEditorPreEndPIEDelegate(const TDelegate<void(bool bSimulateInEditor)>& InDelegate)
@@ -945,14 +945,14 @@ class AActor* UKuroCollectActorComponent::GetActorWithTag(class FName Tag, EColl
 // Function KuroUtility.KuroCompressLibrary.CompressFileOrFolder
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           DestPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(float Rate)>             OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void(TArray<class FString>& SuccessedPaths)>OnCompressComplete                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void()>                       OnFail                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DestPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(float Rate)>&      OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const TArray<class FString>& SuccessedPaths)>&OnCompressComplete                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                OnFail                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // int64                                   MaxSingleFileReadSize                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroCompressLibrary::CompressFileOrFolder(const class FString& Path, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, int64 MaxSingleFileReadSize)
+void UKuroCompressLibrary::CompressFileOrFolder(const class FString& Path, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(const TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, int64 MaxSingleFileReadSize)
 {
 	static class UFunction* Func = nullptr;
 
@@ -980,15 +980,15 @@ void UKuroCompressLibrary::CompressFileOrFolder(const class FString& Path, const
 // Function KuroUtility.KuroCompressLibrary.CompressFilesOrFoldersAsync
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   Paths                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           DestPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(float Rate)>             OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void(TArray<class FString>& SuccessedPaths)>OnCompressComplete                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void()>                       OnFail                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Paths                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    DestPath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(float Rate)>&      OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const TArray<class FString>& SuccessedPaths)>&OnCompressComplete                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                OnFail                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    bAutoIncludeFilesUnderFolder                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int64                                   MaxSingleFileReadSize                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroCompressLibrary::CompressFilesOrFoldersAsync(const TArray<class FString>& Paths, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, bool bAutoIncludeFilesUnderFolder, int64 MaxSingleFileReadSize)
+void UKuroCompressLibrary::CompressFilesOrFoldersAsync(const TArray<class FString>& Paths, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(const TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, bool bAutoIncludeFilesUnderFolder, int64 MaxSingleFileReadSize)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1011,6 +1011,34 @@ void UKuroCompressLibrary::CompressFilesOrFoldersAsync(const TArray<class FStrin
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroUtility.KuroDemoInteractSubSystem.GetDemoInteractiveActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             ActorKey                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* UKuroDemoInteractSubSystem::GetDemoInteractiveActor(class FName ActorKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDemoInteractSubSystem", "GetDemoInteractiveActor");
+
+	Params::KuroDemoInteractSubSystem_GetDemoInteractiveActor Parms{};
+
+	Parms.ActorKey = ActorKey;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -1074,275 +1102,11 @@ int64 UKuroMathLibrary::BitwiseRightShift(int64 Source, int32 Bit)
 }
 
 
-// Function KuroUtility.KuroMathLibrary.IntBitwiseAnd
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int32                                   Num1                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Num2                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UKuroMathLibrary::IntBitwiseAnd(int32 Num1, int32 Num2)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMathLibrary", "IntBitwiseAnd");
-
-	Params::KuroMathLibrary_IntBitwiseAnd Parms{};
-
-	Parms.Num1 = Num1;
-	Parms.Num2 = Num2;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroMathLibrary.IntBitwiseNot
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int32                                   Num                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UKuroMathLibrary::IntBitwiseNot(int32 Num)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMathLibrary", "IntBitwiseNot");
-
-	Params::KuroMathLibrary_IntBitwiseNot Parms{};
-
-	Parms.Num = Num;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroMathLibrary.IntBitwiseOr
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int32                                   Num1                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Num2                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UKuroMathLibrary::IntBitwiseOr(int32 Num1, int32 Num2)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMathLibrary", "IntBitwiseOr");
-
-	Params::KuroMathLibrary_IntBitwiseOr Parms{};
-
-	Parms.Num1 = Num1;
-	Parms.Num2 = Num2;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroMathLibrary.IntBitwiseXOr
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int32                                   Num1                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Num2                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UKuroMathLibrary::IntBitwiseXOr(int32 Num1, int32 Num2)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMathLibrary", "IntBitwiseXOr");
-
-	Params::KuroMathLibrary_IntBitwiseXOr Parms{};
-
-	Parms.Num1 = Num1;
-	Parms.Num2 = Num2;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroMathLibrary.KuroStringToInt64
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class FString                           StringNum                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int64 UKuroMathLibrary::KuroStringToInt64(const class FString& StringNum)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMathLibrary", "KuroStringToInt64");
-
-	Params::KuroMathLibrary_KuroStringToInt64 Parms{};
-
-	Parms.StringNum = std::move(StringNum);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroMathLibrary.LongBitwiseAnd
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int64                                   Num1                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   Num2                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int64 UKuroMathLibrary::LongBitwiseAnd(int64 Num1, int64 Num2)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMathLibrary", "LongBitwiseAnd");
-
-	Params::KuroMathLibrary_LongBitwiseAnd Parms{};
-
-	Parms.Num1 = Num1;
-	Parms.Num2 = Num2;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroMathLibrary.LongBitwiseNot
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int64                                   Num                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int64 UKuroMathLibrary::LongBitwiseNot(int64 Num)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMathLibrary", "LongBitwiseNot");
-
-	Params::KuroMathLibrary_LongBitwiseNot Parms{};
-
-	Parms.Num = Num;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroMathLibrary.LongBitwiseOr
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int64                                   Num1                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   Num2                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int64 UKuroMathLibrary::LongBitwiseOr(int64 Num1, int64 Num2)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMathLibrary", "LongBitwiseOr");
-
-	Params::KuroMathLibrary_LongBitwiseOr Parms{};
-
-	Parms.Num1 = Num1;
-	Parms.Num2 = Num2;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function KuroUtility.KuroMathLibrary.LongBitwiseXOr
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// int64                                   Num1                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   Num2                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int64 UKuroMathLibrary::LongBitwiseXOr(int64 Num1, int64 Num2)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroMathLibrary", "LongBitwiseXOr");
-
-	Params::KuroMathLibrary_LongBitwiseXOr Parms{};
-
-	Parms.Num1 = Num1;
-	Parms.Num2 = Num2;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function KuroUtility.KuroMathLibrary.Max
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FVector2D                        A                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        B                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 A                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 B                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector2D UKuroMathLibrary::Max(const struct FVector2D& A, const struct FVector2D& B)
@@ -1371,8 +1135,8 @@ struct FVector2D UKuroMathLibrary::Max(const struct FVector2D& A, const struct F
 // Function KuroUtility.KuroMathLibrary.Min
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FVector2D                        A                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        B                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 A                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 B                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FVector2D UKuroMathLibrary::Min(const struct FVector2D& A, const struct FVector2D& B)
@@ -1426,10 +1190,10 @@ void UKuroMemoryLibrary::PrintUObjectMemoryInfo(class UObject* Object)
 // Function KuroUtility.KuroMeshTextureFunctionLibrary.AddMeshesBundleStreamedAllMipsDelegate
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(TArray<class USkeletalMesh*>& SkeletalMeshes, TArray<class UStaticMesh*>& StaticMeshes)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const TArray<class USkeletalMesh*>& SkeletalMeshes, const TArray<class UStaticMesh*>& StaticMeshes)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroMeshTextureFunctionLibrary::AddMeshesBundleStreamedAllMipsDelegate(const TDelegate<void(TArray<class USkeletalMesh*>& SkeletalMeshes, TArray<class UStaticMesh*>& StaticMeshes)>& InDelegate)
+bool UKuroMeshTextureFunctionLibrary::AddMeshesBundleStreamedAllMipsDelegate(const TDelegate<void(const TArray<class USkeletalMesh*>& SkeletalMeshes, const TArray<class UStaticMesh*>& StaticMeshes)>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1454,7 +1218,7 @@ bool UKuroMeshTextureFunctionLibrary::AddMeshesBundleStreamedAllMipsDelegate(con
 // Function KuroUtility.KuroMeshTextureFunctionLibrary.AddSkeletalStreamedAllMipsDelegate
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(class USkeletalMesh* SkeletalMesh)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(class USkeletalMesh* SkeletalMesh)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroMeshTextureFunctionLibrary::AddSkeletalStreamedAllMipsDelegate(const TDelegate<void(class USkeletalMesh* SkeletalMesh)>& InDelegate)
@@ -1482,7 +1246,7 @@ bool UKuroMeshTextureFunctionLibrary::AddSkeletalStreamedAllMipsDelegate(const T
 // Function KuroUtility.KuroMeshTextureFunctionLibrary.AddStaticMeshStreamedAllMipsDelegate
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(class UStaticMesh* StaticMesh)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(class UStaticMesh* StaticMesh)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroMeshTextureFunctionLibrary::AddStaticMeshStreamedAllMipsDelegate(const TDelegate<void(class UStaticMesh* StaticMesh)>& InDelegate)
@@ -1510,12 +1274,12 @@ bool UKuroMeshTextureFunctionLibrary::AddStaticMeshStreamedAllMipsDelegate(const
 // Function KuroUtility.KuroMeshTextureFunctionLibrary.ForceMeshesBundleStreamingInAllMips
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class USkeletalMesh*>            MeshBundleSkeletalMeshes                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<class UStaticMesh*>              MeshBundleStaticMeshes                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void(TArray<class USkeletalMesh*>& SkeletalMeshes, TArray<class UStaticMesh*>& StaticMeshes)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class USkeletalMesh*>&     MeshBundleSkeletalMeshes                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class UStaticMesh*>&       MeshBundleStaticMeshes                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const TArray<class USkeletalMesh*>& SkeletalMeshes, const TArray<class UStaticMesh*>& StaticMeshes)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UKuroMeshTextureFunctionLibrary::ForceMeshesBundleStreamingInAllMips(const TArray<class USkeletalMesh*>& MeshBundleSkeletalMeshes, const TArray<class UStaticMesh*>& MeshBundleStaticMeshes, const TDelegate<void(TArray<class USkeletalMesh*>& SkeletalMeshes, TArray<class UStaticMesh*>& StaticMeshes)>& InDelegate)
+int32 UKuroMeshTextureFunctionLibrary::ForceMeshesBundleStreamingInAllMips(const TArray<class USkeletalMesh*>& MeshBundleSkeletalMeshes, const TArray<class UStaticMesh*>& MeshBundleStaticMeshes, const TDelegate<void(const TArray<class USkeletalMesh*>& SkeletalMeshes, const TArray<class UStaticMesh*>& StaticMeshes)>& InDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1542,9 +1306,9 @@ int32 UKuroMeshTextureFunctionLibrary::ForceMeshesBundleStreamingInAllMips(const
 // Function KuroUtility.KuroMeshTextureFunctionLibrary.HandleMeshesComponentsBundleStreaming
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class USkeletalMesh*>            MeshBundleSkeletalMeshes                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<class UStaticMesh*>              MeshBundleStaticMeshes                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bStartForceStreamIn                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class USkeletalMesh*>&     MeshBundleSkeletalMeshes                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class UStaticMesh*>&       MeshBundleStaticMeshes                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const bool                              bStartForceStreamIn                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroMeshTextureFunctionLibrary::HandleMeshesComponentsBundleStreaming(const TArray<class USkeletalMesh*>& MeshBundleSkeletalMeshes, const TArray<class UStaticMesh*>& MeshBundleStaticMeshes, const bool bStartForceStreamIn)
 {
@@ -1572,7 +1336,7 @@ void UKuroMeshTextureFunctionLibrary::HandleMeshesComponentsBundleStreaming(cons
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
 // class USkeletalMesh*                    skeletalMesh                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bStartForceStreamIn                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bStartForceStreamIn                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroMeshTextureFunctionLibrary::HandleSkeletalMeshComponentStreaming(class USkeletalMesh* skeletalMesh, const bool bStartForceStreamIn)
 {
@@ -1599,7 +1363,7 @@ void UKuroMeshTextureFunctionLibrary::HandleSkeletalMeshComponentStreaming(class
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
 // class UStaticMesh*                      staticMesh                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bStartForceStreamIn                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bStartForceStreamIn                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroMeshTextureFunctionLibrary::HandleStaticMeshComponentStreaming(class UStaticMesh* staticMesh, const bool bStartForceStreamIn)
 {
@@ -1681,7 +1445,7 @@ bool UKuroMeshTextureFunctionLibrary::IsStaticMeshComponentStreamingComplete(cla
 // Function KuroUtility.KuroMeshTextureFunctionLibrary.StopMeshesBundleStreamingInAllMips
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// int32                                   UniqueInstanceID                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             UniqueInstanceID                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroMeshTextureFunctionLibrary::StopMeshesBundleStreamingInAllMips(const int32 UniqueInstanceID)
@@ -1784,8 +1548,8 @@ bool UKuroMeshTextureFunctionLibrary::UnbindStaticMeshStreamedAllMipsDelegate()
 // Function KuroUtility.KuroPhysicsLibrary.GetHitPoint
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    StartLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVectorDouble                    EndLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             StartLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             EndLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPrimitiveComponent*              TraceComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UKuroHitResult*                   HitResult                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1824,8 +1588,8 @@ bool UKuroPhysicsLibrary::GetHitPoint(const struct FVectorDouble& StartLocation,
 // Function KuroUtility.KuroPhysicsLibrary.GetSphereHitPoint
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    StartLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVectorDouble                    EndLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             StartLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             EndLocation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UPrimitiveComponent*              TraceComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Radius                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1866,7 +1630,7 @@ bool UKuroPhysicsLibrary::GetSphereHitPoint(const struct FVectorDouble& StartLoc
 // Function KuroUtility.KuroPolypartition.BuildTriangleByVertex2D
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// TArray<struct FVector2D>                points                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FVector2D>&         points                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<int32> UKuroPolypartition::BuildTriangleByVertex2D(const TArray<struct FVector2D>& points)
@@ -1913,7 +1677,7 @@ void AKuroSilenceGameMode::GameInitialized()
 // Function KuroUtility.KuroStaticAndroidLibrary.AddAndroidScreenChangeDelegate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void()>                       Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticAndroidLibrary::AddAndroidScreenChangeDelegate(const TDelegate<void()>& Handler)
 {
@@ -2032,8 +1796,8 @@ bool UKuroStaticAndroidLibrary::GetDeviceIsRooted()
 // Function KuroUtility.KuroStaticAndroidLibrary.OpenAppWithUrl
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           schema                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           failSchema                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    schema                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    failSchema                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticAndroidLibrary::OpenAppWithUrl(const class FString& schema, const class FString& failSchema)
 {
@@ -2084,8 +1848,8 @@ bool UKuroStaticiOSLibrary::GetDeviceJailbroken()
 // Function KuroUtility.KuroStaticiOSLibrary.OpenAppWithUrl
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           failUrl                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    failUrl                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticiOSLibrary::OpenAppWithUrl(const class FString& url, const class FString& failUrl)
 {
@@ -2161,7 +1925,7 @@ void UKuroStaticLibrary::ApplyChangeToBlueprint(class AActor* Actor)
 // Function KuroUtility.KuroStaticLibrary.ArrayToBuffer
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<uint8>                           InArray                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<uint8>*                          InArray                                                (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // struct FArrayBuffer                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FArrayBuffer UKuroStaticLibrary::ArrayToBuffer(TArray<uint8>* InArray)
@@ -2190,7 +1954,7 @@ struct FArrayBuffer UKuroStaticLibrary::ArrayToBuffer(TArray<uint8>* InArray)
 // Function KuroUtility.KuroStaticLibrary.Base64Decode
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::Base64Decode(const class FString& inString)
@@ -2218,7 +1982,7 @@ class FString UKuroStaticLibrary::Base64Decode(const class FString& inString)
 // Function KuroUtility.KuroStaticLibrary.Base64Encode
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::Base64Encode(const class FString& inString)
@@ -2243,10 +2007,38 @@ class FString UKuroStaticLibrary::Base64Encode(const class FString& inString)
 }
 
 
+// Function KuroUtility.KuroStaticLibrary.Base64EncodeBinary
+// (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FArrayBuffer&              InBuffer                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKuroStaticLibrary::Base64EncodeBinary(const struct FArrayBuffer& InBuffer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroStaticLibrary", "Base64EncodeBinary");
+
+	Params::KuroStaticLibrary_Base64EncodeBinary Parms{};
+
+	Parms.InBuffer = std::move(InBuffer);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroUtility.KuroStaticLibrary.Base64EncodeWithConvertToUTF8
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::Base64EncodeWithConvertToUTF8(const class FString& inString)
@@ -2274,8 +2066,8 @@ class FString UKuroStaticLibrary::Base64EncodeWithConvertToUTF8(const class FStr
 // Function KuroUtility.KuroStaticLibrary.Base64EncodeWithSpecifyChar
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<uint8>                           ByteArray                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           SpecifyChar                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    ByteArray                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    SpecifyChar                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::Base64EncodeWithSpecifyChar(const TArray<uint8>& ByteArray, const class FString& SpecifyChar)
@@ -2304,8 +2096,8 @@ class FString UKuroStaticLibrary::Base64EncodeWithSpecifyChar(const TArray<uint8
 // Function KuroUtility.KuroStaticLibrary.Base64EncodeWithSpecifyCharWithConvertToUTF8
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SpecifyChar                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SpecifyChar                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::Base64EncodeWithSpecifyCharWithConvertToUTF8(const class FString& inString, const class FString& SpecifyChar)
@@ -2334,7 +2126,7 @@ class FString UKuroStaticLibrary::Base64EncodeWithSpecifyCharWithConvertToUTF8(c
 // Function KuroUtility.KuroStaticLibrary.BindCustomGetTimeBetweenGarbageCollectionPassesDelegate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(float MBFree, float ExtraDevelopmentMemorySize, int32 NumObjects)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(float MBFree, float ExtraDevelopmentMemorySize, int32 NumObjects)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::BindCustomGetTimeBetweenGarbageCollectionPassesDelegate(const TDelegate<void(float MBFree, float ExtraDevelopmentMemorySize, int32 NumObjects)>& Delegate)
 {
@@ -2359,7 +2151,7 @@ void UKuroStaticLibrary::BindCustomGetTimeBetweenGarbageCollectionPassesDelegate
 // Function KuroUtility.KuroStaticLibrary.BindDeviceLangChangeDelegate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void()>                       Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::BindDeviceLangChangeDelegate(const TDelegate<void()>& Delegate)
 {
@@ -2403,7 +2195,7 @@ void UKuroStaticLibrary::ClearCustomGetTimeBetweenGarbageCollectionPassesDelegat
 // Function KuroUtility.KuroStaticLibrary.ClearPlayerInputCache
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// class APlayerController*                PC                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APlayerController**               PC                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::ClearPlayerInputCache(class APlayerController** PC)
 {
@@ -2429,7 +2221,7 @@ void UKuroStaticLibrary::ClearPlayerInputCache(class APlayerController** PC)
 // Function KuroUtility.KuroStaticLibrary.ConvertToObjectType
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// ECollisionChannel                       InCollisionChannel                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ECollisionChannel                 InCollisionChannel                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EObjectTypeQuery                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EObjectTypeQuery UKuroStaticLibrary::ConvertToObjectType(const ECollisionChannel InCollisionChannel)
@@ -2457,7 +2249,7 @@ EObjectTypeQuery UKuroStaticLibrary::ConvertToObjectType(const ECollisionChannel
 // Function KuroUtility.KuroStaticLibrary.ConvertToTraceType
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// ECollisionChannel                       InCollisionChannel                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ECollisionChannel                 InCollisionChannel                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ETraceTypeQuery                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 ETraceTypeQuery UKuroStaticLibrary::ConvertToTraceType(const ECollisionChannel InCollisionChannel)
@@ -2485,8 +2277,8 @@ ETraceTypeQuery UKuroStaticLibrary::ConvertToTraceType(const ECollisionChannel I
 // Function KuroUtility.KuroStaticLibrary.CopyFile
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SourcePath                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           DstPath                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SourcePath                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DstPath                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::CopyFile(const class FString& SourcePath, const class FString& DstPath)
@@ -2543,10 +2335,10 @@ struct FVectorDouble UKuroStaticLibrary::D_GetFirstLocationFromSeqTrack(class UM
 // Function KuroUtility.KuroStaticLibrary.DeleteFile
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRequireExists                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bEvenReadOnly                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bQuiet                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bRequireExists                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEvenReadOnly                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bQuiet                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::DeleteFile(const class FString& Path, const bool bRequireExists, const bool bEvenReadOnly, const bool bQuiet)
@@ -2577,9 +2369,9 @@ bool UKuroStaticLibrary::DeleteFile(const class FString& Path, const bool bRequi
 // Function KuroUtility.KuroStaticLibrary.DeleteFolder
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRequireExists                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTree                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bRequireExists                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bTree                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::DeleteFolder(const class FString& Path, const bool bRequireExists, const bool bTree)
@@ -2634,7 +2426,7 @@ void UKuroStaticLibrary::DestroyObject(class UObject* Object)
 // Function KuroUtility.KuroStaticLibrary.DirectoryExists
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::DirectoryExists(const class FString& Path)
@@ -2692,7 +2484,7 @@ void UKuroStaticLibrary::DoGameViewPortMouseEnter(class UGameViewportClient* InV
 // (Final, Native, Static, Private, HasDefaults, BlueprintCallable)
 // Parameters:
 // class AVolume*                          Volume                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Point                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Point                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   SphereRadius                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2723,11 +2515,11 @@ bool UKuroStaticLibrary::EncompassesPoint(class AVolume* Volume, const struct FV
 // Function KuroUtility.KuroStaticLibrary.ExecProcess
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Params_0                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnCode                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OutStd                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OutErr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Params_0                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  ReturnCode                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutStd                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutErr                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::ExecProcess(const class FString& URL, const class FString& Params_0, int32* ReturnCode, class FString* OutStd, class FString* OutErr)
@@ -2766,8 +2558,8 @@ bool UKuroStaticLibrary::ExecProcess(const class FString& URL, const class FStri
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           FunctionName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Result                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FunctionName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Result                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::ExecuteFunctionByName(class UObject* Object, const class FString& FunctionName, class FString* Result)
@@ -2824,7 +2616,7 @@ void UKuroStaticLibrary::ExitGame(bool force)
 // Function KuroUtility.KuroStaticLibrary.FileExists
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::FileExists(const class FString& Path)
@@ -2852,8 +2644,8 @@ bool UKuroStaticLibrary::FileExists(const class FString& Path)
 // Function KuroUtility.KuroStaticLibrary.FindFilesSorted
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Extension                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Extension                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FString> UKuroStaticLibrary::FindFilesSorted(const class FString& Path, const class FString& Extension)
@@ -2907,7 +2699,7 @@ void UKuroStaticLibrary::ForceGarbageCollection(bool bFullPurge)
 // Function KuroUtility.KuroStaticLibrary.FromUnixTimestamp
 // (Final, Native, Static, Private, HasDefaults, BlueprintCallable)
 // Parameters:
-// int32                                   Timestamp                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Timestamp                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FDateTime                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FDateTime UKuroStaticLibrary::FromUnixTimestamp(const int32 Timestamp)
@@ -2935,8 +2727,8 @@ struct FDateTime UKuroStaticLibrary::FromUnixTimestamp(const int32 Timestamp)
 // Function KuroUtility.KuroStaticLibrary.GetActorOfClassOnLevelInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// TSubclassOf<class AActor>               ActorClass                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ALevelInstance*                   LevelInstance                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSubclassOf<class AActor>         ActorClass                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class ALevelInstance*             LevelInstance                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class AActor* UKuroStaticLibrary::GetActorOfClassOnLevelInstance(const TSubclassOf<class AActor> ActorClass, const class ALevelInstance* LevelInstance)
@@ -2965,7 +2757,7 @@ class AActor* UKuroStaticLibrary::GetActorOfClassOnLevelInstance(const TSubclass
 // Function KuroUtility.KuroStaticLibrary.GetActorsOnLevelInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class ALevelInstance*                   LevelInstance                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class ALevelInstance*             LevelInstance                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class AActor*>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class AActor*> UKuroStaticLibrary::GetActorsOnLevelInstance(const class ALevelInstance* LevelInstance)
@@ -2993,8 +2785,8 @@ TArray<class AActor*> UKuroStaticLibrary::GetActorsOnLevelInstance(const class A
 // Function KuroUtility.KuroStaticLibrary.GetAnimAssets
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UAnimBlueprint*                   InAnimBlueprint                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSet<class UAnimationAsset*>            OutAnimationAssets                                     (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class UAnimBlueprint*             InAnimBlueprint                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSet<class UAnimationAsset*>*           OutAnimationAssets                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetAnimAssets(const class UAnimBlueprint* InAnimBlueprint, TSet<class UAnimationAsset*>* OutAnimationAssets)
 {
@@ -3022,8 +2814,8 @@ void UKuroStaticLibrary::GetAnimAssets(const class UAnimBlueprint* InAnimBluepri
 // Function KuroUtility.KuroStaticLibrary.GetAnimAssetsByAnimBlueprintClass
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSubclassOf<class UAnimInstance>        InAnimClass                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSet<class UAnimationAsset*>            OutAnimationAssets                                     (Parm, OutParm, NativeAccessSpecifierPublic)
+// const TSubclassOf<class UAnimInstance>& InAnimClass                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSet<class UAnimationAsset*>*           OutAnimationAssets                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetAnimAssetsByAnimBlueprintClass(const TSubclassOf<class UAnimInstance>& InAnimClass, TSet<class UAnimationAsset*>* OutAnimationAssets)
 {
@@ -3051,8 +2843,8 @@ void UKuroStaticLibrary::GetAnimAssetsByAnimBlueprintClass(const TSubclassOf<cla
 // Function KuroUtility.KuroStaticLibrary.GetAnimAssetsByAnimInstance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UAnimInstance*                    InAnimInstance                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSet<class UAnimationAsset*>            OutAnimationAssets                                     (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class UAnimInstance*              InAnimInstance                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSet<class UAnimationAsset*>*           OutAnimationAssets                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetAnimAssetsByAnimInstance(const class UAnimInstance* InAnimInstance, TSet<class UAnimationAsset*>* OutAnimationAssets)
 {
@@ -3080,8 +2872,8 @@ void UKuroStaticLibrary::GetAnimAssetsByAnimInstance(const class UAnimInstance* 
 // Function KuroUtility.KuroStaticLibrary.GetAnimMontageNotifies
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UAnimMontage*                     AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FAnimNotifyEvent>         OutNotifies                                            (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const class UAnimMontage*               AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FAnimNotifyEvent>*        OutNotifies                                            (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetAnimMontageNotifies(const class UAnimMontage* AnimMontage, TArray<struct FAnimNotifyEvent>* OutNotifies)
 {
@@ -3109,8 +2901,8 @@ void UKuroStaticLibrary::GetAnimMontageNotifies(const class UAnimMontage* AnimMo
 // Function KuroUtility.KuroStaticLibrary.GetAnimSequenceNotifies
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UAnimSequenceBase*                AnimSequence                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FAnimNotifyEvent>         OutNotifies                                            (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const class UAnimSequenceBase*          AnimSequence                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FAnimNotifyEvent>*        OutNotifies                                            (Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetAnimSequenceNotifies(const class UAnimSequenceBase* AnimSequence, TArray<struct FAnimNotifyEvent>* OutNotifies)
 {
@@ -3138,8 +2930,8 @@ void UKuroStaticLibrary::GetAnimSequenceNotifies(const class UAnimSequenceBase* 
 // Function KuroUtility.KuroStaticLibrary.GetAnimSequencesByAnimMontage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UAnimMontage*                     AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class UAnimSequenceBase*>        OutAnimSequences                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class UAnimMontage*               AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UAnimSequenceBase*>*       OutAnimSequences                                       (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetAnimSequencesByAnimMontage(const class UAnimMontage* AnimMontage, TArray<class UAnimSequenceBase*>* OutAnimSequences)
 {
@@ -3243,7 +3035,7 @@ class FString UKuroStaticLibrary::GetBlueprintCallstack()
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UCameraShakeBase>     CameraShakeClass                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FCameraShakeInfo                 OutInfo                                                (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FCameraShakeInfo*                OutInfo                                                (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::GetCameraShakeInfo(TSubclassOf<class UCameraShakeBase> CameraShakeClass, struct FCameraShakeInfo* OutInfo)
@@ -3274,8 +3066,8 @@ bool UKuroStaticLibrary::GetCameraShakeInfo(TSubclassOf<class UCameraShakeBase> 
 // Function KuroUtility.KuroStaticLibrary.GetCharacterAnimClass
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSubclassOf<class AActor>               InActorClass                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UAnimInstance>        OutAnimClass                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSubclassOf<class AActor>&        InActorClass                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UAnimInstance>*       OutAnimClass                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetCharacterAnimClass(const TSubclassOf<class AActor>& InActorClass, TSubclassOf<class UAnimInstance>* OutAnimClass)
 {
@@ -3303,10 +3095,10 @@ void UKuroStaticLibrary::GetCharacterAnimClass(const TSubclassOf<class AActor>& 
 // Function KuroUtility.KuroStaticLibrary.GetCreatureGenDirectoryByMap
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MapID                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Exist                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Directory                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             MapID                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   Exist                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Directory                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetCreatureGenDirectoryByMap(const class FString& Path, const int32 MapID, bool* Exist, class FString* Directory)
 {
@@ -3441,7 +3233,7 @@ class FString UKuroStaticLibrary::GetDeviceCPU()
 // Function KuroUtility.KuroStaticLibrary.GetDirectories
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FString> UKuroStaticLibrary::GetDirectories(const class FString& Path)
@@ -3491,11 +3283,39 @@ class FString UKuroStaticLibrary::GetDiskSerialNo()
 }
 
 
+// Function KuroUtility.KuroStaticLibrary.GetEnableMobileLowStreaming
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class ULevelSequence*                   Sequence                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroStaticLibrary::GetEnableMobileLowStreaming(class ULevelSequence* Sequence)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroStaticLibrary", "GetEnableMobileLowStreaming");
+
+	Params::KuroStaticLibrary_GetEnableMobileLowStreaming Parms{};
+
+	Parms.Sequence = Sequence;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroUtility.KuroStaticLibrary.GetFiles
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Extension                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Extension                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FString> UKuroStaticLibrary::GetFiles(const class FString& Path, const class FString& Extension)
@@ -3524,8 +3344,8 @@ TArray<class FString> UKuroStaticLibrary::GetFiles(const class FString& Path, co
 // Function KuroUtility.KuroStaticLibrary.GetFilesRecursive
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Filter                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Filter                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Files                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Directories                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
@@ -3636,7 +3456,7 @@ class FString UKuroStaticLibrary::GetGPUInfo()
 // Function KuroUtility.KuroStaticLibrary.GetLevelPath
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::GetLevelPath(const class UObject* WorldContextObject)
@@ -3692,8 +3512,8 @@ class AActor* UKuroStaticLibrary::GetLevelPrefabShowActor(class AActor* Actor)
 // Function KuroUtility.KuroStaticLibrary.GetLocalHostAddresses
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   OutAddresses                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// bool                                    bAppendPort                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  OutAddresses                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const bool                              bAppendPort                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetLocalHostAddresses(TArray<class FString>* OutAddresses, const bool bAppendPort)
 {
@@ -3751,8 +3571,8 @@ class FString UKuroStaticLibrary::GetMacAddress()
 // int32                                   YNumber                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Dis                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ANavigationData*                  NavData                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Point                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          QueryExtent                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Point                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   QueryExtent                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class UNavigationQueryFilter>FilterClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FVector>                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -3863,7 +3683,7 @@ class FString UKuroStaticLibrary::GetProcessorId()
 // Function KuroUtility.KuroStaticLibrary.GetSequenceTracksForObjectBindingID
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class ALevelSequenceActor*              Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class ALevelSequenceActor*        Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             TagName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UMovieSceneTrack*>         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
@@ -3918,8 +3738,8 @@ struct FVector2D UKuroStaticLibrary::GetSlateApplicationCursorPos()
 // Function KuroUtility.KuroStaticLibrary.GetSlotNamesByAnimMontage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UAnimMontage*                     AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FName>                     OutSlotNames                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class UAnimMontage*               AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FName>*                    OutSlotNames                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::GetSlotNamesByAnimMontage(const class UAnimMontage* AnimMontage, TArray<class FName>* OutSlotNames)
 {
@@ -4054,7 +3874,7 @@ int64 UKuroStaticLibrary::GetTotalPhysicalMemory()
 // Function KuroUtility.KuroStaticLibrary.GetTrackByClass
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// TArray<class UMovieSceneTrack*>         Tracks                                                 (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<class UMovieSceneTrack*>&  Tracks                                                 (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // TSubclassOf<class UMovieSceneTrack>     Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UMovieSceneTrack*                 ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -4134,7 +3954,7 @@ struct FVector2D UKuroStaticLibrary::GetViewPortMousePosition()
 // Function KuroUtility.KuroStaticLibrary.HashStringWithSHA1
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::HashStringWithSHA1(const class FString& inString)
@@ -4162,9 +3982,9 @@ class FString UKuroStaticLibrary::HashStringWithSHA1(const class FString& inStri
 // Function KuroUtility.KuroStaticLibrary.IcmpPing
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           IpAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    IpAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Timeout                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(const class FString& Address, float Time, int32 responseState)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const class FString& Address, float Time, int32 responseState)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::IcmpPing(const class FString& IpAddress, float Timeout, const TDelegate<void(const class FString& Address, float Time, int32 responseState)>& InDelegate)
 {
@@ -4191,7 +4011,7 @@ void UKuroStaticLibrary::IcmpPing(const class FString& IpAddress, float Timeout,
 // Function KuroUtility.KuroStaticLibrary.IsEditor
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class UObject*                          WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::IsEditor(const class UObject* WorldContextObject)
@@ -4299,7 +4119,7 @@ bool UKuroStaticLibrary::IsLowMemoryDevice()
 // Function KuroUtility.KuroStaticLibrary.IsModuleLoaded
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ModelName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ModelName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::IsModuleLoaded(const class FString& ModelName)
@@ -4327,8 +4147,8 @@ bool UKuroStaticLibrary::IsModuleLoaded(const class FString& ModelName)
 // Function KuroUtility.KuroStaticLibrary.IsMontageContainGivenAnimNotify
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UAnimMontage*                     AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSet<class FString>                     CheckClassNames                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class UAnimMontage*               AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSet<class FString>&              CheckClassNames                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::IsMontageContainGivenAnimNotify(const class UAnimMontage* AnimMontage, const TSet<class FString>& CheckClassNames)
@@ -4437,7 +4257,7 @@ bool UKuroStaticLibrary::IsWithEditor()
 // Function KuroUtility.KuroStaticLibrary.IsWorldTearingDown
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UWorld*                           World                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::IsWorldTearingDown(const class UWorld* World)
@@ -4490,8 +4310,8 @@ bool UKuroStaticLibrary::KuroEnableCustomAffinity()
 // Function KuroUtility.KuroStaticLibrary.KuroFormatText
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Format                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FString>                   Parameters                                             (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class FString&                    Format                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            Parameters                                             (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::KuroFormatText(const class FString& Format, const TArray<class FString>& Parameters)
@@ -4520,8 +4340,8 @@ class FString UKuroStaticLibrary::KuroFormatText(const class FString& Format, co
 // Function KuroUtility.KuroStaticLibrary.LoadFilesRecursive
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Filter                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Filter                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Files                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Directories                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
@@ -4554,8 +4374,8 @@ TArray<class FString> UKuroStaticLibrary::LoadFilesRecursive(const class FString
 // Function KuroUtility.KuroStaticLibrary.LoadFileToArray
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           OutArray                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<uint8>*                          OutArray                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::LoadFileToArray(const class FString& Path, TArray<uint8>* OutArray)
@@ -4586,8 +4406,8 @@ bool UKuroStaticLibrary::LoadFileToArray(const class FString& Path, TArray<uint8
 // Function KuroUtility.KuroStaticLibrary.LoadFileToString
 // (Final, Native, Static, Private, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Result                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Filename                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Result                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Filename                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::LoadFileToString(class FString* Result, const class FString& Filename)
@@ -4618,7 +4438,7 @@ bool UKuroStaticLibrary::LoadFileToString(class FString* Result, const class FSt
 // Function KuroUtility.KuroStaticLibrary.LoadFileToStringArray
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           FileRevisionPath                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FileRevisionPath                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class FString> UKuroStaticLibrary::LoadFileToStringArray(const class FString& FileRevisionPath)
@@ -4646,8 +4466,8 @@ TArray<class FString> UKuroStaticLibrary::LoadFileToStringArray(const class FStr
 // Function KuroUtility.KuroStaticLibrary.MakeDirectory
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTree                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bTree                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::MakeDirectory(const class FString& Path, const bool bTree)
@@ -4676,7 +4496,7 @@ bool UKuroStaticLibrary::MakeDirectory(const class FString& Path, const bool bTr
 // Function KuroUtility.KuroStaticLibrary.Md5HashAnsiString
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::Md5HashAnsiString(const class FString& inString)
@@ -4704,7 +4524,7 @@ class FString UKuroStaticLibrary::Md5HashAnsiString(const class FString& inStrin
 // Function KuroUtility.KuroStaticLibrary.Md5HashUTF8String
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    inString                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticLibrary::Md5HashUTF8String(const class FString& inString)
@@ -4759,8 +4579,8 @@ void UKuroStaticLibrary::PerceptionConfigureSense(class UAIPerceptionComponent* 
 // Function KuroUtility.KuroStaticLibrary.RegisterCustomCommandProcessor
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Category                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(const class FString& Command)>Processor                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    Category                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const class FString& Command)>&Processor                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::RegisterCustomCommandProcessor(const class FString& Category, const TDelegate<void(const class FString& Command)>& Processor)
 {
@@ -4811,8 +4631,8 @@ void UKuroStaticLibrary::RemoveFromRoot(class UObject* InObject)
 // Function KuroUtility.KuroStaticLibrary.SaveBufferToFile
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FArrayBuffer                     InBuffer                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FArrayBuffer&              InBuffer                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::SaveBufferToFile(const class FString& Path, const struct FArrayBuffer& InBuffer)
@@ -4841,9 +4661,9 @@ bool UKuroStaticLibrary::SaveBufferToFile(const class FString& Path, const struc
 // Function KuroUtility.KuroStaticLibrary.SaveStringToFile
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           SaveText                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           FileName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bWithBom                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SaveText                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FileName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bWithBom                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::SaveStringToFile(const class FString& SaveText, const class FString& FileName, const bool bWithBom)
@@ -4899,8 +4719,8 @@ void UKuroStaticLibrary::SetActorModify(class AActor* Actor)
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsPermanent                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bWithAllChildren                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIsPermanent                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bWithAllChildren                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::SetActorPermanent(class AActor* Actor, const bool bIsPermanent, const bool bWithAllChildren)
 {
@@ -5131,8 +4951,8 @@ void UKuroStaticLibrary::SetHttpThreadIdleMinimumSleepTimeInSeconds(float InHttp
 // Parameters:
 // class UObject*                          world                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   playerIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FKey                             key                                                    (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   deadZone                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FKey&                      key                                                    (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             deadZone                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::SetInputKeyDeadZone(class UObject* world, int32 playerIndex, const struct FKey& key, const float deadZone)
 {
@@ -5160,7 +4980,7 @@ void UKuroStaticLibrary::SetInputKeyDeadZone(class UObject* world, int32 playerI
 // Function KuroUtility.KuroStaticLibrary.SetMontageANIndex
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UAnimMontage*                     AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAnimMontage*               AnimMontage                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::SetMontageANIndex(const class UAnimMontage* AnimMontage)
 {
@@ -5186,7 +5006,7 @@ void UKuroStaticLibrary::SetMontageANIndex(const class UAnimMontage* AnimMontage
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USplineComponent*                 Spline                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  Points                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           Points                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // ESplineCoordinateSpace                  CoordinateSpace                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ESplinePointType                        Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bUpdateSpline                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5218,8 +5038,8 @@ void UKuroStaticLibrary::SetSplinePointsWithType(class USplineComponent* Spline,
 // Function KuroUtility.KuroStaticLibrary.SetStaticMeshVelocity
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// TArray<class AActor*>                   Actors                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// struct FVector                          NewVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class AActor*>&            Actors                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewVelocity                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::SetStaticMeshVelocity(const TArray<class AActor*>& Actors, const struct FVector& NewVelocity)
 {
@@ -5245,7 +5065,7 @@ void UKuroStaticLibrary::SetStaticMeshVelocity(const TArray<class AActor*>& Acto
 // Function KuroUtility.KuroStaticLibrary.SetThreadAffinity
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AffinityHigh                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AffinityLow                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -5274,7 +5094,7 @@ void UKuroStaticLibrary::SetThreadAffinity(const class FString& ThreadName, int3
 // Function KuroUtility.KuroStaticLibrary.SetThreadPolicy
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Policy                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::SetThreadPolicy(const class FString& ThreadName, int32 Policy)
@@ -5301,7 +5121,7 @@ void UKuroStaticLibrary::SetThreadPolicy(const class FString& ThreadName, int32 
 // Function KuroUtility.KuroStaticLibrary.SetThreadPriority
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::SetThreadPriority(const class FString& ThreadName, int32 Priority)
@@ -5328,7 +5148,7 @@ void UKuroStaticLibrary::SetThreadPriority(const class FString& ThreadName, int3
 // Function KuroUtility.KuroStaticLibrary.SetThreadPriorityAndPolicy
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Policy                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -5357,7 +5177,7 @@ void UKuroStaticLibrary::SetThreadPriorityAndPolicy(const class FString& ThreadN
 // Function KuroUtility.KuroStaticLibrary.SetThreadPriorityAndPolicyAndAffinity
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ThreadName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Policy                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AffinityHigh                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5446,8 +5266,8 @@ class AActor* UKuroStaticLibrary::SpawnActorFromAnother(class AActor* Actor, cla
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UAnimInstance*                    UAnimInstance                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             InSlotName                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InBlendOutTime                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       InSlotName                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InBlendOutTime                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::StopAllMontagesBySlotName(class UAnimInstance* UAnimInstance, const class FName InSlotName, const float InBlendOutTime)
 {
@@ -5499,7 +5319,7 @@ void UKuroStaticLibrary::SynchronizeProperties(class UWidget* InWidget)
 // Function KuroUtility.KuroStaticLibrary.ToggleSequenceNodeActiveByTag
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class ALevelSequenceActor*              Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class ALevelSequenceActor*        Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             TagName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bActive                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5531,7 +5351,7 @@ bool UKuroStaticLibrary::ToggleSequenceNodeActiveByTag(const class ALevelSequenc
 // Function KuroUtility.KuroStaticLibrary.ToUnixTimestamp
 // (Final, Native, Static, Private, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FDateTime                        InDataTime                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FDateTime&                 InDataTime                                             (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticLibrary::ToUnixTimestamp(const struct FDateTime& InDataTime)
@@ -5578,7 +5398,7 @@ void UKuroStaticLibrary::UnBindDeviceLangChangeDelegate()
 // Function KuroUtility.KuroStaticLibrary.UnRegisterCustomCommandProcessor
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Category                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Category                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticLibrary::UnRegisterCustomCommandProcessor(const class FString& Category)
 {
@@ -5603,10 +5423,10 @@ void UKuroStaticLibrary::UnRegisterCustomCommandProcessor(const class FString& C
 // Function KuroUtility.KuroStaticLibrary.WriteStringToFile
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
-// class FString                           SaveText                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           FileName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bPublic                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bWithBom                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SaveText                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FileName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bPublic                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bWithBom                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroStaticLibrary::WriteStringToFile(const class FString& SaveText, const class FString& FileName, const bool bPublic, const bool bWithBom)
@@ -5637,8 +5457,8 @@ bool UKuroStaticLibrary::WriteStringToFile(const class FString& SaveText, const 
 // Function KuroUtility.KuroStaticPS5Library.AbortTrophyHandleAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// int32                                   handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 ret)>              callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// int32*                                  handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret)>&       callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::AbortTrophyHandleAsync(int32* handle, const TDelegate<void(int32 ret)>& callback)
 {
@@ -5694,8 +5514,8 @@ int32 UKuroStaticPS5Library::AbortUdsHandle(int32 handle)
 // Function KuroUtility.KuroStaticPS5Library.AddCacheMapElement
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::AddCacheMapElement(const class FString& key, const class FString& value)
 {
@@ -5721,7 +5541,7 @@ void UKuroStaticPS5Library::AddCacheMapElement(const class FString& key, const c
 // Function KuroUtility.KuroStaticPS5Library.AddJoinSessionDelegate
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// TDelegate<void(const class FString& userId, const class FString& playerSessionId)>InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const class FString& userId, const class FString& playerSessionId)>&InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::AddJoinSessionDelegate(const TDelegate<void(const class FString& userId, const class FString& playerSessionId)>& InDelegate)
 {
@@ -5771,7 +5591,7 @@ class FString UKuroStaticPS5Library::CheckJoinSession()
 // Function KuroUtility.KuroStaticPS5Library.CheckUserPremium
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::CheckUserPremium(class FString* userId)
@@ -5839,7 +5659,7 @@ void UKuroStaticPS5Library::ClearJoinSessionHandle()
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int32                                   joinableUserType                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           playerId                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          playerId                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticPS5Library::CreatePlayerSession(int32 joinableUserType, class FString* playerId)
@@ -5870,10 +5690,10 @@ class FString UKuroStaticPS5Library::CreatePlayerSession(int32 joinableUserType,
 // Function KuroUtility.KuroStaticPS5Library.CreateTrophyContextAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    userId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   serviceLabel                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           optionsLong                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 ret, int32 result)>callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    optionsLong                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret, int32 result)>&callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::CreateTrophyContextAsync(const class FString& userId, int32 serviceLabel, const class FString& optionsLong, const TDelegate<void(int32 ret, int32 result)>& callback)
 {
@@ -5901,7 +5721,7 @@ void UKuroStaticPS5Library::CreateTrophyContextAsync(const class FString& userId
 // Function KuroUtility.KuroStaticPS5Library.CreateTrophyHandleAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// TDelegate<void(int32 ret, int32 result)>callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret, int32 result)>&callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::CreateTrophyHandleAsync(const TDelegate<void(int32 ret, int32 result)>& callback)
 {
@@ -5926,8 +5746,8 @@ void UKuroStaticPS5Library::CreateTrophyHandleAsync(const TDelegate<void(int32 r
 // Function KuroUtility.KuroStaticPS5Library.CreateUdsContext
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   context                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  context                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::CreateUdsContext(class FString* userId, int32* context)
@@ -5959,9 +5779,9 @@ int32 UKuroStaticPS5Library::CreateUdsContext(class FString* userId, int32* cont
 // Function KuroUtility.KuroStaticPS5Library.CreateUdsEvent
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           eventName                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   outEventPtr                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   outProPtr                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          eventName                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64*                                  outEventPtr                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64*                                  outProPtr                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::CreateUdsEvent(class FString* eventName, int64* outEventPtr, int64* outProPtr)
@@ -5996,7 +5816,7 @@ int32 UKuroStaticPS5Library::CreateUdsEvent(class FString* eventName, int64* out
 // Function KuroUtility.KuroStaticPS5Library.CreateUdsHandle
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// int32                                   handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::CreateUdsHandle(int32* handle)
@@ -6025,8 +5845,8 @@ int32 UKuroStaticPS5Library::CreateUdsHandle(int32* handle)
 // Function KuroUtility.KuroStaticPS5Library.DestroyTrophyContextAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// int32                                   context                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 ret)>              callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// int32*                                  context                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret)>&       callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::DestroyTrophyContextAsync(int32* context, const TDelegate<void(int32 ret)>& callback)
 {
@@ -6054,8 +5874,8 @@ void UKuroStaticPS5Library::DestroyTrophyContextAsync(int32* context, const TDel
 // Function KuroUtility.KuroStaticPS5Library.DestroyTrophyHandleAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// int32                                   handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 ret)>              callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// int32*                                  handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret)>&       callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::DestroyTrophyHandleAsync(int32* handle, const TDelegate<void(int32 ret)>& callback)
 {
@@ -6167,7 +5987,7 @@ int32 UKuroStaticPS5Library::DestroyUdsHandle(int32 handle)
 // Function KuroUtility.KuroStaticPS5Library.GetAccountIdByUserId
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticPS5Library::GetAccountIdByUserId(class FString* userId)
@@ -6196,10 +6016,10 @@ class FString UKuroStaticPS5Library::GetAccountIdByUserId(class FString* userId)
 // Function KuroUtility.KuroStaticPS5Library.GetAuthCode
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           ClientId                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Scope                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           AuthCode                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   IssuerId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          ClientId                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Scope                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          AuthCode                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  IssuerId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::GetAuthCode(class FString* ClientId, class FString* Scope, class FString* AuthCode, int32* IssuerId)
@@ -6237,7 +6057,7 @@ int32 UKuroStaticPS5Library::GetAuthCode(class FString* ClientId, class FString*
 // Function KuroUtility.KuroStaticPS5Library.GetBasicPresence
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           accountId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          accountId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FBasicPresenceData>       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FBasicPresenceData> UKuroStaticPS5Library::GetBasicPresence(class FString* accountId)
@@ -6266,8 +6086,8 @@ TArray<struct FBasicPresenceData> UKuroStaticPS5Library::GetBasicPresence(class 
 // Function KuroUtility.KuroStaticPS5Library.GetBlockUserList
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// int32                                   offset                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   limit                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  offset                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  limit                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FBlockUserData                   ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FBlockUserData UKuroStaticPS5Library::GetBlockUserList(int32* offset, int32* limit)
@@ -6299,9 +6119,9 @@ struct FBlockUserData UKuroStaticPS5Library::GetBlockUserList(int32* offset, int
 // Function KuroUtility.KuroStaticPS5Library.GetBlockUserListAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// int32                                   offset                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   limit                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(const struct FBlockUserData& data)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// int32*                                  offset                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  limit                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FBlockUserData& data)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::GetBlockUserListAsync(int32* offset, int32* limit, const TDelegate<void(const struct FBlockUserData& data)>& Delegate)
 {
@@ -6332,7 +6152,7 @@ void UKuroStaticPS5Library::GetBlockUserListAsync(int32* offset, int32* limit, c
 // Function KuroUtility.KuroStaticPS5Library.GetCacheMapElement
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticPS5Library::GetCacheMapElement(const class FString& key)
@@ -6360,8 +6180,8 @@ class FString UKuroStaticPS5Library::GetCacheMapElement(const class FString& key
 // Function KuroUtility.KuroStaticPS5Library.GetCommunicationRestrictionStatusAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           accountId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 ret, int32 status)>callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// class FString*                          accountId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret, int32 status)>&callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::GetCommunicationRestrictionStatusAsync(class FString* accountId, const TDelegate<void(int32 ret, int32 status)>& callback)
 {
@@ -6389,7 +6209,7 @@ void UKuroStaticPS5Library::GetCommunicationRestrictionStatusAsync(class FString
 // Function KuroUtility.KuroStaticPS5Library.GetCountryCodeByUserId
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticPS5Library::GetCountryCodeByUserId(class FString* userId)
@@ -6418,10 +6238,10 @@ class FString UKuroStaticPS5Library::GetCountryCodeByUserId(class FString* userI
 // Function KuroUtility.KuroStaticPS5Library.GetIdToken
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           ClientId                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ClientSecret                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Scope                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           IdToken                                                (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          ClientId                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          ClientSecret                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Scope                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          IdToken                                                (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::GetIdToken(class FString* ClientId, class FString* ClientSecret, class FString* Scope, class FString* IdToken)
@@ -6459,7 +6279,7 @@ int32 UKuroStaticPS5Library::GetIdToken(class FString* ClientId, class FString* 
 // Function KuroUtility.KuroStaticPS5Library.GetMessageDialogStateAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// TDelegate<void(int32 ret)>              callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret)>&       callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::GetMessageDialogStateAsync(const TDelegate<void(int32 ret)>& callback)
 {
@@ -6484,7 +6304,7 @@ void UKuroStaticPS5Library::GetMessageDialogStateAsync(const TDelegate<void(int3
 // Function KuroUtility.KuroStaticPS5Library.GetOnlineIdByUserId
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticPS5Library::GetOnlineIdByUserId(class FString* userId)
@@ -6513,7 +6333,7 @@ class FString UKuroStaticPS5Library::GetOnlineIdByUserId(class FString* userId)
 // Function KuroUtility.KuroStaticPS5Library.GetPlayerIdByPlayerSessionId
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           playerSessionId                                        (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          playerSessionId                                        (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticPS5Library::GetPlayerIdByPlayerSessionId(class FString* playerSessionId)
@@ -6567,8 +6387,8 @@ TArray<struct FProductData> UKuroStaticPS5Library::GetStoreProducts()
 // Function KuroUtility.KuroStaticPS5Library.GetTrophyList
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   inputOffset                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  inputOffset                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   length                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTrophyInfoData                  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -6605,7 +6425,7 @@ struct FTrophyInfoData UKuroStaticPS5Library::GetTrophyList(class FString* userI
 // Parameters:
 // int32                                   context                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   handle                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   inputOffset                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  inputOffset                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   length                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTrophyInfoData                  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -6639,11 +6459,11 @@ struct FTrophyInfoData UKuroStaticPS5Library::GetTrophyListWithContextIdAndHandl
 // Function KuroUtility.KuroStaticPS5Library.GetTrophyListWithContextIdAndHandleIdAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// int32                                   inputOffset                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  inputOffset                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   length                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   context                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   handle                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(const struct FTrophyInfoData& data)>callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FTrophyInfoData& data)>&callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::GetTrophyListWithContextIdAndHandleIdAsync(int32* inputOffset, int32 length, int32 context, int32 handle, const TDelegate<void(const struct FTrophyInfoData& data)>& callback)
 {
@@ -6699,7 +6519,7 @@ class FString UKuroStaticPS5Library::GetUserId()
 // Function KuroUtility.KuroStaticPS5Library.GetUserIdByAccountId
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           accountId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          accountId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroStaticPS5Library::GetUserIdByAccountId(class FString* accountId)
@@ -6781,7 +6601,7 @@ int32 UKuroStaticPS5Library::InitNpUniversalDataSystem(int32 poolSize)
 // Function KuroUtility.KuroStaticPS5Library.InitWebApi
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::InitWebApi(class FString* userId)
@@ -6810,7 +6630,7 @@ int32 UKuroStaticPS5Library::InitWebApi(class FString* userId)
 // Function KuroUtility.KuroStaticPS5Library.JoinPlayerSession
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           playerSessionId                                        (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          playerSessionId                                        (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::JoinPlayerSession(class FString* playerSessionId)
 {
@@ -6855,7 +6675,7 @@ void UKuroStaticPS5Library::LeavePlayerSession()
 // Function KuroUtility.KuroStaticPS5Library.NotifyPremium
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::NotifyPremium(class FString* userId)
 {
@@ -6881,7 +6701,7 @@ void UKuroStaticPS5Library::NotifyPremium(class FString* userId)
 // Function KuroUtility.KuroStaticPS5Library.NotifyPremiumFeature
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    isPlayStationOnly                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::NotifyPremiumFeature(class FString* userId, bool isPlayStationOnly)
@@ -6910,7 +6730,7 @@ void UKuroStaticPS5Library::NotifyPremiumFeature(class FString* userId, bool isP
 // Function KuroUtility.KuroStaticPS5Library.OpenCheckoutDialog
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           ProductLabel                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          ProductLabel                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::OpenCheckoutDialog(class FString* ProductLabel)
@@ -6939,10 +6759,10 @@ int32 UKuroStaticPS5Library::OpenCheckoutDialog(class FString* ProductLabel)
 // Function KuroUtility.KuroStaticPS5Library.OpenMessageDialog
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   openMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   msgType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 ret)>              callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret)>&       callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::OpenMessageDialog(class FString* userId, int32 openMode, int32 msgType, const TDelegate<void(int32 ret)>& callback)
 {
@@ -6972,7 +6792,7 @@ void UKuroStaticPS5Library::OpenMessageDialog(class FString* userId, int32 openM
 // Function KuroUtility.KuroStaticPS5Library.OpenWebBrowser
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           Url                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Url                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::OpenWebBrowser(class FString* Url)
 {
@@ -6998,7 +6818,7 @@ void UKuroStaticPS5Library::OpenWebBrowser(class FString* Url)
 // Function KuroUtility.KuroStaticPS5Library.OpenWebView
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           Url                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Url                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::OpenWebView(class FString* Url)
@@ -7109,10 +6929,10 @@ int32 UKuroStaticPS5Library::PostUdsEvent(int32 context, int32 handle, int64 eve
 // Function KuroUtility.KuroStaticPS5Library.RegisterTrophyContextAsync
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// int32                                   context                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           optionsLong                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 ret)>              callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// int32*                                  context                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    optionsLong                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret)>&       callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::RegisterTrophyContextAsync(int32* context, int32* handle, const class FString& optionsLong, const TDelegate<void(int32 ret)>& callback)
 {
@@ -7174,7 +6994,7 @@ int32 UKuroStaticPS5Library::RegisterUdsContext(int32 context, int32 handle)
 // Function KuroUtility.KuroStaticPS5Library.RemoveCacheElement
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::RemoveCacheElement(const class FString& key)
 {
@@ -7199,8 +7019,8 @@ void UKuroStaticPS5Library::RemoveCacheElement(const class FString& key)
 // Function KuroUtility.KuroStaticPS5Library.SceNpGetNpReachabilityState
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   outState                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  outState                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::SceNpGetNpReachabilityState(class FString* userId, int32* outState)
@@ -7305,8 +7125,8 @@ void UKuroStaticPS5Library::TerminateMessageDialog()
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int64                                   proPtr                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class FString>                   value                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// class FString*                          key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  value                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::UdsEventPropertyArraySetString(int64 proPtr, class FString* key, TArray<class FString>* value)
@@ -7341,7 +7161,7 @@ int32 UKuroStaticPS5Library::UdsEventPropertyArraySetString(int64 proPtr, class 
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int64                                   proPtr                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -7375,7 +7195,7 @@ int32 UKuroStaticPS5Library::UdsEventPropertyObjectSetBool(int64 proPtr, class F
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int64                                   proPtr                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -7409,7 +7229,7 @@ int32 UKuroStaticPS5Library::UdsEventPropertyObjectSetFloat32(int64 proPtr, clas
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int64                                   proPtr                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // double                                  value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -7443,7 +7263,7 @@ int32 UKuroStaticPS5Library::UdsEventPropertyObjectSetFloat64(int64 proPtr, clas
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int64                                   proPtr                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -7477,7 +7297,7 @@ int32 UKuroStaticPS5Library::UdsEventPropertyObjectSetInt32(int64 proPtr, class 
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int64                                   proPtr                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int64                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -7511,8 +7331,8 @@ int32 UKuroStaticPS5Library::UdsEventPropertyObjectSetInt64(int64 proPtr, class 
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int64                                   proPtr                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroStaticPS5Library::UdsEventPropertyObjectSetString(int64 proPtr, class FString* key, class FString* value)
@@ -7547,7 +7367,7 @@ int32 UKuroStaticPS5Library::UdsEventPropertyObjectSetString(int64 proPtr, class
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int64                                   proPtr                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -7581,7 +7401,7 @@ int32 UKuroStaticPS5Library::UdsEventPropertyObjectSetUInt32(int64 proPtr, class
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
 // int64                                   proPtr                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          key                                                    (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int64                                   value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -7614,7 +7434,7 @@ int32 UKuroStaticPS5Library::UdsEventPropertyObjectSetUInt64(int64 proPtr, class
 // Function KuroUtility.KuroStaticPS5Library.UnlockTrophy
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   trophyId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -7681,7 +7501,7 @@ int32 UKuroStaticPS5Library::UnlockTrophyWithContextIdAndHandleId(int32 contextI
 // int32                                   contextId                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   handle                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   trophyId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 ret)>              callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret)>&       callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::UnlockTrophyWithContextIdAndHandleIdAsync(int32 contextId, int32 handle, int32 trophyId, const TDelegate<void(int32 ret)>& callback)
 {
@@ -7709,7 +7529,7 @@ void UKuroStaticPS5Library::UnlockTrophyWithContextIdAndHandleIdAsync(int32 cont
 // Function KuroUtility.KuroStaticPS5Library.UpdateTrophyProgress
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// class FString                           userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          userId                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   trophyId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7781,7 +7601,7 @@ int32 UKuroStaticPS5Library::UpdateTrophyProgressWithContextIdAndHandleId(int32 
 // int32                                   handle                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   trophyId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 ret)>              callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 ret)>&       callback                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroStaticPS5Library::UpdateTrophyProgressWithContextIdAndHandleIdAsync(int32 context, int32 handle, int32 trophyId, int32 progress, const TDelegate<void(int32 ret)>& callback)
 {
@@ -7810,7 +7630,7 @@ void UKuroStaticPS5Library::UpdateTrophyProgressWithContextIdAndHandleIdAsync(in
 // Function KuroUtility.KuroSubLevelVisibleSubsystem.GetSubSystem
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UGameInstance*                    GameInstance                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UGameInstance*              GameInstance                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UKuroSubLevelVisibleSubsystem*    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UKuroSubLevelVisibleSubsystem* UKuroSubLevelVisibleSubsystem::GetSubSystem(const class UGameInstance* GameInstance)
@@ -7890,12 +7710,12 @@ void UKuroSubLevelVisibleSubsystem::RemoveLevel(int32 LinkId)
 // Function KuroUtility.KuroSubLevelVisibleSubsystem.SetLevelActorsVisible
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   LinkId                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Visible                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(int32 LinkId)>           FinishCallback                                         (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const int32                             LinkId                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              Visible                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const int32 LinkId)>FinishCallback                                         (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroSubLevelVisibleSubsystem::SetLevelActorsVisible(const int32 LinkId, const bool Visible, const TDelegate<void(int32 LinkId)> FinishCallback)
+bool UKuroSubLevelVisibleSubsystem::SetLevelActorsVisible(const int32 LinkId, const bool Visible, const TDelegate<void(const int32 LinkId)> FinishCallback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -7922,7 +7742,7 @@ bool UKuroSubLevelVisibleSubsystem::SetLevelActorsVisible(const int32 LinkId, co
 // Function KuroUtility.KuroSubLevelVisibleSubsystem.SetOneFrameExecuteCount
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Count                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSubLevelVisibleSubsystem::SetOneFrameExecuteCount(const int32 Count)
 {
@@ -8104,12 +7924,12 @@ bool UKuroTencentCOSLibrary::IsSending()
 // Function KuroUtility.KuroTencentCOSLibrary.SendFileToTencentCOS
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           RemoteURI                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SecretID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SecretKey                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           BucketName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Region                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RemoteURI                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SecretID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SecretKey                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    BucketName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Region                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroTencentCOSLibrary::SendFileToTencentCOS(const class FString& Path, const class FString& RemoteURI, const class FString& SecretID, const class FString& SecretKey, const class FString& BucketName, const class FString& Region)
 {
@@ -8139,7 +7959,7 @@ void UKuroTencentCOSLibrary::SendFileToTencentCOS(const class FString& Path, con
 // Function KuroUtility.KuroTencentCOSLibrary.SendLogToTencentCOS
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(int32 State, float Rate)>OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 State, float Rate)>&OnProgress                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroTencentCOSLibrary::SendLogToTencentCOS(const TDelegate<void(int32 State, float Rate)>& OnProgress)
 {
@@ -8189,7 +8009,7 @@ void UKuroTencentCOSLibrary::SetAdmissibleValue(int32 SingleLogSizeInMb)
 // Function KuroUtility.KuroTencentCOSLibrary.SetFilesToSend
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   FilePaths                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            FilePaths                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroTencentCOSLibrary::SetFilesToSend(const TArray<class FString>& FilePaths)
 {
@@ -8214,10 +8034,10 @@ void UKuroTencentCOSLibrary::SetFilesToSend(const TArray<class FString>& FilePat
 // Function KuroUtility.KuroTencentCOSLibrary.SetHandleFunc
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(TArray<class FString>& FileNames)>PrepareFunc                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TDelegate<void(TArray<class FString>& SendedFiles)>PostSend                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const TArray<class FString>& FileNames)>&PrepareFunc                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const TArray<class FString>& SendedFiles)>&PostSend                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UKuroTencentCOSLibrary::SetHandleFunc(const TDelegate<void(TArray<class FString>& FileNames)>& PrepareFunc, const TDelegate<void(TArray<class FString>& SendedFiles)>& PostSend)
+void UKuroTencentCOSLibrary::SetHandleFunc(const TDelegate<void(const TArray<class FString>& FileNames)>& PrepareFunc, const TDelegate<void(const TArray<class FString>& SendedFiles)>& PostSend)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8266,10 +8086,10 @@ void UKuroTencentCOSLibrary::SetIsAutoSend(bool bIsAutoSend)
 // Function KuroUtility.KuroTencentCOSLibrary.SetSendLogConfig
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SecretID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SecretKey                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           BucketName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Region                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SecretID                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SecretKey                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    BucketName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Region                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroTencentCOSLibrary::SetSendLogConfig(const class FString& SecretID, const class FString& SecretKey, const class FString& BucketName, const class FString& Region)
 {
@@ -8297,7 +8117,7 @@ void UKuroTencentCOSLibrary::SetSendLogConfig(const class FString& SecretID, con
 // Function KuroUtility.KuroTencentCOSLibrary.SetSendLogZipName
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ZipFileName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ZipFileName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroTencentCOSLibrary::SetSendLogZipName(const class FString& ZipFileName)
 {
@@ -8502,9 +8322,9 @@ void ULoadMapNotify::BindEndLoadTransitionMap(TDelegate<void()> EndLoadTransitio
 // Function KuroUtility.LoadMapNotify.BindLoadStreamLevel
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TDelegate<void(int32 LinkId, class FName& LevelName, class ULevelStreaming* StreamingLevel)>LoadStreamLevelHandler                                 (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TDelegate<void(const int32 LinkId, const class FName& LevelName, const class ULevelStreaming* StreamingLevel)>LoadStreamLevelHandler                                 (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void ULoadMapNotify::BindLoadStreamLevel(const TDelegate<void(int32 LinkId, class FName& LevelName, class ULevelStreaming* StreamingLevel)> LoadStreamLevelHandler)
+void ULoadMapNotify::BindLoadStreamLevel(const TDelegate<void(const int32 LinkId, const class FName& LevelName, const class ULevelStreaming* StreamingLevel)> LoadStreamLevelHandler)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8527,9 +8347,9 @@ void ULoadMapNotify::BindLoadStreamLevel(const TDelegate<void(int32 LinkId, clas
 // Function KuroUtility.LoadMapNotify.BindUnLoadStreamLevel
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TDelegate<void(int32 LinkId, class FName& LevelName)>UnLoadStreamLevelHandler                               (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TDelegate<void(const int32 LinkId, const class FName& LevelName)>UnLoadStreamLevelHandler                               (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void ULoadMapNotify::BindUnLoadStreamLevel(const TDelegate<void(int32 LinkId, class FName& LevelName)> UnLoadStreamLevelHandler)
+void ULoadMapNotify::BindUnLoadStreamLevel(const TDelegate<void(const int32 LinkId, const class FName& LevelName)> UnLoadStreamLevelHandler)
 {
 	static class UFunction* Func = nullptr;
 
@@ -8571,7 +8391,7 @@ void ULoadMapNotify::Clear()
 // Function KuroUtility.LoadMapNotify.LoadStreamLevel
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             Path                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      Path                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bMakeVisibleAfterLoad                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bShouldBlockOnLoad                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -8603,7 +8423,7 @@ int32 ULoadMapNotify::LoadStreamLevel(const class FName& Path, bool bMakeVisible
 // Function KuroUtility.LoadMapNotify.OnLoadStreamLevel
 // (Final, Native, Private)
 // Parameters:
-// int32                                   LinkID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             LinkID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ULoadMapNotify::OnLoadStreamLevel(const int32 LinkID)
 {
@@ -8628,7 +8448,7 @@ void ULoadMapNotify::OnLoadStreamLevel(const int32 LinkID)
 // Function KuroUtility.LoadMapNotify.OnUnLoadStreamLevel
 // (Final, Native, Private)
 // Parameters:
-// int32                                   LinkID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             LinkID                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ULoadMapNotify::OnUnLoadStreamLevel(const int32 LinkID)
 {
@@ -8653,7 +8473,7 @@ void ULoadMapNotify::OnUnLoadStreamLevel(const int32 LinkID)
 // Function KuroUtility.LoadMapNotify.UnloadStreamLevel
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             Path                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      Path                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bShouldBlockOnLoad                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8683,7 +8503,7 @@ int32 ULoadMapNotify::UnloadStreamLevel(const class FName& Path, bool bShouldBlo
 // Function KuroUtility.KuroTickManager.AddPrerequisiteActor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8712,7 +8532,7 @@ void UKuroTickManager::AddPrerequisiteActor(const ETickingGroup TickingGroup, cl
 // Function KuroUtility.KuroTickManager.AddPrerequisiteActorComponent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UActorComponent*                  ActorComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8741,8 +8561,8 @@ void UKuroTickManager::AddPrerequisiteActorComponent(const ETickingGroup Ticking
 // Function KuroUtility.KuroTickManager.AddTick
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(float DeltaSeconds)>     TickHandler                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(float DeltaSeconds)>TickHandler                                            (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8842,7 +8662,7 @@ void UKuroTickManager::ClearTick()
 // Function KuroUtility.KuroTickManager.RemovePrerequisiteActor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8871,7 +8691,7 @@ void UKuroTickManager::RemovePrerequisiteActor(const ETickingGroup TickingGroup,
 // Function KuroUtility.KuroTickManager.RemovePrerequisiteActorComponent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UActorComponent*                  ActorComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8900,7 +8720,7 @@ void UKuroTickManager::RemovePrerequisiteActorComponent(const ETickingGroup Tick
 // Function KuroUtility.KuroTickManager.RemoveTick
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroTickManager::RemoveTick(const ETickingGroup TickingGroup)
@@ -8928,7 +8748,7 @@ bool UKuroTickManager::RemoveTick(const ETickingGroup TickingGroup)
 // Function KuroUtility.KuroTickManager.SetCharacterMovementProxyTickFunction
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCharacterMovementComponent*      MoveComp                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8954,10 +8774,66 @@ void UKuroTickManager::SetCharacterMovementProxyTickFunction(const ETickingGroup
 }
 
 
+// Function KuroUtility.KuroTickManager.SetGamePrerequisiteTickFunction
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroTickManager::SetGamePrerequisiteTickFunction(const ETickingGroup TickingGroup, int32 Priority)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroTickManager", "SetGamePrerequisiteTickFunction");
+
+	Params::KuroTickManager_SetGamePrerequisiteTickFunction Parms{};
+
+	Parms.TickingGroup = TickingGroup;
+	Parms.Priority = Priority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroUtility.KuroTickManager.SetSkeletalMeshComponentPrerequisite
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USkeletalMeshComponent*           SkeletalComp                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroTickManager::SetSkeletalMeshComponentPrerequisite(const ETickingGroup TickingGroup, int32 Priority, class USkeletalMeshComponent* SkeletalComp)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroTickManager", "SetSkeletalMeshComponentPrerequisite");
+
+	Params::KuroTickManager_SetSkeletalMeshComponentPrerequisite Parms{};
+
+	Parms.TickingGroup = TickingGroup;
+	Parms.Priority = Priority;
+	Parms.SkeletalComp = SkeletalComp;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroUtility.KuroTickManager.SetSkeletalMeshProxyTickFunction
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USkeletalMeshComponent*           SkeletalComp                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -8986,7 +8862,7 @@ void UKuroTickManager::SetSkeletalMeshProxyTickFunction(const ETickingGroup Tick
 // Function KuroUtility.KuroTickManager.SetTickFunctionCompletionCallbackInMainThread
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ETickingGroup                           TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const ETickingGroup                     TickingGroup                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroTickManager::SetTickFunctionCompletionCallbackInMainThread(const ETickingGroup TickingGroup, int32 Priority)

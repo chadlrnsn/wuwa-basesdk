@@ -10,22 +10,194 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
 
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.Set No Rain Roughness
+// 0x007C (0x007C - 0x0000)
+struct BP_SurfaceRipple_C_Set_No_Rain_Roughness final
+{
+public:
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_1;            // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_2;            // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue;      // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_3;            // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_1;    // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsCurrentPlatformPC_ReturnValue;          // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x003C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_4;            // 0x004C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_2;    // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_5;            // 0x005C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_3;    // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_1;                   // 0x006C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_SurfaceRipple_C_Set_No_Rain_Roughness) == 0x000004, "Wrong alignment on BP_SurfaceRipple_C_Set_No_Rain_Roughness");
+static_assert(sizeof(BP_SurfaceRipple_C_Set_No_Rain_Roughness) == 0x00007C, "Wrong size on BP_SurfaceRipple_C_Set_No_Rain_Roughness");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue) == 0x000000, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_1) == 0x00000C, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_2) == 0x000018, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_GetScalarParameterValue_ReturnValue) == 0x000024, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_GetScalarParameterValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_3) == 0x000028, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_GetScalarParameterValue_ReturnValue_1) == 0x000034, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_GetScalarParameterValue_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_IsCurrentPlatformPC_ReturnValue) == 0x000038, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_IsCurrentPlatformPC_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, K2Node_MakeStruct_LinearColor) == 0x00003C, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::K2Node_MakeStruct_LinearColor' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_4) == 0x00004C, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_GetScalarParameterValue_ReturnValue_2) == 0x000058, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_GetScalarParameterValue_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_5) == 0x00005C, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, CallFunc_GetScalarParameterValue_ReturnValue_3) == 0x000068, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::CallFunc_GetScalarParameterValue_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain_Roughness, K2Node_MakeStruct_LinearColor_1) == 0x00006C, "Member 'BP_SurfaceRipple_C_Set_No_Rain_Roughness::K2Node_MakeStruct_LinearColor_1' has a wrong offset!");
+
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.Set Rain Roughness
+// 0x007C (0x007C - 0x0000)
+struct BP_SurfaceRipple_C_Set_Rain_Roughness final
+{
+public:
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_1;            // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_2;            // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue;      // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_3;            // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_1;    // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsCurrentPlatformPC_ReturnValue;          // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x003C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_4;            // 0x004C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_2;    // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_5;            // 0x005C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_3;    // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_1;                   // 0x006C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_SurfaceRipple_C_Set_Rain_Roughness) == 0x000004, "Wrong alignment on BP_SurfaceRipple_C_Set_Rain_Roughness");
+static_assert(sizeof(BP_SurfaceRipple_C_Set_Rain_Roughness) == 0x00007C, "Wrong size on BP_SurfaceRipple_C_Set_Rain_Roughness");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue) == 0x000000, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_1) == 0x00000C, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_2) == 0x000018, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_GetScalarParameterValue_ReturnValue) == 0x000024, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_GetScalarParameterValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_3) == 0x000028, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_GetScalarParameterValue_ReturnValue_1) == 0x000034, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_GetScalarParameterValue_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_IsCurrentPlatformPC_ReturnValue) == 0x000038, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_IsCurrentPlatformPC_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, K2Node_MakeStruct_LinearColor) == 0x00003C, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::K2Node_MakeStruct_LinearColor' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_4) == 0x00004C, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_GetScalarParameterValue_ReturnValue_2) == 0x000058, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_GetScalarParameterValue_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_MakeLiteralName_ReturnValue_5) == 0x00005C, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_MakeLiteralName_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, CallFunc_GetScalarParameterValue_ReturnValue_3) == 0x000068, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::CallFunc_GetScalarParameterValue_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain_Roughness, K2Node_MakeStruct_LinearColor_1) == 0x00006C, "Member 'BP_SurfaceRipple_C_Set_Rain_Roughness::K2Node_MakeStruct_LinearColor_1' has a wrong offset!");
+
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.Set No Rain
+// 0x0064 (0x0064 - 0x0000)
+struct BP_SurfaceRipple_C_Set_No_Rain final
+{
+public:
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue;      // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_1;            // 0x0010(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_1;    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsCurrentPlatformPC_ReturnValue;          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x0024(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_2;            // 0x0034(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_2;    // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_3;            // 0x0044(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_3;    // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_1;                   // 0x0054(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_SurfaceRipple_C_Set_No_Rain) == 0x000004, "Wrong alignment on BP_SurfaceRipple_C_Set_No_Rain");
+static_assert(sizeof(BP_SurfaceRipple_C_Set_No_Rain) == 0x000064, "Wrong size on BP_SurfaceRipple_C_Set_No_Rain");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, CallFunc_MakeLiteralName_ReturnValue) == 0x000000, "Member 'BP_SurfaceRipple_C_Set_No_Rain::CallFunc_MakeLiteralName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, CallFunc_GetScalarParameterValue_ReturnValue) == 0x00000C, "Member 'BP_SurfaceRipple_C_Set_No_Rain::CallFunc_GetScalarParameterValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, CallFunc_MakeLiteralName_ReturnValue_1) == 0x000010, "Member 'BP_SurfaceRipple_C_Set_No_Rain::CallFunc_MakeLiteralName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, CallFunc_GetScalarParameterValue_ReturnValue_1) == 0x00001C, "Member 'BP_SurfaceRipple_C_Set_No_Rain::CallFunc_GetScalarParameterValue_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, CallFunc_IsCurrentPlatformPC_ReturnValue) == 0x000020, "Member 'BP_SurfaceRipple_C_Set_No_Rain::CallFunc_IsCurrentPlatformPC_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, K2Node_MakeStruct_LinearColor) == 0x000024, "Member 'BP_SurfaceRipple_C_Set_No_Rain::K2Node_MakeStruct_LinearColor' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, CallFunc_MakeLiteralName_ReturnValue_2) == 0x000034, "Member 'BP_SurfaceRipple_C_Set_No_Rain::CallFunc_MakeLiteralName_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, CallFunc_GetScalarParameterValue_ReturnValue_2) == 0x000040, "Member 'BP_SurfaceRipple_C_Set_No_Rain::CallFunc_GetScalarParameterValue_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, CallFunc_MakeLiteralName_ReturnValue_3) == 0x000044, "Member 'BP_SurfaceRipple_C_Set_No_Rain::CallFunc_MakeLiteralName_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, CallFunc_GetScalarParameterValue_ReturnValue_3) == 0x000050, "Member 'BP_SurfaceRipple_C_Set_No_Rain::CallFunc_GetScalarParameterValue_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_No_Rain, K2Node_MakeStruct_LinearColor_1) == 0x000054, "Member 'BP_SurfaceRipple_C_Set_No_Rain::K2Node_MakeStruct_LinearColor_1' has a wrong offset!");
+
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.Set Rain
+// 0x0064 (0x0064 - 0x0000)
+struct BP_SurfaceRipple_C_Set_Rain final
+{
+public:
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue;      // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_1;            // 0x0010(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_1;    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsCurrentPlatformPC_ReturnValue;          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x0024(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_2;            // 0x0034(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_2;    // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_3;            // 0x0044(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue_3;    // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_1;                   // 0x0054(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_SurfaceRipple_C_Set_Rain) == 0x000004, "Wrong alignment on BP_SurfaceRipple_C_Set_Rain");
+static_assert(sizeof(BP_SurfaceRipple_C_Set_Rain) == 0x000064, "Wrong size on BP_SurfaceRipple_C_Set_Rain");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, CallFunc_MakeLiteralName_ReturnValue) == 0x000000, "Member 'BP_SurfaceRipple_C_Set_Rain::CallFunc_MakeLiteralName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, CallFunc_GetScalarParameterValue_ReturnValue) == 0x00000C, "Member 'BP_SurfaceRipple_C_Set_Rain::CallFunc_GetScalarParameterValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, CallFunc_MakeLiteralName_ReturnValue_1) == 0x000010, "Member 'BP_SurfaceRipple_C_Set_Rain::CallFunc_MakeLiteralName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, CallFunc_GetScalarParameterValue_ReturnValue_1) == 0x00001C, "Member 'BP_SurfaceRipple_C_Set_Rain::CallFunc_GetScalarParameterValue_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, CallFunc_IsCurrentPlatformPC_ReturnValue) == 0x000020, "Member 'BP_SurfaceRipple_C_Set_Rain::CallFunc_IsCurrentPlatformPC_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, K2Node_MakeStruct_LinearColor) == 0x000024, "Member 'BP_SurfaceRipple_C_Set_Rain::K2Node_MakeStruct_LinearColor' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, CallFunc_MakeLiteralName_ReturnValue_2) == 0x000034, "Member 'BP_SurfaceRipple_C_Set_Rain::CallFunc_MakeLiteralName_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, CallFunc_GetScalarParameterValue_ReturnValue_2) == 0x000040, "Member 'BP_SurfaceRipple_C_Set_Rain::CallFunc_GetScalarParameterValue_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, CallFunc_MakeLiteralName_ReturnValue_3) == 0x000044, "Member 'BP_SurfaceRipple_C_Set_Rain::CallFunc_MakeLiteralName_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, CallFunc_GetScalarParameterValue_ReturnValue_3) == 0x000050, "Member 'BP_SurfaceRipple_C_Set_Rain::CallFunc_GetScalarParameterValue_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_Set_Rain, K2Node_MakeStruct_LinearColor_1) == 0x000054, "Member 'BP_SurfaceRipple_C_Set_Rain::K2Node_MakeStruct_LinearColor_1' has a wrong offset!");
+
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.UpdateGradualData
+// 0x005C (0x005C - 0x0000)
+struct BP_SurfaceRipple_C_UpdateGradualData final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InputParam;                                        // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           GlobalRainGradualData_0;                           // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Vaild;                                             // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x001C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_1;                   // 0x002C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_2;                   // 0x003C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_3;                   // 0x004C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_SurfaceRipple_C_UpdateGradualData) == 0x000004, "Wrong alignment on BP_SurfaceRipple_C_UpdateGradualData");
+static_assert(sizeof(BP_SurfaceRipple_C_UpdateGradualData) == 0x00005C, "Wrong size on BP_SurfaceRipple_C_UpdateGradualData");
+static_assert(offsetof(BP_SurfaceRipple_C_UpdateGradualData, Index_0) == 0x000000, "Member 'BP_SurfaceRipple_C_UpdateGradualData::Index_0' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_UpdateGradualData, InputParam) == 0x000004, "Member 'BP_SurfaceRipple_C_UpdateGradualData::InputParam' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_UpdateGradualData, GlobalRainGradualData_0) == 0x000008, "Member 'BP_SurfaceRipple_C_UpdateGradualData::GlobalRainGradualData_0' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_UpdateGradualData, Vaild) == 0x000018, "Member 'BP_SurfaceRipple_C_UpdateGradualData::Vaild' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_UpdateGradualData, K2Node_SwitchInteger_CmpSuccess) == 0x000019, "Member 'BP_SurfaceRipple_C_UpdateGradualData::K2Node_SwitchInteger_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_UpdateGradualData, K2Node_MakeStruct_LinearColor) == 0x00001C, "Member 'BP_SurfaceRipple_C_UpdateGradualData::K2Node_MakeStruct_LinearColor' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_UpdateGradualData, K2Node_MakeStruct_LinearColor_1) == 0x00002C, "Member 'BP_SurfaceRipple_C_UpdateGradualData::K2Node_MakeStruct_LinearColor_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_UpdateGradualData, K2Node_MakeStruct_LinearColor_2) == 0x00003C, "Member 'BP_SurfaceRipple_C_UpdateGradualData::K2Node_MakeStruct_LinearColor_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_UpdateGradualData, K2Node_MakeStruct_LinearColor_3) == 0x00004C, "Member 'BP_SurfaceRipple_C_UpdateGradualData::K2Node_MakeStruct_LinearColor_3' has a wrong offset!");
+
 // Function BP_SurfaceRipple.BP_SurfaceRipple_C.SetRainIntensity
-// 0x0004 (0x0004 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct BP_SurfaceRipple_C_SetRainIntensity final
 {
 public:
 	float                                         RainIntensity;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         下雨渐变最大时间_0;                                // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               RainLerpData;                                      // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(BP_SurfaceRipple_C_SetRainIntensity) == 0x000004, "Wrong alignment on BP_SurfaceRipple_C_SetRainIntensity");
-static_assert(sizeof(BP_SurfaceRipple_C_SetRainIntensity) == 0x000004, "Wrong size on BP_SurfaceRipple_C_SetRainIntensity");
+static_assert(alignof(BP_SurfaceRipple_C_SetRainIntensity) == 0x000010, "Wrong alignment on BP_SurfaceRipple_C_SetRainIntensity");
+static_assert(sizeof(BP_SurfaceRipple_C_SetRainIntensity) == 0x000030, "Wrong size on BP_SurfaceRipple_C_SetRainIntensity");
 static_assert(offsetof(BP_SurfaceRipple_C_SetRainIntensity, RainIntensity) == 0x000000, "Member 'BP_SurfaceRipple_C_SetRainIntensity::RainIntensity' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_SetRainIntensity, 下雨渐变最大时间_0) == 0x000004, "Member 'BP_SurfaceRipple_C_SetRainIntensity::下雨渐变最大时间_0' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_SetRainIntensity, RainLerpData) == 0x000010, "Member 'BP_SurfaceRipple_C_SetRainIntensity::RainLerpData' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_SetRainIntensity, CallFunc_Less_FloatFloat_ReturnValue) == 0x000020, "Member 'BP_SurfaceRipple_C_SetRainIntensity::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
 
 // Function BP_SurfaceRipple.BP_SurfaceRipple_C.UserConstructionScript
 // 0x0008 (0x0008 - 0x0000)
@@ -72,26 +244,79 @@ static_assert(sizeof(BP_SurfaceRipple_C_EditorTick) == 0x000004, "Wrong size on 
 static_assert(offsetof(BP_SurfaceRipple_C_EditorTick, DeltaSeconds) == 0x000000, "Member 'BP_SurfaceRipple_C_EditorTick::DeltaSeconds' has a wrong offset!");
 
 // Function BP_SurfaceRipple.BP_SurfaceRipple_C.ExecuteUbergraph_BP_SurfaceRipple
-// 0x0014 (0x0014 - 0x0000)
+// 0x00A4 (0x00A4 - 0x0000)
 struct BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FClamp_ReturnValue;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FMin_ReturnValue;                         // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0028(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Subtract_FloatFloat_ReturnValue_1;        // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_1;            // 0x003C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FMax_ReturnValue;                         // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x004C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ___bool_IsClosed_Variable;                         // 0x004D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x004E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4F[0x1];                                       // 0x004F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FClamp_ReturnValue_1;                     // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_2;         // 0x005D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue_1;            // 0x005E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5F[0x1];                                       // 0x005F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x0060(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_2;            // 0x0070(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_MakeLiteralName_ReturnValue_3;            // 0x007C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_1;                   // 0x0088(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Divide_FloatFloat_ReturnValue_1;          // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FClamp_ReturnValue_2;                     // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_2;        // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple) == 0x000004, "Wrong alignment on BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple");
-static_assert(sizeof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple) == 0x000014, "Wrong size on BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple");
+static_assert(sizeof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple) == 0x0000A4, "Wrong size on BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple");
 static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, EntryPoint) == 0x000000, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, K2Node_Event_DeltaSeconds_1) == 0x000004, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::K2Node_Event_DeltaSeconds_1' has a wrong offset!");
-static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Greater_FloatFloat_ReturnValue) == 0x000008, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, K2Node_Event_EndPlayReason) == 0x000009, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::K2Node_Event_EndPlayReason' has a wrong offset!");
-static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, K2Node_Event_DeltaSeconds) == 0x00000C, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::K2Node_Event_DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Conv_IntToFloat_ReturnValue) == 0x000010, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Conv_IntToFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x000004, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_FClamp_ReturnValue) == 0x000008, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_FClamp_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, K2Node_Event_DeltaSeconds_1) == 0x00000C, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::K2Node_Event_DeltaSeconds_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, K2Node_Event_EndPlayReason) == 0x000010, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::K2Node_Event_EndPlayReason' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Conv_IntToFloat_ReturnValue) == 0x000014, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Conv_IntToFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, K2Node_Event_DeltaSeconds) == 0x000018, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Greater_FloatFloat_ReturnValue) == 0x00001C, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Add_FloatFloat_ReturnValue) == 0x000020, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_FMin_ReturnValue) == 0x000024, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_FMin_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_MakeLiteralName_ReturnValue) == 0x000028, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_MakeLiteralName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000034, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Subtract_FloatFloat_ReturnValue_1) == 0x000038, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Subtract_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_MakeLiteralName_ReturnValue_1) == 0x00003C, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_MakeLiteralName_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_FMax_ReturnValue) == 0x000048, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_FMax_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, ___bool_Has_Been_Initd_Variable) == 0x00004C, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::___bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, ___bool_IsClosed_Variable) == 0x00004D, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::___bool_IsClosed_Variable' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Less_FloatFloat_ReturnValue) == 0x00004E, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000050, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_FClamp_ReturnValue_1) == 0x000054, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_FClamp_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Multiply_FloatFloat_ReturnValue_1) == 0x000058, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Multiply_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Greater_FloatFloat_ReturnValue_1) == 0x00005C, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Greater_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Greater_FloatFloat_ReturnValue_2) == 0x00005D, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Greater_FloatFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Less_FloatFloat_ReturnValue_1) == 0x00005E, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Less_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, K2Node_MakeStruct_LinearColor) == 0x000060, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::K2Node_MakeStruct_LinearColor' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_MakeLiteralName_ReturnValue_2) == 0x000070, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_MakeLiteralName_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_MakeLiteralName_ReturnValue_3) == 0x00007C, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_MakeLiteralName_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, K2Node_MakeStruct_LinearColor_1) == 0x000088, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::K2Node_MakeStruct_LinearColor_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Divide_FloatFloat_ReturnValue_1) == 0x000098, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Divide_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_FClamp_ReturnValue_2) == 0x00009C, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_FClamp_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple, CallFunc_Multiply_FloatFloat_ReturnValue_2) == 0x0000A0, "Member 'BP_SurfaceRipple_C_ExecuteUbergraph_BP_SurfaceRipple::CallFunc_Multiply_FloatFloat_ReturnValue_2' has a wrong offset!");
 
 }
 

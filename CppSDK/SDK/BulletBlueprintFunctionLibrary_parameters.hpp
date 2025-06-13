@@ -381,108 +381,108 @@ static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcSector, trianglesArr
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcSector, __WorldContext) == 0x000058, "Member 'BulletBlueprintFunctionLibrary_C_CalcSector::__WorldContext' has a wrong offset!");
 
 // Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.CalcBulletInitLocation
-// 0x0800 (0x0800 - 0x0000)
+// 0x0820 (0x0820 - 0x0000)
 struct BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation final
 {
 public:
-	struct FSReBulletDataMain                     dataMain;                                          // 0x0000(0x0790)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	class AActor*                                 attacker;                                          // 0x0790(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_798[0x8];                                      // 0x0798(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransformDouble                       target;                                            // 0x07A0(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	class UObject*                                __WorldContext;                                    // 0x07E0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          ReturnValue;                                       // 0x07E8(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSReBulletDataMain                     dataMain;                                          // 0x0000(0x07B0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class AActor*                                 attacker;                                          // 0x07B0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7B8[0x8];                                      // 0x07B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       target;                                            // 0x07C0(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0800(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          ReturnValue;                                       // 0x0808(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation) == 0x000010, "Wrong alignment on BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation");
-static_assert(sizeof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation) == 0x000800, "Wrong size on BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation");
+static_assert(sizeof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation) == 0x000820, "Wrong size on BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation, dataMain) == 0x000000, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation::dataMain' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation, attacker) == 0x000790, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation::attacker' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation, target) == 0x0007A0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation::target' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation, __WorldContext) == 0x0007E0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation::__WorldContext' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation, ReturnValue) == 0x0007E8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation, attacker) == 0x0007B0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation::attacker' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation, target) == 0x0007C0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation::target' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation, __WorldContext) == 0x000800, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation, ReturnValue) == 0x000808, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitLocation::ReturnValue' has a wrong offset!");
 
 // Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.AttachToBone
-// 0x07A8 (0x07A8 - 0x0000)
+// 0x07C8 (0x07C8 - 0x0000)
 struct BulletBlueprintFunctionLibrary_C_AttachToBone final
 {
 public:
 	class USkeletalMeshComponent*                 meshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 bulletActor;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSReBulletDataMain                     dataMain;                                          // 0x0010(0x0790)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	class UObject*                                __WorldContext;                                    // 0x07A0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSReBulletDataMain                     dataMain;                                          // 0x0010(0x07B0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x07C0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BulletBlueprintFunctionLibrary_C_AttachToBone) == 0x000008, "Wrong alignment on BulletBlueprintFunctionLibrary_C_AttachToBone");
-static_assert(sizeof(BulletBlueprintFunctionLibrary_C_AttachToBone) == 0x0007A8, "Wrong size on BulletBlueprintFunctionLibrary_C_AttachToBone");
+static_assert(sizeof(BulletBlueprintFunctionLibrary_C_AttachToBone) == 0x0007C8, "Wrong size on BulletBlueprintFunctionLibrary_C_AttachToBone");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_AttachToBone, meshComp) == 0x000000, "Member 'BulletBlueprintFunctionLibrary_C_AttachToBone::meshComp' has a wrong offset!");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_AttachToBone, bulletActor) == 0x000008, "Member 'BulletBlueprintFunctionLibrary_C_AttachToBone::bulletActor' has a wrong offset!");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_AttachToBone, dataMain) == 0x000010, "Member 'BulletBlueprintFunctionLibrary_C_AttachToBone::dataMain' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_AttachToBone, __WorldContext) == 0x0007A0, "Member 'BulletBlueprintFunctionLibrary_C_AttachToBone::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_AttachToBone, __WorldContext) == 0x0007C0, "Member 'BulletBlueprintFunctionLibrary_C_AttachToBone::__WorldContext' has a wrong offset!");
 
 // Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.CalcBulletInitRotator
-// 0x0800 (0x0800 - 0x0000)
+// 0x0820 (0x0820 - 0x0000)
 struct BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator final
 {
 public:
-	struct FSReBulletDataMain                     dataMain;                                          // 0x0000(0x0790)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	class AActor*                                 bulletActor;                                       // 0x0790(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 attacker;                                          // 0x0798(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTransformDouble                       target;                                            // 0x07A0(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	class AActor*                                 parentBulletActor;                                 // 0x07E0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                __WorldContext;                                    // 0x07E8(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               ReturnValue;                                       // 0x07F0(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	struct FSReBulletDataMain                     dataMain;                                          // 0x0000(0x07B0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class AActor*                                 bulletActor;                                       // 0x07B0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 attacker;                                          // 0x07B8(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTransformDouble                       target;                                            // 0x07C0(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	class AActor*                                 parentBulletActor;                                 // 0x0800(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0808(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               ReturnValue;                                       // 0x0810(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator) == 0x000010, "Wrong alignment on BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator");
-static_assert(sizeof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator) == 0x000800, "Wrong size on BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator");
+static_assert(sizeof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator) == 0x000820, "Wrong size on BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, dataMain) == 0x000000, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::dataMain' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, bulletActor) == 0x000790, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::bulletActor' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, attacker) == 0x000798, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::attacker' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, target) == 0x0007A0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::target' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, parentBulletActor) == 0x0007E0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::parentBulletActor' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, __WorldContext) == 0x0007E8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::__WorldContext' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, ReturnValue) == 0x0007F0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, bulletActor) == 0x0007B0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::bulletActor' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, attacker) == 0x0007B8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::attacker' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, target) == 0x0007C0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::target' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, parentBulletActor) == 0x000800, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::parentBulletActor' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, __WorldContext) == 0x000808, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator, ReturnValue) == 0x000810, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletInitRotator::ReturnValue' has a wrong offset!");
 
 // Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.CalcBulletRotator
-// 0x07D8 (0x07D8 - 0x0000)
+// 0x07F8 (0x07F8 - 0x0000)
 struct BulletBlueprintFunctionLibrary_C_CalcBulletRotator final
 {
 public:
-	struct FSReBulletDataMain                     dataMain;                                          // 0x0000(0x0790)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	class AActor*                                 bulletActor;                                       // 0x0790(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 attacker;                                          // 0x0798(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          target;                                            // 0x07A0(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         delta;                                             // 0x07B8(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_7BC[0x4];                                      // 0x07BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x07C0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               ReturnValue;                                       // 0x07C8(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	struct FSReBulletDataMain                     dataMain;                                          // 0x0000(0x07B0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class AActor*                                 bulletActor;                                       // 0x07B0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 attacker;                                          // 0x07B8(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          target;                                            // 0x07C0(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         delta;                                             // 0x07D8(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7DC[0x4];                                      // 0x07DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x07E0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               ReturnValue;                                       // 0x07E8(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator) == 0x000008, "Wrong alignment on BulletBlueprintFunctionLibrary_C_CalcBulletRotator");
-static_assert(sizeof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator) == 0x0007D8, "Wrong size on BulletBlueprintFunctionLibrary_C_CalcBulletRotator");
+static_assert(sizeof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator) == 0x0007F8, "Wrong size on BulletBlueprintFunctionLibrary_C_CalcBulletRotator");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, dataMain) == 0x000000, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::dataMain' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, bulletActor) == 0x000790, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::bulletActor' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, attacker) == 0x000798, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::attacker' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, target) == 0x0007A0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::target' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, delta) == 0x0007B8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::delta' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, __WorldContext) == 0x0007C0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::__WorldContext' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, ReturnValue) == 0x0007C8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, bulletActor) == 0x0007B0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::bulletActor' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, attacker) == 0x0007B8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::attacker' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, target) == 0x0007C0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::target' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, delta) == 0x0007D8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::delta' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, __WorldContext) == 0x0007E0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletRotator, ReturnValue) == 0x0007E8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletRotator::ReturnValue' has a wrong offset!");
 
 // Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.CalcBulletLocation
-// 0x07C0 (0x07C0 - 0x0000)
+// 0x07E0 (0x07E0 - 0x0000)
 struct BulletBlueprintFunctionLibrary_C_CalcBulletLocation final
 {
 public:
-	struct FSReBulletDataMain                     dataMain;                                          // 0x0000(0x0790)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	class AActor*                                 bulletActor;                                       // 0x0790(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         delta;                                             // 0x0798(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_79C[0x4];                                      // 0x079C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x07A0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          ReturnValue;                                       // 0x07A8(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSReBulletDataMain                     dataMain;                                          // 0x0000(0x07B0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class AActor*                                 bulletActor;                                       // 0x07B0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         delta;                                             // 0x07B8(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7BC[0x4];                                      // 0x07BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x07C0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          ReturnValue;                                       // 0x07C8(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation) == 0x000008, "Wrong alignment on BulletBlueprintFunctionLibrary_C_CalcBulletLocation");
-static_assert(sizeof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation) == 0x0007C0, "Wrong size on BulletBlueprintFunctionLibrary_C_CalcBulletLocation");
+static_assert(sizeof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation) == 0x0007E0, "Wrong size on BulletBlueprintFunctionLibrary_C_CalcBulletLocation");
 static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation, dataMain) == 0x000000, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletLocation::dataMain' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation, bulletActor) == 0x000790, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletLocation::bulletActor' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation, delta) == 0x000798, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletLocation::delta' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation, __WorldContext) == 0x0007A0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletLocation::__WorldContext' has a wrong offset!");
-static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation, ReturnValue) == 0x0007A8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletLocation::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation, bulletActor) == 0x0007B0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletLocation::bulletActor' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation, delta) == 0x0007B8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletLocation::delta' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation, __WorldContext) == 0x0007C0, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletLocation::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BulletBlueprintFunctionLibrary_C_CalcBulletLocation, ReturnValue) == 0x0007C8, "Member 'BulletBlueprintFunctionLibrary_C_CalcBulletLocation::ReturnValue' has a wrong offset!");
 
 // Function BulletBlueprintFunctionLibrary.BulletBlueprintFunctionLibrary_C.DestroyAllBullet
 // 0x0010 (0x0010 - 0x0000)

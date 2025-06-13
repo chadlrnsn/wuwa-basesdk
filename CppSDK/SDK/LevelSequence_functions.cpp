@@ -17,10 +17,35 @@
 namespace SDK
 {
 
+// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FSoftClassPath&            InBurnInClass                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULevelSequenceBurnInOptions::SetBurnIn(const struct FSoftClassPath& InBurnInClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LevelSequenceBurnInOptions", "SetBurnIn");
+
+	Params::LevelSequenceBurnInOptions_SetBurnIn Parms{};
+
+	Parms.InBurnInClass = std::move(InBurnInClass);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function LevelSequence.LevelSequenceActor.AddBinding
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       Binding                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&Binding                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAllowBindingsFromAsset                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -189,7 +214,7 @@ void ALevelSequenceActor::HideBurnin()
 // Function LevelSequence.LevelSequenceActor.RemoveBinding
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       Binding                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&Binding                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ALevelSequenceActor::RemoveBinding(const struct FMovieSceneObjectBindingID& Binding, class AActor* Actor)
@@ -245,7 +270,7 @@ void ALevelSequenceActor::RemoveBindingByTag(class FName Tag, class AActor* Acto
 // Function LevelSequence.LevelSequenceActor.ResetBinding
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       Binding                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&Binding                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ALevelSequenceActor::ResetBinding(const struct FMovieSceneObjectBindingID& Binding)
 {
@@ -289,8 +314,8 @@ void ALevelSequenceActor::ResetBindings()
 // Function LevelSequence.LevelSequenceActor.SetBinding
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMovieSceneObjectBindingID       Binding                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class AActor*>                   Actors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMovieSceneObjectBindingID&Binding                                                (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class AActor*>&            Actors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    bAllowBindingsFromAsset                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ALevelSequenceActor::SetBinding(const struct FMovieSceneObjectBindingID& Binding, const TArray<class AActor*>& Actors, bool bAllowBindingsFromAsset)
@@ -319,7 +344,7 @@ void ALevelSequenceActor::SetBinding(const struct FMovieSceneObjectBindingID& Bi
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class FName                             BindingTag                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class AActor*>                   Actors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class AActor*>&            Actors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    bAllowBindingsFromAsset                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    IncludeSubSequence                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -631,7 +656,7 @@ class UObject* ULevelSequence::CopyMetaData(class UObject* InMetaData)
 // Function LevelSequence.LevelSequence.D_GetCenterOffset
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    OutCenterOffset                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble*                   OutCenterOffset                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULevelSequence::D_GetCenterOffset(struct FVectorDouble* OutCenterOffset)
@@ -713,7 +738,7 @@ bool ULevelSequence::GetAnimAudio()
 // Function LevelSequence.LevelSequence.GetCenterOffset
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          OutCenterOffset                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutCenterOffset                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ULevelSequence::GetCenterOffset(struct FVector* OutCenterOffset)
@@ -792,7 +817,7 @@ void ULevelSequence::SetAnimAudio(bool Value)
 // Function LevelSequence.LevelSequence.SetCenterOffset
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InCenterOffset                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InCenterOffset                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ULevelSequence::SetCenterOffset(const struct FVector& InCenterOffset)
 {
@@ -867,31 +892,6 @@ class UMovieScene* ULevelSequence::GetMovieScene() const
 }
 
 
-// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// struct FSoftClassPath                   InBurnInClass                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULevelSequenceBurnInOptions::SetBurnIn(const struct FSoftClassPath& InBurnInClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceBurnInOptions", "SetBurnIn");
-
-	Params::LevelSequenceBurnInOptions_SetBurnIn Parms{};
-
-	Parms.InBurnInClass = std::move(InBurnInClass);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function LevelSequence.LevelSequenceBurnIn.SetSettings
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -956,8 +956,8 @@ void ULevelSequenceDirector::OnCreated()
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULevelSequence*                   LevelSequence                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FMovieSceneSequencePlaybackSettingsSettings                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// class ALevelSequenceActor*              OutActor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMovieSceneSequencePlaybackSettings&Settings                                               (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// class ALevelSequenceActor**             OutActor                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class ULevelSequencePlayer*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class ULevelSequencePlayer* ULevelSequencePlayer::CreateLevelSequencePlayer(class UObject* WorldContextObject, class ULevelSequence* LevelSequence, const struct FMovieSceneSequencePlaybackSettings& Settings, class ALevelSequenceActor** OutActor)
@@ -1059,7 +1059,7 @@ class UCameraComponent* ULevelSequencePlayer::GetActiveCameraComponent() const
 // Function LevelSequence.LevelSequencePlayer.GetSpawnedActorByGuid
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGuid                            Guid                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     Guid                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIncludeSubSequence                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

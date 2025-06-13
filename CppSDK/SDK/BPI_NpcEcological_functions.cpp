@@ -24,9 +24,9 @@ void IBPI_NpcEcological_C::HandleWeatherChanged()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_NpcEcological_C", "HandleWeatherChanged");
+		Func = AsUObject()->Class->GetFunction("BPI_NpcEcological_C", "HandleWeatherChanged");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 
@@ -38,9 +38,9 @@ void IBPI_NpcEcological_C::HandleDayStateChanged()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_NpcEcological_C", "HandleDayStateChanged");
+		Func = AsUObject()->Class->GetFunction("BPI_NpcEcological_C", "HandleDayStateChanged");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 
@@ -52,9 +52,9 @@ void IBPI_NpcEcological_C::HandleQuestChanged()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_NpcEcological_C", "HandleQuestChanged");
+		Func = AsUObject()->Class->GetFunction("BPI_NpcEcological_C", "HandleQuestChanged");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 
@@ -66,9 +66,9 @@ void IBPI_NpcEcological_C::HandlePlayerEnter()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerEnter");
+		Func = AsUObject()->Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerEnter");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 
@@ -80,9 +80,9 @@ void IBPI_NpcEcological_C::HandlePlayerExit()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerExit");
+		Func = AsUObject()->Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerExit");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 
@@ -94,9 +94,9 @@ void IBPI_NpcEcological_C::HandlePlayerImpact()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerImpact");
+		Func = AsUObject()->Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerImpact");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 
@@ -108,9 +108,9 @@ void IBPI_NpcEcological_C::HandlePlayerImpactEnd()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerImpactEnd");
+		Func = AsUObject()->Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerImpactEnd");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 
@@ -122,9 +122,9 @@ void IBPI_NpcEcological_C::HandlePlayerAttack()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerAttack");
+		Func = AsUObject()->Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerAttack");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 
@@ -136,9 +136,9 @@ void IBPI_NpcEcological_C::HandlePlayerAttackEnd()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerAttackEnd");
+		Func = AsUObject()->Class->GetFunction("BPI_NpcEcological_C", "HandlePlayerAttackEnd");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 }

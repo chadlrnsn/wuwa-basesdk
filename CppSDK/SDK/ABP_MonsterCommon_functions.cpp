@@ -410,7 +410,7 @@ void UABP_MonsterCommon_C::初始化绑定_Tag()
 // Function ABP_MonsterCommon.ABP_MonsterCommon_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_MonsterCommon_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
@@ -431,8 +431,8 @@ void UABP_MonsterCommon_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 // Function ABP_MonsterCommon.ABP_MonsterCommon_C.IKAndFk
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        IKAndFk_0                                              (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       IKAndFk_0                                              (Parm, OutParm, NoDestructor)
 
 void UABP_MonsterCommon_C::IKAndFk(const struct FPoseLink& InPose, struct FPoseLink* IKAndFk_0)
 {

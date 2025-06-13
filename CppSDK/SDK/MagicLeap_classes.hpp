@@ -51,12 +51,12 @@ static_assert(offsetof(UMagicLeapSettings, bUseMLAudioForZI) == 0x000032, "Membe
 class UInAppPurchaseComponent final : public UActorComponent
 {
 public:
-	TMulticastInlineDelegate<void(const class FString& LogMessage)> InAppPurchaseLogMessage;                           // 0x00C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(TArray<struct FPurchaseItemDetails>& ItemsDetails)> GetItemsDetailsSuccess;                            // 0x00D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& LogMessage)> InAppPurchaseLogMessage;         // 0x00C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const TArray<struct FPurchaseItemDetails>& ItemsDetails)> GetItemsDetailsSuccess; // 0x00D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              GetItemsDetailsFailure;                            // 0x00E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FPurchaseConfirmation& PurchaseConfirmations)> PurchaseConfirmationSuccess;                       // 0x00F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FPurchaseConfirmation& PurchaseConfirmations)> PurchaseConfirmationSuccess; // 0x00F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              PurchaseConfirmationFailure;                       // 0x0100(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(TArray<struct FPurchaseConfirmation>& PurchaseHistory)> GetPurchaseHistorySuccess;                         // 0x0110(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const TArray<struct FPurchaseConfirmation>& PurchaseHistory)> GetPurchaseHistorySuccess; // 0x0110(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              GetPurchaseHistoryFailure;                         // 0x0120(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_130[0x8];                                      // 0x0130(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -116,7 +116,7 @@ public:
 	TMulticastInlineDelegate<void()>              DeviceHasReactivatedDelegate;                      // 0x0150(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              DeviceWillEnterRealityModeDelegate;                // 0x0160(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              DeviceWillGoInStandbyDelegate;                     // 0x0170(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(EFocusLostReason reason)> FocusLostDelegate;                                 // 0x0180(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EFocusLostReason reason)> FocusLostDelegate;                       // 0x0180(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              FocusGainedDelegate;                               // 0x0190(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
@@ -206,7 +206,7 @@ class UMagicLeapMeshTrackerComponent final : public USceneComponent
 {
 public:
 	uint8                                         Pad_218[0x8];                                      // 0x0218(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const struct FGuid& ID, TArray<struct FVector>& Vertices, TArray<int32>& Triangles, TArray<struct FVector>& Normals, TArray<float>& Confidence)> OnMeshTrackerUpdated;                              // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FGuid& ID, const TArray<struct FVector>& Vertices, const TArray<int32>& Triangles, const TArray<struct FVector>& Normals, const TArray<float>& Confidence)> OnMeshTrackerUpdated; // 0x0220(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	bool                                          ScanWorld;                                         // 0x0230(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EMagicLeapMeshType                            MeshType;                                          // 0x0231(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_232[0x6];                                      // 0x0232(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
@@ -269,8 +269,8 @@ static_assert(offsetof(UMagicLeapMeshTrackerComponent, MRMesh) == 0x000290, "Mem
 static_assert(offsetof(UMagicLeapMeshTrackerComponent, BricksPerFrame) == 0x000298, "Member 'UMagicLeapMeshTrackerComponent::BricksPerFrame' has a wrong offset!");
 
 // Class MagicLeap.MagicLeapMeshBlockSelectorInterface
-// 0x0000 (0x0030 - 0x0030)
-class IMagicLeapMeshBlockSelectorInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMagicLeapMeshBlockSelectorInterface final
 {
 public:
 	void SelectMeshBlocks(const struct FMagicLeapTrackingMeshInfo& NewMeshInfo, TArray<struct FMagicLeapMeshBlockRequest>* RequestedMesh);
@@ -284,9 +284,18 @@ public:
 	{
 		return GetDefaultObjImpl<IMagicLeapMeshBlockSelectorInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IMagicLeapMeshBlockSelectorInterface) == 0x000008, "Wrong alignment on IMagicLeapMeshBlockSelectorInterface");
-static_assert(sizeof(IMagicLeapMeshBlockSelectorInterface) == 0x000030, "Wrong size on IMagicLeapMeshBlockSelectorInterface");
+static_assert(alignof(IMagicLeapMeshBlockSelectorInterface) == 0x000001, "Wrong alignment on IMagicLeapMeshBlockSelectorInterface");
+static_assert(sizeof(IMagicLeapMeshBlockSelectorInterface) == 0x000001, "Wrong size on IMagicLeapMeshBlockSelectorInterface");
 
 // Class MagicLeap.MagicLeapRaycastFunctionLibrary
 // 0x0000 (0x0030 - 0x0030)

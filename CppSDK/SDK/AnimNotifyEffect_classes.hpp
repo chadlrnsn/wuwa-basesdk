@@ -41,12 +41,13 @@ public:
 	TMap<struct FGameplayTag, bool>               PlayNeedTags;                                      // 0x00D8(0x0050)(Edit, BlueprintVisible)
 	bool                                          NeedAnyTag;                                        // 0x0128(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          IgnoreWhenInvisible;                               // 0x0129(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsSyncEffectTimeScale;                             // 0x012A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_ValidateAssets();
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 	bool K2_PostChangeProperty(const class FName PropertyName);
-	bool TraceDetectClimbStep(class ATsBaseCharacter_C* outer, const struct FTransform& outTrans);
+	bool TraceDetectClimbStep(class ATsBaseCharacter_C* outer1, const struct FTransformDouble& outTrans1);
 	bool IsDisablePostProcess(class USkeletalMeshComponent* meshComp);
 	void AttachEffectAndSetupTransform(class AActor* outer, float effectHandle);
 
@@ -78,6 +79,7 @@ static_assert(offsetof(UAnimNotifyEffect_C, TraceTo) == 0x0000CC, "Member 'UAnim
 static_assert(offsetof(UAnimNotifyEffect_C, PlayNeedTags) == 0x0000D8, "Member 'UAnimNotifyEffect_C::PlayNeedTags' has a wrong offset!");
 static_assert(offsetof(UAnimNotifyEffect_C, NeedAnyTag) == 0x000128, "Member 'UAnimNotifyEffect_C::NeedAnyTag' has a wrong offset!");
 static_assert(offsetof(UAnimNotifyEffect_C, IgnoreWhenInvisible) == 0x000129, "Member 'UAnimNotifyEffect_C::IgnoreWhenInvisible' has a wrong offset!");
+static_assert(offsetof(UAnimNotifyEffect_C, IsSyncEffectTimeScale) == 0x00012A, "Member 'UAnimNotifyEffect_C::IsSyncEffectTimeScale' has a wrong offset!");
 
 }
 

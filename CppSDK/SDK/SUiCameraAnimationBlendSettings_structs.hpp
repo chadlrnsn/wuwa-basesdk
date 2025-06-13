@@ -28,7 +28,7 @@ public:
 	bool                                          bReverse_28_9221334F4855EC4C284F77AB4A7B8A50;      // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UCurveFloat>             CommonCurve_19_44F9D203469BE7A60E24ADB686ADA8C7;   // 0x0040(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	TMap<EUiCameraAnimationAttributeType, TSoftObjectPtr<class UCurveFloat>> CurveMap_18_E91232C14DEC2DBC6A8D0095520D6B42;      // 0x0070(0x0050)(Edit, BlueprintVisible)
+	TMap<EUiCameraAnimationAttributeType, TSoftObjectPtr<class UCurveFloat>> CurveMap_18_E91232C14DEC2DBC6A8D0095520D6B42; // 0x0070(0x0050)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSUiCameraAnimationBlendSettings) == 0x000008, "Wrong alignment on FSUiCameraAnimationBlendSettings");
 static_assert(sizeof(FSUiCameraAnimationBlendSettings) == 0x0000C0, "Wrong size on FSUiCameraAnimationBlendSettings");

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "SHolographicData_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -29,7 +29,7 @@ public:
 	struct FSHolographicData                      OutlineData;                                       // 0x0048(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	struct FSHolographicData                      OtherData;                                         // 0x00A8(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          CanSkipLoopUpdate;                                 // 0x0108(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          UpdateOnStart;                                     // 0x0109(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ExtraUpdateOnStart;                                // 0x0109(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	static class UClass* StaticClass()
@@ -49,7 +49,7 @@ static_assert(offsetof(UPD_HolographicEffect_C, End) == 0x000040, "Member 'UPD_H
 static_assert(offsetof(UPD_HolographicEffect_C, OutlineData) == 0x000048, "Member 'UPD_HolographicEffect_C::OutlineData' has a wrong offset!");
 static_assert(offsetof(UPD_HolographicEffect_C, OtherData) == 0x0000A8, "Member 'UPD_HolographicEffect_C::OtherData' has a wrong offset!");
 static_assert(offsetof(UPD_HolographicEffect_C, CanSkipLoopUpdate) == 0x000108, "Member 'UPD_HolographicEffect_C::CanSkipLoopUpdate' has a wrong offset!");
-static_assert(offsetof(UPD_HolographicEffect_C, UpdateOnStart) == 0x000109, "Member 'UPD_HolographicEffect_C::UpdateOnStart' has a wrong offset!");
+static_assert(offsetof(UPD_HolographicEffect_C, ExtraUpdateOnStart) == 0x000109, "Member 'UPD_HolographicEffect_C::ExtraUpdateOnStart' has a wrong offset!");
 
 }
 

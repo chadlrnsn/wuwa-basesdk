@@ -151,6 +151,30 @@ enum class ERigVMMemoryType : uint8
 	ERigVMMemoryType_MAX                     = 4,
 };
 
+// ScriptStruct RigVM.RigVMParameter
+// 0x0040 (0x0040 - 0x0000)
+struct FRigVMParameter final
+{
+public:
+	ERigVMParameterType                           Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   Name;                                              // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         RegisterIndex;                                     // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CPPType;                                           // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UScriptStruct*                          ScriptStruct;                                      // 0x0028(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   ScriptStructPath;                                  // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FRigVMParameter) == 0x000008, "Wrong alignment on FRigVMParameter");
+static_assert(sizeof(FRigVMParameter) == 0x000040, "Wrong size on FRigVMParameter");
+static_assert(offsetof(FRigVMParameter, Type) == 0x000000, "Member 'FRigVMParameter::Type' has a wrong offset!");
+static_assert(offsetof(FRigVMParameter, Name) == 0x000004, "Member 'FRigVMParameter::Name' has a wrong offset!");
+static_assert(offsetof(FRigVMParameter, RegisterIndex) == 0x000010, "Member 'FRigVMParameter::RegisterIndex' has a wrong offset!");
+static_assert(offsetof(FRigVMParameter, CPPType) == 0x000018, "Member 'FRigVMParameter::CPPType' has a wrong offset!");
+static_assert(offsetof(FRigVMParameter, ScriptStruct) == 0x000028, "Member 'FRigVMParameter::ScriptStruct' has a wrong offset!");
+static_assert(offsetof(FRigVMParameter, ScriptStructPath) == 0x000030, "Member 'FRigVMParameter::ScriptStructPath' has a wrong offset!");
+
 // ScriptStruct RigVM.RigVMExecuteContext
 // 0x0060 (0x0060 - 0x0000)
 struct alignas(0x08) FRigVMExecuteContext
@@ -177,17 +201,6 @@ static_assert(offsetof(FRigVMInstruction, ByteCodeIndex) == 0x000000, "Member 'F
 static_assert(offsetof(FRigVMInstruction, OpCode) == 0x000008, "Member 'FRigVMInstruction::OpCode' has a wrong offset!");
 static_assert(offsetof(FRigVMInstruction, OperandAlignment) == 0x000009, "Member 'FRigVMInstruction::OperandAlignment' has a wrong offset!");
 
-// ScriptStruct RigVM.RigVMInstructionArray
-// 0x0010 (0x0010 - 0x0000)
-struct FRigVMInstructionArray final
-{
-public:
-	TArray<struct FRigVMInstruction>              Instructions;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-};
-static_assert(alignof(FRigVMInstructionArray) == 0x000008, "Wrong alignment on FRigVMInstructionArray");
-static_assert(sizeof(FRigVMInstructionArray) == 0x000010, "Wrong size on FRigVMInstructionArray");
-static_assert(offsetof(FRigVMInstructionArray, Instructions) == 0x000000, "Member 'FRigVMInstructionArray::Instructions' has a wrong offset!");
-
 // ScriptStruct RigVM.RigVMStruct
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FRigVMStruct
@@ -197,30 +210,6 @@ public:
 };
 static_assert(alignof(FRigVMStruct) == 0x000008, "Wrong alignment on FRigVMStruct");
 static_assert(sizeof(FRigVMStruct) == 0x000008, "Wrong size on FRigVMStruct");
-
-// ScriptStruct RigVM.RigVMParameter
-// 0x0040 (0x0040 - 0x0000)
-struct FRigVMParameter final
-{
-public:
-	ERigVMParameterType                           Type;                                              // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   Name;                                              // 0x0004(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         RegisterIndex;                                     // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CPPType;                                           // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UScriptStruct*                          ScriptStruct;                                      // 0x0028(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FName                                   ScriptStructPath;                                  // 0x0030(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FRigVMParameter) == 0x000008, "Wrong alignment on FRigVMParameter");
-static_assert(sizeof(FRigVMParameter) == 0x000040, "Wrong size on FRigVMParameter");
-static_assert(offsetof(FRigVMParameter, Type) == 0x000000, "Member 'FRigVMParameter::Type' has a wrong offset!");
-static_assert(offsetof(FRigVMParameter, Name) == 0x000004, "Member 'FRigVMParameter::Name' has a wrong offset!");
-static_assert(offsetof(FRigVMParameter, RegisterIndex) == 0x000010, "Member 'FRigVMParameter::RegisterIndex' has a wrong offset!");
-static_assert(offsetof(FRigVMParameter, CPPType) == 0x000018, "Member 'FRigVMParameter::CPPType' has a wrong offset!");
-static_assert(offsetof(FRigVMParameter, ScriptStruct) == 0x000028, "Member 'FRigVMParameter::ScriptStruct' has a wrong offset!");
-static_assert(offsetof(FRigVMParameter, ScriptStructPath) == 0x000030, "Member 'FRigVMParameter::ScriptStructPath' has a wrong offset!");
 
 // ScriptStruct RigVM.RigVMByteCodeEntry
 // 0x0010 (0x0010 - 0x0000)
@@ -251,6 +240,17 @@ static_assert(sizeof(FRigVMByteCode) == 0x000030, "Wrong size on FRigVMByteCode"
 static_assert(offsetof(FRigVMByteCode, ByteCode) == 0x000000, "Member 'FRigVMByteCode::ByteCode' has a wrong offset!");
 static_assert(offsetof(FRigVMByteCode, NumInstructions) == 0x000010, "Member 'FRigVMByteCode::NumInstructions' has a wrong offset!");
 static_assert(offsetof(FRigVMByteCode, Entries) == 0x000018, "Member 'FRigVMByteCode::Entries' has a wrong offset!");
+
+// ScriptStruct RigVM.RigVMInstructionArray
+// 0x0010 (0x0010 - 0x0000)
+struct FRigVMInstructionArray final
+{
+public:
+	TArray<struct FRigVMInstruction>              Instructions;                                      // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+};
+static_assert(alignof(FRigVMInstructionArray) == 0x000008, "Wrong alignment on FRigVMInstructionArray");
+static_assert(sizeof(FRigVMInstructionArray) == 0x000010, "Wrong size on FRigVMInstructionArray");
+static_assert(offsetof(FRigVMInstructionArray, Instructions) == 0x000000, "Member 'FRigVMInstructionArray::Instructions' has a wrong offset!");
 
 // ScriptStruct RigVM.RigVMBaseOp
 // 0x0001 (0x0001 - 0x0000)

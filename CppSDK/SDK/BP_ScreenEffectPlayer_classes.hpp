@@ -12,15 +12,15 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "E_SE_PlayState_structs.hpp"
 #include "AkAudio_structs.hpp"
+#include "E_SE_PlayState_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C
-// 0x0070 (0x0320 - 0x02B0)
+// 0x0080 (0x0330 - 0x02B0)
 class ABP_ScreenEffectPlayer_C final : public AActor
 {
 public:
@@ -44,8 +44,15 @@ public:
 	bool                                          bNeedToDestroy;                                    // 0x0318(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_319[0x3];                                      // 0x0319(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CacheEnvironmentFactor;                            // 0x031C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ParameterTweenProgress;                            // 0x0320(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ParameterTweenSpeed;                               // 0x0324(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ParameterTweenTarget;                              // 0x0328(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void AlmostEqual(float val1, float val2, bool* isequal);
+	void SetExtraState(int32 ExtraState);
+	void Refresh_Addition_Parameter(float TweenProgress);
+	void TweenParameterSpeed(float TweenTarget, float TweenSpeed, float TweenDeltaSecond);
 	void BP_ScreenEffectPlayer_AutoGenFunc();
 	void DelayEndAudioCall();
 	void UpdatePlayerSEEnvironmentFactor(float EnvironmentFactor);
@@ -58,7 +65,9 @@ public:
 	void UpdateComponentsAlpha();
 	void UpdateComponents();
 	void EndPlayer();
-	void StartPlayer();
+	void Start_Player();
+	void TweenParameter(float TweenTarget);
+	void TweenParameterImmediately(float TweenTarget);
 	void UserConstructionScript();
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveBeginPlay();
@@ -76,7 +85,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_ScreenEffectPlayer_C) == 0x000008, "Wrong alignment on ABP_ScreenEffectPlayer_C");
-static_assert(sizeof(ABP_ScreenEffectPlayer_C) == 0x000320, "Wrong size on ABP_ScreenEffectPlayer_C");
+static_assert(sizeof(ABP_ScreenEffectPlayer_C) == 0x000330, "Wrong size on ABP_ScreenEffectPlayer_C");
 static_assert(offsetof(ABP_ScreenEffectPlayer_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_ScreenEffectPlayer_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_ScreenEffectPlayer_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_ScreenEffectPlayer_C::DefaultSceneRoot' has a wrong offset!");
 static_assert(offsetof(ABP_ScreenEffectPlayer_C, Data) == 0x0002C0, "Member 'ABP_ScreenEffectPlayer_C::Data' has a wrong offset!");
@@ -92,6 +101,9 @@ static_assert(offsetof(ABP_ScreenEffectPlayer_C, bVisible) == 0x000308, "Member 
 static_assert(offsetof(ABP_ScreenEffectPlayer_C, ScreenEffectRoot) == 0x000310, "Member 'ABP_ScreenEffectPlayer_C::ScreenEffectRoot' has a wrong offset!");
 static_assert(offsetof(ABP_ScreenEffectPlayer_C, bNeedToDestroy) == 0x000318, "Member 'ABP_ScreenEffectPlayer_C::bNeedToDestroy' has a wrong offset!");
 static_assert(offsetof(ABP_ScreenEffectPlayer_C, CacheEnvironmentFactor) == 0x00031C, "Member 'ABP_ScreenEffectPlayer_C::CacheEnvironmentFactor' has a wrong offset!");
+static_assert(offsetof(ABP_ScreenEffectPlayer_C, ParameterTweenProgress) == 0x000320, "Member 'ABP_ScreenEffectPlayer_C::ParameterTweenProgress' has a wrong offset!");
+static_assert(offsetof(ABP_ScreenEffectPlayer_C, ParameterTweenSpeed) == 0x000324, "Member 'ABP_ScreenEffectPlayer_C::ParameterTweenSpeed' has a wrong offset!");
+static_assert(offsetof(ABP_ScreenEffectPlayer_C, ParameterTweenTarget) == 0x000328, "Member 'ABP_ScreenEffectPlayer_C::ParameterTweenTarget' has a wrong offset!");
 
 }
 

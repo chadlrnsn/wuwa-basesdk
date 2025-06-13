@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
+#include "SSkillInfo_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "EPawnChannel_structs.hpp"
 #include "EAimViewState_structs.hpp"
-#include "SSkillInfo_structs.hpp"
 
 
 namespace SDK::Params
@@ -82,44 +82,44 @@ static_assert(sizeof(GA_Base_C_获取当前技能配置Id) == 0x000010, "Wrong s
 static_assert(offsetof(GA_Base_C_获取当前技能配置Id, 当前技能数据名_0) == 0x000000, "Member 'GA_Base_C_获取当前技能配置Id::当前技能数据名_0' has a wrong offset!");
 
 // Function GA_Base.GA_Base_C.获取当前技能配置
-// 0x0170 (0x0170 - 0x0000)
+// 0x0180 (0x0180 - 0x0000)
 struct GA_Base_C_获取当前技能配置 final
 {
 public:
-	struct FSSkillInfo                            当前技能数据_0;                                    // 0x0000(0x0170)(Parm, OutParm, HasGetValueTypeHash)
+	struct FSSkillInfo                            当前技能数据_0;                                    // 0x0000(0x0180)(Parm, OutParm, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_获取当前技能配置) == 0x000008, "Wrong alignment on GA_Base_C_获取当前技能配置");
-static_assert(sizeof(GA_Base_C_获取当前技能配置) == 0x000170, "Wrong size on GA_Base_C_获取当前技能配置");
+static_assert(sizeof(GA_Base_C_获取当前技能配置) == 0x000180, "Wrong size on GA_Base_C_获取当前技能配置");
 static_assert(offsetof(GA_Base_C_获取当前技能配置, 当前技能数据_0) == 0x000000, "Member 'GA_Base_C_获取当前技能配置::当前技能数据_0' has a wrong offset!");
 
 // Function GA_Base.GA_Base_C.获取技能动画
-// 0x0318 (0x0318 - 0x0000)
+// 0x0338 (0x0338 - 0x0000)
 struct GA_Base_C_获取技能动画 final
 {
 public:
 	int32                                         编号;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimMontage*                           动画;                                              // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSkillInfo                            SkillInfo;                                         // 0x0010(0x0170)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	class UAnimMontage*                           Montage;                                           // 0x0180(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSkillInfo                            CallFunc________________;                          // 0x0188(0x0170)(HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetOwningActorFromActorInfo_ReturnValue;  // 0x02F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0300(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0308(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_309[0x7];                                      // 0x0309(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimMontage*                           CallFunc_GetSkillMontageInstance_ReturnValue;      // 0x0310(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillInfo                            SkillInfo;                                         // 0x0010(0x0180)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	class UAnimMontage*                           Montage;                                           // 0x0190(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillInfo                            CallFunc________________;                          // 0x0198(0x0180)(HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetOwningActorFromActorInfo_ReturnValue;  // 0x0318(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0320(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0328(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_329[0x7];                                      // 0x0329(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimMontage*                           CallFunc_GetSkillMontageInstance_ReturnValue;      // 0x0330(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_获取技能动画) == 0x000008, "Wrong alignment on GA_Base_C_获取技能动画");
-static_assert(sizeof(GA_Base_C_获取技能动画) == 0x000318, "Wrong size on GA_Base_C_获取技能动画");
+static_assert(sizeof(GA_Base_C_获取技能动画) == 0x000338, "Wrong size on GA_Base_C_获取技能动画");
 static_assert(offsetof(GA_Base_C_获取技能动画, 编号) == 0x000000, "Member 'GA_Base_C_获取技能动画::编号' has a wrong offset!");
 static_assert(offsetof(GA_Base_C_获取技能动画, 动画) == 0x000008, "Member 'GA_Base_C_获取技能动画::动画' has a wrong offset!");
 static_assert(offsetof(GA_Base_C_获取技能动画, SkillInfo) == 0x000010, "Member 'GA_Base_C_获取技能动画::SkillInfo' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, Montage) == 0x000180, "Member 'GA_Base_C_获取技能动画::Montage' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, CallFunc________________) == 0x000188, "Member 'GA_Base_C_获取技能动画::CallFunc________________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, CallFunc_GetOwningActorFromActorInfo_ReturnValue) == 0x0002F8, "Member 'GA_Base_C_获取技能动画::CallFunc_GetOwningActorFromActorInfo_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, K2Node_DynamicCast_AsTs_Base_Character) == 0x000300, "Member 'GA_Base_C_获取技能动画::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, K2Node_DynamicCast_bSuccess) == 0x000308, "Member 'GA_Base_C_获取技能动画::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取技能动画, CallFunc_GetSkillMontageInstance_ReturnValue) == 0x000310, "Member 'GA_Base_C_获取技能动画::CallFunc_GetSkillMontageInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取技能动画, Montage) == 0x000190, "Member 'GA_Base_C_获取技能动画::Montage' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取技能动画, CallFunc________________) == 0x000198, "Member 'GA_Base_C_获取技能动画::CallFunc________________' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取技能动画, CallFunc_GetOwningActorFromActorInfo_ReturnValue) == 0x000318, "Member 'GA_Base_C_获取技能动画::CallFunc_GetOwningActorFromActorInfo_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取技能动画, K2Node_DynamicCast_AsTs_Base_Character) == 0x000320, "Member 'GA_Base_C_获取技能动画::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取技能动画, K2Node_DynamicCast_bSuccess) == 0x000328, "Member 'GA_Base_C_获取技能动画::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取技能动画, CallFunc_GetSkillMontageInstance_ReturnValue) == 0x000330, "Member 'GA_Base_C_获取技能动画::CallFunc_GetSkillMontageInstance_ReturnValue' has a wrong offset!");
 
 // Function GA_Base.GA_Base_C.获取技能所有动画
 // 0x0040 (0x0040 - 0x0000)
@@ -152,15 +152,15 @@ static_assert(offsetof(GA_Base_C_获取技能所有动画, CallFunc_IsValid_Retu
 static_assert(offsetof(GA_Base_C_获取技能所有动画, CallFunc_Array_Add_ReturnValue) == 0x00003C, "Member 'GA_Base_C_获取技能所有动画::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
 
 // Function GA_Base.GA_Base_C.获取技能标签
-// 0x0180 (0x0180 - 0x0000)
+// 0x0190 (0x0190 - 0x0000)
 struct GA_Base_C_获取技能标签 final
 {
 public:
 	TArray<struct FGameplayTag>                   技能标签;                                          // 0x0000(0x0010)(Parm, OutParm)
-	struct FSSkillInfo                            CallFunc________________;                          // 0x0010(0x0170)(HasGetValueTypeHash)
+	struct FSSkillInfo                            CallFunc________________;                          // 0x0010(0x0180)(HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_获取技能标签) == 0x000008, "Wrong alignment on GA_Base_C_获取技能标签");
-static_assert(sizeof(GA_Base_C_获取技能标签) == 0x000180, "Wrong size on GA_Base_C_获取技能标签");
+static_assert(sizeof(GA_Base_C_获取技能标签) == 0x000190, "Wrong size on GA_Base_C_获取技能标签");
 static_assert(offsetof(GA_Base_C_获取技能标签, 技能标签) == 0x000000, "Member 'GA_Base_C_获取技能标签::技能标签' has a wrong offset!");
 static_assert(offsetof(GA_Base_C_获取技能标签, CallFunc________________) == 0x000010, "Member 'GA_Base_C_获取技能标签::CallFunc________________' has a wrong offset!");
 
@@ -471,7 +471,7 @@ public:
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         值;                                                // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetIntValueByEntity_ReturnValue;          // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -493,7 +493,7 @@ public:
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         值;                                                // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_设置黑板Int) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板Int");
@@ -512,7 +512,7 @@ public:
 	class ATsBaseCharacter_C*                     角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int64                                         值;                                                // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	int64                                         CallFunc_GetLongValueByEntity_ReturnValue;         // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -534,7 +534,7 @@ public:
 	class ATsBaseCharacter_C*                     角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int64                                         值;                                                // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_设置黑板Long) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板Long");
@@ -553,7 +553,7 @@ public:
 	class ATsBaseCharacter_C*                     对象;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         实体ID;                                            // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_获取实体ID) == 0x000008, "Wrong alignment on GA_Base_C_获取实体ID");
@@ -969,7 +969,7 @@ static_assert(offsetof(GA_Base_C_通过ID获取对象Buff层数, CallFunc_______
 static_assert(offsetof(GA_Base_C_通过ID获取对象Buff层数, CallFunc_GetBuffCountById_ReturnValue) == 0x000018, "Member 'GA_Base_C_通过ID获取对象Buff层数::CallFunc_GetBuffCountById_ReturnValue' has a wrong offset!");
 
 // Function GA_Base.GA_Base_C.获取当前技能攻速
-// 0x0198 (0x0198 - 0x0000)
+// 0x01A8 (0x01A8 - 0x0000)
 struct GA_Base_C_获取当前技能攻速 final
 {
 public:
@@ -978,24 +978,24 @@ public:
 	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSkillInfo                            CallFunc________________;                          // 0x0018(0x0170)(HasGetValueTypeHash)
-	float                                         CallFunc___Current_______;                         // 0x0188(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x018C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x018D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_18E[0x2];                                      // 0x018E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc___Current________1;                       // 0x0190(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillInfo                            CallFunc________________;                          // 0x0018(0x0180)(HasGetValueTypeHash)
+	float                                         CallFunc___Current_______;                         // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x019C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x019D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_19E[0x2];                                      // 0x019E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc___Current________1;                       // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_获取当前技能攻速) == 0x000008, "Wrong alignment on GA_Base_C_获取当前技能攻速");
-static_assert(sizeof(GA_Base_C_获取当前技能攻速) == 0x000198, "Wrong size on GA_Base_C_获取当前技能攻速");
+static_assert(sizeof(GA_Base_C_获取当前技能攻速) == 0x0001A8, "Wrong size on GA_Base_C_获取当前技能攻速");
 static_assert(offsetof(GA_Base_C_获取当前技能攻速, SpeedRatio) == 0x000000, "Member 'GA_Base_C_获取当前技能攻速::SpeedRatio' has a wrong offset!");
 static_assert(offsetof(GA_Base_C_获取当前技能攻速, speed) == 0x000004, "Member 'GA_Base_C_获取当前技能攻速::speed' has a wrong offset!");
 static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc_Divide_FloatFloat_ReturnValue) == 0x000008, "Member 'GA_Base_C_获取当前技能攻速::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
 static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc__________) == 0x000010, "Member 'GA_Base_C_获取当前技能攻速::CallFunc__________' has a wrong offset!");
 static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc________________) == 0x000018, "Member 'GA_Base_C_获取当前技能攻速::CallFunc________________' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc___Current_______) == 0x000188, "Member 'GA_Base_C_获取当前技能攻速::CallFunc___Current_______' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x00018C, "Member 'GA_Base_C_获取当前技能攻速::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x00018D, "Member 'GA_Base_C_获取当前技能攻速::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc___Current________1) == 0x000190, "Member 'GA_Base_C_获取当前技能攻速::CallFunc___Current________1' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc___Current_______) == 0x000198, "Member 'GA_Base_C_获取当前技能攻速::CallFunc___Current_______' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x00019C, "Member 'GA_Base_C_获取当前技能攻速::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x00019D, "Member 'GA_Base_C_获取当前技能攻速::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取当前技能攻速, CallFunc___Current________1) == 0x0001A0, "Member 'GA_Base_C_获取当前技能攻速::CallFunc___Current________1' has a wrong offset!");
 
 // Function GA_Base.GA_Base_C.查询特定子弹数量
 // 0x0088 (0x0088 - 0x0000)
@@ -1011,7 +1011,7 @@ public:
 	int32                                         ___int_Variable;                                   // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 CallFunc_GetCharacterLaunchedBulletIds_ReturnValue; // 0x0048(0x0010)(ReferenceParm)
@@ -1053,7 +1053,7 @@ public:
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         值;                                                // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetEntityIdByEntity_ReturnValue;          // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -1075,7 +1075,7 @@ public:
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         值;                                                // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_设置黑板EntityId) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板EntityId");
@@ -1094,7 +1094,7 @@ public:
 	class ATsBaseCharacter_C*                     角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	struct FVectorDouble                          值;                                                // 0x0018(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVectorDouble                          CallFunc_GetVectorValueByEntity_ReturnValue;       // 0x0048(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1116,7 +1116,7 @@ public:
 	class ATsBaseCharacter_C*                     角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	struct FVectorDouble                          值;                                                // 0x0018(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0030(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_设置黑板Vector) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板Vector");
@@ -1179,7 +1179,7 @@ public:
 	class ATsBaseCharacter_C*                     角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 值;                                                // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_设置黑板String) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板String");
@@ -1198,7 +1198,7 @@ public:
 	class ATsBaseCharacter_C*                     角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 String;                                            // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CallFunc_GetStringValueByEntity_ReturnValue;       // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
@@ -1237,7 +1237,7 @@ public:
 	class ATsBaseCharacter_C*                     目标;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         RoleID;                                            // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_GetRoleId_ReturnValue;                    // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1823,7 +1823,7 @@ public:
 	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	struct FRotator                               值;                                                // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_设置黑板Rotator) == 0x000008, "Wrong alignment on GA_Base_C_设置黑板Rotator");
@@ -1839,7 +1839,7 @@ static_assert(offsetof(GA_Base_C_设置黑板Rotator, CallFunc_GetEntityId_Retur
 struct GA_Base_C_修改材质效果 final
 {
 public:
-	TScriptInterface<class IBPI_CreatureInterface_C> Entity;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	TScriptInterface<class IBPI_CreatureInterface_C> Entity;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          IsGroup;                                           // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                材质效果;                                          // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1864,7 +1864,7 @@ public:
 	class FString                                 Key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	int32                                         TargetId;                                          // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;               // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Base_C_设置子弹目标) == 0x000008, "Wrong alignment on GA_Base_C_设置子弹目标");
@@ -2201,6 +2201,43 @@ public:
 static_assert(alignof(GA_Base_C_Apply_Buff_with_Level) == 0x000008, "Wrong alignment on GA_Base_C_Apply_Buff_with_Level");
 static_assert(sizeof(GA_Base_C_Apply_Buff_with_Level) == 0x000008, "Wrong size on GA_Base_C_Apply_Buff_with_Level");
 static_assert(offsetof(GA_Base_C_Apply_Buff_with_Level, buffId) == 0x000000, "Member 'GA_Base_C_Apply_Buff_with_Level::buffId' has a wrong offset!");
+
+// Function GA_Base.GA_Base_C.随机召唤
+// 0x0060 (0x0060 - 0x0000)
+struct GA_Base_C_随机召唤 final
+{
+public:
+	int32                                         召唤者Id;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Index_0;                                           // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       Transform;                                         // 0x0010(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	int32                                         SkillId_0;                                         // 0x0050(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsVisivle;                                         // 0x0054(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(GA_Base_C_随机召唤) == 0x000010, "Wrong alignment on GA_Base_C_随机召唤");
+static_assert(sizeof(GA_Base_C_随机召唤) == 0x000060, "Wrong size on GA_Base_C_随机召唤");
+static_assert(offsetof(GA_Base_C_随机召唤, 召唤者Id) == 0x000000, "Member 'GA_Base_C_随机召唤::召唤者Id' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_随机召唤, Index_0) == 0x000004, "Member 'GA_Base_C_随机召唤::Index_0' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_随机召唤, Transform) == 0x000010, "Member 'GA_Base_C_随机召唤::Transform' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_随机召唤, SkillId_0) == 0x000050, "Member 'GA_Base_C_随机召唤::SkillId_0' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_随机召唤, IsVisivle) == 0x000054, "Member 'GA_Base_C_随机召唤::IsVisivle' has a wrong offset!");
+
+// Function GA_Base.GA_Base_C.获取随机召唤物
+// 0x0010 (0x0010 - 0x0000)
+struct GA_Base_C_获取随机召唤物 final
+{
+public:
+	int32                                         召唤者;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Index_0;                                           // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         实体Id;                                            // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetSummonRandomEntity_ReturnValue;        // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(GA_Base_C_获取随机召唤物) == 0x000004, "Wrong alignment on GA_Base_C_获取随机召唤物");
+static_assert(sizeof(GA_Base_C_获取随机召唤物) == 0x000010, "Wrong size on GA_Base_C_获取随机召唤物");
+static_assert(offsetof(GA_Base_C_获取随机召唤物, 召唤者) == 0x000000, "Member 'GA_Base_C_获取随机召唤物::召唤者' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取随机召唤物, Index_0) == 0x000004, "Member 'GA_Base_C_获取随机召唤物::Index_0' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取随机召唤物, 实体Id) == 0x000008, "Member 'GA_Base_C_获取随机召唤物::实体Id' has a wrong offset!");
+static_assert(offsetof(GA_Base_C_获取随机召唤物, CallFunc_GetSummonRandomEntity_ReturnValue) == 0x00000C, "Member 'GA_Base_C_获取随机召唤物::CallFunc_GetSummonRandomEntity_ReturnValue' has a wrong offset!");
 
 // Function GA_Base.GA_Base_C.K2_CanActivateAbility
 // 0x0078 (0x0078 - 0x0000)

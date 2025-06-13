@@ -1046,5 +1046,33 @@ void ABP_Clouds_C::观测塔()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
+
+// Function BP_Clouds.BP_Clouds_C.初见七丘
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::初见七丘()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "初见七丘");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.七丘夜晚
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::七丘夜晚()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "七丘夜晚");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

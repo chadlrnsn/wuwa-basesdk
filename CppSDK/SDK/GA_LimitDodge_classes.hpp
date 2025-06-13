@@ -19,13 +19,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_LimitDodge.GA_LimitDodge_C
-// 0x0040 (0x05A0 - 0x0560)
+// 0x0040 (0x05B0 - 0x0570)
 class UGA_LimitDodge_C final : public UGa_Passive_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_LimitDodge_C;                    // 0x0560(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     角色;                                              // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTransform                             Transform;                                         // 0x0570(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_LimitDodge_C;                    // 0x0570(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     角色;                                              // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             Transform;                                         // 0x0580(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_GA_LimitDodge(int32 EntryPoint);
@@ -43,10 +43,10 @@ public:
 	}
 };
 static_assert(alignof(UGA_LimitDodge_C) == 0x000010, "Wrong alignment on UGA_LimitDodge_C");
-static_assert(sizeof(UGA_LimitDodge_C) == 0x0005A0, "Wrong size on UGA_LimitDodge_C");
-static_assert(offsetof(UGA_LimitDodge_C, UberGraphFrame_GA_LimitDodge_C) == 0x000560, "Member 'UGA_LimitDodge_C::UberGraphFrame_GA_LimitDodge_C' has a wrong offset!");
-static_assert(offsetof(UGA_LimitDodge_C, 角色) == 0x000568, "Member 'UGA_LimitDodge_C::角色' has a wrong offset!");
-static_assert(offsetof(UGA_LimitDodge_C, Transform) == 0x000570, "Member 'UGA_LimitDodge_C::Transform' has a wrong offset!");
+static_assert(sizeof(UGA_LimitDodge_C) == 0x0005B0, "Wrong size on UGA_LimitDodge_C");
+static_assert(offsetof(UGA_LimitDodge_C, UberGraphFrame_GA_LimitDodge_C) == 0x000570, "Member 'UGA_LimitDodge_C::UberGraphFrame_GA_LimitDodge_C' has a wrong offset!");
+static_assert(offsetof(UGA_LimitDodge_C, 角色) == 0x000578, "Member 'UGA_LimitDodge_C::角色' has a wrong offset!");
+static_assert(offsetof(UGA_LimitDodge_C, Transform) == 0x000580, "Member 'UGA_LimitDodge_C::Transform' has a wrong offset!");
 
 }
 

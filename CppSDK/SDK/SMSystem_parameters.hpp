@@ -77,7 +77,7 @@ static_assert(offsetof(SMNodeInstance_GetGuid, ReturnValue) == 0x000000, "Member
 struct SMNodeInstance_GetNetworkInterface final
 {
 public:
-	TScriptInterface<class ISMStateMachineNetworkedInterface> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class ISMStateMachineNetworkedInterface> ReturnValue;                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(SMNodeInstance_GetNetworkInterface) == 0x000008, "Wrong alignment on SMNodeInstance_GetNetworkInterface");
 static_assert(sizeof(SMNodeInstance_GetNetworkInterface) == 0x000010, "Wrong size on SMNodeInstance_GetNetworkInterface");
@@ -693,7 +693,7 @@ static_assert(offsetof(SMInstance_Internal_Update, DeltaSeconds) == 0x000000, "M
 struct SMInstance_K2_TryGetNetworkInterface final
 {
 public:
-	TScriptInterface<class ISMStateMachineNetworkedInterface> Interface;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class ISMStateMachineNetworkedInterface> Interface;                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	bool                                          bIsValid;                                          // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -1194,7 +1194,7 @@ static_assert(offsetof(SMInstance_GetNestedActiveStateName, ReturnValue) == 0x00
 struct SMInstance_GetNetworkInterface final
 {
 public:
-	TScriptInterface<class ISMStateMachineNetworkedInterface> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class ISMStateMachineNetworkedInterface> ReturnValue;                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(SMInstance_GetNetworkInterface) == 0x000008, "Wrong alignment on SMInstance_GetNetworkInterface");
 static_assert(sizeof(SMInstance_GetNetworkInterface) == 0x000010, "Wrong size on SMInstance_GetNetworkInterface");

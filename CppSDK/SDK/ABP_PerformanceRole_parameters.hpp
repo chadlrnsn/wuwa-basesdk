@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "EPerformanceRoleState_structs.hpp"
 #include "SPerformanceRoleInfo_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params

@@ -146,8 +146,8 @@ class UKuroSDKManager* UKuroSDKManager::Get()
 // Function KuroSDK.KuroSDKManager.GetAdsValue
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           income                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    income                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::GetAdsValue(const class FString& income, const class FString& data)
 {
@@ -548,7 +548,7 @@ class FString UKuroSDKManager::GetSdkLoginInfo()
 // Function KuroSDK.KuroSDKManager.GetSdkParams
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroSDKManager::GetSdkParams(const class FString& data)
@@ -689,8 +689,8 @@ bool UKuroSDKManager::IsUserCenterEnable()
 // Function KuroSDK.KuroSDKManager.KuroSDKEvent
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// EUKuroSDKEventType                      iKuroSDKEvent                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EUKuroSDKEventType&               iKuroSDKEvent                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::KuroSDKEvent(const EUKuroSDKEventType& iKuroSDKEvent, const class FString& sKuroSDKEventParameter)
 {
@@ -716,7 +716,7 @@ void UKuroSDKManager::KuroSDKEvent(const EUKuroSDKEventType& iKuroSDKEvent, cons
 // Function KuroSDK.KuroSDKManager.LogMarketingEvent
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::LogMarketingEvent(const class FString& data)
 {
@@ -741,7 +741,7 @@ void UKuroSDKManager::LogMarketingEvent(const class FString& data)
 // Function KuroSDK.KuroSDKManager.OpenCustomerService
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::OpenCustomerService(const class FString& data)
 {
@@ -766,7 +766,7 @@ void UKuroSDKManager::OpenCustomerService(const class FString& data)
 // Function KuroSDK.KuroSDKManager.OpenDefaultWebView
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::OpenDefaultWebView(const class FString& url)
 {
@@ -810,12 +810,12 @@ void UKuroSDKManager::OpenSdkQRScan()
 // Function KuroSDK.KuroSDKManager.OpenWebView
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           title                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    title                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    isLandscape                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    transparent                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    webAccelerated                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::OpenWebView(const class FString& title, const class FString& url, bool isLandscape, bool transparent, bool webAccelerated, const class FString& data)
 {
@@ -864,7 +864,7 @@ void UKuroSDKManager::PostSplashScreenEndSuccess()
 // Function KuroSDK.KuroSDKManager.QueryProductInfo
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::QueryProductInfo(const class FString& data)
 {
@@ -908,7 +908,7 @@ void UKuroSDKManager::RequestPhotoPermission()
 // Function KuroSDK.KuroSDKManager.RequestReviewApp
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::RequestReviewApp(const class FString& data)
 {
@@ -933,7 +933,7 @@ void UKuroSDKManager::RequestReviewApp(const class FString& data)
 // Function KuroSDK.KuroSDKManager.SetCursor
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::SetCursor(const class FString& data)
 {
@@ -958,7 +958,7 @@ void UKuroSDKManager::SetCursor(const class FString& data)
 // Function KuroSDK.KuroSDKManager.SetFont
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::SetFont(const class FString& data)
 {
@@ -1058,8 +1058,8 @@ void UKuroSDKManager::SetWindowsMode(bool mode)
 // Function KuroSDK.KuroSDKManager.Share
 // (Final, Native, Static, Public, HasOutParams)
 // Parameters:
-// TArray<uint8>                           imageData                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    imageData                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKManager::Share(const TArray<uint8>& imageData, const class FString& sKuroSDKEventParameter)
 {
@@ -1167,8 +1167,8 @@ class UKuroSDKManager* UKuroSDKStaticLibrary::Get()
 // Function KuroSDK.KuroSDKStaticLibrary.GetAdsValue
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           income                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    income                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKStaticLibrary::GetAdsValue(const class FString& income, const class FString& data)
 {
@@ -1408,7 +1408,7 @@ void UKuroSDKStaticLibrary::GetProjectId()
 // Function KuroSDK.KuroSDKStaticLibrary.GetSdkParams
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKStaticLibrary::GetSdkParams(const class FString& data)
 {
@@ -1490,8 +1490,8 @@ void UKuroSDKStaticLibrary::IsShowQuitTips()
 // Function KuroSDK.KuroSDKStaticLibrary.KuroSDKEvent
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// EUKuroSDKEventType                      iKuroSDKEvent                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EUKuroSDKEventType&               iKuroSDKEvent                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKStaticLibrary::KuroSDKEvent(const EUKuroSDKEventType& iKuroSDKEvent, const class FString& sKuroSDKEventParameter)
 {
@@ -1517,7 +1517,7 @@ void UKuroSDKStaticLibrary::KuroSDKEvent(const EUKuroSDKEventType& iKuroSDKEvent
 // Function KuroSDK.KuroSDKStaticLibrary.LogMarketingEvent
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKStaticLibrary::LogMarketingEvent(const class FString& data)
 {
@@ -1542,7 +1542,7 @@ void UKuroSDKStaticLibrary::LogMarketingEvent(const class FString& data)
 // Function KuroSDK.KuroSDKStaticLibrary.OpenCustomerService
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKStaticLibrary::OpenCustomerService(const class FString& data)
 {
@@ -1567,7 +1567,7 @@ void UKuroSDKStaticLibrary::OpenCustomerService(const class FString& data)
 // Function KuroSDK.KuroSDKStaticLibrary.OpenDefaultWebView
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKStaticLibrary::OpenDefaultWebView(const class FString& url)
 {
@@ -1611,12 +1611,12 @@ void UKuroSDKStaticLibrary::OpenQRScan()
 // Function KuroSDK.KuroSDKStaticLibrary.OpenWebView
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           title                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    title                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    isLandScape                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    transparent                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    webAccelerated                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKStaticLibrary::OpenWebView(const class FString& title, const class FString& url, bool isLandScape, bool transparent, bool webAccelerated, const class FString& data)
 {
@@ -1690,8 +1690,8 @@ void UKuroSDKStaticLibrary::SetIfGlobalSdk(bool ifGlobal)
 // Function KuroSDK.KuroSDKStaticLibrary.Share
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           imagePath                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    imagePath                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKStaticLibrary::Share(const class FString& imagePath, const class FString& sKuroSDKEventParameter)
 {
@@ -1717,8 +1717,8 @@ void UKuroSDKStaticLibrary::Share(const class FString& imagePath, const class FS
 // Function KuroSDK.KuroSDKStaticLibrary.ShareTexture
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           texturePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    texturePath                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    sKuroSDKEventParameter                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSDKStaticLibrary::ShareTexture(const class FString& texturePath, const class FString& sKuroSDKEventParameter)
 {

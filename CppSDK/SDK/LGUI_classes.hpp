@@ -10,596 +10,21 @@
 
 #include "Basic.hpp"
 
+#include "KuroCurve_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "LGUI_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Niagara_classes.hpp"
 #include "LTween_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "Niagara_classes.hpp"
 #include "InputCore_structs.hpp"
-#include "KuroCurve_structs.hpp"
 #include "Slate_structs.hpp"
 
 
 namespace SDK
 {
-
-// Class LGUI.UIBaseActor
-// 0x00E8 (0x0398 - 0x02B0)
-class AUIBaseActor : public AActor
-{
-public:
-	uint8                                         Pad_2B0[0x8];                                      // 0x02B0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FSoftObjectPath, class ALevelSequenceActor*> CurBindingSeqActors;                               // 0x02B8(0x0050)(Transient, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& sequenceName, const class FString& eventName)> OnSequencePlayEvent;                               // 0x0308(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	struct FGuid                                  LGUIGuid;                                          // 0x0330(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TMap<struct FSoftObjectPath, class USequencePlayContext*> AllSequencePlayContexts;                           // 0x0340(0x0050)(Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_390[0x8];                                      // 0x0390(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ActivateAllChildrenInteraction();
-	void CleanIdleAnimSeqActorCache();
-	void ClearAllSequence();
-	ESequenceLoadState GetLoadStateOfSequenceByKey(const class FString& Key);
-	struct FSequenceInfo GetSeqInfoByKey(const class FString& Key);
-	class USequencePlayContext* GetSequencePlayContextOfKey(const class FString& Key);
-	class ALevelSequenceActor* GetSequencePlayerByKey(const class FString& Name_0);
-	void LoadSequenceAssetAsyncByKey(const class FString& Key, const TDelegate<void(class ULevelSequence* Sequence)>& OnLoaded);
-	void PauseSequenceByKey(const class FString& Name_0);
-	void PlayLevelSequenceByKey(const class FString& Name_0);
-	void ReplaySequenceByKey(const class FString& Name_0);
-	void ResumeSequenceByKey(const class FString& Name_0);
-	void SequenceJumpToEnd(const struct FSoftObjectPath& SoftPath);
-	void SequenceJumpToSecondByKey(const class FString& Name_0, const struct FFrameTime& Time);
-	void SequencePlayReverseByKey(const class FString& Name_0);
-	void StopSequenceByKey(const class FString& Name_0);
-
-	void ExecuteSequencePlayEvent(const class FString& sequenceName, const class FString& eventName) const;
-	class UUIItem* GetUIItem() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIBaseActor">();
-	}
-	static class AUIBaseActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AUIBaseActor>();
-	}
-};
-static_assert(alignof(AUIBaseActor) == 0x000008, "Wrong alignment on AUIBaseActor");
-static_assert(sizeof(AUIBaseActor) == 0x000398, "Wrong size on AUIBaseActor");
-static_assert(offsetof(AUIBaseActor, CurBindingSeqActors) == 0x0002B8, "Member 'AUIBaseActor::CurBindingSeqActors' has a wrong offset!");
-static_assert(offsetof(AUIBaseActor, OnSequencePlayEvent) == 0x000308, "Member 'AUIBaseActor::OnSequencePlayEvent' has a wrong offset!");
-static_assert(offsetof(AUIBaseActor, LGUIGuid) == 0x000330, "Member 'AUIBaseActor::LGUIGuid' has a wrong offset!");
-static_assert(offsetof(AUIBaseActor, AllSequencePlayContexts) == 0x000340, "Member 'AUIBaseActor::AllSequencePlayContexts' has a wrong offset!");
-
-// Class LGUI.UIPolygonActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUIPolygonActor final : public AUIBaseActor
-{
-public:
-	class UUIPolygon*                             UIPolygon;                                         // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIPolygonActor">();
-	}
-	static class AUIPolygonActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AUIPolygonActor>();
-	}
-};
-static_assert(alignof(AUIPolygonActor) == 0x000008, "Wrong alignment on AUIPolygonActor");
-static_assert(sizeof(AUIPolygonActor) == 0x0003A0, "Wrong size on AUIPolygonActor");
-static_assert(offsetof(AUIPolygonActor, UIPolygon) == 0x000398, "Member 'AUIPolygonActor::UIPolygon' has a wrong offset!");
-
-// Class LGUI.LGUIPrefabCheckerInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPrefabCheckerInterface final : public IInterface
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LGUIPrefabCheckerInterface">();
-	}
-	static class ILGUIPrefabCheckerInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ILGUIPrefabCheckerInterface>();
-	}
-};
-static_assert(alignof(ILGUIPrefabCheckerInterface) == 0x000008, "Wrong alignment on ILGUIPrefabCheckerInterface");
-static_assert(sizeof(ILGUIPrefabCheckerInterface) == 0x000030, "Wrong size on ILGUIPrefabCheckerInterface");
-
-// Class LGUI.GuideHookRegistry
-// 0x0050 (0x0110 - 0x00C0)
-class UGuideHookRegistry final : public UActorComponent
-{
-public:
-	TMap<class FString, TWeakObjectPtr<class AActor>> GuideHookComponents;                               // 0x00C0(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"GuideHookRegistry">();
-	}
-	static class UGuideHookRegistry* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGuideHookRegistry>();
-	}
-};
-static_assert(alignof(UGuideHookRegistry) == 0x000008, "Wrong alignment on UGuideHookRegistry");
-static_assert(sizeof(UGuideHookRegistry) == 0x000110, "Wrong size on UGuideHookRegistry");
-static_assert(offsetof(UGuideHookRegistry, GuideHookComponents) == 0x0000C0, "Member 'UGuideHookRegistry::GuideHookComponents' has a wrong offset!");
-
-// Class LGUI.PrefabActorHierarchyData
-// 0x0000 (0x0030 - 0x0030)
-class UPrefabActorHierarchyData final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"PrefabActorHierarchyData">();
-	}
-	static class UPrefabActorHierarchyData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UPrefabActorHierarchyData>();
-	}
-};
-static_assert(alignof(UPrefabActorHierarchyData) == 0x000008, "Wrong alignment on UPrefabActorHierarchyData");
-static_assert(sizeof(UPrefabActorHierarchyData) == 0x000030, "Wrong size on UPrefabActorHierarchyData");
-
-// Class LGUI.KuroWorldMapUIParams
-// 0x0020 (0x00E0 - 0x00C0)
-class UKuroWorldMapUIParams final : public UActorComponent
-{
-public:
-	int32                                         MarkMenuRectSize;                                  // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              FocusMark_AnchoredPosition;                        // 0x00C4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TweenTime;                                         // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELTweenEase                                   TweenTypeEase;                                     // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GamePadTweenTime;                                  // 0x00D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GamePadMoveSpeed;                                  // 0x00D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroWorldMapUIParams">();
-	}
-	static class UKuroWorldMapUIParams* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroWorldMapUIParams>();
-	}
-};
-static_assert(alignof(UKuroWorldMapUIParams) == 0x000008, "Wrong alignment on UKuroWorldMapUIParams");
-static_assert(sizeof(UKuroWorldMapUIParams) == 0x0000E0, "Wrong size on UKuroWorldMapUIParams");
-static_assert(offsetof(UKuroWorldMapUIParams, MarkMenuRectSize) == 0x0000C0, "Member 'UKuroWorldMapUIParams::MarkMenuRectSize' has a wrong offset!");
-static_assert(offsetof(UKuroWorldMapUIParams, FocusMark_AnchoredPosition) == 0x0000C4, "Member 'UKuroWorldMapUIParams::FocusMark_AnchoredPosition' has a wrong offset!");
-static_assert(offsetof(UKuroWorldMapUIParams, TweenTime) == 0x0000CC, "Member 'UKuroWorldMapUIParams::TweenTime' has a wrong offset!");
-static_assert(offsetof(UKuroWorldMapUIParams, TweenTypeEase) == 0x0000D0, "Member 'UKuroWorldMapUIParams::TweenTypeEase' has a wrong offset!");
-static_assert(offsetof(UKuroWorldMapUIParams, GamePadTweenTime) == 0x0000D4, "Member 'UKuroWorldMapUIParams::GamePadTweenTime' has a wrong offset!");
-static_assert(offsetof(UKuroWorldMapUIParams, GamePadMoveSpeed) == 0x0000D8, "Member 'UKuroWorldMapUIParams::GamePadMoveSpeed' has a wrong offset!");
-
-// Class LGUI.LGUIBehaviour
-// 0x0040 (0x0100 - 0x00C0)
-class ULGUIBehaviour : public UActorComponent
-{
-public:
-	bool                                          enable;                                            // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(float DeltaTime)>              OnLateUpdate;                                      // 0x00C8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_F0[0x4];                                       // 0x00F0(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UUIItem>                 RootUIComp;                                        // 0x00F4(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void AwakeBP();
-	class AActor* InstantiateActor(class AActor* OriginObject, class USceneComponent* Parent);
-	class AActor* InstantiatePrefab(class ULGUIPrefab* OriginObject, class USceneComponent* Parent);
-	class AActor* InstantiatePrefabWithTransform(class ULGUIPrefab* OriginObject, class USceneComponent* Parent, const struct FVector& Location, const struct FRotator& Rotation, const struct FVector& Scale);
-	void LateUpdateBP(float DeltaTime);
-	void OnDestroyBP();
-	void OnDisableBP();
-	void OnEnableBP();
-	void OnUIActiveInHierarchyBP(bool activeOrInactive);
-	void OnUIAttachmentChangedBP();
-	void OnUIChildAcitveInHierarchyBP(class UUIItem* child, bool ativeOrInactive);
-	void OnUIChildAttachmentChangedBP(class UUIItem* child, bool attachOrDetach);
-	void OnUIChildHierarchyIndexChangedBP(class UUIItem* child);
-	void OnUIDimensionsChangedBP(bool positionChanged, bool sizeChanged);
-	void OnUIInteractionStateChangedBP(bool interactableOrNot);
-	void SetEnable(bool value);
-	void StartBP();
-	void UpdateBP(float DeltaTime);
-
-	bool CheckRootUIComponent() const;
-	bool GetEnable() const;
-	bool GetIsActiveAndEnable() const;
-	class UUIItem* GetRootComponent() const;
-	class USceneComponent* GetRootSceneComponent() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LGUIBehaviour">();
-	}
-	static class ULGUIBehaviour* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULGUIBehaviour>();
-	}
-};
-static_assert(alignof(ULGUIBehaviour) == 0x000008, "Wrong alignment on ULGUIBehaviour");
-static_assert(sizeof(ULGUIBehaviour) == 0x000100, "Wrong size on ULGUIBehaviour");
-static_assert(offsetof(ULGUIBehaviour, enable) == 0x0000C0, "Member 'ULGUIBehaviour::enable' has a wrong offset!");
-static_assert(offsetof(ULGUIBehaviour, OnLateUpdate) == 0x0000C8, "Member 'ULGUIBehaviour::OnLateUpdate' has a wrong offset!");
-static_assert(offsetof(ULGUIBehaviour, RootUIComp) == 0x0000F4, "Member 'ULGUIBehaviour::RootUIComp' has a wrong offset!");
-
-// Class LGUI.UISelectableComponent
-// 0x02F8 (0x03F8 - 0x0100)
-class UUISelectableComponent : public ULGUIBehaviour
-{
-public:
-	uint8                                         Pad_100[0x20];                                     // 0x0100(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AUIBaseActor>            TransitionActor;                                   // 0x0120(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          AllowEventBubbleUp;                                // 0x0128(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUISelectableTransitionType                   Transition;                                        // 0x0129(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_12A[0x6];                                      // 0x012A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULTweener*                              TransitionTweener;                                 // 0x0130(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 NormalColor;                                       // 0x0138(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 HighlightedColor;                                  // 0x013C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 PressedColor;                                      // 0x0140(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 DisabledColor;                                     // 0x0144(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 SelectedColor;                                     // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         FadeDuration;                                      // 0x014C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class ULGUISpriteData_BaseObject*             NormalSprite;                                      // 0x0150(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class ULGUISpriteData_BaseObject*             HighlightedSprite;                                 // 0x0158(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class ULGUISpriteData_BaseObject*             PressedSprite;                                     // 0x0160(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class ULGUISpriteData_BaseObject*             DisabledSprite;                                    // 0x0168(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class ULGUISpriteData_BaseObject*             SelectedSprite;                                    // 0x0170(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUIBaseActor>            NormalItem;                                        // 0x0178(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUIBaseActor>            HighlightedItem;                                   // 0x0180(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUIBaseActor>            PressedItem;                                       // 0x0188(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUIBaseActor>            DisabledItem;                                      // 0x0190(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUIBaseActor>            SelectedItem;                                      // 0x0198(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUISelectableSelectionState                   CurrentSelectionState;                             // 0x01A0(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1A1[0x3];                                      // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bApplyColorToChildren;                             // 0x01A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bAutoScrollOnSelected;                             // 0x01A5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1A6[0x2];                                      // 0x01A6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AActor>                  NavigationGroupParentComponentActor;               // 0x01A8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUISelectableComponent>  NavigationGroupParentComponent;                    // 0x01B0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AActor>                  NavigationGroupComponentActor;                     // 0x01B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUINavigationGroupComponent> NavigationGroupComponent;                          // 0x01C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AActor>                  ScrollViewActor;                                   // 0x01C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUIScrollViewWithScrollbarComponent> ScrollViewComponent;                               // 0x01D0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUISelectableTransitionComponent> TransitionComp;                                    // 0x01D8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUISelectableNavigationMode                   NavigationLeft;                                    // 0x01E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1E1[0x7];                                      // 0x01E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIComponentReference                NavigationLeftSpecific;                            // 0x01E8(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	EUISelectableNavigationMode                   NavigationRight;                                   // 0x0210(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_211[0x7];                                      // 0x0211(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIComponentReference                NavigationRightSpecific;                           // 0x0218(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	EUISelectableNavigationMode                   NavigationUp;                                      // 0x0240(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_241[0x7];                                      // 0x0241(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIComponentReference                NavigationUpSpecific;                              // 0x0248(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	EUISelectableNavigationMode                   NavigationDown;                                    // 0x0270(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_271[0x7];                                      // 0x0271(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIComponentReference                NavigationDownSpecific;                            // 0x0278(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	EUISelectableNavigationMode                   NavigationNext;                                    // 0x02A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2A1[0x7];                                      // 0x02A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIComponentReference                NavigationNextSpecific;                            // 0x02A8(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	EUISelectableNavigationMode                   NavigationPrev;                                    // 0x02D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2D1[0x7];                                      // 0x02D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIComponentReference                NavigationPrevSpecific;                            // 0x02D8(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	TMap<EStateTransferType, struct FAnimationPlayInfo> AnimationConfig;                                   // 0x0300(0x0050)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         Pad_350[0x8];                                      // 0x0350(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ULevelSequence*>                 AllAnims;                                          // 0x0358(0x0010)(Edit, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void(bool CurrentSelfInteractive)>  OnSelfInteractiveChanged;                          // 0x0368(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	bool                                          IsSelfInteractive;                                 // 0x0390(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bCanClickWhenDisable;                              // 0x0391(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_392[0x16];                                     // 0x0392(0x0016)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             FocusListenerDelegate;                             // 0x03A8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void()>                             UnFocusListenerDelegate;                           // 0x03D0(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static void ResetSelectableDelegate();
-	static void SetSelectableDelegate(const TDelegate<void(class UUISelectableComponent* SelectableComponent, bool bCreate)>& Delegate);
-	static void SetShieldMobileHighlight(const bool Value);
-	static void SetShieldPCPress(const bool Value);
-
-	void ApplySelectionState(bool bImmediateSet);
-	bool GetCanClickWhenDisable();
-	EUISelectableSelectionState GetSelectionState();
-	bool GetSelfInteractive();
-	void NotifyFocusListener();
-	void NotifyUnFocusListener();
-	void PlayUIAnimationByPlayInfo(const struct FAnimationPlayInfo& PlayInfo);
-	void SetCanClickWhenDisable(bool CanClickEnbale);
-	void SetHighlightedColor(const struct FColor& NewColor);
-	void SetHighlightedSprite(class ULGUISpriteData_BaseObject* NewSprite);
-	void SetIsCustomAnim(bool bIsCustomAnim);
-	void SetIsCustomTransition(bool bIsCustomTransition);
-	void SetNavigationDown(EUISelectableNavigationMode value);
-	void SetNavigationDownExplicit(class UUISelectableComponent* value);
-	void SetNavigationGroup(class UUINavigationGroupComponent* Component);
-	void SetNavigationGroupParent(class UUISelectableComponent* Component);
-	void SetNavigationLeft(EUISelectableNavigationMode value);
-	void SetNavigationLeftExplicit(class UUISelectableComponent* value);
-	void SetNavigationNext(EUISelectableNavigationMode value);
-	void SetNavigationNextExplicit(class UUISelectableComponent* value);
-	void SetNavigationPrev(EUISelectableNavigationMode value);
-	void SetNavigationPrevExplicit(class UUISelectableComponent* value);
-	void SetNavigationRight(EUISelectableNavigationMode value);
-	void SetNavigationRightExplicit(class UUISelectableComponent* value);
-	void SetNavigationUp(EUISelectableNavigationMode value);
-	void SetNavigationUpExplicit(class UUISelectableComponent* value);
-	void SetNormalColor(const struct FColor& NewColor);
-	void SetNormalSprite(class ULGUISpriteData_BaseObject* NewSprite);
-	void SetPressedColor(const struct FColor& NewColor);
-	void SetPressedSprite(class ULGUISpriteData_BaseObject* NewSprite);
-	void SetScrollView(class UUIScrollViewWithScrollbarComponent* Component);
-	void SetSelectionState(EUISelectableSelectionState NewState);
-	void SetSelfInteractive(bool InteractiveEnable);
-	void SetTransitionTarget(class AUIBaseActor* value);
-
-	class ULGUISpriteData_BaseObject* GetDisabledSprite() const;
-	struct FColor GetHighlightedColor() const;
-	class ULGUISpriteData_BaseObject* GetHighlightedSprite() const;
-	EUISelectableNavigationMode GetNavigationDown() const;
-	class UUISelectableComponent* GetNavigationDownExplicit() const;
-	EUISelectableNavigationMode GetNavigationLeft() const;
-	class UUISelectableComponent* GetNavigationLeftExplicit() const;
-	EUISelectableNavigationMode GetNavigationNext() const;
-	class UUISelectableComponent* GetNavigationNextExplicit() const;
-	EUISelectableNavigationMode GetNavigationPrev() const;
-	class UUISelectableComponent* GetNavigationPrevExplicit() const;
-	EUISelectableNavigationMode GetNavigationRight() const;
-	class UUISelectableComponent* GetNavigationRightExplicit() const;
-	EUISelectableNavigationMode GetNavigationUp() const;
-	class UUISelectableComponent* GetNavigationUpExplicit() const;
-	struct FColor GetNormalColor() const;
-	class ULGUISpriteData_BaseObject* GetNormalSprite() const;
-	struct FColor GetPressedColor() const;
-	class ULGUISpriteData_BaseObject* GetPressedSprite() const;
-	class ULGUISpriteData_BaseObject* GetSelectedSprite() const;
-	class AUIBaseActor* GetTransitionTarget() const;
-	bool IsInteractable() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UISelectableComponent">();
-	}
-	static class UUISelectableComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUISelectableComponent>();
-	}
-};
-static_assert(alignof(UUISelectableComponent) == 0x000008, "Wrong alignment on UUISelectableComponent");
-static_assert(sizeof(UUISelectableComponent) == 0x0003F8, "Wrong size on UUISelectableComponent");
-static_assert(offsetof(UUISelectableComponent, TransitionActor) == 0x000120, "Member 'UUISelectableComponent::TransitionActor' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, AllowEventBubbleUp) == 0x000128, "Member 'UUISelectableComponent::AllowEventBubbleUp' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, Transition) == 0x000129, "Member 'UUISelectableComponent::Transition' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, TransitionTweener) == 0x000130, "Member 'UUISelectableComponent::TransitionTweener' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NormalColor) == 0x000138, "Member 'UUISelectableComponent::NormalColor' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, HighlightedColor) == 0x00013C, "Member 'UUISelectableComponent::HighlightedColor' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, PressedColor) == 0x000140, "Member 'UUISelectableComponent::PressedColor' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, DisabledColor) == 0x000144, "Member 'UUISelectableComponent::DisabledColor' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, SelectedColor) == 0x000148, "Member 'UUISelectableComponent::SelectedColor' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, FadeDuration) == 0x00014C, "Member 'UUISelectableComponent::FadeDuration' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NormalSprite) == 0x000150, "Member 'UUISelectableComponent::NormalSprite' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, HighlightedSprite) == 0x000158, "Member 'UUISelectableComponent::HighlightedSprite' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, PressedSprite) == 0x000160, "Member 'UUISelectableComponent::PressedSprite' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, DisabledSprite) == 0x000168, "Member 'UUISelectableComponent::DisabledSprite' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, SelectedSprite) == 0x000170, "Member 'UUISelectableComponent::SelectedSprite' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NormalItem) == 0x000178, "Member 'UUISelectableComponent::NormalItem' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, HighlightedItem) == 0x000180, "Member 'UUISelectableComponent::HighlightedItem' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, PressedItem) == 0x000188, "Member 'UUISelectableComponent::PressedItem' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, DisabledItem) == 0x000190, "Member 'UUISelectableComponent::DisabledItem' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, SelectedItem) == 0x000198, "Member 'UUISelectableComponent::SelectedItem' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, CurrentSelectionState) == 0x0001A0, "Member 'UUISelectableComponent::CurrentSelectionState' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, bApplyColorToChildren) == 0x0001A4, "Member 'UUISelectableComponent::bApplyColorToChildren' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, bAutoScrollOnSelected) == 0x0001A5, "Member 'UUISelectableComponent::bAutoScrollOnSelected' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationGroupParentComponentActor) == 0x0001A8, "Member 'UUISelectableComponent::NavigationGroupParentComponentActor' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationGroupParentComponent) == 0x0001B0, "Member 'UUISelectableComponent::NavigationGroupParentComponent' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationGroupComponentActor) == 0x0001B8, "Member 'UUISelectableComponent::NavigationGroupComponentActor' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationGroupComponent) == 0x0001C0, "Member 'UUISelectableComponent::NavigationGroupComponent' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, ScrollViewActor) == 0x0001C8, "Member 'UUISelectableComponent::ScrollViewActor' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, ScrollViewComponent) == 0x0001D0, "Member 'UUISelectableComponent::ScrollViewComponent' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, TransitionComp) == 0x0001D8, "Member 'UUISelectableComponent::TransitionComp' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationLeft) == 0x0001E0, "Member 'UUISelectableComponent::NavigationLeft' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationLeftSpecific) == 0x0001E8, "Member 'UUISelectableComponent::NavigationLeftSpecific' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationRight) == 0x000210, "Member 'UUISelectableComponent::NavigationRight' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationRightSpecific) == 0x000218, "Member 'UUISelectableComponent::NavigationRightSpecific' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationUp) == 0x000240, "Member 'UUISelectableComponent::NavigationUp' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationUpSpecific) == 0x000248, "Member 'UUISelectableComponent::NavigationUpSpecific' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationDown) == 0x000270, "Member 'UUISelectableComponent::NavigationDown' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationDownSpecific) == 0x000278, "Member 'UUISelectableComponent::NavigationDownSpecific' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationNext) == 0x0002A0, "Member 'UUISelectableComponent::NavigationNext' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationNextSpecific) == 0x0002A8, "Member 'UUISelectableComponent::NavigationNextSpecific' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationPrev) == 0x0002D0, "Member 'UUISelectableComponent::NavigationPrev' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, NavigationPrevSpecific) == 0x0002D8, "Member 'UUISelectableComponent::NavigationPrevSpecific' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, AnimationConfig) == 0x000300, "Member 'UUISelectableComponent::AnimationConfig' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, AllAnims) == 0x000358, "Member 'UUISelectableComponent::AllAnims' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, OnSelfInteractiveChanged) == 0x000368, "Member 'UUISelectableComponent::OnSelfInteractiveChanged' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, IsSelfInteractive) == 0x000390, "Member 'UUISelectableComponent::IsSelfInteractive' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, bCanClickWhenDisable) == 0x000391, "Member 'UUISelectableComponent::bCanClickWhenDisable' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, FocusListenerDelegate) == 0x0003A8, "Member 'UUISelectableComponent::FocusListenerDelegate' has a wrong offset!");
-static_assert(offsetof(UUISelectableComponent, UnFocusListenerDelegate) == 0x0003D0, "Member 'UUISelectableComponent::UnFocusListenerDelegate' has a wrong offset!");
-
-// Class LGUI.UIButtonComponent
-// 0x0288 (0x0680 - 0x03F8)
-class UUIButtonComponent : public UUISelectableComponent
-{
-public:
-	uint8                                         Pad_3F8[0x8];                                      // 0x03F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIDrawableEvent                     OnClick;                                           // 0x0400(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_418[0x18];                                     // 0x0418(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bAllowChangeCursorStyleWhenEnter;                  // 0x0430(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_431[0x7];                                      // 0x0431(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             OnClickCallBack;                                   // 0x0438(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             OnPointDownCallBack;                               // 0x0460(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             OnPointUpCallBack;                                 // 0x0488(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             OnPointCancelCallBack;                             // 0x04B0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             OnPointEnterCallBack;                              // 0x04D8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             OnPointExitCallBack;                               // 0x0500(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerBeginDragCallBack;                        // 0x0528(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerDragCallBack;                             // 0x0550(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerEndDragCallBack;                          // 0x0578(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        AkAudioEvent;                                      // 0x05A0(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& eventName)> OnPostAudioEvent;                                  // 0x05C0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TMap<EButtonAudioStateTransferType, struct FSoftObjectPath> AudioConfig;                                       // 0x05E8(0x0050)(Edit, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        LongPressAudioEvent;                               // 0x0638(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(EButtonAudioStateTransferType StateTransfer, const class FString& EventName)> OnPostAudioStateEvent;                             // 0x0658(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-
-public:
-	bool OnPointerDown_Implementation(class ULGUIPointerEventData* eventData);
-	struct FLGUIDelegateHandleWrapper RegisterClickEvent(const TDelegate<void()>& InDelegate);
-	void UnregisterClickEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIButtonComponent">();
-	}
-	static class UUIButtonComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIButtonComponent>();
-	}
-};
-static_assert(alignof(UUIButtonComponent) == 0x000008, "Wrong alignment on UUIButtonComponent");
-static_assert(sizeof(UUIButtonComponent) == 0x000680, "Wrong size on UUIButtonComponent");
-static_assert(offsetof(UUIButtonComponent, OnClick) == 0x000400, "Member 'UUIButtonComponent::OnClick' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, bAllowChangeCursorStyleWhenEnter) == 0x000430, "Member 'UUIButtonComponent::bAllowChangeCursorStyleWhenEnter' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnClickCallBack) == 0x000438, "Member 'UUIButtonComponent::OnClickCallBack' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPointDownCallBack) == 0x000460, "Member 'UUIButtonComponent::OnPointDownCallBack' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPointUpCallBack) == 0x000488, "Member 'UUIButtonComponent::OnPointUpCallBack' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPointCancelCallBack) == 0x0004B0, "Member 'UUIButtonComponent::OnPointCancelCallBack' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPointEnterCallBack) == 0x0004D8, "Member 'UUIButtonComponent::OnPointEnterCallBack' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPointExitCallBack) == 0x000500, "Member 'UUIButtonComponent::OnPointExitCallBack' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPointerBeginDragCallBack) == 0x000528, "Member 'UUIButtonComponent::OnPointerBeginDragCallBack' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPointerDragCallBack) == 0x000550, "Member 'UUIButtonComponent::OnPointerDragCallBack' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPointerEndDragCallBack) == 0x000578, "Member 'UUIButtonComponent::OnPointerEndDragCallBack' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, AkAudioEvent) == 0x0005A0, "Member 'UUIButtonComponent::AkAudioEvent' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPostAudioEvent) == 0x0005C0, "Member 'UUIButtonComponent::OnPostAudioEvent' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, AudioConfig) == 0x0005E8, "Member 'UUIButtonComponent::AudioConfig' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, LongPressAudioEvent) == 0x000638, "Member 'UUIButtonComponent::LongPressAudioEvent' has a wrong offset!");
-static_assert(offsetof(UUIButtonComponent, OnPostAudioStateEvent) == 0x000658, "Member 'UUIButtonComponent::OnPostAudioStateEvent' has a wrong offset!");
-
-// Class LGUI.UISelectableButtonComponent
-// 0x0008 (0x0688 - 0x0680)
-class UUISelectableButtonComponent final : public UUIButtonComponent
-{
-public:
-	uint8                                         Pad_680[0x8];                                      // 0x0680(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetForceSelect(bool forceSelect);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UISelectableButtonComponent">();
-	}
-	static class UUISelectableButtonComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUISelectableButtonComponent>();
-	}
-};
-static_assert(alignof(UUISelectableButtonComponent) == 0x000008, "Wrong alignment on UUISelectableButtonComponent");
-static_assert(sizeof(UUISelectableButtonComponent) == 0x000688, "Wrong size on UUISelectableButtonComponent");
-
-// Class LGUI.LGUIPrefabHelperObject
-// 0x0000 (0x0030 - 0x0030)
-class ULGUIPrefabHelperObject final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LGUIPrefabHelperObject">();
-	}
-	static class ULGUIPrefabHelperObject* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULGUIPrefabHelperObject>();
-	}
-};
-static_assert(alignof(ULGUIPrefabHelperObject) == 0x000008, "Wrong alignment on ULGUIPrefabHelperObject");
-static_assert(sizeof(ULGUIPrefabHelperObject) == 0x000030, "Wrong size on ULGUIPrefabHelperObject");
-
-// Class LGUI.LGUIBaseRayEmitter
-// 0x0030 (0x00F0 - 0x00C0)
-class ULGUIBaseRayEmitter : public UActorComponent
-{
-public:
-	float                                         clickThreshold;                                    // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          holdToDrag;                                        // 0x00C4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         holdToDragTime;                                    // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_CC[0x24];                                      // 0x00CC(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	float GetClickThreshold();
-	void GetInitialValue(float* OutClickThreshold, bool* OutHoldToDrag, float* OutHoldToDragTime);
-	void SetClickThreshold(float value);
-	void SetInitialValue(float InClickThreshold, bool InHoldToDrag, float InHoldToDragTime);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LGUIBaseRayEmitter">();
-	}
-	static class ULGUIBaseRayEmitter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULGUIBaseRayEmitter>();
-	}
-};
-static_assert(alignof(ULGUIBaseRayEmitter) == 0x000008, "Wrong alignment on ULGUIBaseRayEmitter");
-static_assert(sizeof(ULGUIBaseRayEmitter) == 0x0000F0, "Wrong size on ULGUIBaseRayEmitter");
-static_assert(offsetof(ULGUIBaseRayEmitter, clickThreshold) == 0x0000C0, "Member 'ULGUIBaseRayEmitter::clickThreshold' has a wrong offset!");
-static_assert(offsetof(ULGUIBaseRayEmitter, holdToDrag) == 0x0000C4, "Member 'ULGUIBaseRayEmitter::holdToDrag' has a wrong offset!");
-static_assert(offsetof(ULGUIBaseRayEmitter, holdToDragTime) == 0x0000C8, "Member 'ULGUIBaseRayEmitter::holdToDragTime' has a wrong offset!");
-
-// Class LGUI.LGUIPrefabHelperActor
-// 0x0000 (0x02B0 - 0x02B0)
-class ALGUIPrefabHelperActor final : public AActor
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LGUIPrefabHelperActor">();
-	}
-	static class ALGUIPrefabHelperActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ALGUIPrefabHelperActor>();
-	}
-};
-static_assert(alignof(ALGUIPrefabHelperActor) == 0x000008, "Wrong alignment on ALGUIPrefabHelperActor");
-static_assert(sizeof(ALGUIPrefabHelperActor) == 0x0002B0, "Wrong size on ALGUIPrefabHelperActor");
-
-// Class LGUI.LGUI_CenterScreenRayemitter
-// 0x0008 (0x00F8 - 0x00F0)
-class ULGUI_CenterScreenRayemitter final : public ULGUIBaseRayEmitter
-{
-public:
-	uint8                                         Pad_F0[0x8];                                       // 0x00F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LGUI_CenterScreenRayemitter">();
-	}
-	static class ULGUI_CenterScreenRayemitter* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULGUI_CenterScreenRayemitter>();
-	}
-};
-static_assert(alignof(ULGUI_CenterScreenRayemitter) == 0x000008, "Wrong alignment on ULGUI_CenterScreenRayemitter");
-static_assert(sizeof(ULGUI_CenterScreenRayemitter) == 0x0000F8, "Wrong size on ULGUI_CenterScreenRayemitter");
 
 // Class LGUI.UIItem
 // 0x0330 (0x0550 - 0x0220)
@@ -622,7 +47,7 @@ public:
 	struct FColor                                 changeColor;                                       // 0x0370(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_374[0x4];                                      // 0x0374(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FString, struct FSequenceInfo>     LevelSequences;                                    // 0x0378(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TMap<struct FSoftObjectPath, struct FLGUILevelSequenceBindings> LevelSequenceBindings;                             // 0x03C8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
+	TMap<struct FSoftObjectPath, struct FLGUILevelSequenceBindings> LevelSequenceBindings;           // 0x03C8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NativeAccessSpecifierPublic)
 	TArray<class UObject*>                        HardRefAssets;                                     // 0x0418(0x0010)(Edit, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_428[0xC];                                      // 0x0428(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	TWeakObjectPtr<class AActor>                  RenderCanvasActor;                                 // 0x0434(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -655,6 +80,7 @@ public:
 	struct FVector2D GetPositionInScreen(bool bIsScaledByDPI);
 	struct FVector2D GetPositionInViewPort(bool bIsScaledByDPI);
 	class ULGUICanvas* GetRenderCanvas();
+	struct FVector GetUIWorldPosition();
 	bool IsBoundOutOfScreen();
 	bool IsRenderTargetUI();
 	bool IsScreenSpaceOverlayUI();
@@ -788,16 +214,17 @@ static_assert(offsetof(UUIItem, DebugCollisionLine) == 0x000548, "Member 'UUIIte
 
 // Class LGUI.UIBaseRenderable
 // 0x0040 (0x0590 - 0x0550)
-#pragma pack(push, 0x1)
-class alignas(0x10) UUIBaseRenderable : public UUIItem
+class UUIBaseRenderable : public UUIItem
 {
 public:
 	uint8                                         Pad_550[0x14];                                     // 0x0550(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         BatchDepth;                                        // 0x0564(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsRenderAfterBlurPartial;                         // 0x0568(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_569[0x17];                                     // 0x0569(0x0017)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bIsAlphaZeroClip;                                  // 0x0580(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_581[0x7];                                      // 0x0581(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         LayerDepth;                                        // 0x0568(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ExtraBatchDepth;                                   // 0x056C(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsRenderAfterBlurPartial;                         // 0x0570(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_571[0x17];                                     // 0x0571(0x0017)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIsAlphaZeroClip;                                  // 0x0588(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_589[0x7];                                      // 0x0589(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetUIRenderAfterBlurPartial(bool bAfterBlurPartial);
@@ -814,31 +241,396 @@ public:
 		return GetDefaultObjImpl<UUIBaseRenderable>();
 	}
 };
-#pragma pack(pop)
 static_assert(alignof(UUIBaseRenderable) == 0x000010, "Wrong alignment on UUIBaseRenderable");
 static_assert(sizeof(UUIBaseRenderable) == 0x000590, "Wrong size on UUIBaseRenderable");
 static_assert(offsetof(UUIBaseRenderable, BatchDepth) == 0x000564, "Member 'UUIBaseRenderable::BatchDepth' has a wrong offset!");
-static_assert(offsetof(UUIBaseRenderable, bIsRenderAfterBlurPartial) == 0x000568, "Member 'UUIBaseRenderable::bIsRenderAfterBlurPartial' has a wrong offset!");
-static_assert(offsetof(UUIBaseRenderable, bIsAlphaZeroClip) == 0x000580, "Member 'UUIBaseRenderable::bIsAlphaZeroClip' has a wrong offset!");
+static_assert(offsetof(UUIBaseRenderable, LayerDepth) == 0x000568, "Member 'UUIBaseRenderable::LayerDepth' has a wrong offset!");
+static_assert(offsetof(UUIBaseRenderable, ExtraBatchDepth) == 0x00056C, "Member 'UUIBaseRenderable::ExtraBatchDepth' has a wrong offset!");
+static_assert(offsetof(UUIBaseRenderable, bIsRenderAfterBlurPartial) == 0x000570, "Member 'UUIBaseRenderable::bIsRenderAfterBlurPartial' has a wrong offset!");
+static_assert(offsetof(UUIBaseRenderable, bIsAlphaZeroClip) == 0x000588, "Member 'UUIBaseRenderable::bIsAlphaZeroClip' has a wrong offset!");
 
-// Class LGUI.UIBatchGeometryRenderable
-// 0x01F0 (0x0780 - 0x0590)
-class UUIBatchGeometryRenderable : public UUIBaseRenderable
+// Class LGUI.UINiagara
+// 0x07E0 (0x0D70 - 0x0590)
+class UUINiagara final : public UUIBaseRenderable
 {
 public:
-	uint8                                         Pad_588[0xE0];                                     // 0x0588(0x00E0)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, float>                      CustomScalarParameterTMap;                         // 0x0668(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class FName, class UTexture*>            CustomTextureParameterTMap;                        // 0x06B8(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class FName, struct FLinearColor>        CustomVectorParameterTMap;                         // 0x0708(0x0050)(NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     CustomUIMaterial;                                  // 0x0758(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsSelfRender;                                     // 0x0760(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsGray;                                           // 0x0761(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsColorRevert;                                    // 0x0762(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bRaycastComplex;                                   // 0x0763(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_764[0x4];                                      // 0x0764(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUIDrawcallMesh*                        uiMesh;                                            // 0x0768(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMaterialInstanceDynamic*               uiMaterial;                                        // 0x0770(0x0008)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_778[0x8];                                      // 0x0778(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UNiagaraSystem*                         NiagaraSystemReference;                            // 0x0590(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsNiagaraActive;                                   // 0x0598(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_599[0x3];                                      // 0x0599(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StartTime;                                         // 0x059C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LoopTime;                                          // 0x05A0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EndTime;                                           // 0x05A4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroCurveVector                       NiagaraLocation;                                   // 0x05A8(0x01A8)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FKuroCurveVector                       NiagaraRotation;                                   // 0x0750(0x01A8)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FKuroCurveVector                       NiagaraScale;                                      // 0x08F8(0x01A8)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FKuroCurveFloat>   FloatParameter;                                    // 0x0AA0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FKuroCurveVector>  VectorParameter;                                   // 0x0AF0(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FKuroCurveLinearColor> ColorParameter;                                // 0x0B40(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	bool                                          bAdaptPosAndSizeChanged;                           // 0x0B90(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableCircleClip;                                 // 0x0B91(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B92[0x2];                                      // 0x0B92(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCircleClipParameters                  CircleClipParameters;                              // 0x0B94(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_BA4[0x4];                                      // 0x0BA4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULGUINiagaraComponent*                  NiagaraComponent;                                  // 0x0BA8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_BB0[0x1A0];                                    // 0x0BB0(0x01A0)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bResetNiagara;                                     // 0x0D50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D51[0x7];                                      // 0x0D51(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAkAudioEvent*                          StartEvent;                                        // 0x0D58(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCanInterupt;                                      // 0x0D60(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D61[0x3];                                      // 0x0D61(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         FadeOutMs;                                         // 0x0D64(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D68[0x8];                                      // 0x0D68(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ActivateSystem(bool Reset);
+	void DeactivateSystem();
+	bool GetIsActive();
+	bool IsCircleClipEnable();
+	void ReinitializeSystem();
+	void ResetOverrideParameters();
+	void ResetOverrideParametersAndActivate();
+	void SetCircleClipEnable(bool Enable);
+	void SetCircleClipParameters(const struct FCircleClipParameters& NewCircleClipParameters);
+	void SetNiagaraEmitterCustomTexture(const class FString& InEmitterName, const class FString& InVariableName, class UTexture* InTexture);
+	void SetNiagaraEmitterFloatParam(const class FString& InEmitterName, const class FString& InVariableName, float InValue);
+	void SetNiagaraEmitterVectorParam(const class FString& InEmitterName, const class FString& InVariableName, const struct FVector4& InVector);
+	void SetNiagaraSystem(class UNiagaraSystem* InSystem);
+	void SetNiagaraUIActive(bool active, bool bInResetNiagara);
+	void SetNiagaraVarFloat(const class FString& VarName, float Value);
+	void SetNiagaraVarLinearColor(const class FString& VarName, const struct FLinearColor& Value);
+	void SwitchToStop();
+
+	struct FCircleClipParameters GetCircleClipParameters() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UINiagara">();
+	}
+	static class UUINiagara* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUINiagara>();
+	}
+};
+static_assert(alignof(UUINiagara) == 0x000010, "Wrong alignment on UUINiagara");
+static_assert(sizeof(UUINiagara) == 0x000D70, "Wrong size on UUINiagara");
+static_assert(offsetof(UUINiagara, NiagaraSystemReference) == 0x000590, "Member 'UUINiagara::NiagaraSystemReference' has a wrong offset!");
+static_assert(offsetof(UUINiagara, IsNiagaraActive) == 0x000598, "Member 'UUINiagara::IsNiagaraActive' has a wrong offset!");
+static_assert(offsetof(UUINiagara, StartTime) == 0x00059C, "Member 'UUINiagara::StartTime' has a wrong offset!");
+static_assert(offsetof(UUINiagara, LoopTime) == 0x0005A0, "Member 'UUINiagara::LoopTime' has a wrong offset!");
+static_assert(offsetof(UUINiagara, EndTime) == 0x0005A4, "Member 'UUINiagara::EndTime' has a wrong offset!");
+static_assert(offsetof(UUINiagara, NiagaraLocation) == 0x0005A8, "Member 'UUINiagara::NiagaraLocation' has a wrong offset!");
+static_assert(offsetof(UUINiagara, NiagaraRotation) == 0x000750, "Member 'UUINiagara::NiagaraRotation' has a wrong offset!");
+static_assert(offsetof(UUINiagara, NiagaraScale) == 0x0008F8, "Member 'UUINiagara::NiagaraScale' has a wrong offset!");
+static_assert(offsetof(UUINiagara, FloatParameter) == 0x000AA0, "Member 'UUINiagara::FloatParameter' has a wrong offset!");
+static_assert(offsetof(UUINiagara, VectorParameter) == 0x000AF0, "Member 'UUINiagara::VectorParameter' has a wrong offset!");
+static_assert(offsetof(UUINiagara, ColorParameter) == 0x000B40, "Member 'UUINiagara::ColorParameter' has a wrong offset!");
+static_assert(offsetof(UUINiagara, bAdaptPosAndSizeChanged) == 0x000B90, "Member 'UUINiagara::bAdaptPosAndSizeChanged' has a wrong offset!");
+static_assert(offsetof(UUINiagara, bEnableCircleClip) == 0x000B91, "Member 'UUINiagara::bEnableCircleClip' has a wrong offset!");
+static_assert(offsetof(UUINiagara, CircleClipParameters) == 0x000B94, "Member 'UUINiagara::CircleClipParameters' has a wrong offset!");
+static_assert(offsetof(UUINiagara, NiagaraComponent) == 0x000BA8, "Member 'UUINiagara::NiagaraComponent' has a wrong offset!");
+static_assert(offsetof(UUINiagara, bResetNiagara) == 0x000D50, "Member 'UUINiagara::bResetNiagara' has a wrong offset!");
+static_assert(offsetof(UUINiagara, StartEvent) == 0x000D58, "Member 'UUINiagara::StartEvent' has a wrong offset!");
+static_assert(offsetof(UUINiagara, bCanInterupt) == 0x000D60, "Member 'UUINiagara::bCanInterupt' has a wrong offset!");
+static_assert(offsetof(UUINiagara, FadeOutMs) == 0x000D64, "Member 'UUINiagara::FadeOutMs' has a wrong offset!");
+
+// Class LGUI.LGUIPrefabCheckerInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPrefabCheckerInterface final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LGUIPrefabCheckerInterface">();
+	}
+	static class ILGUIPrefabCheckerInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ILGUIPrefabCheckerInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+static_assert(alignof(ILGUIPrefabCheckerInterface) == 0x000001, "Wrong alignment on ILGUIPrefabCheckerInterface");
+static_assert(sizeof(ILGUIPrefabCheckerInterface) == 0x000001, "Wrong size on ILGUIPrefabCheckerInterface");
+
+// Class LGUI.GuideHookRegistry
+// 0x0050 (0x0110 - 0x00C0)
+class UGuideHookRegistry final : public UActorComponent
+{
+public:
+	TMap<class FString, TWeakObjectPtr<class AActor>> GuideHookComponents;                           // 0x00C0(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"GuideHookRegistry">();
+	}
+	static class UGuideHookRegistry* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGuideHookRegistry>();
+	}
+};
+static_assert(alignof(UGuideHookRegistry) == 0x000008, "Wrong alignment on UGuideHookRegistry");
+static_assert(sizeof(UGuideHookRegistry) == 0x000110, "Wrong size on UGuideHookRegistry");
+static_assert(offsetof(UGuideHookRegistry, GuideHookComponents) == 0x0000C0, "Member 'UGuideHookRegistry::GuideHookComponents' has a wrong offset!");
+
+// Class LGUI.PrefabActorHierarchyData
+// 0x0000 (0x0030 - 0x0030)
+class UPrefabActorHierarchyData final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"PrefabActorHierarchyData">();
+	}
+	static class UPrefabActorHierarchyData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UPrefabActorHierarchyData>();
+	}
+};
+static_assert(alignof(UPrefabActorHierarchyData) == 0x000008, "Wrong alignment on UPrefabActorHierarchyData");
+static_assert(sizeof(UPrefabActorHierarchyData) == 0x000030, "Wrong size on UPrefabActorHierarchyData");
+
+// Class LGUI.KuroWorldMapUIParams
+// 0x0020 (0x00E0 - 0x00C0)
+class UKuroWorldMapUIParams final : public UActorComponent
+{
+public:
+	int32                                         MarkMenuRectSize;                                  // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              FocusMark_AnchoredPosition;                        // 0x00C4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TweenTime;                                         // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELTweenEase                                   TweenTypeEase;                                     // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GamePadTweenTime;                                  // 0x00D4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GamePadMoveSpeed;                                  // 0x00D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroWorldMapUIParams">();
+	}
+	static class UKuroWorldMapUIParams* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroWorldMapUIParams>();
+	}
+};
+static_assert(alignof(UKuroWorldMapUIParams) == 0x000008, "Wrong alignment on UKuroWorldMapUIParams");
+static_assert(sizeof(UKuroWorldMapUIParams) == 0x0000E0, "Wrong size on UKuroWorldMapUIParams");
+static_assert(offsetof(UKuroWorldMapUIParams, MarkMenuRectSize) == 0x0000C0, "Member 'UKuroWorldMapUIParams::MarkMenuRectSize' has a wrong offset!");
+static_assert(offsetof(UKuroWorldMapUIParams, FocusMark_AnchoredPosition) == 0x0000C4, "Member 'UKuroWorldMapUIParams::FocusMark_AnchoredPosition' has a wrong offset!");
+static_assert(offsetof(UKuroWorldMapUIParams, TweenTime) == 0x0000CC, "Member 'UKuroWorldMapUIParams::TweenTime' has a wrong offset!");
+static_assert(offsetof(UKuroWorldMapUIParams, TweenTypeEase) == 0x0000D0, "Member 'UKuroWorldMapUIParams::TweenTypeEase' has a wrong offset!");
+static_assert(offsetof(UKuroWorldMapUIParams, GamePadTweenTime) == 0x0000D4, "Member 'UKuroWorldMapUIParams::GamePadTweenTime' has a wrong offset!");
+static_assert(offsetof(UKuroWorldMapUIParams, GamePadMoveSpeed) == 0x0000D8, "Member 'UKuroWorldMapUIParams::GamePadMoveSpeed' has a wrong offset!");
+
+// Class LGUI.LGUIBehaviour
+// 0x0040 (0x0100 - 0x00C0)
+class ULGUIBehaviour : public UActorComponent
+{
+public:
+	bool                                          enable;                                            // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(float DeltaTime)>              OnLateUpdate;                                      // 0x00C8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_F0[0x4];                                       // 0x00F0(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UUIItem>                 RootUIComp;                                        // 0x00F4(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AwakeBP();
+	class AActor* InstantiateActor(class AActor* OriginObject, class USceneComponent* Parent);
+	class AActor* InstantiatePrefab(class ULGUIPrefab* OriginObject, class USceneComponent* Parent);
+	class AActor* InstantiatePrefabWithTransform(class ULGUIPrefab* OriginObject, class USceneComponent* Parent, const struct FVector& Location, const struct FRotator& Rotation, const struct FVector& Scale);
+	void LateUpdateBP(float DeltaTime);
+	void OnDestroyBP();
+	void OnDisableBP();
+	void OnEnableBP();
+	void OnUIActiveInHierarchyBP(bool activeOrInactive);
+	void OnUIAttachmentChangedBP();
+	void OnUIChildAcitveInHierarchyBP(class UUIItem* child, bool ativeOrInactive);
+	void OnUIChildAttachmentChangedBP(class UUIItem* child, bool attachOrDetach);
+	void OnUIChildHierarchyIndexChangedBP(class UUIItem* child);
+	void OnUIDimensionsChangedBP(bool positionChanged, bool sizeChanged);
+	void OnUIInteractionStateChangedBP(bool interactableOrNot);
+	void SetEnable(bool value);
+	void StartBP();
+	void UpdateBP(float DeltaTime);
+
+	bool CheckRootUIComponent() const;
+	bool GetEnable() const;
+	bool GetIsActiveAndEnable() const;
+	class UUIItem* GetRootComponent() const;
+	class USceneComponent* GetRootSceneComponent() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LGUIBehaviour">();
+	}
+	static class ULGUIBehaviour* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULGUIBehaviour>();
+	}
+};
+static_assert(alignof(ULGUIBehaviour) == 0x000008, "Wrong alignment on ULGUIBehaviour");
+static_assert(sizeof(ULGUIBehaviour) == 0x000100, "Wrong size on ULGUIBehaviour");
+static_assert(offsetof(ULGUIBehaviour, enable) == 0x0000C0, "Member 'ULGUIBehaviour::enable' has a wrong offset!");
+static_assert(offsetof(ULGUIBehaviour, OnLateUpdate) == 0x0000C8, "Member 'ULGUIBehaviour::OnLateUpdate' has a wrong offset!");
+static_assert(offsetof(ULGUIBehaviour, RootUIComp) == 0x0000F4, "Member 'ULGUIBehaviour::RootUIComp' has a wrong offset!");
+
+// Class LGUI.UISafeZone
+// 0x0110 (0x0210 - 0x0100)
+class UUISafeZone final : public ULGUIBehaviour
+{
+public:
+	ESafeZoneAdaptionStrategy                     AdaptionStrategy;                                  // 0x0100(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_101[0x3];                                      // 0x0101(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMargin                                Padding;                                           // 0x0104(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_114[0x10];                                     // 0x0114(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMargin                                DefaultMargin;                                     // 0x0124(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FMargin                                PadMargin;                                         // 0x0134(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FMargin                                DefFoldableSquareMargin;                           // 0x0144(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_154[0x4];                                      // 0x0154(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, struct FMargin>           CustomDeviceMargins;                               // 0x0158(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, struct FFoldableMargins>  FoldableDeviceMargins;                             // 0x01A8(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1F8[0x18];                                     // 0x01F8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetWidthAndHeightRadio(float Left, float Right, float Top, float Bottom);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISafeZone">();
+	}
+	static class UUISafeZone* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISafeZone>();
+	}
+};
+static_assert(alignof(UUISafeZone) == 0x000008, "Wrong alignment on UUISafeZone");
+static_assert(sizeof(UUISafeZone) == 0x000210, "Wrong size on UUISafeZone");
+static_assert(offsetof(UUISafeZone, AdaptionStrategy) == 0x000100, "Member 'UUISafeZone::AdaptionStrategy' has a wrong offset!");
+static_assert(offsetof(UUISafeZone, Padding) == 0x000104, "Member 'UUISafeZone::Padding' has a wrong offset!");
+static_assert(offsetof(UUISafeZone, DefaultMargin) == 0x000124, "Member 'UUISafeZone::DefaultMargin' has a wrong offset!");
+static_assert(offsetof(UUISafeZone, PadMargin) == 0x000134, "Member 'UUISafeZone::PadMargin' has a wrong offset!");
+static_assert(offsetof(UUISafeZone, DefFoldableSquareMargin) == 0x000144, "Member 'UUISafeZone::DefFoldableSquareMargin' has a wrong offset!");
+static_assert(offsetof(UUISafeZone, CustomDeviceMargins) == 0x000158, "Member 'UUISafeZone::CustomDeviceMargins' has a wrong offset!");
+static_assert(offsetof(UUISafeZone, FoldableDeviceMargins) == 0x0001A8, "Member 'UUISafeZone::FoldableDeviceMargins' has a wrong offset!");
+
+// Class LGUI.LGUIPrefabHelperObject
+// 0x0000 (0x0030 - 0x0030)
+class ULGUIPrefabHelperObject final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LGUIPrefabHelperObject">();
+	}
+	static class ULGUIPrefabHelperObject* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULGUIPrefabHelperObject>();
+	}
+};
+static_assert(alignof(ULGUIPrefabHelperObject) == 0x000008, "Wrong alignment on ULGUIPrefabHelperObject");
+static_assert(sizeof(ULGUIPrefabHelperObject) == 0x000030, "Wrong size on ULGUIPrefabHelperObject");
+
+// Class LGUI.LGUIBaseRayEmitter
+// 0x0030 (0x00F0 - 0x00C0)
+class ULGUIBaseRayEmitter : public UActorComponent
+{
+public:
+	float                                         clickThreshold;                                    // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          holdToDrag;                                        // 0x00C4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         holdToDragTime;                                    // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_CC[0x24];                                      // 0x00CC(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	float GetClickThreshold();
+	void GetInitialValue(float* OutClickThreshold, bool* OutHoldToDrag, float* OutHoldToDragTime);
+	void SetClickThreshold(float value);
+	void SetInitialValue(float InClickThreshold, bool InHoldToDrag, float InHoldToDragTime);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LGUIBaseRayEmitter">();
+	}
+	static class ULGUIBaseRayEmitter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULGUIBaseRayEmitter>();
+	}
+};
+static_assert(alignof(ULGUIBaseRayEmitter) == 0x000008, "Wrong alignment on ULGUIBaseRayEmitter");
+static_assert(sizeof(ULGUIBaseRayEmitter) == 0x0000F0, "Wrong size on ULGUIBaseRayEmitter");
+static_assert(offsetof(ULGUIBaseRayEmitter, clickThreshold) == 0x0000C0, "Member 'ULGUIBaseRayEmitter::clickThreshold' has a wrong offset!");
+static_assert(offsetof(ULGUIBaseRayEmitter, holdToDrag) == 0x0000C4, "Member 'ULGUIBaseRayEmitter::holdToDrag' has a wrong offset!");
+static_assert(offsetof(ULGUIBaseRayEmitter, holdToDragTime) == 0x0000C8, "Member 'ULGUIBaseRayEmitter::holdToDragTime' has a wrong offset!");
+
+// Class LGUI.LGUIPrefabHelperActor
+// 0x0000 (0x02B0 - 0x02B0)
+class ALGUIPrefabHelperActor final : public AActor
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LGUIPrefabHelperActor">();
+	}
+	static class ALGUIPrefabHelperActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ALGUIPrefabHelperActor>();
+	}
+};
+static_assert(alignof(ALGUIPrefabHelperActor) == 0x000008, "Wrong alignment on ALGUIPrefabHelperActor");
+static_assert(sizeof(ALGUIPrefabHelperActor) == 0x0002B0, "Wrong size on ALGUIPrefabHelperActor");
+
+// Class LGUI.LGUI_CenterScreenRayemitter
+// 0x0008 (0x00F8 - 0x00F0)
+class ULGUI_CenterScreenRayemitter final : public ULGUIBaseRayEmitter
+{
+public:
+	uint8                                         Pad_F0[0x8];                                       // 0x00F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LGUI_CenterScreenRayemitter">();
+	}
+	static class ULGUI_CenterScreenRayemitter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULGUI_CenterScreenRayemitter>();
+	}
+};
+static_assert(alignof(ULGUI_CenterScreenRayemitter) == 0x000008, "Wrong alignment on ULGUI_CenterScreenRayemitter");
+static_assert(sizeof(ULGUI_CenterScreenRayemitter) == 0x0000F8, "Wrong size on ULGUI_CenterScreenRayemitter");
+
+// Class LGUI.UIBatchGeometryRenderable
+// 0x0200 (0x0790 - 0x0590)
+#pragma pack(push, 0x1)
+class alignas(0x10) UUIBatchGeometryRenderable : public UUIBaseRenderable
+{
+public:
+	uint8                                         Pad_590[0xE0];                                     // 0x0590(0x00E0)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, float>                      CustomScalarParameterTMap;                         // 0x0670(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FName, class UTexture*>            CustomTextureParameterTMap;                        // 0x06C0(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FName, struct FLinearColor>        CustomVectorParameterTMap;                         // 0x0710(0x0050)(NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     CustomUIMaterial;                                  // 0x0760(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsSelfRender;                                     // 0x0768(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsGray;                                           // 0x0769(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsColorRevert;                                    // 0x076A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bRaycastComplex;                                   // 0x076B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_76C[0x4];                                      // 0x076C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUIDrawcallMesh*                        uiMesh;                                            // 0x0770(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMaterialInstanceDynamic*               uiMaterial;                                        // 0x0778(0x0008)(Edit, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_780[0x8];                                      // 0x0780(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ClearCustomMaterialParameterInMap();
@@ -868,26 +660,28 @@ public:
 		return GetDefaultObjImpl<UUIBatchGeometryRenderable>();
 	}
 };
+#pragma pack(pop)
 static_assert(alignof(UUIBatchGeometryRenderable) == 0x000010, "Wrong alignment on UUIBatchGeometryRenderable");
-static_assert(sizeof(UUIBatchGeometryRenderable) == 0x000780, "Wrong size on UUIBatchGeometryRenderable");
-static_assert(offsetof(UUIBatchGeometryRenderable, CustomScalarParameterTMap) == 0x000668, "Member 'UUIBatchGeometryRenderable::CustomScalarParameterTMap' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable, CustomTextureParameterTMap) == 0x0006B8, "Member 'UUIBatchGeometryRenderable::CustomTextureParameterTMap' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable, CustomVectorParameterTMap) == 0x000708, "Member 'UUIBatchGeometryRenderable::CustomVectorParameterTMap' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable, CustomUIMaterial) == 0x000758, "Member 'UUIBatchGeometryRenderable::CustomUIMaterial' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable, bIsSelfRender) == 0x000760, "Member 'UUIBatchGeometryRenderable::bIsSelfRender' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable, bIsGray) == 0x000761, "Member 'UUIBatchGeometryRenderable::bIsGray' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable, bIsColorRevert) == 0x000762, "Member 'UUIBatchGeometryRenderable::bIsColorRevert' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable, bRaycastComplex) == 0x000763, "Member 'UUIBatchGeometryRenderable::bRaycastComplex' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable, uiMesh) == 0x000768, "Member 'UUIBatchGeometryRenderable::uiMesh' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable, uiMaterial) == 0x000770, "Member 'UUIBatchGeometryRenderable::uiMaterial' has a wrong offset!");
+static_assert(sizeof(UUIBatchGeometryRenderable) == 0x000790, "Wrong size on UUIBatchGeometryRenderable");
+static_assert(offsetof(UUIBatchGeometryRenderable, CustomScalarParameterTMap) == 0x000670, "Member 'UUIBatchGeometryRenderable::CustomScalarParameterTMap' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable, CustomTextureParameterTMap) == 0x0006C0, "Member 'UUIBatchGeometryRenderable::CustomTextureParameterTMap' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable, CustomVectorParameterTMap) == 0x000710, "Member 'UUIBatchGeometryRenderable::CustomVectorParameterTMap' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable, CustomUIMaterial) == 0x000760, "Member 'UUIBatchGeometryRenderable::CustomUIMaterial' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable, bIsSelfRender) == 0x000768, "Member 'UUIBatchGeometryRenderable::bIsSelfRender' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable, bIsGray) == 0x000769, "Member 'UUIBatchGeometryRenderable::bIsGray' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable, bIsColorRevert) == 0x00076A, "Member 'UUIBatchGeometryRenderable::bIsColorRevert' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable, bRaycastComplex) == 0x00076B, "Member 'UUIBatchGeometryRenderable::bRaycastComplex' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable, uiMesh) == 0x000770, "Member 'UUIBatchGeometryRenderable::uiMesh' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable, uiMaterial) == 0x000778, "Member 'UUIBatchGeometryRenderable::uiMaterial' has a wrong offset!");
 
 // Class LGUI.UISpriteBase
-// 0x0010 (0x0790 - 0x0780)
-class UUISpriteBase : public UUIBatchGeometryRenderable
+// 0x0010 (0x07A0 - 0x0790)
+#pragma pack(push, 0x1)
+class alignas(0x10) UUISpriteBase : public UUIBatchGeometryRenderable
 {
 public:
-	class ULGUISpriteData_BaseObject*             sprite;                                            // 0x0780(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_788[0x8];                                      // 0x0788(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class ULGUISpriteData_BaseObject*             sprite;                                            // 0x0788(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_790[0x8];                                      // 0x0790(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetSizeFromSpriteData();
@@ -905,22 +699,22 @@ public:
 		return GetDefaultObjImpl<UUISpriteBase>();
 	}
 };
+#pragma pack(pop)
 static_assert(alignof(UUISpriteBase) == 0x000010, "Wrong alignment on UUISpriteBase");
-static_assert(sizeof(UUISpriteBase) == 0x000790, "Wrong size on UUISpriteBase");
-static_assert(offsetof(UUISpriteBase, sprite) == 0x000780, "Member 'UUISpriteBase::sprite' has a wrong offset!");
+static_assert(sizeof(UUISpriteBase) == 0x0007A0, "Wrong size on UUISpriteBase");
+static_assert(offsetof(UUISpriteBase, sprite) == 0x000788, "Member 'UUISpriteBase::sprite' has a wrong offset!");
 
 // Class LGUI.UI2DLineRendererBase
-// 0x0020 (0x07B0 - 0x0790)
-#pragma pack(push, 0x1)
-class alignas(0x10) UUI2DLineRendererBase : public UUISpriteBase
+// 0x0010 (0x07B0 - 0x07A0)
+class UUI2DLineRendererBase : public UUISpriteBase
 {
 public:
-	float                                         LineWidth;                                         // 0x0790(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUI2DLineRenderer_EndType                     EndType;                                           // 0x0794(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_795[0x3];                                      // 0x0795(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LineWidthOffset;                                   // 0x0798(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bFixedThickness;                                   // 0x079C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_79D[0xB];                                      // 0x079D(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         LineWidth;                                         // 0x0798(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUI2DLineRenderer_EndType                     EndType;                                           // 0x079C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_79D[0x3];                                      // 0x079D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LineWidthOffset;                                   // 0x07A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bFixedThickness;                                   // 0x07A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7A5[0xB];                                      // 0x07A5(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class ULTweener* LineWidthTo(float endValue, float duration, float delay, ELTweenEase easeType);
@@ -942,53 +736,57 @@ public:
 		return GetDefaultObjImpl<UUI2DLineRendererBase>();
 	}
 };
-#pragma pack(pop)
 static_assert(alignof(UUI2DLineRendererBase) == 0x000010, "Wrong alignment on UUI2DLineRendererBase");
 static_assert(sizeof(UUI2DLineRendererBase) == 0x0007B0, "Wrong size on UUI2DLineRendererBase");
-static_assert(offsetof(UUI2DLineRendererBase, LineWidth) == 0x000790, "Member 'UUI2DLineRendererBase::LineWidth' has a wrong offset!");
-static_assert(offsetof(UUI2DLineRendererBase, EndType) == 0x000794, "Member 'UUI2DLineRendererBase::EndType' has a wrong offset!");
-static_assert(offsetof(UUI2DLineRendererBase, LineWidthOffset) == 0x000798, "Member 'UUI2DLineRendererBase::LineWidthOffset' has a wrong offset!");
-static_assert(offsetof(UUI2DLineRendererBase, bFixedThickness) == 0x00079C, "Member 'UUI2DLineRendererBase::bFixedThickness' has a wrong offset!");
+static_assert(offsetof(UUI2DLineRendererBase, LineWidth) == 0x000798, "Member 'UUI2DLineRendererBase::LineWidth' has a wrong offset!");
+static_assert(offsetof(UUI2DLineRendererBase, EndType) == 0x00079C, "Member 'UUI2DLineRendererBase::EndType' has a wrong offset!");
+static_assert(offsetof(UUI2DLineRendererBase, LineWidthOffset) == 0x0007A0, "Member 'UUI2DLineRendererBase::LineWidthOffset' has a wrong offset!");
+static_assert(offsetof(UUI2DLineRendererBase, bFixedThickness) == 0x0007A4, "Member 'UUI2DLineRendererBase::bFixedThickness' has a wrong offset!");
 
-// Class LGUI.UIRing
-// 0x0020 (0x07D0 - 0x07B0)
-class UUIRing final : public UUI2DLineRendererBase
+// Class LGUI.UIPolygonLine
+// 0x0030 (0x07E0 - 0x07B0)
+class UUIPolygonLine final : public UUI2DLineRendererBase
 {
 public:
-	float                                         StartAngle;                                        // 0x07A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         EndAngle;                                          // 0x07AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         Segment;                                           // 0x07B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7B4[0x4];                                      // 0x07B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector2D>                      CurrentPointArray;                                 // 0x07B8(0x0010)(Edit, ZeroConstructor, Transient, EditConst, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7C8[0x8];                                      // 0x07C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          FullCycle;                                         // 0x07B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7B1[0x3];                                      // 0x07B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StartAngle;                                        // 0x07B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         EndAngle;                                          // 0x07B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         Sides;                                             // 0x07BC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<float>                                 VertexOffsetArray;                                 // 0x07C0(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector2D>                      CurrentPointArray;                                 // 0x07D0(0x0010)(Edit, ZeroConstructor, Transient, EditConst, Protected, NativeAccessSpecifierProtected)
 
 public:
 	class ULTweener* EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
-	void SetEndAngle(float newValue);
-	void SetSegment(int32 newValue);
-	void SetStartAngle(float newValue);
+	void SetEndAngle(float value);
+	void SetSides(int32 value);
+	void SetStartAngle(float value);
+	void SetVertexOffsetArray(const TArray<float>& value);
 	class ULTweener* StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
 
 	float GetEndAngle() const;
-	int32 GetSegment() const;
+	int32 GetSides() const;
 	float GetStartAngle() const;
+	const TArray<float> GetVertexOffsetArray() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIRing">();
+		return StaticClassImpl<"UIPolygonLine">();
 	}
-	static class UUIRing* GetDefaultObj()
+	static class UUIPolygonLine* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIRing>();
+		return GetDefaultObjImpl<UUIPolygonLine>();
 	}
 };
-static_assert(alignof(UUIRing) == 0x000010, "Wrong alignment on UUIRing");
-static_assert(sizeof(UUIRing) == 0x0007D0, "Wrong size on UUIRing");
-static_assert(offsetof(UUIRing, StartAngle) == 0x0007A8, "Member 'UUIRing::StartAngle' has a wrong offset!");
-static_assert(offsetof(UUIRing, EndAngle) == 0x0007AC, "Member 'UUIRing::EndAngle' has a wrong offset!");
-static_assert(offsetof(UUIRing, Segment) == 0x0007B0, "Member 'UUIRing::Segment' has a wrong offset!");
-static_assert(offsetof(UUIRing, CurrentPointArray) == 0x0007B8, "Member 'UUIRing::CurrentPointArray' has a wrong offset!");
+static_assert(alignof(UUIPolygonLine) == 0x000010, "Wrong alignment on UUIPolygonLine");
+static_assert(sizeof(UUIPolygonLine) == 0x0007E0, "Wrong size on UUIPolygonLine");
+static_assert(offsetof(UUIPolygonLine, FullCycle) == 0x0007B0, "Member 'UUIPolygonLine::FullCycle' has a wrong offset!");
+static_assert(offsetof(UUIPolygonLine, StartAngle) == 0x0007B4, "Member 'UUIPolygonLine::StartAngle' has a wrong offset!");
+static_assert(offsetof(UUIPolygonLine, EndAngle) == 0x0007B8, "Member 'UUIPolygonLine::EndAngle' has a wrong offset!");
+static_assert(offsetof(UUIPolygonLine, Sides) == 0x0007BC, "Member 'UUIPolygonLine::Sides' has a wrong offset!");
+static_assert(offsetof(UUIPolygonLine, VertexOffsetArray) == 0x0007C0, "Member 'UUIPolygonLine::VertexOffsetArray' has a wrong offset!");
+static_assert(offsetof(UUIPolygonLine, CurrentPointArray) == 0x0007D0, "Member 'UUIPolygonLine::CurrentPointArray' has a wrong offset!");
 
 // Class LGUI.LGUIPrefabHelperComponent
 // 0x0000 (0x0220 - 0x0220)
@@ -1465,6 +1263,7 @@ public:
 	static struct FVector2D GetUIItemPositionInViewPort(class UObject* WorldContextObject, class UUIItem* Item, bool bIsScaledByBPI);
 	static class UUIItem* GetUIItemWithPath(class UObject* WorldContextObject, const class FString& FullItemPath);
 	static class UUIItem* GetUIItemWithRelativePath(class UUIItem* ParentItem, const class FString& RelativePath);
+	static struct FVector GetUIWorldPosForceUpdate(class UUIItem* UIItem);
 	static bool GetWorldUISceneRendering(class UObject* WorldContextObject);
 	static class ULTweener* HeightTo(class UUIItem* target, float endValue, float duration, float delay, ELTweenEase ease);
 	static void K2_LGUICompRef_GetComponent(const struct FLGUIComponentReference& InLGUICompRef, class UActorComponent** OutResult);
@@ -1613,7 +1412,7 @@ public:
 	bool                                          inheritRectClip;                                   // 0x0204(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bFlipClipArea;                                     // 0x0205(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bClipWithRectOp;                                   // 0x0206(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_207[0x1];                                      // 0x0207(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bForceTopmostText;                                 // 0x0207(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         dynamicPixelsPerUnit;                              // 0x0208(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int8                                          additionalShaderChannels;                          // 0x020C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_20D[0x3];                                      // 0x020D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1623,14 +1422,15 @@ public:
 	int8                                          overrideParameters;                                // 0x022A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bClipOutOfScreenRenderables;                       // 0x022B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bEnableOnlyCanvasMovedOpt;                         // 0x022C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_22D[0x53];                                     // 0x022D(0x0053)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class UUIBaseRenderable*>                RenderableSet;                                     // 0x0280(0x0050)(Edit, ExportObject, Transient, EditConst, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TArray<class UUIBaseRenderable*>              ToRenderList;                                      // 0x02D0(0x0010)(Edit, ExportObject, ZeroConstructor, Transient, EditConst, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2E0[0x60];                                     // 0x02E0(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLGUIMaterialArrayContainer>    PooledUIMaterialList;                              // 0x0340(0x0010)(Edit, ZeroConstructor, Transient, EditConst, NativeAccessSpecifierPrivate)
-	uint8                                         IsUiScenePrimitive : 1;                            // 0x0350(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	bool                                          bPostTickUpdate;                                   // 0x0351(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_352[0x1E];                                     // 0x0352(0x001E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bCheckSameMaterialAndSkipBatchCal;                 // 0x022D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_22E[0x5A];                                     // 0x022E(0x005A)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class UUIBaseRenderable*>                RenderableSet;                                     // 0x0288(0x0050)(Edit, ExportObject, Transient, EditConst, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TArray<class UUIBaseRenderable*>              ToRenderList;                                      // 0x02D8(0x0010)(Edit, ExportObject, ZeroConstructor, Transient, EditConst, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2E8[0x60];                                     // 0x02E8(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLGUIMaterialArrayContainer>    PooledUIMaterialList;                              // 0x0348(0x0010)(Edit, ZeroConstructor, Transient, EditConst, NativeAccessSpecifierPrivate)
+	uint8                                         IsUiScenePrimitive : 1;                            // 0x0358(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	bool                                          bPostTickUpdate;                                   // 0x0359(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_35A[0x16];                                     // 0x035A(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	ELGUICanvasClipType GetActualClipType();
@@ -1649,6 +1449,9 @@ public:
 	bool GetRequireUV1();
 	bool GetRequireUV2();
 	bool GetRequireUV3();
+	bool GetRequireUV4();
+	bool GetRequireUV5();
+	bool GetRequireUV6();
 	class ULGUICanvas* GetRootCanvas();
 	struct FIntPoint GetViewportSize();
 	bool IsUIVisible(class UUIItem* HitUI);
@@ -1666,6 +1469,7 @@ public:
 	void SetRenderMode(ELGUIRenderMode value);
 	void SetRenderTarget(class UTextureRenderTarget2D* value);
 	void SetSortOrder(int32 newValue, bool propagateToChildrenCanvas);
+	void SetSortOrderNew(int32 newValue, bool propagateToChildrenCanvas);
 	void SetSortOrderToHighestOfHierarchy(bool propagateToChildrenCanvas);
 
 	float GetCanvasScale() const;
@@ -1714,6 +1518,7 @@ static_assert(offsetof(ULGUICanvas, clipTextureAlpha) == 0x000200, "Member 'ULGU
 static_assert(offsetof(ULGUICanvas, inheritRectClip) == 0x000204, "Member 'ULGUICanvas::inheritRectClip' has a wrong offset!");
 static_assert(offsetof(ULGUICanvas, bFlipClipArea) == 0x000205, "Member 'ULGUICanvas::bFlipClipArea' has a wrong offset!");
 static_assert(offsetof(ULGUICanvas, bClipWithRectOp) == 0x000206, "Member 'ULGUICanvas::bClipWithRectOp' has a wrong offset!");
+static_assert(offsetof(ULGUICanvas, bForceTopmostText) == 0x000207, "Member 'ULGUICanvas::bForceTopmostText' has a wrong offset!");
 static_assert(offsetof(ULGUICanvas, dynamicPixelsPerUnit) == 0x000208, "Member 'ULGUICanvas::dynamicPixelsPerUnit' has a wrong offset!");
 static_assert(offsetof(ULGUICanvas, additionalShaderChannels) == 0x00020C, "Member 'ULGUICanvas::additionalShaderChannels' has a wrong offset!");
 static_assert(offsetof(ULGUICanvas, DefaultMaterials) == 0x000210, "Member 'ULGUICanvas::DefaultMaterials' has a wrong offset!");
@@ -1722,17 +1527,18 @@ static_assert(offsetof(ULGUICanvas, onlyOwnerSee) == 0x000229, "Member 'ULGUICan
 static_assert(offsetof(ULGUICanvas, overrideParameters) == 0x00022A, "Member 'ULGUICanvas::overrideParameters' has a wrong offset!");
 static_assert(offsetof(ULGUICanvas, bClipOutOfScreenRenderables) == 0x00022B, "Member 'ULGUICanvas::bClipOutOfScreenRenderables' has a wrong offset!");
 static_assert(offsetof(ULGUICanvas, bEnableOnlyCanvasMovedOpt) == 0x00022C, "Member 'ULGUICanvas::bEnableOnlyCanvasMovedOpt' has a wrong offset!");
-static_assert(offsetof(ULGUICanvas, RenderableSet) == 0x000280, "Member 'ULGUICanvas::RenderableSet' has a wrong offset!");
-static_assert(offsetof(ULGUICanvas, ToRenderList) == 0x0002D0, "Member 'ULGUICanvas::ToRenderList' has a wrong offset!");
-static_assert(offsetof(ULGUICanvas, PooledUIMaterialList) == 0x000340, "Member 'ULGUICanvas::PooledUIMaterialList' has a wrong offset!");
-static_assert(offsetof(ULGUICanvas, bPostTickUpdate) == 0x000351, "Member 'ULGUICanvas::bPostTickUpdate' has a wrong offset!");
+static_assert(offsetof(ULGUICanvas, bCheckSameMaterialAndSkipBatchCal) == 0x00022D, "Member 'ULGUICanvas::bCheckSameMaterialAndSkipBatchCal' has a wrong offset!");
+static_assert(offsetof(ULGUICanvas, RenderableSet) == 0x000288, "Member 'ULGUICanvas::RenderableSet' has a wrong offset!");
+static_assert(offsetof(ULGUICanvas, ToRenderList) == 0x0002D8, "Member 'ULGUICanvas::ToRenderList' has a wrong offset!");
+static_assert(offsetof(ULGUICanvas, PooledUIMaterialList) == 0x000348, "Member 'ULGUICanvas::PooledUIMaterialList' has a wrong offset!");
+static_assert(offsetof(ULGUICanvas, bPostTickUpdate) == 0x000359, "Member 'ULGUICanvas::bPostTickUpdate' has a wrong offset!");
 
 // Class LGUI.LGUICanvasScaler
 // 0x0090 (0x0150 - 0x00C0)
 class ULGUICanvasScaler final : public UActorComponent
 {
 public:
-	TDelegate<void(const struct FIntPoint& NewViewportSize)> OnViewportSizeChanged;                             // 0x00C0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FIntPoint& NewViewportSize)> OnViewportSizeChanged;                  // 0x00C0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	uint8                                         Pad_E8[0x20];                                      // 0x00E8(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	ECameraProjectionMode                         ProjectionType;                                    // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1799,9 +1605,13 @@ class ULGUIComponentsRegistry final : public UActorComponent
 {
 public:
 	class FString                                 TsClassName;                                       // 0x00C0(0x0010)(Edit, ZeroConstructor, Transient, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FRegisterRuntimeData> RuntimeRegistryData;                               // 0x00D0(0x0050)(Edit, EditConst, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TMap<class FString, struct FRegisterRuntimeData> RuntimeRegistryData;                            // 0x00D0(0x0050)(Edit, EditConst, AdvancedDisplay, NativeAccessSpecifierPublic)
 	TArray<class AActor*>                         Components;                                        // 0x0120(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	TMap<int32, class FString>                    MissingComponents;                                 // 0x0130(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
+
+public:
+	TArray<class AActor*> GetComponents();
+	void SetComponents(const TArray<class AActor*>& NewComponents);
 
 public:
 	static class UClass* StaticClass()
@@ -1820,37 +1630,58 @@ static_assert(offsetof(ULGUIComponentsRegistry, RuntimeRegistryData) == 0x0000D0
 static_assert(offsetof(ULGUIComponentsRegistry, Components) == 0x000120, "Member 'ULGUIComponentsRegistry::Components' has a wrong offset!");
 static_assert(offsetof(ULGUIComponentsRegistry, MissingComponents) == 0x000130, "Member 'ULGUIComponentsRegistry::MissingComponents' has a wrong offset!");
 
-// Class LGUI.UISpriteAnimator
-// 0x0018 (0x0118 - 0x0100)
-class UUISpriteAnimator final : public ULGUIBehaviour
+// Class LGUI.UISpineRenderable
+// 0x03D0 (0x0960 - 0x0590)
+class UUISpineRenderable final : public UUIBaseRenderable
 {
 public:
-	int32                                         CurFrame;                                          // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUISprite*                              Sprite;                                            // 0x0108(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class ULGUISpriteData_BaseImporter*           CurSpriteImporter;                                 // 0x0110(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DepthOffset;                                       // 0x0590(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   TextureParameterName;                              // 0x0594(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAdjustSizeWithAnimation;                          // 0x05A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5A1[0x37];                                     // 0x05A1(0x0037)(Fixing Size After Last Property [ Dumper-7 ])
+	class USpineSkeletonDataAsset*                CurrSkeletonData;                                  // 0x05D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5E0[0x200];                                    // 0x05E0(0x0200)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<ELGUICanvasClipType, class UMaterialInterface*> NormalBlendMaterials;                       // 0x07E0(0x0050)(Edit, NativeAccessSpecifierPrivate)
+	TMap<ELGUICanvasClipType, class UMaterialInterface*> AdditiveBlendMaterials;                     // 0x0830(0x0050)(Edit, NativeAccessSpecifierPrivate)
+	TMap<ELGUICanvasClipType, class UMaterialInterface*> MultiplyBlendMaterials;                     // 0x0880(0x0050)(Edit, NativeAccessSpecifierPrivate)
+	TMap<ELGUICanvasClipType, class UMaterialInterface*> ScreenBlendMaterials;                       // 0x08D0(0x0050)(Edit, NativeAccessSpecifierPrivate)
+	TArray<class UMaterialInstanceDynamic*>       AtlasNormalBlendMaterials;                         // 0x0920(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
+	TArray<class UMaterialInstanceDynamic*>       AtlasAdditiveBlendMaterials;                       // 0x0930(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
+	TArray<class UMaterialInstanceDynamic*>       AtlasMultiplyBlendMaterials;                       // 0x0940(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
+	TArray<class UMaterialInstanceDynamic*>       AtlasScreenBlendMaterials;                         // 0x0950(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
 
 public:
-	void ResetSpriteImporter();
-	void SetCurFrame(int32 newCurFrame);
+	void AdjustSize();
+	void AfterSkeletonUpdate(class USpineSkeletonComponent* SkeletonComponent);
+	void TestPlayPreviewAnimInRuntime();
 
-	int32 GetCurFrame() const;
+	int32 GetMeshesNum() const;
+	int32 GetTotalVerticeNum() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISpriteAnimator">();
+		return StaticClassImpl<"UISpineRenderable">();
 	}
-	static class UUISpriteAnimator* GetDefaultObj()
+	static class UUISpineRenderable* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISpriteAnimator>();
+		return GetDefaultObjImpl<UUISpineRenderable>();
 	}
 };
-static_assert(alignof(UUISpriteAnimator) == 0x000008, "Wrong alignment on UUISpriteAnimator");
-static_assert(sizeof(UUISpriteAnimator) == 0x000118, "Wrong size on UUISpriteAnimator");
-static_assert(offsetof(UUISpriteAnimator, CurFrame) == 0x000100, "Member 'UUISpriteAnimator::CurFrame' has a wrong offset!");
-static_assert(offsetof(UUISpriteAnimator, Sprite) == 0x000108, "Member 'UUISpriteAnimator::Sprite' has a wrong offset!");
-static_assert(offsetof(UUISpriteAnimator, CurSpriteImporter) == 0x000110, "Member 'UUISpriteAnimator::CurSpriteImporter' has a wrong offset!");
+static_assert(alignof(UUISpineRenderable) == 0x000010, "Wrong alignment on UUISpineRenderable");
+static_assert(sizeof(UUISpineRenderable) == 0x000960, "Wrong size on UUISpineRenderable");
+static_assert(offsetof(UUISpineRenderable, DepthOffset) == 0x000590, "Member 'UUISpineRenderable::DepthOffset' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, TextureParameterName) == 0x000594, "Member 'UUISpineRenderable::TextureParameterName' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, bAdjustSizeWithAnimation) == 0x0005A0, "Member 'UUISpineRenderable::bAdjustSizeWithAnimation' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, CurrSkeletonData) == 0x0005D8, "Member 'UUISpineRenderable::CurrSkeletonData' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, NormalBlendMaterials) == 0x0007E0, "Member 'UUISpineRenderable::NormalBlendMaterials' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, AdditiveBlendMaterials) == 0x000830, "Member 'UUISpineRenderable::AdditiveBlendMaterials' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, MultiplyBlendMaterials) == 0x000880, "Member 'UUISpineRenderable::MultiplyBlendMaterials' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, ScreenBlendMaterials) == 0x0008D0, "Member 'UUISpineRenderable::ScreenBlendMaterials' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, AtlasNormalBlendMaterials) == 0x000920, "Member 'UUISpineRenderable::AtlasNormalBlendMaterials' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, AtlasAdditiveBlendMaterials) == 0x000930, "Member 'UUISpineRenderable::AtlasAdditiveBlendMaterials' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, AtlasMultiplyBlendMaterials) == 0x000940, "Member 'UUISpineRenderable::AtlasMultiplyBlendMaterials' has a wrong offset!");
+static_assert(offsetof(UUISpineRenderable, AtlasScreenBlendMaterials) == 0x000950, "Member 'UUISpineRenderable::AtlasScreenBlendMaterials' has a wrong offset!");
 
 // Class LGUI.LGUIEditorLevelDataStorageActor
 // 0x0000 (0x02B0 - 0x02B0)
@@ -1889,105 +1720,83 @@ public:
 static_assert(alignof(ULGUIEditorManagerObject) == 0x000008, "Wrong alignment on ULGUIEditorManagerObject");
 static_assert(sizeof(ULGUIEditorManagerObject) == 0x000038, "Wrong size on ULGUIEditorManagerObject");
 
-// Class LGUI.UIEventTriggerComponent
-// 0x02C8 (0x0388 - 0x00C0)
-class UUIEventTriggerComponent final : public UActorComponent
+// Class LGUI.UIEffectTextAnimation_Selector
+// 0x0008 (0x0038 - 0x0030)
+class UUIEffectTextAnimation_Selector : public UObject
 {
 public:
-	uint8                                         Pad_C0[0x38];                                      // 0x00C0(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          AllowEventBubbleUp;                                // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIDrawableEvent                     OnPointerEnter;                                    // 0x0100(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerExit;                                     // 0x0118(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerDown;                                     // 0x0130(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerUp;                                       // 0x0148(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerCancel;                                   // 0x0160(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerClick;                                    // 0x0178(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerBeginDrag;                                // 0x0190(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerDrag;                                     // 0x01A8(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerEndDrag;                                  // 0x01C0(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerDragEnter;                                // 0x01D8(0x0018)(Deprecated, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerDragExit;                                 // 0x01F0(0x0018)(Deprecated, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerDragDrop;                                 // 0x0208(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerScroll;                                   // 0x0220(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerSelect;                                   // 0x0238(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	struct FLGUIDrawableEvent                     OnPointerDeselect;                                 // 0x0250(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_268[0x120];                                    // 0x0268(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         offset;                                            // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerBeginDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerClick(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerDeselect(const TDelegate<void(class ULGUIBaseEventData* eventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerDown(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerDragDrop(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerDragEnter(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerDragExit(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerEndDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerEnter(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerExit(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerScroll(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerSelect(const TDelegate<void(class ULGUIBaseEventData* eventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterOnPointerUp(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
-	void UnregisterOnPointerBeginDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerClick(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerDeselect(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerDown(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerDragDrop(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerDragEnter(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerDragExit(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerEndDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerEnter(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerExit(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerScroll(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerSelect(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterOnPointerUp(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void SetOffset(float value);
+
+	float GetOffset() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIEventTriggerComponent">();
+		return StaticClassImpl<"UIEffectTextAnimation_Selector">();
 	}
-	static class UUIEventTriggerComponent* GetDefaultObj()
+	static class UUIEffectTextAnimation_Selector* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIEventTriggerComponent>();
+		return GetDefaultObjImpl<UUIEffectTextAnimation_Selector>();
 	}
 };
-static_assert(alignof(UUIEventTriggerComponent) == 0x000008, "Wrong alignment on UUIEventTriggerComponent");
-static_assert(sizeof(UUIEventTriggerComponent) == 0x000388, "Wrong size on UUIEventTriggerComponent");
-static_assert(offsetof(UUIEventTriggerComponent, AllowEventBubbleUp) == 0x0000F8, "Member 'UUIEventTriggerComponent::AllowEventBubbleUp' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerEnter) == 0x000100, "Member 'UUIEventTriggerComponent::OnPointerEnter' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerExit) == 0x000118, "Member 'UUIEventTriggerComponent::OnPointerExit' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerDown) == 0x000130, "Member 'UUIEventTriggerComponent::OnPointerDown' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerUp) == 0x000148, "Member 'UUIEventTriggerComponent::OnPointerUp' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerCancel) == 0x000160, "Member 'UUIEventTriggerComponent::OnPointerCancel' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerClick) == 0x000178, "Member 'UUIEventTriggerComponent::OnPointerClick' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerBeginDrag) == 0x000190, "Member 'UUIEventTriggerComponent::OnPointerBeginDrag' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerDrag) == 0x0001A8, "Member 'UUIEventTriggerComponent::OnPointerDrag' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerEndDrag) == 0x0001C0, "Member 'UUIEventTriggerComponent::OnPointerEndDrag' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerDragEnter) == 0x0001D8, "Member 'UUIEventTriggerComponent::OnPointerDragEnter' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerDragExit) == 0x0001F0, "Member 'UUIEventTriggerComponent::OnPointerDragExit' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerDragDrop) == 0x000208, "Member 'UUIEventTriggerComponent::OnPointerDragDrop' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerScroll) == 0x000220, "Member 'UUIEventTriggerComponent::OnPointerScroll' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerSelect) == 0x000238, "Member 'UUIEventTriggerComponent::OnPointerSelect' has a wrong offset!");
-static_assert(offsetof(UUIEventTriggerComponent, OnPointerDeselect) == 0x000250, "Member 'UUIEventTriggerComponent::OnPointerDeselect' has a wrong offset!");
+static_assert(alignof(UUIEffectTextAnimation_Selector) == 0x000008, "Wrong alignment on UUIEffectTextAnimation_Selector");
+static_assert(sizeof(UUIEffectTextAnimation_Selector) == 0x000038, "Wrong size on UUIEffectTextAnimation_Selector");
+static_assert(offsetof(UUIEffectTextAnimation_Selector, offset) == 0x000030, "Member 'UUIEffectTextAnimation_Selector::offset' has a wrong offset!");
+
+// Class LGUI.UIEffectTextAnimation_RichTextTagSelector
+// 0x0018 (0x0050 - 0x0038)
+class UUIEffectTextAnimation_RichTextTagSelector final : public UUIEffectTextAnimation_Selector
+{
+public:
+	float                                         range;                                             // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   tagName;                                           // 0x003C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          flipDirection;                                     // 0x0048(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetFlipDirection(bool value);
+	void SetRange(float value);
+	void SetTagName(const class FName& value);
+
+	bool GetFlipDirection() const;
+	float GetRange() const;
+	const class FName GetTagName() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIEffectTextAnimation_RichTextTagSelector">();
+	}
+	static class UUIEffectTextAnimation_RichTextTagSelector* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIEffectTextAnimation_RichTextTagSelector>();
+	}
+};
+static_assert(alignof(UUIEffectTextAnimation_RichTextTagSelector) == 0x000008, "Wrong alignment on UUIEffectTextAnimation_RichTextTagSelector");
+static_assert(sizeof(UUIEffectTextAnimation_RichTextTagSelector) == 0x000050, "Wrong size on UUIEffectTextAnimation_RichTextTagSelector");
+static_assert(offsetof(UUIEffectTextAnimation_RichTextTagSelector, range) == 0x000038, "Member 'UUIEffectTextAnimation_RichTextTagSelector::range' has a wrong offset!");
+static_assert(offsetof(UUIEffectTextAnimation_RichTextTagSelector, tagName) == 0x00003C, "Member 'UUIEffectTextAnimation_RichTextTagSelector::tagName' has a wrong offset!");
+static_assert(offsetof(UUIEffectTextAnimation_RichTextTagSelector, flipDirection) == 0x000048, "Member 'UUIEffectTextAnimation_RichTextTagSelector::flipDirection' has a wrong offset!");
 
 // Class LGUI.LGUIEventSystem
 // 0x0160 (0x0220 - 0x00C0)
 class ULGUIEventSystem final : public UActorComponent
 {
 public:
-	TMulticastInlineDelegate<void(bool bIsConnected, int32 PlatformUserId, int32 ControllerId)> OnConnectionChanged;                               // 0x00C0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bIsConnected, int32 PlatformUserId, int32 ControllerId)> OnConnectionChanged; // 0x00C0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D0[0x1];                                       // 0x00D0(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bRayEventEnable;                                   // 0x00D1(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          HighlightWhenMouseMoveOut;                         // 0x00D2(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D3[0x5];                                       // 0x00D3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<int32, class ULGUIPointerEventData*>     pointerEventDataMap;                               // 0x00D8(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
 	uint8                                         Pad_128[0x30];                                     // 0x0128(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(ENavigationComponentState State, class USceneComponent* CursorComponent, ELGUIPointerInputType InputType, bool bForceNavigation)> NavigationChangeDelegate;                          // 0x0158(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void(ELGUINavigationDirection direction)> FindDefaultNavigationDelegate;                     // 0x0180(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void(ELGUINavigationDirection direction, class UUISelectableComponent* SelectableComponent)> TryFindNavigationDelegate;                         // 0x01A8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void(ENavigationComponentState State, class USceneComponent* CursorComponent, ELGUIPointerInputType InputType, bool bForceNavigation)> NavigationChangeDelegate; // 0x0158(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void(ELGUINavigationDirection direction)> FindDefaultNavigationDelegate;               // 0x0180(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void(ELGUINavigationDirection direction, class UUISelectableComponent* SelectableComponent)> TryFindNavigationDelegate; // 0x01A8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
 	ELGUIPointerInputType                         defaultInputType;                                  // 0x01D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ELGUIEventFireType                            eventFireTypeForNavigation;                        // 0x01D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1D2[0x2];                                      // 0x01D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
@@ -2018,7 +1827,7 @@ public:
 	bool IsRaycastEnable();
 	class USceneComponent* Navigate(ELGUINavigationDirection direction, class UUISelectableComponent* Selectable);
 	struct FLGUIDelegateHandleWrapper RegisterGlobalListener(const TDelegate<void(class ULGUIBaseEventData* eventData)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterHitEvent(const TDelegate<void(bool isHit, struct FHitResult& hitResult, class USceneComponent* hitComponent)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterHitEvent(const TDelegate<void(bool isHit, const struct FHitResult& hitResult, class USceneComponent* hitComponent)>& InDelegate);
 	void RegisterPointerEnterExitEvent(const TDelegate<void(bool bEnter)>& PointerEnterExitDelegate);
 	void SetRaycastEnable(bool enable, bool clearEvent);
 	void SetSelectComponent(class USceneComponent* InSelectComp, class ULGUIBaseEventData* eventData, ELGUIEventFireType eventFireType);
@@ -2080,58 +1889,36 @@ static_assert(alignof(ALGUIEventSystemActor) == 0x000008, "Wrong alignment on AL
 static_assert(sizeof(ALGUIEventSystemActor) == 0x0002B8, "Wrong size on ALGUIEventSystemActor");
 static_assert(offsetof(ALGUIEventSystemActor, EventSystem) == 0x0002B0, "Member 'ALGUIEventSystemActor::EventSystem' has a wrong offset!");
 
-// Class LGUI.UISelectableTransitionComponent
-// 0x0010 (0x0110 - 0x0100)
-class UUISelectableTransitionComponent : public ULGUIBehaviour
+// Class LGUI.UISpriteBase_BP
+// 0x0010 (0x07B0 - 0x07A0)
+class UUISpriteBase_BP final : public UUISpriteBase
 {
 public:
-	TArray<class ULTweener*>                      TweenerCollection;                                 // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
+	class ULGUICreateGeometryHelper*              createGeometryHelper;                              // 0x0798(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class ULGUIUpdateGeometryHelper*              updateGeometryHelper;                              // 0x07A0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_7A8[0x8];                                      // 0x07A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void CollectTweener(class ULTweener* InItem);
-	void CollectTweeners(const TSet<class ULTweener*>& InItems);
-	void OnDisabledBP(bool InImmediateSet);
-	void OnHighlightedBP(bool InImmediateSet);
-	void OnNormalBP(bool InImmediateSet);
-	void OnPressedBP(bool InImmediateSet);
-	void OnStartCustomTransitionBP(class FName InTransitionName, bool InImmediateSet);
-	void StopTransition();
+	void MarkRebuildGeometry_BP();
+	void MarkVertexChanged_BP();
+	void OnBeforeCreateOrUpdateGeometry_BP();
+	void OnCreateGeometry_BP(class ULGUICreateGeometryHelper* InCreateGeometryHelper, class ULGUISpriteData_BaseObject* InSpriteData);
+	void OnUpdateGeometry_BP(class ULGUIUpdateGeometryHelper* InUpdateGoemetryHelper, class ULGUISpriteData_BaseObject* InSpriteData, bool InVertexPositionChanged, bool InVertexUVChanged, bool InVertexColorChanged);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISelectableTransitionComponent">();
+		return StaticClassImpl<"UISpriteBase_BP">();
 	}
-	static class UUISelectableTransitionComponent* GetDefaultObj()
+	static class UUISpriteBase_BP* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISelectableTransitionComponent>();
+		return GetDefaultObjImpl<UUISpriteBase_BP>();
 	}
 };
-static_assert(alignof(UUISelectableTransitionComponent) == 0x000008, "Wrong alignment on UUISelectableTransitionComponent");
-static_assert(sizeof(UUISelectableTransitionComponent) == 0x000110, "Wrong size on UUISelectableTransitionComponent");
-static_assert(offsetof(UUISelectableTransitionComponent, TweenerCollection) == 0x000100, "Member 'UUISelectableTransitionComponent::TweenerCollection' has a wrong offset!");
-
-// Class LGUI.UITransitionBase
-// 0x0158 (0x0268 - 0x0110)
-class UUITransitionBase : public UUISelectableTransitionComponent
-{
-public:
-	struct FWidgetTransitionInfo                  WidgetTransitionInfo;                              // 0x0110(0x0104)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_214[0x54];                                     // 0x0214(0x0054)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UITransitionBase">();
-	}
-	static class UUITransitionBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUITransitionBase>();
-	}
-};
-static_assert(alignof(UUITransitionBase) == 0x000008, "Wrong alignment on UUITransitionBase");
-static_assert(sizeof(UUITransitionBase) == 0x000268, "Wrong size on UUITransitionBase");
-static_assert(offsetof(UUITransitionBase, WidgetTransitionInfo) == 0x000110, "Member 'UUITransitionBase::WidgetTransitionInfo' has a wrong offset!");
+static_assert(alignof(UUISpriteBase_BP) == 0x000010, "Wrong alignment on UUISpriteBase_BP");
+static_assert(sizeof(UUISpriteBase_BP) == 0x0007B0, "Wrong size on UUISpriteBase_BP");
+static_assert(offsetof(UUISpriteBase_BP, createGeometryHelper) == 0x000798, "Member 'UUISpriteBase_BP::createGeometryHelper' has a wrong offset!");
+static_assert(offsetof(UUISpriteBase_BP, updateGeometryHelper) == 0x0007A0, "Member 'UUISpriteBase_BP::updateGeometryHelper' has a wrong offset!");
 
 // Class LGUI.LGUIFontData_BaseObject
 // 0x0050 (0x0080 - 0x0030)
@@ -2227,72 +2014,80 @@ static_assert(offsetof(ULGUIFontData, renderTextArray) == 0x0000F0, "Member 'ULG
 static_assert(offsetof(ULGUIFontData, fontBinaryArray) == 0x000100, "Member 'ULGUIFontData::fontBinaryArray' has a wrong offset!");
 static_assert(offsetof(ULGUIFontData, tempFontBinaryArray) == 0x000110, "Member 'ULGUIFontData::tempFontBinaryArray' has a wrong offset!");
 
-// Class LGUI.UISprite
-// 0x0040 (0x07D0 - 0x0790)
-class UUISprite final : public UUISpriteBase
+// Class LGUI.UIBaseActor
+// 0x00E8 (0x0398 - 0x02B0)
+class AUIBaseActor : public AActor
 {
 public:
-	EUISpriteType                                 type;                                              // 0x0790(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUISpriteFillMethod                           fillMethod;                                        // 0x0791(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         fillOrigin;                                        // 0x0792(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          fillDirectionFlip;                                 // 0x0793(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         fillAmount;                                        // 0x0794(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bTileAutoFit;                                      // 0x0798(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_799[0x3];                                      // 0x0799(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         clampEdge;                                         // 0x079C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         tileX;                                             // 0x07A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         tileY;                                             // 0x07A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         offsetX;                                           // 0x07A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         offsetY;                                           // 0x07AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMaterialInterface*                     HistoryCustomMaterial;                             // 0x07B0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7B8[0x18];                                     // 0x07B8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B0[0x8];                                      // 0x02B0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FSoftObjectPath, class ALevelSequenceActor*> CurBindingSeqActors;                    // 0x02B8(0x0050)(Transient, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& sequenceName, const class FString& eventName)> OnSequencePlayEvent; // 0x0308(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	struct FGuid                                  LGUIGuid;                                          // 0x0330(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TMap<struct FSoftObjectPath, class USequencePlayContext*> AllSequencePlayContexts;               // 0x0340(0x0050)(Transient, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_390[0x8];                                      // 0x0390(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetFillAmount(float newValue);
-	void SetFillDirectionFlip(bool newValue);
-	void SetFillMethod(EUISpriteFillMethod newValue);
-	void SetFillOrigin(uint8 newValue);
-	void SetOffsetX(float newValue);
-	void SetOffsetY(float newValue);
-	void SetSpriteType(EUISpriteType newType);
-	void SetTileOffset(const struct FLinearColor& In);
-	void SetTileX(float newValue);
-	void SetTileY(float newValue);
+	void ActivateAllChildrenInteraction();
+	void CleanIdleAnimSeqActorCache();
+	void ClearAllSequence();
+	ESequenceLoadState GetLoadStateOfSequenceByKey(const class FString& Key);
+	struct FSequenceInfo GetSeqInfoByKey(const class FString& Key);
+	class USequencePlayContext* GetSequencePlayContextOfKey(const class FString& Key);
+	class ALevelSequenceActor* GetSequencePlayerByKey(const class FString& Name_0);
+	void LoadSequenceAssetAsyncByKey(const class FString& Key, const TDelegate<void(class ULevelSequence* Sequence)>& OnLoaded);
+	void PauseSequenceByKey(const class FString& Name_0);
+	void PlayLevelSequenceByKey(const class FString& Name_0);
+	void ReplaySequenceByKey(const class FString& Name_0);
+	void ResumeSequenceByKey(const class FString& Name_0);
+	void SequenceJumpToEnd(const struct FSoftObjectPath& SoftPath);
+	void SequenceJumpToSecondByKey(const class FString& Name_0, const struct FFrameTime& Time);
+	void SequencePlayReverseByKey(const class FString& Name_0);
+	void StopSequenceByKey(const class FString& Name_0);
 
-	float GetFillAmount() const;
-	bool GetFillDirectionFlip() const;
-	EUISpriteFillMethod GetFillMethod() const;
-	uint8 GetFillOrigin() const;
-	EUISpriteType GetSpriteType() const;
+	void ExecuteSequencePlayEvent(const class FString& sequenceName, const class FString& eventName) const;
+	class UUIItem* GetUIItem() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISprite">();
+		return StaticClassImpl<"UIBaseActor">();
 	}
-	static class UUISprite* GetDefaultObj()
+	static class AUIBaseActor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISprite>();
+		return GetDefaultObjImpl<AUIBaseActor>();
 	}
 };
-static_assert(alignof(UUISprite) == 0x000010, "Wrong alignment on UUISprite");
-static_assert(sizeof(UUISprite) == 0x0007D0, "Wrong size on UUISprite");
-static_assert(offsetof(UUISprite, type) == 0x000790, "Member 'UUISprite::type' has a wrong offset!");
-static_assert(offsetof(UUISprite, fillMethod) == 0x000791, "Member 'UUISprite::fillMethod' has a wrong offset!");
-static_assert(offsetof(UUISprite, fillOrigin) == 0x000792, "Member 'UUISprite::fillOrigin' has a wrong offset!");
-static_assert(offsetof(UUISprite, fillDirectionFlip) == 0x000793, "Member 'UUISprite::fillDirectionFlip' has a wrong offset!");
-static_assert(offsetof(UUISprite, fillAmount) == 0x000794, "Member 'UUISprite::fillAmount' has a wrong offset!");
-static_assert(offsetof(UUISprite, bTileAutoFit) == 0x000798, "Member 'UUISprite::bTileAutoFit' has a wrong offset!");
-static_assert(offsetof(UUISprite, clampEdge) == 0x00079C, "Member 'UUISprite::clampEdge' has a wrong offset!");
-static_assert(offsetof(UUISprite, tileX) == 0x0007A0, "Member 'UUISprite::tileX' has a wrong offset!");
-static_assert(offsetof(UUISprite, tileY) == 0x0007A4, "Member 'UUISprite::tileY' has a wrong offset!");
-static_assert(offsetof(UUISprite, offsetX) == 0x0007A8, "Member 'UUISprite::offsetX' has a wrong offset!");
-static_assert(offsetof(UUISprite, offsetY) == 0x0007AC, "Member 'UUISprite::offsetY' has a wrong offset!");
-static_assert(offsetof(UUISprite, HistoryCustomMaterial) == 0x0007B0, "Member 'UUISprite::HistoryCustomMaterial' has a wrong offset!");
+static_assert(alignof(AUIBaseActor) == 0x000008, "Wrong alignment on AUIBaseActor");
+static_assert(sizeof(AUIBaseActor) == 0x000398, "Wrong size on AUIBaseActor");
+static_assert(offsetof(AUIBaseActor, CurBindingSeqActors) == 0x0002B8, "Member 'AUIBaseActor::CurBindingSeqActors' has a wrong offset!");
+static_assert(offsetof(AUIBaseActor, OnSequencePlayEvent) == 0x000308, "Member 'AUIBaseActor::OnSequencePlayEvent' has a wrong offset!");
+static_assert(offsetof(AUIBaseActor, LGUIGuid) == 0x000330, "Member 'AUIBaseActor::LGUIGuid' has a wrong offset!");
+static_assert(offsetof(AUIBaseActor, AllSequencePlayContexts) == 0x000340, "Member 'AUIBaseActor::AllSequencePlayContexts' has a wrong offset!");
+
+// Class LGUI.UISpineActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUISpineActor final : public AUIBaseActor
+{
+public:
+	class UUISpineRenderable*                     UISpine;                                           // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISpineActor">();
+	}
+	static class AUISpineActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AUISpineActor>();
+	}
+};
+static_assert(alignof(AUISpineActor) == 0x000008, "Wrong alignment on AUISpineActor");
+static_assert(sizeof(AUISpineActor) == 0x0003A0, "Wrong size on AUISpineActor");
+static_assert(offsetof(AUISpineActor, UISpine) == 0x000398, "Member 'AUISpineActor::UISpine' has a wrong offset!");
 
 // Class LGUI.LGUIGridAnimationInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIGridAnimationInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIGridAnimationInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -2303,9 +2098,18 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIGridAnimationInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ILGUIGridAnimationInterface) == 0x000008, "Wrong alignment on ILGUIGridAnimationInterface");
-static_assert(sizeof(ILGUIGridAnimationInterface) == 0x000030, "Wrong size on ILGUIGridAnimationInterface");
+static_assert(alignof(ILGUIGridAnimationInterface) == 0x000001, "Wrong alignment on ILGUIGridAnimationInterface");
+static_assert(sizeof(ILGUIGridAnimationInterface) == 0x000001, "Wrong size on ILGUIGridAnimationInterface");
 
 // Class LGUI.LGUIImageSequencePlayer
 // 0x0020 (0x00E0 - 0x00C0)
@@ -2347,46 +2151,47 @@ static_assert(offsetof(ULGUIImageSequencePlayer, fps) == 0x0000C0, "Member 'ULGU
 static_assert(offsetof(ULGUIImageSequencePlayer, loop) == 0x0000C4, "Member 'ULGUIImageSequencePlayer::loop' has a wrong offset!");
 static_assert(offsetof(ULGUIImageSequencePlayer, playOnStart) == 0x0000C5, "Member 'ULGUIImageSequencePlayer::playOnStart' has a wrong offset!");
 
-// Class LGUI.UIContainerActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUIContainerActor : public AUIBaseActor
+// Class LGUI.UIEffectTextAnimation_RangeSelector
+// 0x0028 (0x0060 - 0x0038)
+class UUIEffectTextAnimation_RangeSelector final : public UUIEffectTextAnimation_Selector
 {
 public:
-	class UUIItem*                                UIItem;                                            // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         range;                                             // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          flipDirection;                                     // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         start;                                             // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         end;                                               // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          lineByLine;                                        // 0x0048(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_49[0x17];                                      // 0x0049(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetEnd(float value);
+	void SetFlipDirection(bool value);
+	void SetRange(float value);
+	void SetStart(float value);
+
+	float GetEnd() const;
+	bool GetFlipDirection() const;
+	float GetRange() const;
+	float GetStart() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIContainerActor">();
+		return StaticClassImpl<"UIEffectTextAnimation_RangeSelector">();
 	}
-	static class AUIContainerActor* GetDefaultObj()
+	static class UUIEffectTextAnimation_RangeSelector* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AUIContainerActor>();
+		return GetDefaultObjImpl<UUIEffectTextAnimation_RangeSelector>();
 	}
 };
-static_assert(alignof(AUIContainerActor) == 0x000008, "Wrong alignment on AUIContainerActor");
-static_assert(sizeof(AUIContainerActor) == 0x0003A0, "Wrong size on AUIContainerActor");
-static_assert(offsetof(AUIContainerActor, UIItem) == 0x000398, "Member 'AUIContainerActor::UIItem' has a wrong offset!");
-
-// Class LGUI.UIEventBlocker
-// 0x0010 (0x03B0 - 0x03A0)
-class AUIEventBlocker final : public AUIContainerActor
-{
-public:
-	uint8                                         Pad_3A0[0x10];                                     // 0x03A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIEventBlocker">();
-	}
-	static class AUIEventBlocker* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AUIEventBlocker>();
-	}
-};
-static_assert(alignof(AUIEventBlocker) == 0x000008, "Wrong alignment on AUIEventBlocker");
-static_assert(sizeof(AUIEventBlocker) == 0x0003B0, "Wrong size on AUIEventBlocker");
+static_assert(alignof(UUIEffectTextAnimation_RangeSelector) == 0x000008, "Wrong alignment on UUIEffectTextAnimation_RangeSelector");
+static_assert(sizeof(UUIEffectTextAnimation_RangeSelector) == 0x000060, "Wrong size on UUIEffectTextAnimation_RangeSelector");
+static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, range) == 0x000038, "Member 'UUIEffectTextAnimation_RangeSelector::range' has a wrong offset!");
+static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, flipDirection) == 0x00003C, "Member 'UUIEffectTextAnimation_RangeSelector::flipDirection' has a wrong offset!");
+static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, start) == 0x000040, "Member 'UUIEffectTextAnimation_RangeSelector::start' has a wrong offset!");
+static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, end) == 0x000044, "Member 'UUIEffectTextAnimation_RangeSelector::end' has a wrong offset!");
+static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, lineByLine) == 0x000048, "Member 'UUIEffectTextAnimation_RangeSelector::lineByLine' has a wrong offset!");
 
 // Class LGUI.LGUIManagerActor
 // 0x0230 (0x04E0 - 0x02B0)
@@ -2496,47 +2301,286 @@ static_assert(sizeof(ULGUINiagaraComponent) == 0x000710, "Wrong size on ULGUINia
 static_assert(offsetof(ULGUINiagaraComponent, IsUIDrawCallVisible) == 0x0006F0, "Member 'ULGUINiagaraComponent::IsUIDrawCallVisible' has a wrong offset!");
 static_assert(offsetof(ULGUINiagaraComponent, IsSupportWorldSpace) == 0x0006F1, "Member 'ULGUINiagaraComponent::IsSupportWorldSpace' has a wrong offset!");
 
-// Class LGUI.UIExtendToggleTransitionBase
-// 0x0040 (0x0140 - 0x0100)
-class UUIExtendToggleTransitionBase : public ULGUIBehaviour
+// Class LGUI.UISelectableComponent
+// 0x02F8 (0x03F8 - 0x0100)
+class UUISelectableComponent : public ULGUIBehaviour
 {
 public:
-	struct FUIWidget                              UnCkeckUnHoverWidget;                              // 0x0100(0x0040)(NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_100[0x20];                                     // 0x0100(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AUIBaseActor>            TransitionActor;                                   // 0x0120(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          AllowEventBubbleUp;                                // 0x0128(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUISelectableTransitionType                   Transition;                                        // 0x0129(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_12A[0x6];                                      // 0x012A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULTweener*                              TransitionTweener;                                 // 0x0130(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 NormalColor;                                       // 0x0138(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 HighlightedColor;                                  // 0x013C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 PressedColor;                                      // 0x0140(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 DisabledColor;                                     // 0x0144(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 SelectedColor;                                     // 0x0148(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         FadeDuration;                                      // 0x014C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class ULGUISpriteData_BaseObject*             NormalSprite;                                      // 0x0150(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class ULGUISpriteData_BaseObject*             HighlightedSprite;                                 // 0x0158(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class ULGUISpriteData_BaseObject*             PressedSprite;                                     // 0x0160(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class ULGUISpriteData_BaseObject*             DisabledSprite;                                    // 0x0168(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class ULGUISpriteData_BaseObject*             SelectedSprite;                                    // 0x0170(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUIBaseActor>            NormalItem;                                        // 0x0178(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUIBaseActor>            HighlightedItem;                                   // 0x0180(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUIBaseActor>            PressedItem;                                       // 0x0188(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUIBaseActor>            DisabledItem;                                      // 0x0190(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUIBaseActor>            SelectedItem;                                      // 0x0198(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUISelectableSelectionState                   CurrentSelectionState;                             // 0x01A0(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1A1[0x3];                                      // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bApplyColorToChildren;                             // 0x01A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bAutoScrollOnSelected;                             // 0x01A5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1A6[0x2];                                      // 0x01A6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AActor>                  NavigationGroupParentComponentActor;               // 0x01A8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUISelectableComponent>  NavigationGroupParentComponent;                    // 0x01B0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AActor>                  NavigationGroupComponentActor;                     // 0x01B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUINavigationGroupComponent> NavigationGroupComponent;                      // 0x01C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AActor>                  ScrollViewActor;                                   // 0x01C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUIScrollViewWithScrollbarComponent> ScrollViewComponent;                   // 0x01D0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUISelectableTransitionComponent> TransitionComp;                           // 0x01D8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUISelectableNavigationMode                   NavigationLeft;                                    // 0x01E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1E1[0x7];                                      // 0x01E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIComponentReference                NavigationLeftSpecific;                            // 0x01E8(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	EUISelectableNavigationMode                   NavigationRight;                                   // 0x0210(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_211[0x7];                                      // 0x0211(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIComponentReference                NavigationRightSpecific;                           // 0x0218(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	EUISelectableNavigationMode                   NavigationUp;                                      // 0x0240(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_241[0x7];                                      // 0x0241(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIComponentReference                NavigationUpSpecific;                              // 0x0248(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	EUISelectableNavigationMode                   NavigationDown;                                    // 0x0270(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_271[0x7];                                      // 0x0271(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIComponentReference                NavigationDownSpecific;                            // 0x0278(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	EUISelectableNavigationMode                   NavigationNext;                                    // 0x02A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2A1[0x7];                                      // 0x02A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIComponentReference                NavigationNextSpecific;                            // 0x02A8(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	EUISelectableNavigationMode                   NavigationPrev;                                    // 0x02D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2D1[0x7];                                      // 0x02D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIComponentReference                NavigationPrevSpecific;                            // 0x02D8(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TMap<EStateTransferType, struct FAnimationPlayInfo> AnimationConfig;                             // 0x0300(0x0050)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         Pad_350[0x8];                                      // 0x0350(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ULevelSequence*>                 AllAnims;                                          // 0x0358(0x0010)(Edit, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void(bool CurrentSelfInteractive)>  OnSelfInteractiveChanged;                          // 0x0368(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	bool                                          IsSelfInteractive;                                 // 0x0390(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCanClickWhenDisable;                              // 0x0391(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_392[0x16];                                     // 0x0392(0x0016)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             FocusListenerDelegate;                             // 0x03A8(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void()>                             UnFocusListenerDelegate;                           // 0x03D0(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static void ResetSelectableDelegate();
+	static void SetSelectableDelegate(const TDelegate<void(class UUISelectableComponent* SelectableComponent, bool bCreate)>& Delegate);
+	static void SetShieldMobileHighlight(const bool Value);
+	static void SetShieldPCPress(const bool Value);
+
+	void ApplySelectionState(bool bImmediateSet);
+	bool GetCanClickWhenDisable();
+	EUISelectableSelectionState GetSelectionState();
+	bool GetSelfInteractive();
+	void NotifyFocusListener();
+	void NotifyUnFocusListener();
+	void PlayUIAnimationByPlayInfo(const struct FAnimationPlayInfo& PlayInfo);
+	void SetCanClickWhenDisable(bool CanClickEnbale);
+	void SetHighlightedColor(const struct FColor& NewColor);
+	void SetHighlightedSprite(class ULGUISpriteData_BaseObject* NewSprite);
+	void SetIsCustomAnim(bool bIsCustomAnim);
+	void SetIsCustomTransition(bool bIsCustomTransition);
+	void SetNavigationDown(EUISelectableNavigationMode value);
+	void SetNavigationDownExplicit(class UUISelectableComponent* value);
+	void SetNavigationGroup(class UUINavigationGroupComponent* Component);
+	void SetNavigationGroupParent(class UUISelectableComponent* Component);
+	void SetNavigationLeft(EUISelectableNavigationMode value);
+	void SetNavigationLeftExplicit(class UUISelectableComponent* value);
+	void SetNavigationNext(EUISelectableNavigationMode value);
+	void SetNavigationNextExplicit(class UUISelectableComponent* value);
+	void SetNavigationPrev(EUISelectableNavigationMode value);
+	void SetNavigationPrevExplicit(class UUISelectableComponent* value);
+	void SetNavigationRight(EUISelectableNavigationMode value);
+	void SetNavigationRightExplicit(class UUISelectableComponent* value);
+	void SetNavigationUp(EUISelectableNavigationMode value);
+	void SetNavigationUpExplicit(class UUISelectableComponent* value);
+	void SetNormalColor(const struct FColor& NewColor);
+	void SetNormalSprite(class ULGUISpriteData_BaseObject* NewSprite);
+	void SetPressedColor(const struct FColor& NewColor);
+	void SetPressedSprite(class ULGUISpriteData_BaseObject* NewSprite);
+	void SetScrollView(class UUIScrollViewWithScrollbarComponent* Component);
+	void SetSelectionState(EUISelectableSelectionState NewState);
+	void SetSelfInteractive(bool InteractiveEnable);
+	void SetTransitionTarget(class AUIBaseActor* value);
+
+	class ULGUISpriteData_BaseObject* GetDisabledSprite() const;
+	struct FColor GetHighlightedColor() const;
+	class ULGUISpriteData_BaseObject* GetHighlightedSprite() const;
+	EUISelectableNavigationMode GetNavigationDown() const;
+	class UUISelectableComponent* GetNavigationDownExplicit() const;
+	EUISelectableNavigationMode GetNavigationLeft() const;
+	class UUISelectableComponent* GetNavigationLeftExplicit() const;
+	EUISelectableNavigationMode GetNavigationNext() const;
+	class UUISelectableComponent* GetNavigationNextExplicit() const;
+	EUISelectableNavigationMode GetNavigationPrev() const;
+	class UUISelectableComponent* GetNavigationPrevExplicit() const;
+	EUISelectableNavigationMode GetNavigationRight() const;
+	class UUISelectableComponent* GetNavigationRightExplicit() const;
+	EUISelectableNavigationMode GetNavigationUp() const;
+	class UUISelectableComponent* GetNavigationUpExplicit() const;
+	struct FColor GetNormalColor() const;
+	class ULGUISpriteData_BaseObject* GetNormalSprite() const;
+	struct FColor GetPressedColor() const;
+	class ULGUISpriteData_BaseObject* GetPressedSprite() const;
+	class ULGUISpriteData_BaseObject* GetSelectedSprite() const;
+	class AUIBaseActor* GetTransitionTarget() const;
+	bool IsInteractable() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIExtendToggleTransitionBase">();
+		return StaticClassImpl<"UISelectableComponent">();
 	}
-	static class UUIExtendToggleTransitionBase* GetDefaultObj()
+	static class UUISelectableComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIExtendToggleTransitionBase>();
+		return GetDefaultObjImpl<UUISelectableComponent>();
 	}
 };
-static_assert(alignof(UUIExtendToggleTransitionBase) == 0x000008, "Wrong alignment on UUIExtendToggleTransitionBase");
-static_assert(sizeof(UUIExtendToggleTransitionBase) == 0x000140, "Wrong size on UUIExtendToggleTransitionBase");
-static_assert(offsetof(UUIExtendToggleTransitionBase, UnCkeckUnHoverWidget) == 0x000100, "Member 'UUIExtendToggleTransitionBase::UnCkeckUnHoverWidget' has a wrong offset!");
+static_assert(alignof(UUISelectableComponent) == 0x000008, "Wrong alignment on UUISelectableComponent");
+static_assert(sizeof(UUISelectableComponent) == 0x0003F8, "Wrong size on UUISelectableComponent");
+static_assert(offsetof(UUISelectableComponent, TransitionActor) == 0x000120, "Member 'UUISelectableComponent::TransitionActor' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, AllowEventBubbleUp) == 0x000128, "Member 'UUISelectableComponent::AllowEventBubbleUp' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, Transition) == 0x000129, "Member 'UUISelectableComponent::Transition' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, TransitionTweener) == 0x000130, "Member 'UUISelectableComponent::TransitionTweener' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NormalColor) == 0x000138, "Member 'UUISelectableComponent::NormalColor' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, HighlightedColor) == 0x00013C, "Member 'UUISelectableComponent::HighlightedColor' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, PressedColor) == 0x000140, "Member 'UUISelectableComponent::PressedColor' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, DisabledColor) == 0x000144, "Member 'UUISelectableComponent::DisabledColor' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, SelectedColor) == 0x000148, "Member 'UUISelectableComponent::SelectedColor' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, FadeDuration) == 0x00014C, "Member 'UUISelectableComponent::FadeDuration' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NormalSprite) == 0x000150, "Member 'UUISelectableComponent::NormalSprite' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, HighlightedSprite) == 0x000158, "Member 'UUISelectableComponent::HighlightedSprite' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, PressedSprite) == 0x000160, "Member 'UUISelectableComponent::PressedSprite' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, DisabledSprite) == 0x000168, "Member 'UUISelectableComponent::DisabledSprite' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, SelectedSprite) == 0x000170, "Member 'UUISelectableComponent::SelectedSprite' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NormalItem) == 0x000178, "Member 'UUISelectableComponent::NormalItem' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, HighlightedItem) == 0x000180, "Member 'UUISelectableComponent::HighlightedItem' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, PressedItem) == 0x000188, "Member 'UUISelectableComponent::PressedItem' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, DisabledItem) == 0x000190, "Member 'UUISelectableComponent::DisabledItem' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, SelectedItem) == 0x000198, "Member 'UUISelectableComponent::SelectedItem' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, CurrentSelectionState) == 0x0001A0, "Member 'UUISelectableComponent::CurrentSelectionState' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, bApplyColorToChildren) == 0x0001A4, "Member 'UUISelectableComponent::bApplyColorToChildren' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, bAutoScrollOnSelected) == 0x0001A5, "Member 'UUISelectableComponent::bAutoScrollOnSelected' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationGroupParentComponentActor) == 0x0001A8, "Member 'UUISelectableComponent::NavigationGroupParentComponentActor' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationGroupParentComponent) == 0x0001B0, "Member 'UUISelectableComponent::NavigationGroupParentComponent' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationGroupComponentActor) == 0x0001B8, "Member 'UUISelectableComponent::NavigationGroupComponentActor' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationGroupComponent) == 0x0001C0, "Member 'UUISelectableComponent::NavigationGroupComponent' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, ScrollViewActor) == 0x0001C8, "Member 'UUISelectableComponent::ScrollViewActor' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, ScrollViewComponent) == 0x0001D0, "Member 'UUISelectableComponent::ScrollViewComponent' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, TransitionComp) == 0x0001D8, "Member 'UUISelectableComponent::TransitionComp' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationLeft) == 0x0001E0, "Member 'UUISelectableComponent::NavigationLeft' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationLeftSpecific) == 0x0001E8, "Member 'UUISelectableComponent::NavigationLeftSpecific' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationRight) == 0x000210, "Member 'UUISelectableComponent::NavigationRight' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationRightSpecific) == 0x000218, "Member 'UUISelectableComponent::NavigationRightSpecific' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationUp) == 0x000240, "Member 'UUISelectableComponent::NavigationUp' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationUpSpecific) == 0x000248, "Member 'UUISelectableComponent::NavigationUpSpecific' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationDown) == 0x000270, "Member 'UUISelectableComponent::NavigationDown' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationDownSpecific) == 0x000278, "Member 'UUISelectableComponent::NavigationDownSpecific' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationNext) == 0x0002A0, "Member 'UUISelectableComponent::NavigationNext' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationNextSpecific) == 0x0002A8, "Member 'UUISelectableComponent::NavigationNextSpecific' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationPrev) == 0x0002D0, "Member 'UUISelectableComponent::NavigationPrev' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, NavigationPrevSpecific) == 0x0002D8, "Member 'UUISelectableComponent::NavigationPrevSpecific' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, AnimationConfig) == 0x000300, "Member 'UUISelectableComponent::AnimationConfig' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, AllAnims) == 0x000358, "Member 'UUISelectableComponent::AllAnims' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, OnSelfInteractiveChanged) == 0x000368, "Member 'UUISelectableComponent::OnSelfInteractiveChanged' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, IsSelfInteractive) == 0x000390, "Member 'UUISelectableComponent::IsSelfInteractive' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, bCanClickWhenDisable) == 0x000391, "Member 'UUISelectableComponent::bCanClickWhenDisable' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, FocusListenerDelegate) == 0x0003A8, "Member 'UUISelectableComponent::FocusListenerDelegate' has a wrong offset!");
+static_assert(offsetof(UUISelectableComponent, UnFocusListenerDelegate) == 0x0003D0, "Member 'UUISelectableComponent::UnFocusListenerDelegate' has a wrong offset!");
 
-// Class LGUI.UIExtendToggleTextTransition
-// 0x0070 (0x01B0 - 0x0140)
-class UUIExtendToggleTextTransition final : public UUIExtendToggleTransitionBase
+// Class LGUI.UIExtendToggle
+// 0x04A8 (0x08A0 - 0x03F8)
+class UUIExtendToggle final : public UUISelectableComponent
 {
 public:
-	struct FExtendToggleTextTransitionState       TransitionState;                                   // 0x0140(0x0070)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3F8[0x10];                                     // 0x03F8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(EToggleState State)> OnStateChange;                                // 0x0408(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_418[0x10];                                     // 0x0418(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             CanExecuteChange;                                  // 0x0428(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnHover;                                           // 0x0450(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnUnHover;                                         // 0x0460(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnUndeterminedClicked;                             // 0x0470(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& eventName)> OnPostAudioEvent;                                // 0x0480(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMap<EToggleAudioTransitionState, struct FSoftObjectPath> AudioConfig;                           // 0x04A8(0x0050)(Edit, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreSelectedHover;                              // 0x04F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4F9[0x7];                                      // 0x04F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        LongPressAudioEvent;                               // 0x0500(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(EToggleAudioTransitionState State, const class FString& EventName)> OnPostAudioStateEvent; // 0x0520(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(EToggleState State)>           OnPointEnterCallBack;                              // 0x0548(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(EToggleState State)>           OnPointExitCallBack;                               // 0x0570(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(EToggleState State)>           OnPointDownCallBack;                               // 0x0598(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(EToggleState State)>           OnPointUpCallBack;                                 // 0x05C0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(EToggleState State, class ULGUIPointerEventData* eventData)> OnPointUpCallBackWithEventData; // 0x05E8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(EToggleState State)>           OnPointCancelCallBack;                             // 0x0610(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerBeginDragCallBack;              // 0x0638(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerDragCallBack;                   // 0x0660(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerEndDragCallBack;                // 0x0688(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	EToggleState                                  ToggleState;                                       // 0x06B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6B1[0x3];                                      // 0x06B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AActor>                  ToggleGroupActor;                                  // 0x06B4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bToggleOnSelect;                                   // 0x06BC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bLockStateOnSelect;                                // 0x06BD(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCheckToggleSelected;                              // 0x06BE(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6BF[0x1];                                      // 0x06BF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EToggleAnimationType, struct FToggleAnimationPlayInfo> ToggleAnimations;                    // 0x06C0(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	TMap<EUISelectableInteractionState, struct FToggleStateAnimation> InteractiveAnimations;         // 0x0710(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	TMap<EToggleStateSwitch, struct FToggleAnimationPlayInfo> StateSwitchAnimations;                 // 0x0760(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7B0[0xF0];                                     // 0x07B0(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAllTransitionsEnable(bool bIsEnable);
+	void SetToggleGroup(class AActor* TogGroupActor);
+	EToggleChangeStateResult SetToggleState(EToggleState State, bool bFireEvent);
+	void SetToggleStateForce(EToggleState State, bool bFireEvent, bool bIngnoreAnim);
+
+	class UUIExtendToggleGroup* GetToggleGroup() const;
+	EToggleState GetToggleState() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIExtendToggleTextTransition">();
+		return StaticClassImpl<"UIExtendToggle">();
 	}
-	static class UUIExtendToggleTextTransition* GetDefaultObj()
+	static class UUIExtendToggle* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIExtendToggleTextTransition>();
+		return GetDefaultObjImpl<UUIExtendToggle>();
 	}
 };
-static_assert(alignof(UUIExtendToggleTextTransition) == 0x000008, "Wrong alignment on UUIExtendToggleTextTransition");
-static_assert(sizeof(UUIExtendToggleTextTransition) == 0x0001B0, "Wrong size on UUIExtendToggleTextTransition");
-static_assert(offsetof(UUIExtendToggleTextTransition, TransitionState) == 0x000140, "Member 'UUIExtendToggleTextTransition::TransitionState' has a wrong offset!");
+static_assert(alignof(UUIExtendToggle) == 0x000008, "Wrong alignment on UUIExtendToggle");
+static_assert(sizeof(UUIExtendToggle) == 0x0008A0, "Wrong size on UUIExtendToggle");
+static_assert(offsetof(UUIExtendToggle, OnStateChange) == 0x000408, "Member 'UUIExtendToggle::OnStateChange' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, CanExecuteChange) == 0x000428, "Member 'UUIExtendToggle::CanExecuteChange' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnHover) == 0x000450, "Member 'UUIExtendToggle::OnHover' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnUnHover) == 0x000460, "Member 'UUIExtendToggle::OnUnHover' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnUndeterminedClicked) == 0x000470, "Member 'UUIExtendToggle::OnUndeterminedClicked' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPostAudioEvent) == 0x000480, "Member 'UUIExtendToggle::OnPostAudioEvent' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, AudioConfig) == 0x0004A8, "Member 'UUIExtendToggle::AudioConfig' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, bIgnoreSelectedHover) == 0x0004F8, "Member 'UUIExtendToggle::bIgnoreSelectedHover' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, LongPressAudioEvent) == 0x000500, "Member 'UUIExtendToggle::LongPressAudioEvent' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPostAudioStateEvent) == 0x000520, "Member 'UUIExtendToggle::OnPostAudioStateEvent' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPointEnterCallBack) == 0x000548, "Member 'UUIExtendToggle::OnPointEnterCallBack' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPointExitCallBack) == 0x000570, "Member 'UUIExtendToggle::OnPointExitCallBack' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPointDownCallBack) == 0x000598, "Member 'UUIExtendToggle::OnPointDownCallBack' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPointUpCallBack) == 0x0005C0, "Member 'UUIExtendToggle::OnPointUpCallBack' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPointUpCallBackWithEventData) == 0x0005E8, "Member 'UUIExtendToggle::OnPointUpCallBackWithEventData' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPointCancelCallBack) == 0x000610, "Member 'UUIExtendToggle::OnPointCancelCallBack' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPointerBeginDragCallBack) == 0x000638, "Member 'UUIExtendToggle::OnPointerBeginDragCallBack' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPointerDragCallBack) == 0x000660, "Member 'UUIExtendToggle::OnPointerDragCallBack' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, OnPointerEndDragCallBack) == 0x000688, "Member 'UUIExtendToggle::OnPointerEndDragCallBack' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, ToggleState) == 0x0006B0, "Member 'UUIExtendToggle::ToggleState' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, ToggleGroupActor) == 0x0006B4, "Member 'UUIExtendToggle::ToggleGroupActor' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, bToggleOnSelect) == 0x0006BC, "Member 'UUIExtendToggle::bToggleOnSelect' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, bLockStateOnSelect) == 0x0006BD, "Member 'UUIExtendToggle::bLockStateOnSelect' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, bCheckToggleSelected) == 0x0006BE, "Member 'UUIExtendToggle::bCheckToggleSelected' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, ToggleAnimations) == 0x0006C0, "Member 'UUIExtendToggle::ToggleAnimations' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, InteractiveAnimations) == 0x000710, "Member 'UUIExtendToggle::InteractiveAnimations' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggle, StateSwitchAnimations) == 0x000760, "Member 'UUIExtendToggle::StateSwitchAnimations' has a wrong offset!");
 
 // Class LGUI.LGUIPlayTween
 // 0x0090 (0x00C0 - 0x0030)
@@ -2616,37 +2660,82 @@ static_assert(offsetof(ULGUIPlayTween_Float, from) == 0x0000C0, "Member 'ULGUIPl
 static_assert(offsetof(ULGUIPlayTween_Float, to) == 0x0000C4, "Member 'ULGUIPlayTween_Float::to' has a wrong offset!");
 static_assert(offsetof(ULGUIPlayTween_Float, onUpdateValue) == 0x0000C8, "Member 'ULGUIPlayTween_Float::onUpdateValue' has a wrong offset!");
 
-// Class LGUI.UIInputAdaptZone
-// 0x0030 (0x0130 - 0x0100)
-class UUIInputAdaptZone final : public ULGUIBehaviour
+// Class LGUI.UILayoutBase
+// 0x0070 (0x0170 - 0x0100)
+class UUILayoutBase : public ULGUIBehaviour
 {
 public:
-	struct FMargin                                AdaptMargin;                                       // 0x0100(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_110[0x18];                                     // 0x0110(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bMouseKeyboardAdapt;                               // 0x0128(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bGamepadAdapt;                                     // 0x0129(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_12A[0x6];                                      // 0x012A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_100[0x20];                                     // 0x0100(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GridAnimationStartTime;                            // 0x0120(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         GridAnimationInterval;                             // 0x0124(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          IsInAnimation;                                     // 0x0128(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsScaleCalculated;                                // 0x0129(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUseOriginalChildrenOrder;                         // 0x012A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_12B[0x1D];                                     // 0x012B(0x001D)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(class UUILayoutBase* Layout)>  OnRebuildLayoutDelegate;                           // 0x0148(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 
 public:
-	void OnMouseMoved(float Value);
-	void OnPressAnyKey(const struct FKey& Key);
-	void OnTouchBegin(ETouchIndex TouchIndex, const struct FVector& Location);
+	void SetGridAnimationInterval(float value);
+	void SetGridAnimationStartTime(float value);
+	void SetInAnimation(bool state);
+
+	float GetGridAnimationInterval() const;
+	float GetGridAnimationStartTime() const;
+	bool GetInAnimation() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIInputAdaptZone">();
+		return StaticClassImpl<"UILayoutBase">();
 	}
-	static class UUIInputAdaptZone* GetDefaultObj()
+	static class UUILayoutBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIInputAdaptZone>();
+		return GetDefaultObjImpl<UUILayoutBase>();
 	}
 };
-static_assert(alignof(UUIInputAdaptZone) == 0x000008, "Wrong alignment on UUIInputAdaptZone");
-static_assert(sizeof(UUIInputAdaptZone) == 0x000130, "Wrong size on UUIInputAdaptZone");
-static_assert(offsetof(UUIInputAdaptZone, AdaptMargin) == 0x000100, "Member 'UUIInputAdaptZone::AdaptMargin' has a wrong offset!");
-static_assert(offsetof(UUIInputAdaptZone, bMouseKeyboardAdapt) == 0x000128, "Member 'UUIInputAdaptZone::bMouseKeyboardAdapt' has a wrong offset!");
-static_assert(offsetof(UUIInputAdaptZone, bGamepadAdapt) == 0x000129, "Member 'UUIInputAdaptZone::bGamepadAdapt' has a wrong offset!");
+static_assert(alignof(UUILayoutBase) == 0x000008, "Wrong alignment on UUILayoutBase");
+static_assert(sizeof(UUILayoutBase) == 0x000170, "Wrong size on UUILayoutBase");
+static_assert(offsetof(UUILayoutBase, GridAnimationStartTime) == 0x000120, "Member 'UUILayoutBase::GridAnimationStartTime' has a wrong offset!");
+static_assert(offsetof(UUILayoutBase, GridAnimationInterval) == 0x000124, "Member 'UUILayoutBase::GridAnimationInterval' has a wrong offset!");
+static_assert(offsetof(UUILayoutBase, IsInAnimation) == 0x000128, "Member 'UUILayoutBase::IsInAnimation' has a wrong offset!");
+static_assert(offsetof(UUILayoutBase, bIsScaleCalculated) == 0x000129, "Member 'UUILayoutBase::bIsScaleCalculated' has a wrong offset!");
+static_assert(offsetof(UUILayoutBase, bUseOriginalChildrenOrder) == 0x00012A, "Member 'UUILayoutBase::bUseOriginalChildrenOrder' has a wrong offset!");
+static_assert(offsetof(UUILayoutBase, OnRebuildLayoutDelegate) == 0x000148, "Member 'UUILayoutBase::OnRebuildLayoutDelegate' has a wrong offset!");
+
+// Class LGUI.UILayoutWithAnimation
+// 0x0020 (0x0190 - 0x0170)
+class UUILayoutWithAnimation : public UUILayoutBase
+{
+public:
+	EUILayoutChangePositionAnimationType          AnimationType;                                     // 0x0170(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_171[0x3];                                      // 0x0171(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AnimationDuration;                                 // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class ULTweener*>                      TweenerArray;                                      // 0x0178(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_188[0x8];                                      // 0x0188(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void CancelAnimation(bool callComplete);
+	void SetAnimationDuration(float value);
+	void SetAnimationType(EUILayoutChangePositionAnimationType value);
+
+	float GetAnimationDuration() const;
+	EUILayoutChangePositionAnimationType GetAnimationType() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UILayoutWithAnimation">();
+	}
+	static class UUILayoutWithAnimation* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUILayoutWithAnimation>();
+	}
+};
+static_assert(alignof(UUILayoutWithAnimation) == 0x000008, "Wrong alignment on UUILayoutWithAnimation");
+static_assert(sizeof(UUILayoutWithAnimation) == 0x000190, "Wrong size on UUILayoutWithAnimation");
+static_assert(offsetof(UUILayoutWithAnimation, AnimationType) == 0x000170, "Member 'UUILayoutWithAnimation::AnimationType' has a wrong offset!");
+static_assert(offsetof(UUILayoutWithAnimation, AnimationDuration) == 0x000174, "Member 'UUILayoutWithAnimation::AnimationDuration' has a wrong offset!");
+static_assert(offsetof(UUILayoutWithAnimation, TweenerArray) == 0x000178, "Member 'UUILayoutWithAnimation::TweenerArray' has a wrong offset!");
 
 // Class LGUI.LGUIPlayTween_Color
 // 0x0020 (0x00E0 - 0x00C0)
@@ -2698,64 +2787,58 @@ static_assert(offsetof(ULGUIPlayTween_Int, from) == 0x0000C0, "Member 'ULGUIPlay
 static_assert(offsetof(ULGUIPlayTween_Int, to) == 0x0000C4, "Member 'ULGUIPlayTween_Int::to' has a wrong offset!");
 static_assert(offsetof(ULGUIPlayTween_Int, onUpdateValue) == 0x0000C8, "Member 'ULGUIPlayTween_Int::onUpdateValue' has a wrong offset!");
 
-// Class LGUI.UIForcesCursor
-// 0x00F0 (0x0310 - 0x0220)
-class UUIForcesCursor final : public USceneComponent
+// Class LGUI.UIExtendToggleTransitionBase
+// 0x0040 (0x0140 - 0x0100)
+class UUIExtendToggleTransitionBase : public ULGUIBehaviour
 {
 public:
-	bool                                          IsOrthographic;                                    // 0x0218(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_219[0x3];                                      // 0x0219(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ScreenSizeX;                                       // 0x021C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ScreenSizeY;                                       // 0x0220(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               RotatorInfo;                                       // 0x0224(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                MoveVector;                                        // 0x0230(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                OriginPos;                                         // 0x023C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FrameStepping;                                     // 0x0248(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAngleX;                                         // 0x024C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAngleY;                                         // 0x0250(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MouseX;                                            // 0x0254(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MouseY;                                            // 0x0258(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                OffsetVector;                                      // 0x025C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AroundPoint;                                       // 0x0268(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GamepadRightX;                                     // 0x0274(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GamepadRightY;                                     // 0x0278(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Tilt;                                              // 0x027C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Gravity;                                           // 0x0288(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                RotationRate;                                      // 0x0294(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Acceleration;                                      // 0x02A0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AC[0x64];                                     // 0x02AC(0x0064)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FUIWidget                              UnCkeckUnHoverWidget;                              // 0x0100(0x0040)(NoDestructor, Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIForcesCursor">();
+		return StaticClassImpl<"UIExtendToggleTransitionBase">();
 	}
-	static class UUIForcesCursor* GetDefaultObj()
+	static class UUIExtendToggleTransitionBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIForcesCursor>();
+		return GetDefaultObjImpl<UUIExtendToggleTransitionBase>();
 	}
 };
-static_assert(alignof(UUIForcesCursor) == 0x000010, "Wrong alignment on UUIForcesCursor");
-static_assert(sizeof(UUIForcesCursor) == 0x000310, "Wrong size on UUIForcesCursor");
-static_assert(offsetof(UUIForcesCursor, IsOrthographic) == 0x000218, "Member 'UUIForcesCursor::IsOrthographic' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, ScreenSizeX) == 0x00021C, "Member 'UUIForcesCursor::ScreenSizeX' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, ScreenSizeY) == 0x000220, "Member 'UUIForcesCursor::ScreenSizeY' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, RotatorInfo) == 0x000224, "Member 'UUIForcesCursor::RotatorInfo' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, MoveVector) == 0x000230, "Member 'UUIForcesCursor::MoveVector' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, OriginPos) == 0x00023C, "Member 'UUIForcesCursor::OriginPos' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, FrameStepping) == 0x000248, "Member 'UUIForcesCursor::FrameStepping' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, MaxAngleX) == 0x00024C, "Member 'UUIForcesCursor::MaxAngleX' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, MaxAngleY) == 0x000250, "Member 'UUIForcesCursor::MaxAngleY' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, MouseX) == 0x000254, "Member 'UUIForcesCursor::MouseX' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, MouseY) == 0x000258, "Member 'UUIForcesCursor::MouseY' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, OffsetVector) == 0x00025C, "Member 'UUIForcesCursor::OffsetVector' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, AroundPoint) == 0x000268, "Member 'UUIForcesCursor::AroundPoint' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, GamepadRightX) == 0x000274, "Member 'UUIForcesCursor::GamepadRightX' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, GamepadRightY) == 0x000278, "Member 'UUIForcesCursor::GamepadRightY' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, Tilt) == 0x00027C, "Member 'UUIForcesCursor::Tilt' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, Gravity) == 0x000288, "Member 'UUIForcesCursor::Gravity' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, RotationRate) == 0x000294, "Member 'UUIForcesCursor::RotationRate' has a wrong offset!");
-static_assert(offsetof(UUIForcesCursor, Acceleration) == 0x0002A0, "Member 'UUIForcesCursor::Acceleration' has a wrong offset!");
+static_assert(alignof(UUIExtendToggleTransitionBase) == 0x000008, "Wrong alignment on UUIExtendToggleTransitionBase");
+static_assert(sizeof(UUIExtendToggleTransitionBase) == 0x000140, "Wrong size on UUIExtendToggleTransitionBase");
+static_assert(offsetof(UUIExtendToggleTransitionBase, UnCkeckUnHoverWidget) == 0x000100, "Member 'UUIExtendToggleTransitionBase::UnCkeckUnHoverWidget' has a wrong offset!");
+
+// Class LGUI.UIExtendToggleTextureTransition
+// 0x01A8 (0x02E8 - 0x0140)
+class UUIExtendToggleTextureTransition final : public UUIExtendToggleTransitionBase
+{
+public:
+	ETextureTransitionType                        TransitionType;                                    // 0x0140(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FExtendToggleColorTransition           TransitionColors;                                  // 0x0144(0x0028)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FExtendToggleTextureTransitionState    TransitionState;                                   // 0x0170(0x0128)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_298[0x50];                                     // 0x0298(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAllTransitionStateTexture(class UTexture* Texture);
+	void SetTargetStateTexture(EToggleTransitionState State, class UTexture* Texture, bool ForceNoTriggerOnChange);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIExtendToggleTextureTransition">();
+	}
+	static class UUIExtendToggleTextureTransition* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIExtendToggleTextureTransition>();
+	}
+};
+static_assert(alignof(UUIExtendToggleTextureTransition) == 0x000008, "Wrong alignment on UUIExtendToggleTextureTransition");
+static_assert(sizeof(UUIExtendToggleTextureTransition) == 0x0002E8, "Wrong size on UUIExtendToggleTextureTransition");
+static_assert(offsetof(UUIExtendToggleTextureTransition, TransitionType) == 0x000140, "Member 'UUIExtendToggleTextureTransition::TransitionType' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggleTextureTransition, TransitionColors) == 0x000144, "Member 'UUIExtendToggleTextureTransition::TransitionColors' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggleTextureTransition, TransitionState) == 0x000170, "Member 'UUIExtendToggleTextureTransition::TransitionState' has a wrong offset!");
 
 // Class LGUI.LGUIPlayTween_LinearColor
 // 0x0038 (0x00F8 - 0x00C0)
@@ -2808,47 +2891,89 @@ static_assert(offsetof(ULGUIPlayTween_Quaternion, from) == 0x0000C0, "Member 'UL
 static_assert(offsetof(ULGUIPlayTween_Quaternion, to) == 0x0000D0, "Member 'ULGUIPlayTween_Quaternion::to' has a wrong offset!");
 static_assert(offsetof(ULGUIPlayTween_Quaternion, onUpdateValue) == 0x0000E0, "Member 'ULGUIPlayTween_Quaternion::onUpdateValue' has a wrong offset!");
 
-// Class LGUI.UIExtendToggleGroup
-// 0x0048 (0x0108 - 0x00C0)
-class UUIExtendToggleGroup final : public UActorComponent
+// Class LGUI.UIButtonComponent
+// 0x0288 (0x0680 - 0x03F8)
+class UUIButtonComponent : public UUISelectableComponent
 {
 public:
-	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class UUIExtendToggle* Toggle)> OnToggleGroupActivationChanged;                    // 0x00C8(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	bool                                          bGroupToggleOnSelect;                              // 0x00D8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D9[0xF];                                       // 0x00D9(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TWeakObjectPtr<class UUIExtendToggle>> ToggleCollection;                                  // 0x00E8(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	bool                                          bAllowNoneSelect;                                  // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bEnable;                                           // 0x00F9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_FA[0xE];                                       // 0x00FA(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3F8[0x8];                                      // 0x03F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIDrawableEvent                     OnClick;                                           // 0x0400(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_418[0x18];                                     // 0x0418(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bAllowChangeCursorStyleWhenEnter;                  // 0x0430(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_431[0x7];                                      // 0x0431(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             OnClickCallBack;                                   // 0x0438(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnPointDownCallBack;                               // 0x0460(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnPointUpCallBack;                                 // 0x0488(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnPointCancelCallBack;                             // 0x04B0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnPointEnterCallBack;                              // 0x04D8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnPointExitCallBack;                               // 0x0500(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerBeginDragCallBack;              // 0x0528(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerDragCallBack;                   // 0x0550(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerEndDragCallBack;                // 0x0578(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        AkAudioEvent;                                      // 0x05A0(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& eventName)> OnPostAudioEvent;                                // 0x05C0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMap<EButtonAudioStateTransferType, struct FSoftObjectPath> AudioConfig;                         // 0x05E8(0x0050)(Edit, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        LongPressAudioEvent;                               // 0x0638(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(EButtonAudioStateTransferType StateTransfer, const class FString& EventName)> OnPostAudioStateEvent; // 0x0658(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 
 public:
-	static void BindOnExtendToggleGroupActive(const TDelegate<void(class UUIExtendToggleGroup* ExtendToggleGroup, bool bCreate)>& Delegate);
-	static void UnBindOnExtendToggleGroupActive();
-
-	bool GetAllowNoneSelect();
-	void SetAllowNoneSelect(bool bAllowNoneSelection);
-	void SetGroupEnable(bool bInEnable);
-
-	class UUIExtendToggle* GetCurSelection() const;
+	bool OnPointerDown_Implementation(class ULGUIPointerEventData* eventData);
+	struct FLGUIDelegateHandleWrapper RegisterClickEvent(const TDelegate<void()>& InDelegate);
+	void UnregisterClickEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIExtendToggleGroup">();
+		return StaticClassImpl<"UIButtonComponent">();
 	}
-	static class UUIExtendToggleGroup* GetDefaultObj()
+	static class UUIButtonComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIExtendToggleGroup>();
+		return GetDefaultObjImpl<UUIButtonComponent>();
 	}
 };
-static_assert(alignof(UUIExtendToggleGroup) == 0x000008, "Wrong alignment on UUIExtendToggleGroup");
-static_assert(sizeof(UUIExtendToggleGroup) == 0x000108, "Wrong size on UUIExtendToggleGroup");
-static_assert(offsetof(UUIExtendToggleGroup, OnToggleGroupActivationChanged) == 0x0000C8, "Member 'UUIExtendToggleGroup::OnToggleGroupActivationChanged' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggleGroup, bGroupToggleOnSelect) == 0x0000D8, "Member 'UUIExtendToggleGroup::bGroupToggleOnSelect' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggleGroup, ToggleCollection) == 0x0000E8, "Member 'UUIExtendToggleGroup::ToggleCollection' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggleGroup, bAllowNoneSelect) == 0x0000F8, "Member 'UUIExtendToggleGroup::bAllowNoneSelect' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggleGroup, bEnable) == 0x0000F9, "Member 'UUIExtendToggleGroup::bEnable' has a wrong offset!");
+static_assert(alignof(UUIButtonComponent) == 0x000008, "Wrong alignment on UUIButtonComponent");
+static_assert(sizeof(UUIButtonComponent) == 0x000680, "Wrong size on UUIButtonComponent");
+static_assert(offsetof(UUIButtonComponent, OnClick) == 0x000400, "Member 'UUIButtonComponent::OnClick' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, bAllowChangeCursorStyleWhenEnter) == 0x000430, "Member 'UUIButtonComponent::bAllowChangeCursorStyleWhenEnter' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnClickCallBack) == 0x000438, "Member 'UUIButtonComponent::OnClickCallBack' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPointDownCallBack) == 0x000460, "Member 'UUIButtonComponent::OnPointDownCallBack' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPointUpCallBack) == 0x000488, "Member 'UUIButtonComponent::OnPointUpCallBack' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPointCancelCallBack) == 0x0004B0, "Member 'UUIButtonComponent::OnPointCancelCallBack' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPointEnterCallBack) == 0x0004D8, "Member 'UUIButtonComponent::OnPointEnterCallBack' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPointExitCallBack) == 0x000500, "Member 'UUIButtonComponent::OnPointExitCallBack' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPointerBeginDragCallBack) == 0x000528, "Member 'UUIButtonComponent::OnPointerBeginDragCallBack' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPointerDragCallBack) == 0x000550, "Member 'UUIButtonComponent::OnPointerDragCallBack' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPointerEndDragCallBack) == 0x000578, "Member 'UUIButtonComponent::OnPointerEndDragCallBack' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, AkAudioEvent) == 0x0005A0, "Member 'UUIButtonComponent::AkAudioEvent' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPostAudioEvent) == 0x0005C0, "Member 'UUIButtonComponent::OnPostAudioEvent' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, AudioConfig) == 0x0005E8, "Member 'UUIButtonComponent::AudioConfig' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, LongPressAudioEvent) == 0x000638, "Member 'UUIButtonComponent::LongPressAudioEvent' has a wrong offset!");
+static_assert(offsetof(UUIButtonComponent, OnPostAudioStateEvent) == 0x000658, "Member 'UUIButtonComponent::OnPostAudioStateEvent' has a wrong offset!");
+
+// Class LGUI.UIExtendButtonComponent
+// 0x0008 (0x0688 - 0x0680)
+class UUIExtendButtonComponent final : public UUIButtonComponent
+{
+public:
+	int32                                         HelpGroupId;                                       // 0x0680(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_684[0x4];                                      // 0x0684(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static void SetDelegateForHelpClick(const TDelegate<void(int32 helpGroupId)>& delegateObj);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIExtendButtonComponent">();
+	}
+	static class UUIExtendButtonComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIExtendButtonComponent>();
+	}
+};
+static_assert(alignof(UUIExtendButtonComponent) == 0x000008, "Wrong alignment on UUIExtendButtonComponent");
+static_assert(sizeof(UUIExtendButtonComponent) == 0x000688, "Wrong size on UUIExtendButtonComponent");
+static_assert(offsetof(UUIExtendButtonComponent, HelpGroupId) == 0x000680, "Member 'UUIExtendButtonComponent::HelpGroupId' has a wrong offset!");
 
 // Class LGUI.LGUIPlayTween_Rotator
 // 0x0030 (0x00F0 - 0x00C0)
@@ -2900,153 +3025,40 @@ static_assert(offsetof(ULGUIPlayTween_Vector2, from) == 0x0000C0, "Member 'ULGUI
 static_assert(offsetof(ULGUIPlayTween_Vector2, to) == 0x0000C8, "Member 'ULGUIPlayTween_Vector2::to' has a wrong offset!");
 static_assert(offsetof(ULGUIPlayTween_Vector2, onUpdateValue) == 0x0000D0, "Member 'ULGUIPlayTween_Vector2::onUpdateValue' has a wrong offset!");
 
-// Class LGUI.UILayoutBase
-// 0x0070 (0x0170 - 0x0100)
-class UUILayoutBase : public ULGUIBehaviour
+// Class LGUI.UIFrameAnimController
+// 0x0030 (0x0130 - 0x0100)
+class UUIFrameAnimController final : public ULGUIBehaviour
 {
 public:
-	uint8                                         Pad_100[0x20];                                     // 0x0100(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GridAnimationStartTime;                            // 0x0120(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         GridAnimationInterval;                             // 0x0124(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          IsInAnimation;                                     // 0x0128(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsScaleCalculated;                                // 0x0129(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_12A[0x1E];                                     // 0x012A(0x001E)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class UUILayoutBase* Layout)>  OnRebuildLayoutDelegate;                           // 0x0148(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	float                                         FrameInterval;                                     // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUseCustomFrameCount;                              // 0x0104(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_105[0x3];                                      // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         BeginFrame;                                        // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         CustomFrameCount;                                  // 0x010C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_110[0x20];                                     // 0x0110(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetGridAnimationInterval(float value);
-	void SetGridAnimationStartTime(float value);
-	void SetInAnimation(bool state);
-
-	float GetGridAnimationInterval() const;
-	float GetGridAnimationStartTime() const;
-	bool GetInAnimation() const;
+	void Pause();
+	void Play(bool bLooping);
+	void Resume();
+	void Stop();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UILayoutBase">();
+		return StaticClassImpl<"UIFrameAnimController">();
 	}
-	static class UUILayoutBase* GetDefaultObj()
+	static class UUIFrameAnimController* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUILayoutBase>();
+		return GetDefaultObjImpl<UUIFrameAnimController>();
 	}
 };
-static_assert(alignof(UUILayoutBase) == 0x000008, "Wrong alignment on UUILayoutBase");
-static_assert(sizeof(UUILayoutBase) == 0x000170, "Wrong size on UUILayoutBase");
-static_assert(offsetof(UUILayoutBase, GridAnimationStartTime) == 0x000120, "Member 'UUILayoutBase::GridAnimationStartTime' has a wrong offset!");
-static_assert(offsetof(UUILayoutBase, GridAnimationInterval) == 0x000124, "Member 'UUILayoutBase::GridAnimationInterval' has a wrong offset!");
-static_assert(offsetof(UUILayoutBase, IsInAnimation) == 0x000128, "Member 'UUILayoutBase::IsInAnimation' has a wrong offset!");
-static_assert(offsetof(UUILayoutBase, bIsScaleCalculated) == 0x000129, "Member 'UUILayoutBase::bIsScaleCalculated' has a wrong offset!");
-static_assert(offsetof(UUILayoutBase, OnRebuildLayoutDelegate) == 0x000148, "Member 'UUILayoutBase::OnRebuildLayoutDelegate' has a wrong offset!");
-
-// Class LGUI.UILayoutWithAnimation
-// 0x0020 (0x0190 - 0x0170)
-class UUILayoutWithAnimation : public UUILayoutBase
-{
-public:
-	EUILayoutChangePositionAnimationType          AnimationType;                                     // 0x0170(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_171[0x3];                                      // 0x0171(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AnimationDuration;                                 // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<class ULTweener*>                      TweenerArray;                                      // 0x0178(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_188[0x8];                                      // 0x0188(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void CancelAnimation(bool callComplete);
-	void SetAnimationDuration(float value);
-	void SetAnimationType(EUILayoutChangePositionAnimationType value);
-
-	float GetAnimationDuration() const;
-	EUILayoutChangePositionAnimationType GetAnimationType() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UILayoutWithAnimation">();
-	}
-	static class UUILayoutWithAnimation* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUILayoutWithAnimation>();
-	}
-};
-static_assert(alignof(UUILayoutWithAnimation) == 0x000008, "Wrong alignment on UUILayoutWithAnimation");
-static_assert(sizeof(UUILayoutWithAnimation) == 0x000190, "Wrong size on UUILayoutWithAnimation");
-static_assert(offsetof(UUILayoutWithAnimation, AnimationType) == 0x000170, "Member 'UUILayoutWithAnimation::AnimationType' has a wrong offset!");
-static_assert(offsetof(UUILayoutWithAnimation, AnimationDuration) == 0x000174, "Member 'UUILayoutWithAnimation::AnimationDuration' has a wrong offset!");
-static_assert(offsetof(UUILayoutWithAnimation, TweenerArray) == 0x000178, "Member 'UUILayoutWithAnimation::TweenerArray' has a wrong offset!");
-
-// Class LGUI.UIGridLayout
-// 0x0038 (0x01C8 - 0x0190)
-class UUIGridLayout final : public UUILayoutWithAnimation
-{
-public:
-	struct FMargin                                Padding;                                           // 0x0190(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FVector2D                              Spacing;                                           // 0x01A0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ELGUILayoutAlignmentType                      Align;                                             // 0x01A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          LastLineCanAlign;                                  // 0x01A9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          HorizontalOrVertical;                              // 0x01AA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          DependOnSizeOrCount;                               // 0x01AB(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ExpendChildSize;                                   // 0x01AC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              CellSize;                                          // 0x01B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint32                                        LineCount;                                         // 0x01B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          WidthFitToChildren;                                // 0x01BC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          HeightFitToChildren;                               // 0x01BD(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EGridFitType                                  FitType;                                           // 0x01BE(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1BF[0x9];                                      // 0x01BF(0x0009)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetAlign(ELGUILayoutAlignmentType value);
-	void SetCellSize(const struct FVector2D& value);
-	void SetDependOnSizeOrCount(bool value);
-	void SetExpendChildSize(bool value);
-	void SetHeightFitToChildren(bool value);
-	void SetHorizontalOrVertical(bool value);
-	void SetLastLineCanAlign(bool value);
-	void SetLineCount(int32 value);
-	void SetMaxItemCountInOneLine(int32 value);
-	void SetPadding(const struct FMargin& value);
-	void SetSpacing(const struct FVector2D& value);
-	void SetWidthFitToChildren(bool value);
-
-	struct FVector2D GetActuralRange() const;
-	ELGUILayoutAlignmentType GetAlign() const;
-	struct FVector2D GetCellSize() const;
-	bool GetDependOnSizeOrCount() const;
-	bool GetExpendChildSize() const;
-	bool GetHeightFitToChildren() const;
-	bool GetHorizontalOrVertical() const;
-	bool GetLastLineCanAlign() const;
-	int32 GetLineCount() const;
-	int32 GetMaxItemCountInOneLine() const;
-	struct FMargin GetPadding() const;
-	struct FVector2D GetSpacing() const;
-	bool GetWidthFitToChildren() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIGridLayout">();
-	}
-	static class UUIGridLayout* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIGridLayout>();
-	}
-};
-static_assert(alignof(UUIGridLayout) == 0x000008, "Wrong alignment on UUIGridLayout");
-static_assert(sizeof(UUIGridLayout) == 0x0001C8, "Wrong size on UUIGridLayout");
-static_assert(offsetof(UUIGridLayout, Padding) == 0x000190, "Member 'UUIGridLayout::Padding' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, Spacing) == 0x0001A0, "Member 'UUIGridLayout::Spacing' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, Align) == 0x0001A8, "Member 'UUIGridLayout::Align' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, LastLineCanAlign) == 0x0001A9, "Member 'UUIGridLayout::LastLineCanAlign' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, HorizontalOrVertical) == 0x0001AA, "Member 'UUIGridLayout::HorizontalOrVertical' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, DependOnSizeOrCount) == 0x0001AB, "Member 'UUIGridLayout::DependOnSizeOrCount' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, ExpendChildSize) == 0x0001AC, "Member 'UUIGridLayout::ExpendChildSize' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, CellSize) == 0x0001B0, "Member 'UUIGridLayout::CellSize' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, LineCount) == 0x0001B8, "Member 'UUIGridLayout::LineCount' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, WidthFitToChildren) == 0x0001BC, "Member 'UUIGridLayout::WidthFitToChildren' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, HeightFitToChildren) == 0x0001BD, "Member 'UUIGridLayout::HeightFitToChildren' has a wrong offset!");
-static_assert(offsetof(UUIGridLayout, FitType) == 0x0001BE, "Member 'UUIGridLayout::FitType' has a wrong offset!");
+static_assert(alignof(UUIFrameAnimController) == 0x000008, "Wrong alignment on UUIFrameAnimController");
+static_assert(sizeof(UUIFrameAnimController) == 0x000130, "Wrong size on UUIFrameAnimController");
+static_assert(offsetof(UUIFrameAnimController, FrameInterval) == 0x000100, "Member 'UUIFrameAnimController::FrameInterval' has a wrong offset!");
+static_assert(offsetof(UUIFrameAnimController, bUseCustomFrameCount) == 0x000104, "Member 'UUIFrameAnimController::bUseCustomFrameCount' has a wrong offset!");
+static_assert(offsetof(UUIFrameAnimController, BeginFrame) == 0x000108, "Member 'UUIFrameAnimController::BeginFrame' has a wrong offset!");
+static_assert(offsetof(UUIFrameAnimController, CustomFrameCount) == 0x00010C, "Member 'UUIFrameAnimController::CustomFrameCount' has a wrong offset!");
 
 // Class LGUI.LGUIPlayTween_Vector3
 // 0x0030 (0x00F0 - 0x00C0)
@@ -3099,35 +3111,31 @@ static_assert(offsetof(ULGUIPlayTween_Vector4, from) == 0x0000C0, "Member 'ULGUI
 static_assert(offsetof(ULGUIPlayTween_Vector4, to) == 0x0000D0, "Member 'ULGUIPlayTween_Vector4::to' has a wrong offset!");
 static_assert(offsetof(ULGUIPlayTween_Vector4, onUpdateValue) == 0x0000E0, "Member 'ULGUIPlayTween_Vector4::onUpdateValue' has a wrong offset!");
 
-// Class LGUI.UINavigationBehaviour
-// 0x0008 (0x0108 - 0x0100)
-class UUINavigationBehaviour : public ULGUIBehaviour
+// Class LGUI.UILayoutInterface
+// 0x0000 (0x0000 - 0x0000)
+class IUILayoutInterface final
 {
-public:
-	int32                                         LoopScrollViewGridIndex;                           // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	bool OnCheckCanSetNavigationBP();
-	bool OnCheckLoopScrollChangeNavigationBP();
-	void OnNotifyInteractiveBP();
-	void OnNotifyNavigationEnterBP(class ULGUIPointerEventData* eventData);
-	void OnNotifyNavigationSelectBP(class ULGUIPointerEventData* eventData);
-	void OnNotifyNotInteractiveBP();
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UINavigationBehaviour">();
+		return StaticClassImpl<"UILayoutInterface">();
 	}
-	static class UUINavigationBehaviour* GetDefaultObj()
+	static class IUILayoutInterface* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUINavigationBehaviour>();
+		return GetDefaultObjImpl<IUILayoutInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
-static_assert(alignof(UUINavigationBehaviour) == 0x000008, "Wrong alignment on UUINavigationBehaviour");
-static_assert(sizeof(UUINavigationBehaviour) == 0x000108, "Wrong size on UUINavigationBehaviour");
-static_assert(offsetof(UUINavigationBehaviour, LoopScrollViewGridIndex) == 0x000100, "Member 'UUINavigationBehaviour::LoopScrollViewGridIndex' has a wrong offset!");
+static_assert(alignof(IUILayoutInterface) == 0x000001, "Wrong alignment on IUILayoutInterface");
+static_assert(sizeof(IUILayoutInterface) == 0x000001, "Wrong size on IUILayoutInterface");
 
 // Class LGUI.LGUIPlayTweenComponent
 // 0x0010 (0x00D0 - 0x00C0)
@@ -3190,61 +3198,65 @@ static_assert(offsetof(ULGUIPlayTweenSequenceComponent, playOnStart) == 0x0000C0
 static_assert(offsetof(ULGUIPlayTweenSequenceComponent, playTweenArray) == 0x0000C8, "Member 'ULGUIPlayTweenSequenceComponent::playTweenArray' has a wrong offset!");
 static_assert(offsetof(ULGUIPlayTweenSequenceComponent, onComplete) == 0x0000D8, "Member 'ULGUIPlayTweenSequenceComponent::onComplete' has a wrong offset!");
 
-// Class LGUI.UIInturnAnimController
-// 0x0088 (0x0148 - 0x00C0)
-class UUIInturnAnimController final : public UActorComponent
+// Class LGUI.UIHorizontalLayout
+// 0x0038 (0x01C8 - 0x0190)
+class UUIHorizontalLayout final : public UUILayoutWithAnimation
 {
 public:
-	TDelegate<void()>                             OnFinish;                                          // 0x00C0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	class FString                                 AnimName;                                          // 0x00E8(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         StartTime;                                         // 0x00F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bPlayInSameTime;                                   // 0x00FC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_FD[0x3];                                       // 0x00FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Interval;                                          // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         CustomAnimDuration;                                // 0x0104(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bItemDefaultActive;                                // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bItemDefaultAlphaZero;                             // 0x0109(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_10A[0x2];                                      // 0x010A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PlayFromIndex;                                     // 0x010C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_110[0x38];                                     // 0x0110(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMargin                                Padding;                                           // 0x0190(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	float                                         Spacing;                                           // 0x01A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ELGUILayoutAlignmentType                      Align;                                             // 0x01A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ExpendChildrenWidth;                               // 0x01A5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bControlWidthCalculatedScale;                      // 0x01A6(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ExpendChildrenHeight;                              // 0x01A7(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bControlHeightCalculatedScale;                     // 0x01A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          WidthFitToChildren;                                // 0x01A9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          HeightFitToChildren;                               // 0x01AA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1AB[0x1D];                                     // 0x01AB(0x001D)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void OnItemAnimFinish();
-	void Play(const class FString& NewAnimName, int32 AssignNum, bool bIsScrollViewItem);
-	void PlayInEditor();
-	void PlayWithActors(const TArray<TWeakObjectPtr<class AUIBaseActor>>& SpecChildren, const class FString& NewAnimName);
-	void PlayWithItems(const TArray<class UUIItem*>& SpecChildren, const class FString& NewAnimName);
-	void SetItemDefaultAlphaZero(bool IsItemDefaultAlphaZero);
-	void Stop();
+	void SetAlign(ELGUILayoutAlignmentType value);
+	void SetExpendChildrenHeight(bool value);
+	void SetExpendChildrenWidth(bool value);
+	void SetHeightFitToChildren(bool value);
+	void SetPadding(const struct FMargin& value);
+	void SetSpacing(float value);
+	void SetWidthFitToChildren(bool value);
 
-	bool GetItemDefaultAlphaZero() const;
-	bool IsPlaying() const;
+	float GetActuralRange() const;
+	ELGUILayoutAlignmentType GetAlign() const;
+	bool GetExpendChildrenHeight() const;
+	bool GetExpendChildrenWidth() const;
+	bool GetHeightFitToChildren() const;
+	struct FMargin GetPadding() const;
+	float GetSpacing() const;
+	bool GetWidthFitToChildren() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIInturnAnimController">();
+		return StaticClassImpl<"UIHorizontalLayout">();
 	}
-	static class UUIInturnAnimController* GetDefaultObj()
+	static class UUIHorizontalLayout* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIInturnAnimController>();
+		return GetDefaultObjImpl<UUIHorizontalLayout>();
 	}
 };
-static_assert(alignof(UUIInturnAnimController) == 0x000008, "Wrong alignment on UUIInturnAnimController");
-static_assert(sizeof(UUIInturnAnimController) == 0x000148, "Wrong size on UUIInturnAnimController");
-static_assert(offsetof(UUIInturnAnimController, OnFinish) == 0x0000C0, "Member 'UUIInturnAnimController::OnFinish' has a wrong offset!");
-static_assert(offsetof(UUIInturnAnimController, AnimName) == 0x0000E8, "Member 'UUIInturnAnimController::AnimName' has a wrong offset!");
-static_assert(offsetof(UUIInturnAnimController, StartTime) == 0x0000F8, "Member 'UUIInturnAnimController::StartTime' has a wrong offset!");
-static_assert(offsetof(UUIInturnAnimController, bPlayInSameTime) == 0x0000FC, "Member 'UUIInturnAnimController::bPlayInSameTime' has a wrong offset!");
-static_assert(offsetof(UUIInturnAnimController, Interval) == 0x000100, "Member 'UUIInturnAnimController::Interval' has a wrong offset!");
-static_assert(offsetof(UUIInturnAnimController, CustomAnimDuration) == 0x000104, "Member 'UUIInturnAnimController::CustomAnimDuration' has a wrong offset!");
-static_assert(offsetof(UUIInturnAnimController, bItemDefaultActive) == 0x000108, "Member 'UUIInturnAnimController::bItemDefaultActive' has a wrong offset!");
-static_assert(offsetof(UUIInturnAnimController, bItemDefaultAlphaZero) == 0x000109, "Member 'UUIInturnAnimController::bItemDefaultAlphaZero' has a wrong offset!");
-static_assert(offsetof(UUIInturnAnimController, PlayFromIndex) == 0x00010C, "Member 'UUIInturnAnimController::PlayFromIndex' has a wrong offset!");
+static_assert(alignof(UUIHorizontalLayout) == 0x000008, "Wrong alignment on UUIHorizontalLayout");
+static_assert(sizeof(UUIHorizontalLayout) == 0x0001C8, "Wrong size on UUIHorizontalLayout");
+static_assert(offsetof(UUIHorizontalLayout, Padding) == 0x000190, "Member 'UUIHorizontalLayout::Padding' has a wrong offset!");
+static_assert(offsetof(UUIHorizontalLayout, Spacing) == 0x0001A0, "Member 'UUIHorizontalLayout::Spacing' has a wrong offset!");
+static_assert(offsetof(UUIHorizontalLayout, Align) == 0x0001A4, "Member 'UUIHorizontalLayout::Align' has a wrong offset!");
+static_assert(offsetof(UUIHorizontalLayout, ExpendChildrenWidth) == 0x0001A5, "Member 'UUIHorizontalLayout::ExpendChildrenWidth' has a wrong offset!");
+static_assert(offsetof(UUIHorizontalLayout, bControlWidthCalculatedScale) == 0x0001A6, "Member 'UUIHorizontalLayout::bControlWidthCalculatedScale' has a wrong offset!");
+static_assert(offsetof(UUIHorizontalLayout, ExpendChildrenHeight) == 0x0001A7, "Member 'UUIHorizontalLayout::ExpendChildrenHeight' has a wrong offset!");
+static_assert(offsetof(UUIHorizontalLayout, bControlHeightCalculatedScale) == 0x0001A8, "Member 'UUIHorizontalLayout::bControlHeightCalculatedScale' has a wrong offset!");
+static_assert(offsetof(UUIHorizontalLayout, WidthFitToChildren) == 0x0001A9, "Member 'UUIHorizontalLayout::WidthFitToChildren' has a wrong offset!");
+static_assert(offsetof(UUIHorizontalLayout, HeightFitToChildren) == 0x0001AA, "Member 'UUIHorizontalLayout::HeightFitToChildren' has a wrong offset!");
 
 // Class LGUI.LGUIPointerClickInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPointerClickInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPointerClickInterface final
 {
 public:
 	bool OnPointerClick(class ULGUIPointerEventData* eventData);
@@ -3258,13 +3270,22 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIPointerClickInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ILGUIPointerClickInterface) == 0x000008, "Wrong alignment on ILGUIPointerClickInterface");
-static_assert(sizeof(ILGUIPointerClickInterface) == 0x000030, "Wrong size on ILGUIPointerClickInterface");
+static_assert(alignof(ILGUIPointerClickInterface) == 0x000001, "Wrong alignment on ILGUIPointerClickInterface");
+static_assert(sizeof(ILGUIPointerClickInterface) == 0x000001, "Wrong size on ILGUIPointerClickInterface");
 
 // Class LGUI.LGUIPointerDownUpInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPointerDownUpInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPointerDownUpInterface final
 {
 public:
 	bool OnPointerDown(class ULGUIPointerEventData* eventData);
@@ -3279,13 +3300,49 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIPointerDownUpInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ILGUIPointerDownUpInterface) == 0x000008, "Wrong alignment on ILGUIPointerDownUpInterface");
-static_assert(sizeof(ILGUIPointerDownUpInterface) == 0x000030, "Wrong size on ILGUIPointerDownUpInterface");
+static_assert(alignof(ILGUIPointerDownUpInterface) == 0x000001, "Wrong alignment on ILGUIPointerDownUpInterface");
+static_assert(sizeof(ILGUIPointerDownUpInterface) == 0x000001, "Wrong size on ILGUIPointerDownUpInterface");
+
+// Class LGUI.UIFlyoutMenuItem
+// 0x0030 (0x00F0 - 0x00C0)
+class UUIFlyoutMenuItem final : public UActorComponent
+{
+public:
+	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AUIBaseActor*                           _RootUIActor;                                      // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AUITextActor*                           _TextActor;                                        // 0x00D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AUISpriteActor*                         _HighlightSpriteActor;                             // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E0[0x10];                                      // 0x00E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIFlyoutMenuItem">();
+	}
+	static class UUIFlyoutMenuItem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIFlyoutMenuItem>();
+	}
+};
+static_assert(alignof(UUIFlyoutMenuItem) == 0x000008, "Wrong alignment on UUIFlyoutMenuItem");
+static_assert(sizeof(UUIFlyoutMenuItem) == 0x0000F0, "Wrong size on UUIFlyoutMenuItem");
+static_assert(offsetof(UUIFlyoutMenuItem, _RootUIActor) == 0x0000C8, "Member 'UUIFlyoutMenuItem::_RootUIActor' has a wrong offset!");
+static_assert(offsetof(UUIFlyoutMenuItem, _TextActor) == 0x0000D0, "Member 'UUIFlyoutMenuItem::_TextActor' has a wrong offset!");
+static_assert(offsetof(UUIFlyoutMenuItem, _HighlightSpriteActor) == 0x0000D8, "Member 'UUIFlyoutMenuItem::_HighlightSpriteActor' has a wrong offset!");
 
 // Class LGUI.LGUIPointerDragDropInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPointerDragDropInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPointerDragDropInterface final
 {
 public:
 	bool OnPointerDragDrop(class ULGUIPointerEventData* eventData);
@@ -3299,13 +3356,22 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIPointerDragDropInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ILGUIPointerDragDropInterface) == 0x000008, "Wrong alignment on ILGUIPointerDragDropInterface");
-static_assert(sizeof(ILGUIPointerDragDropInterface) == 0x000030, "Wrong size on ILGUIPointerDragDropInterface");
+static_assert(alignof(ILGUIPointerDragDropInterface) == 0x000001, "Wrong alignment on ILGUIPointerDragDropInterface");
+static_assert(sizeof(ILGUIPointerDragDropInterface) == 0x000001, "Wrong size on ILGUIPointerDragDropInterface");
 
 // Class LGUI.LGUIPointerDragEnterExitInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPointerDragEnterExitInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPointerDragEnterExitInterface final
 {
 public:
 	bool OnPointerDragEnter(class ULGUIPointerEventData* eventData);
@@ -3320,13 +3386,22 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIPointerDragEnterExitInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ILGUIPointerDragEnterExitInterface) == 0x000008, "Wrong alignment on ILGUIPointerDragEnterExitInterface");
-static_assert(sizeof(ILGUIPointerDragEnterExitInterface) == 0x000030, "Wrong size on ILGUIPointerDragEnterExitInterface");
+static_assert(alignof(ILGUIPointerDragEnterExitInterface) == 0x000001, "Wrong alignment on ILGUIPointerDragEnterExitInterface");
+static_assert(sizeof(ILGUIPointerDragEnterExitInterface) == 0x000001, "Wrong size on ILGUIPointerDragEnterExitInterface");
 
 // Class LGUI.LGUIPointerDragInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPointerDragInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPointerDragInterface final
 {
 public:
 	bool OnPointerBeginDrag(class ULGUIPointerEventData* eventData);
@@ -3342,13 +3417,22 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIPointerDragInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ILGUIPointerDragInterface) == 0x000008, "Wrong alignment on ILGUIPointerDragInterface");
-static_assert(sizeof(ILGUIPointerDragInterface) == 0x000030, "Wrong size on ILGUIPointerDragInterface");
+static_assert(alignof(ILGUIPointerDragInterface) == 0x000001, "Wrong alignment on ILGUIPointerDragInterface");
+static_assert(sizeof(ILGUIPointerDragInterface) == 0x000001, "Wrong size on ILGUIPointerDragInterface");
 
 // Class LGUI.LGUIPointerEnterExitInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPointerEnterExitInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPointerEnterExitInterface final
 {
 public:
 	bool OnPointerEnter(class ULGUIPointerEventData* eventData);
@@ -3363,30 +3447,66 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIPointerEnterExitInterface>();
 	}
-};
-static_assert(alignof(ILGUIPointerEnterExitInterface) == 0x000008, "Wrong alignment on ILGUIPointerEnterExitInterface");
-static_assert(sizeof(ILGUIPointerEnterExitInterface) == 0x000030, "Wrong size on ILGUIPointerEnterExitInterface");
 
-// Class LGUI.UIPolygonLineActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUIPolygonLineActor final : public AUIBaseActor
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+static_assert(alignof(ILGUIPointerEnterExitInterface) == 0x000001, "Wrong alignment on ILGUIPointerEnterExitInterface");
+static_assert(sizeof(ILGUIPointerEnterExitInterface) == 0x000001, "Wrong size on ILGUIPointerEnterExitInterface");
+
+// Class LGUI.UIPolygon
+// 0x0020 (0x07C0 - 0x07A0)
+class UUIPolygon final : public UUISpriteBase
 {
 public:
-	class UUIPolygonLine*                         UIPolygonLine;                                     // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          FullCycle;                                         // 0x0798(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_799[0x3];                                      // 0x0799(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StartAngle;                                        // 0x079C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         EndAngle;                                          // 0x07A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         Sides;                                             // 0x07A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUIPolygonUVType                              UVType;                                            // 0x07A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7A9[0x7];                                      // 0x07A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 VertexOffsetArray;                                 // 0x07B0(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	class ULTweener* EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
+	void SetEndAngle(float value);
+	void SetSides(int32 value);
+	void SetStartAngle(float value);
+	void SetUVType(EUIPolygonUVType value);
+	void SetVertexOffsetArray(const TArray<float>& value);
+	class ULTweener* StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
+
+	float GetEndAngle() const;
+	int32 GetSides() const;
+	float GetStartAngle() const;
+	EUIPolygonUVType GetUVType() const;
+	const TArray<float> GetVertexOffsetArray() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIPolygonLineActor">();
+		return StaticClassImpl<"UIPolygon">();
 	}
-	static class AUIPolygonLineActor* GetDefaultObj()
+	static class UUIPolygon* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AUIPolygonLineActor>();
+		return GetDefaultObjImpl<UUIPolygon>();
 	}
 };
-static_assert(alignof(AUIPolygonLineActor) == 0x000008, "Wrong alignment on AUIPolygonLineActor");
-static_assert(sizeof(AUIPolygonLineActor) == 0x0003A0, "Wrong size on AUIPolygonLineActor");
-static_assert(offsetof(AUIPolygonLineActor, UIPolygonLine) == 0x000398, "Member 'AUIPolygonLineActor::UIPolygonLine' has a wrong offset!");
+static_assert(alignof(UUIPolygon) == 0x000010, "Wrong alignment on UUIPolygon");
+static_assert(sizeof(UUIPolygon) == 0x0007C0, "Wrong size on UUIPolygon");
+static_assert(offsetof(UUIPolygon, FullCycle) == 0x000798, "Member 'UUIPolygon::FullCycle' has a wrong offset!");
+static_assert(offsetof(UUIPolygon, StartAngle) == 0x00079C, "Member 'UUIPolygon::StartAngle' has a wrong offset!");
+static_assert(offsetof(UUIPolygon, EndAngle) == 0x0007A0, "Member 'UUIPolygon::EndAngle' has a wrong offset!");
+static_assert(offsetof(UUIPolygon, Sides) == 0x0007A4, "Member 'UUIPolygon::Sides' has a wrong offset!");
+static_assert(offsetof(UUIPolygon, UVType) == 0x0007A8, "Member 'UUIPolygon::UVType' has a wrong offset!");
+static_assert(offsetof(UUIPolygon, VertexOffsetArray) == 0x0007B0, "Member 'UUIPolygon::VertexOffsetArray' has a wrong offset!");
 
 // Class LGUI.LGUIPointerEventData
 // 0x01C0 (0x0200 - 0x0040)
@@ -3498,8 +3618,8 @@ static_assert(offsetof(ULGUIPointerEventData, nowIsTriggerPressed) == 0x0001F8, 
 static_assert(offsetof(ULGUIPointerEventData, dragDropTriggered) == 0x0001FB, "Member 'ULGUIPointerEventData::dragDropTriggered' has a wrong offset!");
 
 // Class LGUI.LGUIPointerInterruptInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPointerInterruptInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPointerInterruptInterface final
 {
 public:
 	bool NeedInterrupt(class ULGUIBaseEventData* EventData);
@@ -3513,13 +3633,22 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIPointerInterruptInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ILGUIPointerInterruptInterface) == 0x000008, "Wrong alignment on ILGUIPointerInterruptInterface");
-static_assert(sizeof(ILGUIPointerInterruptInterface) == 0x000030, "Wrong size on ILGUIPointerInterruptInterface");
+static_assert(alignof(ILGUIPointerInterruptInterface) == 0x000001, "Wrong alignment on ILGUIPointerInterruptInterface");
+static_assert(sizeof(ILGUIPointerInterruptInterface) == 0x000001, "Wrong size on ILGUIPointerInterruptInterface");
 
 // Class LGUI.LGUIPointerScrollInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPointerScrollInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPointerScrollInterface final
 {
 public:
 	bool OnPointerScroll(class ULGUIPointerEventData* eventData);
@@ -3533,13 +3662,22 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIPointerScrollInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ILGUIPointerScrollInterface) == 0x000008, "Wrong alignment on ILGUIPointerScrollInterface");
-static_assert(sizeof(ILGUIPointerScrollInterface) == 0x000030, "Wrong size on ILGUIPointerScrollInterface");
+static_assert(alignof(ILGUIPointerScrollInterface) == 0x000001, "Wrong alignment on ILGUIPointerScrollInterface");
+static_assert(sizeof(ILGUIPointerScrollInterface) == 0x000001, "Wrong size on ILGUIPointerScrollInterface");
 
 // Class LGUI.LGUIPointerSelectDeselectInterface
-// 0x0000 (0x0030 - 0x0030)
-class ILGUIPointerSelectDeselectInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ILGUIPointerSelectDeselectInterface final
 {
 public:
 	bool OnPointerDeselect(class ULGUIBaseEventData* eventData);
@@ -3554,9 +3692,18 @@ public:
 	{
 		return GetDefaultObjImpl<ILGUIPointerSelectDeselectInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ILGUIPointerSelectDeselectInterface) == 0x000008, "Wrong alignment on ILGUIPointerSelectDeselectInterface");
-static_assert(sizeof(ILGUIPointerSelectDeselectInterface) == 0x000030, "Wrong size on ILGUIPointerSelectDeselectInterface");
+static_assert(alignof(ILGUIPointerSelectDeselectInterface) == 0x000001, "Wrong alignment on ILGUIPointerSelectDeselectInterface");
+static_assert(sizeof(ILGUIPointerSelectDeselectInterface) == 0x000001, "Wrong size on ILGUIPointerSelectDeselectInterface");
 
 // Class LGUI.LGUIPrefab
 // 0x0078 (0x00A8 - 0x0030)
@@ -3619,33 +3766,73 @@ static_assert(alignof(ALGUIPrefabActor) == 0x000008, "Wrong alignment on ALGUIPr
 static_assert(sizeof(ALGUIPrefabActor) == 0x0002B8, "Wrong size on ALGUIPrefabActor");
 static_assert(offsetof(ALGUIPrefabActor, PrefabComponent) == 0x0002B0, "Member 'ALGUIPrefabActor::PrefabComponent' has a wrong offset!");
 
-// Class LGUI.UINiagaraActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUINiagaraActor final : public AUIBaseActor
+// Class LGUI.UINavigationGroupComponent
+// 0x0108 (0x0208 - 0x0100)
+class UUINavigationGroupComponent final : public ULGUIBehaviour
 {
 public:
-	class UUINiagara*                             UINiagara;                                         // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_100[0xA0];                                     // 0x0100(0x00A0)(Fixing Size After Last Property [ Dumper-7 ])
+	EUINavigationWrapMode                         HorizontalWrapMode;                                // 0x01A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EUINavigationPriorityMode                     HorizontalPriorityMode;                            // 0x01A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EUINavigationWrapMode                         VerticalWrapMode;                                  // 0x01A2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EUINavigationPriorityMode                     VerticalPriorityMode;                              // 0x01A3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  PrevNavigationGroupActor;                          // 0x01A4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UUINavigationGroupComponent> PrevNavigationGroup;                           // 0x01AC(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  NextNavigationGroupActor;                          // 0x01B4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UUINavigationGroupComponent> NextNavigationGroup;                           // 0x01BC(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PrevNavigationGroupName;                           // 0x01C4(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NextNavigationGroupName;                           // 0x01D0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NavigationGroupName;                               // 0x01DC(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<TWeakObjectPtr<class AActor>>          DefaultNavigateActors;                             // 0x01E8(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	bool                                          BookMark;                                          // 0x01F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ScrollBall;                                        // 0x01F9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          MouseCanJump;                                      // 0x01FA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AutoSearch;                                        // 0x01FB(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SelectableMemory;                                  // 0x01FC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1FD[0x3];                                      // 0x01FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ViewId;                                            // 0x0200(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void ActivateSystem();
-	void DeactivateSystem();
-	void SwitchToStop();
+	static void ResetNavigateGroupDelegate();
+	static void SetNavigateGroupDelegate(const TDelegate<void(class UUINavigationGroupComponent* NavigationGroupComponent, EUINavigationGroupMode mode)>& Delegate);
+	static void SetNavigateTolerance(const float Tolerance);
 
-	class UUINiagara* GetUINiagara() const;
+	void GetRootNavigationGrade(TArray<class UUISelectableComponent*>* Result);
+	void Navigate();
+	void NavigateToNextGroup();
+	void NavigateToPrevGroup();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UINiagaraActor">();
+		return StaticClassImpl<"UINavigationGroupComponent">();
 	}
-	static class AUINiagaraActor* GetDefaultObj()
+	static class UUINavigationGroupComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AUINiagaraActor>();
+		return GetDefaultObjImpl<UUINavigationGroupComponent>();
 	}
 };
-static_assert(alignof(AUINiagaraActor) == 0x000008, "Wrong alignment on AUINiagaraActor");
-static_assert(sizeof(AUINiagaraActor) == 0x0003A0, "Wrong size on AUINiagaraActor");
-static_assert(offsetof(AUINiagaraActor, UINiagara) == 0x000398, "Member 'AUINiagaraActor::UINiagara' has a wrong offset!");
+static_assert(alignof(UUINavigationGroupComponent) == 0x000008, "Wrong alignment on UUINavigationGroupComponent");
+static_assert(sizeof(UUINavigationGroupComponent) == 0x000208, "Wrong size on UUINavigationGroupComponent");
+static_assert(offsetof(UUINavigationGroupComponent, HorizontalWrapMode) == 0x0001A0, "Member 'UUINavigationGroupComponent::HorizontalWrapMode' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, HorizontalPriorityMode) == 0x0001A1, "Member 'UUINavigationGroupComponent::HorizontalPriorityMode' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, VerticalWrapMode) == 0x0001A2, "Member 'UUINavigationGroupComponent::VerticalWrapMode' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, VerticalPriorityMode) == 0x0001A3, "Member 'UUINavigationGroupComponent::VerticalPriorityMode' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, PrevNavigationGroupActor) == 0x0001A4, "Member 'UUINavigationGroupComponent::PrevNavigationGroupActor' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, PrevNavigationGroup) == 0x0001AC, "Member 'UUINavigationGroupComponent::PrevNavigationGroup' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, NextNavigationGroupActor) == 0x0001B4, "Member 'UUINavigationGroupComponent::NextNavigationGroupActor' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, NextNavigationGroup) == 0x0001BC, "Member 'UUINavigationGroupComponent::NextNavigationGroup' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, PrevNavigationGroupName) == 0x0001C4, "Member 'UUINavigationGroupComponent::PrevNavigationGroupName' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, NextNavigationGroupName) == 0x0001D0, "Member 'UUINavigationGroupComponent::NextNavigationGroupName' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, NavigationGroupName) == 0x0001DC, "Member 'UUINavigationGroupComponent::NavigationGroupName' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, DefaultNavigateActors) == 0x0001E8, "Member 'UUINavigationGroupComponent::DefaultNavigateActors' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, BookMark) == 0x0001F8, "Member 'UUINavigationGroupComponent::BookMark' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, ScrollBall) == 0x0001F9, "Member 'UUINavigationGroupComponent::ScrollBall' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, MouseCanJump) == 0x0001FA, "Member 'UUINavigationGroupComponent::MouseCanJump' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, AutoSearch) == 0x0001FB, "Member 'UUINavigationGroupComponent::AutoSearch' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, SelectableMemory) == 0x0001FC, "Member 'UUINavigationGroupComponent::SelectableMemory' has a wrong offset!");
+static_assert(offsetof(UUINavigationGroupComponent, ViewId) == 0x000200, "Member 'UUINavigationGroupComponent::ViewId' has a wrong offset!");
 
 // Class LGUI.LGUIScaleAdaptation
 // 0x0008 (0x0108 - 0x0100)
@@ -3706,65 +3893,26 @@ static_assert(offsetof(ULGUIScreenSpaceInteraction, clickThreshold) == 0x000268,
 static_assert(offsetof(ULGUIScreenSpaceInteraction, holdToDrag) == 0x00026C, "Member 'ULGUIScreenSpaceInteraction::holdToDrag' has a wrong offset!");
 static_assert(offsetof(ULGUIScreenSpaceInteraction, holdToDragTime) == 0x000270, "Member 'ULGUIScreenSpaceInteraction::holdToDragTime' has a wrong offset!");
 
-// Class LGUI.UIScrollbarComponent
-// 0x0080 (0x0478 - 0x03F8)
-class UUIScrollbarComponent final : public UUISelectableComponent
+// Class LGUI.UIRingActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUIRingActor final : public AUIBaseActor
 {
 public:
-	uint8                                         Pad_3F8[0x8];                                      // 0x03F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Value;                                             // 0x0400(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         Size;                                              // 0x0404(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUIBaseActor>            HandleActor;                                       // 0x0408(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUIScrollbarDirectionType                     DirectionType;                                     // 0x0410(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_411[0x3];                                      // 0x0411(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UUIItem>                 Handle;                                            // 0x0414(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUIItem>                 HandleArea;                                        // 0x041C(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_424[0x1C];                                     // 0x0424(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIDrawableEvent                     OnValueChange;                                     // 0x0440(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AActor>                  ScrollViewBackgroundActor;                         // 0x0458(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUIItem>                 ScrollViewBackgroundComponent;                     // 0x0460(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          MainScrollbar;                                     // 0x0468(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_469[0x3];                                      // 0x0469(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ViewId;                                            // 0x046C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_470[0x8];                                      // 0x0470(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static void ResetScrollbarDelegate();
-	static void SetScrollbarDelegate(const TDelegate<void(class UUIScrollbarComponent* ScrollbarComponent, bool ativeOrInactive)>& Delegate);
-
-	void ChangeSchedule(ELGUINavigationDirection InDirection);
-	struct FLGUIDelegateHandleWrapper RegisterSlideEvent(const TDelegate<void(float InFloat)>& InDelegate);
-	void SetSize(float InSize);
-	void SetValue(float InValue, bool FireEvent);
-	void SetValueAndSize(float InValue, float InSize, bool FireEvent);
-	void UnregisterSlideEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-
-	float GetSize() const;
-	float GetValue() const;
+	class UUIRing*                                UIElement;                                         // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIScrollbarComponent">();
+		return StaticClassImpl<"UIRingActor">();
 	}
-	static class UUIScrollbarComponent* GetDefaultObj()
+	static class AUIRingActor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIScrollbarComponent>();
+		return GetDefaultObjImpl<AUIRingActor>();
 	}
 };
-static_assert(alignof(UUIScrollbarComponent) == 0x000008, "Wrong alignment on UUIScrollbarComponent");
-static_assert(sizeof(UUIScrollbarComponent) == 0x000478, "Wrong size on UUIScrollbarComponent");
-static_assert(offsetof(UUIScrollbarComponent, Value) == 0x000400, "Member 'UUIScrollbarComponent::Value' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, Size) == 0x000404, "Member 'UUIScrollbarComponent::Size' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, HandleActor) == 0x000408, "Member 'UUIScrollbarComponent::HandleActor' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, DirectionType) == 0x000410, "Member 'UUIScrollbarComponent::DirectionType' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, Handle) == 0x000414, "Member 'UUIScrollbarComponent::Handle' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, HandleArea) == 0x00041C, "Member 'UUIScrollbarComponent::HandleArea' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, OnValueChange) == 0x000440, "Member 'UUIScrollbarComponent::OnValueChange' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, ScrollViewBackgroundActor) == 0x000458, "Member 'UUIScrollbarComponent::ScrollViewBackgroundActor' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, ScrollViewBackgroundComponent) == 0x000460, "Member 'UUIScrollbarComponent::ScrollViewBackgroundComponent' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, MainScrollbar) == 0x000468, "Member 'UUIScrollbarComponent::MainScrollbar' has a wrong offset!");
-static_assert(offsetof(UUIScrollbarComponent, ViewId) == 0x00046C, "Member 'UUIScrollbarComponent::ViewId' has a wrong offset!");
+static_assert(alignof(AUIRingActor) == 0x000008, "Wrong alignment on AUIRingActor");
+static_assert(sizeof(AUIRingActor) == 0x0003A0, "Wrong size on AUIRingActor");
+static_assert(offsetof(AUIRingActor, UIElement) == 0x000398, "Member 'AUIRingActor::UIElement' has a wrong offset!");
 
 // Class LGUI.LGUIScreenSpaceInteractionForNoneUI
 // 0x0010 (0x0270 - 0x0260)
@@ -3807,7 +3955,7 @@ static_assert(offsetof(ULGUIScreenSpaceInteractionForNoneUI, holdToDragTime) == 
 class ULGUISequenceBindingMgr final : public UObject
 {
 public:
-	TMap<class UMovieSceneSequence*, struct FActorBindings> BindingMaps;                                       // 0x0030(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class UMovieSceneSequence*, struct FActorBindings> BindingMaps;                             // 0x0030(0x0050)(Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -3823,77 +3971,48 @@ static_assert(alignof(ULGUISequenceBindingMgr) == 0x000008, "Wrong alignment on 
 static_assert(sizeof(ULGUISequenceBindingMgr) == 0x000080, "Wrong size on ULGUISequenceBindingMgr");
 static_assert(offsetof(ULGUISequenceBindingMgr, BindingMaps) == 0x000030, "Member 'ULGUISequenceBindingMgr::BindingMaps' has a wrong offset!");
 
-// Class LGUI.UISliderComponent
-// 0x00F8 (0x04F0 - 0x03F8)
-class UUISliderComponent final : public UUISelectableComponent
+// Class LGUI.UISizeControlByAspectRatio
+// 0x0028 (0x0198 - 0x0170)
+class UUISizeControlByAspectRatio final : public UUILayoutBase
 {
 public:
-	uint8                                         Pad_3F8[0x8];                                      // 0x03F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Value;                                             // 0x0400(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MinValue;                                          // 0x0404(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MaxValue;                                          // 0x0408(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          WholeNumbers;                                      // 0x040C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_40D[0x3];                                      // 0x040D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AUIBaseActor>            FillActor;                                         // 0x0410(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUIBaseActor>            HandleActor;                                       // 0x0418(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUISliderDirectionType                        DirectionType;                                     // 0x0420(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_421[0x7];                                      // 0x0421(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(float InFloat)>                OnValueChangeCb;                                   // 0x0428(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void()>                             OnEndDragCb;                                       // 0x0450(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	class UAkAudioEvent*                          DragBeginAudioEvent;                               // 0x0478(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAkAudioEvent*                          DragEndAudioEvent;                                 // 0x0480(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAkAudioEvent*                          DraggingAudioEvent;                                // 0x0488(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DraggingAudioEventInterval;                        // 0x0490(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUIItem>                 Fill;                                              // 0x0494(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUIItem>                 FillArea;                                          // 0x049C(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUIItem>                 Handle;                                            // 0x04A4(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUIItem>                 HandleArea;                                        // 0x04AC(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4B4[0x1C];                                     // 0x04B4(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIDrawableEvent                     OnValueChange;                                     // 0x04D0(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4E8[0x8];                                      // 0x04E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EUISizeControlByAspectRatioMode               ControlMode;                                       // 0x0170(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_171[0x3];                                      // 0x0171(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AspectRatio;                                       // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_178[0xC];                                      // 0x0178(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UUISizeControlByAspectRatioHelper> HelperComp;                              // 0x0184(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector2D                              Pivot;                                             // 0x018C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bChangeChildrenOffset;                             // 0x0194(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bChangeChildrenSize;                               // 0x0195(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bChangeChildrenAlign;                              // 0x0196(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_197[0x1];                                      // 0x0197(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	struct FLGUIDelegateHandleWrapper RegisterSlideEvent(const TDelegate<void(float InFloat)>& InDelegate);
-	void SetMaxValue(float InMaxValue, bool KeepRelativeValue, bool FireEvent);
-	void SetMinValue(float InMinValue, bool KeepRelativeValue, bool FireEvent);
-	void SetProgressIncrement(float incrementValue, bool needRound);
-	void SetValue(float InValue, bool FireEvent);
-	void UnregisterSlideEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void SetAspectRatio(float value);
+	void SetControlMode(EUISizeControlByAspectRatioMode value);
 
-	float GetMaxValue() const;
-	float GetMinValue() const;
-	float GetValue() const;
+	float GetAspectRatio() const;
+	EUISizeControlByAspectRatioMode GetControlMode() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISliderComponent">();
+		return StaticClassImpl<"UISizeControlByAspectRatio">();
 	}
-	static class UUISliderComponent* GetDefaultObj()
+	static class UUISizeControlByAspectRatio* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISliderComponent>();
+		return GetDefaultObjImpl<UUISizeControlByAspectRatio>();
 	}
 };
-static_assert(alignof(UUISliderComponent) == 0x000008, "Wrong alignment on UUISliderComponent");
-static_assert(sizeof(UUISliderComponent) == 0x0004F0, "Wrong size on UUISliderComponent");
-static_assert(offsetof(UUISliderComponent, Value) == 0x000400, "Member 'UUISliderComponent::Value' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, MinValue) == 0x000404, "Member 'UUISliderComponent::MinValue' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, MaxValue) == 0x000408, "Member 'UUISliderComponent::MaxValue' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, WholeNumbers) == 0x00040C, "Member 'UUISliderComponent::WholeNumbers' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, FillActor) == 0x000410, "Member 'UUISliderComponent::FillActor' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, HandleActor) == 0x000418, "Member 'UUISliderComponent::HandleActor' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, DirectionType) == 0x000420, "Member 'UUISliderComponent::DirectionType' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, OnValueChangeCb) == 0x000428, "Member 'UUISliderComponent::OnValueChangeCb' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, OnEndDragCb) == 0x000450, "Member 'UUISliderComponent::OnEndDragCb' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, DragBeginAudioEvent) == 0x000478, "Member 'UUISliderComponent::DragBeginAudioEvent' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, DragEndAudioEvent) == 0x000480, "Member 'UUISliderComponent::DragEndAudioEvent' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, DraggingAudioEvent) == 0x000488, "Member 'UUISliderComponent::DraggingAudioEvent' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, DraggingAudioEventInterval) == 0x000490, "Member 'UUISliderComponent::DraggingAudioEventInterval' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, Fill) == 0x000494, "Member 'UUISliderComponent::Fill' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, FillArea) == 0x00049C, "Member 'UUISliderComponent::FillArea' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, Handle) == 0x0004A4, "Member 'UUISliderComponent::Handle' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, HandleArea) == 0x0004AC, "Member 'UUISliderComponent::HandleArea' has a wrong offset!");
-static_assert(offsetof(UUISliderComponent, OnValueChange) == 0x0004D0, "Member 'UUISliderComponent::OnValueChange' has a wrong offset!");
+static_assert(alignof(UUISizeControlByAspectRatio) == 0x000008, "Wrong alignment on UUISizeControlByAspectRatio");
+static_assert(sizeof(UUISizeControlByAspectRatio) == 0x000198, "Wrong size on UUISizeControlByAspectRatio");
+static_assert(offsetof(UUISizeControlByAspectRatio, ControlMode) == 0x000170, "Member 'UUISizeControlByAspectRatio::ControlMode' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByAspectRatio, AspectRatio) == 0x000174, "Member 'UUISizeControlByAspectRatio::AspectRatio' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByAspectRatio, HelperComp) == 0x000184, "Member 'UUISizeControlByAspectRatio::HelperComp' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByAspectRatio, Pivot) == 0x00018C, "Member 'UUISizeControlByAspectRatio::Pivot' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByAspectRatio, bChangeChildrenOffset) == 0x000194, "Member 'UUISizeControlByAspectRatio::bChangeChildrenOffset' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByAspectRatio, bChangeChildrenSize) == 0x000195, "Member 'UUISizeControlByAspectRatio::bChangeChildrenSize' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByAspectRatio, bChangeChildrenAlign) == 0x000196, "Member 'UUISizeControlByAspectRatio::bChangeChildrenAlign' has a wrong offset!");
 
 // Class LGUI.LGUISettings
 // 0x01C8 (0x01F8 - 0x0030)
@@ -3996,6 +4115,27 @@ public:
 static_assert(alignof(ULGUIEditorSettings) == 0x000008, "Wrong alignment on ULGUIEditorSettings");
 static_assert(sizeof(ULGUIEditorSettings) == 0x000030, "Wrong size on ULGUIEditorSettings");
 
+// Class LGUI.UIScrollViewHelper
+// 0x0008 (0x0108 - 0x0100)
+class UUIScrollViewHelper final : public ULGUIBehaviour
+{
+public:
+	TWeakObjectPtr<class UUIScrollViewComponent>  TargetComp;                                        // 0x0100(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIScrollViewHelper">();
+	}
+	static class UUIScrollViewHelper* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIScrollViewHelper>();
+	}
+};
+static_assert(alignof(UUIScrollViewHelper) == 0x000008, "Wrong alignment on UUIScrollViewHelper");
+static_assert(sizeof(UUIScrollViewHelper) == 0x000108, "Wrong size on UUIScrollViewHelper");
+static_assert(offsetof(UUIScrollViewHelper, TargetComp) == 0x000100, "Member 'UUIScrollViewHelper::TargetComp' has a wrong offset!");
+
 // Class LGUI.LGUISpriteData_BaseObject
 // 0x0000 (0x0030 - 0x0030)
 class ULGUISpriteData_BaseObject : public UObject
@@ -4054,33 +4194,31 @@ static_assert(offsetof(ULGUISpriteData, spriteInfo) == 0x000038, "Member 'ULGUIS
 static_assert(offsetof(ULGUISpriteData, packingTag) == 0x00006C, "Member 'ULGUISpriteData::packingTag' has a wrong offset!");
 static_assert(offsetof(ULGUISpriteData, atlasTexture) == 0x000080, "Member 'ULGUISpriteData::atlasTexture' has a wrong offset!");
 
-// Class LGUI.UIRoundedLayout
-// 0x0010 (0x0180 - 0x0170)
-class UUIRoundedLayout final : public UUILayoutBase
+// Class LGUI.UIRaycastRangeComponent
+// 0x0020 (0x0120 - 0x0100)
+class UUIRaycastRangeComponent final : public ULGUIBehaviour
 {
 public:
-	float                                         Radius;                                            // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         StartAngle;                                        // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         EndAngle;                                          // 0x0178(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bSetChildAngle;                                    // 0x017C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         PointSize;                                         // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DragDistance;                                      // 0x0104(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      Points;                                            // 0x0108(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIRoundedLayout">();
+		return StaticClassImpl<"UIRaycastRangeComponent">();
 	}
-	static class UUIRoundedLayout* GetDefaultObj()
+	static class UUIRaycastRangeComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIRoundedLayout>();
+		return GetDefaultObjImpl<UUIRaycastRangeComponent>();
 	}
 };
-static_assert(alignof(UUIRoundedLayout) == 0x000008, "Wrong alignment on UUIRoundedLayout");
-static_assert(sizeof(UUIRoundedLayout) == 0x000180, "Wrong size on UUIRoundedLayout");
-static_assert(offsetof(UUIRoundedLayout, Radius) == 0x000170, "Member 'UUIRoundedLayout::Radius' has a wrong offset!");
-static_assert(offsetof(UUIRoundedLayout, StartAngle) == 0x000174, "Member 'UUIRoundedLayout::StartAngle' has a wrong offset!");
-static_assert(offsetof(UUIRoundedLayout, EndAngle) == 0x000178, "Member 'UUIRoundedLayout::EndAngle' has a wrong offset!");
-static_assert(offsetof(UUIRoundedLayout, bSetChildAngle) == 0x00017C, "Member 'UUIRoundedLayout::bSetChildAngle' has a wrong offset!");
+static_assert(alignof(UUIRaycastRangeComponent) == 0x000008, "Wrong alignment on UUIRaycastRangeComponent");
+static_assert(sizeof(UUIRaycastRangeComponent) == 0x000120, "Wrong size on UUIRaycastRangeComponent");
+static_assert(offsetof(UUIRaycastRangeComponent, PointSize) == 0x000100, "Member 'UUIRaycastRangeComponent::PointSize' has a wrong offset!");
+static_assert(offsetof(UUIRaycastRangeComponent, DragDistance) == 0x000104, "Member 'UUIRaycastRangeComponent::DragDistance' has a wrong offset!");
+static_assert(offsetof(UUIRaycastRangeComponent, Points) == 0x000108, "Member 'UUIRaycastRangeComponent::Points' has a wrong offset!");
 
 // Class LGUI.LGUISpriteData_BaseImporter
 // 0x0000 (0x0030 - 0x0030)
@@ -4123,26 +4261,62 @@ static_assert(sizeof(ULGUITextureData) == 0x000070, "Wrong size on ULGUITextureD
 static_assert(offsetof(ULGUITextureData, Texture) == 0x000030, "Member 'ULGUITextureData::Texture' has a wrong offset!");
 static_assert(offsetof(ULGUITextureData, SpriteInfo) == 0x000038, "Member 'ULGUITextureData::SpriteInfo' has a wrong offset!");
 
-// Class LGUI.UISizeControlByOtherHelper
-// 0x0008 (0x0108 - 0x0100)
-class UUISizeControlByOtherHelper final : public ULGUIBehaviour
+// Class LGUI.UISelectableTransitionComponent
+// 0x0010 (0x0110 - 0x0100)
+class UUISelectableTransitionComponent : public ULGUIBehaviour
 {
 public:
-	TWeakObjectPtr<class UUISizeControlByOther>   TargetComp;                                        // 0x0100(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<class ULTweener*>                      TweenerCollection;                                 // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
+
+public:
+	void CollectTweener(class ULTweener* InItem);
+	void CollectTweeners(const TSet<class ULTweener*>& InItems);
+	void OnDisabledBP(bool InImmediateSet);
+	void OnHighlightedBP(bool InImmediateSet);
+	void OnNormalBP(bool InImmediateSet);
+	void OnPressedBP(bool InImmediateSet);
+	void OnStartCustomTransitionBP(class FName InTransitionName, bool InImmediateSet);
+	void StopTransition();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISizeControlByOtherHelper">();
+		return StaticClassImpl<"UISelectableTransitionComponent">();
 	}
-	static class UUISizeControlByOtherHelper* GetDefaultObj()
+	static class UUISelectableTransitionComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISizeControlByOtherHelper>();
+		return GetDefaultObjImpl<UUISelectableTransitionComponent>();
 	}
 };
-static_assert(alignof(UUISizeControlByOtherHelper) == 0x000008, "Wrong alignment on UUISizeControlByOtherHelper");
-static_assert(sizeof(UUISizeControlByOtherHelper) == 0x000108, "Wrong size on UUISizeControlByOtherHelper");
-static_assert(offsetof(UUISizeControlByOtherHelper, TargetComp) == 0x000100, "Member 'UUISizeControlByOtherHelper::TargetComp' has a wrong offset!");
+static_assert(alignof(UUISelectableTransitionComponent) == 0x000008, "Wrong alignment on UUISelectableTransitionComponent");
+static_assert(sizeof(UUISelectableTransitionComponent) == 0x000110, "Wrong size on UUISelectableTransitionComponent");
+static_assert(offsetof(UUISelectableTransitionComponent, TweenerCollection) == 0x000100, "Member 'UUISelectableTransitionComponent::TweenerCollection' has a wrong offset!");
+
+// Class LGUI.UISelectableStateHolder
+// 0x0018 (0x0128 - 0x0110)
+class UUISelectableStateHolder final : public UUISelectableTransitionComponent
+{
+public:
+	uint8                                         Pad_110[0x10];                                     // 0x0110(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	EStateTransitionType                          TransitionType;                                    // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAllTransitionsEnable(bool bEnable);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISelectableStateHolder">();
+	}
+	static class UUISelectableStateHolder* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISelectableStateHolder>();
+	}
+};
+static_assert(alignof(UUISelectableStateHolder) == 0x000008, "Wrong alignment on UUISelectableStateHolder");
+static_assert(sizeof(UUISelectableStateHolder) == 0x000128, "Wrong size on UUISelectableStateHolder");
+static_assert(offsetof(UUISelectableStateHolder, TransitionType) == 0x000120, "Member 'UUISelectableStateHolder::TransitionType' has a wrong offset!");
 
 // Class LGUI.LGUIWorldSpaceInteraction
 // 0x0010 (0x0280 - 0x0270)
@@ -4224,41 +4398,34 @@ static_assert(offsetof(ULGUIWorldSpaceInteractionForNoneUI, holdToDrag) == 0x000
 static_assert(offsetof(ULGUIWorldSpaceInteractionForNoneUI, holdToDragTime) == 0x000268, "Member 'ULGUIWorldSpaceInteractionForNoneUI::holdToDragTime' has a wrong offset!");
 static_assert(offsetof(ULGUIWorldSpaceInteractionForNoneUI, interactionSource) == 0x00026C, "Member 'ULGUIWorldSpaceInteractionForNoneUI::interactionSource' has a wrong offset!");
 
-// Class LGUI.UISpriteSequencePlayer
-// 0x0018 (0x00F8 - 0x00E0)
-class UUISpriteSequencePlayer final : public ULGUIImageSequencePlayer
+// Class LGUI.UISpriteActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUISpriteActor final : public AUIBaseActor
 {
 public:
-	TWeakObjectPtr<class UUISpriteBase>           sprite;                                            // 0x00E0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<class ULGUISpriteData_BaseObject*>     spriteSequence;                                    // 0x00E8(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	void SetSpriteSequence(const TArray<class ULGUISpriteData_BaseObject*>& value);
-
-	const TArray<class ULGUISpriteData_BaseObject*> GetSpriteSequence() const;
+	class UUISprite*                              UISprite;                                          // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISpriteSequencePlayer">();
+		return StaticClassImpl<"UISpriteActor">();
 	}
-	static class UUISpriteSequencePlayer* GetDefaultObj()
+	static class AUISpriteActor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISpriteSequencePlayer>();
+		return GetDefaultObjImpl<AUISpriteActor>();
 	}
 };
-static_assert(alignof(UUISpriteSequencePlayer) == 0x000008, "Wrong alignment on UUISpriteSequencePlayer");
-static_assert(sizeof(UUISpriteSequencePlayer) == 0x0000F8, "Wrong size on UUISpriteSequencePlayer");
-static_assert(offsetof(UUISpriteSequencePlayer, sprite) == 0x0000E0, "Member 'UUISpriteSequencePlayer::sprite' has a wrong offset!");
-static_assert(offsetof(UUISpriteSequencePlayer, spriteSequence) == 0x0000E8, "Member 'UUISpriteSequencePlayer::spriteSequence' has a wrong offset!");
+static_assert(alignof(AUISpriteActor) == 0x000008, "Wrong alignment on AUISpriteActor");
+static_assert(sizeof(AUISpriteActor) == 0x0003A0, "Wrong size on AUISpriteActor");
+static_assert(offsetof(AUISpriteActor, UISprite) == 0x000398, "Member 'AUISpriteActor::UISprite' has a wrong offset!");
 
 // Class LGUI.RootTextItemMapDataV2
 // 0x0100 (0x01C0 - 0x00C0)
 class URootTextItemMapDataV2 final : public UActorComponent
 {
 public:
-	TMap<uint32, TWeakObjectPtr<class AUITextActor>> TextActorMap;                                      // 0x00C0(0x0050)(Edit, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
-	TMap<uint32, TWeakObjectPtr<class AUITextActor>> DirtyTextActorMap;                                 // 0x0110(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
+	TMap<uint32, TWeakObjectPtr<class AUITextActor>> TextActorMap;                                   // 0x00C0(0x0050)(Edit, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
+	TMap<uint32, TWeakObjectPtr<class AUITextActor>> DirtyTextActorMap;                              // 0x0110(0x0050)(Edit, UObjectWrapper, NativeAccessSpecifierPublic)
 	TMap<uint32, uint32>                          TransitionTextIdMap;                               // 0x0160(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
 	bool                                          bUnpackAllText;                                    // 0x01B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsPartOfNested;                                   // 0x01B1(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4330,31 +4497,66 @@ static_assert(offsetof(USequencePlayContext, OnPause) == 0x000138, "Member 'USeq
 static_assert(offsetof(USequencePlayContext, OnInterrupt) == 0x000160, "Member 'USequencePlayContext::OnInterrupt' has a wrong offset!");
 static_assert(offsetof(USequencePlayContext, Roots) == 0x000198, "Member 'USequencePlayContext::Roots' has a wrong offset!");
 
-// Class LGUI.UISpineBoneAnchor
-// 0x0070 (0x0170 - 0x0100)
-class UUISpineBoneAnchor final : public ULGUIBehaviour
+// Class LGUI.UISizeControlByOther
+// 0x0038 (0x01A8 - 0x0170)
+class UUISizeControlByOther final : public UUILayoutBase
 {
 public:
-	TArray<struct FAnchorInfo>                    AnchorInfos;                                       // 0x0100(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	class USpineSkeletonComponent*                SpineSkeletonComponent;                            // 0x0110(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class USpineSkeletonDataAsset*                CurrSkeletonData;                                  // 0x0118(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_120[0x50];                                     // 0x0120(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AUIBaseActor>            TargetActor;                                       // 0x0170(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ControlWidth;                                      // 0x0178(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ControlHeight;                                     // 0x0179(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          UseWidthRange;                                     // 0x017A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          UseHeightRange;                                    // 0x017B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         MaxWidth;                                          // 0x017C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         MinWidth;                                          // 0x0180(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         MaxHeight;                                         // 0x0184(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         MinHeight;                                         // 0x0188(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AdditionalWidth;                                   // 0x018C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AdditionalHeight;                                  // 0x0190(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bSizeZeroWhenNotActive;                            // 0x0194(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_195[0x3];                                      // 0x0195(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UUIItem>                 TargetUIItem;                                      // 0x0198(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUISizeControlByOtherHelper> HelperComp;                                    // 0x01A0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	void SetAdditionalHeight(float value);
+	void SetAdditionalWidth(float value);
+	void SetControlHeight(bool value);
+	void SetControlWidth(bool value);
+	void SetTargetActor(class AUIBaseActor* NewTargetActor);
+
+	float GetAdditionalHeight() const;
+	float GetAdditionalWidth() const;
+	bool GetControlHeight() const;
+	bool GetControlWidth() const;
+	class AUIBaseActor* GetTargetActor() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISpineBoneAnchor">();
+		return StaticClassImpl<"UISizeControlByOther">();
 	}
-	static class UUISpineBoneAnchor* GetDefaultObj()
+	static class UUISizeControlByOther* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISpineBoneAnchor>();
+		return GetDefaultObjImpl<UUISizeControlByOther>();
 	}
 };
-static_assert(alignof(UUISpineBoneAnchor) == 0x000008, "Wrong alignment on UUISpineBoneAnchor");
-static_assert(sizeof(UUISpineBoneAnchor) == 0x000170, "Wrong size on UUISpineBoneAnchor");
-static_assert(offsetof(UUISpineBoneAnchor, AnchorInfos) == 0x000100, "Member 'UUISpineBoneAnchor::AnchorInfos' has a wrong offset!");
-static_assert(offsetof(UUISpineBoneAnchor, SpineSkeletonComponent) == 0x000110, "Member 'UUISpineBoneAnchor::SpineSkeletonComponent' has a wrong offset!");
-static_assert(offsetof(UUISpineBoneAnchor, CurrSkeletonData) == 0x000118, "Member 'UUISpineBoneAnchor::CurrSkeletonData' has a wrong offset!");
+static_assert(alignof(UUISizeControlByOther) == 0x000008, "Wrong alignment on UUISizeControlByOther");
+static_assert(sizeof(UUISizeControlByOther) == 0x0001A8, "Wrong size on UUISizeControlByOther");
+static_assert(offsetof(UUISizeControlByOther, TargetActor) == 0x000170, "Member 'UUISizeControlByOther::TargetActor' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, ControlWidth) == 0x000178, "Member 'UUISizeControlByOther::ControlWidth' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, ControlHeight) == 0x000179, "Member 'UUISizeControlByOther::ControlHeight' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, UseWidthRange) == 0x00017A, "Member 'UUISizeControlByOther::UseWidthRange' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, UseHeightRange) == 0x00017B, "Member 'UUISizeControlByOther::UseHeightRange' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, MaxWidth) == 0x00017C, "Member 'UUISizeControlByOther::MaxWidth' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, MinWidth) == 0x000180, "Member 'UUISizeControlByOther::MinWidth' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, MaxHeight) == 0x000184, "Member 'UUISizeControlByOther::MaxHeight' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, MinHeight) == 0x000188, "Member 'UUISizeControlByOther::MinHeight' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, AdditionalWidth) == 0x00018C, "Member 'UUISizeControlByOther::AdditionalWidth' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, AdditionalHeight) == 0x000190, "Member 'UUISizeControlByOther::AdditionalHeight' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, bSizeZeroWhenNotActive) == 0x000194, "Member 'UUISizeControlByOther::bSizeZeroWhenNotActive' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, TargetUIItem) == 0x000198, "Member 'UUISizeControlByOther::TargetUIItem' has a wrong offset!");
+static_assert(offsetof(UUISizeControlByOther, HelperComp) == 0x0001A0, "Member 'UUISizeControlByOther::HelperComp' has a wrong offset!");
 
 // Class LGUI.SequencerManager
 // 0x0178 (0x01A8 - 0x0030)
@@ -4392,222 +4594,101 @@ static_assert(offsetof(USequencerManager, AllLvlSequencerActors) == 0x000038, "M
 static_assert(offsetof(USequencerManager, BatchPlayContexts) == 0x000180, "Member 'USequencerManager::BatchPlayContexts' has a wrong offset!");
 static_assert(offsetof(USequencerManager, TransientSyncParamContext) == 0x000190, "Member 'USequencerManager::TransientSyncParamContext' has a wrong offset!");
 
-// Class LGUI.UISizeControlByAspectRatioHelper
-// 0x0008 (0x0108 - 0x0100)
-class UUISizeControlByAspectRatioHelper final : public ULGUIBehaviour
+// Class LGUI.UISelectableGroupComponent
+// 0x0030 (0x0130 - 0x0100)
+class UUISelectableGroupComponent final : public ULGUIBehaviour
 {
 public:
-	TWeakObjectPtr<class UUISizeControlByAspectRatio> TargetComp;                                        // 0x0100(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_100[0x8];                                      // 0x0100(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          AllowEventBubbleUp;                                // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UUISelectableComponent>  Selected;                                          // 0x010C(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TWeakObjectPtr<class UUISelectableComponent>  Highlighted;                                       // 0x0114(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TWeakObjectPtr<class UUISelectableComponent>> SelectableComponents;                       // 0x0120(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
+
+public:
+	void OnComponentHighlighted(class UUISelectableComponent* Component);
+	void OnComponentSelected(class UUISelectableComponent* Component);
+	void OnComponentUnhighlighted();
+	void OnComponentUnselected();
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISizeControlByAspectRatioHelper">();
+		return StaticClassImpl<"UISelectableGroupComponent">();
 	}
-	static class UUISizeControlByAspectRatioHelper* GetDefaultObj()
+	static class UUISelectableGroupComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISizeControlByAspectRatioHelper>();
+		return GetDefaultObjImpl<UUISelectableGroupComponent>();
 	}
 };
-static_assert(alignof(UUISizeControlByAspectRatioHelper) == 0x000008, "Wrong alignment on UUISizeControlByAspectRatioHelper");
-static_assert(sizeof(UUISizeControlByAspectRatioHelper) == 0x000108, "Wrong size on UUISizeControlByAspectRatioHelper");
-static_assert(offsetof(UUISizeControlByAspectRatioHelper, TargetComp) == 0x000100, "Member 'UUISizeControlByAspectRatioHelper::TargetComp' has a wrong offset!");
+static_assert(alignof(UUISelectableGroupComponent) == 0x000008, "Wrong alignment on UUISelectableGroupComponent");
+static_assert(sizeof(UUISelectableGroupComponent) == 0x000130, "Wrong size on UUISelectableGroupComponent");
+static_assert(offsetof(UUISelectableGroupComponent, AllowEventBubbleUp) == 0x000108, "Member 'UUISelectableGroupComponent::AllowEventBubbleUp' has a wrong offset!");
+static_assert(offsetof(UUISelectableGroupComponent, Selected) == 0x00010C, "Member 'UUISelectableGroupComponent::Selected' has a wrong offset!");
+static_assert(offsetof(UUISelectableGroupComponent, Highlighted) == 0x000114, "Member 'UUISelectableGroupComponent::Highlighted' has a wrong offset!");
+static_assert(offsetof(UUISelectableGroupComponent, SelectableComponents) == 0x000120, "Member 'UUISelectableGroupComponent::SelectableComponents' has a wrong offset!");
 
-// Class LGUI.UIText
-// 0x0360 (0x0AE0 - 0x0780)
-class UUIText final : public UUIBatchGeometryRenderable
+// Class LGUI.UIDirectMeshRenderable
+// 0x0010 (0x05A0 - 0x0590)
+class UUIDirectMeshRenderable : public UUIBaseRenderable
 {
 public:
-	uint8                                         Pad_780[0x60];                                     // 0x0780(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULGUIFontData_BaseObject*               font;                                              // 0x07E0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 text;                                              // 0x07E8(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         size;                                              // 0x07F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector2D                              spacePercentage;                                   // 0x07FC(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector2D                              space;                                             // 0x0804(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         outlineSize;                                       // 0x080C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 outlineColor;                                      // 0x0810(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int16                                         glowSize;                                          // 0x0814(0x0002)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_816[0x2];                                      // 0x0816(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 glowColor;                                         // 0x0818(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUITextParagraphHorizontalAlign               hAlign;                                            // 0x081C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUITextParagraphVerticalAlign                 vAlign;                                            // 0x081D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUITextOverflowType                           overflowType;                                      // 0x081E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_81F[0x1];                                      // 0x081F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         maxWidth;                                          // 0x0820(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         maxHeight;                                         // 0x0824(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          adjustWidth;                                       // 0x0828(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          adjustHeight;                                      // 0x0829(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          NeedCustomerLimitWidth;                            // 0x082A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_82B[0x1];                                      // 0x082B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CustomerLimitWidth;                                // 0x082C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUITextFontStyle                              fontStyle;                                         // 0x0830(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          richText;                                          // 0x0831(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bApplyAlphaOnRichText;                             // 0x0832(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bFilterAnoRichTag;                                 // 0x0833(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bBestFit;                                          // 0x0834(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bRichTextTextureBestFit;                           // 0x0835(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bAlignCenter;                                      // 0x0836(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIgnoreWordRules;                                  // 0x0837(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bAutoEllipsis;                                     // 0x0838(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bAutoEllipsisSplitWord;                            // 0x0839(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_83A[0x2];                                      // 0x083A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         BestFitMinSize;                                    // 0x083C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bCalculateOutlineSize;                             // 0x0840(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_841[0x7];                                      // 0x0841(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         hyperlinks;                                        // 0x0848(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bFilterHyperLinks;                                 // 0x0858(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_859[0x3];                                      // 0x0859(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         hyperLinksClickAreaRatio;                          // 0x085C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bEnableHyperLinksHighlight;                        // 0x0860(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_861[0x3];                                      // 0x0861(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 HyperLinksHoverColor;                              // 0x0864(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_868[0x8];                                      // 0x0868(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const class FString& HyperLink)> OnHyperLinkClickCallBack;                          // 0x0870(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_898[0x80];                                     // 0x0898(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bEnableTextRenderSystemV2;                         // 0x0918(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_919[0x117];                                    // 0x0919(0x0117)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUITextClickComponent*                  ClickComponent;                                    // 0x0A30(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_A38[0x28];                                     // 0x0A38(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             OnSelfLanguageChange;                              // 0x0A60(0x0028)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             OnTextureAsyncLoaded;                              // 0x0A88(0x0028)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NativeAccessSpecifierPublic)
-	uint32                                        TranslateId;                                       // 0x0AB0(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_AB4[0x24];                                     // 0x0AB4(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bGameRichText;                                     // 0x0AD8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_AD9[0x7];                                      // 0x0AD9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static void OnTsLanguageChange();
-	static void SetGmReplaceFontDelegate(const TDelegate<void(class UUIText* uiText)>& Delegate);
-	static void SetLocalTextDelegate(const TDelegate<void(class FString& TableName, int32 TextKey, class UUIText* uiText)>& Delegate);
-	static void SetLocalTextNewDelegate(const TDelegate<void(class FString& TextKey, class UUIText* uiText, bool isMainText)>& Delegate);
-	static void SetTextTranslateDelegate(const TDelegate<void(class UUIText* uiText)>& Delegate);
-	static void SetTsGameRichTextDelegate(const TDelegate<void(const class FString& RichTextType, const TArray<class FString>& Params)>& Delegate);
-
-	void AddFloatArgs(float Value);
-	void AddFormatTableInfo(const class FString& ConfigTableName, int32 Key);
-	void AddFormatTableInfoNew(const class FString& Key);
-	void AddInt64Args(int64 Value);
-	void AddIntArgs(int32 Value);
-	void AddStringArgs(const class FString& Value);
-	void Clear();
-	int32 GetDisplayCharLength();
-	int32 GetRealFontSize();
-	struct FVector2D GetRealSize();
-	int32 GetRenderLineCharNum(int32 index);
-	float GetRenderLineHeight(int32 LineIndex);
-	int32 GetRenderLineNum();
-	void GetTextLineNumArray(TArray<int32>* OutArray);
-	struct FVector2D GetTextRenderSize();
-	void OnTextTextureLoaded(const TArray<struct FDynamicAtlasSlotManagedHandle>& ManagedHandle);
-	void SetAdjustHeight(bool newAdjustHeight);
-	void SetAdjustWidth(bool newAdjustWidth);
-	void SetEnableHyperLinksHighlight(bool bEnabled);
-	void SetFilterAnoRichTag(bool bFilter);
-	void SetFont(class ULGUIFontData_BaseObject* newFont);
-	void SetFontSize(float newSize);
-	void SetFontSpace(const struct FVector2D& newSpace);
-	void SetFontSpacePercentage(const struct FVector2D& newSpace);
-	void SetFontStyle(EUITextFontStyle newFontStyle);
-	void SetGameRichText(bool value);
-	void SetHyperLinksHoverSpiteActive(bool bActive);
-	void SetMaxHeight(int32 NewMaxHeight);
-	void SetMaxWidth(int32 NewMaxWidth);
-	void SetOverflowType(EUITextOverflowType newOverflowType);
-	void SetParagraphHorizontalAlignment(EUITextParagraphHorizontalAlign newHAlign);
-	void SetParagraphVerticalAlignment(EUITextParagraphVerticalAlign newVAlign);
-	void SetRichText(bool newRichText);
-	void SetText(const class FString& newText, bool DisableTranslate);
-	void ShowText(const class FString& ConfigTableName, int32 Key);
-	void ShowTextNew(const class FString& Key);
-
-	bool GetAdjustHeight() const;
-	bool GetAdjustWidth() const;
-	bool GetAlignCenter() const;
-	bool GetAutoEllipsis() const;
-	bool GetAutoEllipsisSplitWord() const;
-	class ULGUIFontData_BaseObject* GetFont() const;
-	struct FColor GetFontGlowColor() const;
-	int32 GetFontGlowSize() const;
-	struct FColor GetFontOutlineColor() const;
-	int32 GetFontOutlineSize() const;
-	struct FVector2D GetFontSpace() const;
-	struct FVector2D GetFontSpaceFinal() const;
-	struct FVector2D GetFontSpacePercentage() const;
-	EUITextFontStyle GetFontStyle() const;
-	TArray<class FString> GetHyperlinks() const;
-	int32 GetMaxHeight() const;
-	int32 GetMaxWidth() const;
-	EUITextOverflowType GetOverflowType() const;
-	bool GetRichText() const;
-	float GetSize() const;
-	class FString GetText() const;
-	bool IsEnableHyperLinksHighlight() const;
-	bool IsFilterAnoRichTag() const;
+	uint8                                         Pad_590[0x10];                                     // 0x0590(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIText">();
+		return StaticClassImpl<"UIDirectMeshRenderable">();
 	}
-	static class UUIText* GetDefaultObj()
+	static class UUIDirectMeshRenderable* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIText>();
+		return GetDefaultObjImpl<UUIDirectMeshRenderable>();
 	}
 };
-static_assert(alignof(UUIText) == 0x000010, "Wrong alignment on UUIText");
-static_assert(sizeof(UUIText) == 0x000AE0, "Wrong size on UUIText");
-static_assert(offsetof(UUIText, font) == 0x0007E0, "Member 'UUIText::font' has a wrong offset!");
-static_assert(offsetof(UUIText, text) == 0x0007E8, "Member 'UUIText::text' has a wrong offset!");
-static_assert(offsetof(UUIText, size) == 0x0007F8, "Member 'UUIText::size' has a wrong offset!");
-static_assert(offsetof(UUIText, spacePercentage) == 0x0007FC, "Member 'UUIText::spacePercentage' has a wrong offset!");
-static_assert(offsetof(UUIText, space) == 0x000804, "Member 'UUIText::space' has a wrong offset!");
-static_assert(offsetof(UUIText, outlineSize) == 0x00080C, "Member 'UUIText::outlineSize' has a wrong offset!");
-static_assert(offsetof(UUIText, outlineColor) == 0x000810, "Member 'UUIText::outlineColor' has a wrong offset!");
-static_assert(offsetof(UUIText, glowSize) == 0x000814, "Member 'UUIText::glowSize' has a wrong offset!");
-static_assert(offsetof(UUIText, glowColor) == 0x000818, "Member 'UUIText::glowColor' has a wrong offset!");
-static_assert(offsetof(UUIText, hAlign) == 0x00081C, "Member 'UUIText::hAlign' has a wrong offset!");
-static_assert(offsetof(UUIText, vAlign) == 0x00081D, "Member 'UUIText::vAlign' has a wrong offset!");
-static_assert(offsetof(UUIText, overflowType) == 0x00081E, "Member 'UUIText::overflowType' has a wrong offset!");
-static_assert(offsetof(UUIText, maxWidth) == 0x000820, "Member 'UUIText::maxWidth' has a wrong offset!");
-static_assert(offsetof(UUIText, maxHeight) == 0x000824, "Member 'UUIText::maxHeight' has a wrong offset!");
-static_assert(offsetof(UUIText, adjustWidth) == 0x000828, "Member 'UUIText::adjustWidth' has a wrong offset!");
-static_assert(offsetof(UUIText, adjustHeight) == 0x000829, "Member 'UUIText::adjustHeight' has a wrong offset!");
-static_assert(offsetof(UUIText, NeedCustomerLimitWidth) == 0x00082A, "Member 'UUIText::NeedCustomerLimitWidth' has a wrong offset!");
-static_assert(offsetof(UUIText, CustomerLimitWidth) == 0x00082C, "Member 'UUIText::CustomerLimitWidth' has a wrong offset!");
-static_assert(offsetof(UUIText, fontStyle) == 0x000830, "Member 'UUIText::fontStyle' has a wrong offset!");
-static_assert(offsetof(UUIText, richText) == 0x000831, "Member 'UUIText::richText' has a wrong offset!");
-static_assert(offsetof(UUIText, bApplyAlphaOnRichText) == 0x000832, "Member 'UUIText::bApplyAlphaOnRichText' has a wrong offset!");
-static_assert(offsetof(UUIText, bFilterAnoRichTag) == 0x000833, "Member 'UUIText::bFilterAnoRichTag' has a wrong offset!");
-static_assert(offsetof(UUIText, bBestFit) == 0x000834, "Member 'UUIText::bBestFit' has a wrong offset!");
-static_assert(offsetof(UUIText, bRichTextTextureBestFit) == 0x000835, "Member 'UUIText::bRichTextTextureBestFit' has a wrong offset!");
-static_assert(offsetof(UUIText, bAlignCenter) == 0x000836, "Member 'UUIText::bAlignCenter' has a wrong offset!");
-static_assert(offsetof(UUIText, bIgnoreWordRules) == 0x000837, "Member 'UUIText::bIgnoreWordRules' has a wrong offset!");
-static_assert(offsetof(UUIText, bAutoEllipsis) == 0x000838, "Member 'UUIText::bAutoEllipsis' has a wrong offset!");
-static_assert(offsetof(UUIText, bAutoEllipsisSplitWord) == 0x000839, "Member 'UUIText::bAutoEllipsisSplitWord' has a wrong offset!");
-static_assert(offsetof(UUIText, BestFitMinSize) == 0x00083C, "Member 'UUIText::BestFitMinSize' has a wrong offset!");
-static_assert(offsetof(UUIText, bCalculateOutlineSize) == 0x000840, "Member 'UUIText::bCalculateOutlineSize' has a wrong offset!");
-static_assert(offsetof(UUIText, hyperlinks) == 0x000848, "Member 'UUIText::hyperlinks' has a wrong offset!");
-static_assert(offsetof(UUIText, bFilterHyperLinks) == 0x000858, "Member 'UUIText::bFilterHyperLinks' has a wrong offset!");
-static_assert(offsetof(UUIText, hyperLinksClickAreaRatio) == 0x00085C, "Member 'UUIText::hyperLinksClickAreaRatio' has a wrong offset!");
-static_assert(offsetof(UUIText, bEnableHyperLinksHighlight) == 0x000860, "Member 'UUIText::bEnableHyperLinksHighlight' has a wrong offset!");
-static_assert(offsetof(UUIText, HyperLinksHoverColor) == 0x000864, "Member 'UUIText::HyperLinksHoverColor' has a wrong offset!");
-static_assert(offsetof(UUIText, OnHyperLinkClickCallBack) == 0x000870, "Member 'UUIText::OnHyperLinkClickCallBack' has a wrong offset!");
-static_assert(offsetof(UUIText, bEnableTextRenderSystemV2) == 0x000918, "Member 'UUIText::bEnableTextRenderSystemV2' has a wrong offset!");
-static_assert(offsetof(UUIText, ClickComponent) == 0x000A30, "Member 'UUIText::ClickComponent' has a wrong offset!");
-static_assert(offsetof(UUIText, OnSelfLanguageChange) == 0x000A60, "Member 'UUIText::OnSelfLanguageChange' has a wrong offset!");
-static_assert(offsetof(UUIText, OnTextureAsyncLoaded) == 0x000A88, "Member 'UUIText::OnTextureAsyncLoaded' has a wrong offset!");
-static_assert(offsetof(UUIText, TranslateId) == 0x000AB0, "Member 'UUIText::TranslateId' has a wrong offset!");
-static_assert(offsetof(UUIText, bGameRichText) == 0x000AD8, "Member 'UUIText::bGameRichText' has a wrong offset!");
+static_assert(alignof(UUIDirectMeshRenderable) == 0x000010, "Wrong alignment on UUIDirectMeshRenderable");
+static_assert(sizeof(UUIDirectMeshRenderable) == 0x0005A0, "Wrong size on UUIDirectMeshRenderable");
+
+// Class LGUI.UIStaticMesh
+// 0x0010 (0x05B0 - 0x05A0)
+class UUIStaticMesh final : public UUIDirectMeshRenderable
+{
+public:
+	class UStaticMesh*                            mesh;                                              // 0x05A0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUIStaticMeshVertexColorType                  vertexColorType;                                   // 0x05A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5A9[0x7];                                      // 0x05A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetMesh(class UStaticMesh* value);
+	void SetVertexColorType(EUIStaticMeshVertexColorType value);
+
+	class UStaticMesh* GetMesh() const;
+	EUIStaticMeshVertexColorType GetVertexColorType() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIStaticMesh">();
+	}
+	static class UUIStaticMesh* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIStaticMesh>();
+	}
+};
+static_assert(alignof(UUIStaticMesh) == 0x000010, "Wrong alignment on UUIStaticMesh");
+static_assert(sizeof(UUIStaticMesh) == 0x0005B0, "Wrong size on UUIStaticMesh");
+static_assert(offsetof(UUIStaticMesh, mesh) == 0x0005A0, "Member 'UUIStaticMesh::mesh' has a wrong offset!");
+static_assert(offsetof(UUIStaticMesh, vertexColorType) == 0x0005A8, "Member 'UUIStaticMesh::vertexColorType' has a wrong offset!");
 
 // Class LGUI.UI2DLineChildrenAsPoints
 // 0x0030 (0x07E0 - 0x07B0)
 class UUI2DLineChildrenAsPoints final : public UUI2DLineRendererBase
 {
 public:
-	uint8                                         Pad_7A8[0x10];                                     // 0x07A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector2D>                      CurrentPointArray;                                 // 0x07B8(0x0010)(Edit, ZeroConstructor, Transient, EditConst, Protected, NativeAccessSpecifierProtected)
-	TArray<class UUIItem*>                        SortedItemArray;                                   // 0x07C8(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7D8[0x8];                                      // 0x07D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_7B0[0x10];                                     // 0x07B0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector2D>                      CurrentPointArray;                                 // 0x07C0(0x0010)(Edit, ZeroConstructor, Transient, EditConst, Protected, NativeAccessSpecifierProtected)
+	TArray<class UUIItem*>                        SortedItemArray;                                   // 0x07D0(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -4621,8 +4702,8 @@ public:
 };
 static_assert(alignof(UUI2DLineChildrenAsPoints) == 0x000010, "Wrong alignment on UUI2DLineChildrenAsPoints");
 static_assert(sizeof(UUI2DLineChildrenAsPoints) == 0x0007E0, "Wrong size on UUI2DLineChildrenAsPoints");
-static_assert(offsetof(UUI2DLineChildrenAsPoints, CurrentPointArray) == 0x0007B8, "Member 'UUI2DLineChildrenAsPoints::CurrentPointArray' has a wrong offset!");
-static_assert(offsetof(UUI2DLineChildrenAsPoints, SortedItemArray) == 0x0007C8, "Member 'UUI2DLineChildrenAsPoints::SortedItemArray' has a wrong offset!");
+static_assert(offsetof(UUI2DLineChildrenAsPoints, CurrentPointArray) == 0x0007C0, "Member 'UUI2DLineChildrenAsPoints::CurrentPointArray' has a wrong offset!");
+static_assert(offsetof(UUI2DLineChildrenAsPoints, SortedItemArray) == 0x0007D0, "Member 'UUI2DLineChildrenAsPoints::SortedItemArray' has a wrong offset!");
 
 // Class LGUI.UI2DLineChildrenAsPointsActor
 // 0x0008 (0x03A0 - 0x0398)
@@ -4650,8 +4731,7 @@ static_assert(offsetof(AUI2DLineChildrenAsPointsActor, UIElement) == 0x000398, "
 class UUI2DLineRaw final : public UUI2DLineRendererBase
 {
 public:
-	TArray<struct FVector2D>                      PointArray;                                        // 0x07A8(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7B8[0x8];                                      // 0x07B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector2D>                      PointArray;                                        // 0x07B0(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 
 public:
 	void AdjustSize();
@@ -4669,7 +4749,7 @@ public:
 };
 static_assert(alignof(UUI2DLineRaw) == 0x000010, "Wrong alignment on UUI2DLineRaw");
 static_assert(sizeof(UUI2DLineRaw) == 0x0007C0, "Wrong size on UUI2DLineRaw");
-static_assert(offsetof(UUI2DLineRaw, PointArray) == 0x0007A8, "Member 'UUI2DLineRaw::PointArray' has a wrong offset!");
+static_assert(offsetof(UUI2DLineRaw, PointArray) == 0x0007B0, "Member 'UUI2DLineRaw::PointArray' has a wrong offset!");
 
 // Class LGUI.UI2DLineActor
 // 0x0008 (0x03A0 - 0x0398)
@@ -4718,39 +4798,65 @@ static_assert(alignof(UUIAndroidBackComponent) == 0x000008, "Wrong alignment on 
 static_assert(sizeof(UUIAndroidBackComponent) == 0x000108, "Wrong size on UUIAndroidBackComponent");
 static_assert(offsetof(UUIAndroidBackComponent, ClickPivot) == 0x000100, "Member 'UUIAndroidBackComponent::ClickPivot' has a wrong offset!");
 
-// Class LGUI.UIStaticMeshActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUIStaticMeshActor final : public AUIBaseActor
+// Class LGUI.UITransitionBase
+// 0x0158 (0x0268 - 0x0110)
+class UUITransitionBase : public UUISelectableTransitionComponent
 {
 public:
-	class UUIStaticMesh*                          UIStaticMesh;                                      // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FWidgetTransitionInfo                  WidgetTransitionInfo;                              // 0x0110(0x0104)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_214[0x54];                                     // 0x0214(0x0054)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIStaticMeshActor">();
+		return StaticClassImpl<"UITransitionBase">();
 	}
-	static class AUIStaticMeshActor* GetDefaultObj()
+	static class UUITransitionBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AUIStaticMeshActor>();
+		return GetDefaultObjImpl<UUITransitionBase>();
 	}
 };
-static_assert(alignof(AUIStaticMeshActor) == 0x000008, "Wrong alignment on AUIStaticMeshActor");
-static_assert(sizeof(AUIStaticMeshActor) == 0x0003A0, "Wrong size on AUIStaticMeshActor");
-static_assert(offsetof(AUIStaticMeshActor, UIStaticMesh) == 0x000398, "Member 'AUIStaticMeshActor::UIStaticMesh' has a wrong offset!");
+static_assert(alignof(UUITransitionBase) == 0x000008, "Wrong alignment on UUITransitionBase");
+static_assert(sizeof(UUITransitionBase) == 0x000268, "Wrong size on UUITransitionBase");
+static_assert(offsetof(UUITransitionBase, WidgetTransitionInfo) == 0x000110, "Member 'UUITransitionBase::WidgetTransitionInfo' has a wrong offset!");
+
+// Class LGUI.UISpriteTransition
+// 0x0080 (0x02E8 - 0x0268)
+class UUISpriteTransition final : public UUITransitionBase
+{
+public:
+	struct FSpriteTransitionInfo                  TransitionInfo;                                    // 0x0268(0x0080)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	void SetAllTransitionSprite(class ULGUISpriteData_BaseObject* NewSprite);
+	void SetStateSprite(EUISelectableSelectionState State, class ULGUISpriteData_BaseObject* NewSprite);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISpriteTransition">();
+	}
+	static class UUISpriteTransition* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISpriteTransition>();
+	}
+};
+static_assert(alignof(UUISpriteTransition) == 0x000008, "Wrong alignment on UUISpriteTransition");
+static_assert(sizeof(UUISpriteTransition) == 0x0002E8, "Wrong size on UUISpriteTransition");
+static_assert(offsetof(UUISpriteTransition, TransitionInfo) == 0x000268, "Member 'UUISpriteTransition::TransitionInfo' has a wrong offset!");
 
 // Class LGUI.UIArtText
-// 0x00A0 (0x0820 - 0x0780)
+// 0x00A0 (0x0830 - 0x0790)
 class UUIArtText final : public UUIBatchGeometryRenderable
 {
 public:
-	class ULGUIArtTextData*                       ArtTextData;                                       // 0x0780(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 Text;                                              // 0x0788(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         Size;                                              // 0x0798(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector2D                              Space;                                             // 0x079C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUIArtTextHorizontalAlign                     HorizontalAlign;                                   // 0x07A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          IsWidthControlledByText;                           // 0x07A5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7A6[0x7A];                                     // 0x07A6(0x007A)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class ULGUIArtTextData*                       ArtTextData;                                       // 0x0788(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                 Text;                                              // 0x0790(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         Size;                                              // 0x07A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector2D                              Space;                                             // 0x07A4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUIArtTextHorizontalAlign                     HorizontalAlign;                                   // 0x07AC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          IsWidthControlledByText;                           // 0x07AD(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7AE[0x82];                                     // 0x07AE(0x0082)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool CheckTextValid();
@@ -4779,13 +4885,13 @@ public:
 	}
 };
 static_assert(alignof(UUIArtText) == 0x000010, "Wrong alignment on UUIArtText");
-static_assert(sizeof(UUIArtText) == 0x000820, "Wrong size on UUIArtText");
-static_assert(offsetof(UUIArtText, ArtTextData) == 0x000780, "Member 'UUIArtText::ArtTextData' has a wrong offset!");
-static_assert(offsetof(UUIArtText, Text) == 0x000788, "Member 'UUIArtText::Text' has a wrong offset!");
-static_assert(offsetof(UUIArtText, Size) == 0x000798, "Member 'UUIArtText::Size' has a wrong offset!");
-static_assert(offsetof(UUIArtText, Space) == 0x00079C, "Member 'UUIArtText::Space' has a wrong offset!");
-static_assert(offsetof(UUIArtText, HorizontalAlign) == 0x0007A4, "Member 'UUIArtText::HorizontalAlign' has a wrong offset!");
-static_assert(offsetof(UUIArtText, IsWidthControlledByText) == 0x0007A5, "Member 'UUIArtText::IsWidthControlledByText' has a wrong offset!");
+static_assert(sizeof(UUIArtText) == 0x000830, "Wrong size on UUIArtText");
+static_assert(offsetof(UUIArtText, ArtTextData) == 0x000788, "Member 'UUIArtText::ArtTextData' has a wrong offset!");
+static_assert(offsetof(UUIArtText, Text) == 0x000790, "Member 'UUIArtText::Text' has a wrong offset!");
+static_assert(offsetof(UUIArtText, Size) == 0x0007A0, "Member 'UUIArtText::Size' has a wrong offset!");
+static_assert(offsetof(UUIArtText, Space) == 0x0007A4, "Member 'UUIArtText::Space' has a wrong offset!");
+static_assert(offsetof(UUIArtText, HorizontalAlign) == 0x0007AC, "Member 'UUIArtText::HorizontalAlign' has a wrong offset!");
+static_assert(offsetof(UUIArtText, IsWidthControlledByText) == 0x0007AD, "Member 'UUIArtText::IsWidthControlledByText' has a wrong offset!");
 
 // Class LGUI.UIArtTextActor
 // 0x0008 (0x03A0 - 0x0398)
@@ -4809,12 +4915,13 @@ static_assert(sizeof(AUIArtTextActor) == 0x0003A0, "Wrong size on AUIArtTextActo
 static_assert(offsetof(AUIArtTextActor, UIArtText) == 0x000398, "Member 'AUIArtTextActor::UIArtText' has a wrong offset!");
 
 // Class LGUI.UITextureBase
-// 0x0040 (0x07C0 - 0x0780)
-class UUITextureBase : public UUIBatchGeometryRenderable
+// 0x0040 (0x07D0 - 0x0790)
+#pragma pack(push, 0x1)
+class alignas(0x10) UUITextureBase : public UUIBatchGeometryRenderable
 {
 public:
-	class UTexture*                               texture;                                           // 0x0780(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_788[0x38];                                     // 0x0788(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UTexture*                               texture;                                           // 0x0788(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_790[0x38];                                     // 0x0790(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnDynamicAtlasSlotBuilt(const struct FDynamicAtlasSlotManagedHandle& ManagedHandle);
@@ -4834,46 +4941,19 @@ public:
 		return GetDefaultObjImpl<UUITextureBase>();
 	}
 };
+#pragma pack(pop)
 static_assert(alignof(UUITextureBase) == 0x000010, "Wrong alignment on UUITextureBase");
-static_assert(sizeof(UUITextureBase) == 0x0007C0, "Wrong size on UUITextureBase");
-static_assert(offsetof(UUITextureBase, texture) == 0x000780, "Member 'UUITextureBase::texture' has a wrong offset!");
-
-// Class LGUI.UITextureBox
-// 0x0010 (0x07D0 - 0x07C0)
-class UUITextureBox final : public UUITextureBase
-{
-public:
-	float                                         thickness;                                         // 0x07C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          seperateFrontColor;                                // 0x07C4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7C5[0x3];                                      // 0x07C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 frontFaceColor;                                    // 0x07C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7CC[0x4];                                      // 0x07CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UITextureBox">();
-	}
-	static class UUITextureBox* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUITextureBox>();
-	}
-};
-static_assert(alignof(UUITextureBox) == 0x000010, "Wrong alignment on UUITextureBox");
-static_assert(sizeof(UUITextureBox) == 0x0007D0, "Wrong size on UUITextureBox");
-static_assert(offsetof(UUITextureBox, thickness) == 0x0007C0, "Member 'UUITextureBox::thickness' has a wrong offset!");
-static_assert(offsetof(UUITextureBox, seperateFrontColor) == 0x0007C4, "Member 'UUITextureBox::seperateFrontColor' has a wrong offset!");
-static_assert(offsetof(UUITextureBox, frontFaceColor) == 0x0007C8, "Member 'UUITextureBox::frontFaceColor' has a wrong offset!");
+static_assert(sizeof(UUITextureBase) == 0x0007D0, "Wrong size on UUITextureBase");
+static_assert(offsetof(UUITextureBase, texture) == 0x000788, "Member 'UUITextureBase::texture' has a wrong offset!");
 
 // Class LGUI.UIPostProcessRenderable
 // 0x0050 (0x05E0 - 0x0590)
-#pragma pack(push, 0x1)
-class alignas(0x10) UUIPostProcessRenderable : public UUIBaseRenderable
+class UUIPostProcessRenderable : public UUIBaseRenderable
 {
 public:
-	uint8                                         Pad_588[0x10];                                     // 0x0588(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             maskTexture;                                       // 0x0598(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5A0[0x38];                                     // 0x05A0(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_590[0x10];                                     // 0x0590(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             maskTexture;                                       // 0x05A0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5A8[0x38];                                     // 0x05A8(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetMaskTexture(class UTexture2D* newValue);
@@ -4890,23 +4970,22 @@ public:
 		return GetDefaultObjImpl<UUIPostProcessRenderable>();
 	}
 };
-#pragma pack(pop)
 static_assert(alignof(UUIPostProcessRenderable) == 0x000010, "Wrong alignment on UUIPostProcessRenderable");
 static_assert(sizeof(UUIPostProcessRenderable) == 0x0005E0, "Wrong size on UUIPostProcessRenderable");
-static_assert(offsetof(UUIPostProcessRenderable, maskTexture) == 0x000598, "Member 'UUIPostProcessRenderable::maskTexture' has a wrong offset!");
+static_assert(offsetof(UUIPostProcessRenderable, maskTexture) == 0x0005A0, "Member 'UUIPostProcessRenderable::maskTexture' has a wrong offset!");
 
 // Class LGUI.UIBackgroundBlur
 // 0x0020 (0x0600 - 0x05E0)
 class UUIBackgroundBlur final : public UUIPostProcessRenderable
 {
 public:
-	float                                         blurStrength;                                      // 0x05D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          applyAlphaToBlur;                                  // 0x05DC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5DD[0x3];                                      // 0x05DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         maxDownSampleLevel;                                // 0x05E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5E4[0x4];                                      // 0x05E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             strengthTexture;                                   // 0x05E8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5F0[0x10];                                     // 0x05F0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         blurStrength;                                      // 0x05E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          applyAlphaToBlur;                                  // 0x05E4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5E5[0x3];                                      // 0x05E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         maxDownSampleLevel;                                // 0x05E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5EC[0x4];                                      // 0x05EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             strengthTexture;                                   // 0x05F0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5F8[0x8];                                      // 0x05F8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetApplyAlphaToBlur(bool newValue);
@@ -4931,109 +5010,33 @@ public:
 };
 static_assert(alignof(UUIBackgroundBlur) == 0x000010, "Wrong alignment on UUIBackgroundBlur");
 static_assert(sizeof(UUIBackgroundBlur) == 0x000600, "Wrong size on UUIBackgroundBlur");
-static_assert(offsetof(UUIBackgroundBlur, blurStrength) == 0x0005D8, "Member 'UUIBackgroundBlur::blurStrength' has a wrong offset!");
-static_assert(offsetof(UUIBackgroundBlur, applyAlphaToBlur) == 0x0005DC, "Member 'UUIBackgroundBlur::applyAlphaToBlur' has a wrong offset!");
-static_assert(offsetof(UUIBackgroundBlur, maxDownSampleLevel) == 0x0005E0, "Member 'UUIBackgroundBlur::maxDownSampleLevel' has a wrong offset!");
-static_assert(offsetof(UUIBackgroundBlur, strengthTexture) == 0x0005E8, "Member 'UUIBackgroundBlur::strengthTexture' has a wrong offset!");
+static_assert(offsetof(UUIBackgroundBlur, blurStrength) == 0x0005E0, "Member 'UUIBackgroundBlur::blurStrength' has a wrong offset!");
+static_assert(offsetof(UUIBackgroundBlur, applyAlphaToBlur) == 0x0005E4, "Member 'UUIBackgroundBlur::applyAlphaToBlur' has a wrong offset!");
+static_assert(offsetof(UUIBackgroundBlur, maxDownSampleLevel) == 0x0005E8, "Member 'UUIBackgroundBlur::maxDownSampleLevel' has a wrong offset!");
+static_assert(offsetof(UUIBackgroundBlur, strengthTexture) == 0x0005F0, "Member 'UUIBackgroundBlur::strengthTexture' has a wrong offset!");
 
-// Class LGUI.UITextInputComponent
-// 0x0308 (0x0700 - 0x03F8)
-class UUITextInputComponent final : public UUISelectableComponent
+// Class LGUI.UITextClickComponent
+// 0x0060 (0x0160 - 0x0100)
+class UUITextClickComponent final : public ULGUIBehaviour
 {
 public:
-	uint8                                         Pad_3F8[0x10];                                     // 0x03F8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AUITextActor>            TextActor;                                         // 0x0408(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 Text;                                              // 0x0410(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ELGUITextInputType                            InputType;                                         // 0x0420(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_421[0x7];                                      // 0x0421(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 PasswordChar;                                      // 0x0428(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bAllowMultiLine;                                   // 0x0438(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_439[0x3];                                      // 0x0439(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AUIBaseActor>            PlaceHolderActor;                                  // 0x043C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         CaretBlinkRate;                                    // 0x0444(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         CaretWidth;                                        // 0x0448(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          IsShowDefaultText;                                 // 0x044C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_44D[0x3];                                      // 0x044D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 CaretColor;                                        // 0x0450(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FColor                                 SelectionColor;                                    // 0x0454(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVirtualKeyboardOptions                VirtualKeyboradOptions;                            // 0x0458(0x0001)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_459[0x7];                                      // 0x0459(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FKey>                           IgnoreKeys;                                        // 0x0460(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_470[0x18];                                     // 0x0470(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIDrawableEvent                     OnValueChange;                                     // 0x0488(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4A0[0x18];                                     // 0x04A0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIDrawableEvent                     OnSubmit;                                          // 0x04B8(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4D0[0x18];                                     // 0x04D0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIDrawableEvent                     OnInputActivate;                                   // 0x04E8(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void(const class FString& InString)> OnCheckTextInputDelegate;                          // 0x0500(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint32                                        MaxInput;                                          // 0x0528(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_52C[0x8C];                                     // 0x052C(0x008C)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerController*                      PlayerController;                                  // 0x05B8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5C0[0x18];                                     // 0x05C0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UUISprite>               CaretObject;                                       // 0x05D8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<TWeakObjectPtr<class UUISprite>>       SelectionMaskObjectArray;                          // 0x05E0(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5F0[0x70];                                     // 0x05F0(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const class FString& InString)> OnTextChange;                                      // 0x0660(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& InString)> OnTextSubmit;                                      // 0x0688(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& InString)> OnTextClip;                                        // 0x06B0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(bool InActivate)>              OnInputActivateDelegate;                           // 0x06D8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-
-public:
-	void ActivateInputText();
-	void ClearCustomInputTypeEvent();
-	void DeactivateInputText();
-	bool IsInputActive();
-	struct FLGUIDelegateHandleWrapper RegisterInputActivateEvent(const TDelegate<void(bool InActivate)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterSubmitEvent(const TDelegate<void(const class FString& InString)>& InDelegate);
-	struct FLGUIDelegateHandleWrapper RegisterValueChangeEvent(const TDelegate<void(const class FString& InString)>& InDelegate);
-	void SetCustomInputTypeFunction(const TDelegate<void(const class FString& InString)>& InFunction);
-	void SetInputType(ELGUITextInputType newValue);
-	void SetText(const class FString& InText, bool InFireEvent);
-	void UnregisterInputActivateEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterSubmitEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-	void UnregisterValueChangeEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-
-	ELGUITextInputType GetInputType() const;
-	class FString GetText() const;
-	class UUIText* GetTextComponent() const;
+	uint8                                         Pad_100[0x10];                                     // 0x0100(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UUIText>                 Target;                                            // 0x0110(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_118[0x48];                                     // 0x0118(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UITextInputComponent">();
+		return StaticClassImpl<"UITextClickComponent">();
 	}
-	static class UUITextInputComponent* GetDefaultObj()
+	static class UUITextClickComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUITextInputComponent>();
+		return GetDefaultObjImpl<UUITextClickComponent>();
 	}
 };
-static_assert(alignof(UUITextInputComponent) == 0x000008, "Wrong alignment on UUITextInputComponent");
-static_assert(sizeof(UUITextInputComponent) == 0x000700, "Wrong size on UUITextInputComponent");
-static_assert(offsetof(UUITextInputComponent, TextActor) == 0x000408, "Member 'UUITextInputComponent::TextActor' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, Text) == 0x000410, "Member 'UUITextInputComponent::Text' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, InputType) == 0x000420, "Member 'UUITextInputComponent::InputType' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, PasswordChar) == 0x000428, "Member 'UUITextInputComponent::PasswordChar' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, bAllowMultiLine) == 0x000438, "Member 'UUITextInputComponent::bAllowMultiLine' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, PlaceHolderActor) == 0x00043C, "Member 'UUITextInputComponent::PlaceHolderActor' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, CaretBlinkRate) == 0x000444, "Member 'UUITextInputComponent::CaretBlinkRate' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, CaretWidth) == 0x000448, "Member 'UUITextInputComponent::CaretWidth' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, IsShowDefaultText) == 0x00044C, "Member 'UUITextInputComponent::IsShowDefaultText' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, CaretColor) == 0x000450, "Member 'UUITextInputComponent::CaretColor' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, SelectionColor) == 0x000454, "Member 'UUITextInputComponent::SelectionColor' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, VirtualKeyboradOptions) == 0x000458, "Member 'UUITextInputComponent::VirtualKeyboradOptions' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, IgnoreKeys) == 0x000460, "Member 'UUITextInputComponent::IgnoreKeys' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, OnValueChange) == 0x000488, "Member 'UUITextInputComponent::OnValueChange' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, OnSubmit) == 0x0004B8, "Member 'UUITextInputComponent::OnSubmit' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, OnInputActivate) == 0x0004E8, "Member 'UUITextInputComponent::OnInputActivate' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, OnCheckTextInputDelegate) == 0x000500, "Member 'UUITextInputComponent::OnCheckTextInputDelegate' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, MaxInput) == 0x000528, "Member 'UUITextInputComponent::MaxInput' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, PlayerController) == 0x0005B8, "Member 'UUITextInputComponent::PlayerController' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, CaretObject) == 0x0005D8, "Member 'UUITextInputComponent::CaretObject' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, SelectionMaskObjectArray) == 0x0005E0, "Member 'UUITextInputComponent::SelectionMaskObjectArray' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, OnTextChange) == 0x000660, "Member 'UUITextInputComponent::OnTextChange' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, OnTextSubmit) == 0x000688, "Member 'UUITextInputComponent::OnTextSubmit' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, OnTextClip) == 0x0006B0, "Member 'UUITextInputComponent::OnTextClip' has a wrong offset!");
-static_assert(offsetof(UUITextInputComponent, OnInputActivateDelegate) == 0x0006D8, "Member 'UUITextInputComponent::OnInputActivateDelegate' has a wrong offset!");
+static_assert(alignof(UUITextClickComponent) == 0x000008, "Wrong alignment on UUITextClickComponent");
+static_assert(sizeof(UUITextClickComponent) == 0x000160, "Wrong size on UUITextClickComponent");
+static_assert(offsetof(UUITextClickComponent, Target) == 0x000110, "Member 'UUITextClickComponent::Target' has a wrong offset!");
 
 // Class LGUI.UIPostProcessBaseActor
 // 0x0000 (0x0398 - 0x0398)
@@ -5073,35 +5076,47 @@ static_assert(alignof(AUIBackgroundBlurActor) == 0x000008, "Wrong alignment on A
 static_assert(sizeof(AUIBackgroundBlurActor) == 0x0003A0, "Wrong size on AUIBackgroundBlurActor");
 static_assert(offsetof(AUIBackgroundBlurActor, UIBackgroundBlur) == 0x000398, "Member 'AUIBackgroundBlurActor::UIBackgroundBlur' has a wrong offset!");
 
-// Class LGUI.SpriteTransitionUtil
-// 0x0000 (0x0030 - 0x0030)
-class USpriteTransitionUtil final : public UBlueprintFunctionLibrary
+// Class LGUI.UISpriteSheetTexturePlayer
+// 0x0018 (0x00F8 - 0x00E0)
+class UUISpriteSheetTexturePlayer final : public ULGUIImageSequencePlayer
 {
 public:
-	static void SetSpriteByTransitionInfo(class UUISprite* Sprite, const struct FSpriteTransitionOfState& Info);
-	static void SetSpriteSize(class UUISprite* Sprite, bool bSnapSize, float Width, float Height);
+	TWeakObjectPtr<class UUITexture>              texture;                                           // 0x00E0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         widthCount;                                        // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         heightCount;                                       // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_F0[0x8];                                       // 0x00F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetHeightCount(int32 value);
+	void SetWidthCount(int32 value);
+
+	int32 GetHeightCount() const;
+	int32 GetWidthCount() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"SpriteTransitionUtil">();
+		return StaticClassImpl<"UISpriteSheetTexturePlayer">();
 	}
-	static class USpriteTransitionUtil* GetDefaultObj()
+	static class UUISpriteSheetTexturePlayer* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<USpriteTransitionUtil>();
+		return GetDefaultObjImpl<UUISpriteSheetTexturePlayer>();
 	}
 };
-static_assert(alignof(USpriteTransitionUtil) == 0x000008, "Wrong alignment on USpriteTransitionUtil");
-static_assert(sizeof(USpriteTransitionUtil) == 0x000030, "Wrong size on USpriteTransitionUtil");
+static_assert(alignof(UUISpriteSheetTexturePlayer) == 0x000008, "Wrong alignment on UUISpriteSheetTexturePlayer");
+static_assert(sizeof(UUISpriteSheetTexturePlayer) == 0x0000F8, "Wrong size on UUISpriteSheetTexturePlayer");
+static_assert(offsetof(UUISpriteSheetTexturePlayer, texture) == 0x0000E0, "Member 'UUISpriteSheetTexturePlayer::texture' has a wrong offset!");
+static_assert(offsetof(UUISpriteSheetTexturePlayer, widthCount) == 0x0000E8, "Member 'UUISpriteSheetTexturePlayer::widthCount' has a wrong offset!");
+static_assert(offsetof(UUISpriteSheetTexturePlayer, heightCount) == 0x0000EC, "Member 'UUISpriteSheetTexturePlayer::heightCount' has a wrong offset!");
 
 // Class LGUI.UIBackgroundPixelate
-// 0x0000 (0x05E0 - 0x05E0)
+// 0x0010 (0x05F0 - 0x05E0)
 class UUIBackgroundPixelate final : public UUIPostProcessRenderable
 {
 public:
-	float                                         pixelateStrength;                                  // 0x05D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          applyAlphaToStrength;                              // 0x05DC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5DD[0x3];                                      // 0x05DD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         pixelateStrength;                                  // 0x05E0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          applyAlphaToStrength;                              // 0x05E4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5E5[0xB];                                      // 0x05E5(0x000B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetApplyAlphaToStrength(bool newValue);
@@ -5121,9 +5136,9 @@ public:
 	}
 };
 static_assert(alignof(UUIBackgroundPixelate) == 0x000010, "Wrong alignment on UUIBackgroundPixelate");
-static_assert(sizeof(UUIBackgroundPixelate) == 0x0005E0, "Wrong size on UUIBackgroundPixelate");
-static_assert(offsetof(UUIBackgroundPixelate, pixelateStrength) == 0x0005D8, "Member 'UUIBackgroundPixelate::pixelateStrength' has a wrong offset!");
-static_assert(offsetof(UUIBackgroundPixelate, applyAlphaToStrength) == 0x0005DC, "Member 'UUIBackgroundPixelate::applyAlphaToStrength' has a wrong offset!");
+static_assert(sizeof(UUIBackgroundPixelate) == 0x0005F0, "Wrong size on UUIBackgroundPixelate");
+static_assert(offsetof(UUIBackgroundPixelate, pixelateStrength) == 0x0005E0, "Member 'UUIBackgroundPixelate::pixelateStrength' has a wrong offset!");
+static_assert(offsetof(UUIBackgroundPixelate, applyAlphaToStrength) == 0x0005E4, "Member 'UUIBackgroundPixelate::applyAlphaToStrength' has a wrong offset!");
 
 // Class LGUI.UIBackgroundPixelateActor
 // 0x0008 (0x03A0 - 0x0398)
@@ -5167,474 +5182,6 @@ static_assert(alignof(ULevelSequencePrefabData) == 0x000008, "Wrong alignment on
 static_assert(sizeof(ULevelSequencePrefabData) == 0x000040, "Wrong size on ULevelSequencePrefabData");
 static_assert(offsetof(ULevelSequencePrefabData, SourcePrefabGuids) == 0x000030, "Member 'ULevelSequencePrefabData::SourcePrefabGuids' has a wrong offset!");
 
-// Class LGUI.UIViewTweenParams
-// 0x0020 (0x00E0 - 0x00C0)
-class UUIViewTweenParams final : public UActorComponent
-{
-public:
-	float                                         TweenSize;                                         // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         TweenAlpha;                                        // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         TweenTime;                                         // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         ViewNameBlackList;                                 // 0x00D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-
-public:
-	float GetTweenAlpha() const;
-	float GetTweenSize() const;
-	float GetTweenTime() const;
-	const TArray<class FString> GetViewNameBlackList() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIViewTweenParams">();
-	}
-	static class UUIViewTweenParams* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIViewTweenParams>();
-	}
-};
-static_assert(alignof(UUIViewTweenParams) == 0x000008, "Wrong alignment on UUIViewTweenParams");
-static_assert(sizeof(UUIViewTweenParams) == 0x0000E0, "Wrong size on UUIViewTweenParams");
-static_assert(offsetof(UUIViewTweenParams, TweenSize) == 0x0000C0, "Member 'UUIViewTweenParams::TweenSize' has a wrong offset!");
-static_assert(offsetof(UUIViewTweenParams, TweenAlpha) == 0x0000C4, "Member 'UUIViewTweenParams::TweenAlpha' has a wrong offset!");
-static_assert(offsetof(UUIViewTweenParams, TweenTime) == 0x0000C8, "Member 'UUIViewTweenParams::TweenTime' has a wrong offset!");
-static_assert(offsetof(UUIViewTweenParams, ViewNameBlackList) == 0x0000D0, "Member 'UUIViewTweenParams::ViewNameBlackList' has a wrong offset!");
-
-// Class LGUI.LGUICreateGeometryHelper
-// 0x0010 (0x0040 - 0x0030)
-class ULGUICreateGeometryHelper final : public UObject
-{
-public:
-	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void AddTriangle(int32 index0, int32 index1, int32 index2);
-	void AddVertexFull(const struct FVector& position, const struct FColor& color, const struct FVector2D& uv0, const struct FVector2D& uv1, const struct FVector2D& uv2, const struct FVector2D& uv3, const struct FVector& normal, const struct FVector& tangent);
-	void AddVertexSimple(const struct FVector& position, const struct FColor& color, const struct FVector2D& uv0);
-	void AddVertexStruct(const struct FLGUIGeometryVertex& vertex);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LGUICreateGeometryHelper">();
-	}
-	static class ULGUICreateGeometryHelper* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULGUICreateGeometryHelper>();
-	}
-};
-static_assert(alignof(ULGUICreateGeometryHelper) == 0x000008, "Wrong alignment on ULGUICreateGeometryHelper");
-static_assert(sizeof(ULGUICreateGeometryHelper) == 0x000040, "Wrong size on ULGUICreateGeometryHelper");
-
-// Class LGUI.LGUIUpdateGeometryHelper
-// 0x0020 (0x0050 - 0x0030)
-class ULGUIUpdateGeometryHelper final : public UObject
-{
-public:
-	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FLGUIGeometryVertex>            cacheVertices;                                     // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-
-public:
-	void BeginUpdateVertices();
-	void EndUpdateVertices();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LGUIUpdateGeometryHelper">();
-	}
-	static class ULGUIUpdateGeometryHelper* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULGUIUpdateGeometryHelper>();
-	}
-};
-static_assert(alignof(ULGUIUpdateGeometryHelper) == 0x000008, "Wrong alignment on ULGUIUpdateGeometryHelper");
-static_assert(sizeof(ULGUIUpdateGeometryHelper) == 0x000050, "Wrong size on ULGUIUpdateGeometryHelper");
-static_assert(offsetof(ULGUIUpdateGeometryHelper, cacheVertices) == 0x000040, "Member 'ULGUIUpdateGeometryHelper::cacheVertices' has a wrong offset!");
-
-// Class LGUI.UITextureTransitionComponent
-// 0x0080 (0x02E8 - 0x0268)
-class UUITextureTransitionComponent final : public UUITransitionBase
-{
-public:
-	struct FTextureTransitionInfo                 Transition;                                        // 0x0268(0x0080)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	void SetAllStateTexture(class UTexture* NewTexture);
-	void SetStateTexture(EUISelectableSelectionState State, class UTexture* NewTexture);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UITextureTransitionComponent">();
-	}
-	static class UUITextureTransitionComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUITextureTransitionComponent>();
-	}
-};
-static_assert(alignof(UUITextureTransitionComponent) == 0x000008, "Wrong alignment on UUITextureTransitionComponent");
-static_assert(sizeof(UUITextureTransitionComponent) == 0x0002E8, "Wrong size on UUITextureTransitionComponent");
-static_assert(offsetof(UUITextureTransitionComponent, Transition) == 0x000268, "Member 'UUITextureTransitionComponent::Transition' has a wrong offset!");
-
-// Class LGUI.UIBatchGeometryRenderable_BP
-// 0x0010 (0x0790 - 0x0780)
-class UUIBatchGeometryRenderable_BP final : public UUIBatchGeometryRenderable
-{
-public:
-	class ULGUICreateGeometryHelper*              createGeometryHelper;                              // 0x0780(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class ULGUIUpdateGeometryHelper*              updateGeometryHelper;                              // 0x0788(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	void MarkRebuildGeometry_BP();
-	void MarkVertexChanged_BP();
-	void OnBeforeCreateOrUpdateGeometry_BP();
-	void OnCreateGeometry_BP(class ULGUICreateGeometryHelper* InCreateGeometryHelper);
-	void OnUpdateGeometry_BP(class ULGUIUpdateGeometryHelper* InUpdateGoemetryHelper, bool InVertexPositionChanged, bool InVertexUVChanged, bool InVertexColorChanged);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIBatchGeometryRenderable_BP">();
-	}
-	static class UUIBatchGeometryRenderable_BP* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIBatchGeometryRenderable_BP>();
-	}
-};
-static_assert(alignof(UUIBatchGeometryRenderable_BP) == 0x000010, "Wrong alignment on UUIBatchGeometryRenderable_BP");
-static_assert(sizeof(UUIBatchGeometryRenderable_BP) == 0x000790, "Wrong size on UUIBatchGeometryRenderable_BP");
-static_assert(offsetof(UUIBatchGeometryRenderable_BP, createGeometryHelper) == 0x000780, "Member 'UUIBatchGeometryRenderable_BP::createGeometryHelper' has a wrong offset!");
-static_assert(offsetof(UUIBatchGeometryRenderable_BP, updateGeometryHelper) == 0x000788, "Member 'UUIBatchGeometryRenderable_BP::updateGeometryHelper' has a wrong offset!");
-
-// Class LGUI.UIComboBox
-// 0x0038 (0x00F8 - 0x00C0)
-class UUIComboBox final : public UActorComponent
-{
-public:
-	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AUIBaseActor*                           _RootUIActor;                                      // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AUIBaseActor*                           _SrcItemActor;                                     // 0x00D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D8[0x20];                                      // 0x00D8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UUIComboBox* CreateComboBoxFromArray(const TArray<class FString>& InItemNameArray, const TDelegate<void(int32 InSelectIndex, const class FString& InSelectItem)>& InCallback, class AUIBaseActor* InParentActor, int32 InSelectedItemIndex, EComboBoxPosition InPosition);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIComboBox">();
-	}
-	static class UUIComboBox* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIComboBox>();
-	}
-};
-static_assert(alignof(UUIComboBox) == 0x000008, "Wrong alignment on UUIComboBox");
-static_assert(sizeof(UUIComboBox) == 0x0000F8, "Wrong size on UUIComboBox");
-static_assert(offsetof(UUIComboBox, _RootUIActor) == 0x0000C8, "Member 'UUIComboBox::_RootUIActor' has a wrong offset!");
-static_assert(offsetof(UUIComboBox, _SrcItemActor) == 0x0000D0, "Member 'UUIComboBox::_SrcItemActor' has a wrong offset!");
-
-// Class LGUI.UIVerticalLayout
-// 0x0038 (0x01C8 - 0x0190)
-class UUIVerticalLayout final : public UUILayoutWithAnimation
-{
-public:
-	struct FMargin                                Padding;                                           // 0x0190(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	float                                         Spacing;                                           // 0x01A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ELGUILayoutAlignmentType                      Align;                                             // 0x01A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ExpendChildrenWidth;                               // 0x01A5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bControlWidthCalculatedScale;                      // 0x01A6(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ExpendChildrenHeight;                              // 0x01A7(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bControlHeightCalculatedScale;                     // 0x01A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          HeightFitToChildren;                               // 0x01A9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          WidthFitToChildren;                                // 0x01AA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1AB[0x1D];                                     // 0x01AB(0x001D)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetAlign(ELGUILayoutAlignmentType value);
-	void SetExpendChildrenHeight(bool value);
-	void SetExpendChildrenWidth(bool value);
-	void SetHeightFitToChildren(bool value);
-	void SetPadding(const struct FMargin& value);
-	void SetSpacing(float value);
-	void SetWidthFitToChildren(bool value);
-
-	float GetActuralRange() const;
-	ELGUILayoutAlignmentType GetAlign() const;
-	bool GetExpendChildrenHeight() const;
-	bool GetExpendChildrenWidth() const;
-	bool GetHeightFitToChildren() const;
-	struct FMargin GetPadding() const;
-	float GetSpacing() const;
-	bool GetWidthFitToChildren() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIVerticalLayout">();
-	}
-	static class UUIVerticalLayout* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIVerticalLayout>();
-	}
-};
-static_assert(alignof(UUIVerticalLayout) == 0x000008, "Wrong alignment on UUIVerticalLayout");
-static_assert(sizeof(UUIVerticalLayout) == 0x0001C8, "Wrong size on UUIVerticalLayout");
-static_assert(offsetof(UUIVerticalLayout, Padding) == 0x000190, "Member 'UUIVerticalLayout::Padding' has a wrong offset!");
-static_assert(offsetof(UUIVerticalLayout, Spacing) == 0x0001A0, "Member 'UUIVerticalLayout::Spacing' has a wrong offset!");
-static_assert(offsetof(UUIVerticalLayout, Align) == 0x0001A4, "Member 'UUIVerticalLayout::Align' has a wrong offset!");
-static_assert(offsetof(UUIVerticalLayout, ExpendChildrenWidth) == 0x0001A5, "Member 'UUIVerticalLayout::ExpendChildrenWidth' has a wrong offset!");
-static_assert(offsetof(UUIVerticalLayout, bControlWidthCalculatedScale) == 0x0001A6, "Member 'UUIVerticalLayout::bControlWidthCalculatedScale' has a wrong offset!");
-static_assert(offsetof(UUIVerticalLayout, ExpendChildrenHeight) == 0x0001A7, "Member 'UUIVerticalLayout::ExpendChildrenHeight' has a wrong offset!");
-static_assert(offsetof(UUIVerticalLayout, bControlHeightCalculatedScale) == 0x0001A8, "Member 'UUIVerticalLayout::bControlHeightCalculatedScale' has a wrong offset!");
-static_assert(offsetof(UUIVerticalLayout, HeightFitToChildren) == 0x0001A9, "Member 'UUIVerticalLayout::HeightFitToChildren' has a wrong offset!");
-static_assert(offsetof(UUIVerticalLayout, WidthFitToChildren) == 0x0001AA, "Member 'UUIVerticalLayout::WidthFitToChildren' has a wrong offset!");
-
-// Class LGUI.UIComboBoxItem
-// 0x0030 (0x00F0 - 0x00C0)
-class UUIComboBoxItem final : public UActorComponent
-{
-public:
-	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AUIBaseActor*                           _RootUIActor;                                      // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AUITextActor*                           _TextActor;                                        // 0x00D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AUISpriteActor*                         _HighlightSpriteActor;                             // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_E0[0x10];                                      // 0x00E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIComboBoxItem">();
-	}
-	static class UUIComboBoxItem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIComboBoxItem>();
-	}
-};
-static_assert(alignof(UUIComboBoxItem) == 0x000008, "Wrong alignment on UUIComboBoxItem");
-static_assert(sizeof(UUIComboBoxItem) == 0x0000F0, "Wrong size on UUIComboBoxItem");
-static_assert(offsetof(UUIComboBoxItem, _RootUIActor) == 0x0000C8, "Member 'UUIComboBoxItem::_RootUIActor' has a wrong offset!");
-static_assert(offsetof(UUIComboBoxItem, _TextActor) == 0x0000D0, "Member 'UUIComboBoxItem::_TextActor' has a wrong offset!");
-static_assert(offsetof(UUIComboBoxItem, _HighlightSpriteActor) == 0x0000D8, "Member 'UUIComboBoxItem::_HighlightSpriteActor' has a wrong offset!");
-
-// Class LGUI.UICustomDepthStencilMask
-// 0x0000 (0x05E0 - 0x05E0)
-class UUICustomDepthStencilMask final : public UUIPostProcessRenderable
-{
-public:
-	bool                                          bFullScreen;                                       // 0x05D8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUICustomDepthStencilMaskSourceType           sourceType;                                        // 0x05D9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5DA[0x2];                                      // 0x05DA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         stencilValue;                                      // 0x05DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	void SetFullScreen(bool value);
-	void SetSourceType(EUICustomDepthStencilMaskSourceType value);
-	void SetStencilValue(int32 value);
-
-	bool GetFullScreen() const;
-	EUICustomDepthStencilMaskSourceType GetSourceType() const;
-	int32 GetStencilValue() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UICustomDepthStencilMask">();
-	}
-	static class UUICustomDepthStencilMask* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUICustomDepthStencilMask>();
-	}
-};
-static_assert(alignof(UUICustomDepthStencilMask) == 0x000010, "Wrong alignment on UUICustomDepthStencilMask");
-static_assert(sizeof(UUICustomDepthStencilMask) == 0x0005E0, "Wrong size on UUICustomDepthStencilMask");
-static_assert(offsetof(UUICustomDepthStencilMask, bFullScreen) == 0x0005D8, "Member 'UUICustomDepthStencilMask::bFullScreen' has a wrong offset!");
-static_assert(offsetof(UUICustomDepthStencilMask, sourceType) == 0x0005D9, "Member 'UUICustomDepthStencilMask::sourceType' has a wrong offset!");
-static_assert(offsetof(UUICustomDepthStencilMask, stencilValue) == 0x0005DC, "Member 'UUICustomDepthStencilMask::stencilValue' has a wrong offset!");
-
-// Class LGUI.UICustomDepthStencilMaskActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUICustomDepthStencilMaskActor final : public AUIPostProcessBaseActor
-{
-public:
-	class UUICustomDepthStencilMask*              UICustomDepthStencilMask;                          // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UICustomDepthStencilMaskActor">();
-	}
-	static class AUICustomDepthStencilMaskActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AUICustomDepthStencilMaskActor>();
-	}
-};
-static_assert(alignof(AUICustomDepthStencilMaskActor) == 0x000008, "Wrong alignment on AUICustomDepthStencilMaskActor");
-static_assert(sizeof(AUICustomDepthStencilMaskActor) == 0x0003A0, "Wrong size on AUICustomDepthStencilMaskActor");
-static_assert(offsetof(AUICustomDepthStencilMaskActor, UICustomDepthStencilMask) == 0x000398, "Member 'AUICustomDepthStencilMaskActor::UICustomDepthStencilMask' has a wrong offset!");
-
-// Class LGUI.UITexture
-// 0x0080 (0x0840 - 0x07C0)
-class UUITexture : public UUITextureBase
-{
-public:
-	EUITextureType                                type;                                              // 0x07C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7C1[0x3];                                      // 0x07C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUISpriteInfo                        spriteData;                                        // 0x07C4(0x0034)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	class ULGUITextureData*                       textureData;                                       // 0x07F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector4                               uvRect;                                            // 0x0800(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUISpriteFillMethod                           fillMethod;                                        // 0x0810(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         fillOrigin;                                        // 0x0811(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          fillDirectionFlip;                                 // 0x0812(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_813[0x1];                                      // 0x0813(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         fillAmount;                                        // 0x0814(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsFrameAnimate;                                   // 0x0818(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUseFrameSize;                                     // 0x0819(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_81A[0x2];                                      // 0x081A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         FrameAnimateRows;                                  // 0x081C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         FrameAnimateColumn;                                // 0x0820(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         CurFrame;                                          // 0x0824(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector2D                              FrameSize;                                         // 0x0828(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UTexture*                               DynamicAtlasTexture;                               // 0x0830(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_838[0x8];                                      // 0x0838(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetCurFrame(float newCurFrame);
-	void SetFillAmount(float newValue);
-	void SetFillDirectionFlip(bool newValue);
-	void SetFillMethod(EUISpriteFillMethod newValue);
-	void SetFillOrigin(uint8 newValue);
-	void SetSpriteData(const struct FLGUISpriteInfo& newSpriteData);
-	void SetTextureData(class ULGUITextureData* NewTextureData);
-	void SetTextureType(EUITextureType newType);
-	void SetUVRect(const struct FVector4& newUVRect);
-
-	float GetFillAmount() const;
-	bool GetFillDirectionFlip() const;
-	EUISpriteFillMethod GetFillMethod() const;
-	uint8 GetFillOrigin() const;
-	struct FLGUISpriteInfo GetSpriteData() const;
-	class ULGUITextureData* GetTextureData() const;
-	EUITextureType GetTextureType() const;
-	struct FVector4 GetUVRect() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UITexture">();
-	}
-	static class UUITexture* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUITexture>();
-	}
-};
-static_assert(alignof(UUITexture) == 0x000010, "Wrong alignment on UUITexture");
-static_assert(sizeof(UUITexture) == 0x000840, "Wrong size on UUITexture");
-static_assert(offsetof(UUITexture, type) == 0x0007C0, "Member 'UUITexture::type' has a wrong offset!");
-static_assert(offsetof(UUITexture, spriteData) == 0x0007C4, "Member 'UUITexture::spriteData' has a wrong offset!");
-static_assert(offsetof(UUITexture, textureData) == 0x0007F8, "Member 'UUITexture::textureData' has a wrong offset!");
-static_assert(offsetof(UUITexture, uvRect) == 0x000800, "Member 'UUITexture::uvRect' has a wrong offset!");
-static_assert(offsetof(UUITexture, fillMethod) == 0x000810, "Member 'UUITexture::fillMethod' has a wrong offset!");
-static_assert(offsetof(UUITexture, fillOrigin) == 0x000811, "Member 'UUITexture::fillOrigin' has a wrong offset!");
-static_assert(offsetof(UUITexture, fillDirectionFlip) == 0x000812, "Member 'UUITexture::fillDirectionFlip' has a wrong offset!");
-static_assert(offsetof(UUITexture, fillAmount) == 0x000814, "Member 'UUITexture::fillAmount' has a wrong offset!");
-static_assert(offsetof(UUITexture, bIsFrameAnimate) == 0x000818, "Member 'UUITexture::bIsFrameAnimate' has a wrong offset!");
-static_assert(offsetof(UUITexture, bUseFrameSize) == 0x000819, "Member 'UUITexture::bUseFrameSize' has a wrong offset!");
-static_assert(offsetof(UUITexture, FrameAnimateRows) == 0x00081C, "Member 'UUITexture::FrameAnimateRows' has a wrong offset!");
-static_assert(offsetof(UUITexture, FrameAnimateColumn) == 0x000820, "Member 'UUITexture::FrameAnimateColumn' has a wrong offset!");
-static_assert(offsetof(UUITexture, CurFrame) == 0x000824, "Member 'UUITexture::CurFrame' has a wrong offset!");
-static_assert(offsetof(UUITexture, FrameSize) == 0x000828, "Member 'UUITexture::FrameSize' has a wrong offset!");
-static_assert(offsetof(UUITexture, DynamicAtlasTexture) == 0x000830, "Member 'UUITexture::DynamicAtlasTexture' has a wrong offset!");
-
-// Class LGUI.ViewportUITexture
-// 0x0010 (0x0850 - 0x0840)
-class UViewportUITexture final : public UUITexture
-{
-public:
-	class ASceneCapture2D*                        SceneCaptureActor;                                 // 0x0840(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bSyncSizeToRT;                                     // 0x0848(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_849[0x7];                                      // 0x0849(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class USceneCaptureComponent2D* GetSceneCapture() const;
-	void ViewPointToWorld(const struct FVector2D& InViewPoint, struct FVector* OutWorldLocation, struct FVector* OutWorldDirection) const;
-	bool WorldToViewPoint(const struct FVector& InWorldLocation, struct FVector2D* OutViewPoint) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ViewportUITexture">();
-	}
-	static class UViewportUITexture* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UViewportUITexture>();
-	}
-};
-static_assert(alignof(UViewportUITexture) == 0x000010, "Wrong alignment on UViewportUITexture");
-static_assert(sizeof(UViewportUITexture) == 0x000850, "Wrong size on UViewportUITexture");
-static_assert(offsetof(UViewportUITexture, SceneCaptureActor) == 0x000840, "Member 'UViewportUITexture::SceneCaptureActor' has a wrong offset!");
-static_assert(offsetof(UViewportUITexture, bSyncSizeToRT) == 0x000848, "Member 'UViewportUITexture::bSyncSizeToRT' has a wrong offset!");
-
-// Class LGUI.UICustomMesh
-// 0x0060 (0x07E0 - 0x0780)
-class UUICustomMesh final : public UUIBatchGeometryRenderable
-{
-public:
-	TArray<struct FVector>                        originPositions;                                   // 0x0780(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        originNormals;                                     // 0x0790(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        originTangents;                                    // 0x07A0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      originUV0;                                         // 0x07B0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<uint16>                                originTriangles;                                   // 0x07C0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            StaticMesh;                                        // 0x07D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7D8[0x8];                                      // 0x07D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void CleanData();
-	void CreateMeshSection(int32 SectionIndex, const TArray<struct FVector>& Vertices, const TArray<int32>& Triangles, const TArray<struct FVector>& Normals, const TArray<struct FVector2D>& UV0, const TArray<struct FVector2D>& UV1, const TArray<struct FVector2D>& UV2, const TArray<struct FVector2D>& UV3, const TArray<struct FVector2D>& UV4, const TArray<struct FVector2D>& UV5, const TArray<struct FVector2D>& UV6, const TArray<struct FVector2D>& UV7, const TArray<struct FColor>& VertexColors, const TArray<struct FVector>& Tangents);
-	void ReadStaticMeshData(class UStaticMesh* MeshComponent);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UICustomMesh">();
-	}
-	static class UUICustomMesh* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUICustomMesh>();
-	}
-};
-static_assert(alignof(UUICustomMesh) == 0x000010, "Wrong alignment on UUICustomMesh");
-static_assert(sizeof(UUICustomMesh) == 0x0007E0, "Wrong size on UUICustomMesh");
-static_assert(offsetof(UUICustomMesh, originPositions) == 0x000780, "Member 'UUICustomMesh::originPositions' has a wrong offset!");
-static_assert(offsetof(UUICustomMesh, originNormals) == 0x000790, "Member 'UUICustomMesh::originNormals' has a wrong offset!");
-static_assert(offsetof(UUICustomMesh, originTangents) == 0x0007A0, "Member 'UUICustomMesh::originTangents' has a wrong offset!");
-static_assert(offsetof(UUICustomMesh, originUV0) == 0x0007B0, "Member 'UUICustomMesh::originUV0' has a wrong offset!");
-static_assert(offsetof(UUICustomMesh, originTriangles) == 0x0007C0, "Member 'UUICustomMesh::originTriangles' has a wrong offset!");
-static_assert(offsetof(UUICustomMesh, StaticMesh) == 0x0007D0, "Member 'UUICustomMesh::StaticMesh' has a wrong offset!");
-
-// Class LGUI.UICustomMeshActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUICustomMeshActor final : public AUIBaseActor
-{
-public:
-	class UUICustomMesh*                          customMesh;                                        // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UICustomMeshActor">();
-	}
-	static class AUICustomMeshActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AUICustomMeshActor>();
-	}
-};
-static_assert(alignof(AUICustomMeshActor) == 0x000008, "Wrong alignment on AUICustomMeshActor");
-static_assert(sizeof(AUICustomMeshActor) == 0x0003A0, "Wrong size on AUICustomMeshActor");
-static_assert(offsetof(AUICustomMeshActor, customMesh) == 0x000398, "Member 'AUICustomMeshActor::customMesh' has a wrong offset!");
-
 // Class LGUI.UIToggleComponent
 // 0x00C8 (0x04C0 - 0x03F8)
 class UUIToggleComponent final : public UUISelectableComponent
@@ -5643,7 +5190,7 @@ public:
 	TWeakObjectPtr<class AUIBaseActor>            ToggleActor;                                       // 0x03F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	EUIToggleTransitionType                       ToggleTransition;                                  // 0x0400(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_401[0x3];                                      // 0x0401(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UUISelectableTransitionComponent> ToggleTransitionComp;                              // 0x0404(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUISelectableTransitionComponent> ToggleTransitionComp;                     // 0x0404(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_40C[0x4];                                      // 0x040C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              ToggleTransitionTweener;                           // 0x0410(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         OnAlpha;                                           // 0x0418(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -5708,27 +5255,453 @@ static_assert(offsetof(UUIToggleComponent, GroupComp) == 0x000460, "Member 'UUIT
 static_assert(offsetof(UUIToggleComponent, OnToggle) == 0x000480, "Member 'UUIToggleComponent::OnToggle' has a wrong offset!");
 static_assert(offsetof(UUIToggleComponent, OnToggleEvent) == 0x000498, "Member 'UUIToggleComponent::OnToggleEvent' has a wrong offset!");
 
-// Class LGUI.UIDirectMeshRenderable
-// 0x0010 (0x05A0 - 0x0590)
-#pragma pack(push, 0x1)
-class alignas(0x10) UUIDirectMeshRenderable : public UUIBaseRenderable
+// Class LGUI.LGUICreateGeometryHelper
+// 0x0010 (0x0040 - 0x0030)
+class ULGUICreateGeometryHelper final : public UObject
 {
 public:
-	uint8                                         Pad_588[0x10];                                     // 0x0588(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddTriangle(int32 index0, int32 index1, int32 index2);
+	void AddVertexFull(const struct FVector& position, const struct FColor& color, const struct FVector2D& uv0, const struct FVector2D& uv1, const struct FVector2D& uv2, const struct FVector2D& uv3, const struct FVector& normal, const struct FVector& tangent);
+	void AddVertexSimple(const struct FVector& position, const struct FColor& color, const struct FVector2D& uv0);
+	void AddVertexStruct(const struct FLGUIGeometryVertex& vertex);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIDirectMeshRenderable">();
+		return StaticClassImpl<"LGUICreateGeometryHelper">();
 	}
-	static class UUIDirectMeshRenderable* GetDefaultObj()
+	static class ULGUICreateGeometryHelper* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIDirectMeshRenderable>();
+		return GetDefaultObjImpl<ULGUICreateGeometryHelper>();
 	}
 };
-#pragma pack(pop)
-static_assert(alignof(UUIDirectMeshRenderable) == 0x000010, "Wrong alignment on UUIDirectMeshRenderable");
-static_assert(sizeof(UUIDirectMeshRenderable) == 0x0005A0, "Wrong size on UUIDirectMeshRenderable");
+static_assert(alignof(ULGUICreateGeometryHelper) == 0x000008, "Wrong alignment on ULGUICreateGeometryHelper");
+static_assert(sizeof(ULGUICreateGeometryHelper) == 0x000040, "Wrong size on ULGUICreateGeometryHelper");
+
+// Class LGUI.LGUIUpdateGeometryHelper
+// 0x0020 (0x0050 - 0x0030)
+class ULGUIUpdateGeometryHelper final : public UObject
+{
+public:
+	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FLGUIGeometryVertex>            cacheVertices;                                     // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+
+public:
+	void BeginUpdateVertices();
+	void EndUpdateVertices();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LGUIUpdateGeometryHelper">();
+	}
+	static class ULGUIUpdateGeometryHelper* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULGUIUpdateGeometryHelper>();
+	}
+};
+static_assert(alignof(ULGUIUpdateGeometryHelper) == 0x000008, "Wrong alignment on ULGUIUpdateGeometryHelper");
+static_assert(sizeof(ULGUIUpdateGeometryHelper) == 0x000050, "Wrong size on ULGUIUpdateGeometryHelper");
+static_assert(offsetof(ULGUIUpdateGeometryHelper, cacheVertices) == 0x000040, "Member 'ULGUIUpdateGeometryHelper::cacheVertices' has a wrong offset!");
+
+// Class LGUI.UITextureActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUITextureActor final : public AUIBaseActor
+{
+public:
+	class UUITexture*                             UITexture;                                         // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UITextureActor">();
+	}
+	static class AUITextureActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AUITextureActor>();
+	}
+};
+static_assert(alignof(AUITextureActor) == 0x000008, "Wrong alignment on AUITextureActor");
+static_assert(sizeof(AUITextureActor) == 0x0003A0, "Wrong size on AUITextureActor");
+static_assert(offsetof(AUITextureActor, UITexture) == 0x000398, "Member 'AUITextureActor::UITexture' has a wrong offset!");
+
+// Class LGUI.UIBatchGeometryRenderable_BP
+// 0x0010 (0x07A0 - 0x0790)
+class UUIBatchGeometryRenderable_BP final : public UUIBatchGeometryRenderable
+{
+public:
+	class ULGUICreateGeometryHelper*              createGeometryHelper;                              // 0x0788(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class ULGUIUpdateGeometryHelper*              updateGeometryHelper;                              // 0x0790(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_798[0x8];                                      // 0x0798(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void MarkRebuildGeometry_BP();
+	void MarkVertexChanged_BP();
+	void OnBeforeCreateOrUpdateGeometry_BP();
+	void OnCreateGeometry_BP(class ULGUICreateGeometryHelper* InCreateGeometryHelper);
+	void OnUpdateGeometry_BP(class ULGUIUpdateGeometryHelper* InUpdateGoemetryHelper, bool InVertexPositionChanged, bool InVertexUVChanged, bool InVertexColorChanged);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIBatchGeometryRenderable_BP">();
+	}
+	static class UUIBatchGeometryRenderable_BP* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIBatchGeometryRenderable_BP>();
+	}
+};
+static_assert(alignof(UUIBatchGeometryRenderable_BP) == 0x000010, "Wrong alignment on UUIBatchGeometryRenderable_BP");
+static_assert(sizeof(UUIBatchGeometryRenderable_BP) == 0x0007A0, "Wrong size on UUIBatchGeometryRenderable_BP");
+static_assert(offsetof(UUIBatchGeometryRenderable_BP, createGeometryHelper) == 0x000788, "Member 'UUIBatchGeometryRenderable_BP::createGeometryHelper' has a wrong offset!");
+static_assert(offsetof(UUIBatchGeometryRenderable_BP, updateGeometryHelper) == 0x000790, "Member 'UUIBatchGeometryRenderable_BP::updateGeometryHelper' has a wrong offset!");
+
+// Class LGUI.UITextActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUITextActor final : public AUIBaseActor
+{
+public:
+	class UUIText*                                UIText;                                            // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UITextActor">();
+	}
+	static class AUITextActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AUITextActor>();
+	}
+};
+static_assert(alignof(AUITextActor) == 0x000008, "Wrong alignment on AUITextActor");
+static_assert(sizeof(AUITextActor) == 0x0003A0, "Wrong size on AUITextActor");
+static_assert(offsetof(AUITextActor, UIText) == 0x000398, "Member 'AUITextActor::UIText' has a wrong offset!");
+
+// Class LGUI.UIComboBox
+// 0x0038 (0x00F8 - 0x00C0)
+class UUIComboBox final : public UActorComponent
+{
+public:
+	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AUIBaseActor*                           _RootUIActor;                                      // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AUIBaseActor*                           _SrcItemActor;                                     // 0x00D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D8[0x20];                                      // 0x00D8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UUIComboBox* CreateComboBoxFromArray(const TArray<class FString>& InItemNameArray, const TDelegate<void(int32 InSelectIndex, const class FString& InSelectItem)>& InCallback, class AUIBaseActor* InParentActor, int32 InSelectedItemIndex, EComboBoxPosition InPosition);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIComboBox">();
+	}
+	static class UUIComboBox* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIComboBox>();
+	}
+};
+static_assert(alignof(UUIComboBox) == 0x000008, "Wrong alignment on UUIComboBox");
+static_assert(sizeof(UUIComboBox) == 0x0000F8, "Wrong size on UUIComboBox");
+static_assert(offsetof(UUIComboBox, _RootUIActor) == 0x0000C8, "Member 'UUIComboBox::_RootUIActor' has a wrong offset!");
+static_assert(offsetof(UUIComboBox, _SrcItemActor) == 0x0000D0, "Member 'UUIComboBox::_SrcItemActor' has a wrong offset!");
+
+// Class LGUI.UITextureTransitionComponent
+// 0x0080 (0x02E8 - 0x0268)
+class UUITextureTransitionComponent final : public UUITransitionBase
+{
+public:
+	struct FTextureTransitionInfo                 Transition;                                        // 0x0268(0x0080)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	void SetAllStateTexture(class UTexture* NewTexture);
+	void SetStateTexture(EUISelectableSelectionState State, class UTexture* NewTexture);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UITextureTransitionComponent">();
+	}
+	static class UUITextureTransitionComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUITextureTransitionComponent>();
+	}
+};
+static_assert(alignof(UUITextureTransitionComponent) == 0x000008, "Wrong alignment on UUITextureTransitionComponent");
+static_assert(sizeof(UUITextureTransitionComponent) == 0x0002E8, "Wrong size on UUITextureTransitionComponent");
+static_assert(offsetof(UUITextureTransitionComponent, Transition) == 0x000268, "Member 'UUITextureTransitionComponent::Transition' has a wrong offset!");
+
+// Class LGUI.UIComboBoxItem
+// 0x0030 (0x00F0 - 0x00C0)
+class UUIComboBoxItem final : public UActorComponent
+{
+public:
+	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AUIBaseActor*                           _RootUIActor;                                      // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AUITextActor*                           _TextActor;                                        // 0x00D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AUISpriteActor*                         _HighlightSpriteActor;                             // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E0[0x10];                                      // 0x00E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIComboBoxItem">();
+	}
+	static class UUIComboBoxItem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIComboBoxItem>();
+	}
+};
+static_assert(alignof(UUIComboBoxItem) == 0x000008, "Wrong alignment on UUIComboBoxItem");
+static_assert(sizeof(UUIComboBoxItem) == 0x0000F0, "Wrong size on UUIComboBoxItem");
+static_assert(offsetof(UUIComboBoxItem, _RootUIActor) == 0x0000C8, "Member 'UUIComboBoxItem::_RootUIActor' has a wrong offset!");
+static_assert(offsetof(UUIComboBoxItem, _TextActor) == 0x0000D0, "Member 'UUIComboBoxItem::_TextActor' has a wrong offset!");
+static_assert(offsetof(UUIComboBoxItem, _HighlightSpriteActor) == 0x0000D8, "Member 'UUIComboBoxItem::_HighlightSpriteActor' has a wrong offset!");
+
+// Class LGUI.UIContainerActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUIContainerActor : public AUIBaseActor
+{
+public:
+	class UUIItem*                                UIItem;                                            // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIContainerActor">();
+	}
+	static class AUIContainerActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AUIContainerActor>();
+	}
+};
+static_assert(alignof(AUIContainerActor) == 0x000008, "Wrong alignment on AUIContainerActor");
+static_assert(sizeof(AUIContainerActor) == 0x0003A0, "Wrong size on AUIContainerActor");
+static_assert(offsetof(AUIContainerActor, UIItem) == 0x000398, "Member 'AUIContainerActor::UIItem' has a wrong offset!");
+
+// Class LGUI.WwiseAudioComponent
+// 0x0008 (0x00C8 - 0x00C0)
+class UWwiseAudioComponent final : public UActorComponent
+{
+public:
+	int32                                         AudioStateSystemLevel;                             // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	int32 GetAudioStateSystemLevel() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"WwiseAudioComponent">();
+	}
+	static class UWwiseAudioComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UWwiseAudioComponent>();
+	}
+};
+static_assert(alignof(UWwiseAudioComponent) == 0x000008, "Wrong alignment on UWwiseAudioComponent");
+static_assert(sizeof(UWwiseAudioComponent) == 0x0000C8, "Wrong size on UWwiseAudioComponent");
+static_assert(offsetof(UWwiseAudioComponent, AudioStateSystemLevel) == 0x0000C0, "Member 'UWwiseAudioComponent::AudioStateSystemLevel' has a wrong offset!");
+
+// Class LGUI.UICustomDepthStencilMask
+// 0x0010 (0x05F0 - 0x05E0)
+class UUICustomDepthStencilMask final : public UUIPostProcessRenderable
+{
+public:
+	bool                                          bFullScreen;                                       // 0x05E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUICustomDepthStencilMaskSourceType           sourceType;                                        // 0x05E1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5E2[0x2];                                      // 0x05E2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         stencilValue;                                      // 0x05E4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5E8[0x8];                                      // 0x05E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetFullScreen(bool value);
+	void SetSourceType(EUICustomDepthStencilMaskSourceType value);
+	void SetStencilValue(int32 value);
+
+	bool GetFullScreen() const;
+	EUICustomDepthStencilMaskSourceType GetSourceType() const;
+	int32 GetStencilValue() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UICustomDepthStencilMask">();
+	}
+	static class UUICustomDepthStencilMask* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUICustomDepthStencilMask>();
+	}
+};
+static_assert(alignof(UUICustomDepthStencilMask) == 0x000010, "Wrong alignment on UUICustomDepthStencilMask");
+static_assert(sizeof(UUICustomDepthStencilMask) == 0x0005F0, "Wrong size on UUICustomDepthStencilMask");
+static_assert(offsetof(UUICustomDepthStencilMask, bFullScreen) == 0x0005E0, "Member 'UUICustomDepthStencilMask::bFullScreen' has a wrong offset!");
+static_assert(offsetof(UUICustomDepthStencilMask, sourceType) == 0x0005E1, "Member 'UUICustomDepthStencilMask::sourceType' has a wrong offset!");
+static_assert(offsetof(UUICustomDepthStencilMask, stencilValue) == 0x0005E4, "Member 'UUICustomDepthStencilMask::stencilValue' has a wrong offset!");
+
+// Class LGUI.UICustomDepthStencilMaskActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUICustomDepthStencilMaskActor final : public AUIPostProcessBaseActor
+{
+public:
+	class UUICustomDepthStencilMask*              UICustomDepthStencilMask;                          // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UICustomDepthStencilMaskActor">();
+	}
+	static class AUICustomDepthStencilMaskActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AUICustomDepthStencilMaskActor>();
+	}
+};
+static_assert(alignof(AUICustomDepthStencilMaskActor) == 0x000008, "Wrong alignment on AUICustomDepthStencilMaskActor");
+static_assert(sizeof(AUICustomDepthStencilMaskActor) == 0x0003A0, "Wrong size on AUICustomDepthStencilMaskActor");
+static_assert(offsetof(AUICustomDepthStencilMaskActor, UICustomDepthStencilMask) == 0x000398, "Member 'AUICustomDepthStencilMaskActor::UICustomDepthStencilMask' has a wrong offset!");
+
+// Class LGUI.UIVerticalLayout
+// 0x0038 (0x01C8 - 0x0190)
+class UUIVerticalLayout final : public UUILayoutWithAnimation
+{
+public:
+	struct FMargin                                Padding;                                           // 0x0190(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	float                                         Spacing;                                           // 0x01A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ELGUILayoutAlignmentType                      Align;                                             // 0x01A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ExpendChildrenWidth;                               // 0x01A5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bControlWidthCalculatedScale;                      // 0x01A6(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ExpendChildrenHeight;                              // 0x01A7(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bControlHeightCalculatedScale;                     // 0x01A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          HeightFitToChildren;                               // 0x01A9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          WidthFitToChildren;                                // 0x01AA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1AB[0x1D];                                     // 0x01AB(0x001D)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAlign(ELGUILayoutAlignmentType value);
+	void SetExpendChildrenHeight(bool value);
+	void SetExpendChildrenWidth(bool value);
+	void SetHeightFitToChildren(bool value);
+	void SetPadding(const struct FMargin& value);
+	void SetSpacing(float value);
+	void SetWidthFitToChildren(bool value);
+
+	float GetActuralRange() const;
+	ELGUILayoutAlignmentType GetAlign() const;
+	bool GetExpendChildrenHeight() const;
+	bool GetExpendChildrenWidth() const;
+	bool GetHeightFitToChildren() const;
+	struct FMargin GetPadding() const;
+	float GetSpacing() const;
+	bool GetWidthFitToChildren() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIVerticalLayout">();
+	}
+	static class UUIVerticalLayout* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIVerticalLayout>();
+	}
+};
+static_assert(alignof(UUIVerticalLayout) == 0x000008, "Wrong alignment on UUIVerticalLayout");
+static_assert(sizeof(UUIVerticalLayout) == 0x0001C8, "Wrong size on UUIVerticalLayout");
+static_assert(offsetof(UUIVerticalLayout, Padding) == 0x000190, "Member 'UUIVerticalLayout::Padding' has a wrong offset!");
+static_assert(offsetof(UUIVerticalLayout, Spacing) == 0x0001A0, "Member 'UUIVerticalLayout::Spacing' has a wrong offset!");
+static_assert(offsetof(UUIVerticalLayout, Align) == 0x0001A4, "Member 'UUIVerticalLayout::Align' has a wrong offset!");
+static_assert(offsetof(UUIVerticalLayout, ExpendChildrenWidth) == 0x0001A5, "Member 'UUIVerticalLayout::ExpendChildrenWidth' has a wrong offset!");
+static_assert(offsetof(UUIVerticalLayout, bControlWidthCalculatedScale) == 0x0001A6, "Member 'UUIVerticalLayout::bControlWidthCalculatedScale' has a wrong offset!");
+static_assert(offsetof(UUIVerticalLayout, ExpendChildrenHeight) == 0x0001A7, "Member 'UUIVerticalLayout::ExpendChildrenHeight' has a wrong offset!");
+static_assert(offsetof(UUIVerticalLayout, bControlHeightCalculatedScale) == 0x0001A8, "Member 'UUIVerticalLayout::bControlHeightCalculatedScale' has a wrong offset!");
+static_assert(offsetof(UUIVerticalLayout, HeightFitToChildren) == 0x0001A9, "Member 'UUIVerticalLayout::HeightFitToChildren' has a wrong offset!");
+static_assert(offsetof(UUIVerticalLayout, WidthFitToChildren) == 0x0001AA, "Member 'UUIVerticalLayout::WidthFitToChildren' has a wrong offset!");
+
+// Class LGUI.UICustomMesh
+// 0x0050 (0x07E0 - 0x0790)
+class UUICustomMesh final : public UUIBatchGeometryRenderable
+{
+public:
+	TArray<struct FVector>                        originPositions;                                   // 0x0788(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        originNormals;                                     // 0x0798(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        originTangents;                                    // 0x07A8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FVector2D>                      originUV0;                                         // 0x07B8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<uint16>                                originTriangles;                                   // 0x07C8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            StaticMesh;                                        // 0x07D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void CleanData();
+	void CreateMeshSection(int32 SectionIndex, const TArray<struct FVector>& Vertices, const TArray<int32>& Triangles, const TArray<struct FVector>& Normals, const TArray<struct FVector2D>& UV0, const TArray<struct FVector2D>& UV1, const TArray<struct FVector2D>& UV2, const TArray<struct FVector2D>& UV3, const TArray<struct FVector2D>& UV4, const TArray<struct FVector2D>& UV5, const TArray<struct FVector2D>& UV6, const TArray<struct FVector2D>& UV7, const TArray<struct FColor>& VertexColors, const TArray<struct FVector>& Tangents);
+	void ReadStaticMeshData(class UStaticMesh* MeshComponent);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UICustomMesh">();
+	}
+	static class UUICustomMesh* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUICustomMesh>();
+	}
+};
+static_assert(alignof(UUICustomMesh) == 0x000010, "Wrong alignment on UUICustomMesh");
+static_assert(sizeof(UUICustomMesh) == 0x0007E0, "Wrong size on UUICustomMesh");
+static_assert(offsetof(UUICustomMesh, originPositions) == 0x000788, "Member 'UUICustomMesh::originPositions' has a wrong offset!");
+static_assert(offsetof(UUICustomMesh, originNormals) == 0x000798, "Member 'UUICustomMesh::originNormals' has a wrong offset!");
+static_assert(offsetof(UUICustomMesh, originTangents) == 0x0007A8, "Member 'UUICustomMesh::originTangents' has a wrong offset!");
+static_assert(offsetof(UUICustomMesh, originUV0) == 0x0007B8, "Member 'UUICustomMesh::originUV0' has a wrong offset!");
+static_assert(offsetof(UUICustomMesh, originTriangles) == 0x0007C8, "Member 'UUICustomMesh::originTriangles' has a wrong offset!");
+static_assert(offsetof(UUICustomMesh, StaticMesh) == 0x0007D8, "Member 'UUICustomMesh::StaticMesh' has a wrong offset!");
+
+// Class LGUI.UICustomMeshActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUICustomMeshActor final : public AUIBaseActor
+{
+public:
+	class UUICustomMesh*                          customMesh;                                        // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UICustomMeshActor">();
+	}
+	static class AUICustomMeshActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AUICustomMeshActor>();
+	}
+};
+static_assert(alignof(AUICustomMeshActor) == 0x000008, "Wrong alignment on AUICustomMeshActor");
+static_assert(sizeof(AUICustomMeshActor) == 0x0003A0, "Wrong size on AUICustomMeshActor");
+static_assert(offsetof(AUICustomMeshActor, customMesh) == 0x000398, "Member 'AUICustomMeshActor::customMesh' has a wrong offset!");
+
+// Class LGUI.UITextureBox
+// 0x0010 (0x07E0 - 0x07D0)
+class UUITextureBox final : public UUITextureBase
+{
+public:
+	float                                         thickness;                                         // 0x07C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          seperateFrontColor;                                // 0x07CC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7CD[0x3];                                      // 0x07CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 frontFaceColor;                                    // 0x07D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7D4[0xC];                                      // 0x07D4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UITextureBox">();
+	}
+	static class UUITextureBox* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUITextureBox>();
+	}
+};
+static_assert(alignof(UUITextureBox) == 0x000010, "Wrong alignment on UUITextureBox");
+static_assert(sizeof(UUITextureBox) == 0x0007E0, "Wrong size on UUITextureBox");
+static_assert(offsetof(UUITextureBox, thickness) == 0x0007C8, "Member 'UUITextureBox::thickness' has a wrong offset!");
+static_assert(offsetof(UUITextureBox, seperateFrontColor) == 0x0007CC, "Member 'UUITextureBox::seperateFrontColor' has a wrong offset!");
+static_assert(offsetof(UUITextureBox, frontFaceColor) == 0x0007D0, "Member 'UUITextureBox::frontFaceColor' has a wrong offset!");
 
 // Class LGUI.UIDraggableComponent
 // 0x01F0 (0x02F0 - 0x0100)
@@ -5736,15 +5709,15 @@ class UUIDraggableComponent final : public ULGUIBehaviour
 {
 public:
 	uint8                                         Pad_100[0x28];                                     // 0x0100(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerDownCallBack;                             // 0x0128(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerUpCallBack;                               // 0x0150(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerCancelCallBack;                           // 0x0178(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerBeginDragCallBack;                        // 0x01A0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerDragCallBack;                             // 0x01C8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerEndDragCallBack;                          // 0x01F0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerScrollCallBack;                           // 0x0218(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(bool PositionChanged, bool SizeChanged)> OnUIDimensionsChangedCallBack;                     // 0x0240(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIBaseEventData* eventData)> NeedInterruptDelegate;                             // 0x0268(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerDownCallBack;                   // 0x0128(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerUpCallBack;                     // 0x0150(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerCancelCallBack;                 // 0x0178(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerBeginDragCallBack;              // 0x01A0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerDragCallBack;                   // 0x01C8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerEndDragCallBack;                // 0x01F0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerScrollCallBack;                 // 0x0218(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(bool PositionChanged, bool SizeChanged)> OnUIDimensionsChangedCallBack;           // 0x0240(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class ULGUIBaseEventData* eventData)> NeedInterruptDelegate;                      // 0x0268(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	bool                                          bNeedInterrupt;                                    // 0x0290(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_291[0xF];                                      // 0x0291(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void()>                             NavigateToPrevDelegate;                            // 0x02A0(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
@@ -5779,6 +5752,332 @@ static_assert(offsetof(UUIDraggableComponent, bNeedInterrupt) == 0x000290, "Memb
 static_assert(offsetof(UUIDraggableComponent, NavigateToPrevDelegate) == 0x0002A0, "Member 'UUIDraggableComponent::NavigateToPrevDelegate' has a wrong offset!");
 static_assert(offsetof(UUIDraggableComponent, NavigateToNextDelegate) == 0x0002C8, "Member 'UUIDraggableComponent::NavigateToNextDelegate' has a wrong offset!");
 
+// Class LGUI.UIItemEditorHelperComp
+// 0x0010 (0x0510 - 0x0500)
+class UUIItemEditorHelperComp final : public UPrimitiveComponent
+{
+public:
+	class UUIItem*                                Parent;                                            // 0x0500(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBodySetup*                             BodySetup;                                         // 0x0508(0x0008)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIItemEditorHelperComp">();
+	}
+	static class UUIItemEditorHelperComp* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIItemEditorHelperComp>();
+	}
+};
+static_assert(alignof(UUIItemEditorHelperComp) == 0x000010, "Wrong alignment on UUIItemEditorHelperComp");
+static_assert(sizeof(UUIItemEditorHelperComp) == 0x000510, "Wrong size on UUIItemEditorHelperComp");
+static_assert(offsetof(UUIItemEditorHelperComp, Parent) == 0x000500, "Member 'UUIItemEditorHelperComp::Parent' has a wrong offset!");
+static_assert(offsetof(UUIItemEditorHelperComp, BodySetup) == 0x000508, "Member 'UUIItemEditorHelperComp::BodySetup' has a wrong offset!");
+
+// Class LGUI.UIDrawcallMesh
+// 0x0000 (0x0590 - 0x0590)
+class UUIDrawcallMesh final : public ULGUIMeshComponent
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIDrawcallMesh">();
+	}
+	static class UUIDrawcallMesh* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIDrawcallMesh>();
+	}
+};
+static_assert(alignof(UUIDrawcallMesh) == 0x000010, "Wrong alignment on UUIDrawcallMesh");
+static_assert(sizeof(UUIDrawcallMesh) == 0x000590, "Wrong size on UUIDrawcallMesh");
+
+// Class LGUI.UIDropdownComponent
+// 0x0108 (0x0500 - 0x03F8)
+class UUIDropdownComponent final : public UUISelectableComponent
+{
+public:
+	TWeakObjectPtr<class AUIBaseActor>            ListRoot;                                          // 0x03F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUITextActor>            CaptionText;                                       // 0x0400(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUITextActor>            SecondCaptionText;                                 // 0x0408(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUISpriteActor>          CaptionSprite;                                     // 0x0410(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FLGUIComponentReference                ItemTemplate;                                      // 0x0418(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	EUIDropdownVerticalPosition                   VerticalPosition;                                  // 0x0440(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          VerticalOverlap;                                   // 0x0441(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUIDropdownHorizontalPosition                 HorizontalPosition;                                // 0x0442(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_443[0x1];                                      // 0x0443(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Value;                                             // 0x0444(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<struct FUIDropdownOptionData>          Options;                                           // 0x0448(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_458[0x18];                                     // 0x0458(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TWeakObjectPtr<class UUIDropdownItemComponent>> CreatedItemArray;                         // 0x0470(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	uint8                                         Pad_480[0x18];                                     // 0x0480(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIDrawableEvent                     OnSelectionChange;                                 // 0x0498(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void(int32 InSelectIndex)>          OnSelectChange;                                    // 0x04B0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(bool IsShow)>                  OnPanelActiveChange;                               // 0x04D8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+
+public:
+	void AddOptions(const TArray<struct FUIDropdownOptionData>& InOptions);
+	void Hide();
+	void MarkRecreateList();
+	struct FLGUIDelegateHandleWrapper RegisterSelectionChangeEvent(const TDelegate<void(int32 InSelectIndex)>& InDelegate);
+	void SetHorizontalPosition(EUIDropdownHorizontalPosition InValue);
+	void SetMaxHeight(float newValue);
+	void SetOptions(const TArray<struct FUIDropdownOptionData>& InOptions);
+	void SetValue(int32 newValue, bool fireEvent);
+	void SetVerticalOverlap(bool newValue);
+	void SetVerticalPosition(EUIDropdownVerticalPosition InValue);
+	void Show();
+	void UnbindAllToggleDelegate();
+	void UnregisterSelectionChangeEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+
+	struct FUIDropdownOptionData GetCurrentOption() const;
+	EUIDropdownHorizontalPosition GetHorizontalPosition() const;
+	float GetMaxHeight() const;
+	struct FUIDropdownOptionData GetOption(int32 index) const;
+	const TArray<struct FUIDropdownOptionData> GetOptions() const;
+	int32 GetValue() const;
+	bool GetVerticalOverlap() const;
+	EUIDropdownVerticalPosition GetVerticalPosition() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIDropdownComponent">();
+	}
+	static class UUIDropdownComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIDropdownComponent>();
+	}
+};
+static_assert(alignof(UUIDropdownComponent) == 0x000008, "Wrong alignment on UUIDropdownComponent");
+static_assert(sizeof(UUIDropdownComponent) == 0x000500, "Wrong size on UUIDropdownComponent");
+static_assert(offsetof(UUIDropdownComponent, ListRoot) == 0x0003F8, "Member 'UUIDropdownComponent::ListRoot' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, CaptionText) == 0x000400, "Member 'UUIDropdownComponent::CaptionText' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, SecondCaptionText) == 0x000408, "Member 'UUIDropdownComponent::SecondCaptionText' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, CaptionSprite) == 0x000410, "Member 'UUIDropdownComponent::CaptionSprite' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, ItemTemplate) == 0x000418, "Member 'UUIDropdownComponent::ItemTemplate' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, VerticalPosition) == 0x000440, "Member 'UUIDropdownComponent::VerticalPosition' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, VerticalOverlap) == 0x000441, "Member 'UUIDropdownComponent::VerticalOverlap' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, HorizontalPosition) == 0x000442, "Member 'UUIDropdownComponent::HorizontalPosition' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, Value) == 0x000444, "Member 'UUIDropdownComponent::Value' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, Options) == 0x000448, "Member 'UUIDropdownComponent::Options' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, CreatedItemArray) == 0x000470, "Member 'UUIDropdownComponent::CreatedItemArray' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, OnSelectionChange) == 0x000498, "Member 'UUIDropdownComponent::OnSelectionChange' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, OnSelectChange) == 0x0004B0, "Member 'UUIDropdownComponent::OnSelectChange' has a wrong offset!");
+static_assert(offsetof(UUIDropdownComponent, OnPanelActiveChange) == 0x0004D8, "Member 'UUIDropdownComponent::OnPanelActiveChange' has a wrong offset!");
+
+// Class LGUI.UIDropdownItemComponent
+// 0x0050 (0x0110 - 0x00C0)
+class UUIDropdownItemComponent final : public UActorComponent
+{
+public:
+	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AUITextActor>            TextActor;                                         // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUITextActor>            SecondTextActor;                                   // 0x00D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUISpriteActor>          SpriteActor;                                       // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FLGUIComponentReference                Toggle;                                            // 0x00E0(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIDropdownItemComponent">();
+	}
+	static class UUIDropdownItemComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIDropdownItemComponent>();
+	}
+};
+static_assert(alignof(UUIDropdownItemComponent) == 0x000008, "Wrong alignment on UUIDropdownItemComponent");
+static_assert(sizeof(UUIDropdownItemComponent) == 0x000110, "Wrong size on UUIDropdownItemComponent");
+static_assert(offsetof(UUIDropdownItemComponent, TextActor) == 0x0000C8, "Member 'UUIDropdownItemComponent::TextActor' has a wrong offset!");
+static_assert(offsetof(UUIDropdownItemComponent, SecondTextActor) == 0x0000D0, "Member 'UUIDropdownItemComponent::SecondTextActor' has a wrong offset!");
+static_assert(offsetof(UUIDropdownItemComponent, SpriteActor) == 0x0000D8, "Member 'UUIDropdownItemComponent::SpriteActor' has a wrong offset!");
+static_assert(offsetof(UUIDropdownItemComponent, Toggle) == 0x0000E0, "Member 'UUIDropdownItemComponent::Toggle' has a wrong offset!");
+
+// Class LGUI.GeometryHandle
+// 0x0020 (0x0050 - 0x0030)
+class UGeometryHandle final : public UObject
+{
+public:
+	uint8                                         Pad_30[0x20];                                      // 0x0030(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAdditionalUV(int32 AdditionalUVChannel, const struct FVector2D& UV);
+
+	bool IsGeometryValid() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"GeometryHandle">();
+	}
+	static class UGeometryHandle* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGeometryHandle>();
+	}
+};
+static_assert(alignof(UGeometryHandle) == 0x000008, "Wrong alignment on UGeometryHandle");
+static_assert(sizeof(UGeometryHandle) == 0x000050, "Wrong size on UGeometryHandle");
+
+// Class LGUI.UIMultiTemplateLayout
+// 0x0040 (0x01D0 - 0x0190)
+class UUIMultiTemplateLayout final : public UUILayoutWithAnimation
+{
+public:
+	ELGUILayoutDirectionType                      DirectionType;                                     // 0x0190(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_191[0x3];                                      // 0x0191(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMargin                                Padding;                                           // 0x0194(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FVector2D                              Spacing;                                           // 0x01A4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          SizeFitToChildren;                                 // 0x01AC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bAutoAdjustScale;                                  // 0x01AD(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1AE[0x22];                                     // 0x01AE(0x0022)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAutoAdjustScale(bool Value);
+	void SetDirectionType(ELGUILayoutDirectionType NewDirectionType);
+	void SetPadding(const struct FMargin& value);
+	void SetSizeFitToChildren(bool Value);
+	void SetSpacing(const struct FVector2D& value);
+
+	bool GetAutoAdjustScale() const;
+	ELGUILayoutDirectionType GetDirectionType() const;
+	struct FMargin GetPadding() const;
+	bool GetSizeFitToChildren() const;
+	struct FVector2D GetSpacing() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIMultiTemplateLayout">();
+	}
+	static class UUIMultiTemplateLayout* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIMultiTemplateLayout>();
+	}
+};
+static_assert(alignof(UUIMultiTemplateLayout) == 0x000008, "Wrong alignment on UUIMultiTemplateLayout");
+static_assert(sizeof(UUIMultiTemplateLayout) == 0x0001D0, "Wrong size on UUIMultiTemplateLayout");
+static_assert(offsetof(UUIMultiTemplateLayout, DirectionType) == 0x000190, "Member 'UUIMultiTemplateLayout::DirectionType' has a wrong offset!");
+static_assert(offsetof(UUIMultiTemplateLayout, Padding) == 0x000194, "Member 'UUIMultiTemplateLayout::Padding' has a wrong offset!");
+static_assert(offsetof(UUIMultiTemplateLayout, Spacing) == 0x0001A4, "Member 'UUIMultiTemplateLayout::Spacing' has a wrong offset!");
+static_assert(offsetof(UUIMultiTemplateLayout, SizeFitToChildren) == 0x0001AC, "Member 'UUIMultiTemplateLayout::SizeFitToChildren' has a wrong offset!");
+static_assert(offsetof(UUIMultiTemplateLayout, bAutoAdjustScale) == 0x0001AD, "Member 'UUIMultiTemplateLayout::bAutoAdjustScale' has a wrong offset!");
+
+// Class LGUI.UIDynamicBatchMesh
+// 0x0160 (0x06F0 - 0x0590)
+class UUIDynamicBatchMesh final : public UUIBaseRenderable
+{
+public:
+	uint8                                         Pad_590[0xF0];                                     // 0x0590(0x00F0)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, class UGeometryHandle*>           GeometryHandleMap;                                 // 0x0680(0x0050)(Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6D0[0x8];                                      // 0x06D0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SingleGeometryExistTime;                           // 0x06D8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         MaxVerticeCount;                                   // 0x06DC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6E0[0x10];                                     // 0x06E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class UGeometryHandle* AddBatchGeometryRenderable(class UUIBatchGeometryRenderable* Renderable);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIDynamicBatchMesh">();
+	}
+	static class UUIDynamicBatchMesh* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIDynamicBatchMesh>();
+	}
+};
+static_assert(alignof(UUIDynamicBatchMesh) == 0x000010, "Wrong alignment on UUIDynamicBatchMesh");
+static_assert(sizeof(UUIDynamicBatchMesh) == 0x0006F0, "Wrong size on UUIDynamicBatchMesh");
+static_assert(offsetof(UUIDynamicBatchMesh, GeometryHandleMap) == 0x000680, "Member 'UUIDynamicBatchMesh::GeometryHandleMap' has a wrong offset!");
+static_assert(offsetof(UUIDynamicBatchMesh, SingleGeometryExistTime) == 0x0006D8, "Member 'UUIDynamicBatchMesh::SingleGeometryExistTime' has a wrong offset!");
+static_assert(offsetof(UUIDynamicBatchMesh, MaxVerticeCount) == 0x0006DC, "Member 'UUIDynamicBatchMesh::MaxVerticeCount' has a wrong offset!");
+
+// Class LGUI.UIDynamicBatchMeshActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUIDynamicBatchMeshActor final : public AUIBaseActor
+{
+public:
+	class UUIDynamicBatchMesh*                    UIDynamicBatchMesh;                                // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIDynamicBatchMeshActor">();
+	}
+	static class AUIDynamicBatchMeshActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AUIDynamicBatchMeshActor>();
+	}
+};
+static_assert(alignof(AUIDynamicBatchMeshActor) == 0x000008, "Wrong alignment on AUIDynamicBatchMeshActor");
+static_assert(sizeof(AUIDynamicBatchMeshActor) == 0x0003A0, "Wrong size on AUIDynamicBatchMeshActor");
+static_assert(offsetof(AUIDynamicBatchMeshActor, UIDynamicBatchMesh) == 0x000398, "Member 'AUIDynamicBatchMeshActor::UIDynamicBatchMesh' has a wrong offset!");
+
+// Class LGUI.UIInteractionGroup
+// 0x0010 (0x00D0 - 0x00C0)
+class UUIInteractionGroup final : public UActorComponent
+{
+public:
+	bool                                          bInteractable;                                     // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIgnoreParentGroup;                                // 0x00C1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUIItem*                                CacheUIItem;                                       // 0x00C8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	void SetIgnoreParentGroup(bool value);
+	void SetInteractable(bool value);
+
+	bool GetIgnoreParentGroup() const;
+	bool GetInteractable() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIInteractionGroup">();
+	}
+	static class UUIInteractionGroup* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIInteractionGroup>();
+	}
+};
+static_assert(alignof(UUIInteractionGroup) == 0x000008, "Wrong alignment on UUIInteractionGroup");
+static_assert(sizeof(UUIInteractionGroup) == 0x0000D0, "Wrong size on UUIInteractionGroup");
+static_assert(offsetof(UUIInteractionGroup, bInteractable) == 0x0000C0, "Member 'UUIInteractionGroup::bInteractable' has a wrong offset!");
+static_assert(offsetof(UUIInteractionGroup, bIgnoreParentGroup) == 0x0000C1, "Member 'UUIInteractionGroup::bIgnoreParentGroup' has a wrong offset!");
+static_assert(offsetof(UUIInteractionGroup, CacheUIItem) == 0x0000C8, "Member 'UUIInteractionGroup::CacheUIItem' has a wrong offset!");
+
+// Class LGUI.UIDynmaicTextureAtlasMgr
+// 0x0150 (0x0180 - 0x0030)
+class UUIDynmaicTextureAtlasMgr final : public UObject
+{
+public:
+	TMap<struct FSoftObjectPath, struct FRenderableCollection> PathRenderableMap;                    // 0x0030(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<struct FSoftObjectPath, struct FRenderableCollection> FailInsertRenderableMap;              // 0x0080(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<int32, struct FLoadingPathRenderableMap> BatchLoadingPathRenderableMap;                     // 0x00D0(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_120[0x60];                                     // 0x0120(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnDynamicAtlasExpandCallback(const struct FTextureExpandParam& TextureExpandParam);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIDynmaicTextureAtlasMgr">();
+	}
+	static class UUIDynmaicTextureAtlasMgr* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIDynmaicTextureAtlasMgr>();
+	}
+};
+static_assert(alignof(UUIDynmaicTextureAtlasMgr) == 0x000008, "Wrong alignment on UUIDynmaicTextureAtlasMgr");
+static_assert(sizeof(UUIDynmaicTextureAtlasMgr) == 0x000180, "Wrong size on UUIDynmaicTextureAtlasMgr");
+static_assert(offsetof(UUIDynmaicTextureAtlasMgr, PathRenderableMap) == 0x000030, "Member 'UUIDynmaicTextureAtlasMgr::PathRenderableMap' has a wrong offset!");
+static_assert(offsetof(UUIDynmaicTextureAtlasMgr, FailInsertRenderableMap) == 0x000080, "Member 'UUIDynmaicTextureAtlasMgr::FailInsertRenderableMap' has a wrong offset!");
+static_assert(offsetof(UUIDynmaicTextureAtlasMgr, BatchLoadingPathRenderableMap) == 0x0000D0, "Member 'UUIDynmaicTextureAtlasMgr::BatchLoadingPathRenderableMap' has a wrong offset!");
+
 // Class LGUI.UIScrollViewComponent
 // 0x0180 (0x0280 - 0x0100)
 class UUIScrollViewComponent : public ULGUIBehaviour
@@ -5802,15 +6101,15 @@ public:
 	bool                                          CanScroll;                                         // 0x0149(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          RayCastTargetForScrollView;                        // 0x014A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_14B[0x5];                                      // 0x014B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerBeginDragCallBack;                        // 0x0150(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerEndDragCallBack;                          // 0x0178(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void(class ULGUIPointerEventData* EventData)> OnScrollViewDownUpCallback;                        // 0x01A0(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerBeginDragCallBack;              // 0x0150(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerEndDragCallBack;                // 0x0178(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void(class ULGUIPointerEventData* EventData)> OnScrollViewDownUpCallback;              // 0x01A0(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
 	TWeakObjectPtr<class UUIItem>                 ContentUIItem;                                     // 0x01C8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TWeakObjectPtr<class UUIItem>                 ContentParentUIItem;                               // 0x01D0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_1D8[0x70];                                     // 0x01D8(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULTweener*                              Tweener;                                           // 0x0248(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_250[0x8];                                      // 0x0250(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FVector2D& InVector2)> OnScrollValueChange;                               // 0x0258(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FVector2D& InVector2)> OnScrollValueChange;                          // 0x0258(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static float GetDecelerationRateDegbug();
@@ -5936,296 +6235,6 @@ static_assert(offsetof(UUIScrollViewWithScrollbarComponent, HorizontalScrollbarC
 static_assert(offsetof(UUIScrollViewWithScrollbarComponent, VerticalScrollbarComp) == 0x0002A8, "Member 'UUIScrollViewWithScrollbarComponent::VerticalScrollbarComp' has a wrong offset!");
 static_assert(offsetof(UUIScrollViewWithScrollbarComponent, IsChangeNavigation) == 0x0002B2, "Member 'UUIScrollViewWithScrollbarComponent::IsChangeNavigation' has a wrong offset!");
 
-// Class LGUI.UILoopScrollViewComponent
-// 0x01B0 (0x0468 - 0x02B8)
-class UUILoopScrollViewComponent final : public UUIScrollViewWithScrollbarComponent
-{
-public:
-	uint8                                         Pad_2B8[0x38];                                     // 0x02B8(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TWeakObjectPtr<class AUIBaseActor>>    GridArray;                                         // 0x02F0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_300[0x50];                                     // 0x0300(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AUIBaseActor>            TemplateGrid;                                      // 0x0350(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         DisplayGridNum;                                    // 0x0358(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	int32                                         TotalGridNum;                                      // 0x035C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          GridDefaultUIActive;                               // 0x0360(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          IsGridShrinkStrech;                                // 0x0361(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_362[0x2];                                      // 0x0362(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SpacingHorizontal;                                 // 0x0364(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SpacingVertical;                                   // 0x0368(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PaddingHorizontal;                                 // 0x036C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PaddingVertical;                                   // 0x0370(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bForceSingleLine;                                  // 0x0374(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_375[0x3];                                      // 0x0375(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GridAnimationStartTime;                            // 0x0378(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GridAnimationInterval;                             // 0x037C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsInAnimation;                                     // 0x0380(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_381[0x7];                                      // 0x0381(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(int32 DisplayIndex, class AUIBaseActor* Actor)> OnGridCreate;                                      // 0x0388(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(int32 StartIndex, int32 EndIndex)> OnGridsUpdate;                                     // 0x03B0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             OnDestroyCallBack;                                 // 0x03D8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_400[0x50];                                     // 0x0400(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         NavigationIndex;                                   // 0x0450(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_454[0x14];                                     // 0x0454(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void Refresh();
-	void RefreshByData(class AUIBaseActor* UIItem, int32 GridNum, bool KeepContentPosition);
-	void ResetPreview();
-	void ScrollToGridIndex(int32 GridIndex, bool bTweenAnim);
-	void ScrollToNextLine(bool bReversed);
-	void SetGridAnimationInterval(float value);
-	void SetGridAnimationStartTime(float value);
-	void SetInAnimation(bool state);
-	void SetNavigationIndex(int32 GridIndex);
-
-	class AUIBaseActor* GetGrid(int32 GridIndex) const;
-	float GetGridAnimationInterval() const;
-	float GetGridAnimationStartTime() const;
-	bool GetInAnimation() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UILoopScrollViewComponent">();
-	}
-	static class UUILoopScrollViewComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUILoopScrollViewComponent>();
-	}
-};
-static_assert(alignof(UUILoopScrollViewComponent) == 0x000008, "Wrong alignment on UUILoopScrollViewComponent");
-static_assert(sizeof(UUILoopScrollViewComponent) == 0x000468, "Wrong size on UUILoopScrollViewComponent");
-static_assert(offsetof(UUILoopScrollViewComponent, GridArray) == 0x0002F0, "Member 'UUILoopScrollViewComponent::GridArray' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, TemplateGrid) == 0x000350, "Member 'UUILoopScrollViewComponent::TemplateGrid' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, DisplayGridNum) == 0x000358, "Member 'UUILoopScrollViewComponent::DisplayGridNum' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, TotalGridNum) == 0x00035C, "Member 'UUILoopScrollViewComponent::TotalGridNum' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, GridDefaultUIActive) == 0x000360, "Member 'UUILoopScrollViewComponent::GridDefaultUIActive' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, IsGridShrinkStrech) == 0x000361, "Member 'UUILoopScrollViewComponent::IsGridShrinkStrech' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, SpacingHorizontal) == 0x000364, "Member 'UUILoopScrollViewComponent::SpacingHorizontal' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, SpacingVertical) == 0x000368, "Member 'UUILoopScrollViewComponent::SpacingVertical' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, PaddingHorizontal) == 0x00036C, "Member 'UUILoopScrollViewComponent::PaddingHorizontal' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, PaddingVertical) == 0x000370, "Member 'UUILoopScrollViewComponent::PaddingVertical' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, bForceSingleLine) == 0x000374, "Member 'UUILoopScrollViewComponent::bForceSingleLine' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, GridAnimationStartTime) == 0x000378, "Member 'UUILoopScrollViewComponent::GridAnimationStartTime' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, GridAnimationInterval) == 0x00037C, "Member 'UUILoopScrollViewComponent::GridAnimationInterval' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, IsInAnimation) == 0x000380, "Member 'UUILoopScrollViewComponent::IsInAnimation' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, OnGridCreate) == 0x000388, "Member 'UUILoopScrollViewComponent::OnGridCreate' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, OnGridsUpdate) == 0x0003B0, "Member 'UUILoopScrollViewComponent::OnGridsUpdate' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, OnDestroyCallBack) == 0x0003D8, "Member 'UUILoopScrollViewComponent::OnDestroyCallBack' has a wrong offset!");
-static_assert(offsetof(UUILoopScrollViewComponent, NavigationIndex) == 0x000450, "Member 'UUILoopScrollViewComponent::NavigationIndex' has a wrong offset!");
-
-// Class LGUI.UIDrawcallMesh
-// 0x0000 (0x0590 - 0x0590)
-class UUIDrawcallMesh final : public ULGUIMeshComponent
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIDrawcallMesh">();
-	}
-	static class UUIDrawcallMesh* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIDrawcallMesh>();
-	}
-};
-static_assert(alignof(UUIDrawcallMesh) == 0x000010, "Wrong alignment on UUIDrawcallMesh");
-static_assert(sizeof(UUIDrawcallMesh) == 0x000590, "Wrong size on UUIDrawcallMesh");
-
-// Class LGUI.UIDropdownComponent
-// 0x0108 (0x0500 - 0x03F8)
-class UUIDropdownComponent final : public UUISelectableComponent
-{
-public:
-	TWeakObjectPtr<class AUIBaseActor>            ListRoot;                                          // 0x03F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUITextActor>            CaptionText;                                       // 0x0400(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUITextActor>            SecondCaptionText;                                 // 0x0408(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUISpriteActor>          CaptionSprite;                                     // 0x0410(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FLGUIComponentReference                ItemTemplate;                                      // 0x0418(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	EUIDropdownVerticalPosition                   VerticalPosition;                                  // 0x0440(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          VerticalOverlap;                                   // 0x0441(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUIDropdownHorizontalPosition                 HorizontalPosition;                                // 0x0442(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_443[0x1];                                      // 0x0443(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Value;                                             // 0x0444(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<struct FUIDropdownOptionData>          Options;                                           // 0x0448(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_458[0x18];                                     // 0x0458(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TWeakObjectPtr<class UUIDropdownItemComponent>> CreatedItemArray;                                  // 0x0470(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                         Pad_480[0x18];                                     // 0x0480(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLGUIDrawableEvent                     OnSelectionChange;                                 // 0x0498(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
-	TDelegate<void(int32 InSelectIndex)>          OnSelectChange;                                    // 0x04B0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(bool IsShow)>                  OnPanelActiveChange;                               // 0x04D8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-
-public:
-	void AddOptions(const TArray<struct FUIDropdownOptionData>& InOptions);
-	void Hide();
-	void MarkRecreateList();
-	struct FLGUIDelegateHandleWrapper RegisterSelectionChangeEvent(const TDelegate<void(int32 InSelectIndex)>& InDelegate);
-	void SetHorizontalPosition(EUIDropdownHorizontalPosition InValue);
-	void SetMaxHeight(float newValue);
-	void SetOptions(const TArray<struct FUIDropdownOptionData>& InOptions);
-	void SetValue(int32 newValue, bool fireEvent);
-	void SetVerticalOverlap(bool newValue);
-	void SetVerticalPosition(EUIDropdownVerticalPosition InValue);
-	void Show();
-	void UnbindAllToggleDelegate();
-	void UnregisterSelectionChangeEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
-
-	struct FUIDropdownOptionData GetCurrentOption() const;
-	EUIDropdownHorizontalPosition GetHorizontalPosition() const;
-	float GetMaxHeight() const;
-	struct FUIDropdownOptionData GetOption(int32 index) const;
-	const TArray<struct FUIDropdownOptionData> GetOptions() const;
-	int32 GetValue() const;
-	bool GetVerticalOverlap() const;
-	EUIDropdownVerticalPosition GetVerticalPosition() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIDropdownComponent">();
-	}
-	static class UUIDropdownComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIDropdownComponent>();
-	}
-};
-static_assert(alignof(UUIDropdownComponent) == 0x000008, "Wrong alignment on UUIDropdownComponent");
-static_assert(sizeof(UUIDropdownComponent) == 0x000500, "Wrong size on UUIDropdownComponent");
-static_assert(offsetof(UUIDropdownComponent, ListRoot) == 0x0003F8, "Member 'UUIDropdownComponent::ListRoot' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, CaptionText) == 0x000400, "Member 'UUIDropdownComponent::CaptionText' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, SecondCaptionText) == 0x000408, "Member 'UUIDropdownComponent::SecondCaptionText' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, CaptionSprite) == 0x000410, "Member 'UUIDropdownComponent::CaptionSprite' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, ItemTemplate) == 0x000418, "Member 'UUIDropdownComponent::ItemTemplate' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, VerticalPosition) == 0x000440, "Member 'UUIDropdownComponent::VerticalPosition' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, VerticalOverlap) == 0x000441, "Member 'UUIDropdownComponent::VerticalOverlap' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, HorizontalPosition) == 0x000442, "Member 'UUIDropdownComponent::HorizontalPosition' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, Value) == 0x000444, "Member 'UUIDropdownComponent::Value' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, Options) == 0x000448, "Member 'UUIDropdownComponent::Options' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, CreatedItemArray) == 0x000470, "Member 'UUIDropdownComponent::CreatedItemArray' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, OnSelectionChange) == 0x000498, "Member 'UUIDropdownComponent::OnSelectionChange' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, OnSelectChange) == 0x0004B0, "Member 'UUIDropdownComponent::OnSelectChange' has a wrong offset!");
-static_assert(offsetof(UUIDropdownComponent, OnPanelActiveChange) == 0x0004D8, "Member 'UUIDropdownComponent::OnPanelActiveChange' has a wrong offset!");
-
-// Class LGUI.UIDropdownItemComponent
-// 0x0050 (0x0110 - 0x00C0)
-class UUIDropdownItemComponent final : public UActorComponent
-{
-public:
-	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AUITextActor>            TextActor;                                         // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUITextActor>            SecondTextActor;                                   // 0x00D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AUISpriteActor>          SpriteActor;                                       // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FLGUIComponentReference                Toggle;                                            // 0x00E0(0x0028)(Edit, NoDestructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIDropdownItemComponent">();
-	}
-	static class UUIDropdownItemComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIDropdownItemComponent>();
-	}
-};
-static_assert(alignof(UUIDropdownItemComponent) == 0x000008, "Wrong alignment on UUIDropdownItemComponent");
-static_assert(sizeof(UUIDropdownItemComponent) == 0x000110, "Wrong size on UUIDropdownItemComponent");
-static_assert(offsetof(UUIDropdownItemComponent, TextActor) == 0x0000C8, "Member 'UUIDropdownItemComponent::TextActor' has a wrong offset!");
-static_assert(offsetof(UUIDropdownItemComponent, SecondTextActor) == 0x0000D0, "Member 'UUIDropdownItemComponent::SecondTextActor' has a wrong offset!");
-static_assert(offsetof(UUIDropdownItemComponent, SpriteActor) == 0x0000D8, "Member 'UUIDropdownItemComponent::SpriteActor' has a wrong offset!");
-static_assert(offsetof(UUIDropdownItemComponent, Toggle) == 0x0000E0, "Member 'UUIDropdownItemComponent::Toggle' has a wrong offset!");
-
-// Class LGUI.UIDynmaicTextureAtlasMgr
-// 0x0150 (0x0180 - 0x0030)
-class UUIDynmaicTextureAtlasMgr final : public UObject
-{
-public:
-	TMap<struct FSoftObjectPath, struct FRenderableCollection> PathRenderableMap;                                 // 0x0030(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TMap<struct FSoftObjectPath, struct FRenderableCollection> FailInsertRenderableMap;                           // 0x0080(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TMap<int32, struct FLoadingPathRenderableMap> BatchLoadingPathRenderableMap;                     // 0x00D0(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_120[0x60];                                     // 0x0120(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnDynamicAtlasExpandCallback(const struct FTextureExpandParam& TextureExpandParam);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIDynmaicTextureAtlasMgr">();
-	}
-	static class UUIDynmaicTextureAtlasMgr* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIDynmaicTextureAtlasMgr>();
-	}
-};
-static_assert(alignof(UUIDynmaicTextureAtlasMgr) == 0x000008, "Wrong alignment on UUIDynmaicTextureAtlasMgr");
-static_assert(sizeof(UUIDynmaicTextureAtlasMgr) == 0x000180, "Wrong size on UUIDynmaicTextureAtlasMgr");
-static_assert(offsetof(UUIDynmaicTextureAtlasMgr, PathRenderableMap) == 0x000030, "Member 'UUIDynmaicTextureAtlasMgr::PathRenderableMap' has a wrong offset!");
-static_assert(offsetof(UUIDynmaicTextureAtlasMgr, FailInsertRenderableMap) == 0x000080, "Member 'UUIDynmaicTextureAtlasMgr::FailInsertRenderableMap' has a wrong offset!");
-static_assert(offsetof(UUIDynmaicTextureAtlasMgr, BatchLoadingPathRenderableMap) == 0x0000D0, "Member 'UUIDynmaicTextureAtlasMgr::BatchLoadingPathRenderableMap' has a wrong offset!");
-
-// Class LGUI.UINavigationTextChangeListener
-// 0x0008 (0x0108 - 0x0100)
-class UUINavigationTextChangeListener : public ULGUIBehaviour
-{
-public:
-	class AActor*                                 TextActor;                                         // 0x0100(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	void OnNotifyTextChangeBP(const class FString& NotifyText);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UINavigationTextChangeListener">();
-	}
-	static class UUINavigationTextChangeListener* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUINavigationTextChangeListener>();
-	}
-};
-static_assert(alignof(UUINavigationTextChangeListener) == 0x000008, "Wrong alignment on UUINavigationTextChangeListener");
-static_assert(sizeof(UUINavigationTextChangeListener) == 0x000108, "Wrong size on UUINavigationTextChangeListener");
-static_assert(offsetof(UUINavigationTextChangeListener, TextActor) == 0x000100, "Member 'UUINavigationTextChangeListener::TextActor' has a wrong offset!");
-
-// Class LGUI.UILayoutElement
-// 0x0018 (0x0118 - 0x0100)
-class UUILayoutElement final : public ULGUIBehaviour
-{
-public:
-	class UUILayoutBase*                          ParentLayout;                                      // 0x0100(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	ELayoutElementType                            LayoutElementType;                                 // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ConstantSize;                                      // 0x010C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         RatioSize;                                         // 0x0110(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetConstantSize(float value);
-	void SetLayoutType(ELayoutElementType InType);
-	void SetRatioSize(float value);
-
-	float GetConstantSize() const;
-	bool GetIgnoreLayout() const;
-	ELayoutElementType GetLayoutType() const;
-	float GetRatioSize() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UILayoutElement">();
-	}
-	static class UUILayoutElement* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUILayoutElement>();
-	}
-};
-static_assert(alignof(UUILayoutElement) == 0x000008, "Wrong alignment on UUILayoutElement");
-static_assert(sizeof(UUILayoutElement) == 0x000118, "Wrong size on UUILayoutElement");
-static_assert(offsetof(UUILayoutElement, ParentLayout) == 0x000100, "Member 'UUILayoutElement::ParentLayout' has a wrong offset!");
-static_assert(offsetof(UUILayoutElement, LayoutElementType) == 0x000108, "Member 'UUILayoutElement::LayoutElementType' has a wrong offset!");
-static_assert(offsetof(UUILayoutElement, ConstantSize) == 0x00010C, "Member 'UUILayoutElement::ConstantSize' has a wrong offset!");
-static_assert(offsetof(UUILayoutElement, RatioSize) == 0x000110, "Member 'UUILayoutElement::RatioSize' has a wrong offset!");
-
 // Class LGUI.UIDynScrollViewComponent
 // 0x0218 (0x04D0 - 0x02B8)
 class UUIDynScrollViewComponent final : public UUIScrollViewWithScrollbarComponent
@@ -6245,15 +6254,15 @@ public:
 	bool                                          IsInAnimation;                                     // 0x02F0(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          SizeMatchContent;                                  // 0x02F1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2F2[0x6];                                      // 0x02F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(int32 DisplayIndex, class AUIBaseActor* Actor)> OnItemCreate;                                      // 0x02F8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(int32 Index, class AUIBaseActor* Actor)> OnItemUpdate;                                      // 0x0320(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 DisplayIndex, class AUIBaseActor* Actor)> OnItemCreate;                     // 0x02F8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Index, class AUIBaseActor* Actor)> OnItemUpdate;                            // 0x0320(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TDelegate<void(int32 Index)>                  ItemSizeDelegate;                                  // 0x0348(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(int32 Index, class AUIBaseActor* Actor)> OnItemClear;                                       // 0x0370(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 Index, class AUIBaseActor* Actor)> OnItemClear;                             // 0x0370(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TDelegate<void()>                             OnDestroyCallBack;                                 // 0x0398(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3C0[0x10];                                     // 0x03C0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<TWeakObjectPtr<class AUIBaseActor>>    DisplayItemArray;                                  // 0x03D0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
 	TArray<TWeakObjectPtr<class AUIBaseActor>>    IdleItemArray;                                     // 0x03E0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
-	TMap<class AUIBaseActor*, class AUIBaseActor*> ToUsingItemMap;                                    // 0x03F0(0x0050)(NativeAccessSpecifierPrivate)
+	TMap<class AUIBaseActor*, class AUIBaseActor*> ToUsingItemMap;                                   // 0x03F0(0x0050)(NativeAccessSpecifierPrivate)
 	uint8                                         Pad_440[0x79];                                     // 0x0440(0x0079)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          IsNavigateScrollFixedValue;                        // 0x04B9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_4BA[0x16];                                     // 0x04BA(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -6512,33 +6521,6 @@ static_assert(offsetof(UUIEffectShadow, shadowColor) == 0x0000D8, "Member 'UUIEf
 static_assert(offsetof(UUIEffectShadow, multiplySourceAlpha) == 0x0000DC, "Member 'UUIEffectShadow::multiplySourceAlpha' has a wrong offset!");
 static_assert(offsetof(UUIEffectShadow, shadowOffset) == 0x0000E0, "Member 'UUIEffectShadow::shadowOffset' has a wrong offset!");
 
-// Class LGUI.UIEffectTextAnimation_Selector
-// 0x0008 (0x0038 - 0x0030)
-class UUIEffectTextAnimation_Selector : public UObject
-{
-public:
-	float                                         offset;                                            // 0x0030(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetOffset(float value);
-
-	float GetOffset() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIEffectTextAnimation_Selector">();
-	}
-	static class UUIEffectTextAnimation_Selector* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIEffectTextAnimation_Selector>();
-	}
-};
-static_assert(alignof(UUIEffectTextAnimation_Selector) == 0x000008, "Wrong alignment on UUIEffectTextAnimation_Selector");
-static_assert(sizeof(UUIEffectTextAnimation_Selector) == 0x000038, "Wrong size on UUIEffectTextAnimation_Selector");
-static_assert(offsetof(UUIEffectTextAnimation_Selector, offset) == 0x000030, "Member 'UUIEffectTextAnimation_Selector::offset' has a wrong offset!");
-
 // Class LGUI.UIEffectTextAnimation_Property
 // 0x0000 (0x0030 - 0x0030)
 class UUIEffectTextAnimation_Property : public UObject
@@ -6562,7 +6544,7 @@ class UUIEffectTextAnimation final : public UUIGeometryModifierBase
 {
 public:
 	class UUIEffectTextAnimation_Selector*        selector;                                          // 0x00D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<class UUIEffectTextAnimation_Property*> properties;                                        // 0x00E0(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TArray<class UUIEffectTextAnimation_Property*> properties;                                       // 0x00E0(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	class UUIText*                                uiText;                                            // 0x00F0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_F8[0x18];                                      // 0x00F8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -7022,48 +7004,6 @@ static_assert(alignof(UUIEffectTextAnimation_ScaleWaveProperty) == 0x000008, "Wr
 static_assert(sizeof(UUIEffectTextAnimation_ScaleWaveProperty) == 0x000060, "Wrong size on UUIEffectTextAnimation_ScaleWaveProperty");
 static_assert(offsetof(UUIEffectTextAnimation_ScaleWaveProperty, scale) == 0x000050, "Member 'UUIEffectTextAnimation_ScaleWaveProperty::scale' has a wrong offset!");
 
-// Class LGUI.UIEffectTextAnimation_RangeSelector
-// 0x0028 (0x0060 - 0x0038)
-class UUIEffectTextAnimation_RangeSelector final : public UUIEffectTextAnimation_Selector
-{
-public:
-	float                                         range;                                             // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          flipDirection;                                     // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         start;                                             // 0x0040(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	float                                         end;                                               // 0x0044(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          lineByLine;                                        // 0x0048(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_49[0x17];                                      // 0x0049(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetEnd(float value);
-	void SetFlipDirection(bool value);
-	void SetRange(float value);
-	void SetStart(float value);
-
-	float GetEnd() const;
-	bool GetFlipDirection() const;
-	float GetRange() const;
-	float GetStart() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIEffectTextAnimation_RangeSelector">();
-	}
-	static class UUIEffectTextAnimation_RangeSelector* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIEffectTextAnimation_RangeSelector>();
-	}
-};
-static_assert(alignof(UUIEffectTextAnimation_RangeSelector) == 0x000008, "Wrong alignment on UUIEffectTextAnimation_RangeSelector");
-static_assert(sizeof(UUIEffectTextAnimation_RangeSelector) == 0x000060, "Wrong size on UUIEffectTextAnimation_RangeSelector");
-static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, range) == 0x000038, "Member 'UUIEffectTextAnimation_RangeSelector::range' has a wrong offset!");
-static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, flipDirection) == 0x00003C, "Member 'UUIEffectTextAnimation_RangeSelector::flipDirection' has a wrong offset!");
-static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, start) == 0x000040, "Member 'UUIEffectTextAnimation_RangeSelector::start' has a wrong offset!");
-static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, end) == 0x000044, "Member 'UUIEffectTextAnimation_RangeSelector::end' has a wrong offset!");
-static_assert(offsetof(UUIEffectTextAnimation_RangeSelector, lineByLine) == 0x000048, "Member 'UUIEffectTextAnimation_RangeSelector::lineByLine' has a wrong offset!");
-
 // Class LGUI.UIEffectTextAnimation_RandomSelector
 // 0x0010 (0x0048 - 0x0038)
 class UUIEffectTextAnimation_RandomSelector final : public UUIEffectTextAnimation_Selector
@@ -7099,40 +7039,25 @@ static_assert(offsetof(UUIEffectTextAnimation_RandomSelector, seed) == 0x000038,
 static_assert(offsetof(UUIEffectTextAnimation_RandomSelector, start) == 0x00003C, "Member 'UUIEffectTextAnimation_RandomSelector::start' has a wrong offset!");
 static_assert(offsetof(UUIEffectTextAnimation_RandomSelector, end) == 0x000040, "Member 'UUIEffectTextAnimation_RandomSelector::end' has a wrong offset!");
 
-// Class LGUI.UIEffectTextAnimation_RichTextTagSelector
-// 0x0018 (0x0050 - 0x0038)
-class UUIEffectTextAnimation_RichTextTagSelector final : public UUIEffectTextAnimation_Selector
+// Class LGUI.UIEventBlocker
+// 0x0010 (0x03B0 - 0x03A0)
+class AUIEventBlocker final : public AUIContainerActor
 {
 public:
-	float                                         range;                                             // 0x0038(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FName                                   tagName;                                           // 0x003C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          flipDirection;                                     // 0x0048(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetFlipDirection(bool value);
-	void SetRange(float value);
-	void SetTagName(const class FName& value);
-
-	bool GetFlipDirection() const;
-	float GetRange() const;
-	const class FName GetTagName() const;
+	uint8                                         Pad_3A0[0x10];                                     // 0x03A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIEffectTextAnimation_RichTextTagSelector">();
+		return StaticClassImpl<"UIEventBlocker">();
 	}
-	static class UUIEffectTextAnimation_RichTextTagSelector* GetDefaultObj()
+	static class AUIEventBlocker* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIEffectTextAnimation_RichTextTagSelector>();
+		return GetDefaultObjImpl<AUIEventBlocker>();
 	}
 };
-static_assert(alignof(UUIEffectTextAnimation_RichTextTagSelector) == 0x000008, "Wrong alignment on UUIEffectTextAnimation_RichTextTagSelector");
-static_assert(sizeof(UUIEffectTextAnimation_RichTextTagSelector) == 0x000050, "Wrong size on UUIEffectTextAnimation_RichTextTagSelector");
-static_assert(offsetof(UUIEffectTextAnimation_RichTextTagSelector, range) == 0x000038, "Member 'UUIEffectTextAnimation_RichTextTagSelector::range' has a wrong offset!");
-static_assert(offsetof(UUIEffectTextAnimation_RichTextTagSelector, tagName) == 0x00003C, "Member 'UUIEffectTextAnimation_RichTextTagSelector::tagName' has a wrong offset!");
-static_assert(offsetof(UUIEffectTextAnimation_RichTextTagSelector, flipDirection) == 0x000048, "Member 'UUIEffectTextAnimation_RichTextTagSelector::flipDirection' has a wrong offset!");
+static_assert(alignof(AUIEventBlocker) == 0x000008, "Wrong alignment on AUIEventBlocker");
+static_assert(sizeof(AUIEventBlocker) == 0x0003B0, "Wrong size on AUIEventBlocker");
 
 // Class LGUI.UIEventBlockerComponent
 // 0x0040 (0x0100 - 0x00C0)
@@ -7157,116 +7082,131 @@ static_assert(alignof(UUIEventBlockerComponent) == 0x000008, "Wrong alignment on
 static_assert(sizeof(UUIEventBlockerComponent) == 0x000100, "Wrong size on UUIEventBlockerComponent");
 static_assert(offsetof(UUIEventBlockerComponent, AllowEventBubbleUp) == 0x0000F8, "Member 'UUIEventBlockerComponent::AllowEventBubbleUp' has a wrong offset!");
 
-// Class LGUI.UIExtendButtonComponent
-// 0x0008 (0x0688 - 0x0680)
-class UUIExtendButtonComponent final : public UUIButtonComponent
+// Class LGUI.UIEventTriggerComponent
+// 0x02C8 (0x0388 - 0x00C0)
+class UUIEventTriggerComponent final : public UActorComponent
 {
 public:
-	int32                                         HelpGroupId;                                       // 0x0680(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_684[0x4];                                      // 0x0684(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x38];                                      // 0x00C0(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          AllowEventBubbleUp;                                // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIDrawableEvent                     OnPointerEnter;                                    // 0x0100(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerExit;                                     // 0x0118(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerDown;                                     // 0x0130(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerUp;                                       // 0x0148(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerCancel;                                   // 0x0160(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerClick;                                    // 0x0178(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerBeginDrag;                                // 0x0190(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerDrag;                                     // 0x01A8(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerEndDrag;                                  // 0x01C0(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerDragEnter;                                // 0x01D8(0x0018)(Deprecated, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerDragExit;                                 // 0x01F0(0x0018)(Deprecated, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerDragDrop;                                 // 0x0208(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerScroll;                                   // 0x0220(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerSelect;                                   // 0x0238(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	struct FLGUIDrawableEvent                     OnPointerDeselect;                                 // 0x0250(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_268[0x120];                                    // 0x0268(0x0120)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static void SetDelegateForHelpClick(const TDelegate<void(int32 helpGroupId)>& delegateObj);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerBeginDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerClick(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerDeselect(const TDelegate<void(class ULGUIBaseEventData* eventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerDown(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerDragDrop(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerDragEnter(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerDragExit(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerEndDrag(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerEnter(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerExit(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerScroll(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerSelect(const TDelegate<void(class ULGUIBaseEventData* eventData)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterOnPointerUp(const TDelegate<void(class ULGUIPointerEventData* pointerEventData)>& InDelegate);
+	void UnregisterOnPointerBeginDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerClick(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerDeselect(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerDown(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerDragDrop(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerDragEnter(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerDragExit(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerEndDrag(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerEnter(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerExit(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerScroll(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerSelect(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterOnPointerUp(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIExtendButtonComponent">();
+		return StaticClassImpl<"UIEventTriggerComponent">();
 	}
-	static class UUIExtendButtonComponent* GetDefaultObj()
+	static class UUIEventTriggerComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIExtendButtonComponent>();
+		return GetDefaultObjImpl<UUIEventTriggerComponent>();
 	}
 };
-static_assert(alignof(UUIExtendButtonComponent) == 0x000008, "Wrong alignment on UUIExtendButtonComponent");
-static_assert(sizeof(UUIExtendButtonComponent) == 0x000688, "Wrong size on UUIExtendButtonComponent");
-static_assert(offsetof(UUIExtendButtonComponent, HelpGroupId) == 0x000680, "Member 'UUIExtendButtonComponent::HelpGroupId' has a wrong offset!");
+static_assert(alignof(UUIEventTriggerComponent) == 0x000008, "Wrong alignment on UUIEventTriggerComponent");
+static_assert(sizeof(UUIEventTriggerComponent) == 0x000388, "Wrong size on UUIEventTriggerComponent");
+static_assert(offsetof(UUIEventTriggerComponent, AllowEventBubbleUp) == 0x0000F8, "Member 'UUIEventTriggerComponent::AllowEventBubbleUp' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerEnter) == 0x000100, "Member 'UUIEventTriggerComponent::OnPointerEnter' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerExit) == 0x000118, "Member 'UUIEventTriggerComponent::OnPointerExit' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerDown) == 0x000130, "Member 'UUIEventTriggerComponent::OnPointerDown' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerUp) == 0x000148, "Member 'UUIEventTriggerComponent::OnPointerUp' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerCancel) == 0x000160, "Member 'UUIEventTriggerComponent::OnPointerCancel' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerClick) == 0x000178, "Member 'UUIEventTriggerComponent::OnPointerClick' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerBeginDrag) == 0x000190, "Member 'UUIEventTriggerComponent::OnPointerBeginDrag' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerDrag) == 0x0001A8, "Member 'UUIEventTriggerComponent::OnPointerDrag' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerEndDrag) == 0x0001C0, "Member 'UUIEventTriggerComponent::OnPointerEndDrag' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerDragEnter) == 0x0001D8, "Member 'UUIEventTriggerComponent::OnPointerDragEnter' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerDragExit) == 0x0001F0, "Member 'UUIEventTriggerComponent::OnPointerDragExit' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerDragDrop) == 0x000208, "Member 'UUIEventTriggerComponent::OnPointerDragDrop' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerScroll) == 0x000220, "Member 'UUIEventTriggerComponent::OnPointerScroll' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerSelect) == 0x000238, "Member 'UUIEventTriggerComponent::OnPointerSelect' has a wrong offset!");
+static_assert(offsetof(UUIEventTriggerComponent, OnPointerDeselect) == 0x000250, "Member 'UUIEventTriggerComponent::OnPointerDeselect' has a wrong offset!");
 
-// Class LGUI.UIExtendToggle
-// 0x0480 (0x0878 - 0x03F8)
-class UUIExtendToggle final : public UUISelectableComponent
+// Class LGUI.UIExtendToggleGroup
+// 0x0048 (0x0108 - 0x00C0)
+class UUIExtendToggleGroup final : public UActorComponent
 {
 public:
-	uint8                                         Pad_3F8[0x10];                                     // 0x03F8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(EToggleState State)> OnStateChange;                                     // 0x0408(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_418[0x10];                                     // 0x0418(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             CanExecuteChange;                                  // 0x0428(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnHover;                                           // 0x0450(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnUnHover;                                         // 0x0460(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnUndeterminedClicked;                             // 0x0470(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& eventName)> OnPostAudioEvent;                                  // 0x0480(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TMap<EToggleAudioTransitionState, struct FSoftObjectPath> AudioConfig;                                       // 0x04A8(0x0050)(Edit, NativeAccessSpecifierPublic)
-	bool                                          bIgnoreSelectedHover;                              // 0x04F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4F9[0x7];                                      // 0x04F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftObjectPath                        LongPressAudioEvent;                               // 0x0500(0x0020)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(EToggleAudioTransitionState State, const class FString& EventName)> OnPostAudioStateEvent;                             // 0x0520(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(EToggleState State)>           OnPointEnterCallBack;                              // 0x0548(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(EToggleState State)>           OnPointExitCallBack;                               // 0x0570(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(EToggleState State)>           OnPointDownCallBack;                               // 0x0598(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(EToggleState State)>           OnPointUpCallBack;                                 // 0x05C0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(EToggleState State)>           OnPointCancelCallBack;                             // 0x05E8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerBeginDragCallBack;                        // 0x0610(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerDragCallBack;                             // 0x0638(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(class ULGUIPointerEventData* eventData)> OnPointerEndDragCallBack;                          // 0x0660(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	EToggleState                                  ToggleState;                                       // 0x0688(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_689[0x3];                                      // 0x0689(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class AActor>                  ToggleGroupActor;                                  // 0x068C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bToggleOnSelect;                                   // 0x0694(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bLockStateOnSelect;                                // 0x0695(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bCheckToggleSelected;                              // 0x0696(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_697[0x1];                                      // 0x0697(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EToggleAnimationType, struct FToggleAnimationPlayInfo> ToggleAnimations;                                  // 0x0698(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	TMap<EUISelectableInteractionState, struct FToggleStateAnimation> InteractiveAnimations;                             // 0x06E8(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	TMap<EToggleStateSwitch, struct FToggleAnimationPlayInfo> StateSwitchAnimations;                             // 0x0738(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_788[0xF0];                                     // 0x0788(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class UUIExtendToggle* Toggle)> OnToggleGroupActivationChanged;    // 0x00C8(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	bool                                          bGroupToggleOnSelect;                              // 0x00D8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D9[0xF];                                       // 0x00D9(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TWeakObjectPtr<class UUIExtendToggle>> ToggleCollection;                                  // 0x00E8(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	bool                                          bAllowNoneSelect;                                  // 0x00F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bEnable;                                           // 0x00F9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_FA[0xE];                                       // 0x00FA(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetAllTransitionsEnable(bool bIsEnable);
-	void SetToggleGroup(class AActor* TogGroupActor);
-	EToggleChangeStateResult SetToggleState(EToggleState State, bool bFireEvent);
-	void SetToggleStateForce(EToggleState State, bool bFireEvent, bool bIngnoreAnim);
+	static void BindOnExtendToggleGroupActive(const TDelegate<void(class UUIExtendToggleGroup* ExtendToggleGroup, bool bCreate)>& Delegate);
+	static void UnBindOnExtendToggleGroupActive();
 
-	class UUIExtendToggleGroup* GetToggleGroup() const;
-	EToggleState GetToggleState() const;
+	bool GetAllowNoneSelect();
+	void SetAllowNoneSelect(bool bAllowNoneSelection);
+	void SetGroupEnable(bool bInEnable);
+
+	class UUIExtendToggle* GetCurSelection() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIExtendToggle">();
+		return StaticClassImpl<"UIExtendToggleGroup">();
 	}
-	static class UUIExtendToggle* GetDefaultObj()
+	static class UUIExtendToggleGroup* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIExtendToggle>();
+		return GetDefaultObjImpl<UUIExtendToggleGroup>();
 	}
 };
-static_assert(alignof(UUIExtendToggle) == 0x000008, "Wrong alignment on UUIExtendToggle");
-static_assert(sizeof(UUIExtendToggle) == 0x000878, "Wrong size on UUIExtendToggle");
-static_assert(offsetof(UUIExtendToggle, OnStateChange) == 0x000408, "Member 'UUIExtendToggle::OnStateChange' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, CanExecuteChange) == 0x000428, "Member 'UUIExtendToggle::CanExecuteChange' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnHover) == 0x000450, "Member 'UUIExtendToggle::OnHover' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnUnHover) == 0x000460, "Member 'UUIExtendToggle::OnUnHover' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnUndeterminedClicked) == 0x000470, "Member 'UUIExtendToggle::OnUndeterminedClicked' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPostAudioEvent) == 0x000480, "Member 'UUIExtendToggle::OnPostAudioEvent' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, AudioConfig) == 0x0004A8, "Member 'UUIExtendToggle::AudioConfig' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, bIgnoreSelectedHover) == 0x0004F8, "Member 'UUIExtendToggle::bIgnoreSelectedHover' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, LongPressAudioEvent) == 0x000500, "Member 'UUIExtendToggle::LongPressAudioEvent' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPostAudioStateEvent) == 0x000520, "Member 'UUIExtendToggle::OnPostAudioStateEvent' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPointEnterCallBack) == 0x000548, "Member 'UUIExtendToggle::OnPointEnterCallBack' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPointExitCallBack) == 0x000570, "Member 'UUIExtendToggle::OnPointExitCallBack' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPointDownCallBack) == 0x000598, "Member 'UUIExtendToggle::OnPointDownCallBack' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPointUpCallBack) == 0x0005C0, "Member 'UUIExtendToggle::OnPointUpCallBack' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPointCancelCallBack) == 0x0005E8, "Member 'UUIExtendToggle::OnPointCancelCallBack' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPointerBeginDragCallBack) == 0x000610, "Member 'UUIExtendToggle::OnPointerBeginDragCallBack' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPointerDragCallBack) == 0x000638, "Member 'UUIExtendToggle::OnPointerDragCallBack' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, OnPointerEndDragCallBack) == 0x000660, "Member 'UUIExtendToggle::OnPointerEndDragCallBack' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, ToggleState) == 0x000688, "Member 'UUIExtendToggle::ToggleState' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, ToggleGroupActor) == 0x00068C, "Member 'UUIExtendToggle::ToggleGroupActor' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, bToggleOnSelect) == 0x000694, "Member 'UUIExtendToggle::bToggleOnSelect' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, bLockStateOnSelect) == 0x000695, "Member 'UUIExtendToggle::bLockStateOnSelect' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, bCheckToggleSelected) == 0x000696, "Member 'UUIExtendToggle::bCheckToggleSelected' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, ToggleAnimations) == 0x000698, "Member 'UUIExtendToggle::ToggleAnimations' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, InteractiveAnimations) == 0x0006E8, "Member 'UUIExtendToggle::InteractiveAnimations' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggle, StateSwitchAnimations) == 0x000738, "Member 'UUIExtendToggle::StateSwitchAnimations' has a wrong offset!");
+static_assert(alignof(UUIExtendToggleGroup) == 0x000008, "Wrong alignment on UUIExtendToggleGroup");
+static_assert(sizeof(UUIExtendToggleGroup) == 0x000108, "Wrong size on UUIExtendToggleGroup");
+static_assert(offsetof(UUIExtendToggleGroup, OnToggleGroupActivationChanged) == 0x0000C8, "Member 'UUIExtendToggleGroup::OnToggleGroupActivationChanged' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggleGroup, bGroupToggleOnSelect) == 0x0000D8, "Member 'UUIExtendToggleGroup::bGroupToggleOnSelect' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggleGroup, ToggleCollection) == 0x0000E8, "Member 'UUIExtendToggleGroup::ToggleCollection' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggleGroup, bAllowNoneSelect) == 0x0000F8, "Member 'UUIExtendToggleGroup::bAllowNoneSelect' has a wrong offset!");
+static_assert(offsetof(UUIExtendToggleGroup, bEnable) == 0x0000F9, "Member 'UUIExtendToggleGroup::bEnable' has a wrong offset!");
 
 // Class LGUI.UIExtendToggleSpriteTransition
 // 0x01A8 (0x02E8 - 0x0140)
@@ -7300,37 +7240,26 @@ static_assert(offsetof(UUIExtendToggleSpriteTransition, TransitionType) == 0x000
 static_assert(offsetof(UUIExtendToggleSpriteTransition, TransitionColors) == 0x000144, "Member 'UUIExtendToggleSpriteTransition::TransitionColors' has a wrong offset!");
 static_assert(offsetof(UUIExtendToggleSpriteTransition, TransitionState) == 0x000170, "Member 'UUIExtendToggleSpriteTransition::TransitionState' has a wrong offset!");
 
-// Class LGUI.UIExtendToggleTextureTransition
-// 0x01A8 (0x02E8 - 0x0140)
-class UUIExtendToggleTextureTransition final : public UUIExtendToggleTransitionBase
+// Class LGUI.UIExtendToggleTextTransition
+// 0x0070 (0x01B0 - 0x0140)
+class UUIExtendToggleTextTransition final : public UUIExtendToggleTransitionBase
 {
 public:
-	ETextureTransitionType                        TransitionType;                                    // 0x0140(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FExtendToggleColorTransition           TransitionColors;                                  // 0x0144(0x0028)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FExtendToggleTextureTransitionState    TransitionState;                                   // 0x0170(0x0128)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_298[0x50];                                     // 0x0298(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetAllTransitionStateTexture(class UTexture* Texture);
-	void SetTargetStateTexture(EToggleTransitionState State, class UTexture* Texture, bool ForceNoTriggerOnChange);
+	struct FExtendToggleTextTransitionState       TransitionState;                                   // 0x0140(0x0070)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIExtendToggleTextureTransition">();
+		return StaticClassImpl<"UIExtendToggleTextTransition">();
 	}
-	static class UUIExtendToggleTextureTransition* GetDefaultObj()
+	static class UUIExtendToggleTextTransition* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIExtendToggleTextureTransition>();
+		return GetDefaultObjImpl<UUIExtendToggleTextTransition>();
 	}
 };
-static_assert(alignof(UUIExtendToggleTextureTransition) == 0x000008, "Wrong alignment on UUIExtendToggleTextureTransition");
-static_assert(sizeof(UUIExtendToggleTextureTransition) == 0x0002E8, "Wrong size on UUIExtendToggleTextureTransition");
-static_assert(offsetof(UUIExtendToggleTextureTransition, TransitionType) == 0x000140, "Member 'UUIExtendToggleTextureTransition::TransitionType' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggleTextureTransition, TransitionColors) == 0x000144, "Member 'UUIExtendToggleTextureTransition::TransitionColors' has a wrong offset!");
-static_assert(offsetof(UUIExtendToggleTextureTransition, TransitionState) == 0x000170, "Member 'UUIExtendToggleTextureTransition::TransitionState' has a wrong offset!");
+static_assert(alignof(UUIExtendToggleTextTransition) == 0x000008, "Wrong alignment on UUIExtendToggleTextTransition");
+static_assert(sizeof(UUIExtendToggleTextTransition) == 0x0001B0, "Wrong size on UUIExtendToggleTextTransition");
+static_assert(offsetof(UUIExtendToggleTextTransition, TransitionState) == 0x000140, "Member 'UUIExtendToggleTextTransition::TransitionState' has a wrong offset!");
 
 // Class LGUI.UIFlyoutMenu
 // 0x0038 (0x00F8 - 0x00C0)
@@ -7362,1020 +7291,1225 @@ static_assert(offsetof(UUIFlyoutMenu, _RootUIActor) == 0x0000C8, "Member 'UUIFly
 static_assert(offsetof(UUIFlyoutMenu, _SrcItemActor) == 0x0000D0, "Member 'UUIFlyoutMenu::_SrcItemActor' has a wrong offset!");
 static_assert(offsetof(UUIFlyoutMenu, _CreatedItemArray) == 0x0000D8, "Member 'UUIFlyoutMenu::_CreatedItemArray' has a wrong offset!");
 
-// Class LGUI.UIFlyoutMenuItem
-// 0x0030 (0x00F0 - 0x00C0)
-class UUIFlyoutMenuItem final : public UActorComponent
+// Class LGUI.UIForcesCursor
+// 0x00F0 (0x0310 - 0x0220)
+class UUIForcesCursor final : public USceneComponent
 {
 public:
-	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AUIBaseActor*                           _RootUIActor;                                      // 0x00C8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AUITextActor*                           _TextActor;                                        // 0x00D0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AUISpriteActor*                         _HighlightSpriteActor;                             // 0x00D8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_E0[0x10];                                      // 0x00E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          IsOrthographic;                                    // 0x0218(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_219[0x3];                                      // 0x0219(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ScreenSizeX;                                       // 0x021C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ScreenSizeY;                                       // 0x0220(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               RotatorInfo;                                       // 0x0224(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                MoveVector;                                        // 0x0230(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OriginPos;                                         // 0x023C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FrameStepping;                                     // 0x0248(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAngleX;                                         // 0x024C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAngleY;                                         // 0x0250(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MouseX;                                            // 0x0254(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MouseY;                                            // 0x0258(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                OffsetVector;                                      // 0x025C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AroundPoint;                                       // 0x0268(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GamepadRightX;                                     // 0x0274(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GamepadRightY;                                     // 0x0278(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Tilt;                                              // 0x027C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Gravity;                                           // 0x0288(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                RotationRate;                                      // 0x0294(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Acceleration;                                      // 0x02A0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2AC[0x64];                                     // 0x02AC(0x0064)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIFlyoutMenuItem">();
+		return StaticClassImpl<"UIForcesCursor">();
 	}
-	static class UUIFlyoutMenuItem* GetDefaultObj()
+	static class UUIForcesCursor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIFlyoutMenuItem>();
+		return GetDefaultObjImpl<UUIForcesCursor>();
 	}
 };
-static_assert(alignof(UUIFlyoutMenuItem) == 0x000008, "Wrong alignment on UUIFlyoutMenuItem");
-static_assert(sizeof(UUIFlyoutMenuItem) == 0x0000F0, "Wrong size on UUIFlyoutMenuItem");
-static_assert(offsetof(UUIFlyoutMenuItem, _RootUIActor) == 0x0000C8, "Member 'UUIFlyoutMenuItem::_RootUIActor' has a wrong offset!");
-static_assert(offsetof(UUIFlyoutMenuItem, _TextActor) == 0x0000D0, "Member 'UUIFlyoutMenuItem::_TextActor' has a wrong offset!");
-static_assert(offsetof(UUIFlyoutMenuItem, _HighlightSpriteActor) == 0x0000D8, "Member 'UUIFlyoutMenuItem::_HighlightSpriteActor' has a wrong offset!");
+static_assert(alignof(UUIForcesCursor) == 0x000010, "Wrong alignment on UUIForcesCursor");
+static_assert(sizeof(UUIForcesCursor) == 0x000310, "Wrong size on UUIForcesCursor");
+static_assert(offsetof(UUIForcesCursor, IsOrthographic) == 0x000218, "Member 'UUIForcesCursor::IsOrthographic' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, ScreenSizeX) == 0x00021C, "Member 'UUIForcesCursor::ScreenSizeX' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, ScreenSizeY) == 0x000220, "Member 'UUIForcesCursor::ScreenSizeY' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, RotatorInfo) == 0x000224, "Member 'UUIForcesCursor::RotatorInfo' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, MoveVector) == 0x000230, "Member 'UUIForcesCursor::MoveVector' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, OriginPos) == 0x00023C, "Member 'UUIForcesCursor::OriginPos' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, FrameStepping) == 0x000248, "Member 'UUIForcesCursor::FrameStepping' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, MaxAngleX) == 0x00024C, "Member 'UUIForcesCursor::MaxAngleX' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, MaxAngleY) == 0x000250, "Member 'UUIForcesCursor::MaxAngleY' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, MouseX) == 0x000254, "Member 'UUIForcesCursor::MouseX' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, MouseY) == 0x000258, "Member 'UUIForcesCursor::MouseY' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, OffsetVector) == 0x00025C, "Member 'UUIForcesCursor::OffsetVector' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, AroundPoint) == 0x000268, "Member 'UUIForcesCursor::AroundPoint' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, GamepadRightX) == 0x000274, "Member 'UUIForcesCursor::GamepadRightX' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, GamepadRightY) == 0x000278, "Member 'UUIForcesCursor::GamepadRightY' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, Tilt) == 0x00027C, "Member 'UUIForcesCursor::Tilt' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, Gravity) == 0x000288, "Member 'UUIForcesCursor::Gravity' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, RotationRate) == 0x000294, "Member 'UUIForcesCursor::RotationRate' has a wrong offset!");
+static_assert(offsetof(UUIForcesCursor, Acceleration) == 0x0002A0, "Member 'UUIForcesCursor::Acceleration' has a wrong offset!");
 
-// Class LGUI.UIFrameAnimController
-// 0x0030 (0x0130 - 0x0100)
-class UUIFrameAnimController final : public ULGUIBehaviour
-{
-public:
-	float                                         FrameInterval;                                     // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUseCustomFrameCount;                              // 0x0104(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_105[0x3];                                      // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         BeginFrame;                                        // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         CustomFrameCount;                                  // 0x010C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_110[0x20];                                     // 0x0110(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void Pause();
-	void Play(bool bLooping);
-	void Resume();
-	void Stop();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIFrameAnimController">();
-	}
-	static class UUIFrameAnimController* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIFrameAnimController>();
-	}
-};
-static_assert(alignof(UUIFrameAnimController) == 0x000008, "Wrong alignment on UUIFrameAnimController");
-static_assert(sizeof(UUIFrameAnimController) == 0x000130, "Wrong size on UUIFrameAnimController");
-static_assert(offsetof(UUIFrameAnimController, FrameInterval) == 0x000100, "Member 'UUIFrameAnimController::FrameInterval' has a wrong offset!");
-static_assert(offsetof(UUIFrameAnimController, bUseCustomFrameCount) == 0x000104, "Member 'UUIFrameAnimController::bUseCustomFrameCount' has a wrong offset!");
-static_assert(offsetof(UUIFrameAnimController, BeginFrame) == 0x000108, "Member 'UUIFrameAnimController::BeginFrame' has a wrong offset!");
-static_assert(offsetof(UUIFrameAnimController, CustomFrameCount) == 0x00010C, "Member 'UUIFrameAnimController::CustomFrameCount' has a wrong offset!");
-
-// Class LGUI.UIHorizontalLayout
+// Class LGUI.UIGridLayout
 // 0x0038 (0x01C8 - 0x0190)
-class UUIHorizontalLayout final : public UUILayoutWithAnimation
+class UUIGridLayout final : public UUILayoutWithAnimation
 {
 public:
 	struct FMargin                                Padding;                                           // 0x0190(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	float                                         Spacing;                                           // 0x01A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ELGUILayoutAlignmentType                      Align;                                             // 0x01A4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ExpendChildrenWidth;                               // 0x01A5(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bControlWidthCalculatedScale;                      // 0x01A6(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ExpendChildrenHeight;                              // 0x01A7(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bControlHeightCalculatedScale;                     // 0x01A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          WidthFitToChildren;                                // 0x01A9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          HeightFitToChildren;                               // 0x01AA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1AB[0x1D];                                     // 0x01AB(0x001D)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              Spacing;                                           // 0x01A0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ELGUILayoutAlignmentType                      Align;                                             // 0x01A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          LastLineCanAlign;                                  // 0x01A9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          HorizontalOrVertical;                              // 0x01AA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          DependOnSizeOrCount;                               // 0x01AB(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          ExpendChildSize;                                   // 0x01AC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              CellSize;                                          // 0x01B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint32                                        LineCount;                                         // 0x01B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          WidthFitToChildren;                                // 0x01BC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          HeightFitToChildren;                               // 0x01BD(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EGridFitType                                  FitType;                                           // 0x01BE(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1BF[0x9];                                      // 0x01BF(0x0009)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetAlign(ELGUILayoutAlignmentType value);
-	void SetExpendChildrenHeight(bool value);
-	void SetExpendChildrenWidth(bool value);
+	void SetCellSize(const struct FVector2D& value);
+	void SetDependOnSizeOrCount(bool value);
+	void SetExpendChildSize(bool value);
 	void SetHeightFitToChildren(bool value);
+	void SetHorizontalOrVertical(bool value);
+	void SetLastLineCanAlign(bool value);
+	void SetLineCount(int32 value);
+	void SetMaxItemCountInOneLine(int32 value);
 	void SetPadding(const struct FMargin& value);
-	void SetSpacing(float value);
+	void SetSpacing(const struct FVector2D& value);
 	void SetWidthFitToChildren(bool value);
 
-	float GetActuralRange() const;
+	struct FVector2D GetActuralRange() const;
 	ELGUILayoutAlignmentType GetAlign() const;
-	bool GetExpendChildrenHeight() const;
-	bool GetExpendChildrenWidth() const;
+	struct FVector2D GetCellSize() const;
+	bool GetDependOnSizeOrCount() const;
+	bool GetExpendChildSize() const;
 	bool GetHeightFitToChildren() const;
+	bool GetHorizontalOrVertical() const;
+	bool GetLastLineCanAlign() const;
+	int32 GetLineCount() const;
+	int32 GetMaxItemCountInOneLine() const;
 	struct FMargin GetPadding() const;
-	float GetSpacing() const;
+	struct FVector2D GetSpacing() const;
 	bool GetWidthFitToChildren() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIHorizontalLayout">();
+		return StaticClassImpl<"UIGridLayout">();
 	}
-	static class UUIHorizontalLayout* GetDefaultObj()
+	static class UUIGridLayout* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIHorizontalLayout>();
+		return GetDefaultObjImpl<UUIGridLayout>();
 	}
 };
-static_assert(alignof(UUIHorizontalLayout) == 0x000008, "Wrong alignment on UUIHorizontalLayout");
-static_assert(sizeof(UUIHorizontalLayout) == 0x0001C8, "Wrong size on UUIHorizontalLayout");
-static_assert(offsetof(UUIHorizontalLayout, Padding) == 0x000190, "Member 'UUIHorizontalLayout::Padding' has a wrong offset!");
-static_assert(offsetof(UUIHorizontalLayout, Spacing) == 0x0001A0, "Member 'UUIHorizontalLayout::Spacing' has a wrong offset!");
-static_assert(offsetof(UUIHorizontalLayout, Align) == 0x0001A4, "Member 'UUIHorizontalLayout::Align' has a wrong offset!");
-static_assert(offsetof(UUIHorizontalLayout, ExpendChildrenWidth) == 0x0001A5, "Member 'UUIHorizontalLayout::ExpendChildrenWidth' has a wrong offset!");
-static_assert(offsetof(UUIHorizontalLayout, bControlWidthCalculatedScale) == 0x0001A6, "Member 'UUIHorizontalLayout::bControlWidthCalculatedScale' has a wrong offset!");
-static_assert(offsetof(UUIHorizontalLayout, ExpendChildrenHeight) == 0x0001A7, "Member 'UUIHorizontalLayout::ExpendChildrenHeight' has a wrong offset!");
-static_assert(offsetof(UUIHorizontalLayout, bControlHeightCalculatedScale) == 0x0001A8, "Member 'UUIHorizontalLayout::bControlHeightCalculatedScale' has a wrong offset!");
-static_assert(offsetof(UUIHorizontalLayout, WidthFitToChildren) == 0x0001A9, "Member 'UUIHorizontalLayout::WidthFitToChildren' has a wrong offset!");
-static_assert(offsetof(UUIHorizontalLayout, HeightFitToChildren) == 0x0001AA, "Member 'UUIHorizontalLayout::HeightFitToChildren' has a wrong offset!");
+static_assert(alignof(UUIGridLayout) == 0x000008, "Wrong alignment on UUIGridLayout");
+static_assert(sizeof(UUIGridLayout) == 0x0001C8, "Wrong size on UUIGridLayout");
+static_assert(offsetof(UUIGridLayout, Padding) == 0x000190, "Member 'UUIGridLayout::Padding' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, Spacing) == 0x0001A0, "Member 'UUIGridLayout::Spacing' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, Align) == 0x0001A8, "Member 'UUIGridLayout::Align' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, LastLineCanAlign) == 0x0001A9, "Member 'UUIGridLayout::LastLineCanAlign' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, HorizontalOrVertical) == 0x0001AA, "Member 'UUIGridLayout::HorizontalOrVertical' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, DependOnSizeOrCount) == 0x0001AB, "Member 'UUIGridLayout::DependOnSizeOrCount' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, ExpendChildSize) == 0x0001AC, "Member 'UUIGridLayout::ExpendChildSize' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, CellSize) == 0x0001B0, "Member 'UUIGridLayout::CellSize' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, LineCount) == 0x0001B8, "Member 'UUIGridLayout::LineCount' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, WidthFitToChildren) == 0x0001BC, "Member 'UUIGridLayout::WidthFitToChildren' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, HeightFitToChildren) == 0x0001BD, "Member 'UUIGridLayout::HeightFitToChildren' has a wrong offset!");
+static_assert(offsetof(UUIGridLayout, FitType) == 0x0001BE, "Member 'UUIGridLayout::FitType' has a wrong offset!");
 
-// Class LGUI.UIInteractionGroup
-// 0x0010 (0x00D0 - 0x00C0)
-class UUIInteractionGroup final : public UActorComponent
+// Class LGUI.UIInputAdaptZone
+// 0x0030 (0x0130 - 0x0100)
+class UUIInputAdaptZone final : public ULGUIBehaviour
 {
 public:
-	bool                                          bInteractable;                                     // 0x00C0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIgnoreParentGroup;                                // 0x00C1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUIItem*                                CacheUIItem;                                       // 0x00C8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FMargin                                AdaptMargin;                                       // 0x0100(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_110[0x18];                                     // 0x0110(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bMouseKeyboardAdapt;                               // 0x0128(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bGamepadAdapt;                                     // 0x0129(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_12A[0x6];                                      // 0x012A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetIgnoreParentGroup(bool value);
-	void SetInteractable(bool value);
-
-	bool GetIgnoreParentGroup() const;
-	bool GetInteractable() const;
+	void OnMouseMoved(float Value);
+	void OnPressAnyKey(const struct FKey& Key);
+	void OnTouchBegin(ETouchIndex TouchIndex, const struct FVector& Location);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIInteractionGroup">();
+		return StaticClassImpl<"UIInputAdaptZone">();
 	}
-	static class UUIInteractionGroup* GetDefaultObj()
+	static class UUIInputAdaptZone* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIInteractionGroup>();
+		return GetDefaultObjImpl<UUIInputAdaptZone>();
 	}
 };
-static_assert(alignof(UUIInteractionGroup) == 0x000008, "Wrong alignment on UUIInteractionGroup");
-static_assert(sizeof(UUIInteractionGroup) == 0x0000D0, "Wrong size on UUIInteractionGroup");
-static_assert(offsetof(UUIInteractionGroup, bInteractable) == 0x0000C0, "Member 'UUIInteractionGroup::bInteractable' has a wrong offset!");
-static_assert(offsetof(UUIInteractionGroup, bIgnoreParentGroup) == 0x0000C1, "Member 'UUIInteractionGroup::bIgnoreParentGroup' has a wrong offset!");
-static_assert(offsetof(UUIInteractionGroup, CacheUIItem) == 0x0000C8, "Member 'UUIInteractionGroup::CacheUIItem' has a wrong offset!");
+static_assert(alignof(UUIInputAdaptZone) == 0x000008, "Wrong alignment on UUIInputAdaptZone");
+static_assert(sizeof(UUIInputAdaptZone) == 0x000130, "Wrong size on UUIInputAdaptZone");
+static_assert(offsetof(UUIInputAdaptZone, AdaptMargin) == 0x000100, "Member 'UUIInputAdaptZone::AdaptMargin' has a wrong offset!");
+static_assert(offsetof(UUIInputAdaptZone, bMouseKeyboardAdapt) == 0x000128, "Member 'UUIInputAdaptZone::bMouseKeyboardAdapt' has a wrong offset!");
+static_assert(offsetof(UUIInputAdaptZone, bGamepadAdapt) == 0x000129, "Member 'UUIInputAdaptZone::bGamepadAdapt' has a wrong offset!");
 
-// Class LGUI.UIItemEditorHelperComp
-// 0x0010 (0x0510 - 0x0500)
-class UUIItemEditorHelperComp final : public UPrimitiveComponent
+// Class LGUI.UIInturnAnimController
+// 0x0088 (0x0148 - 0x00C0)
+class UUIInturnAnimController final : public UActorComponent
 {
 public:
-	class UUIItem*                                Parent;                                            // 0x0500(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBodySetup*                             BodySetup;                                         // 0x0508(0x0008)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnFinish;                                          // 0x00C0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	class FString                                 AnimName;                                          // 0x00E8(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         StartTime;                                         // 0x00F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bPlayInSameTime;                                   // 0x00FC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_FD[0x3];                                       // 0x00FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Interval;                                          // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         CustomAnimDuration;                                // 0x0104(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bItemDefaultActive;                                // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bItemDefaultAlphaZero;                             // 0x0109(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_10A[0x2];                                      // 0x010A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PlayFromIndex;                                     // 0x010C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_110[0x38];                                     // 0x0110(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnItemAnimFinish();
+	void Play(const class FString& NewAnimName, int32 AssignNum, bool bIsScrollViewItem);
+	void PlayInEditor();
+	void PlayWithActors(const TArray<TWeakObjectPtr<class AUIBaseActor>>& SpecChildren, const class FString& NewAnimName);
+	void PlayWithItems(const TArray<class UUIItem*>& SpecChildren, const class FString& NewAnimName);
+	void SetItemDefaultAlphaZero(bool IsItemDefaultAlphaZero);
+	void Stop();
+
+	bool GetItemDefaultAlphaZero() const;
+	bool IsPlaying() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIItemEditorHelperComp">();
+		return StaticClassImpl<"UIInturnAnimController">();
 	}
-	static class UUIItemEditorHelperComp* GetDefaultObj()
+	static class UUIInturnAnimController* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIItemEditorHelperComp>();
+		return GetDefaultObjImpl<UUIInturnAnimController>();
 	}
 };
-static_assert(alignof(UUIItemEditorHelperComp) == 0x000010, "Wrong alignment on UUIItemEditorHelperComp");
-static_assert(sizeof(UUIItemEditorHelperComp) == 0x000510, "Wrong size on UUIItemEditorHelperComp");
-static_assert(offsetof(UUIItemEditorHelperComp, Parent) == 0x000500, "Member 'UUIItemEditorHelperComp::Parent' has a wrong offset!");
-static_assert(offsetof(UUIItemEditorHelperComp, BodySetup) == 0x000508, "Member 'UUIItemEditorHelperComp::BodySetup' has a wrong offset!");
+static_assert(alignof(UUIInturnAnimController) == 0x000008, "Wrong alignment on UUIInturnAnimController");
+static_assert(sizeof(UUIInturnAnimController) == 0x000148, "Wrong size on UUIInturnAnimController");
+static_assert(offsetof(UUIInturnAnimController, OnFinish) == 0x0000C0, "Member 'UUIInturnAnimController::OnFinish' has a wrong offset!");
+static_assert(offsetof(UUIInturnAnimController, AnimName) == 0x0000E8, "Member 'UUIInturnAnimController::AnimName' has a wrong offset!");
+static_assert(offsetof(UUIInturnAnimController, StartTime) == 0x0000F8, "Member 'UUIInturnAnimController::StartTime' has a wrong offset!");
+static_assert(offsetof(UUIInturnAnimController, bPlayInSameTime) == 0x0000FC, "Member 'UUIInturnAnimController::bPlayInSameTime' has a wrong offset!");
+static_assert(offsetof(UUIInturnAnimController, Interval) == 0x000100, "Member 'UUIInturnAnimController::Interval' has a wrong offset!");
+static_assert(offsetof(UUIInturnAnimController, CustomAnimDuration) == 0x000104, "Member 'UUIInturnAnimController::CustomAnimDuration' has a wrong offset!");
+static_assert(offsetof(UUIInturnAnimController, bItemDefaultActive) == 0x000108, "Member 'UUIInturnAnimController::bItemDefaultActive' has a wrong offset!");
+static_assert(offsetof(UUIInturnAnimController, bItemDefaultAlphaZero) == 0x000109, "Member 'UUIInturnAnimController::bItemDefaultAlphaZero' has a wrong offset!");
+static_assert(offsetof(UUIInturnAnimController, PlayFromIndex) == 0x00010C, "Member 'UUIInturnAnimController::PlayFromIndex' has a wrong offset!");
 
-// Class LGUI.UILayoutInterface
-// 0x0000 (0x0030 - 0x0030)
-class IUILayoutInterface final : public IInterface
+// Class LGUI.UILayoutElement
+// 0x0018 (0x0118 - 0x0100)
+class UUILayoutElement final : public ULGUIBehaviour
 {
 public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UILayoutInterface">();
-	}
-	static class IUILayoutInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IUILayoutInterface>();
-	}
-};
-static_assert(alignof(IUILayoutInterface) == 0x000008, "Wrong alignment on IUILayoutInterface");
-static_assert(sizeof(IUILayoutInterface) == 0x000030, "Wrong size on IUILayoutInterface");
-
-// Class LGUI.UIMultiTemplateLayout
-// 0x0040 (0x01D0 - 0x0190)
-class UUIMultiTemplateLayout final : public UUILayoutWithAnimation
-{
-public:
-	ELGUILayoutDirectionType                      DirectionType;                                     // 0x0190(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_191[0x3];                                      // 0x0191(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMargin                                Padding;                                           // 0x0194(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FVector2D                              Spacing;                                           // 0x01A4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          SizeFitToChildren;                                 // 0x01AC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bAutoAdjustScale;                                  // 0x01AD(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1AE[0x22];                                     // 0x01AE(0x0022)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UUILayoutBase*                          ParentLayout;                                      // 0x0100(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	ELayoutElementType                            LayoutElementType;                                 // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ConstantSize;                                      // 0x010C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         RatioSize;                                         // 0x0110(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetAutoAdjustScale(bool Value);
-	void SetDirectionType(ELGUILayoutDirectionType NewDirectionType);
-	void SetPadding(const struct FMargin& value);
-	void SetSizeFitToChildren(bool Value);
-	void SetSpacing(const struct FVector2D& value);
+	void SetConstantSize(float value);
+	void SetLayoutType(ELayoutElementType InType);
+	void SetRatioSize(float value);
 
-	bool GetAutoAdjustScale() const;
-	ELGUILayoutDirectionType GetDirectionType() const;
-	struct FMargin GetPadding() const;
-	bool GetSizeFitToChildren() const;
-	struct FVector2D GetSpacing() const;
+	float GetConstantSize() const;
+	bool GetIgnoreLayout() const;
+	ELayoutElementType GetLayoutType() const;
+	float GetRatioSize() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIMultiTemplateLayout">();
+		return StaticClassImpl<"UILayoutElement">();
 	}
-	static class UUIMultiTemplateLayout* GetDefaultObj()
+	static class UUILayoutElement* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIMultiTemplateLayout>();
+		return GetDefaultObjImpl<UUILayoutElement>();
 	}
 };
-static_assert(alignof(UUIMultiTemplateLayout) == 0x000008, "Wrong alignment on UUIMultiTemplateLayout");
-static_assert(sizeof(UUIMultiTemplateLayout) == 0x0001D0, "Wrong size on UUIMultiTemplateLayout");
-static_assert(offsetof(UUIMultiTemplateLayout, DirectionType) == 0x000190, "Member 'UUIMultiTemplateLayout::DirectionType' has a wrong offset!");
-static_assert(offsetof(UUIMultiTemplateLayout, Padding) == 0x000194, "Member 'UUIMultiTemplateLayout::Padding' has a wrong offset!");
-static_assert(offsetof(UUIMultiTemplateLayout, Spacing) == 0x0001A4, "Member 'UUIMultiTemplateLayout::Spacing' has a wrong offset!");
-static_assert(offsetof(UUIMultiTemplateLayout, SizeFitToChildren) == 0x0001AC, "Member 'UUIMultiTemplateLayout::SizeFitToChildren' has a wrong offset!");
-static_assert(offsetof(UUIMultiTemplateLayout, bAutoAdjustScale) == 0x0001AD, "Member 'UUIMultiTemplateLayout::bAutoAdjustScale' has a wrong offset!");
+static_assert(alignof(UUILayoutElement) == 0x000008, "Wrong alignment on UUILayoutElement");
+static_assert(sizeof(UUILayoutElement) == 0x000118, "Wrong size on UUILayoutElement");
+static_assert(offsetof(UUILayoutElement, ParentLayout) == 0x000100, "Member 'UUILayoutElement::ParentLayout' has a wrong offset!");
+static_assert(offsetof(UUILayoutElement, LayoutElementType) == 0x000108, "Member 'UUILayoutElement::LayoutElementType' has a wrong offset!");
+static_assert(offsetof(UUILayoutElement, ConstantSize) == 0x00010C, "Member 'UUILayoutElement::ConstantSize' has a wrong offset!");
+static_assert(offsetof(UUILayoutElement, RatioSize) == 0x000110, "Member 'UUILayoutElement::RatioSize' has a wrong offset!");
 
-// Class LGUI.UINavigationGroupComponent
-// 0x0108 (0x0208 - 0x0100)
-class UUINavigationGroupComponent final : public ULGUIBehaviour
+// Class LGUI.UILoopScrollViewComponent
+// 0x01B0 (0x0468 - 0x02B8)
+class UUILoopScrollViewComponent final : public UUIScrollViewWithScrollbarComponent
 {
 public:
-	uint8                                         Pad_100[0xA0];                                     // 0x0100(0x00A0)(Fixing Size After Last Property [ Dumper-7 ])
-	EUINavigationWrapMode                         HorizontalWrapMode;                                // 0x01A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EUINavigationPriorityMode                     HorizontalPriorityMode;                            // 0x01A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EUINavigationWrapMode                         VerticalWrapMode;                                  // 0x01A2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EUINavigationPriorityMode                     VerticalPriorityMode;                              // 0x01A3(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  PrevNavigationGroupActor;                          // 0x01A4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UUINavigationGroupComponent> PrevNavigationGroup;                               // 0x01AC(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  NextNavigationGroupActor;                          // 0x01B4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UUINavigationGroupComponent> NextNavigationGroup;                               // 0x01BC(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   PrevNavigationGroupName;                           // 0x01C4(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   NextNavigationGroupName;                           // 0x01D0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   NavigationGroupName;                               // 0x01DC(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<TWeakObjectPtr<class AActor>>          DefaultNavigateActors;                             // 0x01E8(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	bool                                          BookMark;                                          // 0x01F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ScrollBall;                                        // 0x01F9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          MouseCanJump;                                      // 0x01FA(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AutoSearch;                                        // 0x01FB(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SelectableMemory;                                  // 0x01FC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1FD[0x3];                                      // 0x01FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ViewId;                                            // 0x0200(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B8[0x38];                                     // 0x02B8(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TWeakObjectPtr<class AUIBaseActor>>    GridArray;                                         // 0x02F0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_300[0x50];                                     // 0x0300(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AUIBaseActor>            TemplateGrid;                                      // 0x0350(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         DisplayGridNum;                                    // 0x0358(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         TotalGridNum;                                      // 0x035C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          GridDefaultUIActive;                               // 0x0360(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          IsGridShrinkStrech;                                // 0x0361(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_362[0x2];                                      // 0x0362(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SpacingHorizontal;                                 // 0x0364(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpacingVertical;                                   // 0x0368(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PaddingHorizontal;                                 // 0x036C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PaddingVertical;                                   // 0x0370(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForceSingleLine;                                  // 0x0374(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_375[0x3];                                      // 0x0375(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GridAnimationStartTime;                            // 0x0378(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GridAnimationInterval;                             // 0x037C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsInAnimation;                                     // 0x0380(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_381[0x7];                                      // 0x0381(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(int32 DisplayIndex, class AUIBaseActor* Actor)> OnGridCreate;                     // 0x0388(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 StartIndex, int32 EndIndex)> OnGridsUpdate;                                 // 0x03B0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnDestroyCallBack;                                 // 0x03D8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_400[0x50];                                     // 0x0400(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         NavigationIndex;                                   // 0x0450(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_454[0x14];                                     // 0x0454(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static void ResetNavigateGroupDelegate();
-	static void SetNavigateGroupDelegate(const TDelegate<void(class UUINavigationGroupComponent* NavigationGroupComponent, EUINavigationGroupMode mode)>& Delegate);
-	static void SetNavigateTolerance(const float Tolerance);
+	void Refresh();
+	void RefreshByData(class AUIBaseActor* UIItem, int32 GridNum, bool KeepContentPosition);
+	void ResetPreview();
+	void ScrollToGridIndex(int32 GridIndex, bool bTweenAnim);
+	void ScrollToNextLine(bool bReversed);
+	void SetGridAnimationInterval(float value);
+	void SetGridAnimationStartTime(float value);
+	void SetInAnimation(bool state);
+	void SetNavigationIndex(int32 GridIndex);
 
-	void GetRootNavigationGrade(TArray<class UUISelectableComponent*>* Result);
-	void Navigate();
-	void NavigateToNextGroup();
-	void NavigateToPrevGroup();
+	class AUIBaseActor* GetGrid(int32 GridIndex) const;
+	float GetGridAnimationInterval() const;
+	float GetGridAnimationStartTime() const;
+	bool GetInAnimation() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UINavigationGroupComponent">();
+		return StaticClassImpl<"UILoopScrollViewComponent">();
 	}
-	static class UUINavigationGroupComponent* GetDefaultObj()
+	static class UUILoopScrollViewComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUINavigationGroupComponent>();
+		return GetDefaultObjImpl<UUILoopScrollViewComponent>();
 	}
 };
-static_assert(alignof(UUINavigationGroupComponent) == 0x000008, "Wrong alignment on UUINavigationGroupComponent");
-static_assert(sizeof(UUINavigationGroupComponent) == 0x000208, "Wrong size on UUINavigationGroupComponent");
-static_assert(offsetof(UUINavigationGroupComponent, HorizontalWrapMode) == 0x0001A0, "Member 'UUINavigationGroupComponent::HorizontalWrapMode' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, HorizontalPriorityMode) == 0x0001A1, "Member 'UUINavigationGroupComponent::HorizontalPriorityMode' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, VerticalWrapMode) == 0x0001A2, "Member 'UUINavigationGroupComponent::VerticalWrapMode' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, VerticalPriorityMode) == 0x0001A3, "Member 'UUINavigationGroupComponent::VerticalPriorityMode' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, PrevNavigationGroupActor) == 0x0001A4, "Member 'UUINavigationGroupComponent::PrevNavigationGroupActor' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, PrevNavigationGroup) == 0x0001AC, "Member 'UUINavigationGroupComponent::PrevNavigationGroup' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, NextNavigationGroupActor) == 0x0001B4, "Member 'UUINavigationGroupComponent::NextNavigationGroupActor' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, NextNavigationGroup) == 0x0001BC, "Member 'UUINavigationGroupComponent::NextNavigationGroup' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, PrevNavigationGroupName) == 0x0001C4, "Member 'UUINavigationGroupComponent::PrevNavigationGroupName' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, NextNavigationGroupName) == 0x0001D0, "Member 'UUINavigationGroupComponent::NextNavigationGroupName' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, NavigationGroupName) == 0x0001DC, "Member 'UUINavigationGroupComponent::NavigationGroupName' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, DefaultNavigateActors) == 0x0001E8, "Member 'UUINavigationGroupComponent::DefaultNavigateActors' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, BookMark) == 0x0001F8, "Member 'UUINavigationGroupComponent::BookMark' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, ScrollBall) == 0x0001F9, "Member 'UUINavigationGroupComponent::ScrollBall' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, MouseCanJump) == 0x0001FA, "Member 'UUINavigationGroupComponent::MouseCanJump' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, AutoSearch) == 0x0001FB, "Member 'UUINavigationGroupComponent::AutoSearch' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, SelectableMemory) == 0x0001FC, "Member 'UUINavigationGroupComponent::SelectableMemory' has a wrong offset!");
-static_assert(offsetof(UUINavigationGroupComponent, ViewId) == 0x000200, "Member 'UUINavigationGroupComponent::ViewId' has a wrong offset!");
+static_assert(alignof(UUILoopScrollViewComponent) == 0x000008, "Wrong alignment on UUILoopScrollViewComponent");
+static_assert(sizeof(UUILoopScrollViewComponent) == 0x000468, "Wrong size on UUILoopScrollViewComponent");
+static_assert(offsetof(UUILoopScrollViewComponent, GridArray) == 0x0002F0, "Member 'UUILoopScrollViewComponent::GridArray' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, TemplateGrid) == 0x000350, "Member 'UUILoopScrollViewComponent::TemplateGrid' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, DisplayGridNum) == 0x000358, "Member 'UUILoopScrollViewComponent::DisplayGridNum' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, TotalGridNum) == 0x00035C, "Member 'UUILoopScrollViewComponent::TotalGridNum' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, GridDefaultUIActive) == 0x000360, "Member 'UUILoopScrollViewComponent::GridDefaultUIActive' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, IsGridShrinkStrech) == 0x000361, "Member 'UUILoopScrollViewComponent::IsGridShrinkStrech' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, SpacingHorizontal) == 0x000364, "Member 'UUILoopScrollViewComponent::SpacingHorizontal' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, SpacingVertical) == 0x000368, "Member 'UUILoopScrollViewComponent::SpacingVertical' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, PaddingHorizontal) == 0x00036C, "Member 'UUILoopScrollViewComponent::PaddingHorizontal' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, PaddingVertical) == 0x000370, "Member 'UUILoopScrollViewComponent::PaddingVertical' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, bForceSingleLine) == 0x000374, "Member 'UUILoopScrollViewComponent::bForceSingleLine' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, GridAnimationStartTime) == 0x000378, "Member 'UUILoopScrollViewComponent::GridAnimationStartTime' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, GridAnimationInterval) == 0x00037C, "Member 'UUILoopScrollViewComponent::GridAnimationInterval' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, IsInAnimation) == 0x000380, "Member 'UUILoopScrollViewComponent::IsInAnimation' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, OnGridCreate) == 0x000388, "Member 'UUILoopScrollViewComponent::OnGridCreate' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, OnGridsUpdate) == 0x0003B0, "Member 'UUILoopScrollViewComponent::OnGridsUpdate' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, OnDestroyCallBack) == 0x0003D8, "Member 'UUILoopScrollViewComponent::OnDestroyCallBack' has a wrong offset!");
+static_assert(offsetof(UUILoopScrollViewComponent, NavigationIndex) == 0x000450, "Member 'UUILoopScrollViewComponent::NavigationIndex' has a wrong offset!");
 
-// Class LGUI.UINiagara
-// 0x07D0 (0x0D60 - 0x0590)
-class UUINiagara final : public UUIBaseRenderable
+// Class LGUI.UINavigationBehaviour
+// 0x0008 (0x0108 - 0x0100)
+class UUINavigationBehaviour : public ULGUIBehaviour
 {
 public:
-	class UNiagaraSystem*                         NiagaraSystemReference;                            // 0x0588(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsNiagaraActive;                                   // 0x0590(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_591[0x3];                                      // 0x0591(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StartTime;                                         // 0x0594(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LoopTime;                                          // 0x0598(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EndTime;                                           // 0x059C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroCurveVector                       NiagaraLocation;                                   // 0x05A0(0x01A8)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FKuroCurveVector                       NiagaraRotation;                                   // 0x0748(0x01A8)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FKuroCurveVector                       NiagaraScale;                                      // 0x08F0(0x01A8)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FKuroCurveFloat>   FloatParameter;                                    // 0x0A98(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FKuroCurveVector>  VectorParameter;                                   // 0x0AE8(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TMap<class FString, struct FKuroCurveLinearColor> ColorParameter;                                    // 0x0B38(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	bool                                          bAdaptPosAndSizeChanged;                           // 0x0B88(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableCircleClip;                                 // 0x0B89(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_B8A[0x2];                                      // 0x0B8A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCircleClipParameters                  CircleClipParameters;                              // 0x0B8C(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_B9C[0x4];                                      // 0x0B9C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ULGUINiagaraComponent*                  NiagaraComponent;                                  // 0x0BA0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_BA8[0x1A0];                                    // 0x0BA8(0x01A0)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bResetNiagara;                                     // 0x0D48(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D49[0x7];                                      // 0x0D49(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkAudioEvent*                          StartEvent;                                        // 0x0D50(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bCanInterupt;                                      // 0x0D58(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D59[0x3];                                      // 0x0D59(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         FadeOutMs;                                         // 0x0D5C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         LoopScrollViewGridIndex;                           // 0x0100(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void ActivateSystem(bool Reset);
+	bool OnCheckCanSetNavigationBP();
+	bool OnCheckLoopScrollChangeNavigationBP();
+	void OnNotifyInteractiveBP();
+	void OnNotifyNavigationEnterBP(class ULGUIPointerEventData* eventData);
+	void OnNotifyNavigationSelectBP(class ULGUIPointerEventData* eventData);
+	void OnNotifyNotInteractiveBP();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UINavigationBehaviour">();
+	}
+	static class UUINavigationBehaviour* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUINavigationBehaviour>();
+	}
+};
+static_assert(alignof(UUINavigationBehaviour) == 0x000008, "Wrong alignment on UUINavigationBehaviour");
+static_assert(sizeof(UUINavigationBehaviour) == 0x000108, "Wrong size on UUINavigationBehaviour");
+static_assert(offsetof(UUINavigationBehaviour, LoopScrollViewGridIndex) == 0x000100, "Member 'UUINavigationBehaviour::LoopScrollViewGridIndex' has a wrong offset!");
+
+// Class LGUI.UINavigationTextChangeListener
+// 0x0008 (0x0108 - 0x0100)
+class UUINavigationTextChangeListener : public ULGUIBehaviour
+{
+public:
+	class AActor*                                 TextActor;                                         // 0x0100(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	void OnNotifyTextChangeBP(const class FString& NotifyText);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UINavigationTextChangeListener">();
+	}
+	static class UUINavigationTextChangeListener* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUINavigationTextChangeListener>();
+	}
+};
+static_assert(alignof(UUINavigationTextChangeListener) == 0x000008, "Wrong alignment on UUINavigationTextChangeListener");
+static_assert(sizeof(UUINavigationTextChangeListener) == 0x000108, "Wrong size on UUINavigationTextChangeListener");
+static_assert(offsetof(UUINavigationTextChangeListener, TextActor) == 0x000100, "Member 'UUINavigationTextChangeListener::TextActor' has a wrong offset!");
+
+// Class LGUI.UINiagaraActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUINiagaraActor final : public AUIBaseActor
+{
+public:
+	class UUINiagara*                             UINiagara;                                         // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	void ActivateSystem();
 	void DeactivateSystem();
-	bool GetIsActive();
-	bool IsCircleClipEnable();
-	void ReinitializeSystem();
-	void ResetOverrideParameters();
-	void ResetOverrideParametersAndActivate();
-	void SetCircleClipEnable(bool Enable);
-	void SetCircleClipParameters(const struct FCircleClipParameters& NewCircleClipParameters);
-	void SetNiagaraEmitterCustomTexture(const class FString& InEmitterName, const class FString& InVariableName, class UTexture* InTexture);
-	void SetNiagaraEmitterFloatParam(const class FString& InEmitterName, const class FString& InVariableName, float InValue);
-	void SetNiagaraEmitterVectorParam(const class FString& InEmitterName, const class FString& InVariableName, const struct FVector4& InVector);
-	void SetNiagaraSystem(class UNiagaraSystem* InSystem);
-	void SetNiagaraUIActive(bool active, bool bInResetNiagara);
-	void SetNiagaraVarFloat(const class FString& VarName, float Value);
-	void SetNiagaraVarLinearColor(const class FString& VarName, const struct FLinearColor& Value);
 	void SwitchToStop();
 
-	struct FCircleClipParameters GetCircleClipParameters() const;
+	class UUINiagara* GetUINiagara() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UINiagara">();
+		return StaticClassImpl<"UINiagaraActor">();
 	}
-	static class UUINiagara* GetDefaultObj()
+	static class AUINiagaraActor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUINiagara>();
+		return GetDefaultObjImpl<AUINiagaraActor>();
 	}
 };
-static_assert(alignof(UUINiagara) == 0x000010, "Wrong alignment on UUINiagara");
-static_assert(sizeof(UUINiagara) == 0x000D60, "Wrong size on UUINiagara");
-static_assert(offsetof(UUINiagara, NiagaraSystemReference) == 0x000588, "Member 'UUINiagara::NiagaraSystemReference' has a wrong offset!");
-static_assert(offsetof(UUINiagara, IsNiagaraActive) == 0x000590, "Member 'UUINiagara::IsNiagaraActive' has a wrong offset!");
-static_assert(offsetof(UUINiagara, StartTime) == 0x000594, "Member 'UUINiagara::StartTime' has a wrong offset!");
-static_assert(offsetof(UUINiagara, LoopTime) == 0x000598, "Member 'UUINiagara::LoopTime' has a wrong offset!");
-static_assert(offsetof(UUINiagara, EndTime) == 0x00059C, "Member 'UUINiagara::EndTime' has a wrong offset!");
-static_assert(offsetof(UUINiagara, NiagaraLocation) == 0x0005A0, "Member 'UUINiagara::NiagaraLocation' has a wrong offset!");
-static_assert(offsetof(UUINiagara, NiagaraRotation) == 0x000748, "Member 'UUINiagara::NiagaraRotation' has a wrong offset!");
-static_assert(offsetof(UUINiagara, NiagaraScale) == 0x0008F0, "Member 'UUINiagara::NiagaraScale' has a wrong offset!");
-static_assert(offsetof(UUINiagara, FloatParameter) == 0x000A98, "Member 'UUINiagara::FloatParameter' has a wrong offset!");
-static_assert(offsetof(UUINiagara, VectorParameter) == 0x000AE8, "Member 'UUINiagara::VectorParameter' has a wrong offset!");
-static_assert(offsetof(UUINiagara, ColorParameter) == 0x000B38, "Member 'UUINiagara::ColorParameter' has a wrong offset!");
-static_assert(offsetof(UUINiagara, bAdaptPosAndSizeChanged) == 0x000B88, "Member 'UUINiagara::bAdaptPosAndSizeChanged' has a wrong offset!");
-static_assert(offsetof(UUINiagara, bEnableCircleClip) == 0x000B89, "Member 'UUINiagara::bEnableCircleClip' has a wrong offset!");
-static_assert(offsetof(UUINiagara, CircleClipParameters) == 0x000B8C, "Member 'UUINiagara::CircleClipParameters' has a wrong offset!");
-static_assert(offsetof(UUINiagara, NiagaraComponent) == 0x000BA0, "Member 'UUINiagara::NiagaraComponent' has a wrong offset!");
-static_assert(offsetof(UUINiagara, bResetNiagara) == 0x000D48, "Member 'UUINiagara::bResetNiagara' has a wrong offset!");
-static_assert(offsetof(UUINiagara, StartEvent) == 0x000D50, "Member 'UUINiagara::StartEvent' has a wrong offset!");
-static_assert(offsetof(UUINiagara, bCanInterupt) == 0x000D58, "Member 'UUINiagara::bCanInterupt' has a wrong offset!");
-static_assert(offsetof(UUINiagara, FadeOutMs) == 0x000D5C, "Member 'UUINiagara::FadeOutMs' has a wrong offset!");
+static_assert(alignof(AUINiagaraActor) == 0x000008, "Wrong alignment on AUINiagaraActor");
+static_assert(sizeof(AUINiagaraActor) == 0x0003A0, "Wrong size on AUINiagaraActor");
+static_assert(offsetof(AUINiagaraActor, UINiagara) == 0x000398, "Member 'AUINiagaraActor::UINiagara' has a wrong offset!");
 
-// Class LGUI.UIPolygon
-// 0x0030 (0x07C0 - 0x0790)
-class UUIPolygon final : public UUISpriteBase
-{
-public:
-	bool                                          FullCycle;                                         // 0x0790(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_791[0x3];                                      // 0x0791(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StartAngle;                                        // 0x0794(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         EndAngle;                                          // 0x0798(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         Sides;                                             // 0x079C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUIPolygonUVType                              UVType;                                            // 0x07A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7A1[0x7];                                      // 0x07A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<float>                                 VertexOffsetArray;                                 // 0x07A8(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7B8[0x8];                                      // 0x07B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class ULTweener* EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
-	void SetEndAngle(float value);
-	void SetSides(int32 value);
-	void SetStartAngle(float value);
-	void SetUVType(EUIPolygonUVType value);
-	void SetVertexOffsetArray(const TArray<float>& value);
-	class ULTweener* StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
-
-	float GetEndAngle() const;
-	int32 GetSides() const;
-	float GetStartAngle() const;
-	EUIPolygonUVType GetUVType() const;
-	const TArray<float> GetVertexOffsetArray() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIPolygon">();
-	}
-	static class UUIPolygon* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIPolygon>();
-	}
-};
-static_assert(alignof(UUIPolygon) == 0x000010, "Wrong alignment on UUIPolygon");
-static_assert(sizeof(UUIPolygon) == 0x0007C0, "Wrong size on UUIPolygon");
-static_assert(offsetof(UUIPolygon, FullCycle) == 0x000790, "Member 'UUIPolygon::FullCycle' has a wrong offset!");
-static_assert(offsetof(UUIPolygon, StartAngle) == 0x000794, "Member 'UUIPolygon::StartAngle' has a wrong offset!");
-static_assert(offsetof(UUIPolygon, EndAngle) == 0x000798, "Member 'UUIPolygon::EndAngle' has a wrong offset!");
-static_assert(offsetof(UUIPolygon, Sides) == 0x00079C, "Member 'UUIPolygon::Sides' has a wrong offset!");
-static_assert(offsetof(UUIPolygon, UVType) == 0x0007A0, "Member 'UUIPolygon::UVType' has a wrong offset!");
-static_assert(offsetof(UUIPolygon, VertexOffsetArray) == 0x0007A8, "Member 'UUIPolygon::VertexOffsetArray' has a wrong offset!");
-
-// Class LGUI.UIPolygonLine
-// 0x0030 (0x07E0 - 0x07B0)
-class UUIPolygonLine final : public UUI2DLineRendererBase
-{
-public:
-	bool                                          FullCycle;                                         // 0x07A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7A9[0x3];                                      // 0x07A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StartAngle;                                        // 0x07AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         EndAngle;                                          // 0x07B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         Sides;                                             // 0x07B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<float>                                 VertexOffsetArray;                                 // 0x07B8(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FVector2D>                      CurrentPointArray;                                 // 0x07C8(0x0010)(Edit, ZeroConstructor, Transient, EditConst, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_7D8[0x8];                                      // 0x07D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class ULTweener* EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
-	void SetEndAngle(float value);
-	void SetSides(int32 value);
-	void SetStartAngle(float value);
-	void SetVertexOffsetArray(const TArray<float>& value);
-	class ULTweener* StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
-
-	float GetEndAngle() const;
-	int32 GetSides() const;
-	float GetStartAngle() const;
-	const TArray<float> GetVertexOffsetArray() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIPolygonLine">();
-	}
-	static class UUIPolygonLine* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIPolygonLine>();
-	}
-};
-static_assert(alignof(UUIPolygonLine) == 0x000010, "Wrong alignment on UUIPolygonLine");
-static_assert(sizeof(UUIPolygonLine) == 0x0007E0, "Wrong size on UUIPolygonLine");
-static_assert(offsetof(UUIPolygonLine, FullCycle) == 0x0007A8, "Member 'UUIPolygonLine::FullCycle' has a wrong offset!");
-static_assert(offsetof(UUIPolygonLine, StartAngle) == 0x0007AC, "Member 'UUIPolygonLine::StartAngle' has a wrong offset!");
-static_assert(offsetof(UUIPolygonLine, EndAngle) == 0x0007B0, "Member 'UUIPolygonLine::EndAngle' has a wrong offset!");
-static_assert(offsetof(UUIPolygonLine, Sides) == 0x0007B4, "Member 'UUIPolygonLine::Sides' has a wrong offset!");
-static_assert(offsetof(UUIPolygonLine, VertexOffsetArray) == 0x0007B8, "Member 'UUIPolygonLine::VertexOffsetArray' has a wrong offset!");
-static_assert(offsetof(UUIPolygonLine, CurrentPointArray) == 0x0007C8, "Member 'UUIPolygonLine::CurrentPointArray' has a wrong offset!");
-
-// Class LGUI.UIRaycastRangeComponent
-// 0x0020 (0x0120 - 0x0100)
-class UUIRaycastRangeComponent final : public ULGUIBehaviour
-{
-public:
-	float                                         PointSize;                                         // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DragDistance;                                      // 0x0104(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector2D>                      Points;                                            // 0x0108(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIRaycastRangeComponent">();
-	}
-	static class UUIRaycastRangeComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIRaycastRangeComponent>();
-	}
-};
-static_assert(alignof(UUIRaycastRangeComponent) == 0x000008, "Wrong alignment on UUIRaycastRangeComponent");
-static_assert(sizeof(UUIRaycastRangeComponent) == 0x000120, "Wrong size on UUIRaycastRangeComponent");
-static_assert(offsetof(UUIRaycastRangeComponent, PointSize) == 0x000100, "Member 'UUIRaycastRangeComponent::PointSize' has a wrong offset!");
-static_assert(offsetof(UUIRaycastRangeComponent, DragDistance) == 0x000104, "Member 'UUIRaycastRangeComponent::DragDistance' has a wrong offset!");
-static_assert(offsetof(UUIRaycastRangeComponent, Points) == 0x000108, "Member 'UUIRaycastRangeComponent::Points' has a wrong offset!");
-
-// Class LGUI.UIRingActor
+// Class LGUI.UIPolygonActor
 // 0x0008 (0x03A0 - 0x0398)
-class AUIRingActor final : public AUIBaseActor
+class AUIPolygonActor final : public AUIBaseActor
 {
 public:
-	class UUIRing*                                UIElement;                                         // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UUIPolygon*                             UIPolygon;                                         // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIRingActor">();
+		return StaticClassImpl<"UIPolygonActor">();
 	}
-	static class AUIRingActor* GetDefaultObj()
+	static class AUIPolygonActor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AUIRingActor>();
+		return GetDefaultObjImpl<AUIPolygonActor>();
 	}
 };
-static_assert(alignof(AUIRingActor) == 0x000008, "Wrong alignment on AUIRingActor");
-static_assert(sizeof(AUIRingActor) == 0x0003A0, "Wrong size on AUIRingActor");
-static_assert(offsetof(AUIRingActor, UIElement) == 0x000398, "Member 'AUIRingActor::UIElement' has a wrong offset!");
+static_assert(alignof(AUIPolygonActor) == 0x000008, "Wrong alignment on AUIPolygonActor");
+static_assert(sizeof(AUIPolygonActor) == 0x0003A0, "Wrong size on AUIPolygonActor");
+static_assert(offsetof(AUIPolygonActor, UIPolygon) == 0x000398, "Member 'AUIPolygonActor::UIPolygon' has a wrong offset!");
 
-// Class LGUI.UISafeZone
-// 0x0110 (0x0210 - 0x0100)
-class UUISafeZone final : public ULGUIBehaviour
+// Class LGUI.UIPolygonLineActor
+// 0x0008 (0x03A0 - 0x0398)
+class AUIPolygonLineActor final : public AUIBaseActor
 {
 public:
-	ESafeZoneAdaptionStrategy                     AdaptionStrategy;                                  // 0x0100(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_101[0x3];                                      // 0x0101(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMargin                                Padding;                                           // 0x0104(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_114[0x10];                                     // 0x0114(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMargin                                DefaultMargin;                                     // 0x0124(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FMargin                                PadMargin;                                         // 0x0134(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FMargin                                DefFoldableSquareMargin;                           // 0x0144(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_154[0x4];                                      // 0x0154(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, struct FMargin>           CustomDeviceMargins;                               // 0x0158(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	TMap<class FString, struct FFoldableMargins>  FoldableDeviceMargins;                             // 0x01A8(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1F8[0x18];                                     // 0x01F8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetWidthAndHeightRadio(float Left, float Right, float Top, float Bottom);
+	class UUIPolygonLine*                         UIPolygonLine;                                     // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISafeZone">();
+		return StaticClassImpl<"UIPolygonLineActor">();
 	}
-	static class UUISafeZone* GetDefaultObj()
+	static class AUIPolygonLineActor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISafeZone>();
+		return GetDefaultObjImpl<AUIPolygonLineActor>();
 	}
 };
-static_assert(alignof(UUISafeZone) == 0x000008, "Wrong alignment on UUISafeZone");
-static_assert(sizeof(UUISafeZone) == 0x000210, "Wrong size on UUISafeZone");
-static_assert(offsetof(UUISafeZone, AdaptionStrategy) == 0x000100, "Member 'UUISafeZone::AdaptionStrategy' has a wrong offset!");
-static_assert(offsetof(UUISafeZone, Padding) == 0x000104, "Member 'UUISafeZone::Padding' has a wrong offset!");
-static_assert(offsetof(UUISafeZone, DefaultMargin) == 0x000124, "Member 'UUISafeZone::DefaultMargin' has a wrong offset!");
-static_assert(offsetof(UUISafeZone, PadMargin) == 0x000134, "Member 'UUISafeZone::PadMargin' has a wrong offset!");
-static_assert(offsetof(UUISafeZone, DefFoldableSquareMargin) == 0x000144, "Member 'UUISafeZone::DefFoldableSquareMargin' has a wrong offset!");
-static_assert(offsetof(UUISafeZone, CustomDeviceMargins) == 0x000158, "Member 'UUISafeZone::CustomDeviceMargins' has a wrong offset!");
-static_assert(offsetof(UUISafeZone, FoldableDeviceMargins) == 0x0001A8, "Member 'UUISafeZone::FoldableDeviceMargins' has a wrong offset!");
+static_assert(alignof(AUIPolygonLineActor) == 0x000008, "Wrong alignment on AUIPolygonLineActor");
+static_assert(sizeof(AUIPolygonLineActor) == 0x0003A0, "Wrong size on AUIPolygonLineActor");
+static_assert(offsetof(AUIPolygonLineActor, UIPolygonLine) == 0x000398, "Member 'AUIPolygonLineActor::UIPolygonLine' has a wrong offset!");
 
-// Class LGUI.UIScrollViewHelper
+// Class LGUI.UIRing
+// 0x0020 (0x07D0 - 0x07B0)
+class UUIRing final : public UUI2DLineRendererBase
+{
+public:
+	float                                         StartAngle;                                        // 0x07B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         EndAngle;                                          // 0x07B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         Segment;                                           // 0x07B8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7BC[0x4];                                      // 0x07BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector2D>                      CurrentPointArray;                                 // 0x07C0(0x0010)(Edit, ZeroConstructor, Transient, EditConst, Protected, NativeAccessSpecifierProtected)
+
+public:
+	class ULTweener* EndAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
+	void SetEndAngle(float newValue);
+	void SetSegment(int32 newValue);
+	void SetStartAngle(float newValue);
+	class ULTweener* StartAngleTo(float endValue, float duration, float delay, ELTweenEase easeType);
+
+	float GetEndAngle() const;
+	int32 GetSegment() const;
+	float GetStartAngle() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIRing">();
+	}
+	static class UUIRing* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIRing>();
+	}
+};
+static_assert(alignof(UUIRing) == 0x000010, "Wrong alignment on UUIRing");
+static_assert(sizeof(UUIRing) == 0x0007D0, "Wrong size on UUIRing");
+static_assert(offsetof(UUIRing, StartAngle) == 0x0007B0, "Member 'UUIRing::StartAngle' has a wrong offset!");
+static_assert(offsetof(UUIRing, EndAngle) == 0x0007B4, "Member 'UUIRing::EndAngle' has a wrong offset!");
+static_assert(offsetof(UUIRing, Segment) == 0x0007B8, "Member 'UUIRing::Segment' has a wrong offset!");
+static_assert(offsetof(UUIRing, CurrentPointArray) == 0x0007C0, "Member 'UUIRing::CurrentPointArray' has a wrong offset!");
+
+// Class LGUI.UIRoundedLayout
+// 0x0010 (0x0180 - 0x0170)
+class UUIRoundedLayout final : public UUILayoutBase
+{
+public:
+	float                                         Radius;                                            // 0x0170(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         StartAngle;                                        // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         EndAngle;                                          // 0x0178(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bSetChildAngle;                                    // 0x017C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIRoundedLayout">();
+	}
+	static class UUIRoundedLayout* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIRoundedLayout>();
+	}
+};
+static_assert(alignof(UUIRoundedLayout) == 0x000008, "Wrong alignment on UUIRoundedLayout");
+static_assert(sizeof(UUIRoundedLayout) == 0x000180, "Wrong size on UUIRoundedLayout");
+static_assert(offsetof(UUIRoundedLayout, Radius) == 0x000170, "Member 'UUIRoundedLayout::Radius' has a wrong offset!");
+static_assert(offsetof(UUIRoundedLayout, StartAngle) == 0x000174, "Member 'UUIRoundedLayout::StartAngle' has a wrong offset!");
+static_assert(offsetof(UUIRoundedLayout, EndAngle) == 0x000178, "Member 'UUIRoundedLayout::EndAngle' has a wrong offset!");
+static_assert(offsetof(UUIRoundedLayout, bSetChildAngle) == 0x00017C, "Member 'UUIRoundedLayout::bSetChildAngle' has a wrong offset!");
+
+// Class LGUI.UIScrollbarComponent
+// 0x0080 (0x0478 - 0x03F8)
+class UUIScrollbarComponent final : public UUISelectableComponent
+{
+public:
+	uint8                                         Pad_3F8[0x8];                                      // 0x03F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Value;                                             // 0x0400(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         Size;                                              // 0x0404(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUIBaseActor>            HandleActor;                                       // 0x0408(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUIScrollbarDirectionType                     DirectionType;                                     // 0x0410(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_411[0x3];                                      // 0x0411(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UUIItem>                 Handle;                                            // 0x0414(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUIItem>                 HandleArea;                                        // 0x041C(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_424[0x1C];                                     // 0x0424(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIDrawableEvent                     OnValueChange;                                     // 0x0440(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AActor>                  ScrollViewBackgroundActor;                         // 0x0458(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUIItem>                 ScrollViewBackgroundComponent;                     // 0x0460(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          MainScrollbar;                                     // 0x0468(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_469[0x3];                                      // 0x0469(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ViewId;                                            // 0x046C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_470[0x8];                                      // 0x0470(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static void ResetScrollbarDelegate();
+	static void SetScrollbarDelegate(const TDelegate<void(class UUIScrollbarComponent* ScrollbarComponent, bool ativeOrInactive)>& Delegate);
+
+	void ChangeSchedule(ELGUINavigationDirection InDirection);
+	struct FLGUIDelegateHandleWrapper RegisterSlideEvent(const TDelegate<void(float InFloat)>& InDelegate);
+	void SetSize(float InSize);
+	void SetValue(float InValue, bool FireEvent);
+	void SetValueAndSize(float InValue, float InSize, bool FireEvent);
+	void UnregisterSlideEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+
+	float GetSize() const;
+	float GetValue() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIScrollbarComponent">();
+	}
+	static class UUIScrollbarComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIScrollbarComponent>();
+	}
+};
+static_assert(alignof(UUIScrollbarComponent) == 0x000008, "Wrong alignment on UUIScrollbarComponent");
+static_assert(sizeof(UUIScrollbarComponent) == 0x000478, "Wrong size on UUIScrollbarComponent");
+static_assert(offsetof(UUIScrollbarComponent, Value) == 0x000400, "Member 'UUIScrollbarComponent::Value' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, Size) == 0x000404, "Member 'UUIScrollbarComponent::Size' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, HandleActor) == 0x000408, "Member 'UUIScrollbarComponent::HandleActor' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, DirectionType) == 0x000410, "Member 'UUIScrollbarComponent::DirectionType' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, Handle) == 0x000414, "Member 'UUIScrollbarComponent::Handle' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, HandleArea) == 0x00041C, "Member 'UUIScrollbarComponent::HandleArea' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, OnValueChange) == 0x000440, "Member 'UUIScrollbarComponent::OnValueChange' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, ScrollViewBackgroundActor) == 0x000458, "Member 'UUIScrollbarComponent::ScrollViewBackgroundActor' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, ScrollViewBackgroundComponent) == 0x000460, "Member 'UUIScrollbarComponent::ScrollViewBackgroundComponent' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, MainScrollbar) == 0x000468, "Member 'UUIScrollbarComponent::MainScrollbar' has a wrong offset!");
+static_assert(offsetof(UUIScrollbarComponent, ViewId) == 0x00046C, "Member 'UUIScrollbarComponent::ViewId' has a wrong offset!");
+
+// Class LGUI.UISelectableButtonComponent
+// 0x0008 (0x0688 - 0x0680)
+class UUISelectableButtonComponent final : public UUIButtonComponent
+{
+public:
+	uint8                                         Pad_680[0x8];                                      // 0x0680(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetForceSelect(bool forceSelect);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UISelectableButtonComponent">();
+	}
+	static class UUISelectableButtonComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUISelectableButtonComponent>();
+	}
+};
+static_assert(alignof(UUISelectableButtonComponent) == 0x000008, "Wrong alignment on UUISelectableButtonComponent");
+static_assert(sizeof(UUISelectableButtonComponent) == 0x000688, "Wrong size on UUISelectableButtonComponent");
+
+// Class LGUI.UISizeControlByAspectRatioHelper
 // 0x0008 (0x0108 - 0x0100)
-class UUIScrollViewHelper final : public ULGUIBehaviour
+class UUISizeControlByAspectRatioHelper final : public ULGUIBehaviour
 {
 public:
-	TWeakObjectPtr<class UUIScrollViewComponent>  TargetComp;                                        // 0x0100(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TWeakObjectPtr<class UUISizeControlByAspectRatio> TargetComp;                                    // 0x0100(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UIScrollViewHelper">();
+		return StaticClassImpl<"UISizeControlByAspectRatioHelper">();
 	}
-	static class UUIScrollViewHelper* GetDefaultObj()
+	static class UUISizeControlByAspectRatioHelper* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUIScrollViewHelper>();
+		return GetDefaultObjImpl<UUISizeControlByAspectRatioHelper>();
 	}
 };
-static_assert(alignof(UUIScrollViewHelper) == 0x000008, "Wrong alignment on UUIScrollViewHelper");
-static_assert(sizeof(UUIScrollViewHelper) == 0x000108, "Wrong size on UUIScrollViewHelper");
-static_assert(offsetof(UUIScrollViewHelper, TargetComp) == 0x000100, "Member 'UUIScrollViewHelper::TargetComp' has a wrong offset!");
+static_assert(alignof(UUISizeControlByAspectRatioHelper) == 0x000008, "Wrong alignment on UUISizeControlByAspectRatioHelper");
+static_assert(sizeof(UUISizeControlByAspectRatioHelper) == 0x000108, "Wrong size on UUISizeControlByAspectRatioHelper");
+static_assert(offsetof(UUISizeControlByAspectRatioHelper, TargetComp) == 0x000100, "Member 'UUISizeControlByAspectRatioHelper::TargetComp' has a wrong offset!");
 
-// Class LGUI.UISelectableGroupComponent
-// 0x0030 (0x0130 - 0x0100)
-class UUISelectableGroupComponent final : public ULGUIBehaviour
+// Class LGUI.UISizeControlByOtherHelper
+// 0x0008 (0x0108 - 0x0100)
+class UUISizeControlByOtherHelper final : public ULGUIBehaviour
 {
 public:
-	uint8                                         Pad_100[0x8];                                      // 0x0100(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          AllowEventBubbleUp;                                // 0x0108(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UUISelectableComponent>  Selected;                                          // 0x010C(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TWeakObjectPtr<class UUISelectableComponent>  Highlighted;                                       // 0x0114(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TWeakObjectPtr<class UUISelectableComponent>> SelectableComponents;                              // 0x0120(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-
-public:
-	void OnComponentHighlighted(class UUISelectableComponent* Component);
-	void OnComponentSelected(class UUISelectableComponent* Component);
-	void OnComponentUnhighlighted();
-	void OnComponentUnselected();
+	TWeakObjectPtr<class UUISizeControlByOther>   TargetComp;                                        // 0x0100(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISelectableGroupComponent">();
+		return StaticClassImpl<"UISizeControlByOtherHelper">();
 	}
-	static class UUISelectableGroupComponent* GetDefaultObj()
+	static class UUISizeControlByOtherHelper* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISelectableGroupComponent>();
+		return GetDefaultObjImpl<UUISizeControlByOtherHelper>();
 	}
 };
-static_assert(alignof(UUISelectableGroupComponent) == 0x000008, "Wrong alignment on UUISelectableGroupComponent");
-static_assert(sizeof(UUISelectableGroupComponent) == 0x000130, "Wrong size on UUISelectableGroupComponent");
-static_assert(offsetof(UUISelectableGroupComponent, AllowEventBubbleUp) == 0x000108, "Member 'UUISelectableGroupComponent::AllowEventBubbleUp' has a wrong offset!");
-static_assert(offsetof(UUISelectableGroupComponent, Selected) == 0x00010C, "Member 'UUISelectableGroupComponent::Selected' has a wrong offset!");
-static_assert(offsetof(UUISelectableGroupComponent, Highlighted) == 0x000114, "Member 'UUISelectableGroupComponent::Highlighted' has a wrong offset!");
-static_assert(offsetof(UUISelectableGroupComponent, SelectableComponents) == 0x000120, "Member 'UUISelectableGroupComponent::SelectableComponents' has a wrong offset!");
+static_assert(alignof(UUISizeControlByOtherHelper) == 0x000008, "Wrong alignment on UUISizeControlByOtherHelper");
+static_assert(sizeof(UUISizeControlByOtherHelper) == 0x000108, "Wrong size on UUISizeControlByOtherHelper");
+static_assert(offsetof(UUISizeControlByOtherHelper, TargetComp) == 0x000100, "Member 'UUISizeControlByOtherHelper::TargetComp' has a wrong offset!");
 
-// Class LGUI.UISelectableStateHolder
-// 0x0018 (0x0128 - 0x0110)
-class UUISelectableStateHolder final : public UUISelectableTransitionComponent
+// Class LGUI.UISliderComponent
+// 0x00F8 (0x04F0 - 0x03F8)
+class UUISliderComponent final : public UUISelectableComponent
 {
 public:
-	uint8                                         Pad_110[0x10];                                     // 0x0110(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	EStateTransitionType                          TransitionType;                                    // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3F8[0x8];                                      // 0x03F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Value;                                             // 0x0400(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MinValue;                                          // 0x0404(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MaxValue;                                          // 0x0408(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          WholeNumbers;                                      // 0x040C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_40D[0x3];                                      // 0x040D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AUIBaseActor>            FillActor;                                         // 0x0410(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AUIBaseActor>            HandleActor;                                       // 0x0418(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUISliderDirectionType                        DirectionType;                                     // 0x0420(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_421[0x7];                                      // 0x0421(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(float InFloat)>                OnValueChangeCb;                                   // 0x0428(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void()>                             OnEndDragCb;                                       // 0x0450(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	class UAkAudioEvent*                          DragBeginAudioEvent;                               // 0x0478(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAkAudioEvent*                          DragEndAudioEvent;                                 // 0x0480(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAkAudioEvent*                          DraggingAudioEvent;                                // 0x0488(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DraggingAudioEventInterval;                        // 0x0490(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUIItem>                 Fill;                                              // 0x0494(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUIItem>                 FillArea;                                          // 0x049C(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUIItem>                 Handle;                                            // 0x04A4(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class UUIItem>                 HandleArea;                                        // 0x04AC(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4B4[0x1C];                                     // 0x04B4(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIDrawableEvent                     OnValueChange;                                     // 0x04D0(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4E8[0x8];                                      // 0x04E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetAllTransitionsEnable(bool bEnable);
+	struct FLGUIDelegateHandleWrapper RegisterSlideEvent(const TDelegate<void(float InFloat)>& InDelegate);
+	void SetMaxValue(float InMaxValue, bool KeepRelativeValue, bool FireEvent);
+	void SetMinValue(float InMinValue, bool KeepRelativeValue, bool FireEvent);
+	void SetProgressIncrement(float incrementValue, bool needRound);
+	void SetValue(float InValue, bool FireEvent);
+	void UnregisterSlideEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+
+	float GetMaxValue() const;
+	float GetMinValue() const;
+	float GetValue() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISelectableStateHolder">();
+		return StaticClassImpl<"UISliderComponent">();
 	}
-	static class UUISelectableStateHolder* GetDefaultObj()
+	static class UUISliderComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISelectableStateHolder>();
+		return GetDefaultObjImpl<UUISliderComponent>();
 	}
 };
-static_assert(alignof(UUISelectableStateHolder) == 0x000008, "Wrong alignment on UUISelectableStateHolder");
-static_assert(sizeof(UUISelectableStateHolder) == 0x000128, "Wrong size on UUISelectableStateHolder");
-static_assert(offsetof(UUISelectableStateHolder, TransitionType) == 0x000120, "Member 'UUISelectableStateHolder::TransitionType' has a wrong offset!");
+static_assert(alignof(UUISliderComponent) == 0x000008, "Wrong alignment on UUISliderComponent");
+static_assert(sizeof(UUISliderComponent) == 0x0004F0, "Wrong size on UUISliderComponent");
+static_assert(offsetof(UUISliderComponent, Value) == 0x000400, "Member 'UUISliderComponent::Value' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, MinValue) == 0x000404, "Member 'UUISliderComponent::MinValue' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, MaxValue) == 0x000408, "Member 'UUISliderComponent::MaxValue' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, WholeNumbers) == 0x00040C, "Member 'UUISliderComponent::WholeNumbers' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, FillActor) == 0x000410, "Member 'UUISliderComponent::FillActor' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, HandleActor) == 0x000418, "Member 'UUISliderComponent::HandleActor' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, DirectionType) == 0x000420, "Member 'UUISliderComponent::DirectionType' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, OnValueChangeCb) == 0x000428, "Member 'UUISliderComponent::OnValueChangeCb' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, OnEndDragCb) == 0x000450, "Member 'UUISliderComponent::OnEndDragCb' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, DragBeginAudioEvent) == 0x000478, "Member 'UUISliderComponent::DragBeginAudioEvent' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, DragEndAudioEvent) == 0x000480, "Member 'UUISliderComponent::DragEndAudioEvent' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, DraggingAudioEvent) == 0x000488, "Member 'UUISliderComponent::DraggingAudioEvent' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, DraggingAudioEventInterval) == 0x000490, "Member 'UUISliderComponent::DraggingAudioEventInterval' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, Fill) == 0x000494, "Member 'UUISliderComponent::Fill' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, FillArea) == 0x00049C, "Member 'UUISliderComponent::FillArea' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, Handle) == 0x0004A4, "Member 'UUISliderComponent::Handle' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, HandleArea) == 0x0004AC, "Member 'UUISliderComponent::HandleArea' has a wrong offset!");
+static_assert(offsetof(UUISliderComponent, OnValueChange) == 0x0004D0, "Member 'UUISliderComponent::OnValueChange' has a wrong offset!");
 
-// Class LGUI.UISizeControlByAspectRatio
-// 0x0028 (0x0198 - 0x0170)
-class UUISizeControlByAspectRatio final : public UUILayoutBase
+// Class LGUI.UISpineBoneAnchor
+// 0x0070 (0x0170 - 0x0100)
+class UUISpineBoneAnchor final : public ULGUIBehaviour
 {
 public:
-	EUISizeControlByAspectRatioMode               ControlMode;                                       // 0x0170(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_171[0x3];                                      // 0x0171(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AspectRatio;                                       // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_178[0xC];                                      // 0x0178(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UUISizeControlByAspectRatioHelper> HelperComp;                                        // 0x0184(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector2D                              Pivot;                                             // 0x018C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bChangeChildrenOffset;                             // 0x0194(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bChangeChildrenSize;                               // 0x0195(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bChangeChildrenAlign;                              // 0x0196(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_197[0x1];                                      // 0x0197(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetAspectRatio(float value);
-	void SetControlMode(EUISizeControlByAspectRatioMode value);
-
-	float GetAspectRatio() const;
-	EUISizeControlByAspectRatioMode GetControlMode() const;
+	TArray<struct FAnchorInfo>                    AnchorInfos;                                       // 0x0100(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	class USpineSkeletonComponent*                SpineSkeletonComponent;                            // 0x0110(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class USpineSkeletonDataAsset*                CurrSkeletonData;                                  // 0x0118(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_120[0x50];                                     // 0x0120(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISizeControlByAspectRatio">();
+		return StaticClassImpl<"UISpineBoneAnchor">();
 	}
-	static class UUISizeControlByAspectRatio* GetDefaultObj()
+	static class UUISpineBoneAnchor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISizeControlByAspectRatio>();
+		return GetDefaultObjImpl<UUISpineBoneAnchor>();
 	}
 };
-static_assert(alignof(UUISizeControlByAspectRatio) == 0x000008, "Wrong alignment on UUISizeControlByAspectRatio");
-static_assert(sizeof(UUISizeControlByAspectRatio) == 0x000198, "Wrong size on UUISizeControlByAspectRatio");
-static_assert(offsetof(UUISizeControlByAspectRatio, ControlMode) == 0x000170, "Member 'UUISizeControlByAspectRatio::ControlMode' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByAspectRatio, AspectRatio) == 0x000174, "Member 'UUISizeControlByAspectRatio::AspectRatio' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByAspectRatio, HelperComp) == 0x000184, "Member 'UUISizeControlByAspectRatio::HelperComp' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByAspectRatio, Pivot) == 0x00018C, "Member 'UUISizeControlByAspectRatio::Pivot' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByAspectRatio, bChangeChildrenOffset) == 0x000194, "Member 'UUISizeControlByAspectRatio::bChangeChildrenOffset' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByAspectRatio, bChangeChildrenSize) == 0x000195, "Member 'UUISizeControlByAspectRatio::bChangeChildrenSize' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByAspectRatio, bChangeChildrenAlign) == 0x000196, "Member 'UUISizeControlByAspectRatio::bChangeChildrenAlign' has a wrong offset!");
+static_assert(alignof(UUISpineBoneAnchor) == 0x000008, "Wrong alignment on UUISpineBoneAnchor");
+static_assert(sizeof(UUISpineBoneAnchor) == 0x000170, "Wrong size on UUISpineBoneAnchor");
+static_assert(offsetof(UUISpineBoneAnchor, AnchorInfos) == 0x000100, "Member 'UUISpineBoneAnchor::AnchorInfos' has a wrong offset!");
+static_assert(offsetof(UUISpineBoneAnchor, SpineSkeletonComponent) == 0x000110, "Member 'UUISpineBoneAnchor::SpineSkeletonComponent' has a wrong offset!");
+static_assert(offsetof(UUISpineBoneAnchor, CurrSkeletonData) == 0x000118, "Member 'UUISpineBoneAnchor::CurrSkeletonData' has a wrong offset!");
 
-// Class LGUI.UISizeControlByOther
-// 0x0038 (0x01A8 - 0x0170)
-class UUISizeControlByOther final : public UUILayoutBase
+// Class LGUI.UISprite
+// 0x0030 (0x07D0 - 0x07A0)
+class UUISprite final : public UUISpriteBase
 {
 public:
-	TWeakObjectPtr<class AUIBaseActor>            TargetActor;                                       // 0x0170(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ControlWidth;                                      // 0x0178(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ControlHeight;                                     // 0x0179(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          UseWidthRange;                                     // 0x017A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          UseHeightRange;                                    // 0x017B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         MaxWidth;                                          // 0x017C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         MinWidth;                                          // 0x0180(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         MaxHeight;                                         // 0x0184(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         MinHeight;                                         // 0x0188(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         AdditionalWidth;                                   // 0x018C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         AdditionalHeight;                                  // 0x0190(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bSizeZeroWhenNotActive;                            // 0x0194(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_195[0x3];                                      // 0x0195(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UUIItem>                 TargetUIItem;                                      // 0x0198(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class UUISizeControlByOtherHelper> HelperComp;                                        // 0x01A0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUISpriteType                                 type;                                              // 0x0798(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUISpriteFillMethod                           fillMethod;                                        // 0x0799(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         fillOrigin;                                        // 0x079A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          fillDirectionFlip;                                 // 0x079B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         fillAmount;                                        // 0x079C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bTileAutoFit;                                      // 0x07A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7A1[0x3];                                      // 0x07A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         clampEdge;                                         // 0x07A4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         tileX;                                             // 0x07A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         tileY;                                             // 0x07AC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         offsetX;                                           // 0x07B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         offsetY;                                           // 0x07B4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMaterialInterface*                     HistoryCustomMaterial;                             // 0x07B8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7C0[0x10];                                     // 0x07C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetAdditionalHeight(float value);
-	void SetAdditionalWidth(float value);
-	void SetControlHeight(bool value);
-	void SetControlWidth(bool value);
-	void SetTargetActor(class AUIBaseActor* NewTargetActor);
+	void SetFillAmount(float newValue);
+	void SetFillDirectionFlip(bool newValue);
+	void SetFillMethod(EUISpriteFillMethod newValue);
+	void SetFillOrigin(uint8 newValue);
+	void SetOffsetX(float newValue);
+	void SetOffsetY(float newValue);
+	void SetSpriteType(EUISpriteType newType);
+	void SetTileOffset(const struct FLinearColor& In);
+	void SetTileX(float newValue);
+	void SetTileY(float newValue);
 
-	float GetAdditionalHeight() const;
-	float GetAdditionalWidth() const;
-	bool GetControlHeight() const;
-	bool GetControlWidth() const;
-	class AUIBaseActor* GetTargetActor() const;
+	float GetFillAmount() const;
+	bool GetFillDirectionFlip() const;
+	EUISpriteFillMethod GetFillMethod() const;
+	uint8 GetFillOrigin() const;
+	EUISpriteType GetSpriteType() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISizeControlByOther">();
+		return StaticClassImpl<"UISprite">();
 	}
-	static class UUISizeControlByOther* GetDefaultObj()
+	static class UUISprite* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISizeControlByOther>();
+		return GetDefaultObjImpl<UUISprite>();
 	}
 };
-static_assert(alignof(UUISizeControlByOther) == 0x000008, "Wrong alignment on UUISizeControlByOther");
-static_assert(sizeof(UUISizeControlByOther) == 0x0001A8, "Wrong size on UUISizeControlByOther");
-static_assert(offsetof(UUISizeControlByOther, TargetActor) == 0x000170, "Member 'UUISizeControlByOther::TargetActor' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, ControlWidth) == 0x000178, "Member 'UUISizeControlByOther::ControlWidth' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, ControlHeight) == 0x000179, "Member 'UUISizeControlByOther::ControlHeight' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, UseWidthRange) == 0x00017A, "Member 'UUISizeControlByOther::UseWidthRange' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, UseHeightRange) == 0x00017B, "Member 'UUISizeControlByOther::UseHeightRange' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, MaxWidth) == 0x00017C, "Member 'UUISizeControlByOther::MaxWidth' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, MinWidth) == 0x000180, "Member 'UUISizeControlByOther::MinWidth' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, MaxHeight) == 0x000184, "Member 'UUISizeControlByOther::MaxHeight' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, MinHeight) == 0x000188, "Member 'UUISizeControlByOther::MinHeight' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, AdditionalWidth) == 0x00018C, "Member 'UUISizeControlByOther::AdditionalWidth' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, AdditionalHeight) == 0x000190, "Member 'UUISizeControlByOther::AdditionalHeight' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, bSizeZeroWhenNotActive) == 0x000194, "Member 'UUISizeControlByOther::bSizeZeroWhenNotActive' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, TargetUIItem) == 0x000198, "Member 'UUISizeControlByOther::TargetUIItem' has a wrong offset!");
-static_assert(offsetof(UUISizeControlByOther, HelperComp) == 0x0001A0, "Member 'UUISizeControlByOther::HelperComp' has a wrong offset!");
+static_assert(alignof(UUISprite) == 0x000010, "Wrong alignment on UUISprite");
+static_assert(sizeof(UUISprite) == 0x0007D0, "Wrong size on UUISprite");
+static_assert(offsetof(UUISprite, type) == 0x000798, "Member 'UUISprite::type' has a wrong offset!");
+static_assert(offsetof(UUISprite, fillMethod) == 0x000799, "Member 'UUISprite::fillMethod' has a wrong offset!");
+static_assert(offsetof(UUISprite, fillOrigin) == 0x00079A, "Member 'UUISprite::fillOrigin' has a wrong offset!");
+static_assert(offsetof(UUISprite, fillDirectionFlip) == 0x00079B, "Member 'UUISprite::fillDirectionFlip' has a wrong offset!");
+static_assert(offsetof(UUISprite, fillAmount) == 0x00079C, "Member 'UUISprite::fillAmount' has a wrong offset!");
+static_assert(offsetof(UUISprite, bTileAutoFit) == 0x0007A0, "Member 'UUISprite::bTileAutoFit' has a wrong offset!");
+static_assert(offsetof(UUISprite, clampEdge) == 0x0007A4, "Member 'UUISprite::clampEdge' has a wrong offset!");
+static_assert(offsetof(UUISprite, tileX) == 0x0007A8, "Member 'UUISprite::tileX' has a wrong offset!");
+static_assert(offsetof(UUISprite, tileY) == 0x0007AC, "Member 'UUISprite::tileY' has a wrong offset!");
+static_assert(offsetof(UUISprite, offsetX) == 0x0007B0, "Member 'UUISprite::offsetX' has a wrong offset!");
+static_assert(offsetof(UUISprite, offsetY) == 0x0007B4, "Member 'UUISprite::offsetY' has a wrong offset!");
+static_assert(offsetof(UUISprite, HistoryCustomMaterial) == 0x0007B8, "Member 'UUISprite::HistoryCustomMaterial' has a wrong offset!");
 
-// Class LGUI.UISpineActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUISpineActor final : public AUIBaseActor
+// Class LGUI.UISpriteAnimator
+// 0x0018 (0x0118 - 0x0100)
+class UUISpriteAnimator final : public ULGUIBehaviour
 {
 public:
-	class UUISpineRenderable*                     UISpine;                                           // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         CurFrame;                                          // 0x0100(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUISprite*                              Sprite;                                            // 0x0108(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class ULGUISpriteData_BaseImporter*           CurSpriteImporter;                                 // 0x0110(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	void ResetSpriteImporter();
+	void SetCurFrame(int32 newCurFrame);
+
+	int32 GetCurFrame() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISpineActor">();
+		return StaticClassImpl<"UISpriteAnimator">();
 	}
-	static class AUISpineActor* GetDefaultObj()
+	static class UUISpriteAnimator* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AUISpineActor>();
+		return GetDefaultObjImpl<UUISpriteAnimator>();
 	}
 };
-static_assert(alignof(AUISpineActor) == 0x000008, "Wrong alignment on AUISpineActor");
-static_assert(sizeof(AUISpineActor) == 0x0003A0, "Wrong size on AUISpineActor");
-static_assert(offsetof(AUISpineActor, UISpine) == 0x000398, "Member 'AUISpineActor::UISpine' has a wrong offset!");
+static_assert(alignof(UUISpriteAnimator) == 0x000008, "Wrong alignment on UUISpriteAnimator");
+static_assert(sizeof(UUISpriteAnimator) == 0x000118, "Wrong size on UUISpriteAnimator");
+static_assert(offsetof(UUISpriteAnimator, CurFrame) == 0x000100, "Member 'UUISpriteAnimator::CurFrame' has a wrong offset!");
+static_assert(offsetof(UUISpriteAnimator, Sprite) == 0x000108, "Member 'UUISpriteAnimator::Sprite' has a wrong offset!");
+static_assert(offsetof(UUISpriteAnimator, CurSpriteImporter) == 0x000110, "Member 'UUISpriteAnimator::CurSpriteImporter' has a wrong offset!");
 
-// Class LGUI.UISpineRenderable
-// 0x03D0 (0x0960 - 0x0590)
-class UUISpineRenderable final : public UUIBaseRenderable
-{
-public:
-	float                                         DepthOffset;                                       // 0x0588(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   TextureParameterName;                              // 0x058C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAdjustSizeWithAnimation;                          // 0x0598(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_599[0x37];                                     // 0x0599(0x0037)(Fixing Size After Last Property [ Dumper-7 ])
-	class USpineSkeletonDataAsset*                CurrSkeletonData;                                  // 0x05D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5D8[0x200];                                    // 0x05D8(0x0200)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<ELGUICanvasClipType, class UMaterialInterface*> NormalBlendMaterials;                              // 0x07D8(0x0050)(Edit, NativeAccessSpecifierPrivate)
-	TMap<ELGUICanvasClipType, class UMaterialInterface*> AdditiveBlendMaterials;                            // 0x0828(0x0050)(Edit, NativeAccessSpecifierPrivate)
-	TMap<ELGUICanvasClipType, class UMaterialInterface*> MultiplyBlendMaterials;                            // 0x0878(0x0050)(Edit, NativeAccessSpecifierPrivate)
-	TMap<ELGUICanvasClipType, class UMaterialInterface*> ScreenBlendMaterials;                              // 0x08C8(0x0050)(Edit, NativeAccessSpecifierPrivate)
-	TArray<class UMaterialInstanceDynamic*>       AtlasNormalBlendMaterials;                         // 0x0918(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
-	TArray<class UMaterialInstanceDynamic*>       AtlasAdditiveBlendMaterials;                       // 0x0928(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
-	TArray<class UMaterialInstanceDynamic*>       AtlasMultiplyBlendMaterials;                       // 0x0938(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
-	TArray<class UMaterialInstanceDynamic*>       AtlasScreenBlendMaterials;                         // 0x0948(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_958[0x8];                                      // 0x0958(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void AdjustSize();
-	void AfterSkeletonUpdate(class USpineSkeletonComponent* SkeletonComponent);
-	void TestPlayPreviewAnimInRuntime();
-
-	int32 GetMeshesNum() const;
-	int32 GetTotalVerticeNum() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UISpineRenderable">();
-	}
-	static class UUISpineRenderable* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUISpineRenderable>();
-	}
-};
-static_assert(alignof(UUISpineRenderable) == 0x000010, "Wrong alignment on UUISpineRenderable");
-static_assert(sizeof(UUISpineRenderable) == 0x000960, "Wrong size on UUISpineRenderable");
-static_assert(offsetof(UUISpineRenderable, DepthOffset) == 0x000588, "Member 'UUISpineRenderable::DepthOffset' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, TextureParameterName) == 0x00058C, "Member 'UUISpineRenderable::TextureParameterName' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, bAdjustSizeWithAnimation) == 0x000598, "Member 'UUISpineRenderable::bAdjustSizeWithAnimation' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, CurrSkeletonData) == 0x0005D0, "Member 'UUISpineRenderable::CurrSkeletonData' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, NormalBlendMaterials) == 0x0007D8, "Member 'UUISpineRenderable::NormalBlendMaterials' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, AdditiveBlendMaterials) == 0x000828, "Member 'UUISpineRenderable::AdditiveBlendMaterials' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, MultiplyBlendMaterials) == 0x000878, "Member 'UUISpineRenderable::MultiplyBlendMaterials' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, ScreenBlendMaterials) == 0x0008C8, "Member 'UUISpineRenderable::ScreenBlendMaterials' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, AtlasNormalBlendMaterials) == 0x000918, "Member 'UUISpineRenderable::AtlasNormalBlendMaterials' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, AtlasAdditiveBlendMaterials) == 0x000928, "Member 'UUISpineRenderable::AtlasAdditiveBlendMaterials' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, AtlasMultiplyBlendMaterials) == 0x000938, "Member 'UUISpineRenderable::AtlasMultiplyBlendMaterials' has a wrong offset!");
-static_assert(offsetof(UUISpineRenderable, AtlasScreenBlendMaterials) == 0x000948, "Member 'UUISpineRenderable::AtlasScreenBlendMaterials' has a wrong offset!");
-
-// Class LGUI.UISpriteActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUISpriteActor final : public AUIBaseActor
-{
-public:
-	class UUISprite*                              UISprite;                                          // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UISpriteActor">();
-	}
-	static class AUISpriteActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AUISpriteActor>();
-	}
-};
-static_assert(alignof(AUISpriteActor) == 0x000008, "Wrong alignment on AUISpriteActor");
-static_assert(sizeof(AUISpriteActor) == 0x0003A0, "Wrong size on AUISpriteActor");
-static_assert(offsetof(AUISpriteActor, UISprite) == 0x000398, "Member 'AUISpriteActor::UISprite' has a wrong offset!");
-
-// Class LGUI.UISpriteBase_BP
-// 0x0010 (0x07A0 - 0x0790)
-class UUISpriteBase_BP final : public UUISpriteBase
-{
-public:
-	class ULGUICreateGeometryHelper*              createGeometryHelper;                              // 0x0790(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class ULGUIUpdateGeometryHelper*              updateGeometryHelper;                              // 0x0798(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	void MarkRebuildGeometry_BP();
-	void MarkVertexChanged_BP();
-	void OnBeforeCreateOrUpdateGeometry_BP();
-	void OnCreateGeometry_BP(class ULGUICreateGeometryHelper* InCreateGeometryHelper, class ULGUISpriteData_BaseObject* InSpriteData);
-	void OnUpdateGeometry_BP(class ULGUIUpdateGeometryHelper* InUpdateGoemetryHelper, class ULGUISpriteData_BaseObject* InSpriteData, bool InVertexPositionChanged, bool InVertexUVChanged, bool InVertexColorChanged);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UISpriteBase_BP">();
-	}
-	static class UUISpriteBase_BP* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUISpriteBase_BP>();
-	}
-};
-static_assert(alignof(UUISpriteBase_BP) == 0x000010, "Wrong alignment on UUISpriteBase_BP");
-static_assert(sizeof(UUISpriteBase_BP) == 0x0007A0, "Wrong size on UUISpriteBase_BP");
-static_assert(offsetof(UUISpriteBase_BP, createGeometryHelper) == 0x000790, "Member 'UUISpriteBase_BP::createGeometryHelper' has a wrong offset!");
-static_assert(offsetof(UUISpriteBase_BP, updateGeometryHelper) == 0x000798, "Member 'UUISpriteBase_BP::updateGeometryHelper' has a wrong offset!");
-
-// Class LGUI.UISpriteSheetTexturePlayer
+// Class LGUI.UISpriteSequencePlayer
 // 0x0018 (0x00F8 - 0x00E0)
-class UUISpriteSheetTexturePlayer final : public ULGUIImageSequencePlayer
+class UUISpriteSequencePlayer final : public ULGUIImageSequencePlayer
 {
 public:
-	TWeakObjectPtr<class UUITexture>              texture;                                           // 0x00E0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         widthCount;                                        // 0x00E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         heightCount;                                       // 0x00EC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_F0[0x8];                                       // 0x00F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UUISpriteBase>           sprite;                                            // 0x00E0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class ULGUISpriteData_BaseObject*>     spriteSequence;                                    // 0x00E8(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 
 public:
-	void SetHeightCount(int32 value);
-	void SetWidthCount(int32 value);
+	void SetSpriteSequence(const TArray<class ULGUISpriteData_BaseObject*>& value);
 
-	int32 GetHeightCount() const;
-	int32 GetWidthCount() const;
+	const TArray<class ULGUISpriteData_BaseObject*> GetSpriteSequence() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISpriteSheetTexturePlayer">();
+		return StaticClassImpl<"UISpriteSequencePlayer">();
 	}
-	static class UUISpriteSheetTexturePlayer* GetDefaultObj()
+	static class UUISpriteSequencePlayer* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISpriteSheetTexturePlayer>();
+		return GetDefaultObjImpl<UUISpriteSequencePlayer>();
 	}
 };
-static_assert(alignof(UUISpriteSheetTexturePlayer) == 0x000008, "Wrong alignment on UUISpriteSheetTexturePlayer");
-static_assert(sizeof(UUISpriteSheetTexturePlayer) == 0x0000F8, "Wrong size on UUISpriteSheetTexturePlayer");
-static_assert(offsetof(UUISpriteSheetTexturePlayer, texture) == 0x0000E0, "Member 'UUISpriteSheetTexturePlayer::texture' has a wrong offset!");
-static_assert(offsetof(UUISpriteSheetTexturePlayer, widthCount) == 0x0000E8, "Member 'UUISpriteSheetTexturePlayer::widthCount' has a wrong offset!");
-static_assert(offsetof(UUISpriteSheetTexturePlayer, heightCount) == 0x0000EC, "Member 'UUISpriteSheetTexturePlayer::heightCount' has a wrong offset!");
+static_assert(alignof(UUISpriteSequencePlayer) == 0x000008, "Wrong alignment on UUISpriteSequencePlayer");
+static_assert(sizeof(UUISpriteSequencePlayer) == 0x0000F8, "Wrong size on UUISpriteSequencePlayer");
+static_assert(offsetof(UUISpriteSequencePlayer, sprite) == 0x0000E0, "Member 'UUISpriteSequencePlayer::sprite' has a wrong offset!");
+static_assert(offsetof(UUISpriteSequencePlayer, spriteSequence) == 0x0000E8, "Member 'UUISpriteSequencePlayer::spriteSequence' has a wrong offset!");
 
-// Class LGUI.UISpriteTransition
-// 0x0080 (0x02E8 - 0x0268)
-class UUISpriteTransition final : public UUITransitionBase
+// Class LGUI.SpriteTransitionUtil
+// 0x0000 (0x0030 - 0x0030)
+class USpriteTransitionUtil final : public UBlueprintFunctionLibrary
 {
 public:
-	struct FSpriteTransitionInfo                  TransitionInfo;                                    // 0x0268(0x0080)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	void SetAllTransitionSprite(class ULGUISpriteData_BaseObject* NewSprite);
-	void SetStateSprite(EUISelectableSelectionState State, class ULGUISpriteData_BaseObject* NewSprite);
+	static void SetSpriteByTransitionInfo(class UUISprite* Sprite, const struct FSpriteTransitionOfState& Info);
+	static void SetSpriteSize(class UUISprite* Sprite, bool bSnapSize, float Width, float Height);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UISpriteTransition">();
+		return StaticClassImpl<"SpriteTransitionUtil">();
 	}
-	static class UUISpriteTransition* GetDefaultObj()
+	static class USpriteTransitionUtil* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UUISpriteTransition>();
+		return GetDefaultObjImpl<USpriteTransitionUtil>();
 	}
 };
-static_assert(alignof(UUISpriteTransition) == 0x000008, "Wrong alignment on UUISpriteTransition");
-static_assert(sizeof(UUISpriteTransition) == 0x0002E8, "Wrong size on UUISpriteTransition");
-static_assert(offsetof(UUISpriteTransition, TransitionInfo) == 0x000268, "Member 'UUISpriteTransition::TransitionInfo' has a wrong offset!");
+static_assert(alignof(USpriteTransitionUtil) == 0x000008, "Wrong alignment on USpriteTransitionUtil");
+static_assert(sizeof(USpriteTransitionUtil) == 0x000030, "Wrong size on USpriteTransitionUtil");
 
-// Class LGUI.UIStaticMesh
-// 0x0010 (0x05B0 - 0x05A0)
-class UUIStaticMesh final : public UUIDirectMeshRenderable
-{
-public:
-	class UStaticMesh*                            mesh;                                              // 0x0598(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUIStaticMeshVertexColorType                  vertexColorType;                                   // 0x05A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_5A1[0xF];                                      // 0x05A1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetMesh(class UStaticMesh* value);
-	void SetVertexColorType(EUIStaticMeshVertexColorType value);
-
-	class UStaticMesh* GetMesh() const;
-	EUIStaticMeshVertexColorType GetVertexColorType() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UIStaticMesh">();
-	}
-	static class UUIStaticMesh* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUIStaticMesh>();
-	}
-};
-static_assert(alignof(UUIStaticMesh) == 0x000010, "Wrong alignment on UUIStaticMesh");
-static_assert(sizeof(UUIStaticMesh) == 0x0005B0, "Wrong size on UUIStaticMesh");
-static_assert(offsetof(UUIStaticMesh, mesh) == 0x000598, "Member 'UUIStaticMesh::mesh' has a wrong offset!");
-static_assert(offsetof(UUIStaticMesh, vertexColorType) == 0x0005A0, "Member 'UUIStaticMesh::vertexColorType' has a wrong offset!");
-
-// Class LGUI.UITextClickComponent
-// 0x0050 (0x0150 - 0x0100)
-class UUITextClickComponent final : public ULGUIBehaviour
-{
-public:
-	uint8                                         Pad_100[0x10];                                     // 0x0100(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TWeakObjectPtr<class UUIText>                 Target;                                            // 0x0110(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_118[0x38];                                     // 0x0118(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UITextClickComponent">();
-	}
-	static class UUITextClickComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUITextClickComponent>();
-	}
-};
-static_assert(alignof(UUITextClickComponent) == 0x000008, "Wrong alignment on UUITextClickComponent");
-static_assert(sizeof(UUITextClickComponent) == 0x000150, "Wrong size on UUITextClickComponent");
-static_assert(offsetof(UUITextClickComponent, Target) == 0x000110, "Member 'UUITextClickComponent::Target' has a wrong offset!");
-
-// Class LGUI.UITextActor
+// Class LGUI.UIStaticMeshActor
 // 0x0008 (0x03A0 - 0x0398)
-class AUITextActor final : public AUIBaseActor
+class AUIStaticMeshActor final : public AUIBaseActor
 {
 public:
-	class UUIText*                                UIText;                                            // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UUIStaticMesh*                          UIStaticMesh;                                      // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UITextActor">();
+		return StaticClassImpl<"UIStaticMeshActor">();
 	}
-	static class AUITextActor* GetDefaultObj()
+	static class AUIStaticMeshActor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AUITextActor>();
+		return GetDefaultObjImpl<AUIStaticMeshActor>();
 	}
 };
-static_assert(alignof(AUITextActor) == 0x000008, "Wrong alignment on AUITextActor");
-static_assert(sizeof(AUITextActor) == 0x0003A0, "Wrong size on AUITextActor");
-static_assert(offsetof(AUITextActor, UIText) == 0x000398, "Member 'AUITextActor::UIText' has a wrong offset!");
+static_assert(alignof(AUIStaticMeshActor) == 0x000008, "Wrong alignment on AUIStaticMeshActor");
+static_assert(sizeof(AUIStaticMeshActor) == 0x0003A0, "Wrong size on AUIStaticMeshActor");
+static_assert(offsetof(AUIStaticMeshActor, UIStaticMesh) == 0x000398, "Member 'AUIStaticMeshActor::UIStaticMesh' has a wrong offset!");
+
+// Class LGUI.UIText
+// 0x0360 (0x0AF0 - 0x0790)
+class UUIText final : public UUIBatchGeometryRenderable
+{
+public:
+	uint8                                         Pad_788[0x60];                                     // 0x0788(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
+	class ULGUIFontData_BaseObject*               font;                                              // 0x07E8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                 text;                                              // 0x07F0(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         size;                                              // 0x0800(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector2D                              spacePercentage;                                   // 0x0804(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector2D                              space;                                             // 0x080C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         outlineSize;                                       // 0x0814(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 outlineColor;                                      // 0x0818(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int16                                         glowSize;                                          // 0x081C(0x0002)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_81E[0x2];                                      // 0x081E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 glowColor;                                         // 0x0820(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUITextParagraphHorizontalAlign               hAlign;                                            // 0x0824(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUITextParagraphVerticalAlign                 vAlign;                                            // 0x0825(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUITextOverflowType                           overflowType;                                      // 0x0826(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_827[0x1];                                      // 0x0827(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         maxWidth;                                          // 0x0828(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         maxHeight;                                         // 0x082C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          adjustWidth;                                       // 0x0830(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          adjustHeight;                                      // 0x0831(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          NeedCustomerLimitWidth;                            // 0x0832(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_833[0x1];                                      // 0x0833(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CustomerLimitWidth;                                // 0x0834(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUITextFontStyle                              fontStyle;                                         // 0x0838(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          richText;                                          // 0x0839(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bApplyAlphaOnRichText;                             // 0x083A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bFilterAnoRichTag;                                 // 0x083B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bBestFit;                                          // 0x083C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bRichTextTextureBestFit;                           // 0x083D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bAlignCenter;                                      // 0x083E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIgnoreWordRules;                                  // 0x083F(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bAutoEllipsis;                                     // 0x0840(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bAutoEllipsisSplitWord;                            // 0x0841(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_842[0x2];                                      // 0x0842(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         BestFitMinSize;                                    // 0x0844(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCalculateOutlineSize;                             // 0x0848(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_849[0x7];                                      // 0x0849(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         hyperlinks;                                        // 0x0850(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	bool                                          bFilterHyperLinks;                                 // 0x0860(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_861[0x3];                                      // 0x0861(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         hyperLinksClickAreaRatio;                          // 0x0864(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bEnableHyperLinksHighlight;                        // 0x0868(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_869[0x3];                                      // 0x0869(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 HyperLinksHoverColor;                              // 0x086C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_870[0x8];                                      // 0x0870(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const class FString& HyperLink)> OnHyperLinkClickCallBack;                        // 0x0878(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8A0[0x80];                                     // 0x08A0(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bEnableTextRenderSystemV2;                         // 0x0920(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_921[0x117];                                    // 0x0921(0x0117)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUITextClickComponent*                  ClickComponent;                                    // 0x0A38(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_A40[0x28];                                     // 0x0A40(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             OnSelfLanguageChange;                              // 0x0A68(0x0028)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnTextureAsyncLoaded;                              // 0x0A90(0x0028)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NativeAccessSpecifierPublic)
+	uint32                                        TranslateId;                                       // 0x0AB8(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_ABC[0x24];                                     // 0x0ABC(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bGameRichText;                                     // 0x0AE0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_AE1[0xF];                                      // 0x0AE1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static void OnTsLanguageChange();
+	static void SetGmReplaceFontDelegate(const TDelegate<void(class UUIText* uiText)>& Delegate);
+	static void SetLocalTextDelegate(const TDelegate<void(const class FString& TableName, int32 TextKey, class UUIText* uiText)>& Delegate);
+	static void SetLocalTextNewDelegate(const TDelegate<void(const class FString& TextKey, class UUIText* uiText, const bool isMainText)>& Delegate);
+	static void SetTextTranslateDelegate(const TDelegate<void(class UUIText* uiText)>& Delegate);
+	static void SetTsGameRichTextDelegate(const TDelegate<void(const class FString& RichTextType, const TArray<class FString>& Params)>& Delegate);
+
+	void AddFloatArgs(float Value);
+	void AddFormatTableInfo(const class FString& ConfigTableName, int32 Key);
+	void AddFormatTableInfoNew(const class FString& Key);
+	void AddInt64Args(int64 Value);
+	void AddIntArgs(int32 Value);
+	void AddStringArgs(const class FString& Value);
+	void Clear();
+	int32 GetDisplayCharLength();
+	int32 GetRealFontSize();
+	struct FVector2D GetRealSize();
+	int32 GetRenderLineCharNum(int32 index);
+	float GetRenderLineHeight(int32 LineIndex);
+	int32 GetRenderLineNum();
+	void GetTextLineNumArray(TArray<int32>* OutArray);
+	struct FVector2D GetTextRenderSize();
+	void OnTextTextureLoaded(const TArray<struct FDynamicAtlasSlotManagedHandle>& ManagedHandle);
+	void SetAdjustHeight(bool newAdjustHeight);
+	void SetAdjustWidth(bool newAdjustWidth);
+	void SetEnableHyperLinksHighlight(bool bEnabled);
+	void SetFilterAnoRichTag(bool bFilter);
+	void SetFont(class ULGUIFontData_BaseObject* newFont);
+	void SetFontSize(float newSize);
+	void SetFontSpace(const struct FVector2D& newSpace);
+	void SetFontSpacePercentage(const struct FVector2D& newSpace);
+	void SetFontStyle(EUITextFontStyle newFontStyle);
+	void SetGameRichText(bool value);
+	void SetHyperLinksHoverSpiteActive(bool bActive);
+	void SetMaxHeight(int32 NewMaxHeight);
+	void SetMaxWidth(int32 NewMaxWidth);
+	void SetOverflowType(EUITextOverflowType newOverflowType);
+	void SetParagraphHorizontalAlignment(EUITextParagraphHorizontalAlign newHAlign);
+	void SetParagraphVerticalAlignment(EUITextParagraphVerticalAlign newVAlign);
+	void SetRichText(bool newRichText);
+	void SetText(const class FString& newText, bool DisableTranslate);
+	void ShowText(const class FString& ConfigTableName, int32 Key);
+	void ShowTextNew(const class FString& Key);
+
+	bool GetAdjustHeight() const;
+	bool GetAdjustWidth() const;
+	bool GetAlignCenter() const;
+	bool GetAutoEllipsis() const;
+	bool GetAutoEllipsisSplitWord() const;
+	class ULGUIFontData_BaseObject* GetFont() const;
+	struct FColor GetFontGlowColor() const;
+	int32 GetFontGlowSize() const;
+	struct FColor GetFontOutlineColor() const;
+	int32 GetFontOutlineSize() const;
+	struct FVector2D GetFontSpace() const;
+	struct FVector2D GetFontSpaceFinal() const;
+	struct FVector2D GetFontSpacePercentage() const;
+	EUITextFontStyle GetFontStyle() const;
+	TArray<class FString> GetHyperlinks() const;
+	int32 GetMaxHeight() const;
+	int32 GetMaxWidth() const;
+	EUITextOverflowType GetOverflowType() const;
+	bool GetRichText() const;
+	float GetSize() const;
+	class FString GetText() const;
+	bool IsEnableHyperLinksHighlight() const;
+	bool IsFilterAnoRichTag() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIText">();
+	}
+	static class UUIText* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIText>();
+	}
+};
+static_assert(alignof(UUIText) == 0x000010, "Wrong alignment on UUIText");
+static_assert(sizeof(UUIText) == 0x000AF0, "Wrong size on UUIText");
+static_assert(offsetof(UUIText, font) == 0x0007E8, "Member 'UUIText::font' has a wrong offset!");
+static_assert(offsetof(UUIText, text) == 0x0007F0, "Member 'UUIText::text' has a wrong offset!");
+static_assert(offsetof(UUIText, size) == 0x000800, "Member 'UUIText::size' has a wrong offset!");
+static_assert(offsetof(UUIText, spacePercentage) == 0x000804, "Member 'UUIText::spacePercentage' has a wrong offset!");
+static_assert(offsetof(UUIText, space) == 0x00080C, "Member 'UUIText::space' has a wrong offset!");
+static_assert(offsetof(UUIText, outlineSize) == 0x000814, "Member 'UUIText::outlineSize' has a wrong offset!");
+static_assert(offsetof(UUIText, outlineColor) == 0x000818, "Member 'UUIText::outlineColor' has a wrong offset!");
+static_assert(offsetof(UUIText, glowSize) == 0x00081C, "Member 'UUIText::glowSize' has a wrong offset!");
+static_assert(offsetof(UUIText, glowColor) == 0x000820, "Member 'UUIText::glowColor' has a wrong offset!");
+static_assert(offsetof(UUIText, hAlign) == 0x000824, "Member 'UUIText::hAlign' has a wrong offset!");
+static_assert(offsetof(UUIText, vAlign) == 0x000825, "Member 'UUIText::vAlign' has a wrong offset!");
+static_assert(offsetof(UUIText, overflowType) == 0x000826, "Member 'UUIText::overflowType' has a wrong offset!");
+static_assert(offsetof(UUIText, maxWidth) == 0x000828, "Member 'UUIText::maxWidth' has a wrong offset!");
+static_assert(offsetof(UUIText, maxHeight) == 0x00082C, "Member 'UUIText::maxHeight' has a wrong offset!");
+static_assert(offsetof(UUIText, adjustWidth) == 0x000830, "Member 'UUIText::adjustWidth' has a wrong offset!");
+static_assert(offsetof(UUIText, adjustHeight) == 0x000831, "Member 'UUIText::adjustHeight' has a wrong offset!");
+static_assert(offsetof(UUIText, NeedCustomerLimitWidth) == 0x000832, "Member 'UUIText::NeedCustomerLimitWidth' has a wrong offset!");
+static_assert(offsetof(UUIText, CustomerLimitWidth) == 0x000834, "Member 'UUIText::CustomerLimitWidth' has a wrong offset!");
+static_assert(offsetof(UUIText, fontStyle) == 0x000838, "Member 'UUIText::fontStyle' has a wrong offset!");
+static_assert(offsetof(UUIText, richText) == 0x000839, "Member 'UUIText::richText' has a wrong offset!");
+static_assert(offsetof(UUIText, bApplyAlphaOnRichText) == 0x00083A, "Member 'UUIText::bApplyAlphaOnRichText' has a wrong offset!");
+static_assert(offsetof(UUIText, bFilterAnoRichTag) == 0x00083B, "Member 'UUIText::bFilterAnoRichTag' has a wrong offset!");
+static_assert(offsetof(UUIText, bBestFit) == 0x00083C, "Member 'UUIText::bBestFit' has a wrong offset!");
+static_assert(offsetof(UUIText, bRichTextTextureBestFit) == 0x00083D, "Member 'UUIText::bRichTextTextureBestFit' has a wrong offset!");
+static_assert(offsetof(UUIText, bAlignCenter) == 0x00083E, "Member 'UUIText::bAlignCenter' has a wrong offset!");
+static_assert(offsetof(UUIText, bIgnoreWordRules) == 0x00083F, "Member 'UUIText::bIgnoreWordRules' has a wrong offset!");
+static_assert(offsetof(UUIText, bAutoEllipsis) == 0x000840, "Member 'UUIText::bAutoEllipsis' has a wrong offset!");
+static_assert(offsetof(UUIText, bAutoEllipsisSplitWord) == 0x000841, "Member 'UUIText::bAutoEllipsisSplitWord' has a wrong offset!");
+static_assert(offsetof(UUIText, BestFitMinSize) == 0x000844, "Member 'UUIText::BestFitMinSize' has a wrong offset!");
+static_assert(offsetof(UUIText, bCalculateOutlineSize) == 0x000848, "Member 'UUIText::bCalculateOutlineSize' has a wrong offset!");
+static_assert(offsetof(UUIText, hyperlinks) == 0x000850, "Member 'UUIText::hyperlinks' has a wrong offset!");
+static_assert(offsetof(UUIText, bFilterHyperLinks) == 0x000860, "Member 'UUIText::bFilterHyperLinks' has a wrong offset!");
+static_assert(offsetof(UUIText, hyperLinksClickAreaRatio) == 0x000864, "Member 'UUIText::hyperLinksClickAreaRatio' has a wrong offset!");
+static_assert(offsetof(UUIText, bEnableHyperLinksHighlight) == 0x000868, "Member 'UUIText::bEnableHyperLinksHighlight' has a wrong offset!");
+static_assert(offsetof(UUIText, HyperLinksHoverColor) == 0x00086C, "Member 'UUIText::HyperLinksHoverColor' has a wrong offset!");
+static_assert(offsetof(UUIText, OnHyperLinkClickCallBack) == 0x000878, "Member 'UUIText::OnHyperLinkClickCallBack' has a wrong offset!");
+static_assert(offsetof(UUIText, bEnableTextRenderSystemV2) == 0x000920, "Member 'UUIText::bEnableTextRenderSystemV2' has a wrong offset!");
+static_assert(offsetof(UUIText, ClickComponent) == 0x000A38, "Member 'UUIText::ClickComponent' has a wrong offset!");
+static_assert(offsetof(UUIText, OnSelfLanguageChange) == 0x000A68, "Member 'UUIText::OnSelfLanguageChange' has a wrong offset!");
+static_assert(offsetof(UUIText, OnTextureAsyncLoaded) == 0x000A90, "Member 'UUIText::OnTextureAsyncLoaded' has a wrong offset!");
+static_assert(offsetof(UUIText, TranslateId) == 0x000AB8, "Member 'UUIText::TranslateId' has a wrong offset!");
+static_assert(offsetof(UUIText, bGameRichText) == 0x000AE0, "Member 'UUIText::bGameRichText' has a wrong offset!");
+
+// Class LGUI.UITextAdditionalUVModifier
+// 0x0018 (0x00F0 - 0x00D8)
+class UUITextAdditionalUVModifier final : public UUIGeometryModifierBase
+{
+public:
+	uint8                                         Pad_D8[0x18];                                      // 0x00D8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetAdditionalUV(int32 AdditionalUVChannel, const struct FVector2D& UV);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UITextAdditionalUVModifier">();
+	}
+	static class UUITextAdditionalUVModifier* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUITextAdditionalUVModifier>();
+	}
+};
+static_assert(alignof(UUITextAdditionalUVModifier) == 0x000008, "Wrong alignment on UUITextAdditionalUVModifier");
+static_assert(sizeof(UUITextAdditionalUVModifier) == 0x0000F0, "Wrong size on UUITextAdditionalUVModifier");
+
+// Class LGUI.UITextInputComponent
+// 0x0308 (0x0700 - 0x03F8)
+class UUITextInputComponent final : public UUISelectableComponent
+{
+public:
+	uint8                                         Pad_3F8[0x10];                                     // 0x03F8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AUITextActor>            TextActor;                                         // 0x0408(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                 Text;                                              // 0x0410(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ELGUITextInputType                            InputType;                                         // 0x0420(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_421[0x7];                                      // 0x0421(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PasswordChar;                                      // 0x0428(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bAllowMultiLine;                                   // 0x0438(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_439[0x3];                                      // 0x0439(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AUIBaseActor>            PlaceHolderActor;                                  // 0x043C(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         CaretBlinkRate;                                    // 0x0444(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         CaretWidth;                                        // 0x0448(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          IsShowDefaultText;                                 // 0x044C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_44D[0x3];                                      // 0x044D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 CaretColor;                                        // 0x0450(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FColor                                 SelectionColor;                                    // 0x0454(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVirtualKeyboardOptions                VirtualKeyboradOptions;                            // 0x0458(0x0001)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_459[0x7];                                      // 0x0459(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FKey>                           IgnoreKeys;                                        // 0x0460(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_470[0x18];                                     // 0x0470(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIDrawableEvent                     OnValueChange;                                     // 0x0488(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4A0[0x18];                                     // 0x04A0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIDrawableEvent                     OnSubmit;                                          // 0x04B8(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4D0[0x18];                                     // 0x04D0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUIDrawableEvent                     OnInputActivate;                                   // 0x04E8(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
+	TDelegate<void(const class FString& InString)> OnCheckTextInputDelegate;                         // 0x0500(0x0028)(Edit, ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	uint32                                        MaxInput;                                          // 0x0528(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_52C[0x8C];                                     // 0x052C(0x008C)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerController*                      PlayerController;                                  // 0x05B8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5C0[0x18];                                     // 0x05C0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class UUISprite>               CaretObject;                                       // 0x05D8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<TWeakObjectPtr<class UUISprite>>       SelectionMaskObjectArray;                          // 0x05E0(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5F0[0x70];                                     // 0x05F0(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const class FString& InString)> OnTextChange;                                     // 0x0660(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& InString)> OnTextSubmit;                                     // 0x0688(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& InString)> OnTextClip;                                       // 0x06B0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(bool InActivate)>              OnInputActivateDelegate;                           // 0x06D8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+
+public:
+	void ActivateInputText();
+	void ClearCustomInputTypeEvent();
+	void DeactivateInputText();
+	bool IsInputActive();
+	struct FLGUIDelegateHandleWrapper RegisterInputActivateEvent(const TDelegate<void(bool InActivate)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterSubmitEvent(const TDelegate<void(const class FString& InString)>& InDelegate);
+	struct FLGUIDelegateHandleWrapper RegisterValueChangeEvent(const TDelegate<void(const class FString& InString)>& InDelegate);
+	void SetCustomInputTypeFunction(const TDelegate<void(const class FString& InString)>& InFunction);
+	void SetInputType(ELGUITextInputType newValue);
+	void SetText(const class FString& InText, bool InFireEvent);
+	void UnregisterInputActivateEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterSubmitEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+	void UnregisterValueChangeEvent(const struct FLGUIDelegateHandleWrapper& InDelegateHandle);
+
+	ELGUITextInputType GetInputType() const;
+	class FString GetText() const;
+	class UUIText* GetTextComponent() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UITextInputComponent">();
+	}
+	static class UUITextInputComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUITextInputComponent>();
+	}
+};
+static_assert(alignof(UUITextInputComponent) == 0x000008, "Wrong alignment on UUITextInputComponent");
+static_assert(sizeof(UUITextInputComponent) == 0x000700, "Wrong size on UUITextInputComponent");
+static_assert(offsetof(UUITextInputComponent, TextActor) == 0x000408, "Member 'UUITextInputComponent::TextActor' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, Text) == 0x000410, "Member 'UUITextInputComponent::Text' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, InputType) == 0x000420, "Member 'UUITextInputComponent::InputType' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, PasswordChar) == 0x000428, "Member 'UUITextInputComponent::PasswordChar' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, bAllowMultiLine) == 0x000438, "Member 'UUITextInputComponent::bAllowMultiLine' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, PlaceHolderActor) == 0x00043C, "Member 'UUITextInputComponent::PlaceHolderActor' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, CaretBlinkRate) == 0x000444, "Member 'UUITextInputComponent::CaretBlinkRate' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, CaretWidth) == 0x000448, "Member 'UUITextInputComponent::CaretWidth' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, IsShowDefaultText) == 0x00044C, "Member 'UUITextInputComponent::IsShowDefaultText' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, CaretColor) == 0x000450, "Member 'UUITextInputComponent::CaretColor' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, SelectionColor) == 0x000454, "Member 'UUITextInputComponent::SelectionColor' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, VirtualKeyboradOptions) == 0x000458, "Member 'UUITextInputComponent::VirtualKeyboradOptions' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, IgnoreKeys) == 0x000460, "Member 'UUITextInputComponent::IgnoreKeys' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, OnValueChange) == 0x000488, "Member 'UUITextInputComponent::OnValueChange' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, OnSubmit) == 0x0004B8, "Member 'UUITextInputComponent::OnSubmit' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, OnInputActivate) == 0x0004E8, "Member 'UUITextInputComponent::OnInputActivate' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, OnCheckTextInputDelegate) == 0x000500, "Member 'UUITextInputComponent::OnCheckTextInputDelegate' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, MaxInput) == 0x000528, "Member 'UUITextInputComponent::MaxInput' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, PlayerController) == 0x0005B8, "Member 'UUITextInputComponent::PlayerController' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, CaretObject) == 0x0005D8, "Member 'UUITextInputComponent::CaretObject' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, SelectionMaskObjectArray) == 0x0005E0, "Member 'UUITextInputComponent::SelectionMaskObjectArray' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, OnTextChange) == 0x000660, "Member 'UUITextInputComponent::OnTextChange' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, OnTextSubmit) == 0x000688, "Member 'UUITextInputComponent::OnTextSubmit' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, OnTextClip) == 0x0006B0, "Member 'UUITextInputComponent::OnTextClip' has a wrong offset!");
+static_assert(offsetof(UUITextInputComponent, OnInputActivateDelegate) == 0x0006D8, "Member 'UUITextInputComponent::OnInputActivateDelegate' has a wrong offset!");
 
 // Class LGUI.UITextTransition
 // 0x0030 (0x0298 - 0x0268)
@@ -8398,34 +8532,88 @@ static_assert(alignof(UUITextTransition) == 0x000008, "Wrong alignment on UUITex
 static_assert(sizeof(UUITextTransition) == 0x000298, "Wrong size on UUITextTransition");
 static_assert(offsetof(UUITextTransition, TransitionInfo) == 0x000268, "Member 'UUITextTransition::TransitionInfo' has a wrong offset!");
 
-// Class LGUI.UITextureActor
-// 0x0008 (0x03A0 - 0x0398)
-class AUITextureActor final : public AUIBaseActor
+// Class LGUI.UITexture
+// 0x0080 (0x0850 - 0x07D0)
+class UUITexture : public UUITextureBase
 {
 public:
-	class UUITexture*                             UITexture;                                         // 0x0398(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	EUITextureType                                type;                                              // 0x07C8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_7C9[0x3];                                      // 0x07C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLGUISpriteInfo                        spriteData;                                        // 0x07CC(0x0034)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	class ULGUITextureData*                       textureData;                                       // 0x0800(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_808[0x8];                                      // 0x0808(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               uvRect;                                            // 0x0810(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUISpriteFillMethod                           fillMethod;                                        // 0x0820(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         fillOrigin;                                        // 0x0821(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          fillDirectionFlip;                                 // 0x0822(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_823[0x1];                                      // 0x0823(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         fillAmount;                                        // 0x0824(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsFrameAnimate;                                   // 0x0828(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUseFrameSize;                                     // 0x0829(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_82A[0x2];                                      // 0x082A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         FrameAnimateRows;                                  // 0x082C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         FrameAnimateColumn;                                // 0x0830(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         CurFrame;                                          // 0x0834(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector2D                              FrameSize;                                         // 0x0838(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UTexture*                               DynamicAtlasTexture;                               // 0x0840(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_848[0x8];                                      // 0x0848(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetCurFrame(float newCurFrame);
+	void SetFillAmount(float newValue);
+	void SetFillDirectionFlip(bool newValue);
+	void SetFillMethod(EUISpriteFillMethod newValue);
+	void SetFillOrigin(uint8 newValue);
+	void SetSpriteData(const struct FLGUISpriteInfo& newSpriteData);
+	void SetTextureData(class ULGUITextureData* NewTextureData);
+	void SetTextureType(EUITextureType newType);
+	void SetUVRect(const struct FVector4& newUVRect);
+
+	float GetFillAmount() const;
+	bool GetFillDirectionFlip() const;
+	EUISpriteFillMethod GetFillMethod() const;
+	uint8 GetFillOrigin() const;
+	struct FLGUISpriteInfo GetSpriteData() const;
+	class ULGUITextureData* GetTextureData() const;
+	EUITextureType GetTextureType() const;
+	struct FVector4 GetUVRect() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UITextureActor">();
+		return StaticClassImpl<"UITexture">();
 	}
-	static class AUITextureActor* GetDefaultObj()
+	static class UUITexture* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AUITextureActor>();
+		return GetDefaultObjImpl<UUITexture>();
 	}
 };
-static_assert(alignof(AUITextureActor) == 0x000008, "Wrong alignment on AUITextureActor");
-static_assert(sizeof(AUITextureActor) == 0x0003A0, "Wrong size on AUITextureActor");
-static_assert(offsetof(AUITextureActor, UITexture) == 0x000398, "Member 'AUITextureActor::UITexture' has a wrong offset!");
+static_assert(alignof(UUITexture) == 0x000010, "Wrong alignment on UUITexture");
+static_assert(sizeof(UUITexture) == 0x000850, "Wrong size on UUITexture");
+static_assert(offsetof(UUITexture, type) == 0x0007C8, "Member 'UUITexture::type' has a wrong offset!");
+static_assert(offsetof(UUITexture, spriteData) == 0x0007CC, "Member 'UUITexture::spriteData' has a wrong offset!");
+static_assert(offsetof(UUITexture, textureData) == 0x000800, "Member 'UUITexture::textureData' has a wrong offset!");
+static_assert(offsetof(UUITexture, uvRect) == 0x000810, "Member 'UUITexture::uvRect' has a wrong offset!");
+static_assert(offsetof(UUITexture, fillMethod) == 0x000820, "Member 'UUITexture::fillMethod' has a wrong offset!");
+static_assert(offsetof(UUITexture, fillOrigin) == 0x000821, "Member 'UUITexture::fillOrigin' has a wrong offset!");
+static_assert(offsetof(UUITexture, fillDirectionFlip) == 0x000822, "Member 'UUITexture::fillDirectionFlip' has a wrong offset!");
+static_assert(offsetof(UUITexture, fillAmount) == 0x000824, "Member 'UUITexture::fillAmount' has a wrong offset!");
+static_assert(offsetof(UUITexture, bIsFrameAnimate) == 0x000828, "Member 'UUITexture::bIsFrameAnimate' has a wrong offset!");
+static_assert(offsetof(UUITexture, bUseFrameSize) == 0x000829, "Member 'UUITexture::bUseFrameSize' has a wrong offset!");
+static_assert(offsetof(UUITexture, FrameAnimateRows) == 0x00082C, "Member 'UUITexture::FrameAnimateRows' has a wrong offset!");
+static_assert(offsetof(UUITexture, FrameAnimateColumn) == 0x000830, "Member 'UUITexture::FrameAnimateColumn' has a wrong offset!");
+static_assert(offsetof(UUITexture, CurFrame) == 0x000834, "Member 'UUITexture::CurFrame' has a wrong offset!");
+static_assert(offsetof(UUITexture, FrameSize) == 0x000838, "Member 'UUITexture::FrameSize' has a wrong offset!");
+static_assert(offsetof(UUITexture, DynamicAtlasTexture) == 0x000840, "Member 'UUITexture::DynamicAtlasTexture' has a wrong offset!");
 
 // Class LGUI.UITextureBase_BP
-// 0x0010 (0x07D0 - 0x07C0)
+// 0x0010 (0x07E0 - 0x07D0)
 class UUITextureBase_BP final : public UUITextureBase
 {
 public:
-	class ULGUICreateGeometryHelper*              createGeometryHelper;                              // 0x07C0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class ULGUIUpdateGeometryHelper*              updateGeometryHelper;                              // 0x07C8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class ULGUICreateGeometryHelper*              createGeometryHelper;                              // 0x07C8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class ULGUIUpdateGeometryHelper*              updateGeometryHelper;                              // 0x07D0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_7D8[0x8];                                      // 0x07D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void MarkRebuildGeometry_BP();
@@ -8445,9 +8633,9 @@ public:
 	}
 };
 static_assert(alignof(UUITextureBase_BP) == 0x000010, "Wrong alignment on UUITextureBase_BP");
-static_assert(sizeof(UUITextureBase_BP) == 0x0007D0, "Wrong size on UUITextureBase_BP");
-static_assert(offsetof(UUITextureBase_BP, createGeometryHelper) == 0x0007C0, "Member 'UUITextureBase_BP::createGeometryHelper' has a wrong offset!");
-static_assert(offsetof(UUITextureBase_BP, updateGeometryHelper) == 0x0007C8, "Member 'UUITextureBase_BP::updateGeometryHelper' has a wrong offset!");
+static_assert(sizeof(UUITextureBase_BP) == 0x0007E0, "Wrong size on UUITextureBase_BP");
+static_assert(offsetof(UUITextureBase_BP, createGeometryHelper) == 0x0007C8, "Member 'UUITextureBase_BP::createGeometryHelper' has a wrong offset!");
+static_assert(offsetof(UUITextureBase_BP, updateGeometryHelper) == 0x0007D0, "Member 'UUITextureBase_BP::updateGeometryHelper' has a wrong offset!");
 
 // Class LGUI.UITextureBoxActor
 // 0x0008 (0x03A0 - 0x0398)
@@ -8498,7 +8686,7 @@ class UUIToggleGroupComponent final : public UActorComponent
 public:
 	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TWeakObjectPtr<class UUIToggleComponent>      LastSelect;                                        // 0x00C8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<TWeakObjectPtr<class UUIToggleComponent>> ToggleCollection;                                  // 0x00D0(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TArray<TWeakObjectPtr<class UUIToggleComponent>> ToggleCollection;                               // 0x00D0(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	bool                                          bAllowNoneSelected;                                // 0x00E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_E1[0x1F];                                      // 0x00E1(0x001F)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLGUIDrawableEvent                     OnToggle;                                          // 0x0100(0x0018)(Edit, Protected, NativeAccessSpecifierProtected)
@@ -8507,7 +8695,7 @@ public:
 	TWeakObjectPtr<class UUIToggleComponent>      Selected;                                          // 0x011C(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TWeakObjectPtr<class UUIToggleComponent>      Highlighted;                                       // 0x0124(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_12C[0x4];                                      // 0x012C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TWeakObjectPtr<class UUIToggleComponent>> SelectableComponents;                              // 0x0130(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TArray<TWeakObjectPtr<class UUIToggleComponent>> SelectableComponents;                           // 0x0130(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 
 public:
 	void ClearSelection();
@@ -8573,6 +8761,40 @@ static_assert(offsetof(UUIViewAudioEffectComponent, bAudioCoverEnable) == 0x0000
 static_assert(offsetof(UUIViewAudioEffectComponent, AudioUiAlpha) == 0x0000C4, "Member 'UUIViewAudioEffectComponent::AudioUiAlpha' has a wrong offset!");
 static_assert(offsetof(UUIViewAudioEffectComponent, AudioUiCover) == 0x0000C8, "Member 'UUIViewAudioEffectComponent::AudioUiCover' has a wrong offset!");
 
+// Class LGUI.UIViewTweenParams
+// 0x0020 (0x00E0 - 0x00C0)
+class UUIViewTweenParams final : public UActorComponent
+{
+public:
+	float                                         TweenSize;                                         // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         TweenAlpha;                                        // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         TweenTime;                                         // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         ViewNameBlackList;                                 // 0x00D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+
+public:
+	float GetTweenAlpha() const;
+	float GetTweenSize() const;
+	float GetTweenTime() const;
+	const TArray<class FString> GetViewNameBlackList() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UIViewTweenParams">();
+	}
+	static class UUIViewTweenParams* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UUIViewTweenParams>();
+	}
+};
+static_assert(alignof(UUIViewTweenParams) == 0x000008, "Wrong alignment on UUIViewTweenParams");
+static_assert(sizeof(UUIViewTweenParams) == 0x0000E0, "Wrong size on UUIViewTweenParams");
+static_assert(offsetof(UUIViewTweenParams, TweenSize) == 0x0000C0, "Member 'UUIViewTweenParams::TweenSize' has a wrong offset!");
+static_assert(offsetof(UUIViewTweenParams, TweenAlpha) == 0x0000C4, "Member 'UUIViewTweenParams::TweenAlpha' has a wrong offset!");
+static_assert(offsetof(UUIViewTweenParams, TweenTime) == 0x0000C8, "Member 'UUIViewTweenParams::TweenTime' has a wrong offset!");
+static_assert(offsetof(UUIViewTweenParams, ViewNameBlackList) == 0x0000D0, "Member 'UUIViewTweenParams::ViewNameBlackList' has a wrong offset!");
+
 // Class LGUI.LGUIMapTilesSyncer
 // 0x0008 (0x0108 - 0x0100)
 class ULGUIMapTilesSyncer final : public ULGUIBehaviour
@@ -8593,6 +8815,35 @@ public:
 static_assert(alignof(ULGUIMapTilesSyncer) == 0x000008, "Wrong alignment on ULGUIMapTilesSyncer");
 static_assert(sizeof(ULGUIMapTilesSyncer) == 0x000108, "Wrong size on ULGUIMapTilesSyncer");
 static_assert(offsetof(ULGUIMapTilesSyncer, TilesRoot) == 0x000100, "Member 'ULGUIMapTilesSyncer::TilesRoot' has a wrong offset!");
+
+// Class LGUI.ViewportUITexture
+// 0x0010 (0x0860 - 0x0850)
+class UViewportUITexture final : public UUITexture
+{
+public:
+	class ASceneCapture2D*                        SceneCaptureActor;                                 // 0x0850(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bSyncSizeToRT;                                     // 0x0858(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_859[0x7];                                      // 0x0859(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class USceneCaptureComponent2D* GetSceneCapture() const;
+	void ViewPointToWorld(const struct FVector2D& InViewPoint, struct FVector* OutWorldLocation, struct FVector* OutWorldDirection) const;
+	bool WorldToViewPoint(const struct FVector& InWorldLocation, struct FVector2D* OutViewPoint) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ViewportUITexture">();
+	}
+	static class UViewportUITexture* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UViewportUITexture>();
+	}
+};
+static_assert(alignof(UViewportUITexture) == 0x000010, "Wrong alignment on UViewportUITexture");
+static_assert(sizeof(UViewportUITexture) == 0x000860, "Wrong size on UViewportUITexture");
+static_assert(offsetof(UViewportUITexture, SceneCaptureActor) == 0x000850, "Member 'UViewportUITexture::SceneCaptureActor' has a wrong offset!");
+static_assert(offsetof(UViewportUITexture, bSyncSizeToRT) == 0x000858, "Member 'UViewportUITexture::bSyncSizeToRT' has a wrong offset!");
 
 // Class LGUI.ViewportUITextureActor
 // 0x0008 (0x03A0 - 0x0398)
@@ -8617,31 +8868,6 @@ public:
 static_assert(alignof(AViewportUITextureActor) == 0x000008, "Wrong alignment on AViewportUITextureActor");
 static_assert(sizeof(AViewportUITextureActor) == 0x0003A0, "Wrong size on AViewportUITextureActor");
 static_assert(offsetof(AViewportUITextureActor, UITextureComponent) == 0x000398, "Member 'AViewportUITextureActor::UITextureComponent' has a wrong offset!");
-
-// Class LGUI.WwiseAudioComponent
-// 0x0008 (0x00C8 - 0x00C0)
-class UWwiseAudioComponent final : public UActorComponent
-{
-public:
-	int32                                         AudioStateSystemLevel;                             // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	int32 GetAudioStateSystemLevel() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"WwiseAudioComponent">();
-	}
-	static class UWwiseAudioComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UWwiseAudioComponent>();
-	}
-};
-static_assert(alignof(UWwiseAudioComponent) == 0x000008, "Wrong alignment on UWwiseAudioComponent");
-static_assert(sizeof(UWwiseAudioComponent) == 0x0000C8, "Wrong size on UWwiseAudioComponent");
-static_assert(offsetof(UWwiseAudioComponent, AudioStateSystemLevel) == 0x0000C0, "Member 'UWwiseAudioComponent::AudioStateSystemLevel' has a wrong offset!");
 
 }
 

@@ -107,7 +107,7 @@ bool UAnimNotifyStateEffect_C::K2_NotifyEnd(class USkeletalMeshComponent* MeshCo
 // Function AnimNotifyStateEffect.AnimNotifyStateEffect_C.K2_PostChangeProperty
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FName                             PropertyName                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FName                       PropertyName                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UAnimNotifyStateEffect_C::K2_PostChangeProperty(const class FName PropertyName)

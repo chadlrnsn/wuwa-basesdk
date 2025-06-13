@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "Engine_structs.hpp"
-#include "EEffectPlay_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "EEffectType_structs.hpp"
 #include "KuroCurve_structs.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "EEffectPlay_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK

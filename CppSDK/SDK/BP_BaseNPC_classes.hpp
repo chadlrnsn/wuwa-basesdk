@@ -37,6 +37,7 @@ public:
 	struct FSoftObjectPath                        BornEffect;                                        // 0x0778(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash)
 	class USkeletalMeshComponent*                 CombineFaceMesh;                                   // 0x0798(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CanUpdateTextureFace;                              // 0x07A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsEnableIK;                                        // 0x07A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_BaseNPC(int32 EntryPoint);
@@ -77,6 +78,7 @@ static_assert(offsetof(ABP_BaseNPC_C, CanLookAtPlayer) == 0x000777, "Member 'ABP
 static_assert(offsetof(ABP_BaseNPC_C, BornEffect) == 0x000778, "Member 'ABP_BaseNPC_C::BornEffect' has a wrong offset!");
 static_assert(offsetof(ABP_BaseNPC_C, CombineFaceMesh) == 0x000798, "Member 'ABP_BaseNPC_C::CombineFaceMesh' has a wrong offset!");
 static_assert(offsetof(ABP_BaseNPC_C, CanUpdateTextureFace) == 0x0007A0, "Member 'ABP_BaseNPC_C::CanUpdateTextureFace' has a wrong offset!");
+static_assert(offsetof(ABP_BaseNPC_C, IsEnableIK) == 0x0007A1, "Member 'ABP_BaseNPC_C::IsEnableIK' has a wrong offset!");
 
 }
 

@@ -232,7 +232,7 @@ void ABP_EffectActor_C::CalculateLifeTime()
 // Function BP_EffectActor.BP_EffectActor_C.IsEditor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    IsEditor_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   IsEditor_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_EffectActor_C::IsEditor(bool* IsEditor_0)
 {
@@ -253,7 +253,7 @@ void ABP_EffectActor_C::IsEditor(bool* IsEditor_0)
 // Function BP_EffectActor.BP_EffectActor_C.Stop
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    Immediately                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -278,7 +278,7 @@ bool ABP_EffectActor_C::Stop(const class FString& Reason, bool Immediately)
 // Function BP_EffectActor.BP_EffectActor_C.Play
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_EffectActor_C::Play(const class FString& Reason)
 {
@@ -326,7 +326,7 @@ void ABP_EffectActor_C::StopEffect()
 // Function BP_EffectActor.BP_EffectActor_C.GetHandle
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_EffectActor_C::GetHandle(int32* Handle)
 {

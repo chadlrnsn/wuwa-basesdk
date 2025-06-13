@@ -10,8 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SD_KuroTraceCloudData_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "E_Cloud_Presents_structs.hpp"
 
@@ -493,9 +494,9 @@ public:
 	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x009C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FRotator                               CallFunc_CalLightDirectionWithLimit_LightRotation; // 0x00A0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	struct FRotator                               CallFunc_CalLightDirectionWithLimit_LightRotation_1; // 0x00AC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector                                CallFunc_GetParallaxCorrectCachedForwardVector_ReturnValue; // 0x00B8(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00C4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B9[0x3];                                       // 0x00B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CallFunc_GetParallaxCorrectCachedForwardVector_ReturnValue; // 0x00BC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Divide_FloatFloat_ReturnValue;            // 0x00C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsUsingParallaxCorrect_ReturnValue_1;     // 0x00CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_CD[0x3];                                       // 0x00CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -507,11 +508,11 @@ public:
 	uint8                                         Pad_179[0x3];                                      // 0x0179(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                CallFunc_GetForwardVector_ReturnValue_1;           // 0x017C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CallFunc_GetForwardVector_ReturnValue_2;           // 0x0188(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Dot_VectorVector_ReturnValue_1;           // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_DegAcos_ReturnValue_1;                    // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue_1;    // 0x019C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_19D[0x3];                                      // 0x019D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Dot_VectorVector_ReturnValue_1;           // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_DegAcos_ReturnValue_1;                    // 0x019C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue_1;    // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A1[0x3];                                      // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         CallFunc_Add_FloatFloat_ReturnValue_1;             // 0x01A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue_2;    // 0x01A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -532,8 +533,8 @@ static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_Multiply_F
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_Add_FloatFloat_ReturnValue) == 0x00009C, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_CalLightDirectionWithLimit_LightRotation) == 0x0000A0, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_CalLightDirectionWithLimit_LightRotation' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_CalLightDirectionWithLimit_LightRotation_1) == 0x0000AC, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_CalLightDirectionWithLimit_LightRotation_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_GetParallaxCorrectCachedForwardVector_ReturnValue) == 0x0000B8, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_GetParallaxCorrectCachedForwardVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_IsValid_ReturnValue) == 0x0000C4, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_IsValid_ReturnValue) == 0x0000B8, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_GetParallaxCorrectCachedForwardVector_ReturnValue) == 0x0000BC, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_GetParallaxCorrectCachedForwardVector_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_Divide_FloatFloat_ReturnValue) == 0x0000C8, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_Divide_FloatFloat_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_IsUsingParallaxCorrect_ReturnValue_1) == 0x0000CC, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_IsUsingParallaxCorrect_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_GetForwardVector_ReturnValue) == 0x0000D0, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_GetForwardVector_ReturnValue' has a wrong offset!");
@@ -543,10 +544,10 @@ static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_DegAcos_Re
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_GreaterEqual_FloatFloat_ReturnValue) == 0x000178, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_GreaterEqual_FloatFloat_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_GetForwardVector_ReturnValue_1) == 0x00017C, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_GetForwardVector_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_GetForwardVector_ReturnValue_2) == 0x000188, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_GetForwardVector_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_Dot_VectorVector_ReturnValue_1) == 0x000194, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_Dot_VectorVector_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_DegAcos_ReturnValue_1) == 0x000198, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_DegAcos_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_GreaterEqual_FloatFloat_ReturnValue_1) == 0x00019C, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_GreaterEqual_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x0001A0, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x000194, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_Dot_VectorVector_ReturnValue_1) == 0x000198, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_Dot_VectorVector_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_DegAcos_ReturnValue_1) == 0x00019C, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_DegAcos_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_GreaterEqual_FloatFloat_ReturnValue_1) == 0x0001A0, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_GreaterEqual_FloatFloat_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_Add_FloatFloat_ReturnValue_1) == 0x0001A4, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_Add_FloatFloat_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_GreaterEqual_FloatFloat_ReturnValue_2) == 0x0001A8, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_GreaterEqual_FloatFloat_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_Update_Light_Direction, CallFunc_Subtract_FloatFloat_ReturnValue_1) == 0x0001AC, "Member 'BP_GlobalGI_C_Update_Light_Direction::CallFunc_Subtract_FloatFloat_ReturnValue_1' has a wrong offset!");
@@ -715,17 +716,17 @@ static_assert(offsetof(BP_GlobalGI_C_UpdateSkyDome, AtmosphereSunRotVec) == 0x00
 static_assert(offsetof(BP_GlobalGI_C_UpdateSkyDome, SkyDomeActor) == 0x000010, "Member 'BP_GlobalGI_C_UpdateSkyDome::SkyDomeActor' has a wrong offset!");
 
 // Function BP_GlobalGI.BP_GlobalGI_C.UpdateCloudCard
-// 0x0094 (0x0094 - 0x0000)
+// 0x00A4 (0x00A4 - 0x0000)
 struct BP_GlobalGI_C_UpdateCloudCard final
 {
 public:
-	struct FKuroCloudCardSetting                  CloudCardSetting;                                  // 0x0000(0x0084)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	struct FLinearColor                           CallFunc_Multiply_LinearColorFloat_ReturnValue;    // 0x0084(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FKuroCloudCardSetting                  CloudCardSetting;                                  // 0x0000(0x0094)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	struct FLinearColor                           CallFunc_Multiply_LinearColorFloat_ReturnValue;    // 0x0094(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_GlobalGI_C_UpdateCloudCard) == 0x000004, "Wrong alignment on BP_GlobalGI_C_UpdateCloudCard");
-static_assert(sizeof(BP_GlobalGI_C_UpdateCloudCard) == 0x000094, "Wrong size on BP_GlobalGI_C_UpdateCloudCard");
+static_assert(sizeof(BP_GlobalGI_C_UpdateCloudCard) == 0x0000A4, "Wrong size on BP_GlobalGI_C_UpdateCloudCard");
 static_assert(offsetof(BP_GlobalGI_C_UpdateCloudCard, CloudCardSetting) == 0x000000, "Member 'BP_GlobalGI_C_UpdateCloudCard::CloudCardSetting' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateCloudCard, CallFunc_Multiply_LinearColorFloat_ReturnValue) == 0x000084, "Member 'BP_GlobalGI_C_UpdateCloudCard::CallFunc_Multiply_LinearColorFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateCloudCard, CallFunc_Multiply_LinearColorFloat_ReturnValue) == 0x000094, "Member 'BP_GlobalGI_C_UpdateCloudCard::CallFunc_Multiply_LinearColorFloat_ReturnValue' has a wrong offset!");
 
 // Function BP_GlobalGI.BP_GlobalGI_C.Update Day Night Data Layer
 // 0x0090 (0x0090 - 0x0000)
@@ -1151,43 +1152,87 @@ static_assert(offsetof(BP_GlobalGI_C_OnGlobalGITick, CallFunc_BooleanOR_ReturnVa
 static_assert(offsetof(BP_GlobalGI_C_OnGlobalGITick, CallFunc_BooleanAND_ReturnValue) == 0x00001D, "Member 'BP_GlobalGI_C_OnGlobalGITick::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
 
 // Function BP_GlobalGI.BP_GlobalGI_C.UpdateEditor
-// 0x0060 (0x0060 - 0x0000)
+// 0x00E0 (0x00E0 - 0x0000)
 struct BP_GlobalGI_C_UpdateEditor final
 {
 public:
-	int32                                         ___int_Array_Index_Variable;                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Array_Index_Variable_1;                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class ABP_DispersionLightPostprocess_C*> CallFunc_GetAllActorsOfClass_OutActors;            // 0x0010(0x0010)(ReferenceParm)
-	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_DispersionLightPostprocess_C*       CallFunc_Array_Get_Item;                           // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class ABP_LevelSequenceHalo_C*>        CallFunc_GetAllActorsOfClass_OutActors_1;          // 0x0038(0x0010)(ReferenceParm)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_LevelSequenceHalo_C*                CallFunc_Array_Get_Item_1;                         // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x005C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_2;                     // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_3;                    // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_4;                    // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_3;                     // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_4;                     // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_VolumetricFogFalloff_SpotLight_C*> CallFunc_GetAllActorsOfClass_OutActors;      // 0x0040(0x0010)(ReferenceParm)
+	TArray<class ABP_VolumetricFogDistFalloff_RectLight_C*> CallFunc_GetAllActorsOfClass_OutActors_1; // 0x0050(0x0010)(ReferenceParm)
+	class ABP_VolumetricFogFalloff_SpotLight_C*   CallFunc_Array_Get_Item;                           // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_VolumetricFogDistFalloff_RectLight_C* CallFunc_Array_Get_Item_1;                       // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0079(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_VolumetricFogDistFalloff_PointLight_C*> CallFunc_GetAllActorsOfClass_OutActors_2; // 0x0080(0x0010)(ReferenceParm)
+	class ABP_VolumetricFogDistFalloff_PointLight_C* CallFunc_Array_Get_Item_2;                      // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0098(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x009C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9D[0x3];                                       // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_DispersionLightPostprocess_C*> CallFunc_GetAllActorsOfClass_OutActors_3;        // 0x00A0(0x0010)(ReferenceParm)
+	class ABP_DispersionLightPostprocess_C*       CallFunc_Array_Get_Item_3;                         // 0x00B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x00BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_LevelSequenceHalo_C*>        CallFunc_GetAllActorsOfClass_OutActors_4;          // 0x00C0(0x0010)(ReferenceParm)
+	class ABP_LevelSequenceHalo_C*                CallFunc_Array_Get_Item_4;                         // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x00DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_GlobalGI_C_UpdateEditor) == 0x000008, "Wrong alignment on BP_GlobalGI_C_UpdateEditor");
-static_assert(sizeof(BP_GlobalGI_C_UpdateEditor) == 0x000060, "Wrong size on BP_GlobalGI_C_UpdateEditor");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Loop_Counter_Variable) == 0x000004, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(sizeof(BP_GlobalGI_C_UpdateEditor) == 0x0000E0, "Wrong size on BP_GlobalGI_C_UpdateEditor");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Loop_Counter_Variable) == 0x000000, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Add_IntInt_ReturnValue) == 0x000004, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Array_Index_Variable) == 0x000008, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Array_Index_Variable' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Array_Index_Variable_1) == 0x00000C, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_GetAllActorsOfClass_OutActors) == 0x000010, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Loop_Counter_Variable_1) == 0x000020, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Get_Item) == 0x000028, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Add_IntInt_ReturnValue_1) == 0x000030, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Length_ReturnValue) == 0x000034, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_GetAllActorsOfClass_OutActors_1) == 0x000038, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_GetAllActorsOfClass_OutActors_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Less_IntInt_ReturnValue) == 0x000048, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Get_Item_1) == 0x000050, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Length_ReturnValue_1) == 0x000058, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Less_IntInt_ReturnValue_1) == 0x00005C, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Loop_Counter_Variable_1) == 0x000010, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Add_IntInt_ReturnValue_1) == 0x000014, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Loop_Counter_Variable_2) == 0x000018, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Add_IntInt_ReturnValue_2) == 0x00001C, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Array_Index_Variable_2) == 0x000020, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Loop_Counter_Variable_3) == 0x000024, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Loop_Counter_Variable_3' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Add_IntInt_ReturnValue_3) == 0x000028, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Loop_Counter_Variable_4) == 0x00002C, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Loop_Counter_Variable_4' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Add_IntInt_ReturnValue_4) == 0x000030, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Array_Index_Variable_3) == 0x000034, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Array_Index_Variable_3' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, ___int_Array_Index_Variable_4) == 0x000038, "Member 'BP_GlobalGI_C_UpdateEditor::___int_Array_Index_Variable_4' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_GetAllActorsOfClass_OutActors) == 0x000040, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_GetAllActorsOfClass_OutActors' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_GetAllActorsOfClass_OutActors_1) == 0x000050, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_GetAllActorsOfClass_OutActors_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Get_Item) == 0x000060, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Get_Item_1) == 0x000068, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Length_ReturnValue) == 0x000070, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Length_ReturnValue_1) == 0x000074, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Less_IntInt_ReturnValue) == 0x000078, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Less_IntInt_ReturnValue_1) == 0x000079, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_GetAllActorsOfClass_OutActors_2) == 0x000080, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_GetAllActorsOfClass_OutActors_2' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Get_Item_2) == 0x000090, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Length_ReturnValue_2) == 0x000098, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Less_IntInt_ReturnValue_2) == 0x00009C, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_GetAllActorsOfClass_OutActors_3) == 0x0000A0, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_GetAllActorsOfClass_OutActors_3' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Get_Item_3) == 0x0000B0, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Get_Item_3' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Length_ReturnValue_3) == 0x0000B8, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Less_IntInt_ReturnValue_3) == 0x0000BC, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_GetAllActorsOfClass_OutActors_4) == 0x0000C0, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_GetAllActorsOfClass_OutActors_4' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Get_Item_4) == 0x0000D0, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Get_Item_4' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Array_Length_ReturnValue_4) == 0x0000D8, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateEditor, CallFunc_Less_IntInt_ReturnValue_4) == 0x0000DC, "Member 'BP_GlobalGI_C_UpdateEditor::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
 
 // Function BP_GlobalGI.BP_GlobalGI_C.UpdateOcean
 // 0x0020 (0x0020 - 0x0000)
@@ -1203,20 +1248,88 @@ static_assert(offsetof(BP_GlobalGI_C_UpdateOcean, CallFunc_GetVectorParameterVal
 static_assert(offsetof(BP_GlobalGI_C_UpdateOcean, CallFunc_GetVectorParameterValue_ReturnValue_1) == 0x000010, "Member 'BP_GlobalGI_C_UpdateOcean::CallFunc_GetVectorParameterValue_ReturnValue_1' has a wrong offset!");
 
 // Function BP_GlobalGI.BP_GlobalGI_C.IsPerformanceLightExist
-// 0x0018 (0x0018 - 0x0000)
+// 0x0038 (0x0038 - 0x0000)
 struct BP_GlobalGI_C_IsPerformanceLightExist final
 {
 public:
-	bool                                          CallFunc_IsEditor_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_PerformanceDisableLight_C*          CallFunc_GetActorOfClass_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWorld*                                 CallFunc_GetWorld_ReturnValue;                     // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                CallFunc_GetActorOfClass_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_PerformanceDisableLight_MP4_OnlyEditor_C* CallFunc_GetActorOfClass_ReturnValue_1;      // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsEditor_ReturnValue;                     // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_PerformanceDisableLight_C*          CallFunc_GetActorOfClass_ReturnValue_2;            // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_GlobalGI_C_IsPerformanceLightExist) == 0x000008, "Wrong alignment on BP_GlobalGI_C_IsPerformanceLightExist");
-static_assert(sizeof(BP_GlobalGI_C_IsPerformanceLightExist) == 0x000018, "Wrong size on BP_GlobalGI_C_IsPerformanceLightExist");
-static_assert(offsetof(BP_GlobalGI_C_IsPerformanceLightExist, CallFunc_IsEditor_ReturnValue) == 0x000000, "Member 'BP_GlobalGI_C_IsPerformanceLightExist::CallFunc_IsEditor_ReturnValue' has a wrong offset!");
+static_assert(sizeof(BP_GlobalGI_C_IsPerformanceLightExist) == 0x000038, "Wrong size on BP_GlobalGI_C_IsPerformanceLightExist");
+static_assert(offsetof(BP_GlobalGI_C_IsPerformanceLightExist, CallFunc_GetWorld_ReturnValue) == 0x000000, "Member 'BP_GlobalGI_C_IsPerformanceLightExist::CallFunc_GetWorld_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_IsPerformanceLightExist, CallFunc_GetActorOfClass_ReturnValue) == 0x000008, "Member 'BP_GlobalGI_C_IsPerformanceLightExist::CallFunc_GetActorOfClass_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_GlobalGI_C_IsPerformanceLightExist, CallFunc_IsValid_ReturnValue) == 0x000010, "Member 'BP_GlobalGI_C_IsPerformanceLightExist::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_IsPerformanceLightExist, CallFunc_GetActorOfClass_ReturnValue_1) == 0x000018, "Member 'BP_GlobalGI_C_IsPerformanceLightExist::CallFunc_GetActorOfClass_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_IsPerformanceLightExist, CallFunc_IsValid_ReturnValue_1) == 0x000020, "Member 'BP_GlobalGI_C_IsPerformanceLightExist::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_IsPerformanceLightExist, CallFunc_IsEditor_ReturnValue) == 0x000021, "Member 'BP_GlobalGI_C_IsPerformanceLightExist::CallFunc_IsEditor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_IsPerformanceLightExist, CallFunc_GetActorOfClass_ReturnValue_2) == 0x000028, "Member 'BP_GlobalGI_C_IsPerformanceLightExist::CallFunc_GetActorOfClass_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_IsPerformanceLightExist, CallFunc_IsValid_ReturnValue_2) == 0x000030, "Member 'BP_GlobalGI_C_IsPerformanceLightExist::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UpdateVolumeCloudLightWeight
+// 0x00C0 (0x00C0 - 0x0000)
+struct BP_GlobalGI_C_UpdateVolumeCloudLightWeight final
+{
+public:
+	bool                                          bFindValidTime;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetScalarParameterValue_ReturnValue;      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSD_KuroTraceCloudData                 CallFunc_Array_Get_Item;                           // 0x0008(0x0014)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSD_KuroTraceCloudData                 CallFunc_Array_Get_Item_1;                         // 0x0028(0x0014)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MapRangeClamped_ReturnValue;              // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_LinearColorLerp_ReturnValue;              // 0x0044(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSD_KuroTraceCloudData                 CallFunc_Array_Get_Item_2;                         // 0x0054(0x0014)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSD_KuroTraceCloudData                 CallFunc_Array_Get_Item_3;                         // 0x0068(0x0014)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_FloatFloat_ReturnValue;      // 0x007C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7D[0x3];                                       // 0x007D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue_1;            // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0084(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_SelectInt_ReturnValue;                    // 0x0088(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x008C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSD_KuroTraceCloudData                 CallFunc_Array_Get_Item_4;                         // 0x0090(0x0014)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x00A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MapRangeClamped_ReturnValue_1;            // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_LinearColorLerp_ReturnValue_1;            // 0x00AC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00BC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight) == 0x000004, "Wrong alignment on BP_GlobalGI_C_UpdateVolumeCloudLightWeight");
+static_assert(sizeof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight) == 0x0000C0, "Wrong size on BP_GlobalGI_C_UpdateVolumeCloudLightWeight");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, bFindValidTime) == 0x000000, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::bFindValidTime' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_GetScalarParameterValue_ReturnValue) == 0x000004, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_GetScalarParameterValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Array_Get_Item) == 0x000008, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Array_Length_ReturnValue) == 0x00001C, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Subtract_IntInt_ReturnValue) == 0x000020, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Subtract_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Array_Length_ReturnValue_1) == 0x000024, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Array_Get_Item_1) == 0x000028, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_MapRangeClamped_ReturnValue) == 0x00003C, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_MapRangeClamped_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, ___int_Array_Index_Variable) == 0x000040, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_LinearColorLerp_ReturnValue) == 0x000044, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_LinearColorLerp_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Array_Get_Item_2) == 0x000054, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Array_Get_Item_3) == 0x000068, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Array_Get_Item_3' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_GreaterEqual_FloatFloat_ReturnValue) == 0x00007C, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_GreaterEqual_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Subtract_IntInt_ReturnValue_1) == 0x000080, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Subtract_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Less_IntInt_ReturnValue) == 0x000084, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_SelectInt_ReturnValue) == 0x000088, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_SelectInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, ___int_Loop_Counter_Variable) == 0x00008C, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Array_Get_Item_4) == 0x000090, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Array_Get_Item_4' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Less_IntInt_ReturnValue_1) == 0x0000A4, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_MapRangeClamped_ReturnValue_1) == 0x0000A8, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_MapRangeClamped_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_LinearColorLerp_ReturnValue_1) == 0x0000AC, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_LinearColorLerp_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GlobalGI_C_UpdateVolumeCloudLightWeight, CallFunc_Add_IntInt_ReturnValue) == 0x0000BC, "Member 'BP_GlobalGI_C_UpdateVolumeCloudLightWeight::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
 
 }
 

@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_DispersionLightPostprocess.BP_DispersionLightPostprocess_C
-// 0x01A0 (0x0450 - 0x02B0)
+// 0x01C0 (0x0470 - 0x02B0)
 class ABP_DispersionLightPostprocess_C final : public AActor
 {
 public:
@@ -52,9 +52,17 @@ public:
 	TMap<class FName, float>                      Scalar_Parameters;                                 // 0x0360(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FName, struct FLinearColor>        Vector_Parameters;                                 // 0x03B0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FName, class UTexture*>            Texture_Parameters;                                // 0x0400(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	float                                         NoiseUSpeed;                                       // 0x0450(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         NoiseVSpeed;                                       // 0x0454(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         NoiseUVMulty;                                      // 0x0458(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         NoiseStrength;                                     // 0x045C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UTexture*                               NoiseTex;                                          // 0x0460(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Reverse;                                           // 0x0468(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	float                                         Desaturation;                                      // 0x046C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_DispersionLightPostprocess(int32 EntryPoint);
+	void ReceiveDestroyed();
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveBeginPlay();
 	void UserConstructionScript();
@@ -72,7 +80,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_DispersionLightPostprocess_C) == 0x000008, "Wrong alignment on ABP_DispersionLightPostprocess_C");
-static_assert(sizeof(ABP_DispersionLightPostprocess_C) == 0x000450, "Wrong size on ABP_DispersionLightPostprocess_C");
+static_assert(sizeof(ABP_DispersionLightPostprocess_C) == 0x000470, "Wrong size on ABP_DispersionLightPostprocess_C");
 static_assert(offsetof(ABP_DispersionLightPostprocess_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_DispersionLightPostprocess_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_DispersionLightPostprocess_C, Arrow) == 0x0002B8, "Member 'ABP_DispersionLightPostprocess_C::Arrow' has a wrong offset!");
 static_assert(offsetof(ABP_DispersionLightPostprocess_C, Sphere) == 0x0002C0, "Member 'ABP_DispersionLightPostprocess_C::Sphere' has a wrong offset!");
@@ -101,6 +109,13 @@ static_assert(offsetof(ABP_DispersionLightPostprocess_C, UseMultiBlend) == 0x000
 static_assert(offsetof(ABP_DispersionLightPostprocess_C, Scalar_Parameters) == 0x000360, "Member 'ABP_DispersionLightPostprocess_C::Scalar_Parameters' has a wrong offset!");
 static_assert(offsetof(ABP_DispersionLightPostprocess_C, Vector_Parameters) == 0x0003B0, "Member 'ABP_DispersionLightPostprocess_C::Vector_Parameters' has a wrong offset!");
 static_assert(offsetof(ABP_DispersionLightPostprocess_C, Texture_Parameters) == 0x000400, "Member 'ABP_DispersionLightPostprocess_C::Texture_Parameters' has a wrong offset!");
+static_assert(offsetof(ABP_DispersionLightPostprocess_C, NoiseUSpeed) == 0x000450, "Member 'ABP_DispersionLightPostprocess_C::NoiseUSpeed' has a wrong offset!");
+static_assert(offsetof(ABP_DispersionLightPostprocess_C, NoiseVSpeed) == 0x000454, "Member 'ABP_DispersionLightPostprocess_C::NoiseVSpeed' has a wrong offset!");
+static_assert(offsetof(ABP_DispersionLightPostprocess_C, NoiseUVMulty) == 0x000458, "Member 'ABP_DispersionLightPostprocess_C::NoiseUVMulty' has a wrong offset!");
+static_assert(offsetof(ABP_DispersionLightPostprocess_C, NoiseStrength) == 0x00045C, "Member 'ABP_DispersionLightPostprocess_C::NoiseStrength' has a wrong offset!");
+static_assert(offsetof(ABP_DispersionLightPostprocess_C, NoiseTex) == 0x000460, "Member 'ABP_DispersionLightPostprocess_C::NoiseTex' has a wrong offset!");
+static_assert(offsetof(ABP_DispersionLightPostprocess_C, Reverse) == 0x000468, "Member 'ABP_DispersionLightPostprocess_C::Reverse' has a wrong offset!");
+static_assert(offsetof(ABP_DispersionLightPostprocess_C, Desaturation) == 0x00046C, "Member 'ABP_DispersionLightPostprocess_C::Desaturation' has a wrong offset!");
 
 }
 

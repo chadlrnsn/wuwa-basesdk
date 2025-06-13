@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
+#include "E_Cloud_Presents_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "Engine_structs.hpp"
 #include "AkAudio_structs.hpp"
-#include "E_Cloud_Presents_structs.hpp"
 
 
 namespace SDK
@@ -120,6 +120,8 @@ public:
 	void 残破竞技场();
 	void 尖刺山();
 	void 观测塔();
+	void 初见七丘();
+	void 七丘夜晚();
 
 public:
 	static class UClass* StaticClass()

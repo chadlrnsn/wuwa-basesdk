@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "AudioMixer_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AudioMixer_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
@@ -816,7 +816,7 @@ public:
 	float                                         CutoffFrequency;                                   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FilterQ;                                           // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSourceEffectFilterAudioBusModulationSettings> AudioBusModulation;                                // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSourceEffectFilterAudioBusModulationSettings> AudioBusModulation;                 // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FSourceEffectFilterSettings) == 0x000008, "Wrong alignment on FSourceEffectFilterSettings");
 static_assert(sizeof(FSourceEffectFilterSettings) == 0x000020, "Wrong size on FSourceEffectFilterSettings");

@@ -27,11 +27,11 @@ public:
 	struct FSAiConditions                         狂暴生效检测;                                      // 0x0790(0x00B8)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_AIC_ME1JiancuxiongMd00001(int32 EntryPoint);
-	void 当触发对策事件时_事件_0(int32 对策事件ID, const struct FSHitInformation& 受击数据);
-	void 背部受击(class ATsBaseCharacter_C* 角色, const struct FGameplayTag& 部位Tag, class ATsBaseCharacter_C* 攻击者);
-	void 狂暴(bool bContent);
 	void OnStart();
+	void 狂暴(bool bContent);
+	void 背部受击(class ATsBaseCharacter_C* 角色, const struct FGameplayTag& 部位Tag, class ATsBaseCharacter_C* 攻击者);
+	void 当触发对策事件时_事件_0(int32 对策事件ID, const struct FSHitInformation& 受击数据);
+	void ExecuteUbergraph_AIC_ME1JiancuxiongMd00001(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

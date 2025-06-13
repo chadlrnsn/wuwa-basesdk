@@ -17,52 +17,54 @@ namespace SDK::Params
 {
 
 // Function ABP_SoarWing.ABP_SoarWing_C.ExecuteUbergraph_ABP_SoarWing
-// 0x0070 (0x0070 - 0x0000)
+// 0x0078 (0x0078 - 0x0000)
 struct ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 CallFunc_GetOwner_ReturnValue;                     // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ABaseCharacter*                         K2Node_DynamicCast_AsBase_Character;               // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         K2Node_Event_DeltaTimeX;                           // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimInstance*                          CallFunc_GetLinkedAnimGraphInstanceByTag_ReturnValue; // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UABP_BaseRole_C*                        K2Node_DynamicCast_AsABP_Base_Role;                // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UABP_BaseRole_C*                        K2Node_DynamicCast_AsABP_Base_Role;                // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UABP_BaseRole_C*                        K2Node_DynamicCast_AsABP_Base_Role_1;              // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_GetRelevantAnimTimeRemaining_ReturnValue; // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                CallFunc_GetOuterObject_ReturnValue;               // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMeshComponent*                 K2Node_DynamicCast_As_______;                      // 0x0060(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_FClamp_ReturnValue;                       // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaTimeX;                           // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetRelevantAnimTimeRemaining_ReturnValue; // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                CallFunc_GetOuterObject_ReturnValue;               // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_FloatFloat_ReturnValue;              // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkeletalMeshComponent*                 K2Node_DynamicCast_As_______;                      // 0x0068(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing) == 0x000008, "Wrong alignment on ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing");
-static_assert(sizeof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing) == 0x000070, "Wrong size on ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing");
+static_assert(sizeof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing) == 0x000078, "Wrong size on ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing");
 static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, EntryPoint) == 0x000000, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::EntryPoint' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_IsValid_ReturnValue) == 0x000004, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_IsValid_ReturnValue' has a wrong offset!");
 static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_GetOwner_ReturnValue) == 0x000008, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_GetOwner_ReturnValue' has a wrong offset!");
 static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_AsBase_Character) == 0x000010, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_AsBase_Character' has a wrong offset!");
 static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_bSuccess) == 0x000018, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_Event_DeltaTimeX) == 0x00001C, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_Event_DeltaTimeX' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_IsValid_ReturnValue) == 0x000019, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_IsValid_ReturnValue' has a wrong offset!");
 static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_GetLinkedAnimGraphInstanceByTag_ReturnValue) == 0x000020, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_GetLinkedAnimGraphInstanceByTag_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_GetAnimInstance_ReturnValue) == 0x000028, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_GetAnimInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_AsABP_Base_Role) == 0x000030, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_AsABP_Base_Role' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_bSuccess_1) == 0x000038, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_AsABP_Base_Role) == 0x000028, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_AsABP_Base_Role' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_bSuccess_1) == 0x000030, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_GetAnimInstance_ReturnValue) == 0x000038, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_GetAnimInstance_ReturnValue' has a wrong offset!");
 static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_AsABP_Base_Role_1) == 0x000040, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_AsABP_Base_Role_1' has a wrong offset!");
 static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_bSuccess_2) == 0x000048, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_GetRelevantAnimTimeRemaining_ReturnValue) == 0x00004C, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_GetRelevantAnimTimeRemaining_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_GetOuterObject_ReturnValue) == 0x000050, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_GetOuterObject_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_Less_FloatFloat_ReturnValue) == 0x000058, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_As_______) == 0x000060, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_As_______' has a wrong offset!");
-static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_bSuccess_3) == 0x000068, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_FClamp_ReturnValue) == 0x00004C, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_FClamp_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_Event_DeltaTimeX) == 0x000050, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_Event_DeltaTimeX' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_GetRelevantAnimTimeRemaining_ReturnValue) == 0x000054, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_GetRelevantAnimTimeRemaining_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_GetOuterObject_ReturnValue) == 0x000058, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_GetOuterObject_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, CallFunc_Less_FloatFloat_ReturnValue) == 0x000060, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::CallFunc_Less_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_As_______) == 0x000068, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_As_______' has a wrong offset!");
+static_assert(offsetof(ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing, K2Node_DynamicCast_bSuccess_3) == 0x000070, "Member 'ABP_SoarWing_C_ExecuteUbergraph_ABP_SoarWing::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
 
 // Function ABP_SoarWing.ABP_SoarWing_C.BlueprintUpdateAnimation
 // 0x0004 (0x0004 - 0x0000)

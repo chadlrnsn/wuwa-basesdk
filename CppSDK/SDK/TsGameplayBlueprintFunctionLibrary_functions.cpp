@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -53,7 +53,7 @@ bool UTsGameplayBlueprintFunctionLibrary_C::ContainsTag(int32 entityId, const st
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::AddTag(int32 entityId, const struct FGameplayTag& tag, class UObject* __WorldContext)
@@ -83,7 +83,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::AddTag(int32 entityId, const struct 
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::AddTagWithDuration(int32 entityId, float duration, const struct FGameplayTag& tag, class UObject* __WorldContext)
@@ -113,7 +113,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::AddTagWithDuration(int32 entityId, f
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           tagName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    tagName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::AddTagByName(int32 entityId, const class FString& tagName, class UObject* __WorldContext)
@@ -142,7 +142,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::AddTagByName(int32 entityId, const c
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::RemoveTag(int32 entityId, const struct FGameplayTag& tag, class UObject* __WorldContext)
@@ -171,7 +171,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::RemoveTag(int32 entityId, const stru
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           tagName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    tagName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::RemoveTagByName(int32 entityId, const class FString& tagName, class UObject* __WorldContext)
@@ -230,7 +230,7 @@ bool UTsGameplayBlueprintFunctionLibrary_C::IsLogicAutonomousProxy(int32 entityI
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FActiveGameplayEffectHandle      handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FActiveGameplayEffectHandle&handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // float                                   stacksToRemove                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
@@ -264,7 +264,7 @@ bool UTsGameplayBlueprintFunctionLibrary_C::RemoveActiveGameplayEffect(int32 ent
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::RemoveBuffByTag(int32 entityId, const struct FGameplayTag& tag, class UObject* __WorldContext)
@@ -538,7 +538,7 @@ class FString UTsGameplayBlueprintFunctionLibrary_C::GetTagDebugStrings(int32 en
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           buffStr                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    buffStr                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
@@ -1219,7 +1219,7 @@ int32 UTsGameplayBlueprintFunctionLibrary_C::GetDebugEntityId(class UObject* __W
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UListView*                        listView                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           filterStr                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    filterStr                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::RefreshBuffListView(int32 entityId, class UListView* listView, const class FString& filterStr, class UObject* __WorldContext)
@@ -1814,7 +1814,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::SetHardnessModeId(int32 entityId, in
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSHitInformation                 hitData                                                (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference, HasGetValueTypeHash)
+// const struct FSHitInformation&          hitData                                                (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::OnHit(int32 entityId, const struct FSHitInformation& hitData, class UObject* __WorldContext)
@@ -1902,7 +1902,7 @@ bool UTsGameplayBlueprintFunctionLibrary_C::CheckHasPart(int32 entityId, class U
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -1934,7 +1934,7 @@ float UTsGameplayBlueprintFunctionLibrary_C::GetPartRemainedLife(int32 entityId,
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::ResetPartLife(int32 entityId, const struct FGameplayTag& tag, class UObject* __WorldContext)
@@ -2407,7 +2407,7 @@ struct FVectorDouble UTsGameplayBlueprintFunctionLibrary_C::GetBeHitLocation(int
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSCounterAttackBuff              addValue                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSCounterAttackBuff&       addValue                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::AddCheckBuffList(int32 entityId, const struct FSCounterAttackBuff& addValue, class UObject* __WorldContext)
@@ -3410,7 +3410,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::SetCurrentPriority(int32 entityId, i
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -3442,7 +3442,7 @@ bool UTsGameplayBlueprintFunctionLibrary_C::HasAbility(int32 entityId, const cla
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FSSkillInfo                      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash)
 
@@ -3474,7 +3474,7 @@ struct FSSkillInfo UTsGameplayBlueprintFunctionLibrary_C::GetSkillInfo(int32 ent
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   priority                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -3505,7 +3505,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::SetSkillPriority(int32 entityId, con
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    isSyn                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    isNotEnd                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -3880,7 +3880,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::OnEndAbility(int32 entityId, class U
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -3912,7 +3912,7 @@ float UTsGameplayBlueprintFunctionLibrary_C::GetPriority(int32 entityId, const c
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -3944,7 +3944,7 @@ float UTsGameplayBlueprintFunctionLibrary_C::GetActivePriority(int32 entityId, c
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   index                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimMontage*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -3978,7 +3978,7 @@ class UAnimMontage* UTsGameplayBlueprintFunctionLibrary_C::GetSkillMontageInstan
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::SetSkillRotateLocation(int32 entityId, const struct FVectorDouble& location, class UObject* __WorldContext)
@@ -4007,7 +4007,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::SetSkillRotateLocation(int32 entityI
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    direct                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             direct                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::SetSkillRotateDirect(int32 entityId, const struct FVectorDouble& direct, class UObject* __WorldContext)
@@ -4242,7 +4242,7 @@ int32 UTsGameplayBlueprintFunctionLibrary_C::GetVisionSkillId(int32 entityId, fl
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    isSyn                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -4330,7 +4330,7 @@ class FString UTsGameplayBlueprintFunctionLibrary_C::GetCurrentMontageCorrespond
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           socketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    socketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::SetSocketName(int32 entityId, const class FString& socketName, class UObject* __WorldContext)
@@ -4389,7 +4389,7 @@ class FString UTsGameplayBlueprintFunctionLibrary_C::GetSocketName(int32 entityI
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           boneName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    boneName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FTransformDouble                 ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -4421,10 +4421,10 @@ struct FTransformDouble UTsGameplayBlueprintFunctionLibrary_C::GetPointTransform
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   montageIndex                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   rate                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           startSection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    startSection                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   startTimeSeconds                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -4458,7 +4458,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::PlaySkillMontage2Server(int32 entity
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   montageIndex                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -4669,7 +4669,7 @@ bool UTsGameplayBlueprintFunctionLibrary_C::FixHookTargetIsClimb(int32 entityId,
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           socketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    socketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::SetIgnoreSocketName(int32 entityId, const class FString& socketName, class UObject* __WorldContext)
@@ -4698,7 +4698,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::SetIgnoreSocketName(int32 entityId, 
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           socketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    socketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::DeleteIgnoreSocketName(int32 entityId, const class FString& socketName, class UObject* __WorldContext)
@@ -4758,9 +4758,9 @@ float UTsGameplayBlueprintFunctionLibrary_C::GetToTargetSocketDistance(int32 ent
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    returnValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// TArray<struct FVector>                  outPathPosition                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FVector                          outLastTraceDestination                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       outHit                                                 (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// TArray<struct FVector>&                 outPathPosition                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FVector&                   outLastTraceDestination                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                outHit                                                 (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::SetPredictProjectileInfo(int32 entityId, bool returnValue, TArray<struct FVector>& outPathPosition, const struct FVector& outLastTraceDestination, const struct FHitResult& outHit, class UObject* __WorldContext)
@@ -5543,7 +5543,7 @@ struct FVectorDouble UTsGameplayBlueprintFunctionLibrary_C::GetManipulateInterac
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::EnvironmentInfoDetect(int32 entityId, const struct FVectorDouble& location, class UObject* __WorldContext)
@@ -5878,7 +5878,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::ResetBaseValueLocal(int32 entityId, 
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          callObject                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::SetEntityEnable(int32 entityId, bool enable, class UObject* callObject, const class FString& reason, class UObject* __WorldContext)
@@ -5967,7 +5967,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::SetEnableAttackInputActionOfMorphVis
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   buffId1                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId1                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId1                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
@@ -6146,7 +6146,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::ChangeAiControllerDebugDraw(int32 en
 // Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.TryGetDebugMovementComp
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           pbDataId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    pbDataId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UKuroDebugMovementComponent*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -6208,7 +6208,7 @@ EHitAnim UTsGameplayBlueprintFunctionLibrary_C::GetBeHitAnimType(int32 typeId, c
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UGA_Base_C*                       ga                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSSkillBehaviorAction            action                                                 (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FSSkillBehaviorAction&     action                                                 (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::SkillBehaviorBegin(int32 entityId, class UGA_Base_C* ga, const struct FSSkillBehaviorAction& action, class UObject* __WorldContext)
@@ -6239,7 +6239,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::SkillBehaviorBegin(int32 entityId, c
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UGA_Base_C*                       ga                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSSkillBehaviorCondition         condition                                              (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FSSkillBehaviorCondition&  condition                                              (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -6564,8 +6564,8 @@ void UTsGameplayBlueprintFunctionLibrary_C::SetIsHookEndByInterrupt(int32 entity
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    end                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             start                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             end                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    draw                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -6661,7 +6661,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::EndStatueInteract(int32 entityId, cl
 // float                                   distance                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    isPowerfulMode                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // float                                   checkAngle                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FGameplayTag>             tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FGameplayTag>&            tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::StartInhalation(int32 entityId, float strength, float distance, bool isPowerfulMode, float checkAngle, TArray<struct FGameplayTag>& tag, class UObject* __WorldContext)
@@ -6783,7 +6783,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::EndCustomInteract(int32 entityId, cl
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   phantomFormationId                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FGameplayTag>             skillTriggerTags                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FGameplayTag>&            skillTriggerTags                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::ChangePhantomTeam(int32 phantomFormationId, TArray<struct FGameplayTag>& skillTriggerTags, class UObject* __WorldContext)
@@ -6991,7 +6991,7 @@ float UTsGameplayBlueprintFunctionLibrary_C::GetEntityDeltaMillisecond(int32 ent
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class ATsBaseCharacter_C*               target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int64                                   buffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   addCount                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -7056,7 +7056,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::SyncTwoEntityLocationAndRotation(int
 // bool                                    visible                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    collision                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    movable                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    sync                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -7453,7 +7453,7 @@ void UTsGameplayBlueprintFunctionLibrary_C::StartBattleQte(int32 entityId, int32
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsGameplayBlueprintFunctionLibrary_C::StopGroup1Skill(int32 entityId, const class FString& reason, class UObject* __WorldContext)
@@ -7475,6 +7475,375 @@ void UTsGameplayBlueprintFunctionLibrary_C::StopGroup1Skill(int32 entityId, cons
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.GetLocationByAction
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UGA_Base_C*                       ga                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSSkillBehaviorAction&     action                                                 (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVectorDouble UTsGameplayBlueprintFunctionLibrary_C::GetLocationByAction(int32 entityId, class UGA_Base_C* ga, const struct FSSkillBehaviorAction& action, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "GetLocationByAction");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction Parms{};
+
+	Parms.entityId = entityId;
+	Parms.ga = ga;
+	Parms.action = std::move(action);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.GetRotationByAction
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UGA_Base_C*                       ga                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSSkillBehaviorAction&     action                                                 (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+struct FRotator UTsGameplayBlueprintFunctionLibrary_C::GetRotationByAction(int32 entityId, class UGA_Base_C* ga, const struct FSSkillBehaviorAction& action, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "GetRotationByAction");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction Parms{};
+
+	Parms.entityId = entityId;
+	Parms.ga = ga;
+	Parms.action = std::move(action);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointCharacterLookAtPoint
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVectorDouble UTsGameplayBlueprintFunctionLibrary_C::SlashHookPointCharacterLookAtPoint(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "SlashHookPointCharacterLookAtPoint");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointHasLookAtConfig
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsGameplayBlueprintFunctionLibrary_C::SlashHookPointHasLookAtConfig(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "SlashHookPointHasLookAtConfig");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointIsTakeOverCamera
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsGameplayBlueprintFunctionLibrary_C::SlashHookPointIsTakeOverCamera(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "SlashHookPointIsTakeOverCamera");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.IsSlashGameplayIsSuccess
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsGameplayBlueprintFunctionLibrary_C::IsSlashGameplayIsSuccess(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "IsSlashGameplayIsSuccess");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.GetCharactersLocationNearBy
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVectorDouble&             center                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   distance                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   maxCount                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSCharacterLocationsAndRadius    ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash)
+
+struct FSCharacterLocationsAndRadius UTsGameplayBlueprintFunctionLibrary_C::GetCharactersLocationNearBy(const struct FVectorDouble& center, float distance, int32 maxCount, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "GetCharactersLocationNearBy");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy Parms{};
+
+	Parms.center = std::move(center);
+	Parms.distance = distance;
+	Parms.maxCount = maxCount;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.StartChargeSlash
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsGameplayBlueprintFunctionLibrary_C::StartChargeSlash(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "StartChargeSlash");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.StopChargeSlash
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsGameplayBlueprintFunctionLibrary_C::StopChargeSlash(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "StopChargeSlash");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.BeginSkillAsync
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             socketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UKuroBooleanEventBinder*          eventBinder                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsGameplayBlueprintFunctionLibrary_C::BeginSkillAsync(int32 entityId, class FName skillId, class AActor* target, class FName socketName, class UKuroBooleanEventBinder* eventBinder, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "BeginSkillAsync");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync Parms{};
+
+	Parms.entityId = entityId;
+	Parms.skillId = skillId;
+	Parms.target = target;
+	Parms.socketName = socketName;
+	Parms.eventBinder = eventBinder;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointSafePointLoc
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+struct FVectorDouble UTsGameplayBlueprintFunctionLibrary_C::SlashHookPointSafePointLoc(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "SlashHookPointSafePointLoc");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointSafePointRot
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+struct FRotator UTsGameplayBlueprintFunctionLibrary_C::SlashHookPointSafePointRot(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsGameplayBlueprintFunctionLibrary_C", "SlashHookPointSafePointRot");
+
+	Params::TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 }

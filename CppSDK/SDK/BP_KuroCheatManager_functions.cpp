@@ -82,7 +82,7 @@ void UBP_KuroCheatManager_C::UpdateFunctionKey()
 // Function BP_KuroCheatManager.BP_KuroCheatManager_C.作弊指令
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             输入按键_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FKey&                      输入按键_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // bool                                    按下_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UBP_KuroCheatManager_C::作弊指令(const struct FKey& 输入按键_0, bool 按下_0)

@@ -28,10 +28,10 @@ public:
 	struct FSAiConditions                         自爆死亡申请监听;                                  // 0x0848(0x00B8)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void 自爆检测(bool bContent);
-	void OnStart();
-	void 自爆死亡申请(bool bContent);
 	void ExecuteUbergraph_AIC_MO1HKacacaMd00101(int32 EntryPoint);
+	void 自爆死亡申请(bool bContent);
+	void OnStart();
+	void 自爆检测(bool bContent);
 
 public:
 	static class UClass* StaticClass()

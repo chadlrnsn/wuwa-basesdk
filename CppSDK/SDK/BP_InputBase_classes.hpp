@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "SInputShowList_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EInputCharacterState_structs.hpp"
-#include "SInputShowList_structs.hpp"
 
 
 namespace SDK
@@ -28,8 +28,8 @@ public:
 	class ABaseCharacter*                         OwnerActor;                                        // 0x00C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         UnlockLongPressTime;                               // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         IsLockOnState;                                     // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<EInputCharacterState, struct FSInputShowList> InputShowMap;                                      // 0x00D8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<EInputCharacterState, struct FSInputShowList> MobileInputShowMap;                                // 0x0128(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EInputCharacterState, struct FSInputShowList> InputShowMap;                                 // 0x00D8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EInputCharacterState, struct FSInputShowList> MobileInputShowMap;                           // 0x0128(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_BP_InputBase(int32 EntryPoint);

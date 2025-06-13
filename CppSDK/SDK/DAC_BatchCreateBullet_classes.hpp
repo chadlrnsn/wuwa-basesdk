@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_classes.hpp"
 #include "SSkillBehaviorBatchBullet_structs.hpp"
 #include "EBatchBulletPosition_structs.hpp"
-#include "Engine_classes.hpp"
 
 
 namespace SDK

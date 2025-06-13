@@ -21,7 +21,7 @@ namespace SDK
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -143,7 +143,7 @@ void UTsAiBlueprintFunctionLibrary_C::RestartBehaviorTree(int32 entityId, class 
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // bool                                    value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsAiBlueprintFunctionLibrary_C::SetAiEnabled(int32 entityId, bool value, const class FString& key, class UObject* __WorldContext)
@@ -523,7 +523,7 @@ int32 UTsAiBlueprintFunctionLibrary_C::GetSummonType(int32 entityId, class UObje
 // Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.TsLogInfo
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    text                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsAiBlueprintFunctionLibrary_C::TsLogInfo(const class FString& text, class UObject* __WorldContext)
@@ -659,10 +659,10 @@ void UTsAiBlueprintFunctionLibrary_C::OnPlayerImpactBegin(int32 entityId, class 
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    isAttacked1                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
-// bool                                    isImpacted                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
-// float                                   direction                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   strength                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool&                                   isAttacked1                                            (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// bool&                                   isImpacted                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// float&                                  direction                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float&                                  strength                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsAiBlueprintFunctionLibrary_C::UpdateNpcPerformData(int32 entityId, bool& isAttacked1, bool& isImpacted, float& direction, float& strength, class UObject* __WorldContext)
@@ -698,7 +698,7 @@ void UTsAiBlueprintFunctionLibrary_C::UpdateNpcPerformData(int32 entityId, bool&
 // Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelIntVar
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FSAiLevelVar&              levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -728,7 +728,7 @@ int32 UTsAiBlueprintFunctionLibrary_C::GetLevelIntVar(const struct FSAiLevelVar&
 // Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelStringVar
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FSAiLevelVar&              levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
@@ -758,7 +758,7 @@ class FString UTsAiBlueprintFunctionLibrary_C::GetLevelStringVar(const struct FS
 // Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelFloatVar
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FSAiLevelVar&              levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -788,7 +788,7 @@ float UTsAiBlueprintFunctionLibrary_C::GetLevelFloatVar(const struct FSAiLevelVa
 // Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelPosVar
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FSAiLevelVar&              levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -818,7 +818,7 @@ struct FVector UTsAiBlueprintFunctionLibrary_C::GetLevelPosVar(const struct FSAi
 // Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetLevelBoolVar
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSAiLevelVar                     levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FSAiLevelVar&              levelVar                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -832,6 +832,67 @@ bool UTsAiBlueprintFunctionLibrary_C::GetLevelBoolVar(const struct FSAiLevelVar&
 	Params::TsAiBlueprintFunctionLibrary_C_GetLevelBoolVar Parms{};
 
 	Parms.levelVar = std::move(levelVar);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.UpdateNpcStateData
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32&                                  animState                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsAiBlueprintFunctionLibrary_C::UpdateNpcStateData(int32 entityId, int32& animState, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "UpdateNpcStateData");
+
+	Params::TsAiBlueprintFunctionLibrary_C_UpdateNpcStateData Parms{};
+
+	Parms.entityId = entityId;
+	Parms.animState = animState;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	animState = Parms.animState;
+}
+
+
+// Function TsAiBlueprintFunctionLibrary.TsAiBlueprintFunctionLibrary_C.GetAndResetNoTransitionSwitch
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsAiBlueprintFunctionLibrary_C::GetAndResetNoTransitionSwitch(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsAiBlueprintFunctionLibrary_C", "GetAndResetNoTransitionSwitch");
+
+	Params::TsAiBlueprintFunctionLibrary_C_GetAndResetNoTransitionSwitch Parms{};
+
+	Parms.entityId = entityId;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;

@@ -17,35 +17,12 @@
 namespace SDK::Params
 {
 
-// Function GameplayTasks.GameplayTasksComponent.K2_RunGameplayTask
-// 0x0048 (0x0048 - 0x0000)
-struct GameplayTasksComponent_K2_RunGameplayTask final
-{
-public:
-	TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	class UGameplayTask*                          Task;                                              // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Priority;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalRequiredResources;                       // 0x0020(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalClaimedResources;                        // 0x0030(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
-	EGameplayTaskRunResult                        ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(GameplayTasksComponent_K2_RunGameplayTask) == 0x000008, "Wrong alignment on GameplayTasksComponent_K2_RunGameplayTask");
-static_assert(sizeof(GameplayTasksComponent_K2_RunGameplayTask) == 0x000048, "Wrong size on GameplayTasksComponent_K2_RunGameplayTask");
-static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, TaskOwner) == 0x000000, "Member 'GameplayTasksComponent_K2_RunGameplayTask::TaskOwner' has a wrong offset!");
-static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, Task) == 0x000010, "Member 'GameplayTasksComponent_K2_RunGameplayTask::Task' has a wrong offset!");
-static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, Priority) == 0x000018, "Member 'GameplayTasksComponent_K2_RunGameplayTask::Priority' has a wrong offset!");
-static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, AdditionalRequiredResources) == 0x000020, "Member 'GameplayTasksComponent_K2_RunGameplayTask::AdditionalRequiredResources' has a wrong offset!");
-static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, AdditionalClaimedResources) == 0x000030, "Member 'GameplayTasksComponent_K2_RunGameplayTask::AdditionalClaimedResources' has a wrong offset!");
-static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, ReturnValue) == 0x000040, "Member 'GameplayTasksComponent_K2_RunGameplayTask::ReturnValue' has a wrong offset!");
-
 // Function GameplayTasks.GameplayTask_ClaimResource.ClaimResource
 // 0x0030 (0x0030 - 0x0000)
 struct GameplayTask_ClaimResource_ClaimResource final
 {
 public:
-	TScriptInterface<class IGameplayTaskOwnerInterface> InTaskOwner;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class IGameplayTaskOwnerInterface> InTaskOwner;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TSubclassOf<class UGameplayTaskResource>      ResourceClass;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Priority;                                          // 0x0018(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -65,8 +42,8 @@ static_assert(offsetof(GameplayTask_ClaimResource_ClaimResource, ReturnValue) ==
 struct GameplayTask_ClaimResource_ClaimResources final
 {
 public:
-	TScriptInterface<class IGameplayTaskOwnerInterface> InTaskOwner;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class UGameplayTaskResource>> ResourceClasses;                                   // 0x0010(0x0010)(Parm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class IGameplayTaskOwnerInterface> InTaskOwner;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class UGameplayTaskResource>> ResourceClasses;                                // 0x0010(0x0010)(Parm, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	uint8                                         Priority;                                          // 0x0020(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   TaskInstanceName;                                  // 0x0024(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -80,12 +57,35 @@ static_assert(offsetof(GameplayTask_ClaimResource_ClaimResources, Priority) == 0
 static_assert(offsetof(GameplayTask_ClaimResource_ClaimResources, TaskInstanceName) == 0x000024, "Member 'GameplayTask_ClaimResource_ClaimResources::TaskInstanceName' has a wrong offset!");
 static_assert(offsetof(GameplayTask_ClaimResource_ClaimResources, ReturnValue) == 0x000030, "Member 'GameplayTask_ClaimResource_ClaimResources::ReturnValue' has a wrong offset!");
 
+// Function GameplayTasks.GameplayTasksComponent.K2_RunGameplayTask
+// 0x0048 (0x0048 - 0x0000)
+struct GameplayTasksComponent_K2_RunGameplayTask final
+{
+public:
+	TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	class UGameplayTask*                          Task;                                              // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Priority;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalRequiredResources;                    // 0x0020(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class UGameplayTaskResource>> AdditionalClaimedResources;                     // 0x0030(0x0010)(Parm, ZeroConstructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
+	EGameplayTaskRunResult                        ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(GameplayTasksComponent_K2_RunGameplayTask) == 0x000008, "Wrong alignment on GameplayTasksComponent_K2_RunGameplayTask");
+static_assert(sizeof(GameplayTasksComponent_K2_RunGameplayTask) == 0x000048, "Wrong size on GameplayTasksComponent_K2_RunGameplayTask");
+static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, TaskOwner) == 0x000000, "Member 'GameplayTasksComponent_K2_RunGameplayTask::TaskOwner' has a wrong offset!");
+static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, Task) == 0x000010, "Member 'GameplayTasksComponent_K2_RunGameplayTask::Task' has a wrong offset!");
+static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, Priority) == 0x000018, "Member 'GameplayTasksComponent_K2_RunGameplayTask::Priority' has a wrong offset!");
+static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, AdditionalRequiredResources) == 0x000020, "Member 'GameplayTasksComponent_K2_RunGameplayTask::AdditionalRequiredResources' has a wrong offset!");
+static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, AdditionalClaimedResources) == 0x000030, "Member 'GameplayTasksComponent_K2_RunGameplayTask::AdditionalClaimedResources' has a wrong offset!");
+static_assert(offsetof(GameplayTasksComponent_K2_RunGameplayTask, ReturnValue) == 0x000040, "Member 'GameplayTasksComponent_K2_RunGameplayTask::ReturnValue' has a wrong offset!");
+
 // Function GameplayTasks.GameplayTask_SpawnActor.SpawnActor
 // 0x0040 (0x0040 - 0x0000)
 struct GameplayTask_SpawnActor_SpawnActor final
 {
 public:
-	TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
 	struct FVector                                SpawnLocation;                                     // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FRotator                               SpawnRotation;                                     // 0x001C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	TSubclassOf<class AActor>                     Class_0;                                           // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -136,7 +136,7 @@ static_assert(offsetof(GameplayTask_SpawnActor_FinishSpawningActor, SpawnedActor
 struct GameplayTask_WaitDelay_TaskWaitDelay final
 {
 public:
-	TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic)
 	float                                         Time;                                              // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Priority;                                          // 0x0014(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          NeedTick;                                          // 0x0015(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

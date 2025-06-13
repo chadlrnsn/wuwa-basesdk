@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EWeaponViewName_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 
 
 namespace SDK
@@ -21,7 +21,7 @@ namespace SDK
 
 // AnimBlueprintGeneratedClass ABP_SwordScabbarcdCommon.ABP_SwordScabbarcdCommon_C
 // 0x1980 (0x1FE0 - 0x0660)
-class UABP_SwordScabbarcdCommon_C final : public UAnimInstance
+class UABP_SwordScabbarcdCommon_C : public UAnimInstance
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0660(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

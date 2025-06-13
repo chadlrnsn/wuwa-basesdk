@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_XA.GA_XA_C
-// 0x0010 (0x0568 - 0x0558)
+// 0x0010 (0x0578 - 0x0568)
 class UGA_XA_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_XA_C;                            // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	EMovementMode                                 运动模式;                                          // 0x0560(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_XA_C;                            // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	EMovementMode                                 运动模式;                                          // 0x0570(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_XA(int32 EntryPoint);
@@ -41,9 +41,9 @@ public:
 	}
 };
 static_assert(alignof(UGA_XA_C) == 0x000008, "Wrong alignment on UGA_XA_C");
-static_assert(sizeof(UGA_XA_C) == 0x000568, "Wrong size on UGA_XA_C");
-static_assert(offsetof(UGA_XA_C, UberGraphFrame_GA_XA_C) == 0x000558, "Member 'UGA_XA_C::UberGraphFrame_GA_XA_C' has a wrong offset!");
-static_assert(offsetof(UGA_XA_C, 运动模式) == 0x000560, "Member 'UGA_XA_C::运动模式' has a wrong offset!");
+static_assert(sizeof(UGA_XA_C) == 0x000578, "Wrong size on UGA_XA_C");
+static_assert(offsetof(UGA_XA_C, UberGraphFrame_GA_XA_C) == 0x000568, "Member 'UGA_XA_C::UberGraphFrame_GA_XA_C' has a wrong offset!");
+static_assert(offsetof(UGA_XA_C, 运动模式) == 0x000570, "Member 'UGA_XA_C::运动模式' has a wrong offset!");
 
 }
 

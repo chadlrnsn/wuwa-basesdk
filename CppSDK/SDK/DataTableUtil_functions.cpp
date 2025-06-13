@@ -20,10 +20,10 @@ namespace SDK
 // Function DataTableUtil.DataTableUtil_C.LoadRoleQualityInfo
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Row                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Row                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bSucc                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FSRoleQualityInfo                result                                                 (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   bSucc                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSRoleQualityInfo*               result                                                 (Parm, OutParm, HasGetValueTypeHash)
 
 void UDataTableUtil_C::LoadRoleQualityInfo(const class FString& Row, class UObject* __WorldContext, bool* bSucc, struct FSRoleQualityInfo* result)
 {
@@ -50,10 +50,10 @@ void UDataTableUtil_C::LoadRoleQualityInfo(const class FString& Row, class UObje
 // Function DataTableUtil.DataTableUtil_C.LoadModelConfig
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Row                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Row                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bSucc                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FSModelConfig                    result                                                 (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+// bool*                                   bSucc                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSModelConfig*                   result                                                 (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
 
 void UDataTableUtil_C::LoadModelConfig(const class FString& Row, class UObject* __WorldContext, bool* bSucc, struct FSModelConfig* result)
 {
@@ -81,7 +81,7 @@ void UDataTableUtil_C::LoadModelConfig(const class FString& Row, class UObject* 
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FSServerInfo>             NewParam                                               (Parm, OutParm)
+// TArray<struct FSServerInfo>*            NewParam                                               (Parm, OutParm)
 
 void UDataTableUtil_C::LoadServerInfo(class UObject* __WorldContext, TArray<struct FSServerInfo>* NewParam)
 {
@@ -104,10 +104,10 @@ void UDataTableUtil_C::LoadServerInfo(class UObject* __WorldContext, TArray<stru
 // Function DataTableUtil.DataTableUtil_C.LoadVisionInfo
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           phantomId                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    phantomId                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSVisionData                     visionConfig                                           (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
-// bool                                    found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSVisionData*                    visionConfig                                           (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+// bool*                                   found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadVisionInfo(const class FString& phantomId, class UObject* __WorldContext, struct FSVisionData* visionConfig, bool* found)
 {
@@ -135,10 +135,10 @@ void UDataTableUtil_C::LoadVisionInfo(const class FString& phantomId, class UObj
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UDataTable*                       inSeqNetwork                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSSequencesNetwork               outInfo                                                (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    outIsFound                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSSequencesNetwork*              outInfo                                                (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   outIsFound                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadSeqNetworksInfo(class UDataTable* inSeqNetwork, const class FString& inRow, class UObject* __WorldContext, struct FSSequencesNetwork* outInfo, bool* outIsFound)
 {
@@ -167,7 +167,7 @@ void UDataTableUtil_C::LoadSeqNetworksInfo(class UDataTable* inSeqNetwork, const
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FSGMOrderInfo>            gmInfoList1                                            (Parm, OutParm)
+// TArray<struct FSGMOrderInfo>*           gmInfoList1                                            (Parm, OutParm)
 
 void UDataTableUtil_C::LoadGmOrderInfo(class UObject* __WorldContext, TArray<struct FSGMOrderInfo>* gmInfoList1)
 {
@@ -190,10 +190,10 @@ void UDataTableUtil_C::LoadGmOrderInfo(class UObject* __WorldContext, TArray<str
 // Function DataTableUtil.DataTableUtil_C.LoadConditionGroupInfo
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSConditionGroup                 outConfig                                              (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSConditionGroup*                outConfig                                              (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadConditionGroupInfo(const class FString& inRow, class UObject* __WorldContext, struct FSConditionGroup* outConfig, bool* outFound)
 {
@@ -220,10 +220,10 @@ void UDataTableUtil_C::LoadConditionGroupInfo(const class FString& inRow, class 
 // Function DataTableUtil.DataTableUtil_C.LoadCipherInfo
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSCipherGameplay                 outConfig                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-// bool                                    outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSCipherGameplay*                outConfig                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// bool*                                   outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadCipherInfo(const class FString& inRow, class UObject* __WorldContext, struct FSCipherGameplay* outConfig, bool* outFound)
 {
@@ -250,10 +250,10 @@ void UDataTableUtil_C::LoadCipherInfo(const class FString& inRow, class UObject*
 // Function DataTableUtil.DataTableUtil_C.LoadInteractionConfig
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSInteractionConfig              ouConfig                                               (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSInteractionConfig*             ouConfig                                               (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadInteractionConfig(const class FString& inRow, class UObject* __WorldContext, struct FSInteractionConfig* ouConfig, bool* outFound)
 {
@@ -280,10 +280,10 @@ void UDataTableUtil_C::LoadInteractionConfig(const class FString& inRow, class U
 // Function DataTableUtil.DataTableUtil_C.LoadUiCameraAnimationSettings
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FSUiCameraAnimationSettings      ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash)
-// bool                                    bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 struct FSUiCameraAnimationSettings UDataTableUtil_C::LoadUiCameraAnimationSettings(const class FString& RowName, class UObject* __WorldContext, bool* bFound)
 {
@@ -309,10 +309,10 @@ struct FSUiCameraAnimationSettings UDataTableUtil_C::LoadUiCameraAnimationSettin
 // Function DataTableUtil.DataTableUtil_C.LoadUiCameraAnimationBlendSettings
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FSUiCameraAnimationBlendSettings ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash)
-// bool                                    bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 struct FSUiCameraAnimationBlendSettings UDataTableUtil_C::LoadUiCameraAnimationBlendSettings(const class FString& RowName, class UObject* __WorldContext, bool* bFound)
 {
@@ -338,10 +338,10 @@ struct FSUiCameraAnimationBlendSettings UDataTableUtil_C::LoadUiCameraAnimationB
 // Function DataTableUtil.DataTableUtil_C.LoadAIConfig
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           inConfigId                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    inConfigId                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSAIConfig                       Out_Row                                                (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSAIConfig*                      Out_Row                                                (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadAIConfig(const class FString& inConfigId, class UObject* __WorldContext, struct FSAIConfig* Out_Row, bool* outFound)
 {
@@ -370,8 +370,8 @@ void UDataTableUtil_C::LoadAIConfig(const class FString& inConfigId, class UObje
 // Parameters:
 // int32                                   CampNum                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSCamp                           CampInfo                                               (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    Found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSCamp*                          CampInfo                                               (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   Found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadCampConfig(int32 CampNum, class UObject* __WorldContext, struct FSCamp* CampInfo, bool* Found)
 {
@@ -400,8 +400,8 @@ void UDataTableUtil_C::LoadCampConfig(int32 CampNum, class UObject* __WorldConte
 // Parameters:
 // int32                                   MapId                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSHitMapping                     result                                                 (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSHitMapping*                    result                                                 (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadHitMapConfig(int32 MapId, class UObject* __WorldContext, struct FSHitMapping* result, bool* found)
 {
@@ -430,7 +430,7 @@ void UDataTableUtil_C::LoadHitMapConfig(int32 MapId, class UObject* __WorldConte
 // Parameters:
 // int32                                   Camp                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECamp                                   Num                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECamp*                                  Num                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UDataTableUtil_C::GetCampNum(int32 Camp, class UObject* __WorldContext, ECamp* Num)
 {
@@ -479,8 +479,8 @@ TArray<struct FSCamp> UDataTableUtil_C::LoadAllCampConfigs(class UObject* __Worl
 // Parameters:
 // class FName                             RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSParkourConfig                  输出行                                                 (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSParkourConfig*                 输出行                                                 (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   found                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadParkourConfig(class FName RowName, class UObject* __WorldContext, struct FSParkourConfig* 输出行, bool* found)
 {
@@ -531,10 +531,10 @@ TArray<struct FSSkillMontage> UDataTableUtil_C::LoadAllSkillMontages(class UObje
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UDataTable*                       CharacterFightInfo                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           CharacterResourcePath                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    CharacterResourcePath                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSCharacterFightInfo             outInfo                                                (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    outIsFound                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSCharacterFightInfo*            outInfo                                                (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   outIsFound                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadCharacterFightInfo(class UDataTable* CharacterFightInfo, const class FString& CharacterResourcePath, class UObject* __WorldContext, struct FSCharacterFightInfo* outInfo, bool* outIsFound)
 {
@@ -562,10 +562,10 @@ void UDataTableUtil_C::LoadCharacterFightInfo(class UDataTable* CharacterFightIn
 // Function DataTableUtil.DataTableUtil_C.LoadManipulatePrecastConfig
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSManipulateConfig               outConfig                                              (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSManipulateConfig*              outConfig                                              (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadManipulatePrecastConfig(const class FString& inRow, class UObject* __WorldContext, struct FSManipulateConfig* outConfig, bool* outFound)
 {
@@ -592,10 +592,10 @@ void UDataTableUtil_C::LoadManipulatePrecastConfig(const class FString& inRow, c
 // Function DataTableUtil.DataTableUtil_C.LoadManipulateItemConfig
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    inRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSManipulateConfig               outConfig                                              (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSManipulateConfig*              outConfig                                              (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   outFound                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UDataTableUtil_C::LoadManipulateItemConfig(const class FString& inRow, class UObject* __WorldContext, struct FSManipulateConfig* outConfig, bool* outFound)
 {
@@ -622,10 +622,10 @@ void UDataTableUtil_C::LoadManipulateItemConfig(const class FString& inRow, clas
 // Function DataTableUtil.DataTableUtil_C.LoadSceneDecorationConfig
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FSSceneDecorationConfig          ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash)
-// bool                                    bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 struct FSSceneDecorationConfig UDataTableUtil_C::LoadSceneDecorationConfig(const class FString& RowName, class UObject* __WorldContext, bool* bFound)
 {
@@ -651,10 +651,10 @@ struct FSSceneDecorationConfig UDataTableUtil_C::LoadSceneDecorationConfig(const
 // Function DataTableUtil.DataTableUtil_C.LoadSceneUITagConfig
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // struct FSSceneUITagConfig               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-// bool                                    bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 struct FSSceneUITagConfig UDataTableUtil_C::LoadSceneUITagConfig(const class FString& RowName, class UObject* __WorldContext, bool* bFound)
 {
@@ -681,7 +681,7 @@ struct FSSceneUITagConfig UDataTableUtil_C::LoadSceneUITagConfig(const class FSt
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<int32, struct FSAiWeaponSocket>    Sockets                                                (Parm, OutParm)
+// TMap<int32, struct FSAiWeaponSocket>*   Sockets                                                (Parm, OutParm)
 
 void UDataTableUtil_C::LoadAllAiWeaponSockets(class UObject* __WorldContext, TMap<int32, struct FSAiWeaponSocket>* Sockets)
 {
@@ -706,7 +706,7 @@ void UDataTableUtil_C::LoadAllAiWeaponSockets(class UObject* __WorldContext, TMa
 // Parameters:
 // class FName                             RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSAiWeaponSocket                 Out_Row                                                (Parm, OutParm, HasGetValueTypeHash)
+// struct FSAiWeaponSocket*                Out_Row                                                (Parm, OutParm, HasGetValueTypeHash)
 
 void UDataTableUtil_C::LoadAiWeaponSocket(class FName RowName, class UObject* __WorldContext, struct FSAiWeaponSocket* Out_Row)
 {
@@ -731,9 +731,9 @@ void UDataTableUtil_C::LoadAiWeaponSocket(class FName RowName, class UObject* __
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             RowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   Key                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32&                            Key                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSWeaponSocketItem               Weapon                                                 (Parm, OutParm, HasGetValueTypeHash)
+// struct FSWeaponSocketItem*              Weapon                                                 (Parm, OutParm, HasGetValueTypeHash)
 
 void UDataTableUtil_C::LoadAiWeaponSocketConfigs(class FName RowName, const int32& Key, class UObject* __WorldContext, struct FSWeaponSocketItem* Weapon)
 {
@@ -758,9 +758,9 @@ void UDataTableUtil_C::LoadAiWeaponSocketConfigs(class FName RowName, const int3
 // Function DataTableUtil.DataTableUtil_C.GetDataTableOnEditor
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           path                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    path                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UDataTable*                       Return                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UDataTable**                      Return                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UDataTableUtil_C::GetDataTableOnEditor(const class FString& path, class UObject* __WorldContext, class UDataTable** Return)
 {

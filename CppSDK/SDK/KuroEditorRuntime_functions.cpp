@@ -173,10 +173,10 @@ bool UEditorRuntimeOperations::IsUdpPortInUse(int32 Port)
 // Function KuroEditorRuntime.EditorRuntimeOperations.ReadBatchFilesAsync
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   FilePaths                                              (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TDelegate<void(TArray<struct FReadFileData>& LoadedFiles, TArray<class FString>& ReadFailedFiles)>OnAllFilesRead                                         (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            FilePaths                                              (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TDelegate<void(const TArray<struct FReadFileData>& LoadedFiles, const TArray<class FString>& ReadFailedFiles)>OnAllFilesRead                                         (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UEditorRuntimeOperations::ReadBatchFilesAsync(const TArray<class FString>& FilePaths, TDelegate<void(TArray<struct FReadFileData>& LoadedFiles, TArray<class FString>& ReadFailedFiles)> OnAllFilesRead)
+void UEditorRuntimeOperations::ReadBatchFilesAsync(const TArray<class FString>& FilePaths, TDelegate<void(const TArray<struct FReadFileData>& LoadedFiles, const TArray<class FString>& ReadFailedFiles)> OnAllFilesRead)
 {
 	static class UFunction* Func = nullptr;
 
@@ -200,7 +200,7 @@ void UEditorRuntimeOperations::ReadBatchFilesAsync(const TArray<class FString>& 
 // Function KuroEditorRuntime.EditorRuntimeOperations.ReadFileAsync
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           FilePath                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FilePath                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TDelegate<void(bool IsSuccess, const class FString& FileContent)>OnFileRead                                             (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UEditorRuntimeOperations::ReadFileAsync(const class FString& FilePath, TDelegate<void(bool IsSuccess, const class FString& FileContent)> OnFileRead)
@@ -227,10 +227,10 @@ void UEditorRuntimeOperations::ReadFileAsync(const class FString& FilePath, TDel
 // Function KuroEditorRuntime.EditorRuntimeOperations.SendHttpRequest
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           Method                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TMap<class FString, class FString>      HeaderParam                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           Content                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Method                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TMap<class FString, class FString>&HeaderParam                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    Content                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TDelegate<void(bool Success, int32 Code, const class FString& Data)>Handler                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UEditorRuntimeOperations::SendHttpRequest(const class FString& Method, const class FString& Url, const TMap<class FString, class FString>& HeaderParam, const class FString& Content, TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handler)
@@ -260,8 +260,8 @@ void UEditorRuntimeOperations::SendHttpRequest(const class FString& Method, cons
 // Function KuroEditorRuntime.EditorRuntimeOperations.SendMessage
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Msg                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Ip                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Msg                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Ip                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Port                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

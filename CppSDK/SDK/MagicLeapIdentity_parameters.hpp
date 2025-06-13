@@ -35,7 +35,7 @@ static_assert(offsetof(MagicLeapIdentity_GetAllAvailableAttributes, ReturnValue)
 struct MagicLeapIdentity_GetAllAvailableAttributesAsync final
 {
 public:
-	TDelegate<void(EMagicLeapIdentityError ResultCode, TArray<EMagicLeapIdentityKey>& AvailableAttributes)> ResultDelegate;                                    // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(EMagicLeapIdentityError ResultCode, const TArray<EMagicLeapIdentityKey>& AvailableAttributes)> ResultDelegate; // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapIdentity_GetAllAvailableAttributesAsync) == 0x000004, "Wrong alignment on MagicLeapIdentity_GetAllAvailableAttributesAsync");
 static_assert(sizeof(MagicLeapIdentity_GetAllAvailableAttributesAsync) == 0x000028, "Wrong size on MagicLeapIdentity_GetAllAvailableAttributesAsync");
@@ -63,7 +63,7 @@ struct MagicLeapIdentity_RequestAttributeValueAsync final
 {
 public:
 	TArray<EMagicLeapIdentityKey>                 RequestedAttributeList;                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TDelegate<void(EMagicLeapIdentityError ResultCode, TArray<struct FMagicLeapIdentityAttribute>& AttributeValue)> ResultDelegate;                                    // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(EMagicLeapIdentityError ResultCode, const TArray<struct FMagicLeapIdentityAttribute>& AttributeValue)> ResultDelegate; // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	EMagicLeapIdentityError                       ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };

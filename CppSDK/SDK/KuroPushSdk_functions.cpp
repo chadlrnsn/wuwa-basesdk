@@ -39,8 +39,8 @@ void UKuroPushSdkStaticLibrary::AreNotificationEnable()
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.BindAlias
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           alias                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           sn                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    alias                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    sn                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::BindAlias(const class FString& alias, const class FString& sn)
 {
@@ -286,9 +286,9 @@ void UKuroPushSdkStaticLibrary::OpenNotification()
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.PushLocalNotification
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           title                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           body                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           exData                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    title                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    body                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    exData                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::PushLocalNotification(const class FString& title, const class FString& body, const class FString& exData)
 {
@@ -372,9 +372,9 @@ void UKuroPushSdkStaticLibrary::Resume()
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.SendFeedBackMessage
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           actionId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           taskId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           msgId                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    actionId                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    taskId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    msgId                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::SendFeedBackMessage(const class FString& actionId, const class FString& taskId, const class FString& msgId)
 {
@@ -401,7 +401,7 @@ void UKuroPushSdkStaticLibrary::SendFeedBackMessage(const class FString& actionI
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.SetApplicationGroupIdentify
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           identify                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    identify                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::SetApplicationGroupIdentify(const class FString& identify)
 {
@@ -426,7 +426,7 @@ void UKuroPushSdkStaticLibrary::SetApplicationGroupIdentify(const class FString&
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.SetBudge
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           budge                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    budge                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::SetBudge(const class FString& budge)
 {
@@ -451,7 +451,7 @@ void UKuroPushSdkStaticLibrary::SetBudge(const class FString& budge)
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.SetChannel
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           channelId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    channelId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::SetChannel(const class FString& channelId)
 {
@@ -495,7 +495,7 @@ void UKuroPushSdkStaticLibrary::SetDebug()
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.SetLocalChannelId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           channelId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          channelId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::SetLocalChannelId(class FString* channelId)
 {
@@ -521,8 +521,8 @@ void UKuroPushSdkStaticLibrary::SetLocalChannelId(class FString* channelId)
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.SetLocalChannelIdAndName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           channelId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           channelName                                            (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          channelId                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          channelName                                            (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::SetLocalChannelIdAndName(class FString* channelId, class FString* channelName)
 {
@@ -551,8 +551,8 @@ void UKuroPushSdkStaticLibrary::SetLocalChannelIdAndName(class FString* channelI
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.SetLocalSetNotificationIcon
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           smallIcon                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           largeIcon                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          smallIcon                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          largeIcon                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::SetLocalSetNotificationIcon(class FString* smallIcon, class FString* largeIcon)
 {
@@ -608,8 +608,8 @@ void UKuroPushSdkStaticLibrary::SetLocationEnable(bool isEnable, bool isVerify)
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.SetNotificationIcon
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           smallIcon                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           largeIcon                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          smallIcon                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          largeIcon                                              (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::SetNotificationIcon(class FString* smallIcon, class FString* largeIcon)
 {
@@ -688,8 +688,8 @@ void UKuroPushSdkStaticLibrary::SetRunInBackGround(bool state)
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.SetTag
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           tags                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           sn                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    tags                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    sn                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroPushSdkStaticLibrary::SetTag(const class FString& tags, const class FString& sn)
@@ -718,9 +718,9 @@ bool UKuroPushSdkStaticLibrary::SetTag(const class FString& tags, const class FS
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.StartPushSdk
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           appId                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           appKey                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           appSecret                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    appId                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    appKey                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    appSecret                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::StartPushSdk(const class FString& appId, const class FString& appKey, const class FString& appSecret)
 {
@@ -785,8 +785,8 @@ void UKuroPushSdkStaticLibrary::TurnOnPush()
 // Function KuroPushSdk.KuroPushSdkStaticLibrary.UnBindAlias
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           alias                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           sn                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    alias                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    sn                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    isSelf                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPushSdkStaticLibrary::UnBindAlias(const class FString& alias, const class FString& sn, bool isSelf)

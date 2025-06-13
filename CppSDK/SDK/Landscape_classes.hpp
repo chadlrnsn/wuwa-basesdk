@@ -99,8 +99,8 @@ public:
 	struct FVector4                               SectionBaseMinAndRange;                            // 0x0340(0x0010)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_350[0x20];                                     // 0x0350(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     LandscapeHoleMaterial;                             // 0x0370(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLandscapeProxyMaterialOverride> LandscapeMaterialsOverride;                        // 0x0378(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FLandscapeProxyCustomLayerPhysicalMaterial> CustomLayerPhysicalMaterial;                       // 0x0388(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLandscapeProxyMaterialOverride> LandscapeMaterialsOverride;                       // 0x0378(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLandscapeProxyCustomLayerPhysicalMaterial> CustomLayerPhysicalMaterial;           // 0x0388(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          bMeshHoles;                                        // 0x0398(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         MeshHolesMaxLod;                                   // 0x0399(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_39A[0x6];                                      // 0x039A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
@@ -114,8 +114,8 @@ public:
 	uint8                                         Pad_3C4[0x4];                                      // 0x03C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class ULandscapeComponent*>            LandscapeComponents;                               // 0x03C8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	class ULandscapeBatchComponent*               LandscapeBatch;                                    // 0x03D8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class ULandscapeHeightfieldCollisionComponent*> CollisionComponents;                               // 0x03E0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<class UHierarchicalInstancedStaticMeshComponent*> FoliageComponents;                                 // 0x03F0(0x0010)(ExportObject, ZeroConstructor, Transient, DuplicateTransient, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class ULandscapeHeightfieldCollisionComponent*> CollisionComponents;                      // 0x03E0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHierarchicalInstancedStaticMeshComponent*> FoliageComponents;                      // 0x03F0(0x0010)(ExportObject, ZeroConstructor, Transient, DuplicateTransient, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	uint8                                         Pad_400[0x64];                                     // 0x0400(0x0064)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bHasLandscapeGrass;                                // 0x0464(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_465[0x3];                                      // 0x0465(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -130,8 +130,9 @@ public:
 	uint8                                         bCastFarShadowOnMobile : 1;                        // 0x0470(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         BitPad_470_2 : 6;                                  // 0x0470(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
 	uint8                                         Pad_471[0x3];                                      // 0x0471(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bCastHiddenShadow : 1;                             // 0x0474(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         BitPad_474_1 : 7;                                  // 0x0474(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
+	uint8                                         bCastContactShadow : 1;                            // 0x0474(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCastHiddenShadow : 1;                             // 0x0474(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         BitPad_474_2 : 6;                                  // 0x0474(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
 	uint8                                         Pad_475[0x3];                                      // 0x0475(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint8                                         bCastShadowAsTwoSided : 1;                         // 0x0478(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         BitPad_478_1 : 7;                                  // 0x0478(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
@@ -165,7 +166,7 @@ public:
 	ENavDataGatheringMode                         NavigationGeometryGatheringMode;                   // 0x0635(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseLandscapeForCullingInvisibleHLODVertices;      // 0x0636(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHasLayersContent;                                 // 0x0637(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class UTexture2D*, class ULandscapeWeightmapUsage*> WeightmapUsageMap;                                 // 0x0638(0x0050)(Transient, NativeAccessSpecifierPublic)
+	TMap<class UTexture2D*, class ULandscapeWeightmapUsage*> WeightmapUsageMap;                      // 0x0638(0x0050)(Transient, NativeAccessSpecifierPublic)
 
 public:
 	static float GetKuroLandscapeFOVFactor();
@@ -363,7 +364,7 @@ public:
 	uint8                                         Pad_514[0x4];                                      // 0x0514(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInterface*                     OverrideMaterial;                                  // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                     OverrideHoleMaterial;                              // 0x0520(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FLandscapeComponentMaterialOverride> OverrideMaterials;                                 // 0x0528(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLandscapeComponentMaterialOverride> OverrideMaterials;                            // 0x0528(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class UMaterialInstanceConstant*>      MaterialInstances;                                 // 0x0538(0x0010)(ZeroConstructor, TextExportTransient, NativeAccessSpecifierPublic)
 	TArray<class UMaterialInstanceDynamic*>       MaterialInstancesDynamic;                          // 0x0548(0x0010)(ZeroConstructor, Transient, TextExportTransient, NativeAccessSpecifierPublic)
 	TArray<int8>                                  LODIndexToMaterialIndex;                           // 0x0558(0x0010)(ZeroConstructor, TextExportTransient, NativeAccessSpecifierPublic)
@@ -378,7 +379,7 @@ public:
 	uint8                                         Pad_5B4[0xC];                                      // 0x05B4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector4                               HeightmapScaleBias;                                // 0x05C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FBox                                   CachedLocalBox;                                    // 0x05D0(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	TLazyObjectPtr<class ULandscapeHeightfieldCollisionComponent> CollisionComponent;                                // 0x05EC(0x001C)(ExportObject, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TLazyObjectPtr<class ULandscapeHeightfieldCollisionComponent> CollisionComponent;                // 0x05EC(0x001C)(ExportObject, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTexture2D*                             HeightmapTexture;                                  // 0x0608(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, TextExportTransient, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TArray<struct FWeightmapLayerAllocationInfo>  WeightmapLayerAllocations;                         // 0x0610(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<class UTexture2D*>                     WeightmapTextures;                                 // 0x0620(0x0010)(ZeroConstructor, TextExportTransient, NativeAccessSpecifierPrivate)
@@ -393,7 +394,8 @@ public:
 	int32                                         ForcedLOD;                                         // 0x066C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         LODBias;                                           // 0x0670(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bLimitMaxKuroFOVFactorForLODCalculation;           // 0x0674(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_675[0x3];                                      // 0x0675(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bDisableSubsectionFrustumCull;                     // 0x0675(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_676[0x2];                                      // 0x0676(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  StateId;                                           // 0x0678(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FGuid                                  BakedTextureMaterialGuid;                          // 0x0688(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTexture2D*                             GIBakedBaseColorTexture;                           // 0x0698(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -461,6 +463,7 @@ static_assert(offsetof(ULandscapeComponent, StaticLightingResolution) == 0x00066
 static_assert(offsetof(ULandscapeComponent, ForcedLOD) == 0x00066C, "Member 'ULandscapeComponent::ForcedLOD' has a wrong offset!");
 static_assert(offsetof(ULandscapeComponent, LODBias) == 0x000670, "Member 'ULandscapeComponent::LODBias' has a wrong offset!");
 static_assert(offsetof(ULandscapeComponent, bLimitMaxKuroFOVFactorForLODCalculation) == 0x000674, "Member 'ULandscapeComponent::bLimitMaxKuroFOVFactorForLODCalculation' has a wrong offset!");
+static_assert(offsetof(ULandscapeComponent, bDisableSubsectionFrustumCull) == 0x000675, "Member 'ULandscapeComponent::bDisableSubsectionFrustumCull' has a wrong offset!");
 static_assert(offsetof(ULandscapeComponent, StateId) == 0x000678, "Member 'ULandscapeComponent::StateId' has a wrong offset!");
 static_assert(offsetof(ULandscapeComponent, BakedTextureMaterialGuid) == 0x000688, "Member 'ULandscapeComponent::BakedTextureMaterialGuid' has a wrong offset!");
 static_assert(offsetof(ULandscapeComponent, GIBakedBaseColorTexture) == 0x000698, "Member 'ULandscapeComponent::GIBakedBaseColorTexture' has a wrong offset!");
@@ -700,7 +703,7 @@ static_assert(offsetof(ULandscapeLayerInfoObject, LayerUsageDebugColor) == 0x000
 class ULandscapeMaterialInstanceConstant final : public UMaterialInstanceConstant
 {
 public:
-	TArray<struct FLandscapeMaterialTextureStreamingInfo> TextureStreamingInfo;                              // 0x03F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FLandscapeMaterialTextureStreamingInfo> TextureStreamingInfo;                      // 0x03F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	uint8                                         bIsLayerThumbnail : 1;                             // 0x0400(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bDisableTessellation : 1;                          // 0x0400(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bMobile : 1;                                       // 0x0400(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -1125,6 +1128,27 @@ static_assert(alignof(UMaterialExpressionLandscapeKuroBlend) == 0x000008, "Wrong
 static_assert(sizeof(UMaterialExpressionLandscapeKuroBlend) == 0x000058, "Wrong size on UMaterialExpressionLandscapeKuroBlend");
 static_assert(offsetof(UMaterialExpressionLandscapeKuroBlend, ExpressionGUID) == 0x000048, "Member 'UMaterialExpressionLandscapeKuroBlend::ExpressionGUID' has a wrong offset!");
 
+// Class Landscape.MaterialExpressionLandscapeVisibilityMask
+// 0x0010 (0x0058 - 0x0048)
+class UMaterialExpressionLandscapeVisibilityMask final : public UMaterialExpression
+{
+public:
+	struct FGuid                                  ExpressionGUID;                                    // 0x0048(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MaterialExpressionLandscapeVisibilityMask">();
+	}
+	static class UMaterialExpressionLandscapeVisibilityMask* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMaterialExpressionLandscapeVisibilityMask>();
+	}
+};
+static_assert(alignof(UMaterialExpressionLandscapeVisibilityMask) == 0x000008, "Wrong alignment on UMaterialExpressionLandscapeVisibilityMask");
+static_assert(sizeof(UMaterialExpressionLandscapeVisibilityMask) == 0x000058, "Wrong size on UMaterialExpressionLandscapeVisibilityMask");
+static_assert(offsetof(UMaterialExpressionLandscapeVisibilityMask, ExpressionGUID) == 0x000048, "Member 'UMaterialExpressionLandscapeVisibilityMask::ExpressionGUID' has a wrong offset!");
+
 // Class Landscape.MaterialExpressionLandscapeColormap
 // 0x0030 (0x0078 - 0x0048)
 class UMaterialExpressionLandscapeColormap final : public UMaterialExpression
@@ -1313,27 +1337,6 @@ static_assert(alignof(UMaterialExpressionLandscapeRetainNode) == 0x000008, "Wron
 static_assert(sizeof(UMaterialExpressionLandscapeRetainNode) == 0x000080, "Wrong size on UMaterialExpressionLandscapeRetainNode");
 static_assert(offsetof(UMaterialExpressionLandscapeRetainNode, MaterialAttribute) == 0x000048, "Member 'UMaterialExpressionLandscapeRetainNode::MaterialAttribute' has a wrong offset!");
 static_assert(offsetof(UMaterialExpressionLandscapeRetainNode, ExpressionGUID) == 0x000070, "Member 'UMaterialExpressionLandscapeRetainNode::ExpressionGUID' has a wrong offset!");
-
-// Class Landscape.MaterialExpressionLandscapeVisibilityMask
-// 0x0010 (0x0058 - 0x0048)
-class UMaterialExpressionLandscapeVisibilityMask final : public UMaterialExpression
-{
-public:
-	struct FGuid                                  ExpressionGUID;                                    // 0x0048(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MaterialExpressionLandscapeVisibilityMask">();
-	}
-	static class UMaterialExpressionLandscapeVisibilityMask* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMaterialExpressionLandscapeVisibilityMask>();
-	}
-};
-static_assert(alignof(UMaterialExpressionLandscapeVisibilityMask) == 0x000008, "Wrong alignment on UMaterialExpressionLandscapeVisibilityMask");
-static_assert(sizeof(UMaterialExpressionLandscapeVisibilityMask) == 0x000058, "Wrong size on UMaterialExpressionLandscapeVisibilityMask");
-static_assert(offsetof(UMaterialExpressionLandscapeVisibilityMask, ExpressionGUID) == 0x000048, "Member 'UMaterialExpressionLandscapeVisibilityMask::ExpressionGUID' has a wrong offset!");
 
 }
 

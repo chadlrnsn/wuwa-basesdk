@@ -10,35 +10,45 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SurfaceRipple.BP_SurfaceRipple_C
-// 0x0038 (0x02F8 - 0x02C0)
+// 0x0070 (0x0330 - 0x02C0)
 class ABP_SurfaceRipple_C final : public AKuroEditorTickActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	EKuroRainType                                 CurrentRainType;                                   // 0x02D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D1[0x3];                                      // 0x02D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RainDensity;                                       // 0x02D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialParameterCollection*           Global_MPC;                                        // 0x02D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               MID_Ripple;                                        // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UTextureRenderTarget2D*                 RT_Ripple;                                         // 0x02E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 FollowActor;                                       // 0x02E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bSim;                                              // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         RainDensity;                                       // 0x02E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         LastRainDensity;                                   // 0x02EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaTime;                                         // 0x02F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         RainTimePassed;                                    // 0x02F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         下雨渐变最大时间;                                  // 0x02F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2FC[0x4];                                      // 0x02FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               下雨地面变化参数;                                  // 0x0300(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           GlobalRainGradualData;                             // 0x0310(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           GlobalRainLerpData;                                // 0x0320(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetRainIntensity(float RainIntensity);
+	void Set_No_Rain_Roughness();
+	void Set_Rain_Roughness();
+	void Set_No_Rain();
+	void Set_Rain();
+	void UpdateGradualData(int32 Index_0, float InputParam, struct FLinearColor* GlobalRainGradualData_0, bool* Vaild);
+	void SetRainIntensity(float RainIntensity, float 下雨渐变最大时间_0, const struct FVector4& RainLerpData);
 	void UserConstructionScript();
+	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveBeginPlay();
 	void EditorTick(float DeltaSeconds);
 	void ExecuteUbergraph_BP_SurfaceRipple(int32 EntryPoint);
 
@@ -52,16 +62,21 @@ public:
 		return GetDefaultObjImpl<ABP_SurfaceRipple_C>();
 	}
 };
-static_assert(alignof(ABP_SurfaceRipple_C) == 0x000008, "Wrong alignment on ABP_SurfaceRipple_C");
-static_assert(sizeof(ABP_SurfaceRipple_C) == 0x0002F8, "Wrong size on ABP_SurfaceRipple_C");
+static_assert(alignof(ABP_SurfaceRipple_C) == 0x000010, "Wrong alignment on ABP_SurfaceRipple_C");
+static_assert(sizeof(ABP_SurfaceRipple_C) == 0x000330, "Wrong size on ABP_SurfaceRipple_C");
 static_assert(offsetof(ABP_SurfaceRipple_C, UberGraphFrame) == 0x0002C0, "Member 'ABP_SurfaceRipple_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_SurfaceRipple_C, DefaultSceneRoot) == 0x0002C8, "Member 'ABP_SurfaceRipple_C::DefaultSceneRoot' has a wrong offset!");
-static_assert(offsetof(ABP_SurfaceRipple_C, CurrentRainType) == 0x0002D0, "Member 'ABP_SurfaceRipple_C::CurrentRainType' has a wrong offset!");
-static_assert(offsetof(ABP_SurfaceRipple_C, RainDensity) == 0x0002D4, "Member 'ABP_SurfaceRipple_C::RainDensity' has a wrong offset!");
+static_assert(offsetof(ABP_SurfaceRipple_C, Global_MPC) == 0x0002D0, "Member 'ABP_SurfaceRipple_C::Global_MPC' has a wrong offset!");
 static_assert(offsetof(ABP_SurfaceRipple_C, MID_Ripple) == 0x0002D8, "Member 'ABP_SurfaceRipple_C::MID_Ripple' has a wrong offset!");
 static_assert(offsetof(ABP_SurfaceRipple_C, RT_Ripple) == 0x0002E0, "Member 'ABP_SurfaceRipple_C::RT_Ripple' has a wrong offset!");
-static_assert(offsetof(ABP_SurfaceRipple_C, FollowActor) == 0x0002E8, "Member 'ABP_SurfaceRipple_C::FollowActor' has a wrong offset!");
-static_assert(offsetof(ABP_SurfaceRipple_C, bSim) == 0x0002F0, "Member 'ABP_SurfaceRipple_C::bSim' has a wrong offset!");
+static_assert(offsetof(ABP_SurfaceRipple_C, RainDensity) == 0x0002E8, "Member 'ABP_SurfaceRipple_C::RainDensity' has a wrong offset!");
+static_assert(offsetof(ABP_SurfaceRipple_C, LastRainDensity) == 0x0002EC, "Member 'ABP_SurfaceRipple_C::LastRainDensity' has a wrong offset!");
+static_assert(offsetof(ABP_SurfaceRipple_C, DeltaTime) == 0x0002F0, "Member 'ABP_SurfaceRipple_C::DeltaTime' has a wrong offset!");
+static_assert(offsetof(ABP_SurfaceRipple_C, RainTimePassed) == 0x0002F4, "Member 'ABP_SurfaceRipple_C::RainTimePassed' has a wrong offset!");
+static_assert(offsetof(ABP_SurfaceRipple_C, 下雨渐变最大时间) == 0x0002F8, "Member 'ABP_SurfaceRipple_C::下雨渐变最大时间' has a wrong offset!");
+static_assert(offsetof(ABP_SurfaceRipple_C, 下雨地面变化参数) == 0x000300, "Member 'ABP_SurfaceRipple_C::下雨地面变化参数' has a wrong offset!");
+static_assert(offsetof(ABP_SurfaceRipple_C, GlobalRainGradualData) == 0x000310, "Member 'ABP_SurfaceRipple_C::GlobalRainGradualData' has a wrong offset!");
+static_assert(offsetof(ABP_SurfaceRipple_C, GlobalRainLerpData) == 0x000320, "Member 'ABP_SurfaceRipple_C::GlobalRainLerpData' has a wrong offset!");
 
 }
 

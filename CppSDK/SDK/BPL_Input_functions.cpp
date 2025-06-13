@@ -47,7 +47,7 @@ bool UBPL_Input_C::IsKeyDown(EInputAction NewParam, class UObject* __WorldContex
 // Parameters:
 // EInputAction                            Action                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Time                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  Time                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Input_C::GetKeyDownTime(EInputAction Action, class UObject* __WorldContext, float* Time)
 {

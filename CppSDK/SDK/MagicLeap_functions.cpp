@@ -20,7 +20,7 @@ namespace SDK
 // Function MagicLeap.InAppPurchaseComponent.TryGetItemsDetailsAsync
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   ItemIDs                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            ItemIDs                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UInAppPurchaseComponent::TryGetItemsDetailsAsync(const TArray<class FString>& ItemIDs)
@@ -76,7 +76,7 @@ bool UInAppPurchaseComponent::TryGetPurchaseHistoryAsync(int32 InNumPages)
 // Function MagicLeap.InAppPurchaseComponent.TryPurchaseItemAsync
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPurchaseItemDetails             ItemDetails                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FPurchaseItemDetails&      ItemDetails                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UInAppPurchaseComponent::TryPurchaseItemAsync(const struct FPurchaseItemDetails& ItemDetails)
@@ -104,8 +104,8 @@ bool UInAppPurchaseComponent::TryPurchaseItemAsync(const struct FPurchaseItemDet
 // Function MagicLeap.MagicLeapRaycastComponent.RequestRaycast
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMagicLeapRaycastQueryParams     RequestParams                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// TDelegate<void(const struct FMagicLeapRaycastHitResult& HitResult)>ResultDelegate                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMagicLeapRaycastQueryParams&RequestParams                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FMagicLeapRaycastHitResult& HitResult)>&ResultDelegate                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMagicLeapRaycastComponent::RequestRaycast(const struct FMagicLeapRaycastQueryParams& RequestParams, const TDelegate<void(const struct FMagicLeapRaycastHitResult& HitResult)>& ResultDelegate)
@@ -134,7 +134,7 @@ bool UMagicLeapRaycastComponent::RequestRaycast(const struct FMagicLeapRaycastQu
 // Function MagicLeap.MagicLeapHMDFunctionLibrary.GetGraphicsClientPerformanceInfo
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMagicLeapGraphicsClientPerformanceInfoPerformanceInfo                                        (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMagicLeapGraphicsClientPerformanceInfo*PerformanceInfo                                        (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMagicLeapHMDFunctionLibrary::GetGraphicsClientPerformanceInfo(struct FMagicLeapGraphicsClientPerformanceInfo* PerformanceInfo)
@@ -163,7 +163,7 @@ bool UMagicLeapHMDFunctionLibrary::GetGraphicsClientPerformanceInfo(struct FMagi
 // Function MagicLeap.MagicLeapHMDFunctionLibrary.GetHeadTrackingMapEvents
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TSet<EMagicLeapHeadTrackingMapEvent>    MapEvents                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+// TSet<EMagicLeapHeadTrackingMapEvent>*   MapEvents                                              (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMagicLeapHMDFunctionLibrary::GetHeadTrackingMapEvents(TSet<EMagicLeapHeadTrackingMapEvent>* MapEvents)
@@ -192,7 +192,7 @@ bool UMagicLeapHMDFunctionLibrary::GetHeadTrackingMapEvents(TSet<EMagicLeapHeadT
 // Function MagicLeap.MagicLeapHMDFunctionLibrary.GetHeadTrackingState
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FMagicLeapHeadTrackingState      State                                                  (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMagicLeapHeadTrackingState*     State                                                  (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMagicLeapHMDFunctionLibrary::GetHeadTrackingState(struct FMagicLeapHeadTrackingState* State)
@@ -421,7 +421,7 @@ bool UMagicLeapHMDFunctionLibrary::SetAppReady()
 // Function MagicLeap.MagicLeapHMDFunctionLibrary.SetBaseOrientation
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FQuat                            InBaseOrientation                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FQuat&                     InBaseOrientation                                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UMagicLeapHMDFunctionLibrary::SetBaseOrientation(const struct FQuat& InBaseOrientation)
 {
@@ -446,7 +446,7 @@ void UMagicLeapHMDFunctionLibrary::SetBaseOrientation(const struct FQuat& InBase
 // Function MagicLeap.MagicLeapHMDFunctionLibrary.SetBasePosition
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InBasePosition                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InBasePosition                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMagicLeapHMDFunctionLibrary::SetBasePosition(const struct FVector& InBasePosition)
 {
@@ -471,7 +471,7 @@ void UMagicLeapHMDFunctionLibrary::SetBasePosition(const struct FVector& InBaseP
 // Function MagicLeap.MagicLeapHMDFunctionLibrary.SetBaseRotation
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FRotator                         InBaseRotation                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InBaseRotation                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UMagicLeapHMDFunctionLibrary::SetBaseRotation(const struct FRotator& InBaseRotation)
 {
@@ -496,7 +496,7 @@ void UMagicLeapHMDFunctionLibrary::SetBaseRotation(const struct FRotator& InBase
 // Function MagicLeap.MagicLeapHMDFunctionLibrary.SetFocusActor
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           InFocusActor                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     InFocusActor                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bSetStabilizationActor                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMagicLeapHMDFunctionLibrary::SetFocusActor(const class AActor* InFocusActor, bool bSetStabilizationActor)
@@ -523,7 +523,7 @@ void UMagicLeapHMDFunctionLibrary::SetFocusActor(const class AActor* InFocusActo
 // Function MagicLeap.MagicLeapHMDFunctionLibrary.SetStabilizationDepthActor
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           InStabilizationDepthActor                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     InStabilizationDepthActor                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bSetFocusActor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UMagicLeapHMDFunctionLibrary::SetStabilizationDepthActor(const class AActor* InStabilizationDepthActor, bool bSetFocusActor)
@@ -669,8 +669,8 @@ int32 UMagicLeapMeshTrackerComponent::GetNumQueuedBlockUpdates()
 // Function MagicLeap.MagicLeapMeshTrackerComponent.SelectMeshBlocks
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FMagicLeapTrackingMeshInfo       NewMeshInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FMagicLeapMeshBlockRequest>RequestedMesh                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FMagicLeapTrackingMeshInfo&NewMeshInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FMagicLeapMeshBlockRequest>*RequestedMesh                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UMagicLeapMeshTrackerComponent::SelectMeshBlocks(const struct FMagicLeapTrackingMeshInfo& NewMeshInfo, TArray<struct FMagicLeapMeshBlockRequest>* RequestedMesh)
 {
@@ -698,15 +698,15 @@ void UMagicLeapMeshTrackerComponent::SelectMeshBlocks(const struct FMagicLeapTra
 // Function MagicLeap.MagicLeapMeshBlockSelectorInterface.SelectMeshBlocks
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FMagicLeapTrackingMeshInfo       NewMeshInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FMagicLeapMeshBlockRequest>RequestedMesh                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const struct FMagicLeapTrackingMeshInfo&NewMeshInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FMagicLeapMeshBlockRequest>*RequestedMesh                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void IMagicLeapMeshBlockSelectorInterface::SelectMeshBlocks(const struct FMagicLeapTrackingMeshInfo& NewMeshInfo, TArray<struct FMagicLeapMeshBlockRequest>* RequestedMesh)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MagicLeapMeshBlockSelectorInterface", "SelectMeshBlocks");
+		Func = AsUObject()->Class->GetFunction("MagicLeapMeshBlockSelectorInterface", "SelectMeshBlocks");
 
 	Params::MagicLeapMeshBlockSelectorInterface_SelectMeshBlocks Parms{};
 
@@ -715,7 +715,7 @@ void IMagicLeapMeshBlockSelectorInterface::SelectMeshBlocks(const struct FMagicL
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -727,9 +727,9 @@ void IMagicLeapMeshBlockSelectorInterface::SelectMeshBlocks(const struct FMagicL
 // Function MagicLeap.MagicLeapRaycastFunctionLibrary.MakeRaycastQueryParams
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FVector                          Position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          UpVector                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   UpVector                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   HorizontalFovDegrees                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

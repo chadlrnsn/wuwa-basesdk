@@ -20,18 +20,18 @@ namespace SDK
 // Function BPI_EffectInterface.BPI_EffectInterface_C.GetHandle
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void IBPI_EffectInterface_C::GetHandle(int32* Handle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_EffectInterface_C", "GetHandle");
+		Func = AsUObject()->Class->GetFunction("BPI_EffectInterface_C", "GetHandle");
 
 	Params::BPI_EffectInterface_C_GetHandle Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	if (Handle != nullptr)
 		*Handle = Parms.Handle;
@@ -48,13 +48,13 @@ void IBPI_EffectInterface_C::SetHandle(int32 Handle)
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_EffectInterface_C", "SetHandle");
+		Func = AsUObject()->Class->GetFunction("BPI_EffectInterface_C", "SetHandle");
 
 	Params::BPI_EffectInterface_C_SetHandle Parms{};
 
 	Parms.Handle = Handle;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
 
@@ -66,9 +66,9 @@ void IBPI_EffectInterface_C::RemoveHandle()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_EffectInterface_C", "RemoveHandle");
+		Func = AsUObject()->Class->GetFunction("BPI_EffectInterface_C", "RemoveHandle");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 }

@@ -145,7 +145,7 @@ void UControlRigComponent::AddMappedCompleteSkeletalMesh(class USkeletalMeshComp
 // Function ControlRig.ControlRigComponent.AddMappedComponents
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<struct FControlRigComponentMappedComponent>Components                                             (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FControlRigComponentMappedComponent>&Components                                             (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::AddMappedComponents(const TArray<struct FControlRigComponentMappedComponent>& Components)
 {
@@ -170,7 +170,7 @@ void UControlRigComponent::AddMappedComponents(const TArray<struct FControlRigCo
 // Function ControlRig.ControlRigComponent.AddMappedElements
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<struct FControlRigComponentMappedElement>NewMappedElements                                      (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FControlRigComponentMappedElement>&NewMappedElements                                      (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::AddMappedElements(const TArray<struct FControlRigComponentMappedElement>& NewMappedElements)
 {
@@ -196,8 +196,8 @@ void UControlRigComponent::AddMappedElements(const TArray<struct FControlRigComp
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class USkeletalMeshComponent*           SkeletalMeshComponent                                  (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FControlRigComponentMappedBone>Bones                                                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FControlRigComponentMappedCurve>Curves                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FControlRigComponentMappedBone>&Bones                                                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FControlRigComponentMappedCurve>&Curves                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::AddMappedSkeletalMesh(class USkeletalMeshComponent* SkeletalMeshComponent, const TArray<struct FControlRigComponentMappedBone>& Bones, const TArray<struct FControlRigComponentMappedCurve>& Curves)
 {
@@ -878,7 +878,7 @@ void UControlRigComponent::SetBoneInitialTransformsFromSkeletalMesh(class USkele
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       Transform                                              (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                Transform                                              (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // EControlRigComponentSpace               Space                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Weight                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bPropagateToChildren                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -992,7 +992,7 @@ void UControlRigComponent::SetControlInt(class FName ControlName, int32 Value)
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             ControlName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       OffsetTransform                                        (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                OffsetTransform                                        (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // EControlRigComponentSpace               Space                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::SetControlOffset(class FName ControlName, const struct FTransform& OffsetTransform, EControlRigComponentSpace Space)
@@ -1021,7 +1021,7 @@ void UControlRigComponent::SetControlOffset(class FName ControlName, const struc
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             ControlName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EControlRigComponentSpace               Space                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::SetControlPosition(class FName ControlName, const struct FVector& Value, EControlRigComponentSpace Space)
@@ -1050,7 +1050,7 @@ void UControlRigComponent::SetControlPosition(class FName ControlName, const str
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             ControlName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // EControlRigComponentSpace               Space                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::SetControlRotator(class FName ControlName, const struct FRotator& Value, EControlRigComponentSpace Space)
@@ -1079,7 +1079,7 @@ void UControlRigComponent::SetControlRotator(class FName ControlName, const stru
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             ControlName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EControlRigComponentSpace               Space                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::SetControlScale(class FName ControlName, const struct FVector& Value, EControlRigComponentSpace Space)
@@ -1108,7 +1108,7 @@ void UControlRigComponent::SetControlScale(class FName ControlName, const struct
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             ControlName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       Value                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                Value                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // EControlRigComponentSpace               Space                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::SetControlTransform(class FName ControlName, const struct FTransform& Value, EControlRigComponentSpace Space)
@@ -1137,7 +1137,7 @@ void UControlRigComponent::SetControlTransform(class FName ControlName, const st
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             ControlName                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::SetControlVector2D(class FName ControlName, const struct FVector2D& Value)
 {
@@ -1164,7 +1164,7 @@ void UControlRigComponent::SetControlVector2D(class FName ControlName, const str
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       InitialTransform                                       (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                InitialTransform                                       (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // EControlRigComponentSpace               Space                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bPropagateToChildren                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1195,7 +1195,7 @@ void UControlRigComponent::SetInitialBoneTransform(class FName BoneName, const s
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             SpaceName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       InitialTransform                                       (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                InitialTransform                                       (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // EControlRigComponentSpace               Space                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::SetInitialSpaceTransform(class FName SpaceName, const struct FTransform& InitialTransform, EControlRigComponentSpace Space)
@@ -1223,7 +1223,7 @@ void UControlRigComponent::SetInitialSpaceTransform(class FName SpaceName, const
 // Function ControlRig.ControlRigComponent.SetMappedElements
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<struct FControlRigComponentMappedElement>NewMappedElements                                      (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TArray<struct FControlRigComponentMappedElement>&NewMappedElements                                      (Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UControlRigComponent::SetMappedElements(const TArray<struct FControlRigComponentMappedElement>& NewMappedElements)
 {
@@ -1416,7 +1416,7 @@ void AControlRigGizmoActor::OnSelectionChanged(bool bIsSelected)
 // Function ControlRig.ControlRigGizmoActor.OnTransformChanged
 // (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
 // Parameters:
-// struct FTransform                       NewTransform                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                NewTransform                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void AControlRigGizmoActor::OnTransformChanged(const struct FTransform& NewTransform)
 {
@@ -1461,7 +1461,7 @@ void AControlRigGizmoActor::SetEnabled(bool bInEnabled)
 // Function ControlRig.ControlRigGizmoActor.SetGlobalTransform
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransform                       InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void AControlRigGizmoActor::SetGlobalTransform(const struct FTransform& InTransform)
 {

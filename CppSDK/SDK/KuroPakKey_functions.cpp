@@ -70,9 +70,9 @@ bool UKuroPakKeyLibrary::HasPendingEncryptedPaks()
 // Function KuroPakKey.KuroPakKeyLibrary.LoadKeys
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RSAPubKey                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           FilePath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RSAPubKey                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FilePath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Tag                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPakKeyLibrary::LoadKeys(const class FString& RSAPubKey, const class FString& FilePath, const class FString& Tag)
 {
@@ -99,7 +99,7 @@ void UKuroPakKeyLibrary::LoadKeys(const class FString& RSAPubKey, const class FS
 // Function KuroPakKey.KuroPakKeyLibrary.LoadPakKeysFromFile
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           FilePath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FilePath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPakKeyLibrary::LoadPakKeysFromFile(const class FString& FilePath)
 {
@@ -199,7 +199,7 @@ void UKuroPakKeyLibrary::SetLoadCallback(TDelegate<void(bool Success, const clas
 // Function KuroPakKey.KuroPakKeyLibrary.SetRSAPublicKey
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           PublicKey                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PublicKey                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPakKeyLibrary::SetRSAPublicKey(const class FString& PublicKey)
 {

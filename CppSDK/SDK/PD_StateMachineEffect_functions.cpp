@@ -21,7 +21,7 @@ namespace SDK
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EEffectState                            InputState                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSEffectStateInfo                Ret                                                    (Parm, OutParm, HasGetValueTypeHash)
+// struct FSEffectStateInfo*               Ret                                                    (Parm, OutParm, HasGetValueTypeHash)
 
 void UPD_StateMachineEffect_C::GetStateInfo(EEffectState InputState, struct FSEffectStateInfo* Ret)
 {

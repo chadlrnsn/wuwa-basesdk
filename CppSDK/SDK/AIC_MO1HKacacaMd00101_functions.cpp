@@ -17,37 +17,23 @@
 namespace SDK
 {
 
-// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.自爆检测
-// (BlueprintCallable, BlueprintEvent)
+// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.ExecuteUbergraph_AIC_MO1HKacacaMd00101
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AAIC_MO1HKacacaMd00101_C::自爆检测(bool bContent)
+void AAIC_MO1HKacacaMd00101_C::ExecuteUbergraph_AIC_MO1HKacacaMd00101(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_MO1HKacacaMd00101_C", "自爆检测");
+		Func = Class->GetFunction("AIC_MO1HKacacaMd00101_C", "ExecuteUbergraph_AIC_MO1HKacacaMd00101");
 
-	Params::AIC_MO1HKacacaMd00101_C_自爆检测 Parms{};
+	Params::AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd00101 Parms{};
 
-	Parms.bContent = bContent;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.OnStart
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void AAIC_MO1HKacacaMd00101_C::OnStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_MO1HKacacaMd00101_C", "OnStart");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -71,21 +57,35 @@ void AAIC_MO1HKacacaMd00101_C::自爆死亡申请(bool bContent)
 }
 
 
-// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.ExecuteUbergraph_AIC_MO1HKacacaMd00101
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.OnStart
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void AAIC_MO1HKacacaMd00101_C::ExecuteUbergraph_AIC_MO1HKacacaMd00101(int32 EntryPoint)
+void AAIC_MO1HKacacaMd00101_C::OnStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_MO1HKacacaMd00101_C", "ExecuteUbergraph_AIC_MO1HKacacaMd00101");
+		Func = Class->GetFunction("AIC_MO1HKacacaMd00101_C", "OnStart");
 
-	Params::AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd00101 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.自爆检测
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void AAIC_MO1HKacacaMd00101_C::自爆检测(bool bContent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_MO1HKacacaMd00101_C", "自爆检测");
+
+	Params::AIC_MO1HKacacaMd00101_C_自爆检测 Parms{};
+
+	Parms.bContent = bContent;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

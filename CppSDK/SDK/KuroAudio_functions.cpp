@@ -17,6 +17,44 @@
 namespace SDK
 {
 
+// Function KuroAudio.KuroAmbientSoundComponent.PlaySound
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+
+void UKuroAmbientSoundComponent::PlaySound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroAmbientSoundComponent", "PlaySound");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroAudio.KuroAmbientSoundComponent.StopSound
+// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable)
+
+void UKuroAmbientSoundComponent::StopSound()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroAmbientSoundComponent", "StopSound");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroAudio.KuroAmbientSoundComponent.IsPlaying
 // (Final, BlueprintCosmetic, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -42,54 +80,10 @@ bool UKuroAmbientSoundComponent::IsPlaying() const
 }
 
 
-// Function KuroAudio.KuroAmbientSoundComponent.PlaySound
-// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable, Const)
-
-void UKuroAmbientSoundComponent::PlaySound() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroAmbientSoundComponent", "PlaySound");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function KuroAudio.KuroAmbientSoundComponent.StopSound
-// (Final, BlueprintCosmetic, Native, Public, BlueprintCallable, Const)
-// Parameters:
-// int32                                   FadeDuration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKuroAmbientSoundComponent::StopSound(const int32 FadeDuration) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroAmbientSoundComponent", "StopSound");
-
-	Params::KuroAmbientSoundComponent_StopSound Parms{};
-
-	Parms.FadeDuration = FadeDuration;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function KuroAudio.KuroAudioDelegates.SetAudioPauseDelegate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void()>                       InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroAudioDelegates::SetAudioPauseDelegate(const TDelegate<void()>& InDelegate)
 {
@@ -114,7 +108,7 @@ void UKuroAudioDelegates::SetAudioPauseDelegate(const TDelegate<void()>& InDeleg
 // Function KuroAudio.KuroAudioDelegates.SetAudioResumeDelegate
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void()>                       InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                InDelegate                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroAudioDelegates::SetAudioResumeDelegate(const TDelegate<void()>& InDelegate)
 {
@@ -177,8 +171,8 @@ void UKuroAudioDelegates::UnbindAudioResumeDelegate()
 // Function KuroAudio.KuroAudioEnvironmentSubsystem.D_DynamicReverbTrace
 // (Final, BlueprintCosmetic, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bForceUpdate                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bForceUpdate                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioEnvironmentSubsystem::D_DynamicReverbTrace(const struct FVectorDouble& Location, const bool bForceUpdate)
 {
@@ -242,8 +236,8 @@ void UKuroAudioEnvironmentSubsystem::DynamicReverbReset()
 // Function KuroAudio.KuroAudioEnvironmentSubsystem.DynamicReverbTrace
 // (Final, BlueprintCosmetic, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bForceUpdate                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bForceUpdate                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioEnvironmentSubsystem::DynamicReverbTrace(const struct FVector& Location, const bool bForceUpdate)
 {
@@ -266,42 +260,10 @@ void UKuroAudioEnvironmentSubsystem::DynamicReverbTrace(const struct FVector& Lo
 }
 
 
-// Function KuroAudio.KuroAudioEnvironmentSubsystem.CalculateDynamicReverbParam
-// (Final, BlueprintCosmetic, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   HorizontalTraceDistance                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   VerticalTraceDistance                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FKuroDynamicReverbParam          ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FKuroDynamicReverbParam UKuroAudioEnvironmentSubsystem::CalculateDynamicReverbParam(const struct FVector& Location, const float HorizontalTraceDistance, const float VerticalTraceDistance) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KuroAudioEnvironmentSubsystem", "CalculateDynamicReverbParam");
-
-	Params::KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam Parms{};
-
-	Parms.Location = std::move(Location);
-	Parms.HorizontalTraceDistance = HorizontalTraceDistance;
-	Parms.VerticalTraceDistance = VerticalTraceDistance;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function KuroAudio.KuroAudioEnvironmentSubsystem.GetEnvironmentInfo
 // (Final, BlueprintCosmetic, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKuroAudioEnvironmentInfo        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FKuroAudioEnvironmentInfo UKuroAudioEnvironmentSubsystem::GetEnvironmentInfo(const struct FVector& Location) const
@@ -329,7 +291,7 @@ struct FKuroAudioEnvironmentInfo UKuroAudioEnvironmentSubsystem::GetEnvironmentI
 // Function KuroAudio.KuroAudioEnvironmentSubsystem.GetEnvironmentInfo_MusicCompatible
 // (Final, BlueprintCosmetic, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FKuroAudioEnvironmentInfo        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FKuroAudioEnvironmentInfo UKuroAudioEnvironmentSubsystem::GetEnvironmentInfo_MusicCompatible(const struct FVector& Location) const
@@ -357,7 +319,7 @@ struct FKuroAudioEnvironmentInfo UKuroAudioEnvironmentSubsystem::GetEnvironmentI
 // Function KuroAudio.KuroAudioEnvironmentSubsystem.GetEnvironmentStates
 // (Final, BlueprintCosmetic, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVector                          Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TMap<class FString, class FString>      ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 TMap<class FString, class FString> UKuroAudioEnvironmentSubsystem::GetEnvironmentStates(const struct FVector& Location) const
@@ -404,11 +366,11 @@ void UKuroAudioStatics::ChangeIosAudioSessionProperties()
 // Function KuroAudio.KuroAudioStatics.ExecuteActionOnEvent
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UAkAudioEvent*                    AudioEvent                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAudioActionType                        ActionType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   TransitionDuration                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAudioFadeCurve                         TransitionFadeCurve                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAkAudioEvent*              AudioEvent                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAudioActionType                  ActionType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             TransitionDuration                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAudioFadeCurve                   TransitionFadeCurve                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioStatics::ExecuteActionOnEvent(const class UAkAudioEvent* AudioEvent, const EAudioActionType ActionType, const class AActor* Actor, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve)
 {
@@ -437,11 +399,11 @@ void UKuroAudioStatics::ExecuteActionOnEvent(const class UAkAudioEvent* AudioEve
 // Function KuroAudio.KuroAudioStatics.ExecuteActionOnEventName
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAudioActionType                        ActionType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   TransitionDuration                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAudioFadeCurve                         TransitionFadeCurve                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAudioActionType                  ActionType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             TransitionDuration                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAudioFadeCurve                   TransitionFadeCurve                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioStatics::ExecuteActionOnEventName(const class FString& EventName, const EAudioActionType ActionType, const class AActor* Actor, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve)
 {
@@ -470,10 +432,10 @@ void UKuroAudioStatics::ExecuteActionOnEventName(const class FString& EventName,
 // Function KuroAudio.KuroAudioStatics.ExecuteActionOnPlayingId
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   PlayingId                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAudioActionType                        ActionType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   TransitionDuration                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAudioFadeCurve                         TransitionFadeCurve                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             PlayingId                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAudioActionType                  ActionType                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             TransitionDuration                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAudioFadeCurve                   TransitionFadeCurve                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioStatics::ExecuteActionOnPlayingId(const int32 PlayingId, const EAudioActionType ActionType, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve)
 {
@@ -502,8 +464,8 @@ void UKuroAudioStatics::ExecuteActionOnPlayingId(const int32 PlayingId, const EA
 // (Final, BlueprintCosmetic, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USceneComponent*                  Parent                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             SocketName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bCreated                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      SocketName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bCreated                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAkComponent*                     ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAkComponent* UKuroAudioStatics::GetAkComponent(class USceneComponent* Parent, const class FName& SocketName, bool* bCreated)
@@ -535,7 +497,7 @@ class UAkComponent* UKuroAudioStatics::GetAkComponent(class USceneComponent* Par
 // Function KuroAudio.KuroAudioStatics.GetAudioEnvironmentSubsystem
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UWorld*                           World                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UKuroAudioEnvironmentSubsystem*   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UKuroAudioEnvironmentSubsystem* UKuroAudioStatics::GetAudioEnvironmentSubsystem(const class UWorld* World)
@@ -563,7 +525,7 @@ class UKuroAudioEnvironmentSubsystem* UKuroAudioStatics::GetAudioEnvironmentSubs
 // Function KuroAudio.KuroAudioStatics.GetSourcePlayPosition
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   PlayingId                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             PlayingId                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroAudioStatics::GetSourcePlayPosition(const int32 PlayingId)
@@ -641,8 +603,8 @@ bool UKuroAudioStatics::IsDolbyAtmosGameSupported()
 // Function KuroAudio.KuroAudioStatics.PostNotifyEvent
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class UAkAudioEvent*                    NotifyEvent                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAkAudioEvent*              NotifyEvent                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioStatics::PostNotifyEvent(const class UAkAudioEvent* NotifyEvent, const class AActor* Actor)
 {
@@ -668,11 +630,11 @@ void UKuroAudioStatics::PostNotifyEvent(const class UAkAudioEvent* NotifyEvent, 
 // Function KuroAudio.KuroAudioStatics.SeekOnEventName
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   PlayingId                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSnapToMarker                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Position                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             PlayingId                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bSnapToMarker                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioStatics::SeekOnEventName(const class FString& EventName, const int32 Position, const class AActor* Actor, const int32 PlayingId, const bool bSnapToMarker)
 {
@@ -726,11 +688,11 @@ void UKuroAudioStatics::SetIosAuditPackage(bool IsAuditPackage)
 // Function KuroAudio.KuroAudioStatics.SetRtpcValue
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RtpcName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   TransitionDuration                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAudioFadeCurve                         TransitionFadeCurve                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RtpcName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             TransitionDuration                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAudioFadeCurve                   TransitionFadeCurve                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioStatics::SetRtpcValue(const class FString& RtpcName, const float Value, const class AActor* Actor, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve)
 {
@@ -759,8 +721,8 @@ void UKuroAudioStatics::SetRtpcValue(const class FString& RtpcName, const float 
 // Function KuroAudio.KuroAudioStatics.SetState
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           StateGroup                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           State                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    StateGroup                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    State                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioStatics::SetState(const class FString& StateGroup, const class FString& State)
 {
@@ -786,9 +748,9 @@ void UKuroAudioStatics::SetState(const class FString& StateGroup, const class FS
 // Function KuroAudio.KuroAudioStatics.SetSwitch
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SwitchGroup                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SwitchState                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SwitchGroup                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SwitchState                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioStatics::SetSwitch(const class FString& SwitchGroup, const class FString& SwitchState, const class AActor* Actor)
 {
@@ -815,7 +777,7 @@ void UKuroAudioStatics::SetSwitch(const class FString& SwitchGroup, const class 
 // Function KuroAudio.KuroAudioStatics.StopAll
 // (Final, BlueprintCosmetic, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class AActor*                           Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class AActor*                     Actor                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroAudioStatics::StopAll(const class AActor* Actor)
 {

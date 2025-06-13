@@ -10,28 +10,29 @@
 
 #include "Basic.hpp"
 
-#include "EHitAnim_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "EFishingSkillType_structs.hpp"
+#include "SCharacterLocationsAndRadius_structs.hpp"
+#include "SSkillBehaviorAction_structs.hpp"
 #include "ECharacterLoadType_structs.hpp"
 #include "EMorphType_structs.hpp"
-#include "SHitInformation_structs.hpp"
-#include "EFishingSkillType_structs.hpp"
-#include "GameplayTags_structs.hpp"
-#include "SSkillBehaviorCondition_structs.hpp"
-#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "EHookInteractTypeBp_structs.hpp"
 #include "EVisionType_structs.hpp"
-#include "SSkillBehaviorAction_structs.hpp"
+#include "SSkillBehaviorCondition_structs.hpp"
+#include "EHitAnim_structs.hpp"
 #include "ESkillTargetDirection_structs.hpp"
 #include "SVisionCounterAttack_structs.hpp"
 #include "EAimViewState_structs.hpp"
 #include "ECharViewDirectionState_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ECharParentMoveState_structs.hpp"
 #include "ECharState_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 #include "SSkillInfo_structs.hpp"
 #include "SCounterAttackBuff_structs.hpp"
 #include "SCounterAttack_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
+#include "SHitInformation_structs.hpp"
 
 
 namespace SDK::Params
@@ -1001,20 +1002,20 @@ static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SetHardnessModeId, i
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SetHardnessModeId, __WorldContext) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_SetHardnessModeId::__WorldContext' has a wrong offset!");
 
 // Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.OnHit
-// 0x08B8 (0x08B8 - 0x0000)
+// 0x08D8 (0x08D8 - 0x0000)
 struct TsGameplayBlueprintFunctionLibrary_C_OnHit final
 {
 public:
 	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSHitInformation                       hitData;                                           // 0x0008(0x08A8)(BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference, HasGetValueTypeHash)
-	class UObject*                                __WorldContext;                                    // 0x08B0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSHitInformation                       hitData;                                           // 0x0008(0x08C8)(BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x08D0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_OnHit) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_OnHit");
-static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_OnHit) == 0x0008B8, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_OnHit");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_OnHit) == 0x0008D8, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_OnHit");
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_OnHit, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_OnHit::entityId' has a wrong offset!");
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_OnHit, hitData) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_OnHit::hitData' has a wrong offset!");
-static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_OnHit, __WorldContext) == 0x0008B0, "Member 'TsGameplayBlueprintFunctionLibrary_C_OnHit::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_OnHit, __WorldContext) == 0x0008D0, "Member 'TsGameplayBlueprintFunctionLibrary_C_OnHit::__WorldContext' has a wrong offset!");
 
 // Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SetBeHitIgnoreRotate
 // 0x0010 (0x0010 - 0x0000)
@@ -1875,7 +1876,7 @@ static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_HasAbility, __WorldC
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_HasAbility, ReturnValue) == 0x000020, "Member 'TsGameplayBlueprintFunctionLibrary_C_HasAbility::ReturnValue' has a wrong offset!");
 
 // Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.GetSkillInfo
-// 0x0190 (0x0190 - 0x0000)
+// 0x01A0 (0x01A0 - 0x0000)
 struct TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo final
 {
 public:
@@ -1883,10 +1884,10 @@ public:
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 skillId;                                           // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSkillInfo                            ReturnValue;                                       // 0x0020(0x0170)(Parm, OutParm, ReturnParm, HasGetValueTypeHash)
+	struct FSSkillInfo                            ReturnValue;                                       // 0x0020(0x0180)(Parm, OutParm, ReturnParm, HasGetValueTypeHash)
 };
 static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo");
-static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo) == 0x000190, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo) == 0x0001A0, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo");
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo::entityId' has a wrong offset!");
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo, skillId) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo::skillId' has a wrong offset!");
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo, __WorldContext) == 0x000018, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetSkillInfo::__WorldContext' has a wrong offset!");
@@ -4103,6 +4104,208 @@ static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_StopGroup1Skill) == 0x
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_StopGroup1Skill, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_StopGroup1Skill::entityId' has a wrong offset!");
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_StopGroup1Skill, reason) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_StopGroup1Skill::reason' has a wrong offset!");
 static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_StopGroup1Skill, __WorldContext) == 0x000018, "Member 'TsGameplayBlueprintFunctionLibrary_C_StopGroup1Skill::__WorldContext' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.GetLocationByAction
+// 0x02F0 (0x02F0 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGA_Base_C*                             ga;                                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillBehaviorAction                  action;                                            // 0x0010(0x02C0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x02D0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          ReturnValue;                                       // 0x02D8(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction) == 0x0002F0, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction, ga) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction::ga' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction, action) == 0x000010, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction::action' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction, __WorldContext) == 0x0002D0, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction, ReturnValue) == 0x0002D8, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetLocationByAction::ReturnValue' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.GetRotationByAction
+// 0x02E8 (0x02E8 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGA_Base_C*                             ga;                                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillBehaviorAction                  action;                                            // 0x0010(0x02C0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x02D0(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               ReturnValue;                                       // 0x02D8(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction) == 0x0002E8, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction, ga) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction::ga' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction, action) == 0x000010, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction::action' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction, __WorldContext) == 0x0002D0, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction, ReturnValue) == 0x0002D8, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetRotationByAction::ReturnValue' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointCharacterLookAtPoint
+// 0x0028 (0x0028 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint) == 0x000028, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint, __WorldContext) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint, ReturnValue) == 0x000010, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointCharacterLookAtPoint::ReturnValue' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointHasLookAtConfig
+// 0x0018 (0x0018 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig) == 0x000018, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig, __WorldContext) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig, ReturnValue) == 0x000010, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointHasLookAtConfig::ReturnValue' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointIsTakeOverCamera
+// 0x0018 (0x0018 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera) == 0x000018, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera, __WorldContext) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera, ReturnValue) == 0x000010, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointIsTakeOverCamera::ReturnValue' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.IsSlashGameplayIsSuccess
+// 0x0010 (0x0010 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess) == 0x000010, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess, __WorldContext) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess, ReturnValue) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_IsSlashGameplayIsSuccess::ReturnValue' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.GetCharactersLocationNearBy
+// 0x0058 (0x0058 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy final
+{
+public:
+	struct FVectorDouble                          center;                                            // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         distance;                                          // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         maxCount;                                          // 0x001C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCharacterLocationsAndRadius          ReturnValue;                                       // 0x0028(0x0030)(Parm, OutParm, ReturnParm, HasGetValueTypeHash)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy) == 0x000058, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy, center) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy::center' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy, distance) == 0x000018, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy::distance' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy, maxCount) == 0x00001C, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy::maxCount' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy, __WorldContext) == 0x000020, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy, ReturnValue) == 0x000028, "Member 'TsGameplayBlueprintFunctionLibrary_C_GetCharactersLocationNearBy::ReturnValue' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.StartChargeSlash
+// 0x0010 (0x0010 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash) == 0x000010, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash, __WorldContext) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_StartChargeSlash::__WorldContext' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.StopChargeSlash
+// 0x0010 (0x0010 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash) == 0x000010, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash, __WorldContext) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_StopChargeSlash::__WorldContext' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.BeginSkillAsync
+// 0x0038 (0x0038 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   skillId;                                           // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 target;                                            // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   socketName;                                        // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroBooleanEventBinder*                eventBinder;                                       // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync) == 0x000038, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync, skillId) == 0x000004, "Member 'TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync::skillId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync, target) == 0x000010, "Member 'TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync::target' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync, socketName) == 0x000018, "Member 'TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync::socketName' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync, eventBinder) == 0x000028, "Member 'TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync::eventBinder' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync, __WorldContext) == 0x000030, "Member 'TsGameplayBlueprintFunctionLibrary_C_BeginSkillAsync::__WorldContext' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointSafePointLoc
+// 0x0028 (0x0028 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc) == 0x000028, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc, __WorldContext) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc, ReturnValue) == 0x000010, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointLoc::ReturnValue' has a wrong offset!");
+
+// Function TsGameplayBlueprintFunctionLibrary.TsGameplayBlueprintFunctionLibrary_C.SlashHookPointSafePointRot
+// 0x0020 (0x0020 - 0x0000)
+struct TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot) == 0x000008, "Wrong alignment on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot");
+static_assert(sizeof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot) == 0x000020, "Wrong size on TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot, entityId) == 0x000000, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot::entityId' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot, __WorldContext) == 0x000008, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot::__WorldContext' has a wrong offset!");
+static_assert(offsetof(TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot, ReturnValue) == 0x000010, "Member 'TsGameplayBlueprintFunctionLibrary_C_SlashHookPointSafePointRot::ReturnValue' has a wrong offset!");
 
 }
 

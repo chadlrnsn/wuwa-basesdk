@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ERelation_structs.hpp"
 #include "ECamp_structs.hpp"
+#include "ERelation_structs.hpp"
 
 
 namespace SDK
@@ -65,7 +65,7 @@ public:
 	void 怪物通用转向(const struct FRotator& 目标旋转体, float TargetInterpSpeed_Const_, float ActorInterpSpeed_Smooth_, class ATsBaseCharacter_C* 旋转对象, class UObject* __WorldContext);
 	bool 是否需要移动(class ATsBaseCharacter_C* BaseCharacter, bool 是否正在移动, bool 是否有移动输入, class UObject* __WorldContext);
 	class UKuroBooleanEventBinder* 创建AIC监听(class UObject* AIC自身对象, const TDelegate<void(bool bContent)>& Event, class UObject* __WorldContext);
-	class UKuroPerceptionEventBinder* 创建仇恨感知监听(class UObject* AIC自身对象, const TDelegate<void(TArray<class AActor*>& AddActor, TArray<class AActor*>& RemoveActor, TArray<int32>& RemoveActorIds, int32 Num)>& Event1, class UObject* __WorldContext);
+	class UKuroPerceptionEventBinder* 创建仇恨感知监听(class UObject* AIC自身对象, const TDelegate<void(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)>& Event1, class UObject* __WorldContext);
 	class UKuroActorEventBinder* 创建物件破坏监听(class UObject* AIC自身对象, const TDelegate<void(class AActor* Actor, bool bContent)>& Event, class UObject* __WorldContext);
 
 public:

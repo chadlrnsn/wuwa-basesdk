@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "SScenePropertyEffect_structs.hpp"
+#include "Engine_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "Engine_structs.hpp"
-#include "SScenePropertyEffect_structs.hpp"
 #include "SSceneInteractionitem_structs.hpp"
 #include "ESceneInteractionEffect_structs.hpp"
 #include "GameplayTags_structs.hpp"
@@ -30,17 +30,17 @@ class ASceneInteractionActor_C final : public AKuroSceneInteractionActor
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TMap<EKuroSceneInteractionState, struct FSSceneInteractionitem> States;                                            // 0x02C0(0x0050)(Edit, BlueprintVisible)
+	TMap<EKuroSceneInteractionState, struct FSSceneInteractionitem> States;                          // 0x02C0(0x0050)(Edit, BlueprintVisible)
 	TMap<class FString, class AActor*>            ReferenceActors;                                   // 0x0310(0x0050)(Edit, BlueprintVisible)
 	TArray<class AActor*>                         CollisionActors;                                   // 0x0360(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	class FString                                 LevelName;                                         // 0x0370(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	float                                         HandleId;                                          // 0x0380(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_384[0x4];                                      // 0x0384(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<ESceneInteractionEffect, class ABP_EffectActor_C*> EndEffects;                                        // 0x0388(0x0050)(Edit, BlueprintVisible)
-	TMap<ESceneInteractionEffect, struct FSScenePropertyEffect> Effects;                                           // 0x03D8(0x0050)(Edit, BlueprintVisible)
+	TMap<ESceneInteractionEffect, class ABP_EffectActor_C*> EndEffects;                              // 0x0388(0x0050)(Edit, BlueprintVisible)
+	TMap<ESceneInteractionEffect, struct FSScenePropertyEffect> Effects;                             // 0x03D8(0x0050)(Edit, BlueprintVisible)
 	TArray<class AActor*>                         InteractionEffectHookActors;                       // 0x0428(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	class ATsBaseCharacter_C*                     CharacterForOrgan;                                 // 0x0438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	TMap<struct FGameplayTag, struct FSSceneInteractionTags> TagsAndCorrespondingEffects;                       // 0x0440(0x0050)(Edit, BlueprintVisible)
+	TMap<struct FGameplayTag, struct FSSceneInteractionTags> TagsAndCorrespondingEffects;            // 0x0440(0x0050)(Edit, BlueprintVisible)
 	TArray<class AActor*>                         ActorsForProjection;                               // 0x0490(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	TMap<class AActor*, struct FGameplayTag>      PartCollisionActorsAndCorrespondingTags;           // 0x04A0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	class UMaterialInstance*                      MaterialForProjection;                             // 0x04F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

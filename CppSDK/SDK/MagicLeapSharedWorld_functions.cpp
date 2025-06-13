@@ -20,7 +20,7 @@ namespace SDK
 // Function MagicLeapSharedWorld.MagicLeapSharedWorldGameMode.DetermineSharedWorldData
 // (BlueprintAuthorityOnly, Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FMagicLeapSharedWorldSharedData  NewSharedWorldData                                     (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FMagicLeapSharedWorldSharedData* NewSharedWorldData                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void AMagicLeapSharedWorldGameMode::DetermineSharedWorldData(struct FMagicLeapSharedWorldSharedData* NewSharedWorldData)
 {
@@ -197,7 +197,7 @@ void AMagicLeapSharedWorldPlayerController::ClientSetChosenOne(bool bChosenOne)
 // Function MagicLeapSharedWorld.MagicLeapSharedWorldPlayerController.ServerSetAlignmentTransforms
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
 // Parameters:
-// struct FMagicLeapSharedWorldAlignmentTransformsInAlignmentTransforms                                  (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMagicLeapSharedWorldAlignmentTransforms&InAlignmentTransforms                                  (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void AMagicLeapSharedWorldPlayerController::ServerSetAlignmentTransforms(const struct FMagicLeapSharedWorldAlignmentTransforms& InAlignmentTransforms)
 {
@@ -222,7 +222,7 @@ void AMagicLeapSharedWorldPlayerController::ServerSetAlignmentTransforms(const s
 // Function MagicLeapSharedWorld.MagicLeapSharedWorldPlayerController.ServerSetLocalWorldData
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
 // Parameters:
-// struct FMagicLeapSharedWorldLocalData   LocalWorldReplicationData                              (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FMagicLeapSharedWorldLocalData&LocalWorldReplicationData                              (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void AMagicLeapSharedWorldPlayerController::ServerSetLocalWorldData(const struct FMagicLeapSharedWorldLocalData& LocalWorldReplicationData)
 {

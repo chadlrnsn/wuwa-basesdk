@@ -17,20 +17,26 @@
 namespace SDK
 {
 
-// Function TsTaskAiMarkItem.TsTaskAiMarkItem_C.InitTsVariables
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Function TsTaskAiMarkItem.TsTaskAiMarkItem_C.ExecuteUbergraph_TsTaskAiMarkItem
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskAiMarkItem_C::InitTsVariables()
+void UTsTaskAiMarkItem_C::ExecuteUbergraph_TsTaskAiMarkItem(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskAiMarkItem_C", "InitTsVariables");
+		Func = Class->GetFunction("TsTaskAiMarkItem_C", "ExecuteUbergraph_TsTaskAiMarkItem");
+
+	Params::TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -63,26 +69,20 @@ void UTsTaskAiMarkItem_C::ReceiveExecuteAI(class AAIController* OwnerController,
 }
 
 
-// Function TsTaskAiMarkItem.TsTaskAiMarkItem_C.ExecuteUbergraph_TsTaskAiMarkItem
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TsTaskAiMarkItem.TsTaskAiMarkItem_C.InitTsVariables
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void UTsTaskAiMarkItem_C::ExecuteUbergraph_TsTaskAiMarkItem(int32 EntryPoint)
+void UTsTaskAiMarkItem_C::InitTsVariables()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskAiMarkItem_C", "ExecuteUbergraph_TsTaskAiMarkItem");
-
-	Params::TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+		Func = Class->GetFunction("TsTaskAiMarkItem_C", "InitTsVariables");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

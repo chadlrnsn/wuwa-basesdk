@@ -10,9 +10,72 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+
 
 namespace SDK::Params
 {
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateFlickLight
+// 0x0040 (0x0040 - 0x0000)
+struct BP_GroupFadeWithVolume_C_UpdateFlickLight final
+{
+public:
+	float                                         A;                                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Array_Get_Item;                           // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_KuroFlickLight_C*>           CallFunc_Set_ToArray_Result;                       // 0x0018(0x0010)(ReferenceParm)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_KuroFlickLight_C*                   CallFunc_Array_Get_Item_1;                         // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_GroupFadeWithVolume_C_UpdateFlickLight) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_UpdateFlickLight");
+static_assert(sizeof(BP_GroupFadeWithVolume_C_UpdateFlickLight) == 0x000040, "Wrong size on BP_GroupFadeWithVolume_C_UpdateFlickLight");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, A) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::A' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, ___int_Array_Index_Variable) == 0x000004, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, ___int_Loop_Counter_Variable) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, CallFunc_Add_IntInt_ReturnValue) == 0x00000C, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, CallFunc_Array_Get_Item) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, CallFunc_Set_ToArray_Result) == 0x000018, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::CallFunc_Set_ToArray_Result' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, CallFunc_Array_Get_Item_1) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, CallFunc_Array_Length_ReturnValue) == 0x000038, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateFlickLight, CallFunc_Less_IntInt_ReturnValue) == 0x00003C, "Member 'BP_GroupFadeWithVolume_C_UpdateFlickLight::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheFlickLight
+// 0x0038 (0x0038 - 0x0000)
+struct BP_GroupFadeWithVolume_C_CacheFlickLight final
+{
+public:
+	int32                                         ___int_Array_Index_Variable;                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_KuroFlickLight_C*>           CallFunc_Set_ToArray_Result;                       // 0x0008(0x0010)(ReferenceParm)
+	class ABP_KuroFlickLight_C*                   CallFunc_Array_Get_Item;                           // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_GroupFadeWithVolume_C_CacheFlickLight) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_CacheFlickLight");
+static_assert(sizeof(BP_GroupFadeWithVolume_C_CacheFlickLight) == 0x000038, "Wrong size on BP_GroupFadeWithVolume_C_CacheFlickLight");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheFlickLight, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_CacheFlickLight::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheFlickLight, CallFunc_Set_ToArray_Result) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_CacheFlickLight::CallFunc_Set_ToArray_Result' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheFlickLight, CallFunc_Array_Get_Item) == 0x000018, "Member 'BP_GroupFadeWithVolume_C_CacheFlickLight::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheFlickLight, CallFunc_Array_Length_ReturnValue) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_CacheFlickLight::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheFlickLight, CallFunc_IsValid_ReturnValue) == 0x000024, "Member 'BP_GroupFadeWithVolume_C_CacheFlickLight::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheFlickLight, CallFunc_Array_Add_ReturnValue) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_CacheFlickLight::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheFlickLight, ___int_Loop_Counter_Variable) == 0x00002C, "Member 'BP_GroupFadeWithVolume_C_CacheFlickLight::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheFlickLight, CallFunc_Less_IntInt_ReturnValue) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_CacheFlickLight::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheFlickLight, CallFunc_Add_IntInt_ReturnValue) == 0x000034, "Member 'BP_GroupFadeWithVolume_C_CacheFlickLight::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
 
 // Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.MarkLightExcludeFromTOD
 // 0x0048 (0x0048 - 0x0000)
@@ -117,7 +180,7 @@ static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckObjectPlatform, CallFunc_Co
 static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckObjectPlatform, CallFunc_Concat_StrStr_ReturnValue_5) == 0x000098, "Member 'BP_GroupFadeWithVolume_C_CheckObjectPlatform::CallFunc_Concat_StrStr_ReturnValue_5' has a wrong offset!");
 
 // Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CheckPlatform
-// 0x00D0 (0x00D0 - 0x0000)
+// 0x0138 (0x0138 - 0x0000)
 struct BP_GroupFadeWithVolume_C_CheckPlatform final
 {
 public:
@@ -125,86 +188,225 @@ public:
 	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_2;                     // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_3;                    // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_3;                     // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class ABP_VolumetricSphereLightSuperFar_C*> CallFunc_Set_ToArray_Result;                       // 0x0030(0x0010)(ReferenceParm)
-	TArray<class ABP_VolumetricSphereLight_C*>    CallFunc_Set_ToArray_Result_1;                     // 0x0040(0x0010)(ReferenceParm)
-	class ABP_VolumetricSphereLightSuperFar_C*    CallFunc_Array_Get_Item;                           // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_VolumetricSphereLight_C*            CallFunc_Array_Get_Item_1;                         // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Set_Remove_ReturnValue;                   // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Set_Remove_ReturnValue_1;                 // 0x0061(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_CheckObjectPlatform_valid;                // 0x0062(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_CheckObjectPlatform_valid_1;              // 0x0063(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x006C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x006D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_6E[0x2];                                       // 0x006E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ALight*>                         CallFunc_Set_ToArray_Result_2;                     // 0x0070(0x0010)(ReferenceParm)
-	class ALight*                                 CallFunc_Array_Get_Item_2;                         // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class ABP_SingleCloud_C*>              CallFunc_Set_ToArray_Result_3;                     // 0x0088(0x0010)(ReferenceParm)
-	bool                                          CallFunc_Set_Remove_ReturnValue_2;                 // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_SingleCloud_C*                      CallFunc_Array_Get_Item_3;                         // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Set_Remove_ReturnValue_3;                 // 0x00AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x00AD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_CheckObjectPlatform_valid_2;              // 0x00AE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_CheckObjectPlatform_valid_3;              // 0x00AF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x00B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B5[0x3];                                       // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetPathName_ReturnValue;                  // 0x00B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Contains_ReturnValue;                     // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Contains_ReturnValue_1;                   // 0x00C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_2;                     // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_3;                     // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_3;                    // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_3;                 // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_4;                    // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_5;                    // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_4;                 // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_5;                 // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_4;                     // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_KuroFlickLight_C*>           CallFunc_Set_ToArray_Result;                       // 0x0048(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_5;                     // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_KuroFlickLight_C*                   CallFunc_Array_Get_Item;                           // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Set_Remove_ReturnValue;                   // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CheckObjectPlatform_valid;                // 0x0071(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_72[0x6];                                       // 0x0072(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_SuperFarFog_C*>              CallFunc_Set_ToArray_Result_1;                     // 0x0078(0x0010)(ReferenceParm)
+	TArray<class ABP_VolumetricSphereLightSuperFar_C*> CallFunc_Set_ToArray_Result_2;                // 0x0088(0x0010)(ReferenceParm)
+	class ABP_SuperFarFog_C*                      CallFunc_Array_Get_Item_1;                         // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_VolumetricSphereLightSuperFar_C*    CallFunc_Array_Get_Item_2;                         // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Set_Remove_ReturnValue_1;                 // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Set_Remove_ReturnValue_2;                 // 0x00A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CheckObjectPlatform_valid_1;              // 0x00AA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CheckObjectPlatform_valid_2;              // 0x00AB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x00B4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x00B5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B6[0x2];                                       // 0x00B6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_VolumetricSphereLight_C*>    CallFunc_Set_ToArray_Result_3;                     // 0x00B8(0x0010)(ReferenceParm)
+	class ABP_VolumetricSphereLight_C*            CallFunc_Array_Get_Item_3;                         // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class ALight*>                         CallFunc_Set_ToArray_Result_4;                     // 0x00D0(0x0010)(ReferenceParm)
+	bool                                          CallFunc_Set_Remove_ReturnValue_3;                 // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ALight*                                 CallFunc_Array_Get_Item_4;                         // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_3;               // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Set_Remove_ReturnValue_4;                 // 0x00F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_3;                // 0x00F5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CheckObjectPlatform_valid_3;              // 0x00F6(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CheckObjectPlatform_valid_4;              // 0x00F7(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         CallFunc_Array_Length_ReturnValue_4;               // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_4;                // 0x00FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_FD[0x3];                                       // 0x00FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_SingleCloud_C*>              CallFunc_Set_ToArray_Result_5;                     // 0x0100(0x0010)(ReferenceParm)
+	class FString                                 CallFunc_GetPathName_ReturnValue;                  // 0x0110(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class ABP_SingleCloud_C*                      CallFunc_Array_Get_Item_5;                         // 0x0120(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Contains_ReturnValue;                     // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Set_Remove_ReturnValue_5;                 // 0x0129(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_CheckObjectPlatform_valid_5;              // 0x012A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Contains_ReturnValue_1;                   // 0x012B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         CallFunc_Array_Length_ReturnValue_5;               // 0x012C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_5;                // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_GroupFadeWithVolume_C_CheckPlatform) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_CheckPlatform");
-static_assert(sizeof(BP_GroupFadeWithVolume_C_CheckPlatform) == 0x0000D0, "Wrong size on BP_GroupFadeWithVolume_C_CheckPlatform");
+static_assert(sizeof(BP_GroupFadeWithVolume_C_CheckPlatform) == 0x000138, "Wrong size on BP_GroupFadeWithVolume_C_CheckPlatform");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Array_Index_Variable' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Loop_Counter_Variable) == 0x000004, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Loop_Counter_Variable' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Loop_Counter_Variable_1) == 0x00000C, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Loop_Counter_Variable_2) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Loop_Counter_Variable_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Add_IntInt_ReturnValue_1) == 0x000014, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Add_IntInt_ReturnValue_2) == 0x000018, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Array_Index_Variable_1) == 0x00001C, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Array_Index_Variable_2) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Array_Index_Variable_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Loop_Counter_Variable_3) == 0x000024, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Loop_Counter_Variable_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Add_IntInt_ReturnValue_3) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Array_Index_Variable_3) == 0x00002C, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Array_Index_Variable_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result_1) == 0x000040, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item) == 0x000050, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item_1) == 0x000058, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue) == 0x000060, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue_1) == 0x000061, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid) == 0x000062, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid_1) == 0x000063, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue) == 0x000064, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue_1) == 0x000068, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue) == 0x00006C, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue_1) == 0x00006D, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result_2) == 0x000070, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item_2) == 0x000080, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result_3) == 0x000088, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue_2) == 0x000098, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item_3) == 0x0000A0, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue_2) == 0x0000A8, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue_3) == 0x0000AC, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue_2) == 0x0000AD, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid_2) == 0x0000AE, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid_3) == 0x0000AF, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue_3) == 0x0000B0, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue_3) == 0x0000B4, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_GetPathName_ReturnValue) == 0x0000B8, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_GetPathName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Contains_ReturnValue) == 0x0000C8, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Contains_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Contains_ReturnValue_1) == 0x0000C9, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Contains_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Add_IntInt_ReturnValue_1) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Array_Index_Variable_1) == 0x000014, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Array_Index_Variable_2) == 0x000018, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Loop_Counter_Variable_2) == 0x00001C, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Add_IntInt_ReturnValue_2) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Array_Index_Variable_3) == 0x000024, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Array_Index_Variable_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Loop_Counter_Variable_3) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Loop_Counter_Variable_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Add_IntInt_ReturnValue_3) == 0x00002C, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Add_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Loop_Counter_Variable_4) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Loop_Counter_Variable_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Loop_Counter_Variable_5) == 0x000034, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Loop_Counter_Variable_5' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Add_IntInt_ReturnValue_4) == 0x000038, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Add_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Add_IntInt_ReturnValue_5) == 0x00003C, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Add_IntInt_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Array_Index_Variable_4) == 0x000040, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Array_Index_Variable_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result) == 0x000048, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue) == 0x000058, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, ___int_Array_Index_Variable_5) == 0x00005C, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::___int_Array_Index_Variable_5' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue) == 0x000060, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item) == 0x000068, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue) == 0x000070, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid) == 0x000071, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result_1) == 0x000078, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result_2) == 0x000088, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item_1) == 0x000098, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item_2) == 0x0000A0, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue_1) == 0x0000A8, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue_2) == 0x0000A9, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid_1) == 0x0000AA, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid_2) == 0x0000AB, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue_1) == 0x0000AC, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue_2) == 0x0000B0, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue_1) == 0x0000B4, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue_2) == 0x0000B5, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result_3) == 0x0000B8, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item_3) == 0x0000C8, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result_4) == 0x0000D0, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue_3) == 0x0000E0, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item_4) == 0x0000E8, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue_3) == 0x0000F0, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue_4) == 0x0000F4, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue_3) == 0x0000F5, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid_3) == 0x0000F6, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid_4) == 0x0000F7, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue_4) == 0x0000F8, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue_4) == 0x0000FC, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_ToArray_Result_5) == 0x000100, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_ToArray_Result_5' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_GetPathName_ReturnValue) == 0x000110, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_GetPathName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Get_Item_5) == 0x000120, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Get_Item_5' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Contains_ReturnValue) == 0x000128, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Contains_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Set_Remove_ReturnValue_5) == 0x000129, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Set_Remove_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_CheckObjectPlatform_valid_5) == 0x00012A, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_CheckObjectPlatform_valid_5' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Contains_ReturnValue_1) == 0x00012B, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Contains_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Array_Length_ReturnValue_5) == 0x00012C, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Array_Length_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CheckPlatform, CallFunc_Less_IntInt_ReturnValue_5) == 0x000130, "Member 'BP_GroupFadeWithVolume_C_CheckPlatform::CallFunc_Less_IntInt_ReturnValue_5' has a wrong offset!");
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateSuperFarFog
+// 0x0088 (0x0088 - 0x0000)
+struct BP_GroupFadeWithVolume_C_UpdateSuperFarFog final
+{
+public:
+	float                                         A;                                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Array_Get_Item;                           // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Array_Get_Item_1;                         // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue_1;        // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class ABP_SuperFarFog_C*>              CallFunc_Set_ToArray_Result;                       // 0x0020(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_SuperFarFog_C*                      CallFunc_Array_Get_Item_2;                         // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_BreakColor_R;                             // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_G;                             // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_B;                             // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_A;                             // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_R_1;                           // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_G_1;                           // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_B_1;                           // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_A_1;                           // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeColor_ReturnValue;                    // 0x0064(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeColor_ReturnValue_1;                  // 0x0074(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_UpdateSuperFarFog");
+static_assert(sizeof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog) == 0x000088, "Wrong size on BP_GroupFadeWithVolume_C_UpdateSuperFarFog");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, A) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::A' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, ___int_Array_Index_Variable) == 0x000004, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, ___int_Loop_Counter_Variable) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_Add_IntInt_ReturnValue) == 0x00000C, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_Array_Get_Item) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_Array_Get_Item_1) == 0x000014, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x000018, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_Multiply_FloatFloat_ReturnValue_1) == 0x00001C, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_Multiply_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_Set_ToArray_Result) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_Set_ToArray_Result' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_Array_Length_ReturnValue) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_Array_Get_Item_2) == 0x000038, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_Less_IntInt_ReturnValue) == 0x000040, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_BreakColor_R) == 0x000044, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_BreakColor_R' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_BreakColor_G) == 0x000048, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_BreakColor_G' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_BreakColor_B) == 0x00004C, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_BreakColor_B' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_BreakColor_A) == 0x000050, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_BreakColor_A' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_BreakColor_R_1) == 0x000054, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_BreakColor_R_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_BreakColor_G_1) == 0x000058, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_BreakColor_G_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_BreakColor_B_1) == 0x00005C, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_BreakColor_B_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_BreakColor_A_1) == 0x000060, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_BreakColor_A_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_MakeColor_ReturnValue) == 0x000064, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_MakeColor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateSuperFarFog, CallFunc_MakeColor_ReturnValue_1) == 0x000074, "Member 'BP_GroupFadeWithVolume_C_UpdateSuperFarFog::CallFunc_MakeColor_ReturnValue_1' has a wrong offset!");
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheSuperFarFog
+// 0x0058 (0x0058 - 0x0000)
+struct BP_GroupFadeWithVolume_C_CacheSuperFarFog final
+{
+public:
+	int32                                         ___int_Array_Index_Variable;                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_SuperFarFog_C*>              CallFunc_Set_ToArray_Result;                       // 0x0010(0x0010)(ReferenceParm)
+	class ABP_SuperFarFog_C*                      CallFunc_Array_Get_Item;                           // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_BreakColor_R;                             // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_G;                             // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_B;                             // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_A;                             // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_R_1;                           // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_G_1;                           // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_B_1;                           // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_BreakColor_A_1;                           // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_GroupFadeWithVolume_C_CacheSuperFarFog) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_CacheSuperFarFog");
+static_assert(sizeof(BP_GroupFadeWithVolume_C_CacheSuperFarFog) == 0x000058, "Wrong size on BP_GroupFadeWithVolume_C_CacheSuperFarFog");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, ___int_Loop_Counter_Variable) == 0x000004, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_Set_ToArray_Result) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_Set_ToArray_Result' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_Array_Get_Item) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_Less_IntInt_ReturnValue) == 0x00002C, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_BreakColor_R) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_BreakColor_R' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_BreakColor_G) == 0x000034, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_BreakColor_G' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_BreakColor_B) == 0x000038, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_BreakColor_B' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_BreakColor_A) == 0x00003C, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_BreakColor_A' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_Array_Add_ReturnValue) == 0x000040, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_BreakColor_R_1) == 0x000044, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_BreakColor_R_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_BreakColor_G_1) == 0x000048, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_BreakColor_G_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_BreakColor_B_1) == 0x00004C, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_BreakColor_B_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_BreakColor_A_1) == 0x000050, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_BreakColor_A_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheSuperFarFog, CallFunc_Array_Add_ReturnValue_1) == 0x000054, "Member 'BP_GroupFadeWithVolume_C_CacheSuperFarFog::CallFunc_Array_Add_ReturnValue_1' has a wrong offset!");
 
 // Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateCloud
 // 0x0058 (0x0058 - 0x0000)
@@ -246,61 +448,6 @@ static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateCloud, CallFunc_GetMateria
 static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateCloud, K2Node_DynamicCast_As______) == 0x000048, "Member 'BP_GroupFadeWithVolume_C_UpdateCloud::K2Node_DynamicCast_As______' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateCloud, K2Node_DynamicCast_bSuccess) == 0x000050, "Member 'BP_GroupFadeWithVolume_C_UpdateCloud::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheVolumeLightSphereFar
-// 0x0038 (0x0038 - 0x0000)
-struct BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar final
-{
-public:
-	int32                                         ___int_Array_Index_Variable;                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ABP_VolumetricSphereLightSuperFar_C*> CallFunc_Set_ToArray_Result;                       // 0x0010(0x0010)(ReferenceParm)
-	class ABP_VolumetricSphereLightSuperFar_C*    CallFunc_Array_Get_Item;                           // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar");
-static_assert(sizeof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar) == 0x000038, "Wrong size on BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, ___int_Loop_Counter_Variable) == 0x000004, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Set_ToArray_Result) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Set_ToArray_Result' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Array_Get_Item) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Less_IntInt_ReturnValue) == 0x00002C, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Array_Add_ReturnValue) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheVolumeLightSphere
-// 0x0038 (0x0038 - 0x0000)
-struct BP_GroupFadeWithVolume_C_CacheVolumeLightSphere final
-{
-public:
-	int32                                         ___int_Array_Index_Variable;                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ABP_VolumetricSphereLight_C*>    CallFunc_Set_ToArray_Result;                       // 0x0010(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_VolumetricSphereLight_C*            CallFunc_Array_Get_Item;                           // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_CacheVolumeLightSphere");
-static_assert(sizeof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere) == 0x000038, "Wrong size on BP_GroupFadeWithVolume_C_CacheVolumeLightSphere");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, ___int_Loop_Counter_Variable) == 0x000004, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Set_ToArray_Result) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Set_ToArray_Result' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Array_Length_ReturnValue) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Array_Get_Item) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Less_IntInt_ReturnValue) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Array_Add_ReturnValue) == 0x000034, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
-
 // Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheCloud
 // 0x0038 (0x0038 - 0x0000)
 struct BP_GroupFadeWithVolume_C_CacheCloud final
@@ -340,7 +487,7 @@ public:
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_Array_Get_Item;                           // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ABP_VolumetricSphereLightSuperFar_C*> CallFunc_Set_ToArray_Result;                       // 0x0018(0x0010)(ReferenceParm)
+	TArray<class ABP_VolumetricSphereLightSuperFar_C*> CallFunc_Set_ToArray_Result;                  // 0x0018(0x0010)(ReferenceParm)
 	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ABP_VolumetricSphereLightSuperFar_C*    CallFunc_Array_Get_Item_1;                         // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -359,6 +506,33 @@ static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateVolumeLightSphereFar, Call
 static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateVolumeLightSphereFar, CallFunc_Array_Get_Item_1) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_UpdateVolumeLightSphereFar::CallFunc_Array_Get_Item_1' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateVolumeLightSphereFar, CallFunc_Array_Length_ReturnValue) == 0x000038, "Member 'BP_GroupFadeWithVolume_C_UpdateVolumeLightSphereFar::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateVolumeLightSphereFar, CallFunc_Less_IntInt_ReturnValue) == 0x00003C, "Member 'BP_GroupFadeWithVolume_C_UpdateVolumeLightSphereFar::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheVolumeLightSphereFar
+// 0x0038 (0x0038 - 0x0000)
+struct BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar final
+{
+public:
+	int32                                         ___int_Array_Index_Variable;                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_VolumetricSphereLightSuperFar_C*> CallFunc_Set_ToArray_Result;                  // 0x0010(0x0010)(ReferenceParm)
+	class ABP_VolumetricSphereLightSuperFar_C*    CallFunc_Array_Get_Item;                           // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar");
+static_assert(sizeof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar) == 0x000038, "Wrong size on BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, ___int_Loop_Counter_Variable) == 0x000004, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Set_ToArray_Result) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Set_ToArray_Result' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Array_Get_Item) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Array_Length_ReturnValue) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Less_IntInt_ReturnValue) == 0x00002C, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar, CallFunc_Array_Add_ReturnValue) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphereFar::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
 
 // Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateVolumeLightSphere
 // 0x0040 (0x0040 - 0x0000)
@@ -390,6 +564,34 @@ static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateVolumeLightSphere, CallFun
 static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateVolumeLightSphere, CallFunc_Array_Get_Item_1) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_UpdateVolumeLightSphere::CallFunc_Array_Get_Item_1' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateVolumeLightSphere, CallFunc_Array_Length_ReturnValue) == 0x000038, "Member 'BP_GroupFadeWithVolume_C_UpdateVolumeLightSphere::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_UpdateVolumeLightSphere, CallFunc_Less_IntInt_ReturnValue) == 0x00003C, "Member 'BP_GroupFadeWithVolume_C_UpdateVolumeLightSphere::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheVolumeLightSphere
+// 0x0038 (0x0038 - 0x0000)
+struct BP_GroupFadeWithVolume_C_CacheVolumeLightSphere final
+{
+public:
+	int32                                         ___int_Array_Index_Variable;                       // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_VolumetricSphereLight_C*>    CallFunc_Set_ToArray_Result;                       // 0x0010(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_VolumetricSphereLight_C*            CallFunc_Array_Get_Item;                           // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_CacheVolumeLightSphere");
+static_assert(sizeof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere) == 0x000038, "Wrong size on BP_GroupFadeWithVolume_C_CacheVolumeLightSphere");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, ___int_Array_Index_Variable) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, ___int_Loop_Counter_Variable) == 0x000004, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Add_IntInt_ReturnValue) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Set_ToArray_Result) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Set_ToArray_Result' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Array_Length_ReturnValue) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Array_Get_Item) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Less_IntInt_ReturnValue) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheVolumeLightSphere, CallFunc_Array_Add_ReturnValue) == 0x000034, "Member 'BP_GroupFadeWithVolume_C_CacheVolumeLightSphere::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
 
 // Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateLight
 // 0x0108 (0x0108 - 0x0000)
@@ -502,33 +704,41 @@ static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheLightInstensity, CallFunc_A
 static_assert(offsetof(BP_GroupFadeWithVolume_C_CacheLightInstensity, CallFunc_Concat_StrStr_ReturnValue_1) == 0x000070, "Member 'BP_GroupFadeWithVolume_C_CacheLightInstensity::CallFunc_Concat_StrStr_ReturnValue_1' has a wrong offset!");
 
 // Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ClearInvalid
-// 0x0038 (0x0038 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct BP_GroupFadeWithVolume_C_ClearInvalid final
 {
 public:
 	class ALight*                                 NewLocalVar_0;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ABP_VolumetricSphereLight_C*            NULLL;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	const class ALight*                           ___object_Variable;                                // 0x0010(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	const class ABP_VolumetricSphereLightSuperFar_C* ___object_Variable_1;                              // 0x0018(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	const class ABP_SingleCloud_C*                ___object_Variable_2;                              // 0x0020(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	const class ABP_VolumetricSphereLight_C*      ___object_Variable_3;                              // 0x0028(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Set_Remove_ReturnValue;                   // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Set_Remove_ReturnValue_1;                 // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Set_Remove_ReturnValue_2;                 // 0x0032(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Set_Remove_ReturnValue_3;                 // 0x0033(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	const class ABP_SuperFarFog_C*                ___object_Variable;                                // 0x0010(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class ABP_SingleCloud_C*                ___object_Variable_1;                              // 0x0018(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class ALight*                           ___object_Variable_2;                              // 0x0020(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class ABP_VolumetricSphereLightSuperFar_C* ___object_Variable_3;                           // 0x0028(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class ABP_KuroFlickLight_C*             ___object_Variable_4;                              // 0x0030(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class ABP_VolumetricSphereLight_C*      ___object_Variable_5;                              // 0x0038(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Set_Remove_ReturnValue;                   // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Set_Remove_ReturnValue_1;                 // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Set_Remove_ReturnValue_2;                 // 0x0042(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Set_Remove_ReturnValue_3;                 // 0x0043(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Set_Remove_ReturnValue_4;                 // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Set_Remove_ReturnValue_5;                 // 0x0045(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_GroupFadeWithVolume_C_ClearInvalid) == 0x000008, "Wrong alignment on BP_GroupFadeWithVolume_C_ClearInvalid");
-static_assert(sizeof(BP_GroupFadeWithVolume_C_ClearInvalid) == 0x000038, "Wrong size on BP_GroupFadeWithVolume_C_ClearInvalid");
+static_assert(sizeof(BP_GroupFadeWithVolume_C_ClearInvalid) == 0x000048, "Wrong size on BP_GroupFadeWithVolume_C_ClearInvalid");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, NewLocalVar_0) == 0x000000, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::NewLocalVar_0' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, NULLL) == 0x000008, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::NULLL' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, ___object_Variable) == 0x000010, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::___object_Variable' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, ___object_Variable_1) == 0x000018, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::___object_Variable_1' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, ___object_Variable_2) == 0x000020, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::___object_Variable_2' has a wrong offset!");
 static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, ___object_Variable_3) == 0x000028, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::___object_Variable_3' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue_1) == 0x000031, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue_2) == 0x000032, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue_3) == 0x000033, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, ___object_Variable_4) == 0x000030, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::___object_Variable_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, ___object_Variable_5) == 0x000038, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::___object_Variable_5' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue) == 0x000040, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue_1) == 0x000041, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue_2) == 0x000042, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue_3) == 0x000043, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue_4) == 0x000044, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_GroupFadeWithVolume_C_ClearInvalid, CallFunc_Set_Remove_ReturnValue_5) == 0x000045, "Member 'BP_GroupFadeWithVolume_C_ClearInvalid::CallFunc_Set_Remove_ReturnValue_5' has a wrong offset!");
 
 // Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UserConstructionScript
 // 0x0020 (0x0020 - 0x0000)

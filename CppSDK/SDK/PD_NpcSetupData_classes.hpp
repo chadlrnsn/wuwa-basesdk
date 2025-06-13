@@ -11,16 +11,16 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "ENpcSetupType_structs.hpp"
 #include "SNpcHookPart_structs.hpp"
 #include "Engine_classes.hpp"
+#include "ENpcSetupType_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass PD_NpcSetupData.PD_NpcSetupData_C
-// 0x0150 (0x0188 - 0x0038)
+// 0x01A0 (0x01D8 - 0x0038)
 class UPD_NpcSetupData_C final : public UPrimaryDataAsset
 {
 public:
@@ -66,6 +66,11 @@ public:
 	class UMaterialInstance*                      Skel_BodyUp_Mat;                                   // 0x0170(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      Skel_BodyDown_Mat;                                 // 0x0178(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      Skel_Body_Mat;                                     // 0x0180(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UMaterialInstance*>              Skel_Body_Mat_Extra;                               // 0x0188(0x0010)(Edit, BlueprintVisible)
+	TArray<class UMaterialInstance*>              Hair_Mat_Extra;                                    // 0x0198(0x0010)(Edit, BlueprintVisible)
+	TArray<class UMaterialInstance*>              Face_Mat_Extra;                                    // 0x01A8(0x0010)(Edit, BlueprintVisible)
+	TArray<class UMaterialInstance*>              Skel_BodyUp_Mat_Extra;                             // 0x01B8(0x0010)(Edit, BlueprintVisible)
+	TArray<class UMaterialInstance*>              Skel_BodyDown_Mat_Extra;                           // 0x01C8(0x0010)(Edit, BlueprintVisible)
 
 public:
 	void IsEmpty(bool* Result);
@@ -76,6 +81,7 @@ public:
 	void HasSkelBodyDown(bool* Result);
 	void HasSkelBody(bool* Result);
 	void GetAllParts(TArray<class USkeletalMesh*>* OutParts);
+	void GetAllPartMaterials(TArray<class UMaterialInstance*>* Results);
 
 public:
 	static class UClass* StaticClass()
@@ -88,7 +94,7 @@ public:
 	}
 };
 static_assert(alignof(UPD_NpcSetupData_C) == 0x000008, "Wrong alignment on UPD_NpcSetupData_C");
-static_assert(sizeof(UPD_NpcSetupData_C) == 0x000188, "Wrong size on UPD_NpcSetupData_C");
+static_assert(sizeof(UPD_NpcSetupData_C) == 0x0001D8, "Wrong size on UPD_NpcSetupData_C");
 static_assert(offsetof(UPD_NpcSetupData_C, Skel_Hair) == 0x000038, "Member 'UPD_NpcSetupData_C::Skel_Hair' has a wrong offset!");
 static_assert(offsetof(UPD_NpcSetupData_C, Skel_Hair_Color) == 0x000040, "Member 'UPD_NpcSetupData_C::Skel_Hair_Color' has a wrong offset!");
 static_assert(offsetof(UPD_NpcSetupData_C, Skel_Face) == 0x000048, "Member 'UPD_NpcSetupData_C::Skel_Face' has a wrong offset!");
@@ -120,6 +126,11 @@ static_assert(offsetof(UPD_NpcSetupData_C, Face_Mat) == 0x000168, "Member 'UPD_N
 static_assert(offsetof(UPD_NpcSetupData_C, Skel_BodyUp_Mat) == 0x000170, "Member 'UPD_NpcSetupData_C::Skel_BodyUp_Mat' has a wrong offset!");
 static_assert(offsetof(UPD_NpcSetupData_C, Skel_BodyDown_Mat) == 0x000178, "Member 'UPD_NpcSetupData_C::Skel_BodyDown_Mat' has a wrong offset!");
 static_assert(offsetof(UPD_NpcSetupData_C, Skel_Body_Mat) == 0x000180, "Member 'UPD_NpcSetupData_C::Skel_Body_Mat' has a wrong offset!");
+static_assert(offsetof(UPD_NpcSetupData_C, Skel_Body_Mat_Extra) == 0x000188, "Member 'UPD_NpcSetupData_C::Skel_Body_Mat_Extra' has a wrong offset!");
+static_assert(offsetof(UPD_NpcSetupData_C, Hair_Mat_Extra) == 0x000198, "Member 'UPD_NpcSetupData_C::Hair_Mat_Extra' has a wrong offset!");
+static_assert(offsetof(UPD_NpcSetupData_C, Face_Mat_Extra) == 0x0001A8, "Member 'UPD_NpcSetupData_C::Face_Mat_Extra' has a wrong offset!");
+static_assert(offsetof(UPD_NpcSetupData_C, Skel_BodyUp_Mat_Extra) == 0x0001B8, "Member 'UPD_NpcSetupData_C::Skel_BodyUp_Mat_Extra' has a wrong offset!");
+static_assert(offsetof(UPD_NpcSetupData_C, Skel_BodyDown_Mat_Extra) == 0x0001C8, "Member 'UPD_NpcSetupData_C::Skel_BodyDown_Mat_Extra' has a wrong offset!");
 
 }
 

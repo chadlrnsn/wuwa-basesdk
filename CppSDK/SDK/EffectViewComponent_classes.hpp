@@ -21,10 +21,10 @@ namespace SDK
 class UEffectViewComponent_C final : public USceneComponent
 {
 public:
-	void EditorTick(float deltaSecond);
-	void SetAutoPlay(bool autoPlay);
-	void Play();
 	void Stop(bool immediately);
+	void Play();
+	void SetAutoPlay(bool autoPlay);
+	void EditorTick(float deltaSecond);
 
 public:
 	static class UClass* StaticClass()

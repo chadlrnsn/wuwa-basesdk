@@ -20,8 +20,8 @@ namespace SDK
 {
 
 // Class SMSystem.SMInstanceInterface
-// 0x0000 (0x0030 - 0x0030)
-class ISMInstanceInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ISMInstanceInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -32,13 +32,22 @@ public:
 	{
 		return GetDefaultObjImpl<ISMInstanceInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ISMInstanceInterface) == 0x000008, "Wrong alignment on ISMInstanceInterface");
-static_assert(sizeof(ISMInstanceInterface) == 0x000030, "Wrong size on ISMInstanceInterface");
+static_assert(alignof(ISMInstanceInterface) == 0x000001, "Wrong alignment on ISMInstanceInterface");
+static_assert(sizeof(ISMInstanceInterface) == 0x000001, "Wrong size on ISMInstanceInterface");
 
 // Class SMSystem.SMStateMachineInterface
-// 0x0000 (0x0030 - 0x0030)
-class ISMStateMachineInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ISMStateMachineInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -49,13 +58,22 @@ public:
 	{
 		return GetDefaultObjImpl<ISMStateMachineInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ISMStateMachineInterface) == 0x000008, "Wrong alignment on ISMStateMachineInterface");
-static_assert(sizeof(ISMStateMachineInterface) == 0x000030, "Wrong size on ISMStateMachineInterface");
+static_assert(alignof(ISMStateMachineInterface) == 0x000001, "Wrong alignment on ISMStateMachineInterface");
+static_assert(sizeof(ISMStateMachineInterface) == 0x000001, "Wrong size on ISMStateMachineInterface");
 
 // Class SMSystem.SMStateMachineNetworkedInterface
-// 0x0000 (0x0030 - 0x0030)
-class ISMStateMachineNetworkedInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ISMStateMachineNetworkedInterface final
 {
 public:
 	bool HasAuthority() const;
@@ -71,9 +89,18 @@ public:
 	{
 		return GetDefaultObjImpl<ISMStateMachineNetworkedInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ISMStateMachineNetworkedInterface) == 0x000008, "Wrong alignment on ISMStateMachineNetworkedInterface");
-static_assert(sizeof(ISMStateMachineNetworkedInterface) == 0x000030, "Wrong size on ISMStateMachineNetworkedInterface");
+static_assert(alignof(ISMStateMachineNetworkedInterface) == 0x000001, "Wrong alignment on ISMStateMachineNetworkedInterface");
+static_assert(sizeof(ISMStateMachineNetworkedInterface) == 0x000001, "Wrong size on ISMStateMachineNetworkedInterface");
 
 // Class SMSystem.SMBlueprint
 // 0x0008 (0x00B0 - 0x00A8)
@@ -194,10 +221,10 @@ class USMStateInstance_Base : public USMNodeInstance
 {
 public:
 	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class USMStateInstance_Base* StateInstance)> OnStateBeginEvent;                                 // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMStateInstance_Base* StateInstance)> OnPostStateBeginEvent;                             // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMStateInstance_Base* StateInstance, float DeltaSeconds)> OnStateUpdateEvent;                                // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMStateInstance_Base* StateInstance)> OnStateEndEvent;                                   // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMStateInstance_Base* StateInstance)> OnStateBeginEvent;    // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMStateInstance_Base* StateInstance)> OnPostStateBeginEvent; // 0x0068(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMStateInstance_Base* StateInstance, float DeltaSeconds)> OnStateUpdateEvent; // 0x0078(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMStateInstance_Base* StateInstance)> OnStateEndEvent;      // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	ETakeControlType                              TakeControlType;                                   // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ETransitionRule                               TransitionRule;                                    // 0x0099(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
@@ -310,16 +337,16 @@ public:
 	TArray<struct FSMReferenceContainer>          ReplicatedReferences;                              // 0x0068(0x0010)(Net, ZeroConstructor, Transient, RepNotify, NativeAccessSpecifierPrivate)
 	struct FGuid                                  RootStateMachineGuid;                              // 0x0078(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class USMStateMachineInstance*>        AllRootNodeInstances;                              // 0x0088(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnPreStateMachineInitializedEvent;                 // 0x0098(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineInitializedEvent;                    // 0x00A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineStartedEvent;                        // 0x00B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance, float DeltaSeconds)> OnStateMachineUpdatedEvent;                        // 0x00C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineStoppedEvent;                        // 0x00D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMTransitionInfo& Transition)> OnStateMachineTransitionTakenEvent;                // 0x00E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMStateInfo& NewState, const struct FSMStateInfo& PreviousState)> OnStateMachineStateChangedEvent;                   // 0x00F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMStateInfo& State)> OnStateMachineStateStartedEvent;                   // 0x0108(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnPreStateMachineInitializedEvent;   // 0x0098(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineInitializedEvent;      // 0x00A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineStartedEvent;          // 0x00B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance, float DeltaSeconds)> OnStateMachineUpdatedEvent; // 0x00C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineStoppedEvent;          // 0x00D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMTransitionInfo& Transition)> OnStateMachineTransitionTakenEvent; // 0x00E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMStateInfo& NewState, const struct FSMStateInfo& PreviousState)> OnStateMachineStateChangedEvent; // 0x00F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMStateInfo& State)> OnStateMachineStateStartedEvent; // 0x0108(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class USMStateMachineComponent*               ComponentOwner;                                    // 0x0118(0x0008)(ExportObject, Net, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TScriptInterface<class ISMStateMachineNetworkedInterface> NetworkInterface;                                  // 0x0120(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TScriptInterface<class ISMStateMachineNetworkedInterface> NetworkInterface;                      // 0x0120(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	uint8                                         Pad_130[0x140];                                    // 0x0130(0x0140)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSMStateMachine                        RootStateMachine;                                  // 0x0270(0x0298)(Protected, NativeAccessSpecifierProtected)
 	class UObject*                                R_StateMachineContext;                             // 0x0508(0x0008)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -575,13 +602,13 @@ class USMStateMachineComponent final : public UActorComponent
 {
 public:
 	uint8                                         Pad_C0[0x10];                                      // 0x00C0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineInitializedEvent;                    // 0x00D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineStartedEvent;                        // 0x00E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance, float DeltaSeconds)> OnStateMachineUpdatedEvent;                        // 0x00F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineStoppedEvent;                        // 0x0100(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMTransitionInfo& Transition)> OnStateMachineTransitionTakenEvent;                // 0x0110(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMStateInfo& NewState, const struct FSMStateInfo& PreviousState)> OnStateMachineStateChangedEvent;                   // 0x0120(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMStateInfo& State)> OnStateMachineStateStartedEvent;                   // 0x0130(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineInitializedEvent;      // 0x00D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineStartedEvent;          // 0x00E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance, float DeltaSeconds)> OnStateMachineUpdatedEvent; // 0x00F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance)> OnStateMachineStoppedEvent;          // 0x0100(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMTransitionInfo& Transition)> OnStateMachineTransitionTakenEvent; // 0x0110(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMStateInfo& NewState, const struct FSMStateInfo& PreviousState)> OnStateMachineStateChangedEvent; // 0x0120(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMInstance* Instance, const struct FSMStateInfo& State)> OnStateMachineStateStartedEvent; // 0x0130(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TSet<class UActorChannel*>                    CurrentActorChannels;                              // 0x0140(0x0050)(Transient, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_190[0x24];                                     // 0x0190(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
 	uint8                                         bAutomaticallyHandleNewConnections : 1;            // 0x01B4(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -814,7 +841,7 @@ class USMTransitionInstance final : public USMNodeInstance
 public:
 	int32                                         PriorityOrder;                                     // 0x0050(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class USMTransitionInstance* TransitionInstance)> OnTransitionEnteredEvent;                          // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USMTransitionInstance* TransitionInstance)> OnTransitionEnteredEvent; // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	ETransitionPredictionType                     TransitionPredictionType;                          // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UASMConditionBase*                      Condition;                                         // 0x0070(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, PersistentInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)

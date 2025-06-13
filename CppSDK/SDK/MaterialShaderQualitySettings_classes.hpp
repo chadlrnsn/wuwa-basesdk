@@ -22,7 +22,7 @@ namespace SDK
 class UMaterialShaderQualitySettings final : public UObject
 {
 public:
-	TMap<class FName, class UShaderPlatformQualitySettings*> ForwardSettingMap;                                 // 0x0030(0x0050)(NativeAccessSpecifierPrivate)
+	TMap<class FName, class UShaderPlatformQualitySettings*> ForwardSettingMap;                      // 0x0030(0x0050)(NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()

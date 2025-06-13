@@ -16,22 +16,22 @@
 namespace SDK
 {
 
-// BlueprintGeneratedClass KuroSceneInteraction_142.TPrefab_SM_Pro_FaDian_3_C
+// BlueprintGeneratedClass KuroSceneInteraction_142.TPrefab_SM_Pro_Mine_4_C
 // 0x0000 (0x02B8 - 0x02B8)
-class KuroSceneInteraction_142::ATPrefab_SM_Pro_FaDian_3_C final : public ALevelScriptActor
+class KuroSceneInteraction_142::ATPrefab_SM_Pro_Mine_4_C final : public ALevelScriptActor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass KuroSceneInteraction_142.TPrefab_SM_Pro_FaDian_3_C", true, "TPrefab_SM_Pro_FaDian_3_C">();
+		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass KuroSceneInteraction_142.TPrefab_SM_Pro_Mine_4_C", true, "TPrefab_SM_Pro_Mine_4_C">();
 	}
-	static class KuroSceneInteraction_142::ATPrefab_SM_Pro_FaDian_3_C* GetDefaultObj()
+	static class KuroSceneInteraction_142::ATPrefab_SM_Pro_Mine_4_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<KuroSceneInteraction_142::ATPrefab_SM_Pro_FaDian_3_C>();
+		return GetDefaultObjImpl<KuroSceneInteraction_142::ATPrefab_SM_Pro_Mine_4_C>();
 	}
 };
-static_assert(alignof(KuroSceneInteraction_142::ATPrefab_SM_Pro_FaDian_3_C) == 0x000008, "Wrong alignment on KuroSceneInteraction_142::ATPrefab_SM_Pro_FaDian_3_C");
-static_assert(sizeof(KuroSceneInteraction_142::ATPrefab_SM_Pro_FaDian_3_C) == 0x0002B8, "Wrong size on KuroSceneInteraction_142::ATPrefab_SM_Pro_FaDian_3_C");
+static_assert(alignof(KuroSceneInteraction_142::ATPrefab_SM_Pro_Mine_4_C) == 0x000008, "Wrong alignment on KuroSceneInteraction_142::ATPrefab_SM_Pro_Mine_4_C");
+static_assert(sizeof(KuroSceneInteraction_142::ATPrefab_SM_Pro_Mine_4_C) == 0x0002B8, "Wrong size on KuroSceneInteraction_142::ATPrefab_SM_Pro_Mine_4_C");
 
 }
 

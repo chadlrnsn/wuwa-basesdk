@@ -12,8 +12,8 @@
 
 #include "SCommonRainSpawnerConfig_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroCurve_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroCurve_structs.hpp"
 
 
 namespace SDK

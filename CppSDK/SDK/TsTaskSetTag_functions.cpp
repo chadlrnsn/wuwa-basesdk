@@ -17,31 +17,6 @@
 namespace SDK
 {
 
-// Function TsTaskSetTag.TsTaskSetTag_C.ExecuteUbergraph_TsTaskSetTag
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsTaskSetTag_C::ExecuteUbergraph_TsTaskSetTag(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskSetTag_C", "ExecuteUbergraph_TsTaskSetTag");
-
-	Params::TsTaskSetTag_C_ExecuteUbergraph_TsTaskSetTag Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function TsTaskSetTag.TsTaskSetTag_C.ReceiveTickAI
 // (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -61,6 +36,31 @@ void UTsTaskSetTag_C::ReceiveTickAI(class AAIController* OwnerController, class 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;
 	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsTaskSetTag.TsTaskSetTag_C.ExecuteUbergraph_TsTaskSetTag
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsTaskSetTag_C::ExecuteUbergraph_TsTaskSetTag(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsTaskSetTag_C", "ExecuteUbergraph_TsTaskSetTag");
+
+	Params::TsTaskSetTag_C_ExecuteUbergraph_TsTaskSetTag Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

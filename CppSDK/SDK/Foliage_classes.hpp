@@ -20,35 +20,6 @@
 namespace SDK
 {
 
-// Class Foliage.FoliageInstancedStaticMeshComponent
-// 0x0030 (0x07B0 - 0x0780)
-class UFoliageInstancedStaticMeshComponent final : public UHierarchicalInstancedStaticMeshComponent
-{
-public:
-	TMulticastInlineDelegate<void(int32 InstanceIndex, float Damage, class AController* InstigatedBy, const struct FVector& HitLocation, const struct FVector& ShotFromDirection, class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakePointDamage;                         // 0x0778(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(TArray<int32>& Instances, TArray<float>& Damages, class AController* InstigatedBy, const struct FVector& Origin, float MaxRadius, class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakeRadialDamage;                        // 0x0788(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	bool                                          bEnableDiscardOnLoad;                              // 0x0798(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_799[0x3];                                      // 0x0799(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGuid                                  GenerationGuid;                                    // 0x079C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_7AC[0x4];                                      // 0x07AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"FoliageInstancedStaticMeshComponent">();
-	}
-	static class UFoliageInstancedStaticMeshComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UFoliageInstancedStaticMeshComponent>();
-	}
-};
-static_assert(alignof(UFoliageInstancedStaticMeshComponent) == 0x000010, "Wrong alignment on UFoliageInstancedStaticMeshComponent");
-static_assert(sizeof(UFoliageInstancedStaticMeshComponent) == 0x0007B0, "Wrong size on UFoliageInstancedStaticMeshComponent");
-static_assert(offsetof(UFoliageInstancedStaticMeshComponent, OnInstanceTakePointDamage) == 0x000778, "Member 'UFoliageInstancedStaticMeshComponent::OnInstanceTakePointDamage' has a wrong offset!");
-static_assert(offsetof(UFoliageInstancedStaticMeshComponent, OnInstanceTakeRadialDamage) == 0x000788, "Member 'UFoliageInstancedStaticMeshComponent::OnInstanceTakeRadialDamage' has a wrong offset!");
-static_assert(offsetof(UFoliageInstancedStaticMeshComponent, bEnableDiscardOnLoad) == 0x000798, "Member 'UFoliageInstancedStaticMeshComponent::bEnableDiscardOnLoad' has a wrong offset!");
-static_assert(offsetof(UFoliageInstancedStaticMeshComponent, GenerationGuid) == 0x00079C, "Member 'UFoliageInstancedStaticMeshComponent::GenerationGuid' has a wrong offset!");
-
 // Class Foliage.InteractiveFoliageActor
 // 0x0060 (0x0320 - 0x02C0)
 class AInteractiveFoliageActor final : public AStaticMeshActor
@@ -100,26 +71,34 @@ static_assert(offsetof(AInteractiveFoliageActor, MaxTouchImpulse) == 0x000310, "
 static_assert(offsetof(AInteractiveFoliageActor, MaxForce) == 0x000314, "Member 'AInteractiveFoliageActor::MaxForce' has a wrong offset!");
 static_assert(offsetof(AInteractiveFoliageActor, Mass) == 0x000318, "Member 'AInteractiveFoliageActor::Mass' has a wrong offset!");
 
-// Class Foliage.FoliageStatistics
-// 0x0000 (0x0030 - 0x0030)
-class UFoliageStatistics final : public UBlueprintFunctionLibrary
+// Class Foliage.FoliageInstancedStaticMeshComponent
+// 0x0030 (0x07B0 - 0x0780)
+class UFoliageInstancedStaticMeshComponent final : public UHierarchicalInstancedStaticMeshComponent
 {
 public:
-	static int32 FoliageOverlappingBoxCount(class UObject* WorldContextObject, const class UStaticMesh* StaticMesh, const struct FBox& Box);
-	static int32 FoliageOverlappingSphereCount(class UObject* WorldContextObject, const class UStaticMesh* StaticMesh, const struct FVector& CenterPosition, float Radius);
+	TMulticastInlineDelegate<void(int32 InstanceIndex, float Damage, class AController* InstigatedBy, const struct FVector& HitLocation, const struct FVector& ShotFromDirection, const class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakePointDamage; // 0x0778(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const TArray<int32>& Instances, const TArray<float>& Damages, class AController* InstigatedBy, const struct FVector& Origin, float MaxRadius, const class UDamageType* DamageType, class AActor* DamageCauser)> OnInstanceTakeRadialDamage; // 0x0788(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	bool                                          bEnableDiscardOnLoad;                              // 0x0798(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_799[0x3];                                      // 0x0799(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  GenerationGuid;                                    // 0x079C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_7AC[0x4];                                      // 0x07AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"FoliageStatistics">();
+		return StaticClassImpl<"FoliageInstancedStaticMeshComponent">();
 	}
-	static class UFoliageStatistics* GetDefaultObj()
+	static class UFoliageInstancedStaticMeshComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UFoliageStatistics>();
+		return GetDefaultObjImpl<UFoliageInstancedStaticMeshComponent>();
 	}
 };
-static_assert(alignof(UFoliageStatistics) == 0x000008, "Wrong alignment on UFoliageStatistics");
-static_assert(sizeof(UFoliageStatistics) == 0x000030, "Wrong size on UFoliageStatistics");
+static_assert(alignof(UFoliageInstancedStaticMeshComponent) == 0x000010, "Wrong alignment on UFoliageInstancedStaticMeshComponent");
+static_assert(sizeof(UFoliageInstancedStaticMeshComponent) == 0x0007B0, "Wrong size on UFoliageInstancedStaticMeshComponent");
+static_assert(offsetof(UFoliageInstancedStaticMeshComponent, OnInstanceTakePointDamage) == 0x000778, "Member 'UFoliageInstancedStaticMeshComponent::OnInstanceTakePointDamage' has a wrong offset!");
+static_assert(offsetof(UFoliageInstancedStaticMeshComponent, OnInstanceTakeRadialDamage) == 0x000788, "Member 'UFoliageInstancedStaticMeshComponent::OnInstanceTakeRadialDamage' has a wrong offset!");
+static_assert(offsetof(UFoliageInstancedStaticMeshComponent, bEnableDiscardOnLoad) == 0x000798, "Member 'UFoliageInstancedStaticMeshComponent::bEnableDiscardOnLoad' has a wrong offset!");
+static_assert(offsetof(UFoliageInstancedStaticMeshComponent, GenerationGuid) == 0x00079C, "Member 'UFoliageInstancedStaticMeshComponent::GenerationGuid' has a wrong offset!");
 
 // Class Foliage.InteractiveFoliageComponent
 // 0x0010 (0x05D0 - 0x05C0)
@@ -141,8 +120,29 @@ public:
 static_assert(alignof(UInteractiveFoliageComponent) == 0x000010, "Wrong alignment on UInteractiveFoliageComponent");
 static_assert(sizeof(UInteractiveFoliageComponent) == 0x0005D0, "Wrong size on UInteractiveFoliageComponent");
 
+// Class Foliage.FoliageStatistics
+// 0x0000 (0x0030 - 0x0030)
+class UFoliageStatistics final : public UBlueprintFunctionLibrary
+{
+public:
+	static int32 FoliageOverlappingBoxCount(class UObject* WorldContextObject, const class UStaticMesh* StaticMesh, const struct FBox& Box);
+	static int32 FoliageOverlappingSphereCount(class UObject* WorldContextObject, const class UStaticMesh* StaticMesh, const struct FVector& CenterPosition, float Radius);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"FoliageStatistics">();
+	}
+	static class UFoliageStatistics* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UFoliageStatistics>();
+	}
+};
+static_assert(alignof(UFoliageStatistics) == 0x000008, "Wrong alignment on UFoliageStatistics");
+static_assert(sizeof(UFoliageStatistics) == 0x000030, "Wrong size on UFoliageStatistics");
+
 // Class Foliage.FoliageType
-// 0x0448 (0x0478 - 0x0030)
+// 0x0450 (0x0480 - 0x0030)
 class UFoliageType : public UObject
 {
 public:
@@ -195,85 +195,86 @@ public:
 	uint8                                         bOverride_KuroMinVertsToSplitNode : 1;             // 0x014F(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	float                                         KuroFoliageSplitFactor;                            // 0x0150(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         KuroMinVertsToSplitNode;                           // 0x0154(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FInt32Interval                         CullDistance;                                      // 0x0158(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPerPlatformFloat                      FoliageDensityLow;                                 // 0x0160(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPerPlatformFloat                      FoliageDensityMiddle;                              // 0x0164(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPerPlatformFloat                      FoliageDensityHigh;                                // 0x0168(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         bEnableStaticLighting : 1;                         // 0x016C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Deprecated, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         CastShadow : 1;                                    // 0x016C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bAffectDynamicIndirectLighting : 1;                // 0x016C(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bAffectDistanceFieldLighting : 1;                  // 0x016C(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCastDynamicShadow : 1;                            // 0x016C(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCastStaticShadow : 1;                             // 0x016C(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         BitPad_16C_6 : 2;                                  // 0x016C(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
-	uint8                                         Pad_16D[0x3];                                      // 0x016D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bCastContactShadow : 1;                            // 0x0170(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         BitPad_170_1 : 7;                                  // 0x0170(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
+	int32                                         KuroFoliageForceShadowLOD;                         // 0x0158(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInt32Interval                         CullDistance;                                      // 0x015C(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPerPlatformFloat                      FoliageDensityLow;                                 // 0x0164(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPerPlatformFloat                      FoliageDensityMiddle;                              // 0x0168(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPerPlatformFloat                      FoliageDensityHigh;                                // 0x016C(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         bEnableStaticLighting : 1;                         // 0x0170(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Deprecated, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         CastShadow : 1;                                    // 0x0170(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bAffectDynamicIndirectLighting : 1;                // 0x0170(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bAffectDistanceFieldLighting : 1;                  // 0x0170(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCastDynamicShadow : 1;                            // 0x0170(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCastStaticShadow : 1;                             // 0x0170(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         BitPad_170_6 : 2;                                  // 0x0170(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
 	uint8                                         Pad_171[0x3];                                      // 0x0171(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bCastShadowAsTwoSided : 1;                         // 0x0174(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bReceivesDecals : 1;                               // 0x0174(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverrideLightMapRes : 1;                          // 0x0174(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCastContactShadow : 1;                            // 0x0174(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         BitPad_174_1 : 7;                                  // 0x0174(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
 	uint8                                         Pad_175[0x3];                                      // 0x0175(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         OverriddenLightMapRes;                             // 0x0178(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ELightmapType                                 LightmapType;                                      // 0x017C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bUseAsOccluder : 1;                                // 0x0180(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         BitPad_180_1 : 7;                                  // 0x0180(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
+	uint8                                         bCastShadowAsTwoSided : 1;                         // 0x0178(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bReceivesDecals : 1;                               // 0x0178(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverrideLightMapRes : 1;                          // 0x0178(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_179[0x3];                                      // 0x0179(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         OverriddenLightMapRes;                             // 0x017C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ELightmapType                                 LightmapType;                                      // 0x0180(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_181[0x3];                                      // 0x0181(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bVisibleInRayTracing : 1;                          // 0x0184(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bEvaluateWorldPositionOffset : 1;                  // 0x0184(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bUseAsOccluder : 1;                                // 0x0184(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         BitPad_184_1 : 7;                                  // 0x0184(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
 	uint8                                         Pad_185[0x3];                                      // 0x0185(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBodyInstance                          BodyInstance;                                      // 0x0188(0x0168)(Edit, NativeAccessSpecifierPublic)
-	EHasCustomNavigableGeometry                   CustomNavigableGeometry;                           // 0x02F0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLightingChannels                      LightingChannels;                                  // 0x02F1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F2[0x2];                                      // 0x02F2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bRenderCustomDepth : 1;                            // 0x02F4(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_2F5[0x3];                                      // 0x02F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	ERendererStencilMask                          CustomDepthStencilWriteMask;                       // 0x02F8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F9[0x3];                                      // 0x02F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CustomDepthStencilValue;                           // 0x02FC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TranslucencySortPriority;                          // 0x0300(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CollisionRadius;                                   // 0x0304(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ShadeRadius;                                       // 0x0308(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumSteps;                                          // 0x030C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InitialSeedDensity;                                // 0x0310(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AverageSpreadDistance;                             // 0x0314(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SpreadVariance;                                    // 0x0318(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SeedsPerStep;                                      // 0x031C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DistributionSeed;                                  // 0x0320(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxInitialSeedOffset;                              // 0x0324(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCanGrowInShade;                                   // 0x0328(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSpawnsInShade;                                    // 0x0329(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_32A[0x2];                                      // 0x032A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MaxInitialAge;                                     // 0x032C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxAge;                                            // 0x0330(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OverlapPriority;                                   // 0x0334(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FFloatInterval                         ProceduralScale;                                   // 0x0338(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRuntimeFloatCurve                     ScaleCurve;                                        // 0x0340(0x0088)(Edit, NativeAccessSpecifierPublic)
-	struct FFoliageDensityFalloff                 DensityFalloff;                                    // 0x03C8(0x0090)(Edit, NativeAccessSpecifierPublic)
-	int32                                         ChangeCount;                                       // 0x0458(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ReapplyDensity : 1;                                // 0x045C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyRadius : 1;                                 // 0x045C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyAlignToNormal : 1;                          // 0x045C(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyRandomYaw : 1;                              // 0x045C(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyScaling : 1;                                // 0x045C(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyScaleX : 1;                                 // 0x045C(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyScaleY : 1;                                 // 0x045C(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyScaleZ : 1;                                 // 0x045C(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyRandomPitchAngle : 1;                       // 0x045D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyGroundSlope : 1;                            // 0x045D(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyHeight : 1;                                 // 0x045D(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyLandscapeLayers : 1;                        // 0x045D(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyZOffset : 1;                                // 0x045D(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyCollisionWithWorld : 1;                     // 0x045D(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         ReapplyVertexColorMask : 1;                        // 0x045D(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bEnableDensityScaling : 1;                         // 0x045D(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bEnableDiscardOnLoad : 1;                          // 0x045E(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_45F[0x1];                                      // 0x045F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class URuntimeVirtualTexture*>         RuntimeVirtualTextures;                            // 0x0460(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         VirtualTextureCullMips;                            // 0x0470(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERuntimeVirtualTextureMainPassType            VirtualTextureRenderPassType;                      // 0x0474(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_475[0x3];                                      // 0x0475(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         bVisibleInRayTracing : 1;                          // 0x0188(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bEvaluateWorldPositionOffset : 1;                  // 0x0188(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_189[0x7];                                      // 0x0189(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBodyInstance                          BodyInstance;                                      // 0x0190(0x0168)(Edit, NativeAccessSpecifierPublic)
+	EHasCustomNavigableGeometry                   CustomNavigableGeometry;                           // 0x02F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLightingChannels                      LightingChannels;                                  // 0x02F9(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2FA[0x2];                                      // 0x02FA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bRenderCustomDepth : 1;                            // 0x02FC(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_2FD[0x3];                                      // 0x02FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	ERendererStencilMask                          CustomDepthStencilWriteMask;                       // 0x0300(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_301[0x3];                                      // 0x0301(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CustomDepthStencilValue;                           // 0x0304(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TranslucencySortPriority;                          // 0x0308(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CollisionRadius;                                   // 0x030C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShadeRadius;                                       // 0x0310(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumSteps;                                          // 0x0314(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InitialSeedDensity;                                // 0x0318(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AverageSpreadDistance;                             // 0x031C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpreadVariance;                                    // 0x0320(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SeedsPerStep;                                      // 0x0324(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DistributionSeed;                                  // 0x0328(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxInitialSeedOffset;                              // 0x032C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanGrowInShade;                                   // 0x0330(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSpawnsInShade;                                    // 0x0331(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_332[0x2];                                      // 0x0332(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxInitialAge;                                     // 0x0334(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxAge;                                            // 0x0338(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OverlapPriority;                                   // 0x033C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFloatInterval                         ProceduralScale;                                   // 0x0340(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRuntimeFloatCurve                     ScaleCurve;                                        // 0x0348(0x0088)(Edit, NativeAccessSpecifierPublic)
+	struct FFoliageDensityFalloff                 DensityFalloff;                                    // 0x03D0(0x0090)(Edit, NativeAccessSpecifierPublic)
+	int32                                         ChangeCount;                                       // 0x0460(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ReapplyDensity : 1;                                // 0x0464(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyRadius : 1;                                 // 0x0464(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyAlignToNormal : 1;                          // 0x0464(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyRandomYaw : 1;                              // 0x0464(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyScaling : 1;                                // 0x0464(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyScaleX : 1;                                 // 0x0464(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyScaleY : 1;                                 // 0x0464(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyScaleZ : 1;                                 // 0x0464(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyRandomPitchAngle : 1;                       // 0x0465(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyGroundSlope : 1;                            // 0x0465(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyHeight : 1;                                 // 0x0465(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyLandscapeLayers : 1;                        // 0x0465(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyZOffset : 1;                                // 0x0465(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyCollisionWithWorld : 1;                     // 0x0465(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         ReapplyVertexColorMask : 1;                        // 0x0465(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bEnableDensityScaling : 1;                         // 0x0465(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bEnableDiscardOnLoad : 1;                          // 0x0466(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_467[0x1];                                      // 0x0467(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class URuntimeVirtualTexture*>         RuntimeVirtualTextures;                            // 0x0468(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         VirtualTextureCullMips;                            // 0x0478(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERuntimeVirtualTextureMainPassType            VirtualTextureRenderPassType;                      // 0x047C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_47D[0x3];                                      // 0x047D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -286,7 +287,7 @@ public:
 	}
 };
 static_assert(alignof(UFoliageType) == 0x000008, "Wrong alignment on UFoliageType");
-static_assert(sizeof(UFoliageType) == 0x000478, "Wrong size on UFoliageType");
+static_assert(sizeof(UFoliageType) == 0x000480, "Wrong size on UFoliageType");
 static_assert(offsetof(UFoliageType, UpdateGuid) == 0x000030, "Member 'UFoliageType::UpdateGuid' has a wrong offset!");
 static_assert(offsetof(UFoliageType, Density) == 0x000040, "Member 'UFoliageType::Density' has a wrong offset!");
 static_assert(offsetof(UFoliageType, DensityAdjustmentFactor) == 0x000044, "Member 'UFoliageType::DensityAdjustmentFactor' has a wrong offset!");
@@ -318,50 +319,51 @@ static_assert(offsetof(UFoliageType, Mobility) == 0x00014C, "Member 'UFoliageTyp
 static_assert(offsetof(UFoliageType, KuroFoliageCullType) == 0x00014D, "Member 'UFoliageType::KuroFoliageCullType' has a wrong offset!");
 static_assert(offsetof(UFoliageType, KuroFoliageSplitFactor) == 0x000150, "Member 'UFoliageType::KuroFoliageSplitFactor' has a wrong offset!");
 static_assert(offsetof(UFoliageType, KuroMinVertsToSplitNode) == 0x000154, "Member 'UFoliageType::KuroMinVertsToSplitNode' has a wrong offset!");
-static_assert(offsetof(UFoliageType, CullDistance) == 0x000158, "Member 'UFoliageType::CullDistance' has a wrong offset!");
-static_assert(offsetof(UFoliageType, FoliageDensityLow) == 0x000160, "Member 'UFoliageType::FoliageDensityLow' has a wrong offset!");
-static_assert(offsetof(UFoliageType, FoliageDensityMiddle) == 0x000164, "Member 'UFoliageType::FoliageDensityMiddle' has a wrong offset!");
-static_assert(offsetof(UFoliageType, FoliageDensityHigh) == 0x000168, "Member 'UFoliageType::FoliageDensityHigh' has a wrong offset!");
-static_assert(offsetof(UFoliageType, OverriddenLightMapRes) == 0x000178, "Member 'UFoliageType::OverriddenLightMapRes' has a wrong offset!");
-static_assert(offsetof(UFoliageType, LightmapType) == 0x00017C, "Member 'UFoliageType::LightmapType' has a wrong offset!");
-static_assert(offsetof(UFoliageType, BodyInstance) == 0x000188, "Member 'UFoliageType::BodyInstance' has a wrong offset!");
-static_assert(offsetof(UFoliageType, CustomNavigableGeometry) == 0x0002F0, "Member 'UFoliageType::CustomNavigableGeometry' has a wrong offset!");
-static_assert(offsetof(UFoliageType, LightingChannels) == 0x0002F1, "Member 'UFoliageType::LightingChannels' has a wrong offset!");
-static_assert(offsetof(UFoliageType, CustomDepthStencilWriteMask) == 0x0002F8, "Member 'UFoliageType::CustomDepthStencilWriteMask' has a wrong offset!");
-static_assert(offsetof(UFoliageType, CustomDepthStencilValue) == 0x0002FC, "Member 'UFoliageType::CustomDepthStencilValue' has a wrong offset!");
-static_assert(offsetof(UFoliageType, TranslucencySortPriority) == 0x000300, "Member 'UFoliageType::TranslucencySortPriority' has a wrong offset!");
-static_assert(offsetof(UFoliageType, CollisionRadius) == 0x000304, "Member 'UFoliageType::CollisionRadius' has a wrong offset!");
-static_assert(offsetof(UFoliageType, ShadeRadius) == 0x000308, "Member 'UFoliageType::ShadeRadius' has a wrong offset!");
-static_assert(offsetof(UFoliageType, NumSteps) == 0x00030C, "Member 'UFoliageType::NumSteps' has a wrong offset!");
-static_assert(offsetof(UFoliageType, InitialSeedDensity) == 0x000310, "Member 'UFoliageType::InitialSeedDensity' has a wrong offset!");
-static_assert(offsetof(UFoliageType, AverageSpreadDistance) == 0x000314, "Member 'UFoliageType::AverageSpreadDistance' has a wrong offset!");
-static_assert(offsetof(UFoliageType, SpreadVariance) == 0x000318, "Member 'UFoliageType::SpreadVariance' has a wrong offset!");
-static_assert(offsetof(UFoliageType, SeedsPerStep) == 0x00031C, "Member 'UFoliageType::SeedsPerStep' has a wrong offset!");
-static_assert(offsetof(UFoliageType, DistributionSeed) == 0x000320, "Member 'UFoliageType::DistributionSeed' has a wrong offset!");
-static_assert(offsetof(UFoliageType, MaxInitialSeedOffset) == 0x000324, "Member 'UFoliageType::MaxInitialSeedOffset' has a wrong offset!");
-static_assert(offsetof(UFoliageType, bCanGrowInShade) == 0x000328, "Member 'UFoliageType::bCanGrowInShade' has a wrong offset!");
-static_assert(offsetof(UFoliageType, bSpawnsInShade) == 0x000329, "Member 'UFoliageType::bSpawnsInShade' has a wrong offset!");
-static_assert(offsetof(UFoliageType, MaxInitialAge) == 0x00032C, "Member 'UFoliageType::MaxInitialAge' has a wrong offset!");
-static_assert(offsetof(UFoliageType, MaxAge) == 0x000330, "Member 'UFoliageType::MaxAge' has a wrong offset!");
-static_assert(offsetof(UFoliageType, OverlapPriority) == 0x000334, "Member 'UFoliageType::OverlapPriority' has a wrong offset!");
-static_assert(offsetof(UFoliageType, ProceduralScale) == 0x000338, "Member 'UFoliageType::ProceduralScale' has a wrong offset!");
-static_assert(offsetof(UFoliageType, ScaleCurve) == 0x000340, "Member 'UFoliageType::ScaleCurve' has a wrong offset!");
-static_assert(offsetof(UFoliageType, DensityFalloff) == 0x0003C8, "Member 'UFoliageType::DensityFalloff' has a wrong offset!");
-static_assert(offsetof(UFoliageType, ChangeCount) == 0x000458, "Member 'UFoliageType::ChangeCount' has a wrong offset!");
-static_assert(offsetof(UFoliageType, RuntimeVirtualTextures) == 0x000460, "Member 'UFoliageType::RuntimeVirtualTextures' has a wrong offset!");
-static_assert(offsetof(UFoliageType, VirtualTextureCullMips) == 0x000470, "Member 'UFoliageType::VirtualTextureCullMips' has a wrong offset!");
-static_assert(offsetof(UFoliageType, VirtualTextureRenderPassType) == 0x000474, "Member 'UFoliageType::VirtualTextureRenderPassType' has a wrong offset!");
+static_assert(offsetof(UFoliageType, KuroFoliageForceShadowLOD) == 0x000158, "Member 'UFoliageType::KuroFoliageForceShadowLOD' has a wrong offset!");
+static_assert(offsetof(UFoliageType, CullDistance) == 0x00015C, "Member 'UFoliageType::CullDistance' has a wrong offset!");
+static_assert(offsetof(UFoliageType, FoliageDensityLow) == 0x000164, "Member 'UFoliageType::FoliageDensityLow' has a wrong offset!");
+static_assert(offsetof(UFoliageType, FoliageDensityMiddle) == 0x000168, "Member 'UFoliageType::FoliageDensityMiddle' has a wrong offset!");
+static_assert(offsetof(UFoliageType, FoliageDensityHigh) == 0x00016C, "Member 'UFoliageType::FoliageDensityHigh' has a wrong offset!");
+static_assert(offsetof(UFoliageType, OverriddenLightMapRes) == 0x00017C, "Member 'UFoliageType::OverriddenLightMapRes' has a wrong offset!");
+static_assert(offsetof(UFoliageType, LightmapType) == 0x000180, "Member 'UFoliageType::LightmapType' has a wrong offset!");
+static_assert(offsetof(UFoliageType, BodyInstance) == 0x000190, "Member 'UFoliageType::BodyInstance' has a wrong offset!");
+static_assert(offsetof(UFoliageType, CustomNavigableGeometry) == 0x0002F8, "Member 'UFoliageType::CustomNavigableGeometry' has a wrong offset!");
+static_assert(offsetof(UFoliageType, LightingChannels) == 0x0002F9, "Member 'UFoliageType::LightingChannels' has a wrong offset!");
+static_assert(offsetof(UFoliageType, CustomDepthStencilWriteMask) == 0x000300, "Member 'UFoliageType::CustomDepthStencilWriteMask' has a wrong offset!");
+static_assert(offsetof(UFoliageType, CustomDepthStencilValue) == 0x000304, "Member 'UFoliageType::CustomDepthStencilValue' has a wrong offset!");
+static_assert(offsetof(UFoliageType, TranslucencySortPriority) == 0x000308, "Member 'UFoliageType::TranslucencySortPriority' has a wrong offset!");
+static_assert(offsetof(UFoliageType, CollisionRadius) == 0x00030C, "Member 'UFoliageType::CollisionRadius' has a wrong offset!");
+static_assert(offsetof(UFoliageType, ShadeRadius) == 0x000310, "Member 'UFoliageType::ShadeRadius' has a wrong offset!");
+static_assert(offsetof(UFoliageType, NumSteps) == 0x000314, "Member 'UFoliageType::NumSteps' has a wrong offset!");
+static_assert(offsetof(UFoliageType, InitialSeedDensity) == 0x000318, "Member 'UFoliageType::InitialSeedDensity' has a wrong offset!");
+static_assert(offsetof(UFoliageType, AverageSpreadDistance) == 0x00031C, "Member 'UFoliageType::AverageSpreadDistance' has a wrong offset!");
+static_assert(offsetof(UFoliageType, SpreadVariance) == 0x000320, "Member 'UFoliageType::SpreadVariance' has a wrong offset!");
+static_assert(offsetof(UFoliageType, SeedsPerStep) == 0x000324, "Member 'UFoliageType::SeedsPerStep' has a wrong offset!");
+static_assert(offsetof(UFoliageType, DistributionSeed) == 0x000328, "Member 'UFoliageType::DistributionSeed' has a wrong offset!");
+static_assert(offsetof(UFoliageType, MaxInitialSeedOffset) == 0x00032C, "Member 'UFoliageType::MaxInitialSeedOffset' has a wrong offset!");
+static_assert(offsetof(UFoliageType, bCanGrowInShade) == 0x000330, "Member 'UFoliageType::bCanGrowInShade' has a wrong offset!");
+static_assert(offsetof(UFoliageType, bSpawnsInShade) == 0x000331, "Member 'UFoliageType::bSpawnsInShade' has a wrong offset!");
+static_assert(offsetof(UFoliageType, MaxInitialAge) == 0x000334, "Member 'UFoliageType::MaxInitialAge' has a wrong offset!");
+static_assert(offsetof(UFoliageType, MaxAge) == 0x000338, "Member 'UFoliageType::MaxAge' has a wrong offset!");
+static_assert(offsetof(UFoliageType, OverlapPriority) == 0x00033C, "Member 'UFoliageType::OverlapPriority' has a wrong offset!");
+static_assert(offsetof(UFoliageType, ProceduralScale) == 0x000340, "Member 'UFoliageType::ProceduralScale' has a wrong offset!");
+static_assert(offsetof(UFoliageType, ScaleCurve) == 0x000348, "Member 'UFoliageType::ScaleCurve' has a wrong offset!");
+static_assert(offsetof(UFoliageType, DensityFalloff) == 0x0003D0, "Member 'UFoliageType::DensityFalloff' has a wrong offset!");
+static_assert(offsetof(UFoliageType, ChangeCount) == 0x000460, "Member 'UFoliageType::ChangeCount' has a wrong offset!");
+static_assert(offsetof(UFoliageType, RuntimeVirtualTextures) == 0x000468, "Member 'UFoliageType::RuntimeVirtualTextures' has a wrong offset!");
+static_assert(offsetof(UFoliageType, VirtualTextureCullMips) == 0x000478, "Member 'UFoliageType::VirtualTextureCullMips' has a wrong offset!");
+static_assert(offsetof(UFoliageType, VirtualTextureRenderPassType) == 0x00047C, "Member 'UFoliageType::VirtualTextureRenderPassType' has a wrong offset!");
 
 // Class Foliage.FoliageType_Actor
-// 0x0018 (0x0490 - 0x0478)
+// 0x0018 (0x0498 - 0x0480)
 class UFoliageType_Actor final : public UFoliageType
 {
 public:
-	TSubclassOf<class AActor>                     ActorClass;                                        // 0x0478(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShouldAttachToBaseComponent;                      // 0x0480(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStaticMeshOnly;                                   // 0x0481(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_482[0x6];                                      // 0x0482(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UFoliageInstancedStaticMeshComponent> StaticMeshOnlyComponentClass;                      // 0x0488(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AActor>                     ActorClass;                                        // 0x0480(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShouldAttachToBaseComponent;                      // 0x0488(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStaticMeshOnly;                                   // 0x0489(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48A[0x6];                                      // 0x048A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UFoliageInstancedStaticMeshComponent> StaticMeshOnlyComponentClass;            // 0x0490(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -374,20 +376,20 @@ public:
 	}
 };
 static_assert(alignof(UFoliageType_Actor) == 0x000008, "Wrong alignment on UFoliageType_Actor");
-static_assert(sizeof(UFoliageType_Actor) == 0x000490, "Wrong size on UFoliageType_Actor");
-static_assert(offsetof(UFoliageType_Actor, ActorClass) == 0x000478, "Member 'UFoliageType_Actor::ActorClass' has a wrong offset!");
-static_assert(offsetof(UFoliageType_Actor, bShouldAttachToBaseComponent) == 0x000480, "Member 'UFoliageType_Actor::bShouldAttachToBaseComponent' has a wrong offset!");
-static_assert(offsetof(UFoliageType_Actor, bStaticMeshOnly) == 0x000481, "Member 'UFoliageType_Actor::bStaticMeshOnly' has a wrong offset!");
-static_assert(offsetof(UFoliageType_Actor, StaticMeshOnlyComponentClass) == 0x000488, "Member 'UFoliageType_Actor::StaticMeshOnlyComponentClass' has a wrong offset!");
+static_assert(sizeof(UFoliageType_Actor) == 0x000498, "Wrong size on UFoliageType_Actor");
+static_assert(offsetof(UFoliageType_Actor, ActorClass) == 0x000480, "Member 'UFoliageType_Actor::ActorClass' has a wrong offset!");
+static_assert(offsetof(UFoliageType_Actor, bShouldAttachToBaseComponent) == 0x000488, "Member 'UFoliageType_Actor::bShouldAttachToBaseComponent' has a wrong offset!");
+static_assert(offsetof(UFoliageType_Actor, bStaticMeshOnly) == 0x000489, "Member 'UFoliageType_Actor::bStaticMeshOnly' has a wrong offset!");
+static_assert(offsetof(UFoliageType_Actor, StaticMeshOnlyComponentClass) == 0x000490, "Member 'UFoliageType_Actor::StaticMeshOnlyComponentClass' has a wrong offset!");
 
 // Class Foliage.FoliageType_InstancedStaticMesh
-// 0x0020 (0x0498 - 0x0478)
+// 0x0020 (0x04A0 - 0x0480)
 class UFoliageType_InstancedStaticMesh final : public UFoliageType
 {
 public:
-	class UStaticMesh*                            Mesh;                                              // 0x0478(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInterface*>             OverrideMaterials;                                 // 0x0480(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	TSubclassOf<class UFoliageInstancedStaticMeshComponent> ComponentClass;                                    // 0x0490(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            Mesh;                                              // 0x0480(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInterface*>             OverrideMaterials;                                 // 0x0488(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TSubclassOf<class UFoliageInstancedStaticMeshComponent> ComponentClass;                          // 0x0498(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -400,10 +402,10 @@ public:
 	}
 };
 static_assert(alignof(UFoliageType_InstancedStaticMesh) == 0x000008, "Wrong alignment on UFoliageType_InstancedStaticMesh");
-static_assert(sizeof(UFoliageType_InstancedStaticMesh) == 0x000498, "Wrong size on UFoliageType_InstancedStaticMesh");
-static_assert(offsetof(UFoliageType_InstancedStaticMesh, Mesh) == 0x000478, "Member 'UFoliageType_InstancedStaticMesh::Mesh' has a wrong offset!");
-static_assert(offsetof(UFoliageType_InstancedStaticMesh, OverrideMaterials) == 0x000480, "Member 'UFoliageType_InstancedStaticMesh::OverrideMaterials' has a wrong offset!");
-static_assert(offsetof(UFoliageType_InstancedStaticMesh, ComponentClass) == 0x000490, "Member 'UFoliageType_InstancedStaticMesh::ComponentClass' has a wrong offset!");
+static_assert(sizeof(UFoliageType_InstancedStaticMesh) == 0x0004A0, "Wrong size on UFoliageType_InstancedStaticMesh");
+static_assert(offsetof(UFoliageType_InstancedStaticMesh, Mesh) == 0x000480, "Member 'UFoliageType_InstancedStaticMesh::Mesh' has a wrong offset!");
+static_assert(offsetof(UFoliageType_InstancedStaticMesh, OverrideMaterials) == 0x000488, "Member 'UFoliageType_InstancedStaticMesh::OverrideMaterials' has a wrong offset!");
+static_assert(offsetof(UFoliageType_InstancedStaticMesh, ComponentClass) == 0x000498, "Member 'UFoliageType_InstancedStaticMesh::ComponentClass' has a wrong offset!");
 
 // Class Foliage.InstancedFoliageActor
 // 0x0060 (0x0310 - 0x02B0)

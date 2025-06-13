@@ -58,7 +58,7 @@ void UClothingSimulationInteractor::DisableGravityOverride()
 // Function ClothingSystemRuntimeInterface.ClothingSimulationInteractor.EnableGravityOverride
 // (Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InVector                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InVector                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UClothingSimulationInteractor::EnableGravityOverride(const struct FVector& InVector)
 {

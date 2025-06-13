@@ -11,15 +11,16 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "EFreeCameraInputMode_structs.hpp"
 #include "SFreeCameraDragInput_structs.hpp"
+#include "EFreeCameraInputMode_structs.hpp"
+#include "EFreeCameraLimit_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SFreeCamera.SFreeCamera
-// 0x0024 (0x0024 - 0x0000)
+// 0x0078 (0x0078 - 0x0000)
 struct FSFreeCamera final
 {
 public:
@@ -31,9 +32,11 @@ public:
 	float                                         初始FOV_8_E242445B44FDAA96EA6ED1A11318C01A;        // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EFreeCameraInputMode                          初始输入模式_21_D9C480CF464CF9146879EBBA6E43D40D;  // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSFreeCameraDragInput                  拖动输入_19_3E6F77CA49532A1D883F9DB37FA7F3E5;      // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EFreeCameraLimit, float>                 限制_37_3D8848CB4E9E47B637688C8051D188B6;          // 0x0028(0x0050)(Edit, BlueprintVisible)
 };
-static_assert(alignof(FSFreeCamera) == 0x000004, "Wrong alignment on FSFreeCamera");
-static_assert(sizeof(FSFreeCamera) == 0x000024, "Wrong size on FSFreeCamera");
+static_assert(alignof(FSFreeCamera) == 0x000008, "Wrong alignment on FSFreeCamera");
+static_assert(sizeof(FSFreeCamera) == 0x000078, "Wrong size on FSFreeCamera");
 static_assert(offsetof(FSFreeCamera, PC生效_28_18D22BC84801D7A8C7443BB8950D249F) == 0x000000, "Member 'FSFreeCamera::PC生效_28_18D22BC84801D7A8C7443BB8950D249F' has a wrong offset!");
 static_assert(offsetof(FSFreeCamera, 手机生效_30_130B15F44FA490047FEC709CB3D1F6FE) == 0x000001, "Member 'FSFreeCamera::手机生效_30_130B15F44FA490047FEC709CB3D1F6FE' has a wrong offset!");
 static_assert(offsetof(FSFreeCamera, 初始位置_2_8314611C42976FFC8FB95FA8D5C0F04A) == 0x000004, "Member 'FSFreeCamera::初始位置_2_8314611C42976FFC8FB95FA8D5C0F04A' has a wrong offset!");
@@ -41,6 +44,7 @@ static_assert(offsetof(FSFreeCamera, 初始旋转_31_FAABE2F648C80DEB573FA9A8765
 static_assert(offsetof(FSFreeCamera, 初始FOV_8_E242445B44FDAA96EA6ED1A11318C01A) == 0x00001C, "Member 'FSFreeCamera::初始FOV_8_E242445B44FDAA96EA6ED1A11318C01A' has a wrong offset!");
 static_assert(offsetof(FSFreeCamera, 初始输入模式_21_D9C480CF464CF9146879EBBA6E43D40D) == 0x000020, "Member 'FSFreeCamera::初始输入模式_21_D9C480CF464CF9146879EBBA6E43D40D' has a wrong offset!");
 static_assert(offsetof(FSFreeCamera, 拖动输入_19_3E6F77CA49532A1D883F9DB37FA7F3E5) == 0x000021, "Member 'FSFreeCamera::拖动输入_19_3E6F77CA49532A1D883F9DB37FA7F3E5' has a wrong offset!");
+static_assert(offsetof(FSFreeCamera, 限制_37_3D8848CB4E9E47B637688C8051D188B6) == 0x000028, "Member 'FSFreeCamera::限制_37_3D8848CB4E9E47B637688C8051D188B6' has a wrong offset!");
 
 }
 

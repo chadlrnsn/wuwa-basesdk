@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PD_CloudPrefab.PD_CloudPrefab_C
-// 0x0008 (0x0180 - 0x0178)
+// 0x0008 (0x0198 - 0x0190)
 class UPD_CloudPrefab_C final : public UKuroPDCloudPrefab
 {
 public:
-	class UClass*                                 PrefebBP;                                          // 0x0178(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 PrefebBP;                                          // 0x0190(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(UPD_CloudPrefab_C) == 0x000008, "Wrong alignment on UPD_CloudPrefab_C");
-static_assert(sizeof(UPD_CloudPrefab_C) == 0x000180, "Wrong size on UPD_CloudPrefab_C");
-static_assert(offsetof(UPD_CloudPrefab_C, PrefebBP) == 0x000178, "Member 'UPD_CloudPrefab_C::PrefebBP' has a wrong offset!");
+static_assert(sizeof(UPD_CloudPrefab_C) == 0x000198, "Wrong size on UPD_CloudPrefab_C");
+static_assert(offsetof(UPD_CloudPrefab_C, PrefebBP) == 0x000190, "Member 'UPD_CloudPrefab_C::PrefebBP' has a wrong offset!");
 
 }
 

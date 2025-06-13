@@ -41,8 +41,8 @@ void Ani_MissionPnlProcess_Unlock::USequenceDirector_C::SequenceEvent__ENTRYPOIN
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AUIContainerActor*                PnlChild                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Sequence_NameN                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           Event_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Sequence_NameN                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Event_Name                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void Ani_MissionPnlProcess_Unlock::USequenceDirector_C::PnlChild_Event_0(class AUIContainerActor* PnlChild, const class FString& Sequence_NameN, const class FString& Event_Name)
 {

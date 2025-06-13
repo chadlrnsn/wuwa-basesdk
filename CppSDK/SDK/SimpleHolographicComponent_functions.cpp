@@ -17,55 +17,152 @@
 namespace SDK
 {
 
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.ExecuteUbergraph_SimpleHolographicComponent
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.StartEffect
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void USimpleHolographicComponent_C::ExecuteUbergraph_SimpleHolographicComponent(int32 EntryPoint)
+void USimpleHolographicComponent_C::StartEffect()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleHolographicComponent_C", "ExecuteUbergraph_SimpleHolographicComponent");
+		Func = Class->GetFunction("SimpleHolographicComponent_C", "StartEffect");
 
-	Params::SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.EndEffect
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void USimpleHolographicComponent_C::ReceiveTick(float DeltaSeconds)
+void USimpleHolographicComponent_C::EndEffect()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleHolographicComponent_C", "ReceiveTick");
+		Func = Class->GetFunction("SimpleHolographicComponent_C", "EndEffect");
 
-	Params::SimpleHolographicComponent_C_ReceiveTick Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.DeltaSeconds = DeltaSeconds;
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.UpdateMaterialsWithDa
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UMaterialInstanceDynamic*>&Materials                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FSHolographicData&         SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+
+void USimpleHolographicComponent_C::UpdateMaterialsWithDa(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleHolographicComponent_C", "UpdateMaterialsWithDa");
+
+	Params::SimpleHolographicComponent_C_UpdateMaterialsWithDa Parms{};
+
+	Parms.Materials = std::move(Materials);
+	Parms.SHolographicData = std::move(SHolographicData);
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Materials = std::move(Parms.Materials);
+}
+
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.RemoveNpcEffect
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void USimpleHolographicComponent_C::RemoveNpcEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleHolographicComponent_C", "RemoveNpcEffect");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.Clear
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void USimpleHolographicComponent_C::Clear()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleHolographicComponent_C", "Clear");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.RevertMaterialParamters
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FSMaterialParamCache&      MaterialCache                                          (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic**        result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void USimpleHolographicComponent_C::RevertMaterialParamters(const struct FSMaterialParamCache& MaterialCache, class UMaterialInstanceDynamic** result)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleHolographicComponent_C", "RevertMaterialParamters");
+
+	Params::SimpleHolographicComponent_C_RevertMaterialParamters Parms{};
+
+	Parms.MaterialCache = std::move(MaterialCache);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (result != nullptr)
+		*result = Parms.result;
+}
+
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.CacheAndReplace
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FSHolographicData&         SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// class UPrimitiveComponent*              self2                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int32                                   ElementIndex                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic*         material                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSMaterialParamCache*            CacheResult                                            (Parm, OutParm, HasGetValueTypeHash)
+
+class UMaterialInstanceDynamic* USimpleHolographicComponent_C::CacheAndReplace(const struct FSHolographicData& SHolographicData, class UPrimitiveComponent* self2, int32 ElementIndex, class UMaterialInstanceDynamic* material, struct FSMaterialParamCache* CacheResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SimpleHolographicComponent_C", "CacheAndReplace");
+
+	Params::SimpleHolographicComponent_C_CacheAndReplace Parms{};
+
+	Parms.SHolographicData = std::move(SHolographicData);
+	Parms.self2 = self2;
+	Parms.ElementIndex = ElementIndex;
+	Parms.material = material;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (CacheResult != nullptr)
+		*CacheResult = std::move(Parms.CacheResult);
+
+	return Parms.ReturnValue;
 }
 
 
 // Function SimpleHolographicComponent.SimpleHolographicComponent_C.CacheMaterialParameters
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FSMaterialControllerFloatParameter>floats                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSMaterialControllerColorParameter>colors                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSMaterialControllerFloatParameter>&floats                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSMaterialControllerColorParameter>&colors                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UMaterialInstanceDynamic*         material                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bReplaceMaterial                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // int32                                   index                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSMaterialParamCache             result                                                 (Parm, OutParm, HasGetValueTypeHash)
+// struct FSMaterialParamCache*            result                                                 (Parm, OutParm, HasGetValueTypeHash)
 
 void USimpleHolographicComponent_C::CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& floats, TArray<struct FSMaterialControllerColorParameter>& colors, class UMaterialInstanceDynamic* material, bool bReplaceMaterial, int32 index, struct FSMaterialParamCache* result)
 {
@@ -92,140 +189,43 @@ void USimpleHolographicComponent_C::CacheMaterialParameters(TArray<struct FSMate
 }
 
 
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.CacheAndReplace
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// struct FSHolographicData                SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-// class UPrimitiveComponent*              self2                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// int32                                   ElementIndex                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UMaterialInstanceDynamic*         material                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UMaterialInstanceDynamic*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSMaterialParamCache             CacheResult                                            (Parm, OutParm, HasGetValueTypeHash)
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class UMaterialInstanceDynamic* USimpleHolographicComponent_C::CacheAndReplace(const struct FSHolographicData& SHolographicData, class UPrimitiveComponent* self2, int32 ElementIndex, class UMaterialInstanceDynamic* material, struct FSMaterialParamCache* CacheResult)
+void USimpleHolographicComponent_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleHolographicComponent_C", "CacheAndReplace");
+		Func = Class->GetFunction("SimpleHolographicComponent_C", "ReceiveTick");
 
-	Params::SimpleHolographicComponent_C_CacheAndReplace Parms{};
+	Params::SimpleHolographicComponent_C_ReceiveTick Parms{};
 
-	Parms.SHolographicData = std::move(SHolographicData);
-	Parms.self2 = self2;
-	Parms.ElementIndex = ElementIndex;
-	Parms.material = material;
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (CacheResult != nullptr)
-		*CacheResult = std::move(Parms.CacheResult);
-
-	return Parms.ReturnValue;
 }
 
 
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.RevertMaterialParamters
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.ExecuteUbergraph_SimpleHolographicComponent
+// (Final, UbergraphFunction)
 // Parameters:
-// struct FSMaterialParamCache             MaterialCache                                          (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// class UMaterialInstanceDynamic*         result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void USimpleHolographicComponent_C::RevertMaterialParamters(const struct FSMaterialParamCache& MaterialCache, class UMaterialInstanceDynamic** result)
+void USimpleHolographicComponent_C::ExecuteUbergraph_SimpleHolographicComponent(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleHolographicComponent_C", "RevertMaterialParamters");
+		Func = Class->GetFunction("SimpleHolographicComponent_C", "ExecuteUbergraph_SimpleHolographicComponent");
 
-	Params::SimpleHolographicComponent_C_RevertMaterialParamters Parms{};
+	Params::SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent Parms{};
 
-	Parms.MaterialCache = std::move(MaterialCache);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (result != nullptr)
-		*result = Parms.result;
-}
-
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.Clear
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void USimpleHolographicComponent_C::Clear()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleHolographicComponent_C", "Clear");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.RemoveNpcEffect
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void USimpleHolographicComponent_C::RemoveNpcEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleHolographicComponent_C", "RemoveNpcEffect");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.UpdateMaterialsWithDa
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<class UMaterialInstanceDynamic*> Materials                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FSHolographicData                SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-
-void USimpleHolographicComponent_C::UpdateMaterialsWithDa(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleHolographicComponent_C", "UpdateMaterialsWithDa");
-
-	Params::SimpleHolographicComponent_C_UpdateMaterialsWithDa Parms{};
-
-	Parms.Materials = std::move(Materials);
-	Parms.SHolographicData = std::move(SHolographicData);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Materials = std::move(Parms.Materials);
-}
-
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.EndEffect
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void USimpleHolographicComponent_C::EndEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleHolographicComponent_C", "EndEffect");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.StartEffect
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void USimpleHolographicComponent_C::StartEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SimpleHolographicComponent_C", "StartEffect");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

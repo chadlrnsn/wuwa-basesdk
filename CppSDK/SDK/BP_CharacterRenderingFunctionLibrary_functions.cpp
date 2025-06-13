@@ -23,7 +23,7 @@ namespace SDK
 // class ASkeletalMeshActor*               SkeletalMesh                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPD_CharacterControllerData_C*    Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::QuickInitAndAddData(class ASkeletalMeshActor* SkeletalMesh, class UPD_CharacterControllerData_C* Data, class UObject* __WorldContext, float* HandleId)
 {
@@ -75,7 +75,7 @@ void UBP_CharacterRenderingFunctionLibrary_C::RemoveMaterialControllerData(class
 // class ASkeletalMeshActor*               SkeletalMesh                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPD_CharacterControllerDataGroup_C*Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::QuickInitAndAddDataGroup(class ASkeletalMeshActor* SkeletalMesh, class UPD_CharacterControllerDataGroup_C* Data, class UObject* __WorldContext, float* HandleId)
 {
@@ -103,7 +103,7 @@ void UBP_CharacterRenderingFunctionLibrary_C::QuickInitAndAddDataGroup(class ASk
 // class ATsBaseCharacter_C*               Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPD_CharacterControllerData_C*    Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::QuickInitAndAddData_BP(class ATsBaseCharacter_C* Character, class UPD_CharacterControllerData_C* Data, class UObject* __WorldContext, float* HandleId)
 {
@@ -179,7 +179,7 @@ void UBP_CharacterRenderingFunctionLibrary_C::RemoveMaterialControllerData_BP(cl
 // class ATsBaseCharacter_C*               Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPD_CharacterControllerDataGroup_C*Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::QuickInitAndAddDataGroup_BP(class ATsBaseCharacter_C* Character, class UPD_CharacterControllerDataGroup_C* Data, class UObject* __WorldContext, float* HandleId)
 {
@@ -257,7 +257,7 @@ void UBP_CharacterRenderingFunctionLibrary_C::SetCharacterStarScarValue(class AT
 // class UMeshComponent*                   MeshComponent                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPD_CharacterControllerData_C*    Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::QuickInitAndAddData_MeshComponent(class UMeshComponent* MeshComponent, class UPD_CharacterControllerData_C* Data, class UObject* __WorldContext, float* HandleId)
 {
@@ -352,7 +352,7 @@ void UBP_CharacterRenderingFunctionLibrary_C::RemoveSimpleHolographicEffect(clas
 // Parameters:
 // class USkinnedMeshComponent*            Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class UPD_WeaponLevelMaterialDatas_C*   Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   Level                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32&                            Level                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::ApplyWeaponLevelMaterial(class USkinnedMeshComponent* Mesh, class UPD_WeaponLevelMaterialDatas_C* Data, const int32& Level, class UObject* __WorldContext)
@@ -377,7 +377,7 @@ void UBP_CharacterRenderingFunctionLibrary_C::ApplyWeaponLevelMaterial(class USk
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UMaterialParameterCollection*     MPC                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialParameterCollection**    MPC                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::GetLGUIMPC(class UObject* __WorldContext, class UMaterialParameterCollection** MPC)
 {
@@ -427,8 +427,8 @@ void UBP_CharacterRenderingFunctionLibrary_C::AddMaterialControllerDataForAllCas
 // class USkeletalMeshComponent*           MeshComponent                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPD_CharacterControllerDataGroup_C*Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UCharRenderingComponent_C*        CharRenderComponent                                    (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  HandleId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UCharRenderingComponent_C**       CharRenderComponent                                    (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::QuickInitAndAddDataGroup_MeshComponent(class USkeletalMeshComponent* MeshComponent, class UPD_CharacterControllerDataGroup_C* Data, class UObject* __WorldContext, float* HandleId, class UCharRenderingComponent_C** CharRenderComponent)
 {
@@ -481,7 +481,7 @@ void UBP_CharacterRenderingFunctionLibrary_C::RemoveMaterialControllerDataGroup_
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UNiagaraComponent*                NiagaraComponen                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           ParamName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ParamName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::SetNiagaraSkeletalMeshSimpleNPC(class UNiagaraComponent* NiagaraComponen, const class FString& ParamName, class UObject* __WorldContext)
@@ -504,7 +504,7 @@ void UBP_CharacterRenderingFunctionLibrary_C::SetNiagaraSkeletalMeshSimpleNPC(cl
 // Function BP_CharacterRenderingFunctionLibrary.BP_CharacterRenderingFunctionLibrary_C.ApplyMaterialParems
 // (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSWeaponMaterialParams           Params_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FSWeaponMaterialParams&    Params_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class UMaterialInstanceDynamic*         Material                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -531,7 +531,7 @@ void UBP_CharacterRenderingFunctionLibrary_C::ApplyMaterialParems(const struct F
 // int32                                   FirstIndex                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPD_WeaponLevelMaterialDatas_C*   Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSWeaponLevelMaterialData        Value                                                  (Parm, OutParm, HasGetValueTypeHash)
+// struct FSWeaponLevelMaterialData*       Value                                                  (Parm, OutParm, HasGetValueTypeHash)
 
 void UBP_CharacterRenderingFunctionLibrary_C::GetFallbackLevelData(int32 FirstIndex, class UPD_WeaponLevelMaterialDatas_C* Data, class UObject* __WorldContext, struct FSWeaponLevelMaterialData* Value)
 {

@@ -109,9 +109,9 @@ void ABP_KuroProjectilePathTracer_C::UpdateDisplay()
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    ReturnValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// TArray<struct FVector>                  OutPathPosition                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FVector                          OutLastTraceDestination                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       OutHit                                                 (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// TArray<struct FVector>&                 OutPathPosition                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FVector&                   OutLastTraceDestination                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FHitResult&                OutHit                                                 (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 
 void ABP_KuroProjectilePathTracer_C::SetPredictProjectileInfo(bool ReturnValue, TArray<struct FVector>& OutPathPosition, const struct FVector& OutLastTraceDestination, const struct FHitResult& OutHit)
 {

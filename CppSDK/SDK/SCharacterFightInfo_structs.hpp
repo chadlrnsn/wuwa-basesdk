@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SCharacterMorphInfo_structs.hpp"
 #include "ECharacterLoadType_structs.hpp"
 #include "EMorphType_structs.hpp"
+#include "SCharacterMorphInfo_structs.hpp"
 
 
 namespace SDK

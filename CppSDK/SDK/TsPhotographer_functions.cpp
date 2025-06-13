@@ -94,7 +94,7 @@ void ATsPhotographer_C::AddSourceYawInput(float yaw)
 // Function TsPhotographer.TsPhotographer_C.SetCameraInitializeTransform
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransform                       transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransform&                transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 
 void ATsPhotographer_C::SetCameraInitializeTransform(const struct FTransform& transform)
 {
@@ -208,7 +208,7 @@ void ATsPhotographer_C::AddSourcePitchInput(float pitch)
 // Function TsPhotographer.TsPhotographer_C.SetPlayerSourceLocation
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const struct FVector&                   location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ATsPhotographer_C::SetPlayerSourceLocation(const struct FVector& location)
 {

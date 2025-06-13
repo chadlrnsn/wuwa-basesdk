@@ -69,19 +69,22 @@ static_assert(offsetof(LevelGamePlayBlueprintFunctionLibrary_C_GetScanInteractio
 static_assert(offsetof(LevelGamePlayBlueprintFunctionLibrary_C_GetScanInteractionEffectMaxDistance, ReturnValue) == 0x000008, "Member 'LevelGamePlayBlueprintFunctionLibrary_C_GetScanInteractionEffectMaxDistance::ReturnValue' has a wrong offset!");
 
 // Function LevelGamePlayBlueprintFunctionLibrary.LevelGamePlayBlueprintFunctionLibrary_C.ApplyScanEffect
-// 0x0018 (0x0018 - 0x0000)
+// 0x0020 (0x0020 - 0x0000)
 struct LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect final
 {
 public:
 	class AActor*                                 inActor;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	int32                                         type;                                              // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect) == 0x000008, "Wrong alignment on LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect");
-static_assert(sizeof(LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect) == 0x000018, "Wrong size on LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect");
+static_assert(sizeof(LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect) == 0x000020, "Wrong size on LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect");
 static_assert(offsetof(LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect, inActor) == 0x000000, "Member 'LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect::inActor' has a wrong offset!");
-static_assert(offsetof(LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect, __WorldContext) == 0x000008, "Member 'LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect::__WorldContext' has a wrong offset!");
-static_assert(offsetof(LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect, ReturnValue) == 0x000010, "Member 'LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect::ReturnValue' has a wrong offset!");
+static_assert(offsetof(LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect, type) == 0x000008, "Member 'LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect::type' has a wrong offset!");
+static_assert(offsetof(LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect, __WorldContext) == 0x000010, "Member 'LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect::__WorldContext' has a wrong offset!");
+static_assert(offsetof(LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect, ReturnValue) == 0x000018, "Member 'LevelGamePlayBlueprintFunctionLibrary_C_ApplyScanEffect::ReturnValue' has a wrong offset!");
 
 }
 

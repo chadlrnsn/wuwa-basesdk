@@ -17,6 +17,17 @@
 namespace SDK::Params
 {
 
+// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
+// 0x0020 (0x0020 - 0x0000)
+struct LevelSequenceBurnInOptions_SetBurnIn final
+{
+public:
+	struct FSoftClassPath                         InBurnInClass;                                     // 0x0000(0x0020)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000008, "Wrong alignment on LevelSequenceBurnInOptions_SetBurnIn");
+static_assert(sizeof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000020, "Wrong size on LevelSequenceBurnInOptions_SetBurnIn");
+static_assert(offsetof(LevelSequenceBurnInOptions_SetBurnIn, InBurnInClass) == 0x000000, "Member 'LevelSequenceBurnInOptions_SetBurnIn::InBurnInClass' has a wrong offset!");
+
 // Function LevelSequence.LevelSequenceActor.AddBinding
 // 0x0028 (0x0028 - 0x0000)
 struct LevelSequenceActor_AddBinding final
@@ -406,17 +417,6 @@ static_assert(alignof(LevelSequence_GetMovieScene) == 0x000008, "Wrong alignment
 static_assert(sizeof(LevelSequence_GetMovieScene) == 0x000008, "Wrong size on LevelSequence_GetMovieScene");
 static_assert(offsetof(LevelSequence_GetMovieScene, ReturnValue) == 0x000000, "Member 'LevelSequence_GetMovieScene::ReturnValue' has a wrong offset!");
 
-// Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
-// 0x0020 (0x0020 - 0x0000)
-struct LevelSequenceBurnInOptions_SetBurnIn final
-{
-public:
-	struct FSoftClassPath                         InBurnInClass;                                     // 0x0000(0x0020)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000008, "Wrong alignment on LevelSequenceBurnInOptions_SetBurnIn");
-static_assert(sizeof(LevelSequenceBurnInOptions_SetBurnIn) == 0x000020, "Wrong size on LevelSequenceBurnInOptions_SetBurnIn");
-static_assert(offsetof(LevelSequenceBurnInOptions_SetBurnIn, InBurnInClass) == 0x000000, "Member 'LevelSequenceBurnInOptions_SetBurnIn::InBurnInClass' has a wrong offset!");
-
 // Function LevelSequence.LevelSequenceBurnIn.SetSettings
 // 0x0008 (0x0008 - 0x0000)
 struct LevelSequenceBurnIn_SetSettings final
@@ -433,7 +433,7 @@ static_assert(offsetof(LevelSequenceBurnIn_SetSettings, InSettings) == 0x000000,
 struct LevelSequenceBurnIn_GetSettingsClass final
 {
 public:
-	TSubclassOf<class ULevelSequenceBurnInInitSettings> ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ULevelSequenceBurnInInitSettings> ReturnValue;                                 // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(LevelSequenceBurnIn_GetSettingsClass) == 0x000008, "Wrong alignment on LevelSequenceBurnIn_GetSettingsClass");
 static_assert(sizeof(LevelSequenceBurnIn_GetSettingsClass) == 0x000008, "Wrong size on LevelSequenceBurnIn_GetSettingsClass");

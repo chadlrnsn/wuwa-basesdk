@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_LightGroup_SyncToMainLight.BP_LightGroup_SyncToMainLight_C
-// 0x00A8 (0x0358 - 0x02B0)
+// 0x00B0 (0x0360 - 0x02B0)
 class ABP_LightGroup_SyncToMainLight_C final : public AActor
 {
 public:
@@ -28,7 +28,7 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	bool                                          bEditorTick;                                       // 0x02C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_2C1[0x7];                                      // 0x02C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_GlobalGI_C*                         CachedGI;                                          // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_GlobalGI_C*                         CachedGI;                                          // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, Transient, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMap<class ALight*, float>                    LightInstensityMap;                                // 0x02D0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	float                                         MainLightIntensity;                                // 0x0320(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         MaxProcessCount;                                   // 0x0324(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -39,6 +39,8 @@ public:
 	int32                                         MapLength;                                         // 0x0350(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bNeedSetAgain;                                     // 0x0354(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          bLightNotChange;                                   // 0x0355(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_356[0x2];                                      // 0x0356(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         NightMulti;                                        // 0x0358(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Update();
@@ -60,7 +62,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_LightGroup_SyncToMainLight_C) == 0x000008, "Wrong alignment on ABP_LightGroup_SyncToMainLight_C");
-static_assert(sizeof(ABP_LightGroup_SyncToMainLight_C) == 0x000358, "Wrong size on ABP_LightGroup_SyncToMainLight_C");
+static_assert(sizeof(ABP_LightGroup_SyncToMainLight_C) == 0x000360, "Wrong size on ABP_LightGroup_SyncToMainLight_C");
 static_assert(offsetof(ABP_LightGroup_SyncToMainLight_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_LightGroup_SyncToMainLight_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_LightGroup_SyncToMainLight_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_LightGroup_SyncToMainLight_C::DefaultSceneRoot' has a wrong offset!");
 static_assert(offsetof(ABP_LightGroup_SyncToMainLight_C, bEditorTick) == 0x0002C0, "Member 'ABP_LightGroup_SyncToMainLight_C::bEditorTick' has a wrong offset!");
@@ -74,6 +76,7 @@ static_assert(offsetof(ABP_LightGroup_SyncToMainLight_C, Keys) == 0x000340, "Mem
 static_assert(offsetof(ABP_LightGroup_SyncToMainLight_C, MapLength) == 0x000350, "Member 'ABP_LightGroup_SyncToMainLight_C::MapLength' has a wrong offset!");
 static_assert(offsetof(ABP_LightGroup_SyncToMainLight_C, bNeedSetAgain) == 0x000354, "Member 'ABP_LightGroup_SyncToMainLight_C::bNeedSetAgain' has a wrong offset!");
 static_assert(offsetof(ABP_LightGroup_SyncToMainLight_C, bLightNotChange) == 0x000355, "Member 'ABP_LightGroup_SyncToMainLight_C::bLightNotChange' has a wrong offset!");
+static_assert(offsetof(ABP_LightGroup_SyncToMainLight_C, NightMulti) == 0x000358, "Member 'ABP_LightGroup_SyncToMainLight_C::NightMulti' has a wrong offset!");
 
 }
 

@@ -132,7 +132,7 @@ int32 UTsEntityDebugInfoManager_C::GetEntityPbDataId(int32 entityId)
 // Function TsEntityDebugInfoManager.TsEntityDebugInfoManager_C.GetSelectedEntityId
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           label                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    label                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 int32 UTsEntityDebugInfoManager_C::GetSelectedEntityId(const class FString& label)

@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "ESkillTargetDirection_structs.hpp"
+#include "ESkillMode_structs.hpp"
+#include "SSkillTrigger_structs.hpp"
 #include "SSkillTarget_structs.hpp"
 #include "SSkillBehavior_structs.hpp"
 #include "ESkillGenre_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "GameplayTags_structs.hpp"
-#include "ESkillMode_structs.hpp"
-#include "SSkillTrigger_structs.hpp"
-#include "ESkillTargetDirection_structs.hpp"
 #include "SSkillCooldownInfo_structs.hpp"
 #include "ESkillOverrideType_structs.hpp"
 
@@ -26,7 +26,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SSkillInfo.SSkillInfo
-// 0x0170 (0x0170 - 0x0000)
+// 0x0180 (0x0180 - 0x0000)
 struct FSSkillInfo final
 {
 public:
@@ -70,9 +70,10 @@ public:
 	bool                                          SkillCanBeginWithoutControl_304_073A44B74B03C28BAE48E6B6C2E3F4F2; // 0x0169(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_16A[0x2];                                      // 0x016A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MaxCounterCount_307_EF26A0C144CC939C38497AAF9B613CCA; // 0x016C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<int64>                                 SpecialBuffInCode_311_A1A6B39D4ABC2363D160E89BCC36CABA; // 0x0170(0x0010)(Edit, BlueprintVisible)
 };
 static_assert(alignof(FSSkillInfo) == 0x000008, "Wrong alignment on FSSkillInfo");
-static_assert(sizeof(FSSkillInfo) == 0x000170, "Wrong size on FSSkillInfo");
+static_assert(sizeof(FSSkillInfo) == 0x000180, "Wrong size on FSSkillInfo");
 static_assert(offsetof(FSSkillInfo, SkillName_236_CC31932A4D72CB83AD07F49CAA66531D) == 0x000000, "Member 'FSSkillInfo::SkillName_236_CC31932A4D72CB83AD07F49CAA66531D' has a wrong offset!");
 static_assert(offsetof(FSSkillInfo, SkillIcon_197_2BF3BB3144DFB00F4B135CA6A25894FD) == 0x000010, "Member 'FSSkillInfo::SkillIcon_197_2BF3BB3144DFB00F4B135CA6A25894FD' has a wrong offset!");
 static_assert(offsetof(FSSkillInfo, SkillMode_263_700294234859C1051A2CCABFD9291CBF) == 0x000030, "Member 'FSSkillInfo::SkillMode_263_700294234859C1051A2CCABFD9291CBF' has a wrong offset!");
@@ -105,6 +106,7 @@ static_assert(offsetof(FSSkillInfo, ExportSpecialAnim_287_9181271C401FEB3D8A026C
 static_assert(offsetof(FSSkillInfo, SkillStepUp_293_F165FA024DD97820BBAC7A900EAC7C43) == 0x000168, "Member 'FSSkillInfo::SkillStepUp_293_F165FA024DD97820BBAC7A900EAC7C43' has a wrong offset!");
 static_assert(offsetof(FSSkillInfo, SkillCanBeginWithoutControl_304_073A44B74B03C28BAE48E6B6C2E3F4F2) == 0x000169, "Member 'FSSkillInfo::SkillCanBeginWithoutControl_304_073A44B74B03C28BAE48E6B6C2E3F4F2' has a wrong offset!");
 static_assert(offsetof(FSSkillInfo, MaxCounterCount_307_EF26A0C144CC939C38497AAF9B613CCA) == 0x00016C, "Member 'FSSkillInfo::MaxCounterCount_307_EF26A0C144CC939C38497AAF9B613CCA' has a wrong offset!");
+static_assert(offsetof(FSSkillInfo, SpecialBuffInCode_311_A1A6B39D4ABC2363D160E89BCC36CABA) == 0x000170, "Member 'FSSkillInfo::SpecialBuffInCode_311_A1A6B39D4ABC2363D160E89BCC36CABA' has a wrong offset!");
 
 }
 

@@ -18,40 +18,6 @@
 namespace SDK
 {
 
-// Class LiveLinkInterface.LiveLinkController
-// 0x0000 (0x0030 - 0x0030)
-class ULiveLinkController final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LiveLinkController">();
-	}
-	static class ULiveLinkController* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULiveLinkController>();
-	}
-};
-static_assert(alignof(ULiveLinkController) == 0x000008, "Wrong alignment on ULiveLinkController");
-static_assert(sizeof(ULiveLinkController) == 0x000030, "Wrong size on ULiveLinkController");
-
-// Class LiveLinkInterface.LiveLinkSourceFactory
-// 0x0000 (0x0030 - 0x0030)
-class ULiveLinkSourceFactory : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"LiveLinkSourceFactory">();
-	}
-	static class ULiveLinkSourceFactory* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULiveLinkSourceFactory>();
-	}
-};
-static_assert(alignof(ULiveLinkSourceFactory) == 0x000008, "Wrong alignment on ULiveLinkSourceFactory");
-static_assert(sizeof(ULiveLinkSourceFactory) == 0x000030, "Wrong size on ULiveLinkSourceFactory");
-
 // Class LiveLinkInterface.LiveLinkRole
 // 0x0000 (0x0030 - 0x0030)
 class ULiveLinkRole : public UObject
@@ -85,6 +51,23 @@ public:
 };
 static_assert(alignof(ULiveLinkBasicRole) == 0x000008, "Wrong alignment on ULiveLinkBasicRole");
 static_assert(sizeof(ULiveLinkBasicRole) == 0x000030, "Wrong size on ULiveLinkBasicRole");
+
+// Class LiveLinkInterface.LiveLinkSourceFactory
+// 0x0000 (0x0030 - 0x0030)
+class ULiveLinkSourceFactory : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LiveLinkSourceFactory">();
+	}
+	static class ULiveLinkSourceFactory* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULiveLinkSourceFactory>();
+	}
+};
+static_assert(alignof(ULiveLinkSourceFactory) == 0x000008, "Wrong alignment on ULiveLinkSourceFactory");
+static_assert(sizeof(ULiveLinkSourceFactory) == 0x000030, "Wrong size on ULiveLinkSourceFactory");
 
 // Class LiveLinkInterface.LiveLinkAnimationRole
 // 0x0000 (0x0030 - 0x0030)
@@ -137,6 +120,23 @@ public:
 static_assert(alignof(ULiveLinkCameraRole) == 0x000008, "Wrong alignment on ULiveLinkCameraRole");
 static_assert(sizeof(ULiveLinkCameraRole) == 0x000030, "Wrong size on ULiveLinkCameraRole");
 
+// Class LiveLinkInterface.LiveLinkController
+// 0x0000 (0x0030 - 0x0030)
+class ULiveLinkController final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"LiveLinkController">();
+	}
+	static class ULiveLinkController* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULiveLinkController>();
+	}
+};
+static_assert(alignof(ULiveLinkController) == 0x000008, "Wrong alignment on ULiveLinkController");
+static_assert(sizeof(ULiveLinkController) == 0x000030, "Wrong size on ULiveLinkController");
+
 // Class LiveLinkInterface.LiveLinkSourceSettings
 // 0x0078 (0x00A8 - 0x0030)
 class ULiveLinkSourceSettings : public UObject
@@ -144,7 +144,7 @@ class ULiveLinkSourceSettings : public UObject
 public:
 	ELiveLinkSourceMode                           Mode;                                              // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLiveLinkSourceBufferManagementSettings BufferSettings;                                    // 0x0038(0x0058)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLiveLinkSourceBufferManagementSettings BufferSettings;                                   // 0x0038(0x0058)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	class FString                                 ConnectionString;                                  // 0x0090(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class ULiveLinkSourceFactory>     Factory;                                           // 0x00A0(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

@@ -244,8 +244,8 @@ static_assert(offsetof(UKuroRegionCylinderComponent, HalfHeight) == 0x000224, "M
 class UKuroRegionDetectComponent final : public UActorComponent
 {
 public:
-	TMap<class FString, class UKuroRegionShapeComponent*> RegionMap;                                         // 0x00C0(0x0050)(ExportObject, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TMap<class FString, class UKuroRegionEventBinder*> RegionEventMap;                                    // 0x0110(0x0050)(NativeAccessSpecifierPrivate)
+	TMap<class FString, class UKuroRegionShapeComponent*> RegionMap;                                 // 0x00C0(0x0050)(ExportObject, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<class FString, class UKuroRegionEventBinder*> RegionEventMap;                               // 0x0110(0x0050)(NativeAccessSpecifierPrivate)
 	TArray<TWeakObjectPtr<class AActor>>          EventTargets;                                      // 0x0160(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_170[0x50];                                     // 0x0170(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -280,7 +280,7 @@ class UKuroRegionEventBinder final : public UObject
 {
 public:
 	class FString                                 RegionName;                                        // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsInRegion, class AActor* Target)> Callback;                                          // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsInRegion, class AActor* Target)> Callback;                  // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -381,12 +381,13 @@ class alignas(0x10) UKuroSceneItemMoveComponent final : public UActorComponent
 {
 public:
 	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnStopCallback;                                    // 0x00D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 Index)>   OnArrivePointCallback;                             // 0x00E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F8[0x38];                                      // 0x00F8(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSimpleMoveData                        SimpleMoveData;                                    // 0x0130(0x0090)(NativeAccessSpecifierPrivate)
-	struct FSplineMoveData                        SplineMoveData;                                    // 0x01C0(0x0068)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	struct FTargetRotationData                    TargetRotationData;                                // 0x0228(0x0038)(NativeAccessSpecifierPrivate)
+	struct FSimpleMoveData                        SimpleMoveData;                                    // 0x00D8(0x0090)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FSplineMoveData                        SplineMoveData;                                    // 0x0168(0x0068)(BlueprintVisible, BlueprintReadOnly, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnStopCallback;                                    // 0x01D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 Index)>   OnArrivePointCallback;                             // 0x01E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1F0[0x30];                                     // 0x01F0(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTargetRotationData                    TargetRotationData;                                // 0x0220(0x0038)(NativeAccessSpecifierPrivate)
+	uint8                                         Pad_258[0x8];                                      // 0x0258(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static bool FindTimeByValueIn01Curve(const class UCurveFloat* Curve, const float TargetValue, float* ResultTime, int32 MaxSearchDepth, const float Tolerance);
@@ -428,11 +429,11 @@ public:
 };
 static_assert(alignof(UKuroSceneItemMoveComponent) == 0x000010, "Wrong alignment on UKuroSceneItemMoveComponent");
 static_assert(sizeof(UKuroSceneItemMoveComponent) == 0x000260, "Wrong size on UKuroSceneItemMoveComponent");
-static_assert(offsetof(UKuroSceneItemMoveComponent, OnStopCallback) == 0x0000D8, "Member 'UKuroSceneItemMoveComponent::OnStopCallback' has a wrong offset!");
-static_assert(offsetof(UKuroSceneItemMoveComponent, OnArrivePointCallback) == 0x0000E8, "Member 'UKuroSceneItemMoveComponent::OnArrivePointCallback' has a wrong offset!");
-static_assert(offsetof(UKuroSceneItemMoveComponent, SimpleMoveData) == 0x000130, "Member 'UKuroSceneItemMoveComponent::SimpleMoveData' has a wrong offset!");
-static_assert(offsetof(UKuroSceneItemMoveComponent, SplineMoveData) == 0x0001C0, "Member 'UKuroSceneItemMoveComponent::SplineMoveData' has a wrong offset!");
-static_assert(offsetof(UKuroSceneItemMoveComponent, TargetRotationData) == 0x000228, "Member 'UKuroSceneItemMoveComponent::TargetRotationData' has a wrong offset!");
+static_assert(offsetof(UKuroSceneItemMoveComponent, SimpleMoveData) == 0x0000D8, "Member 'UKuroSceneItemMoveComponent::SimpleMoveData' has a wrong offset!");
+static_assert(offsetof(UKuroSceneItemMoveComponent, SplineMoveData) == 0x000168, "Member 'UKuroSceneItemMoveComponent::SplineMoveData' has a wrong offset!");
+static_assert(offsetof(UKuroSceneItemMoveComponent, OnStopCallback) == 0x0001D0, "Member 'UKuroSceneItemMoveComponent::OnStopCallback' has a wrong offset!");
+static_assert(offsetof(UKuroSceneItemMoveComponent, OnArrivePointCallback) == 0x0001E0, "Member 'UKuroSceneItemMoveComponent::OnArrivePointCallback' has a wrong offset!");
+static_assert(offsetof(UKuroSceneItemMoveComponent, TargetRotationData) == 0x000220, "Member 'UKuroSceneItemMoveComponent::TargetRotationData' has a wrong offset!");
 
 // Class KuroComponent.KuroSplineChainComponent
 // 0x0030 (0x0670 - 0x0640)

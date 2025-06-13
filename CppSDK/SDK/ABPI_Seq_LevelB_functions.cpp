@@ -24,9 +24,9 @@ void IABPI_Seq_LevelB_C::OnJumpFrame()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABPI_Seq_LevelB_C", "OnJumpFrame");
+		Func = AsUObject()->Class->GetFunction("ABPI_Seq_LevelB_C", "OnJumpFrame");
 
-	UObject::ProcessEvent(Func, nullptr);
+	AsUObject()->ProcessEvent(Func, nullptr);
 }
 
 }

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "Engine_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
@@ -28,13 +28,13 @@ public:
 	bool                                          IsEnableDisable;                                   // 0x02D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_BP_PerformanceDisableLight(int32 EntryPoint);
-	void ReceiveDestroyed();
-	void EditorTick(float DeltaSeconds);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveBeginPlay();
-	void UserConstructionScript();
 	void DisableLightFun();
+	void UserConstructionScript();
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void EditorTick(float DeltaSeconds);
+	void ReceiveDestroyed();
+	void ExecuteUbergraph_BP_PerformanceDisableLight(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

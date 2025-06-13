@@ -17,20 +17,26 @@
 namespace SDK
 {
 
-// Function TsTaskAiFindClosetItem.TsTaskAiFindClosetItem_C.InitTsVariables
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Function TsTaskAiFindClosetItem.TsTaskAiFindClosetItem_C.ExecuteUbergraph_TsTaskAiFindClosetItem
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskAiFindClosetItem_C::InitTsVariables()
+void UTsTaskAiFindClosetItem_C::ExecuteUbergraph_TsTaskAiFindClosetItem(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskAiFindClosetItem_C", "InitTsVariables");
+		Func = Class->GetFunction("TsTaskAiFindClosetItem_C", "ExecuteUbergraph_TsTaskAiFindClosetItem");
+
+	Params::TsTaskAiFindClosetItem_C_ExecuteUbergraph_TsTaskAiFindClosetItem Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -63,26 +69,20 @@ void UTsTaskAiFindClosetItem_C::ReceiveExecuteAI(class AAIController* OwnerContr
 }
 
 
-// Function TsTaskAiFindClosetItem.TsTaskAiFindClosetItem_C.ExecuteUbergraph_TsTaskAiFindClosetItem
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function TsTaskAiFindClosetItem.TsTaskAiFindClosetItem_C.InitTsVariables
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void UTsTaskAiFindClosetItem_C::ExecuteUbergraph_TsTaskAiFindClosetItem(int32 EntryPoint)
+void UTsTaskAiFindClosetItem_C::InitTsVariables()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskAiFindClosetItem_C", "ExecuteUbergraph_TsTaskAiFindClosetItem");
-
-	Params::TsTaskAiFindClosetItem_C_ExecuteUbergraph_TsTaskAiFindClosetItem Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+		Func = Class->GetFunction("TsTaskAiFindClosetItem_C", "InitTsVariables");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

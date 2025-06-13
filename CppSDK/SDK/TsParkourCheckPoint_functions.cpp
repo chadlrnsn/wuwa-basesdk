@@ -114,7 +114,7 @@ void ATsParkourCheckPoint_C::GenerateFx(class UEffectModelBase* inModelBase1)
 // Function TsParkourCheckPoint.TsParkourCheckPoint_C.GenerateFxByPath
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           effectPath                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    effectPath                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ATsParkourCheckPoint_C::GenerateFxByPath(const class FString& effectPath)
 {

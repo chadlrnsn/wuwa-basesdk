@@ -11,15 +11,15 @@
 #include "Basic.hpp"
 
 #include "ControlRig_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
-#include "PropertyPath_structs.hpp"
-#include "MovieSceneTracks_structs.hpp"
-#include "MovieSceneTracks_classes.hpp"
+#include "AnimGraphRuntime_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "PropertyPath_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
+#include "MovieSceneTracks_structs.hpp"
+#include "MovieSceneTracks_classes.hpp"
 #include "LevelSequence_classes.hpp"
-#include "AnimGraphRuntime_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
@@ -86,6 +86,26 @@ static_assert(offsetof(UControlRig, InteractionRig) == 0x0005C0, "Member 'UContr
 static_assert(offsetof(UControlRig, InteractionRigClass) == 0x0005C8, "Member 'UControlRig::InteractionRigClass' has a wrong offset!");
 static_assert(offsetof(UControlRig, AssetUserData) == 0x0005D0, "Member 'UControlRig::AssetUserData' has a wrong offset!");
 
+// Class ControlRig.ControlRigLayerInstance
+// 0x0010 (0x0670 - 0x0660)
+class UControlRigLayerInstance final : public UAnimInstance
+{
+public:
+	uint8                                         Pad_660[0x10];                                     // 0x0660(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ControlRigLayerInstance">();
+	}
+	static class UControlRigLayerInstance* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UControlRigLayerInstance>();
+	}
+};
+static_assert(alignof(UControlRigLayerInstance) == 0x000010, "Wrong alignment on UControlRigLayerInstance");
+static_assert(sizeof(UControlRigLayerInstance) == 0x000670, "Wrong size on UControlRigLayerInstance");
+
 // Class ControlRig.AdditiveControlRig
 // 0x0010 (0x0670 - 0x0660)
 class UAdditiveControlRig final : public UControlRig
@@ -146,12 +166,12 @@ class UControlRigComponent final : public UPrimitiveComponent
 {
 public:
 	TSubclassOf<class UControlRig>                ControlRigClass;                                   // 0x0500(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostInitializeDelegate;                          // 0x0508(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreSetupDelegate;                                // 0x0518(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostSetupDelegate;                               // 0x0528(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreUpdateDelegate;                               // 0x0538(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostUpdateDelegate;                              // 0x0548(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TArray<struct FControlRigComponentMappedElement> MappedElements;                                    // 0x0558(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostInitializeDelegate;  // 0x0508(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreSetupDelegate;        // 0x0518(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostSetupDelegate;       // 0x0528(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPreUpdateDelegate;       // 0x0538(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UControlRigComponent* Component)> OnPostUpdateDelegate;      // 0x0548(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedElement> MappedElements;                                 // 0x0558(0x0010)(Edit, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                          bResetTransformBeforeTick;                         // 0x0568(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bResetInitialsBeforeSetup;                         // 0x0569(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUpdateRigOnTick;                                  // 0x056A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -287,6 +307,35 @@ static_assert(offsetof(AControlRigControlActor, Components) == 0x000318, "Member
 static_assert(offsetof(AControlRigControlActor, Materials) == 0x000328, "Member 'AControlRigControlActor::Materials' has a wrong offset!");
 static_assert(offsetof(AControlRigControlActor, ColorParameterName) == 0x000338, "Member 'AControlRigControlActor::ColorParameterName' has a wrong offset!");
 
+// Class ControlRig.ControlRigGizmoLibrary
+// 0x00D0 (0x0100 - 0x0030)
+class UControlRigGizmoLibrary final : public UObject
+{
+public:
+	struct FControlRigGizmoDefinition             DefaultGizmo;                                      // 0x0030(0x0070)(Edit, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UMaterial>               DefaultMaterial;                                   // 0x00A0(0x0030)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   MaterialColorParameter;                            // 0x00D0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FControlRigGizmoDefinition>     Gizmos;                                            // 0x00E0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F0[0x10];                                      // 0x00F0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ControlRigGizmoLibrary">();
+	}
+	static class UControlRigGizmoLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UControlRigGizmoLibrary>();
+	}
+};
+static_assert(alignof(UControlRigGizmoLibrary) == 0x000010, "Wrong alignment on UControlRigGizmoLibrary");
+static_assert(sizeof(UControlRigGizmoLibrary) == 0x000100, "Wrong size on UControlRigGizmoLibrary");
+static_assert(offsetof(UControlRigGizmoLibrary, DefaultGizmo) == 0x000030, "Member 'UControlRigGizmoLibrary::DefaultGizmo' has a wrong offset!");
+static_assert(offsetof(UControlRigGizmoLibrary, DefaultMaterial) == 0x0000A0, "Member 'UControlRigGizmoLibrary::DefaultMaterial' has a wrong offset!");
+static_assert(offsetof(UControlRigGizmoLibrary, MaterialColorParameter) == 0x0000D0, "Member 'UControlRigGizmoLibrary::MaterialColorParameter' has a wrong offset!");
+static_assert(offsetof(UControlRigGizmoLibrary, Gizmos) == 0x0000E0, "Member 'UControlRigGizmoLibrary::Gizmos' has a wrong offset!");
+
 // Class ControlRig.ControlRigGizmoActor
 // 0x0030 (0x02E0 - 0x02B0)
 class AControlRigGizmoActor final : public AActor
@@ -337,55 +386,6 @@ static_assert(offsetof(AControlRigGizmoActor, StaticMeshComponent) == 0x0002B8, 
 static_assert(offsetof(AControlRigGizmoActor, ControlRigIndex) == 0x0002C0, "Member 'AControlRigGizmoActor::ControlRigIndex' has a wrong offset!");
 static_assert(offsetof(AControlRigGizmoActor, ControlName) == 0x0002C4, "Member 'AControlRigGizmoActor::ControlName' has a wrong offset!");
 static_assert(offsetof(AControlRigGizmoActor, ColorParameterName) == 0x0002D0, "Member 'AControlRigGizmoActor::ColorParameterName' has a wrong offset!");
-
-// Class ControlRig.ControlRigGizmoLibrary
-// 0x00D0 (0x0100 - 0x0030)
-class UControlRigGizmoLibrary final : public UObject
-{
-public:
-	struct FControlRigGizmoDefinition             DefaultGizmo;                                      // 0x0030(0x0070)(Edit, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UMaterial>               DefaultMaterial;                                   // 0x00A0(0x0030)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   MaterialColorParameter;                            // 0x00D0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FControlRigGizmoDefinition>     Gizmos;                                            // 0x00E0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F0[0x10];                                      // 0x00F0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ControlRigGizmoLibrary">();
-	}
-	static class UControlRigGizmoLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UControlRigGizmoLibrary>();
-	}
-};
-static_assert(alignof(UControlRigGizmoLibrary) == 0x000010, "Wrong alignment on UControlRigGizmoLibrary");
-static_assert(sizeof(UControlRigGizmoLibrary) == 0x000100, "Wrong size on UControlRigGizmoLibrary");
-static_assert(offsetof(UControlRigGizmoLibrary, DefaultGizmo) == 0x000030, "Member 'UControlRigGizmoLibrary::DefaultGizmo' has a wrong offset!");
-static_assert(offsetof(UControlRigGizmoLibrary, DefaultMaterial) == 0x0000A0, "Member 'UControlRigGizmoLibrary::DefaultMaterial' has a wrong offset!");
-static_assert(offsetof(UControlRigGizmoLibrary, MaterialColorParameter) == 0x0000D0, "Member 'UControlRigGizmoLibrary::MaterialColorParameter' has a wrong offset!");
-static_assert(offsetof(UControlRigGizmoLibrary, Gizmos) == 0x0000E0, "Member 'UControlRigGizmoLibrary::Gizmos' has a wrong offset!");
-
-// Class ControlRig.ControlRigLayerInstance
-// 0x0010 (0x0670 - 0x0660)
-class UControlRigLayerInstance final : public UAnimInstance
-{
-public:
-	uint8                                         Pad_660[0x10];                                     // 0x0660(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ControlRigLayerInstance">();
-	}
-	static class UControlRigLayerInstance* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UControlRigLayerInstance>();
-	}
-};
-static_assert(alignof(UControlRigLayerInstance) == 0x000010, "Wrong alignment on UControlRigLayerInstance");
-static_assert(sizeof(UControlRigLayerInstance) == 0x000670, "Wrong size on UControlRigLayerInstance");
 
 // Class ControlRig.ControlRigValidationPass
 // 0x0000 (0x0030 - 0x0030)

@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "GameplayTags_structs.hpp"
-#include "ESceneInteractionEffect_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "SNiagaraParam_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "ESceneInteractionEffect_structs.hpp"
 #include "EBodyType_structs.hpp"
 
 
@@ -34,7 +34,7 @@ public:
 	struct FSoftObjectPath                        DA_177_AB8FDE124B35121D6F1FCF9EB0CD09AD;           // 0x0078(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	TSoftClassPtr<class UClass>                   动画蓝图_171_0392CD7E4090222C990267BFB07ACCFA;     // 0x0098(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class FString                                 描述_17_8069323C48DE6851BB6B6788D1B95952;          // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	TMap<struct FGameplayTag, struct FSoftObjectPath> 动画列表_133_D11B6EF248DEB4226B6CF2A98A882A05;     // 0x00D8(0x0050)(Edit, BlueprintVisible)
+	TMap<struct FGameplayTag, struct FSoftObjectPath> 动画列表_133_D11B6EF248DEB4226B6CF2A98A882A05; // 0x00D8(0x0050)(Edit, BlueprintVisible)
 	TArray<class FString>                         BattleSockets_63_FB5D6DAC483A857CFEEDEFACB2756F1D; // 0x0128(0x0010)(Edit, BlueprintVisible)
 	TArray<class FString>                         NormalSockets_64_AE83EB754176514E8D8DAE8521A609ED; // 0x0138(0x0010)(Edit, BlueprintVisible)
 	TMap<struct FGameplayTag, struct FSoftObjectPath> 静态网格体列表_132_071970D4433C2225A287F4BF6673DE4F; // 0x0148(0x0050)(Edit, BlueprintVisible)

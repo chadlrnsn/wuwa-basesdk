@@ -74,7 +74,7 @@ static_assert(offsetof(DownloaderProxy_HasComplete, ReturnValue) == 0x000000, "M
 struct DownloaderProxy_SetCompleteCallback final
 {
 public:
-	TDelegate<void(uint8 DownloadState, int32 HttpState)> InCb;                                              // 0x0000(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(uint8 DownloadState, int32 HttpState)> InCb;                                      // 0x0000(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(DownloaderProxy_SetCompleteCallback) == 0x000004, "Wrong alignment on DownloaderProxy_SetCompleteCallback");
 static_assert(sizeof(DownloaderProxy_SetCompleteCallback) == 0x000028, "Wrong size on DownloaderProxy_SetCompleteCallback");
@@ -85,7 +85,7 @@ static_assert(offsetof(DownloaderProxy_SetCompleteCallback, InCb) == 0x000000, "
 struct DownloaderProxy_SetProgressCallback final
 {
 public:
-	TDelegate<void(int64 ThisTimeReceiveSize, int64 ReceivedSize, int64 SavedSize)> InCb;                                              // 0x0000(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(int64 ThisTimeReceiveSize, int64 ReceivedSize, int64 SavedSize)> InCb;            // 0x0000(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(DownloaderProxy_SetProgressCallback) == 0x000004, "Wrong alignment on DownloaderProxy_SetProgressCallback");
 static_assert(sizeof(DownloaderProxy_SetProgressCallback) == 0x000028, "Wrong size on DownloaderProxy_SetProgressCallback");

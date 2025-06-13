@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SequenceDialogue_structs.hpp"
 #include "MovieScene_classes.hpp"
+#include "SequenceDialogue_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
 
@@ -203,8 +203,8 @@ class UMovieSceneDialogueSubsystem final : public UWorldSubsystem
 {
 public:
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool bShow, class FText& DialogueID, int32 GuardTime, int32 AudioDelay, int32 AudioTransitionDuration, ELanguageAudio LanguageType)> OnShowDialogue;                                    // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool bShow, const class FString& AudioKey, int32 AudioTransitionDuration)> OnShowDialogueAudio;                               // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bShow, const class FText& DialogueID, const int32 GuardTime, const int32 AudioDelay, const int32 AudioTransitionDuration, const ELanguageAudio LanguageType)> OnShowDialogue; // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bShow, const class FString& AudioKey, const int32 AudioTransitionDuration)> OnShowDialogueAudio; // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_60[0x10];                                      // 0x0060(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 AutoTransformActor;                                // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMovieScene3DTransformTrack*            AutoTransformDataTrack;                            // 0x0078(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -335,8 +335,8 @@ static_assert(offsetof(USeqAnimDataSetting, SeqAnimCurveFloats) == 0x000030, "Me
 static_assert(offsetof(USeqAnimDataSetting, SeqAnimCurveVectors) == 0x000040, "Member 'USeqAnimDataSetting::SeqAnimCurveVectors' has a wrong offset!");
 
 // Class SequenceDialogue.SeqAnimDataInterface
-// 0x0000 (0x0030 - 0x0030)
-class ISeqAnimDataInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ISeqAnimDataInterface final
 {
 public:
 	bool GetAnimDataFloat(TArray<struct FNamedCurveValue>* FloatCurveData);
@@ -354,13 +354,22 @@ public:
 	{
 		return GetDefaultObjImpl<ISeqAnimDataInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ISeqAnimDataInterface) == 0x000008, "Wrong alignment on ISeqAnimDataInterface");
-static_assert(sizeof(ISeqAnimDataInterface) == 0x000030, "Wrong size on ISeqAnimDataInterface");
+static_assert(alignof(ISeqAnimDataInterface) == 0x000001, "Wrong alignment on ISeqAnimDataInterface");
+static_assert(sizeof(ISeqAnimDataInterface) == 0x000001, "Wrong size on ISeqAnimDataInterface");
 
 // Class SequenceDialogue.SeqAutoTransformInterface
-// 0x0000 (0x0030 - 0x0030)
-class ISeqAutoTransformInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ISeqAutoTransformInterface final
 {
 public:
 	void BeginAutoTransform(float TimeLength);
@@ -375,9 +384,18 @@ public:
 	{
 		return GetDefaultObjImpl<ISeqAutoTransformInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ISeqAutoTransformInterface) == 0x000008, "Wrong alignment on ISeqAutoTransformInterface");
-static_assert(sizeof(ISeqAutoTransformInterface) == 0x000030, "Wrong size on ISeqAutoTransformInterface");
+static_assert(alignof(ISeqAutoTransformInterface) == 0x000001, "Wrong alignment on ISeqAutoTransformInterface");
+static_assert(sizeof(ISeqAutoTransformInterface) == 0x000001, "Wrong size on ISeqAutoTransformInterface");
 
 }
 

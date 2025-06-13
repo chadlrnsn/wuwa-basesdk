@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "STransitionLinearColorIndexGroup_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "EEffectState_structs.hpp"
-#include "SStateBasedEffectFloatCurveSection_structs.hpp"
+#include "SStateBasedEffectLinearColorCurveSection_structs.hpp"
+#include "SEffectStateFloatCurve_structs.hpp"
 #include "STransitionFloatIndexGroup_structs.hpp"
 #include "SEffectStateInfo_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "STransitionLinearColorIndexGroup_structs.hpp"
-#include "SEffectStateFloatCurve_structs.hpp"
-#include "SStateBasedEffectLinearColorCurveSection_structs.hpp"
+#include "SStateBasedEffectFloatCurveSection_structs.hpp"
 #include "SEffectStateLinearColorCurve_structs.hpp"
 #include "Engine_structs.hpp"
 
@@ -468,7 +468,7 @@ public:
 	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x032C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Array_Index_Variable_3;                     // 0x0330(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Array_Get_Item_2;                         // 0x0334(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSStateBasedEffectLinearColorCurveSection CallFunc_Map_Find_Value_2;                         // 0x0340(0x0490)(HasGetValueTypeHash)
+	struct FSStateBasedEffectLinearColorCurveSection CallFunc_Map_Find_Value_2;                      // 0x0340(0x0490)(HasGetValueTypeHash)
 	bool                                          CallFunc_Map_Find_ReturnValue_2;                   // 0x07D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_7D1[0x3];                                      // 0x07D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ___int_Loop_Counter_Variable_3;                    // 0x07D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -561,7 +561,7 @@ public:
 	TArray<class FName>                           CallFunc_Map_Keys_Keys_1;                          // 0x0050(0x0010)(ReferenceParm)
 	class FName                                   CallFunc_Array_Get_Item;                           // 0x0060(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Array_Get_Item_1;                         // 0x006C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSStateBasedEffectLinearColorCurveSection CallFunc_Map_Find_Value;                           // 0x0078(0x0490)(HasGetValueTypeHash)
+	struct FSStateBasedEffectLinearColorCurveSection CallFunc_Map_Find_Value;                        // 0x0078(0x0490)(HasGetValueTypeHash)
 	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x0508(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_509[0x7];                                      // 0x0509(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSStateBasedEffectFloatCurveSection    CallFunc_Map_Find_Value_1;                         // 0x0510(0x0170)(HasGetValueTypeHash)
@@ -772,7 +772,7 @@ public:
 	int32                                         ___int_Array_Index_Variable_3;                     // 0x0624(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x0628(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Array_Get_Item_2;                         // 0x062C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSStateBasedEffectLinearColorCurveSection CallFunc_Map_Find_Value_5;                         // 0x0638(0x0490)(HasGetValueTypeHash)
+	struct FSStateBasedEffectLinearColorCurveSection CallFunc_Map_Find_Value_5;                      // 0x0638(0x0490)(HasGetValueTypeHash)
 	bool                                          CallFunc_Map_Find_ReturnValue_5;                   // 0x0AC8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_AC9[0x3];                                      // 0x0AC9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           CallFunc_Map_Find_Value_6;                         // 0x0ACC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

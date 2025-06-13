@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "SMaterialControllerColorParameter_structs.hpp"
 #include "SHolographicData_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "SMaterialParamCache_structs.hpp"
-#include "SMaterialControllerFloatParameter_structs.hpp"
 #include "KuroCurve_structs.hpp"
+#include "SMaterialControllerFloatParameter_structs.hpp"
+#include "SMaterialParamCache_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SMaterialControllerColorParameter_structs.hpp"
 #include "SHolographicMaterialsCache_structs.hpp"
 
 
@@ -24,27 +24,34 @@ namespace SDK::Params
 {
 
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.ExecuteUbergraph_BP_NPCMaterialController
-// 0x0010 (0x0010 - 0x0000)
+// 0x0018 (0x0018 - 0x0000)
 struct BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x000F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x0013(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController) == 0x000004, "Wrong alignment on BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController");
-static_assert(sizeof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController) == 0x000010, "Wrong size on BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController");
+static_assert(sizeof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController) == 0x000018, "Wrong size on BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController");
 static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, EntryPoint) == 0x000000, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::EntryPoint' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, K2Node_Event_DeltaSeconds) == 0x000004, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::K2Node_Event_DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, CallFunc_Add_FloatFloat_ReturnValue) == 0x000008, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, K2Node_SwitchEnum_CmpSuccess) == 0x00000C, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, K2Node_SwitchEnum_CmpSuccess_1) == 0x00000D, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, CallFunc_Greater_FloatFloat_ReturnValue) == 0x00000E, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, CallFunc_Greater_FloatFloat_ReturnValue_1) == 0x00000F, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::CallFunc_Greater_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, CallFunc_IsValid_ReturnValue) == 0x000004, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, K2Node_Event_DeltaSeconds) == 0x000008, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, CallFunc_Add_FloatFloat_ReturnValue) == 0x00000C, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, K2Node_SwitchEnum_CmpSuccess) == 0x000010, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, K2Node_SwitchEnum_CmpSuccess_1) == 0x000011, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, CallFunc_Greater_FloatFloat_ReturnValue) == 0x000012, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, CallFunc_Greater_FloatFloat_ReturnValue_1) == 0x000013, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::CallFunc_Greater_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000014, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController, CallFunc_BooleanAND_ReturnValue) == 0x000015, "Member 'BP_NPCMaterialController_C_ExecuteUbergraph_BP_NPCMaterialController::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
 
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)
@@ -62,8 +69,8 @@ static_assert(offsetof(BP_NPCMaterialController_C_ReceiveTick, DeltaSeconds) == 
 struct BP_NPCMaterialController_C_CacheMaterialParameters final
 {
 public:
-	TArray<struct FSMaterialControllerFloatParameter> floats;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FSMaterialControllerColorParameter> colors;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FSMaterialControllerFloatParameter> floats;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FSMaterialControllerColorParameter> colors;                                        // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	class UMaterialInstanceDynamic*               material;                                          // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bReplaceMaterial;                                  // 0x0028(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -343,9 +350,9 @@ public:
 	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x005A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_5B[0x5];                                       // 0x005B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroMaterialControllerComponent*       CallFunc_AddOrGetMaterialControllerComponentFromActor_ReturnValue; // 0x0060(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0069(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x006A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0069(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x006A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(BP_NPCMaterialController_C_StartEffect) == 0x000008, "Wrong alignment on BP_NPCMaterialController_C_StartEffect");
 static_assert(sizeof(BP_NPCMaterialController_C_StartEffect) == 0x000070, "Wrong size on BP_NPCMaterialController_C_StartEffect");
@@ -361,9 +368,9 @@ static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsValid_
 static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_BooleanAND_ReturnValue_1) == 0x000059, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_BooleanAND_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_BooleanOR_ReturnValue) == 0x00005A, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_AddOrGetMaterialControllerComponentFromActor_ReturnValue) == 0x000060, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_AddOrGetMaterialControllerComponentFromActor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000068, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x000069, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsValid_ReturnValue_2) == 0x00006A, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_IsValid_ReturnValue_2) == 0x000068, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000069, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_NPCMaterialController_C_StartEffect, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x00006A, "Member 'BP_NPCMaterialController_C_StartEffect::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
 
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.EndEffect
 // 0x0001 (0x0001 - 0x0000)

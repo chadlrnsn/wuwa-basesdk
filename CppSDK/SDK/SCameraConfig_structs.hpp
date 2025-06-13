@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "EFightCameraType_structs.hpp"
-#include "SBaseCurve_structs.hpp"
 #include "EFightCameraDefault_structs.hpp"
-#include "GameplayTags_structs.hpp"
-#include "EFightCameraFocus_structs.hpp"
 #include "EFightCameraAdjust_structs.hpp"
+#include "EFightCameraType_structs.hpp"
+#include "EFightCameraModify_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "SBaseCurve_structs.hpp"
 #include "EFightCameraAuto_structs.hpp"
 #include "EFightCameraInput_structs.hpp"
-#include "EFightCameraModify_structs.hpp"
+#include "EFightCameraFocus_structs.hpp"
 #include "EFightCameraGuide_structs.hpp"
 #include "EFightCameraExplore_structs.hpp"
 #include "EFightCameraDialogue_structs.hpp"
@@ -67,7 +67,7 @@ public:
 	TMap<EFightCameraSidestep, float>             移动自动镜头_46_7FF98AFE46049674E443A5A3466CC3AB;  // 0x0368(0x0050)(Edit, BlueprintVisible)
 	bool                                          是否开启主镜头缓入缓出_75_6096DE6E42E79C20AAAD81B5ACFACC74; // 0x03B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_3B9[0x7];                                      // 0x03B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EFightCameraDefault, struct FSBaseCurve> 基础曲线配置_99_36EB4DFA4C24A67C4FC39C9D39456B9E;  // 0x03C0(0x0050)(Edit, BlueprintVisible)
+	TMap<EFightCameraDefault, struct FSBaseCurve> 基础曲线配置_99_36EB4DFA4C24A67C4FC39C9D39456B9E; // 0x03C0(0x0050)(Edit, BlueprintVisible)
 	TMap<EFightCameraAdjust, struct FSBaseCurve>  技能修正曲线配置_113_F5C59F9242A05862FD5A28AAB3B75B90; // 0x0410(0x0050)(Edit, BlueprintVisible)
 	TMap<EFightCameraAuto, struct FSBaseCurve>    自动镜头曲线配置_114_C56F26FC42B97E290F759F850B68151B; // 0x0460(0x0050)(Edit, BlueprintVisible)
 	TMap<EFightCameraFocus, struct FSBaseCurve>   锁定镜头曲线配置_116_D0A0E74148A1035933F5878490F9D560; // 0x04B0(0x0050)(Edit, BlueprintVisible)

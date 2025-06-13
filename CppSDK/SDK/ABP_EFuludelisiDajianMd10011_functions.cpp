@@ -68,7 +68,7 @@ void UABP_EFuludelisiDajianMd10011_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 // Function ABP_EFuludelisiDajianMd10011.ABP_EFuludelisiDajianMd10011_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        Param_AnimGraph_0                                      (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       Param_AnimGraph_0                                      (Parm, OutParm, NoDestructor)
 
 void UABP_EFuludelisiDajianMd10011_C::AnimGraph(struct FPoseLink* Param_AnimGraph_0)
 {
@@ -89,8 +89,8 @@ void UABP_EFuludelisiDajianMd10011_C::AnimGraph(struct FPoseLink* Param_AnimGrap
 // Function ABP_EFuludelisiDajianMd10011.ABP_EFuludelisiDajianMd10011_C.IKAndFk_Clone
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        IKAndFk_Clone_0                                        (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       IKAndFk_Clone_0                                        (Parm, OutParm, NoDestructor)
 
 void UABP_EFuludelisiDajianMd10011_C::IKAndFk_Clone(const struct FPoseLink& InPose, struct FPoseLink* IKAndFk_Clone_0)
 {

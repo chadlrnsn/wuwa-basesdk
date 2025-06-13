@@ -17,23 +17,37 @@
 namespace SDK
 {
 
-// Function EffectViewComponent.EffectViewComponent_C.EditorTick
+// Function EffectViewComponent.EffectViewComponent_C.Stop
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   deltaSecond                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    immediately                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UEffectViewComponent_C::EditorTick(float deltaSecond)
+void UEffectViewComponent_C::Stop(bool immediately)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("EffectViewComponent_C", "EditorTick");
+		Func = Class->GetFunction("EffectViewComponent_C", "Stop");
 
-	Params::EffectViewComponent_C_EditorTick Parms{};
+	Params::EffectViewComponent_C_Stop Parms{};
 
-	Parms.deltaSecond = deltaSecond;
+	Parms.immediately = immediately;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function EffectViewComponent.EffectViewComponent_C.Play
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UEffectViewComponent_C::Play()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EffectViewComponent_C", "Play");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,35 +71,21 @@ void UEffectViewComponent_C::SetAutoPlay(bool autoPlay)
 }
 
 
-// Function EffectViewComponent.EffectViewComponent_C.Play
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UEffectViewComponent_C::Play()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EffectViewComponent_C", "Play");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function EffectViewComponent.EffectViewComponent_C.Stop
+// Function EffectViewComponent.EffectViewComponent_C.EditorTick
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    immediately                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float                                   deltaSecond                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UEffectViewComponent_C::Stop(bool immediately)
+void UEffectViewComponent_C::EditorTick(float deltaSecond)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("EffectViewComponent_C", "Stop");
+		Func = Class->GetFunction("EffectViewComponent_C", "EditorTick");
 
-	Params::EffectViewComponent_C_Stop Parms{};
+	Params::EffectViewComponent_C_EditorTick Parms{};
 
-	Parms.immediately = immediately;
+	Parms.deltaSecond = deltaSecond;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

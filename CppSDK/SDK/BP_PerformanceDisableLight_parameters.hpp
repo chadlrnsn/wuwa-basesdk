@@ -14,6 +14,39 @@
 namespace SDK::Params
 {
 
+// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.UserConstructionScript
+// 0x0001 (0x0001 - 0x0000)
+struct BP_PerformanceDisableLight_C_UserConstructionScript final
+{
+public:
+	bool                                          CallFunc_IsWithEditor_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(BP_PerformanceDisableLight_C_UserConstructionScript) == 0x000001, "Wrong alignment on BP_PerformanceDisableLight_C_UserConstructionScript");
+static_assert(sizeof(BP_PerformanceDisableLight_C_UserConstructionScript) == 0x000001, "Wrong size on BP_PerformanceDisableLight_C_UserConstructionScript");
+static_assert(offsetof(BP_PerformanceDisableLight_C_UserConstructionScript, CallFunc_IsWithEditor_ReturnValue) == 0x000000, "Member 'BP_PerformanceDisableLight_C_UserConstructionScript::CallFunc_IsWithEditor_ReturnValue' has a wrong offset!");
+
+// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_PerformanceDisableLight_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_PerformanceDisableLight_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_PerformanceDisableLight_C_ReceiveTick");
+static_assert(sizeof(BP_PerformanceDisableLight_C_ReceiveTick) == 0x000004, "Wrong size on BP_PerformanceDisableLight_C_ReceiveTick");
+static_assert(offsetof(BP_PerformanceDisableLight_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_PerformanceDisableLight_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
+
+// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_PerformanceDisableLight_C_EditorTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_PerformanceDisableLight_C_EditorTick) == 0x000004, "Wrong alignment on BP_PerformanceDisableLight_C_EditorTick");
+static_assert(sizeof(BP_PerformanceDisableLight_C_EditorTick) == 0x000004, "Wrong size on BP_PerformanceDisableLight_C_EditorTick");
+static_assert(offsetof(BP_PerformanceDisableLight_C_EditorTick, DeltaSeconds) == 0x000000, "Member 'BP_PerformanceDisableLight_C_EditorTick::DeltaSeconds' has a wrong offset!");
+
 // Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.ExecuteUbergraph_BP_PerformanceDisableLight
 // 0x000C (0x000C - 0x0000)
 struct BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_PerformanceDisableLight final
@@ -28,39 +61,6 @@ static_assert(sizeof(BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_Performanc
 static_assert(offsetof(BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_PerformanceDisableLight, EntryPoint) == 0x000000, "Member 'BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_PerformanceDisableLight::EntryPoint' has a wrong offset!");
 static_assert(offsetof(BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_PerformanceDisableLight, K2Node_Event_DeltaSeconds_1) == 0x000004, "Member 'BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_PerformanceDisableLight::K2Node_Event_DeltaSeconds_1' has a wrong offset!");
 static_assert(offsetof(BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_PerformanceDisableLight, K2Node_Event_DeltaSeconds) == 0x000008, "Member 'BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_PerformanceDisableLight::K2Node_Event_DeltaSeconds' has a wrong offset!");
-
-// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.EditorTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_PerformanceDisableLight_C_EditorTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_PerformanceDisableLight_C_EditorTick) == 0x000004, "Wrong alignment on BP_PerformanceDisableLight_C_EditorTick");
-static_assert(sizeof(BP_PerformanceDisableLight_C_EditorTick) == 0x000004, "Wrong size on BP_PerformanceDisableLight_C_EditorTick");
-static_assert(offsetof(BP_PerformanceDisableLight_C_EditorTick, DeltaSeconds) == 0x000000, "Member 'BP_PerformanceDisableLight_C_EditorTick::DeltaSeconds' has a wrong offset!");
-
-// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_PerformanceDisableLight_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_PerformanceDisableLight_C_ReceiveTick) == 0x000004, "Wrong alignment on BP_PerformanceDisableLight_C_ReceiveTick");
-static_assert(sizeof(BP_PerformanceDisableLight_C_ReceiveTick) == 0x000004, "Wrong size on BP_PerformanceDisableLight_C_ReceiveTick");
-static_assert(offsetof(BP_PerformanceDisableLight_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'BP_PerformanceDisableLight_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
-
-// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.UserConstructionScript
-// 0x0001 (0x0001 - 0x0000)
-struct BP_PerformanceDisableLight_C_UserConstructionScript final
-{
-public:
-	bool                                          CallFunc_IsWithEditor_ReturnValue;                 // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(BP_PerformanceDisableLight_C_UserConstructionScript) == 0x000001, "Wrong alignment on BP_PerformanceDisableLight_C_UserConstructionScript");
-static_assert(sizeof(BP_PerformanceDisableLight_C_UserConstructionScript) == 0x000001, "Wrong size on BP_PerformanceDisableLight_C_UserConstructionScript");
-static_assert(offsetof(BP_PerformanceDisableLight_C_UserConstructionScript, CallFunc_IsWithEditor_ReturnValue) == 0x000000, "Member 'BP_PerformanceDisableLight_C_UserConstructionScript::CallFunc_IsWithEditor_ReturnValue' has a wrong offset!");
 
 }
 

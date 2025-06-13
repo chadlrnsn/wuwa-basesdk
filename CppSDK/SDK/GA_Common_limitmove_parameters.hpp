@@ -55,7 +55,7 @@ public:
 	bool                                          CallFunc_IsKeyDown_ReturnValue;                    // 0x01C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_1C9[0x7];                                      // 0x01C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_7;            // 0x01D0(0x0028)(ZeroConstructor)
-	TScriptInterface<class IGameplayTaskOwnerInterface> CallFunc_TaskWaitDelay_TaskOwner_CastInput;        // 0x01F8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	TScriptInterface<class IGameplayTaskOwnerInterface> CallFunc_TaskWaitDelay_TaskOwner_CastInput;  // 0x01F8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	class UGameplayTask_WaitDelay*                CallFunc_TaskWaitDelay_ReturnValue;                // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc___________7;                              // 0x0210(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_______________1;                          // 0x0218(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)

@@ -45,7 +45,7 @@ void ABP_BaseNPC_C::ExecuteUbergraph_BP_BaseNPC(int32 EntryPoint)
 // class UPrimitiveComponent*              OtherComp                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   OtherBodyIndex                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bFromSweep                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FHitResult                       SweepResult                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// const struct FHitResult&                SweepResult                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 
 void ABP_BaseNPC_C::BndEvt__BP_BaseNPC_HitCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
@@ -184,7 +184,7 @@ void ABP_BaseNPC_C::通知AIC冲撞结果(bool IsImpact)
 // Function BP_BaseNPC.BP_BaseNPC_C.执行冲撞处理
 // (Private, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_BaseNPC_C::执行冲撞处理(bool* Success)
 {
@@ -205,7 +205,7 @@ void ABP_BaseNPC_C::执行冲撞处理(bool* Success)
 // Function BP_BaseNPC.BP_BaseNPC_C.执行攻击处理
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_BaseNPC_C::执行攻击处理(bool* Success)
 {
@@ -246,7 +246,7 @@ void ABP_BaseNPC_C::通知AIC攻击结果(bool IsAttack)
 // Function BP_BaseNPC.BP_BaseNPC_C.检查是否玩家攻击
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    IsAttack                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   IsAttack                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_BaseNPC_C::检查是否玩家攻击(bool* IsAttack)
 {

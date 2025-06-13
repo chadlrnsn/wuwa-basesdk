@@ -47,7 +47,7 @@ void UGameScreenshotTask::OnIOSPhotoLibraryAuthorizationCompleted(bool IsGranted
 // Parameters:
 // int32                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FColor>                   Colors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FColor>&            Colors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGameScreenshotTask::OnScreenshotCaptured(int32 Width, int32 Height, const TArray<struct FColor>& Colors)
 {
@@ -74,7 +74,7 @@ void UGameScreenshotTask::OnScreenshotCaptured(int32 Width, int32 Height, const 
 // Function KuroGameScreenshot.GameScreenshotTask.OnScreenshotCompressed
 // (Final, Native, Public, HasOutParams)
 // Parameters:
-// TArray<uint8>                           CompressedBitMap                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    CompressedBitMap                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGameScreenshotTask::OnScreenshotCompressed(const TArray<uint8>& CompressedBitMap)
 {
@@ -164,8 +164,8 @@ bool UGameScreenshotTask::TakeScreenshot()
 // Parameters:
 // int32                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FColor>                   Colors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<uint8>                           BitMap                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FColor>&            Colors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<uint8>*                          BitMap                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UKuroGameScreenshotBPLibrary::CompressConvertColorsToBitmap(int32 Width, int32 Height, const TArray<struct FColor>& Colors, TArray<uint8>* BitMap)
 {
@@ -197,8 +197,8 @@ void UKuroGameScreenshotBPLibrary::CompressConvertColorsToBitmap(int32 Width, in
 // Parameters:
 // int32                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FColor>                   Colors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<uint8>                           BitMap                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FColor>&            Colors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<uint8>*                          BitMap                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UKuroGameScreenshotBPLibrary::ConvertColorsToBitmap(int32 Width, int32 Height, const TArray<struct FColor>& Colors, TArray<uint8>* BitMap)
 {
@@ -254,9 +254,9 @@ bool UKuroGameScreenshotBPLibrary::IsPhotoLibraryAuthorized()
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                          Outer_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           InFilename                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        MinCaptureRegion                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector2D                        MaxCaptureRegion                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InFilename                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 MinCaptureRegion                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 MaxCaptureRegion                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ScreenshotResolutionX                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ScreenshotResolutionY                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    SaveFile                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -295,7 +295,7 @@ class UGameScreenshotTask* UKuroGameScreenshotBPLibrary::PrepareTakeScreenshot(c
 // Parameters:
 // int32                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           BitMap                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    BitMap                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UKuroGameScreenshotBPLibrary::SaveColorArrayToAndroidAlbum(int32 Width, int32 Height, const TArray<uint8>& BitMap)
 {
@@ -324,7 +324,7 @@ void UKuroGameScreenshotBPLibrary::SaveColorArrayToAndroidAlbum(int32 Width, int
 // Parameters:
 // int32                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FColor>                   Colors                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FColor>&            Colors                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UKuroGameScreenshotBPLibrary::SaveColorArrayToIosAlbum(int32 Width, int32 Height, const TArray<struct FColor>& Colors)
 {
@@ -351,10 +351,10 @@ void UKuroGameScreenshotBPLibrary::SaveColorArrayToIosAlbum(int32 Width, int32 H
 // Function KuroGameScreenshot.KuroGameScreenshotBPLibrary.SaveScreenshot
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           FilePath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FilePath                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FColor>                   Colors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FColor>&            Colors                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroGameScreenshotBPLibrary::SaveScreenshot(const class FString& FilePath, int32 Width, int32 Height, const TArray<struct FColor>& Colors)
 {

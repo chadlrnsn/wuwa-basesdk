@@ -11,20 +11,20 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "GA_Base_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "GA_Base_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Bulante_Burst.GA_Bulante_Burst_C
-// 0x0020 (0x0578 - 0x0558)
+// 0x0020 (0x0588 - 0x0568)
 class UGA_Bulante_Burst_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Bulante_Burst_C;                 // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FVectorDouble                          合法点;                                            // 0x0560(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Bulante_Burst_C;                 // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FVectorDouble                          合法点;                                            // 0x0570(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Bulante_Burst(int32 EntryPoint);
@@ -52,9 +52,9 @@ public:
 	}
 };
 static_assert(alignof(UGA_Bulante_Burst_C) == 0x000008, "Wrong alignment on UGA_Bulante_Burst_C");
-static_assert(sizeof(UGA_Bulante_Burst_C) == 0x000578, "Wrong size on UGA_Bulante_Burst_C");
-static_assert(offsetof(UGA_Bulante_Burst_C, UberGraphFrame_GA_Bulante_Burst_C) == 0x000558, "Member 'UGA_Bulante_Burst_C::UberGraphFrame_GA_Bulante_Burst_C' has a wrong offset!");
-static_assert(offsetof(UGA_Bulante_Burst_C, 合法点) == 0x000560, "Member 'UGA_Bulante_Burst_C::合法点' has a wrong offset!");
+static_assert(sizeof(UGA_Bulante_Burst_C) == 0x000588, "Wrong size on UGA_Bulante_Burst_C");
+static_assert(offsetof(UGA_Bulante_Burst_C, UberGraphFrame_GA_Bulante_Burst_C) == 0x000568, "Member 'UGA_Bulante_Burst_C::UberGraphFrame_GA_Bulante_Burst_C' has a wrong offset!");
+static_assert(offsetof(UGA_Bulante_Burst_C, 合法点) == 0x000570, "Member 'UGA_Bulante_Burst_C::合法点' has a wrong offset!");
 
 }
 

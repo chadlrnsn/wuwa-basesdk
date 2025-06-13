@@ -20,7 +20,7 @@ namespace SDK
 // Function BPL_CameraUtility.BPL_CameraUtility_C.DtGetCameraConfigs
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FSCamera_Setting>         CameraSettings                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSCamera_Setting>&        CameraSettings                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UDataTable*                       DataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -46,7 +46,7 @@ void UBPL_CameraUtility_C::DtGetCameraConfigs(TArray<struct FSCamera_Setting>& C
 // Function BPL_CameraUtility.BPL_CameraUtility_C.DtGetCameraConfigList
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FSCameraConfig>           CameraSettings                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSCameraConfig>&          CameraSettings                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UDataTable*                       DataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

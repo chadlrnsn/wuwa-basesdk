@@ -22,7 +22,7 @@ class UKuroLogAnalyzerLibrary final : public UBlueprintFunctionLibrary
 {
 public:
 	static bool Clear();
-	static bool Initialize(const int32 InVerbosity, const TDelegate<void(class FName& Category, int32 Verbosity, const class FString& Format, const class FString& Message)>& InLogDelegate, const int32 InMessageMaxSize);
+	static bool Initialize(const int32 InVerbosity, const TDelegate<void(const class FName& Category, const int32 Verbosity, const class FString& Format, const class FString& Message)>& InLogDelegate, const int32 InMessageMaxSize);
 	static void SetEnable(const bool bEnable);
 
 public:

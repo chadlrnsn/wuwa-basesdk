@@ -89,11 +89,11 @@ struct FVectorDouble UKuroClimbObject::D_GetSafetyLocation()
 // Function KuroMovement.KuroClimbObject.D_ProcessClimbing
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    MoveSpeed                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             MoveSpeed                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    IsTryMove                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransformDouble                 OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransformDouble*                OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroClimbObject::D_ProcessClimbing(const struct FVectorDouble& MoveSpeed, float DeltaTime, bool IsTryMove, float DebugDrawDuration, struct FTransformDouble* OutTrans)
@@ -127,9 +127,9 @@ bool UKuroClimbObject::D_ProcessClimbing(const struct FVectorDouble& MoveSpeed, 
 // Function KuroMovement.KuroClimbObject.D_TryClimbingArrives
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    InputDirect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             InputDirect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransformDouble                 OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransformDouble*                OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    NeedTryBlockUp                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EClimbingArriveType                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -164,8 +164,8 @@ EClimbingArriveType UKuroClimbObject::D_TryClimbingArrives(const struct FVectorD
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransformDouble                 OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   OutLongOffset                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransformDouble*                OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// float*                                  OutLongOffset                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ESprintVaultType                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 ESprintVaultType UKuroClimbObject::D_TrySprintVault(float DebugDrawDuration, struct FTransformDouble* OutTrans, float* OutLongOffset)
@@ -199,9 +199,9 @@ ESprintVaultType UKuroClimbObject::D_TrySprintVault(float DebugDrawDuration, str
 // Function KuroMovement.KuroClimbObject.D_TryStartClimb
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransformDouble                 Trans                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransformDouble&          Trans                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransformDouble                 OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransformDouble*                OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroClimbObject::D_TryStartClimb(const struct FTransformDouble& Trans, float DebugDrawDuration, struct FTransformDouble* OutTrans)
@@ -233,9 +233,9 @@ bool UKuroClimbObject::D_TryStartClimb(const struct FTransformDouble& Trans, flo
 // Function KuroMovement.KuroClimbObject.D_TryUpArrives
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    InputDirect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             InputDirect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransformDouble                 OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransformDouble*                OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // EClimbingArriveType                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EClimbingArriveType UKuroClimbObject::D_TryUpArrives(const struct FVectorDouble& InputDirect, float DebugDrawDuration, struct FTransformDouble* OutTrans)
@@ -338,7 +338,7 @@ struct FVector UKuroClimbObject::GetSecondMoveOffset()
 // Parameters:
 // class UShapeComponent*                  InShapeComp                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ECollisionChannel                       InClimbChannel                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  BaseLocations                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           BaseLocations                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // float                                   InSphereRadius                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InActorToWallDist                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InDetectLength                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -375,12 +375,12 @@ void UKuroClimbObject::InitBase(class UShapeComponent* InShapeComp, ECollisionCh
 // Function KuroMovement.KuroClimbObject.InitBlockUps
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InBlockUpOffset                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InBlockUpOffset                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InBlockUpDetectRadius                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InBlockUpDetectDistance                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InBlockUpBackDistance                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InBlockUpBackMin                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InBlockUpFinalMove                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InBlockUpFinalMove                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   BlockUpVerticalRangeMin                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   BlockUpVerticalRangeMax                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -447,7 +447,7 @@ void UKuroClimbObject::InitClimbSafety(float InRadius, float InHalfHeight, float
 // float                                   InForwardBlockRadius                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InForwardBlockDistanceMin                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InForwardBlockDistanceMax                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InSprintVaultMoveOffset                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InSprintVaultMoveOffset                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InHeightMin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InHeightMax                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InSprintVaultLongNeedDistance                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -492,9 +492,9 @@ void UKuroClimbObject::InitSprintVault(float InForwardBlockHeight, float InForwa
 // Function KuroMovement.KuroClimbObject.InitUpArrives
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<struct FVector>                  InUpArriveMoveOffsets                                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<float>                           InHeightMins                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<float>                           InHeightMaxs                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           InUpArriveMoveOffsets                                  (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<float>&                    InHeightMins                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<float>&                    InHeightMaxs                                           (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UKuroClimbObject::InitUpArrives(const TArray<struct FVector>& InUpArriveMoveOffsets, const TArray<float>& InHeightMins, const TArray<float>& InHeightMaxs)
 {
@@ -546,11 +546,11 @@ bool UKuroClimbObject::NeedFollowHangOnStartingClimb()
 // Function KuroMovement.KuroClimbObject.ProcessClimbing
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          MoveSpeed                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   MoveSpeed                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    IsTryMove                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransform*                      OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroClimbObject::ProcessClimbing(const struct FVector& MoveSpeed, float DeltaTime, bool IsTryMove, float DebugDrawDuration, struct FTransform* OutTrans)
@@ -609,9 +609,9 @@ void UKuroClimbObject::SyncFromOther(class UKuroClimbObject* Other)
 // Function KuroMovement.KuroClimbObject.TryClimbingArrives
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InputDirect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InputDirect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransform*                      OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    NeedTryBlockUp                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EClimbingArriveType                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -646,8 +646,8 @@ EClimbingArriveType UKuroClimbObject::TryClimbingArrives(const struct FVector& I
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   OutLongOffset                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform*                      OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// float*                                  OutLongOffset                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ESprintVaultType                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 ESprintVaultType UKuroClimbObject::TrySprintVault(float DebugDrawDuration, struct FTransform* OutTrans, float* OutLongOffset)
@@ -681,9 +681,9 @@ ESprintVaultType UKuroClimbObject::TrySprintVault(float DebugDrawDuration, struc
 // Function KuroMovement.KuroClimbObject.TryStartClimb
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransform                       Trans                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                Trans                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransform*                      OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroClimbObject::TryStartClimb(const struct FTransform& Trans, float DebugDrawDuration, struct FTransform* OutTrans)
@@ -715,9 +715,9 @@ bool UKuroClimbObject::TryStartClimb(const struct FTransform& Trans, float Debug
 // Function KuroMovement.KuroClimbObject.TryUpArrives
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InputDirect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InputDirect                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   DebugDrawDuration                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransform*                      OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // EClimbingArriveType                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EClimbingArriveType UKuroClimbObject::TryUpArrives(const struct FVector& InputDirect, float DebugDrawDuration, struct FTransform* OutTrans)
@@ -749,7 +749,7 @@ EClimbingArriveType UKuroClimbObject::TryUpArrives(const struct FVector& InputDi
 // Function KuroMovement.KuroDebugMovementComponent.KuroDebugMovementBaseRecordToString
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FBaseRecord                      Record                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FBaseRecord&               Record                                                 (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UKuroDebugMovementComponent::KuroDebugMovementBaseRecordToString(const struct FBaseRecord& Record)
@@ -930,8 +930,8 @@ int32 UKuroDebugMovementComponent::GetRecordFrames()
 // Function KuroMovement.KuroDebugMovementComponent.RecordModifyInfo
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FString                           Context                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          CustomVector                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Context                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   CustomVector                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EKDMRecordType                          Type                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroDebugMovementComponent::RecordModifyInfo(const class FString& Context, const struct FVector& CustomVector, EKDMRecordType Type)
@@ -1060,7 +1060,7 @@ void AKuroMoveTrigger::OnEndOverlap(class UPrimitiveComponent* OverlappedCompone
 // class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void AKuroMoveTrigger::OnEnterOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
@@ -1092,14 +1092,14 @@ void AKuroMoveTrigger::OnEnterOverlap(class UPrimitiveComponent* OverlappedCompo
 // Parameters:
 // float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCharacterMovementComponent*      CharMoveComp                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          TargetPrevPos                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          TargetNextPos                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetPrevPos                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   TargetNextPos                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MinDist                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxDist                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MinAccel                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxAccel                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Friction                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          InOutTargetForward                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         InOutTargetForward                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   FacingLerpSpeed                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   FacingLerpRate                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1147,7 +1147,7 @@ bool UKuroMovementBPLibrary::KuroKite(float DeltaSeconds, class UCharacterMoveme
 // float                                   TargetSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Friction                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   AccelOnGround                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          FloorNormal                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         FloorNormal                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Gravity                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   StepUpHeight                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxSpeed                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1190,9 +1190,9 @@ bool UKuroMovementBPLibrary::KuroRoll(float DeltaSeconds, class UCharacterMoveme
 // Parameters:
 // float                                   DeltaTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCharacterMovementComponent*      CharMoveComp                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          PrevBlockNormal                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          SpeedParams                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   PrevBlockNormal                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Direction                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SpeedParams                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   IgnoreStepHeight                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      SpeedReduceCurve                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1232,8 +1232,8 @@ int32 UKuroMovementBPLibrary::KuroSki(float DeltaTime, class UCharacterMovementC
 // class UCharacterMovementComponent*      CharMoveComp                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   AirFriction                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Aerodynamics                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Gravity                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          SoarPlaneNormal                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Gravity                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SoarPlaneNormal                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxSpeed                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EMoveHitType                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

@@ -350,7 +350,7 @@ void ABP_BaseRole_Seq_V2_C::EndSwitchPose_ToBP(class AActor* To, bool Log)
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetABPC_Body_V2
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UABPC_Seq_Body_V2_C*              ABPC_Body_V2_0                                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UABPC_Seq_Body_V2_C**             ABPC_Body_V2_0                                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_BaseRole_Seq_V2_C::GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Body_V2_0)
 {
@@ -371,7 +371,7 @@ void ABP_BaseRole_Seq_V2_C::GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Bod
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.SetAnimDataVector
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TMap<class FName, struct FVector>       VectorCurveData                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TMap<class FName, struct FVector>&VectorCurveData                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_BaseRole_Seq_V2_C::SetAnimDataVector(const TMap<class FName, struct FVector>& VectorCurveData)
@@ -394,7 +394,7 @@ bool ABP_BaseRole_Seq_V2_C::SetAnimDataVector(const TMap<class FName, struct FVe
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.SetAnimDataFloat
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         FloatCurveData                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FNamedCurveValue>&  FloatCurveData                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_BaseRole_Seq_V2_C::SetAnimDataFloat(const TArray<struct FNamedCurveValue>& FloatCurveData)
@@ -417,7 +417,7 @@ bool ABP_BaseRole_Seq_V2_C::SetAnimDataFloat(const TArray<struct FNamedCurveValu
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetAnimDataVector
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TMap<class FName, struct FVector>       VectorCurveData                                        (Parm, OutParm)
+// TMap<class FName, struct FVector>*      VectorCurveData                                        (Parm, OutParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_BaseRole_Seq_V2_C::GetAnimDataVector(TMap<class FName, struct FVector>* VectorCurveData)
@@ -441,7 +441,7 @@ bool ABP_BaseRole_Seq_V2_C::GetAnimDataVector(TMap<class FName, struct FVector>*
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetAnimDataFloat
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         FloatCurveData                                         (Parm, OutParm)
+// TArray<struct FNamedCurveValue>*        FloatCurveData                                         (Parm, OutParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_BaseRole_Seq_V2_C::GetAnimDataFloat(TArray<struct FNamedCurveValue>* FloatCurveData)

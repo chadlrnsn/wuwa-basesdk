@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
+#include "SD_KuroTraceCloudData_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "SD_KuroTraceCloudData_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C
-// 0x01E0 (0x0490 - 0x02B0)
+// 0x01E8 (0x0498 - 0x02B0)
 class ABP_KuroVolumeCloud_Global_C final : public AUKuroCustomCookActor
 {
 public:
@@ -54,22 +54,23 @@ public:
 	TMap<class FName, float>                      Scalar_Parameters;                                 // 0x03A0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FName, struct FLinearColor>        Vector_Parameters;                                 // 0x03F0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FName, class UTexture*>            Texture_Parameters;                                // 0x0440(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bUseGlobalSpeed;                                   // 0x0490(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_BP_KuroVolumeCloud_Global(int32 EntryPoint);
-	void ReceiveBeginPlay();
-	void BeforeSave();
-	void BeforeCookForPC();
-	void BeforeCookForMobile();
-	void ReceiveTick(float DeltaSeconds);
-	void EditorTick();
-	void UserConstructionScript();
-	void UpdateCloudTransform();
-	void UpdateCloudLighting();
-	void GetLerpGIData(float Time, struct FSD_KuroTraceCloudData* LerpData_0);
-	void Update();
-	void CheckNeed_Update();
 	void CleanMID();
+	void CheckNeed_Update();
+	void Update();
+	void GetLerpGIData(float Time, struct FSD_KuroTraceCloudData* LerpData_0);
+	void UpdateCloudLighting();
+	void UpdateCloudTransform();
+	void UserConstructionScript();
+	void EditorTick();
+	void ReceiveTick(float DeltaSeconds);
+	void BeforeCookForMobile();
+	void BeforeCookForPC();
+	void BeforeSave();
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_KuroVolumeCloud_Global(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -82,7 +83,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_KuroVolumeCloud_Global_C) == 0x000008, "Wrong alignment on ABP_KuroVolumeCloud_Global_C");
-static_assert(sizeof(ABP_KuroVolumeCloud_Global_C) == 0x000490, "Wrong size on ABP_KuroVolumeCloud_Global_C");
+static_assert(sizeof(ABP_KuroVolumeCloud_Global_C) == 0x000498, "Wrong size on ABP_KuroVolumeCloud_Global_C");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_KuroVolumeCloud_Global_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, Cube) == 0x0002B8, "Member 'ABP_KuroVolumeCloud_Global_C::Cube' has a wrong offset!");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, CloudRange) == 0x0002C0, "Member 'ABP_KuroVolumeCloud_Global_C::CloudRange' has a wrong offset!");
@@ -109,6 +110,7 @@ static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, ThunderCurve3) == 0x000398,
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, Scalar_Parameters) == 0x0003A0, "Member 'ABP_KuroVolumeCloud_Global_C::Scalar_Parameters' has a wrong offset!");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, Vector_Parameters) == 0x0003F0, "Member 'ABP_KuroVolumeCloud_Global_C::Vector_Parameters' has a wrong offset!");
 static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, Texture_Parameters) == 0x000440, "Member 'ABP_KuroVolumeCloud_Global_C::Texture_Parameters' has a wrong offset!");
+static_assert(offsetof(ABP_KuroVolumeCloud_Global_C, bUseGlobalSpeed) == 0x000490, "Member 'ABP_KuroVolumeCloud_Global_C::bUseGlobalSpeed' has a wrong offset!");
 
 }
 

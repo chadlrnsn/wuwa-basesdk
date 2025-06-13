@@ -20,10 +20,10 @@ namespace SDK
 // Function SE_UINiagaraController.SE_UINiagaraController_C.CaculatePoint
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector2D                        LeftBottomPoint                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector2D                        RightTopPoint                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector2D                        NewLeftBottomPoint                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector2D                        NewRightTopPoint                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 LeftBottomPoint                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector2D&                 RightTopPoint                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector2D*                       NewLeftBottomPoint                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector2D*                       NewRightTopPoint                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void USE_UINiagaraController_C::CaculatePoint(const struct FVector2D& LeftBottomPoint, const struct FVector2D& RightTopPoint, struct FVector2D* NewLeftBottomPoint, struct FVector2D* NewRightTopPoint)
 {

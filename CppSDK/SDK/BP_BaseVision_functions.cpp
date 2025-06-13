@@ -102,7 +102,7 @@ void ABP_BaseVision_C::ReceiveBeginPlay()
 // Function BP_BaseVision.BP_BaseVision_C.获取幻象数据
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FSVisionData                     幻象数据                                               (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+// struct FSVisionData*                    幻象数据                                               (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
 
 void ABP_BaseVision_C::获取幻象数据(struct FSVisionData* 幻象数据)
 {
@@ -123,7 +123,7 @@ void ABP_BaseVision_C::获取幻象数据(struct FSVisionData* 幻象数据)
 // Function BP_BaseVision.BP_BaseVision_C.获取召唤角色
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C*               召唤角色                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C**              召唤角色                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_BaseVision_C::获取召唤角色(class ATsBaseCharacter_C** 召唤角色)
 {

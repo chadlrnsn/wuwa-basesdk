@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "GameplayAbilities_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 
 
 namespace SDK::Params
@@ -24,7 +24,7 @@ struct GA_Destroy_Bianshen_Vision_C_ExecuteUbergraph_GA_Destroy_Bianshen_Vision 
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0028)(ZeroConstructor)
+	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate;  // 0x0008(0x0028)(ZeroConstructor)
 	struct FGameplayEventData                     K2Node_CustomEvent_Payload;                        // 0x0030(0x00B8)()
 	struct FGameplayEventData                     ___struct_Variable;                                // 0x00E8(0x00B8)()
 	class UAbilityTask_WaitGameplayEvent*         CallFunc_WaitGameplayEvent_ReturnValue;            // 0x01A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -63,7 +63,7 @@ public:
 	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x0389(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_38A[0x6];                                      // 0x038A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc___________4;                              // 0x0390(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(struct FGameplayTag& Tag)>     K2Node_CreateDelegate_OutputDelegate_9;            // 0x0398(0x0028)(ZeroConstructor)
+	TDelegate<void(const struct FGameplayTag& Tag)> K2Node_CreateDelegate_OutputDelegate_9;          // 0x0398(0x0028)(ZeroConstructor)
 	int32                                         CallFunc_____ID___ID;                              // 0x03C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_3C4[0x4];                                      // 0x03C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc___________5;                              // 0x03C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -124,7 +124,7 @@ public:
 	uint8                                         Pad_6C9[0x3];                                      // 0x06C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           K2Node_CustomEvent_Tag;                            // 0x06CC(0x000C)(ConstParm, NoDestructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_____GA_______________1;                   // 0x06D8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TDelegate<void(struct FGameplayTag& Tag)>     K2Node_CreateDelegate_OutputDelegate_12;           // 0x06E8(0x0028)(ZeroConstructor)
+	TDelegate<void(const struct FGameplayTag& Tag)> K2Node_CreateDelegate_OutputDelegate_12;         // 0x06E8(0x0028)(ZeroConstructor)
 	class FString                                 CallFunc_Conv_NameToString_ReturnValue_1;          // 0x0710(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class UAnimMontage*                           CallFunc___________13;                             // 0x0720(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_6;                    // 0x0728(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -132,7 +132,7 @@ public:
 	struct FGameplayTag                           ___struct_Variable_3;                              // 0x072C(0x000C)(NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_bWasCancelled;                        // 0x0738(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_739[0x7];                                      // 0x0739(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate_13;           // 0x0740(0x0028)(ZeroConstructor)
+	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate_13; // 0x0740(0x0028)(ZeroConstructor)
 	int32                                         CallFunc_____ID___ID_2;                            // 0x0768(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_76C[0x4];                                      // 0x076C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilityTask_WaitGameplayTagAdded*      CallFunc_WaitGameplayTagAdd_ReturnValue;           // 0x0770(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

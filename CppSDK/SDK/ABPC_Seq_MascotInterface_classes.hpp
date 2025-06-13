@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ABPC_Seq_MascotInterface.ABPC_Seq_MascotInterface_C
-// 0x0000 (0x0030 - 0x0030)
-class IABPC_Seq_MascotInterface_C final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IABPC_Seq_MascotInterface_C final
 {
 public:
 	void GetAddSpineValue(struct FRotator* AddSpine);
@@ -33,9 +33,18 @@ public:
 	{
 		return GetDefaultObjImpl<IABPC_Seq_MascotInterface_C>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IABPC_Seq_MascotInterface_C) == 0x000008, "Wrong alignment on IABPC_Seq_MascotInterface_C");
-static_assert(sizeof(IABPC_Seq_MascotInterface_C) == 0x000030, "Wrong size on IABPC_Seq_MascotInterface_C");
+static_assert(alignof(IABPC_Seq_MascotInterface_C) == 0x000001, "Wrong alignment on IABPC_Seq_MascotInterface_C");
+static_assert(sizeof(IABPC_Seq_MascotInterface_C) == 0x000001, "Wrong size on IABPC_Seq_MascotInterface_C");
 
 }
 

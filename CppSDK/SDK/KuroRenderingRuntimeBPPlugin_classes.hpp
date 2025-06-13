@@ -10,14 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "KuroPointCloud_structs.hpp"
+#include "KuroCurve_structs.hpp"
+#include "KuroMath_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "KuroPointCloud_structs.hpp"
 #include "ProceduralMeshComponent_classes.hpp"
-#include "KuroCurve_structs.hpp"
 #include "Renderer_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "LevelSequence_classes.hpp"
@@ -27,28 +28,6 @@
 
 namespace SDK
 {
-
-// Class KuroRenderingRuntimeBPPlugin.NiagaraDataInterfaceKuroRendering
-// 0x0010 (0x0050 - 0x0040)
-class UNiagaraDataInterfaceKuroRendering final : public UNiagaraDataInterface
-{
-public:
-	class FName                                   NiagaraCollectionName;                             // 0x0040(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"NiagaraDataInterfaceKuroRendering">();
-	}
-	static class UNiagaraDataInterfaceKuroRendering* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UNiagaraDataInterfaceKuroRendering>();
-	}
-};
-static_assert(alignof(UNiagaraDataInterfaceKuroRendering) == 0x000008, "Wrong alignment on UNiagaraDataInterfaceKuroRendering");
-static_assert(sizeof(UNiagaraDataInterfaceKuroRendering) == 0x000050, "Wrong size on UNiagaraDataInterfaceKuroRendering");
-static_assert(offsetof(UNiagaraDataInterfaceKuroRendering, NiagaraCollectionName) == 0x000040, "Member 'UNiagaraDataInterfaceKuroRendering::NiagaraCollectionName' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroBillboardComponent
 // 0x0010 (0x00D0 - 0x00C0)
@@ -87,27 +66,27 @@ static_assert(offsetof(UKuroBillboardComponent, ScaleSize) == 0x0000C4, "Member 
 static_assert(offsetof(UKuroBillboardComponent, MaxDistance) == 0x0000C8, "Member 'UKuroBillboardComponent::MaxDistance' has a wrong offset!");
 static_assert(offsetof(UKuroBillboardComponent, MinSize) == 0x0000CC, "Member 'UKuroBillboardComponent::MinSize' has a wrong offset!");
 
-// Class KuroRenderingRuntimeBPPlugin.KuroNvClothSelfCollisionHelperSphere
-// 0x0008 (0x02B8 - 0x02B0)
-class AKuroNvClothSelfCollisionHelperSphere final : public AActor
+// Class KuroRenderingRuntimeBPPlugin.KuroLevelSequenceActor
+// 0x0010 (0x0358 - 0x0348)
+class AKuroLevelSequenceActor final : public ALevelSequenceActor
 {
 public:
-	float                                         Radius;                                            // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B4[0x4];                                      // 0x02B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   Key;                                               // 0x0348(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_354[0x4];                                      // 0x0354(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroNvClothSelfCollisionHelperSphere">();
+		return StaticClassImpl<"KuroLevelSequenceActor">();
 	}
-	static class AKuroNvClothSelfCollisionHelperSphere* GetDefaultObj()
+	static class AKuroLevelSequenceActor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AKuroNvClothSelfCollisionHelperSphere>();
+		return GetDefaultObjImpl<AKuroLevelSequenceActor>();
 	}
 };
-static_assert(alignof(AKuroNvClothSelfCollisionHelperSphere) == 0x000008, "Wrong alignment on AKuroNvClothSelfCollisionHelperSphere");
-static_assert(sizeof(AKuroNvClothSelfCollisionHelperSphere) == 0x0002B8, "Wrong size on AKuroNvClothSelfCollisionHelperSphere");
-static_assert(offsetof(AKuroNvClothSelfCollisionHelperSphere, Radius) == 0x0002B0, "Member 'AKuroNvClothSelfCollisionHelperSphere::Radius' has a wrong offset!");
+static_assert(alignof(AKuroLevelSequenceActor) == 0x000008, "Wrong alignment on AKuroLevelSequenceActor");
+static_assert(sizeof(AKuroLevelSequenceActor) == 0x000358, "Wrong size on AKuroLevelSequenceActor");
+static_assert(offsetof(AKuroLevelSequenceActor, Key) == 0x000348, "Member 'AKuroLevelSequenceActor::Key' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.InteractiveLeaves
 // 0x01E0 (0x0490 - 0x02B0)
@@ -135,58 +114,100 @@ static_assert(offsetof(AInteractiveLeaves, IsmComponent) == 0x0002B0, "Member 'A
 static_assert(offsetof(AInteractiveLeaves, StaticComponent) == 0x0002B8, "Member 'AInteractiveLeaves::StaticComponent' has a wrong offset!");
 static_assert(offsetof(AInteractiveLeaves, Config) == 0x0002C0, "Member 'AInteractiveLeaves::Config' has a wrong offset!");
 
-// Class KuroRenderingRuntimeBPPlugin.KuroChangeMaterialsTextures
-// 0x0030 (0x0068 - 0x0038)
-class UKuroChangeMaterialsTextures final : public UPrimaryDataAsset
+// Class KuroRenderingRuntimeBPPlugin.TODPPVManagerSubsystem
+// 0x00A8 (0x00E0 - 0x0038)
+class UTODPPVManagerSubsystem final : public UWorldSubsystem
 {
 public:
-	class FString                                 SkeletalMeshName;                                  // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ParameterName;                                     // 0x0048(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSoftObjectPtr<class UTexture2D>>      Textures;                                          // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class AKuroPostProcessVolume*, float>    ProxiesToDayPPV;                                   // 0x0040(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class AKuroPostProcessVolume*, float>    ProxiesToNightPPV;                                 // 0x0090(0x0050)(Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroChangeMaterialsTextures">();
+		return StaticClassImpl<"TODPPVManagerSubsystem">();
 	}
-	static class UKuroChangeMaterialsTextures* GetDefaultObj()
+	static class UTODPPVManagerSubsystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKuroChangeMaterialsTextures>();
+		return GetDefaultObjImpl<UTODPPVManagerSubsystem>();
 	}
 };
-static_assert(alignof(UKuroChangeMaterialsTextures) == 0x000008, "Wrong alignment on UKuroChangeMaterialsTextures");
-static_assert(sizeof(UKuroChangeMaterialsTextures) == 0x000068, "Wrong size on UKuroChangeMaterialsTextures");
-static_assert(offsetof(UKuroChangeMaterialsTextures, SkeletalMeshName) == 0x000038, "Member 'UKuroChangeMaterialsTextures::SkeletalMeshName' has a wrong offset!");
-static_assert(offsetof(UKuroChangeMaterialsTextures, ParameterName) == 0x000048, "Member 'UKuroChangeMaterialsTextures::ParameterName' has a wrong offset!");
-static_assert(offsetof(UKuroChangeMaterialsTextures, Textures) == 0x000058, "Member 'UKuroChangeMaterialsTextures::Textures' has a wrong offset!");
+static_assert(alignof(UTODPPVManagerSubsystem) == 0x000008, "Wrong alignment on UTODPPVManagerSubsystem");
+static_assert(sizeof(UTODPPVManagerSubsystem) == 0x0000E0, "Wrong size on UTODPPVManagerSubsystem");
+static_assert(offsetof(UTODPPVManagerSubsystem, ProxiesToDayPPV) == 0x000040, "Member 'UTODPPVManagerSubsystem::ProxiesToDayPPV' has a wrong offset!");
+static_assert(offsetof(UTODPPVManagerSubsystem, ProxiesToNightPPV) == 0x000090, "Member 'UTODPPVManagerSubsystem::ProxiesToNightPPV' has a wrong offset!");
 
-// Class KuroRenderingRuntimeBPPlugin.KuroNvClothSelfCollisionHelperCapsule
-// 0x0018 (0x02C8 - 0x02B0)
-class AKuroNvClothSelfCollisionHelperCapsule final : public AActor
+// Class KuroRenderingRuntimeBPPlugin.KuroBookPavingActor
+// 0x0010 (0x02C0 - 0x02B0)
+class AKuroBookPavingActor final : public AActor
 {
 public:
-	float                                         Length;                                            // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Radius;                                            // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMeshComponent*                   Sphere0;                                           // 0x02B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UStaticMeshComponent*                   Sphere1;                                           // 0x02C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<struct FBookPavingDataStruct>          DataList;                                          // 0x02B0(0x0010)(BlueprintVisible, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroNvClothSelfCollisionHelperCapsule">();
+		return StaticClassImpl<"KuroBookPavingActor">();
 	}
-	static class AKuroNvClothSelfCollisionHelperCapsule* GetDefaultObj()
+	static class AKuroBookPavingActor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AKuroNvClothSelfCollisionHelperCapsule>();
+		return GetDefaultObjImpl<AKuroBookPavingActor>();
 	}
 };
-static_assert(alignof(AKuroNvClothSelfCollisionHelperCapsule) == 0x000008, "Wrong alignment on AKuroNvClothSelfCollisionHelperCapsule");
-static_assert(sizeof(AKuroNvClothSelfCollisionHelperCapsule) == 0x0002C8, "Wrong size on AKuroNvClothSelfCollisionHelperCapsule");
-static_assert(offsetof(AKuroNvClothSelfCollisionHelperCapsule, Length) == 0x0002B0, "Member 'AKuroNvClothSelfCollisionHelperCapsule::Length' has a wrong offset!");
-static_assert(offsetof(AKuroNvClothSelfCollisionHelperCapsule, Radius) == 0x0002B4, "Member 'AKuroNvClothSelfCollisionHelperCapsule::Radius' has a wrong offset!");
-static_assert(offsetof(AKuroNvClothSelfCollisionHelperCapsule, Sphere0) == 0x0002B8, "Member 'AKuroNvClothSelfCollisionHelperCapsule::Sphere0' has a wrong offset!");
-static_assert(offsetof(AKuroNvClothSelfCollisionHelperCapsule, Sphere1) == 0x0002C0, "Member 'AKuroNvClothSelfCollisionHelperCapsule::Sphere1' has a wrong offset!");
+static_assert(alignof(AKuroBookPavingActor) == 0x000008, "Wrong alignment on AKuroBookPavingActor");
+static_assert(sizeof(AKuroBookPavingActor) == 0x0002C0, "Wrong size on AKuroBookPavingActor");
+static_assert(offsetof(AKuroBookPavingActor, DataList) == 0x0002B0, "Member 'AKuroBookPavingActor::DataList' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroLevelSequenceSubsystem
+// 0x0070 (0x00A8 - 0x0038)
+class UKuroLevelSequenceSubsystem final : public UWorldSubsystem
+{
+public:
+	TMulticastInlineDelegate<void(class AKuroLevelSequenceActor* SequenceActor)> OnLevelSequenceRegister; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AKuroLevelSequenceActor* SequenceActor)> OnLevelSequenceUnRegister; // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_58[0x50];                                      // 0x0058(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void GetAllLevelSequences(TArray<class AKuroLevelSequenceActor*>* InAllLevelSequences);
+	class AKuroLevelSequenceActor* GetLevelSequence(const class FName& Key);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroLevelSequenceSubsystem">();
+	}
+	static class UKuroLevelSequenceSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroLevelSequenceSubsystem>();
+	}
+};
+static_assert(alignof(UKuroLevelSequenceSubsystem) == 0x000008, "Wrong alignment on UKuroLevelSequenceSubsystem");
+static_assert(sizeof(UKuroLevelSequenceSubsystem) == 0x0000A8, "Wrong size on UKuroLevelSequenceSubsystem");
+static_assert(offsetof(UKuroLevelSequenceSubsystem, OnLevelSequenceRegister) == 0x000038, "Member 'UKuroLevelSequenceSubsystem::OnLevelSequenceRegister' has a wrong offset!");
+static_assert(offsetof(UKuroLevelSequenceSubsystem, OnLevelSequenceUnRegister) == 0x000048, "Member 'UKuroLevelSequenceSubsystem::OnLevelSequenceUnRegister' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroWuYinQuActorBase
+// 0x0010 (0x02C0 - 0x02B0)
+class AKuroWuYinQuActorBase final : public AActor
+{
+public:
+	class FName                                   Key;                                               // 0x02B0(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroWuYinQuActorBase">();
+	}
+	static class AKuroWuYinQuActorBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroWuYinQuActorBase>();
+	}
+};
+static_assert(alignof(AKuroWuYinQuActorBase) == 0x000008, "Wrong alignment on AKuroWuYinQuActorBase");
+static_assert(sizeof(AKuroWuYinQuActorBase) == 0x0002C0, "Wrong size on AKuroWuYinQuActorBase");
+static_assert(offsetof(AKuroWuYinQuActorBase, Key) == 0x0002B0, "Member 'AKuroWuYinQuActorBase::Key' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.InteractiveLeavesConfigData
 // 0x0128 (0x0160 - 0x0038)
@@ -253,122 +274,31 @@ static_assert(offsetof(UInteractiveLeavesConfigData, ConstForce) == 0x0000A4, "M
 static_assert(offsetof(UInteractiveLeavesConfigData, SpatialTree) == 0x0000B0, "Member 'UInteractiveLeavesConfigData::SpatialTree' has a wrong offset!");
 static_assert(offsetof(UInteractiveLeavesConfigData, SpatialTreeMobile) == 0x000108, "Member 'UInteractiveLeavesConfigData::SpatialTreeMobile' has a wrong offset!");
 
-// Class KuroRenderingRuntimeBPPlugin.KuroNvClothSelfCollisionHelperBox
-// 0x0010 (0x02C0 - 0x02B0)
-class AKuroNvClothSelfCollisionHelperBox final : public AActor
+// Class KuroRenderingRuntimeBPPlugin.KuroLightActorBase
+// 0x0008 (0x02B8 - 0x02B0)
+class AKuroLightActorBase : public AActor
 {
 public:
-	float                                         X;                                                 // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Y;                                                 // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Z;                                                 // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bEnableEditorTick;                                 // 0x02B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetLightIntensityScale(float ScaleFactor);
+	void Update(float DeltaSeconds);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroNvClothSelfCollisionHelperBox">();
+		return StaticClassImpl<"KuroLightActorBase">();
 	}
-	static class AKuroNvClothSelfCollisionHelperBox* GetDefaultObj()
+	static class AKuroLightActorBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AKuroNvClothSelfCollisionHelperBox>();
+		return GetDefaultObjImpl<AKuroLightActorBase>();
 	}
 };
-static_assert(alignof(AKuroNvClothSelfCollisionHelperBox) == 0x000008, "Wrong alignment on AKuroNvClothSelfCollisionHelperBox");
-static_assert(sizeof(AKuroNvClothSelfCollisionHelperBox) == 0x0002C0, "Wrong size on AKuroNvClothSelfCollisionHelperBox");
-static_assert(offsetof(AKuroNvClothSelfCollisionHelperBox, X) == 0x0002B0, "Member 'AKuroNvClothSelfCollisionHelperBox::X' has a wrong offset!");
-static_assert(offsetof(AKuroNvClothSelfCollisionHelperBox, Y) == 0x0002B4, "Member 'AKuroNvClothSelfCollisionHelperBox::Y' has a wrong offset!");
-static_assert(offsetof(AKuroNvClothSelfCollisionHelperBox, Z) == 0x0002B8, "Member 'AKuroNvClothSelfCollisionHelperBox::Z' has a wrong offset!");
-
-// Class KuroRenderingRuntimeBPPlugin.ThunderGenerator
-// 0x0250 (0x0500 - 0x02B0)
-class AThunderGenerator : public AActor
-{
-public:
-	float                                         PointLightHeight;                                  // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B4[0x4];                                      // 0x02B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKuroWeatherDataAsset*                  WeatherDataAsset;                                  // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TraceHeightMin;                                    // 0x02C0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         TraceHeightMax;                                    // 0x02C4(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         DistributionFactor;                                // 0x02C8(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         GenerateIntervalMin;                               // 0x02CC(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         GenerateIntervalMax;                               // 0x02D0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         GenerateChance;                                    // 0x02D4(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ThunderPlayInnerRange;                             // 0x02D8(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ThunderPlayRange;                                  // 0x02DC(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         BaseThunderAttackChance;                           // 0x02E0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2E4[0x4];                                      // 0x02E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroCurveFloat                        PointLightCurve;                                   // 0x02E8(0x0090)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
-	struct FKuroCurveFloat                        PointLightRadiusCurve;                             // 0x0378(0x0090)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
-	struct FKuroCurveFloat                        PostProcessCurve;                                  // 0x0408(0x0090)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
-	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0498(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x04A0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UPointLightComponent*                   PointLightComponent;                               // 0x04A8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UKuroPostProcessComponent*              KuroPostProcessComponent;                          // 0x04B0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class AKuroGlobalGI*                          CachedGlobalGI;                                    // 0x04B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UKuroGISystem*                          CachedGISystem;                                    // 0x04C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ThunderAge;                                        // 0x04C8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         AttackAge;                                         // 0x04CC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bThunderActive;                                    // 0x04D0(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EKuroThunderType                              CurrentThunderType;                                // 0x04D1(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4D2[0x2];                                      // 0x04D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FinalThunderGenerateChance;                        // 0x04D4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         FinalThunderAttackChance;                          // 0x04D8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ThunderCloudIntensity;                             // 0x04DC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ThunderPostProcessIntensity;                       // 0x04E0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_4E4[0x1C];                                     // 0x04E4(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static void SpawnThunderInWorld(class UObject* WorldContextObject, const struct FVector& Location, bool bAttack);
-
-	bool CalculateThunderPosition(const struct FTransform& CameraTransform, struct FVector* OutPosition, bool bAttack);
-	void DisableThunder();
-	void EnableThunder();
-	void OnReceiveThunderAttack(const struct FVector& Location, bool bAttack);
-	void OnReceiveThunderTrigger(class AThunderTrigger* Trigger, const struct FTransform& CameraTransform);
-	void OnThunderTypeChanged();
-	void OnUpdateThunderEffect(float DeltaSeconds);
-	void SpawnThunder(const struct FVector& HitLocation, bool bAttack);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ThunderGenerator">();
-	}
-	static class AThunderGenerator* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AThunderGenerator>();
-	}
-};
-static_assert(alignof(AThunderGenerator) == 0x000008, "Wrong alignment on AThunderGenerator");
-static_assert(sizeof(AThunderGenerator) == 0x000500, "Wrong size on AThunderGenerator");
-static_assert(offsetof(AThunderGenerator, PointLightHeight) == 0x0002B0, "Member 'AThunderGenerator::PointLightHeight' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, WeatherDataAsset) == 0x0002B8, "Member 'AThunderGenerator::WeatherDataAsset' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, TraceHeightMin) == 0x0002C0, "Member 'AThunderGenerator::TraceHeightMin' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, TraceHeightMax) == 0x0002C4, "Member 'AThunderGenerator::TraceHeightMax' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, DistributionFactor) == 0x0002C8, "Member 'AThunderGenerator::DistributionFactor' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, GenerateIntervalMin) == 0x0002CC, "Member 'AThunderGenerator::GenerateIntervalMin' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, GenerateIntervalMax) == 0x0002D0, "Member 'AThunderGenerator::GenerateIntervalMax' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, GenerateChance) == 0x0002D4, "Member 'AThunderGenerator::GenerateChance' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, ThunderPlayInnerRange) == 0x0002D8, "Member 'AThunderGenerator::ThunderPlayInnerRange' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, ThunderPlayRange) == 0x0002DC, "Member 'AThunderGenerator::ThunderPlayRange' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, BaseThunderAttackChance) == 0x0002E0, "Member 'AThunderGenerator::BaseThunderAttackChance' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, PointLightCurve) == 0x0002E8, "Member 'AThunderGenerator::PointLightCurve' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, PointLightRadiusCurve) == 0x000378, "Member 'AThunderGenerator::PointLightRadiusCurve' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, PostProcessCurve) == 0x000408, "Member 'AThunderGenerator::PostProcessCurve' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, NiagaraSystem) == 0x000498, "Member 'AThunderGenerator::NiagaraSystem' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, NiagaraComponent) == 0x0004A0, "Member 'AThunderGenerator::NiagaraComponent' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, PointLightComponent) == 0x0004A8, "Member 'AThunderGenerator::PointLightComponent' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, KuroPostProcessComponent) == 0x0004B0, "Member 'AThunderGenerator::KuroPostProcessComponent' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, CachedGlobalGI) == 0x0004B8, "Member 'AThunderGenerator::CachedGlobalGI' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, CachedGISystem) == 0x0004C0, "Member 'AThunderGenerator::CachedGISystem' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, ThunderAge) == 0x0004C8, "Member 'AThunderGenerator::ThunderAge' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, AttackAge) == 0x0004CC, "Member 'AThunderGenerator::AttackAge' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, bThunderActive) == 0x0004D0, "Member 'AThunderGenerator::bThunderActive' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, CurrentThunderType) == 0x0004D1, "Member 'AThunderGenerator::CurrentThunderType' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, FinalThunderGenerateChance) == 0x0004D4, "Member 'AThunderGenerator::FinalThunderGenerateChance' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, FinalThunderAttackChance) == 0x0004D8, "Member 'AThunderGenerator::FinalThunderAttackChance' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, ThunderCloudIntensity) == 0x0004DC, "Member 'AThunderGenerator::ThunderCloudIntensity' has a wrong offset!");
-static_assert(offsetof(AThunderGenerator, ThunderPostProcessIntensity) == 0x0004E0, "Member 'AThunderGenerator::ThunderPostProcessIntensity' has a wrong offset!");
+static_assert(alignof(AKuroLightActorBase) == 0x000008, "Wrong alignment on AKuroLightActorBase");
+static_assert(sizeof(AKuroLightActorBase) == 0x0002B8, "Wrong size on AKuroLightActorBase");
+static_assert(offsetof(AKuroLightActorBase, bEnableEditorTick) == 0x0002B0, "Member 'AKuroLightActorBase::bEnableEditorTick' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroActorCullingLocalVolume
 // 0x0018 (0x0300 - 0x02E8)
@@ -390,26 +320,133 @@ public:
 static_assert(alignof(AKuroActorCullingLocalVolume) == 0x000008, "Wrong alignment on AKuroActorCullingLocalVolume");
 static_assert(sizeof(AKuroActorCullingLocalVolume) == 0x000300, "Wrong size on AKuroActorCullingLocalVolume");
 
-// Class KuroRenderingRuntimeBPPlugin.KuroNvClothPlacementBoundHelper
-// 0x0010 (0x02F8 - 0x02E8)
-class AKuroNvClothPlacementBoundHelper final : public AVolume
+// Class KuroRenderingRuntimeBPPlugin.KuroMaterialControllerComponent
+// 0x00D8 (0x0198 - 0x00C0)
+class UKuroMaterialControllerComponent final : public UActorComponent
 {
 public:
-	TArray<class AKuroNvClothPlacement*>          NvClothPlacementArray;                             // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C0[0x10];                                      // 0x00C0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bInitTakeOver;                                     // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_D1[0xC7];                                      // 0x00D1(0x00C7)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UKuroMaterialControllerComponent* AddOrGetMaterialControllerComponentFromActor(class AActor* Actor);
+	static class UKuroMaterialControllerComponent* AddOrGetMaterialControllerComponentFromActorWithoutInit(class AActor* Actor);
+
+	void AddColorUpdateParamPermanent(class FName Name_0, const struct FLinearColor& Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
+	void AddColorUpdateParamPermanentByIndex(class FName Name_0, const struct FLinearColor& Value, class FName BodyName, int32 MaterialIndex);
+	void AddColorUpdateParamPermanentCommon(class FName Name_0, const struct FLinearColor& Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
+	void AddColorUpdateParamPermanentCustom(class FName Name_0, const struct FLinearColor& Value, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
+	int32 AddEffect(class UKuroMaterialControllerDataAsset* DataAsset, bool bLoop, bool bPause, class USkeletalMeshComponent* AnimObject);
+	int32 AddEffect_Ex(class UKuroMaterialControllerDataAsset* DataAsset, bool bLoop, bool bPause, class USkeletalMeshComponent* AnimObject, bool bHiddenOnRemove);
+	int32 AddEffectRaw(class UKuroMaterialContainerDataCache* DataCache, bool bLoop, bool bPause, class USkeletalMeshComponent* AnimObject, bool bHiddenOnRemove);
+	void AddExternalAlphaTestRefCount(EKuroCharBodySpecifiedType BodyType);
+	void AddExternalBattleMaskRefCount(EKuroCharBodySpecifiedType BodyType);
+	void AddExternalBattleRefCount(EKuroCharBodySpecifiedType BodyType);
+	void AddExternalOutlineStencilTestRefCount(EKuroCharBodySpecifiedType BodyType);
+	void AddFloatUpdateParamPermanent(class FName Name_0, float Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
+	void AddFloatUpdateParamPermanentByIndex(class FName Name_0, float Value, class FName BodyName, int32 MaterialIndex);
+	void AddFloatUpdateParamPermanentCommon(class FName Name_0, float Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
+	void AddFloatUpdateParamPermanentCustom(class FName Name_0, float Value, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
+	void AddSkeletalMeshComponent(class USkeletalMeshComponent* SkeletalMeshComponent, class FName BodyName, bool bUseEmptyMaterial);
+	void AddTextureUpdateParamPermanent(class FName Name_0, class UTexture* Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
+	void AddTextureUpdateParamPermanentByIndex(class FName Name_0, class UTexture* Value, class FName BodyName, int32 MaterialIndex);
+	void AddTextureUpdateParamPermanentCommon(class FName Name_0, class UTexture* Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
+	void AddTextureUpdateParamPermanentCustom(class FName Name_0, class UTexture* Value, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
+	int32 GetEffectKey(class FName KeyName);
+	void InitFromOwner();
+	void ManualTick(float DeltaSeconds, bool bIncludePaused, bool bIncludeNewEffects);
+	void MarkForceUpdateAllOnce();
+	void RefreshFilter(int32 HandleId);
+	void RegisterEffectKey(class FName KeyName, int32 HandleId);
+	void RemoveAllEffects();
+	void RemoveColorUpdateParamPermanent(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
+	void RemoveColorUpdateParamPermanentByIndex(class FName Name_0, class FName BodyName, int32 MaterialIndex);
+	void RemoveColorUpdateParamPermanentCommon(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
+	void RemoveColorUpdateParamPermanentCustom(class FName Name_0, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
+	TArray<int32> RemoveDeadEffects();
+	void RemoveEffect(int32 HandleId);
+	void RemoveExternalAlphaTestRefCount(EKuroCharBodySpecifiedType BodyType);
+	void RemoveExternalBattleMaskRefCount(EKuroCharBodySpecifiedType BodyType);
+	void RemoveExternalBattleRefCount(EKuroCharBodySpecifiedType BodyType);
+	void RemoveExternalMaterialReplace(EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
+	void RemoveExternalMaterialReplaceByIndex(class FName BodyName, int32 MaterialIndex);
+	void RemoveExternalMaterialReplaceCommon(EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
+	void RemoveExternalMaterialReplaceCustom(class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
+	void RemoveExternalOutlineStencilTestRefCount(EKuroCharBodySpecifiedType BodyType);
+	void RemoveFloatUpdateParamPermanent(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
+	void RemoveFloatUpdateParamPermanentByIndex(class FName Name_0, class FName BodyName, int32 MaterialIndex);
+	void RemoveFloatUpdateParamPermanentCommon(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
+	void RemoveFloatUpdateParamPermanentCustom(class FName Name_0, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
+	void RemoveSkeletalMeshComponent(class FName BodyName);
+	void RemoveTextureUpdateParamPermanent(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
+	void RemoveTextureUpdateParamPermanentByIndex(class FName Name_0, class FName BodyName, int32 MaterialIndex);
+	void RemoveTextureUpdateParamPermanentCommon(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
+	void RemoveTextureUpdateParamPermanentCustom(class FName Name_0, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
+	void ResetAllBodyInfo();
+	void SeekFactor(float AbsoluteFactor, bool bIncludePaused);
+	void SeekHandleFactor(int32 HandleId, float AbsoluteFactor);
+	void SetBaseMaterialByIndex(class UMaterialInterface* Mat, class FName BodyName, int32 MaterialIndex);
+	void SetExternalMaterialReplace(class UMaterialInterface* Mat, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
+	void SetExternalMaterialReplaceByIndex(class UMaterialInterface* Mat, class FName BodyName, int32 MaterialIndex);
+	void SetExternalMaterialReplaceCommon(class UMaterialInterface* Mat, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
+	void SetExternalMaterialReplaceCustom(class UMaterialInterface* Mat, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
+	void SetHandleEnabled(int32 HandleId, bool bEnabled);
+	void SetHandleLoop(int32 HandleId, bool bLoop, bool bSeekToEnd);
+	void SetHandlePause(int32 HandleId, bool bPause);
+	void SetInitTakeOver(bool InTakeOver);
+	void SetSkeletalMeshComponentUpdateGroup(class FName BodyName, class FName NewUpdateGroupId);
+	void SetToonCustomStencilValue(int32 Value);
+	void UnregisterEffectKey(class FName KeyName);
+	void UpdateEffects();
+
+	bool CheckInit() const;
+	TArray<class FName> GetAllRegisteredBodyNames() const;
+	bool GetAnyUnloopEffect() const;
+	float GetBodyOpacity() const;
+	class USkeletalMeshComponent* GetRegisteredSkeletalMeshComponent(class FName BodyName) const;
+	class USkeletalMeshComponent* GetRegisteredSkeletalMeshComponentByType(EKuroCharBodyType BodyType, int32 Index_0) const;
+	class FName GetSkeletalMeshComponentBodyName(class USkeletalMeshComponent* SkeletalMeshComponent) const;
+	bool HasSkeletalMeshComponent(class USkeletalMeshComponent* SkeletalMeshComponent) const;
+	bool HasSkeletalMeshComponentName(class FName BodyName) const;
+	void SetAllBodyNoWater(bool bNoWater) const;
+	void SetUpdateForce(bool bInUpdateForce) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"KuroNvClothPlacementBoundHelper">();
+		return StaticClassImpl<"KuroMaterialControllerComponent">();
 	}
-	static class AKuroNvClothPlacementBoundHelper* GetDefaultObj()
+	static class UKuroMaterialControllerComponent* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AKuroNvClothPlacementBoundHelper>();
+		return GetDefaultObjImpl<UKuroMaterialControllerComponent>();
 	}
 };
-static_assert(alignof(AKuroNvClothPlacementBoundHelper) == 0x000008, "Wrong alignment on AKuroNvClothPlacementBoundHelper");
-static_assert(sizeof(AKuroNvClothPlacementBoundHelper) == 0x0002F8, "Wrong size on AKuroNvClothPlacementBoundHelper");
-static_assert(offsetof(AKuroNvClothPlacementBoundHelper, NvClothPlacementArray) == 0x0002E8, "Member 'AKuroNvClothPlacementBoundHelper::NvClothPlacementArray' has a wrong offset!");
+static_assert(alignof(UKuroMaterialControllerComponent) == 0x000008, "Wrong alignment on UKuroMaterialControllerComponent");
+static_assert(sizeof(UKuroMaterialControllerComponent) == 0x000198, "Wrong size on UKuroMaterialControllerComponent");
+static_assert(offsetof(UKuroMaterialControllerComponent, bInitTakeOver) == 0x0000D0, "Member 'UKuroMaterialControllerComponent::bInitTakeOver' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroWorldPartitionPreviewManager
+// 0x0000 (0x0030 - 0x0030)
+class UKuroWorldPartitionPreviewManager final : public UObject
+{
+public:
+	void AddPreviewActorType(TSubclassOf<class AActor> Class_0);
+	void RemovePreviewActorType(TSubclassOf<class AActor> Class_0);
+	void SetPreviewMobile(bool PreviewMobile);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroWorldPartitionPreviewManager">();
+	}
+	static class UKuroWorldPartitionPreviewManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroWorldPartitionPreviewManager>();
+	}
+};
+static_assert(alignof(UKuroWorldPartitionPreviewManager) == 0x000008, "Wrong alignment on UKuroWorldPartitionPreviewManager");
+static_assert(sizeof(UKuroWorldPartitionPreviewManager) == 0x000030, "Wrong size on UKuroWorldPartitionPreviewManager");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroAnimNotify
 // 0x0008 (0x0048 - 0x0040)
@@ -437,6 +474,23 @@ public:
 static_assert(alignof(UKuroAnimNotify) == 0x000008, "Wrong alignment on UKuroAnimNotify");
 static_assert(sizeof(UKuroAnimNotify) == 0x000048, "Wrong size on UKuroAnimNotify");
 static_assert(offsetof(UKuroAnimNotify, exportIndex) == 0x000040, "Member 'UKuroAnimNotify::exportIndex' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroMaterialControllerComponentDebugDraw
+// 0x0000 (0x0038 - 0x0038)
+class UKuroMaterialControllerComponentDebugDraw final : public UWorldSubsystem
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroMaterialControllerComponentDebugDraw">();
+	}
+	static class UKuroMaterialControllerComponentDebugDraw* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroMaterialControllerComponentDebugDraw>();
+	}
+};
+static_assert(alignof(UKuroMaterialControllerComponentDebugDraw) == 0x000008, "Wrong alignment on UKuroMaterialControllerComponentDebugDraw");
+static_assert(sizeof(UKuroMaterialControllerComponentDebugDraw) == 0x000038, "Wrong size on UKuroMaterialControllerComponentDebugDraw");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroAnimNotifyState
 // 0x0008 (0x0048 - 0x0040)
@@ -466,6 +520,134 @@ public:
 static_assert(alignof(UKuroAnimNotifyState) == 0x000008, "Wrong alignment on UKuroAnimNotifyState");
 static_assert(sizeof(UKuroAnimNotifyState) == 0x000048, "Wrong size on UKuroAnimNotifyState");
 static_assert(offsetof(UKuroAnimNotifyState, exportIndex) == 0x000040, "Member 'UKuroAnimNotifyState::exportIndex' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroRainComponent
+// 0x0010 (0x0230 - 0x0220)
+#pragma pack(push, 0x1)
+class alignas(0x10) UKuroRainComponent : public USceneComponent
+{
+public:
+	uint8                                         Pad_218[0x9];                                      // 0x0218(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bAutoPlay;                                         // 0x0221(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_222[0x6];                                      // 0x0222(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	int32 AddArraySpawner(int32 RenderIndex);
+	int32 AddCustomRandomByNormalizedAgeProcessor(const struct FKuroCurveFloat& Curve, int32 Index_0);
+	int32 AddCustomRandomByVelocityProcessor(const struct FKuroCurveFloat& Curve, int32 Index_0);
+	int32 AddCustomRandomSetProcessor(float Value, int32 Index_0);
+	int32 AddCycleBoxProcessor(const struct FVector& Min, const struct FVector& Max, bool bKillOnZ);
+	int32 AddDragProcessor(float DragSize);
+	int32 AddLinearForceProcessor(const struct FVector& Force);
+	int32 AddRandomSpawner(int32 RenderIndex);
+	int32 AddVectorFieldForceProcessor(class UVectorFieldStatic* InVectorField, const struct FVector& InPosScale, const struct FVector& InMoveSpeed, float InForceSize);
+	int32 AddWindProcessor(const struct FVector& WindVelocity);
+	void D_SetArraySpawnerRuntime(int32 SpawnerID, const struct FVectorDouble& SpawnCenter, float SpawnRate, const struct FVector& VelocityMin, const struct FVector& VelocityMax);
+	void D_SetCycleBoxProcessor(int32 ProcessorID, const struct FVectorDouble& Min, const struct FVectorDouble& Max);
+	void D_SetRandomSpawnerRuntime(int32 SpawnerID, const struct FVectorDouble& SpawnCenter, float SpawnRate, const struct FVector& VelocityMin, const struct FVector& VelocityMax);
+	struct FVector GetCycleBoxProcessor_Max(int32 ProcessorID);
+	struct FVector GetCycleBoxProcessor_Min(int32 ProcessorID);
+	float GetDragProcessor_DragSize(int32 ProcessorID);
+	int32 GetEmitterDataNum();
+	bool GetIsPlaying();
+	struct FVector GetLinearForceProcessor_Force(int32 ProcessorID);
+	struct FVector GetWindProcessor_WindVelocity(int32 ProcessorID);
+	void Init();
+	void PreSolveRainParticles(float DeltaSeconds);
+	void SetArraySpawnerBasic(int32 SpawnerID, int32 ArraySize, float ArrayLength, float SpawnTimeWiggle, float SpawnPositionWiggle, float LifeTimeMin, float LifeTimeMax, float ScaleMin, float ScaleMax, float BaseMassMin, float BaseMassMax);
+	void SetArraySpawnerRuntime(int32 SpawnerID, const struct FVector& SpawnCenter, float SpawnRate, const struct FVector& VelocityMin, const struct FVector& VelocityMax);
+	void SetCustomRandomByNormalizedAgeProcessor(int32 ProcessorID, const struct FKuroCurveFloat& Curve, int32 Index_0);
+	void SetCustomRandomByVelocityProcessor(int32 ProcessorID, const struct FKuroCurveFloat& Curve, int32 Index_0);
+	void SetCustomRandomSetProcessor(int32 ProcessorID, float Value, int32 Index_0);
+	void SetCycleBoxProcessor(int32 ProcessorID, const struct FVector& Min, const struct FVector& Max);
+	void SetDragProcessor(int32 ProcessorID, float DragSize);
+	void SetLifeTimeDilation(float Dilation);
+	void SetLinearForceProcessor(int32 ProcessorID, const struct FVector& Force);
+	void SetRandomSpawnerBasic(int32 SpawnerID, float SpawnInnerRadius, float SpawnOuterRadius, float LifeTimeMin, float LifeTimeMax, float ScaleMin, float ScaleMax, float BaseMassMin, float BaseMassMax);
+	void SetRandomSpawnerRuntime(int32 SpawnerID, const struct FVector& SpawnCenter, float SpawnRate, const struct FVector& VelocityMin, const struct FVector& VelocityMax);
+	void SetTimeDilation(float Dilation);
+	void Setup(const TArray<class UStaticMesh*>& Meshes, const TArray<class UMaterialInterface*>& Materials);
+	void SetupRainEmitters();
+	void SetVectorFieldForceProcessor_Others(int32 ProcessorID, const struct FVector& InPosScale, const struct FVector& InMoveSpeed, float InForceSize);
+	void SetVectorFieldForceProcessor_VectorField(int32 ProcessorID, class UVectorFieldStatic* InVectorField);
+	void SetWindProcessor(int32 ProcessorID, const struct FVector& WindVelocity);
+	void Start();
+	void Stop();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroRainComponent">();
+	}
+	static class UKuroRainComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroRainComponent>();
+	}
+};
+#pragma pack(pop)
+static_assert(alignof(UKuroRainComponent) == 0x000010, "Wrong alignment on UKuroRainComponent");
+static_assert(sizeof(UKuroRainComponent) == 0x000230, "Wrong size on UKuroRainComponent");
+static_assert(offsetof(UKuroRainComponent, bAutoPlay) == 0x000221, "Member 'UKuroRainComponent::bAutoPlay' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroWorldRainComponent
+// 0x00C0 (0x02F0 - 0x0230)
+class UKuroWorldRainComponent : public UKuroRainComponent
+{
+public:
+	class UKuroWorldRainComponentSpawnConfig*     SpawnConfig;                                       // 0x0228(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroWorldRainComponentPhysicsConfig*   PhysicsConfig;                                     // 0x0230(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroWorldRainComponentCustomDataConfig* CustomDataConfig;                                 // 0x0238(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverridePhysics : 1;                              // 0x0240(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_241[0x3];                                      // 0x0241(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WindSizeOverride;                                  // 0x0244(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                GravityOverride;                                   // 0x0248(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DragOverride;                                      // 0x0254(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpawnScaleOverride;                                // 0x0258(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeDilationOverride;                              // 0x025C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PassTime;                                          // 0x0260(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_264[0x4];                                      // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BaseSpawnScale;                                    // 0x0268(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                GlobalWind;                                        // 0x026C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FVector                                Center;                                            // 0x0278(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_284[0x6C];                                     // 0x0284(0x006C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void DeactivateRain();
+	bool GetIsRainActive();
+	bool GetIsRainPlaying();
+	void OnReceiveDeactivateRain();
+	void OnReceiveStartRain();
+	void OnReceiveStopRain();
+	void SetBaseSpawnScale(float SpawnScale);
+	void SetCenter(const struct FVector& InCenter);
+	void SetGlobalWind(const struct FVector& InGlobalWind);
+	void StartRain();
+	void StopRain();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroWorldRainComponent">();
+	}
+	static class UKuroWorldRainComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroWorldRainComponent>();
+	}
+};
+static_assert(alignof(UKuroWorldRainComponent) == 0x000010, "Wrong alignment on UKuroWorldRainComponent");
+static_assert(sizeof(UKuroWorldRainComponent) == 0x0002F0, "Wrong size on UKuroWorldRainComponent");
+static_assert(offsetof(UKuroWorldRainComponent, SpawnConfig) == 0x000228, "Member 'UKuroWorldRainComponent::SpawnConfig' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, PhysicsConfig) == 0x000230, "Member 'UKuroWorldRainComponent::PhysicsConfig' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, CustomDataConfig) == 0x000238, "Member 'UKuroWorldRainComponent::CustomDataConfig' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, WindSizeOverride) == 0x000244, "Member 'UKuroWorldRainComponent::WindSizeOverride' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, GravityOverride) == 0x000248, "Member 'UKuroWorldRainComponent::GravityOverride' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, DragOverride) == 0x000254, "Member 'UKuroWorldRainComponent::DragOverride' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, SpawnScaleOverride) == 0x000258, "Member 'UKuroWorldRainComponent::SpawnScaleOverride' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, TimeDilationOverride) == 0x00025C, "Member 'UKuroWorldRainComponent::TimeDilationOverride' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, PassTime) == 0x000260, "Member 'UKuroWorldRainComponent::PassTime' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, BaseSpawnScale) == 0x000268, "Member 'UKuroWorldRainComponent::BaseSpawnScale' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, GlobalWind) == 0x00026C, "Member 'UKuroWorldRainComponent::GlobalWind' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponent, Center) == 0x000278, "Member 'UKuroWorldRainComponent::Center' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroBezierMeshComponent
 // 0x00C0 (0x0660 - 0x05A0)
@@ -500,6 +682,60 @@ public:
 };
 static_assert(alignof(UKuroBezierMeshComponent) == 0x000010, "Wrong alignment on UKuroBezierMeshComponent");
 static_assert(sizeof(UKuroBezierMeshComponent) == 0x000660, "Wrong size on UKuroBezierMeshComponent");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroChangeMaterialsTextures
+// 0x0030 (0x0068 - 0x0038)
+class UKuroChangeMaterialsTextures final : public UPrimaryDataAsset
+{
+public:
+	class FString                                 SkeletalMeshName;                                  // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ParameterName;                                     // 0x0048(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSoftObjectPtr<class UTexture2D>>      Textures;                                          // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroChangeMaterialsTextures">();
+	}
+	static class UKuroChangeMaterialsTextures* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroChangeMaterialsTextures>();
+	}
+};
+static_assert(alignof(UKuroChangeMaterialsTextures) == 0x000008, "Wrong alignment on UKuroChangeMaterialsTextures");
+static_assert(sizeof(UKuroChangeMaterialsTextures) == 0x000068, "Wrong size on UKuroChangeMaterialsTextures");
+static_assert(offsetof(UKuroChangeMaterialsTextures, SkeletalMeshName) == 0x000038, "Member 'UKuroChangeMaterialsTextures::SkeletalMeshName' has a wrong offset!");
+static_assert(offsetof(UKuroChangeMaterialsTextures, ParameterName) == 0x000048, "Member 'UKuroChangeMaterialsTextures::ParameterName' has a wrong offset!");
+static_assert(offsetof(UKuroChangeMaterialsTextures, Textures) == 0x000058, "Member 'UKuroChangeMaterialsTextures::Textures' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.MovieSceneKuroMaterialContainerSection
+// 0x0010 (0x0108 - 0x00F8)
+class UMovieSceneKuroMaterialContainerSection final : public UMovieSceneSection
+{
+public:
+	class UKuroMaterialControllerDataAsset*       MaterialDataAsset;                                 // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLoop;                                             // 0x0100(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEndImmediate;                                     // 0x0101(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSkipToEnd;                                        // 0x0102(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_103[0x5];                                      // 0x0103(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneKuroMaterialContainerSection">();
+	}
+	static class UMovieSceneKuroMaterialContainerSection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneKuroMaterialContainerSection>();
+	}
+};
+static_assert(alignof(UMovieSceneKuroMaterialContainerSection) == 0x000008, "Wrong alignment on UMovieSceneKuroMaterialContainerSection");
+static_assert(sizeof(UMovieSceneKuroMaterialContainerSection) == 0x000108, "Wrong size on UMovieSceneKuroMaterialContainerSection");
+static_assert(offsetof(UMovieSceneKuroMaterialContainerSection, MaterialDataAsset) == 0x0000F8, "Member 'UMovieSceneKuroMaterialContainerSection::MaterialDataAsset' has a wrong offset!");
+static_assert(offsetof(UMovieSceneKuroMaterialContainerSection, bLoop) == 0x000100, "Member 'UMovieSceneKuroMaterialContainerSection::bLoop' has a wrong offset!");
+static_assert(offsetof(UMovieSceneKuroMaterialContainerSection, bEndImmediate) == 0x000101, "Member 'UMovieSceneKuroMaterialContainerSection::bEndImmediate' has a wrong offset!");
+static_assert(offsetof(UMovieSceneKuroMaterialContainerSection, bSkipToEnd) == 0x000102, "Member 'UMovieSceneKuroMaterialContainerSection::bSkipToEnd' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroChangeSkeletalMaterialsComponent
 // 0x0010 (0x00D0 - 0x00C0)
@@ -538,8 +774,8 @@ public:
 	struct FKuroCharMaterialControllerFloatGroup  TextureStrength;                                   // 0x1500(0x01B0)(Edit, NativeAccessSpecifierPublic)
 	struct FKuroCharMaterialControllerFloatGroup  TextureLowerLimit;                                 // 0x16B0(0x01B0)(Edit, NativeAccessSpecifierPublic)
 	struct FKuroCharMaterialControllerFloatGroup  TextureUpperLimit;                                 // 0x1860(0x01B0)(Edit, NativeAccessSpecifierPublic)
-	TArray<struct FKuroCharMaterialControllerFloatGroup> FloatParameters;                                   // 0x1A10(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FKuroCharMaterialControllerColorGroup> ColorParameters;                                   // 0x1A20(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroCharMaterialControllerFloatGroup> FloatParameters;                            // 0x1A10(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroCharMaterialControllerColorGroup> ColorParameters;                            // 0x1A20(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FKuroCharMaterialControllerFloatGroup  RimRange;                                          // 0x1A30(0x01B0)(Edit, NativeAccessSpecifierPublic)
 	struct FKuroCharMaterialControllerColorGroup  RimColor;                                          // 0x1BE0(0x0660)(Edit, NativeAccessSpecifierPublic)
 	struct FKuroCharMaterialControllerFloatGroup  OutlineWidth;                                      // 0x2240(0x01B0)(Edit, NativeAccessSpecifierPublic)
@@ -560,8 +796,8 @@ public:
 	struct FKuroCharMaterialControllerFloatGroup  StripMaskVScale;                                   // 0x6110(0x01B0)(Edit, NativeAccessSpecifierPublic)
 	struct FKuroCharMaterialControllerFloatGroup  StripMaskVSpeed;                                   // 0x62C0(0x01B0)(Edit, NativeAccessSpecifierPublic)
 	struct FKuroCharMaterialControllerFloatGroup  DitherValue;                                       // 0x6470(0x01B0)(Edit, NativeAccessSpecifierPublic)
-	TArray<struct FKuroCharMaterialControllerFloatGroup> CustomFloatParameters;                             // 0x6620(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FKuroCharMaterialControllerColorGroup> CustomColorParameters;                             // 0x6630(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroCharMaterialControllerFloatGroup> CustomFloatParameters;                      // 0x6620(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroCharMaterialControllerColorGroup> CustomColorParameters;                      // 0x6630(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FKuroCharMaterialControllerFloatGroup  HairDisplaceProgress;                              // 0x6640(0x01B0)(Edit, NativeAccessSpecifierPublic)
 	struct FKuroCharMaterialControllerFloatGroup  HairDisplaceContrast;                              // 0x67F0(0x01B0)(Edit, NativeAccessSpecifierPublic)
 
@@ -675,15 +911,100 @@ static_assert(offsetof(UKuroCharacterMaterialControllerCache, CustomColorParamet
 static_assert(offsetof(UKuroCharacterMaterialControllerCache, HairDisplaceProgress) == 0x006640, "Member 'UKuroCharacterMaterialControllerCache::HairDisplaceProgress' has a wrong offset!");
 static_assert(offsetof(UKuroCharacterMaterialControllerCache, HairDisplaceContrast) == 0x0067F0, "Member 'UKuroCharacterMaterialControllerCache::HairDisplaceContrast' has a wrong offset!");
 
+// Class KuroRenderingRuntimeBPPlugin.KuroWorldRainComponentPhysicsConfig
+// 0x0450 (0x0488 - 0x0038)
+class UKuroWorldRainComponentPhysicsConfig final : public UPrimaryDataAsset
+{
+public:
+	struct FKuroCurveFloat                        SpawnScaleCurve;                                   // 0x0038(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         BaseWindSize;                                      // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveFloat                        WindCurve;                                         // 0x00D0(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FVector                                BaseGravitySize;                                   // 0x0160(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveFloat                        GravityCurve;                                      // 0x0170(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         BaseDragSize;                                      // 0x0200(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveFloat                        DragCurve;                                         // 0x0208(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class UVectorFieldStatic*                     VectorField;                                       // 0x0298(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VectorFieldBaseSize;                               // 0x02A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveFloat                        VectorFieldCurve;                                  // 0x02A8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FVector                                VectorFieldScale;                                  // 0x0338(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                VectorFieldMoveDirection;                          // 0x0344(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        VectorFieldMoveSpeedCurve;                         // 0x0350(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FVector                                CycleBoxHalfSize;                                  // 0x03E0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CycleBoxZBias;                                     // 0x03EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        TimeDilationCurve;                                 // 0x03F0(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	float                                         LifeTimeDilationOnDeath;                           // 0x0480(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_484[0x4];                                      // 0x0484(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroWorldRainComponentPhysicsConfig">();
+	}
+	static class UKuroWorldRainComponentPhysicsConfig* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroWorldRainComponentPhysicsConfig>();
+	}
+};
+static_assert(alignof(UKuroWorldRainComponentPhysicsConfig) == 0x000008, "Wrong alignment on UKuroWorldRainComponentPhysicsConfig");
+static_assert(sizeof(UKuroWorldRainComponentPhysicsConfig) == 0x000488, "Wrong size on UKuroWorldRainComponentPhysicsConfig");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, SpawnScaleCurve) == 0x000038, "Member 'UKuroWorldRainComponentPhysicsConfig::SpawnScaleCurve' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, BaseWindSize) == 0x0000C8, "Member 'UKuroWorldRainComponentPhysicsConfig::BaseWindSize' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, WindCurve) == 0x0000D0, "Member 'UKuroWorldRainComponentPhysicsConfig::WindCurve' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, BaseGravitySize) == 0x000160, "Member 'UKuroWorldRainComponentPhysicsConfig::BaseGravitySize' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, GravityCurve) == 0x000170, "Member 'UKuroWorldRainComponentPhysicsConfig::GravityCurve' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, BaseDragSize) == 0x000200, "Member 'UKuroWorldRainComponentPhysicsConfig::BaseDragSize' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, DragCurve) == 0x000208, "Member 'UKuroWorldRainComponentPhysicsConfig::DragCurve' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorField) == 0x000298, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorField' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldBaseSize) == 0x0002A0, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldBaseSize' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldCurve) == 0x0002A8, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldCurve' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldScale) == 0x000338, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldScale' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldMoveDirection) == 0x000344, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldMoveDirection' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldMoveSpeedCurve) == 0x000350, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldMoveSpeedCurve' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, CycleBoxHalfSize) == 0x0003E0, "Member 'UKuroWorldRainComponentPhysicsConfig::CycleBoxHalfSize' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, CycleBoxZBias) == 0x0003EC, "Member 'UKuroWorldRainComponentPhysicsConfig::CycleBoxZBias' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, TimeDilationCurve) == 0x0003F0, "Member 'UKuroWorldRainComponentPhysicsConfig::TimeDilationCurve' has a wrong offset!");
+static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, LifeTimeDilationOnDeath) == 0x000480, "Member 'UKuroWorldRainComponentPhysicsConfig::LifeTimeDilationOnDeath' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroHitMeshActor
+// 0x0010 (0x02C0 - 0x02B0)
+class AKuroHitMeshActor final : public AActor
+{
+public:
+	class USceneComponent*                        SceneComponent;                                    // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x02B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroHitMeshActor">();
+	}
+	static class AKuroHitMeshActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroHitMeshActor>();
+	}
+};
+static_assert(alignof(AKuroHitMeshActor) == 0x000008, "Wrong alignment on AKuroHitMeshActor");
+static_assert(sizeof(AKuroHitMeshActor) == 0x0002C0, "Wrong size on AKuroHitMeshActor");
+static_assert(offsetof(AKuroHitMeshActor, SceneComponent) == 0x0002B0, "Member 'AKuroHitMeshActor::SceneComponent' has a wrong offset!");
+static_assert(offsetof(AKuroHitMeshActor, SkeletalMeshComponent) == 0x0002B8, "Member 'AKuroHitMeshActor::SkeletalMeshComponent' has a wrong offset!");
+
 // Class KuroRenderingRuntimeBPPlugin.KuroCharRenderingComponent
-// 0x0008 (0x00C8 - 0x00C0)
+// 0x0018 (0x00D8 - 0x00C0)
 class UKuroCharRenderingComponent : public UActorComponent
 {
 public:
 	class UKuroMaterialControllerComponent*       MaterialController;                                // 0x00C0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C8[0x10];                                      // 0x00C8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	void AddHitMeshOnSocket(class USkeletalMesh* SkeletalMesh, const struct FTransformDouble& WorldTransform, class FName Socket, float LastTime, const struct FTransform& MeshTransform);
+	void ClearAllHitMesh();
 	class UKuroMaterialControllerComponent* GetSureMaterialController();
+	void UpdateHitMesh(float DeltaTime);
 
 public:
 	static class UClass* StaticClass()
@@ -696,7 +1017,7 @@ public:
 	}
 };
 static_assert(alignof(UKuroCharRenderingComponent) == 0x000008, "Wrong alignment on UKuroCharRenderingComponent");
-static_assert(sizeof(UKuroCharRenderingComponent) == 0x0000C8, "Wrong size on UKuroCharRenderingComponent");
+static_assert(sizeof(UKuroCharRenderingComponent) == 0x0000D8, "Wrong size on UKuroCharRenderingComponent");
 static_assert(offsetof(UKuroCharRenderingComponent, MaterialController) == 0x0000C0, "Member 'UKuroCharRenderingComponent::MaterialController' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroEditorTickActor
@@ -735,11 +1056,13 @@ static_assert(offsetof(AKuroEditorTickActor, bSetActorComponentTickEnabledByFocu
 static_assert(offsetof(AKuroEditorTickActor, KuroEditorTickActorId) == 0x0002B4, "Member 'AKuroEditorTickActor::KuroEditorTickActorId' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroCloudPrefabActor
-// 0x0008 (0x02C8 - 0x02C0)
+// 0x0018 (0x02D8 - 0x02C0)
 class AKuroCloudPrefabActor : public AKuroEditorTickActor
 {
 public:
 	class UKuroPDCloudPrefab*                     CloudPrefab;                                       // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        SmoothWidth;                                       // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D0[0x8];                                      // 0x02D0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UMaterialInstanceDynamic* CreateDMI(class UStaticMeshComponent* Mesh);
@@ -761,8 +1084,9 @@ public:
 	}
 };
 static_assert(alignof(AKuroCloudPrefabActor) == 0x000008, "Wrong alignment on AKuroCloudPrefabActor");
-static_assert(sizeof(AKuroCloudPrefabActor) == 0x0002C8, "Wrong size on AKuroCloudPrefabActor");
+static_assert(sizeof(AKuroCloudPrefabActor) == 0x0002D8, "Wrong size on AKuroCloudPrefabActor");
 static_assert(offsetof(AKuroCloudPrefabActor, CloudPrefab) == 0x0002C0, "Member 'AKuroCloudPrefabActor::CloudPrefab' has a wrong offset!");
+static_assert(offsetof(AKuroCloudPrefabActor, SmoothWidth) == 0x0002C8, "Member 'AKuroCloudPrefabActor::SmoothWidth' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroCloudsActor
 // 0x0000 (0x02C0 - 0x02C0)
@@ -795,7 +1119,8 @@ public:
 	float                                         OrthSizeX;                                         // 0x0230(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         OrthSizeY;                                         // 0x0234(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bCapture : 1;                                      // 0x0238(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_239[0x7];                                      // 0x0239(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	ECaptureMode                                  CaptureMode;                                       // 0x0239(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23A[0x6];                                      // 0x023A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -814,6 +1139,7 @@ static_assert(offsetof(UKuroCustomCaptureVolume, CapturePos) == 0x000220, "Membe
 static_assert(offsetof(UKuroCustomCaptureVolume, CutDistance) == 0x00022C, "Member 'UKuroCustomCaptureVolume::CutDistance' has a wrong offset!");
 static_assert(offsetof(UKuroCustomCaptureVolume, OrthSizeX) == 0x000230, "Member 'UKuroCustomCaptureVolume::OrthSizeX' has a wrong offset!");
 static_assert(offsetof(UKuroCustomCaptureVolume, OrthSizeY) == 0x000234, "Member 'UKuroCustomCaptureVolume::OrthSizeY' has a wrong offset!");
+static_assert(offsetof(UKuroCustomCaptureVolume, CaptureMode) == 0x000239, "Member 'UKuroCustomCaptureVolume::CaptureMode' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroCustomCaptureWorldSubsystem
 // 0x0008 (0x0040 - 0x0038)
@@ -841,7 +1167,7 @@ class UKuroRenderingDataDistortionProxyManageSystem final : public UWorldSubsyst
 {
 public:
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UKuroDataDistortionProxyComponent*> ProxyComponents;                                   // 0x0040(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TArray<class UKuroDataDistortionProxyComponent*> ProxyComponents;                                // 0x0040(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_50[0x20];                                      // 0x0050(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -885,27 +1211,65 @@ static_assert(sizeof(UKuroDataDistortionProxyComponent) == 0x0000D0, "Wrong size
 static_assert(offsetof(UKuroDataDistortionProxyComponent, PhaseBias) == 0x0000C0, "Member 'UKuroDataDistortionProxyComponent::PhaseBias' has a wrong offset!");
 static_assert(offsetof(UKuroDataDistortionProxyComponent, DurationScale) == 0x0000C4, "Member 'UKuroDataDistortionProxyComponent::DurationScale' has a wrong offset!");
 
+// Class KuroRenderingRuntimeBPPlugin.KuroDebugDrawComponent
+// 0x0020 (0x0240 - 0x0220)
+class UKuroDebugDrawComponent final : public USceneComponent
+{
+public:
+	EKuroDebugDrawComponentType                   Type;                                              // 0x0218(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_219[0x3];                                      // 0x0219(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Center;                                            // 0x021C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Extent;                                            // 0x0228(0x000C)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Radius;                                            // 0x0234(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Angle;                                             // 0x0238(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23C[0x4];                                      // 0x023C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroDebugDrawComponent">();
+	}
+	static class UKuroDebugDrawComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroDebugDrawComponent>();
+	}
+};
+static_assert(alignof(UKuroDebugDrawComponent) == 0x000010, "Wrong alignment on UKuroDebugDrawComponent");
+static_assert(sizeof(UKuroDebugDrawComponent) == 0x000240, "Wrong size on UKuroDebugDrawComponent");
+static_assert(offsetof(UKuroDebugDrawComponent, Type) == 0x000218, "Member 'UKuroDebugDrawComponent::Type' has a wrong offset!");
+static_assert(offsetof(UKuroDebugDrawComponent, Center) == 0x00021C, "Member 'UKuroDebugDrawComponent::Center' has a wrong offset!");
+static_assert(offsetof(UKuroDebugDrawComponent, Extent) == 0x000228, "Member 'UKuroDebugDrawComponent::Extent' has a wrong offset!");
+static_assert(offsetof(UKuroDebugDrawComponent, Radius) == 0x000234, "Member 'UKuroDebugDrawComponent::Radius' has a wrong offset!");
+static_assert(offsetof(UKuroDebugDrawComponent, Angle) == 0x000238, "Member 'UKuroDebugDrawComponent::Angle' has a wrong offset!");
+
 // Class KuroRenderingRuntimeBPPlugin.KuroDestructibleActor
-// 0x0030 (0x02E0 - 0x02B0)
+// 0x0048 (0x02F8 - 0x02B0)
 class AKuroDestructibleActor : public AActor
 {
 public:
 	class UKuroDestructibleAsset*                 KuroDestructibleAsset;                             // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UStaticMeshComponent*>           StaticMeshChunkList;                               // 0x02B8(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	class UPoseableMeshComponent*                 PoseableMeshComponent;                             // 0x02C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IgnoreBullet;                                      // 0x02D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D1[0x3];                                      // 0x02D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ImpulseFactor;                                     // 0x02D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BaseForce;                                         // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAddImpulseAtLocation;                             // 0x02DC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bVelChange;                                        // 0x02DD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2DE[0x2];                                      // 0x02DE(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKuroDestructibleDestructionAsset*      KuroDestructibleDestructionAsset;                  // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UStaticMeshComponent*>           StaticMeshChunkList;                               // 0x02C0(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class UStaticMeshComponent*                   ProxyMeshComponent;                                // 0x02D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPoseableMeshComponent*                 NewPoseableMeshComponent;                          // 0x02D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseDummyHurtOrigin;                               // 0x02E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E1[0x3];                                      // 0x02E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                DummyHurtOrigin;                                   // 0x02E4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F0[0x8];                                      // 0x02F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void ApplyDamage(const struct FVector& HurtOrigin, const struct FVector& SpeedDirection);
-	void ApplyRadiusImpulse(const struct FVector& HurtOrigin, const float Impulse, const float Attenuation, const float ForceRatio, const bool UseAttenuation);
-	void ApplyTransformToSkeletalMeshComponent(const EBoneSpaces BoneSpace);
-	void PlayDestruction(const struct FVector& HurtDirection, const struct FVector& HurtOrigin, float Impulse, bool IsZeroImpulse);
+	void ApplyDamage(const struct FVector& HurtOrigin, const struct FVector& HurtDirection);
+	void ApplyTransformToPoseableMeshComponent(const EBoneSpaces BoneSpace);
+	void HideStaticMeshChunkList();
+	void OnDestructibleInit();
+	void SetStaticMeshChunkListPhysicsSimulation(const bool bSimulate);
+	void ShowStaticMeshChunkList();
+
+	void HidePoseableMeshComponent() const;
+	void ShowPoseableMeshComponent() const;
+	void ToggleMeshComponent(const bool bShowPoseableMeshComponent) const;
+	void UpdatePoseableMeshComponent(const bool bSnapToProxyMeshComponent) const;
+	void UpdateProxyMeshComponent() const;
 
 public:
 	static class UClass* StaticClass()
@@ -918,24 +1282,25 @@ public:
 	}
 };
 static_assert(alignof(AKuroDestructibleActor) == 0x000008, "Wrong alignment on AKuroDestructibleActor");
-static_assert(sizeof(AKuroDestructibleActor) == 0x0002E0, "Wrong size on AKuroDestructibleActor");
+static_assert(sizeof(AKuroDestructibleActor) == 0x0002F8, "Wrong size on AKuroDestructibleActor");
 static_assert(offsetof(AKuroDestructibleActor, KuroDestructibleAsset) == 0x0002B0, "Member 'AKuroDestructibleActor::KuroDestructibleAsset' has a wrong offset!");
-static_assert(offsetof(AKuroDestructibleActor, StaticMeshChunkList) == 0x0002B8, "Member 'AKuroDestructibleActor::StaticMeshChunkList' has a wrong offset!");
-static_assert(offsetof(AKuroDestructibleActor, PoseableMeshComponent) == 0x0002C8, "Member 'AKuroDestructibleActor::PoseableMeshComponent' has a wrong offset!");
-static_assert(offsetof(AKuroDestructibleActor, IgnoreBullet) == 0x0002D0, "Member 'AKuroDestructibleActor::IgnoreBullet' has a wrong offset!");
-static_assert(offsetof(AKuroDestructibleActor, ImpulseFactor) == 0x0002D4, "Member 'AKuroDestructibleActor::ImpulseFactor' has a wrong offset!");
-static_assert(offsetof(AKuroDestructibleActor, BaseForce) == 0x0002D8, "Member 'AKuroDestructibleActor::BaseForce' has a wrong offset!");
-static_assert(offsetof(AKuroDestructibleActor, bAddImpulseAtLocation) == 0x0002DC, "Member 'AKuroDestructibleActor::bAddImpulseAtLocation' has a wrong offset!");
-static_assert(offsetof(AKuroDestructibleActor, bVelChange) == 0x0002DD, "Member 'AKuroDestructibleActor::bVelChange' has a wrong offset!");
+static_assert(offsetof(AKuroDestructibleActor, KuroDestructibleDestructionAsset) == 0x0002B8, "Member 'AKuroDestructibleActor::KuroDestructibleDestructionAsset' has a wrong offset!");
+static_assert(offsetof(AKuroDestructibleActor, StaticMeshChunkList) == 0x0002C0, "Member 'AKuroDestructibleActor::StaticMeshChunkList' has a wrong offset!");
+static_assert(offsetof(AKuroDestructibleActor, ProxyMeshComponent) == 0x0002D0, "Member 'AKuroDestructibleActor::ProxyMeshComponent' has a wrong offset!");
+static_assert(offsetof(AKuroDestructibleActor, NewPoseableMeshComponent) == 0x0002D8, "Member 'AKuroDestructibleActor::NewPoseableMeshComponent' has a wrong offset!");
+static_assert(offsetof(AKuroDestructibleActor, bUseDummyHurtOrigin) == 0x0002E0, "Member 'AKuroDestructibleActor::bUseDummyHurtOrigin' has a wrong offset!");
+static_assert(offsetof(AKuroDestructibleActor, DummyHurtOrigin) == 0x0002E4, "Member 'AKuroDestructibleActor::DummyHurtOrigin' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroDestructibleAsset
-// 0x0020 (0x0058 - 0x0038)
+// 0x0040 (0x0078 - 0x0038)
 class UKuroDestructibleAsset final : public UPrimaryDataAsset
 {
 public:
 	class UStaticMesh*                            WholeStaticMesh;                                   // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USkeletalMesh*                          SkeletalMeshForRender;                             // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FKuroDestructiblePieceInfo>     PieceInfos;                                        // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInterface*>             StaticMeshMaterialOverrides;                       // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class USkeletalMesh*                          SkeletalMeshForRender;                             // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInterface*>             SkeletalMeshMaterialOverrides;                     // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroDestructiblePieceInfo>     PieceInfos;                                        // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -948,10 +1313,82 @@ public:
 	}
 };
 static_assert(alignof(UKuroDestructibleAsset) == 0x000008, "Wrong alignment on UKuroDestructibleAsset");
-static_assert(sizeof(UKuroDestructibleAsset) == 0x000058, "Wrong size on UKuroDestructibleAsset");
+static_assert(sizeof(UKuroDestructibleAsset) == 0x000078, "Wrong size on UKuroDestructibleAsset");
 static_assert(offsetof(UKuroDestructibleAsset, WholeStaticMesh) == 0x000038, "Member 'UKuroDestructibleAsset::WholeStaticMesh' has a wrong offset!");
-static_assert(offsetof(UKuroDestructibleAsset, SkeletalMeshForRender) == 0x000040, "Member 'UKuroDestructibleAsset::SkeletalMeshForRender' has a wrong offset!");
-static_assert(offsetof(UKuroDestructibleAsset, PieceInfos) == 0x000048, "Member 'UKuroDestructibleAsset::PieceInfos' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleAsset, StaticMeshMaterialOverrides) == 0x000040, "Member 'UKuroDestructibleAsset::StaticMeshMaterialOverrides' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleAsset, SkeletalMeshForRender) == 0x000050, "Member 'UKuroDestructibleAsset::SkeletalMeshForRender' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleAsset, SkeletalMeshMaterialOverrides) == 0x000058, "Member 'UKuroDestructibleAsset::SkeletalMeshMaterialOverrides' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleAsset, PieceInfos) == 0x000068, "Member 'UKuroDestructibleAsset::PieceInfos' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroDestructibleDestructionAsset
+// 0x0060 (0x0098 - 0x0038)
+class UKuroDestructibleDestructionAsset final : public UPrimaryDataAsset
+{
+public:
+	struct FCollisionProfileName                  CollisionProfileName;                              // 0x0038(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCollisionProfileName                  TriggerCollisionProfileName;                       // 0x0044(0x000C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreBullet;                                     // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BaseForce;                                         // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ImpulseFactor;                                     // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ImpulseFactor2;                                    // 0x005C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseAttenuation;                                   // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseAutoDamageRadius;                              // 0x0061(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_62[0x2];                                       // 0x0062(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DamageRadius;                                      // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAddImpulseAtLocation;                             // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bVelChange;                                        // 0x0069(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAddAngularImpulse;                                // 0x006A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6B[0x1];                                       // 0x006B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AngularImpulseFactor;                              // 0x006C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseEasing;                                        // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x3];                                       // 0x0071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxEaseMass;                                       // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECurveSourceType                              SourceType;                                        // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            CurveAsset;                                        // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEasingType                                   EasingType;                                        // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseLinearDamping;                                 // 0x0089(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8A[0x2];                                       // 0x008A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LinearDamping;                                     // 0x008C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreUpdateOverlap;                              // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_91[0x3];                                       // 0x0091(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StaticMeshSimulatePhysicsTime;                     // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroDestructibleDestructionAsset">();
+	}
+	static class UKuroDestructibleDestructionAsset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroDestructibleDestructionAsset>();
+	}
+};
+static_assert(alignof(UKuroDestructibleDestructionAsset) == 0x000008, "Wrong alignment on UKuroDestructibleDestructionAsset");
+static_assert(sizeof(UKuroDestructibleDestructionAsset) == 0x000098, "Wrong size on UKuroDestructibleDestructionAsset");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, CollisionProfileName) == 0x000038, "Member 'UKuroDestructibleDestructionAsset::CollisionProfileName' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, TriggerCollisionProfileName) == 0x000044, "Member 'UKuroDestructibleDestructionAsset::TriggerCollisionProfileName' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, bIgnoreBullet) == 0x000050, "Member 'UKuroDestructibleDestructionAsset::bIgnoreBullet' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, BaseForce) == 0x000054, "Member 'UKuroDestructibleDestructionAsset::BaseForce' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, ImpulseFactor) == 0x000058, "Member 'UKuroDestructibleDestructionAsset::ImpulseFactor' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, ImpulseFactor2) == 0x00005C, "Member 'UKuroDestructibleDestructionAsset::ImpulseFactor2' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, bUseAttenuation) == 0x000060, "Member 'UKuroDestructibleDestructionAsset::bUseAttenuation' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, bUseAutoDamageRadius) == 0x000061, "Member 'UKuroDestructibleDestructionAsset::bUseAutoDamageRadius' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, DamageRadius) == 0x000064, "Member 'UKuroDestructibleDestructionAsset::DamageRadius' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, bAddImpulseAtLocation) == 0x000068, "Member 'UKuroDestructibleDestructionAsset::bAddImpulseAtLocation' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, bVelChange) == 0x000069, "Member 'UKuroDestructibleDestructionAsset::bVelChange' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, bAddAngularImpulse) == 0x00006A, "Member 'UKuroDestructibleDestructionAsset::bAddAngularImpulse' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, AngularImpulseFactor) == 0x00006C, "Member 'UKuroDestructibleDestructionAsset::AngularImpulseFactor' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, bUseEasing) == 0x000070, "Member 'UKuroDestructibleDestructionAsset::bUseEasing' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, MaxEaseMass) == 0x000074, "Member 'UKuroDestructibleDestructionAsset::MaxEaseMass' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, SourceType) == 0x000078, "Member 'UKuroDestructibleDestructionAsset::SourceType' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, CurveAsset) == 0x000080, "Member 'UKuroDestructibleDestructionAsset::CurveAsset' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, EasingType) == 0x000088, "Member 'UKuroDestructibleDestructionAsset::EasingType' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, bUseLinearDamping) == 0x000089, "Member 'UKuroDestructibleDestructionAsset::bUseLinearDamping' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, LinearDamping) == 0x00008C, "Member 'UKuroDestructibleDestructionAsset::LinearDamping' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, bIgnoreUpdateOverlap) == 0x000090, "Member 'UKuroDestructibleDestructionAsset::bIgnoreUpdateOverlap' has a wrong offset!");
+static_assert(offsetof(UKuroDestructibleDestructionAsset, StaticMeshSimulatePhysicsTime) == 0x000094, "Member 'UKuroDestructibleDestructionAsset::StaticMeshSimulatePhysicsTime' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroEditorTickActorSubsystem
 // 0x0028 (0x0060 - 0x0038)
@@ -1101,8 +1538,8 @@ static_assert(offsetof(UKuroFlickerLightPreset, IntensityCurve) == 0x000040, "Me
 static_assert(offsetof(UKuroFlickerLightPreset, FlickSpeed) == 0x0000D0, "Member 'UKuroFlickerLightPreset::FlickSpeed' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroFlickerLightActor
-// 0x0058 (0x0308 - 0x02B0)
-class AKuroFlickerLightActor final : public AActor
+// 0x0050 (0x0300 - 0x02B0)
+class AKuroFlickerLightActor : public AActor
 {
 public:
 	class UKuroFlickerLightPreset*                Preset;                                            // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1117,15 +1554,16 @@ public:
 	uint8                                         Pad_2D1[0x3];                                      // 0x02D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ToonHardLightBaseIntensityScale;                   // 0x02D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ToonHardLightIntensityCurveScale;                  // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CurrentBaseIntensity;                              // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         CurrentIntensityCurve;                             // 0x02E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2E4[0x4];                                      // 0x02E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AllIntensityScale;                                 // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurrentBaseIntensity;                              // 0x02E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         CurrentIntensityCurve;                             // 0x02E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UPointLightComponent*                   RootLight;                                         // 0x02E8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2F0[0x18];                                     // 0x02F0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F0[0x10];                                     // 0x02F0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void CalculateIntensity(float DeltaTime);
 	void ForeachPointLight(class UPointLightComponent* PointLightComponent);
+	void UpdateLight();
 
 public:
 	static class UClass* StaticClass()
@@ -1138,7 +1576,7 @@ public:
 	}
 };
 static_assert(alignof(AKuroFlickerLightActor) == 0x000008, "Wrong alignment on AKuroFlickerLightActor");
-static_assert(sizeof(AKuroFlickerLightActor) == 0x000308, "Wrong size on AKuroFlickerLightActor");
+static_assert(sizeof(AKuroFlickerLightActor) == 0x000300, "Wrong size on AKuroFlickerLightActor");
 static_assert(offsetof(AKuroFlickerLightActor, Preset) == 0x0002B0, "Member 'AKuroFlickerLightActor::Preset' has a wrong offset!");
 static_assert(offsetof(AKuroFlickerLightActor, BaseIntensityScale) == 0x0002B8, "Member 'AKuroFlickerLightActor::BaseIntensityScale' has a wrong offset!");
 static_assert(offsetof(AKuroFlickerLightActor, IntensityCurveScale) == 0x0002BC, "Member 'AKuroFlickerLightActor::IntensityCurveScale' has a wrong offset!");
@@ -1149,13 +1587,14 @@ static_assert(offsetof(AKuroFlickerLightActor, ToonLightIntensityCurveScale) == 
 static_assert(offsetof(AKuroFlickerLightActor, bApplyToonHardLight) == 0x0002D0, "Member 'AKuroFlickerLightActor::bApplyToonHardLight' has a wrong offset!");
 static_assert(offsetof(AKuroFlickerLightActor, ToonHardLightBaseIntensityScale) == 0x0002D4, "Member 'AKuroFlickerLightActor::ToonHardLightBaseIntensityScale' has a wrong offset!");
 static_assert(offsetof(AKuroFlickerLightActor, ToonHardLightIntensityCurveScale) == 0x0002D8, "Member 'AKuroFlickerLightActor::ToonHardLightIntensityCurveScale' has a wrong offset!");
-static_assert(offsetof(AKuroFlickerLightActor, CurrentBaseIntensity) == 0x0002DC, "Member 'AKuroFlickerLightActor::CurrentBaseIntensity' has a wrong offset!");
-static_assert(offsetof(AKuroFlickerLightActor, CurrentIntensityCurve) == 0x0002E0, "Member 'AKuroFlickerLightActor::CurrentIntensityCurve' has a wrong offset!");
+static_assert(offsetof(AKuroFlickerLightActor, AllIntensityScale) == 0x0002DC, "Member 'AKuroFlickerLightActor::AllIntensityScale' has a wrong offset!");
+static_assert(offsetof(AKuroFlickerLightActor, CurrentBaseIntensity) == 0x0002E0, "Member 'AKuroFlickerLightActor::CurrentBaseIntensity' has a wrong offset!");
+static_assert(offsetof(AKuroFlickerLightActor, CurrentIntensityCurve) == 0x0002E4, "Member 'AKuroFlickerLightActor::CurrentIntensityCurve' has a wrong offset!");
 static_assert(offsetof(AKuroFlickerLightActor, RootLight) == 0x0002E8, "Member 'AKuroFlickerLightActor::RootLight' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroFloatingStaticMesh
 // 0x0080 (0x0330 - 0x02B0)
-class AKuroFloatingStaticMesh : public AActor
+class AKuroFloatingStaticMesh final : public AActor
 {
 public:
 	class AKuroFloatingStaticMesh*                BindingActor;                                      // 0x02B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1321,7 +1760,7 @@ static_assert(alignof(AKuroFoliageRemoverActor) == 0x000008, "Wrong alignment on
 static_assert(sizeof(AKuroFoliageRemoverActor) == 0x0002C0, "Wrong size on AKuroFoliageRemoverActor");
 
 // Class KuroRenderingRuntimeBPPlugin.ClusteredStuffDataAsset
-// 0x0138 (0x0170 - 0x0038)
+// 0x0198 (0x01D0 - 0x0038)
 class UClusteredStuffDataAsset final : public UPrimaryDataAsset
 {
 public:
@@ -1329,10 +1768,14 @@ public:
 	TMap<class FName, float>                      FloatParameters;                                   // 0x0040(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TMap<class FName, struct FLinearColor>        ColorParameters;                                   // 0x0090(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	TMap<class FName, struct FVector>             VectorParameters;                                  // 0x00E0(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FVector                                Scale;                                             // 0x0130(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bUseWorldPosition : 1;                             // 0x013C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_13D[0x3];                                      // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             WorldTransform;                                    // 0x0140(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	TMap<class FName, class UObject*>             ObjectParameters;                                  // 0x0130(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FVector                                Scale;                                             // 0x0180(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bUseWorldPosition : 1;                             // 0x018C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_18D[0x3];                                      // 0x018D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             WorldTransform;                                    // 0x0190(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class UClusteredStuffDataAsset*               MobileClusteredStuff;                              // 0x01C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bAlwaysActive : 1;                                 // 0x01C8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1C9[0x7];                                      // 0x01C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1345,16 +1788,18 @@ public:
 	}
 };
 static_assert(alignof(UClusteredStuffDataAsset) == 0x000010, "Wrong alignment on UClusteredStuffDataAsset");
-static_assert(sizeof(UClusteredStuffDataAsset) == 0x000170, "Wrong size on UClusteredStuffDataAsset");
+static_assert(sizeof(UClusteredStuffDataAsset) == 0x0001D0, "Wrong size on UClusteredStuffDataAsset");
 static_assert(offsetof(UClusteredStuffDataAsset, NiagaraSystem) == 0x000038, "Member 'UClusteredStuffDataAsset::NiagaraSystem' has a wrong offset!");
 static_assert(offsetof(UClusteredStuffDataAsset, FloatParameters) == 0x000040, "Member 'UClusteredStuffDataAsset::FloatParameters' has a wrong offset!");
 static_assert(offsetof(UClusteredStuffDataAsset, ColorParameters) == 0x000090, "Member 'UClusteredStuffDataAsset::ColorParameters' has a wrong offset!");
 static_assert(offsetof(UClusteredStuffDataAsset, VectorParameters) == 0x0000E0, "Member 'UClusteredStuffDataAsset::VectorParameters' has a wrong offset!");
-static_assert(offsetof(UClusteredStuffDataAsset, Scale) == 0x000130, "Member 'UClusteredStuffDataAsset::Scale' has a wrong offset!");
-static_assert(offsetof(UClusteredStuffDataAsset, WorldTransform) == 0x000140, "Member 'UClusteredStuffDataAsset::WorldTransform' has a wrong offset!");
+static_assert(offsetof(UClusteredStuffDataAsset, ObjectParameters) == 0x000130, "Member 'UClusteredStuffDataAsset::ObjectParameters' has a wrong offset!");
+static_assert(offsetof(UClusteredStuffDataAsset, Scale) == 0x000180, "Member 'UClusteredStuffDataAsset::Scale' has a wrong offset!");
+static_assert(offsetof(UClusteredStuffDataAsset, WorldTransform) == 0x000190, "Member 'UClusteredStuffDataAsset::WorldTransform' has a wrong offset!");
+static_assert(offsetof(UClusteredStuffDataAsset, MobileClusteredStuff) == 0x0001C0, "Member 'UClusteredStuffDataAsset::MobileClusteredStuff' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroWeatherDataAsset
-// 0x0DF8 (0x0E30 - 0x0038)
+// 0x0F28 (0x0F60 - 0x0038)
 class UKuroWeatherDataAsset final : public UDataAsset
 {
 public:
@@ -1377,7 +1822,7 @@ public:
 	uint8                                         Pad_61[0x3];                                       // 0x0061(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ForbidWeatherThreshold;                            // 0x0064(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroGISetting                         GISetting;                                         // 0x0070(0x0DC0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroGISetting                         GISetting;                                         // 0x0070(0x0EF0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1390,7 +1835,7 @@ public:
 	}
 };
 static_assert(alignof(UKuroWeatherDataAsset) == 0x000010, "Wrong alignment on UKuroWeatherDataAsset");
-static_assert(sizeof(UKuroWeatherDataAsset) == 0x000E30, "Wrong size on UKuroWeatherDataAsset");
+static_assert(sizeof(UKuroWeatherDataAsset) == 0x000F60, "Wrong size on UKuroWeatherDataAsset");
 static_assert(offsetof(UKuroWeatherDataAsset, UseOnlyOverrideProperty) == 0x000038, "Member 'UKuroWeatherDataAsset::UseOnlyOverrideProperty' has a wrong offset!");
 static_assert(offsetof(UKuroWeatherDataAsset, bPolarDaynight) == 0x000039, "Member 'UKuroWeatherDataAsset::bPolarDaynight' has a wrong offset!");
 static_assert(offsetof(UKuroWeatherDataAsset, bSpecialBlend) == 0x00003A, "Member 'UKuroWeatherDataAsset::bSpecialBlend' has a wrong offset!");
@@ -1497,8 +1942,8 @@ public:
 	TArray<class FName>                           ThunderProfileNames;                               // 0x0048(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	TArray<class FName>                           RainProfileNames;                                  // 0x0058(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	TArray<struct FSoftObjectPath>                LensflareDatas;                                    // 0x0068(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UKuroLandscapeParametersData> LandscapeParametersData;                           // 0x0078(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UKuroMaterialControllerDataAsset> MaterialControllerBlueprintClass;                  // 0x00A8(0x0008)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UKuroLandscapeParametersData> LandscapeParametersData;                      // 0x0078(0x0030)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UKuroMaterialControllerDataAsset> MaterialControllerBlueprintClass;            // 0x00A8(0x0008)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSoftObjectPath                        EmptyMaterial;                                     // 0x00B0(0x0020)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                     EmptyMaterialLoaded;                               // 0x00D0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<class UKuroPPLensflareData*>           LensflareDatasLoaded;                              // 0x00D8(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
@@ -1529,7 +1974,9 @@ static_assert(offsetof(UKuroGISettings, LensflareDatasLoaded) == 0x0000D8, "Memb
 class alignas(0x10) UKuroGISystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_38[0x218];                                     // 0x0038(0x0218)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroScreenFilterDataAsset*             KuroScreenFilterDataAsset;                         // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x208];                                     // 0x0048(0x0208)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, class UObject*>             WeatherData;                                       // 0x0250(0x0050)(Transient, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2A0[0xF8];                                     // 0x02A0(0x00F8)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroWorldPartitionPreviewManager*      WorldPartitionPreviewManager;                      // 0x0398(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1542,6 +1989,7 @@ public:
 
 public:
 	static class UKuroGISystem* GetKuroGISystem(class UWorld* InWorld);
+	static void SetKuroScreenFilterInterpolation(class UWorld* InWorld, const int32 ScreenFilterIndex, float X, float Y, float Intensity);
 
 	bool End3DUISceneRendering();
 	class AKuroGlobalGI* GetKuroGlobalGIActor();
@@ -1563,6 +2011,7 @@ public:
 };
 static_assert(alignof(UKuroGISystem) == 0x000010, "Wrong alignment on UKuroGISystem");
 static_assert(sizeof(UKuroGISystem) == 0x000490, "Wrong size on UKuroGISystem");
+static_assert(offsetof(UKuroGISystem, KuroScreenFilterDataAsset) == 0x000040, "Member 'UKuroGISystem::KuroScreenFilterDataAsset' has a wrong offset!");
 static_assert(offsetof(UKuroGISystem, WeatherData) == 0x000250, "Member 'UKuroGISystem::WeatherData' has a wrong offset!");
 static_assert(offsetof(UKuroGISystem, WorldPartitionPreviewManager) == 0x000398, "Member 'UKuroGISystem::WorldPartitionPreviewManager' has a wrong offset!");
 static_assert(offsetof(UKuroGISystem, PostprocessMaterialManager) == 0x0003A0, "Member 'UKuroGISystem::PostprocessMaterialManager' has a wrong offset!");
@@ -1570,12 +2019,100 @@ static_assert(offsetof(UKuroGISystem, SceneEffectActorManager) == 0x0003D0, "Mem
 static_assert(offsetof(UKuroGISystem, PropertyDebugger) == 0x0003F8, "Member 'UKuroGISystem::PropertyDebugger' has a wrong offset!");
 static_assert(offsetof(UKuroGISystem, RainManager) == 0x000458, "Member 'UKuroGISystem::RainManager' has a wrong offset!");
 
+// Class KuroRenderingRuntimeBPPlugin.KuroScreenFilterParameter
+// 0x0020 (0x0058 - 0x0038)
+class UKuroScreenFilterParameter final : public UDataAsset
+{
+public:
+	float                                         Contrast;                                          // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Saturation;                                        // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ColorTemperature;                                  // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Hue;                                               // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Vignette;                                          // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Brightness;                                        // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Gamma;                                             // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ShadowIntensity;                                   // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroScreenFilterParameter">();
+	}
+	static class UKuroScreenFilterParameter* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroScreenFilterParameter>();
+	}
+};
+static_assert(alignof(UKuroScreenFilterParameter) == 0x000008, "Wrong alignment on UKuroScreenFilterParameter");
+static_assert(sizeof(UKuroScreenFilterParameter) == 0x000058, "Wrong size on UKuroScreenFilterParameter");
+static_assert(offsetof(UKuroScreenFilterParameter, Contrast) == 0x000038, "Member 'UKuroScreenFilterParameter::Contrast' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterParameter, Saturation) == 0x00003C, "Member 'UKuroScreenFilterParameter::Saturation' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterParameter, ColorTemperature) == 0x000040, "Member 'UKuroScreenFilterParameter::ColorTemperature' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterParameter, Hue) == 0x000044, "Member 'UKuroScreenFilterParameter::Hue' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterParameter, Vignette) == 0x000048, "Member 'UKuroScreenFilterParameter::Vignette' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterParameter, Brightness) == 0x00004C, "Member 'UKuroScreenFilterParameter::Brightness' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterParameter, Gamma) == 0x000050, "Member 'UKuroScreenFilterParameter::Gamma' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterParameter, ShadowIntensity) == 0x000054, "Member 'UKuroScreenFilterParameter::ShadowIntensity' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroScreenFilterDataAsset
+// 0x0030 (0x0068 - 0x0038)
+class UKuroScreenFilterDataAsset final : public UDataAsset
+{
+public:
+	class UKuroScreenFilterParameter*             ParameterA;                                        // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroScreenFilterParameter*             ParameterB;                                        // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroScreenFilterParameter*             ParameterC;                                        // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroScreenFilterParameter*             ParameterD;                                        // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               ScreenLeakColorGradingLUT;                         // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ColorGradingLUTIntensity;                          // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroScreenFilterDataAsset">();
+	}
+	static class UKuroScreenFilterDataAsset* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroScreenFilterDataAsset>();
+	}
+};
+static_assert(alignof(UKuroScreenFilterDataAsset) == 0x000008, "Wrong alignment on UKuroScreenFilterDataAsset");
+static_assert(sizeof(UKuroScreenFilterDataAsset) == 0x000068, "Wrong size on UKuroScreenFilterDataAsset");
+static_assert(offsetof(UKuroScreenFilterDataAsset, ParameterA) == 0x000038, "Member 'UKuroScreenFilterDataAsset::ParameterA' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterDataAsset, ParameterB) == 0x000040, "Member 'UKuroScreenFilterDataAsset::ParameterB' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterDataAsset, ParameterC) == 0x000048, "Member 'UKuroScreenFilterDataAsset::ParameterC' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterDataAsset, ParameterD) == 0x000050, "Member 'UKuroScreenFilterDataAsset::ParameterD' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterDataAsset, ScreenLeakColorGradingLUT) == 0x000058, "Member 'UKuroScreenFilterDataAsset::ScreenLeakColorGradingLUT' has a wrong offset!");
+static_assert(offsetof(UKuroScreenFilterDataAsset, ColorGradingLUTIntensity) == 0x000060, "Member 'UKuroScreenFilterDataAsset::ColorGradingLUTIntensity' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroScreenFilterSystemData
+// 0x0010 (0x0048 - 0x0038)
+class UKuroScreenFilterSystemData final : public UDataAsset
+{
+public:
+	TArray<class UKuroScreenFilterDataAsset*>     ScreenFilterSystemDatas;                           // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroScreenFilterSystemData">();
+	}
+	static class UKuroScreenFilterSystemData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroScreenFilterSystemData>();
+	}
+};
+static_assert(alignof(UKuroScreenFilterSystemData) == 0x000008, "Wrong alignment on UKuroScreenFilterSystemData");
+static_assert(sizeof(UKuroScreenFilterSystemData) == 0x000048, "Wrong size on UKuroScreenFilterSystemData");
+static_assert(offsetof(UKuroScreenFilterSystemData, ScreenFilterSystemDatas) == 0x000038, "Member 'UKuroScreenFilterSystemData::ScreenFilterSystemDatas' has a wrong offset!");
+
 // Class KuroRenderingRuntimeBPPlugin.KuroGlobalColorSplitTextures
 // 0x0050 (0x0088 - 0x0038)
 class UKuroGlobalColorSplitTextures final : public UDataAsset
 {
 public:
-	TMap<struct FWPCoord, TSoftObjectPtr<class UTexture2D>> CoordTexPair;                                      // 0x0038(0x0050)(Edit, BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic)
+	TMap<struct FWPCoord, TSoftObjectPtr<class UTexture2D>> CoordTexPair;                            // 0x0038(0x0050)(Edit, BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1621,7 +2158,7 @@ static_assert(offsetof(UKuroGlobalColorMapComponent, ColorSplitTexturePlaceHolde
 static_assert(offsetof(UKuroGlobalColorMapComponent, SizePerCell) == 0x0000F8, "Member 'UKuroGlobalColorMapComponent::SizePerCell' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroGlobalGI
-// 0x2930 (0x2BE0 - 0x02B0)
+// 0x2BB0 (0x2E60 - 0x02B0)
 class AKuroGlobalGI : public AActor
 {
 public:
@@ -1631,118 +2168,122 @@ public:
 	uint8                                         Pad_2B3[0x1];                                      // 0x02B3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TickDeltaTime;                                     // 0x02B4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ViewLocation;                                      // 0x02B8(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SunHorizonAngle;                                   // 0x02C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SunVerticalAngle;                                  // 0x02C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsReversed;                                        // 0x02CC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2CD[0x3];                                      // 0x02CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ReverseZCenter;                                    // 0x02D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLockSceneLightVerticalAngle;                      // 0x02D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D5[0x3];                                      // 0x02D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              SceneLightVerticalAngleRange;                      // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroGISetting                         LerpGISetting;                                     // 0x02E0(0x0DC0)(Edit, BlueprintVisible, Transient, EditConst, NativeAccessSpecifierPublic)
-	struct FKuroGISetting                         TempGISetting;                                     // 0x10A0(0x0DC0)(Edit, BlueprintVisible, Transient, EditConst, NativeAccessSpecifierPublic)
-	struct FPostProcessSettings                   LerpPostProcessSetting;                            // 0x1E60(0x0860)(Edit, BlueprintVisible, Transient, EditConst, NativeAccessSpecifierPublic)
-	bool                                          bContrlTODTime;                                    // 0x26C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26C1[0x3];                                     // 0x26C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CurTimeAfterLerp;                                  // 0x26C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LerpSunHorizonAngle;                               // 0x26C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LerpSunVerticalAngle;                              // 0x26CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GlobalWindSpeed;                                   // 0x26D0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GlobalWindPower;                                   // 0x26D4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GlobalTimeDilation;                                // 0x26D8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                GlobalWindForwardDrection;                         // 0x26DC(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WindTextureOffset;                                 // 0x26E8(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsDayTime;                                        // 0x26F4(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDayNightEmssiveFactor;                            // 0x26F5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_26F6[0x2];                                     // 0x26F6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DayNightEmssiveSmoothFactor;                       // 0x26F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TODNightLightLoadingTime;                          // 0x26FC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TODDayLightLoadingTime;                            // 0x2700(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TODEmssiveCloseLerpFade;                           // 0x2704(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NowGlobalLightIntensity;                           // 0x2708(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_270C[0x1];                                     // 0x270C(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bRainAffectPointLight;                             // 0x270D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_270E[0x2];                                     // 0x270E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CharLightHorizontal;                               // 0x2710(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CharDebugLightDirection;                           // 0x2714(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CharDebugLightDirectionZero;                       // 0x2720(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               AtmosphereSunRotation;                             // 0x272C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                AtmosphereSunForward;                              // 0x2738(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               AtmosphereMoonRotation;                            // 0x2744(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                AtmosphereMoonForward;                             // 0x2750(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         KuroViewCenterPlayerIndex;                         // 0x275C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroViewCenterHeightOffset;                        // 0x2760(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableCustomKuroViewCenter;                       // 0x2764(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2765[0x3];                                     // 0x2765(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CustomKuroViewCenter;                              // 0x2768(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CurrentKuroViewCenter;                             // 0x2774(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroTrailSystemEnable;                             // 0x2780(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2784[0x4];                                     // 0x2784(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             KuroTrailNoiseTexutre;                             // 0x2788(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UpdatePostProcessDataThreshold;                    // 0x2790(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2794[0x4];                                     // 0x2794(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTextureCube*                           KuroSkyLightCubemap1;                              // 0x2798(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTextureCube*                           KuroSkyLightCubemap2;                              // 0x27A0(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTextureCube*                           KuroSkyLightCubemap3;                              // 0x27A8(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroCubemapBlend12;                                // 0x27B0(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroCubemapBlend23;                                // 0x27B4(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         KuroGlobalGIIndex;                                 // 0x27B8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         GIID;                                              // 0x27BC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsKuroInit;                                        // 0x27C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_27C1[0x7];                                     // 0x27C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialParameterCollection*           GIMPC;                                             // 0x27C8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_27D0[0x20];                                    // 0x27D0(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroCurveFloat                        FogTime;                                           // 0x27F0(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class UClusteredStuffDataAsset*, TWeakObjectPtr<class AKuroRuntimeTransientActor>> ClusteredStuffTransientActors;                     // 0x2880(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPublic)
-	TSet<class UClusteredStuffDataAsset*>         ClusteredStuffActive;                              // 0x28D0(0x0050)(Transient, NativeAccessSpecifierPublic)
-	TArray<class UClusteredStuffDataAsset*>       AdditionalClusteredStuff;                          // 0x2920(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	class UClusteredStuffDataAsset*               DefaultAutoGrassData;                              // 0x2930(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2938[0x8];                                     // 0x2938(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class USunLensFlareConfig*                    DefaultSunLensflareConfig;                         // 0x2940(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInstanceDynamic*               StarsMat;                                          // 0x2948(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInstanceDynamic*               MilkyWayMat;                                       // 0x2950(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInstanceDynamic*               SkyBoxMat;                                         // 0x2958(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayerInCave;                                     // 0x2960(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayerInGrass;                                    // 0x2961(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bForbidWeather;                                    // 0x2962(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2963[0x15];                                    // 0x2963(0x0015)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKuroPointCloudStreamingConfig*         GlobalPointCloudStreamingConfig;                   // 0x2978(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GlobalPointCloudStreamingDistance;                 // 0x2980(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2984[0xC];                                     // 0x2984(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKuroTODData*                           TODDataAsset;                                      // 0x2990(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UKuroGISystem>           CachedGISystem;                                    // 0x2998(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_29A0[0x28];                                    // 0x29A0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               LightFunctionMaterialDynamic;                      // 0x29C8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMaterialInstanceDynamic*               LightFunctionMIPerformance;                        // 0x29D0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMaterialInstanceDynamic*               LightFunctionMIDefault;                            // 0x29D8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMaterialInstanceDynamic*               VolumetricLightFunctionMI;                         // 0x29E0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_29E8[0x90];                                    // 0x29E8(0x0090)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPhysicalMaterial*                      LastFrameGlobalFootstepMaterial;                   // 0x2A78(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2A80[0x28];                                    // 0x2A80(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FinalRoughnessDensity;                             // 0x2AA8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AAC[0x4];                                     // 0x2AAC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FinalRainDensityValue;                             // 0x2AB0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AB4[0x8];                                     // 0x2AB4(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FinalRainGravityValue;                             // 0x2ABC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RainGravityStepSpeed;                              // 0x2AC0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AC4[0xC];                                     // 0x2AC4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture*                               TargetLightFunctionMap_Texture;                    // 0x2AD0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               FinalLightFunctionMap_Texture;                     // 0x2AD8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               TargetLightFunctionPerShadowMap_Texture;           // 0x2AE0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               FinalLightFunctionPerShadowMap_Texture;            // 0x2AE8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2AF0[0x40];                                    // 0x2AF0(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture*                               TargetMilkyWayTexture;                             // 0x2B30(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               FinalMilkyWayTexture;                              // 0x2B38(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               TargetMilkyWayDistortionTexture;                   // 0x2B40(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               FinalMilkyWayDistortionTexture;                    // 0x2B48(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               TargetMilkyWayStarTexture;                         // 0x2B50(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               FinalMilkyWayStarTexture;                          // 0x2B58(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B60[0x8];                                     // 0x2B60(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDirectionalLightComponent*             AtmosphereSunLight;                                // 0x2B68(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UDirectionalLightComponent*             AtmosphereMoonLight;                               // 0x2B70(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B78[0x4C];                                    // 0x2B78(0x004C)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bDisableWeatherTemporalLerp;                       // 0x2BC4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2BC5[0x1B];                                    // 0x2BC5(0x001B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          DisableGlobalGITransition;                         // 0x02C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DisableFixedTimeState;                             // 0x02C5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C6[0x2];                                      // 0x02C6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SunHorizonAngle;                                   // 0x02C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SunVerticalAngle;                                  // 0x02CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsReversed;                                        // 0x02D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D1[0x3];                                      // 0x02D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReverseZCenter;                                    // 0x02D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLockSceneLightVerticalAngle;                      // 0x02D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D9[0x3];                                      // 0x02D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              SceneLightVerticalAngleRange;                      // 0x02DC(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E4[0xC];                                      // 0x02E4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroGISetting                         LerpGISetting;                                     // 0x02F0(0x0EF0)(Edit, BlueprintVisible, Transient, EditConst, NativeAccessSpecifierPublic)
+	struct FKuroGISetting                         TempGISetting;                                     // 0x11E0(0x0EF0)(Edit, BlueprintVisible, Transient, EditConst, NativeAccessSpecifierPublic)
+	struct FPostProcessSettings                   LerpPostProcessSetting;                            // 0x20D0(0x0870)(Edit, BlueprintVisible, Transient, EditConst, NativeAccessSpecifierPublic)
+	bool                                          bContrlTODTime;                                    // 0x2940(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2941[0x3];                                     // 0x2941(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CurTimeAfterLerp;                                  // 0x2944(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LerpSunHorizonAngle;                               // 0x2948(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LerpSunVerticalAngle;                              // 0x294C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GlobalWindSpeed;                                   // 0x2950(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GlobalWindPower;                                   // 0x2954(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GlobalTimeDilation;                                // 0x2958(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                GlobalWindForwardDrection;                         // 0x295C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WindTextureOffset;                                 // 0x2968(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsDayTime;                                        // 0x2974(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDayNightEmssiveFactor;                            // 0x2975(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2976[0x2];                                     // 0x2976(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DayNightEmssiveSmoothFactor;                       // 0x2978(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TODNightLightLoadingTime;                          // 0x297C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TODDayLightLoadingTime;                            // 0x2980(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TODEmssiveCloseLerpFade;                           // 0x2984(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NowGlobalLightIntensity;                           // 0x2988(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_298C[0x1];                                     // 0x298C(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bRainAffectPointLight;                             // 0x298D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_298E[0x2];                                     // 0x298E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CharLightHorizontal;                               // 0x2990(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CharDebugLightDirection;                           // 0x2994(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CharDebugLightDirectionZero;                       // 0x29A0(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               AtmosphereSunRotation;                             // 0x29AC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                AtmosphereSunForward;                              // 0x29B8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               AtmosphereMoonRotation;                            // 0x29C4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                AtmosphereMoonForward;                             // 0x29D0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         KuroViewCenterPlayerIndex;                         // 0x29DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroViewCenterHeightOffset;                        // 0x29E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableCustomKuroViewCenter;                       // 0x29E4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29E5[0x3];                                     // 0x29E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CustomKuroViewCenter;                              // 0x29E8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CurrentKuroViewCenter;                             // 0x29F4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroTrailSystemEnable;                             // 0x2A00(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A04[0x4];                                     // 0x2A04(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             KuroTrailNoiseTexutre;                             // 0x2A08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UpdatePostProcessDataThreshold;                    // 0x2A10(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A14[0x4];                                     // 0x2A14(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTextureCube*                           KuroSkyLightCubemap1;                              // 0x2A18(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTextureCube*                           KuroSkyLightCubemap2;                              // 0x2A20(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTextureCube*                           KuroSkyLightCubemap3;                              // 0x2A28(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroCubemapBlend12;                                // 0x2A30(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroCubemapBlend23;                                // 0x2A34(0x0004)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         KuroGlobalGIIndex;                                 // 0x2A38(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         GIID;                                              // 0x2A3C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsKuroInit;                                        // 0x2A40(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A41[0x7];                                     // 0x2A41(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialParameterCollection*           GIMPC;                                             // 0x2A48(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A50[0x20];                                    // 0x2A50(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveFloat                        FogTime;                                           // 0x2A70(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class UClusteredStuffDataAsset*, TWeakObjectPtr<class AKuroRuntimeTransientActor>> ClusteredStuffTransientActors; // 0x2B00(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPublic)
+	TSet<class UClusteredStuffDataAsset*>         ClusteredStuffActive;                              // 0x2B50(0x0050)(Transient, NativeAccessSpecifierPublic)
+	TArray<class UClusteredStuffDataAsset*>       AdditionalClusteredStuff;                          // 0x2BA0(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	class UClusteredStuffDataAsset*               DefaultAutoGrassData;                              // 0x2BB0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BB8[0x8];                                     // 0x2BB8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class USunLensFlareConfig*                    DefaultSunLensflareConfig;                         // 0x2BC0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInstanceDynamic*               StarsMat;                                          // 0x2BC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInstanceDynamic*               MilkyWayMat;                                       // 0x2BD0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInstanceDynamic*               SkyBoxMat;                                         // 0x2BD8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayerInCave;                                     // 0x2BE0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayerInGrass;                                    // 0x2BE1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bForbidWeather;                                    // 0x2BE2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BE3[0x15];                                    // 0x2BE3(0x0015)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroPointCloudStreamingConfig*         GlobalPointCloudStreamingConfig;                   // 0x2BF8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GlobalPointCloudStreamingDistance;                 // 0x2C00(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C04[0xC];                                     // 0x2C04(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroTODData*                           TODDataAsset;                                      // 0x2C10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UKuroGISystem>           CachedGISystem;                                    // 0x2C18(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2C20[0x28];                                    // 0x2C20(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               LightFunctionMaterialDynamic;                      // 0x2C48(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialInstanceDynamic*               LightFunctionMIPerformance;                        // 0x2C50(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialInstanceDynamic*               LightFunctionMIDefault;                            // 0x2C58(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialInstanceDynamic*               VolumetricLightFunctionMI;                         // 0x2C60(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2C68[0x90];                                    // 0x2C68(0x0090)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPhysicalMaterial*                      LastFrameGlobalFootstepMaterial;                   // 0x2CF8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2D00[0x28];                                    // 0x2D00(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FinalRoughnessDensity;                             // 0x2D28(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D2C[0x4];                                     // 0x2D2C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FinalRainDensityValue;                             // 0x2D30(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D34[0x8];                                     // 0x2D34(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FinalRainGravityValue;                             // 0x2D3C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RainGravityStepSpeed;                              // 0x2D40(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D44[0xC];                                     // 0x2D44(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture*                               TargetLightFunctionMap_Texture;                    // 0x2D50(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               FinalLightFunctionMap_Texture;                     // 0x2D58(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               TargetLightFunctionPerShadowMap_Texture;           // 0x2D60(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               FinalLightFunctionPerShadowMap_Texture;            // 0x2D68(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D70[0x40];                                    // 0x2D70(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture*                               TargetMilkyWayTexture;                             // 0x2DB0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               FinalMilkyWayTexture;                              // 0x2DB8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               TargetMilkyWayDistortionTexture;                   // 0x2DC0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               FinalMilkyWayDistortionTexture;                    // 0x2DC8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               TargetMilkyWayStarTexture;                         // 0x2DD0(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               FinalMilkyWayStarTexture;                          // 0x2DD8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2DE0[0x8];                                     // 0x2DE0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDirectionalLightComponent*             AtmosphereSunLight;                                // 0x2DE8(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDirectionalLightComponent*             AtmosphereMoonLight;                               // 0x2DF0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2DF8[0x4C];                                    // 0x2DF8(0x004C)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bDisableWeatherTemporalLerp;                       // 0x2E44(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E45[0x1B];                                    // 0x2E45(0x001B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void BindEventForbidWeatherStateChanged(TDelegate<void(bool InForbidWeather)> InDelegate);
@@ -1762,7 +2303,7 @@ public:
 	void ApplyMilkyWayParameters(class UMaterialInstance* MilkyWayMaterial, class UStaticMeshComponent* MilkyWayMeshComponent, float Time);
 	void ApplyRainOverrider(class AKuroWorldRainGlobalOverrider* Overrider);
 	void ApplySkyBoxSetting(const class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, class UMaterialInstance* SkyBoxMaterial, class UStaticMeshComponent* SkyBoxMeshComponent, float Time);
-	void ApplyStarsParameters(class UMaterialInstance* StarMaterial, class UStaticMeshComponent* StarMeshComponent, float Time);
+	void ApplyStarsParameters(class UMaterialInstance* StarMaterial, class UStaticMeshComponent* StarMeshComponent, float Time, class UMaterialInstance* StarMaterial_V2);
 	void CalLightDirectionWithLimit(float Time, float LightAngleLimit, struct FRotator* LightRotation);
 	void ClearLensflare();
 	class UKuroGISystem* GetCachedGISystem();
@@ -1796,6 +2337,7 @@ public:
 	void ApplyKuroOceanMPC(const class UObject* WorldContextObject, class UMaterialParameterCollection* Collection) const;
 	void ApplyLightParameters(const class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, class UDirectionalLightComponent* SceneLight, bool bEnableLumen) const;
 	void ApplyLightShaft(class UDirectionalLightComponent* SceneLight) const;
+	void ApplyMultipleLayerSkySetting(const class UObject* WorldContextObject, class UMaterialParameterCollection* Collection) const;
 	void ApplySkyEffectsParameters(const class UObject* WorldContextObject, class UMaterialParameterCollection* Collection) const;
 	float CalcTODTimeFactor(float StartTime, float EndTime, float CurrTime) const;
 	bool K2_IsInPersistentLevel() const;
@@ -1811,100 +2353,102 @@ public:
 	}
 };
 static_assert(alignof(AKuroGlobalGI) == 0x000010, "Wrong alignment on AKuroGlobalGI");
-static_assert(sizeof(AKuroGlobalGI) == 0x002BE0, "Wrong size on AKuroGlobalGI");
+static_assert(sizeof(AKuroGlobalGI) == 0x002E60, "Wrong size on AKuroGlobalGI");
 static_assert(offsetof(AKuroGlobalGI, TickInEditor) == 0x0002B0, "Member 'AKuroGlobalGI::TickInEditor' has a wrong offset!");
 static_assert(offsetof(AKuroGlobalGI, IsPersistentLevelGI) == 0x0002B1, "Member 'AKuroGlobalGI::IsPersistentLevelGI' has a wrong offset!");
 static_assert(offsetof(AKuroGlobalGI, bPostProcessVolumeChanged) == 0x0002B2, "Member 'AKuroGlobalGI::bPostProcessVolumeChanged' has a wrong offset!");
 static_assert(offsetof(AKuroGlobalGI, TickDeltaTime) == 0x0002B4, "Member 'AKuroGlobalGI::TickDeltaTime' has a wrong offset!");
 static_assert(offsetof(AKuroGlobalGI, ViewLocation) == 0x0002B8, "Member 'AKuroGlobalGI::ViewLocation' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, SunHorizonAngle) == 0x0002C4, "Member 'AKuroGlobalGI::SunHorizonAngle' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, SunVerticalAngle) == 0x0002C8, "Member 'AKuroGlobalGI::SunVerticalAngle' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, IsReversed) == 0x0002CC, "Member 'AKuroGlobalGI::IsReversed' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, ReverseZCenter) == 0x0002D0, "Member 'AKuroGlobalGI::ReverseZCenter' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bLockSceneLightVerticalAngle) == 0x0002D4, "Member 'AKuroGlobalGI::bLockSceneLightVerticalAngle' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, SceneLightVerticalAngleRange) == 0x0002D8, "Member 'AKuroGlobalGI::SceneLightVerticalAngleRange' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, LerpGISetting) == 0x0002E0, "Member 'AKuroGlobalGI::LerpGISetting' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TempGISetting) == 0x0010A0, "Member 'AKuroGlobalGI::TempGISetting' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, LerpPostProcessSetting) == 0x001E60, "Member 'AKuroGlobalGI::LerpPostProcessSetting' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bContrlTODTime) == 0x0026C0, "Member 'AKuroGlobalGI::bContrlTODTime' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, CurTimeAfterLerp) == 0x0026C4, "Member 'AKuroGlobalGI::CurTimeAfterLerp' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, LerpSunHorizonAngle) == 0x0026C8, "Member 'AKuroGlobalGI::LerpSunHorizonAngle' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, LerpSunVerticalAngle) == 0x0026CC, "Member 'AKuroGlobalGI::LerpSunVerticalAngle' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, GlobalWindSpeed) == 0x0026D0, "Member 'AKuroGlobalGI::GlobalWindSpeed' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, GlobalWindPower) == 0x0026D4, "Member 'AKuroGlobalGI::GlobalWindPower' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, GlobalTimeDilation) == 0x0026D8, "Member 'AKuroGlobalGI::GlobalTimeDilation' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, GlobalWindForwardDrection) == 0x0026DC, "Member 'AKuroGlobalGI::GlobalWindForwardDrection' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, WindTextureOffset) == 0x0026E8, "Member 'AKuroGlobalGI::WindTextureOffset' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bIsDayTime) == 0x0026F4, "Member 'AKuroGlobalGI::bIsDayTime' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bDayNightEmssiveFactor) == 0x0026F5, "Member 'AKuroGlobalGI::bDayNightEmssiveFactor' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, DayNightEmssiveSmoothFactor) == 0x0026F8, "Member 'AKuroGlobalGI::DayNightEmssiveSmoothFactor' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TODNightLightLoadingTime) == 0x0026FC, "Member 'AKuroGlobalGI::TODNightLightLoadingTime' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TODDayLightLoadingTime) == 0x002700, "Member 'AKuroGlobalGI::TODDayLightLoadingTime' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TODEmssiveCloseLerpFade) == 0x002704, "Member 'AKuroGlobalGI::TODEmssiveCloseLerpFade' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, NowGlobalLightIntensity) == 0x002708, "Member 'AKuroGlobalGI::NowGlobalLightIntensity' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bRainAffectPointLight) == 0x00270D, "Member 'AKuroGlobalGI::bRainAffectPointLight' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, CharLightHorizontal) == 0x002710, "Member 'AKuroGlobalGI::CharLightHorizontal' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, CharDebugLightDirection) == 0x002714, "Member 'AKuroGlobalGI::CharDebugLightDirection' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, CharDebugLightDirectionZero) == 0x002720, "Member 'AKuroGlobalGI::CharDebugLightDirectionZero' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, AtmosphereSunRotation) == 0x00272C, "Member 'AKuroGlobalGI::AtmosphereSunRotation' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, AtmosphereSunForward) == 0x002738, "Member 'AKuroGlobalGI::AtmosphereSunForward' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, AtmosphereMoonRotation) == 0x002744, "Member 'AKuroGlobalGI::AtmosphereMoonRotation' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, AtmosphereMoonForward) == 0x002750, "Member 'AKuroGlobalGI::AtmosphereMoonForward' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroViewCenterPlayerIndex) == 0x00275C, "Member 'AKuroGlobalGI::KuroViewCenterPlayerIndex' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroViewCenterHeightOffset) == 0x002760, "Member 'AKuroGlobalGI::KuroViewCenterHeightOffset' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bEnableCustomKuroViewCenter) == 0x002764, "Member 'AKuroGlobalGI::bEnableCustomKuroViewCenter' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, CustomKuroViewCenter) == 0x002768, "Member 'AKuroGlobalGI::CustomKuroViewCenter' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, CurrentKuroViewCenter) == 0x002774, "Member 'AKuroGlobalGI::CurrentKuroViewCenter' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroTrailSystemEnable) == 0x002780, "Member 'AKuroGlobalGI::KuroTrailSystemEnable' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroTrailNoiseTexutre) == 0x002788, "Member 'AKuroGlobalGI::KuroTrailNoiseTexutre' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, UpdatePostProcessDataThreshold) == 0x002790, "Member 'AKuroGlobalGI::UpdatePostProcessDataThreshold' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroSkyLightCubemap1) == 0x002798, "Member 'AKuroGlobalGI::KuroSkyLightCubemap1' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroSkyLightCubemap2) == 0x0027A0, "Member 'AKuroGlobalGI::KuroSkyLightCubemap2' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroSkyLightCubemap3) == 0x0027A8, "Member 'AKuroGlobalGI::KuroSkyLightCubemap3' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroCubemapBlend12) == 0x0027B0, "Member 'AKuroGlobalGI::KuroCubemapBlend12' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroCubemapBlend23) == 0x0027B4, "Member 'AKuroGlobalGI::KuroCubemapBlend23' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, KuroGlobalGIIndex) == 0x0027B8, "Member 'AKuroGlobalGI::KuroGlobalGIIndex' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, GIID) == 0x0027BC, "Member 'AKuroGlobalGI::GIID' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, IsKuroInit) == 0x0027C0, "Member 'AKuroGlobalGI::IsKuroInit' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, GIMPC) == 0x0027C8, "Member 'AKuroGlobalGI::GIMPC' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, FogTime) == 0x0027F0, "Member 'AKuroGlobalGI::FogTime' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, ClusteredStuffTransientActors) == 0x002880, "Member 'AKuroGlobalGI::ClusteredStuffTransientActors' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, ClusteredStuffActive) == 0x0028D0, "Member 'AKuroGlobalGI::ClusteredStuffActive' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, AdditionalClusteredStuff) == 0x002920, "Member 'AKuroGlobalGI::AdditionalClusteredStuff' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, DefaultAutoGrassData) == 0x002930, "Member 'AKuroGlobalGI::DefaultAutoGrassData' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, DefaultSunLensflareConfig) == 0x002940, "Member 'AKuroGlobalGI::DefaultSunLensflareConfig' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, StarsMat) == 0x002948, "Member 'AKuroGlobalGI::StarsMat' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, MilkyWayMat) == 0x002950, "Member 'AKuroGlobalGI::MilkyWayMat' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, SkyBoxMat) == 0x002958, "Member 'AKuroGlobalGI::SkyBoxMat' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bPlayerInCave) == 0x002960, "Member 'AKuroGlobalGI::bPlayerInCave' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bPlayerInGrass) == 0x002961, "Member 'AKuroGlobalGI::bPlayerInGrass' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bForbidWeather) == 0x002962, "Member 'AKuroGlobalGI::bForbidWeather' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, GlobalPointCloudStreamingConfig) == 0x002978, "Member 'AKuroGlobalGI::GlobalPointCloudStreamingConfig' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, GlobalPointCloudStreamingDistance) == 0x002980, "Member 'AKuroGlobalGI::GlobalPointCloudStreamingDistance' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TODDataAsset) == 0x002990, "Member 'AKuroGlobalGI::TODDataAsset' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, CachedGISystem) == 0x002998, "Member 'AKuroGlobalGI::CachedGISystem' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, LightFunctionMaterialDynamic) == 0x0029C8, "Member 'AKuroGlobalGI::LightFunctionMaterialDynamic' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, LightFunctionMIPerformance) == 0x0029D0, "Member 'AKuroGlobalGI::LightFunctionMIPerformance' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, LightFunctionMIDefault) == 0x0029D8, "Member 'AKuroGlobalGI::LightFunctionMIDefault' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, VolumetricLightFunctionMI) == 0x0029E0, "Member 'AKuroGlobalGI::VolumetricLightFunctionMI' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, LastFrameGlobalFootstepMaterial) == 0x002A78, "Member 'AKuroGlobalGI::LastFrameGlobalFootstepMaterial' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, FinalRoughnessDensity) == 0x002AA8, "Member 'AKuroGlobalGI::FinalRoughnessDensity' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, FinalRainDensityValue) == 0x002AB0, "Member 'AKuroGlobalGI::FinalRainDensityValue' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, FinalRainGravityValue) == 0x002ABC, "Member 'AKuroGlobalGI::FinalRainGravityValue' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, RainGravityStepSpeed) == 0x002AC0, "Member 'AKuroGlobalGI::RainGravityStepSpeed' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TargetLightFunctionMap_Texture) == 0x002AD0, "Member 'AKuroGlobalGI::TargetLightFunctionMap_Texture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, FinalLightFunctionMap_Texture) == 0x002AD8, "Member 'AKuroGlobalGI::FinalLightFunctionMap_Texture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TargetLightFunctionPerShadowMap_Texture) == 0x002AE0, "Member 'AKuroGlobalGI::TargetLightFunctionPerShadowMap_Texture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, FinalLightFunctionPerShadowMap_Texture) == 0x002AE8, "Member 'AKuroGlobalGI::FinalLightFunctionPerShadowMap_Texture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TargetMilkyWayTexture) == 0x002B30, "Member 'AKuroGlobalGI::TargetMilkyWayTexture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, FinalMilkyWayTexture) == 0x002B38, "Member 'AKuroGlobalGI::FinalMilkyWayTexture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TargetMilkyWayDistortionTexture) == 0x002B40, "Member 'AKuroGlobalGI::TargetMilkyWayDistortionTexture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, FinalMilkyWayDistortionTexture) == 0x002B48, "Member 'AKuroGlobalGI::FinalMilkyWayDistortionTexture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, TargetMilkyWayStarTexture) == 0x002B50, "Member 'AKuroGlobalGI::TargetMilkyWayStarTexture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, FinalMilkyWayStarTexture) == 0x002B58, "Member 'AKuroGlobalGI::FinalMilkyWayStarTexture' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, AtmosphereSunLight) == 0x002B68, "Member 'AKuroGlobalGI::AtmosphereSunLight' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, AtmosphereMoonLight) == 0x002B70, "Member 'AKuroGlobalGI::AtmosphereMoonLight' has a wrong offset!");
-static_assert(offsetof(AKuroGlobalGI, bDisableWeatherTemporalLerp) == 0x002BC4, "Member 'AKuroGlobalGI::bDisableWeatherTemporalLerp' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, DisableGlobalGITransition) == 0x0002C4, "Member 'AKuroGlobalGI::DisableGlobalGITransition' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, DisableFixedTimeState) == 0x0002C5, "Member 'AKuroGlobalGI::DisableFixedTimeState' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, SunHorizonAngle) == 0x0002C8, "Member 'AKuroGlobalGI::SunHorizonAngle' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, SunVerticalAngle) == 0x0002CC, "Member 'AKuroGlobalGI::SunVerticalAngle' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, IsReversed) == 0x0002D0, "Member 'AKuroGlobalGI::IsReversed' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, ReverseZCenter) == 0x0002D4, "Member 'AKuroGlobalGI::ReverseZCenter' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bLockSceneLightVerticalAngle) == 0x0002D8, "Member 'AKuroGlobalGI::bLockSceneLightVerticalAngle' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, SceneLightVerticalAngleRange) == 0x0002DC, "Member 'AKuroGlobalGI::SceneLightVerticalAngleRange' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, LerpGISetting) == 0x0002F0, "Member 'AKuroGlobalGI::LerpGISetting' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TempGISetting) == 0x0011E0, "Member 'AKuroGlobalGI::TempGISetting' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, LerpPostProcessSetting) == 0x0020D0, "Member 'AKuroGlobalGI::LerpPostProcessSetting' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bContrlTODTime) == 0x002940, "Member 'AKuroGlobalGI::bContrlTODTime' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, CurTimeAfterLerp) == 0x002944, "Member 'AKuroGlobalGI::CurTimeAfterLerp' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, LerpSunHorizonAngle) == 0x002948, "Member 'AKuroGlobalGI::LerpSunHorizonAngle' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, LerpSunVerticalAngle) == 0x00294C, "Member 'AKuroGlobalGI::LerpSunVerticalAngle' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, GlobalWindSpeed) == 0x002950, "Member 'AKuroGlobalGI::GlobalWindSpeed' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, GlobalWindPower) == 0x002954, "Member 'AKuroGlobalGI::GlobalWindPower' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, GlobalTimeDilation) == 0x002958, "Member 'AKuroGlobalGI::GlobalTimeDilation' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, GlobalWindForwardDrection) == 0x00295C, "Member 'AKuroGlobalGI::GlobalWindForwardDrection' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, WindTextureOffset) == 0x002968, "Member 'AKuroGlobalGI::WindTextureOffset' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bIsDayTime) == 0x002974, "Member 'AKuroGlobalGI::bIsDayTime' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bDayNightEmssiveFactor) == 0x002975, "Member 'AKuroGlobalGI::bDayNightEmssiveFactor' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, DayNightEmssiveSmoothFactor) == 0x002978, "Member 'AKuroGlobalGI::DayNightEmssiveSmoothFactor' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TODNightLightLoadingTime) == 0x00297C, "Member 'AKuroGlobalGI::TODNightLightLoadingTime' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TODDayLightLoadingTime) == 0x002980, "Member 'AKuroGlobalGI::TODDayLightLoadingTime' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TODEmssiveCloseLerpFade) == 0x002984, "Member 'AKuroGlobalGI::TODEmssiveCloseLerpFade' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, NowGlobalLightIntensity) == 0x002988, "Member 'AKuroGlobalGI::NowGlobalLightIntensity' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bRainAffectPointLight) == 0x00298D, "Member 'AKuroGlobalGI::bRainAffectPointLight' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, CharLightHorizontal) == 0x002990, "Member 'AKuroGlobalGI::CharLightHorizontal' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, CharDebugLightDirection) == 0x002994, "Member 'AKuroGlobalGI::CharDebugLightDirection' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, CharDebugLightDirectionZero) == 0x0029A0, "Member 'AKuroGlobalGI::CharDebugLightDirectionZero' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, AtmosphereSunRotation) == 0x0029AC, "Member 'AKuroGlobalGI::AtmosphereSunRotation' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, AtmosphereSunForward) == 0x0029B8, "Member 'AKuroGlobalGI::AtmosphereSunForward' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, AtmosphereMoonRotation) == 0x0029C4, "Member 'AKuroGlobalGI::AtmosphereMoonRotation' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, AtmosphereMoonForward) == 0x0029D0, "Member 'AKuroGlobalGI::AtmosphereMoonForward' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroViewCenterPlayerIndex) == 0x0029DC, "Member 'AKuroGlobalGI::KuroViewCenterPlayerIndex' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroViewCenterHeightOffset) == 0x0029E0, "Member 'AKuroGlobalGI::KuroViewCenterHeightOffset' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bEnableCustomKuroViewCenter) == 0x0029E4, "Member 'AKuroGlobalGI::bEnableCustomKuroViewCenter' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, CustomKuroViewCenter) == 0x0029E8, "Member 'AKuroGlobalGI::CustomKuroViewCenter' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, CurrentKuroViewCenter) == 0x0029F4, "Member 'AKuroGlobalGI::CurrentKuroViewCenter' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroTrailSystemEnable) == 0x002A00, "Member 'AKuroGlobalGI::KuroTrailSystemEnable' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroTrailNoiseTexutre) == 0x002A08, "Member 'AKuroGlobalGI::KuroTrailNoiseTexutre' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, UpdatePostProcessDataThreshold) == 0x002A10, "Member 'AKuroGlobalGI::UpdatePostProcessDataThreshold' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroSkyLightCubemap1) == 0x002A18, "Member 'AKuroGlobalGI::KuroSkyLightCubemap1' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroSkyLightCubemap2) == 0x002A20, "Member 'AKuroGlobalGI::KuroSkyLightCubemap2' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroSkyLightCubemap3) == 0x002A28, "Member 'AKuroGlobalGI::KuroSkyLightCubemap3' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroCubemapBlend12) == 0x002A30, "Member 'AKuroGlobalGI::KuroCubemapBlend12' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroCubemapBlend23) == 0x002A34, "Member 'AKuroGlobalGI::KuroCubemapBlend23' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, KuroGlobalGIIndex) == 0x002A38, "Member 'AKuroGlobalGI::KuroGlobalGIIndex' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, GIID) == 0x002A3C, "Member 'AKuroGlobalGI::GIID' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, IsKuroInit) == 0x002A40, "Member 'AKuroGlobalGI::IsKuroInit' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, GIMPC) == 0x002A48, "Member 'AKuroGlobalGI::GIMPC' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, FogTime) == 0x002A70, "Member 'AKuroGlobalGI::FogTime' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, ClusteredStuffTransientActors) == 0x002B00, "Member 'AKuroGlobalGI::ClusteredStuffTransientActors' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, ClusteredStuffActive) == 0x002B50, "Member 'AKuroGlobalGI::ClusteredStuffActive' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, AdditionalClusteredStuff) == 0x002BA0, "Member 'AKuroGlobalGI::AdditionalClusteredStuff' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, DefaultAutoGrassData) == 0x002BB0, "Member 'AKuroGlobalGI::DefaultAutoGrassData' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, DefaultSunLensflareConfig) == 0x002BC0, "Member 'AKuroGlobalGI::DefaultSunLensflareConfig' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, StarsMat) == 0x002BC8, "Member 'AKuroGlobalGI::StarsMat' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, MilkyWayMat) == 0x002BD0, "Member 'AKuroGlobalGI::MilkyWayMat' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, SkyBoxMat) == 0x002BD8, "Member 'AKuroGlobalGI::SkyBoxMat' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bPlayerInCave) == 0x002BE0, "Member 'AKuroGlobalGI::bPlayerInCave' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bPlayerInGrass) == 0x002BE1, "Member 'AKuroGlobalGI::bPlayerInGrass' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bForbidWeather) == 0x002BE2, "Member 'AKuroGlobalGI::bForbidWeather' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, GlobalPointCloudStreamingConfig) == 0x002BF8, "Member 'AKuroGlobalGI::GlobalPointCloudStreamingConfig' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, GlobalPointCloudStreamingDistance) == 0x002C00, "Member 'AKuroGlobalGI::GlobalPointCloudStreamingDistance' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TODDataAsset) == 0x002C10, "Member 'AKuroGlobalGI::TODDataAsset' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, CachedGISystem) == 0x002C18, "Member 'AKuroGlobalGI::CachedGISystem' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, LightFunctionMaterialDynamic) == 0x002C48, "Member 'AKuroGlobalGI::LightFunctionMaterialDynamic' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, LightFunctionMIPerformance) == 0x002C50, "Member 'AKuroGlobalGI::LightFunctionMIPerformance' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, LightFunctionMIDefault) == 0x002C58, "Member 'AKuroGlobalGI::LightFunctionMIDefault' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, VolumetricLightFunctionMI) == 0x002C60, "Member 'AKuroGlobalGI::VolumetricLightFunctionMI' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, LastFrameGlobalFootstepMaterial) == 0x002CF8, "Member 'AKuroGlobalGI::LastFrameGlobalFootstepMaterial' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, FinalRoughnessDensity) == 0x002D28, "Member 'AKuroGlobalGI::FinalRoughnessDensity' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, FinalRainDensityValue) == 0x002D30, "Member 'AKuroGlobalGI::FinalRainDensityValue' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, FinalRainGravityValue) == 0x002D3C, "Member 'AKuroGlobalGI::FinalRainGravityValue' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, RainGravityStepSpeed) == 0x002D40, "Member 'AKuroGlobalGI::RainGravityStepSpeed' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TargetLightFunctionMap_Texture) == 0x002D50, "Member 'AKuroGlobalGI::TargetLightFunctionMap_Texture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, FinalLightFunctionMap_Texture) == 0x002D58, "Member 'AKuroGlobalGI::FinalLightFunctionMap_Texture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TargetLightFunctionPerShadowMap_Texture) == 0x002D60, "Member 'AKuroGlobalGI::TargetLightFunctionPerShadowMap_Texture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, FinalLightFunctionPerShadowMap_Texture) == 0x002D68, "Member 'AKuroGlobalGI::FinalLightFunctionPerShadowMap_Texture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TargetMilkyWayTexture) == 0x002DB0, "Member 'AKuroGlobalGI::TargetMilkyWayTexture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, FinalMilkyWayTexture) == 0x002DB8, "Member 'AKuroGlobalGI::FinalMilkyWayTexture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TargetMilkyWayDistortionTexture) == 0x002DC0, "Member 'AKuroGlobalGI::TargetMilkyWayDistortionTexture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, FinalMilkyWayDistortionTexture) == 0x002DC8, "Member 'AKuroGlobalGI::FinalMilkyWayDistortionTexture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, TargetMilkyWayStarTexture) == 0x002DD0, "Member 'AKuroGlobalGI::TargetMilkyWayStarTexture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, FinalMilkyWayStarTexture) == 0x002DD8, "Member 'AKuroGlobalGI::FinalMilkyWayStarTexture' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, AtmosphereSunLight) == 0x002DE8, "Member 'AKuroGlobalGI::AtmosphereSunLight' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, AtmosphereMoonLight) == 0x002DF0, "Member 'AKuroGlobalGI::AtmosphereMoonLight' has a wrong offset!");
+static_assert(offsetof(AKuroGlobalGI, bDisableWeatherTemporalLerp) == 0x002E44, "Member 'AKuroGlobalGI::bDisableWeatherTemporalLerp' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroHeightMapSettings
 // 0x0010 (0x0048 - 0x0038)
@@ -2126,11 +2670,11 @@ static_assert(offsetof(UKuroGrassInteractionSphereComponent, Radius) == 0x000218
 static_assert(offsetof(UKuroGrassInteractionSphereComponent, bEnabled) == 0x00021C, "Member 'UKuroGrassInteractionSphereComponent::bEnabled' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroGrassInteractionWorldSubsystem
-// 0x0008 (0x0040 - 0x0038)
+// 0x0018 (0x0050 - 0x0038)
 class UKuroGrassInteractionWorldSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x18];                                      // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2143,7 +2687,7 @@ public:
 	}
 };
 static_assert(alignof(UKuroGrassInteractionWorldSubsystem) == 0x000008, "Wrong alignment on UKuroGrassInteractionWorldSubsystem");
-static_assert(sizeof(UKuroGrassInteractionWorldSubsystem) == 0x000040, "Wrong size on UKuroGrassInteractionWorldSubsystem");
+static_assert(sizeof(UKuroGrassInteractionWorldSubsystem) == 0x000050, "Wrong size on UKuroGrassInteractionWorldSubsystem");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroHaloComponent
 // 0x0030 (0x05F0 - 0x05C0)
@@ -2218,6 +2762,26 @@ static_assert(sizeof(AKuroHighResLandscapeActor) == 0x0002B8, "Wrong size on AKu
 static_assert(offsetof(AKuroHighResLandscapeActor, bIsEnable) == 0x0002B0, "Member 'AKuroHighResLandscapeActor::bIsEnable' has a wrong offset!");
 static_assert(offsetof(AKuroHighResLandscapeActor, bUseProxyEvent) == 0x0002B1, "Member 'AKuroHighResLandscapeActor::bUseProxyEvent' has a wrong offset!");
 
+// Class KuroRenderingRuntimeBPPlugin.KuroInteractionPlacement
+// 0x0010 (0x02D0 - 0x02C0)
+class AKuroInteractionPlacement final : public AStaticMeshActor
+{
+public:
+	uint8                                         Pad_2C0[0x10];                                     // 0x02C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroInteractionPlacement">();
+	}
+	static class AKuroInteractionPlacement* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroInteractionPlacement>();
+	}
+};
+static_assert(alignof(AKuroInteractionPlacement) == 0x000008, "Wrong alignment on AKuroInteractionPlacement");
+static_assert(sizeof(AKuroInteractionPlacement) == 0x0002D0, "Wrong size on AKuroInteractionPlacement");
+
 // Class KuroRenderingRuntimeBPPlugin.KuroLensFlare
 // 0x0048 (0x0108 - 0x00C0)
 class UKuroLensFlare final : public UActorComponent
@@ -2255,178 +2819,6 @@ static_assert(offsetof(UKuroLensFlare, UVs) == 0x0000E0, "Member 'UKuroLensFlare
 static_assert(offsetof(UKuroLensFlare, VertexColor) == 0x0000F0, "Member 'UKuroLensFlare::VertexColor' has a wrong offset!");
 static_assert(offsetof(UKuroLensFlare, MeshComponent) == 0x000100, "Member 'UKuroLensFlare::MeshComponent' has a wrong offset!");
 
-// Class KuroRenderingRuntimeBPPlugin.KuroLevelSequenceActor
-// 0x0010 (0x0358 - 0x0348)
-class AKuroLevelSequenceActor final : public ALevelSequenceActor
-{
-public:
-	class FName                                   Key;                                               // 0x0348(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_354[0x4];                                      // 0x0354(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroLevelSequenceActor">();
-	}
-	static class AKuroLevelSequenceActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AKuroLevelSequenceActor>();
-	}
-};
-static_assert(alignof(AKuroLevelSequenceActor) == 0x000008, "Wrong alignment on AKuroLevelSequenceActor");
-static_assert(sizeof(AKuroLevelSequenceActor) == 0x000358, "Wrong size on AKuroLevelSequenceActor");
-static_assert(offsetof(AKuroLevelSequenceActor, Key) == 0x000348, "Member 'AKuroLevelSequenceActor::Key' has a wrong offset!");
-
-// Class KuroRenderingRuntimeBPPlugin.KuroLevelSequenceSubsystem
-// 0x0070 (0x00A8 - 0x0038)
-class UKuroLevelSequenceSubsystem final : public UWorldSubsystem
-{
-public:
-	TMulticastInlineDelegate<void(class AKuroLevelSequenceActor* SequenceActor)> OnLevelSequenceRegister;                           // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AKuroLevelSequenceActor* SequenceActor)> OnLevelSequenceUnRegister;                         // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_58[0x50];                                      // 0x0058(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void GetAllLevelSequences(TArray<class AKuroLevelSequenceActor*>* InAllLevelSequences);
-	class AKuroLevelSequenceActor* GetLevelSequence(const class FName& Key);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroLevelSequenceSubsystem">();
-	}
-	static class UKuroLevelSequenceSubsystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroLevelSequenceSubsystem>();
-	}
-};
-static_assert(alignof(UKuroLevelSequenceSubsystem) == 0x000008, "Wrong alignment on UKuroLevelSequenceSubsystem");
-static_assert(sizeof(UKuroLevelSequenceSubsystem) == 0x0000A8, "Wrong size on UKuroLevelSequenceSubsystem");
-static_assert(offsetof(UKuroLevelSequenceSubsystem, OnLevelSequenceRegister) == 0x000038, "Member 'UKuroLevelSequenceSubsystem::OnLevelSequenceRegister' has a wrong offset!");
-static_assert(offsetof(UKuroLevelSequenceSubsystem, OnLevelSequenceUnRegister) == 0x000048, "Member 'UKuroLevelSequenceSubsystem::OnLevelSequenceUnRegister' has a wrong offset!");
-
-// Class KuroRenderingRuntimeBPPlugin.KuroMaterialControllerComponent
-// 0x00D8 (0x0198 - 0x00C0)
-class UKuroMaterialControllerComponent final : public UActorComponent
-{
-public:
-	uint8                                         Pad_C0[0x10];                                      // 0x00C0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bInitTakeOver;                                     // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_D1[0xC7];                                      // 0x00D1(0x00C7)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UKuroMaterialControllerComponent* AddOrGetMaterialControllerComponentFromActor(class AActor* Actor);
-	static class UKuroMaterialControllerComponent* AddOrGetMaterialControllerComponentFromActorWithoutInit(class AActor* Actor);
-
-	void AddColorUpdateParamPermanent(class FName Name_0, const struct FLinearColor& Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
-	void AddColorUpdateParamPermanentByIndex(class FName Name_0, const struct FLinearColor& Value, class FName BodyName, int32 MaterialIndex);
-	void AddColorUpdateParamPermanentCommon(class FName Name_0, const struct FLinearColor& Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
-	void AddColorUpdateParamPermanentCustom(class FName Name_0, const struct FLinearColor& Value, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
-	int32 AddEffect(class UKuroMaterialControllerDataAsset* DataAsset, bool bLoop, bool bPause, class USkeletalMeshComponent* AnimObject);
-	int32 AddEffect_Ex(class UKuroMaterialControllerDataAsset* DataAsset, bool bLoop, bool bPause, class USkeletalMeshComponent* AnimObject, bool bHiddenOnRemove);
-	int32 AddEffectRaw(class UKuroMaterialContainerDataCache* DataCache, bool bLoop, bool bPause, class USkeletalMeshComponent* AnimObject, bool bHiddenOnRemove);
-	void AddExternalAlphaTestRefCount(EKuroCharBodySpecifiedType BodyType);
-	void AddExternalBattleMaskRefCount(EKuroCharBodySpecifiedType BodyType);
-	void AddExternalBattleRefCount(EKuroCharBodySpecifiedType BodyType);
-	void AddExternalOutlineStencilTestRefCount(EKuroCharBodySpecifiedType BodyType);
-	void AddFloatUpdateParamPermanent(class FName Name_0, float Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
-	void AddFloatUpdateParamPermanentByIndex(class FName Name_0, float Value, class FName BodyName, int32 MaterialIndex);
-	void AddFloatUpdateParamPermanentCommon(class FName Name_0, float Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
-	void AddFloatUpdateParamPermanentCustom(class FName Name_0, float Value, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
-	void AddSkeletalMeshComponent(class USkeletalMeshComponent* SkeletalMeshComponent, class FName BodyName, bool bUseEmptyMaterial);
-	void AddTextureUpdateParamPermanent(class FName Name_0, class UTexture* Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
-	void AddTextureUpdateParamPermanentByIndex(class FName Name_0, class UTexture* Value, class FName BodyName, int32 MaterialIndex);
-	void AddTextureUpdateParamPermanentCommon(class FName Name_0, class UTexture* Value, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
-	void AddTextureUpdateParamPermanentCustom(class FName Name_0, class UTexture* Value, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
-	int32 GetEffectKey(class FName KeyName);
-	void InitFromOwner();
-	void ManualTick(float DeltaSeconds, bool bIncludePaused, bool bIncludeNewEffects);
-	void MarkForceUpdateAllOnce();
-	void RefreshFilter(int32 HandleId);
-	void RegisterEffectKey(class FName KeyName, int32 HandleId);
-	void RemoveAllEffects();
-	void RemoveColorUpdateParamPermanent(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
-	void RemoveColorUpdateParamPermanentByIndex(class FName Name_0, class FName BodyName, int32 MaterialIndex);
-	void RemoveColorUpdateParamPermanentCommon(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
-	void RemoveColorUpdateParamPermanentCustom(class FName Name_0, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
-	TArray<int32> RemoveDeadEffects();
-	void RemoveEffect(int32 HandleId);
-	void RemoveExternalAlphaTestRefCount(EKuroCharBodySpecifiedType BodyType);
-	void RemoveExternalBattleMaskRefCount(EKuroCharBodySpecifiedType BodyType);
-	void RemoveExternalBattleRefCount(EKuroCharBodySpecifiedType BodyType);
-	void RemoveExternalMaterialReplace(EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
-	void RemoveExternalMaterialReplaceByIndex(class FName BodyName, int32 MaterialIndex);
-	void RemoveExternalMaterialReplaceCommon(EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
-	void RemoveExternalMaterialReplaceCustom(class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
-	void RemoveExternalOutlineStencilTestRefCount(EKuroCharBodySpecifiedType BodyType);
-	void RemoveFloatUpdateParamPermanent(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
-	void RemoveFloatUpdateParamPermanentByIndex(class FName Name_0, class FName BodyName, int32 MaterialIndex);
-	void RemoveFloatUpdateParamPermanentCommon(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
-	void RemoveFloatUpdateParamPermanentCustom(class FName Name_0, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
-	void RemoveSkeletalMeshComponent(class FName BodyName);
-	void RemoveTextureUpdateParamPermanent(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
-	void RemoveTextureUpdateParamPermanentByIndex(class FName Name_0, class FName BodyName, int32 MaterialIndex);
-	void RemoveTextureUpdateParamPermanentCommon(class FName Name_0, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
-	void RemoveTextureUpdateParamPermanentCustom(class FName Name_0, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
-	void ResetAllBodyInfo();
-	void SeekFactor(float AbsoluteFactor, bool bIncludePaused);
-	void SeekHandleFactor(int32 HandleId, float AbsoluteFactor);
-	void SetExternalMaterialReplace(class UMaterialInterface* Mat, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType, const EKuroCharMeshPart MeshPart);
-	void SetExternalMaterialReplaceByIndex(class UMaterialInterface* Mat, class FName BodyName, int32 MaterialIndex);
-	void SetExternalMaterialReplaceCommon(class UMaterialInterface* Mat, EKuroCharBodySpecifiedType BodyType, EKuroCharSlotSpecifiedType SlotType);
-	void SetExternalMaterialReplaceCustom(class UMaterialInterface* Mat, class FName BodyName, EKuroCharSlotSpecifiedType SlotType, const class FString& CustomPartName);
-	void SetHandleEnabled(int32 HandleId, bool bEnabled);
-	void SetHandleLoop(int32 HandleId, bool bLoop, bool bSeekToEnd);
-	void SetHandlePause(int32 HandleId, bool bPause);
-	void SetInitTakeOver(bool InTakeOver);
-	void SetSkeletalMeshComponentUpdateGroup(class FName BodyName, class FName NewUpdateGroupId);
-	void SetToonCustomStencilValue(int32 Value);
-	void UnregisterEffectKey(class FName KeyName);
-	void UpdateEffects();
-
-	bool CheckInit() const;
-	TArray<class FName> GetAllRegisteredBodyNames() const;
-	bool GetAnyUnloopEffect() const;
-	float GetBodyOpacity() const;
-	class USkeletalMeshComponent* GetRegisteredSkeletalMeshComponent(class FName BodyName) const;
-	class USkeletalMeshComponent* GetRegisteredSkeletalMeshComponentByType(EKuroCharBodyType BodyType, int32 Index_0) const;
-	class FName GetSkeletalMeshComponentBodyName(class USkeletalMeshComponent* SkeletalMeshComponent) const;
-	bool HasSkeletalMeshComponent(class USkeletalMeshComponent* SkeletalMeshComponent) const;
-	bool HasSkeletalMeshComponentName(class FName BodyName) const;
-	void SetAllBodyNoWater(bool bNoWater) const;
-	void SetUpdateForce(bool bInUpdateForce) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroMaterialControllerComponent">();
-	}
-	static class UKuroMaterialControllerComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroMaterialControllerComponent>();
-	}
-};
-static_assert(alignof(UKuroMaterialControllerComponent) == 0x000008, "Wrong alignment on UKuroMaterialControllerComponent");
-static_assert(sizeof(UKuroMaterialControllerComponent) == 0x000198, "Wrong size on UKuroMaterialControllerComponent");
-static_assert(offsetof(UKuroMaterialControllerComponent, bInitTakeOver) == 0x0000D0, "Member 'UKuroMaterialControllerComponent::bInitTakeOver' has a wrong offset!");
-
-// Class KuroRenderingRuntimeBPPlugin.KuroMaterialControllerComponentDebugDraw
-// 0x0000 (0x0038 - 0x0038)
-class UKuroMaterialControllerComponentDebugDraw final : public UWorldSubsystem
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroMaterialControllerComponentDebugDraw">();
-	}
-	static class UKuroMaterialControllerComponentDebugDraw* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroMaterialControllerComponentDebugDraw>();
-	}
-};
-static_assert(alignof(UKuroMaterialControllerComponentDebugDraw) == 0x000008, "Wrong alignment on UKuroMaterialControllerComponentDebugDraw");
-static_assert(sizeof(UKuroMaterialControllerComponentDebugDraw) == 0x000038, "Wrong size on UKuroMaterialControllerComponentDebugDraw");
-
 // Class KuroRenderingRuntimeBPPlugin.KuroMaterialContainerDataCache
 // 0x4C08 (0x4C40 - 0x0038)
 class UKuroMaterialContainerDataCache final : public UPrimaryDataAsset
@@ -2454,17 +2846,17 @@ public:
 	struct FKuroMaterialControllerParam_Color     ColorParam;                                        // 0x1FE0(0x1028)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bUseTextureSample;                                 // 0x3008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3009[0x7];                                     // 0x3009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroMaterialControllerParam_TextureSample TextureSampleParam;                                // 0x3010(0x1698)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialControllerParam_TextureSample TextureSampleParam;                            // 0x3010(0x1698)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bUseMotionOffset;                                  // 0x46A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_46A9[0x7];                                     // 0x46A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroMaterialControllerParam_MotionOffset MotionOffsetParam;                                 // 0x46B0(0x01B8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialControllerParam_MotionOffset MotionOffsetParam;                              // 0x46B0(0x01B8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bUseDither;                                        // 0x4868(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4869[0x7];                                     // 0x4869(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroMaterialControllerParam_Dither    DitherParam;                                       // 0x4870(0x01B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bUseCustom;                                        // 0x4A20(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4A21[0x7];                                     // 0x4A21(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroMaterialControllerParam_Custom    CustomParam;                                       // 0x4A28(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FKuroMaterialControllerParam_MaterialReplace MaterialReplaceParam;                              // 0x4A58(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialControllerParam_MaterialReplace MaterialReplaceParam;                        // 0x4A58(0x0030)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          bAllowMaterialUnreverted;                          // 0x4A88(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseBodyOpacity;                                   // 0x4A89(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4A8A[0x6];                                     // 0x4A8A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
@@ -2578,7 +2970,7 @@ public:
 	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMeshComponent*                   ParentStaticMeshComp;                              // 0x00C8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USkeletalMeshComponent*                 ParentSkeletalMeshComp;                            // 0x00D0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FKuroMaterialVariationRuntimeInfo> AllRuntimeMaterialInfo;                            // 0x00D8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FKuroMaterialVariationRuntimeInfo> AllRuntimeMaterialInfo;                         // 0x00D8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	bool GetKeywordState(class FName PropertyName, int32 MaterialIndex);
@@ -2625,7 +3017,7 @@ static_assert(offsetof(UKuroMaterialVariationComponent, ParentSkeletalMeshComp) 
 static_assert(offsetof(UKuroMaterialVariationComponent, AllRuntimeMaterialInfo) == 0x0000D8, "Member 'UKuroMaterialVariationComponent::AllRuntimeMaterialInfo' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroNvClothPlacement
-// 0x0050 (0x0300 - 0x02B0)
+// 0x0058 (0x0308 - 0x02B0)
 class AKuroNvClothPlacement final : public AActor
 {
 public:
@@ -2639,7 +3031,7 @@ public:
 	bool                                          bDrawDebugSelfCollision;                           // 0x02DC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2DD[0x3];                                      // 0x02DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           DrawDebugSelfCollisionColor;                       // 0x02E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F0[0x10];                                     // 0x02F0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F0[0x18];                                     // 0x02F0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool IsEnabled();
@@ -2656,7 +3048,7 @@ public:
 	}
 };
 static_assert(alignof(AKuroNvClothPlacement) == 0x000008, "Wrong alignment on AKuroNvClothPlacement");
-static_assert(sizeof(AKuroNvClothPlacement) == 0x000300, "Wrong size on AKuroNvClothPlacement");
+static_assert(sizeof(AKuroNvClothPlacement) == 0x000308, "Wrong size on AKuroNvClothPlacement");
 static_assert(offsetof(AKuroNvClothPlacement, bUseRandomWind) == 0x0002B0, "Member 'AKuroNvClothPlacement::bUseRandomWind' has a wrong offset!");
 static_assert(offsetof(AKuroNvClothPlacement, RandomWindFrequency) == 0x0002B4, "Member 'AKuroNvClothPlacement::RandomWindFrequency' has a wrong offset!");
 static_assert(offsetof(AKuroNvClothPlacement, RandomWindStrength) == 0x0002B8, "Member 'AKuroNvClothPlacement::RandomWindStrength' has a wrong offset!");
@@ -2665,17 +3057,113 @@ static_assert(offsetof(AKuroNvClothPlacement, ValidBound) == 0x0002C0, "Member '
 static_assert(offsetof(AKuroNvClothPlacement, bDrawDebugSelfCollision) == 0x0002DC, "Member 'AKuroNvClothPlacement::bDrawDebugSelfCollision' has a wrong offset!");
 static_assert(offsetof(AKuroNvClothPlacement, DrawDebugSelfCollisionColor) == 0x0002E0, "Member 'AKuroNvClothPlacement::DrawDebugSelfCollisionColor' has a wrong offset!");
 
+// Class KuroRenderingRuntimeBPPlugin.KuroNvClothSelfCollisionHelperSphere
+// 0x0008 (0x02B8 - 0x02B0)
+class AKuroNvClothSelfCollisionHelperSphere final : public AActor
+{
+public:
+	float                                         Radius;                                            // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B4[0x4];                                      // 0x02B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroNvClothSelfCollisionHelperSphere">();
+	}
+	static class AKuroNvClothSelfCollisionHelperSphere* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroNvClothSelfCollisionHelperSphere>();
+	}
+};
+static_assert(alignof(AKuroNvClothSelfCollisionHelperSphere) == 0x000008, "Wrong alignment on AKuroNvClothSelfCollisionHelperSphere");
+static_assert(sizeof(AKuroNvClothSelfCollisionHelperSphere) == 0x0002B8, "Wrong size on AKuroNvClothSelfCollisionHelperSphere");
+static_assert(offsetof(AKuroNvClothSelfCollisionHelperSphere, Radius) == 0x0002B0, "Member 'AKuroNvClothSelfCollisionHelperSphere::Radius' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroNvClothSelfCollisionHelperCapsule
+// 0x0018 (0x02C8 - 0x02B0)
+class AKuroNvClothSelfCollisionHelperCapsule final : public AActor
+{
+public:
+	float                                         Length;                                            // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Radius;                                            // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMeshComponent*                   Sphere0;                                           // 0x02B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UStaticMeshComponent*                   Sphere1;                                           // 0x02C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroNvClothSelfCollisionHelperCapsule">();
+	}
+	static class AKuroNvClothSelfCollisionHelperCapsule* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroNvClothSelfCollisionHelperCapsule>();
+	}
+};
+static_assert(alignof(AKuroNvClothSelfCollisionHelperCapsule) == 0x000008, "Wrong alignment on AKuroNvClothSelfCollisionHelperCapsule");
+static_assert(sizeof(AKuroNvClothSelfCollisionHelperCapsule) == 0x0002C8, "Wrong size on AKuroNvClothSelfCollisionHelperCapsule");
+static_assert(offsetof(AKuroNvClothSelfCollisionHelperCapsule, Length) == 0x0002B0, "Member 'AKuroNvClothSelfCollisionHelperCapsule::Length' has a wrong offset!");
+static_assert(offsetof(AKuroNvClothSelfCollisionHelperCapsule, Radius) == 0x0002B4, "Member 'AKuroNvClothSelfCollisionHelperCapsule::Radius' has a wrong offset!");
+static_assert(offsetof(AKuroNvClothSelfCollisionHelperCapsule, Sphere0) == 0x0002B8, "Member 'AKuroNvClothSelfCollisionHelperCapsule::Sphere0' has a wrong offset!");
+static_assert(offsetof(AKuroNvClothSelfCollisionHelperCapsule, Sphere1) == 0x0002C0, "Member 'AKuroNvClothSelfCollisionHelperCapsule::Sphere1' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroNvClothSelfCollisionHelperBox
+// 0x0010 (0x02C0 - 0x02B0)
+class AKuroNvClothSelfCollisionHelperBox final : public AActor
+{
+public:
+	float                                         X;                                                 // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Y;                                                 // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Z;                                                 // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroNvClothSelfCollisionHelperBox">();
+	}
+	static class AKuroNvClothSelfCollisionHelperBox* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroNvClothSelfCollisionHelperBox>();
+	}
+};
+static_assert(alignof(AKuroNvClothSelfCollisionHelperBox) == 0x000008, "Wrong alignment on AKuroNvClothSelfCollisionHelperBox");
+static_assert(sizeof(AKuroNvClothSelfCollisionHelperBox) == 0x0002C0, "Wrong size on AKuroNvClothSelfCollisionHelperBox");
+static_assert(offsetof(AKuroNvClothSelfCollisionHelperBox, X) == 0x0002B0, "Member 'AKuroNvClothSelfCollisionHelperBox::X' has a wrong offset!");
+static_assert(offsetof(AKuroNvClothSelfCollisionHelperBox, Y) == 0x0002B4, "Member 'AKuroNvClothSelfCollisionHelperBox::Y' has a wrong offset!");
+static_assert(offsetof(AKuroNvClothSelfCollisionHelperBox, Z) == 0x0002B8, "Member 'AKuroNvClothSelfCollisionHelperBox::Z' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroNvClothPlacementBoundHelper
+// 0x0010 (0x02F8 - 0x02E8)
+class AKuroNvClothPlacementBoundHelper final : public AVolume
+{
+public:
+	TArray<class AKuroNvClothPlacement*>          NvClothPlacementArray;                             // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroNvClothPlacementBoundHelper">();
+	}
+	static class AKuroNvClothPlacementBoundHelper* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroNvClothPlacementBoundHelper>();
+	}
+};
+static_assert(alignof(AKuroNvClothPlacementBoundHelper) == 0x000008, "Wrong alignment on AKuroNvClothPlacementBoundHelper");
+static_assert(sizeof(AKuroNvClothPlacementBoundHelper) == 0x0002F8, "Wrong size on AKuroNvClothPlacementBoundHelper");
+static_assert(offsetof(AKuroNvClothPlacementBoundHelper, NvClothPlacementArray) == 0x0002E8, "Member 'AKuroNvClothPlacementBoundHelper::NvClothPlacementArray' has a wrong offset!");
+
 // Class KuroRenderingRuntimeBPPlugin.KuroPDCloudPrefab
-// 0x0140 (0x0178 - 0x0038)
+// 0x0158 (0x0190 - 0x0038)
 class UKuroPDCloudPrefab : public UPrimaryDataAsset
 {
 public:
 	struct FCloudParameters                       CloudTop;                                          // 0x0038(0x00C0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FCloudCover                            CloudCover;                                        // 0x00F8(0x0008)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPOICloudParameters                    CloudBigShape;                                     // 0x0100(0x0038)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FMountainParameters                    Mountain;                                          // 0x0138(0x0001)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_139[0x7];                                      // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAnomaliesParameters                   CloudAnomalies;                                    // 0x0140(0x0038)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCloudCover                            CloudCover;                                        // 0x00F8(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPOICloudParameters                    CloudBigShape;                                     // 0x0110(0x0040)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMountainParameters                    Mountain;                                          // 0x0150(0x0001)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAnomaliesParameters                   CloudAnomalies;                                    // 0x0158(0x0038)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2688,12 +3176,107 @@ public:
 	}
 };
 static_assert(alignof(UKuroPDCloudPrefab) == 0x000008, "Wrong alignment on UKuroPDCloudPrefab");
-static_assert(sizeof(UKuroPDCloudPrefab) == 0x000178, "Wrong size on UKuroPDCloudPrefab");
+static_assert(sizeof(UKuroPDCloudPrefab) == 0x000190, "Wrong size on UKuroPDCloudPrefab");
 static_assert(offsetof(UKuroPDCloudPrefab, CloudTop) == 0x000038, "Member 'UKuroPDCloudPrefab::CloudTop' has a wrong offset!");
 static_assert(offsetof(UKuroPDCloudPrefab, CloudCover) == 0x0000F8, "Member 'UKuroPDCloudPrefab::CloudCover' has a wrong offset!");
-static_assert(offsetof(UKuroPDCloudPrefab, CloudBigShape) == 0x000100, "Member 'UKuroPDCloudPrefab::CloudBigShape' has a wrong offset!");
-static_assert(offsetof(UKuroPDCloudPrefab, Mountain) == 0x000138, "Member 'UKuroPDCloudPrefab::Mountain' has a wrong offset!");
-static_assert(offsetof(UKuroPDCloudPrefab, CloudAnomalies) == 0x000140, "Member 'UKuroPDCloudPrefab::CloudAnomalies' has a wrong offset!");
+static_assert(offsetof(UKuroPDCloudPrefab, CloudBigShape) == 0x000110, "Member 'UKuroPDCloudPrefab::CloudBigShape' has a wrong offset!");
+static_assert(offsetof(UKuroPDCloudPrefab, Mountain) == 0x000150, "Member 'UKuroPDCloudPrefab::Mountain' has a wrong offset!");
+static_assert(offsetof(UKuroPDCloudPrefab, CloudAnomalies) == 0x000158, "Member 'UKuroPDCloudPrefab::CloudAnomalies' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.ThunderGenerator
+// 0x0270 (0x0520 - 0x02B0)
+class AThunderGenerator : public AActor
+{
+public:
+	float                                         PointLightHeight;                                  // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B4[0x4];                                      // 0x02B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroWeatherDataAsset*                  WeatherDataAsset;                                  // 0x02B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TraceHeightMin;                                    // 0x02C0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         TraceHeightMax;                                    // 0x02C4(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         DistributionFactor;                                // 0x02C8(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         GenerateIntervalMin;                               // 0x02CC(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         GenerateIntervalMax;                               // 0x02D0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         GenerateChance;                                    // 0x02D4(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ThunderPlayInnerRange;                             // 0x02D8(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ThunderPlayRange;                                  // 0x02DC(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         BaseThunderAttackChance;                           // 0x02E0(0x0004)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2E4[0x4];                                      // 0x02E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveFloat                        PointLightCurve;                                   // 0x02E8(0x0090)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
+	struct FKuroCurveFloat                        PointLightRadiusCurve;                             // 0x0378(0x0090)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
+	struct FKuroCurveFloat                        PostProcessCurve;                                  // 0x0408(0x0090)(BlueprintVisible, Transient, Protected, NativeAccessSpecifierProtected)
+	class UNiagaraSystem*                         NiagaraSystem;                                     // 0x0498(0x0008)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UNiagaraComponent*                      NiagaraComponent;                                  // 0x04A0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UPointLightComponent*                   PointLightComponent;                               // 0x04A8(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKuroPostProcessComponent*              KuroPostProcessComponent;                          // 0x04B0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class AKuroGlobalGI*                          CachedGlobalGI;                                    // 0x04B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKuroGISystem*                          CachedGISystem;                                    // 0x04C0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ThunderAge;                                        // 0x04C8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         AttackAge;                                         // 0x04CC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bThunderActive;                                    // 0x04D0(0x0001)(BlueprintVisible, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EKuroThunderType                              CurrentThunderType;                                // 0x04D1(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4D2[0x2];                                      // 0x04D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FinalThunderGenerateChance;                        // 0x04D4(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         FinalThunderAttackChance;                          // 0x04D8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ThunderCloudIntensity;                             // 0x04DC(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ThunderPostProcessIntensity;                       // 0x04E0(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FLinearColor                           ThunderPostProcessMainLightColor;                  // 0x04E4(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FLinearColor                           ThunderPostProcessOriginColor;                     // 0x04F4(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_504[0x1C];                                     // 0x0504(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static void SpawnThunderInWorld(class UObject* WorldContextObject, const struct FVector& Location, bool bAttack);
+
+	bool CalculateThunderPosition(const struct FTransform& CameraTransform, struct FVector* OutPosition, bool bAttack);
+	void DisableThunder();
+	void EnableThunder();
+	void OnReceiveThunderAttack(const struct FVector& Location, bool bAttack);
+	void OnReceiveThunderTrigger(class AThunderTrigger* Trigger, const struct FTransform& CameraTransform);
+	void OnThunderTypeChanged();
+	void OnUpdateThunderEffect(float DeltaSeconds);
+	void SpawnThunder(const struct FVector& HitLocation, bool bAttack);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ThunderGenerator">();
+	}
+	static class AThunderGenerator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AThunderGenerator>();
+	}
+};
+static_assert(alignof(AThunderGenerator) == 0x000008, "Wrong alignment on AThunderGenerator");
+static_assert(sizeof(AThunderGenerator) == 0x000520, "Wrong size on AThunderGenerator");
+static_assert(offsetof(AThunderGenerator, PointLightHeight) == 0x0002B0, "Member 'AThunderGenerator::PointLightHeight' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, WeatherDataAsset) == 0x0002B8, "Member 'AThunderGenerator::WeatherDataAsset' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, TraceHeightMin) == 0x0002C0, "Member 'AThunderGenerator::TraceHeightMin' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, TraceHeightMax) == 0x0002C4, "Member 'AThunderGenerator::TraceHeightMax' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, DistributionFactor) == 0x0002C8, "Member 'AThunderGenerator::DistributionFactor' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, GenerateIntervalMin) == 0x0002CC, "Member 'AThunderGenerator::GenerateIntervalMin' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, GenerateIntervalMax) == 0x0002D0, "Member 'AThunderGenerator::GenerateIntervalMax' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, GenerateChance) == 0x0002D4, "Member 'AThunderGenerator::GenerateChance' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, ThunderPlayInnerRange) == 0x0002D8, "Member 'AThunderGenerator::ThunderPlayInnerRange' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, ThunderPlayRange) == 0x0002DC, "Member 'AThunderGenerator::ThunderPlayRange' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, BaseThunderAttackChance) == 0x0002E0, "Member 'AThunderGenerator::BaseThunderAttackChance' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, PointLightCurve) == 0x0002E8, "Member 'AThunderGenerator::PointLightCurve' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, PointLightRadiusCurve) == 0x000378, "Member 'AThunderGenerator::PointLightRadiusCurve' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, PostProcessCurve) == 0x000408, "Member 'AThunderGenerator::PostProcessCurve' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, NiagaraSystem) == 0x000498, "Member 'AThunderGenerator::NiagaraSystem' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, NiagaraComponent) == 0x0004A0, "Member 'AThunderGenerator::NiagaraComponent' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, PointLightComponent) == 0x0004A8, "Member 'AThunderGenerator::PointLightComponent' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, KuroPostProcessComponent) == 0x0004B0, "Member 'AThunderGenerator::KuroPostProcessComponent' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, CachedGlobalGI) == 0x0004B8, "Member 'AThunderGenerator::CachedGlobalGI' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, CachedGISystem) == 0x0004C0, "Member 'AThunderGenerator::CachedGISystem' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, ThunderAge) == 0x0004C8, "Member 'AThunderGenerator::ThunderAge' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, AttackAge) == 0x0004CC, "Member 'AThunderGenerator::AttackAge' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, bThunderActive) == 0x0004D0, "Member 'AThunderGenerator::bThunderActive' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, CurrentThunderType) == 0x0004D1, "Member 'AThunderGenerator::CurrentThunderType' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, FinalThunderGenerateChance) == 0x0004D4, "Member 'AThunderGenerator::FinalThunderGenerateChance' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, FinalThunderAttackChance) == 0x0004D8, "Member 'AThunderGenerator::FinalThunderAttackChance' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, ThunderCloudIntensity) == 0x0004DC, "Member 'AThunderGenerator::ThunderCloudIntensity' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, ThunderPostProcessIntensity) == 0x0004E0, "Member 'AThunderGenerator::ThunderPostProcessIntensity' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, ThunderPostProcessMainLightColor) == 0x0004E4, "Member 'AThunderGenerator::ThunderPostProcessMainLightColor' has a wrong offset!");
+static_assert(offsetof(AThunderGenerator, ThunderPostProcessOriginColor) == 0x0004F4, "Member 'AThunderGenerator::ThunderPostProcessOriginColor' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroPlayerPrefsSystem
 // 0x0008 (0x0040 - 0x0038)
@@ -2729,17 +3312,17 @@ static_assert(sizeof(UKuroPlayerPrefsSystem) == 0x000040, "Wrong size on UKuroPl
 static_assert(offsetof(UKuroPlayerPrefsSystem, KuroSaveGame) == 0x000038, "Member 'UKuroPlayerPrefsSystem::KuroSaveGame' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroPostProcessComponent
-// 0x0E00 (0x18A0 - 0x0AA0)
+// 0x0F30 (0x19E0 - 0x0AB0)
 class UKuroPostProcessComponent final : public UPostProcessComponent
 {
 public:
-	class UKuroWeatherDataAsset*                  WeatherDataAsset;                                  // 0x0A98(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroTODData*                           PPTODDataAsset;                                    // 0x0AA0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AA8[0x8];                                      // 0x0AA8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroGISetting                         GISetting;                                         // 0x0AB0(0x0DC0)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
-	class AVolume*                                ReferencedVolumeActor;                             // 0x1870(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUpdateOverrideWithTOD;                            // 0x1878(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1879[0x27];                                    // 0x1879(0x0027)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKuroWeatherDataAsset*                  WeatherDataAsset;                                  // 0x0AA8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroTODData*                           PPTODDataAsset;                                    // 0x0AB0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AB8[0x8];                                      // 0x0AB8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroGISetting                         GISetting;                                         // 0x0AC0(0x0EF0)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
+	class AVolume*                                ReferencedVolumeActor;                             // 0x19B0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUpdateOverrideWithTOD;                            // 0x19B8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19B9[0x27];                                    // 0x19B9(0x0027)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void PostModify();
@@ -2758,26 +3341,26 @@ public:
 	}
 };
 static_assert(alignof(UKuroPostProcessComponent) == 0x000010, "Wrong alignment on UKuroPostProcessComponent");
-static_assert(sizeof(UKuroPostProcessComponent) == 0x0018A0, "Wrong size on UKuroPostProcessComponent");
-static_assert(offsetof(UKuroPostProcessComponent, WeatherDataAsset) == 0x000A98, "Member 'UKuroPostProcessComponent::WeatherDataAsset' has a wrong offset!");
-static_assert(offsetof(UKuroPostProcessComponent, PPTODDataAsset) == 0x000AA0, "Member 'UKuroPostProcessComponent::PPTODDataAsset' has a wrong offset!");
-static_assert(offsetof(UKuroPostProcessComponent, GISetting) == 0x000AB0, "Member 'UKuroPostProcessComponent::GISetting' has a wrong offset!");
-static_assert(offsetof(UKuroPostProcessComponent, ReferencedVolumeActor) == 0x001870, "Member 'UKuroPostProcessComponent::ReferencedVolumeActor' has a wrong offset!");
-static_assert(offsetof(UKuroPostProcessComponent, bUpdateOverrideWithTOD) == 0x001878, "Member 'UKuroPostProcessComponent::bUpdateOverrideWithTOD' has a wrong offset!");
+static_assert(sizeof(UKuroPostProcessComponent) == 0x0019E0, "Wrong size on UKuroPostProcessComponent");
+static_assert(offsetof(UKuroPostProcessComponent, WeatherDataAsset) == 0x000AA8, "Member 'UKuroPostProcessComponent::WeatherDataAsset' has a wrong offset!");
+static_assert(offsetof(UKuroPostProcessComponent, PPTODDataAsset) == 0x000AB0, "Member 'UKuroPostProcessComponent::PPTODDataAsset' has a wrong offset!");
+static_assert(offsetof(UKuroPostProcessComponent, GISetting) == 0x000AC0, "Member 'UKuroPostProcessComponent::GISetting' has a wrong offset!");
+static_assert(offsetof(UKuroPostProcessComponent, ReferencedVolumeActor) == 0x0019B0, "Member 'UKuroPostProcessComponent::ReferencedVolumeActor' has a wrong offset!");
+static_assert(offsetof(UKuroPostProcessComponent, bUpdateOverrideWithTOD) == 0x0019B8, "Member 'UKuroPostProcessComponent::bUpdateOverrideWithTOD' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroPostProcessVolume
-// 0x0E10 (0x1980 - 0x0B70)
+// 0x0F40 (0x1AC0 - 0x0B80)
 class AKuroPostProcessVolume final : public APostProcessVolume
 {
 public:
-	class UKuroWeatherDataAsset*                  WeatherDataAsset;                                  // 0x0B68(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroTODData*                           PPTODDataAsset;                                    // 0x0B70(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B78[0x8];                                      // 0x0B78(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroGISetting                         GISetting;                                         // 0x0B80(0x0DC0)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
-	bool                                          bUpdateOverrideWithTOD;                            // 0x1940(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1941[0x7];                                     // 0x1941(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           DatalayerLabel;                                    // 0x1948(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1958[0x28];                                    // 0x1958(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKuroWeatherDataAsset*                  WeatherDataAsset;                                  // 0x0B78(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroTODData*                           PPTODDataAsset;                                    // 0x0B80(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B88[0x8];                                      // 0x0B88(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroGISetting                         GISetting;                                         // 0x0B90(0x0EF0)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
+	bool                                          bUpdateOverrideWithTOD;                            // 0x1A80(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A81[0x7];                                     // 0x1A81(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           DatalayerLabel;                                    // 0x1A88(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A98[0x28];                                    // 0x1A98(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void PostModify();
@@ -2795,12 +3378,12 @@ public:
 	}
 };
 static_assert(alignof(AKuroPostProcessVolume) == 0x000010, "Wrong alignment on AKuroPostProcessVolume");
-static_assert(sizeof(AKuroPostProcessVolume) == 0x001980, "Wrong size on AKuroPostProcessVolume");
-static_assert(offsetof(AKuroPostProcessVolume, WeatherDataAsset) == 0x000B68, "Member 'AKuroPostProcessVolume::WeatherDataAsset' has a wrong offset!");
-static_assert(offsetof(AKuroPostProcessVolume, PPTODDataAsset) == 0x000B70, "Member 'AKuroPostProcessVolume::PPTODDataAsset' has a wrong offset!");
-static_assert(offsetof(AKuroPostProcessVolume, GISetting) == 0x000B80, "Member 'AKuroPostProcessVolume::GISetting' has a wrong offset!");
-static_assert(offsetof(AKuroPostProcessVolume, bUpdateOverrideWithTOD) == 0x001940, "Member 'AKuroPostProcessVolume::bUpdateOverrideWithTOD' has a wrong offset!");
-static_assert(offsetof(AKuroPostProcessVolume, DatalayerLabel) == 0x001948, "Member 'AKuroPostProcessVolume::DatalayerLabel' has a wrong offset!");
+static_assert(sizeof(AKuroPostProcessVolume) == 0x001AC0, "Wrong size on AKuroPostProcessVolume");
+static_assert(offsetof(AKuroPostProcessVolume, WeatherDataAsset) == 0x000B78, "Member 'AKuroPostProcessVolume::WeatherDataAsset' has a wrong offset!");
+static_assert(offsetof(AKuroPostProcessVolume, PPTODDataAsset) == 0x000B80, "Member 'AKuroPostProcessVolume::PPTODDataAsset' has a wrong offset!");
+static_assert(offsetof(AKuroPostProcessVolume, GISetting) == 0x000B90, "Member 'AKuroPostProcessVolume::GISetting' has a wrong offset!");
+static_assert(offsetof(AKuroPostProcessVolume, bUpdateOverrideWithTOD) == 0x001A80, "Member 'AKuroPostProcessVolume::bUpdateOverrideWithTOD' has a wrong offset!");
+static_assert(offsetof(AKuroPostProcessVolume, DatalayerLabel) == 0x001A88, "Member 'AKuroPostProcessVolume::DatalayerLabel' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroRainSettings
 // 0x02D0 (0x0308 - 0x0038)
@@ -2820,10 +3403,10 @@ public:
 	uint8                                         Pad_191[0x7];                                      // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveVector2D                     RaindropSizeCurve;                                 // 0x0198(0x0120)(Edit, NativeAccessSpecifierPublic)
 	class UMaterialInterface*                     Material;                                          // 0x02B8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FKuroRainMaterialFloatParameter> MaterialFloatParameters_Density;                   // 0x02C0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FKuroRainMaterialColorParameter> MaterialColorParameters_Density;                   // 0x02D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FKuroRainMaterialFloatParameter> MaterialFloatParameters_Speed;                     // 0x02E0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FKuroRainMaterialColorParameter> MaterialColorParameters_Speed;                     // 0x02F0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroRainMaterialFloatParameter> MaterialFloatParameters_Density;                  // 0x02C0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroRainMaterialColorParameter> MaterialColorParameters_Density;                  // 0x02D0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroRainMaterialFloatParameter> MaterialFloatParameters_Speed;                    // 0x02E0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroRainMaterialColorParameter> MaterialColorParameters_Speed;                    // 0x02F0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         FramesIntervalUpdateParameters;                    // 0x0300(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         FramesIntervalFixRainBoxes;                        // 0x0304(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2856,6 +3439,28 @@ static_assert(offsetof(UKuroRainSettings, MaterialFloatParameters_Speed) == 0x00
 static_assert(offsetof(UKuroRainSettings, MaterialColorParameters_Speed) == 0x0002F0, "Member 'UKuroRainSettings::MaterialColorParameters_Speed' has a wrong offset!");
 static_assert(offsetof(UKuroRainSettings, FramesIntervalUpdateParameters) == 0x000300, "Member 'UKuroRainSettings::FramesIntervalUpdateParameters' has a wrong offset!");
 static_assert(offsetof(UKuroRainSettings, FramesIntervalFixRainBoxes) == 0x000304, "Member 'UKuroRainSettings::FramesIntervalFixRainBoxes' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.NiagaraDataInterfaceKuroRendering
+// 0x0010 (0x0050 - 0x0040)
+class UNiagaraDataInterfaceKuroRendering final : public UNiagaraDataInterface
+{
+public:
+	class FName                                   NiagaraCollectionName;                             // 0x0040(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"NiagaraDataInterfaceKuroRendering">();
+	}
+	static class UNiagaraDataInterfaceKuroRendering* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UNiagaraDataInterfaceKuroRendering>();
+	}
+};
+static_assert(alignof(UNiagaraDataInterfaceKuroRendering) == 0x000008, "Wrong alignment on UNiagaraDataInterfaceKuroRendering");
+static_assert(sizeof(UNiagaraDataInterfaceKuroRendering) == 0x000050, "Wrong size on UNiagaraDataInterfaceKuroRendering");
+static_assert(offsetof(UNiagaraDataInterfaceKuroRendering, NiagaraCollectionName) == 0x000040, "Member 'UNiagaraDataInterfaceKuroRendering::NiagaraCollectionName' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroRainActor
 // 0x0190 (0x0440 - 0x02B0)
@@ -2911,8 +3516,10 @@ public:
 	void DisableRain();
 	void EnableRain();
 	void GetPlayerOrEditorCameraLocation(struct FVector* OutLocation);
+	void ProcessPlayingRainComponents();
 	void RemoveRainComponent(class UKuroRainComponent* Comp);
 	void SetCameraFrustum(class UKuroRainComponent* Comp);
+	void UpdatePlayingRainComponent(class UKuroRainComponent* RainComponent);
 
 public:
 	static class UClass* StaticClass()
@@ -2926,74 +3533,6 @@ public:
 };
 static_assert(alignof(AKuroRainActorV2) == 0x000008, "Wrong alignment on AKuroRainActorV2");
 static_assert(sizeof(AKuroRainActorV2) == 0x0002C8, "Wrong size on AKuroRainActorV2");
-
-// Class KuroRenderingRuntimeBPPlugin.KuroRainComponent
-// 0x0010 (0x0230 - 0x0220)
-#pragma pack(push, 0x1)
-class alignas(0x10) UKuroRainComponent : public USceneComponent
-{
-public:
-	uint8                                         Pad_218[0x9];                                      // 0x0218(0x0009)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bAutoPlay;                                         // 0x0221(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_222[0x6];                                      // 0x0222(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	int32 AddArraySpawner(int32 RenderIndex);
-	int32 AddCustomRandomByNormalizedAgeProcessor(const struct FKuroCurveFloat& Curve, int32 Index_0);
-	int32 AddCustomRandomByVelocityProcessor(const struct FKuroCurveFloat& Curve, int32 Index_0);
-	int32 AddCustomRandomSetProcessor(float Value, int32 Index_0);
-	int32 AddCycleBoxProcessor(const struct FVector& Min, const struct FVector& Max, bool bKillOnZ);
-	int32 AddDragProcessor(float DragSize);
-	int32 AddLinearForceProcessor(const struct FVector& Force);
-	int32 AddRandomSpawner(int32 RenderIndex);
-	int32 AddVectorFieldForceProcessor(class UVectorFieldStatic* InVectorField, const struct FVector& InPosScale, const struct FVector& InMoveSpeed, float InForceSize);
-	int32 AddWindProcessor(const struct FVector& WindVelocity);
-	void D_SetArraySpawnerRuntime(int32 SpawnerID, const struct FVectorDouble& SpawnCenter, float SpawnRate, const struct FVector& VelocityMin, const struct FVector& VelocityMax);
-	void D_SetCycleBoxProcessor(int32 ProcessorID, const struct FVectorDouble& Min, const struct FVectorDouble& Max);
-	void D_SetRandomSpawnerRuntime(int32 SpawnerID, const struct FVectorDouble& SpawnCenter, float SpawnRate, const struct FVector& VelocityMin, const struct FVector& VelocityMax);
-	struct FVector GetCycleBoxProcessor_Max(int32 ProcessorID);
-	struct FVector GetCycleBoxProcessor_Min(int32 ProcessorID);
-	float GetDragProcessor_DragSize(int32 ProcessorID);
-	int32 GetEmitterDataNum();
-	bool GetIsPlaying();
-	struct FVector GetLinearForceProcessor_Force(int32 ProcessorID);
-	struct FVector GetWindProcessor_WindVelocity(int32 ProcessorID);
-	void Init();
-	void PreSolveRainParticles(float DeltaSeconds);
-	void SetArraySpawnerBasic(int32 SpawnerID, int32 ArraySize, float ArrayLength, float SpawnTimeWiggle, float SpawnPositionWiggle, float LifeTimeMin, float LifeTimeMax, float ScaleMin, float ScaleMax, float BaseMassMin, float BaseMassMax);
-	void SetArraySpawnerRuntime(int32 SpawnerID, const struct FVector& SpawnCenter, float SpawnRate, const struct FVector& VelocityMin, const struct FVector& VelocityMax);
-	void SetCustomRandomByNormalizedAgeProcessor(int32 ProcessorID, const struct FKuroCurveFloat& Curve, int32 Index_0);
-	void SetCustomRandomByVelocityProcessor(int32 ProcessorID, const struct FKuroCurveFloat& Curve, int32 Index_0);
-	void SetCustomRandomSetProcessor(int32 ProcessorID, float Value, int32 Index_0);
-	void SetCycleBoxProcessor(int32 ProcessorID, const struct FVector& Min, const struct FVector& Max);
-	void SetDragProcessor(int32 ProcessorID, float DragSize);
-	void SetLifeTimeDilation(float Dilation);
-	void SetLinearForceProcessor(int32 ProcessorID, const struct FVector& Force);
-	void SetRandomSpawnerBasic(int32 SpawnerID, float SpawnInnerRadius, float SpawnOuterRadius, float LifeTimeMin, float LifeTimeMax, float ScaleMin, float ScaleMax, float BaseMassMin, float BaseMassMax);
-	void SetRandomSpawnerRuntime(int32 SpawnerID, const struct FVector& SpawnCenter, float SpawnRate, const struct FVector& VelocityMin, const struct FVector& VelocityMax);
-	void SetTimeDilation(float Dilation);
-	void Setup(const TArray<class UStaticMesh*>& Meshes, const TArray<class UMaterialInterface*>& Materials);
-	void SetupRainEmitters();
-	void SetVectorFieldForceProcessor_Others(int32 ProcessorID, const struct FVector& InPosScale, const struct FVector& InMoveSpeed, float InForceSize);
-	void SetVectorFieldForceProcessor_VectorField(int32 ProcessorID, class UVectorFieldStatic* InVectorField);
-	void SetWindProcessor(int32 ProcessorID, const struct FVector& WindVelocity);
-	void Start();
-	void Stop();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroRainComponent">();
-	}
-	static class UKuroRainComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroRainComponent>();
-	}
-};
-#pragma pack(pop)
-static_assert(alignof(UKuroRainComponent) == 0x000010, "Wrong alignment on UKuroRainComponent");
-static_assert(sizeof(UKuroRainComponent) == 0x000230, "Wrong size on UKuroRainComponent");
-static_assert(offsetof(UKuroRainComponent, bAutoPlay) == 0x000221, "Member 'UKuroRainComponent::bAutoPlay' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroRainManager
 // 0x00C0 (0x00F0 - 0x0030)
@@ -3069,6 +3608,8 @@ public:
 	static int32 AddPostprocessMaterial(class UObject* WorldContextObject, class UMaterialInterface* Material, float Priority, bool bIsUiPostprocess);
 	static bool AddWeatherDataType(class UObject* WorldContextObject, class FName Identifier, class UClass* ClassType);
 	static void AddWorldPartitionRequiredDataLayer(const class UObject* WorldContextObject, const TArray<class FName>& InDataLayerNames);
+	static void CatmullRomPoints(const struct FVector2D& P0, const struct FVector2D& P1, const struct FVector2D& P2, const struct FVector2D& P3, TArray<struct FVector2D>* CurveList, float alpha, float tension, int32 Step);
+	static void CatmullRomPointsFromLists(const TArray<struct FVectorDouble>& PointList, TArray<struct FVector2D>* CurveList, float alpha, float tension, int32 Step);
 	static void ClearKuroCellLayer(const class UObject* WorldContextObject, EKuroCellLayerType ControlType);
 	static void ClearObjectFlags(class UObject* Object, int32 flags);
 	static void ClearWorldPartitionRequiredDataLayers(const class UObject* WorldContextObject);
@@ -3118,6 +3659,7 @@ public:
 	static int32 GetDeviceProfileDeviceScore();
 	static class FString GetDeviceProfileDeviceType();
 	static class FString GetDeviceProfileProfileName();
+	static bool GetDisableNPCOptAsRayTracing(const class UObject* WorldContextObject);
 	static bool GetDriverValid();
 	static float GetFloat(const class UObject* WorldContextObject, const class FString& Key, float DefaultValue);
 	static float GetFloatGromGroup(struct FKuroCharMaterialControllerFloatGroup* Target, const float Factor, const int32 Type);
@@ -3173,6 +3715,7 @@ public:
 	static bool GetStreamingCells(const class UObject* WorldContextObject, const struct FWorldPartitionStreamingQuerySource& QuerySource, TArray<struct FWorldPartitionRuntimeSpatialHashCell>* OutCells);
 	static class FString GetString(const class UObject* WorldContextObject, const class FString& Key, const class FString& DefaultValue);
 	static class UWorldSubsystem* GetSubsystem(const class UObject* WorldContextObject, TSubclassOf<class UWorldSubsystem> WorldSubsystemClass);
+	static TArray<int32> GetSupportedRefreshRates();
 	static float GetSwapBufferTime();
 	static void GetVectorParameterValueRef(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, class FName ParameterName, struct FLinearColor* RefLinearColor);
 	static void GetVectorParameterValueRefRGBA(class UObject* WorldContextObject, class UMaterialParameterCollection* Collection, class FName ParameterName, float* RefLinearColorR, float* RefLinearColorG, float* RefLinearColorB, float* RefLinearColorA);
@@ -3209,6 +3752,7 @@ public:
 	static bool IsWorldPartitionDataLayerEnable(const class UObject* WorldContextObject, class FName DataLayerName);
 	static bool IsWorldPartitionWorld(class UObject* WorldContextObject);
 	static bool IsWpPlayerInCaveOrRoom(const class UObject* WorldContextObject);
+	static struct FVector2D KuroBuoyancyCalculation(class UStaticMeshComponent* MeshComponent, const TArray<struct FVector4>& SphereList, float WaterHeight, const struct FVector& BuoyancyMagnitude);
 	static void KuroMarkPackageDirty(class UObject* Object);
 	static class UActorSequencePlayer* MakeSequencePlayer(class UActorSequenceComponent* SequenceComponent, const struct FMovieSceneSequencePlaybackSettings& PlaybackSettings);
 	static void MarkWorldPostProcessPriorityDirty(class UObject* WorldContextObject);
@@ -3273,6 +3817,7 @@ public:
 	static void UpdateFoliageDataLayer(const class UObject* WorldContextObject, const int32 InMobileLevel);
 	static void UpdateOrAddCurveColorValue(class UCurveLinearColor* Curve, float InTime, const struct FLinearColor& InValue);
 	static void UpdateOrAddCurveFloatValue(class UCurveFloat* Curve, float InTime, float InValue);
+	static struct FVector2D VolumeSphereInWater(const struct FVector& Pos, const float Radius, const float WaterHeight);
 	static void WpBeginAdjustLoadRange(const class UObject* WorldContextObject, float InAdjustValue, ECaveOrRoomLoadType InLoadType, bool bUseCustomCoef);
 	static void WpBeginEnterCaveOrRoom(const class UObject* WorldContextObject, const class FName& EncloseDataLayer, const class FName& EncloseSubDataLayer);
 	static void WpBeginLeaveCaveOrRoom(const class UObject* WorldContextObject, const class FName& EncloseDataLayer, const class FName& EncloseSubDataLayer);
@@ -3329,7 +3874,7 @@ static_assert(offsetof(AKuroRenderQualitySettingVolume, PCVolumeLightCullDistanc
 static_assert(offsetof(AKuroRenderQualitySettingVolume, MobileVolumeLightCullDistance) == 0x000320, "Member 'AKuroRenderQualitySettingVolume::MobileVolumeLightCullDistance' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroLocalRenderQualitySetting
-// 0x0098 (0x00D0 - 0x0038)
+// 0x00A8 (0x00E0 - 0x0038)
 class UKuroLocalRenderQualitySetting final : public UDataAsset
 {
 public:
@@ -3344,26 +3889,31 @@ public:
 	int32                                         MobileLocalRenderSettingIndexLow;                  // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MobileLocalRenderSettingIndexMedium;               // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         MobileLocalRenderSettingIndexHigh;                 // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_PCLocalRenderSettingIndexLowest : 1;     // 0x0050(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_PCLocalRenderSettingIndexLow : 1;        // 0x0050(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_PCLocalRenderSettingIndexMedium : 1;     // 0x0050(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_PCLocalRenderSettingIndexHigh : 1;       // 0x0050(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_PCLocalRenderSettingIndexUltra : 1;      // 0x0050(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	bool                                          EnableResetLocalRenderSettingMobileLowMemory;      // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          EnableResetLocalRenderSettingPC;                   // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PCLocalRenderSettingIndexLowest;                   // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PCLocalRenderSettingIndexLow;                      // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PCLocalRenderSettingIndexMedium;                   // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PCLocalRenderSettingIndexHigh;                     // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PCLocalRenderSettingIndexUltra;                    // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         InBoundLocalCmdPC;                                 // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         OutBoundLocalCmdPC;                                // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         InBoundLocalCmdMobile;                             // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         OutBoundLocalCmdMobile;                            // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         InBoundLocalCmdScalabilityPC;                      // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         InBoundLocalCmdScalabilityMobile;                  // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         MobileLowMemoryLocalRenderSettingIndexLowest;      // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MobileLowMemoryLocalRenderSettingIndexLow;         // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MobileLowMemoryLocalRenderSettingIndexMedium;      // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MobileLowMemoryLocalRenderSettingIndexHigh;        // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_PCLocalRenderSettingIndexLowest : 1;     // 0x0064(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_PCLocalRenderSettingIndexLow : 1;        // 0x0064(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_PCLocalRenderSettingIndexMedium : 1;     // 0x0064(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_PCLocalRenderSettingIndexHigh : 1;       // 0x0064(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_PCLocalRenderSettingIndexUltra : 1;      // 0x0064(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          EnableResetLocalRenderSettingPC;                   // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PCLocalRenderSettingIndexLowest;                   // 0x006C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PCLocalRenderSettingIndexLow;                      // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PCLocalRenderSettingIndexMedium;                   // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PCLocalRenderSettingIndexHigh;                     // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PCLocalRenderSettingIndexUltra;                    // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         InBoundLocalCmdPC;                                 // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         OutBoundLocalCmdPC;                                // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         InBoundLocalCmdMobile;                             // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         OutBoundLocalCmdMobile;                            // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         InBoundLocalCmdScalabilityPC;                      // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         InBoundLocalCmdScalabilityMobile;                  // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -3376,24 +3926,29 @@ public:
 	}
 };
 static_assert(alignof(UKuroLocalRenderQualitySetting) == 0x000008, "Wrong alignment on UKuroLocalRenderQualitySetting");
-static_assert(sizeof(UKuroLocalRenderQualitySetting) == 0x0000D0, "Wrong size on UKuroLocalRenderQualitySetting");
+static_assert(sizeof(UKuroLocalRenderQualitySetting) == 0x0000E0, "Wrong size on UKuroLocalRenderQualitySetting");
 static_assert(offsetof(UKuroLocalRenderQualitySetting, EnableResetLocalRenderSettingMobile) == 0x00003C, "Member 'UKuroLocalRenderQualitySetting::EnableResetLocalRenderSettingMobile' has a wrong offset!");
 static_assert(offsetof(UKuroLocalRenderQualitySetting, MobileLocalRenderSettingIndexLowest) == 0x000040, "Member 'UKuroLocalRenderQualitySetting::MobileLocalRenderSettingIndexLowest' has a wrong offset!");
 static_assert(offsetof(UKuroLocalRenderQualitySetting, MobileLocalRenderSettingIndexLow) == 0x000044, "Member 'UKuroLocalRenderQualitySetting::MobileLocalRenderSettingIndexLow' has a wrong offset!");
 static_assert(offsetof(UKuroLocalRenderQualitySetting, MobileLocalRenderSettingIndexMedium) == 0x000048, "Member 'UKuroLocalRenderQualitySetting::MobileLocalRenderSettingIndexMedium' has a wrong offset!");
 static_assert(offsetof(UKuroLocalRenderQualitySetting, MobileLocalRenderSettingIndexHigh) == 0x00004C, "Member 'UKuroLocalRenderQualitySetting::MobileLocalRenderSettingIndexHigh' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, EnableResetLocalRenderSettingPC) == 0x000054, "Member 'UKuroLocalRenderQualitySetting::EnableResetLocalRenderSettingPC' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexLowest) == 0x000058, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexLowest' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexLow) == 0x00005C, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexLow' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexMedium) == 0x000060, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexMedium' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexHigh) == 0x000064, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexHigh' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexUltra) == 0x000068, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexUltra' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, InBoundLocalCmdPC) == 0x000070, "Member 'UKuroLocalRenderQualitySetting::InBoundLocalCmdPC' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, OutBoundLocalCmdPC) == 0x000080, "Member 'UKuroLocalRenderQualitySetting::OutBoundLocalCmdPC' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, InBoundLocalCmdMobile) == 0x000090, "Member 'UKuroLocalRenderQualitySetting::InBoundLocalCmdMobile' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, OutBoundLocalCmdMobile) == 0x0000A0, "Member 'UKuroLocalRenderQualitySetting::OutBoundLocalCmdMobile' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, InBoundLocalCmdScalabilityPC) == 0x0000B0, "Member 'UKuroLocalRenderQualitySetting::InBoundLocalCmdScalabilityPC' has a wrong offset!");
-static_assert(offsetof(UKuroLocalRenderQualitySetting, InBoundLocalCmdScalabilityMobile) == 0x0000C0, "Member 'UKuroLocalRenderQualitySetting::InBoundLocalCmdScalabilityMobile' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, EnableResetLocalRenderSettingMobileLowMemory) == 0x000050, "Member 'UKuroLocalRenderQualitySetting::EnableResetLocalRenderSettingMobileLowMemory' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, MobileLowMemoryLocalRenderSettingIndexLowest) == 0x000054, "Member 'UKuroLocalRenderQualitySetting::MobileLowMemoryLocalRenderSettingIndexLowest' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, MobileLowMemoryLocalRenderSettingIndexLow) == 0x000058, "Member 'UKuroLocalRenderQualitySetting::MobileLowMemoryLocalRenderSettingIndexLow' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, MobileLowMemoryLocalRenderSettingIndexMedium) == 0x00005C, "Member 'UKuroLocalRenderQualitySetting::MobileLowMemoryLocalRenderSettingIndexMedium' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, MobileLowMemoryLocalRenderSettingIndexHigh) == 0x000060, "Member 'UKuroLocalRenderQualitySetting::MobileLowMemoryLocalRenderSettingIndexHigh' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, EnableResetLocalRenderSettingPC) == 0x000068, "Member 'UKuroLocalRenderQualitySetting::EnableResetLocalRenderSettingPC' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexLowest) == 0x00006C, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexLowest' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexLow) == 0x000070, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexLow' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexMedium) == 0x000074, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexMedium' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexHigh) == 0x000078, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexHigh' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, PCLocalRenderSettingIndexUltra) == 0x00007C, "Member 'UKuroLocalRenderQualitySetting::PCLocalRenderSettingIndexUltra' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, InBoundLocalCmdPC) == 0x000080, "Member 'UKuroLocalRenderQualitySetting::InBoundLocalCmdPC' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, OutBoundLocalCmdPC) == 0x000090, "Member 'UKuroLocalRenderQualitySetting::OutBoundLocalCmdPC' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, InBoundLocalCmdMobile) == 0x0000A0, "Member 'UKuroLocalRenderQualitySetting::InBoundLocalCmdMobile' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, OutBoundLocalCmdMobile) == 0x0000B0, "Member 'UKuroLocalRenderQualitySetting::OutBoundLocalCmdMobile' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, InBoundLocalCmdScalabilityPC) == 0x0000C0, "Member 'UKuroLocalRenderQualitySetting::InBoundLocalCmdScalabilityPC' has a wrong offset!");
+static_assert(offsetof(UKuroLocalRenderQualitySetting, InBoundLocalCmdScalabilityMobile) == 0x0000D0, "Member 'UKuroLocalRenderQualitySetting::InBoundLocalCmdScalabilityMobile' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroRuntimeTransientActor
 // 0x0010 (0x02C0 - 0x02B0)
@@ -3503,10 +4058,10 @@ public:
 	bool                                          bUseDissolve;                                      // 0x004C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroMaterialControllerParam_SI_Rim    RimParam;                                          // 0x0050(0x02B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FKuroMaterialControllerParam_SI_BaseColor BaseColorParam;                                    // 0x0300(0x02B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FKuroMaterialControllerParam_SI_AddEmission AddEmissionParam;                                  // 0x05B0(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FKuroMaterialControllerParam_SI_EmissionChange EmissionChangeParam;                               // 0x07D0(0x0340)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FKuroMaterialControllerParam_SI_Dissolve DissolveParam;                                     // 0x0B10(0x08A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialControllerParam_SI_BaseColor BaseColorParam;                                 // 0x0300(0x02B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialControllerParam_SI_AddEmission AddEmissionParam;                             // 0x05B0(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialControllerParam_SI_EmissionChange EmissionChangeParam;                       // 0x07D0(0x0340)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialControllerParam_SI_Dissolve DissolveParam;                                   // 0x0B10(0x08A0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -3702,11 +4257,14 @@ static_assert(offsetof(AKuroSceneRainActor, RainComponent_Back) == 0x0002D0, "Me
 class UKuroSequencePerformanceManager final : public UWorldSubsystem
 {
 public:
+	static void AlwaysTriggered();
 	static void ApplyVolumetricFogHighQualityMode(const class UObject* WorldContextObject, class UExponentialHeightFogComponent* HeightFog);
 	static void CloseKuroPerformanceMode();
 	static void EditPerformanceConfiguration(const TArray<class FString>& CmdArray);
 	static void ExecuteCommandInPerformance(const class FString& Command);
 	static EKuroPerformanceMode GetPerformanceMode();
+	static int64 GetTotalPhysicalMemoryInPerformance();
+	static bool IsLowMemoryDeviceInPerformance();
 	static void OpenKuroPerformanceMode(class ULevelSequence* Sequence);
 	static void OpenKuroPerformanceModeInPhotographModel(class UKuroSequenceConsoleCommandDataAsset* PhotographModelDA);
 	static void SetPerformanceMode(const EKuroPerformanceMode CurrentPerformanceMode);
@@ -3727,6 +4285,129 @@ public:
 };
 static_assert(alignof(UKuroSequencePerformanceManager) == 0x000008, "Wrong alignment on UKuroSequencePerformanceManager");
 static_assert(sizeof(UKuroSequencePerformanceManager) == 0x000038, "Wrong size on UKuroSequencePerformanceManager");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroVolumetricQualitySettings
+// 0x0010 (0x0058 - 0x0048)
+class UKuroVolumetricQualitySettings final : public UDeveloperSettings
+{
+public:
+	TArray<class FString>                         VolumetricQuality;                                 // 0x0048(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroVolumetricQualitySettings">();
+	}
+	static class UKuroVolumetricQualitySettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroVolumetricQualitySettings>();
+	}
+};
+static_assert(alignof(UKuroVolumetricQualitySettings) == 0x000008, "Wrong alignment on UKuroVolumetricQualitySettings");
+static_assert(sizeof(UKuroVolumetricQualitySettings) == 0x000058, "Wrong size on UKuroVolumetricQualitySettings");
+static_assert(offsetof(UKuroVolumetricQualitySettings, VolumetricQuality) == 0x000048, "Member 'UKuroVolumetricQualitySettings::VolumetricQuality' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroSequencePoseComponent
+// 0x0130 (0x01F0 - 0x00C0)
+class UKuroSequencePoseComponent final : public UActorComponent
+{
+public:
+	float                                         SequenceTimeRange;                                 // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     DefaultMaterialToUse;                              // 0x00C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeOutline;                                   // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoSetCharacterTexture;                          // 0x00D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D2[0x6];                                       // 0x00D2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, class UMaterialInterface*> ExtraMaterialsToUse;                              // 0x00D8(0x0050)(Edit, BlueprintVisible, AdvancedDisplay, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FKuroCurveFloat>     FloatParametersCurve;                              // 0x0128(0x0050)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FKuroCurveLinearColor> ColorParametersCurve;                            // 0x0178(0x0050)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
+	int32                                         MaxPose;                                           // 0x01C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsEnabled;                                        // 0x01CC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1CD[0x3];                                      // 0x01CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FKuroPoseSequence>              PoseSequences;                                     // 0x01D0(0x0010)(ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1E0[0x10];                                     // 0x01E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddSkeletalMeshComponent(class USkeletalMeshComponent* InSkeletalMeshComponent);
+
+	int32 GetCurrentPoseNum() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroSequencePoseComponent">();
+	}
+	static class UKuroSequencePoseComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroSequencePoseComponent>();
+	}
+};
+static_assert(alignof(UKuroSequencePoseComponent) == 0x000008, "Wrong alignment on UKuroSequencePoseComponent");
+static_assert(sizeof(UKuroSequencePoseComponent) == 0x0001F0, "Wrong size on UKuroSequencePoseComponent");
+static_assert(offsetof(UKuroSequencePoseComponent, SequenceTimeRange) == 0x0000C0, "Member 'UKuroSequencePoseComponent::SequenceTimeRange' has a wrong offset!");
+static_assert(offsetof(UKuroSequencePoseComponent, DefaultMaterialToUse) == 0x0000C8, "Member 'UKuroSequencePoseComponent::DefaultMaterialToUse' has a wrong offset!");
+static_assert(offsetof(UKuroSequencePoseComponent, bIncludeOutline) == 0x0000D0, "Member 'UKuroSequencePoseComponent::bIncludeOutline' has a wrong offset!");
+static_assert(offsetof(UKuroSequencePoseComponent, bAutoSetCharacterTexture) == 0x0000D1, "Member 'UKuroSequencePoseComponent::bAutoSetCharacterTexture' has a wrong offset!");
+static_assert(offsetof(UKuroSequencePoseComponent, ExtraMaterialsToUse) == 0x0000D8, "Member 'UKuroSequencePoseComponent::ExtraMaterialsToUse' has a wrong offset!");
+static_assert(offsetof(UKuroSequencePoseComponent, FloatParametersCurve) == 0x000128, "Member 'UKuroSequencePoseComponent::FloatParametersCurve' has a wrong offset!");
+static_assert(offsetof(UKuroSequencePoseComponent, ColorParametersCurve) == 0x000178, "Member 'UKuroSequencePoseComponent::ColorParametersCurve' has a wrong offset!");
+static_assert(offsetof(UKuroSequencePoseComponent, MaxPose) == 0x0001C8, "Member 'UKuroSequencePoseComponent::MaxPose' has a wrong offset!");
+static_assert(offsetof(UKuroSequencePoseComponent, bIsEnabled) == 0x0001CC, "Member 'UKuroSequencePoseComponent::bIsEnabled' has a wrong offset!");
+static_assert(offsetof(UKuroSequencePoseComponent, PoseSequences) == 0x0001D0, "Member 'UKuroSequencePoseComponent::PoseSequences' has a wrong offset!");
+
+// Class KuroRenderingRuntimeBPPlugin.KuroSmartLightActor
+// 0x00A0 (0x0350 - 0x02B0)
+class AKuroSmartLightActor final : public AActor
+{
+public:
+	EKuroSmartLightActorDetectType                DetectType;                                        // 0x02B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B1[0x3];                                      // 0x02B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                DetectCenter;                                      // 0x02B4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                DetectExtent;                                      // 0x02C0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DetectRadius;                                      // 0x02CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightIntensity;                                    // 0x02D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightUpTime;                                       // 0x02D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightUpDelay;                                      // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightOffTime;                                      // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightOffDelay;                                     // 0x02E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightUpdateExtraTime;                              // 0x02E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FKuroSmartLightCustomParameterFloat> CustomParameterFloats;                        // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroSmartLightCustomParameterLinearColor> CustomParameterLinearColors;            // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class USceneComponent*                        SceneRoot;                                         // 0x0308(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_310[0x40];                                     // 0x0310(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ApplyLightParametersToStaticMeshComponent(class UStaticMeshComponent* Component);
+	void OnUpdateLightOff(float Time);
+	void OnUpdateLightOn(float Time);
+	void TriggerLightOffEditorOnly();
+	void TriggerLightOnEditorOnly();
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroSmartLightActor">();
+	}
+	static class AKuroSmartLightActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroSmartLightActor>();
+	}
+};
+static_assert(alignof(AKuroSmartLightActor) == 0x000008, "Wrong alignment on AKuroSmartLightActor");
+static_assert(sizeof(AKuroSmartLightActor) == 0x000350, "Wrong size on AKuroSmartLightActor");
+static_assert(offsetof(AKuroSmartLightActor, DetectType) == 0x0002B0, "Member 'AKuroSmartLightActor::DetectType' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, DetectCenter) == 0x0002B4, "Member 'AKuroSmartLightActor::DetectCenter' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, DetectExtent) == 0x0002C0, "Member 'AKuroSmartLightActor::DetectExtent' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, DetectRadius) == 0x0002CC, "Member 'AKuroSmartLightActor::DetectRadius' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, LightIntensity) == 0x0002D0, "Member 'AKuroSmartLightActor::LightIntensity' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, LightUpTime) == 0x0002D4, "Member 'AKuroSmartLightActor::LightUpTime' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, LightUpDelay) == 0x0002D8, "Member 'AKuroSmartLightActor::LightUpDelay' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, LightOffTime) == 0x0002DC, "Member 'AKuroSmartLightActor::LightOffTime' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, LightOffDelay) == 0x0002E0, "Member 'AKuroSmartLightActor::LightOffDelay' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, LightUpdateExtraTime) == 0x0002E4, "Member 'AKuroSmartLightActor::LightUpdateExtraTime' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, CustomParameterFloats) == 0x0002E8, "Member 'AKuroSmartLightActor::CustomParameterFloats' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, CustomParameterLinearColors) == 0x0002F8, "Member 'AKuroSmartLightActor::CustomParameterLinearColors' has a wrong offset!");
+static_assert(offsetof(AKuroSmartLightActor, SceneRoot) == 0x000308, "Member 'AKuroSmartLightActor::SceneRoot' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroSplitTextureStreamerSettings
 // 0x0020 (0x0058 - 0x0038)
@@ -3860,6 +4541,7 @@ public:
 
 public:
 	void Update(float DeltaSeconds);
+	void UpdateFog();
 
 public:
 	static class UClass* StaticClass()
@@ -3972,10 +4654,10 @@ class UKuroUiSceneSystem final : public UWorldSubsystem
 {
 public:
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneLoadComplete;                         // 0x0040(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneUnLoadComplete;                       // 0x0068(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneVisibleComplete;                      // 0x0090(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneInVisibleComplete;                    // 0x00B8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneLoadComplete;                       // 0x0040(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneUnLoadComplete;                     // 0x0068(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneVisibleComplete;                    // 0x0090(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& ScenePath)> OnKuroUiSceneInVisibleComplete;                  // 0x00B8(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TMap<class FString, class UKuroUiSceneInfo*>  AllStreamingLevelInfo;                             // 0x00E0(0x0050)(Edit, NativeAccessSpecifierPrivate)
 	class FString                                 CurrentShowScenePath;                              // 0x0130(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         LevelLoadingCount;                                 // 0x0140(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -4120,28 +4802,6 @@ static_assert(sizeof(AKuroWorldInfo) == 0x000320, "Wrong size on AKuroWorldInfo"
 static_assert(offsetof(AKuroWorldInfo, M_LandscapeInfo) == 0x0002B0, "Member 'AKuroWorldInfo::M_LandscapeInfo' has a wrong offset!");
 static_assert(offsetof(AKuroWorldInfo, M_StreamingLevelInfoList) == 0x000310, "Member 'AKuroWorldInfo::M_StreamingLevelInfoList' has a wrong offset!");
 
-// Class KuroRenderingRuntimeBPPlugin.KuroWorldPartitionPreviewManager
-// 0x0000 (0x0030 - 0x0030)
-class UKuroWorldPartitionPreviewManager final : public UObject
-{
-public:
-	void AddPreviewActorType(TSubclassOf<class AActor> Class_0);
-	void RemovePreviewActorType(TSubclassOf<class AActor> Class_0);
-	void SetPreviewMobile(bool PreviewMobile);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroWorldPartitionPreviewManager">();
-	}
-	static class UKuroWorldPartitionPreviewManager* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroWorldPartitionPreviewManager>();
-	}
-};
-static_assert(alignof(UKuroWorldPartitionPreviewManager) == 0x000008, "Wrong alignment on UKuroWorldPartitionPreviewManager");
-static_assert(sizeof(UKuroWorldPartitionPreviewManager) == 0x000030, "Wrong size on UKuroWorldPartitionPreviewManager");
-
 // Class KuroRenderingRuntimeBPPlugin.KuroWorldRainComponentSpawnConfig
 // 0x0010 (0x0048 - 0x0038)
 class UKuroWorldRainComponentSpawnConfig final : public UPrimaryDataAsset
@@ -4163,64 +4823,6 @@ static_assert(alignof(UKuroWorldRainComponentSpawnConfig) == 0x000008, "Wrong al
 static_assert(sizeof(UKuroWorldRainComponentSpawnConfig) == 0x000048, "Wrong size on UKuroWorldRainComponentSpawnConfig");
 static_assert(offsetof(UKuroWorldRainComponentSpawnConfig, Spawners) == 0x000038, "Member 'UKuroWorldRainComponentSpawnConfig::Spawners' has a wrong offset!");
 
-// Class KuroRenderingRuntimeBPPlugin.KuroWorldRainComponentPhysicsConfig
-// 0x0450 (0x0488 - 0x0038)
-class UKuroWorldRainComponentPhysicsConfig final : public UPrimaryDataAsset
-{
-public:
-	struct FKuroCurveFloat                        SpawnScaleCurve;                                   // 0x0038(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         BaseWindSize;                                      // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CC[0x4];                                       // 0x00CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroCurveFloat                        WindCurve;                                         // 0x00D0(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FVector                                BaseGravitySize;                                   // 0x0160(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16C[0x4];                                      // 0x016C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroCurveFloat                        GravityCurve;                                      // 0x0170(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         BaseDragSize;                                      // 0x0200(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroCurveFloat                        DragCurve;                                         // 0x0208(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class UVectorFieldStatic*                     VectorField;                                       // 0x0298(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         VectorFieldBaseSize;                               // 0x02A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A4[0x4];                                      // 0x02A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroCurveFloat                        VectorFieldCurve;                                  // 0x02A8(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FVector                                VectorFieldScale;                                  // 0x0338(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                VectorFieldMoveDirection;                          // 0x0344(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroCurveFloat                        VectorFieldMoveSpeedCurve;                         // 0x0350(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FVector                                CycleBoxHalfSize;                                  // 0x03E0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CycleBoxZBias;                                     // 0x03EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroCurveFloat                        TimeDilationCurve;                                 // 0x03F0(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	float                                         LifeTimeDilationOnDeath;                           // 0x0480(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_484[0x4];                                      // 0x0484(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroWorldRainComponentPhysicsConfig">();
-	}
-	static class UKuroWorldRainComponentPhysicsConfig* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroWorldRainComponentPhysicsConfig>();
-	}
-};
-static_assert(alignof(UKuroWorldRainComponentPhysicsConfig) == 0x000008, "Wrong alignment on UKuroWorldRainComponentPhysicsConfig");
-static_assert(sizeof(UKuroWorldRainComponentPhysicsConfig) == 0x000488, "Wrong size on UKuroWorldRainComponentPhysicsConfig");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, SpawnScaleCurve) == 0x000038, "Member 'UKuroWorldRainComponentPhysicsConfig::SpawnScaleCurve' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, BaseWindSize) == 0x0000C8, "Member 'UKuroWorldRainComponentPhysicsConfig::BaseWindSize' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, WindCurve) == 0x0000D0, "Member 'UKuroWorldRainComponentPhysicsConfig::WindCurve' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, BaseGravitySize) == 0x000160, "Member 'UKuroWorldRainComponentPhysicsConfig::BaseGravitySize' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, GravityCurve) == 0x000170, "Member 'UKuroWorldRainComponentPhysicsConfig::GravityCurve' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, BaseDragSize) == 0x000200, "Member 'UKuroWorldRainComponentPhysicsConfig::BaseDragSize' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, DragCurve) == 0x000208, "Member 'UKuroWorldRainComponentPhysicsConfig::DragCurve' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorField) == 0x000298, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorField' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldBaseSize) == 0x0002A0, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldBaseSize' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldCurve) == 0x0002A8, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldCurve' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldScale) == 0x000338, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldScale' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldMoveDirection) == 0x000344, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldMoveDirection' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, VectorFieldMoveSpeedCurve) == 0x000350, "Member 'UKuroWorldRainComponentPhysicsConfig::VectorFieldMoveSpeedCurve' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, CycleBoxHalfSize) == 0x0003E0, "Member 'UKuroWorldRainComponentPhysicsConfig::CycleBoxHalfSize' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, CycleBoxZBias) == 0x0003EC, "Member 'UKuroWorldRainComponentPhysicsConfig::CycleBoxZBias' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, TimeDilationCurve) == 0x0003F0, "Member 'UKuroWorldRainComponentPhysicsConfig::TimeDilationCurve' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponentPhysicsConfig, LifeTimeDilationOnDeath) == 0x000480, "Member 'UKuroWorldRainComponentPhysicsConfig::LifeTimeDilationOnDeath' has a wrong offset!");
-
 // Class KuroRenderingRuntimeBPPlugin.KuroWorldRainComponentCustomDataConfig
 // 0x0010 (0x0048 - 0x0038)
 class UKuroWorldRainComponentCustomDataConfig final : public UPrimaryDataAsset
@@ -4241,66 +4843,6 @@ public:
 static_assert(alignof(UKuroWorldRainComponentCustomDataConfig) == 0x000008, "Wrong alignment on UKuroWorldRainComponentCustomDataConfig");
 static_assert(sizeof(UKuroWorldRainComponentCustomDataConfig) == 0x000048, "Wrong size on UKuroWorldRainComponentCustomDataConfig");
 static_assert(offsetof(UKuroWorldRainComponentCustomDataConfig, CustomRandoms) == 0x000038, "Member 'UKuroWorldRainComponentCustomDataConfig::CustomRandoms' has a wrong offset!");
-
-// Class KuroRenderingRuntimeBPPlugin.KuroWorldRainComponent
-// 0x00C0 (0x02F0 - 0x0230)
-class UKuroWorldRainComponent : public UKuroRainComponent
-{
-public:
-	class UKuroWorldRainComponentSpawnConfig*     SpawnConfig;                                       // 0x0228(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroWorldRainComponentPhysicsConfig*   PhysicsConfig;                                     // 0x0230(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroWorldRainComponentCustomDataConfig* CustomDataConfig;                                  // 0x0238(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverridePhysics : 1;                              // 0x0240(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_241[0x3];                                      // 0x0241(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WindSizeOverride;                                  // 0x0244(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                GravityOverride;                                   // 0x0248(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DragOverride;                                      // 0x0254(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SpawnScaleOverride;                                // 0x0258(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeDilationOverride;                              // 0x025C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PassTime;                                          // 0x0260(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_264[0x4];                                      // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BaseSpawnScale;                                    // 0x0268(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                GlobalWind;                                        // 0x026C(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FVector                                Center;                                            // 0x0278(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_284[0x6C];                                     // 0x0284(0x006C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void DeactivateRain();
-	bool GetIsRainActive();
-	bool GetIsRainPlaying();
-	void OnReceiveDeactivateRain();
-	void OnReceiveStartRain();
-	void OnReceiveStopRain();
-	void SetBaseSpawnScale(float SpawnScale);
-	void SetCenter(const struct FVector& InCenter);
-	void SetGlobalWind(const struct FVector& InGlobalWind);
-	void StartRain();
-	void StopRain();
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroWorldRainComponent">();
-	}
-	static class UKuroWorldRainComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroWorldRainComponent>();
-	}
-};
-static_assert(alignof(UKuroWorldRainComponent) == 0x000010, "Wrong alignment on UKuroWorldRainComponent");
-static_assert(sizeof(UKuroWorldRainComponent) == 0x0002F0, "Wrong size on UKuroWorldRainComponent");
-static_assert(offsetof(UKuroWorldRainComponent, SpawnConfig) == 0x000228, "Member 'UKuroWorldRainComponent::SpawnConfig' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, PhysicsConfig) == 0x000230, "Member 'UKuroWorldRainComponent::PhysicsConfig' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, CustomDataConfig) == 0x000238, "Member 'UKuroWorldRainComponent::CustomDataConfig' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, WindSizeOverride) == 0x000244, "Member 'UKuroWorldRainComponent::WindSizeOverride' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, GravityOverride) == 0x000248, "Member 'UKuroWorldRainComponent::GravityOverride' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, DragOverride) == 0x000254, "Member 'UKuroWorldRainComponent::DragOverride' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, SpawnScaleOverride) == 0x000258, "Member 'UKuroWorldRainComponent::SpawnScaleOverride' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, TimeDilationOverride) == 0x00025C, "Member 'UKuroWorldRainComponent::TimeDilationOverride' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, PassTime) == 0x000260, "Member 'UKuroWorldRainComponent::PassTime' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, BaseSpawnScale) == 0x000268, "Member 'UKuroWorldRainComponent::BaseSpawnScale' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, GlobalWind) == 0x00026C, "Member 'UKuroWorldRainComponent::GlobalWind' has a wrong offset!");
-static_assert(offsetof(UKuroWorldRainComponent, Center) == 0x000278, "Member 'UKuroWorldRainComponent::Center' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.KuroWorldRainGlobalOverrider
 // 0x0038 (0x02E8 - 0x02B0)
@@ -4341,28 +4883,6 @@ static_assert(offsetof(AKuroWorldRainGlobalOverrider, GravityOverride) == 0x0002
 static_assert(offsetof(AKuroWorldRainGlobalOverrider, DragOverride) == 0x0002D4, "Member 'AKuroWorldRainGlobalOverrider::DragOverride' has a wrong offset!");
 static_assert(offsetof(AKuroWorldRainGlobalOverrider, TimeDilationOverride) == 0x0002DC, "Member 'AKuroWorldRainGlobalOverrider::TimeDilationOverride' has a wrong offset!");
 static_assert(offsetof(AKuroWorldRainGlobalOverrider, Priority) == 0x0002E0, "Member 'AKuroWorldRainGlobalOverrider::Priority' has a wrong offset!");
-
-// Class KuroRenderingRuntimeBPPlugin.KuroWuYinQuActorBase
-// 0x0010 (0x02C0 - 0x02B0)
-class AKuroWuYinQuActorBase : public AActor
-{
-public:
-	class FName                                   Key;                                               // 0x02B0(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"KuroWuYinQuActorBase">();
-	}
-	static class AKuroWuYinQuActorBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AKuroWuYinQuActorBase>();
-	}
-};
-static_assert(alignof(AKuroWuYinQuActorBase) == 0x000008, "Wrong alignment on AKuroWuYinQuActorBase");
-static_assert(sizeof(AKuroWuYinQuActorBase) == 0x0002C0, "Wrong size on AKuroWuYinQuActorBase");
-static_assert(offsetof(AKuroWuYinQuActorBase, Key) == 0x0002B0, "Member 'AKuroWuYinQuActorBase::Key' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.LensflareSamplerActor
 // 0x00A8 (0x0358 - 0x02B0)
@@ -4438,34 +4958,6 @@ static_assert(offsetof(ALensflareSamplerActor, SceneComponent) == 0x000330, "Mem
 static_assert(offsetof(ALensflareSamplerActor, LensflareGhostComponent) == 0x000338, "Member 'ALensflareSamplerActor::LensflareGhostComponent' has a wrong offset!");
 static_assert(offsetof(ALensflareSamplerActor, LensflareGlareComponent) == 0x000340, "Member 'ALensflareSamplerActor::LensflareGlareComponent' has a wrong offset!");
 static_assert(offsetof(ALensflareSamplerActor, LensflareHaloComponent) == 0x000348, "Member 'ALensflareSamplerActor::LensflareHaloComponent' has a wrong offset!");
-
-// Class KuroRenderingRuntimeBPPlugin.MovieSceneKuroMaterialContainerSection
-// 0x0010 (0x0108 - 0x00F8)
-class UMovieSceneKuroMaterialContainerSection final : public UMovieSceneSection
-{
-public:
-	class UKuroMaterialControllerDataAsset*       MaterialDataAsset;                                 // 0x00F8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLoop;                                             // 0x0100(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEndImmediate;                                     // 0x0101(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSkipToEnd;                                        // 0x0102(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_103[0x5];                                      // 0x0103(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneKuroMaterialContainerSection">();
-	}
-	static class UMovieSceneKuroMaterialContainerSection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneKuroMaterialContainerSection>();
-	}
-};
-static_assert(alignof(UMovieSceneKuroMaterialContainerSection) == 0x000008, "Wrong alignment on UMovieSceneKuroMaterialContainerSection");
-static_assert(sizeof(UMovieSceneKuroMaterialContainerSection) == 0x000108, "Wrong size on UMovieSceneKuroMaterialContainerSection");
-static_assert(offsetof(UMovieSceneKuroMaterialContainerSection, MaterialDataAsset) == 0x0000F8, "Member 'UMovieSceneKuroMaterialContainerSection::MaterialDataAsset' has a wrong offset!");
-static_assert(offsetof(UMovieSceneKuroMaterialContainerSection, bLoop) == 0x000100, "Member 'UMovieSceneKuroMaterialContainerSection::bLoop' has a wrong offset!");
-static_assert(offsetof(UMovieSceneKuroMaterialContainerSection, bEndImmediate) == 0x000101, "Member 'UMovieSceneKuroMaterialContainerSection::bEndImmediate' has a wrong offset!");
-static_assert(offsetof(UMovieSceneKuroMaterialContainerSection, bSkipToEnd) == 0x000102, "Member 'UMovieSceneKuroMaterialContainerSection::bSkipToEnd' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.MovieSceneKuroMaterialContainerTrack
 // 0x0018 (0x0098 - 0x0080)
@@ -4559,30 +5051,6 @@ static_assert(offsetof(AThunderTrigger, Radius) == 0x0002C4, "Member 'AThunderTr
 static_assert(offsetof(AThunderTrigger, Power) == 0x0002C8, "Member 'AThunderTrigger::Power' has a wrong offset!");
 static_assert(offsetof(AThunderTrigger, BrightnessLighting) == 0x0002CC, "Member 'AThunderTrigger::BrightnessLighting' has a wrong offset!");
 static_assert(offsetof(AThunderTrigger, BrightnessCloudLight) == 0x0002D0, "Member 'AThunderTrigger::BrightnessCloudLight' has a wrong offset!");
-
-// Class KuroRenderingRuntimeBPPlugin.TODPPVManagerSubsystem
-// 0x00A8 (0x00E0 - 0x0038)
-class UTODPPVManagerSubsystem final : public UWorldSubsystem
-{
-public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class AKuroPostProcessVolume*, float>    ProxiesToDayPPV;                                   // 0x0040(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TMap<class AKuroPostProcessVolume*, float>    ProxiesToNightPPV;                                 // 0x0090(0x0050)(Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"TODPPVManagerSubsystem">();
-	}
-	static class UTODPPVManagerSubsystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UTODPPVManagerSubsystem>();
-	}
-};
-static_assert(alignof(UTODPPVManagerSubsystem) == 0x000008, "Wrong alignment on UTODPPVManagerSubsystem");
-static_assert(sizeof(UTODPPVManagerSubsystem) == 0x0000E0, "Wrong size on UTODPPVManagerSubsystem");
-static_assert(offsetof(UTODPPVManagerSubsystem, ProxiesToDayPPV) == 0x000040, "Member 'UTODPPVManagerSubsystem::ProxiesToDayPPV' has a wrong offset!");
-static_assert(offsetof(UTODPPVManagerSubsystem, ProxiesToNightPPV) == 0x000090, "Member 'UTODPPVManagerSubsystem::ProxiesToNightPPV' has a wrong offset!");
 
 // Class KuroRenderingRuntimeBPPlugin.UKuroCustomCookActor
 // 0x0000 (0x02B0 - 0x02B0)

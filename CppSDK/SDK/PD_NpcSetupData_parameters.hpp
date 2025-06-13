@@ -161,5 +161,38 @@ static_assert(offsetof(PD_NpcSetupData_C_GetAllParts, CallFunc_Array_AddUnique_R
 static_assert(offsetof(PD_NpcSetupData_C_GetAllParts, CallFunc_HasSkelBody_Result) == 0x000034, "Member 'PD_NpcSetupData_C_GetAllParts::CallFunc_HasSkelBody_Result' has a wrong offset!");
 static_assert(offsetof(PD_NpcSetupData_C_GetAllParts, CallFunc_Array_AddUnique_ReturnValue_4) == 0x000038, "Member 'PD_NpcSetupData_C_GetAllParts::CallFunc_Array_AddUnique_ReturnValue_4' has a wrong offset!");
 
+// Function PD_NpcSetupData.PD_NpcSetupData_C.GetAllPartMaterials
+// 0x0040 (0x0040 - 0x0000)
+struct PD_NpcSetupData_C_GetAllPartMaterials final
+{
+public:
+	TArray<class UMaterialInstance*>              Results;                                           // 0x0000(0x0010)(Parm, OutParm)
+	TArray<class UMaterialInstance*>              OutMaterials;                                      // 0x0010(0x0010)(Edit, BlueprintVisible)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_1;                  // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_2;                  // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_3;                  // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue_4;                  // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_HasSkelFace_Result;                       // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasSkelHair_Result;                       // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasSkelBodyDown_Result;                   // 0x0036(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasSkelBodyUp_Result;                     // 0x0037(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasSkelBody_Result;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(PD_NpcSetupData_C_GetAllPartMaterials) == 0x000008, "Wrong alignment on PD_NpcSetupData_C_GetAllPartMaterials");
+static_assert(sizeof(PD_NpcSetupData_C_GetAllPartMaterials) == 0x000040, "Wrong size on PD_NpcSetupData_C_GetAllPartMaterials");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, Results) == 0x000000, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::Results' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, OutMaterials) == 0x000010, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::OutMaterials' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_Array_Add_ReturnValue) == 0x000020, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_Array_Add_ReturnValue' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_Array_Add_ReturnValue_1) == 0x000024, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_Array_Add_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_Array_Add_ReturnValue_2) == 0x000028, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_Array_Add_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_Array_Add_ReturnValue_3) == 0x00002C, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_Array_Add_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_Array_Add_ReturnValue_4) == 0x000030, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_Array_Add_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_HasSkelFace_Result) == 0x000034, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_HasSkelFace_Result' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_HasSkelHair_Result) == 0x000035, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_HasSkelHair_Result' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_HasSkelBodyDown_Result) == 0x000036, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_HasSkelBodyDown_Result' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_HasSkelBodyUp_Result) == 0x000037, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_HasSkelBodyUp_Result' has a wrong offset!");
+static_assert(offsetof(PD_NpcSetupData_C_GetAllPartMaterials, CallFunc_HasSkelBody_Result) == 0x000038, "Member 'PD_NpcSetupData_C_GetAllPartMaterials::CallFunc_HasSkelBody_Result' has a wrong offset!");
+
 }
 

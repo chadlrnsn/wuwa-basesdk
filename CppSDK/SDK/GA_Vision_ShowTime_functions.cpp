@@ -94,7 +94,7 @@ void UGA_Vision_ShowTime_C::K2_ActivateAbility()
 // Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.EventReceived_18B59F5945020DB23C42FD88A68D9368
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void UGA_Vision_ShowTime_C::EventReceived_18B59F5945020DB23C42FD88A68D9368(const struct FGameplayEventData& Payload)
 {

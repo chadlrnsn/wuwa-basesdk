@@ -30,11 +30,11 @@ public:
 	class UDirectionalLightComponent*             MainLightComponent;                                // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_UiSceneRenderingComponent(int32 EntryPoint);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void Init(class ABP_GlobalGI_C* InGlobalGI);
-	void OnKuroStartUiScene(const class FString& UiScenePath);
 	void OnKuroEndUiScene();
+	void OnKuroStartUiScene(const class FString& UiScenePath);
+	void Init(class ABP_GlobalGI_C* InGlobalGI);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ExecuteUbergraph_BP_UiSceneRenderingComponent(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

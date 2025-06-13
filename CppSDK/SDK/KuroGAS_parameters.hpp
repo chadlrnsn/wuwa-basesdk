@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
-#include "KuroGAS_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
+#include "KuroGAS_structs.hpp"
 
 
 namespace SDK::Params
@@ -262,6 +262,17 @@ static_assert(alignof(BaseAbilitySystemComponent_GetAbility) == 0x000008, "Wrong
 static_assert(sizeof(BaseAbilitySystemComponent_GetAbility) == 0x000010, "Wrong size on BaseAbilitySystemComponent_GetAbility");
 static_assert(offsetof(BaseAbilitySystemComponent_GetAbility, Ability) == 0x000000, "Member 'BaseAbilitySystemComponent_GetAbility::Ability' has a wrong offset!");
 static_assert(offsetof(BaseAbilitySystemComponent_GetAbility, ReturnValue) == 0x000008, "Member 'BaseAbilitySystemComponent_GetAbility::ReturnValue' has a wrong offset!");
+
+// Function KuroGAS.BaseAbilitySystemComponent.GetAbilityScopeLockCount
+// 0x0004 (0x0004 - 0x0000)
+struct BaseAbilitySystemComponent_GetAbilityScopeLockCount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BaseAbilitySystemComponent_GetAbilityScopeLockCount) == 0x000004, "Wrong alignment on BaseAbilitySystemComponent_GetAbilityScopeLockCount");
+static_assert(sizeof(BaseAbilitySystemComponent_GetAbilityScopeLockCount) == 0x000004, "Wrong size on BaseAbilitySystemComponent_GetAbilityScopeLockCount");
+static_assert(offsetof(BaseAbilitySystemComponent_GetAbilityScopeLockCount, ReturnValue) == 0x000000, "Member 'BaseAbilitySystemComponent_GetAbilityScopeLockCount::ReturnValue' has a wrong offset!");
 
 // Function KuroGAS.BaseAbilitySystemComponent.GetActiveEffectsByGrantedTags
 // 0x0020 (0x0020 - 0x0000)
@@ -520,7 +531,7 @@ public:
 	int32                                         ModifiedAttributeId;                               // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EGameplayModOp                                ModOp;                                             // 0x000C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UGameplayModMagnitudeCalculation> CalculationClassMagnitude;                         // 0x0010(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UGameplayModMagnitudeCalculation> CalculationClassMagnitude;                   // 0x0010(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(BaseAbilitySystemComponent_AddGeModifierByMMC) == 0x000008, "Wrong alignment on BaseAbilitySystemComponent_AddGeModifierByMMC");
 static_assert(sizeof(BaseAbilitySystemComponent_AddGeModifierByMMC) == 0x000018, "Wrong size on BaseAbilitySystemComponent_AddGeModifierByMMC");

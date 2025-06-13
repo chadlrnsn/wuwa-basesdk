@@ -17,22 +17,24 @@
 namespace SDK
 {
 
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.RecycleEffect
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.ChangeMaterialTextures
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UEffectViewComponent_C*           view                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class AActor*                           actor1                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    assetPath1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UEffectBlueprintFunctionLibrary_C::RecycleEffect(class UEffectViewComponent_C* view, class UObject* __WorldContext)
+void UEffectBlueprintFunctionLibrary_C::ChangeMaterialTextures(class AActor* actor1, const class FString& assetPath1, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "RecycleEffect");
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "ChangeMaterialTextures");
 
-	Params::EffectBlueprintFunctionLibrary_C_RecycleEffect Parms{};
+	Params::EffectBlueprintFunctionLibrary_C_ChangeMaterialTextures Parms{};
 
-	Parms.view = view;
+	Parms.actor1 = actor1;
+	Parms.assetPath1 = std::move(assetPath1);
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -44,27 +46,21 @@ void UEffectBlueprintFunctionLibrary_C::RecycleEffect(class UEffectViewComponent
 }
 
 
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.AddDebugLineFromPlayer
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.GetScreenEffectSystem
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// struct FLinearColor                     color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// float                                   width                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABP_ScreenEffectSystem_C*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-float UEffectBlueprintFunctionLibrary_C::AddDebugLineFromPlayer(const struct FVector& location, const struct FLinearColor& color, float width, class UObject* __WorldContext)
+class ABP_ScreenEffectSystem_C* UEffectBlueprintFunctionLibrary_C::GetScreenEffectSystem(class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "AddDebugLineFromPlayer");
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "GetScreenEffectSystem");
 
-	Params::EffectBlueprintFunctionLibrary_C_AddDebugLineFromPlayer Parms{};
+	Params::EffectBlueprintFunctionLibrary_C_GetScreenEffectSystem Parms{};
 
-	Parms.location = std::move(location);
-	Parms.color = std::move(color);
-	Parms.width = width;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -78,323 +74,20 @@ float UEffectBlueprintFunctionLibrary_C::AddDebugLineFromPlayer(const struct FVe
 }
 
 
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.ClearDebugDraw
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UEffectBlueprintFunctionLibrary_C::ClearDebugDraw(class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "ClearDebugDraw");
-
-	Params::EffectBlueprintFunctionLibrary_C_ClearDebugDraw Parms{};
-
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetMaterialControllerDataSync
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           materialDataPath                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
-// bool                                    isGroup                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UEffectBlueprintFunctionLibrary_C::SetMaterialControllerDataSync(int32 entityId, const class FString& materialDataPath, bool isGroup, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetMaterialControllerDataSync");
-
-	Params::EffectBlueprintFunctionLibrary_C_SetMaterialControllerDataSync Parms{};
-
-	Parms.entityId = entityId;
-	Parms.materialDataPath = std::move(materialDataPath);
-	Parms.isGroup = isGroup;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.ValidateKuroAnimNotify
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UKuroAnimNotify*                  asset                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
-
-bool UEffectBlueprintFunctionLibrary_C::ValidateKuroAnimNotify(class UKuroAnimNotify* asset, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "ValidateKuroAnimNotify");
-
-	Params::EffectBlueprintFunctionLibrary_C_ValidateKuroAnimNotify Parms{};
-
-	Parms.asset = asset;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.ValidateKuroAnimNotifyState
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UKuroAnimNotifyState*             asset                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
-
-bool UEffectBlueprintFunctionLibrary_C::ValidateKuroAnimNotifyState(class UKuroAnimNotifyState* asset, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "ValidateKuroAnimNotifyState");
-
-	Params::EffectBlueprintFunctionLibrary_C_ValidateKuroAnimNotifyState Parms{};
-
-	Parms.asset = asset;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetEffectSpawnLogEnabled
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    enabled                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UEffectBlueprintFunctionLibrary_C::SetEffectSpawnLogEnabled(bool enabled, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetEffectSpawnLogEnabled");
-
-	Params::EffectBlueprintFunctionLibrary_C_SetEffectSpawnLogEnabled Parms{};
-
-	Parms.enabled = enabled;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.BeginDebugDrawFoliageDetect
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FLinearColor                     color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// float                                   width                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UEffectBlueprintFunctionLibrary_C::BeginDebugDrawFoliageDetect(const struct FLinearColor& color, float width, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "BeginDebugDrawFoliageDetect");
-
-	Params::EffectBlueprintFunctionLibrary_C_BeginDebugDrawFoliageDetect Parms{};
-
-	Parms.color = std::move(color);
-	Parms.width = width;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.EndDebugDrawFoliageDetect
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UEffectBlueprintFunctionLibrary_C::EndDebugDrawFoliageDetect(class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "EndDebugDrawFoliageDetect");
-
-	Params::EffectBlueprintFunctionLibrary_C_EndDebugDrawFoliageDetect Parms{};
-
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.RefreshFoliageDetectConfig
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UEffectBlueprintFunctionLibrary_C::RefreshFoliageDetectConfig(class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "RefreshFoliageDetectConfig");
-
-	Params::EffectBlueprintFunctionLibrary_C_RefreshFoliageDetectConfig Parms{};
-
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetVisualizeCharacterWaterEffectTrace
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UEffectBlueprintFunctionLibrary_C::SetVisualizeCharacterWaterEffectTrace(bool enable, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetVisualizeCharacterWaterEffectTrace");
-
-	Params::EffectBlueprintFunctionLibrary_C_SetVisualizeCharacterWaterEffectTrace Parms{};
-
-	Parms.enable = enable;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetEffectInPoolEnabled
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UEffectBlueprintFunctionLibrary_C::SetEffectInPoolEnabled(bool enable, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetEffectInPoolEnabled");
-
-	Params::EffectBlueprintFunctionLibrary_C_SetEffectInPoolEnabled Parms{};
-
-	Parms.enable = enable;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetEffectOutPoolEnabled
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UEffectBlueprintFunctionLibrary_C::SetEffectOutPoolEnabled(bool enable, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetEffectOutPoolEnabled");
-
-	Params::EffectBlueprintFunctionLibrary_C_SetEffectOutPoolEnabled Parms{};
-
-	Parms.enable = enable;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.EnableSceneObjectWaterEffectShowDebugTrace
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.EffectCgMode
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UEffectBlueprintFunctionLibrary_C::EnableSceneObjectWaterEffectShowDebugTrace(bool enable, class UObject* __WorldContext)
+void UEffectBlueprintFunctionLibrary_C::EffectCgMode(bool enable, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "EnableSceneObjectWaterEffectShowDebugTrace");
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "EffectCgMode");
 
-	Params::EffectBlueprintFunctionLibrary_C_EnableSceneObjectWaterEffectShowDebugTrace Parms{};
+	Params::EffectBlueprintFunctionLibrary_C_EffectCgMode Parms{};
 
 	Parms.enable = enable;
 	Parms.__WorldContext = __WorldContext;
@@ -435,20 +128,20 @@ void UEffectBlueprintFunctionLibrary_C::SetTsWriteTimeToCollectionEnabled(bool e
 }
 
 
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.EffectCgMode
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.EnableSceneObjectWaterEffectShowDebugTrace
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UEffectBlueprintFunctionLibrary_C::EffectCgMode(bool enable, class UObject* __WorldContext)
+void UEffectBlueprintFunctionLibrary_C::EnableSceneObjectWaterEffectShowDebugTrace(bool enable, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "EffectCgMode");
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "EnableSceneObjectWaterEffectShowDebugTrace");
 
-	Params::EffectBlueprintFunctionLibrary_C_EffectCgMode Parms{};
+	Params::EffectBlueprintFunctionLibrary_C_EnableSceneObjectWaterEffectShowDebugTrace Parms{};
 
 	Parms.enable = enable;
 	Parms.__WorldContext = __WorldContext;
@@ -462,21 +155,210 @@ void UEffectBlueprintFunctionLibrary_C::EffectCgMode(bool enable, class UObject*
 }
 
 
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.GetScreenEffectSystem
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetEffectOutPoolEnabled
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
+// bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class ABP_ScreenEffectSystem_C*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class ABP_ScreenEffectSystem_C* UEffectBlueprintFunctionLibrary_C::GetScreenEffectSystem(class UObject* __WorldContext)
+void UEffectBlueprintFunctionLibrary_C::SetEffectOutPoolEnabled(bool enable, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "GetScreenEffectSystem");
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetEffectOutPoolEnabled");
 
-	Params::EffectBlueprintFunctionLibrary_C_GetScreenEffectSystem Parms{};
+	Params::EffectBlueprintFunctionLibrary_C_SetEffectOutPoolEnabled Parms{};
 
+	Parms.enable = enable;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetEffectInPoolEnabled
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UEffectBlueprintFunctionLibrary_C::SetEffectInPoolEnabled(bool enable, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetEffectInPoolEnabled");
+
+	Params::EffectBlueprintFunctionLibrary_C_SetEffectInPoolEnabled Parms{};
+
+	Parms.enable = enable;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetVisualizeCharacterWaterEffectTrace
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    enable                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UEffectBlueprintFunctionLibrary_C::SetVisualizeCharacterWaterEffectTrace(bool enable, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetVisualizeCharacterWaterEffectTrace");
+
+	Params::EffectBlueprintFunctionLibrary_C_SetVisualizeCharacterWaterEffectTrace Parms{};
+
+	Parms.enable = enable;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.RefreshFoliageDetectConfig
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UEffectBlueprintFunctionLibrary_C::RefreshFoliageDetectConfig(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "RefreshFoliageDetectConfig");
+
+	Params::EffectBlueprintFunctionLibrary_C_RefreshFoliageDetectConfig Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.EndDebugDrawFoliageDetect
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UEffectBlueprintFunctionLibrary_C::EndDebugDrawFoliageDetect(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "EndDebugDrawFoliageDetect");
+
+	Params::EffectBlueprintFunctionLibrary_C_EndDebugDrawFoliageDetect Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.BeginDebugDrawFoliageDetect
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// float                                   width                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UEffectBlueprintFunctionLibrary_C::BeginDebugDrawFoliageDetect(const struct FLinearColor& color, float width, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "BeginDebugDrawFoliageDetect");
+
+	Params::EffectBlueprintFunctionLibrary_C_BeginDebugDrawFoliageDetect Parms{};
+
+	Parms.color = std::move(color);
+	Parms.width = width;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetEffectSpawnLogEnabled
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    enabled                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UEffectBlueprintFunctionLibrary_C::SetEffectSpawnLogEnabled(bool enabled, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetEffectSpawnLogEnabled");
+
+	Params::EffectBlueprintFunctionLibrary_C_SetEffectSpawnLogEnabled Parms{};
+
+	Parms.enabled = enabled;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.ValidateKuroAnimNotifyState
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UKuroAnimNotifyState*             asset                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
+
+bool UEffectBlueprintFunctionLibrary_C::ValidateKuroAnimNotifyState(class UKuroAnimNotifyState* asset, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "ValidateKuroAnimNotifyState");
+
+	Params::EffectBlueprintFunctionLibrary_C_ValidateKuroAnimNotifyState Parms{};
+
+	Parms.asset = asset;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -490,24 +372,142 @@ class ABP_ScreenEffectSystem_C* UEffectBlueprintFunctionLibrary_C::GetScreenEffe
 }
 
 
-// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.ChangeMaterialTextures
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.ValidateKuroAnimNotify
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           actor1                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           assetPath1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UKuroAnimNotify*                  asset                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
 
-void UEffectBlueprintFunctionLibrary_C::ChangeMaterialTextures(class AActor* actor1, const class FString& assetPath1, class UObject* __WorldContext)
+bool UEffectBlueprintFunctionLibrary_C::ValidateKuroAnimNotify(class UKuroAnimNotify* asset, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "ChangeMaterialTextures");
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "ValidateKuroAnimNotify");
 
-	Params::EffectBlueprintFunctionLibrary_C_ChangeMaterialTextures Parms{};
+	Params::EffectBlueprintFunctionLibrary_C_ValidateKuroAnimNotify Parms{};
 
-	Parms.actor1 = actor1;
-	Parms.assetPath1 = std::move(assetPath1);
+	Parms.asset = asset;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.SetMaterialControllerDataSync
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    materialDataPath                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// bool                                    isGroup                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UEffectBlueprintFunctionLibrary_C::SetMaterialControllerDataSync(int32 entityId, const class FString& materialDataPath, bool isGroup, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "SetMaterialControllerDataSync");
+
+	Params::EffectBlueprintFunctionLibrary_C_SetMaterialControllerDataSync Parms{};
+
+	Parms.entityId = entityId;
+	Parms.materialDataPath = std::move(materialDataPath);
+	Parms.isGroup = isGroup;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.ClearDebugDraw
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UEffectBlueprintFunctionLibrary_C::ClearDebugDraw(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "ClearDebugDraw");
+
+	Params::EffectBlueprintFunctionLibrary_C_ClearDebugDraw Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.AddDebugLineFromPlayer
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const struct FLinearColor&              color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// float                                   width                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UEffectBlueprintFunctionLibrary_C::AddDebugLineFromPlayer(const struct FVector& location, const struct FLinearColor& color, float width, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "AddDebugLineFromPlayer");
+
+	Params::EffectBlueprintFunctionLibrary_C_AddDebugLineFromPlayer Parms{};
+
+	Parms.location = std::move(location);
+	Parms.color = std::move(color);
+	Parms.width = width;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function EffectBlueprintFunctionLibrary.EffectBlueprintFunctionLibrary_C.RecycleEffect
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UEffectViewComponent_C*           view                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UEffectBlueprintFunctionLibrary_C::RecycleEffect(class UEffectViewComponent_C* view, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("EffectBlueprintFunctionLibrary_C", "RecycleEffect");
+
+	Params::EffectBlueprintFunctionLibrary_C_RecycleEffect Parms{};
+
+	Parms.view = view;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;

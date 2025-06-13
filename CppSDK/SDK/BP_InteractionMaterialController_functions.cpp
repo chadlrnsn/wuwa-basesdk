@@ -83,7 +83,7 @@ void ABP_InteractionMaterialController_C::ForEach()
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   FloatParameter                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           FloatParameterName                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    FloatParameterName                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_InteractionMaterialController_C::ChangeScalarParameter(float FloatParameter, const class FString& FloatParameterName)
 {
@@ -104,8 +104,8 @@ void ABP_InteractionMaterialController_C::ChangeScalarParameter(float FloatParam
 // Function BP_InteractionMaterialController.BP_InteractionMaterialController_C.ChangeVectorParameter
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FLinearColor                     VectorParameter                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           VectorParameterName                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FLinearColor&              VectorParameter                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    VectorParameterName                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_InteractionMaterialController_C::ChangeVectorParameter(const struct FLinearColor& VectorParameter, const class FString& VectorParameterName)
 {

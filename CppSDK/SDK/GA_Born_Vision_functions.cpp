@@ -144,7 +144,7 @@ void UGA_Born_Vision_C::OnTick_5D118C384AE61F1C80292E81F2255DE9()
 // Function GA_Born_Vision.GA_Born_Vision_C.EventReceived_18B59F5945020DB23C42FD889881D7F7
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void UGA_Born_Vision_C::EventReceived_18B59F5945020DB23C42FD889881D7F7(const struct FGameplayEventData& Payload)
 {
@@ -165,7 +165,7 @@ void UGA_Born_Vision_C::EventReceived_18B59F5945020DB23C42FD889881D7F7(const str
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   幻象ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSVisionData                     幻象数据                                               (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+// struct FSVisionData*                    幻象数据                                               (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
 
 void UGA_Born_Vision_C::获取幻象数据(int32 幻象ID, struct FSVisionData* 幻象数据)
 {

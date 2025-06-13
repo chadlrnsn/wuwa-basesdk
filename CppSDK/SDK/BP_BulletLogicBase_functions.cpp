@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // class ATsBaseCharacter_C*               攻击者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class ATsBaseCharacter_C*               受击者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSBulletDataMain                 子弹数据                                               (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FSBulletDataMain&          子弹数据                                               (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class UObject*                          子弹                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_BulletLogicBase_C::执行(class ATsBaseCharacter_C* 攻击者, class ATsBaseCharacter_C* 受击者, const struct FSBulletDataMain& 子弹数据, class UObject* 子弹)

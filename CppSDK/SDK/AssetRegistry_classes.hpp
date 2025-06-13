@@ -69,8 +69,8 @@ static_assert(alignof(UAssetRegistryHelpers) == 0x000008, "Wrong alignment on UA
 static_assert(sizeof(UAssetRegistryHelpers) == 0x000030, "Wrong size on UAssetRegistryHelpers");
 
 // Class AssetRegistry.AssetRegistry
-// 0x0000 (0x0030 - 0x0030)
-class IAssetRegistry final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IAssetRegistry final
 {
 public:
 	bool IsPathForceScanned(const class FString& InPath);
@@ -107,9 +107,18 @@ public:
 	{
 		return GetDefaultObjImpl<IAssetRegistry>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IAssetRegistry) == 0x000008, "Wrong alignment on IAssetRegistry");
-static_assert(sizeof(IAssetRegistry) == 0x000030, "Wrong size on IAssetRegistry");
+static_assert(alignof(IAssetRegistry) == 0x000001, "Wrong alignment on IAssetRegistry");
+static_assert(sizeof(IAssetRegistry) == 0x000001, "Wrong size on IAssetRegistry");
 
 }
 

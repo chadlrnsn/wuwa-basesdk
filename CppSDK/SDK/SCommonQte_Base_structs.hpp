@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ECommonQteType_structs.hpp"
 #include "SCommonQte_SingleClick_structs.hpp"
+#include "ECommonQteType_structs.hpp"
 #include "SCommonQte_ContinuousClick_structs.hpp"
 
 

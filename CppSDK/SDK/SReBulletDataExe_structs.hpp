@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SReBulletDataExe.SReBulletDataExe
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00D0 (0x00D0 - 0x0000)
 struct FSReBulletDataExe final
 {
 public:
@@ -30,10 +30,11 @@ public:
 	TArray<int64>                                 能量恢复类GE数组的Id_92_0FFC094E4B4069E9FA541E99A18C6836; // 0x0050(0x0010)(Edit, BlueprintVisible)
 	TArray<int64>                                 命中后对在场上角色应用的GE的Id_113_B47727BE4F7758AAC1A06FA7B32C1D0D; // 0x0060(0x0010)(Edit, BlueprintVisible)
 	TArray<int64>                                 受击对象进入应用的GE的Id_117_3D423BD949732127D0B715A8BF2B2848; // 0x0070(0x0010)(Edit, BlueprintVisible)
-	TSoftObjectPtr<class UKuroBpDataAssetGroup>   GB组_137_0105B2DE424147DFA801D5AF518CC183;         // 0x0080(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FGameplayTagContainer                  受击对象进入添加Tag_146_9B73F7964709707C04B8E4879A52B2EA; // 0x0080(0x0020)(Edit, BlueprintVisible)
+	TSoftObjectPtr<class UKuroBpDataAssetGroup>   GB组_137_0105B2DE424147DFA801D5AF518CC183;         // 0x00A0(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSReBulletDataExe) == 0x000008, "Wrong alignment on FSReBulletDataExe");
-static_assert(sizeof(FSReBulletDataExe) == 0x0000B0, "Wrong size on FSReBulletDataExe");
+static_assert(sizeof(FSReBulletDataExe) == 0x0000D0, "Wrong size on FSReBulletDataExe");
 static_assert(offsetof(FSReBulletDataExe, 生成时对攻击者发射GameplayEvent标签_143_868F26474217D7B2FC8BBF912756A196) == 0x000000, "Member 'FSReBulletDataExe::生成时对攻击者发射GameplayEvent标签_143_868F26474217D7B2FC8BBF912756A196' has a wrong offset!");
 static_assert(offsetof(FSReBulletDataExe, 命中后对攻击者发射GameplayEvent标签_107_8153E2F04A3D303839E4B5BCA7C2E4F6) == 0x00000C, "Member 'FSReBulletDataExe::命中后对攻击者发射GameplayEvent标签_107_8153E2F04A3D303839E4B5BCA7C2E4F6' has a wrong offset!");
 static_assert(offsetof(FSReBulletDataExe, 命中后对受击者发射GameplayEvent标签_108_87279FE048D1AFCD15EA958F445A2073) == 0x000018, "Member 'FSReBulletDataExe::命中后对受击者发射GameplayEvent标签_108_87279FE048D1AFCD15EA958F445A2073' has a wrong offset!");
@@ -43,7 +44,8 @@ static_assert(offsetof(FSReBulletDataExe, 命中后对受击者应用GE的Id_91_
 static_assert(offsetof(FSReBulletDataExe, 能量恢复类GE数组的Id_92_0FFC094E4B4069E9FA541E99A18C6836) == 0x000050, "Member 'FSReBulletDataExe::能量恢复类GE数组的Id_92_0FFC094E4B4069E9FA541E99A18C6836' has a wrong offset!");
 static_assert(offsetof(FSReBulletDataExe, 命中后对在场上角色应用的GE的Id_113_B47727BE4F7758AAC1A06FA7B32C1D0D) == 0x000060, "Member 'FSReBulletDataExe::命中后对在场上角色应用的GE的Id_113_B47727BE4F7758AAC1A06FA7B32C1D0D' has a wrong offset!");
 static_assert(offsetof(FSReBulletDataExe, 受击对象进入应用的GE的Id_117_3D423BD949732127D0B715A8BF2B2848) == 0x000070, "Member 'FSReBulletDataExe::受击对象进入应用的GE的Id_117_3D423BD949732127D0B715A8BF2B2848' has a wrong offset!");
-static_assert(offsetof(FSReBulletDataExe, GB组_137_0105B2DE424147DFA801D5AF518CC183) == 0x000080, "Member 'FSReBulletDataExe::GB组_137_0105B2DE424147DFA801D5AF518CC183' has a wrong offset!");
+static_assert(offsetof(FSReBulletDataExe, 受击对象进入添加Tag_146_9B73F7964709707C04B8E4879A52B2EA) == 0x000080, "Member 'FSReBulletDataExe::受击对象进入添加Tag_146_9B73F7964709707C04B8E4879A52B2EA' has a wrong offset!");
+static_assert(offsetof(FSReBulletDataExe, GB组_137_0105B2DE424147DFA801D5AF518CC183) == 0x0000A0, "Member 'FSReBulletDataExe::GB组_137_0105B2DE424147DFA801D5AF518CC183' has a wrong offset!");
 
 }
 
