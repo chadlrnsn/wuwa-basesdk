@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ECharacterState_structs.hpp"
+#include "EAiLevelVarSource_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SAiConditions_structs.hpp"
-#include "EAiLevelVarSource_structs.hpp"
 #include "TsAiController_classes.hpp"
+#include "ECharacterState_structs.hpp"
 
 
 namespace SDK

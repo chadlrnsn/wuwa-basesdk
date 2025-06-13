@@ -19,18 +19,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Vision_WaitAttack.GA_Vision_WaitAttack_C
-// 0x0058 (0x05B8 - 0x0560)
+// 0x0058 (0x05C8 - 0x0570)
 class UGA_Vision_WaitAttack_C final : public UGa_Passive_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_WaitAttack_C;             // 0x0560(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           普攻;                                              // 0x0570(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           蓄力;                                              // 0x057C(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           技能;                                              // 0x0588(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           闪避反击;                                          // 0x0594(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           大招;                                              // 0x05A0(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           瞄准射击;                                          // 0x05AC(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_WaitAttack_C;             // 0x0570(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           普攻;                                              // 0x0580(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           蓄力;                                              // 0x058C(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           技能;                                              // 0x0598(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           闪避反击;                                          // 0x05A4(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           大招;                                              // 0x05B0(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           瞄准射击;                                          // 0x05BC(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Vision_WaitAttack(int32 EntryPoint);
@@ -55,15 +55,15 @@ public:
 	}
 };
 static_assert(alignof(UGA_Vision_WaitAttack_C) == 0x000008, "Wrong alignment on UGA_Vision_WaitAttack_C");
-static_assert(sizeof(UGA_Vision_WaitAttack_C) == 0x0005B8, "Wrong size on UGA_Vision_WaitAttack_C");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, UberGraphFrame_GA_Vision_WaitAttack_C) == 0x000560, "Member 'UGA_Vision_WaitAttack_C::UberGraphFrame_GA_Vision_WaitAttack_C' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, 召唤角色) == 0x000568, "Member 'UGA_Vision_WaitAttack_C::召唤角色' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, 普攻) == 0x000570, "Member 'UGA_Vision_WaitAttack_C::普攻' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, 蓄力) == 0x00057C, "Member 'UGA_Vision_WaitAttack_C::蓄力' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, 技能) == 0x000588, "Member 'UGA_Vision_WaitAttack_C::技能' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, 闪避反击) == 0x000594, "Member 'UGA_Vision_WaitAttack_C::闪避反击' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, 大招) == 0x0005A0, "Member 'UGA_Vision_WaitAttack_C::大招' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitAttack_C, 瞄准射击) == 0x0005AC, "Member 'UGA_Vision_WaitAttack_C::瞄准射击' has a wrong offset!");
+static_assert(sizeof(UGA_Vision_WaitAttack_C) == 0x0005C8, "Wrong size on UGA_Vision_WaitAttack_C");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, UberGraphFrame_GA_Vision_WaitAttack_C) == 0x000570, "Member 'UGA_Vision_WaitAttack_C::UberGraphFrame_GA_Vision_WaitAttack_C' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, 召唤角色) == 0x000578, "Member 'UGA_Vision_WaitAttack_C::召唤角色' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, 普攻) == 0x000580, "Member 'UGA_Vision_WaitAttack_C::普攻' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, 蓄力) == 0x00058C, "Member 'UGA_Vision_WaitAttack_C::蓄力' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, 技能) == 0x000598, "Member 'UGA_Vision_WaitAttack_C::技能' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, 闪避反击) == 0x0005A4, "Member 'UGA_Vision_WaitAttack_C::闪避反击' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, 大招) == 0x0005B0, "Member 'UGA_Vision_WaitAttack_C::大招' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitAttack_C, 瞄准射击) == 0x0005BC, "Member 'UGA_Vision_WaitAttack_C::瞄准射击' has a wrong offset!");
 
 }
 

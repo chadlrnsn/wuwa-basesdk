@@ -28,17 +28,6 @@ static_assert(alignof(KuroAmbientSoundComponent_IsPlaying) == 0x000001, "Wrong a
 static_assert(sizeof(KuroAmbientSoundComponent_IsPlaying) == 0x000001, "Wrong size on KuroAmbientSoundComponent_IsPlaying");
 static_assert(offsetof(KuroAmbientSoundComponent_IsPlaying, ReturnValue) == 0x000000, "Member 'KuroAmbientSoundComponent_IsPlaying::ReturnValue' has a wrong offset!");
 
-// Function KuroAudio.KuroAmbientSoundComponent.StopSound
-// 0x0004 (0x0004 - 0x0000)
-struct KuroAmbientSoundComponent_StopSound final
-{
-public:
-	int32                                         FadeDuration;                                      // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroAmbientSoundComponent_StopSound) == 0x000004, "Wrong alignment on KuroAmbientSoundComponent_StopSound");
-static_assert(sizeof(KuroAmbientSoundComponent_StopSound) == 0x000004, "Wrong size on KuroAmbientSoundComponent_StopSound");
-static_assert(offsetof(KuroAmbientSoundComponent_StopSound, FadeDuration) == 0x000000, "Member 'KuroAmbientSoundComponent_StopSound::FadeDuration' has a wrong offset!");
-
 // Function KuroAudio.KuroAudioDelegates.SetAudioPauseDelegate
 // 0x0028 (0x0028 - 0x0000)
 struct KuroAudioDelegates_SetAudioPauseDelegate final
@@ -88,23 +77,6 @@ static_assert(alignof(KuroAudioEnvironmentSubsystem_DynamicReverbTrace) == 0x000
 static_assert(sizeof(KuroAudioEnvironmentSubsystem_DynamicReverbTrace) == 0x000010, "Wrong size on KuroAudioEnvironmentSubsystem_DynamicReverbTrace");
 static_assert(offsetof(KuroAudioEnvironmentSubsystem_DynamicReverbTrace, Location) == 0x000000, "Member 'KuroAudioEnvironmentSubsystem_DynamicReverbTrace::Location' has a wrong offset!");
 static_assert(offsetof(KuroAudioEnvironmentSubsystem_DynamicReverbTrace, bForceUpdate) == 0x00000C, "Member 'KuroAudioEnvironmentSubsystem_DynamicReverbTrace::bForceUpdate' has a wrong offset!");
-
-// Function KuroAudio.KuroAudioEnvironmentSubsystem.CalculateDynamicReverbParam
-// 0x001C (0x001C - 0x0000)
-struct KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HorizontalTraceDistance;                           // 0x000C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         VerticalTraceDistance;                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroDynamicReverbParam                ReturnValue;                                       // 0x0014(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam) == 0x000004, "Wrong alignment on KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam");
-static_assert(sizeof(KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam) == 0x00001C, "Wrong size on KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam");
-static_assert(offsetof(KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam, Location) == 0x000000, "Member 'KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam::Location' has a wrong offset!");
-static_assert(offsetof(KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam, HorizontalTraceDistance) == 0x00000C, "Member 'KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam::HorizontalTraceDistance' has a wrong offset!");
-static_assert(offsetof(KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam, VerticalTraceDistance) == 0x000010, "Member 'KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam::VerticalTraceDistance' has a wrong offset!");
-static_assert(offsetof(KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam, ReturnValue) == 0x000014, "Member 'KuroAudioEnvironmentSubsystem_CalculateDynamicReverbParam::ReturnValue' has a wrong offset!");
 
 // Function KuroAudio.KuroAudioEnvironmentSubsystem.GetEnvironmentInfo
 // 0x0028 (0x0028 - 0x0000)

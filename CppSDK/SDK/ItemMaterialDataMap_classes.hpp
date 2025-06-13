@@ -22,7 +22,7 @@ class AItemMaterialDataMap_C final : public AActor
 {
 public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TMap<float, class UItemMaterialControllerActorData_C*> Map;                                               // 0x02B8(0x0050)(Edit, BlueprintVisible, Transient)
+	TMap<float, class UItemMaterialControllerActorData_C*> Map;                                      // 0x02B8(0x0050)(Edit, BlueprintVisible, Transient)
 
 public:
 	static class UClass* StaticClass()

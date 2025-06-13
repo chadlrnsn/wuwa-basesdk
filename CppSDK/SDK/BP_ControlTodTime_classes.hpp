@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "Engine_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
@@ -34,9 +34,9 @@ public:
 	bool                                          EnableSunHorizontalAngle;                          // 0x02E4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
 
 public:
-	void ExecuteUbergraph_BP_ControlTodTime(int32 EntryPoint);
-	void EditorTick(float DeltaSeconds);
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void EditorTick(float DeltaSeconds);
+	void ExecuteUbergraph_BP_ControlTodTime(int32 EntryPoint);
 	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
 	void UserConstructionScript();

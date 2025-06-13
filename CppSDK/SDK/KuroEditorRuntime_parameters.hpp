@@ -86,7 +86,7 @@ struct EditorRuntimeOperations_ReadBatchFilesAsync final
 {
 public:
 	TArray<class FString>                         FilePaths;                                         // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TDelegate<void(TArray<struct FReadFileData>& LoadedFiles, TArray<class FString>& ReadFailedFiles)> OnAllFilesRead;                                    // 0x0010(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<struct FReadFileData>& LoadedFiles, const TArray<class FString>& ReadFailedFiles)> OnAllFilesRead; // 0x0010(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(EditorRuntimeOperations_ReadBatchFilesAsync) == 0x000008, "Wrong alignment on EditorRuntimeOperations_ReadBatchFilesAsync");
 static_assert(sizeof(EditorRuntimeOperations_ReadBatchFilesAsync) == 0x000038, "Wrong size on EditorRuntimeOperations_ReadBatchFilesAsync");
@@ -99,7 +99,7 @@ struct EditorRuntimeOperations_ReadFileAsync final
 {
 public:
 	class FString                                 FilePath;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(bool IsSuccess, const class FString& FileContent)> OnFileRead;                                        // 0x0010(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(bool IsSuccess, const class FString& FileContent)> OnFileRead;                    // 0x0010(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(EditorRuntimeOperations_ReadFileAsync) == 0x000008, "Wrong alignment on EditorRuntimeOperations_ReadFileAsync");
 static_assert(sizeof(EditorRuntimeOperations_ReadFileAsync) == 0x000038, "Wrong size on EditorRuntimeOperations_ReadFileAsync");
@@ -115,7 +115,7 @@ public:
 	class FString                                 Url;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<class FString, class FString>            HeaderParam;                                       // 0x0020(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	class FString                                 Content;                                           // 0x0070(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handler;                                           // 0x0080(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handler;                    // 0x0080(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(EditorRuntimeOperations_SendHttpRequest) == 0x000008, "Wrong alignment on EditorRuntimeOperations_SendHttpRequest");
 static_assert(sizeof(EditorRuntimeOperations_SendHttpRequest) == 0x0000A8, "Wrong size on EditorRuntimeOperations_SendHttpRequest");

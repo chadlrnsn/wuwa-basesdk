@@ -12,6 +12,7 @@
 
 #include "EAnsRotateBlackboardType_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "EAnsRotateDetectionType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
@@ -19,7 +20,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateRotate.TsAnimNotifyStateRotate_C
-// 0x0060 (0x00A8 - 0x0048)
+// 0x0070 (0x00B8 - 0x0048)
 class UTsAnimNotifyStateRotate_C final : public UKuroAnimNotifyState
 {
 public:
@@ -41,12 +42,19 @@ public:
 	bool                                          只在横板模式中生效;                                // 0x0081(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  屏蔽标签列表;                                      // 0x0088(0x0020)(Edit, BlueprintVisible)
+	bool                                          定向旋转功能;                                      // 0x00A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A9[0x3];                                       // 0x00A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         定向旋转阈值最小值;                                // 0x00AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         定向旋转阈值最大值;                                // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAnsRotateDetectionType                       定向旋转方式;                                      // 0x00B4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          调试定向旋转范围;                                  // 0x00B5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay)
 
 public:
 	bool K2_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime);
 	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
-	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
 	void Initialize();
+	bool IsInContinueDetectionAngle(float angle);
+	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
 
 	class FString GetNotifyName() const;
 
@@ -61,7 +69,7 @@ public:
 	}
 };
 static_assert(alignof(UTsAnimNotifyStateRotate_C) == 0x000008, "Wrong alignment on UTsAnimNotifyStateRotate_C");
-static_assert(sizeof(UTsAnimNotifyStateRotate_C) == 0x0000A8, "Wrong size on UTsAnimNotifyStateRotate_C");
+static_assert(sizeof(UTsAnimNotifyStateRotate_C) == 0x0000B8, "Wrong size on UTsAnimNotifyStateRotate_C");
 static_assert(offsetof(UTsAnimNotifyStateRotate_C, 旋转速度) == 0x000048, "Member 'UTsAnimNotifyStateRotate_C::旋转速度' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateRotate_C, 是否自动朝向目标) == 0x00004C, "Member 'UTsAnimNotifyStateRotate_C::是否自动朝向目标' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateRotate_C, 是否平滑旋转) == 0x00004D, "Member 'UTsAnimNotifyStateRotate_C::是否平滑旋转' has a wrong offset!");
@@ -76,6 +84,11 @@ static_assert(offsetof(UTsAnimNotifyStateRotate_C, 继续旋转阈值) == 0x0000
 static_assert(offsetof(UTsAnimNotifyStateRotate_C, 在横板模式中禁用) == 0x000080, "Member 'UTsAnimNotifyStateRotate_C::在横板模式中禁用' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateRotate_C, 只在横板模式中生效) == 0x000081, "Member 'UTsAnimNotifyStateRotate_C::只在横板模式中生效' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateRotate_C, 屏蔽标签列表) == 0x000088, "Member 'UTsAnimNotifyStateRotate_C::屏蔽标签列表' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyStateRotate_C, 定向旋转功能) == 0x0000A8, "Member 'UTsAnimNotifyStateRotate_C::定向旋转功能' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyStateRotate_C, 定向旋转阈值最小值) == 0x0000AC, "Member 'UTsAnimNotifyStateRotate_C::定向旋转阈值最小值' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyStateRotate_C, 定向旋转阈值最大值) == 0x0000B0, "Member 'UTsAnimNotifyStateRotate_C::定向旋转阈值最大值' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyStateRotate_C, 定向旋转方式) == 0x0000B4, "Member 'UTsAnimNotifyStateRotate_C::定向旋转方式' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyStateRotate_C, 调试定向旋转范围) == 0x0000B5, "Member 'UTsAnimNotifyStateRotate_C::调试定向旋转范围' has a wrong offset!");
 
 }
 

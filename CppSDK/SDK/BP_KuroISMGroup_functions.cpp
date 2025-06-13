@@ -88,7 +88,7 @@ void ABP_KuroISMGroup_C::UserConstructionScript()
 // Function BP_KuroISMGroup.BP_KuroISMGroup_C.IsEditor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    IsEditor_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   IsEditor_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_KuroISMGroup_C::IsEditor(bool* IsEditor_0)
 {
@@ -171,7 +171,7 @@ void ABP_KuroISMGroup_C::MaterialParameterGradient(float DeltalTime)
 // Function BP_KuroISMGroup.BP_KuroISMGroup_C.Timer
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   ElapsedTime                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  ElapsedTime                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_KuroISMGroup_C::Timer(float* ElapsedTime)
 {

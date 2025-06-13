@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SAudioEventProbabilityCooldownInfo_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "SAudioEventProbabilityCooldownInfo_structs.hpp"
 
 
 namespace SDK

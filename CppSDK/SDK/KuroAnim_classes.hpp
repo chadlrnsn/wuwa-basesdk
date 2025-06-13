@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "KuroAnim_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "KuroAnim_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
@@ -111,7 +111,7 @@ static_assert(offsetof(UKuroAnimInstance, LookUpOffsetForBoneRotateAnimNode) == 
 static_assert(offsetof(UKuroAnimInstance, ExtraRibbonAnims) == 0x0006F0, "Member 'UKuroAnimInstance::ExtraRibbonAnims' has a wrong offset!");
 
 // Class KuroAnim.KuroAnimInstanceChar
-// 0x00D0 (0x0820 - 0x0750)
+// 0x0120 (0x0870 - 0x0750)
 class UKuroAnimInstanceChar : public UKuroAnimInstance
 {
 public:
@@ -135,8 +135,9 @@ public:
 	struct FRotator                               LowerBodyRotator;                                  // 0x07F0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_7FC[0x4];                                      // 0x07FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVectorDouble                          LocationProxy;                                     // 0x0800(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESightLockMode                                SightLockMode;                                     // 0x0818(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_819[0x7];                                      // 0x0819(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<class FName, struct FTransform>          CachedBones;                                       // 0x0818(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
+	ESightLockMode                                SightLockMode;                                     // 0x0868(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_869[0x7];                                      // 0x0869(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -149,7 +150,7 @@ public:
 	}
 };
 static_assert(alignof(UKuroAnimInstanceChar) == 0x000010, "Wrong alignment on UKuroAnimInstanceChar");
-static_assert(sizeof(UKuroAnimInstanceChar) == 0x000820, "Wrong size on UKuroAnimInstanceChar");
+static_assert(sizeof(UKuroAnimInstanceChar) == 0x000870, "Wrong size on UKuroAnimInstanceChar");
 static_assert(offsetof(UKuroAnimInstanceChar, LogicParams) == 0x000748, "Member 'UKuroAnimInstanceChar::LogicParams' has a wrong offset!");
 static_assert(offsetof(UKuroAnimInstanceChar, BaseCharacter) == 0x000750, "Member 'UKuroAnimInstanceChar::BaseCharacter' has a wrong offset!");
 static_assert(offsetof(UKuroAnimInstanceChar, DeltaTime) == 0x000760, "Member 'UKuroAnimInstanceChar::DeltaTime' has a wrong offset!");
@@ -163,7 +164,8 @@ static_assert(offsetof(UKuroAnimInstanceChar, OnJumpSpeed) == 0x0007BC, "Member 
 static_assert(offsetof(UKuroAnimInstanceChar, bStunned) == 0x0007C0, "Member 'UKuroAnimInstanceChar::bStunned' has a wrong offset!");
 static_assert(offsetof(UKuroAnimInstanceChar, LowerBodyRotator) == 0x0007F0, "Member 'UKuroAnimInstanceChar::LowerBodyRotator' has a wrong offset!");
 static_assert(offsetof(UKuroAnimInstanceChar, LocationProxy) == 0x000800, "Member 'UKuroAnimInstanceChar::LocationProxy' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceChar, SightLockMode) == 0x000818, "Member 'UKuroAnimInstanceChar::SightLockMode' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceChar, CachedBones) == 0x000818, "Member 'UKuroAnimInstanceChar::CachedBones' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceChar, SightLockMode) == 0x000868, "Member 'UKuroAnimInstanceChar::SightLockMode' has a wrong offset!");
 
 // Class KuroAnim.KuroAdjustableBoxComponent
 // 0x0030 (0x0560 - 0x0530)
@@ -196,30 +198,30 @@ static_assert(offsetof(UKuroAdjustableBoxComponent, MaxExtent) == 0x000540, "Mem
 static_assert(offsetof(UKuroAdjustableBoxComponent, AdjustBoxType) == 0x000544, "Member 'UKuroAdjustableBoxComponent::AdjustBoxType' has a wrong offset!");
 
 // Class KuroAnim.KuroAnimInstanceNpc
-// 0x0030 (0x0850 - 0x0820)
+// 0x0030 (0x08A0 - 0x0870)
 class UKuroAnimInstanceNpc final : public UKuroAnimInstanceChar
 {
 public:
-	struct FVector                                SightDirection;                                    // 0x0820(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SightAlpha;                                        // 0x082C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CameraModeType;                                    // 0x0830(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsBeingCaptured;                                  // 0x0834(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayKnockUpAnim;                                  // 0x0835(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHeadIKReturnToOrigin;                             // 0x0836(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharMoveStateType                            CharacterMoveStateType;                            // 0x0837(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharPositionStateType                        CharacterPositionStateType;                        // 0x0838(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMoveDirection                                MovementDirection;                                 // 0x0839(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EWalkPosture                                  WalkingPosture;                                    // 0x083A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_83B[0x1];                                      // 0x083B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         UpdateDeltaSeconds;                                // 0x083C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WorldDeltaSeconds;                                 // 0x0840(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIdleThreeState;                                   // 0x0844(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCommonDebugState;                                 // 0x0845(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInAirState;                                       // 0x0846(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLowerHalfUniversalFusionState;                    // 0x0847(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInBattleState;                                    // 0x0848(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayEnterBattleState;                             // 0x0849(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84A[0x6];                                      // 0x084A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                SightDirection;                                    // 0x0870(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SightAlpha;                                        // 0x087C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CameraModeType;                                    // 0x0880(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsBeingCaptured;                                  // 0x0884(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayKnockUpAnim;                                  // 0x0885(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHeadIKReturnToOrigin;                             // 0x0886(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharMoveStateType                            CharacterMoveStateType;                            // 0x0887(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharPositionStateType                        CharacterPositionStateType;                        // 0x0888(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMoveDirection                                MovementDirection;                                 // 0x0889(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EWalkPosture                                  WalkingPosture;                                    // 0x088A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_88B[0x1];                                      // 0x088B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         UpdateDeltaSeconds;                                // 0x088C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WorldDeltaSeconds;                                 // 0x0890(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIdleThreeState;                                   // 0x0894(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCommonDebugState;                                 // 0x0895(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInAirState;                                       // 0x0896(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLowerHalfUniversalFusionState;                    // 0x0897(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInBattleState;                                    // 0x0898(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayEnterBattleState;                             // 0x0899(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_89A[0x6];                                      // 0x089A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -232,25 +234,25 @@ public:
 	}
 };
 static_assert(alignof(UKuroAnimInstanceNpc) == 0x000010, "Wrong alignment on UKuroAnimInstanceNpc");
-static_assert(sizeof(UKuroAnimInstanceNpc) == 0x000850, "Wrong size on UKuroAnimInstanceNpc");
-static_assert(offsetof(UKuroAnimInstanceNpc, SightDirection) == 0x000820, "Member 'UKuroAnimInstanceNpc::SightDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, SightAlpha) == 0x00082C, "Member 'UKuroAnimInstanceNpc::SightAlpha' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, CameraModeType) == 0x000830, "Member 'UKuroAnimInstanceNpc::CameraModeType' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, bIsBeingCaptured) == 0x000834, "Member 'UKuroAnimInstanceNpc::bIsBeingCaptured' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, bPlayKnockUpAnim) == 0x000835, "Member 'UKuroAnimInstanceNpc::bPlayKnockUpAnim' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, bHeadIKReturnToOrigin) == 0x000836, "Member 'UKuroAnimInstanceNpc::bHeadIKReturnToOrigin' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, CharacterMoveStateType) == 0x000837, "Member 'UKuroAnimInstanceNpc::CharacterMoveStateType' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, CharacterPositionStateType) == 0x000838, "Member 'UKuroAnimInstanceNpc::CharacterPositionStateType' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, MovementDirection) == 0x000839, "Member 'UKuroAnimInstanceNpc::MovementDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, WalkingPosture) == 0x00083A, "Member 'UKuroAnimInstanceNpc::WalkingPosture' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, UpdateDeltaSeconds) == 0x00083C, "Member 'UKuroAnimInstanceNpc::UpdateDeltaSeconds' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, WorldDeltaSeconds) == 0x000840, "Member 'UKuroAnimInstanceNpc::WorldDeltaSeconds' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, bIdleThreeState) == 0x000844, "Member 'UKuroAnimInstanceNpc::bIdleThreeState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, bCommonDebugState) == 0x000845, "Member 'UKuroAnimInstanceNpc::bCommonDebugState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, bInAirState) == 0x000846, "Member 'UKuroAnimInstanceNpc::bInAirState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, bLowerHalfUniversalFusionState) == 0x000847, "Member 'UKuroAnimInstanceNpc::bLowerHalfUniversalFusionState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, bInBattleState) == 0x000848, "Member 'UKuroAnimInstanceNpc::bInBattleState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceNpc, bPlayEnterBattleState) == 0x000849, "Member 'UKuroAnimInstanceNpc::bPlayEnterBattleState' has a wrong offset!");
+static_assert(sizeof(UKuroAnimInstanceNpc) == 0x0008A0, "Wrong size on UKuroAnimInstanceNpc");
+static_assert(offsetof(UKuroAnimInstanceNpc, SightDirection) == 0x000870, "Member 'UKuroAnimInstanceNpc::SightDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, SightAlpha) == 0x00087C, "Member 'UKuroAnimInstanceNpc::SightAlpha' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, CameraModeType) == 0x000880, "Member 'UKuroAnimInstanceNpc::CameraModeType' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, bIsBeingCaptured) == 0x000884, "Member 'UKuroAnimInstanceNpc::bIsBeingCaptured' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, bPlayKnockUpAnim) == 0x000885, "Member 'UKuroAnimInstanceNpc::bPlayKnockUpAnim' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, bHeadIKReturnToOrigin) == 0x000886, "Member 'UKuroAnimInstanceNpc::bHeadIKReturnToOrigin' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, CharacterMoveStateType) == 0x000887, "Member 'UKuroAnimInstanceNpc::CharacterMoveStateType' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, CharacterPositionStateType) == 0x000888, "Member 'UKuroAnimInstanceNpc::CharacterPositionStateType' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, MovementDirection) == 0x000889, "Member 'UKuroAnimInstanceNpc::MovementDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, WalkingPosture) == 0x00088A, "Member 'UKuroAnimInstanceNpc::WalkingPosture' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, UpdateDeltaSeconds) == 0x00088C, "Member 'UKuroAnimInstanceNpc::UpdateDeltaSeconds' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, WorldDeltaSeconds) == 0x000890, "Member 'UKuroAnimInstanceNpc::WorldDeltaSeconds' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, bIdleThreeState) == 0x000894, "Member 'UKuroAnimInstanceNpc::bIdleThreeState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, bCommonDebugState) == 0x000895, "Member 'UKuroAnimInstanceNpc::bCommonDebugState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, bInAirState) == 0x000896, "Member 'UKuroAnimInstanceNpc::bInAirState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, bLowerHalfUniversalFusionState) == 0x000897, "Member 'UKuroAnimInstanceNpc::bLowerHalfUniversalFusionState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, bInBattleState) == 0x000898, "Member 'UKuroAnimInstanceNpc::bInBattleState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceNpc, bPlayEnterBattleState) == 0x000899, "Member 'UKuroAnimInstanceNpc::bPlayEnterBattleState' has a wrong offset!");
 
 // Class KuroAnim.KuroAdjustableCapsuleComponent
 // 0x0040 (0x0560 - 0x0520)
@@ -331,36 +333,36 @@ static_assert(offsetof(UKuroAnimConfig, DefaultFootOffset) == 0x000030, "Member 
 static_assert(offsetof(UKuroAnimConfig, DefaultHighHeelsOffset) == 0x000034, "Member 'UKuroAnimConfig::DefaultHighHeelsOffset' has a wrong offset!");
 
 // Class KuroAnim.KuroAnimInstanceMonster
-// 0x0050 (0x0870 - 0x0820)
+// 0x0050 (0x08C0 - 0x0870)
 class UKuroAnimInstanceMonster : public UKuroAnimInstanceChar
 {
 public:
-	TArray<class FName>                           HitBonesList;                                      // 0x0820(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FVector                                SightDirection;                                    // 0x0830(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SightAlpha;                                        // 0x083C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CameraModeType;                                    // 0x0840(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HateLocation;                                      // 0x0844(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsBeingCaptured;                                  // 0x0850(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayKnockUpAnim;                                  // 0x0851(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHeadIKReturnToOrigin;                             // 0x0852(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharMoveStateType                            CharacterMoveStateType;                            // 0x0853(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharPositionStateType                        CharacterPositionStateType;                        // 0x0854(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAcceptNewHit;                                     // 0x0855(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnterFk;                                          // 0x0856(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHitInAir;                                         // 0x0857(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HitAnimType;                                       // 0x0858(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMoveDirection                                MovementDirection;                                 // 0x085C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EWalkPosture                                  WalkingPosture;                                    // 0x085D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_85E[0x2];                                      // 0x085E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         UpdateDeltaSeconds;                                // 0x0860(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WorldDeltaSeconds;                                 // 0x0864(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIdleThreeState;                                   // 0x0868(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCommonDebugState;                                 // 0x0869(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInAirState;                                       // 0x086A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLowerHalfUniversalFusionState;                    // 0x086B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInBattleState;                                    // 0x086C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayEnterBattleState;                             // 0x086D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_86E[0x2];                                      // 0x086E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           HitBonesList;                                      // 0x0870(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FVector                                SightDirection;                                    // 0x0880(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SightAlpha;                                        // 0x088C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CameraModeType;                                    // 0x0890(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HateLocation;                                      // 0x0894(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsBeingCaptured;                                  // 0x08A0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayKnockUpAnim;                                  // 0x08A1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHeadIKReturnToOrigin;                             // 0x08A2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharMoveStateType                            CharacterMoveStateType;                            // 0x08A3(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharPositionStateType                        CharacterPositionStateType;                        // 0x08A4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAcceptNewHit;                                     // 0x08A5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnterFk;                                          // 0x08A6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHitInAir;                                         // 0x08A7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HitAnimType;                                       // 0x08A8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMoveDirection                                MovementDirection;                                 // 0x08AC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EWalkPosture                                  WalkingPosture;                                    // 0x08AD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8AE[0x2];                                      // 0x08AE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         UpdateDeltaSeconds;                                // 0x08B0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WorldDeltaSeconds;                                 // 0x08B4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIdleThreeState;                                   // 0x08B8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCommonDebugState;                                 // 0x08B9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInAirState;                                       // 0x08BA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLowerHalfUniversalFusionState;                    // 0x08BB(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInBattleState;                                    // 0x08BC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayEnterBattleState;                             // 0x08BD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8BE[0x2];                                      // 0x08BE(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -373,212 +375,212 @@ public:
 	}
 };
 static_assert(alignof(UKuroAnimInstanceMonster) == 0x000010, "Wrong alignment on UKuroAnimInstanceMonster");
-static_assert(sizeof(UKuroAnimInstanceMonster) == 0x000870, "Wrong size on UKuroAnimInstanceMonster");
-static_assert(offsetof(UKuroAnimInstanceMonster, HitBonesList) == 0x000820, "Member 'UKuroAnimInstanceMonster::HitBonesList' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, SightDirection) == 0x000830, "Member 'UKuroAnimInstanceMonster::SightDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, SightAlpha) == 0x00083C, "Member 'UKuroAnimInstanceMonster::SightAlpha' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, CameraModeType) == 0x000840, "Member 'UKuroAnimInstanceMonster::CameraModeType' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, HateLocation) == 0x000844, "Member 'UKuroAnimInstanceMonster::HateLocation' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bIsBeingCaptured) == 0x000850, "Member 'UKuroAnimInstanceMonster::bIsBeingCaptured' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bPlayKnockUpAnim) == 0x000851, "Member 'UKuroAnimInstanceMonster::bPlayKnockUpAnim' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bHeadIKReturnToOrigin) == 0x000852, "Member 'UKuroAnimInstanceMonster::bHeadIKReturnToOrigin' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, CharacterMoveStateType) == 0x000853, "Member 'UKuroAnimInstanceMonster::CharacterMoveStateType' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, CharacterPositionStateType) == 0x000854, "Member 'UKuroAnimInstanceMonster::CharacterPositionStateType' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bAcceptNewHit) == 0x000855, "Member 'UKuroAnimInstanceMonster::bAcceptNewHit' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bEnterFk) == 0x000856, "Member 'UKuroAnimInstanceMonster::bEnterFk' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bHitInAir) == 0x000857, "Member 'UKuroAnimInstanceMonster::bHitInAir' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, HitAnimType) == 0x000858, "Member 'UKuroAnimInstanceMonster::HitAnimType' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, MovementDirection) == 0x00085C, "Member 'UKuroAnimInstanceMonster::MovementDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, WalkingPosture) == 0x00085D, "Member 'UKuroAnimInstanceMonster::WalkingPosture' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, UpdateDeltaSeconds) == 0x000860, "Member 'UKuroAnimInstanceMonster::UpdateDeltaSeconds' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, WorldDeltaSeconds) == 0x000864, "Member 'UKuroAnimInstanceMonster::WorldDeltaSeconds' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bIdleThreeState) == 0x000868, "Member 'UKuroAnimInstanceMonster::bIdleThreeState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bCommonDebugState) == 0x000869, "Member 'UKuroAnimInstanceMonster::bCommonDebugState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bInAirState) == 0x00086A, "Member 'UKuroAnimInstanceMonster::bInAirState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bLowerHalfUniversalFusionState) == 0x00086B, "Member 'UKuroAnimInstanceMonster::bLowerHalfUniversalFusionState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bInBattleState) == 0x00086C, "Member 'UKuroAnimInstanceMonster::bInBattleState' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceMonster, bPlayEnterBattleState) == 0x00086D, "Member 'UKuroAnimInstanceMonster::bPlayEnterBattleState' has a wrong offset!");
+static_assert(sizeof(UKuroAnimInstanceMonster) == 0x0008C0, "Wrong size on UKuroAnimInstanceMonster");
+static_assert(offsetof(UKuroAnimInstanceMonster, HitBonesList) == 0x000870, "Member 'UKuroAnimInstanceMonster::HitBonesList' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, SightDirection) == 0x000880, "Member 'UKuroAnimInstanceMonster::SightDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, SightAlpha) == 0x00088C, "Member 'UKuroAnimInstanceMonster::SightAlpha' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, CameraModeType) == 0x000890, "Member 'UKuroAnimInstanceMonster::CameraModeType' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, HateLocation) == 0x000894, "Member 'UKuroAnimInstanceMonster::HateLocation' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bIsBeingCaptured) == 0x0008A0, "Member 'UKuroAnimInstanceMonster::bIsBeingCaptured' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bPlayKnockUpAnim) == 0x0008A1, "Member 'UKuroAnimInstanceMonster::bPlayKnockUpAnim' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bHeadIKReturnToOrigin) == 0x0008A2, "Member 'UKuroAnimInstanceMonster::bHeadIKReturnToOrigin' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, CharacterMoveStateType) == 0x0008A3, "Member 'UKuroAnimInstanceMonster::CharacterMoveStateType' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, CharacterPositionStateType) == 0x0008A4, "Member 'UKuroAnimInstanceMonster::CharacterPositionStateType' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bAcceptNewHit) == 0x0008A5, "Member 'UKuroAnimInstanceMonster::bAcceptNewHit' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bEnterFk) == 0x0008A6, "Member 'UKuroAnimInstanceMonster::bEnterFk' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bHitInAir) == 0x0008A7, "Member 'UKuroAnimInstanceMonster::bHitInAir' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, HitAnimType) == 0x0008A8, "Member 'UKuroAnimInstanceMonster::HitAnimType' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, MovementDirection) == 0x0008AC, "Member 'UKuroAnimInstanceMonster::MovementDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, WalkingPosture) == 0x0008AD, "Member 'UKuroAnimInstanceMonster::WalkingPosture' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, UpdateDeltaSeconds) == 0x0008B0, "Member 'UKuroAnimInstanceMonster::UpdateDeltaSeconds' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, WorldDeltaSeconds) == 0x0008B4, "Member 'UKuroAnimInstanceMonster::WorldDeltaSeconds' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bIdleThreeState) == 0x0008B8, "Member 'UKuroAnimInstanceMonster::bIdleThreeState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bCommonDebugState) == 0x0008B9, "Member 'UKuroAnimInstanceMonster::bCommonDebugState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bInAirState) == 0x0008BA, "Member 'UKuroAnimInstanceMonster::bInAirState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bLowerHalfUniversalFusionState) == 0x0008BB, "Member 'UKuroAnimInstanceMonster::bLowerHalfUniversalFusionState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bInBattleState) == 0x0008BC, "Member 'UKuroAnimInstanceMonster::bInBattleState' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceMonster, bPlayEnterBattleState) == 0x0008BD, "Member 'UKuroAnimInstanceMonster::bPlayEnterBattleState' has a wrong offset!");
 
 // Class KuroAnim.KuroAnimInstanceRole
-// 0x0320 (0x0B40 - 0x0820)
+// 0x0320 (0x0B90 - 0x0870)
 class UKuroAnimInstanceRole : public UKuroAnimInstanceChar
 {
 public:
-	TArray<int32>                                 ValidPerformanceIndexes;                           // 0x0820(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bIsFloorMoving;                                    // 0x0830(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_831[0x1F];                                     // 0x0831(0x001F)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bCanbeInterrupt;                                   // 0x0850(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMoveBlock;                                        // 0x0851(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_852[0x2];                                      // 0x0852(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TimeSeconds;                                       // 0x0854(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_858[0x4];                                      // 0x0858(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bIsNotNPC;                                         // 0x085C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_85D[0x3];                                      // 0x085D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ChangeRoleCount;                                   // 0x0860(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_864[0x1];                                      // 0x0864(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bHasNPCTag;                                        // 0x0865(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsGoingToMove;                                    // 0x0866(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_867[0x5];                                      // 0x0867(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TurnMix;                                           // 0x086C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVeloctiyBlend                         SpeedMix;                                          // 0x0870(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector2D                              AimMoveMix;                                        // 0x0880(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                LocalAccel;                                        // 0x0888(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLeanAmount                            LeanAmount;                                        // 0x0894(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	EMoveDirection                                MoveDirection;                                     // 0x089C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_89D[0x3];                                      // 0x089D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GroundMovePlayRate;                                // 0x08A0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WalkRunMix;                                        // 0x08A4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StepSizeMix;                                       // 0x08A8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVeloctiyBlend                         AccelLerpMix;                                      // 0x08AC(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         AimYaw;                                            // 0x08BC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AimPitch;                                          // 0x08C0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsFightStand;                                     // 0x08C4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8C5[0x3];                                      // 0x08C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              MoveMix;                                           // 0x08C8(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CachePercentLR;                                    // 0x08D0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CachePercentFB;                                    // 0x08D4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EStandTurnType                                StandTurnType;                                     // 0x08D8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8D9[0x3];                                      // 0x08D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LandSpeedIndex;                                    // 0x08DC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FallingSpeed;                                      // 0x08E0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ForecastLandWeight;                                // 0x08E4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AirVelocity;                                       // 0x08E8(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AirTargetYaw;                                      // 0x08F4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                GlideMix;                                          // 0x08F8(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SlideMix;                                          // 0x0904(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_908[0x18];                                     // 0x0908(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                AirSlideMix;                                       // 0x0920(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HookRopeMix;                                       // 0x092C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          HookRopeSucceedSpeed;                              // 0x0938(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_939[0x3];                                      // 0x0939(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         JumpMix;                                           // 0x093C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SwimRootOffset;                                    // 0x0940(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SwimAccelOffset;                                   // 0x094C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SwimAccelOffsetReal;                               // 0x0950(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SwimMix;                                           // 0x0954(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FastClimbMix;                                      // 0x0958(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ClimbBrakeMix;                                     // 0x095C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsClimbMoving;                                    // 0x0960(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_961[0x3];                                      // 0x0961(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ClimbRadius;                                       // 0x0964(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ClimbDirection;                                    // 0x0968(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ValidClimbDirection;                               // 0x096C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKuroHumanIKMode                              IKMode;                                            // 0x0970(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIKNoLerp;                                         // 0x0971(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_972[0x2];                                      // 0x0972(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               ComprehensiveRotator;                              // 0x0974(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                BeHitStandardizedDirect;                           // 0x0980(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BeHitSocketLocation;                               // 0x098C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SightLockAlpha;                                    // 0x0998(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SightLockDirect;                                   // 0x099C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInAimShotEnd;                                     // 0x09A8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9A9[0x3];                                      // 0x09A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AimYawMix;                                         // 0x09AC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FreezeCountDown;                                   // 0x09B0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateStop;                                        // 0x09B4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateSprintStop;                                  // 0x09B5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateRunStop;                                     // 0x09B6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateWalkStop;                                    // 0x09B7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGround;                                      // 0x09B8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateStand;                                       // 0x09B9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGroundSprint;                                // 0x09BA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGroundRun;                                   // 0x09BB(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGroundWalk;                                  // 0x09BC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateClimb;                                       // 0x09BD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAir;                                         // 0x09BE(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateSki;                                         // 0x09BF(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateNormalSki;                                   // 0x09C0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirSlide;                                    // 0x09C1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirGlide;                                    // 0x09C2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateWater;                                       // 0x09C3(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateSkill;                                       // 0x09C4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLockDirection;                               // 0x09C5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAimDirection;                                // 0x09C6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateFaceDirection;                               // 0x09C7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateBeHit;                                       // 0x09C8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateHitPush;                                     // 0x09C9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateBeHitFly;                                    // 0x09CA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateDying;                                       // 0x09CB(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateDrown;                                       // 0x09CC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateInBattle;                                    // 0x09CD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateEnterBattle;                                 // 0x09CE(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateKeepSprint;                                  // 0x09CF(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateFastSwim;                                    // 0x09D0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateSit;                                         // 0x09D1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateOverlapBaseAnim;                             // 0x09D2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseAdditive;                                      // 0x09D3(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseOverlapLayerAdditive;                          // 0x09D4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLowerRightTurnBlending;                      // 0x09D5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLowerBlending;                               // 0x09D6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateWholeBodyBlend;                              // 0x09D7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateUseSpecialStateMachine;                      // 0x09D8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateFastBlend;                                   // 0x09D9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9DA[0x2];                                      // 0x09DA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LowerBlendAlpha;                                   // 0x09DC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaPelvis;                                  // 0x09E0(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaSpine;                                   // 0x09EC(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaHead;                                    // 0x09F8(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaArmL;                                    // 0x0A04(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaArmR;                                    // 0x0A10(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaLeg;                                     // 0x0A1C(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bStateCast;                                        // 0x0A28(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateCastThrowing;                                // 0x0A29(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateCastSelecting;                               // 0x0A2A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateCastCasting;                                 // 0x0A2B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateMoveShot;                                    // 0x0A2C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateHoldShot;                                    // 0x0A2D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAiming;                                      // 0x0A2E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGeneralAiming;                               // 0x0A2F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateShotNotify;                                  // 0x0A30(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateFixHook;                                     // 0x0A31(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirNormalShot;                               // 0x0A32(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirNormalShotLeft;                           // 0x0A33(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirNormalShotRight;                          // 0x0A34(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirNormalShotFall;                           // 0x0A35(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateBurst;                                       // 0x0A36(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateInBurst;                                     // 0x0A37(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLimitForward;                                // 0x0A38(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLimitBackward;                               // 0x0A39(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLandRollWhenDying;                                // 0x0A3A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCaught;                                           // 0x0A3B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRagDollQuit;                                      // 0x0A3C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A3D[0x3];                                      // 0x0A3D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ExpresionAlpha;                                    // 0x0A40(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A44[0x8];                                      // 0x0A44(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bEpresion;                                         // 0x0A4C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A4D[0x3];                                      // 0x0A4D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PerformanceCountDown;                              // 0x0A50(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPerformance;                                      // 0x0A54(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A55[0x3];                                      // 0x0A55(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PerformanceIndex;                                  // 0x0A58(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAllowPerformance;                                 // 0x0A5C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAcceptNewSkill;                                   // 0x0A5D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A5E[0x6];                                      // 0x0A5E(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bStageMotionSki;                                   // 0x0A64(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHugeItemPull;                                     // 0x0A65(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHugeItemPullAngle;                                // 0x0A66(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A67[0x1];                                      // 0x0A67(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, float>                    SizeToCharHeightMap;                               // 0x0A68(0x0050)(Edit, NativeAccessSpecifierPublic)
-	struct FVector2D                              LandSpeedThresholds;                               // 0x0AB8(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SpeedMixLerp;                                      // 0x0AC0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GroundLeanLerp;                                    // 0x0AC4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimWalkSpeed;                                     // 0x0AC8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimRunSpeed;                                      // 0x0ACC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimSprintSpeed;                                   // 0x0AD0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AirLeanLerp;                                       // 0x0AD4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         JumpMixLerp;                                       // 0x0AD8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SlideRotateLerp;                                   // 0x0ADC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SlideRotateLerp2;                                  // 0x0AE0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AE4[0x4];                                      // 0x0AE4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            StandWalkStepCurve;                                // 0x0AE8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            StandRunStepCurve;                                 // 0x0AF0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            ForecastLandCurve;                                 // 0x0AF8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            RelativeSpeedBlendCurve;                           // 0x0B00(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            AirLeanCurve;                                      // 0x0B08(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            AngelToStepLengthCurve;                            // 0x0B10(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            AngleToStepFrequencyCurve;                         // 0x0B18(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UDataAsset*                             FkMaterialControllerData;                          // 0x0B20(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B28[0x18];                                     // 0x0B28(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 ValidPerformanceIndexes;                           // 0x0870(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bIsFloorMoving;                                    // 0x0880(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_881[0x1F];                                     // 0x0881(0x001F)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bCanbeInterrupt;                                   // 0x08A0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMoveBlock;                                        // 0x08A1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8A2[0x2];                                      // 0x08A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TimeSeconds;                                       // 0x08A4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8A8[0x4];                                      // 0x08A8(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIsNotNPC;                                         // 0x08AC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8AD[0x3];                                      // 0x08AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ChangeRoleCount;                                   // 0x08B0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8B4[0x1];                                      // 0x08B4(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bHasNPCTag;                                        // 0x08B5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsGoingToMove;                                    // 0x08B6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8B7[0x5];                                      // 0x08B7(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TurnMix;                                           // 0x08BC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVeloctiyBlend                         SpeedMix;                                          // 0x08C0(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector2D                              AimMoveMix;                                        // 0x08D0(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                LocalAccel;                                        // 0x08D8(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLeanAmount                            LeanAmount;                                        // 0x08E4(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	EMoveDirection                                MoveDirection;                                     // 0x08EC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8ED[0x3];                                      // 0x08ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GroundMovePlayRate;                                // 0x08F0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WalkRunMix;                                        // 0x08F4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StepSizeMix;                                       // 0x08F8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVeloctiyBlend                         AccelLerpMix;                                      // 0x08FC(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         AimYaw;                                            // 0x090C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AimPitch;                                          // 0x0910(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsFightStand;                                     // 0x0914(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_915[0x3];                                      // 0x0915(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              MoveMix;                                           // 0x0918(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CachePercentLR;                                    // 0x0920(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CachePercentFB;                                    // 0x0924(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EStandTurnType                                StandTurnType;                                     // 0x0928(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_929[0x3];                                      // 0x0929(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         LandSpeedIndex;                                    // 0x092C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FallingSpeed;                                      // 0x0930(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ForecastLandWeight;                                // 0x0934(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AirVelocity;                                       // 0x0938(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AirTargetYaw;                                      // 0x0944(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                GlideMix;                                          // 0x0948(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SlideMix;                                          // 0x0954(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_958[0x18];                                     // 0x0958(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                AirSlideMix;                                       // 0x0970(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HookRopeMix;                                       // 0x097C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HookRopeSucceedSpeed;                              // 0x0988(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_989[0x3];                                      // 0x0989(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         JumpMix;                                           // 0x098C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SwimRootOffset;                                    // 0x0990(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SwimAccelOffset;                                   // 0x099C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SwimAccelOffsetReal;                               // 0x09A0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SwimMix;                                           // 0x09A4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FastClimbMix;                                      // 0x09A8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ClimbBrakeMix;                                     // 0x09AC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsClimbMoving;                                    // 0x09B0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9B1[0x3];                                      // 0x09B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ClimbRadius;                                       // 0x09B4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ClimbDirection;                                    // 0x09B8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ValidClimbDirection;                               // 0x09BC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroHumanIKMode                              IKMode;                                            // 0x09C0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIKNoLerp;                                         // 0x09C1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C2[0x2];                                      // 0x09C2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               ComprehensiveRotator;                              // 0x09C4(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                BeHitStandardizedDirect;                           // 0x09D0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BeHitSocketLocation;                               // 0x09DC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SightLockAlpha;                                    // 0x09E8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SightLockDirect;                                   // 0x09EC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInAimShotEnd;                                     // 0x09F8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9F9[0x3];                                      // 0x09F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AimYawMix;                                         // 0x09FC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FreezeCountDown;                                   // 0x0A00(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateStop;                                        // 0x0A04(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateSprintStop;                                  // 0x0A05(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateRunStop;                                     // 0x0A06(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateWalkStop;                                    // 0x0A07(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGround;                                      // 0x0A08(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateStand;                                       // 0x0A09(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGroundSprint;                                // 0x0A0A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGroundRun;                                   // 0x0A0B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGroundWalk;                                  // 0x0A0C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateClimb;                                       // 0x0A0D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAir;                                         // 0x0A0E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateSki;                                         // 0x0A0F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateNormalSki;                                   // 0x0A10(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirSlide;                                    // 0x0A11(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirGlide;                                    // 0x0A12(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateWater;                                       // 0x0A13(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateSkill;                                       // 0x0A14(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLockDirection;                               // 0x0A15(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAimDirection;                                // 0x0A16(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateFaceDirection;                               // 0x0A17(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateBeHit;                                       // 0x0A18(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateHitPush;                                     // 0x0A19(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateBeHitFly;                                    // 0x0A1A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateDying;                                       // 0x0A1B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateDrown;                                       // 0x0A1C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateInBattle;                                    // 0x0A1D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateEnterBattle;                                 // 0x0A1E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateKeepSprint;                                  // 0x0A1F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateFastSwim;                                    // 0x0A20(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateSit;                                         // 0x0A21(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateOverlapBaseAnim;                             // 0x0A22(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseAdditive;                                      // 0x0A23(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseOverlapLayerAdditive;                          // 0x0A24(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLowerRightTurnBlending;                      // 0x0A25(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLowerBlending;                               // 0x0A26(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateWholeBodyBlend;                              // 0x0A27(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateUseSpecialStateMachine;                      // 0x0A28(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateFastBlend;                                   // 0x0A29(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A2A[0x2];                                      // 0x0A2A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LowerBlendAlpha;                                   // 0x0A2C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaPelvis;                                  // 0x0A30(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaSpine;                                   // 0x0A3C(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaHead;                                    // 0x0A48(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaArmL;                                    // 0x0A54(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaArmR;                                    // 0x0A60(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaLeg;                                     // 0x0A6C(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bStateCast;                                        // 0x0A78(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateCastThrowing;                                // 0x0A79(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateCastSelecting;                               // 0x0A7A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateCastCasting;                                 // 0x0A7B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateMoveShot;                                    // 0x0A7C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateHoldShot;                                    // 0x0A7D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAiming;                                      // 0x0A7E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGeneralAiming;                               // 0x0A7F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateShotNotify;                                  // 0x0A80(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateFixHook;                                     // 0x0A81(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirNormalShot;                               // 0x0A82(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirNormalShotLeft;                           // 0x0A83(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirNormalShotRight;                          // 0x0A84(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirNormalShotFall;                           // 0x0A85(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateBurst;                                       // 0x0A86(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateInBurst;                                     // 0x0A87(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLimitForward;                                // 0x0A88(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLimitBackward;                               // 0x0A89(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLandRollWhenDying;                                // 0x0A8A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCaught;                                           // 0x0A8B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRagDollQuit;                                      // 0x0A8C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A8D[0x3];                                      // 0x0A8D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ExpresionAlpha;                                    // 0x0A90(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A94[0x8];                                      // 0x0A94(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bEpresion;                                         // 0x0A9C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9D[0x3];                                      // 0x0A9D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PerformanceCountDown;                              // 0x0AA0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPerformance;                                      // 0x0AA4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AA5[0x3];                                      // 0x0AA5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PerformanceIndex;                                  // 0x0AA8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowPerformance;                                 // 0x0AAC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAcceptNewSkill;                                   // 0x0AAD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AAE[0x6];                                      // 0x0AAE(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bStageMotionSki;                                   // 0x0AB4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHugeItemPull;                                     // 0x0AB5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHugeItemPullAngle;                                // 0x0AB6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AB7[0x1];                                      // 0x0AB7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, float>                    SizeToCharHeightMap;                               // 0x0AB8(0x0050)(Edit, NativeAccessSpecifierPublic)
+	struct FVector2D                              LandSpeedThresholds;                               // 0x0B08(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpeedMixLerp;                                      // 0x0B10(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GroundLeanLerp;                                    // 0x0B14(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimWalkSpeed;                                     // 0x0B18(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimRunSpeed;                                      // 0x0B1C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimSprintSpeed;                                   // 0x0B20(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AirLeanLerp;                                       // 0x0B24(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         JumpMixLerp;                                       // 0x0B28(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SlideRotateLerp;                                   // 0x0B2C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SlideRotateLerp2;                                  // 0x0B30(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B34[0x4];                                      // 0x0B34(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            StandWalkStepCurve;                                // 0x0B38(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            StandRunStepCurve;                                 // 0x0B40(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            ForecastLandCurve;                                 // 0x0B48(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            RelativeSpeedBlendCurve;                           // 0x0B50(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            AirLeanCurve;                                      // 0x0B58(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            AngelToStepLengthCurve;                            // 0x0B60(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            AngleToStepFrequencyCurve;                         // 0x0B68(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDataAsset*                             FkMaterialControllerData;                          // 0x0B70(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B78[0x18];                                     // 0x0B78(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -591,162 +593,162 @@ public:
 	}
 };
 static_assert(alignof(UKuroAnimInstanceRole) == 0x000010, "Wrong alignment on UKuroAnimInstanceRole");
-static_assert(sizeof(UKuroAnimInstanceRole) == 0x000B40, "Wrong size on UKuroAnimInstanceRole");
-static_assert(offsetof(UKuroAnimInstanceRole, ValidPerformanceIndexes) == 0x000820, "Member 'UKuroAnimInstanceRole::ValidPerformanceIndexes' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bIsFloorMoving) == 0x000830, "Member 'UKuroAnimInstanceRole::bIsFloorMoving' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bCanbeInterrupt) == 0x000850, "Member 'UKuroAnimInstanceRole::bCanbeInterrupt' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bMoveBlock) == 0x000851, "Member 'UKuroAnimInstanceRole::bMoveBlock' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, TimeSeconds) == 0x000854, "Member 'UKuroAnimInstanceRole::TimeSeconds' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bIsNotNPC) == 0x00085C, "Member 'UKuroAnimInstanceRole::bIsNotNPC' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, ChangeRoleCount) == 0x000860, "Member 'UKuroAnimInstanceRole::ChangeRoleCount' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bHasNPCTag) == 0x000865, "Member 'UKuroAnimInstanceRole::bHasNPCTag' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bIsGoingToMove) == 0x000866, "Member 'UKuroAnimInstanceRole::bIsGoingToMove' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, TurnMix) == 0x00086C, "Member 'UKuroAnimInstanceRole::TurnMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SpeedMix) == 0x000870, "Member 'UKuroAnimInstanceRole::SpeedMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AimMoveMix) == 0x000880, "Member 'UKuroAnimInstanceRole::AimMoveMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, LocalAccel) == 0x000888, "Member 'UKuroAnimInstanceRole::LocalAccel' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, LeanAmount) == 0x000894, "Member 'UKuroAnimInstanceRole::LeanAmount' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, MoveDirection) == 0x00089C, "Member 'UKuroAnimInstanceRole::MoveDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, GroundMovePlayRate) == 0x0008A0, "Member 'UKuroAnimInstanceRole::GroundMovePlayRate' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, WalkRunMix) == 0x0008A4, "Member 'UKuroAnimInstanceRole::WalkRunMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, StepSizeMix) == 0x0008A8, "Member 'UKuroAnimInstanceRole::StepSizeMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AccelLerpMix) == 0x0008AC, "Member 'UKuroAnimInstanceRole::AccelLerpMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AimYaw) == 0x0008BC, "Member 'UKuroAnimInstanceRole::AimYaw' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AimPitch) == 0x0008C0, "Member 'UKuroAnimInstanceRole::AimPitch' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bIsFightStand) == 0x0008C4, "Member 'UKuroAnimInstanceRole::bIsFightStand' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, MoveMix) == 0x0008C8, "Member 'UKuroAnimInstanceRole::MoveMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, CachePercentLR) == 0x0008D0, "Member 'UKuroAnimInstanceRole::CachePercentLR' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, CachePercentFB) == 0x0008D4, "Member 'UKuroAnimInstanceRole::CachePercentFB' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, StandTurnType) == 0x0008D8, "Member 'UKuroAnimInstanceRole::StandTurnType' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, LandSpeedIndex) == 0x0008DC, "Member 'UKuroAnimInstanceRole::LandSpeedIndex' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, FallingSpeed) == 0x0008E0, "Member 'UKuroAnimInstanceRole::FallingSpeed' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, ForecastLandWeight) == 0x0008E4, "Member 'UKuroAnimInstanceRole::ForecastLandWeight' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AirVelocity) == 0x0008E8, "Member 'UKuroAnimInstanceRole::AirVelocity' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AirTargetYaw) == 0x0008F4, "Member 'UKuroAnimInstanceRole::AirTargetYaw' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, GlideMix) == 0x0008F8, "Member 'UKuroAnimInstanceRole::GlideMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SlideMix) == 0x000904, "Member 'UKuroAnimInstanceRole::SlideMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AirSlideMix) == 0x000920, "Member 'UKuroAnimInstanceRole::AirSlideMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, HookRopeMix) == 0x00092C, "Member 'UKuroAnimInstanceRole::HookRopeMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, HookRopeSucceedSpeed) == 0x000938, "Member 'UKuroAnimInstanceRole::HookRopeSucceedSpeed' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, JumpMix) == 0x00093C, "Member 'UKuroAnimInstanceRole::JumpMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SwimRootOffset) == 0x000940, "Member 'UKuroAnimInstanceRole::SwimRootOffset' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SwimAccelOffset) == 0x00094C, "Member 'UKuroAnimInstanceRole::SwimAccelOffset' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SwimAccelOffsetReal) == 0x000950, "Member 'UKuroAnimInstanceRole::SwimAccelOffsetReal' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SwimMix) == 0x000954, "Member 'UKuroAnimInstanceRole::SwimMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, FastClimbMix) == 0x000958, "Member 'UKuroAnimInstanceRole::FastClimbMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, ClimbBrakeMix) == 0x00095C, "Member 'UKuroAnimInstanceRole::ClimbBrakeMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bIsClimbMoving) == 0x000960, "Member 'UKuroAnimInstanceRole::bIsClimbMoving' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, ClimbRadius) == 0x000964, "Member 'UKuroAnimInstanceRole::ClimbRadius' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, ClimbDirection) == 0x000968, "Member 'UKuroAnimInstanceRole::ClimbDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, ValidClimbDirection) == 0x00096C, "Member 'UKuroAnimInstanceRole::ValidClimbDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, IKMode) == 0x000970, "Member 'UKuroAnimInstanceRole::IKMode' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bIKNoLerp) == 0x000971, "Member 'UKuroAnimInstanceRole::bIKNoLerp' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, ComprehensiveRotator) == 0x000974, "Member 'UKuroAnimInstanceRole::ComprehensiveRotator' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, BeHitStandardizedDirect) == 0x000980, "Member 'UKuroAnimInstanceRole::BeHitStandardizedDirect' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, BeHitSocketLocation) == 0x00098C, "Member 'UKuroAnimInstanceRole::BeHitSocketLocation' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SightLockAlpha) == 0x000998, "Member 'UKuroAnimInstanceRole::SightLockAlpha' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SightLockDirect) == 0x00099C, "Member 'UKuroAnimInstanceRole::SightLockDirect' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bInAimShotEnd) == 0x0009A8, "Member 'UKuroAnimInstanceRole::bInAimShotEnd' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AimYawMix) == 0x0009AC, "Member 'UKuroAnimInstanceRole::AimYawMix' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, FreezeCountDown) == 0x0009B0, "Member 'UKuroAnimInstanceRole::FreezeCountDown' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateStop) == 0x0009B4, "Member 'UKuroAnimInstanceRole::bStateStop' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateSprintStop) == 0x0009B5, "Member 'UKuroAnimInstanceRole::bStateSprintStop' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateRunStop) == 0x0009B6, "Member 'UKuroAnimInstanceRole::bStateRunStop' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateWalkStop) == 0x0009B7, "Member 'UKuroAnimInstanceRole::bStateWalkStop' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateGround) == 0x0009B8, "Member 'UKuroAnimInstanceRole::bStateGround' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateStand) == 0x0009B9, "Member 'UKuroAnimInstanceRole::bStateStand' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateGroundSprint) == 0x0009BA, "Member 'UKuroAnimInstanceRole::bStateGroundSprint' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateGroundRun) == 0x0009BB, "Member 'UKuroAnimInstanceRole::bStateGroundRun' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateGroundWalk) == 0x0009BC, "Member 'UKuroAnimInstanceRole::bStateGroundWalk' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateClimb) == 0x0009BD, "Member 'UKuroAnimInstanceRole::bStateClimb' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateAir) == 0x0009BE, "Member 'UKuroAnimInstanceRole::bStateAir' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateSki) == 0x0009BF, "Member 'UKuroAnimInstanceRole::bStateSki' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateNormalSki) == 0x0009C0, "Member 'UKuroAnimInstanceRole::bStateNormalSki' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateAirSlide) == 0x0009C1, "Member 'UKuroAnimInstanceRole::bStateAirSlide' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateAirGlide) == 0x0009C2, "Member 'UKuroAnimInstanceRole::bStateAirGlide' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateWater) == 0x0009C3, "Member 'UKuroAnimInstanceRole::bStateWater' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateSkill) == 0x0009C4, "Member 'UKuroAnimInstanceRole::bStateSkill' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateLockDirection) == 0x0009C5, "Member 'UKuroAnimInstanceRole::bStateLockDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateAimDirection) == 0x0009C6, "Member 'UKuroAnimInstanceRole::bStateAimDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateFaceDirection) == 0x0009C7, "Member 'UKuroAnimInstanceRole::bStateFaceDirection' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateBeHit) == 0x0009C8, "Member 'UKuroAnimInstanceRole::bStateBeHit' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateHitPush) == 0x0009C9, "Member 'UKuroAnimInstanceRole::bStateHitPush' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateBeHitFly) == 0x0009CA, "Member 'UKuroAnimInstanceRole::bStateBeHitFly' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateDying) == 0x0009CB, "Member 'UKuroAnimInstanceRole::bStateDying' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateDrown) == 0x0009CC, "Member 'UKuroAnimInstanceRole::bStateDrown' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateInBattle) == 0x0009CD, "Member 'UKuroAnimInstanceRole::bStateInBattle' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateEnterBattle) == 0x0009CE, "Member 'UKuroAnimInstanceRole::bStateEnterBattle' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateKeepSprint) == 0x0009CF, "Member 'UKuroAnimInstanceRole::bStateKeepSprint' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateFastSwim) == 0x0009D0, "Member 'UKuroAnimInstanceRole::bStateFastSwim' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateSit) == 0x0009D1, "Member 'UKuroAnimInstanceRole::bStateSit' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateOverlapBaseAnim) == 0x0009D2, "Member 'UKuroAnimInstanceRole::bStateOverlapBaseAnim' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bUseAdditive) == 0x0009D3, "Member 'UKuroAnimInstanceRole::bUseAdditive' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bUseOverlapLayerAdditive) == 0x0009D4, "Member 'UKuroAnimInstanceRole::bUseOverlapLayerAdditive' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateLowerRightTurnBlending) == 0x0009D5, "Member 'UKuroAnimInstanceRole::bStateLowerRightTurnBlending' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateLowerBlending) == 0x0009D6, "Member 'UKuroAnimInstanceRole::bStateLowerBlending' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateWholeBodyBlend) == 0x0009D7, "Member 'UKuroAnimInstanceRole::bStateWholeBodyBlend' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateUseSpecialStateMachine) == 0x0009D8, "Member 'UKuroAnimInstanceRole::bStateUseSpecialStateMachine' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateFastBlend) == 0x0009D9, "Member 'UKuroAnimInstanceRole::bStateFastBlend' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, LowerBlendAlpha) == 0x0009DC, "Member 'UKuroAnimInstanceRole::LowerBlendAlpha' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaPelvis) == 0x0009E0, "Member 'UKuroAnimInstanceRole::BlendAlphaPelvis' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaSpine) == 0x0009EC, "Member 'UKuroAnimInstanceRole::BlendAlphaSpine' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaHead) == 0x0009F8, "Member 'UKuroAnimInstanceRole::BlendAlphaHead' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaArmL) == 0x000A04, "Member 'UKuroAnimInstanceRole::BlendAlphaArmL' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaArmR) == 0x000A10, "Member 'UKuroAnimInstanceRole::BlendAlphaArmR' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaLeg) == 0x000A1C, "Member 'UKuroAnimInstanceRole::BlendAlphaLeg' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateCast) == 0x000A28, "Member 'UKuroAnimInstanceRole::bStateCast' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateCastThrowing) == 0x000A29, "Member 'UKuroAnimInstanceRole::bStateCastThrowing' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateCastSelecting) == 0x000A2A, "Member 'UKuroAnimInstanceRole::bStateCastSelecting' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateCastCasting) == 0x000A2B, "Member 'UKuroAnimInstanceRole::bStateCastCasting' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateMoveShot) == 0x000A2C, "Member 'UKuroAnimInstanceRole::bStateMoveShot' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateHoldShot) == 0x000A2D, "Member 'UKuroAnimInstanceRole::bStateHoldShot' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateAiming) == 0x000A2E, "Member 'UKuroAnimInstanceRole::bStateAiming' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateGeneralAiming) == 0x000A2F, "Member 'UKuroAnimInstanceRole::bStateGeneralAiming' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateShotNotify) == 0x000A30, "Member 'UKuroAnimInstanceRole::bStateShotNotify' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateFixHook) == 0x000A31, "Member 'UKuroAnimInstanceRole::bStateFixHook' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateAirNormalShot) == 0x000A32, "Member 'UKuroAnimInstanceRole::bStateAirNormalShot' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateAirNormalShotLeft) == 0x000A33, "Member 'UKuroAnimInstanceRole::bStateAirNormalShotLeft' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateAirNormalShotRight) == 0x000A34, "Member 'UKuroAnimInstanceRole::bStateAirNormalShotRight' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateAirNormalShotFall) == 0x000A35, "Member 'UKuroAnimInstanceRole::bStateAirNormalShotFall' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateBurst) == 0x000A36, "Member 'UKuroAnimInstanceRole::bStateBurst' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateInBurst) == 0x000A37, "Member 'UKuroAnimInstanceRole::bStateInBurst' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateLimitForward) == 0x000A38, "Member 'UKuroAnimInstanceRole::bStateLimitForward' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStateLimitBackward) == 0x000A39, "Member 'UKuroAnimInstanceRole::bStateLimitBackward' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bLandRollWhenDying) == 0x000A3A, "Member 'UKuroAnimInstanceRole::bLandRollWhenDying' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bCaught) == 0x000A3B, "Member 'UKuroAnimInstanceRole::bCaught' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bRagDollQuit) == 0x000A3C, "Member 'UKuroAnimInstanceRole::bRagDollQuit' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, ExpresionAlpha) == 0x000A40, "Member 'UKuroAnimInstanceRole::ExpresionAlpha' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bEpresion) == 0x000A4C, "Member 'UKuroAnimInstanceRole::bEpresion' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, PerformanceCountDown) == 0x000A50, "Member 'UKuroAnimInstanceRole::PerformanceCountDown' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bPerformance) == 0x000A54, "Member 'UKuroAnimInstanceRole::bPerformance' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, PerformanceIndex) == 0x000A58, "Member 'UKuroAnimInstanceRole::PerformanceIndex' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bAllowPerformance) == 0x000A5C, "Member 'UKuroAnimInstanceRole::bAllowPerformance' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bAcceptNewSkill) == 0x000A5D, "Member 'UKuroAnimInstanceRole::bAcceptNewSkill' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bStageMotionSki) == 0x000A64, "Member 'UKuroAnimInstanceRole::bStageMotionSki' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bHugeItemPull) == 0x000A65, "Member 'UKuroAnimInstanceRole::bHugeItemPull' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, bHugeItemPullAngle) == 0x000A66, "Member 'UKuroAnimInstanceRole::bHugeItemPullAngle' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SizeToCharHeightMap) == 0x000A68, "Member 'UKuroAnimInstanceRole::SizeToCharHeightMap' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, LandSpeedThresholds) == 0x000AB8, "Member 'UKuroAnimInstanceRole::LandSpeedThresholds' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SpeedMixLerp) == 0x000AC0, "Member 'UKuroAnimInstanceRole::SpeedMixLerp' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, GroundLeanLerp) == 0x000AC4, "Member 'UKuroAnimInstanceRole::GroundLeanLerp' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AnimWalkSpeed) == 0x000AC8, "Member 'UKuroAnimInstanceRole::AnimWalkSpeed' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AnimRunSpeed) == 0x000ACC, "Member 'UKuroAnimInstanceRole::AnimRunSpeed' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AnimSprintSpeed) == 0x000AD0, "Member 'UKuroAnimInstanceRole::AnimSprintSpeed' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AirLeanLerp) == 0x000AD4, "Member 'UKuroAnimInstanceRole::AirLeanLerp' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, JumpMixLerp) == 0x000AD8, "Member 'UKuroAnimInstanceRole::JumpMixLerp' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SlideRotateLerp) == 0x000ADC, "Member 'UKuroAnimInstanceRole::SlideRotateLerp' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, SlideRotateLerp2) == 0x000AE0, "Member 'UKuroAnimInstanceRole::SlideRotateLerp2' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, StandWalkStepCurve) == 0x000AE8, "Member 'UKuroAnimInstanceRole::StandWalkStepCurve' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, StandRunStepCurve) == 0x000AF0, "Member 'UKuroAnimInstanceRole::StandRunStepCurve' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, ForecastLandCurve) == 0x000AF8, "Member 'UKuroAnimInstanceRole::ForecastLandCurve' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, RelativeSpeedBlendCurve) == 0x000B00, "Member 'UKuroAnimInstanceRole::RelativeSpeedBlendCurve' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AirLeanCurve) == 0x000B08, "Member 'UKuroAnimInstanceRole::AirLeanCurve' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AngelToStepLengthCurve) == 0x000B10, "Member 'UKuroAnimInstanceRole::AngelToStepLengthCurve' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, AngleToStepFrequencyCurve) == 0x000B18, "Member 'UKuroAnimInstanceRole::AngleToStepFrequencyCurve' has a wrong offset!");
-static_assert(offsetof(UKuroAnimInstanceRole, FkMaterialControllerData) == 0x000B20, "Member 'UKuroAnimInstanceRole::FkMaterialControllerData' has a wrong offset!");
+static_assert(sizeof(UKuroAnimInstanceRole) == 0x000B90, "Wrong size on UKuroAnimInstanceRole");
+static_assert(offsetof(UKuroAnimInstanceRole, ValidPerformanceIndexes) == 0x000870, "Member 'UKuroAnimInstanceRole::ValidPerformanceIndexes' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bIsFloorMoving) == 0x000880, "Member 'UKuroAnimInstanceRole::bIsFloorMoving' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bCanbeInterrupt) == 0x0008A0, "Member 'UKuroAnimInstanceRole::bCanbeInterrupt' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bMoveBlock) == 0x0008A1, "Member 'UKuroAnimInstanceRole::bMoveBlock' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, TimeSeconds) == 0x0008A4, "Member 'UKuroAnimInstanceRole::TimeSeconds' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bIsNotNPC) == 0x0008AC, "Member 'UKuroAnimInstanceRole::bIsNotNPC' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, ChangeRoleCount) == 0x0008B0, "Member 'UKuroAnimInstanceRole::ChangeRoleCount' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bHasNPCTag) == 0x0008B5, "Member 'UKuroAnimInstanceRole::bHasNPCTag' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bIsGoingToMove) == 0x0008B6, "Member 'UKuroAnimInstanceRole::bIsGoingToMove' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, TurnMix) == 0x0008BC, "Member 'UKuroAnimInstanceRole::TurnMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SpeedMix) == 0x0008C0, "Member 'UKuroAnimInstanceRole::SpeedMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AimMoveMix) == 0x0008D0, "Member 'UKuroAnimInstanceRole::AimMoveMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, LocalAccel) == 0x0008D8, "Member 'UKuroAnimInstanceRole::LocalAccel' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, LeanAmount) == 0x0008E4, "Member 'UKuroAnimInstanceRole::LeanAmount' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, MoveDirection) == 0x0008EC, "Member 'UKuroAnimInstanceRole::MoveDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, GroundMovePlayRate) == 0x0008F0, "Member 'UKuroAnimInstanceRole::GroundMovePlayRate' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, WalkRunMix) == 0x0008F4, "Member 'UKuroAnimInstanceRole::WalkRunMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, StepSizeMix) == 0x0008F8, "Member 'UKuroAnimInstanceRole::StepSizeMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AccelLerpMix) == 0x0008FC, "Member 'UKuroAnimInstanceRole::AccelLerpMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AimYaw) == 0x00090C, "Member 'UKuroAnimInstanceRole::AimYaw' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AimPitch) == 0x000910, "Member 'UKuroAnimInstanceRole::AimPitch' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bIsFightStand) == 0x000914, "Member 'UKuroAnimInstanceRole::bIsFightStand' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, MoveMix) == 0x000918, "Member 'UKuroAnimInstanceRole::MoveMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, CachePercentLR) == 0x000920, "Member 'UKuroAnimInstanceRole::CachePercentLR' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, CachePercentFB) == 0x000924, "Member 'UKuroAnimInstanceRole::CachePercentFB' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, StandTurnType) == 0x000928, "Member 'UKuroAnimInstanceRole::StandTurnType' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, LandSpeedIndex) == 0x00092C, "Member 'UKuroAnimInstanceRole::LandSpeedIndex' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, FallingSpeed) == 0x000930, "Member 'UKuroAnimInstanceRole::FallingSpeed' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, ForecastLandWeight) == 0x000934, "Member 'UKuroAnimInstanceRole::ForecastLandWeight' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AirVelocity) == 0x000938, "Member 'UKuroAnimInstanceRole::AirVelocity' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AirTargetYaw) == 0x000944, "Member 'UKuroAnimInstanceRole::AirTargetYaw' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, GlideMix) == 0x000948, "Member 'UKuroAnimInstanceRole::GlideMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SlideMix) == 0x000954, "Member 'UKuroAnimInstanceRole::SlideMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AirSlideMix) == 0x000970, "Member 'UKuroAnimInstanceRole::AirSlideMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, HookRopeMix) == 0x00097C, "Member 'UKuroAnimInstanceRole::HookRopeMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, HookRopeSucceedSpeed) == 0x000988, "Member 'UKuroAnimInstanceRole::HookRopeSucceedSpeed' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, JumpMix) == 0x00098C, "Member 'UKuroAnimInstanceRole::JumpMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SwimRootOffset) == 0x000990, "Member 'UKuroAnimInstanceRole::SwimRootOffset' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SwimAccelOffset) == 0x00099C, "Member 'UKuroAnimInstanceRole::SwimAccelOffset' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SwimAccelOffsetReal) == 0x0009A0, "Member 'UKuroAnimInstanceRole::SwimAccelOffsetReal' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SwimMix) == 0x0009A4, "Member 'UKuroAnimInstanceRole::SwimMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, FastClimbMix) == 0x0009A8, "Member 'UKuroAnimInstanceRole::FastClimbMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, ClimbBrakeMix) == 0x0009AC, "Member 'UKuroAnimInstanceRole::ClimbBrakeMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bIsClimbMoving) == 0x0009B0, "Member 'UKuroAnimInstanceRole::bIsClimbMoving' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, ClimbRadius) == 0x0009B4, "Member 'UKuroAnimInstanceRole::ClimbRadius' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, ClimbDirection) == 0x0009B8, "Member 'UKuroAnimInstanceRole::ClimbDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, ValidClimbDirection) == 0x0009BC, "Member 'UKuroAnimInstanceRole::ValidClimbDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, IKMode) == 0x0009C0, "Member 'UKuroAnimInstanceRole::IKMode' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bIKNoLerp) == 0x0009C1, "Member 'UKuroAnimInstanceRole::bIKNoLerp' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, ComprehensiveRotator) == 0x0009C4, "Member 'UKuroAnimInstanceRole::ComprehensiveRotator' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, BeHitStandardizedDirect) == 0x0009D0, "Member 'UKuroAnimInstanceRole::BeHitStandardizedDirect' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, BeHitSocketLocation) == 0x0009DC, "Member 'UKuroAnimInstanceRole::BeHitSocketLocation' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SightLockAlpha) == 0x0009E8, "Member 'UKuroAnimInstanceRole::SightLockAlpha' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SightLockDirect) == 0x0009EC, "Member 'UKuroAnimInstanceRole::SightLockDirect' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bInAimShotEnd) == 0x0009F8, "Member 'UKuroAnimInstanceRole::bInAimShotEnd' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AimYawMix) == 0x0009FC, "Member 'UKuroAnimInstanceRole::AimYawMix' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, FreezeCountDown) == 0x000A00, "Member 'UKuroAnimInstanceRole::FreezeCountDown' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateStop) == 0x000A04, "Member 'UKuroAnimInstanceRole::bStateStop' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateSprintStop) == 0x000A05, "Member 'UKuroAnimInstanceRole::bStateSprintStop' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateRunStop) == 0x000A06, "Member 'UKuroAnimInstanceRole::bStateRunStop' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateWalkStop) == 0x000A07, "Member 'UKuroAnimInstanceRole::bStateWalkStop' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateGround) == 0x000A08, "Member 'UKuroAnimInstanceRole::bStateGround' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateStand) == 0x000A09, "Member 'UKuroAnimInstanceRole::bStateStand' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateGroundSprint) == 0x000A0A, "Member 'UKuroAnimInstanceRole::bStateGroundSprint' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateGroundRun) == 0x000A0B, "Member 'UKuroAnimInstanceRole::bStateGroundRun' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateGroundWalk) == 0x000A0C, "Member 'UKuroAnimInstanceRole::bStateGroundWalk' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateClimb) == 0x000A0D, "Member 'UKuroAnimInstanceRole::bStateClimb' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateAir) == 0x000A0E, "Member 'UKuroAnimInstanceRole::bStateAir' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateSki) == 0x000A0F, "Member 'UKuroAnimInstanceRole::bStateSki' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateNormalSki) == 0x000A10, "Member 'UKuroAnimInstanceRole::bStateNormalSki' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateAirSlide) == 0x000A11, "Member 'UKuroAnimInstanceRole::bStateAirSlide' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateAirGlide) == 0x000A12, "Member 'UKuroAnimInstanceRole::bStateAirGlide' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateWater) == 0x000A13, "Member 'UKuroAnimInstanceRole::bStateWater' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateSkill) == 0x000A14, "Member 'UKuroAnimInstanceRole::bStateSkill' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateLockDirection) == 0x000A15, "Member 'UKuroAnimInstanceRole::bStateLockDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateAimDirection) == 0x000A16, "Member 'UKuroAnimInstanceRole::bStateAimDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateFaceDirection) == 0x000A17, "Member 'UKuroAnimInstanceRole::bStateFaceDirection' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateBeHit) == 0x000A18, "Member 'UKuroAnimInstanceRole::bStateBeHit' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateHitPush) == 0x000A19, "Member 'UKuroAnimInstanceRole::bStateHitPush' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateBeHitFly) == 0x000A1A, "Member 'UKuroAnimInstanceRole::bStateBeHitFly' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateDying) == 0x000A1B, "Member 'UKuroAnimInstanceRole::bStateDying' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateDrown) == 0x000A1C, "Member 'UKuroAnimInstanceRole::bStateDrown' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateInBattle) == 0x000A1D, "Member 'UKuroAnimInstanceRole::bStateInBattle' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateEnterBattle) == 0x000A1E, "Member 'UKuroAnimInstanceRole::bStateEnterBattle' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateKeepSprint) == 0x000A1F, "Member 'UKuroAnimInstanceRole::bStateKeepSprint' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateFastSwim) == 0x000A20, "Member 'UKuroAnimInstanceRole::bStateFastSwim' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateSit) == 0x000A21, "Member 'UKuroAnimInstanceRole::bStateSit' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateOverlapBaseAnim) == 0x000A22, "Member 'UKuroAnimInstanceRole::bStateOverlapBaseAnim' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bUseAdditive) == 0x000A23, "Member 'UKuroAnimInstanceRole::bUseAdditive' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bUseOverlapLayerAdditive) == 0x000A24, "Member 'UKuroAnimInstanceRole::bUseOverlapLayerAdditive' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateLowerRightTurnBlending) == 0x000A25, "Member 'UKuroAnimInstanceRole::bStateLowerRightTurnBlending' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateLowerBlending) == 0x000A26, "Member 'UKuroAnimInstanceRole::bStateLowerBlending' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateWholeBodyBlend) == 0x000A27, "Member 'UKuroAnimInstanceRole::bStateWholeBodyBlend' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateUseSpecialStateMachine) == 0x000A28, "Member 'UKuroAnimInstanceRole::bStateUseSpecialStateMachine' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateFastBlend) == 0x000A29, "Member 'UKuroAnimInstanceRole::bStateFastBlend' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, LowerBlendAlpha) == 0x000A2C, "Member 'UKuroAnimInstanceRole::LowerBlendAlpha' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaPelvis) == 0x000A30, "Member 'UKuroAnimInstanceRole::BlendAlphaPelvis' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaSpine) == 0x000A3C, "Member 'UKuroAnimInstanceRole::BlendAlphaSpine' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaHead) == 0x000A48, "Member 'UKuroAnimInstanceRole::BlendAlphaHead' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaArmL) == 0x000A54, "Member 'UKuroAnimInstanceRole::BlendAlphaArmL' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaArmR) == 0x000A60, "Member 'UKuroAnimInstanceRole::BlendAlphaArmR' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, BlendAlphaLeg) == 0x000A6C, "Member 'UKuroAnimInstanceRole::BlendAlphaLeg' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateCast) == 0x000A78, "Member 'UKuroAnimInstanceRole::bStateCast' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateCastThrowing) == 0x000A79, "Member 'UKuroAnimInstanceRole::bStateCastThrowing' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateCastSelecting) == 0x000A7A, "Member 'UKuroAnimInstanceRole::bStateCastSelecting' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateCastCasting) == 0x000A7B, "Member 'UKuroAnimInstanceRole::bStateCastCasting' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateMoveShot) == 0x000A7C, "Member 'UKuroAnimInstanceRole::bStateMoveShot' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateHoldShot) == 0x000A7D, "Member 'UKuroAnimInstanceRole::bStateHoldShot' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateAiming) == 0x000A7E, "Member 'UKuroAnimInstanceRole::bStateAiming' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateGeneralAiming) == 0x000A7F, "Member 'UKuroAnimInstanceRole::bStateGeneralAiming' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateShotNotify) == 0x000A80, "Member 'UKuroAnimInstanceRole::bStateShotNotify' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateFixHook) == 0x000A81, "Member 'UKuroAnimInstanceRole::bStateFixHook' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateAirNormalShot) == 0x000A82, "Member 'UKuroAnimInstanceRole::bStateAirNormalShot' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateAirNormalShotLeft) == 0x000A83, "Member 'UKuroAnimInstanceRole::bStateAirNormalShotLeft' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateAirNormalShotRight) == 0x000A84, "Member 'UKuroAnimInstanceRole::bStateAirNormalShotRight' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateAirNormalShotFall) == 0x000A85, "Member 'UKuroAnimInstanceRole::bStateAirNormalShotFall' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateBurst) == 0x000A86, "Member 'UKuroAnimInstanceRole::bStateBurst' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateInBurst) == 0x000A87, "Member 'UKuroAnimInstanceRole::bStateInBurst' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateLimitForward) == 0x000A88, "Member 'UKuroAnimInstanceRole::bStateLimitForward' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStateLimitBackward) == 0x000A89, "Member 'UKuroAnimInstanceRole::bStateLimitBackward' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bLandRollWhenDying) == 0x000A8A, "Member 'UKuroAnimInstanceRole::bLandRollWhenDying' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bCaught) == 0x000A8B, "Member 'UKuroAnimInstanceRole::bCaught' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bRagDollQuit) == 0x000A8C, "Member 'UKuroAnimInstanceRole::bRagDollQuit' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, ExpresionAlpha) == 0x000A90, "Member 'UKuroAnimInstanceRole::ExpresionAlpha' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bEpresion) == 0x000A9C, "Member 'UKuroAnimInstanceRole::bEpresion' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, PerformanceCountDown) == 0x000AA0, "Member 'UKuroAnimInstanceRole::PerformanceCountDown' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bPerformance) == 0x000AA4, "Member 'UKuroAnimInstanceRole::bPerformance' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, PerformanceIndex) == 0x000AA8, "Member 'UKuroAnimInstanceRole::PerformanceIndex' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bAllowPerformance) == 0x000AAC, "Member 'UKuroAnimInstanceRole::bAllowPerformance' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bAcceptNewSkill) == 0x000AAD, "Member 'UKuroAnimInstanceRole::bAcceptNewSkill' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bStageMotionSki) == 0x000AB4, "Member 'UKuroAnimInstanceRole::bStageMotionSki' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bHugeItemPull) == 0x000AB5, "Member 'UKuroAnimInstanceRole::bHugeItemPull' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, bHugeItemPullAngle) == 0x000AB6, "Member 'UKuroAnimInstanceRole::bHugeItemPullAngle' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SizeToCharHeightMap) == 0x000AB8, "Member 'UKuroAnimInstanceRole::SizeToCharHeightMap' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, LandSpeedThresholds) == 0x000B08, "Member 'UKuroAnimInstanceRole::LandSpeedThresholds' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SpeedMixLerp) == 0x000B10, "Member 'UKuroAnimInstanceRole::SpeedMixLerp' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, GroundLeanLerp) == 0x000B14, "Member 'UKuroAnimInstanceRole::GroundLeanLerp' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AnimWalkSpeed) == 0x000B18, "Member 'UKuroAnimInstanceRole::AnimWalkSpeed' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AnimRunSpeed) == 0x000B1C, "Member 'UKuroAnimInstanceRole::AnimRunSpeed' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AnimSprintSpeed) == 0x000B20, "Member 'UKuroAnimInstanceRole::AnimSprintSpeed' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AirLeanLerp) == 0x000B24, "Member 'UKuroAnimInstanceRole::AirLeanLerp' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, JumpMixLerp) == 0x000B28, "Member 'UKuroAnimInstanceRole::JumpMixLerp' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SlideRotateLerp) == 0x000B2C, "Member 'UKuroAnimInstanceRole::SlideRotateLerp' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, SlideRotateLerp2) == 0x000B30, "Member 'UKuroAnimInstanceRole::SlideRotateLerp2' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, StandWalkStepCurve) == 0x000B38, "Member 'UKuroAnimInstanceRole::StandWalkStepCurve' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, StandRunStepCurve) == 0x000B40, "Member 'UKuroAnimInstanceRole::StandRunStepCurve' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, ForecastLandCurve) == 0x000B48, "Member 'UKuroAnimInstanceRole::ForecastLandCurve' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, RelativeSpeedBlendCurve) == 0x000B50, "Member 'UKuroAnimInstanceRole::RelativeSpeedBlendCurve' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AirLeanCurve) == 0x000B58, "Member 'UKuroAnimInstanceRole::AirLeanCurve' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AngelToStepLengthCurve) == 0x000B60, "Member 'UKuroAnimInstanceRole::AngelToStepLengthCurve' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, AngleToStepFrequencyCurve) == 0x000B68, "Member 'UKuroAnimInstanceRole::AngleToStepFrequencyCurve' has a wrong offset!");
+static_assert(offsetof(UKuroAnimInstanceRole, FkMaterialControllerData) == 0x000B70, "Member 'UKuroAnimInstanceRole::FkMaterialControllerData' has a wrong offset!");
 
 // Class KuroAnim.AbpLogicParams
-// 0x00F0 (0x0120 - 0x0030)
+// 0x00F8 (0x0128 - 0x0030)
 class UAbpLogicParams final : public UObject
 {
 public:
@@ -806,6 +808,8 @@ public:
 	bool                                          bIsInSequence;                                     // 0x011D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsInSplineMove;                                   // 0x011E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsInUiCamera;                                     // 0x011F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCacheBones;                                       // 0x0120(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -818,7 +822,7 @@ public:
 	}
 };
 static_assert(alignof(UAbpLogicParams) == 0x000008, "Wrong alignment on UAbpLogicParams");
-static_assert(sizeof(UAbpLogicParams) == 0x000120, "Wrong size on UAbpLogicParams");
+static_assert(sizeof(UAbpLogicParams) == 0x000128, "Wrong size on UAbpLogicParams");
 static_assert(offsetof(UAbpLogicParams, AcceptedNewBeHitRef) == 0x000030, "Member 'UAbpLogicParams::AcceptedNewBeHitRef' has a wrong offset!");
 static_assert(offsetof(UAbpLogicParams, BeHitAnimRef) == 0x000034, "Member 'UAbpLogicParams::BeHitAnimRef' has a wrong offset!");
 static_assert(offsetof(UAbpLogicParams, EnterFkRef) == 0x000038, "Member 'UAbpLogicParams::EnterFkRef' has a wrong offset!");
@@ -864,6 +868,7 @@ static_assert(offsetof(UAbpLogicParams, bIsInPerformingPlot) == 0x00011C, "Membe
 static_assert(offsetof(UAbpLogicParams, bIsInSequence) == 0x00011D, "Member 'UAbpLogicParams::bIsInSequence' has a wrong offset!");
 static_assert(offsetof(UAbpLogicParams, bIsInSplineMove) == 0x00011E, "Member 'UAbpLogicParams::bIsInSplineMove' has a wrong offset!");
 static_assert(offsetof(UAbpLogicParams, bIsInUiCamera) == 0x00011F, "Member 'UAbpLogicParams::bIsInUiCamera' has a wrong offset!");
+static_assert(offsetof(UAbpLogicParams, bCacheBones) == 0x000120, "Member 'UAbpLogicParams::bCacheBones' has a wrong offset!");
 
 // Class KuroAnim.KuroAnimJsSubsystem
 // 0x00B0 (0x00E8 - 0x0038)

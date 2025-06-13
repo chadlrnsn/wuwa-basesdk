@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_MO1LiufangzhemanMd00001_New.ABP_MO1LiufangzhemanMd00001_New_C
-// 0x0000 (0x8560 - 0x8560)
+// 0x0000 (0x85B0 - 0x85B0)
 class UABP_MO1LiufangzhemanMd00001_New_C final : public UABP_LiufangzheCommon_C
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UABP_MO1LiufangzhemanMd00001_New_C) == 0x000010, "Wrong alignment on UABP_MO1LiufangzhemanMd00001_New_C");
-static_assert(sizeof(UABP_MO1LiufangzhemanMd00001_New_C) == 0x008560, "Wrong size on UABP_MO1LiufangzhemanMd00001_New_C");
+static_assert(sizeof(UABP_MO1LiufangzhemanMd00001_New_C) == 0x0085B0, "Wrong size on UABP_MO1LiufangzhemanMd00001_New_C");
 
 }
 

@@ -40,7 +40,7 @@ void UABP_R2T1BulanteMd10011_PC_C::ExecuteUbergraph_ABP_R2T1BulanteMd10011_PC(in
 // Function ABP_R2T1BulanteMd10011_PC.ABP_R2T1BulanteMd10011_PC_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_R2T1BulanteMd10011_PC_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
@@ -61,8 +61,8 @@ void UABP_R2T1BulanteMd10011_PC_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 // Function ABP_R2T1BulanteMd10011_PC.ABP_R2T1BulanteMd10011_PC_C.PhyCloth
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        PhyCloth_0                                             (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       PhyCloth_0                                             (Parm, OutParm, NoDestructor)
 
 void UABP_R2T1BulanteMd10011_PC_C::PhyCloth(const struct FPoseLink& InPose, struct FPoseLink* PhyCloth_0)
 {

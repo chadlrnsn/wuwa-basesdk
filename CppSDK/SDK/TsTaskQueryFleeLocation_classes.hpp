@@ -29,8 +29,8 @@ public:
 	int32                                         Radius;                                            // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_TsTaskQueryFleeLocation(int32 EntryPoint);
 	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ExecuteUbergraph_TsTaskQueryFleeLocation(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -21,37 +21,37 @@ namespace SDK
 class UPlotBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static bool IsInSequence(class UObject* __WorldContext);
-	static void SkipCurrentSequence(class UObject* __WorldContext);
-	static void PauseSequence(class UObject* __WorldContext);
-	static void ResumeSequence(class UObject* __WorldContext);
-	static void UseEnterMoveMode(class AActor* inCharacter1, class UObject* __WorldContext);
-	static void StartPlotTs(const class FString& inRes, class UObject* __WorldContext);
-	static bool IsInPerformingPlot(class UObject* __WorldContext);
-	static void TriggerBlackSequence(class UObject* __WorldContext);
-	static void ChangePlotWeather(int32 weatherId, bool isInherit, float tweenTime, class UObject* __WorldContext);
-	static void ShowNameInput(class UObject* __WorldContext);
-	static void AddBurstEyeRenderingMaterial(bool isBoy, class UObject* __WorldContext);
-	static void RemoveBurstEyeRenderingMaterial(bool isBoy, class UObject* __WorldContext);
-	static void ChangePlotTimeOfDay(bool isInherit, int32 startSecond, int32 endSecond, int32 tweenFrame, class UObject* __WorldContext);
-	static void ExecuteSequenceEvents(const class FString& key, class UObject* __WorldContext);
-	static void TriggerCutChange(class UObject* __WorldContext);
-	static void OpenChapterUi(int32 chapterState, int32 chapterId, class UObject* __WorldContext);
-	static void ShowLogo(float time, class UObject* __WorldContext);
-	static void CloseUiView(class UObject* __WorldContext);
-	static void OpenUiView(const class FString& maleAssetName1, const class FString& femaleAssetName1, const class FString& maleSpineName1, const class FString& femaleSpineName1, bool needLoop, class UObject* __WorldContext);
-	static void PlayUiLevelSequence(const class FString& seqName, class UObject* __WorldContext);
-	static void ExecuteEntitySequenceEvents(const class FString& key, int32 entityId, class UObject* __WorldContext);
-	static void PlaySpineAnimForGender(const class FString& maleSpineName, const class FString& femaleSpineName, bool needLoop, class UObject* __WorldContext);
-	static void PlaySpineAnim(const class FString& spineName1, bool needLoop, class UObject* __WorldContext);
-	static void OpenUiViewInArray(const class FString& maleAssetName1, const class FString& femaleAssetName1, TArray<struct FSpineThingsInfo>& maleSpineArray1, TArray<struct FSpineThingsInfo>& femaleSpineArray1, class UObject* __WorldContext);
-	static void PlaySpineAnimForGenderInArray(TArray<struct FSpineThingsInfo>& maleSpineArray1, TArray<struct FSpineThingsInfo>& femaleSpineArray1, class UObject* __WorldContext);
-	static void CloseSpineAnim(const class FString& spineName, class UObject* __WorldContext);
-	static void CloseSpineAnimInArray(TArray<class FString>& spineArray, class UObject* __WorldContext);
-	static void AddInteractTagToInteractingGravityMachine(class UObject* __WorldContext);
-	static void RemoveInteractTagFromInteractingGravityMachine(class UObject* __WorldContext);
-	static void TriggerTagToInteractingGravityMachine(const struct FGameplayTag& Tag, class UObject* __WorldContext);
 	static void ShowBgIcon(bool bShow, class UTexture2D* texture, class ABP_KuroMasterSeqEvent_C* obj, class UObject* __WorldContext);
+	static void TriggerTagToInteractingGravityMachine(const struct FGameplayTag& Tag, class UObject* __WorldContext);
+	static void RemoveInteractTagFromInteractingGravityMachine(class UObject* __WorldContext);
+	static void AddInteractTagToInteractingGravityMachine(class UObject* __WorldContext);
+	static void CloseSpineAnimInArray(TArray<class FString>& spineArray, class UObject* __WorldContext);
+	static void CloseSpineAnim(const class FString& spineName, class UObject* __WorldContext);
+	static void PlaySpineAnimForGenderInArray(TArray<struct FSpineThingsInfo>& maleSpineArray1, TArray<struct FSpineThingsInfo>& femaleSpineArray1, class UObject* __WorldContext);
+	static void OpenUiViewInArray(const class FString& maleAssetName1, const class FString& femaleAssetName1, TArray<struct FSpineThingsInfo>& maleSpineArray1, TArray<struct FSpineThingsInfo>& femaleSpineArray1, class UObject* __WorldContext);
+	static void PlaySpineAnim(const class FString& spineName1, bool needLoop, class UObject* __WorldContext);
+	static void PlaySpineAnimForGender(const class FString& maleSpineName, const class FString& femaleSpineName, bool needLoop, class UObject* __WorldContext);
+	static void ExecuteEntitySequenceEvents(const class FString& key, int32 entityId, class UObject* __WorldContext);
+	static void PlayUiLevelSequence(const class FString& seqName, class UObject* __WorldContext);
+	static void OpenUiView(const class FString& maleAssetName1, const class FString& femaleAssetName1, const class FString& maleSpineName1, const class FString& femaleSpineName1, bool needLoop, class UObject* __WorldContext);
+	static void CloseUiView(class UObject* __WorldContext);
+	static void ShowLogo(float time, class UObject* __WorldContext);
+	static void OpenChapterUi(int32 chapterState, int32 chapterId, class UObject* __WorldContext);
+	static void TriggerCutChange(class UObject* __WorldContext);
+	static void ExecuteSequenceEvents(const class FString& key, class UObject* __WorldContext);
+	static void ChangePlotTimeOfDay(bool isInherit, int32 startSecond, int32 endSecond, int32 tweenFrame, class UObject* __WorldContext);
+	static void RemoveBurstEyeRenderingMaterial(bool isBoy, class UObject* __WorldContext);
+	static void AddBurstEyeRenderingMaterial(bool isBoy, class UObject* __WorldContext);
+	static void ShowNameInput(class UObject* __WorldContext);
+	static void ChangePlotWeather(int32 weatherId, bool isInherit, float tweenTime, class UObject* __WorldContext);
+	static void TriggerBlackSequence(class UObject* __WorldContext);
+	static bool IsInPerformingPlot(class UObject* __WorldContext);
+	static void StartPlotTs(const class FString& inRes, class UObject* __WorldContext);
+	static void UseEnterMoveMode(class AActor* inCharacter1, class UObject* __WorldContext);
+	static void ResumeSequence(class UObject* __WorldContext);
+	static void PauseSequence(class UObject* __WorldContext);
+	static void SkipCurrentSequence(class UObject* __WorldContext);
+	static bool IsInSequence(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

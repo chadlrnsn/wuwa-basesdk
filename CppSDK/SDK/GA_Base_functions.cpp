@@ -74,7 +74,7 @@ void UGA_Base_C::K2_ActivateAbility()
 // Function GA_Base.GA_Base_C.获取施法者
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C*               施法者                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C**              施法者                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取施法者(class ATsBaseCharacter_C** 施法者)
 {
@@ -95,7 +95,7 @@ void UGA_Base_C::获取施法者(class ATsBaseCharacter_C** 施法者)
 // Function GA_Base.GA_Base_C.获取当前技能配置Id
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class FString                           当前技能数据名_0                                       (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          当前技能数据名_0                                       (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取当前技能配置Id(class FString* 当前技能数据名_0)
 {
@@ -116,7 +116,7 @@ void UGA_Base_C::获取当前技能配置Id(class FString* 当前技能数据名
 // Function GA_Base.GA_Base_C.获取当前技能配置
 // (Protected, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FSSkillInfo                      当前技能数据_0                                         (Parm, OutParm, HasGetValueTypeHash)
+// struct FSSkillInfo*                     当前技能数据_0                                         (Parm, OutParm, HasGetValueTypeHash)
 
 void UGA_Base_C::获取当前技能配置(struct FSSkillInfo* 当前技能数据_0)
 {
@@ -138,7 +138,7 @@ void UGA_Base_C::获取当前技能配置(struct FSSkillInfo* 当前技能数据
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   编号                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UAnimMontage*                     动画                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAnimMontage**                    动画                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取技能动画(int32 编号, class UAnimMontage** 动画)
 {
@@ -161,7 +161,7 @@ void UGA_Base_C::获取技能动画(int32 编号, class UAnimMontage** 动画)
 // Function GA_Base.GA_Base_C.获取技能所有动画
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// TArray<class UAnimMontage*>             技能动画数组                                           (Parm, OutParm)
+// TArray<class UAnimMontage*>*            技能动画数组                                           (Parm, OutParm)
 
 void UGA_Base_C::获取技能所有动画(TArray<class UAnimMontage*>* 技能动画数组)
 {
@@ -182,7 +182,7 @@ void UGA_Base_C::获取技能所有动画(TArray<class UAnimMontage*>* 技能动
 // Function GA_Base.GA_Base_C.获取技能标签
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// TArray<struct FGameplayTag>             技能标签                                               (Parm, OutParm)
+// TArray<struct FGameplayTag>*            技能标签                                               (Parm, OutParm)
 
 void UGA_Base_C::获取技能标签(TArray<struct FGameplayTag>* 技能标签)
 {
@@ -203,7 +203,7 @@ void UGA_Base_C::获取技能标签(TArray<struct FGameplayTag>* 技能标签)
 // Function GA_Base.GA_Base_C.获取AbilitySystemComponent
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UBaseAbilitySystemComponent*      AbilitySystemComponent                                 (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UBaseAbilitySystemComponent**     AbilitySystemComponent                                 (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取AbilitySystemComponent(class UBaseAbilitySystemComponent** AbilitySystemComponent)
 {
@@ -225,7 +225,7 @@ void UGA_Base_C::获取AbilitySystemComponent(class UBaseAbilitySystemComponent*
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           技能目标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor**                          技能目标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取技能目标(class ATsBaseCharacter_C* 目标, class AActor** 技能目标)
 {
@@ -249,7 +249,7 @@ void UGA_Base_C::获取技能目标(class ATsBaseCharacter_C* 目标, class AAct
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // bool                                    平面2D                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// float                                   距离                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  距离                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取技能目标距离(bool 平面2D, float* 距离)
 {
@@ -273,8 +273,8 @@ void UGA_Base_C::获取技能目标距离(bool 平面2D, float* 距离)
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTagContainer            标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool                                    是否存在                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FGameplayTagContainer&     标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// bool*                                   是否存在                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::是否拥有任意标签(class ATsBaseCharacter_C* 目标, const struct FGameplayTagContainer& 标签, bool* 是否存在)
 {
@@ -298,7 +298,7 @@ void UGA_Base_C::是否拥有任意标签(class ATsBaseCharacter_C* 目标, cons
 // Function GA_Base.GA_Base_C.设置强制速度
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVectorDouble                    速度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             速度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置强制速度(const struct FVectorDouble& 速度)
 {
@@ -342,7 +342,7 @@ void UGA_Base_C::设置通道的碰撞响应(class UPrimitiveComponent* 目标, 
 // Function GA_Base.GA_Base_C.通过Tag移除自身Buff
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void UGA_Base_C::通过Tag移除自身Buff(const struct FGameplayTag& tag)
 {
@@ -388,7 +388,7 @@ void UGA_Base_C::通过_ID给对象添加Buff(class ATsBaseCharacter_C* Buff对�
 // Parameters:
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   属性id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取Base属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值)
 {
@@ -414,7 +414,7 @@ void UGA_Base_C::获取Base属性值(class ATsBaseCharacter_C* 目标, int32 属
 // Parameters:
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   属性id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取Current属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值)
 {
@@ -464,7 +464,7 @@ void UGA_Base_C::通过_ID移除目标Buff(int64 BuffId, int32 移除层数, cla
 // Parameters:
 // class ATsBaseCharacter_C*               设置对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPD_CharacterControllerData_C*    材质配置                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置材质效果(class ATsBaseCharacter_C* 设置对象, class UPD_CharacterControllerData_C* 材质配置, int32* Handle)
 {
@@ -489,10 +489,10 @@ void UGA_Base_C::设置材质效果(class ATsBaseCharacter_C* 设置对象, clas
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               施法者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           子弹ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FTransformDouble                 初始变换                                               (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// struct FVectorDouble                    目标点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   子弹                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    子弹ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FTransformDouble&          初始变换                                               (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FVectorDouble&             目标点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  子弹                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::创建子弹(class ATsBaseCharacter_C* 施法者, const class FString& 子弹ID, const struct FTransformDouble& 初始变换, const struct FVectorDouble& 目标点, int32* 子弹)
 {
@@ -522,7 +522,7 @@ void UGA_Base_C::创建子弹(class ATsBaseCharacter_C* 施法者, const class F
 // class FName                             技能ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           技能目标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             Socket                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    是否成功释放                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// bool*                                   是否成功释放                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 
 void UGA_Base_C::使用技能(class ATsBaseCharacter_C* 释放者, class FName 技能ID, class AActor* 技能目标, class FName Socket, bool* 是否成功释放)
 {
@@ -549,10 +549,10 @@ void UGA_Base_C::使用技能(class ATsBaseCharacter_C* 释放者, class FName �
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   配置表ID                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FTransformDouble                 出生位置                                               (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// bool                                    是否成功                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class ATsBaseCharacter_C*               召唤物                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   实体ID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FTransformDouble&          出生位置                                               (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// bool*                                   是否成功                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class ATsBaseCharacter_C**              召唤物                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  实体ID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::召唤(int32 配置表ID, const struct FTransformDouble& 出生位置, bool* 是否成功, class ATsBaseCharacter_C** 召唤物, int32* 实体ID)
 {
@@ -582,7 +582,7 @@ void UGA_Base_C::召唤(int32 配置表ID, const struct FTransformDouble& 出生
 // Function GA_Base.GA_Base_C.是否联网
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                                    联网                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   联网                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::是否联网(bool* 联网)
 {
@@ -604,8 +604,8 @@ void UGA_Base_C::是否联网(bool* 联网)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int32                                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取黑板_Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值)
 {
@@ -630,7 +630,7 @@ void UGA_Base_C::获取黑板_Int(class ATsBaseCharacter_C* 角色, const class 
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置黑板Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值)
@@ -654,8 +654,8 @@ void UGA_Base_C::设置黑板Int(class ATsBaseCharacter_C* 角色, const class F
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int64                                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int64*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void UGA_Base_C::获取黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64* 值)
 {
@@ -680,7 +680,7 @@ void UGA_Base_C::获取黑板Long(class ATsBaseCharacter_C* 角色, const class 
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int64                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64 值)
@@ -704,7 +704,7 @@ void UGA_Base_C::设置黑板Long(class ATsBaseCharacter_C* 角色, const class 
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               对象                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   实体ID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  实体ID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取实体ID(class ATsBaseCharacter_C* 对象, int32* 实体ID)
 {
@@ -728,8 +728,8 @@ void UGA_Base_C::获取实体ID(class ATsBaseCharacter_C* 对象, int32* 实体I
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   实体ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class ATsBaseCharacter_C*               对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class ATsBaseCharacter_C**              对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::根据实体ID获取对象(int32 实体ID, class ATsBaseCharacter_C** 对象, bool* 是否找到对象)
 {
@@ -756,9 +756,9 @@ void UGA_Base_C::根据实体ID获取对象(int32 实体ID, class ATsBaseCharact
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class ATsBaseCharacter_C*               对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C**              对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::获取黑板指定Key值关联对象(class ATsBaseCharacter_C* 角色, const class FString& key, class ATsBaseCharacter_C** 对象, bool* 是否找到对象)
 {
@@ -850,8 +850,8 @@ void UGA_Base_C::销毁特定子弹(class FName 子弹名字, bool 是否召唤�
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-// int32                                   层数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// int32*                                  层数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取目标Tag层数(class ATsBaseCharacter_C* 目标, const struct FGameplayTag& Tag, int32* 层数)
 {
@@ -875,10 +875,10 @@ void UGA_Base_C::获取目标Tag层数(class ATsBaseCharacter_C* 目标, const s
 // Function GA_Base.GA_Base_C.获取地面坐标点
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FVectorDouble                    指定点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             指定点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   深度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    地面坐标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    是否存在                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVectorDouble*                   地面坐标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   是否存在                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::获取地面坐标点(const struct FVectorDouble& 指定点, float 深度, struct FVectorDouble* 地面坐标, bool* 是否存在)
 {
@@ -926,7 +926,7 @@ void UGA_Base_C::设置当前技能打断等级(int32 打断等级)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UGameplayTask*                    任务                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// bool                                    有效                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   有效                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::结束异步任务(class UGameplayTask* 任务, bool* 有效)
 {
@@ -950,7 +950,7 @@ void UGA_Base_C::结束异步任务(class UGameplayTask* 任务, bool* 有效)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AActor*                           发送目标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     事件Tag                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              事件Tag                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::发送事件(class AActor* 发送目标, const struct FGameplayTag& 事件Tag)
 {
@@ -996,8 +996,8 @@ float UGA_Base_C::获取两者距离(class AActor* 目标A, class AActor* 目标
 // Function GA_Base.GA_Base_C.创建并播放特效
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UObject*                          DA文件名                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FTransformDouble                 transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const class UObject*                    DA文件名                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FTransformDouble&          transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // bool                                    AttachToCharacter                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -1023,7 +1023,7 @@ int32 UGA_Base_C::创建并播放特效(const class UObject* DA文件名, const 
 // Function GA_Base.GA_Base_C.施法者添加标签
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::施法者添加标签(const struct FGameplayTag& Tag)
 {
@@ -1043,7 +1043,7 @@ void UGA_Base_C::施法者添加标签(const struct FGameplayTag& Tag)
 // Function GA_Base.GA_Base_C.施法者移除标签
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::施法者移除标签(const struct FGameplayTag& tag)
 {
@@ -1065,7 +1065,7 @@ void UGA_Base_C::施法者移除标签(const struct FGameplayTag& tag)
 // Parameters:
 // int64                                   buffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    enforceOnGoingCheck                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// int32                                   层数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  层数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::通过ID获取对象Buff层数(int64 buffId, bool enforceOnGoingCheck, int32* 层数)
 {
@@ -1089,7 +1089,7 @@ void UGA_Base_C::通过ID获取对象Buff层数(int64 buffId, bool enforceOnGoin
 // Function GA_Base.GA_Base_C.获取当前技能攻速
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   SpeedRatio                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  SpeedRatio                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取当前技能攻速(float* SpeedRatio)
 {
@@ -1111,7 +1111,7 @@ void UGA_Base_C::获取当前技能攻速(float* SpeedRatio)
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             子弹名字                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   子弹数量                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  子弹数量                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::查询特定子弹数量(class FName 子弹名字, int32* 子弹数量)
 {
@@ -1135,8 +1135,8 @@ void UGA_Base_C::查询特定子弹数量(class FName 子弹名字, int32* 子�
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int32                                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void UGA_Base_C::获取黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值)
 {
@@ -1161,7 +1161,7 @@ void UGA_Base_C::获取黑板EntityId(class ATsBaseCharacter_C* 角色, const cl
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值)
@@ -1185,8 +1185,8 @@ void UGA_Base_C::设置黑板EntityId(class ATsBaseCharacter_C* 角色, const cl
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FVectorDouble                    值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, struct FVectorDouble* 值)
 {
@@ -1211,8 +1211,8 @@ void UGA_Base_C::获取黑板Vector(class ATsBaseCharacter_C* 角色, const clas
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FVectorDouble                    值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, const struct FVectorDouble& 值)
 {
@@ -1234,7 +1234,7 @@ void UGA_Base_C::设置黑板Vector(class ATsBaseCharacter_C* 角色, const clas
 // Function GA_Base.GA_Base_C.获取当前操作角色Actor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C*               当前角色                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C**              当前角色                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取当前操作角色Actor(class ATsBaseCharacter_C** 当前角色)
 {
@@ -1255,7 +1255,7 @@ void UGA_Base_C::获取当前操作角色Actor(class ATsBaseCharacter_C** 当前
 // Function GA_Base.GA_Base_C.获取当前GA的技能数据名
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           当前技能数据名_0                                       (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          当前技能数据名_0                                       (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取当前GA的技能数据名(class FString* 当前技能数据名_0)
 {
@@ -1276,7 +1276,7 @@ void UGA_Base_C::获取当前GA的技能数据名(class FString* 当前技能数
 // Function GA_Base.GA_Base_C.子弹冻结
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           子弹Id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    子弹Id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // float                                   冻结时间                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::子弹冻结(const class FString& 子弹Id, float 冻结时间)
@@ -1299,8 +1299,8 @@ void UGA_Base_C::子弹冻结(const class FString& 子弹Id, float 冻结时间)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, const class FString& 值)
 {
@@ -1323,8 +1323,8 @@ void UGA_Base_C::设置黑板String(class ATsBaseCharacter_C* 角色, const clas
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           String                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          String                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, class FString* String)
 {
@@ -1348,7 +1348,7 @@ void UGA_Base_C::获取黑板String(class ATsBaseCharacter_C* 角色, const clas
 // Function GA_Base.GA_Base_C.获取游戏事件管理器
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UBP_EventManager_C*               事件管理器                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UBP_EventManager_C**              事件管理器                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void UGA_Base_C::获取游戏事件管理器(class UBP_EventManager_C** 事件管理器)
 {
@@ -1370,7 +1370,7 @@ void UGA_Base_C::获取游戏事件管理器(class UBP_EventManager_C** 事件�
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   RoleID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  RoleID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::获取角色ID(class ATsBaseCharacter_C* 目标, float* RoleID)
 {
@@ -1481,8 +1481,8 @@ void UGA_Base_C::设置接收同打断等级打断(bool skillAcceptInput)
 // float                                   旋转                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   仰角                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   长度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    合法点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    碰撞挤压                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVectorDouble*                   合法点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   碰撞挤压                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::通过角度获取目标附近的合法点(class AActor* 目标Actor, float 旋转, float 仰角, float 长度, struct FVectorDouble* 合法点, bool* 碰撞挤压)
 {
@@ -1512,9 +1512,9 @@ void UGA_Base_C::通过角度获取目标附近的合法点(class AActor* 目标
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               目标Actor                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    终点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    合法点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    碰撞挤压                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FVectorDouble&             终点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   合法点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   碰撞挤压                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::获取目标到终点的合法点(class ATsBaseCharacter_C* 目标Actor, const struct FVectorDouble& 终点, struct FVectorDouble* 合法点, bool* 碰撞挤压)
 {
@@ -1543,8 +1543,8 @@ void UGA_Base_C::获取目标到终点的合法点(class ATsBaseCharacter_C* 目
 // Parameters:
 // class AActor*                           目标Actor                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   向后距离                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    合法点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    碰撞挤压                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVectorDouble*                   合法点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   碰撞挤压                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::获取目标正后方的合法点(class AActor* 目标Actor, float 向后距离, struct FVectorDouble* 合法点, bool* 碰撞挤压)
 {
@@ -1575,9 +1575,9 @@ void UGA_Base_C::获取目标正后方的合法点(class AActor* 目标Actor, fl
 // float                                   施法者半径                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   目标半高                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   目标半径                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    起点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    终点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    合法点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             起点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             终点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   合法点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::对圆柱体类型的合法点检测(float 施法者半高, float 施法者半径, float 目标半高, float 目标半径, const struct FVectorDouble& 起点, const struct FVectorDouble& 终点, struct FVectorDouble* 合法点)
 {
@@ -1644,8 +1644,8 @@ void UGA_Base_C::退出瞄准模式()
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FRotator                         值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FRotator&                  值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::设置黑板Rotator(class ATsBaseCharacter_C* 角色, const class FString& key, const struct FRotator& 值)
 {
@@ -1706,7 +1706,7 @@ void UGA_Base_C::生成特效()
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               Attacker                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   TargetId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置子弹目标(class ATsBaseCharacter_C* Attacker, const class FString& Key, int32 TargetId)
@@ -1730,7 +1730,7 @@ void UGA_Base_C::设置子弹目标(class ATsBaseCharacter_C* Attacker, const cl
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               Target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::给对象添加标签(class ATsBaseCharacter_C* Target, const struct FGameplayTag& tag)
 {
@@ -1752,7 +1752,7 @@ void UGA_Base_C::给对象添加标签(class ATsBaseCharacter_C* Target, const s
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               Target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::给对象移除标签(class ATsBaseCharacter_C* Target, const struct FGameplayTag& tag)
 {
@@ -1798,10 +1798,10 @@ void UGA_Base_C::设置角色Pawn通道碰撞响应(class ATsBaseCharacter_C* �
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    sweep                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    teleport                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UGA_Base_C::设置角色位置(class ATsBaseCharacter_C* 角色, const struct FVectorDouble& location, bool sweep, bool teleport, const class FString& context)
@@ -1829,9 +1829,9 @@ bool UGA_Base_C::设置角色位置(class ATsBaseCharacter_C* 角色, const stru
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         rotation                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FRotator&                  rotation                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    sweep                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UGA_Base_C::设置角色旋转(class ATsBaseCharacter_C* 角色, const struct FRotator& rotation, bool sweep, const class FString& context)
@@ -1858,9 +1858,9 @@ bool UGA_Base_C::设置角色旋转(class ATsBaseCharacter_C* 角色, const stru
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FTransformDouble                 Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // bool                                    sweep                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置角色变换(class ATsBaseCharacter_C* 角色, const struct FTransformDouble& Transform, bool sweep, const class FString& context)
 {
@@ -1884,10 +1884,10 @@ void UGA_Base_C::设置角色变换(class ATsBaseCharacter_C* 角色, const stru
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         rotation                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FVectorDouble&             location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FRotator&                  rotation                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    sweep                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置角色位置和旋转(class ATsBaseCharacter_C* 角色, const struct FVectorDouble& location, const struct FRotator& rotation, bool sweep, const class FString& context)
 {
@@ -1912,10 +1912,10 @@ void UGA_Base_C::设置角色位置和旋转(class ATsBaseCharacter_C* 角色, c
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         rotation                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FRotator&                  rotation                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    sweep                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    teleport                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::叠加角色世界旋转(class ATsBaseCharacter_C* 角色, const struct FRotator& rotation, bool sweep, bool teleport, const class FString& context)
 {
@@ -1940,10 +1940,10 @@ void UGA_Base_C::叠加角色世界旋转(class ATsBaseCharacter_C* 角色, cons
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    sweep                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    teleport                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::叠加角色世界位置(class ATsBaseCharacter_C* 角色, const struct FVectorDouble& location, bool sweep, bool teleport, const class FString& context)
 {
@@ -1968,9 +1968,9 @@ void UGA_Base_C::叠加角色世界位置(class ATsBaseCharacter_C* 角色, cons
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FRotator                         Rotator                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FRotator&                  Rotator                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const class FString&                    context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置角色传送(class ATsBaseCharacter_C* 角色, const struct FVectorDouble& location, const struct FRotator& Rotator, const class FString& context)
 {
@@ -1994,9 +1994,9 @@ void UGA_Base_C::设置角色传送(class ATsBaseCharacter_C* 角色, const stru
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Velocity                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Velocity                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UGA_Base_C::设置角色地面移动(class ATsBaseCharacter_C* 角色, const struct FVector& Velocity, float DeltaSeconds, const class FString& context)
 {
@@ -2019,8 +2019,8 @@ void UGA_Base_C::设置角色地面移动(class ATsBaseCharacter_C* 角色, cons
 // Function GA_Base.GA_Base_C.伴生物获取召唤者对象
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class ATsBaseCharacter_C**              对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UGA_Base_C::伴生物获取召唤者对象(class ATsBaseCharacter_C** 对象, bool* 是否找到对象)
 {
@@ -2064,7 +2064,7 @@ void UGA_Base_C::RemoveBuff(int64 buffId)
 // Function GA_Base.GA_Base_C.RemoveTag
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::RemoveTag(const struct FGameplayTag& tag)
 {
@@ -2084,7 +2084,7 @@ void UGA_Base_C::RemoveTag(const struct FGameplayTag& tag)
 // Function GA_Base.GA_Base_C.AddTag
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Base_C::AddTag(const struct FGameplayTag& tag)
 {
@@ -2121,11 +2121,65 @@ void UGA_Base_C::Apply_Buff_with_Level(int64 buffId)
 }
 
 
+// Function GA_Base.GA_Base_C.随机召唤
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   召唤者Id                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FTransformDouble&          Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// int32                                   SkillId_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsVisivle                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Base_C::随机召唤(int32 召唤者Id, int32 Index_0, const struct FTransformDouble& Transform, int32 SkillId_0, bool IsVisivle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "随机召唤");
+
+	Params::GA_Base_C_随机召唤 Parms{};
+
+	Parms.召唤者Id = 召唤者Id;
+	Parms.Index_0 = Index_0;
+	Parms.Transform = std::move(Transform);
+	Parms.SkillId_0 = SkillId_0;
+	Parms.IsVisivle = IsVisivle;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Base.GA_Base_C.获取随机召唤物
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   召唤者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  实体Id                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::获取随机召唤物(int32 召唤者, int32 Index_0, int32* 实体Id)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取随机召唤物");
+
+	Params::GA_Base_C_获取随机召唤物 Parms{};
+
+	Parms.召唤者 = 召唤者;
+	Parms.Index_0 = Index_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (实体Id != nullptr)
+		*实体Id = Parms.实体Id;
+}
+
+
 // Function GA_Base.GA_Base_C.K2_CanActivateAbility
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// struct FGameplayAbilityActorInfo        ActorInfo                                              (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference)
-// struct FGameplayTagContainer            RelevantTags                                           (Parm, OutParm)
+// const struct FGameplayAbilityActorInfo& ActorInfo                                              (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference)
+// struct FGameplayTagContainer*           RelevantTags                                           (Parm, OutParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UGA_Base_C::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, struct FGameplayTagContainer* RelevantTags) const

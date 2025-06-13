@@ -22,8 +22,8 @@ namespace SDK
 // Parameters:
 // int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FTransformDouble                 Transform                                              (Parm, OutParm, IsPlainOldData, NoDestructor)
+// bool*                                   Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FTransformDouble*                Transform                                              (Parm, OutParm, IsPlainOldData, NoDestructor)
 
 void UBPF_CameraHelper_C::D_GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform)
 {
@@ -52,8 +52,8 @@ void UBPF_CameraHelper_C::D_GetCameraTransform(int32 PlayerIndex, class UObject*
 // Parameters:
 // int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FVectorDouble                    Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVectorDouble*                   Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPF_CameraHelper_C::D_GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location)
 {
@@ -82,8 +82,8 @@ void UBPF_CameraHelper_C::D_GetCameraLocation(int32 PlayerIndex, class UObject* 
 // Parameters:
 // int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FRotator                         Rotator                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FRotator*                        Rotator                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UBPF_CameraHelper_C::GetCameraRotator(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FRotator* Rotator)
 {
@@ -112,8 +112,8 @@ void UBPF_CameraHelper_C::GetCameraRotator(int32 PlayerIndex, class UObject* __W
 // Parameters:
 // int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FVectorDouble                    Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVectorDouble*                   Location                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPF_CameraHelper_C::GetCameraLocation(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FVectorDouble* Location)
 {
@@ -142,8 +142,8 @@ void UBPF_CameraHelper_C::GetCameraLocation(int32 PlayerIndex, class UObject* __
 // Parameters:
 // int32                                   PlayerIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FTransformDouble                 Transform                                              (Parm, OutParm, IsPlainOldData, NoDestructor)
+// bool*                                   Success                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FTransformDouble*                Transform                                              (Parm, OutParm, IsPlainOldData, NoDestructor)
 
 void UBPF_CameraHelper_C::GetCameraTransform(int32 PlayerIndex, class UObject* __WorldContext, bool* Success, struct FTransformDouble* Transform)
 {

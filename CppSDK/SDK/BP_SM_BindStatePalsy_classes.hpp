@@ -21,8 +21,8 @@ namespace SDK
 class UBP_SM_BindStatePalsy_C final : public UASMBindState
 {
 public:
-	TSoftObjectPtr<class UCounterAttackEffectData_C> 弹反特效预设;                                      // 0x0030(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	TSoftObjectPtr<class UCounterAttackCameraData_C> 弹反摄像机预设;                                    // 0x0060(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UCounterAttackEffectData_C> 弹反特效预设;                                   // 0x0030(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UCounterAttackCameraData_C> 弹反摄像机预设;                                 // 0x0060(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

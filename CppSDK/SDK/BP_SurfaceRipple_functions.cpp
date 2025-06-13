@@ -17,12 +17,100 @@
 namespace SDK
 {
 
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.Set No Rain Roughness
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_SurfaceRipple_C::Set_No_Rain_Roughness()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SurfaceRipple_C", "Set No Rain Roughness");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.Set Rain Roughness
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_SurfaceRipple_C::Set_Rain_Roughness()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SurfaceRipple_C", "Set Rain Roughness");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.Set No Rain
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_SurfaceRipple_C::Set_No_Rain()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SurfaceRipple_C", "Set No Rain");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.Set Rain
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_SurfaceRipple_C::Set_Rain()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SurfaceRipple_C", "Set Rain");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.UpdateGradualData
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   Index_0                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   InputParam                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FLinearColor*                    GlobalRainGradualData_0                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Vaild                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_SurfaceRipple_C::UpdateGradualData(int32 Index_0, float InputParam, struct FLinearColor* GlobalRainGradualData_0, bool* Vaild)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SurfaceRipple_C", "UpdateGradualData");
+
+	Params::BP_SurfaceRipple_C_UpdateGradualData Parms{};
+
+	Parms.Index_0 = Index_0;
+	Parms.InputParam = InputParam;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (GlobalRainGradualData_0 != nullptr)
+		*GlobalRainGradualData_0 = std::move(Parms.GlobalRainGradualData_0);
+
+	if (Vaild != nullptr)
+		*Vaild = Parms.Vaild;
+}
+
+
 // Function BP_SurfaceRipple.BP_SurfaceRipple_C.SetRainIntensity
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   RainIntensity                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   下雨渐变最大时间_0                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector4&                  RainLerpData                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SurfaceRipple_C::SetRainIntensity(float RainIntensity)
+void ABP_SurfaceRipple_C::SetRainIntensity(float RainIntensity, float 下雨渐变最大时间_0, const struct FVector4& RainLerpData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -32,6 +120,8 @@ void ABP_SurfaceRipple_C::SetRainIntensity(float RainIntensity)
 	Params::BP_SurfaceRipple_C_SetRainIntensity Parms{};
 
 	Parms.RainIntensity = RainIntensity;
+	Parms.下雨渐变最大时间_0 = 下雨渐变最大时间_0;
+	Parms.RainLerpData = std::move(RainLerpData);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -46,6 +136,20 @@ void ABP_SurfaceRipple_C::UserConstructionScript()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_SurfaceRipple_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SurfaceRipple.BP_SurfaceRipple_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_SurfaceRipple_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SurfaceRipple_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -88,20 +192,6 @@ void ABP_SurfaceRipple_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_SurfaceRipple.BP_SurfaceRipple_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_SurfaceRipple_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SurfaceRipple_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

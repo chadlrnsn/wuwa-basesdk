@@ -77,7 +77,7 @@ void UKuroChainComponent::InitChain()
 // Function KuroComponent.KuroCharacterAnimationComponent.AddModelLocation
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          Offset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Offset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroCharacterAnimationComponent::AddModelLocation(const struct FVector& Offset)
 {
@@ -102,7 +102,7 @@ void UKuroCharacterAnimationComponent::AddModelLocation(const struct FVector& Of
 // Function KuroComponent.KuroCharacterAnimationComponent.AddModelQuat
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FQuat                            Quat                                                   (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FQuat&                     Quat                                                   (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    LockCenter                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroCharacterAnimationComponent::AddModelQuat(const struct FQuat& Quat, bool LockCenter)
@@ -129,8 +129,8 @@ void UKuroCharacterAnimationComponent::AddModelQuat(const struct FQuat& Quat, bo
 // Function KuroComponent.KuroCharacterAnimationComponent.D_GetTransformOffsetInWorld
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransformDouble                 Child                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FTransformDouble                 Parent                                                 (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransformDouble&          Child                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransformDouble&          Parent                                                 (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UKuroCharacterAnimationComponent::D_GetTransformOffsetInWorld(const struct FTransformDouble& Child, const struct FTransformDouble& Parent)
 {
@@ -156,8 +156,8 @@ void UKuroCharacterAnimationComponent::D_GetTransformOffsetInWorld(const struct 
 // Function KuroComponent.KuroCharacterAnimationComponent.GetTransformOffsetInWorld
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransform                       Child                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FTransform                       Parent                                                 (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                Child                                                  (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                Parent                                                 (Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UKuroCharacterAnimationComponent::GetTransformOffsetInWorld(const struct FTransform& Child, const struct FTransform& Parent)
 {
@@ -240,7 +240,7 @@ void UKuroCharacterAnimationComponent::StopModelBuffer()
 // Function KuroComponent.KuroRegionDetectComponent.GetRegionEvent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           RegionName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RegionName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UKuroRegionEventBinder*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UKuroRegionEventBinder* UKuroRegionDetectComponent::GetRegionEvent(const class FString& RegionName)
@@ -287,7 +287,7 @@ void UKuroRegionDetectComponent::ResetEventTargets()
 // Function KuroComponent.KuroRegionDetectComponent.SetDebugMode
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    IsOpen                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              IsOpen                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroRegionDetectComponent::SetDebugMode(const bool IsOpen)
 {
@@ -337,7 +337,7 @@ void UKuroRegionDetectComponent::SetEventTarget(class AActor* DetectTarget)
 // Function KuroComponent.KuroRegionDetectComponent.SetEventTargets
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<class AActor*>                   DetectTargets                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<class AActor*>&            DetectTargets                                          (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UKuroRegionDetectComponent::SetEventTargets(const TArray<class AActor*>& DetectTargets)
 {
@@ -362,8 +362,8 @@ void UKuroRegionDetectComponent::SetEventTargets(const TArray<class AActor*>& De
 // Function KuroComponent.KuroRegionDetectComponent.Detect
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVectorDouble                    Point                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           RegionName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             Point                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    RegionName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroRegionDetectComponent::Detect(const struct FVectorDouble& Point, const class FString& RegionName) const
@@ -392,9 +392,9 @@ bool UKuroRegionDetectComponent::Detect(const struct FVectorDouble& Point, const
 // Function KuroComponent.KuroSceneItemGuidePathComponent.StartTick
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FLinearColor                     Normal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     ChangeCoefficient                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     Finish                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              Normal                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              ChangeCoefficient                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              Finish                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             ParameterName                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   TotalCountDown                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   CurCountDown                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -427,11 +427,11 @@ void UKuroSceneItemGuidePathComponent::StartTick(const struct FLinearColor& Norm
 // Function KuroComponent.KuroSceneItemMoveComponent.FindTimeByValueIn01Curve
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UCurveFloat*                      Curve                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   TargetValue                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ResultTime                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UCurveFloat*                Curve                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             TargetValue                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  ResultTime                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   MaxSearchDepth                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Tolerance                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Tolerance                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSceneItemMoveComponent::FindTimeByValueIn01Curve(const class UCurveFloat* Curve, const float TargetValue, float* ResultTime, int32 MaxSearchDepth, const float Tolerance)
@@ -465,7 +465,7 @@ bool UKuroSceneItemMoveComponent::FindTimeByValueIn01Curve(const class UCurveFlo
 // Function KuroComponent.KuroSceneItemMoveComponent.AddMoveTarget
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    Loc                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             Loc                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MoveTime                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   WaitTime                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxSpeed                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -496,10 +496,10 @@ void UKuroSceneItemMoveComponent::AddMoveTarget(const struct FVectorDouble& Loc,
 
 
 // Function KuroComponent.KuroSceneItemMoveComponent.AddRotationStep
-// (Final, Native, Public, HasOutParams, HasDefaults)
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FRotator                         BeginRotation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FRotator                         EndRotation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  BeginRotation                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FRotator&                  EndRotation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   TimeSec                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   CdSec                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      RotateCurve                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -534,8 +534,8 @@ bool UKuroSceneItemMoveComponent::AddRotationStep(const struct FRotator& BeginRo
 // Function KuroComponent.KuroSceneItemMoveComponent.GetNextMoveTarget
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    NextTarget                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVectorDouble                    CurrentVelocity                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble*                   NextTarget                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVectorDouble*                   CurrentVelocity                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSceneItemMoveComponent::GetNextMoveTarget(struct FVectorDouble* NextTarget, struct FVectorDouble* CurrentVelocity)
@@ -565,7 +565,7 @@ bool UKuroSceneItemMoveComponent::GetNextMoveTarget(struct FVectorDouble* NextTa
 
 
 // Function KuroComponent.KuroSceneItemMoveComponent.InitRotationData
-// (Final, Native, Public)
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    IsLoop                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -597,7 +597,7 @@ bool UKuroSceneItemMoveComponent::InitRotationData(class AActor* TargetActor, bo
 // Function KuroComponent.KuroSceneItemMoveComponent.Kuro_SetGravityDirect
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InGravityDirect                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InGravityDirect                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSceneItemMoveComponent::Kuro_SetGravityDirect(const struct FVector& InGravityDirect)
 {
@@ -620,7 +620,7 @@ void UKuroSceneItemMoveComponent::Kuro_SetGravityDirect(const struct FVector& In
 
 
 // Function KuroComponent.KuroSceneItemMoveComponent.SetEnableDebugForMove
-// (Final, Native, Public)
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    Enable                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -647,7 +647,7 @@ void UKuroSceneItemMoveComponent::SetEnableDebugForMove(bool Enable)
 // Function KuroComponent.KuroSceneItemMoveComponent.SetMaxDeltaDegreePerSecondForUpdatingLookAt
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   MaxDegreePerSecond                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             MaxDegreePerSecond                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSceneItemMoveComponent::SetMaxDeltaDegreePerSecondForUpdatingLookAt(const float MaxDegreePerSecond)
 {
@@ -670,7 +670,7 @@ void UKuroSceneItemMoveComponent::SetMaxDeltaDegreePerSecondForUpdatingLookAt(co
 
 
 // Function KuroComponent.KuroSceneItemMoveComponent.SetTickingMoveEnable
-// (Final, Native, Public)
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -695,7 +695,7 @@ void UKuroSceneItemMoveComponent::SetTickingMoveEnable(bool bEnabled)
 
 
 // Function KuroComponent.KuroSceneItemMoveComponent.SetTickingRotateEnable
-// (Final, Native, Public)
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -726,9 +726,9 @@ void UKuroSceneItemMoveComponent::SetTickingRotateEnable(bool bEnabled)
 // bool                                    Repeat                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Cycle                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    KeepLookAt                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   TimeSec                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             TimeSec                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UCurveFloat*                      TimeDisCurve                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   StartTimeOffset                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             StartTimeOffset                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   StartDis                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   EndDis                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -767,14 +767,14 @@ bool UKuroSceneItemMoveComponent::StartMoveWithSplineAtConstantTime(class USplin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class USplineComponent*                 SplineComponent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MaxMoveTimes                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             MaxMoveTimes                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    Cycle                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    KeepLookAt                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InitSpeed                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Acceleration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   TargetSpeed                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   StartDis                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   EndDis                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             InitSpeed                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Acceleration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             TargetSpeed                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             StartDis                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             EndDis                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSceneItemMoveComponent::StartMoveWithSplineAtDynamicSpeed(class USplineComponent* SplineComponent, const int32 MaxMoveTimes, bool Cycle, bool KeepLookAt, const float InitSpeed, const float Acceleration, const float TargetSpeed, const float StartDis, const float EndDis)
@@ -808,7 +808,7 @@ bool UKuroSceneItemMoveComponent::StartMoveWithSplineAtDynamicSpeed(class USplin
 
 
 // Function KuroComponent.KuroSceneItemMoveComponent.StartRotate
-// (Final, Native, Public)
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -860,7 +860,7 @@ void UKuroSceneItemMoveComponent::StopAllMove(bool BroadcastStopCallback, bool B
 
 
 // Function KuroComponent.KuroSceneItemMoveComponent.StopRotate
-// (Final, Native, Public)
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // EKuroSceneItemStopRotateMethod          StopMethod                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -890,9 +890,9 @@ bool UKuroSceneItemMoveComponent::StopRotate(EKuroSceneItemStopRotateMethod Stop
 // Function KuroComponent.KuroSceneItemMoveComponent.UpdateDynamicSpeedSplineMoveParams
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   CurrentSpeed                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Acceleration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   TargetSpeed                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             CurrentSpeed                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Acceleration                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             TargetSpeed                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSceneItemMoveComponent::UpdateDynamicSpeedSplineMoveParams(const float CurrentSpeed, const float Acceleration, const float TargetSpeed)
@@ -922,7 +922,7 @@ bool UKuroSceneItemMoveComponent::UpdateDynamicSpeedSplineMoveParams(const float
 // Function KuroComponent.KuroSceneItemMoveComponent.UpdateSplineMoveDistance
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   NewDistanceAloneSpline                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             NewDistanceAloneSpline                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSceneItemMoveComponent::UpdateSplineMoveDistance(const float NewDistanceAloneSpline)
@@ -950,7 +950,7 @@ bool UKuroSceneItemMoveComponent::UpdateSplineMoveDistance(const float NewDistan
 // Function KuroComponent.KuroSceneItemMoveComponent.UpdateSplineMoveDistanceByPosition
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    NewPosition                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             NewPosition                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSceneItemMoveComponent::UpdateSplineMoveDistanceByPosition(const struct FVectorDouble& NewPosition)
@@ -1079,7 +1079,7 @@ bool UKuroSceneItemMoveComponent::IsMoving(bool ConsiderSimpleWaitAsMoving) cons
 
 
 // Function KuroComponent.KuroSceneItemMoveComponent.IsRotating
-// (Final, Native, Public, Const)
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

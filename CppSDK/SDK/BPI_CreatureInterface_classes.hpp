@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BPI_CreatureInterface.BPI_CreatureInterface_C
-// 0x0000 (0x0030 - 0x0030)
-class IBPI_CreatureInterface_C final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IBPI_CreatureInterface_C final
 {
 public:
 	int32 GetEntityId();
@@ -32,9 +32,18 @@ public:
 	{
 		return GetDefaultObjImpl<IBPI_CreatureInterface_C>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IBPI_CreatureInterface_C) == 0x000008, "Wrong alignment on IBPI_CreatureInterface_C");
-static_assert(sizeof(IBPI_CreatureInterface_C) == 0x000030, "Wrong size on IBPI_CreatureInterface_C");
+static_assert(alignof(IBPI_CreatureInterface_C) == 0x000001, "Wrong alignment on IBPI_CreatureInterface_C");
+static_assert(sizeof(IBPI_CreatureInterface_C) == 0x000001, "Wrong size on IBPI_CreatureInterface_C");
 
 }
 

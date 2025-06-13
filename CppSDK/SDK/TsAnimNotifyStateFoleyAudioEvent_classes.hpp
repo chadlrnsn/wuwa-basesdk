@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "KuroAudio_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "E_FoleyVariant_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK

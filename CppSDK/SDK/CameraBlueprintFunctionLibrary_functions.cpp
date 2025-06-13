@@ -75,7 +75,7 @@ ECustomCameraMode UCameraBlueprintFunctionLibrary_C::GetCameraMode(class UObject
 // Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetCameraRotation
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FRotator                         rotator                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FRotator&                  rotator                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UCameraBlueprintFunctionLibrary_C::SetCameraRotation(const struct FRotator& rotator, class UObject* __WorldContext)
@@ -136,11 +136,11 @@ struct FVectorDouble UCameraBlueprintFunctionLibrary_C::GetTargetSocketLocation(
 // bool                                    blendLocation                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    isRelativeLocation                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    overrideLocation                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FVector                          newLocation                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   newLocation                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    blendRotation                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    isRelativeRotation                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    overrideRotation                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FRotator                         newRotation                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FRotator&                  newRotation                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UCameraBlueprintFunctionLibrary_C::SetWidgetCameraBlendParams(float blendTime, EViewTargetBlendFunction blendFunction, float blendExp, bool blendLocation, bool isRelativeLocation, bool overrideLocation, const struct FVector& newLocation, bool blendRotation, bool isRelativeRotation, bool overrideRotation, const struct FRotator& newRotation, class UObject* __WorldContext)
@@ -258,8 +258,8 @@ void UCameraBlueprintFunctionLibrary_C::ResetFightCameraPitchAndArmLength(class 
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   id                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          lookAt1                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          lookAt2                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   lookAt1                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   lookAt2                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   prepTime                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   fadeDistance                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   armLengthMin                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -495,8 +495,8 @@ class ACameraActor* UCameraBlueprintFunctionLibrary_C::GetFightCameraActor(class
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ULevelSequence*                   levelSequence                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          startLocation1                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          endLocation1                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   startLocation1                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   endLocation1                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   blendInTime1                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   blendOutTime1                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -662,19 +662,19 @@ void UCameraBlueprintFunctionLibrary_C::ExitSpecialGameplayCamera(class UObject*
 // Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ApplyCameraModify
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // float                                   duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   blendInTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   blendOutTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   breakBlendOutTime                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSCameraModifier_Settings        cameraModifySettings                                   (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FSCameraModifier_Settings& cameraModifySettings                                   (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class UAnimMontage*                     montage                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSBaseCurve                      blendInCurve                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSBaseCurve                      blendOutCurve                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           cameraAttachSocket                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FSBaseCurve&               blendInCurve                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSBaseCurve&               blendOutCurve                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    cameraAttachSocket                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // ECameraAnsEffectiveClientType           cameraEffectiveClientType                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FSCameraModifier_Condition>cameraModifierContions                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSCameraModifier_Condition>&cameraModifierContions                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UCameraBlueprintFunctionLibrary_C::ApplyCameraModify(const struct FGameplayTag& tag, float duration, float blendInTime, float blendOutTime, float breakBlendOutTime, const struct FSCameraModifier_Settings& cameraModifySettings, class UAnimMontage* montage, const struct FSBaseCurve& blendInCurve, const struct FSBaseCurve& blendOutCurve, const class FString& cameraAttachSocket, int32 entityId, ECameraAnsEffectiveClientType cameraEffectiveClientType, TArray<struct FSCameraModifier_Condition>& cameraModifierContions, class UObject* __WorldContext)
@@ -828,12 +828,12 @@ void UCameraBlueprintFunctionLibrary_C::ExitSpecialGameplayCamera2(class UObject
 // Parameters:
 // ESequenceCameraAnsEffectiveClientType   生效客户端                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSSequenceCamera_Settings        settings                                               (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FSSequenceCamera_Settings& settings                                               (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // bool                                    resetLockOnCamera                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FRotator                         additiveRotation                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FString                           cameraAttachSocket                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           cameraDetectSocket                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FVector                          extraSphereLocation                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FRotator&                  additiveRotation                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const class FString&                    cameraAttachSocket                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    cameraDetectSocket                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FVector&                   extraSphereLocation                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   extraDetectSphereRadius                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    isShowExtraSphere                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    isIgnoreCharacterCollision                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -938,7 +938,7 @@ struct FRotator UCameraBlueprintFunctionLibrary_C::GetFightCameraRotation(class 
 // Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetAimAssistModeByKey
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // EAimAssistMode                          mode                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -967,7 +967,7 @@ void UCameraBlueprintFunctionLibrary_C::SetAimAssistModeByKey(const class FStrin
 // Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ClearAimAssistModeByKey
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UCameraBlueprintFunctionLibrary_C::ClearAimAssistModeByKey(const class FString& key, class UObject* __WorldContext)
@@ -1492,7 +1492,7 @@ void UCameraBlueprintFunctionLibrary_C::SwitchUiCameraArmLengthSync(class UObjec
 // Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.OnDebugToolUiCameraArmLengthInputChanged
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           armLengthStr                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    armLengthStr                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UCameraBlueprintFunctionLibrary_C::OnDebugToolUiCameraArmLengthInputChanged(const class FString& armLengthStr, class UObject* __WorldContext)
@@ -1520,7 +1520,7 @@ void UCameraBlueprintFunctionLibrary_C::OnDebugToolUiCameraArmLengthInputChanged
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // ECameraGravityMode                      gravityMode                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    gravityDirect                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             gravityDirect                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UCameraBlueprintFunctionLibrary_C::SetCameraGravityMode(ECameraGravityMode gravityMode, const struct FVectorDouble& gravityDirect, class UObject* __WorldContext)
@@ -1726,6 +1726,74 @@ void UCameraBlueprintFunctionLibrary_C::SwitchCameraDebugRotatorEnabled(class UO
 		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "SwitchCameraDebugRotatorEnabled");
 
 	Params::CameraBlueprintFunctionLibrary_C_SwitchCameraDebugRotatorEnabled Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ApplyCameraGuide
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   lookAt                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   fadeInTime                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   stayTime                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   fadeOutTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    lockCameraInput                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FVector&                   endPosition                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   fov                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ignoreAdjustYaw                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    staticCamera                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::ApplyCameraGuide(const struct FVector& lookAt, float fadeInTime, float stayTime, float fadeOutTime, bool lockCameraInput, const struct FVector& endPosition, float fov, bool ignoreAdjustYaw, bool staticCamera, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "ApplyCameraGuide");
+
+	Params::CameraBlueprintFunctionLibrary_C_ApplyCameraGuide Parms{};
+
+	Parms.lookAt = std::move(lookAt);
+	Parms.fadeInTime = fadeInTime;
+	Parms.stayTime = stayTime;
+	Parms.fadeOutTime = fadeOutTime;
+	Parms.lockCameraInput = lockCameraInput;
+	Parms.endPosition = std::move(endPosition);
+	Parms.fov = fov;
+	Parms.ignoreAdjustYaw = ignoreAdjustYaw;
+	Parms.staticCamera = staticCamera;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ExitCameraGuide
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UCameraBlueprintFunctionLibrary_C::ExitCameraGuide(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CameraBlueprintFunctionLibrary_C", "ExitCameraGuide");
+
+	Params::CameraBlueprintFunctionLibrary_C_ExitCameraGuide Parms{};
 
 	Parms.__WorldContext = __WorldContext;
 

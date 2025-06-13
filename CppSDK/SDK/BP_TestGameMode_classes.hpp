@@ -26,7 +26,7 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class AActor*                                 StreamingSource;                                   // 0x03B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class APlayerStart*>                   PlayerStarts;                                      // 0x03C0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	TArray<struct FWorldPartitionStreamingQuerySource> QuerySources;                                      // 0x03D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FWorldPartitionStreamingQuerySource> QuerySources;                                 // 0x03D0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FTimerHandle                           Handler;                                           // 0x03E0(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsMovieRenderQueueMode;                            // 0x03E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_3E9[0x7];                                      // 0x03E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])

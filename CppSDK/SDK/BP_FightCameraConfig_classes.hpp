@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "SBaseCurve_structs.hpp"
 #include "EFightCameraDefault_structs.hpp"
-#include "EFightCameraFocus_structs.hpp"
 #include "EFightCameraAdjust_structs.hpp"
+#include "EFightCameraGuide_structs.hpp"
+#include "SBaseCurve_structs.hpp"
 #include "EFightCameraAuto_structs.hpp"
 #include "EFightCameraInput_structs.hpp"
+#include "Engine_classes.hpp"
+#include "EFightCameraFocus_structs.hpp"
 #include "EFightCameraModify_structs.hpp"
-#include "EFightCameraGuide_structs.hpp"
 #include "EFightCameraExplore_structs.hpp"
 #include "EFightCameraDialogue_structs.hpp"
 #include "EFightCameraClimb_structs.hpp"
 #include "EFightCameraSidestep_structs.hpp"
 #include "EFightCameraHook_structs.hpp"
 #include "SSettlementCamera_structs.hpp"
-#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -52,11 +52,11 @@ public:
 	TMap<EFightCameraExplore, float>              跑图镜头;                                          // 0x0498(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EFightCameraExplore, struct FSBaseCurve> 跑图镜头曲线配置;                                  // 0x04E8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EFightCameraDialogue, float>             对话镜头;                                          // 0x0538(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<EFightCameraDialogue, struct FSBaseCurve> 对话镜头曲线配置;                                  // 0x0588(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EFightCameraDialogue, struct FSBaseCurve> 对话镜头曲线配置;                                 // 0x0588(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EFightCameraClimb, float>                攀爬镜头;                                          // 0x05D8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EFightCameraClimb, struct FSBaseCurve>   攀爬镜头曲线配置;                                  // 0x0628(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EFightCameraSidestep, float>             移动自动镜头;                                      // 0x0678(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<EFightCameraSidestep, struct FSBaseCurve> 移动自动镜头曲线配置;                              // 0x06C8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EFightCameraSidestep, struct FSBaseCurve> 移动自动镜头曲线配置;                             // 0x06C8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EFightCameraHook, float>                 钩锁镜头;                                          // 0x0718(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EFightCameraHook, struct FSBaseCurve>    钩锁镜头曲线配置;                                  // 0x0768(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FSSettlementCamera                     结算镜头;                                          // 0x07B8(0x0170)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)

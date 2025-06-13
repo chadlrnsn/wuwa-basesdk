@@ -16,6 +16,28 @@
 namespace SDK::Params
 {
 
+// Function BP_ControlTodTime.BP_ControlTodTime_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_ControlTodTime_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_ControlTodTime_C_ReceiveEndPlay) == 0x000001, "Wrong alignment on BP_ControlTodTime_C_ReceiveEndPlay");
+static_assert(sizeof(BP_ControlTodTime_C_ReceiveEndPlay) == 0x000001, "Wrong size on BP_ControlTodTime_C_ReceiveEndPlay");
+static_assert(offsetof(BP_ControlTodTime_C_ReceiveEndPlay, EndPlayReason) == 0x000000, "Member 'BP_ControlTodTime_C_ReceiveEndPlay::EndPlayReason' has a wrong offset!");
+
+// Function BP_ControlTodTime.BP_ControlTodTime_C.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_ControlTodTime_C_EditorTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_ControlTodTime_C_EditorTick) == 0x000004, "Wrong alignment on BP_ControlTodTime_C_EditorTick");
+static_assert(sizeof(BP_ControlTodTime_C_EditorTick) == 0x000004, "Wrong size on BP_ControlTodTime_C_EditorTick");
+static_assert(offsetof(BP_ControlTodTime_C_EditorTick, DeltaSeconds) == 0x000000, "Member 'BP_ControlTodTime_C_EditorTick::DeltaSeconds' has a wrong offset!");
+
 // Function BP_ControlTodTime.BP_ControlTodTime_C.ExecuteUbergraph_BP_ControlTodTime
 // 0x0030 (0x0030 - 0x0000)
 struct BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime final
@@ -43,28 +65,6 @@ static_assert(offsetof(BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime, C
 static_assert(offsetof(BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime, K2Node_DynamicCast_AsBP_Global_GI) == 0x000020, "Member 'BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime::K2Node_DynamicCast_AsBP_Global_GI' has a wrong offset!");
 static_assert(offsetof(BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime, K2Node_DynamicCast_bSuccess) == 0x000028, "Member 'BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 static_assert(offsetof(BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime, CallFunc_IsValid_ReturnValue) == 0x000029, "Member 'BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-
-// Function BP_ControlTodTime.BP_ControlTodTime_C.EditorTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_ControlTodTime_C_EditorTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_ControlTodTime_C_EditorTick) == 0x000004, "Wrong alignment on BP_ControlTodTime_C_EditorTick");
-static_assert(sizeof(BP_ControlTodTime_C_EditorTick) == 0x000004, "Wrong size on BP_ControlTodTime_C_EditorTick");
-static_assert(offsetof(BP_ControlTodTime_C_EditorTick, DeltaSeconds) == 0x000000, "Member 'BP_ControlTodTime_C_EditorTick::DeltaSeconds' has a wrong offset!");
-
-// Function BP_ControlTodTime.BP_ControlTodTime_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct BP_ControlTodTime_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_ControlTodTime_C_ReceiveEndPlay) == 0x000001, "Wrong alignment on BP_ControlTodTime_C_ReceiveEndPlay");
-static_assert(sizeof(BP_ControlTodTime_C_ReceiveEndPlay) == 0x000001, "Wrong size on BP_ControlTodTime_C_ReceiveEndPlay");
-static_assert(offsetof(BP_ControlTodTime_C_ReceiveEndPlay, EndPlayReason) == 0x000000, "Member 'BP_ControlTodTime_C_ReceiveEndPlay::EndPlayReason' has a wrong offset!");
 
 // Function BP_ControlTodTime.BP_ControlTodTime_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)

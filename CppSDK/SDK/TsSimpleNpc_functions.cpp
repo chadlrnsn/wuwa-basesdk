@@ -164,7 +164,7 @@ void ATsSimpleNpc_C::ResetMeshLocation()
 // Function TsSimpleNpc.TsSimpleNpc_C.ShowDialog
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           text1                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    text1                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   removeFrame1                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ATsSimpleNpc_C::ShowDialog(const class FString& text1, float removeFrame1)
@@ -186,7 +186,7 @@ void ATsSimpleNpc_C::ShowDialog(const class FString& text1, float removeFrame1)
 // Function TsSimpleNpc.TsSimpleNpc_C.TryPlayMontage
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           montagePath                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    montagePath                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ATsSimpleNpc_C::TryPlayMontage(const class FString& montagePath)

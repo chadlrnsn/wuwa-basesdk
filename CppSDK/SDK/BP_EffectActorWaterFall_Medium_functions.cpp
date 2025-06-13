@@ -184,7 +184,7 @@ void ABP_EffectActorWaterFall_Medium_C::CalculateLifeTime()
 // Function BP_EffectActorWaterFall_Medium.BP_EffectActorWaterFall_Medium_C.IsEditor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    IsEditor_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   IsEditor_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_EffectActorWaterFall_Medium_C::IsEditor(bool* IsEditor_0)
 {
@@ -205,7 +205,7 @@ void ABP_EffectActorWaterFall_Medium_C::IsEditor(bool* IsEditor_0)
 // Function BP_EffectActorWaterFall_Medium.BP_EffectActorWaterFall_Medium_C.Stop
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    Immediately                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -230,7 +230,7 @@ bool ABP_EffectActorWaterFall_Medium_C::Stop(const class FString& Reason, bool I
 // Function BP_EffectActorWaterFall_Medium.BP_EffectActorWaterFall_Medium_C.Play
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_EffectActorWaterFall_Medium_C::Play(const class FString& Reason)
 {
@@ -278,7 +278,7 @@ void ABP_EffectActorWaterFall_Medium_C::StopEffect()
 // Function BP_EffectActorWaterFall_Medium.BP_EffectActorWaterFall_Medium_C.GetHandle
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_EffectActorWaterFall_Medium_C::GetHandle(int32* Handle)
 {

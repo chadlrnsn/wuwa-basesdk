@@ -89,7 +89,7 @@ static_assert(offsetof(KuroPakKeyLibrary_SetCompleteCallback, Callback) == 0x000
 struct KuroPakKeyLibrary_SetLoadCallback final
 {
 public:
-	TDelegate<void(bool Success, const class FString& Tag)> Callback;                                          // 0x0000(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(bool Success, const class FString& Tag)> Callback;                                // 0x0000(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroPakKeyLibrary_SetLoadCallback) == 0x000004, "Wrong alignment on KuroPakKeyLibrary_SetLoadCallback");
 static_assert(sizeof(KuroPakKeyLibrary_SetLoadCallback) == 0x000028, "Wrong size on KuroPakKeyLibrary_SetLoadCallback");

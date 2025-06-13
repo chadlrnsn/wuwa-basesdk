@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "ECommonQteViewType_SingleButton_structs.hpp"
-#include "SCommonQteButton_structs.hpp"
 #include "ECommonQteInteractiveTiming_structs.hpp"
+#include "SCommonQteButton_structs.hpp"
 
 
 namespace SDK

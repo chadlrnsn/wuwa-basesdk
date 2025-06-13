@@ -77,7 +77,7 @@ static_assert(offsetof(ControlRigComponent_AddMappedCompleteSkeletalMesh, Skelet
 struct ControlRigComponent_AddMappedComponents final
 {
 public:
-	TArray<struct FControlRigComponentMappedComponent> Components;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedComponent> Components;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(ControlRigComponent_AddMappedComponents) == 0x000008, "Wrong alignment on ControlRigComponent_AddMappedComponents");
 static_assert(sizeof(ControlRigComponent_AddMappedComponents) == 0x000010, "Wrong size on ControlRigComponent_AddMappedComponents");
@@ -88,7 +88,7 @@ static_assert(offsetof(ControlRigComponent_AddMappedComponents, Components) == 0
 struct ControlRigComponent_AddMappedElements final
 {
 public:
-	TArray<struct FControlRigComponentMappedElement> NewMappedElements;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedElement> NewMappedElements;                              // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(ControlRigComponent_AddMappedElements) == 0x000008, "Wrong alignment on ControlRigComponent_AddMappedElements");
 static_assert(sizeof(ControlRigComponent_AddMappedElements) == 0x000010, "Wrong size on ControlRigComponent_AddMappedElements");
@@ -101,7 +101,7 @@ struct ControlRigComponent_AddMappedSkeletalMesh final
 public:
 	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FControlRigComponentMappedBone> Bones;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FControlRigComponentMappedCurve> Curves;                                            // 0x0018(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedCurve> Curves;                                           // 0x0018(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(ControlRigComponent_AddMappedSkeletalMesh) == 0x000008, "Wrong alignment on ControlRigComponent_AddMappedSkeletalMesh");
 static_assert(sizeof(ControlRigComponent_AddMappedSkeletalMesh) == 0x000028, "Wrong size on ControlRigComponent_AddMappedSkeletalMesh");
@@ -611,7 +611,7 @@ static_assert(offsetof(ControlRigComponent_SetInitialSpaceTransform, Space) == 0
 struct ControlRigComponent_SetMappedElements final
 {
 public:
-	TArray<struct FControlRigComponentMappedElement> NewMappedElements;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<struct FControlRigComponentMappedElement> NewMappedElements;                              // 0x0000(0x0010)(Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(ControlRigComponent_SetMappedElements) == 0x000008, "Wrong alignment on ControlRigComponent_SetMappedElements");
 static_assert(sizeof(ControlRigComponent_SetMappedElements) == 0x000010, "Wrong size on ControlRigComponent_SetMappedElements");

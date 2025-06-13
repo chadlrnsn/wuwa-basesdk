@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "KuroAnim_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroAnim_structs.hpp"
 #include "KawaiiPhysics_structs.hpp"
 
 

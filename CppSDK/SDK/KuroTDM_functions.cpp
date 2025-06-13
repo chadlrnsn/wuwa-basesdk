@@ -45,7 +45,7 @@ void UTDMStaticLibrary::EnableDeviceInfo(bool enable)
 // Function KuroTDM.TDMStaticLibrary.EnableDeviceInfoCollect
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           model                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    model                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    state                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -100,9 +100,9 @@ class FString UTDMStaticLibrary::GetDeviceInfo()
 // Function KuroTDM.TDMStaticLibrary.Initialize
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           appId                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           appChannel                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           appKey                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    appId                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    appChannel                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    appKey                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UTDMStaticLibrary::Initialize(const class FString& appId, const class FString& appChannel, const class FString& appKey)
@@ -152,7 +152,7 @@ void UTDMStaticLibrary::RegisterLifeCycle()
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // bool                                    isTest                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           address                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    address                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UTDMStaticLibrary::SetRouterAddress(bool isTest, const class FString& address)
 {

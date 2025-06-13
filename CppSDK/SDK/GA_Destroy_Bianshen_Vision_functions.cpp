@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::ExecuteUbergraph_GA_Destroy_Bianshen_Vision(int32 EntryPoint)
+void UGA_Destroy_Bianshen_Vision_C::ExecuteUbergraph_GA_Destroy_Bianshen_Vision(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -42,7 +42,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::ExecuteUbergraph
 // Parameters:
 // bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::K2_OnEndAbility(bool bWasCancelled)
+void UGA_Destroy_Bianshen_Vision_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,7 +60,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::K2_OnEndAbility(
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.K2_ActivateAbility
 // (Event, Protected, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::K2_ActivateAbility()
+void UGA_Destroy_Bianshen_Vision_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
@@ -74,7 +74,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::K2_ActivateAbili
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnCompleted_5D118C384AE61F1C80292E811964291A
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnCompleted_5D118C384AE61F1C80292E811964291A()
+void UGA_Destroy_Bianshen_Vision_C::OnCompleted_5D118C384AE61F1C80292E811964291A()
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,7 +88,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnCompleted_5D11
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnBlendOut_5D118C384AE61F1C80292E811964291A
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnBlendOut_5D118C384AE61F1C80292E811964291A()
+void UGA_Destroy_Bianshen_Vision_C::OnBlendOut_5D118C384AE61F1C80292E811964291A()
 {
 	static class UFunction* Func = nullptr;
 
@@ -102,7 +102,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnBlendOut_5D118
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnInterrupted_5D118C384AE61F1C80292E811964291A
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnInterrupted_5D118C384AE61F1C80292E811964291A()
+void UGA_Destroy_Bianshen_Vision_C::OnInterrupted_5D118C384AE61F1C80292E811964291A()
 {
 	static class UFunction* Func = nullptr;
 
@@ -116,7 +116,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnInterrupted_5D
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnCancelled_5D118C384AE61F1C80292E811964291A
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnCancelled_5D118C384AE61F1C80292E811964291A()
+void UGA_Destroy_Bianshen_Vision_C::OnCancelled_5D118C384AE61F1C80292E811964291A()
 {
 	static class UFunction* Func = nullptr;
 
@@ -130,7 +130,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnCancelled_5D11
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnTick_5D118C384AE61F1C80292E811964291A
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnTick_5D118C384AE61F1C80292E811964291A()
+void UGA_Destroy_Bianshen_Vision_C::OnTick_5D118C384AE61F1C80292E811964291A()
 {
 	static class UFunction* Func = nullptr;
 
@@ -144,9 +144,9 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnTick_5D118C384
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD8800AF4B63
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::EventReceived_18B59F5945020DB23C42FD8800AF4B63(const struct FGameplayEventData& Payload)
+void UGA_Destroy_Bianshen_Vision_C::EventReceived_18B59F5945020DB23C42FD8800AF4B63(const struct FGameplayEventData& Payload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -164,7 +164,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::EventReceived_18
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnCompleted_5D118C384AE61F1C80292E8138815A44
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnCompleted_5D118C384AE61F1C80292E8138815A44()
+void UGA_Destroy_Bianshen_Vision_C::OnCompleted_5D118C384AE61F1C80292E8138815A44()
 {
 	static class UFunction* Func = nullptr;
 
@@ -178,7 +178,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnCompleted_5D11
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnBlendOut_5D118C384AE61F1C80292E8138815A44
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnBlendOut_5D118C384AE61F1C80292E8138815A44()
+void UGA_Destroy_Bianshen_Vision_C::OnBlendOut_5D118C384AE61F1C80292E8138815A44()
 {
 	static class UFunction* Func = nullptr;
 
@@ -192,7 +192,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnBlendOut_5D118
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnInterrupted_5D118C384AE61F1C80292E8138815A44
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnInterrupted_5D118C384AE61F1C80292E8138815A44()
+void UGA_Destroy_Bianshen_Vision_C::OnInterrupted_5D118C384AE61F1C80292E8138815A44()
 {
 	static class UFunction* Func = nullptr;
 
@@ -206,7 +206,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnInterrupted_5D
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnCancelled_5D118C384AE61F1C80292E8138815A44
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnCancelled_5D118C384AE61F1C80292E8138815A44()
+void UGA_Destroy_Bianshen_Vision_C::OnCancelled_5D118C384AE61F1C80292E8138815A44()
 {
 	static class UFunction* Func = nullptr;
 
@@ -220,7 +220,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnCancelled_5D11
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.OnTick_5D118C384AE61F1C80292E8138815A44
 // (BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnTick_5D118C384AE61F1C80292E8138815A44()
+void UGA_Destroy_Bianshen_Vision_C::OnTick_5D118C384AE61F1C80292E8138815A44()
 {
 	static class UFunction* Func = nullptr;
 
@@ -234,9 +234,9 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::OnTick_5D118C384
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A322DF4172
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::Added_21071CB943CD992BF8EFD6A322DF4172(const struct FGameplayTag& Tag)
+void UGA_Destroy_Bianshen_Vision_C::Added_21071CB943CD992BF8EFD6A322DF4172(const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -254,9 +254,9 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::Added_21071CB943
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.Added_21071CB943CD992BF8EFD6A3BE89C32B
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::Added_21071CB943CD992BF8EFD6A3BE89C32B(const struct FGameplayTag& Tag)
+void UGA_Destroy_Bianshen_Vision_C::Added_21071CB943CD992BF8EFD6A3BE89C32B(const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -274,9 +274,9 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::Added_21071CB943
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.EventReceived_18B59F5945020DB23C42FD886E3C9608
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::EventReceived_18B59F5945020DB23C42FD886E3C9608(const struct FGameplayEventData& Payload)
+void UGA_Destroy_Bianshen_Vision_C::EventReceived_18B59F5945020DB23C42FD886E3C9608(const struct FGameplayEventData& Payload)
 {
 	static class UFunction* Func = nullptr;
 
@@ -294,7 +294,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::EventReceived_18
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.显示玩家模型
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::显示玩家模型()
+void UGA_Destroy_Bianshen_Vision_C::显示玩家模型()
 {
 	static class UFunction* Func = nullptr;
 
@@ -308,7 +308,7 @@ void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::显示玩家模�
 // Function GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C.变身结束_碰撞关系处理
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::变身结束_碰撞关系处理()
+void UGA_Destroy_Bianshen_Vision_C::变身结束_碰撞关系处理()
 {
 	static class UFunction* Func = nullptr;
 

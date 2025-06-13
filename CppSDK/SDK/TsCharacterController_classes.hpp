@@ -25,15 +25,15 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_TsCharacterController_C;            // 0x0778(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_TsCharacterController(int32 EntryPoint);
-	void ReceiveUnPossess(class APawn* UnpossessedPawn);
-	void ReceiveBeginPlay();
-	void ReceivePossess(class APawn* PossessedPawn);
-	void ReceivePreProcessInput(const float DeltaTime, const bool bGamePaused);
-	void ReceivePostProcessInput(const float DeltaTime, const bool bGamePaused);
-	void OnSetUiRootActive();
-	void OnSetUiRootDeactivate();
 	void OnSetupInputComponent();
+	void OnSetUiRootDeactivate();
+	void OnSetUiRootActive();
+	void ReceivePostProcessInput(const float DeltaTime, const bool bGamePaused);
+	void ReceivePreProcessInput(const float DeltaTime, const bool bGamePaused);
+	void ReceivePossess(class APawn* PossessedPawn);
+	void ReceiveBeginPlay();
+	void ReceiveUnPossess(class APawn* UnpossessedPawn);
+	void ExecuteUbergraph_TsCharacterController(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

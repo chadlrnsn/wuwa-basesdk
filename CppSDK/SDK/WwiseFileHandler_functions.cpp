@@ -39,8 +39,8 @@ void UWwiseExternalSourceStatics::InitExternalSourceConfigs()
 // Function WwiseFileHandler.WwiseExternalSourceStatics.SetExternalSourceMediaById
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ExternalSourceName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MediaId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ExternalSourceName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             MediaId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UWwiseExternalSourceStatics::SetExternalSourceMediaById(const class FString& ExternalSourceName, const int32 MediaId)
 {
@@ -66,8 +66,8 @@ void UWwiseExternalSourceStatics::SetExternalSourceMediaById(const class FString
 // Function WwiseFileHandler.WwiseExternalSourceStatics.SetExternalSourceMediaByName
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ExternalSourceName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           MediaName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ExternalSourceName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    MediaName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UWwiseExternalSourceStatics::SetExternalSourceMediaByName(const class FString& ExternalSourceName, const class FString& MediaName)
 {
@@ -93,8 +93,8 @@ void UWwiseExternalSourceStatics::SetExternalSourceMediaByName(const class FStri
 // Function WwiseFileHandler.WwiseExternalSourceStatics.SetExternalSourceMediaWithIds
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FAkUniqueID                      ExternalSourceCookie                                   (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   MediaId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAkUniqueID&               ExternalSourceCookie                                   (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const int32                             MediaId                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UWwiseExternalSourceStatics::SetExternalSourceMediaWithIds(const struct FAkUniqueID& ExternalSourceCookie, const int32 MediaId)
 {

@@ -20,7 +20,7 @@ namespace SDK
 // Function TASdkPlugin.ThinkingAnalytics.CalibrateTime
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(int32 Index)>            OnTimeCalibrated                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(int32 Index)>&     OnTimeCalibrated                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::CalibrateTime(const TDelegate<void(int32 Index)>& OnTimeCalibrated, int32 Index_0)
@@ -47,7 +47,7 @@ void UThinkingAnalytics::CalibrateTime(const TDelegate<void(int32 Index)>& OnTim
 // Function TASdkPlugin.ThinkingAnalytics.CreateSimpleInstance
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FCreateInstanceParam             Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FCreateInstanceParam&      Param                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UThinkingAnalytics::CreateSimpleInstance(const struct FCreateInstanceParam& Param)
@@ -75,7 +75,7 @@ bool UThinkingAnalytics::CreateSimpleInstance(const struct FCreateInstanceParam&
 // Function TASdkPlugin.ThinkingAnalytics.DestroyAllInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// bool                                    Flush_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              Flush_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::DestroyAllInstance(const bool Flush_0)
 {
@@ -100,8 +100,8 @@ void UThinkingAnalytics::DestroyAllInstance(const bool Flush_0)
 // Function TASdkPlugin.ThinkingAnalytics.DestroyInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Flush_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              Flush_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::DestroyInstance(const int32 Index_0, const bool Flush_0)
 {
@@ -152,7 +152,7 @@ void UThinkingAnalytics::EnableAutoTrack(int32 Index_0)
 // Function TASdkPlugin.ThinkingAnalytics.EnableAutoTrackWithType
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   EventTypeList                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            EventTypeList                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::EnableAutoTrackWithType(const TArray<class FString>& EventTypeList, int32 Index_0)
@@ -179,8 +179,8 @@ void UThinkingAnalytics::EnableAutoTrackWithType(const TArray<class FString>& Ev
 // Function TASdkPlugin.ThinkingAnalytics.EnableAutoTrackWithTypeAndProperties
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   EventTypeList                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            EventTypeList                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::EnableAutoTrackWithTypeAndProperties(const TArray<class FString>& EventTypeList, const class FString& Properties, int32 Index_0)
@@ -208,7 +208,7 @@ void UThinkingAnalytics::EnableAutoTrackWithTypeAndProperties(const TArray<class
 // Function TASdkPlugin.ThinkingAnalytics.EnableThirdPartySharing
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   EventTypeList                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            EventTypeList                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::EnableThirdPartySharing(const TArray<class FString>& EventTypeList, int32 Index_0)
@@ -287,7 +287,7 @@ void UThinkingAnalytics::Flush(int32 Index_0)
 // Function TASdkPlugin.ThinkingAnalytics.GetAppId
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UThinkingAnalytics::GetAppId(const int32 Index_0)
@@ -474,7 +474,7 @@ class FString UThinkingAnalytics::GetPresetProperties(int32 Index_0)
 // Function TASdkPlugin.ThinkingAnalytics.GetServerUrl
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UThinkingAnalytics::GetServerUrl(const int32 Index_0)
@@ -611,7 +611,7 @@ bool UThinkingAnalytics::HasInstanceTimeCalibrated(int32 Index_0)
 // Function TASdkPlugin.ThinkingAnalytics.Identify
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           DistinctId                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DistinctId                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::Identify(const class FString& DistinctId, int32 Index_0)
@@ -663,14 +663,14 @@ bool UThinkingAnalytics::Initialize()
 // Function TASdkPlugin.ThinkingAnalytics.InitializeDefaultInsWithURL_Appid
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           ServerURL                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Appid                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ExitWaitTime                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MaxPendingLog                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   SendHttpTimeout                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bExitFlush                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   CalibrateIntervalTime                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bCalibratedStopTimer                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ServerURL                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Appid                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             ExitWaitTime                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             MaxPendingLog                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             SendHttpTimeout                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bExitFlush                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             CalibrateIntervalTime                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bCalibratedStopTimer                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UThinkingAnalytics::InitializeDefaultInsWithURL_Appid(const class FString& ServerURL, const class FString& Appid, const float ExitWaitTime, const int32 MaxPendingLog, const float SendHttpTimeout, const bool bExitFlush, const float CalibrateIntervalTime, const bool bCalibratedStopTimer)
@@ -705,16 +705,16 @@ bool UThinkingAnalytics::InitializeDefaultInsWithURL_Appid(const class FString& 
 // Function TASdkPlugin.ThinkingAnalytics.InitializeEncryptInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           appid                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           serverurl                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    appid                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    serverurl                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ETAMode                                 mode                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bEnableLog                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           timeZone                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    timeZone                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bEnableEncrypt                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           EncryptPublicKey                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EncryptPublicKey                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   EncryptVersion                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           SymmetricEncryption                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           AsymmetricEncryption                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SymmetricEncryption                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AsymmetricEncryption                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::InitializeEncryptInstance(const class FString& appid, const class FString& serverurl, ETAMode mode, bool bEnableLog, const class FString& timeZone, bool bEnableEncrypt, const class FString& EncryptPublicKey, int32 EncryptVersion, const class FString& SymmetricEncryption, const class FString& AsymmetricEncryption)
 {
@@ -748,7 +748,7 @@ void UThinkingAnalytics::InitializeEncryptInstance(const class FString& appid, c
 // Function TASdkPlugin.ThinkingAnalytics.Login
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           AccountId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AccountId                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::Login(const class FString& AccountId, int32 Index_0)
@@ -850,7 +850,7 @@ void UThinkingAnalytics::OptOutTracking(int32 Index_0)
 // Function TASdkPlugin.ThinkingAnalytics.SetTrackStatus
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Status                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Status                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::SetTrackStatus(const int32 Status, int32 Index_0)
@@ -877,7 +877,7 @@ void UThinkingAnalytics::SetTrackStatus(const int32 Status, int32 Index_0)
 // Function TASdkPlugin.ThinkingAnalytics.TimeEvent
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::TimeEvent(const class FString& EventName, int32 Index_0)
@@ -931,8 +931,8 @@ void UThinkingAnalytics::ToggleSampleCPUFrequency(bool bActive, float SampleInte
 // Function TASdkPlugin.ThinkingAnalytics.Track
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -963,8 +963,8 @@ bool UThinkingAnalytics::Track(const class FString& EventName, const class FStri
 // Function TASdkPlugin.ThinkingAnalytics.TrackFirst
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -995,9 +995,9 @@ bool UThinkingAnalytics::TrackFirst(const class FString& EventName, const class 
 // Function TASdkPlugin.ThinkingAnalytics.TrackFirstWithId
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           FirstCheckId                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FirstCheckId                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1029,9 +1029,9 @@ bool UThinkingAnalytics::TrackFirstWithId(const class FString& EventName, const 
 // Function TASdkPlugin.ThinkingAnalytics.TrackOverwrite
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           EventId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1063,9 +1063,9 @@ bool UThinkingAnalytics::TrackOverwrite(const class FString& EventName, const cl
 // Function TASdkPlugin.ThinkingAnalytics.TrackUpdate
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           EventId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    EventId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1097,8 +1097,8 @@ bool UThinkingAnalytics::TrackUpdate(const class FString& EventName, const class
 // Function TASdkPlugin.ThinkingAnalytics.UserAdd
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Property                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Property                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::UserAdd(const class FString& Property, const float Value, int32 Index_0)
@@ -1126,7 +1126,7 @@ void UThinkingAnalytics::UserAdd(const class FString& Property, const float Valu
 // Function TASdkPlugin.ThinkingAnalytics.UserAppend
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::UserAppend(const class FString& Properties, int32 Index_0)
@@ -1178,7 +1178,7 @@ void UThinkingAnalytics::UserDelete(int32 Index_0)
 // Function TASdkPlugin.ThinkingAnalytics.UserSet
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::UserSet(const class FString& Properties, int32 Index_0)
@@ -1205,7 +1205,7 @@ void UThinkingAnalytics::UserSet(const class FString& Properties, int32 Index_0)
 // Function TASdkPlugin.ThinkingAnalytics.UserSetOnce
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::UserSetOnce(const class FString& Properties, int32 Index_0)
@@ -1232,7 +1232,7 @@ void UThinkingAnalytics::UserSetOnce(const class FString& Properties, int32 Inde
 // Function TASdkPlugin.ThinkingAnalytics.UserUniqueAppend
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::UserUniqueAppend(const class FString& Properties, int32 Index_0)
@@ -1259,7 +1259,7 @@ void UThinkingAnalytics::UserUniqueAppend(const class FString& Properties, int32
 // Function TASdkPlugin.ThinkingAnalytics.UserUnset
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Property                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Property                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UThinkingAnalytics::UserUnset(const class FString& Property, int32 Index_0)

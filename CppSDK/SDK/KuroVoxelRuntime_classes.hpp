@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "KuroWorldPartition_classes.hpp"
+#include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -67,7 +67,7 @@ class AKuroVoxelPartitionActor final : public AKuroWorldPartitionActor
 {
 public:
 	class UKuroVoxelPartitionComponent*           KuroVoxelPartitionComp;                            // 0x02B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          CanAddToMgrWhenChunkIDCollision;                   // 0x02C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCanAddToMgrWhenChunkIDCollision;                  // 0x02C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2C1[0x7];                                      // 0x02C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -83,7 +83,7 @@ public:
 static_assert(alignof(AKuroVoxelPartitionActor) == 0x000008, "Wrong alignment on AKuroVoxelPartitionActor");
 static_assert(sizeof(AKuroVoxelPartitionActor) == 0x0002C8, "Wrong size on AKuroVoxelPartitionActor");
 static_assert(offsetof(AKuroVoxelPartitionActor, KuroVoxelPartitionComp) == 0x0002B8, "Member 'AKuroVoxelPartitionActor::KuroVoxelPartitionComp' has a wrong offset!");
-static_assert(offsetof(AKuroVoxelPartitionActor, CanAddToMgrWhenChunkIDCollision) == 0x0002C0, "Member 'AKuroVoxelPartitionActor::CanAddToMgrWhenChunkIDCollision' has a wrong offset!");
+static_assert(offsetof(AKuroVoxelPartitionActor, bCanAddToMgrWhenChunkIDCollision) == 0x0002C0, "Member 'AKuroVoxelPartitionActor::bCanAddToMgrWhenChunkIDCollision' has a wrong offset!");
 
 // Class KuroVoxelRuntime.KuroVoxelPartitionComponent
 // 0x0018 (0x00D8 - 0x00C0)
@@ -115,7 +115,7 @@ class UKuroVoxelSystem final : public UWorldSubsystem
 {
 public:
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FIntPoint, class AKuroVoxelPartitionActor*> LoadedPartitionActorsMap;                          // 0x0040(0x0050)(Transient, NativeAccessSpecifierPrivate)
+	TMap<struct FIntPoint, class AKuroVoxelPartitionActor*> LoadedPartitionActorsMap;                // 0x0040(0x0050)(Transient, NativeAccessSpecifierPrivate)
 	TSet<class AKuroVoxelPartitionActor*>         ToAddActorSet;                                     // 0x0090(0x0050)(Transient, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_E0[0x50];                                      // 0x00E0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 

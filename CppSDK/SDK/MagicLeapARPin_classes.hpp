@@ -32,9 +32,9 @@ public:
 	TSubclassOf<class UMagicLeapARPinSaveGame>    PinDataClass;                                      // 0x0230(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSet<EMagicLeapARPinType>                     SearchPinTypes;                                    // 0x0238(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	class USphereComponent*                       SearchVolume;                                      // 0x0288(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool bRestoredOrSynced)> OnPersistentEntityPinned;                          // 0x0290(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bRestoredOrSynced)> OnPersistentEntityPinned;                 // 0x0290(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnPersistentEntityPinLost;                         // 0x02A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool bDataRestored)> OnPinDataLoadAttemptCompleted;                     // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bDataRestored)> OnPinDataLoadAttemptCompleted;                // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	struct FGuid                                  PinnedCFUID;                                       // 0x02C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class USceneComponent*                        PinnedSceneComponent;                              // 0x02D0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMagicLeapARPinSaveGame*                PinData;                                           // 0x02D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -89,8 +89,8 @@ class UMagicLeapARPinFunctionLibrary final : public UBlueprintFunctionLibrary
 {
 public:
 	static class FString ARPinIdToString(const struct FGuid& ARPinId);
-	static void BindToOnMagicLeapARPinUpdatedDelegate(const TDelegate<void(TArray<struct FGuid>& Added, TArray<struct FGuid>& Updated, TArray<struct FGuid>& Deleted)>& Delegate);
-	static void BindToOnMagicLeapContentBindingFoundDelegate(const TDelegate<void(struct FGuid& PinId, TSet<class FString>& PinnedObjectIds)>& Delegate);
+	static void BindToOnMagicLeapARPinUpdatedDelegate(const TDelegate<void(const TArray<struct FGuid>& Added, const TArray<struct FGuid>& Updated, const TArray<struct FGuid>& Deleted)>& Delegate);
+	static void BindToOnMagicLeapContentBindingFoundDelegate(const TDelegate<void(const struct FGuid& PinId, const TSet<class FString>& PinnedObjectIds)>& Delegate);
 	static EMagicLeapPassableWorldError CreateTracker();
 	static EMagicLeapPassableWorldError DestroyTracker();
 	static bool GetARPinPositionAndOrientation(const struct FGuid& PinID, struct FVector* Position, struct FRotator* Orientation, bool* PinFoundInEnvironment);
@@ -107,8 +107,8 @@ public:
 	static EMagicLeapPassableWorldError QueryARPins(const struct FMagicLeapARPinQuery& Query, TArray<struct FGuid>* Pins);
 	static void SetContentBindingSaveGameUserIndex(int32 UserIndex);
 	static EMagicLeapPassableWorldError SetGlobalQueryFilter(const struct FMagicLeapARPinQuery& InGlobalFilter);
-	static void UnBindToOnMagicLeapARPinUpdatedDelegate(const TDelegate<void(TArray<struct FGuid>& Added, TArray<struct FGuid>& Updated, TArray<struct FGuid>& Deleted)>& Delegate);
-	static void UnBindToOnMagicLeapContentBindingFoundDelegate(const TDelegate<void(struct FGuid& PinId, TSet<class FString>& PinnedObjectIds)>& Delegate);
+	static void UnBindToOnMagicLeapARPinUpdatedDelegate(const TDelegate<void(const TArray<struct FGuid>& Added, const TArray<struct FGuid>& Updated, const TArray<struct FGuid>& Deleted)>& Delegate);
+	static void UnBindToOnMagicLeapContentBindingFoundDelegate(const TDelegate<void(const struct FGuid& PinId, const TSet<class FString>& PinnedObjectIds)>& Delegate);
 
 public:
 	static class UClass* StaticClass()
@@ -157,9 +157,9 @@ class AMagicLeapARPinRenderer final : public AActor
 public:
 	bool                                          bInfoActorsVisibilityOverride;                     // 0x02B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGuid, class AMagicLeapARPinInfoActorBase*> AllInfoActors;                                     // 0x02B8(0x0050)(NativeAccessSpecifierPrivate)
+	TMap<struct FGuid, class AMagicLeapARPinInfoActorBase*> AllInfoActors;                           // 0x02B8(0x0050)(NativeAccessSpecifierPrivate)
 	uint8                                         Pad_308[0x8];                                      // 0x0308(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class AMagicLeapARPinInfoActorBase> ClassToSpawn;                                      // 0x0310(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSubclassOf<class AMagicLeapARPinInfoActorBase> ClassToSpawn;                                    // 0x0310(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	void SetVisibilityOverride(const bool InVisibilityOverride);
@@ -236,7 +236,7 @@ static_assert(offsetof(UMagicLeapARPinSaveGame, bShouldPinActor) == 0x0000A0, "M
 class UMagicLeapARPinContentBindings final : public USaveGame
 {
 public:
-	TMap<struct FGuid, struct FMagicLeapARPinObjectIdList> AllContentBindings;                                // 0x0030(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
+	TMap<struct FGuid, struct FMagicLeapARPinObjectIdList> AllContentBindings;                       // 0x0030(0x0050)(Edit, EditConst, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

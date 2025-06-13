@@ -11,16 +11,17 @@
 #include "Basic.hpp"
 
 #include "SSceneInteractionMaterialController_structs.hpp"
+#include "SSceneInteractionSequence_structs.hpp"
 #include "SSceneInteractionitemIndestructibleEffectsParameters_structs.hpp"
 #include "SSceneInteractionAudio_structs.hpp"
-#include "SSceneInteractionSequence_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SSceneInteractionTags.SSceneInteractionTags
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x0150 (0x0150 - 0x0000)
 struct FSSceneInteractionTags final
 {
 public:
@@ -34,10 +35,12 @@ public:
 	TArray<class ABP_EffectActor_C*>              EndEffects_117_EF76CFDD4F0B4E2E07B636AA0B03EA3A;   // 0x0070(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	struct FSSceneInteractionAudio                AkEvent_125_7879183C4C0DC27CD1AFB7A4C9432BC3;      // 0x0080(0x0010)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class ADestructibleActor*>             DestructibleActors_129_305813044966887DDDDCAA843C2C5D04; // 0x0090(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<class ABP_KuroSkeletalMeshDestructibleActor_C*> SkeletalMeshDestructibleActors_135_BC87412E48A5F0B3BAAE5BB20F680D4C; // 0x00A0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<class AKuroDestructibleActor*>         SkeletalMeshDestructibleActors_146_BC87412E48A5F0B3BAAE5BB20F680D4C; // 0x00A0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TMap<class AActor*, struct FCollisionProfileName> AddTagActorCollisionProfile_144_39945B1C47B214D9502E8E86231330BB; // 0x00B0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TMap<class AActor*, struct FCollisionProfileName> RemoveTagActorCollisionProfile_145_51E1BFB54A329920C26E1A9E49316517; // 0x0100(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
 };
 static_assert(alignof(FSSceneInteractionTags) == 0x000008, "Wrong alignment on FSSceneInteractionTags");
-static_assert(sizeof(FSSceneInteractionTags) == 0x0000B0, "Wrong size on FSSceneInteractionTags");
+static_assert(sizeof(FSSceneInteractionTags) == 0x000150, "Wrong size on FSSceneInteractionTags");
 static_assert(offsetof(FSSceneInteractionTags, Effects_89_54B6DE4441F3AEADA2B6158A3CE7A73A) == 0x000000, "Member 'FSSceneInteractionTags::Effects_89_54B6DE4441F3AEADA2B6158A3CE7A73A' has a wrong offset!");
 static_assert(offsetof(FSSceneInteractionTags, Actors_104_3CB998D844868816DFA499A2D346ED92) == 0x000010, "Member 'FSSceneInteractionTags::Actors_104_3CB998D844868816DFA499A2D346ED92' has a wrong offset!");
 static_assert(offsetof(FSSceneInteractionTags, HideActors_105_0358E37C417F8434637F2882B09FAA0A) == 0x000020, "Member 'FSSceneInteractionTags::HideActors_105_0358E37C417F8434637F2882B09FAA0A' has a wrong offset!");
@@ -48,7 +51,9 @@ static_assert(offsetof(FSSceneInteractionTags, Sequence_113_26F27D934AAFE85F0AAC
 static_assert(offsetof(FSSceneInteractionTags, EndEffects_117_EF76CFDD4F0B4E2E07B636AA0B03EA3A) == 0x000070, "Member 'FSSceneInteractionTags::EndEffects_117_EF76CFDD4F0B4E2E07B636AA0B03EA3A' has a wrong offset!");
 static_assert(offsetof(FSSceneInteractionTags, AkEvent_125_7879183C4C0DC27CD1AFB7A4C9432BC3) == 0x000080, "Member 'FSSceneInteractionTags::AkEvent_125_7879183C4C0DC27CD1AFB7A4C9432BC3' has a wrong offset!");
 static_assert(offsetof(FSSceneInteractionTags, DestructibleActors_129_305813044966887DDDDCAA843C2C5D04) == 0x000090, "Member 'FSSceneInteractionTags::DestructibleActors_129_305813044966887DDDDCAA843C2C5D04' has a wrong offset!");
-static_assert(offsetof(FSSceneInteractionTags, SkeletalMeshDestructibleActors_135_BC87412E48A5F0B3BAAE5BB20F680D4C) == 0x0000A0, "Member 'FSSceneInteractionTags::SkeletalMeshDestructibleActors_135_BC87412E48A5F0B3BAAE5BB20F680D4C' has a wrong offset!");
+static_assert(offsetof(FSSceneInteractionTags, SkeletalMeshDestructibleActors_146_BC87412E48A5F0B3BAAE5BB20F680D4C) == 0x0000A0, "Member 'FSSceneInteractionTags::SkeletalMeshDestructibleActors_146_BC87412E48A5F0B3BAAE5BB20F680D4C' has a wrong offset!");
+static_assert(offsetof(FSSceneInteractionTags, AddTagActorCollisionProfile_144_39945B1C47B214D9502E8E86231330BB) == 0x0000B0, "Member 'FSSceneInteractionTags::AddTagActorCollisionProfile_144_39945B1C47B214D9502E8E86231330BB' has a wrong offset!");
+static_assert(offsetof(FSSceneInteractionTags, RemoveTagActorCollisionProfile_145_51E1BFB54A329920C26E1A9E49316517) == 0x000100, "Member 'FSSceneInteractionTags::RemoveTagActorCollisionProfile_145_51E1BFB54A329920C26E1A9E49316517' has a wrong offset!");
 
 }
 

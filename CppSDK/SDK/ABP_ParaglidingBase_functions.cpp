@@ -168,7 +168,7 @@ void UABP_ParaglidingBase_C::SetDash(bool Dash)
 // Function ABP_ParaglidingBase.ABP_ParaglidingBase_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_ParaglidingBase_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {

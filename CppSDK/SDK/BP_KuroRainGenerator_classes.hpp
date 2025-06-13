@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
@@ -70,11 +70,12 @@ public:
 	void PrintSpeed();
 	void UserConstructionScript();
 	void ReceiveTick(float DeltaSeconds);
-	void EditorTick(float DeltaSeconds);
 	void EnableRain();
 	void DisableRain();
 	void ReceiveBeginPlay();
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void EditorTick(float DeltaSeconds);
+	void UpdatePlayingRainComponent(class UKuroRainComponent* RainComponent);
 	void ExecuteUbergraph_BP_KuroRainGenerator(int32 EntryPoint);
 
 public:

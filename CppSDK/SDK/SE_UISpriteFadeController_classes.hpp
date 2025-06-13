@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_SE_UISpriteFadeController_C;        // 0x00E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_SE_UISpriteFadeController(int32 EntryPoint);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ApplyVisibility(bool visibility);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ExecuteUbergraph_SE_UISpriteFadeController(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

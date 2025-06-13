@@ -116,7 +116,7 @@ void UABP_BaseRole_C::ClearClimbDash()
 // Function ABP_BaseRole.ABP_BaseRole_C.InterfaceFixHookDirect
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Offset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Offset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UABP_BaseRole_C::InterfaceFixHookDirect(const struct FVector& Offset)
 {
@@ -436,7 +436,7 @@ void UABP_BaseRole_C::AnimNotify_停止动画()
 // Function ABP_BaseRole.ABP_BaseRole_C.播放动画
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSDynamicMontageParams           播放动画_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSDynamicMontageParams&    播放动画_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UABP_BaseRole_C::播放动画(const struct FSDynamicMontageParams& 播放动画_0)
 {
@@ -1005,29 +1005,141 @@ void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_A
 }
 
 
-// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_28F02994478B8139342CB0AECE051931
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_2D61DE514F39FFF5957974AA46C319E2
 // (BlueprintEvent)
 
-void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_28F02994478B8139342CB0AECE051931()
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_2D61DE514F39FFF5957974AA46C319E2()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_28F02994478B8139342CB0AECE051931");
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_2D61DE514F39FFF5957974AA46C319E2");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_ModifyBone_4E8B5BE14305575017636F8F8EA25EA4
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_6CFF4B814CD4F100672BD49DBA4D75FD
 // (BlueprintEvent)
 
-void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_ModifyBone_4E8B5BE14305575017636F8F8EA25EA4()
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_6CFF4B814CD4F100672BD49DBA4D75FD()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_ModifyBone_4E8B5BE14305575017636F8F8EA25EA4");
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_6CFF4B814CD4F100672BD49DBA4D75FD");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_B1DE472B4E745025C7D365B1065C151B
+// (BlueprintEvent)
+
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_B1DE472B4E745025C7D365B1065C151B()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_B1DE472B4E745025C7D365B1065C151B");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_F4756BA147C5614CE3192FB275577F1C
+// (BlueprintEvent)
+
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_F4756BA147C5614CE3192FB275577F1C()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_F4756BA147C5614CE3192FB275577F1C");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_49B151DB458140A9C9F9E6B1831309D8
+// (BlueprintEvent)
+
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_49B151DB458140A9C9F9E6B1831309D8()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_49B151DB458140A9C9F9E6B1831309D8");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_960C647149E29DDBD6F9DEAF1F19AA7A
+// (BlueprintEvent)
+
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_960C647149E29DDBD6F9DEAF1F19AA7A()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_960C647149E29DDBD6F9DEAF1F19AA7A");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TwoWayBlend_6B3614BE471A4AE72ADC129696E79FA9
+// (BlueprintEvent)
+
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TwoWayBlend_6B3614BE471A4AE72ADC129696E79FA9()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TwoWayBlend_6B3614BE471A4AE72ADC129696E79FA9");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TwoWayBlend_D57A21D249C2FC3C6EBF3DB175B8D301
+// (BlueprintEvent)
+
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TwoWayBlend_D57A21D249C2FC3C6EBF3DB175B8D301()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TwoWayBlend_D57A21D249C2FC3C6EBF3DB175B8D301");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_5D97A0264672B125DE3B51BB56E6E523
+// (BlueprintEvent)
+
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_5D97A0264672B125DE3B51BB56E6E523()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_TransitionResult_5D97A0264672B125DE3B51BB56E6E523");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRole.ABP_BaseRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_ModifyBone_8FD497A747409B320F7DBA8AA574A8DD
+// (BlueprintEvent)
+
+void UABP_BaseRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_ModifyBone_8FD497A747409B320F7DBA8AA574A8DD()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRole_AnimGraphNode_ModifyBone_8FD497A747409B320F7DBA8AA574A8DD");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -5290,8 +5402,8 @@ void UABP_BaseRole_C::更新上传()
 // Function ABP_BaseRole.ABP_BaseRole_C.True布尔序列输出
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// TArray<bool>                            ValArrt_Bool                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// int32                                   Out                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<bool>&                           ValArrt_Bool                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// int32*                                  Out                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UABP_BaseRole_C::True布尔序列输出(TArray<bool>& ValArrt_Bool, int32* Out)
 {
@@ -5331,7 +5443,7 @@ void UABP_BaseRole_C::CleanAnimVariable()
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // float                                   速度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   混合                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  混合                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UABP_BaseRole_C::计算跳跃混合(float 速度, float* 混合)
 {
@@ -5402,10 +5514,10 @@ void UABP_BaseRole_C::XA状态更新()
 // Function ABP_BaseRole.ABP_BaseRole_C.VelocityBlendLerp
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FVeloctiyBlend                   From                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FVeloctiyBlend                   To                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FVeloctiyBlend&            From                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FVeloctiyBlend&            To                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // float                                   Alpha                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVeloctiyBlend                   Out                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVeloctiyBlend*                  Out                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UABP_BaseRole_C::VelocityBlendLerp(const struct FVeloctiyBlend& From, const struct FVeloctiyBlend& To, float Alpha, struct FVeloctiyBlend* Out)
 {
@@ -5486,8 +5598,8 @@ void UABP_BaseRole_C::更新载具信息()
 // Function ABP_BaseRole.ABP_BaseRole_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        SpeicalPose                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 SpeicalPose                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::AnimGraph(const struct FPoseLink& SpeicalPose, struct FPoseLink* AnimGraph_0)
 {
@@ -5510,7 +5622,7 @@ void UABP_BaseRole_C::AnimGraph(const struct FPoseLink& SpeicalPose, struct FPos
 // Function ABP_BaseRole.ABP_BaseRole_C.基础层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        基础层_0                                               (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       基础层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::基础层(struct FPoseLink* 基础层_0)
 {
@@ -5531,8 +5643,8 @@ void UABP_BaseRole_C::基础层(struct FPoseLink* 基础层_0)
 // Function ABP_BaseRole.ABP_BaseRole_C.叠加层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        角色特定动作                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        叠加层_0                                               (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 角色特定动作                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       叠加层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::叠加层(const struct FPoseLink& 角色特定动作, struct FPoseLink* 叠加层_0)
 {
@@ -5555,7 +5667,7 @@ void UABP_BaseRole_C::叠加层(const struct FPoseLink& 角色特定动作, stru
 // Function ABP_BaseRole.ABP_BaseRole_C.基础姿势层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        基础姿势层_0                                           (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       基础姿势层_0                                           (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::基础姿势层(struct FPoseLink* 基础姿势层_0)
 {
@@ -5576,10 +5688,10 @@ void UABP_BaseRole_C::基础姿势层(struct FPoseLink* 基础姿势层_0)
 // Function ABP_BaseRole.ABP_BaseRole_C.骨骼混合叠加层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        BaseLayer                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        OverlayLayer                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        BasePose                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        骨骼混合叠加层_0                                       (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 BaseLayer                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 OverlayLayer                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 BasePose                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       骨骼混合叠加层_0                                       (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::骨骼混合叠加层(const struct FPoseLink& BaseLayer, const struct FPoseLink& OverlayLayer, const struct FPoseLink& BasePose, struct FPoseLink* 骨骼混合叠加层_0)
 {
@@ -5604,10 +5716,10 @@ void UABP_BaseRole_C::骨骼混合叠加层(const struct FPoseLink& BaseLayer, c
 // Function ABP_BaseRole.ABP_BaseRole_C.混合层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        基础层输入                                             (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        叠加层输入                                             (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        姿势层输入                                             (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        混合层_0                                               (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 基础层输入                                             (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 叠加层输入                                             (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 姿势层输入                                             (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       混合层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::混合层(const struct FPoseLink& 基础层输入, const struct FPoseLink& 叠加层输入, const struct FPoseLink& 姿势层输入, struct FPoseLink* 混合层_0)
 {
@@ -5632,14 +5744,14 @@ void UABP_BaseRole_C::混合层(const struct FPoseLink& 基础层输入, const s
 // Function ABP_BaseRole.ABP_BaseRole_C.地面站立循环混合层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        前                                                     (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        后                                                     (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        左前                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        左后                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        右前                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        右后                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        冲刺                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        地面站立循环混合层_0                                   (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 前                                                     (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 后                                                     (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 左前                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 左后                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 右前                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 右后                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 冲刺                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       地面站立循环混合层_0                                   (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::地面站立循环混合层(const struct FPoseLink& 前, const struct FPoseLink& 后, const struct FPoseLink& 左前, const struct FPoseLink& 左后, const struct FPoseLink& 右前, const struct FPoseLink& 右后, const struct FPoseLink& 冲刺, struct FPoseLink* 地面站立循环混合层_0)
 {
@@ -5668,8 +5780,8 @@ void UABP_BaseRole_C::地面站立循环混合层(const struct FPoseLink& 前, c
 // Function ABP_BaseRole.ABP_BaseRole_C.后处理层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        后处理层_0                                             (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       后处理层_0                                             (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::后处理层(const struct FPoseLink& InPose_0, struct FPoseLink* 后处理层_0)
 {
@@ -5692,10 +5804,10 @@ void UABP_BaseRole_C::后处理层(const struct FPoseLink& InPose_0, struct FPos
 // Function ABP_BaseRole.ABP_BaseRole_C.空中射击层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        空中瞄准                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        空中射击                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        空中射击BasePose                                       (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        空中射击层_0                                           (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 空中瞄准                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 空中射击                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 空中射击BasePose                                       (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       空中射击层_0                                           (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::空中射击层(const struct FPoseLink& 空中瞄准, const struct FPoseLink& 空中射击, const struct FPoseLink& 空中射击BasePose, struct FPoseLink* 空中射击层_0)
 {
@@ -5720,14 +5832,14 @@ void UABP_BaseRole_C::空中射击层(const struct FPoseLink& 空中瞄准, cons
 // Function ABP_BaseRole.ABP_BaseRole_C.地面站立循环混合层2
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        前_走跑                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        后_走跑                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        左前_走跑                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        右前_走跑                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        左后_走跑                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        右后_走跑                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        前_冲刺                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        地面站立循环混合层2_0                                  (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 前_走跑                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 后_走跑                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 左前_走跑                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 右前_走跑                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 左后_走跑                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 右后_走跑                                              (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FPoseLink&                 前_冲刺                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       地面站立循环混合层2_0                                  (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::地面站立循环混合层2(const struct FPoseLink& 前_走跑, const struct FPoseLink& 后_走跑, const struct FPoseLink& 左前_走跑, const struct FPoseLink& 右前_走跑, const struct FPoseLink& 左后_走跑, const struct FPoseLink& 右后_走跑, const struct FPoseLink& 前_冲刺, struct FPoseLink* 地面站立循环混合层2_0)
 {
@@ -5756,8 +5868,8 @@ void UABP_BaseRole_C::地面站立循环混合层2(const struct FPoseLink& 前_�
 // Function ABP_BaseRole.ABP_BaseRole_C.演出层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        演出层_0                                               (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       演出层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::演出层(const struct FPoseLink& InPose, struct FPoseLink* 演出层_0)
 {
@@ -5780,8 +5892,8 @@ void UABP_BaseRole_C::演出层(const struct FPoseLink& InPose, struct FPoseLink
 // Function ABP_BaseRole.ABP_BaseRole_C.修型层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        修型层_0                                               (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       修型层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_C::修型层(const struct FPoseLink& InPose_0, struct FPoseLink* 修型层_0)
 {
@@ -5804,7 +5916,7 @@ void UABP_BaseRole_C::修型层(const struct FPoseLink& InPose_0, struct FPoseLi
 // Function ABP_BaseRole.ABP_BaseRole_C.InterfaceJumpPressed
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   Speed                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  Speed                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UABP_BaseRole_C::InterfaceJumpPressed(float* Speed)
 {

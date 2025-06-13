@@ -11,24 +11,24 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "GA_Base_classes.hpp"
 #include "SCameraModifier_Settings_structs.hpp"
+#include "GA_Base_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Common_QTE.GA_Common_QTE_C
-// 0x0138 (0x0690 - 0x0558)
+// 0x0138 (0x06A0 - 0x0568)
 class UGA_Common_QTE_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Common_QTE_C;                    // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FSCameraModifier_Settings              相机配置;                                          // 0x0560(0x0118)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     原来的角色;                                        // 0x0678(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UBP_QTE_Camera_C*                       RogueQteCamera;                                    // 0x0680(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         QTE时停子弹;                                       // 0x0688(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         QTE时停子弹2;                                      // 0x068C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Common_QTE_C;                    // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FSCameraModifier_Settings              相机配置;                                          // 0x0570(0x0118)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     原来的角色;                                        // 0x0688(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBP_QTE_Camera_C*                       RogueQteCamera;                                    // 0x0690(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         QTE时停子弹;                                       // 0x0698(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         QTE时停子弹2;                                      // 0x069C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Common_QTE(int32 EntryPoint);
@@ -52,13 +52,13 @@ public:
 	}
 };
 static_assert(alignof(UGA_Common_QTE_C) == 0x000008, "Wrong alignment on UGA_Common_QTE_C");
-static_assert(sizeof(UGA_Common_QTE_C) == 0x000690, "Wrong size on UGA_Common_QTE_C");
-static_assert(offsetof(UGA_Common_QTE_C, UberGraphFrame_GA_Common_QTE_C) == 0x000558, "Member 'UGA_Common_QTE_C::UberGraphFrame_GA_Common_QTE_C' has a wrong offset!");
-static_assert(offsetof(UGA_Common_QTE_C, 相机配置) == 0x000560, "Member 'UGA_Common_QTE_C::相机配置' has a wrong offset!");
-static_assert(offsetof(UGA_Common_QTE_C, 原来的角色) == 0x000678, "Member 'UGA_Common_QTE_C::原来的角色' has a wrong offset!");
-static_assert(offsetof(UGA_Common_QTE_C, RogueQteCamera) == 0x000680, "Member 'UGA_Common_QTE_C::RogueQteCamera' has a wrong offset!");
-static_assert(offsetof(UGA_Common_QTE_C, QTE时停子弹) == 0x000688, "Member 'UGA_Common_QTE_C::QTE时停子弹' has a wrong offset!");
-static_assert(offsetof(UGA_Common_QTE_C, QTE时停子弹2) == 0x00068C, "Member 'UGA_Common_QTE_C::QTE时停子弹2' has a wrong offset!");
+static_assert(sizeof(UGA_Common_QTE_C) == 0x0006A0, "Wrong size on UGA_Common_QTE_C");
+static_assert(offsetof(UGA_Common_QTE_C, UberGraphFrame_GA_Common_QTE_C) == 0x000568, "Member 'UGA_Common_QTE_C::UberGraphFrame_GA_Common_QTE_C' has a wrong offset!");
+static_assert(offsetof(UGA_Common_QTE_C, 相机配置) == 0x000570, "Member 'UGA_Common_QTE_C::相机配置' has a wrong offset!");
+static_assert(offsetof(UGA_Common_QTE_C, 原来的角色) == 0x000688, "Member 'UGA_Common_QTE_C::原来的角色' has a wrong offset!");
+static_assert(offsetof(UGA_Common_QTE_C, RogueQteCamera) == 0x000690, "Member 'UGA_Common_QTE_C::RogueQteCamera' has a wrong offset!");
+static_assert(offsetof(UGA_Common_QTE_C, QTE时停子弹) == 0x000698, "Member 'UGA_Common_QTE_C::QTE时停子弹' has a wrong offset!");
+static_assert(offsetof(UGA_Common_QTE_C, QTE时停子弹2) == 0x00069C, "Member 'UGA_Common_QTE_C::QTE时停子弹2' has a wrong offset!");
 
 }
 

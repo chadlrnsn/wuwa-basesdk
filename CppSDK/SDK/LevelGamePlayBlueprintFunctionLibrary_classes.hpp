@@ -25,7 +25,7 @@ public:
 	static void SceneInteractionBind(class AActor* actor, const class FString& seqName, const class FString& eventName, class UObject* __WorldContext);
 	static int32 GetScanMaxDistance(class UObject* __WorldContext);
 	static int32 GetScanInteractionEffectMaxDistance(class UObject* __WorldContext);
-	static bool ApplyScanEffect(class AActor* inActor, class UObject* __WorldContext);
+	static bool ApplyScanEffect(class AActor* inActor, int32 type, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

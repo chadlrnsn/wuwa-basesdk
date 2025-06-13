@@ -35,9 +35,9 @@ public:
 	bool                                          TsUseNavigation;                                   // 0x0111(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper)
 
 public:
-	void InitTsVariables();
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_TsTaskAiFindClosetItem(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void InitTsVariables();
 
 public:
 	static class UClass* StaticClass()

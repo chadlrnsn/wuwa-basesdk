@@ -617,30 +617,6 @@ void UABP_ME1BinlangCommon_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_ME
 }
 
 
-// Function ABP_ME1BinlangCommon.ABP_ME1BinlangCommon_C.IKAndFk_Clone
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        IKAndFk_Clone_0                                        (Parm, OutParm, NoDestructor)
-
-void UABP_ME1BinlangCommon_C::IKAndFk_Clone(const struct FPoseLink& InPose, struct FPoseLink* IKAndFk_Clone_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_ME1BinlangCommon_C", "IKAndFk_Clone");
-
-	Params::ABP_ME1BinlangCommon_C_IKAndFk_Clone Parms{};
-
-	Parms.InPose = std::move(InPose);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (IKAndFk_Clone_0 != nullptr)
-		*IKAndFk_Clone_0 = std::move(Parms.IKAndFk_Clone_0);
-}
-
-
 // Function ABP_ME1BinlangCommon.ABP_ME1BinlangCommon_C.初始化绑定 Tag
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -658,7 +634,7 @@ void UABP_ME1BinlangCommon_C::初始化绑定_Tag()
 // Function ABP_ME1BinlangCommon.ABP_ME1BinlangCommon_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        Param_AnimGraph_0                                      (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       Param_AnimGraph_0                                      (Parm, OutParm, NoDestructor)
 
 void UABP_ME1BinlangCommon_C::AnimGraph(struct FPoseLink* Param_AnimGraph_0)
 {
@@ -673,6 +649,30 @@ void UABP_ME1BinlangCommon_C::AnimGraph(struct FPoseLink* Param_AnimGraph_0)
 
 	if (Param_AnimGraph_0 != nullptr)
 		*Param_AnimGraph_0 = std::move(Parms.Param_AnimGraph_0);
+}
+
+
+// Function ABP_ME1BinlangCommon.ABP_ME1BinlangCommon_C.IKAndFk_Clone
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FPoseLink&                 InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       IKAndFk_Clone_0                                        (Parm, OutParm, NoDestructor)
+
+void UABP_ME1BinlangCommon_C::IKAndFk_Clone(const struct FPoseLink& InPose, struct FPoseLink* IKAndFk_Clone_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_ME1BinlangCommon_C", "IKAndFk_Clone");
+
+	Params::ABP_ME1BinlangCommon_C_IKAndFk_Clone Parms{};
+
+	Parms.InPose = std::move(InPose);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (IKAndFk_Clone_0 != nullptr)
+		*IKAndFk_Clone_0 = std::move(Parms.IKAndFk_Clone_0);
 }
 
 }

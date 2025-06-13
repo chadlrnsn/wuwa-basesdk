@@ -27,14 +27,14 @@ bool ISMStateMachineNetworkedInterface::HasAuthority() const
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SMStateMachineNetworkedInterface", "HasAuthority");
+		Func = AsUObject()->Class->GetFunction("SMStateMachineNetworkedInterface", "HasAuthority");
 
 	Params::SMStateMachineNetworkedInterface_HasAuthority Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -52,14 +52,14 @@ bool ISMStateMachineNetworkedInterface::IsConfiguredForNetworking() const
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SMStateMachineNetworkedInterface", "IsConfiguredForNetworking");
+		Func = AsUObject()->Class->GetFunction("SMStateMachineNetworkedInterface", "IsConfiguredForNetworking");
 
 	Params::SMStateMachineNetworkedInterface_IsConfiguredForNetworking Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -77,14 +77,14 @@ bool ISMStateMachineNetworkedInterface::IsSimulatedProxy() const
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SMStateMachineNetworkedInterface", "IsSimulatedProxy");
+		Func = AsUObject()->Class->GetFunction("SMStateMachineNetworkedInterface", "IsSimulatedProxy");
 
 	Params::SMStateMachineNetworkedInterface_IsSimulatedProxy Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -396,7 +396,7 @@ void USMStateInstance_Base::SetActive(bool bValue, bool bSetAllParents, bool bAc
 // Function SMSystem.SMStateInstance_Base.SetAlwaysUpdate
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMStateInstance_Base::SetAlwaysUpdate(const bool bValue)
 {
@@ -421,7 +421,7 @@ void USMStateInstance_Base::SetAlwaysUpdate(const bool bValue)
 // Function SMSystem.SMStateInstance_Base.SetDisableTickTransitionEvaluation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMStateInstance_Base::SetDisableTickTransitionEvaluation(const bool bValue)
 {
@@ -446,7 +446,7 @@ void USMStateInstance_Base::SetDisableTickTransitionEvaluation(const bool bValue
 // Function SMSystem.SMStateInstance_Base.SetEvalTransitionsOnStart
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMStateInstance_Base::SetEvalTransitionsOnStart(const bool bValue)
 {
@@ -471,7 +471,7 @@ void USMStateInstance_Base::SetEvalTransitionsOnStart(const bool bValue)
 // Function SMSystem.SMStateInstance_Base.SetExcludeFromAnyState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMStateInstance_Base::SetExcludeFromAnyState(const bool bValue)
 {
@@ -528,7 +528,7 @@ bool USMStateInstance_Base::SwitchToLinkedState(class USMStateInstance_Base* Nex
 // Function SMSystem.SMStateInstance_Base.SwitchToLinkedStateByName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           NextStateName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    NextStateName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bRequireTransitionToPass                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bActivateNow                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -742,7 +742,7 @@ bool USMStateInstance_Base::GetExcludeFromAnyState() const
 // Function SMSystem.SMStateInstance_Base.GetIncomingTransitions
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class USMTransitionInstance*>    Transitions                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class USMTransitionInstance*>*   Transitions                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    bExcludeAlwaysFalse                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -774,7 +774,7 @@ bool USMStateInstance_Base::GetIncomingTransitions(TArray<class USMTransitionIns
 // Function SMSystem.SMStateInstance_Base.GetNextStateByName
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           StateName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    StateName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMStateInstance_Base*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class USMStateInstance_Base* USMStateInstance_Base::GetNextStateByName(const class FString& StateName) const
@@ -830,7 +830,7 @@ class USMStateInstance_Base* USMStateInstance_Base::GetNextStateByTransitionInde
 // Function SMSystem.SMStateInstance_Base.GetOutgoingTransitions
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class USMTransitionInstance*>    Transitions                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class USMTransitionInstance*>*   Transitions                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    bExcludeAlwaysFalse                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -912,7 +912,7 @@ class USMTransitionInstance* USMStateInstance_Base::GetPreviousActiveTransition(
 // Function SMSystem.SMStateInstance_Base.GetPreviousStateByName
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           StateName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    StateName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMStateInstance_Base*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class USMStateInstance_Base* USMStateInstance_Base::GetPreviousStateByName(const class FString& StateName) const
@@ -940,7 +940,7 @@ class USMStateInstance_Base* USMStateInstance_Base::GetPreviousStateByName(const
 // Function SMSystem.SMStateInstance_Base.GetServerTimeInState
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    bOutUsedLocalTime                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bOutUsedLocalTime                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float USMStateInstance_Base::GetServerTimeInState(bool* bOutUsedLocalTime) const
@@ -994,7 +994,7 @@ const struct FDateTime USMStateInstance_Base::GetStartTime() const
 // Function SMSystem.SMStateInstance_Base.GetStateInfo
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSMStateInfo                     State                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSMStateInfo*                    State                                                  (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void USMStateInstance_Base::GetStateInfo(struct FSMStateInfo* State) const
 {
@@ -1123,7 +1123,7 @@ bool USMStateInstance_Base::IsStateMachine() const
 // Function SMSystem.SMConduitInstance.SetCanEvaluate
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMConduitInstance::SetCanEvaluate(const bool bValue)
 {
@@ -1148,7 +1148,7 @@ void USMConduitInstance::SetCanEvaluate(const bool bValue)
 // Function SMSystem.SMConduitInstance.SetEvalWithTransitions
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMConduitInstance::SetEvalWithTransitions(const bool bValue)
 {
@@ -1262,8 +1262,8 @@ void USMInstance::ClearStateHistory()
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USMTransitionInstance*            InFirstTransitionInstance                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<class USMTransitionInstance*>    OutTransitionChain                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// class USMStateInstance_Base*            OutDestinationState                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class USMTransitionInstance*>*   OutTransitionChain                                     (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// class USMStateInstance_Base**           OutDestinationState                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bRequirePreviousStateActive                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1346,7 +1346,7 @@ void USMInstance::EvaluateTransitions()
 // Function SMSystem.SMInstance.GetAllRootNodeInstance
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class USMStateMachineInstance*>  Nodes                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class USMStateMachineInstance*>* Nodes                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USMInstance::GetAllRootNodeInstance(TArray<class USMStateMachineInstance*>* Nodes)
 {
@@ -1472,7 +1472,7 @@ void USMInstance::Initialize(class UObject* Context)
 // Function SMSystem.SMInstance.Internal_EvaluateAndTakeTransitionChainByGuid
 // (Final, Native, Protected, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FGuid                            PathGuid                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     PathGuid                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USMInstance::Internal_EvaluateAndTakeTransitionChainByGuid(const struct FGuid& PathGuid)
@@ -1500,7 +1500,7 @@ bool USMInstance::Internal_EvaluateAndTakeTransitionChainByGuid(const struct FGu
 // Function SMSystem.SMInstance.Internal_EventCleanup
 // (Final, Native, Protected, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FGuid                            PathGuid                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     PathGuid                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMInstance::Internal_EventCleanup(const struct FGuid& PathGuid)
 {
@@ -1569,8 +1569,8 @@ void USMInstance::Internal_Update(float DeltaSeconds)
 // Function SMSystem.SMInstance.K2_TryGetNetworkInterface
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TScriptInterface<class ISMStateMachineNetworkedInterface>Interface                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
-// bool                                    bIsValid                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TScriptInterface<class ISMStateMachineNetworkedInterface>*Interface                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+// bool*                                   bIsValid                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMInstance::K2_TryGetNetworkInterface(TScriptInterface<class ISMStateMachineNetworkedInterface>* Interface, bool* bIsValid)
 {
@@ -1599,7 +1599,7 @@ void USMInstance::K2_TryGetNetworkInterface(TScriptInterface<class ISMStateMachi
 // Function SMSystem.SMInstance.LoadFromMultipleStates
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FGuid>                    FromGuids                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FGuid>&             FromGuids                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    bNotify                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMInstance::LoadFromMultipleStates(const TArray<struct FGuid>& FromGuids, bool bNotify)
@@ -1626,7 +1626,7 @@ void USMInstance::LoadFromMultipleStates(const TArray<struct FGuid>& FromGuids, 
 // Function SMSystem.SMInstance.LoadFromState
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FGuid                            FromGuid                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     FromGuid                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAllParents                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bNotify                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1712,7 +1712,7 @@ void USMInstance::OnStateMachineInitialized()
 // Function SMSystem.SMInstance.OnStateMachineInitialStateLoaded
 // (Native, Event, Protected, HasOutParams, HasDefaults, BlueprintEvent)
 // Parameters:
-// struct FGuid                            StateGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     StateGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMInstance::OnStateMachineInitialStateLoaded(const struct FGuid& StateGuid)
 {
@@ -1756,8 +1756,8 @@ void USMInstance::OnStateMachineStart()
 // Function SMSystem.SMInstance.OnStateMachineStateChanged
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FSMStateInfo                     ToState                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FSMStateInfo                     FromState                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FSMStateInfo&              ToState                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FSMStateInfo&              FromState                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMInstance::OnStateMachineStateChanged(const struct FSMStateInfo& ToState, const struct FSMStateInfo& FromState)
 {
@@ -1783,7 +1783,7 @@ void USMInstance::OnStateMachineStateChanged(const struct FSMStateInfo& ToState,
 // Function SMSystem.SMInstance.OnStateMachineStateStarted
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FSMStateInfo                     State                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FSMStateInfo&              State                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMInstance::OnStateMachineStateStarted(const struct FSMStateInfo& State)
 {
@@ -1827,7 +1827,7 @@ void USMInstance::OnStateMachineStop()
 // Function SMSystem.SMInstance.OnStateMachineTransitionTaken
 // (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FSMTransitionInfo                Transition                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FSMTransitionInfo&         Transition                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMInstance::OnStateMachineTransitionTaken(const struct FSMTransitionInfo& Transition)
 {
@@ -2116,7 +2116,7 @@ void USMInstance::SetContext(class UObject* Context)
 // Function SMSystem.SMInstance.SetGuidRedirectMap
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TMap<struct FGuid, struct FGuid>        InGuidMap                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TMap<struct FGuid, struct FGuid>& InGuidMap                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMInstance::SetGuidRedirectMap(const TMap<struct FGuid, struct FGuid>& InGuidMap)
 {
@@ -2400,7 +2400,7 @@ void USMInstance::SwitchActiveState(class USMStateInstance_Base* NewStateInstanc
 // Function SMSystem.SMInstance.SwitchActiveStateByQualifiedName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InFullPath                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InFullPath                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bDeactivateOtherStates                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMInstance::SwitchActiveStateByQualifiedName(const class FString& InFullPath, bool bDeactivateOtherStates)
@@ -2427,7 +2427,7 @@ void USMInstance::SwitchActiveStateByQualifiedName(const class FString& InFullPa
 // Function SMSystem.SMInstance.TakeTransitionChain
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class USMTransitionInstance*>    InTransitionChain                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class USMTransitionInstance*>&InTransitionChain                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USMInstance::TakeTransitionChain(const TArray<class USMTransitionInstance*>& InTransitionChain)
@@ -2683,7 +2683,7 @@ class FString USMInstance::GetActiveStateName() const
 // Function SMSystem.SMInstance.GetAllActiveStateGuids
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<struct FGuid>                    ActiveGuids                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FGuid>*                   ActiveGuids                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USMInstance::GetAllActiveStateGuids(TArray<struct FGuid>* ActiveGuids) const
 {
@@ -2709,7 +2709,7 @@ void USMInstance::GetAllActiveStateGuids(TArray<struct FGuid>* ActiveGuids) cons
 // Function SMSystem.SMInstance.GetAllActiveStateInstances
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class USMStateInstance_Base*>    ActiveStateInstances                                   (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class USMStateInstance_Base*>*   ActiveStateInstances                                   (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USMInstance::GetAllActiveStateInstances(TArray<class USMStateInstance_Base*>* ActiveStateInstances) const
 {
@@ -2788,7 +2788,7 @@ TArray<class USMInstance*> USMInstance::GetAllReferencedInstances(bool bIncludeC
 // Function SMSystem.SMInstance.GetAllStateInstances
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class USMStateInstance_Base*>    StateInstances                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class USMStateInstance_Base*>*   StateInstances                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USMInstance::GetAllStateInstances(TArray<class USMStateInstance_Base*>* StateInstances) const
 {
@@ -2814,7 +2814,7 @@ void USMInstance::GetAllStateInstances(TArray<class USMStateInstance_Base*>* Sta
 // Function SMSystem.SMInstance.GetAllTransitionInstances
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class USMTransitionInstance*>    TransitionInstances                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class USMTransitionInstance*>*   TransitionInstances                                    (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USMInstance::GetAllTransitionInstances(TArray<class USMTransitionInstance*>* TransitionInstances) const
 {
@@ -2965,7 +2965,7 @@ TScriptInterface<class ISMStateMachineNetworkedInterface> USMInstance::GetNetwor
 // Function SMSystem.SMInstance.GetNodeInstanceByGuid
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGuid                            Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMNodeInstance*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class USMNodeInstance* USMInstance::GetNodeInstanceByGuid(const struct FGuid& Guid) const
@@ -2993,7 +2993,7 @@ class USMNodeInstance* USMInstance::GetNodeInstanceByGuid(const struct FGuid& Gu
 // Function SMSystem.SMInstance.GetReferencedInstanceByGuid
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGuid                            Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMInstance*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class USMInstance* USMInstance::GetReferencedInstanceByGuid(const struct FGuid& Guid) const
@@ -3202,7 +3202,7 @@ int32 USMInstance::GetStateHistoryMaxCount() const
 // Function SMSystem.SMInstance.GetStateInstanceByGuid
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGuid                            Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMStateInstance_Base*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class USMStateInstance_Base* USMInstance::GetStateInstanceByGuid(const struct FGuid& Guid) const
@@ -3230,7 +3230,7 @@ class USMStateInstance_Base* USMInstance::GetStateInstanceByGuid(const struct FG
 // Function SMSystem.SMInstance.GetStateInstanceByQualifiedName
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           InFullPath                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InFullPath                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMStateInstance_Base*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class USMStateInstance_Base* USMInstance::GetStateInstanceByQualifiedName(const class FString& InFullPath) const
@@ -3333,7 +3333,7 @@ float USMInstance::GetTickInterval() const
 // Function SMSystem.SMInstance.GetTransitionInstanceByGuid
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGuid                            Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMTransitionInstance*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class USMTransitionInstance* USMInstance::GetTransitionInstanceByGuid(const struct FGuid& Guid) const
@@ -3511,8 +3511,8 @@ bool USMInstance::IsTickableWhenPaused() const
 // Function SMSystem.SMInstance.TryGetNestedActiveState
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSMStateInfo                     FoundState                                             (Parm, OutParm, NativeAccessSpecifierPublic)
-// bool                                    bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSMStateInfo*                    FoundState                                             (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMInstance::TryGetNestedActiveState(struct FSMStateInfo* FoundState, bool* bSuccess) const
 {
@@ -3541,9 +3541,9 @@ void USMInstance::TryGetNestedActiveState(struct FSMStateInfo* FoundState, bool*
 // Function SMSystem.SMInstance.TryGetStateInfo
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGuid                            Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSMStateInfo                     StateInfo                                              (Parm, OutParm, NativeAccessSpecifierPublic)
-// bool                                    bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSMStateInfo*                    StateInfo                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMInstance::TryGetStateInfo(const struct FGuid& Guid, struct FSMStateInfo* StateInfo, bool* bSuccess) const
 {
@@ -3574,9 +3574,9 @@ void USMInstance::TryGetStateInfo(const struct FGuid& Guid, struct FSMStateInfo*
 // Function SMSystem.SMInstance.TryGetTransitionInfo
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGuid                            Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSMTransitionInfo                TransitionInfo                                         (Parm, OutParm, NativeAccessSpecifierPublic)
-// bool                                    bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     Guid                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSMTransitionInfo*               TransitionInfo                                         (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMInstance::TryGetTransitionInfo(const struct FGuid& Guid, struct FSMTransitionInfo* TransitionInfo, bool* bSuccess) const
 {
@@ -3607,7 +3607,7 @@ void USMInstance::TryGetTransitionInfo(const struct FGuid& Guid, struct FSMTrans
 // Function SMSystem.SMStateMachineComponent.CLIENT_ActivateStates
 // (Final, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
-// TArray<struct FSMActivateStateTransaction>StateTransactions                                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FSMActivateStateTransaction>&StateTransactions                                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::CLIENT_ActivateStates(const TArray<struct FSMActivateStateTransaction>& StateTransactions)
 {
@@ -3632,7 +3632,7 @@ void USMStateMachineComponent::CLIENT_ActivateStates(const TArray<struct FSMActi
 // Function SMSystem.SMStateMachineComponent.CLIENT_FullSync
 // (Final, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
-// struct FSMFullSyncTransaction           FullSyncTransaction                                    (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FSMFullSyncTransaction&    FullSyncTransaction                                    (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::CLIENT_FullSync(const struct FSMFullSyncTransaction& FullSyncTransaction)
 {
@@ -3657,7 +3657,7 @@ void USMStateMachineComponent::CLIENT_FullSync(const struct FSMFullSyncTransacti
 // Function SMSystem.SMStateMachineComponent.CLIENT_Shutdown
 // (Final, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
-// struct FSMTransaction_Base              Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMTransaction_Base&       Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::CLIENT_Shutdown(const struct FSMTransaction_Base& Transaction)
 {
@@ -3682,7 +3682,7 @@ void USMStateMachineComponent::CLIENT_Shutdown(const struct FSMTransaction_Base&
 // Function SMSystem.SMStateMachineComponent.CLIENT_Start
 // (Final, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
-// struct FSMTransaction_Base              Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMTransaction_Base&       Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::CLIENT_Start(const struct FSMTransaction_Base& Transaction)
 {
@@ -3707,7 +3707,7 @@ void USMStateMachineComponent::CLIENT_Start(const struct FSMTransaction_Base& Tr
 // Function SMSystem.SMStateMachineComponent.CLIENT_Stop
 // (Final, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
-// struct FSMTransaction_Base              Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMTransaction_Base&       Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::CLIENT_Stop(const struct FSMTransaction_Base& Transaction)
 {
@@ -3732,7 +3732,7 @@ void USMStateMachineComponent::CLIENT_Stop(const struct FSMTransaction_Base& Tra
 // Function SMSystem.SMStateMachineComponent.CLIENT_TakeTransitions
 // (Final, Net, NetReliable, Native, Event, Private, NetClient)
 // Parameters:
-// TArray<struct FSMTransitionTransaction> Transactions                                           (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FSMTransitionTransaction>&Transactions                                           (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::CLIENT_TakeTransitions(const TArray<struct FSMTransitionTransaction>& Transactions)
 {
@@ -3858,8 +3858,8 @@ void USMStateMachineComponent::Internal_OnStateMachineStarted(class USMInstance*
 // (Final, Native, Protected)
 // Parameters:
 // class USMInstance*                      Instance                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSMStateInfo                     ToState                                                (Parm, NativeAccessSpecifierPublic)
-// struct FSMStateInfo                     FromState                                              (Parm, NativeAccessSpecifierPublic)
+// const struct FSMStateInfo&              ToState                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FSMStateInfo&              FromState                                              (Parm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::Internal_OnStateMachineStateChanged(class USMInstance* Instance, const struct FSMStateInfo& ToState, const struct FSMStateInfo& FromState)
 {
@@ -3887,7 +3887,7 @@ void USMStateMachineComponent::Internal_OnStateMachineStateChanged(class USMInst
 // (Final, Native, Protected)
 // Parameters:
 // class USMInstance*                      Instance                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSMStateInfo                     State                                                  (Parm, NativeAccessSpecifierPublic)
+// const struct FSMStateInfo&              State                                                  (Parm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::Internal_OnStateMachineStateStarted(class USMInstance* Instance, const struct FSMStateInfo& State)
 {
@@ -3939,7 +3939,7 @@ void USMStateMachineComponent::Internal_OnStateMachineStopped(class USMInstance*
 // (Final, Native, Protected)
 // Parameters:
 // class USMInstance*                      Instance                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSMTransitionInfo                Transition                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FSMTransitionInfo&         Transition                                             (Parm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::Internal_OnStateMachineTransitionTaken(class USMInstance* Instance, const struct FSMTransitionInfo& Transition)
 {
@@ -3992,7 +3992,7 @@ void USMStateMachineComponent::Internal_OnStateMachineUpdated(class USMInstance*
 // Function SMSystem.SMStateMachineComponent.MULTICAST_ActivateStates
 // (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
 // Parameters:
-// TArray<struct FSMActivateStateTransaction>StateTransactions                                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FSMActivateStateTransaction>&StateTransactions                                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::MULTICAST_ActivateStates(const TArray<struct FSMActivateStateTransaction>& StateTransactions)
 {
@@ -4017,7 +4017,7 @@ void USMStateMachineComponent::MULTICAST_ActivateStates(const TArray<struct FSMA
 // Function SMSystem.SMStateMachineComponent.MULTICAST_FullSync
 // (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
 // Parameters:
-// struct FSMFullSyncTransaction           FullSyncTransaction                                    (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FSMFullSyncTransaction&    FullSyncTransaction                                    (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::MULTICAST_FullSync(const struct FSMFullSyncTransaction& FullSyncTransaction)
 {
@@ -4042,7 +4042,7 @@ void USMStateMachineComponent::MULTICAST_FullSync(const struct FSMFullSyncTransa
 // Function SMSystem.SMStateMachineComponent.MULTICAST_Shutdown
 // (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
 // Parameters:
-// struct FSMTransaction_Base              Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMTransaction_Base&       Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::MULTICAST_Shutdown(const struct FSMTransaction_Base& Transaction)
 {
@@ -4067,7 +4067,7 @@ void USMStateMachineComponent::MULTICAST_Shutdown(const struct FSMTransaction_Ba
 // Function SMSystem.SMStateMachineComponent.MULTICAST_Start
 // (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
 // Parameters:
-// struct FSMTransaction_Base              Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMTransaction_Base&       Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::MULTICAST_Start(const struct FSMTransaction_Base& Transaction)
 {
@@ -4092,7 +4092,7 @@ void USMStateMachineComponent::MULTICAST_Start(const struct FSMTransaction_Base&
 // Function SMSystem.SMStateMachineComponent.MULTICAST_Stop
 // (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
 // Parameters:
-// struct FSMTransaction_Base              Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMTransaction_Base&       Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::MULTICAST_Stop(const struct FSMTransaction_Base& Transaction)
 {
@@ -4117,7 +4117,7 @@ void USMStateMachineComponent::MULTICAST_Stop(const struct FSMTransaction_Base& 
 // Function SMSystem.SMStateMachineComponent.MULTICAST_TakeTransitions
 // (Final, Net, NetReliable, Native, Event, NetMulticast, Private)
 // Parameters:
-// TArray<struct FSMTransitionTransaction> Transactions                                           (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FSMTransitionTransaction>&Transactions                                           (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::MULTICAST_TakeTransitions(const TArray<struct FSMTransitionTransaction>& Transactions)
 {
@@ -4194,7 +4194,7 @@ void USMStateMachineComponent::Restart()
 // Function SMSystem.SMStateMachineComponent.SERVER_ActivateStates
 // (Net, NetReliable, Native, Event, Protected, NetServer)
 // Parameters:
-// TArray<struct FSMActivateStateTransaction>StateTransactions                                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FSMActivateStateTransaction>&StateTransactions                                      (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::SERVER_ActivateStates(const TArray<struct FSMActivateStateTransaction>& StateTransactions)
 {
@@ -4219,7 +4219,7 @@ void USMStateMachineComponent::SERVER_ActivateStates(const TArray<struct FSMActi
 // Function SMSystem.SMStateMachineComponent.SERVER_FullSync
 // (Net, NetReliable, Native, Event, Protected, NetServer)
 // Parameters:
-// struct FSMFullSyncTransaction           FullSyncTransaction                                    (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FSMFullSyncTransaction&    FullSyncTransaction                                    (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::SERVER_FullSync(const struct FSMFullSyncTransaction& FullSyncTransaction)
 {
@@ -4244,7 +4244,7 @@ void USMStateMachineComponent::SERVER_FullSync(const struct FSMFullSyncTransacti
 // Function SMSystem.SMStateMachineComponent.SERVER_Initialize
 // (Net, NetReliable, Native, Event, Protected, NetServer)
 // Parameters:
-// struct FSMInitializeTransaction         Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMInitializeTransaction&  Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::SERVER_Initialize(const struct FSMInitializeTransaction& Transaction)
 {
@@ -4288,7 +4288,7 @@ void USMStateMachineComponent::SERVER_RequestFullSync()
 // Function SMSystem.SMStateMachineComponent.SERVER_Shutdown
 // (Net, NetReliable, Native, Event, Protected, NetServer)
 // Parameters:
-// struct FSMTransaction_Base              Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMTransaction_Base&       Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::SERVER_Shutdown(const struct FSMTransaction_Base& Transaction)
 {
@@ -4313,7 +4313,7 @@ void USMStateMachineComponent::SERVER_Shutdown(const struct FSMTransaction_Base&
 // Function SMSystem.SMStateMachineComponent.SERVER_Start
 // (Net, NetReliable, Native, Event, Protected, NetServer)
 // Parameters:
-// struct FSMTransaction_Base              Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMTransaction_Base&       Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::SERVER_Start(const struct FSMTransaction_Base& Transaction)
 {
@@ -4338,7 +4338,7 @@ void USMStateMachineComponent::SERVER_Start(const struct FSMTransaction_Base& Tr
 // Function SMSystem.SMStateMachineComponent.SERVER_Stop
 // (Net, NetReliable, Native, Event, Protected, NetServer)
 // Parameters:
-// struct FSMTransaction_Base              Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FSMTransaction_Base&       Transaction                                            (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::SERVER_Stop(const struct FSMTransaction_Base& Transaction)
 {
@@ -4363,7 +4363,7 @@ void USMStateMachineComponent::SERVER_Stop(const struct FSMTransaction_Base& Tra
 // Function SMSystem.SMStateMachineComponent.SERVER_TakeTransitions
 // (Net, NetReliable, Native, Event, Protected, NetServer)
 // Parameters:
-// TArray<struct FSMTransitionTransaction> TransitionTransactions                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FSMTransitionTransaction>&TransitionTransactions                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void USMStateMachineComponent::SERVER_TakeTransitions(const TArray<struct FSMTransitionTransaction>& TransitionTransactions)
 {
@@ -4645,7 +4645,7 @@ bool USMStateMachineComponent::IsStateMachineActive() const
 // Function SMSystem.SMStateMachineInstance.SetReuseCurrentState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMStateMachineInstance::SetReuseCurrentState(const bool bValue)
 {
@@ -4670,7 +4670,7 @@ void USMStateMachineInstance::SetReuseCurrentState(const bool bValue)
 // Function SMSystem.SMStateMachineInstance.SetReuseIfNotEndState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMStateMachineInstance::SetReuseIfNotEndState(const bool bValue)
 {
@@ -4695,7 +4695,7 @@ void USMStateMachineInstance::SetReuseIfNotEndState(const bool bValue)
 // Function SMSystem.SMStateMachineInstance.SetWaitForEndState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMStateMachineInstance::SetWaitForEndState(const bool bValue)
 {
@@ -4720,7 +4720,7 @@ void USMStateMachineInstance::SetWaitForEndState(const bool bValue)
 // Function SMSystem.SMStateMachineInstance.GetActiveStates
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class USMStateInstance_Base*>    ActiveStates                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class USMStateInstance_Base*>*   ActiveStates                                           (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineInstance::GetActiveStates(TArray<class USMStateInstance_Base*>* ActiveStates) const
 {
@@ -4746,7 +4746,7 @@ void USMStateMachineInstance::GetActiveStates(TArray<class USMStateInstance_Base
 // Function SMSystem.SMStateMachineInstance.GetAllStateInstances
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class USMStateInstance_Base*>    StateInstances                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class USMStateInstance_Base*>*   StateInstances                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineInstance::GetAllStateInstances(TArray<class USMStateInstance_Base*>* StateInstances) const
 {
@@ -4772,7 +4772,7 @@ void USMStateMachineInstance::GetAllStateInstances(TArray<class USMStateInstance
 // Function SMSystem.SMStateMachineInstance.GetContainedStateByName
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class FString                           StateName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    StateName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class USMStateInstance_Base*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class USMStateInstance_Base* USMStateMachineInstance::GetContainedStateByName(const class FString& StateName) const
@@ -4800,7 +4800,7 @@ class USMStateInstance_Base* USMStateMachineInstance::GetContainedStateByName(co
 // Function SMSystem.SMStateMachineInstance.GetEntryStates
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class USMStateInstance_Base*>    EntryStates                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class USMStateInstance_Base*>*   EntryStates                                            (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USMStateMachineInstance::GetEntryStates(TArray<class USMStateInstance_Base*>* EntryStates) const
 {
@@ -4945,7 +4945,7 @@ void USMTransitionInstance::EvaluateFromManuallyBoundEvent()
 // Function SMSystem.SMTransitionInstance.SetCanEvaluate
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMTransitionInstance::SetCanEvaluate(const bool bValue)
 {
@@ -4970,7 +4970,7 @@ void USMTransitionInstance::SetCanEvaluate(const bool bValue)
 // Function SMSystem.SMTransitionInstance.SetCanEvaluateFromEvent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMTransitionInstance::SetCanEvaluateFromEvent(const bool bValue)
 {
@@ -4995,7 +4995,7 @@ void USMTransitionInstance::SetCanEvaluateFromEvent(const bool bValue)
 // Function SMSystem.SMTransitionInstance.SetCanEvalWithStartState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValue                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMTransitionInstance::SetCanEvalWithStartState(const bool bValue)
 {
@@ -5020,7 +5020,7 @@ void USMTransitionInstance::SetCanEvalWithStartState(const bool bValue)
 // Function SMSystem.SMTransitionInstance.SetPriorityOrder
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Value                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USMTransitionInstance::SetPriorityOrder(const int32 Value)
 {
@@ -5295,7 +5295,7 @@ class USMStateInstance_Base* USMTransitionInstance::GetSourceStateForActiveTrans
 // Function SMSystem.SMTransitionInstance.GetTransitionInfo
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FSMTransitionInfo                Transition                                             (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FSMTransitionInfo*               Transition                                             (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void USMTransitionInstance::GetTransitionInfo(struct FSMTransitionInfo* Transition) const
 {

@@ -91,11 +91,11 @@ public:
 	class FString                                 VendorID;                                          // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 ProductID;                                         // 0x0010(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FRawInputDeviceAxisProperties>  AxisProperties;                                    // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRawInputDeviceButtonProperties> ButtonProperties;                                  // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRawInputDeviceAxisButtonProperties> AxisButtonProperties;                              // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRawInputDeviceButtonProperties> ButtonProperties;                                 // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRawInputDeviceAxisButtonProperties> AxisButtonProperties;                         // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FRawInputDeviceAxisProperties>  BluetoothAxisProperties;                           // 0x0050(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRawInputDeviceButtonProperties> BluetoothButtonProperties;                         // 0x0060(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FRawInputDeviceAxisButtonProperties> BluetoothAxisButtonProperties;                     // 0x0070(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRawInputDeviceButtonProperties> BluetoothButtonProperties;                        // 0x0060(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FRawInputDeviceAxisButtonProperties> BluetoothAxisButtonProperties;                // 0x0070(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FRawInputDeviceConfiguration) == 0x000008, "Wrong alignment on FRawInputDeviceConfiguration");
 static_assert(sizeof(FRawInputDeviceConfiguration) == 0x000080, "Wrong size on FRawInputDeviceConfiguration");

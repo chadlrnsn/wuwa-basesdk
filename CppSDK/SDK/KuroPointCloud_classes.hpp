@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "KuroPointCloud_structs.hpp"
+#include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Niagara_classes.hpp"
@@ -61,16 +61,24 @@ static_assert(offsetof(AKuroPointCloudActor, KdTree) == 0x0002D0, "Member 'AKuro
 static_assert(offsetof(AKuroPointCloudActor, CustomData) == 0x000328, "Member 'AKuroPointCloudActor::CustomData' has a wrong offset!");
 
 // Class KuroPointCloud.KuroPointCloudCache
-// 0x0040 (0x0070 - 0x0030)
+// 0x00E0 (0x0110 - 0x0030)
 class UKuroPointCloudCache final : public UObject
 {
 public:
-	TArray<struct FVector>                        PositionCache;                                     // 0x0030(0x0010)(Edit, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FQuat>                          RotationCache;                                     // 0x0040(0x0010)(Edit, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FVector>                        ScaleCache;                                        // 0x0050(0x0010)(Edit, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
-	TArray<int32>                                 IndexCache;                                        // 0x0060(0x0010)(Edit, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector>                        PositionCache;                                     // 0x0030(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FQuat>                          RotationCache;                                     // 0x0040(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector>                        ScaleCache;                                        // 0x0050(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 IndexCache;                                        // 0x0060(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, int32>                      MetaDataInt;                                       // 0x0070(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, float>                      MetaDataFloat;                                     // 0x00C0(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
 
 public:
+	float GetMetaDataFloat(class FName Name_0);
+	int32 GetMetaDataInt(class FName Name_0);
+	bool HasMetaDataFloat(class FName Name_0);
+	bool HasMetaDataInt(class FName Name_0);
+	void SetMetaDataFloat(class FName Name_0, float Value);
+	void SetMetaDataInt(class FName Name_0, int32 Value);
 	void UpdateFromData(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales);
 	void UpdateFromDataWithIndices(const TArray<struct FVector>& Positions, const TArray<struct FQuat>& Rotations, const TArray<struct FVector>& Scales, const TArray<int32>& Indices);
 
@@ -85,11 +93,13 @@ public:
 	}
 };
 static_assert(alignof(UKuroPointCloudCache) == 0x000008, "Wrong alignment on UKuroPointCloudCache");
-static_assert(sizeof(UKuroPointCloudCache) == 0x000070, "Wrong size on UKuroPointCloudCache");
+static_assert(sizeof(UKuroPointCloudCache) == 0x000110, "Wrong size on UKuroPointCloudCache");
 static_assert(offsetof(UKuroPointCloudCache, PositionCache) == 0x000030, "Member 'UKuroPointCloudCache::PositionCache' has a wrong offset!");
 static_assert(offsetof(UKuroPointCloudCache, RotationCache) == 0x000040, "Member 'UKuroPointCloudCache::RotationCache' has a wrong offset!");
 static_assert(offsetof(UKuroPointCloudCache, ScaleCache) == 0x000050, "Member 'UKuroPointCloudCache::ScaleCache' has a wrong offset!");
 static_assert(offsetof(UKuroPointCloudCache, IndexCache) == 0x000060, "Member 'UKuroPointCloudCache::IndexCache' has a wrong offset!");
+static_assert(offsetof(UKuroPointCloudCache, MetaDataInt) == 0x000070, "Member 'UKuroPointCloudCache::MetaDataInt' has a wrong offset!");
+static_assert(offsetof(UKuroPointCloudCache, MetaDataFloat) == 0x0000C0, "Member 'UKuroPointCloudCache::MetaDataFloat' has a wrong offset!");
 
 // Class KuroPointCloud.KuroPointCloudInstance
 // 0x0068 (0x0098 - 0x0030)
@@ -272,7 +282,7 @@ public:
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UKuroPointCloudStreamer*                Streamer;                                          // 0x0040(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FKuroPointCloudWorldCollection> Collections;                                       // 0x0050(0x0050)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	TMap<class FName, struct FKuroPointCloudWorldCollection> Collections;                            // 0x0050(0x0050)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

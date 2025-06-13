@@ -68,7 +68,7 @@ void UABP_BaseAnimal_C::SystemUiStart()
 // Function ABP_BaseAnimal.ABP_BaseAnimal_C.FeedStart
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     GameplayTag                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              GameplayTag                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UABP_BaseAnimal_C::FeedStart(const struct FGameplayTag& GameplayTag)
 {
@@ -1004,7 +1004,7 @@ void UABP_BaseAnimal_C::更新移动信息()
 // Function ABP_BaseAnimal.ABP_BaseAnimal_C.OnFeedStart
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     GameplayTag                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              GameplayTag                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void UABP_BaseAnimal_C::OnFeedStart(const struct FGameplayTag& GameplayTag)
 {
@@ -1038,7 +1038,7 @@ void UABP_BaseAnimal_C::OnSystemUIStart()
 // Function ABP_BaseAnimal.ABP_BaseAnimal_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_BaseAnimal_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
@@ -1059,7 +1059,7 @@ void UABP_BaseAnimal_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 // Function ABP_BaseAnimal.ABP_BaseAnimal_C.基础层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        基础层_0                                               (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       基础层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseAnimal_C::基础层(struct FPoseLink* 基础层_0)
 {
@@ -1080,8 +1080,8 @@ void UABP_BaseAnimal_C::基础层(struct FPoseLink* 基础层_0)
 // Function ABP_BaseAnimal.ABP_BaseAnimal_C.后处理层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        基础输入                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        后处理层_0                                             (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 基础输入                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       后处理层_0                                             (Parm, OutParm, NoDestructor)
 
 void UABP_BaseAnimal_C::后处理层(const struct FPoseLink& 基础输入, struct FPoseLink* 后处理层_0)
 {
@@ -1104,8 +1104,8 @@ void UABP_BaseAnimal_C::后处理层(const struct FPoseLink& 基础输入, struc
 // Function ABP_BaseAnimal.ABP_BaseAnimal_C.演出层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        状态机输入                                             (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        演出层_0                                               (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 状态机输入                                             (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       演出层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseAnimal_C::演出层(const struct FPoseLink& 状态机输入, struct FPoseLink* 演出层_0)
 {
@@ -1128,7 +1128,7 @@ void UABP_BaseAnimal_C::演出层(const struct FPoseLink& 状态机输入, struc
 // Function ABP_BaseAnimal.ABP_BaseAnimal_C.GetCurrentActionTime
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   ActionTime_0                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  ActionTime_0                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UABP_BaseAnimal_C::GetCurrentActionTime(float* ActionTime_0)
 {

@@ -68,7 +68,7 @@ void UTsUiNavigationTextChangeListener_C::AwakeBP()
 // Function TsUiNavigationTextChangeListener.TsUiNavigationTextChangeListener_C.OnNotifyTextChangeBP
 // (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           NotifyText                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    NotifyText                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UTsUiNavigationTextChangeListener_C::OnNotifyTextChangeBP(const class FString& NotifyText)
 {

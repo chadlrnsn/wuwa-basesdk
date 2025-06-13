@@ -305,7 +305,7 @@ static_assert(offsetof(FAutomationWorkerSingleTestReply, NumParticipantsRequired
 struct FAutomationWorkerRequestTestsReplyComplete final
 {
 public:
-	TArray<struct FAutomationWorkerSingleTestReply> Tests;                                             // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FAutomationWorkerSingleTestReply> Tests;                                           // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FAutomationWorkerRequestTestsReplyComplete) == 0x000008, "Wrong alignment on FAutomationWorkerRequestTestsReplyComplete");
 static_assert(sizeof(FAutomationWorkerRequestTestsReplyComplete) == 0x000010, "Wrong size on FAutomationWorkerRequestTestsReplyComplete");

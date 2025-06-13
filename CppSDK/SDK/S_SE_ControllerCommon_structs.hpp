@@ -22,8 +22,8 @@ namespace SDK
 struct FS_SE_ControllerCommon final
 {
 public:
-	TArray<struct FSMaterialControllerFloatParameter> CustomFloats_20_BEFE4A72466DBBF31C7BE88043697CC2;  // 0x0000(0x0010)(Edit, BlueprintVisible)
-	TArray<struct FSMaterialControllerColorParameter> CustomColors_23_D46E551F4EE49A33813738920A17A1A1;  // 0x0010(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FSMaterialControllerFloatParameter> CustomFloats_20_BEFE4A72466DBBF31C7BE88043697CC2; // 0x0000(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FSMaterialControllerColorParameter> CustomColors_23_D46E551F4EE49A33813738920A17A1A1; // 0x0010(0x0010)(Edit, BlueprintVisible)
 	bool                                          bActive_27_2CF94B2C45421EB008661E9B70C1D57E;       // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(FS_SE_ControllerCommon) == 0x000008, "Wrong alignment on FS_SE_ControllerCommon");

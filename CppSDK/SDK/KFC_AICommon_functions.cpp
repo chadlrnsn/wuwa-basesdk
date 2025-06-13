@@ -23,7 +23,7 @@ namespace SDK
 // class AActor*                           目标角色                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           原点角色                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   返回角度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  返回角度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取自身距离目标角度(class AActor* 目标角色, class AActor* 原点角色, class UObject* __WorldContext, float* 返回角度)
 {
@@ -51,8 +51,8 @@ void UKFC_AICommon_C::获取自身距离目标角度(class AActor* 目标角色,
 // class AActor*                           AI对象                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           目标对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   到目标的距离                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    返回是否超过目标                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float*                                  到目标的距离                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   返回是否超过目标                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UKFC_AICommon_C::目标距离计算(class AActor* AI对象, class AActor* 目标对象, class UObject* __WorldContext, float* 到目标的距离, bool* 返回是否超过目标)
 {
@@ -82,14 +82,14 @@ void UKFC_AICommon_C::目标距离计算(class AActor* AI对象, class AActor* �
 // Parameters:
 // class ACharacter*                       As_Base_Character                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          速度向量                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          加速度                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          移动输入向量                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    是否正在移动                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// bool                                    是否有移动输入                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// float                                   速度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   瞄准旋转速率                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EMovementMode                           移动模式                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         速度向量                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         加速度                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         移动输入向量                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   是否正在移动                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   是否有移动输入                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float*                                  速度                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  瞄准旋转速率                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EMovementMode*                          移动模式                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::更新动画属性_性能消耗大仅限进行测试开发_(class ACharacter* As_Base_Character, class UObject* __WorldContext, struct FVector* 速度向量, struct FVector* 加速度, struct FVector* 移动输入向量, bool* 是否正在移动, bool* 是否有移动输入, float* 速度, float* 瞄准旋转速率, EMovementMode* 移动模式)
 {
@@ -136,8 +136,8 @@ void UKFC_AICommon_C::更新动画属性_性能消耗大仅限进行测试开发
 // Parameters:
 // class FName                             剧情ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UDataTable*                       剧情资源表                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<class AActor*>                   演员Actor数组                                          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<class FName>                     演员身份数组                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class AActor*>&                  演员Actor数组                                          (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class FName>&                    演员身份数组                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::播放特写镜头动画(class FName 剧情ID, class UDataTable* 剧情资源表, TArray<class AActor*>& 演员Actor数组, TArray<class FName>& 演员身份数组, class UObject* __WorldContext)
@@ -167,7 +167,7 @@ void UKFC_AICommon_C::播放特写镜头动画(class FName 剧情ID, class UData
 // Parameters:
 // class ATsBaseCharacter_C*               BaseCharacter                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    结束自动朝向                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   结束自动朝向                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UKFC_AICommon_C::游荡强制转向结束(class ATsBaseCharacter_C* BaseCharacter, class UObject* __WorldContext, bool* 结束自动朝向)
 {
@@ -193,9 +193,9 @@ void UKFC_AICommon_C::游荡强制转向结束(class ATsBaseCharacter_C* BaseCha
 // Parameters:
 // class ATsBaseCharacter_C*               自身base对象                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   旋转速度                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          导航坐标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   导航坐标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    导航强制转向中                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   导航强制转向中                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UKFC_AICommon_C::导航强制转向开始(class ATsBaseCharacter_C* 自身base对象, float 旋转速度, const struct FVector& 导航坐标, class UObject* __WorldContext, bool* 导航强制转向中)
 {
@@ -247,7 +247,7 @@ void UKFC_AICommon_C::停止移动(class ATsBaseCharacter_C* Character, class UO
 // float                                   旋转速度                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class ATsBaseCharacter_C*               仇恨对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    自动朝向开始                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   自动朝向开始                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UKFC_AICommon_C::游荡强制转向开始(class ATsBaseCharacter_C* 自身Character, float 旋转速度, class ATsBaseCharacter_C* 仇恨对象, class UObject* __WorldContext, bool* 自动朝向开始)
 {
@@ -274,7 +274,7 @@ void UKFC_AICommon_C::游荡强制转向开始(class ATsBaseCharacter_C* 自身C
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -300,9 +300,9 @@ void UKFC_AICommon_C::设置黑板Int(class ATsBaseCharacter_C* 角色, const cl
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ABaseCharacter*                   角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取黑板_Int(class ABaseCharacter* 角色, const class FString& Key, class UObject* __WorldContext, int32* 值)
 {
@@ -327,10 +327,10 @@ void UKFC_AICommon_C::获取黑板_Int(class ABaseCharacter* 角色, const class
 // Function KFC_AICommon.KFC_AICommon_C.获取自身距离坐标角度
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVectorDouble                    目标坐标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             目标坐标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           原点角色                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   返回角度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  返回角度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取自身距离坐标角度(const struct FVectorDouble& 目标坐标, class AActor* 原点角色, class UObject* __WorldContext, float* 返回角度)
 {
@@ -386,7 +386,7 @@ void UKFC_AICommon_C::使用技能关卡封装(bool 外部方向输入清0, clas
 // class AActor*                           目标角色                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class AActor*                           原点角色                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   返回角度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  返回角度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取自身距离目标角度2D(class AActor* 目标角色, class AActor* 原点角色, class UObject* __WorldContext, float* 返回角度)
 {
@@ -411,9 +411,9 @@ void UKFC_AICommon_C::获取自身距离目标角度2D(class AActor* 目标角�
 // Function KFC_AICommon.KFC_AICommon_C.忽略 Z
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FVector                          InVec                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   InVec                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          OutVec                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         OutVec                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::忽略_Z(const struct FVector& InVec, class UObject* __WorldContext, struct FVector* OutVec)
 {
@@ -441,8 +441,8 @@ void UKFC_AICommon_C::忽略_Z(const struct FVector& InVec, class UObject* __Wor
 // ECamp                                   目标阵营                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UDataTable*                       阵营关系数据                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ERelation                               关系                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   关系整数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ERelation*                              关系                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  关系整数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::阵营判断(ECamp 自身阵营, ECamp 目标阵营, class UDataTable* 阵营关系数据, class UObject* __WorldContext, ERelation* 关系, int32* 关系整数)
 {
@@ -471,10 +471,10 @@ void UKFC_AICommon_C::阵营判断(ECamp 自身阵营, ECamp 目标阵营, class
 // Function KFC_AICommon.KFC_AICommon_C.GetPathToTarget
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          InEndPos                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          InStartPos                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   InEndPos                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   InStartPos                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FVector>                  OutPathpoint                                           (Parm, OutParm)
+// TArray<struct FVector>*                 OutPathpoint                                           (Parm, OutParm)
 
 void UKFC_AICommon_C::GetPathToTarget(const struct FVector& InEndPos, const struct FVector& InStartPos, class UObject* __WorldContext, TArray<struct FVector>* OutPathpoint)
 {
@@ -499,11 +499,11 @@ void UKFC_AICommon_C::GetPathToTarget(const struct FVector& InEndPos, const stru
 // Function KFC_AICommon.KFC_AICommon_C.在原点左边
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FVectorDouble                    原点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    目标点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    原点朝向的点                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             原点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             目标点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             原点朝向的点                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    在原点左边_0                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   在原点左边_0                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UKFC_AICommon_C::在原点左边(const struct FVectorDouble& 原点, const struct FVectorDouble& 目标点, const struct FVectorDouble& 原点朝向的点, class UObject* __WorldContext, bool* 在原点左边_0)
 {
@@ -529,11 +529,11 @@ void UKFC_AICommon_C::在原点左边(const struct FVectorDouble& 原点, const 
 // Function KFC_AICommon.KFC_AICommon_C.Get Pos in Path
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FSPointsRow>              InRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSPointsRow>&             InRow                                                  (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    bXDir                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    bYDir                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FVector>                  OutPoints                                              (Parm, OutParm)
+// TArray<struct FVector>*                 OutPoints                                              (Parm, OutParm)
 
 void UKFC_AICommon_C::Get_Pos_in_Path(TArray<struct FSPointsRow>& InRow, bool bXDir, bool bYDir, class UObject* __WorldContext, TArray<struct FVector>* OutPoints)
 {
@@ -564,7 +564,7 @@ void UKFC_AICommon_C::Get_Pos_in_Path(TArray<struct FSPointsRow>& InRow, bool bX
 // class ATsBaseCharacter_C*               比较对象1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class ATsBaseCharacter_C*               比较对象2                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   距离                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  距离                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::忽略胶囊体距离(class ATsBaseCharacter_C* 比较对象1, class ATsBaseCharacter_C* 比较对象2, class UObject* __WorldContext, float* 距离)
 {
@@ -612,7 +612,7 @@ void UKFC_AICommon_C::怪物通用(class UObject* __WorldContext)
 // class ATsBaseCharacter_C*               原点目标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class ATsBaseCharacter_C*               比较目标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   高度差                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  高度差                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::高度差计算(class ATsBaseCharacter_C* 原点目标, class ATsBaseCharacter_C* 比较目标, class UObject* __WorldContext, float* 高度差)
 {
@@ -638,7 +638,7 @@ void UKFC_AICommon_C::高度差计算(class ATsBaseCharacter_C* 原点目标, cl
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    导航强制转向中                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   导航强制转向中                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UKFC_AICommon_C::导航强制转向结束(class UObject* __WorldContext, bool* 导航强制转向中)
 {
@@ -664,7 +664,7 @@ void UKFC_AICommon_C::导航强制转向结束(class UObject* __WorldContext, bo
 // float                                   最大距离                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   最小距离                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   距离中值_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  距离中值_0                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::距离中值(float 最大距离, float 最小距离, class UObject* __WorldContext, float* 距离中值_0)
 {
@@ -692,11 +692,11 @@ void UKFC_AICommon_C::距离中值(float 最大距离, float 最小距离, class
 // float                                   长度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   旋转                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   仰角                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    原点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    目标点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             原点                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             目标点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ThreeD旋转                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    坐标点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   坐标点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::向量偏转角度长度仰角的坐标(float 长度, float 旋转, float 仰角, const struct FVectorDouble& 原点, const struct FVectorDouble& 目标点, bool ThreeD旋转, class UObject* __WorldContext, struct FVectorDouble* 坐标点)
 {
@@ -725,13 +725,13 @@ void UKFC_AICommon_C::向量偏转角度长度仰角的坐标(float 长度, floa
 // Function KFC_AICommon.KFC_AICommon_C.传送坐标可靠性判断
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FVectorDouble                    起始坐标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    被验证坐标                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             起始坐标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             被验证坐标                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class ATsBaseCharacter_C*               自身                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    坐标点可靠                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FVectorDouble                    可靠坐标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   返回坐标距离目标距离                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   坐标点可靠                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FVectorDouble*                   可靠坐标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  返回坐标距离目标距离                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::传送坐标可靠性判断(const struct FVectorDouble& 起始坐标, const struct FVectorDouble& 被验证坐标, class ATsBaseCharacter_C* 自身, class UObject* __WorldContext, bool* 坐标点可靠, struct FVectorDouble* 可靠坐标, float* 返回坐标距离目标距离)
 {
@@ -764,7 +764,7 @@ void UKFC_AICommon_C::传送坐标可靠性判断(const struct FVectorDouble& �
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int64                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -790,9 +790,9 @@ void UKFC_AICommon_C::设置黑板Long(class ATsBaseCharacter_C* 角色, const c
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int64                                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int64*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取黑板Long(class ATsBaseCharacter_C* 角色, const class FString& Key, class UObject* __WorldContext, int64* 值)
 {
@@ -818,9 +818,9 @@ void UKFC_AICommon_C::获取黑板Long(class ATsBaseCharacter_C* 角色, const c
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// int32*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& Key, class UObject* __WorldContext, int32* 值)
 {
@@ -846,7 +846,7 @@ void UKFC_AICommon_C::获取黑板EntityId(class ATsBaseCharacter_C* 角色, con
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -895,7 +895,7 @@ void UKFC_AICommon_C::开启交互事件(int32 交互事件ID, class UObject* __
 // Parameters:
 // class AAIC_AICommon_C*                  AIC自身对象                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   cd_Id                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TDelegate<void(bool bContent)>          事件                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
+// const TDelegate<void(bool bContent)>    事件                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::创建_CD计时器回调(class AAIC_AICommon_C* AIC自身对象, int32 cd_Id, const TDelegate<void(bool bContent)> 事件, class UObject* __WorldContext)
@@ -923,10 +923,10 @@ void UKFC_AICommon_C::创建_CD计时器回调(class AAIC_AICommon_C* AIC自身�
 // float                                   激发力度                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   发射角度                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   返回高度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   返回位置                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   高度速度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   距离速度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  返回高度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  返回位置                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  高度速度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  距离速度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::抛物线位移函数(float 激发时长, float 激发力度, float 发射角度, class UObject* __WorldContext, float* 返回高度, float* 返回位置, float* 高度速度, float* 距离速度)
 {
@@ -965,7 +965,7 @@ void UKFC_AICommon_C::抛物线位移函数(float 激发时长, float 激发力�
 // class ACharacter*                       原点对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    忽略胶囊体                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   返回角度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  返回角度                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取自身对于目标仰角(class ACharacter* 目标对象, class ACharacter* 原点对象, bool 忽略胶囊体, class UObject* __WorldContext, float* 返回角度)
 {
@@ -994,7 +994,7 @@ void UKFC_AICommon_C::获取自身对于目标仰角(class ACharacter* 目标对
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   属性id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取_Base属性值(class ATsBaseCharacter_C* 目标, int32 属性id, class UObject* __WorldContext, float* 属性值)
 {
@@ -1022,7 +1022,7 @@ void UKFC_AICommon_C::获取_Base属性值(class ATsBaseCharacter_C* 目标, int
 // class ABaseCharacter*                   目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   属性id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取Current属性值(class ABaseCharacter* 目标, int32 属性id, class UObject* __WorldContext, float* 属性值)
 {
@@ -1047,9 +1047,9 @@ void UKFC_AICommon_C::获取Current属性值(class ABaseCharacter* 目标, int32
 // Function KFC_AICommon.KFC_AICommon_C.忽略 Z Double
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FVectorDouble                    InVec                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             InVec                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    OutVec                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   OutVec                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::忽略_Z_Double(const struct FVectorDouble& InVec, class UObject* __WorldContext, struct FVectorDouble* OutVec)
 {
@@ -1074,9 +1074,9 @@ void UKFC_AICommon_C::忽略_Z_Double(const struct FVectorDouble& InVec, class U
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    位置                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   位置                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UKFC_AICommon_C::获取黑板坐标(class ATsBaseCharacter_C* 角色, const class FString& Key, class UObject* __WorldContext, struct FVectorDouble* 位置)
 {
@@ -1101,7 +1101,7 @@ void UKFC_AICommon_C::获取黑板坐标(class ATsBaseCharacter_C* 角色, const
 // Function KFC_AICommon.KFC_AICommon_C.怪物通用转向
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FRotator                         目标旋转体                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FRotator&                  目标旋转体                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // float                                   TargetInterpSpeed_Const_                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ActorInterpSpeed_Smooth_                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class ATsBaseCharacter_C*               旋转对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -1159,7 +1159,7 @@ bool UKFC_AICommon_C::是否需要移动(class ATsBaseCharacter_C* BaseCharacter
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          AIC自身对象                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// TDelegate<void(bool bContent)>          Event                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper)
+// const TDelegate<void(bool bContent)>&   Event                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UKuroBooleanEventBinder*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
@@ -1186,11 +1186,11 @@ class UKuroBooleanEventBinder* UKFC_AICommon_C::创建AIC监听(class UObject* A
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          AIC自身对象                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// TDelegate<void(TArray<class AActor*>& AddActor, TArray<class AActor*>& RemoveActor, TArray<int32>& RemoveActorIds, int32 Num)>Event1                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// const TDelegate<void(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)>&Event1                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UKuroPerceptionEventBinder*       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
-class UKuroPerceptionEventBinder* UKFC_AICommon_C::创建仇恨感知监听(class UObject* AIC自身对象, const TDelegate<void(TArray<class AActor*>& AddActor, TArray<class AActor*>& RemoveActor, TArray<int32>& RemoveActorIds, int32 Num)>& Event1, class UObject* __WorldContext)
+class UKuroPerceptionEventBinder* UKFC_AICommon_C::创建仇恨感知监听(class UObject* AIC自身对象, const TDelegate<void(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)>& Event1, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1213,7 +1213,7 @@ class UKuroPerceptionEventBinder* UKFC_AICommon_C::创建仇恨感知监听(clas
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          AIC自身对象                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// TDelegate<void(class AActor* Actor, bool bContent)>Event                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper)
+// const TDelegate<void(class AActor* Actor, bool bContent)>&Event                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UKuroActorEventBinder*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 

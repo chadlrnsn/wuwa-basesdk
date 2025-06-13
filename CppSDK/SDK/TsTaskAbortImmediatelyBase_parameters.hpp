@@ -14,6 +14,19 @@
 namespace SDK::Params
 {
 
+// Function TsTaskAbortImmediatelyBase.TsTaskAbortImmediatelyBase_C.ReceiveAbortAI
+// 0x0010 (0x0010 - 0x0000)
+struct TsTaskAbortImmediatelyBase_C_ReceiveAbortAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsTaskAbortImmediatelyBase_C_ReceiveAbortAI) == 0x000008, "Wrong alignment on TsTaskAbortImmediatelyBase_C_ReceiveAbortAI");
+static_assert(sizeof(TsTaskAbortImmediatelyBase_C_ReceiveAbortAI) == 0x000010, "Wrong size on TsTaskAbortImmediatelyBase_C_ReceiveAbortAI");
+static_assert(offsetof(TsTaskAbortImmediatelyBase_C_ReceiveAbortAI, OwnerController) == 0x000000, "Member 'TsTaskAbortImmediatelyBase_C_ReceiveAbortAI::OwnerController' has a wrong offset!");
+static_assert(offsetof(TsTaskAbortImmediatelyBase_C_ReceiveAbortAI, ControlledPawn) == 0x000008, "Member 'TsTaskAbortImmediatelyBase_C_ReceiveAbortAI::ControlledPawn' has a wrong offset!");
+
 // Function TsTaskAbortImmediatelyBase.TsTaskAbortImmediatelyBase_C.ExecuteUbergraph_TsTaskAbortImmediatelyBase
 // 0x0018 (0x0018 - 0x0000)
 struct TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortImmediatelyBase final
@@ -29,19 +42,6 @@ static_assert(sizeof(TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortIm
 static_assert(offsetof(TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortImmediatelyBase, EntryPoint) == 0x000000, "Member 'TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortImmediatelyBase::EntryPoint' has a wrong offset!");
 static_assert(offsetof(TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortImmediatelyBase, K2Node_Event_OwnerController) == 0x000008, "Member 'TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortImmediatelyBase::K2Node_Event_OwnerController' has a wrong offset!");
 static_assert(offsetof(TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortImmediatelyBase, K2Node_Event_ControlledPawn) == 0x000010, "Member 'TsTaskAbortImmediatelyBase_C_ExecuteUbergraph_TsTaskAbortImmediatelyBase::K2Node_Event_ControlledPawn' has a wrong offset!");
-
-// Function TsTaskAbortImmediatelyBase.TsTaskAbortImmediatelyBase_C.ReceiveAbortAI
-// 0x0010 (0x0010 - 0x0000)
-struct TsTaskAbortImmediatelyBase_C_ReceiveAbortAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsTaskAbortImmediatelyBase_C_ReceiveAbortAI) == 0x000008, "Wrong alignment on TsTaskAbortImmediatelyBase_C_ReceiveAbortAI");
-static_assert(sizeof(TsTaskAbortImmediatelyBase_C_ReceiveAbortAI) == 0x000010, "Wrong size on TsTaskAbortImmediatelyBase_C_ReceiveAbortAI");
-static_assert(offsetof(TsTaskAbortImmediatelyBase_C_ReceiveAbortAI, OwnerController) == 0x000000, "Member 'TsTaskAbortImmediatelyBase_C_ReceiveAbortAI::OwnerController' has a wrong offset!");
-static_assert(offsetof(TsTaskAbortImmediatelyBase_C_ReceiveAbortAI, ControlledPawn) == 0x000008, "Member 'TsTaskAbortImmediatelyBase_C_ReceiveAbortAI::ControlledPawn' has a wrong offset!");
 
 }
 

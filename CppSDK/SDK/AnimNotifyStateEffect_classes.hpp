@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass AnimNotifyStateEffect.AnimNotifyStateEffect_C
-// 0x00C0 (0x0140 - 0x0080)
+// 0x00D0 (0x0150 - 0x0080)
 class UAnimNotifyStateEffect_C final : public UKuroEffectMakerANS
 {
 public:
@@ -42,6 +42,9 @@ public:
 	bool                                          AlwaysLoop;                                        // 0x013A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          SyncEventTimeToEffectTime;                         // 0x013B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IgnoreWhenInvisible;                               // 0x013C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_13D[0x3];                                      // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   EffectSlotName;                                    // 0x0140(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsSyncEffectTimeScale;                             // 0x014C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_ValidateAssets();
@@ -65,7 +68,7 @@ public:
 	}
 };
 static_assert(alignof(UAnimNotifyStateEffect_C) == 0x000008, "Wrong alignment on UAnimNotifyStateEffect_C");
-static_assert(sizeof(UAnimNotifyStateEffect_C) == 0x000140, "Wrong size on UAnimNotifyStateEffect_C");
+static_assert(sizeof(UAnimNotifyStateEffect_C) == 0x000150, "Wrong size on UAnimNotifyStateEffect_C");
 static_assert(offsetof(UAnimNotifyStateEffect_C, UseSocketTransform) == 0x000080, "Member 'UAnimNotifyStateEffect_C::UseSocketTransform' has a wrong offset!");
 static_assert(offsetof(UAnimNotifyStateEffect_C, UseClipboardTransform) == 0x000081, "Member 'UAnimNotifyStateEffect_C::UseClipboardTransform' has a wrong offset!");
 static_assert(offsetof(UAnimNotifyStateEffect_C, DetachWhenSkillEnd) == 0x000082, "Member 'UAnimNotifyStateEffect_C::DetachWhenSkillEnd' has a wrong offset!");
@@ -82,6 +85,8 @@ static_assert(offsetof(UAnimNotifyStateEffect_C, RecycleWhenEnd) == 0x000139, "M
 static_assert(offsetof(UAnimNotifyStateEffect_C, AlwaysLoop) == 0x00013A, "Member 'UAnimNotifyStateEffect_C::AlwaysLoop' has a wrong offset!");
 static_assert(offsetof(UAnimNotifyStateEffect_C, SyncEventTimeToEffectTime) == 0x00013B, "Member 'UAnimNotifyStateEffect_C::SyncEventTimeToEffectTime' has a wrong offset!");
 static_assert(offsetof(UAnimNotifyStateEffect_C, IgnoreWhenInvisible) == 0x00013C, "Member 'UAnimNotifyStateEffect_C::IgnoreWhenInvisible' has a wrong offset!");
+static_assert(offsetof(UAnimNotifyStateEffect_C, EffectSlotName) == 0x000140, "Member 'UAnimNotifyStateEffect_C::EffectSlotName' has a wrong offset!");
+static_assert(offsetof(UAnimNotifyStateEffect_C, IsSyncEffectTimeScale) == 0x00014C, "Member 'UAnimNotifyStateEffect_C::IsSyncEffectTimeScale' has a wrong offset!");
 
 }
 

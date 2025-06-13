@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SequenceData.BP_SequenceData_C
-// 0x00C8 (0x0100 - 0x0038)
+// 0x00D8 (0x0110 - 0x0038)
 class UBP_SequenceData_C final : public UPrimaryDataAsset
 {
 public:
@@ -48,6 +48,9 @@ public:
 	uint8                                         Pad_E4[0x4];                                       // 0x00E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 GraphName;                                         // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          bIsForceFinalTrans;                                // 0x00F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F9[0x3];                                       // 0x00F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         相机过渡时间;                                      // 0x00FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          约束宽高比;                                        // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	static class UClass* StaticClass()
@@ -60,7 +63,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_SequenceData_C) == 0x000010, "Wrong alignment on UBP_SequenceData_C");
-static_assert(sizeof(UBP_SequenceData_C) == 0x000100, "Wrong size on UBP_SequenceData_C");
+static_assert(sizeof(UBP_SequenceData_C) == 0x000110, "Wrong size on UBP_SequenceData_C");
 static_assert(offsetof(UBP_SequenceData_C, 类型) == 0x000038, "Member 'UBP_SequenceData_C::类型' has a wrong offset!");
 static_assert(offsetof(UBP_SequenceData_C, 剧情资源) == 0x000040, "Member 'UBP_SequenceData_C::剧情资源' has a wrong offset!");
 static_assert(offsetof(UBP_SequenceData_C, 文本资源ID) == 0x000050, "Member 'UBP_SequenceData_C::文本资源ID' has a wrong offset!");
@@ -82,6 +85,8 @@ static_assert(offsetof(UBP_SequenceData_C, GeneratedData) == 0x0000D8, "Member '
 static_assert(offsetof(UBP_SequenceData_C, 葫芦状态) == 0x0000E0, "Member 'UBP_SequenceData_C::葫芦状态' has a wrong offset!");
 static_assert(offsetof(UBP_SequenceData_C, GraphName) == 0x0000E8, "Member 'UBP_SequenceData_C::GraphName' has a wrong offset!");
 static_assert(offsetof(UBP_SequenceData_C, bIsForceFinalTrans) == 0x0000F8, "Member 'UBP_SequenceData_C::bIsForceFinalTrans' has a wrong offset!");
+static_assert(offsetof(UBP_SequenceData_C, 相机过渡时间) == 0x0000FC, "Member 'UBP_SequenceData_C::相机过渡时间' has a wrong offset!");
+static_assert(offsetof(UBP_SequenceData_C, 约束宽高比) == 0x000100, "Member 'UBP_SequenceData_C::约束宽高比' has a wrong offset!");
 
 }
 

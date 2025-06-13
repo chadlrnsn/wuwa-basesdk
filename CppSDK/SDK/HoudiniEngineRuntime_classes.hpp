@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "HoudiniEngineRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "HoudiniEngineRuntime_structs.hpp"
 #include "PhysicsCore_structs.hpp"
 
 
@@ -240,7 +240,7 @@ public:
 	bool                                          bCanDeleteHoudiniNodes;                            // 0x0A4C(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bHasRegisteredComponentTemplate;                   // 0x0A4D(0x0001)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_A4E[0xA];                                      // 0x0A4E(0x000A)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FHoudiniOutputObjectIdentifier, struct FGuid> CachedOutputNodes;                                 // 0x0A58(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<struct FHoudiniOutputObjectIdentifier, struct FGuid> CachedOutputNodes;                     // 0x0A58(0x0050)(Protected, NativeAccessSpecifierProtected)
 	TMap<struct FGuid, struct FGuid>              CachedInputNodes;                                  // 0x0AA8(0x0050)(Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_AF8[0x8];                                      // 0x0AF8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -765,8 +765,8 @@ static_assert(alignof(UHoudiniMeshSplitInstancerComponent_V1) == 0x000010, "Wron
 static_assert(sizeof(UHoudiniMeshSplitInstancerComponent_V1) == 0x000240, "Wrong size on UHoudiniMeshSplitInstancerComponent_V1");
 
 // Class HoudiniEngineRuntime.HoudiniEngineCopyPropertiesInterface
-// 0x0000 (0x0030 - 0x0030)
-class IHoudiniEngineCopyPropertiesInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IHoudiniEngineCopyPropertiesInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -777,9 +777,18 @@ public:
 	{
 		return GetDefaultObjImpl<IHoudiniEngineCopyPropertiesInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IHoudiniEngineCopyPropertiesInterface) == 0x000008, "Wrong alignment on IHoudiniEngineCopyPropertiesInterface");
-static_assert(sizeof(IHoudiniEngineCopyPropertiesInterface) == 0x000030, "Wrong size on IHoudiniEngineCopyPropertiesInterface");
+static_assert(alignof(IHoudiniEngineCopyPropertiesInterface) == 0x000001, "Wrong alignment on IHoudiniEngineCopyPropertiesInterface");
+static_assert(sizeof(IHoudiniEngineCopyPropertiesInterface) == 0x000001, "Wrong size on IHoudiniEngineCopyPropertiesInterface");
 
 // Class HoudiniEngineRuntime.HoudiniHandleParameter
 // 0x0010 (0x0040 - 0x0030)
@@ -891,7 +900,7 @@ public:
 	TArray<class UHoudiniInputObject*>            GeometryCollectionInputObjects;                    // 0x0138(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TSet<class ULandscapeComponent*>              LandscapeSelectedComponents;                       // 0x0148(0x0050)(ExportObject, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	TSet<int32>                                   InputNodesPendingDelete;                           // 0x0198(0x0050)(Transient, DuplicateTransient, NonTransactional, Protected, NativeAccessSpecifierProtected)
-	TArray<class UHoudiniInputHoudiniSplineComponent*> LastInsertedInputs;                                // 0x01E8(0x0010)(ZeroConstructor, Transient, DuplicateTransient, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniInputHoudiniSplineComponent*> LastInsertedInputs;                           // 0x01E8(0x0010)(ZeroConstructor, Transient, DuplicateTransient, NativeAccessSpecifierPublic)
 	TArray<class UHoudiniInputObject*>            LastUndoDeletedInputs;                             // 0x01F8(0x0010)(ZeroConstructor, Transient, DuplicateTransient, NonTransactional, NativeAccessSpecifierPublic)
 	bool                                          bUpdateInputLandscape;                             // 0x0208(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EHoudiniLandscapeExportType                   LandscapeExportType;                               // 0x0209(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1570,10 +1579,10 @@ public:
 	EHoudiniOutputType                            Type;                                              // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FHoudiniGeoPartObject>          HoudiniGeoPartObjects;                             // 0x0038(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniOutputObject> OutputObjects;                                     // 0x0048(0x0050)(DuplicateTransient, Protected, NativeAccessSpecifierProtected)
-	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniInstancedOutput> InstancedOutputs;                                  // 0x0098(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TMap<class FString, class UMaterialInterface*> AssignementMaterials;                              // 0x00E8(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TMap<class FString, class UMaterialInterface*> ReplacementMaterials;                              // 0x0138(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniOutputObject> OutputObjects;          // 0x0048(0x0050)(DuplicateTransient, Protected, NativeAccessSpecifierProtected)
+	TMap<struct FHoudiniOutputObjectIdentifier, struct FHoudiniInstancedOutput> InstancedOutputs;    // 0x0098(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, class UMaterialInterface*> AssignementMaterials;                             // 0x00E8(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, class UMaterialInterface*> ReplacementMaterials;                             // 0x0138(0x0050)(Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_188[0x4];                                      // 0x0188(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bLandscapeWorldComposition;                        // 0x018C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_18D[0x3];                                      // 0x018D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -2167,15 +2176,15 @@ static_assert(offsetof(UHoudiniParameterRampColorPoint, InterpolationParentParm)
 class UHoudiniParameterRampFloat final : public UHoudiniParameterMultiParm
 {
 public:
-	TArray<class UHoudiniParameterRampFloatPoint*> Points;                                            // 0x0158(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<class UHoudiniParameterRampFloatPoint*> CachedPoints;                                      // 0x0168(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampFloatPoint*> Points;                                           // 0x0158(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampFloatPoint*> CachedPoints;                                     // 0x0168(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TArray<float>                                 DefaultPositions;                                  // 0x0178(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<float>                                 DefaultValues;                                     // 0x0188(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 DefaultChoices;                                    // 0x0198(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumDefaultPoints;                                  // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bCaching;                                          // 0x01AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UHoudiniParameterRampModificationEvent*> ModificationEvents;                                // 0x01B0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampModificationEvent*> ModificationEvents;                        // 0x01B0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2203,16 +2212,16 @@ static_assert(offsetof(UHoudiniParameterRampFloat, ModificationEvents) == 0x0001
 class UHoudiniParameterRampColor final : public UHoudiniParameterMultiParm
 {
 public:
-	TArray<class UHoudiniParameterRampColorPoint*> Points;                                            // 0x0158(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampColorPoint*> Points;                                           // 0x0158(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	bool                                          bCaching;                                          // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_169[0x7];                                      // 0x0169(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UHoudiniParameterRampColorPoint*> CachedPoints;                                      // 0x0170(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampColorPoint*> CachedPoints;                                     // 0x0170(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TArray<float>                                 DefaultPositions;                                  // 0x0180(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FLinearColor>                   DefaultValues;                                     // 0x0190(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 DefaultChoices;                                    // 0x01A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	int32                                         NumDefaultPoints;                                  // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1B4[0x4];                                      // 0x01B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UHoudiniParameterRampModificationEvent*> ModificationEvents;                                // 0x01B8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UHoudiniParameterRampModificationEvent*> ModificationEvents;                        // 0x01B8(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2326,7 +2335,7 @@ public:
 	uint8                                         Pad_D8[0x88];                                      // 0x00D8(0x0088)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bShow;                                             // 0x0160(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_161[0x7];                                      // 0x0161(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, struct FHoudiniPDGWorkResultObjectBakedOutput> BakedWorkResultObjectOutputs;                      // 0x0168(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, struct FHoudiniPDGWorkResultObjectBakedOutput> BakedWorkResultObjectOutputs; // 0x0168(0x0050)(Protected, NativeAccessSpecifierProtected)
 	struct FWorkItemTally                         WorkItemTally;                                     // 0x01B8(0x0238)(Transient, NonTransactional, Protected, NativeAccessSpecifierProtected)
 	struct FAggregatedWorkItemTally               AggregatedWorkItemTally;                           // 0x03F0(0x0028)(Transient, NonTransactional, Protected, NativeAccessSpecifierProtected)
 	bool                                          bHasReceivedCookCompleteEvent;                     // 0x0418(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NonTransactional, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -2825,8 +2834,8 @@ static_assert(offsetof(UHoudiniStaticMeshComponent, LocalBounds) == 0x000540, "M
 static_assert(offsetof(UHoudiniStaticMeshComponent, bHoudiniIconVisible) == 0x00055C, "Member 'UHoudiniStaticMeshComponent::bHoudiniIconVisible' has a wrong offset!");
 
 // Class HoudiniEngineRuntime.HoudiniAssetStateEvents
-// 0x0000 (0x0030 - 0x0030)
-class IHoudiniAssetStateEvents final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IHoudiniAssetStateEvents final
 {
 public:
 	static class UClass* StaticClass()
@@ -2837,9 +2846,18 @@ public:
 	{
 		return GetDefaultObjImpl<IHoudiniAssetStateEvents>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IHoudiniAssetStateEvents) == 0x000008, "Wrong alignment on IHoudiniAssetStateEvents");
-static_assert(sizeof(IHoudiniAssetStateEvents) == 0x000030, "Wrong size on IHoudiniAssetStateEvents");
+static_assert(alignof(IHoudiniAssetStateEvents) == 0x000001, "Wrong alignment on IHoudiniAssetStateEvents");
+static_assert(sizeof(IHoudiniAssetStateEvents) == 0x000001, "Wrong size on IHoudiniAssetStateEvents");
 
 }
 

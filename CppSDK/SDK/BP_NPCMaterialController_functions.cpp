@@ -74,12 +74,12 @@ void UBP_NPCMaterialController_C::ReceiveTick(float DeltaSeconds)
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.CacheMaterialParameters
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FSMaterialControllerFloatParameter>floats                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSMaterialControllerColorParameter>colors                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSMaterialControllerFloatParameter>&floats                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSMaterialControllerColorParameter>&colors                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UMaterialInstanceDynamic*         material                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bReplaceMaterial                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // int32                                   index                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSMaterialParamCache             result                                                 (Parm, OutParm, HasGetValueTypeHash)
+// struct FSMaterialParamCache*            result                                                 (Parm, OutParm, HasGetValueTypeHash)
 
 void UBP_NPCMaterialController_C::CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& floats, TArray<struct FSMaterialControllerColorParameter>& colors, class UMaterialInstanceDynamic* material, bool bReplaceMaterial, int32 index, struct FSMaterialParamCache* result)
 {
@@ -109,12 +109,12 @@ void UBP_NPCMaterialController_C::CacheMaterialParameters(TArray<struct FSMateri
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.CacheAndReplace
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSHolographicData                SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FSHolographicData&         SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // class UPrimitiveComponent*              self2                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // int32                                   ElementIndex                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UMaterialInstanceDynamic*         material                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UMaterialInstanceDynamic*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSMaterialParamCache             CacheResult                                            (Parm, OutParm, HasGetValueTypeHash)
+// struct FSMaterialParamCache*            CacheResult                                            (Parm, OutParm, HasGetValueTypeHash)
 
 class UMaterialInstanceDynamic* UBP_NPCMaterialController_C::CacheAndReplace(const struct FSHolographicData& SHolographicData, class UPrimitiveComponent* self2, int32 ElementIndex, class UMaterialInstanceDynamic* material, struct FSMaterialParamCache* CacheResult)
 {
@@ -142,8 +142,8 @@ class UMaterialInstanceDynamic* UBP_NPCMaterialController_C::CacheAndReplace(con
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.RevertMaterialParamters
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSMaterialParamCache             MaterialCache                                          (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-// class UMaterialInstanceDynamic*         result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSMaterialParamCache&      MaterialCache                                          (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// class UMaterialInstanceDynamic**        result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_NPCMaterialController_C::RevertMaterialParamters(const struct FSMaterialParamCache& MaterialCache, class UMaterialInstanceDynamic** result)
 {
@@ -194,8 +194,8 @@ void UBP_NPCMaterialController_C::RemoveNpcEffect()
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.UpdateMaterialsWithDa
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UMaterialInstanceDynamic*> Materials                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FSHolographicData                SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// TArray<class UMaterialInstanceDynamic*>&Materials                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FSHolographicData&         SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UBP_NPCMaterialController_C::UpdateMaterialsWithDa(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData)
 {
@@ -246,8 +246,8 @@ void UBP_NPCMaterialController_C::EndEffect()
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.MaterialPretreatment
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UMaterialInstanceDynamic*> Materials                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FSHolographicData                SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// TArray<class UMaterialInstanceDynamic*>&Materials                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FSHolographicData&         SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 
 void UBP_NPCMaterialController_C::MaterialPretreatment(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData)
 {
@@ -270,7 +270,7 @@ void UBP_NPCMaterialController_C::MaterialPretreatment(TArray<class UMaterialIns
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.ApplyMaterialsWithDa
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSHolographicData                SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FSHolographicData&         SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // EKuroCharSlotSpecifiedType              SlotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_NPCMaterialController_C::ApplyMaterialsWithDa(const struct FSHolographicData& SHolographicData, EKuroCharSlotSpecifiedType SlotType)
@@ -292,7 +292,7 @@ void UBP_NPCMaterialController_C::ApplyMaterialsWithDa(const struct FSHolographi
 // Function BP_NPCMaterialController.BP_NPCMaterialController_C.ApplyMaterialAndTexture
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSHolographicData                SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+// const struct FSHolographicData&         SHolographicData                                       (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
 // EKuroCharSlotSpecifiedType              SlotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_NPCMaterialController_C::ApplyMaterialAndTexture(const struct FSHolographicData& SHolographicData, EKuroCharSlotSpecifiedType SlotType)

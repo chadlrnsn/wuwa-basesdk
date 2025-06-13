@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "EInputState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EInputAction_structs.hpp"
+#include "EInputState_structs.hpp"
 #include "EDetachType_structs.hpp"
 #include "ERelation_structs.hpp"
 #include "EPawnChannel_structs.hpp"
@@ -166,6 +166,8 @@ public:
 	static bool IsPlayerFollowerNeedInput(EInputAction action, EInputState state, class UObject* __WorldContext);
 	static void RegisterToBpActorController(class FName groupTag, TScriptInterface<class IBPI_SceneBp_C> sceneBp, class UObject* __WorldContext);
 	static void UnregisterToBpActorController(class FName groupTag, TScriptInterface<class IBPI_SceneBp_C> sceneBp, class UObject* __WorldContext);
+	static void SummonRandomRequest(int32 summonerId, int32 index, const struct FTransformDouble& transform, int32 skillId, bool isVisible, class UObject* __WorldContext);
+	static int32 GetSummonRandomEntity(int32 summonerId, int32 index, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

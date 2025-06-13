@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function SE_UISpriteFadeController.SE_UISpriteFadeController_C.ExecuteUbergraph_SE_UISpriteFadeController
-// (Final, UbergraphFunction)
+// Function SE_UISpriteFadeController.SE_UISpriteFadeController_C.ApplyVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    visibility                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void USE_UISpriteFadeController_C::ExecuteUbergraph_SE_UISpriteFadeController(int32 EntryPoint)
+void USE_UISpriteFadeController_C::ApplyVisibility(bool visibility)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SE_UISpriteFadeController_C", "ExecuteUbergraph_SE_UISpriteFadeController");
+		Func = Class->GetFunction("SE_UISpriteFadeController_C", "ApplyVisibility");
 
-	Params::SE_UISpriteFadeController_C_ExecuteUbergraph_SE_UISpriteFadeController Parms{};
+	Params::SE_UISpriteFadeController_C_ApplyVisibility Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.visibility = visibility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void USE_UISpriteFadeController_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 }
 
 
-// Function SE_UISpriteFadeController.SE_UISpriteFadeController_C.ApplyVisibility
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function SE_UISpriteFadeController.SE_UISpriteFadeController_C.ExecuteUbergraph_SE_UISpriteFadeController
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    visibility                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void USE_UISpriteFadeController_C::ApplyVisibility(bool visibility)
+void USE_UISpriteFadeController_C::ExecuteUbergraph_SE_UISpriteFadeController(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SE_UISpriteFadeController_C", "ApplyVisibility");
+		Func = Class->GetFunction("SE_UISpriteFadeController_C", "ExecuteUbergraph_SE_UISpriteFadeController");
 
-	Params::SE_UISpriteFadeController_C_ApplyVisibility Parms{};
+	Params::SE_UISpriteFadeController_C_ExecuteUbergraph_SE_UISpriteFadeController Parms{};
 
-	Parms.visibility = visibility;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

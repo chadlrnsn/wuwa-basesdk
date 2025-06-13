@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "STransitionLinearColorIndexGroup_structs.hpp"
+#include "EEffectState_structs.hpp"
+#include "SEffectStateInfo_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "STransitionFloatIndexGroup_structs.hpp"
-#include "Engine_structs.hpp"
-#include "EEffectState_structs.hpp"
-#include "STransitionLinearColorIndexGroup_structs.hpp"
-#include "SEffectStateInfo_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -57,8 +57,8 @@ public:
 	EEffectState                                  InitState;                                         // 0x0648(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_649[0x7];                                      // 0x0649(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UNiagaraComponent*>              NiagaraComponents;                                 // 0x0650(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	TMap<int32, struct FSTransitionFloatIndexGroup> TransitionIndexFloatEndMap;                        // 0x0660(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<int32, struct FSTransitionLinearColorIndexGroup> TransitionIndexLinearColorEndMap;                  // 0x06B0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<int32, struct FSTransitionFloatIndexGroup> TransitionIndexFloatEndMap;                      // 0x0660(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<int32, struct FSTransitionLinearColorIndexGroup> TransitionIndexLinearColorEndMap;          // 0x06B0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_BP_StateMachineEffectBase(int32 EntryPoint);

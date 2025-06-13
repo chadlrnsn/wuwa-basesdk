@@ -114,9 +114,9 @@ void AAIC_AICommon_C::AicTriggerEvent(class FName Name_0)
 // Function AIC_AICommon.AIC_AICommon_C.仇恨外受击
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class AActor*>                   AddActor                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<class AActor*>                   RemoveActor                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>                           RemoveActorIds                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<class AActor*>&            AddActor                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<class AActor*>&            RemoveActor                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    RemoveActorIds                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // int32                                   Num                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AAIC_AICommon_C::仇恨外受击(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)
@@ -140,9 +140,9 @@ void AAIC_AICommon_C::仇恨外受击(const TArray<class AActor*>& AddActor, con
 // Function AIC_AICommon.AIC_AICommon_C.感知监听
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class AActor*>                   AddActor                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<class AActor*>                   RemoveActor                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>                           RemoveActorIds                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<class AActor*>&            AddActor                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<class AActor*>&            RemoveActor                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    RemoveActorIds                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // int32                                   Num                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AAIC_AICommon_C::感知监听(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)
@@ -166,9 +166,9 @@ void AAIC_AICommon_C::感知监听(const TArray<class AActor*>& AddActor, const 
 // Function AIC_AICommon.AIC_AICommon_C.仇恨监听
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class AActor*>                   AddActor                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<class AActor*>                   RemoveActor                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<int32>                           RemoveActorIds                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<class AActor*>&            AddActor                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<class AActor*>&            RemoveActor                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<int32>&                    RemoveActorIds                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // int32                                   Num                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void AAIC_AICommon_C::仇恨监听(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)
@@ -276,10 +276,10 @@ void AAIC_AICommon_C::ReceiveTick(float DeltaSeconds)
 // ECharacterState                         老状态                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // ECharacterState                         新状态                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    主控                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UObject*                          角色返回                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECharacterState                         老状态返回                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECharacterState                         新状态返回                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    主控返回                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject**                         角色返回                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECharacterState*                        老状态返回                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECharacterState*                        新状态返回                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   主控返回                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void AAIC_AICommon_C::状态切换函数(class UObject* 角色, ECharacterState 老状态, ECharacterState 新状态, bool 主控, class UObject** 角色返回, ECharacterState* 老状态返回, ECharacterState* 新状态返回, bool* 主控返回)
 {
@@ -342,7 +342,7 @@ void AAIC_AICommon_C::设置区域监听对象()
 // Function AIC_AICommon.AIC_AICommon_C.区域
 // (Private, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TDelegate<void()>                       换人监听                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// const TDelegate<void()>&                换人监听                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void AAIC_AICommon_C::区域(const TDelegate<void()>& 换人监听)
 {
@@ -362,8 +362,8 @@ void AAIC_AICommon_C::区域(const TDelegate<void()>& 换人监听)
 // Function AIC_AICommon.AIC_AICommon_C.区域监听事件函数
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           区域名称                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// TDelegate<void(bool IsInRegion, class AActor* Target)>事件                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// const class FString&                    区域名称                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TDelegate<void(bool IsInRegion, class AActor* Target)>&事件                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void AAIC_AICommon_C::区域监听事件函数(const class FString& 区域名称, const TDelegate<void(bool IsInRegion, class AActor* Target)>& 事件)
 {
@@ -384,7 +384,7 @@ void AAIC_AICommon_C::区域监听事件函数(const class FString& 区域名称
 // Function AIC_AICommon.AIC_AICommon_C.角色怪射线检测
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    可以钩锁                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   可以钩锁                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void AAIC_AICommon_C::角色怪射线检测(bool* 可以钩锁)
 {
@@ -406,9 +406,9 @@ void AAIC_AICommon_C::角色怪射线检测(bool* 可以钩锁)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // EAiLevelVarSource                       关卡变量监听类型                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           关卡变量名称                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    关卡变量名称                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   关卡副本行为树id                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TDelegate<void(bool bContent)>          事件                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+// const TDelegate<void(bool bContent)>&   事件                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 
 void AAIC_AICommon_C::通用关卡变量切换监听(EAiLevelVarSource 关卡变量监听类型, const class FString& 关卡变量名称, int32 关卡副本行为树id, const TDelegate<void(bool bContent)>& 事件)
 {

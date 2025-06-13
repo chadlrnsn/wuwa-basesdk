@@ -21,7 +21,7 @@ namespace SDK
 class ABP_StreamingSourceActor_C final : public AActor
 {
 public:
-	class UWorldPartitionStreamingSourceComponent* WorldPartitionStreamingSource;                     // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UWorldPartitionStreamingSourceComponent* WorldPartitionStreamingSource;                    // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:

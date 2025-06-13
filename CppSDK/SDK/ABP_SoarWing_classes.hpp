@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "KuroAnim_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "KuroAnim_classes.hpp"
 
 
 namespace SDK
@@ -20,7 +20,7 @@ namespace SDK
 
 // AnimBlueprintGeneratedClass ABP_SoarWing.ABP_SoarWing_C
 // 0x07E0 (0x0F30 - 0x0750)
-class UABP_SoarWing_C final : public UKuroAnimInstance
+class UABP_SoarWing_C : public UKuroAnimInstance
 {
 public:
 	uint8                                         Pad_748[0x8];                                      // 0x0748(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -54,6 +54,7 @@ public:
 	void BlueprintInitializeAnimation();
 	void BlueprintUpdateAnimation(float DeltaTimeX);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SoarWing_AnimGraphNode_TransitionResult_362C454640BFED117D9E3A94E5654B0E();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_SoarWing_AnimGraphNode_BlendSpacePlayer_111D5522419D3E3AF4B0D887CA9CF45A();
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:

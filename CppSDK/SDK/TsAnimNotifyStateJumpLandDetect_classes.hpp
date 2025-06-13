@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateJumpLandDetect.TsAnimNotifyStateJumpLandDetect_C
-// 0x0018 (0x0060 - 0x0048)
+// 0x0020 (0x0068 - 0x0048)
 class UTsAnimNotifyStateJumpLandDetect_C final : public UKuroAnimNotifyState
 {
 public:
@@ -27,6 +27,7 @@ public:
 	bool                                          DebugDraw;                                         // 0x0059(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_5A[0x2];                                       // 0x005A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         EndPointHeight;                                    // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          EnableGoThrough;                                   // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
@@ -47,12 +48,13 @@ public:
 	}
 };
 static_assert(alignof(UTsAnimNotifyStateJumpLandDetect_C) == 0x000008, "Wrong alignment on UTsAnimNotifyStateJumpLandDetect_C");
-static_assert(sizeof(UTsAnimNotifyStateJumpLandDetect_C) == 0x000060, "Wrong size on UTsAnimNotifyStateJumpLandDetect_C");
+static_assert(sizeof(UTsAnimNotifyStateJumpLandDetect_C) == 0x000068, "Wrong size on UTsAnimNotifyStateJumpLandDetect_C");
 static_assert(offsetof(UTsAnimNotifyStateJumpLandDetect_C, MaxHeightOffset) == 0x000048, "Member 'UTsAnimNotifyStateJumpLandDetect_C::MaxHeightOffset' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateJumpLandDetect_C, IgnoreActorTag) == 0x00004C, "Member 'UTsAnimNotifyStateJumpLandDetect_C::IgnoreActorTag' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateJumpLandDetect_C, OnlyDown) == 0x000058, "Member 'UTsAnimNotifyStateJumpLandDetect_C::OnlyDown' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateJumpLandDetect_C, DebugDraw) == 0x000059, "Member 'UTsAnimNotifyStateJumpLandDetect_C::DebugDraw' has a wrong offset!");
 static_assert(offsetof(UTsAnimNotifyStateJumpLandDetect_C, EndPointHeight) == 0x00005C, "Member 'UTsAnimNotifyStateJumpLandDetect_C::EndPointHeight' has a wrong offset!");
+static_assert(offsetof(UTsAnimNotifyStateJumpLandDetect_C, EnableGoThrough) == 0x000060, "Member 'UTsAnimNotifyStateJumpLandDetect_C::EnableGoThrough' has a wrong offset!");
 
 }
 

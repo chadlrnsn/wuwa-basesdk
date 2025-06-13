@@ -192,7 +192,7 @@ void ASceneInteractionActor_C::AddMatrialDataForChildrenActor(class AActor* acto
 // Function SceneInteractionActor.SceneInteractionActor_C.ResetTagActorHide
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ASceneInteractionActor_C::ResetTagActorHide(const struct FGameplayTag& tag)
 {
@@ -217,7 +217,7 @@ void ASceneInteractionActor_C::ResetTagActorHide(const struct FGameplayTag& tag)
 // Function SceneInteractionActor.SceneInteractionActor_C.StopExtraEffectOnTagsChange
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ASceneInteractionActor_C::StopExtraEffectOnTagsChange(const struct FGameplayTag& tag)
 {
@@ -289,7 +289,7 @@ void ASceneInteractionActor_C::DestroySelf()
 // Function SceneInteractionActor.SceneInteractionActor_C.StopTagAkEvent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
 void ASceneInteractionActor_C::StopTagAkEvent(const struct FGameplayTag& tag)
 {
@@ -314,7 +314,7 @@ void ASceneInteractionActor_C::StopTagAkEvent(const struct FGameplayTag& tag)
 // Function SceneInteractionActor.SceneInteractionActor_C.UpdateProjectionActorTransform
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransformDouble                 transform1                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          transform1                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 
 void ASceneInteractionActor_C::UpdateProjectionActorTransform(const struct FTransformDouble& transform1)
 {

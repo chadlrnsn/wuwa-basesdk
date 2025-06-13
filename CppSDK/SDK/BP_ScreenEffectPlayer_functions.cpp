@@ -17,6 +17,96 @@
 namespace SDK
 {
 
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.AlmostEqual
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   val1                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   val2                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   isequal                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_ScreenEffectPlayer_C::AlmostEqual(float val1, float val2, bool* isequal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "AlmostEqual");
+
+	Params::BP_ScreenEffectPlayer_C_AlmostEqual Parms{};
+
+	Parms.val1 = val1;
+	Parms.val2 = val2;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (isequal != nullptr)
+		*isequal = Parms.isequal;
+}
+
+
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.SetExtraState
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   ExtraState                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ScreenEffectPlayer_C::SetExtraState(int32 ExtraState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "SetExtraState");
+
+	Params::BP_ScreenEffectPlayer_C_SetExtraState Parms{};
+
+	Parms.ExtraState = ExtraState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.Refresh Addition Parameter
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   TweenProgress                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ScreenEffectPlayer_C::Refresh_Addition_Parameter(float TweenProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "Refresh Addition Parameter");
+
+	Params::BP_ScreenEffectPlayer_C_Refresh_Addition_Parameter Parms{};
+
+	Parms.TweenProgress = TweenProgress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.TweenParameterSpeed
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   TweenTarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TweenSpeed                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TweenDeltaSecond                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ScreenEffectPlayer_C::TweenParameterSpeed(float TweenTarget, float TweenSpeed, float TweenDeltaSecond)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "TweenParameterSpeed");
+
+	Params::BP_ScreenEffectPlayer_C_TweenParameterSpeed Parms{};
+
+	Parms.TweenTarget = TweenTarget;
+	Parms.TweenSpeed = TweenSpeed;
+	Parms.TweenDeltaSecond = TweenDeltaSecond;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.BP_ScreenEffectPlayer_AutoGenFunc
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -215,17 +305,57 @@ void ABP_ScreenEffectPlayer_C::EndPlayer()
 }
 
 
-// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.StartPlayer
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.Start Player
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_ScreenEffectPlayer_C::StartPlayer()
+void ABP_ScreenEffectPlayer_C::Start_Player()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "StartPlayer");
+		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "Start Player");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.TweenParameter
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   TweenTarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ScreenEffectPlayer_C::TweenParameter(float TweenTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "TweenParameter");
+
+	Params::BP_ScreenEffectPlayer_C_TweenParameter Parms{};
+
+	Parms.TweenTarget = TweenTarget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ScreenEffectPlayer.BP_ScreenEffectPlayer_C.TweenParameterImmediately
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   TweenTarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ScreenEffectPlayer_C::TweenParameterImmediately(float TweenTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_ScreenEffectPlayer_C", "TweenParameterImmediately");
+
+	Params::BP_ScreenEffectPlayer_C_TweenParameterImmediately Parms{};
+
+	Parms.TweenTarget = TweenTarget;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

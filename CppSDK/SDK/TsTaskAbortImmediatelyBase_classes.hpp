@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_TsTaskAbortImmediatelyBase(int32 EntryPoint);
 	void ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ExecuteUbergraph_TsTaskAbortImmediatelyBase(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

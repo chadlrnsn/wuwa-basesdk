@@ -46,6 +46,19 @@ static_assert(offsetof(TsAnimNotifyStateRotate_C_K2_NotifyEnd, MeshComp) == 0x00
 static_assert(offsetof(TsAnimNotifyStateRotate_C_K2_NotifyEnd, Animation) == 0x000008, "Member 'TsAnimNotifyStateRotate_C_K2_NotifyEnd::Animation' has a wrong offset!");
 static_assert(offsetof(TsAnimNotifyStateRotate_C_K2_NotifyEnd, ReturnValue) == 0x000010, "Member 'TsAnimNotifyStateRotate_C_K2_NotifyEnd::ReturnValue' has a wrong offset!");
 
+// Function TsAnimNotifyStateRotate.TsAnimNotifyStateRotate_C.IsInContinueDetectionAngle
+// 0x0008 (0x0008 - 0x0000)
+struct TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle final
+{
+public:
+	float                                         angle;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle) == 0x000004, "Wrong alignment on TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle");
+static_assert(sizeof(TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle) == 0x000008, "Wrong size on TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle");
+static_assert(offsetof(TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle, angle) == 0x000000, "Member 'TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle::angle' has a wrong offset!");
+static_assert(offsetof(TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle, ReturnValue) == 0x000004, "Member 'TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle::ReturnValue' has a wrong offset!");
+
 // Function TsAnimNotifyStateRotate.TsAnimNotifyStateRotate_C.K2_NotifyBegin
 // 0x0018 (0x0018 - 0x0000)
 struct TsAnimNotifyStateRotate_C_K2_NotifyBegin final

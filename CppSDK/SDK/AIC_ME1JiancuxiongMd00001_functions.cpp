@@ -17,69 +17,17 @@
 namespace SDK
 {
 
-// Function AIC_ME1JiancuxiongMd00001.AIC_ME1JiancuxiongMd00001_C.ExecuteUbergraph_AIC_ME1JiancuxiongMd00001
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function AIC_ME1JiancuxiongMd00001.AIC_ME1JiancuxiongMd00001_C.OnStart
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void AAIC_ME1JiancuxiongMd00001_C::ExecuteUbergraph_AIC_ME1JiancuxiongMd00001(int32 EntryPoint)
+void AAIC_ME1JiancuxiongMd00001_C::OnStart()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_ME1JiancuxiongMd00001_C", "ExecuteUbergraph_AIC_ME1JiancuxiongMd00001");
+		Func = Class->GetFunction("AIC_ME1JiancuxiongMd00001_C", "OnStart");
 
-	Params::AIC_ME1JiancuxiongMd00001_C_ExecuteUbergraph_AIC_ME1JiancuxiongMd00001 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIC_ME1JiancuxiongMd00001.AIC_ME1JiancuxiongMd00001_C.当触发对策事件时_事件_0
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   对策事件ID                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSHitInformation                 受击数据                                               (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference, HasGetValueTypeHash)
-
-void AAIC_ME1JiancuxiongMd00001_C::当触发对策事件时_事件_0(int32 对策事件ID, const struct FSHitInformation& 受击数据)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_ME1JiancuxiongMd00001_C", "当触发对策事件时_事件_0");
-
-	Params::AIC_ME1JiancuxiongMd00001_C_当触发对策事件时_事件_0 Parms{};
-
-	Parms.对策事件ID = 对策事件ID;
-	Parms.受击数据 = std::move(受击数据);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIC_ME1JiancuxiongMd00001.AIC_ME1JiancuxiongMd00001_C.背部受击
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     部位Tag                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-// class ATsBaseCharacter_C*               攻击者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AAIC_ME1JiancuxiongMd00001_C::背部受击(class ATsBaseCharacter_C* 角色, const struct FGameplayTag& 部位Tag, class ATsBaseCharacter_C* 攻击者)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_ME1JiancuxiongMd00001_C", "背部受击");
-
-	Params::AIC_ME1JiancuxiongMd00001_C_背部受击 Parms{};
-
-	Parms.角色 = 角色;
-	Parms.部位Tag = std::move(部位Tag);
-	Parms.攻击者 = 攻击者;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -103,17 +51,69 @@ void AAIC_ME1JiancuxiongMd00001_C::狂暴(bool bContent)
 }
 
 
-// Function AIC_ME1JiancuxiongMd00001.AIC_ME1JiancuxiongMd00001_C.OnStart
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function AIC_ME1JiancuxiongMd00001.AIC_ME1JiancuxiongMd00001_C.背部受击
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              部位Tag                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               攻击者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AAIC_ME1JiancuxiongMd00001_C::OnStart()
+void AAIC_ME1JiancuxiongMd00001_C::背部受击(class ATsBaseCharacter_C* 角色, const struct FGameplayTag& 部位Tag, class ATsBaseCharacter_C* 攻击者)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_ME1JiancuxiongMd00001_C", "OnStart");
+		Func = Class->GetFunction("AIC_ME1JiancuxiongMd00001_C", "背部受击");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::AIC_ME1JiancuxiongMd00001_C_背部受击 Parms{};
+
+	Parms.角色 = 角色;
+	Parms.部位Tag = std::move(部位Tag);
+	Parms.攻击者 = 攻击者;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIC_ME1JiancuxiongMd00001.AIC_ME1JiancuxiongMd00001_C.当触发对策事件时_事件_0
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   对策事件ID                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSHitInformation&          受击数据                                               (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference, HasGetValueTypeHash)
+
+void AAIC_ME1JiancuxiongMd00001_C::当触发对策事件时_事件_0(int32 对策事件ID, const struct FSHitInformation& 受击数据)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_ME1JiancuxiongMd00001_C", "当触发对策事件时_事件_0");
+
+	Params::AIC_ME1JiancuxiongMd00001_C_当触发对策事件时_事件_0 Parms{};
+
+	Parms.对策事件ID = 对策事件ID;
+	Parms.受击数据 = std::move(受击数据);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIC_ME1JiancuxiongMd00001.AIC_ME1JiancuxiongMd00001_C.ExecuteUbergraph_AIC_ME1JiancuxiongMd00001
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AAIC_ME1JiancuxiongMd00001_C::ExecuteUbergraph_AIC_ME1JiancuxiongMd00001(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_ME1JiancuxiongMd00001_C", "ExecuteUbergraph_AIC_ME1JiancuxiongMd00001");
+
+	Params::AIC_ME1JiancuxiongMd00001_C_ExecuteUbergraph_AIC_ME1JiancuxiongMd00001 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

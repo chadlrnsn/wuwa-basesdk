@@ -43,8 +43,8 @@ static_assert(sizeof(Ujson2structBPLibrary) == 0x000030, "Wrong size on Ujson2st
 class UJsonAsyncNode final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(const class FString& Response)> success;                                           // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FString& Response)> fail;                                              // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& Response)> success;                           // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& Response)> fail;                              // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UJsonAsyncNode* json2structUrl(const class FString& URL, const class FString& requestJson, const class UObject* WC);

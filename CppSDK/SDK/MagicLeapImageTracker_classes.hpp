@@ -34,7 +34,7 @@ public:
 	TMulticastInlineDelegate<void()>              OnSetImageTargetFailed;                            // 0x0248(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnImageTargetFound;                                // 0x0258(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnImageTargetLost;                                 // 0x0268(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(struct FVector& LastTrackedLocation, struct FRotator& LastTrackedRotation, struct FVector& NewUnreliableLocation, struct FRotator& NewUnreliableRotation)> OnImageTargetUnreliableTracking;                   // 0x0278(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FVector& LastTrackedLocation, const struct FRotator& LastTrackedRotation, const struct FVector& NewUnreliableLocation, const struct FRotator& NewUnreliableRotation)> OnImageTargetUnreliableTracking; // 0x0278(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_288[0x8];                                      // 0x0288(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

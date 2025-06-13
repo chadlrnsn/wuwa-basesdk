@@ -27,13 +27,13 @@ void IBPI_Tick_C::Tick(float DeltaSeconds)
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_Tick_C", "Tick");
+		Func = AsUObject()->Class->GetFunction("BPI_Tick_C", "Tick");
 
 	Params::BPI_Tick_C_Tick Parms{};
 
 	Parms.DeltaSeconds = DeltaSeconds;
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
 }

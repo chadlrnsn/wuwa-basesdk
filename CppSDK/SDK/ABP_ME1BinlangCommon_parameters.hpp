@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroAnim_structs.hpp"
 #include "Engine_structs.hpp"
+#include "KuroAnim_structs.hpp"
 
 
 namespace SDK::Params
@@ -246,6 +246,17 @@ static_assert(alignof(ABP_ME1BinlangCommon_C_BlueprintUpdateAnimation) == 0x0000
 static_assert(sizeof(ABP_ME1BinlangCommon_C_BlueprintUpdateAnimation) == 0x000004, "Wrong size on ABP_ME1BinlangCommon_C_BlueprintUpdateAnimation");
 static_assert(offsetof(ABP_ME1BinlangCommon_C_BlueprintUpdateAnimation, DeltaTimeX) == 0x000000, "Member 'ABP_ME1BinlangCommon_C_BlueprintUpdateAnimation::DeltaTimeX' has a wrong offset!");
 
+// Function ABP_ME1BinlangCommon.ABP_ME1BinlangCommon_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_ME1BinlangCommon_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              Param_AnimGraph_0;                                 // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+static_assert(alignof(ABP_ME1BinlangCommon_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_ME1BinlangCommon_C_AnimGraph");
+static_assert(sizeof(ABP_ME1BinlangCommon_C_AnimGraph) == 0x000010, "Wrong size on ABP_ME1BinlangCommon_C_AnimGraph");
+static_assert(offsetof(ABP_ME1BinlangCommon_C_AnimGraph, Param_AnimGraph_0) == 0x000000, "Member 'ABP_ME1BinlangCommon_C_AnimGraph::Param_AnimGraph_0' has a wrong offset!");
+
 // Function ABP_ME1BinlangCommon.ABP_ME1BinlangCommon_C.IKAndFk_Clone
 // 0x0020 (0x0020 - 0x0000)
 struct ABP_ME1BinlangCommon_C_IKAndFk_Clone final
@@ -258,17 +269,6 @@ static_assert(alignof(ABP_ME1BinlangCommon_C_IKAndFk_Clone) == 0x000008, "Wrong 
 static_assert(sizeof(ABP_ME1BinlangCommon_C_IKAndFk_Clone) == 0x000020, "Wrong size on ABP_ME1BinlangCommon_C_IKAndFk_Clone");
 static_assert(offsetof(ABP_ME1BinlangCommon_C_IKAndFk_Clone, InPose) == 0x000000, "Member 'ABP_ME1BinlangCommon_C_IKAndFk_Clone::InPose' has a wrong offset!");
 static_assert(offsetof(ABP_ME1BinlangCommon_C_IKAndFk_Clone, IKAndFk_Clone_0) == 0x000010, "Member 'ABP_ME1BinlangCommon_C_IKAndFk_Clone::IKAndFk_Clone_0' has a wrong offset!");
-
-// Function ABP_ME1BinlangCommon.ABP_ME1BinlangCommon_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_ME1BinlangCommon_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              Param_AnimGraph_0;                                 // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-static_assert(alignof(ABP_ME1BinlangCommon_C_AnimGraph) == 0x000008, "Wrong alignment on ABP_ME1BinlangCommon_C_AnimGraph");
-static_assert(sizeof(ABP_ME1BinlangCommon_C_AnimGraph) == 0x000010, "Wrong size on ABP_ME1BinlangCommon_C_AnimGraph");
-static_assert(offsetof(ABP_ME1BinlangCommon_C_AnimGraph, Param_AnimGraph_0) == 0x000000, "Member 'ABP_ME1BinlangCommon_C_AnimGraph::Param_AnimGraph_0' has a wrong offset!");
 
 }
 

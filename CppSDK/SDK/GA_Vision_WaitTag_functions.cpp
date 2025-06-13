@@ -74,7 +74,7 @@ void UGA_Vision_WaitTag_C::K2_ActivateAbility()
 // Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Added_21071CB943CD992BF8EFD6A338ACB336
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Vision_WaitTag_C::Added_21071CB943CD992BF8EFD6A338ACB336(const struct FGameplayTag& Tag)
 {
@@ -94,7 +94,7 @@ void UGA_Vision_WaitTag_C::Added_21071CB943CD992BF8EFD6A338ACB336(const struct F
 // Function GA_Vision_WaitTag.GA_Vision_WaitTag_C.Removed_DB9F64004F8908FEAD99D3815F1E8945
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Vision_WaitTag_C::Removed_DB9F64004F8908FEAD99D3815F1E8945(const struct FGameplayTag& Tag)
 {

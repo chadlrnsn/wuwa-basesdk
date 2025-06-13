@@ -10,14 +10,200 @@
 
 #include "Basic.hpp"
 
+#include "Niagara_structs.hpp"
 #include "KuroGameplay_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Niagara_structs.hpp"
 #include "InputCore_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function KuroGameplay.KuroInputEvent.DoActionCallback
+// 0x0020 (0x0020 - 0x0000)
+struct KuroInputEvent_DoActionCallback final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroInputEvent_DoActionCallback) == 0x000008, "Wrong alignment on KuroInputEvent_DoActionCallback");
+static_assert(sizeof(KuroInputEvent_DoActionCallback) == 0x000020, "Wrong size on KuroInputEvent_DoActionCallback");
+static_assert(offsetof(KuroInputEvent_DoActionCallback, Key) == 0x000000, "Member 'KuroInputEvent_DoActionCallback::Key' has a wrong offset!");
+
+// Function KuroGameplay.KuroInputEvent.DoAxisCallback
+// 0x0004 (0x0004 - 0x0000)
+struct KuroInputEvent_DoAxisCallback final
+{
+public:
+	float                                         value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroInputEvent_DoAxisCallback) == 0x000004, "Wrong alignment on KuroInputEvent_DoAxisCallback");
+static_assert(sizeof(KuroInputEvent_DoAxisCallback) == 0x000004, "Wrong size on KuroInputEvent_DoAxisCallback");
+static_assert(offsetof(KuroInputEvent_DoAxisCallback, value) == 0x000000, "Member 'KuroInputEvent_DoAxisCallback::value' has a wrong offset!");
+
+// Function KuroGameplay.KuroInputEvent.DoKeyCallback
+// 0x0020 (0x0020 - 0x0000)
+struct KuroInputEvent_DoKeyCallback final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroInputEvent_DoKeyCallback) == 0x000008, "Wrong alignment on KuroInputEvent_DoKeyCallback");
+static_assert(sizeof(KuroInputEvent_DoKeyCallback) == 0x000020, "Wrong size on KuroInputEvent_DoKeyCallback");
+static_assert(offsetof(KuroInputEvent_DoKeyCallback, Key) == 0x000000, "Member 'KuroInputEvent_DoKeyCallback::Key' has a wrong offset!");
+
+// Function KuroGameplay.KuroInputEvent.DoTouchCallback
+// 0x0010 (0x0010 - 0x0000)
+struct KuroInputEvent_DoTouchCallback final
+{
+public:
+	ETouchIndex                                   touchIndex;                                        // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                position;                                          // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroInputEvent_DoTouchCallback) == 0x000004, "Wrong alignment on KuroInputEvent_DoTouchCallback");
+static_assert(sizeof(KuroInputEvent_DoTouchCallback) == 0x000010, "Wrong size on KuroInputEvent_DoTouchCallback");
+static_assert(offsetof(KuroInputEvent_DoTouchCallback, touchIndex) == 0x000000, "Member 'KuroInputEvent_DoTouchCallback::touchIndex' has a wrong offset!");
+static_assert(offsetof(KuroInputEvent_DoTouchCallback, position) == 0x000004, "Member 'KuroInputEvent_DoTouchCallback::position' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.FakeAddAlwaysLoadedActorsToWorld
+// 0x0008 (0x0008 - 0x0000)
+struct KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld final
+{
+public:
+	const class UWorld*                           World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld");
+static_assert(sizeof(KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld) == 0x000008, "Wrong size on KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld");
+static_assert(offsetof(KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld, World) == 0x000000, "Member 'KuroLevelPlayLibrary_FakeAddAlwaysLoadedActorsToWorld::World' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.FakeRemoveAlwaysLoadedActorsFromWorld
+// 0x0008 (0x0008 - 0x0000)
+struct KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld final
+{
+public:
+	const class UWorld*                           World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld");
+static_assert(sizeof(KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld) == 0x000008, "Wrong size on KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld");
+static_assert(offsetof(KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld, World) == 0x000000, "Member 'KuroLevelPlayLibrary_FakeRemoveAlwaysLoadedActorsFromWorld::World' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetActorComponentsBoundingBox
+// 0x0028 (0x0028 - 0x0000)
+struct KuroLevelPlayLibrary_GetActorComponentsBoundingBox final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNonColliding;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeFromChildActors;                           // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBox                                   ReturnValue;                                       // 0x000C(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetActorComponentsBoundingBox");
+static_assert(sizeof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox) == 0x000028, "Wrong size on KuroLevelPlayLibrary_GetActorComponentsBoundingBox");
+static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, Actor) == 0x000000, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::Actor' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, bNonColliding) == 0x000008, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::bNonColliding' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, bIncludeFromChildActors) == 0x000009, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::bIncludeFromChildActors' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, ReturnValue) == 0x00000C, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::ReturnValue' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetActorScreenBoundingBox
+// 0x0028 (0x0028 - 0x0000)
+struct KuroLevelPlayLibrary_GetActorScreenBoundingBox final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ScreenMin;                                         // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ScreenMax;                                         // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroLevelPlayLibrary_GetActorScreenBoundingBox) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetActorScreenBoundingBox");
+static_assert(sizeof(KuroLevelPlayLibrary_GetActorScreenBoundingBox) == 0x000028, "Wrong size on KuroLevelPlayLibrary_GetActorScreenBoundingBox");
+static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, PlayerController) == 0x000000, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::PlayerController' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, Actor) == 0x000008, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::Actor' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, ScreenMin) == 0x000010, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::ScreenMin' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, ScreenMax) == 0x000018, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::ScreenMax' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, ReturnValue) == 0x000020, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::ReturnValue' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetAllActorsInPersistentLevel
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLevelPlayLibrary_GetAllActorsInPersistentLevel final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         OutLevelActors;                                    // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLevelPlayLibrary_GetAllActorsInPersistentLevel) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetAllActorsInPersistentLevel");
+static_assert(sizeof(KuroLevelPlayLibrary_GetAllActorsInPersistentLevel) == 0x000018, "Wrong size on KuroLevelPlayLibrary_GetAllActorsInPersistentLevel");
+static_assert(offsetof(KuroLevelPlayLibrary_GetAllActorsInPersistentLevel, WorldContextObject) == 0x000000, "Member 'KuroLevelPlayLibrary_GetAllActorsInPersistentLevel::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetAllActorsInPersistentLevel, OutLevelActors) == 0x000008, "Member 'KuroLevelPlayLibrary_GetAllActorsInPersistentLevel::OutLevelActors' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetCurrentLevelRefPath
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLevelPlayLibrary_GetCurrentLevelRefPath final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLevelPlayLibrary_GetCurrentLevelRefPath) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetCurrentLevelRefPath");
+static_assert(sizeof(KuroLevelPlayLibrary_GetCurrentLevelRefPath) == 0x000018, "Wrong size on KuroLevelPlayLibrary_GetCurrentLevelRefPath");
+static_assert(offsetof(KuroLevelPlayLibrary_GetCurrentLevelRefPath, WorldContextObject) == 0x000000, "Member 'KuroLevelPlayLibrary_GetCurrentLevelRefPath::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetCurrentLevelRefPath, ReturnValue) == 0x000008, "Member 'KuroLevelPlayLibrary_GetCurrentLevelRefPath::ReturnValue' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetEntityIdByBaseItem
+// 0x0010 (0x0010 - 0x0000)
+struct KuroLevelPlayLibrary_GetEntityIdByBaseItem final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroLevelPlayLibrary_GetEntityIdByBaseItem) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetEntityIdByBaseItem");
+static_assert(sizeof(KuroLevelPlayLibrary_GetEntityIdByBaseItem) == 0x000010, "Wrong size on KuroLevelPlayLibrary_GetEntityIdByBaseItem");
+static_assert(offsetof(KuroLevelPlayLibrary_GetEntityIdByBaseItem, Actor) == 0x000000, "Member 'KuroLevelPlayLibrary_GetEntityIdByBaseItem::Actor' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetEntityIdByBaseItem, ReturnValue) == 0x000008, "Member 'KuroLevelPlayLibrary_GetEntityIdByBaseItem::ReturnValue' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetPersistentLevelActorsInPackage
+// 0x0020 (0x0020 - 0x0000)
+struct KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage final
+{
+public:
+	class FString                                 PackageName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         OutLevelActors;                                    // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage");
+static_assert(sizeof(KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage) == 0x000020, "Wrong size on KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage");
+static_assert(offsetof(KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage, PackageName) == 0x000000, "Member 'KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage::PackageName' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage, OutLevelActors) == 0x000010, "Member 'KuroLevelPlayLibrary_GetPersistentLevelActorsInPackage::OutLevelActors' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.GetWorldInPackage
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLevelPlayLibrary_GetWorldInPackage final
+{
+public:
+	class FString                                 PackageName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWorld*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLevelPlayLibrary_GetWorldInPackage) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetWorldInPackage");
+static_assert(sizeof(KuroLevelPlayLibrary_GetWorldInPackage) == 0x000018, "Wrong size on KuroLevelPlayLibrary_GetWorldInPackage");
+static_assert(offsetof(KuroLevelPlayLibrary_GetWorldInPackage, PackageName) == 0x000000, "Member 'KuroLevelPlayLibrary_GetWorldInPackage::PackageName' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_GetWorldInPackage, ReturnValue) == 0x000010, "Member 'KuroLevelPlayLibrary_GetWorldInPackage::ReturnValue' has a wrong offset!");
+
+// Function KuroGameplay.KuroLevelPlayLibrary.RegisterBaseItemInfo
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLevelPlayLibrary_RegisterBaseItemInfo final
+{
+public:
+	class UClass*                                 BaseItemClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EntityIdName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLevelPlayLibrary_RegisterBaseItemInfo) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_RegisterBaseItemInfo");
+static_assert(sizeof(KuroLevelPlayLibrary_RegisterBaseItemInfo) == 0x000018, "Wrong size on KuroLevelPlayLibrary_RegisterBaseItemInfo");
+static_assert(offsetof(KuroLevelPlayLibrary_RegisterBaseItemInfo, BaseItemClass) == 0x000000, "Member 'KuroLevelPlayLibrary_RegisterBaseItemInfo::BaseItemClass' has a wrong offset!");
+static_assert(offsetof(KuroLevelPlayLibrary_RegisterBaseItemInfo, EntityIdName) == 0x000008, "Member 'KuroLevelPlayLibrary_RegisterBaseItemInfo::EntityIdName' has a wrong offset!");
 
 // Function KuroGameplay.KuroInputManager.OnActorDestroy
 // 0x0008 (0x0008 - 0x0000)
@@ -29,6 +215,28 @@ public:
 static_assert(alignof(KuroInputManager_OnActorDestroy) == 0x000008, "Wrong alignment on KuroInputManager_OnActorDestroy");
 static_assert(sizeof(KuroInputManager_OnActorDestroy) == 0x000008, "Wrong size on KuroInputManager_OnActorDestroy");
 static_assert(offsetof(KuroInputManager_OnActorDestroy, Actor) == 0x000000, "Member 'KuroInputManager_OnActorDestroy::Actor' has a wrong offset!");
+
+// Function KuroGameplay.KuroLockAxisCollisionComponent.SetAxisValue
+// 0x0004 (0x0004 - 0x0000)
+struct KuroLockAxisCollisionComponent_SetAxisValue final
+{
+public:
+	float                                         InAxisValue;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLockAxisCollisionComponent_SetAxisValue) == 0x000004, "Wrong alignment on KuroLockAxisCollisionComponent_SetAxisValue");
+static_assert(sizeof(KuroLockAxisCollisionComponent_SetAxisValue) == 0x000004, "Wrong size on KuroLockAxisCollisionComponent_SetAxisValue");
+static_assert(offsetof(KuroLockAxisCollisionComponent_SetAxisValue, InAxisValue) == 0x000000, "Member 'KuroLockAxisCollisionComponent_SetAxisValue::InAxisValue' has a wrong offset!");
+
+// Function KuroGameplay.KuroLockAxisCollisionComponent.SetLockAxis
+// 0x0001 (0x0001 - 0x0000)
+struct KuroLockAxisCollisionComponent_SetLockAxis final
+{
+public:
+	ELockAxis                                     InLockAxis;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroLockAxisCollisionComponent_SetLockAxis) == 0x000001, "Wrong alignment on KuroLockAxisCollisionComponent_SetLockAxis");
+static_assert(sizeof(KuroLockAxisCollisionComponent_SetLockAxis) == 0x000001, "Wrong size on KuroLockAxisCollisionComponent_SetLockAxis");
+static_assert(offsetof(KuroLockAxisCollisionComponent_SetLockAxis, InLockAxis) == 0x000000, "Member 'KuroLockAxisCollisionComponent_SetLockAxis::InLockAxis' has a wrong offset!");
 
 // Function KuroGameplay.EffectSystemActor.SetOwnerEntityId
 // 0x0004 (0x0004 - 0x0000)
@@ -470,7 +678,7 @@ static_assert(offsetof(KuroEffectLibrary_SetNiagaraSimulationMinDeltaTime, MinDe
 struct KuroEffectLibrary_SetOnSystemFinishedDelegate final
 {
 public:
-	TDelegate<void(class UNiagaraComponent* NiagaraComponent)> Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class UNiagaraComponent* NiagaraComponent)> Delegate;                             // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroEffectLibrary_SetOnSystemFinishedDelegate) == 0x000004, "Wrong alignment on KuroEffectLibrary_SetOnSystemFinishedDelegate");
 static_assert(sizeof(KuroEffectLibrary_SetOnSystemFinishedDelegate) == 0x000028, "Wrong size on KuroEffectLibrary_SetOnSystemFinishedDelegate");
@@ -481,7 +689,7 @@ static_assert(offsetof(KuroEffectLibrary_SetOnSystemFinishedDelegate, Delegate) 
 struct KuroEffectLibrary_SetOnSystemPausedDelegate final
 {
 public:
-	TDelegate<void(class UNiagaraComponent* NiagaraComponent, bool IsPaused)> Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(class UNiagaraComponent* NiagaraComponent, bool IsPaused)> Delegate;              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroEffectLibrary_SetOnSystemPausedDelegate) == 0x000004, "Wrong alignment on KuroEffectLibrary_SetOnSystemPausedDelegate");
 static_assert(sizeof(KuroEffectLibrary_SetOnSystemPausedDelegate) == 0x000028, "Wrong size on KuroEffectLibrary_SetOnSystemPausedDelegate");
@@ -575,53 +783,6 @@ static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, Effec
 static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, LastScreenUV) == 0x000030, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::LastScreenUV' has a wrong offset!");
 static_assert(offsetof(KuroEffectLibrary_UpdateEffectModelPostProcessSpec, ReturnValue) == 0x000038, "Member 'KuroEffectLibrary_UpdateEffectModelPostProcessSpec::ReturnValue' has a wrong offset!");
 
-// Function KuroGameplay.KuroInputEvent.DoActionCallback
-// 0x0020 (0x0020 - 0x0000)
-struct KuroInputEvent_DoActionCallback final
-{
-public:
-	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroInputEvent_DoActionCallback) == 0x000008, "Wrong alignment on KuroInputEvent_DoActionCallback");
-static_assert(sizeof(KuroInputEvent_DoActionCallback) == 0x000020, "Wrong size on KuroInputEvent_DoActionCallback");
-static_assert(offsetof(KuroInputEvent_DoActionCallback, Key) == 0x000000, "Member 'KuroInputEvent_DoActionCallback::Key' has a wrong offset!");
-
-// Function KuroGameplay.KuroInputEvent.DoAxisCallback
-// 0x0004 (0x0004 - 0x0000)
-struct KuroInputEvent_DoAxisCallback final
-{
-public:
-	float                                         value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroInputEvent_DoAxisCallback) == 0x000004, "Wrong alignment on KuroInputEvent_DoAxisCallback");
-static_assert(sizeof(KuroInputEvent_DoAxisCallback) == 0x000004, "Wrong size on KuroInputEvent_DoAxisCallback");
-static_assert(offsetof(KuroInputEvent_DoAxisCallback, value) == 0x000000, "Member 'KuroInputEvent_DoAxisCallback::value' has a wrong offset!");
-
-// Function KuroGameplay.KuroInputEvent.DoKeyCallback
-// 0x0020 (0x0020 - 0x0000)
-struct KuroInputEvent_DoKeyCallback final
-{
-public:
-	struct FKey                                   Key;                                               // 0x0000(0x0020)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroInputEvent_DoKeyCallback) == 0x000008, "Wrong alignment on KuroInputEvent_DoKeyCallback");
-static_assert(sizeof(KuroInputEvent_DoKeyCallback) == 0x000020, "Wrong size on KuroInputEvent_DoKeyCallback");
-static_assert(offsetof(KuroInputEvent_DoKeyCallback, Key) == 0x000000, "Member 'KuroInputEvent_DoKeyCallback::Key' has a wrong offset!");
-
-// Function KuroGameplay.KuroInputEvent.DoTouchCallback
-// 0x0010 (0x0010 - 0x0000)
-struct KuroInputEvent_DoTouchCallback final
-{
-public:
-	ETouchIndex                                   touchIndex;                                        // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                position;                                          // 0x0004(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroInputEvent_DoTouchCallback) == 0x000004, "Wrong alignment on KuroInputEvent_DoTouchCallback");
-static_assert(sizeof(KuroInputEvent_DoTouchCallback) == 0x000010, "Wrong size on KuroInputEvent_DoTouchCallback");
-static_assert(offsetof(KuroInputEvent_DoTouchCallback, touchIndex) == 0x000000, "Member 'KuroInputEvent_DoTouchCallback::touchIndex' has a wrong offset!");
-static_assert(offsetof(KuroInputEvent_DoTouchCallback, position) == 0x000004, "Member 'KuroInputEvent_DoTouchCallback::position' has a wrong offset!");
-
 // Function KuroGameplay.KuroLevelPlayCustomCollisionComponent.CanEnableCollision
 // 0x0001 (0x0001 - 0x0000)
 struct KuroLevelPlayCustomCollisionComponent_CanEnableCollision final
@@ -643,84 +804,6 @@ public:
 static_assert(alignof(KuroLevelPlayInterface_ProcessPhysics) == 0x000001, "Wrong alignment on KuroLevelPlayInterface_ProcessPhysics");
 static_assert(sizeof(KuroLevelPlayInterface_ProcessPhysics) == 0x000001, "Wrong size on KuroLevelPlayInterface_ProcessPhysics");
 static_assert(offsetof(KuroLevelPlayInterface_ProcessPhysics, ReturnValue) == 0x000000, "Member 'KuroLevelPlayInterface_ProcessPhysics::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetActorComponentsBoundingBox
-// 0x0028 (0x0028 - 0x0000)
-struct KuroLevelPlayLibrary_GetActorComponentsBoundingBox final
-{
-public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNonColliding;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIncludeFromChildActors;                           // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBox                                   ReturnValue;                                       // 0x000C(0x001C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetActorComponentsBoundingBox");
-static_assert(sizeof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox) == 0x000028, "Wrong size on KuroLevelPlayLibrary_GetActorComponentsBoundingBox");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, Actor) == 0x000000, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::Actor' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, bNonColliding) == 0x000008, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::bNonColliding' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, bIncludeFromChildActors) == 0x000009, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::bIncludeFromChildActors' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorComponentsBoundingBox, ReturnValue) == 0x00000C, "Member 'KuroLevelPlayLibrary_GetActorComponentsBoundingBox::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetActorScreenBoundingBox
-// 0x0028 (0x0028 - 0x0000)
-struct KuroLevelPlayLibrary_GetActorScreenBoundingBox final
-{
-public:
-	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 Actor;                                             // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              ScreenMin;                                         // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              ScreenMax;                                         // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetActorScreenBoundingBox) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetActorScreenBoundingBox");
-static_assert(sizeof(KuroLevelPlayLibrary_GetActorScreenBoundingBox) == 0x000028, "Wrong size on KuroLevelPlayLibrary_GetActorScreenBoundingBox");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, PlayerController) == 0x000000, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::PlayerController' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, Actor) == 0x000008, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::Actor' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, ScreenMin) == 0x000010, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::ScreenMin' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, ScreenMax) == 0x000018, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::ScreenMax' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetActorScreenBoundingBox, ReturnValue) == 0x000020, "Member 'KuroLevelPlayLibrary_GetActorScreenBoundingBox::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetCurrentLevelRefPath
-// 0x0018 (0x0018 - 0x0000)
-struct KuroLevelPlayLibrary_GetCurrentLevelRefPath final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetCurrentLevelRefPath) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetCurrentLevelRefPath");
-static_assert(sizeof(KuroLevelPlayLibrary_GetCurrentLevelRefPath) == 0x000018, "Wrong size on KuroLevelPlayLibrary_GetCurrentLevelRefPath");
-static_assert(offsetof(KuroLevelPlayLibrary_GetCurrentLevelRefPath, WorldContextObject) == 0x000000, "Member 'KuroLevelPlayLibrary_GetCurrentLevelRefPath::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetCurrentLevelRefPath, ReturnValue) == 0x000008, "Member 'KuroLevelPlayLibrary_GetCurrentLevelRefPath::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.GetEntityIdByBaseItem
-// 0x0010 (0x0010 - 0x0000)
-struct KuroLevelPlayLibrary_GetEntityIdByBaseItem final
-{
-public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(KuroLevelPlayLibrary_GetEntityIdByBaseItem) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_GetEntityIdByBaseItem");
-static_assert(sizeof(KuroLevelPlayLibrary_GetEntityIdByBaseItem) == 0x000010, "Wrong size on KuroLevelPlayLibrary_GetEntityIdByBaseItem");
-static_assert(offsetof(KuroLevelPlayLibrary_GetEntityIdByBaseItem, Actor) == 0x000000, "Member 'KuroLevelPlayLibrary_GetEntityIdByBaseItem::Actor' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_GetEntityIdByBaseItem, ReturnValue) == 0x000008, "Member 'KuroLevelPlayLibrary_GetEntityIdByBaseItem::ReturnValue' has a wrong offset!");
-
-// Function KuroGameplay.KuroLevelPlayLibrary.RegisterBaseItemInfo
-// 0x0018 (0x0018 - 0x0000)
-struct KuroLevelPlayLibrary_RegisterBaseItemInfo final
-{
-public:
-	class UClass*                                 BaseItemClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 EntityIdName;                                      // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KuroLevelPlayLibrary_RegisterBaseItemInfo) == 0x000008, "Wrong alignment on KuroLevelPlayLibrary_RegisterBaseItemInfo");
-static_assert(sizeof(KuroLevelPlayLibrary_RegisterBaseItemInfo) == 0x000018, "Wrong size on KuroLevelPlayLibrary_RegisterBaseItemInfo");
-static_assert(offsetof(KuroLevelPlayLibrary_RegisterBaseItemInfo, BaseItemClass) == 0x000000, "Member 'KuroLevelPlayLibrary_RegisterBaseItemInfo::BaseItemClass' has a wrong offset!");
-static_assert(offsetof(KuroLevelPlayLibrary_RegisterBaseItemInfo, EntityIdName) == 0x000008, "Member 'KuroLevelPlayLibrary_RegisterBaseItemInfo::EntityIdName' has a wrong offset!");
 
 // Function KuroGameplay.KuroLevelPlaySubsystem.RegisterObject
 // 0x0008 (0x0008 - 0x0000)
@@ -1222,6 +1305,22 @@ static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiled
 static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData) == 0x000008, "Wrong size on KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData");
 static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_ResetMovieSceneCompiledData::Sequence' has a wrong offset!");
 
+// Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.SearchAttachAndReattach
+// 0x0028 (0x0028 - 0x0000)
+struct KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach final
+{
+public:
+	class UMovieSceneSequence*                    Sequence;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           InBindingNames;                                    // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FName                                   Tag;                                               // 0x0018(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach) == 0x000008, "Wrong alignment on KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach");
+static_assert(sizeof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach) == 0x000028, "Wrong size on KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach");
+static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach, Sequence) == 0x000000, "Member 'KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach::Sequence' has a wrong offset!");
+static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach, InBindingNames) == 0x000008, "Member 'KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach::InBindingNames' has a wrong offset!");
+static_assert(offsetof(KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach, Tag) == 0x000018, "Member 'KuroSequenceRuntimeFunctionLibrary_SearchAttachAndReattach::Tag' has a wrong offset!");
+
 // Function KuroGameplay.KuroSequenceRuntimeFunctionLibrary.SectionContains
 // 0x0018 (0x0018 - 0x0000)
 struct KuroSequenceRuntimeFunctionLibrary_SectionContains final
@@ -1285,6 +1384,38 @@ static_assert(alignof(KuroSplineCylinderTriggerActor_GenerateMesh) == 0x000008, 
 static_assert(sizeof(KuroSplineCylinderTriggerActor_GenerateMesh) == 0x000010, "Wrong size on KuroSplineCylinderTriggerActor_GenerateMesh");
 static_assert(offsetof(KuroSplineCylinderTriggerActor_GenerateMesh, Spline) == 0x000000, "Member 'KuroSplineCylinderTriggerActor_GenerateMesh::Spline' has a wrong offset!");
 static_assert(offsetof(KuroSplineCylinderTriggerActor_GenerateMesh, CircleRadius) == 0x000008, "Member 'KuroSplineCylinderTriggerActor_GenerateMesh::CircleRadius' has a wrong offset!");
+
+// Function KuroGameplay.KuroSplineVolumeGenerator.Generate
+// 0x0018 (0x0018 - 0x0000)
+struct KuroSplineVolumeGenerator_Generate final
+{
+public:
+	class USplineComponent*                       InSplineComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ABrush>                     InVolumeClass;                                     // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroSplineVolumeBuilder*               InSplineVolumeBuilder;                             // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSplineVolumeGenerator_Generate) == 0x000008, "Wrong alignment on KuroSplineVolumeGenerator_Generate");
+static_assert(sizeof(KuroSplineVolumeGenerator_Generate) == 0x000018, "Wrong size on KuroSplineVolumeGenerator_Generate");
+static_assert(offsetof(KuroSplineVolumeGenerator_Generate, InSplineComponent) == 0x000000, "Member 'KuroSplineVolumeGenerator_Generate::InSplineComponent' has a wrong offset!");
+static_assert(offsetof(KuroSplineVolumeGenerator_Generate, InVolumeClass) == 0x000008, "Member 'KuroSplineVolumeGenerator_Generate::InVolumeClass' has a wrong offset!");
+static_assert(offsetof(KuroSplineVolumeGenerator_Generate, InSplineVolumeBuilder) == 0x000010, "Member 'KuroSplineVolumeGenerator_Generate::InSplineVolumeBuilder' has a wrong offset!");
+
+// Function KuroGameplay.KuroSplineVolumeGenerator.GeneratePolyhedron
+// 0x0018 (0x0018 - 0x0000)
+struct KuroSplineVolumeGenerator_GeneratePolyhedron final
+{
+public:
+	class USplineComponent*                       InSplineComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ABrush>                     InVolumeClass;                                     // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LowerBoundsHeight;                                 // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UpperBoundsHeight;                                 // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroSplineVolumeGenerator_GeneratePolyhedron) == 0x000008, "Wrong alignment on KuroSplineVolumeGenerator_GeneratePolyhedron");
+static_assert(sizeof(KuroSplineVolumeGenerator_GeneratePolyhedron) == 0x000018, "Wrong size on KuroSplineVolumeGenerator_GeneratePolyhedron");
+static_assert(offsetof(KuroSplineVolumeGenerator_GeneratePolyhedron, InSplineComponent) == 0x000000, "Member 'KuroSplineVolumeGenerator_GeneratePolyhedron::InSplineComponent' has a wrong offset!");
+static_assert(offsetof(KuroSplineVolumeGenerator_GeneratePolyhedron, InVolumeClass) == 0x000008, "Member 'KuroSplineVolumeGenerator_GeneratePolyhedron::InVolumeClass' has a wrong offset!");
+static_assert(offsetof(KuroSplineVolumeGenerator_GeneratePolyhedron, LowerBoundsHeight) == 0x000010, "Member 'KuroSplineVolumeGenerator_GeneratePolyhedron::LowerBoundsHeight' has a wrong offset!");
+static_assert(offsetof(KuroSplineVolumeGenerator_GeneratePolyhedron, UpperBoundsHeight) == 0x000014, "Member 'KuroSplineVolumeGenerator_GeneratePolyhedron::UpperBoundsHeight' has a wrong offset!");
 
 // Function KuroGameplay.KuroStaticMeshLibrary.MergeSimpleCollisions
 // 0x0018 (0x0018 - 0x0000)

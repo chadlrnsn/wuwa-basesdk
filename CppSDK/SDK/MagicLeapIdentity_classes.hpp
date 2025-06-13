@@ -26,9 +26,9 @@ public:
 
 public:
 	EMagicLeapIdentityError GetAllAvailableAttributes(TArray<EMagicLeapIdentityKey>* AvailableAttributes);
-	void GetAllAvailableAttributesAsync(const TDelegate<void(EMagicLeapIdentityError ResultCode, TArray<EMagicLeapIdentityKey>& AvailableAttributes)>& ResultDelegate);
+	void GetAllAvailableAttributesAsync(const TDelegate<void(EMagicLeapIdentityError ResultCode, const TArray<EMagicLeapIdentityKey>& AvailableAttributes)>& ResultDelegate);
 	EMagicLeapIdentityError RequestAttributeValue(const TArray<EMagicLeapIdentityKey>& RequestedAttributeList, TArray<struct FMagicLeapIdentityAttribute>* RequestedAttributeValues);
-	EMagicLeapIdentityError RequestAttributeValueAsync(const TArray<EMagicLeapIdentityKey>& RequestedAttributeList, const TDelegate<void(EMagicLeapIdentityError ResultCode, TArray<struct FMagicLeapIdentityAttribute>& AttributeValue)>& ResultDelegate);
+	EMagicLeapIdentityError RequestAttributeValueAsync(const TArray<EMagicLeapIdentityKey>& RequestedAttributeList, const TDelegate<void(EMagicLeapIdentityError ResultCode, const TArray<struct FMagicLeapIdentityAttribute>& AttributeValue)>& ResultDelegate);
 
 public:
 	static class UClass* StaticClass()

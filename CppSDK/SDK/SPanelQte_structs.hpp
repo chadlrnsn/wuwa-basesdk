@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EPanelQteViewType_structs.hpp"
 #include "EBattleUIChild_structs.hpp"
+#include "EPanelQteViewType_structs.hpp"
 #include "SPanelQteAction_structs.hpp"
 
 
@@ -40,7 +40,7 @@ public:
 	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftClassPtr<class UClass>                   CameraShakeType_41_48B958D547C8585498DECB89BB9E8536; // 0x0058(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	class FString                                 Action_57_9BCCB1CD4843CE536C56AE8CEFF6B6DF;        // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	TSoftObjectPtr<class ULGUITexturePackerSpriteData> Icon_61_B9FC411C4C4579CB0686BE94D2ACD754;          // 0x0098(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class ULGUITexturePackerSpriteData> Icon_61_B9FC411C4C4579CB0686BE94D2ACD754;     // 0x0098(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 static_assert(alignof(FSPanelQte) == 0x000008, "Wrong alignment on FSPanelQte");
 static_assert(sizeof(FSPanelQte) == 0x0000C8, "Wrong size on FSPanelQte");

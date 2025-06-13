@@ -1322,9 +1322,9 @@ void UABP_PerformanceRole_C::UpdateLookAtRotation()
 // Function ABP_PerformanceRole.ABP_PerformanceRole_C.DebugLine
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          LineStart                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          LineEnd                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     LineColor                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   LineStart                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   LineEnd                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              LineColor                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UABP_PerformanceRole_C::DebugLine(const struct FVector& LineStart, const struct FVector& LineEnd, const struct FLinearColor& LineColor)
 {
@@ -1374,7 +1374,7 @@ void UABP_PerformanceRole_C::ClearCreateRoleState()
 // Function ABP_PerformanceRole.ABP_PerformanceRole_C.GetIsLooping
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// bool                                    isLooping_0                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   isLooping_0                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UABP_PerformanceRole_C::GetIsLooping(bool* isLooping_0)
 {
@@ -1424,7 +1424,7 @@ void UABP_PerformanceRole_C::UpdateBlinkInfo()
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // EPerformanceRoleState                   NewState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EPerformanceRoleState                   StateInternal_0                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const EPerformanceRoleState&            StateInternal_0                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UABP_PerformanceRole_C::Is_Same_State(EPerformanceRoleState NewState, const EPerformanceRoleState& StateInternal_0)
@@ -1468,7 +1468,7 @@ void UABP_PerformanceRole_C::Set_Current_State(EPerformanceRoleState state)
 // Function ABP_PerformanceRole.ABP_PerformanceRole_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_PerformanceRole_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
@@ -1489,7 +1489,7 @@ void UABP_PerformanceRole_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 // Function ABP_PerformanceRole.ABP_PerformanceRole_C.BasePose
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        BasePose_0                                             (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       BasePose_0                                             (Parm, OutParm, NoDestructor)
 
 void UABP_PerformanceRole_C::BasePose(struct FPoseLink* BasePose_0)
 {
@@ -1510,8 +1510,8 @@ void UABP_PerformanceRole_C::BasePose(struct FPoseLink* BasePose_0)
 // Function ABP_PerformanceRole.ABP_PerformanceRole_C.PostProcessPose
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        PostProcessPose_0                                      (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       PostProcessPose_0                                      (Parm, OutParm, NoDestructor)
 
 void UABP_PerformanceRole_C::PostProcessPose(const struct FPoseLink& InPose, struct FPoseLink* PostProcessPose_0)
 {

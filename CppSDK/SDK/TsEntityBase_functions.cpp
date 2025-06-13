@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsEntityBase.TsEntityBase_C.EditorInit
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
 void ATsEntityBase_C::EditorInit()
 {
@@ -27,17 +27,12 @@ void ATsEntityBase_C::EditorInit()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsEntityBase_C", "EditorInit");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsEntityBase.TsEntityBase_C.ReceiveBeginPlay
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
 void ATsEntityBase_C::ReceiveBeginPlay()
 {
@@ -46,17 +41,12 @@ void ATsEntityBase_C::ReceiveBeginPlay()
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsEntityBase_C", "ReceiveBeginPlay");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
 // Function TsEntityBase.TsEntityBase_C.ExecuteUbergraph_TsEntityBase
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// (Final, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -71,12 +61,7 @@ void ATsEntityBase_C::ExecuteUbergraph_TsEntityBase(int32 EntryPoint)
 
 	Parms.EntryPoint = EntryPoint;
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 }

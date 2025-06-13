@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ABPI_Seq_LevelB.ABPI_Seq_LevelB_C
-// 0x0000 (0x0030 - 0x0030)
-class IABPI_Seq_LevelB_C final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IABPI_Seq_LevelB_C final
 {
 public:
 	void OnJumpFrame();
@@ -32,9 +32,18 @@ public:
 	{
 		return GetDefaultObjImpl<IABPI_Seq_LevelB_C>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IABPI_Seq_LevelB_C) == 0x000008, "Wrong alignment on IABPI_Seq_LevelB_C");
-static_assert(sizeof(IABPI_Seq_LevelB_C) == 0x000030, "Wrong size on IABPI_Seq_LevelB_C");
+static_assert(alignof(IABPI_Seq_LevelB_C) == 0x000001, "Wrong alignment on IABPI_Seq_LevelB_C");
+static_assert(sizeof(IABPI_Seq_LevelB_C) == 0x000001, "Wrong size on IABPI_Seq_LevelB_C");
 
 }
 

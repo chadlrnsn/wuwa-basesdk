@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "JsEnv_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "Engine_classes.hpp"
 #include "UMG_classes.hpp"
+#include "Engine_classes.hpp"
+#include "JsEnv_structs.hpp"
 
 
 namespace SDK
@@ -388,8 +388,8 @@ static_assert(sizeof(UTypeScriptGeneratedClass) == 0x0003A8, "Wrong size on UTyp
 static_assert(offsetof(UTypeScriptGeneratedClass, HasConstructor) == 0x0003A1, "Member 'UTypeScriptGeneratedClass::HasConstructor' has a wrong offset!");
 
 // Class JsEnv.TypeScriptObject
-// 0x0000 (0x0030 - 0x0030)
-class ITypeScriptObject final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class ITypeScriptObject final
 {
 public:
 	static class UClass* StaticClass()
@@ -400,9 +400,18 @@ public:
 	{
 		return GetDefaultObjImpl<ITypeScriptObject>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(ITypeScriptObject) == 0x000008, "Wrong alignment on ITypeScriptObject");
-static_assert(sizeof(ITypeScriptObject) == 0x000030, "Wrong size on ITypeScriptObject");
+static_assert(alignof(ITypeScriptObject) == 0x000001, "Wrong alignment on ITypeScriptObject");
+static_assert(sizeof(ITypeScriptObject) == 0x000001, "Wrong size on ITypeScriptObject");
 
 }
 

@@ -364,7 +364,7 @@ class UPD_MaterialDebug_C* UCharRenderingComponent_C::GetDebugInfo()
 // Function CharRenderingComponent.CharRenderingComponent_C.AddComponent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UMeshComponent*                   skeletalComp                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UCharRenderingComponent_C::AddComponent(const class FString& skelName, class UMeshComponent* skeletalComp)
@@ -391,7 +391,7 @@ void UCharRenderingComponent_C::AddComponent(const class FString& skelName, clas
 // Function CharRenderingComponent.CharRenderingComponent_C.RemoveComponent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UCharRenderingComponent_C::RemoveComponent(const class FString& skelName)
 {
@@ -438,7 +438,7 @@ void UCharRenderingComponent_C::OnFinalizedLevelSequence()
 // ECharacterBodySpecifiedType             bodyType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   sectionIndex                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // ECharacterSlotSpecifiedType             slotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class FString                           propertyName                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    propertyName                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void UCharRenderingComponent_C::SetMaterialPropertyFloat(ECharacterBodySpecifiedType bodyType, float sectionIndex, ECharacterSlotSpecifiedType slotType, const class FString& propertyName, float value)
@@ -471,8 +471,8 @@ void UCharRenderingComponent_C::SetMaterialPropertyFloat(ECharacterBodySpecified
 // ECharacterBodySpecifiedType             bodyType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   sectionIndex                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // ECharacterSlotSpecifiedType             slotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class FString                           propertyName                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
-// struct FLinearColor                     value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    propertyName                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+// const struct FLinearColor&              value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void UCharRenderingComponent_C::SetMaterialPropertyColor(ECharacterBodySpecifiedType bodyType, float sectionIndex, ECharacterSlotSpecifiedType slotType, const class FString& propertyName, const struct FLinearColor& value)
 {
@@ -844,7 +844,7 @@ void UCharRenderingComponent_C::DisableAllShadowByDecalShadowComponent()
 // Function CharRenderingComponent.CharRenderingComponent_C.AddComponentForDecalShadow
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           name                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    name                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UPrimitiveComponent*              comp                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UCharRenderingComponent_C::AddComponentForDecalShadow(const class FString& name, class UPrimitiveComponent* comp)
@@ -871,7 +871,7 @@ void UCharRenderingComponent_C::AddComponentForDecalShadow(const class FString& 
 // Function CharRenderingComponent.CharRenderingComponent_C.RemoveComponentFromDecalShadow
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           name                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    name                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UCharRenderingComponent_C::RemoveComponentFromDecalShadow(const class FString& name)
 {
@@ -1090,7 +1090,7 @@ void UCharRenderingComponent_C::SetDisableFightDither(bool disable)
 // Function CharRenderingComponent.CharRenderingComponent_C.AddComponentInnerV2
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           skelName1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skelName1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UMeshComponent*                   skeletalComp1                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    useEmptyMaterial                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
@@ -1119,7 +1119,7 @@ void UCharRenderingComponent_C::AddComponentInnerV2(const class FString& skelNam
 // Function CharRenderingComponent.CharRenderingComponent_C.RemoveComponentInnerV2
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void UCharRenderingComponent_C::RemoveComponentInnerV2(const class FString& skelName)
 {
@@ -1201,7 +1201,7 @@ float UCharRenderingComponent_C::QuickInitAndAddData(class UObject* data, class 
 // Function CharRenderingComponent.CharRenderingComponent_C.GetSkeletalMeshComponent
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class USkeletalMeshComponent*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 class USkeletalMeshComponent* UCharRenderingComponent_C::GetSkeletalMeshComponent(const class FString& skelName)
@@ -1229,7 +1229,7 @@ class USkeletalMeshComponent* UCharRenderingComponent_C::GetSkeletalMeshComponen
 // Function CharRenderingComponent.CharRenderingComponent_C.AddComponentWithEmptyMaterial
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    skelName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UMeshComponent*                   skeletalComp                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UCharRenderingComponent_C::AddComponentWithEmptyMaterial(const class FString& skelName, class UMeshComponent* skeletalComp)
@@ -1459,7 +1459,7 @@ void UCharRenderingComponent_C::SetMaterialPropertyFloatV2(class FName name, flo
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             name                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EKuroCharBodySpecifiedType              bodyType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EKuroCharSlotSpecifiedType              slotType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EKuroCharMeshPart                       meshPart                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

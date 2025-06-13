@@ -22,7 +22,7 @@ namespace SDK
 class UDefaultBulletSceneInteraction_C final : public UPrimaryDataAsset
 {
 public:
-	TArray<struct FConditionBulletSceneInteraction> ConditionConfig;                                   // 0x0038(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FConditionBulletSceneInteraction> ConditionConfig;                                 // 0x0038(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

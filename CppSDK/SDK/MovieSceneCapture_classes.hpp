@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "MovieSceneCapture_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "MovieSceneCapture_structs.hpp"
 #include "ImageWriteQueue_structs.hpp"
 
 
@@ -294,8 +294,8 @@ static_assert(offsetof(UImageSequenceProtocol_EXR, bCompressed) == 0x0000E0, "Me
 static_assert(offsetof(UImageSequenceProtocol_EXR, CaptureGamut) == 0x0000E1, "Member 'UImageSequenceProtocol_EXR::CaptureGamut' has a wrong offset!");
 
 // Class MovieSceneCapture.MovieSceneCaptureInterface
-// 0x0000 (0x0030 - 0x0030)
-class IMovieSceneCaptureInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IMovieSceneCaptureInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -306,9 +306,18 @@ public:
 	{
 		return GetDefaultObjImpl<IMovieSceneCaptureInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IMovieSceneCaptureInterface) == 0x000008, "Wrong alignment on IMovieSceneCaptureInterface");
-static_assert(sizeof(IMovieSceneCaptureInterface) == 0x000030, "Wrong size on IMovieSceneCaptureInterface");
+static_assert(alignof(IMovieSceneCaptureInterface) == 0x000001, "Wrong alignment on IMovieSceneCaptureInterface");
+static_assert(sizeof(IMovieSceneCaptureInterface) == 0x000001, "Wrong size on IMovieSceneCaptureInterface");
 
 // Class MovieSceneCapture.MovieSceneCapture
 // 0x0210 (0x0240 - 0x0030)

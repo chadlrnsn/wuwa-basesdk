@@ -14,6 +14,19 @@
 namespace SDK::Params
 {
 
+// Function TsTaskAnimalDestroySelf.TsTaskAnimalDestroySelf_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct TsTaskAnimalDestroySelf_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsTaskAnimalDestroySelf_C_ReceiveExecuteAI) == 0x000008, "Wrong alignment on TsTaskAnimalDestroySelf_C_ReceiveExecuteAI");
+static_assert(sizeof(TsTaskAnimalDestroySelf_C_ReceiveExecuteAI) == 0x000010, "Wrong size on TsTaskAnimalDestroySelf_C_ReceiveExecuteAI");
+static_assert(offsetof(TsTaskAnimalDestroySelf_C_ReceiveExecuteAI, OwnerController) == 0x000000, "Member 'TsTaskAnimalDestroySelf_C_ReceiveExecuteAI::OwnerController' has a wrong offset!");
+static_assert(offsetof(TsTaskAnimalDestroySelf_C_ReceiveExecuteAI, ControlledPawn) == 0x000008, "Member 'TsTaskAnimalDestroySelf_C_ReceiveExecuteAI::ControlledPawn' has a wrong offset!");
+
 // Function TsTaskAnimalDestroySelf.TsTaskAnimalDestroySelf_C.ExecuteUbergraph_TsTaskAnimalDestroySelf
 // 0x0018 (0x0018 - 0x0000)
 struct TsTaskAnimalDestroySelf_C_ExecuteUbergraph_TsTaskAnimalDestroySelf final
@@ -29,19 +42,6 @@ static_assert(sizeof(TsTaskAnimalDestroySelf_C_ExecuteUbergraph_TsTaskAnimalDest
 static_assert(offsetof(TsTaskAnimalDestroySelf_C_ExecuteUbergraph_TsTaskAnimalDestroySelf, EntryPoint) == 0x000000, "Member 'TsTaskAnimalDestroySelf_C_ExecuteUbergraph_TsTaskAnimalDestroySelf::EntryPoint' has a wrong offset!");
 static_assert(offsetof(TsTaskAnimalDestroySelf_C_ExecuteUbergraph_TsTaskAnimalDestroySelf, K2Node_Event_OwnerController) == 0x000008, "Member 'TsTaskAnimalDestroySelf_C_ExecuteUbergraph_TsTaskAnimalDestroySelf::K2Node_Event_OwnerController' has a wrong offset!");
 static_assert(offsetof(TsTaskAnimalDestroySelf_C_ExecuteUbergraph_TsTaskAnimalDestroySelf, K2Node_Event_ControlledPawn) == 0x000010, "Member 'TsTaskAnimalDestroySelf_C_ExecuteUbergraph_TsTaskAnimalDestroySelf::K2Node_Event_ControlledPawn' has a wrong offset!");
-
-// Function TsTaskAnimalDestroySelf.TsTaskAnimalDestroySelf_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct TsTaskAnimalDestroySelf_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsTaskAnimalDestroySelf_C_ReceiveExecuteAI) == 0x000008, "Wrong alignment on TsTaskAnimalDestroySelf_C_ReceiveExecuteAI");
-static_assert(sizeof(TsTaskAnimalDestroySelf_C_ReceiveExecuteAI) == 0x000010, "Wrong size on TsTaskAnimalDestroySelf_C_ReceiveExecuteAI");
-static_assert(offsetof(TsTaskAnimalDestroySelf_C_ReceiveExecuteAI, OwnerController) == 0x000000, "Member 'TsTaskAnimalDestroySelf_C_ReceiveExecuteAI::OwnerController' has a wrong offset!");
-static_assert(offsetof(TsTaskAnimalDestroySelf_C_ReceiveExecuteAI, ControlledPawn) == 0x000008, "Member 'TsTaskAnimalDestroySelf_C_ReceiveExecuteAI::ControlledPawn' has a wrong offset!");
 
 }
 

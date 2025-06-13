@@ -40,7 +40,7 @@ void UABP_Base_Sword_C::ExecuteUbergraph_ABP_Base_Sword(int32 EntryPoint)
 // Function ABP_Base_Sword.ABP_Base_Sword_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_Base_Sword_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {

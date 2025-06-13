@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "EInputAction_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "EInputState_structs.hpp"
 #include "SSkillBehaviorCondition_structs.hpp"
 #include "sInputCommand_structs.hpp"

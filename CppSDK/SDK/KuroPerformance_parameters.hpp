@@ -94,7 +94,7 @@ static_assert(offsetof(KuroPerformanceBPLibrary_GetCurrentAndroidDeviceRequireAd
 struct KuroPerformanceBPLibrary_GetCurrentTemperatureData final
 {
 public:
-	TDelegate<void(bool bResult, float CurrentTemperature, float TempBudget)> Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(bool bResult, float CurrentTemperature, float TempBudget)> Delegate;              // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroPerformanceBPLibrary_GetCurrentTemperatureData) == 0x000004, "Wrong alignment on KuroPerformanceBPLibrary_GetCurrentTemperatureData");
 static_assert(sizeof(KuroPerformanceBPLibrary_GetCurrentTemperatureData) == 0x000028, "Wrong size on KuroPerformanceBPLibrary_GetCurrentTemperatureData");
@@ -193,7 +193,7 @@ static_assert(offsetof(KuroPerformanceBPLibrary_GetSupportedBoostFlag, ReturnVal
 struct KuroPerformanceBPLibrary_GetTickedPerformanceReportAndAdvice final
 {
 public:
-	TDelegate<void(const struct FKuroPerformanceReport& PerformanceReport)> ReportDelegate;                                    // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FKuroPerformanceReport& PerformanceReport)> ReportDelegate;          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(KuroPerformanceBPLibrary_GetTickedPerformanceReportAndAdvice) == 0x000004, "Wrong alignment on KuroPerformanceBPLibrary_GetTickedPerformanceReportAndAdvice");
 static_assert(sizeof(KuroPerformanceBPLibrary_GetTickedPerformanceReportAndAdvice) == 0x000028, "Wrong size on KuroPerformanceBPLibrary_GetTickedPerformanceReportAndAdvice");

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SSkillInfo_structs.hpp"
-#include "Engine_structs.hpp"
 #include "KuroGAS_classes.hpp"
+#include "Engine_structs.hpp"
+#include "SSkillInfo_structs.hpp"
 #include "EPawnChannel_structs.hpp"
 #include "EAimViewState_structs.hpp"
 
@@ -21,14 +21,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Base.GA_Base_C
-// 0x0190 (0x0558 - 0x03C8)
+// 0x01A0 (0x0568 - 0x03C8)
 class UGA_Base_C : public UBaseGameplayAbility
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FSSkillInfo                            当前技能数据;                                      // 0x03D0(0x0170)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	class FString                                 当前技能数据名;                                    // 0x0540(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	int32                                         SkillId;                                           // 0x0550(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillInfo                            当前技能数据;                                      // 0x03D0(0x0180)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 当前技能数据名;                                    // 0x0550(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	int32                                         SkillId;                                           // 0x0560(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Base(int32 EntryPoint);
@@ -119,6 +119,8 @@ public:
 	void RemoveTag(const struct FGameplayTag& tag);
 	void AddTag(const struct FGameplayTag& tag);
 	void Apply_Buff_with_Level(int64 buffId);
+	void 随机召唤(int32 召唤者Id, int32 Index_0, const struct FTransformDouble& Transform, int32 SkillId_0, bool IsVisivle);
+	void 获取随机召唤物(int32 召唤者, int32 Index_0, int32* 实体Id);
 
 	bool K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, struct FGameplayTagContainer* RelevantTags) const;
 
@@ -133,11 +135,11 @@ public:
 	}
 };
 static_assert(alignof(UGA_Base_C) == 0x000008, "Wrong alignment on UGA_Base_C");
-static_assert(sizeof(UGA_Base_C) == 0x000558, "Wrong size on UGA_Base_C");
+static_assert(sizeof(UGA_Base_C) == 0x000568, "Wrong size on UGA_Base_C");
 static_assert(offsetof(UGA_Base_C, UberGraphFrame) == 0x0003C8, "Member 'UGA_Base_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UGA_Base_C, 当前技能数据) == 0x0003D0, "Member 'UGA_Base_C::当前技能数据' has a wrong offset!");
-static_assert(offsetof(UGA_Base_C, 当前技能数据名) == 0x000540, "Member 'UGA_Base_C::当前技能数据名' has a wrong offset!");
-static_assert(offsetof(UGA_Base_C, SkillId) == 0x000550, "Member 'UGA_Base_C::SkillId' has a wrong offset!");
+static_assert(offsetof(UGA_Base_C, 当前技能数据名) == 0x000550, "Member 'UGA_Base_C::当前技能数据名' has a wrong offset!");
+static_assert(offsetof(UGA_Base_C, SkillId) == 0x000560, "Member 'UGA_Base_C::SkillId' has a wrong offset!");
 
 }
 

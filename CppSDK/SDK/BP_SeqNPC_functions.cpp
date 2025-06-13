@@ -17,115 +17,70 @@
 namespace SDK
 {
 
-// Function BP_SeqNPC.BP_SeqNPC_C.ExecuteUbergraph_BP_SeqNPC
-// (Final, UbergraphFunction)
+// Function BP_SeqNPC.BP_SeqNPC_C.GetABPC_Body_V2
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UABPC_Seq_Body_V2_C**             ABPC_Body_V2_0                                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SeqNPC_C::ExecuteUbergraph_BP_SeqNPC(int32 EntryPoint)
+void ABP_SeqNPC_C::GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Body_V2_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SeqNPC_C", "ExecuteUbergraph_BP_SeqNPC");
+		Func = Class->GetFunction("BP_SeqNPC_C", "GetABPC_Body_V2");
 
-	Params::BP_SeqNPC_C_ExecuteUbergraph_BP_SeqNPC Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::BP_SeqNPC_C_GetABPC_Body_V2 Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (ABPC_Body_V2_0 != nullptr)
+		*ABPC_Body_V2_0 = Parms.ABPC_Body_V2_0;
 }
 
 
-// Function BP_SeqNPC.BP_SeqNPC_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_SeqNPC_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SeqNPC_C", "ReceiveTick");
-
-	Params::BP_SeqNPC_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_SeqNPC.BP_SeqNPC_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_SeqNPC_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SeqNPC_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_SeqNPC.BP_SeqNPC_C.UpdateNpcByDa
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_SeqNPC_C::UpdateNpcByDa()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SeqNPC_C", "UpdateNpcByDa");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_SeqNPC.BP_SeqNPC_C.SetAnimDataVector
+// Function BP_SeqNPC.BP_SeqNPC_C.GetAnimDataFloat
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TMap<class FName, struct FVector>       VectorCurveData                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FNamedCurveValue>*        FloatCurveData                                         (Parm, OutParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool ABP_SeqNPC_C::SetAnimDataVector(const TMap<class FName, struct FVector>& VectorCurveData)
+bool ABP_SeqNPC_C::GetAnimDataFloat(TArray<struct FNamedCurveValue>* FloatCurveData)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SeqNPC_C", "SetAnimDataVector");
+		Func = Class->GetFunction("BP_SeqNPC_C", "GetAnimDataFloat");
 
-	Params::BP_SeqNPC_C_SetAnimDataVector Parms{};
-
-	Parms.VectorCurveData = std::move(VectorCurveData);
+	Params::BP_SeqNPC_C_GetAnimDataFloat Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (FloatCurveData != nullptr)
+		*FloatCurveData = std::move(Parms.FloatCurveData);
 
 	return Parms.ReturnValue;
 }
 
 
-// Function BP_SeqNPC.BP_SeqNPC_C.SetAnimDataFloat
+// Function BP_SeqNPC.BP_SeqNPC_C.GetAnimDataVector
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         FloatCurveData                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TMap<class FName, struct FVector>*      VectorCurveData                                        (Parm, OutParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool ABP_SeqNPC_C::SetAnimDataFloat(const TArray<struct FNamedCurveValue>& FloatCurveData)
+bool ABP_SeqNPC_C::GetAnimDataVector(TMap<class FName, struct FVector>* VectorCurveData)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SeqNPC_C", "SetAnimDataFloat");
+		Func = Class->GetFunction("BP_SeqNPC_C", "GetAnimDataVector");
 
-	Params::BP_SeqNPC_C_SetAnimDataFloat Parms{};
-
-	Parms.FloatCurveData = std::move(FloatCurveData);
+	Params::BP_SeqNPC_C_GetAnimDataVector Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (VectorCurveData != nullptr)
+		*VectorCurveData = std::move(Parms.VectorCurveData);
 
 	return Parms.ReturnValue;
 }
@@ -151,72 +106,117 @@ TArray<class FName> ABP_SeqNPC_C::GetSupportGroupNames()
 }
 
 
-// Function BP_SeqNPC.BP_SeqNPC_C.GetAnimDataVector
+// Function BP_SeqNPC.BP_SeqNPC_C.SetAnimDataFloat
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TMap<class FName, struct FVector>       VectorCurveData                                        (Parm, OutParm)
+// const TArray<struct FNamedCurveValue>&  FloatCurveData                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool ABP_SeqNPC_C::GetAnimDataVector(TMap<class FName, struct FVector>* VectorCurveData)
+bool ABP_SeqNPC_C::SetAnimDataFloat(const TArray<struct FNamedCurveValue>& FloatCurveData)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SeqNPC_C", "GetAnimDataVector");
+		Func = Class->GetFunction("BP_SeqNPC_C", "SetAnimDataFloat");
 
-	Params::BP_SeqNPC_C_GetAnimDataVector Parms{};
+	Params::BP_SeqNPC_C_SetAnimDataFloat Parms{};
+
+	Parms.FloatCurveData = std::move(FloatCurveData);
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (VectorCurveData != nullptr)
-		*VectorCurveData = std::move(Parms.VectorCurveData);
 
 	return Parms.ReturnValue;
 }
 
 
-// Function BP_SeqNPC.BP_SeqNPC_C.GetAnimDataFloat
+// Function BP_SeqNPC.BP_SeqNPC_C.SetAnimDataVector
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         FloatCurveData                                         (Parm, OutParm)
+// const TMap<class FName, struct FVector>&VectorCurveData                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool ABP_SeqNPC_C::GetAnimDataFloat(TArray<struct FNamedCurveValue>* FloatCurveData)
+bool ABP_SeqNPC_C::SetAnimDataVector(const TMap<class FName, struct FVector>& VectorCurveData)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SeqNPC_C", "GetAnimDataFloat");
+		Func = Class->GetFunction("BP_SeqNPC_C", "SetAnimDataVector");
 
-	Params::BP_SeqNPC_C_GetAnimDataFloat Parms{};
+	Params::BP_SeqNPC_C_SetAnimDataVector Parms{};
+
+	Parms.VectorCurveData = std::move(VectorCurveData);
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (FloatCurveData != nullptr)
-		*FloatCurveData = std::move(Parms.FloatCurveData);
 
 	return Parms.ReturnValue;
 }
 
 
-// Function BP_SeqNPC.BP_SeqNPC_C.GetABPC_Body_V2
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UABPC_Seq_Body_V2_C*              ABPC_Body_V2_0                                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_SeqNPC.BP_SeqNPC_C.UpdateNpcByDa
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_SeqNPC_C::GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Body_V2_0)
+void ABP_SeqNPC_C::UpdateNpcByDa()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SeqNPC_C", "GetABPC_Body_V2");
+		Func = Class->GetFunction("BP_SeqNPC_C", "UpdateNpcByDa");
 
-	Params::BP_SeqNPC_C_GetABPC_Body_V2 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SeqNPC.BP_SeqNPC_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_SeqNPC_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqNPC_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SeqNPC.BP_SeqNPC_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqNPC_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqNPC_C", "ReceiveTick");
+
+	Params::BP_SeqNPC_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
 
-	if (ABPC_Body_V2_0 != nullptr)
-		*ABPC_Body_V2_0 = Parms.ABPC_Body_V2_0;
+
+// Function BP_SeqNPC.BP_SeqNPC_C.ExecuteUbergraph_BP_SeqNPC
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqNPC_C::ExecuteUbergraph_BP_SeqNPC(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqNPC_C", "ExecuteUbergraph_BP_SeqNPC");
+
+	Params::BP_SeqNPC_C_ExecuteUbergraph_BP_SeqNPC Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

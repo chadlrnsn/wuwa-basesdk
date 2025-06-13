@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "AnimGraphRuntime_structs.hpp"
+#include "Engine_structs.hpp"
+#include "ECharState_structs.hpp"
 #include "KuroAnim_structs.hpp"
 #include "KuroAnim_classes.hpp"
-#include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
-#include "ECharState_structs.hpp"
 #include "EAnimalEcologicalState_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -194,11 +194,11 @@ public:
 	bool                                          起飞;                                              // 0x3977(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          bSitDown;                                          // 0x3978(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_3979[0x7];                                     // 0x3979(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGameplayTag, class UAnimSequence*> 其他动作配置;                                      // 0x3980(0x0050)(Edit, BlueprintVisible)
+	TMap<struct FGameplayTag, class UAnimSequence*> 其他动作配置;                                    // 0x3980(0x0050)(Edit, BlueprintVisible)
 	float                                         ActionTime;                                        // 0x39D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_39D4[0x4];                                     // 0x39D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGameplayTag, TSoftObjectPtr<class UPD_CharacterControllerData_C>> 材质配置;                                          // 0x39D8(0x0050)(Edit, BlueprintVisible)
-	TMap<struct FGameplayTag, class UAnimMontage*> 蒙太奇表演配置;                                    // 0x3A28(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<struct FGameplayTag, TSoftObjectPtr<class UPD_CharacterControllerData_C>> 材质配置;         // 0x39D8(0x0050)(Edit, BlueprintVisible)
+	TMap<struct FGameplayTag, class UAnimMontage*> 蒙太奇表演配置;                                   // 0x3A28(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          支持急转身;                                        // 0x3A78(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          系统UI;                                            // 0x3A79(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	bool                                          bGetDown;                                          // 0x3A7A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)

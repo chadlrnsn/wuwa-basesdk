@@ -22,8 +22,8 @@ class UKuroCloudGameWrapper final : public UObject
 {
 public:
 	TDelegate<void(const class FString& Data)>    CloudGameOnReceiveDataDelegate;                    // 0x0030(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(const class FString& Key, const class FString& Data)> CloudGameOnReceiveDataWithKeyDelegate;             // 0x0058(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(int32 Width, int32 Height)>    CloudGameOnChangeResolutionDelegate;               // 0x0080(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& Key, const class FString& Data)> CloudGameOnReceiveDataWithKeyDelegate; // 0x0058(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const int32 Width, const int32 Height)> CloudGameOnChangeResolutionDelegate;      // 0x0080(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	static void SendDataToPipeBinary(const class FString& Data);

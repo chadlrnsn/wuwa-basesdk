@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "EAiLevelVarSource_structs.hpp"
 #include "SAiLevelVar_structs.hpp"
-#include "ECharacterState_structs.hpp"
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ECharacterState_structs.hpp"
 
 
 namespace SDK::Params
@@ -29,9 +29,9 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void(bool bContent)>                K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0028)(ZeroConstructor)
-	TDelegate<void(TArray<class AActor*>& AddActor, TArray<class AActor*>& RemoveActor, TArray<int32>& RemoveActorIds, int32 Num)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x0030(0x0028)(ZeroConstructor)
-	TDelegate<void(TArray<class AActor*>& AddActor, TArray<class AActor*>& RemoveActor, TArray<int32>& RemoveActorIds, int32 Num)> K2Node_CreateDelegate_OutputDelegate_2;            // 0x0058(0x0028)(ZeroConstructor)
-	TDelegate<void(TArray<class AActor*>& AddActor, TArray<class AActor*>& RemoveActor, TArray<int32>& RemoveActorIds, int32 Num)> K2Node_CreateDelegate_OutputDelegate_3;            // 0x0080(0x0028)(ZeroConstructor)
+	TDelegate<void(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)> K2Node_CreateDelegate_OutputDelegate_1; // 0x0030(0x0028)(ZeroConstructor)
+	TDelegate<void(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)> K2Node_CreateDelegate_OutputDelegate_2; // 0x0058(0x0028)(ZeroConstructor)
+	TDelegate<void(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)> K2Node_CreateDelegate_OutputDelegate_3; // 0x0080(0x0028)(ZeroConstructor)
 	TDelegate<void(bool bContent)>                K2Node_CreateDelegate_OutputDelegate_4;            // 0x00A8(0x0028)(ZeroConstructor)
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_5;            // 0x00D0(0x0028)(ZeroConstructor)
 	TDelegate<void(bool bContent)>                K2Node_CreateDelegate_OutputDelegate_6;            // 0x00F8(0x0028)(ZeroConstructor)
@@ -454,7 +454,7 @@ struct AIC_AICommon_C_区域监听事件函数 final
 {
 public:
 	class FString                                 区域名称;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	TDelegate<void(bool IsInRegion, class AActor* Target)> 事件;                                              // 0x0010(0x0028)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
+	TDelegate<void(bool IsInRegion, class AActor* Target)> 事件;                                     // 0x0010(0x0028)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
 	class UKuroRegionEventBinder*                 CallFunc_GetRegionEvent_ReturnValue;               // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(AIC_AICommon_C_区域监听事件函数) == 0x000008, "Wrong alignment on AIC_AICommon_C_区域监听事件函数");

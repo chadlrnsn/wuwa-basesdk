@@ -112,7 +112,7 @@ struct FKuroPointCloudStreamingCell final
 public:
 	int32                                         CellX;                                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         CellY;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FKuroPointCloudCollectionInstance> InstanceData;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKuroPointCloudCollectionInstance> InstanceData;                                   // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FKuroPointCloudStreamingCell) == 0x000008, "Wrong alignment on FKuroPointCloudStreamingCell");
 static_assert(sizeof(FKuroPointCloudStreamingCell) == 0x000018, "Wrong size on FKuroPointCloudStreamingCell");

@@ -583,8 +583,8 @@ void UBP_InputComponent_C::瞄准按下事件(float time)
 // Function BP_InputComponent.BP_InputComponent_C.特殊探索技能
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FSInputCommand                   指令                                                   (Parm, OutParm, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSInputCommand*                  指令                                                   (Parm, OutParm, NoDestructor, HasGetValueTypeHash)
 
 void UBP_InputComponent_C::特殊探索技能(bool* Result, struct FSInputCommand* 指令)
 {

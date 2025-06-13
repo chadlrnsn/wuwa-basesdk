@@ -20,7 +20,7 @@ namespace SDK
 // Function KuroSqliteBpLib.KuroQueryStatLibrary.AppendString
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Content                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Content                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroQueryStatLibrary::AppendString(const class FString& Content)
 {
@@ -102,7 +102,7 @@ void UKuroQueryStatLibrary::InvokeTestSqliteAction()
 // Function KuroSqliteBpLib.KuroQueryStatLibrary.SetCloseSaveQueryArgsFileAction
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FJsObject                        Action                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FJsObject&                 Action                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroQueryStatLibrary::SetCloseSaveQueryArgsFileAction(const struct FJsObject& Action)
 {
@@ -127,7 +127,7 @@ void UKuroQueryStatLibrary::SetCloseSaveQueryArgsFileAction(const struct FJsObje
 // Function KuroSqliteBpLib.KuroQueryStatLibrary.SetTestDataSavePath
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroQueryStatLibrary::SetTestDataSavePath(const class FString& Path)
 {
@@ -152,7 +152,7 @@ void UKuroQueryStatLibrary::SetTestDataSavePath(const class FString& Path)
 // Function KuroSqliteBpLib.KuroQueryStatLibrary.SetTestSqliteAction
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FJsObject                        Action                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FJsObject&                 Action                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroQueryStatLibrary::SetTestSqliteAction(const struct FJsObject& Action)
 {
@@ -196,8 +196,8 @@ void UKuroSqliteLibrary::CloseAllConnections()
 // Function KuroSqliteBpLib.KuroSqliteLibrary.Execute
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Sql                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Sql                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSqliteLibrary::Execute(const class FString& DbPath, const class FString& Sql)
@@ -226,8 +226,8 @@ bool UKuroSqliteLibrary::Execute(const class FString& DbPath, const class FStrin
 // Function KuroSqliteBpLib.KuroSqliteLibrary.ExecuteAsync
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Sql                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Sql                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSqliteLibrary::ExecuteAsync(const class FString& DbPath, const class FString& Sql)
 {
@@ -253,8 +253,8 @@ void UKuroSqliteLibrary::ExecuteAsync(const class FString& DbPath, const class F
 // Function KuroSqliteBpLib.KuroSqliteLibrary.OpenCreateDB
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseThread                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseThread                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSqliteLibrary::OpenCreateDB(const class FString& DbPath, const bool bUseThread)
@@ -283,8 +283,8 @@ bool UKuroSqliteLibrary::OpenCreateDB(const class FString& DbPath, const bool bU
 // Function KuroSqliteBpLib.KuroSqliteLibrary.Query
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Sql                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Sql                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UKuroSqliteResultSet*             ResultSet                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -315,9 +315,9 @@ bool UKuroSqliteLibrary::Query(const class FString& DbPath, const class FString&
 // Function KuroSqliteBpLib.KuroSqliteLibrary.QueryValue
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Sql                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OutValue                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DbPath                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Sql                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutValue                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroSqliteLibrary::QueryValue(const class FString& DbPath, const class FString& Sql, class FString* OutValue)
@@ -349,7 +349,7 @@ int32 UKuroSqliteLibrary::QueryValue(const class FString& DbPath, const class FS
 // Function KuroSqliteBpLib.KuroSqliteLibrary.SetDBKey
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           DBKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    DBKey                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroSqliteLibrary::SetDBKey(const class FString& DBKey)
 {
@@ -374,7 +374,7 @@ void UKuroSqliteLibrary::SetDBKey(const class FString& DBKey)
 // Function KuroSqliteBpLib.KuroSqliteLibrary.SqliteStatusGetCurrent
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   StatusOp                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             StatusOp                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroSqliteLibrary::SqliteStatusGetCurrent(const int32 StatusOp)
@@ -402,8 +402,8 @@ int32 UKuroSqliteLibrary::SqliteStatusGetCurrent(const int32 StatusOp)
 // Function KuroSqliteBpLib.KuroSqliteLibrary.SqliteStatusGetHighWater
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// int32                                   StatusOp                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ResetHighWater                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             StatusOp                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              ResetHighWater                                         (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UKuroSqliteLibrary::SqliteStatusGetHighWater(const int32 StatusOp, const bool ResetHighWater)
@@ -451,8 +451,8 @@ void UKuroSqliteResultSet::Release()
 // Function KuroSqliteBpLib.KuroSqliteResultSet.GetBigInt
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// class FString                           Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int64*                                  Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSqliteResultSet::GetBigInt(const class FString& Column, int64* Value) const
@@ -483,8 +483,8 @@ bool UKuroSqliteResultSet::GetBigInt(const class FString& Column, int64* Value) 
 // Function KuroSqliteBpLib.KuroSqliteResultSet.GetBool
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// class FString                           Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSqliteResultSet::GetBool(const class FString& Column, bool* Value) const
@@ -515,8 +515,8 @@ bool UKuroSqliteResultSet::GetBool(const class FString& Column, bool* Value) con
 // Function KuroSqliteBpLib.KuroSqliteResultSet.GetBytes
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// class FString                           Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FArrayBuffer                     Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FArrayBuffer*                    Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSqliteResultSet::GetBytes(const class FString& Column, struct FArrayBuffer* Value) const
@@ -547,8 +547,8 @@ bool UKuroSqliteResultSet::GetBytes(const class FString& Column, struct FArrayBu
 // Function KuroSqliteBpLib.KuroSqliteResultSet.GetFloat
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// class FString                           Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float*                                  Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSqliteResultSet::GetFloat(const class FString& Column, float* Value) const
@@ -579,8 +579,8 @@ bool UKuroSqliteResultSet::GetFloat(const class FString& Column, float* Value) c
 // Function KuroSqliteBpLib.KuroSqliteResultSet.GetInt
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// class FString                           Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  Value                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSqliteResultSet::GetInt(const class FString& Column, int32* Value) const
@@ -611,8 +611,8 @@ bool UKuroSqliteResultSet::GetInt(const class FString& Column, int32* Value) con
 // Function KuroSqliteBpLib.KuroSqliteResultSet.GetString
 // (Final, Native, Public, HasOutParams, Const)
 // Parameters:
-// class FString                           Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Column                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          Value                                                  (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroSqliteResultSet::GetString(const class FString& Column, class FString* Value) const

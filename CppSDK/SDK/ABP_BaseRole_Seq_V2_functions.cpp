@@ -60,7 +60,7 @@ void UABP_BaseRole_Seq_V2_C::BlueprintUpdateAnimation(float DeltaTimeX)
 // Function ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_Seq_V2_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
@@ -81,8 +81,8 @@ void UABP_BaseRole_Seq_V2_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 // Function ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C.计算层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        计算层_0                                               (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       计算层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_Seq_V2_C::计算层(const struct FPoseLink& InPose_0, struct FPoseLink* 计算层_0)
 {
@@ -105,7 +105,7 @@ void UABP_BaseRole_Seq_V2_C::计算层(const struct FPoseLink& InPose_0, struct 
 // Function ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C.肢体层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        肢体层_0                                               (Parm, OutParm, NoDestructor)
+// struct FPoseLink*                       肢体层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_Seq_V2_C::肢体层(struct FPoseLink* 肢体层_0)
 {
@@ -126,8 +126,8 @@ void UABP_BaseRole_Seq_V2_C::肢体层(struct FPoseLink* 肢体层_0)
 // Function ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C.面部层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        面部层_0                                               (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       面部层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_Seq_V2_C::面部层(const struct FPoseLink& InPose, struct FPoseLink* 面部层_0)
 {
@@ -150,8 +150,8 @@ void UABP_BaseRole_Seq_V2_C::面部层(const struct FPoseLink& InPose, struct FP
 // Function ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C.修型层
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        修型层_0                                               (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose_0                                               (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       修型层_0                                               (Parm, OutParm, NoDestructor)
 
 void UABP_BaseRole_Seq_V2_C::修型层(const struct FPoseLink& InPose_0, struct FPoseLink* 修型层_0)
 {

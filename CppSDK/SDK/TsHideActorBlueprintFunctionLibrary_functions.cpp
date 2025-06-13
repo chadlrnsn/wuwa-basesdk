@@ -17,44 +17,19 @@
 namespace SDK
 {
 
-// Function TsHideActorBlueprintFunctionLibrary.TsHideActorBlueprintFunctionLibrary_C.HideMesh
+// Function TsHideActorBlueprintFunctionLibrary.TsHideActorBlueprintFunctionLibrary_C.ShowEffect
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHideActorBlueprintFunctionLibrary_C::HideMesh(class UObject* __WorldContext)
+void UTsHideActorBlueprintFunctionLibrary_C::ShowEffect(class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsHideActorBlueprintFunctionLibrary_C", "HideMesh");
+		Func = StaticClass()->GetFunction("TsHideActorBlueprintFunctionLibrary_C", "ShowEffect");
 
-	Params::TsHideActorBlueprintFunctionLibrary_C_HideMesh Parms{};
-
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsHideActorBlueprintFunctionLibrary.TsHideActorBlueprintFunctionLibrary_C.HideEffect
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsHideActorBlueprintFunctionLibrary_C::HideEffect(class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsHideActorBlueprintFunctionLibrary_C", "HideEffect");
-
-	Params::TsHideActorBlueprintFunctionLibrary_C_HideEffect Parms{};
+	Params::TsHideActorBlueprintFunctionLibrary_C_ShowEffect Parms{};
 
 	Parms.__WorldContext = __WorldContext;
 
@@ -92,19 +67,44 @@ void UTsHideActorBlueprintFunctionLibrary_C::ShowMesh(class UObject* __WorldCont
 }
 
 
-// Function TsHideActorBlueprintFunctionLibrary.TsHideActorBlueprintFunctionLibrary_C.ShowEffect
+// Function TsHideActorBlueprintFunctionLibrary.TsHideActorBlueprintFunctionLibrary_C.HideEffect
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHideActorBlueprintFunctionLibrary_C::ShowEffect(class UObject* __WorldContext)
+void UTsHideActorBlueprintFunctionLibrary_C::HideEffect(class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsHideActorBlueprintFunctionLibrary_C", "ShowEffect");
+		Func = StaticClass()->GetFunction("TsHideActorBlueprintFunctionLibrary_C", "HideEffect");
 
-	Params::TsHideActorBlueprintFunctionLibrary_C_ShowEffect Parms{};
+	Params::TsHideActorBlueprintFunctionLibrary_C_HideEffect Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsHideActorBlueprintFunctionLibrary.TsHideActorBlueprintFunctionLibrary_C.HideMesh
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsHideActorBlueprintFunctionLibrary_C::HideMesh(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsHideActorBlueprintFunctionLibrary_C", "HideMesh");
+
+	Params::TsHideActorBlueprintFunctionLibrary_C_HideMesh Parms{};
 
 	Parms.__WorldContext = __WorldContext;
 

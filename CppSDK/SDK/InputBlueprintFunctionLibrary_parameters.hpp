@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ECommandType_structs.hpp"
 #include "sInputCommand_structs.hpp"
+#include "ECommandType_structs.hpp"
 
 
 namespace SDK::Params

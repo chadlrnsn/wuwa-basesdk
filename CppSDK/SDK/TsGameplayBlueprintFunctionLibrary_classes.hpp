@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "EFishingSkillType_structs.hpp"
-#include "ECharParentMoveState_structs.hpp"
-#include "Engine_classes.hpp"
-#include "ECharacterLoadType_structs.hpp"
-#include "EHitAnim_structs.hpp"
-#include "EMorphType_structs.hpp"
 #include "ESkillTargetDirection_structs.hpp"
+#include "Engine_classes.hpp"
 #include "EHookInteractTypeBp_structs.hpp"
+#include "EHitAnim_structs.hpp"
 #include "EVisionType_structs.hpp"
+#include "ECharacterLoadType_structs.hpp"
+#include "EMorphType_structs.hpp"
+#include "EFishingSkillType_structs.hpp"
 #include "EAimViewState_structs.hpp"
 #include "ECharViewDirectionState_structs.hpp"
+#include "ECharParentMoveState_structs.hpp"
 #include "ECharState_structs.hpp"
 
 
@@ -280,6 +280,18 @@ public:
 	static void EndAddMoveByInputDirect(int32 entityId, class UObject* __WorldContext);
 	static void StartBattleQte(int32 entityId, int32 skillId, int32 battleQteId, class UObject* __WorldContext);
 	static void StopGroup1Skill(int32 entityId, const class FString& reason, class UObject* __WorldContext);
+	static struct FVectorDouble GetLocationByAction(int32 entityId, class UGA_Base_C* ga, const struct FSSkillBehaviorAction& action, class UObject* __WorldContext);
+	static struct FRotator GetRotationByAction(int32 entityId, class UGA_Base_C* ga, const struct FSSkillBehaviorAction& action, class UObject* __WorldContext);
+	static struct FVectorDouble SlashHookPointCharacterLookAtPoint(int32 entityId, class UObject* __WorldContext);
+	static bool SlashHookPointHasLookAtConfig(int32 entityId, class UObject* __WorldContext);
+	static bool SlashHookPointIsTakeOverCamera(int32 entityId, class UObject* __WorldContext);
+	static bool IsSlashGameplayIsSuccess(class UObject* __WorldContext);
+	static struct FSCharacterLocationsAndRadius GetCharactersLocationNearBy(const struct FVectorDouble& center, float distance, int32 maxCount, class UObject* __WorldContext);
+	static void StartChargeSlash(int32 entityId, class UObject* __WorldContext);
+	static void StopChargeSlash(int32 entityId, class UObject* __WorldContext);
+	static void BeginSkillAsync(int32 entityId, class FName skillId, class AActor* target, class FName socketName, class UKuroBooleanEventBinder* eventBinder, class UObject* __WorldContext);
+	static struct FVectorDouble SlashHookPointSafePointLoc(int32 entityId, class UObject* __WorldContext);
+	static struct FRotator SlashHookPointSafePointRot(int32 entityId, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

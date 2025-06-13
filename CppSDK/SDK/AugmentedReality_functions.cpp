@@ -270,9 +270,9 @@ bool UARTrackedGeometry::IsTracked() const
 // Function AugmentedReality.ARMeshGeometry.GetObjectClassificationAtLocation
 // (Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InWorldLocation                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EARObjectClassification                 OutClassification                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OutClassificationLocation                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InWorldLocation                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EARObjectClassification*                OutClassification                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutClassificationLocation                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxLocationDiff                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -308,7 +308,7 @@ bool UARMeshGeometry::GetObjectClassificationAtLocation(const struct FVector& In
 // Function AugmentedReality.ARTraceResultLibrary.GetDistanceFromCamera
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FARTraceResult                   TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARTraceResult&            TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UARTraceResultLibrary::GetDistanceFromCamera(const struct FARTraceResult& TraceResult)
@@ -336,7 +336,7 @@ float UARTraceResultLibrary::GetDistanceFromCamera(const struct FARTraceResult& 
 // Function AugmentedReality.ARTraceResultLibrary.GetLocalToTrackingTransform
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FARTraceResult                   TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARTraceResult&            TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FTransform UARTraceResultLibrary::GetLocalToTrackingTransform(const struct FARTraceResult& TraceResult)
@@ -364,7 +364,7 @@ struct FTransform UARTraceResultLibrary::GetLocalToTrackingTransform(const struc
 // Function AugmentedReality.ARTraceResultLibrary.GetLocalToWorldTransform
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FARTraceResult                   TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARTraceResult&            TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FTransform UARTraceResultLibrary::GetLocalToWorldTransform(const struct FARTraceResult& TraceResult)
@@ -392,7 +392,7 @@ struct FTransform UARTraceResultLibrary::GetLocalToWorldTransform(const struct F
 // Function AugmentedReality.ARTraceResultLibrary.GetLocalTransform
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FARTraceResult                   TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARTraceResult&            TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FTransform UARTraceResultLibrary::GetLocalTransform(const struct FARTraceResult& TraceResult)
@@ -420,7 +420,7 @@ struct FTransform UARTraceResultLibrary::GetLocalTransform(const struct FARTrace
 // Function AugmentedReality.ARTraceResultLibrary.GetTraceChannel
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FARTraceResult                   TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARTraceResult&            TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // EARLineTraceChannels                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EARLineTraceChannels UARTraceResultLibrary::GetTraceChannel(const struct FARTraceResult& TraceResult)
@@ -448,7 +448,7 @@ EARLineTraceChannels UARTraceResultLibrary::GetTraceChannel(const struct FARTrac
 // Function AugmentedReality.ARTraceResultLibrary.GetTrackedGeometry
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FARTraceResult                   TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARTraceResult&            TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // class UARTrackedGeometry*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UARTrackedGeometry* UARTraceResultLibrary::GetTrackedGeometry(const struct FARTraceResult& TraceResult)
@@ -503,7 +503,7 @@ class UARGeoTrackingSupport* UARGeoTrackingSupport::GetGeoTrackingSupport()
 // Parameters:
 // float                                   Longitude                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Latitude                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OptionalAnchorName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OptionalAnchorName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UARGeoTrackingSupport::AddGeoAnchorAtLocation(float Longitude, float Latitude, const class FString& OptionalAnchorName)
@@ -536,7 +536,7 @@ bool UARGeoTrackingSupport::AddGeoAnchorAtLocation(float Longitude, float Latitu
 // float                                   Longitude                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Latitude                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   AltitudeMeters                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OptionalAnchorName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OptionalAnchorName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UARGeoTrackingSupport::AddGeoAnchorAtLocationWithAltitude(float Longitude, float Latitude, float AltitudeMeters, const class FString& OptionalAnchorName)
@@ -692,7 +692,7 @@ void UARSessionConfig::AddCandidateObject(class UARCandidateObject* CandidateObj
 // Function AugmentedReality.ARSessionConfig.SetCandidateObjectList
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class UARCandidateObject*>       InCandidateObjects                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<class UARCandidateObject*>&InCandidateObjects                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARSessionConfig::SetCandidateObjectList(const TArray<class UARCandidateObject*>& InCandidateObjects)
 {
@@ -717,7 +717,7 @@ void UARSessionConfig::SetCandidateObjectList(const TArray<class UARCandidateObj
 // Function AugmentedReality.ARSessionConfig.SetDesiredVideoFormat
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FARVideoFormat                   NewFormat                                              (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARVideoFormat&            NewFormat                                              (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARSessionConfig::SetDesiredVideoFormat(const struct FARVideoFormat& NewFormat)
 {
@@ -917,7 +917,7 @@ void UARSessionConfig::SetSessionTrackingFeatureToEnable(EARSessionTrackingFeatu
 // Function AugmentedReality.ARSessionConfig.SetWorldMapData
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<uint8>                           WorldMapData_0                                         (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    WorldMapData_0                                         (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UARSessionConfig::SetWorldMapData(const TArray<uint8>& WorldMapData_0)
 {
@@ -1443,7 +1443,7 @@ bool UARSessionConfig::ShouldResetTrackedObjects() const
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UARComponent>         InComponentClass                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGuid                            NativeID                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     NativeID                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UARComponent*                     ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UARComponent* AARActor::AddARComponent(TSubclassOf<class UARComponent> InComponentClass, const struct FGuid& NativeID)
@@ -1472,7 +1472,7 @@ class UARComponent* AARActor::AddARComponent(TSubclassOf<class UARComponent> InC
 // Function AugmentedReality.ARCandidateObject.SetBoundingBox
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FBox                             InBoundingBox                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FBox&                      InBoundingBox                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARCandidateObject::SetBoundingBox(const struct FBox& InBoundingBox)
 {
@@ -1497,7 +1497,7 @@ void UARCandidateObject::SetBoundingBox(const struct FBox& InBoundingBox)
 // Function AugmentedReality.ARCandidateObject.SetCandidateObjectData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<uint8>                           InCandidateObject                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    InCandidateObject                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARCandidateObject::SetCandidateObjectData(const TArray<uint8>& InCandidateObject)
 {
@@ -1522,7 +1522,7 @@ void UARCandidateObject::SetCandidateObjectData(const TArray<uint8>& InCandidate
 // Function AugmentedReality.ARCandidateObject.SetFriendlyName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           NewName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    NewName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UARCandidateObject::SetFriendlyName(const class FString& NewName)
 {
@@ -1680,7 +1680,7 @@ void UARComponent::ReceiveRemove()
 // Function AugmentedReality.ARComponent.SetNativeID
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FGuid                            NativeID_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     NativeID_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UARComponent::SetNativeID(const struct FGuid& NativeID_0)
 {
@@ -1724,7 +1724,7 @@ void UARComponent::UpdateVisualization()
 // Function AugmentedReality.ARMeshComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARMeshUpdatePayload             Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARMeshUpdatePayload&      Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARMeshComponent::ReceiveAdd(const struct FARMeshUpdatePayload& Payload)
 {
@@ -1744,7 +1744,7 @@ void UARMeshComponent::ReceiveAdd(const struct FARMeshUpdatePayload& Payload)
 // Function AugmentedReality.ARMeshComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARMeshUpdatePayload             Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARMeshUpdatePayload&      Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARMeshComponent::ReceiveUpdate(const struct FARMeshUpdatePayload& Payload)
 {
@@ -1764,7 +1764,7 @@ void UARMeshComponent::ReceiveUpdate(const struct FARMeshUpdatePayload& Payload)
 // Function AugmentedReality.ARMeshComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FARMeshUpdatePayload             NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARMeshUpdatePayload&      NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARMeshComponent::ServerUpdatePayload(const struct FARMeshUpdatePayload& NewPayload)
 {
@@ -2089,8 +2089,8 @@ float UARCandidateImage::GetPhysicalWidth() const
 // Function AugmentedReality.ARBlueprintLibrary.AddManualEnvironmentCaptureProbe
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Extent                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Extent                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UARBlueprintLibrary::AddManualEnvironmentCaptureProbe(const struct FVector& Location, const struct FVector& Extent)
@@ -2121,7 +2121,7 @@ bool UARBlueprintLibrary::AddManualEnvironmentCaptureProbe(const struct FVector&
 // Parameters:
 // class UARSessionConfig*                 SessionConfig                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTexture2D*                       CandidateTexture                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           FriendlyName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FriendlyName                                           (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   PhysicalWidth                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UARCandidateImage*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2153,8 +2153,8 @@ class UARCandidateImage* UARBlueprintLibrary::AddRuntimeCandidateImage(class UAR
 // Function AugmentedReality.ARBlueprintLibrary.AddTrackedPointWithName
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransform                       WorldTransform                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// class FString                           PointName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                WorldTransform                                         (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    PointName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bDeletePointsWithSameName                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2185,9 +2185,9 @@ bool UARBlueprintLibrary::AddTrackedPointWithName(const struct FTransform& World
 // Function AugmentedReality.ARBlueprintLibrary.CalculateAlignmentTransform
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransform                       TransformInFirstCoordinateSystem                       (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FTransform                       TransformInSecondCoordinateSystem                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FTransform                       AlignmentTransform                                     (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                TransformInFirstCoordinateSystem                       (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                TransformInSecondCoordinateSystem                      (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FTransform*                      AlignmentTransform                                     (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARBlueprintLibrary::CalculateAlignmentTransform(const struct FTransform& TransformInFirstCoordinateSystem, const struct FTransform& TransformInSecondCoordinateSystem, struct FTransform* AlignmentTransform)
 {
@@ -2216,9 +2216,9 @@ void UARBlueprintLibrary::CalculateAlignmentTransform(const struct FTransform& T
 // Function AugmentedReality.ARBlueprintLibrary.CalculateClosestIntersection
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// TArray<struct FVector>                  StartPoints                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<struct FVector>                  EndPoints                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FVector                          ClosestIntersection                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           StartPoints                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           EndPoints                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FVector*                         ClosestIntersection                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UARBlueprintLibrary::CalculateClosestIntersection(const TArray<struct FVector>& StartPoints, const TArray<struct FVector>& EndPoints, struct FVector* ClosestIntersection)
 {
@@ -2249,7 +2249,7 @@ void UARBlueprintLibrary::CalculateClosestIntersection(const TArray<struct FVect
 // Parameters:
 // class UARPin*                           ARPin                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     Color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              Color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Scale                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   PersistForSeconds                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2282,7 +2282,7 @@ void UARBlueprintLibrary::DebugDrawPin(class UARPin* ARPin, class UObject* World
 // Parameters:
 // class UARTrackedGeometry*               TrackedGeometry                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     Color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              Color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   OutlineThickness                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   PersistForSeconds                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2313,7 +2313,7 @@ void UARBlueprintLibrary::DebugDrawTrackedGeometry(class UARTrackedGeometry* Tra
 // Function AugmentedReality.ARBlueprintLibrary.FindTrackedPointsByName
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           PointName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PointName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class UARTrackedPoint*>          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<class UARTrackedPoint*> UARBlueprintLibrary::FindTrackedPointsByName(const class FString& PointName)
@@ -2722,7 +2722,7 @@ class UARTextureCameraImage* UARBlueprintLibrary::GetCameraImage()
 // Function AugmentedReality.ARBlueprintLibrary.GetCameraIntrinsics
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FARCameraIntrinsics              OutCameraIntrinsics                                    (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FARCameraIntrinsics*             OutCameraIntrinsics                                    (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UARBlueprintLibrary::GetCameraIntrinsics(struct FARCameraIntrinsics* OutCameraIntrinsics)
@@ -2801,9 +2801,9 @@ int32 UARBlueprintLibrary::GetNumberOfTrackedFacesSupported()
 // Function AugmentedReality.ARBlueprintLibrary.GetObjectClassificationAtLocation
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          InWorldLocation                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EARObjectClassification                 OutClassification                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          OutClassificationLocation                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InWorldLocation                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EARObjectClassification*                OutClassification                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector*                         OutClassificationLocation                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxLocationDiff                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -3205,7 +3205,7 @@ bool UARBlueprintLibrary::IsSessionTypeSupported(EARSessionType SessionType)
 // Function AugmentedReality.ARBlueprintLibrary.LineTraceTrackedObjects
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector2D                        ScreenCoord                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 ScreenCoord                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTestFeaturePoints                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTestGroundPlane                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTestPlaneExtents                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3241,8 +3241,8 @@ TArray<struct FARTraceResult> UARBlueprintLibrary::LineTraceTrackedObjects(const
 // Function AugmentedReality.ARBlueprintLibrary.LineTraceTrackedObjects3D
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          Start                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          End                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Start                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   End                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTestFeaturePoints                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTestGroundPlane                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bTestPlaneExtents                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3324,9 +3324,9 @@ void UARBlueprintLibrary::PauseARSession()
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class USceneComponent*                  ComponentToPin                                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       PinToWorldTransform                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                PinToWorldTransform                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // class UARTrackedGeometry*               TrackedGeometry                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             DebugName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       DebugName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UARPin*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UARPin* UARBlueprintLibrary::PinComponent(class USceneComponent* ComponentToPin, const struct FTransform& PinToWorldTransform, class UARTrackedGeometry* TrackedGeometry, const class FName DebugName)
@@ -3388,8 +3388,8 @@ bool UARBlueprintLibrary::PinComponentToARPin(class USceneComponent* ComponentTo
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class USceneComponent*                  ComponentToPin                                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FARTraceResult                   TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class FName                             DebugName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FARTraceResult&            TraceResult                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FName                       DebugName                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UARPin*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UARPin* UARBlueprintLibrary::PinComponentToTraceResult(class USceneComponent* ComponentToPin, const struct FARTraceResult& TraceResult, const class FName DebugName)
@@ -3488,7 +3488,7 @@ void UARBlueprintLibrary::RemovePin(class UARPin* PinToRemove)
 // Function AugmentedReality.ARBlueprintLibrary.ResizeXRCamera
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FIntPoint                        InSize                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FIntPoint&                 InSize                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FIntPoint                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FIntPoint UARBlueprintLibrary::ResizeXRCamera(const struct FIntPoint& InSize)
@@ -3546,7 +3546,7 @@ bool UARBlueprintLibrary::SaveARPinToLocalStore(class FName InSaveName, class UA
 // Function AugmentedReality.ARBlueprintLibrary.SetAlignmentTransform
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransform                       InAlignmentTransform                                   (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransform&                InAlignmentTransform                                   (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARBlueprintLibrary::SetAlignmentTransform(const struct FTransform& InAlignmentTransform)
 {
@@ -3571,8 +3571,8 @@ void UARBlueprintLibrary::SetAlignmentTransform(const struct FTransform& InAlign
 // Function AugmentedReality.ARBlueprintLibrary.SetARWorldOriginLocationAndRotation
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVector                          OriginLocation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         OriginRotation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVector&                   OriginLocation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  OriginRotation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    bIsTransformInWorldSpace                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bMaintainUpDirection                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -3696,8 +3696,8 @@ void UARBlueprintLibrary::StopARSession()
 // Function AugmentedReality.ARBlueprintLibrary.ToggleARCapture
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bOnOff                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EARCaptureType                          CaptureType                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bOnOff                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EARCaptureType                    CaptureType                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UARBlueprintLibrary::ToggleARCapture(const bool bOnOff, const EARCaptureType CaptureType)
@@ -3780,8 +3780,8 @@ class UARSaveWorldAsyncTaskBlueprintProxy* UARSaveWorldAsyncTaskBlueprintProxy::
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Extent                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Extent                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UARGetCandidateObjectAsyncTaskBlueprintProxy*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UARGetCandidateObjectAsyncTaskBlueprintProxy* UARGetCandidateObjectAsyncTaskBlueprintProxy::ARGetCandidateObject(class UObject* WorldContextObject, const struct FVector& Location, const struct FVector& Extent)
@@ -3836,7 +3836,7 @@ const TMap<EARObjectClassification, struct FLinearColor> UARPlaneComponent::GetO
 // Function AugmentedReality.ARPlaneComponent.SetObjectClassificationDebugColors
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TMap<EARObjectClassification, struct FLinearColor>InColors                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TMap<EARObjectClassification, struct FLinearColor>&InColors                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARPlaneComponent::SetObjectClassificationDebugColors(const TMap<EARObjectClassification, struct FLinearColor>& InColors)
 {
@@ -3886,7 +3886,7 @@ void UARPlaneComponent::SetPlaneComponentDebugMode(EPlaneComponentDebugMode NewD
 // Function AugmentedReality.ARPlaneComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARPlaneUpdatePayload            Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARPlaneUpdatePayload&     Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARPlaneComponent::ReceiveAdd(const struct FARPlaneUpdatePayload& Payload)
 {
@@ -3906,7 +3906,7 @@ void UARPlaneComponent::ReceiveAdd(const struct FARPlaneUpdatePayload& Payload)
 // Function AugmentedReality.ARPlaneComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARPlaneUpdatePayload            Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARPlaneUpdatePayload&     Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARPlaneComponent::ReceiveUpdate(const struct FARPlaneUpdatePayload& Payload)
 {
@@ -3926,7 +3926,7 @@ void UARPlaneComponent::ReceiveUpdate(const struct FARPlaneUpdatePayload& Payloa
 // Function AugmentedReality.ARPlaneComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FARPlaneUpdatePayload            NewPayload                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARPlaneUpdatePayload&     NewPayload                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARPlaneComponent::ServerUpdatePayload(const struct FARPlaneUpdatePayload& NewPayload)
 {
@@ -3951,7 +3951,7 @@ void UARPlaneComponent::ServerUpdatePayload(const struct FARPlaneUpdatePayload& 
 // Function AugmentedReality.ARPointComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARPointUpdatePayload            Payload                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARPointUpdatePayload&     Payload                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARPointComponent::ReceiveAdd(const struct FARPointUpdatePayload& Payload)
 {
@@ -3971,7 +3971,7 @@ void UARPointComponent::ReceiveAdd(const struct FARPointUpdatePayload& Payload)
 // Function AugmentedReality.ARPointComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARPointUpdatePayload            Payload                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARPointUpdatePayload&     Payload                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARPointComponent::ReceiveUpdate(const struct FARPointUpdatePayload& Payload)
 {
@@ -3991,7 +3991,7 @@ void UARPointComponent::ReceiveUpdate(const struct FARPointUpdatePayload& Payloa
 // Function AugmentedReality.ARPointComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FARPointUpdatePayload            NewPayload                                             (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARPointUpdatePayload&     NewPayload                                             (ConstParm, Parm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARPointComponent::ServerUpdatePayload(const struct FARPointUpdatePayload& NewPayload)
 {
@@ -4041,7 +4041,7 @@ void UARFaceComponent::SetFaceComponentDebugMode(EFaceComponentDebugMode NewDebu
 // Function AugmentedReality.ARFaceComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARFaceUpdatePayload             Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARFaceUpdatePayload&      Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARFaceComponent::ReceiveAdd(const struct FARFaceUpdatePayload& Payload)
 {
@@ -4061,7 +4061,7 @@ void UARFaceComponent::ReceiveAdd(const struct FARFaceUpdatePayload& Payload)
 // Function AugmentedReality.ARFaceComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARFaceUpdatePayload             Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARFaceUpdatePayload&      Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARFaceComponent::ReceiveUpdate(const struct FARFaceUpdatePayload& Payload)
 {
@@ -4081,7 +4081,7 @@ void UARFaceComponent::ReceiveUpdate(const struct FARFaceUpdatePayload& Payload)
 // Function AugmentedReality.ARFaceComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FARFaceUpdatePayload             NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARFaceUpdatePayload&      NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARFaceComponent::ServerUpdatePayload(const struct FARFaceUpdatePayload& NewPayload)
 {
@@ -4131,7 +4131,7 @@ void UARImageComponent::SetImageComponentDebugMode(EImageComponentDebugMode NewD
 // Function AugmentedReality.ARImageComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARImageUpdatePayload            Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARImageUpdatePayload&     Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARImageComponent::ReceiveAdd(const struct FARImageUpdatePayload& Payload)
 {
@@ -4151,7 +4151,7 @@ void UARImageComponent::ReceiveAdd(const struct FARImageUpdatePayload& Payload)
 // Function AugmentedReality.ARImageComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARImageUpdatePayload            Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARImageUpdatePayload&     Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARImageComponent::ReceiveUpdate(const struct FARImageUpdatePayload& Payload)
 {
@@ -4171,7 +4171,7 @@ void UARImageComponent::ReceiveUpdate(const struct FARImageUpdatePayload& Payloa
 // Function AugmentedReality.ARImageComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FARImageUpdatePayload            NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARImageUpdatePayload&     NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARImageComponent::ServerUpdatePayload(const struct FARImageUpdatePayload& NewPayload)
 {
@@ -4221,7 +4221,7 @@ void UARQRCodeComponent::SetQRCodeComponentDebugMode(EQRCodeComponentDebugMode N
 // Function AugmentedReality.ARQRCodeComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARQRCodeUpdatePayload           Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARQRCodeUpdatePayload&    Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARQRCodeComponent::ReceiveAdd(const struct FARQRCodeUpdatePayload& Payload)
 {
@@ -4241,7 +4241,7 @@ void UARQRCodeComponent::ReceiveAdd(const struct FARQRCodeUpdatePayload& Payload
 // Function AugmentedReality.ARQRCodeComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARQRCodeUpdatePayload           Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARQRCodeUpdatePayload&    Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARQRCodeComponent::ReceiveUpdate(const struct FARQRCodeUpdatePayload& Payload)
 {
@@ -4261,7 +4261,7 @@ void UARQRCodeComponent::ReceiveUpdate(const struct FARQRCodeUpdatePayload& Payl
 // Function AugmentedReality.ARQRCodeComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FARQRCodeUpdatePayload           NewPayload                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARQRCodeUpdatePayload&    NewPayload                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARQRCodeComponent::ServerUpdatePayload(const struct FARQRCodeUpdatePayload& NewPayload)
 {
@@ -4311,7 +4311,7 @@ void UARPoseComponent::SetPoseComponentDebugMode(EPoseComponentDebugMode NewDebu
 // Function AugmentedReality.ARPoseComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARPoseUpdatePayload             Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARPoseUpdatePayload&      Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARPoseComponent::ReceiveAdd(const struct FARPoseUpdatePayload& Payload)
 {
@@ -4331,7 +4331,7 @@ void UARPoseComponent::ReceiveAdd(const struct FARPoseUpdatePayload& Payload)
 // Function AugmentedReality.ARPoseComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARPoseUpdatePayload             Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARPoseUpdatePayload&      Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARPoseComponent::ReceiveUpdate(const struct FARPoseUpdatePayload& Payload)
 {
@@ -4351,7 +4351,7 @@ void UARPoseComponent::ReceiveUpdate(const struct FARPoseUpdatePayload& Payload)
 // Function AugmentedReality.ARPoseComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FARPoseUpdatePayload             NewPayload                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARPoseUpdatePayload&      NewPayload                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARPoseComponent::ServerUpdatePayload(const struct FARPoseUpdatePayload& NewPayload)
 {
@@ -4376,7 +4376,7 @@ void UARPoseComponent::ServerUpdatePayload(const struct FARPoseUpdatePayload& Ne
 // Function AugmentedReality.AREnvironmentProbeComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FAREnvironmentProbeUpdatePayload Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAREnvironmentProbeUpdatePayload&Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UAREnvironmentProbeComponent::ReceiveAdd(const struct FAREnvironmentProbeUpdatePayload& Payload)
 {
@@ -4396,7 +4396,7 @@ void UAREnvironmentProbeComponent::ReceiveAdd(const struct FAREnvironmentProbeUp
 // Function AugmentedReality.AREnvironmentProbeComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FAREnvironmentProbeUpdatePayload Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAREnvironmentProbeUpdatePayload&Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UAREnvironmentProbeComponent::ReceiveUpdate(const struct FAREnvironmentProbeUpdatePayload& Payload)
 {
@@ -4416,7 +4416,7 @@ void UAREnvironmentProbeComponent::ReceiveUpdate(const struct FAREnvironmentProb
 // Function AugmentedReality.AREnvironmentProbeComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FAREnvironmentProbeUpdatePayload NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FAREnvironmentProbeUpdatePayload&NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UAREnvironmentProbeComponent::ServerUpdatePayload(const struct FAREnvironmentProbeUpdatePayload& NewPayload)
 {
@@ -4441,7 +4441,7 @@ void UAREnvironmentProbeComponent::ServerUpdatePayload(const struct FAREnvironme
 // Function AugmentedReality.ARObjectComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARObjectUpdatePayload           Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARObjectUpdatePayload&    Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARObjectComponent::ReceiveAdd(const struct FARObjectUpdatePayload& Payload)
 {
@@ -4461,7 +4461,7 @@ void UARObjectComponent::ReceiveAdd(const struct FARObjectUpdatePayload& Payload
 // Function AugmentedReality.ARObjectComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARObjectUpdatePayload           Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARObjectUpdatePayload&    Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARObjectComponent::ReceiveUpdate(const struct FARObjectUpdatePayload& Payload)
 {
@@ -4481,7 +4481,7 @@ void UARObjectComponent::ReceiveUpdate(const struct FARObjectUpdatePayload& Payl
 // Function AugmentedReality.ARObjectComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FARObjectUpdatePayload           NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FARObjectUpdatePayload&    NewPayload                                             (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARObjectComponent::ServerUpdatePayload(const struct FARObjectUpdatePayload& NewPayload)
 {
@@ -4531,7 +4531,7 @@ void UARGeoAnchorComponent::SetGeoAnchorComponentDebugMode(EGeoAnchorComponentDe
 // Function AugmentedReality.ARGeoAnchorComponent.ReceiveAdd
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARGeoAnchorUpdatePayload        Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARGeoAnchorUpdatePayload& Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARGeoAnchorComponent::ReceiveAdd(const struct FARGeoAnchorUpdatePayload& Payload)
 {
@@ -4551,7 +4551,7 @@ void UARGeoAnchorComponent::ReceiveAdd(const struct FARGeoAnchorUpdatePayload& P
 // Function AugmentedReality.ARGeoAnchorComponent.ReceiveUpdate
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FARGeoAnchorUpdatePayload        Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARGeoAnchorUpdatePayload& Payload                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARGeoAnchorComponent::ReceiveUpdate(const struct FARGeoAnchorUpdatePayload& Payload)
 {
@@ -4571,7 +4571,7 @@ void UARGeoAnchorComponent::ReceiveUpdate(const struct FARGeoAnchorUpdatePayload
 // Function AugmentedReality.ARGeoAnchorComponent.ServerUpdatePayload
 // (Net, NetReliable, Native, Event, Protected, NetServer, NetValidate)
 // Parameters:
-// struct FARGeoAnchorUpdatePayload        NewPayload                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FARGeoAnchorUpdatePayload& NewPayload                                             (ConstParm, Parm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UARGeoAnchorComponent::ServerUpdatePayload(const struct FARGeoAnchorUpdatePayload& NewPayload)
 {
@@ -4622,8 +4622,8 @@ class UARDependencyHandler* UARDependencyHandler::GetARDependencyHandler()
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLatentActionInfo                LatentInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// EARServiceAvailability                  OutAvailability                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLatentActionInfo&         LatentInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// EARServiceAvailability*                 OutAvailability                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UARDependencyHandler::CheckARServiceAvailability(class UObject* WorldContextObject, const struct FLatentActionInfo& LatentInfo, EARServiceAvailability* OutAvailability)
 {
@@ -4653,8 +4653,8 @@ void UARDependencyHandler::CheckARServiceAvailability(class UObject* WorldContex
 // (Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLatentActionInfo                LatentInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// EARServiceInstallRequestResult          OutInstallResult                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLatentActionInfo&         LatentInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// EARServiceInstallRequestResult*         OutInstallResult                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UARDependencyHandler::InstallARService(class UObject* WorldContextObject, const struct FLatentActionInfo& LatentInfo, EARServiceInstallRequestResult* OutInstallResult)
 {
@@ -4685,8 +4685,8 @@ void UARDependencyHandler::InstallARService(class UObject* WorldContextObject, c
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UARSessionConfig*                 SessionConfig                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLatentActionInfo                LatentInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// EARServicePermissionRequestResult       OutPermissionResult                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLatentActionInfo&         LatentInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// EARServicePermissionRequestResult*      OutPermissionResult                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UARDependencyHandler::RequestARSessionPermission(class UObject* WorldContextObject, class UARSessionConfig* SessionConfig, const struct FLatentActionInfo& LatentInfo, EARServicePermissionRequestResult* OutPermissionResult)
 {
@@ -4718,7 +4718,7 @@ void UARDependencyHandler::RequestARSessionPermission(class UObject* WorldContex
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UARSessionConfig*                 SessionConfig                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLatentActionInfo                LatentInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FLatentActionInfo&         LatentInfo                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UARDependencyHandler::StartARSessionLatent(class UObject* WorldContextObject, class UARSessionConfig* SessionConfig, const struct FLatentActionInfo& LatentInfo)
 {
@@ -4806,7 +4806,7 @@ class UCheckGeoTrackingAvailabilityAsyncTaskBlueprintProxy* UCheckGeoTrackingAva
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          WorldPosition                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   WorldPosition                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGetGeoLocationAsyncTaskBlueprintProxy*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGetGeoLocationAsyncTaskBlueprintProxy* UGetGeoLocationAsyncTaskBlueprintProxy::GetGeoLocationAtWorldPosition(class UObject* WorldContextObject, const struct FVector& WorldPosition)
@@ -4861,7 +4861,7 @@ void UARLifeCycleComponent::ServerDestroyARActor(class AARActor* Actor)
 // (Final, Net, NetReliable, Native, Event, Private, NetServer, HasDefaults, NetValidate)
 // Parameters:
 // class UClass*                           ComponentClass                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGuid                            NativeID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     NativeID                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UARLifeCycleComponent::ServerSpawnARActor(class UClass* ComponentClass, const struct FGuid& NativeID)
 {
@@ -4888,7 +4888,7 @@ void UARLifeCycleComponent::ServerSpawnARActor(class UClass* ComponentClass, con
 // (Native, Public, HasOutParams, HasDefaults, Const)
 // Parameters:
 // class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Scale                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   PersistForSeconds                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -5093,7 +5093,7 @@ class AARSharedWorldGameState* AARSharedWorldGameMode::GetARSharedWorldGameState
 // Function AugmentedReality.ARSharedWorldGameMode.SetARSharedWorldData
 // (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<uint8>                           ARWorldData                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    ARWorldData                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void AARSharedWorldGameMode::SetARSharedWorldData(const TArray<uint8>& ARWorldData)
 {
@@ -5137,7 +5137,7 @@ void AARSharedWorldGameMode::SetARWorldSharingIsReady()
 // Function AugmentedReality.ARSharedWorldGameMode.SetPreviewImageData
 // (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
 // Parameters:
-// TArray<uint8>                           ImageData                                              (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    ImageData                                              (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void AARSharedWorldGameMode::SetPreviewImageData(const TArray<uint8>& ImageData)
 {
@@ -5204,7 +5204,7 @@ void AARSharedWorldPlayerController::ClientInitSharedWorld(int32 PreviewImageSiz
 // (Net, NetReliable, Native, Event, Public, NetClient, NetValidate)
 // Parameters:
 // int32                                   Offset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           Buffer                                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    Buffer                                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void AARSharedWorldPlayerController::ClientUpdateARWorldData(int32 Offset, const TArray<uint8>& Buffer)
 {
@@ -5231,7 +5231,7 @@ void AARSharedWorldPlayerController::ClientUpdateARWorldData(int32 Offset, const
 // (Net, NetReliable, Native, Event, Public, NetClient, NetValidate)
 // Parameters:
 // int32                                   Offset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           Buffer                                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    Buffer                                                 (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void AARSharedWorldPlayerController::ClientUpdatePreviewImageData(int32 Offset, const TArray<uint8>& Buffer)
 {

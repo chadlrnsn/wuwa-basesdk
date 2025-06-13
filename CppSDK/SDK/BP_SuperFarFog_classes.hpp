@@ -10,34 +10,36 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "KuroCurve_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroCurve_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SuperFarFog.BP_SuperFarFog_C
-// 0x00D8 (0x0460 - 0x0388)
+// 0x00E0 (0x0468 - 0x0388)
 class ABP_SuperFarFog_C final : public AKuroSuperFarFog
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0388(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	bool                                          固定旋转;                                          // 0x0390(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_391[0x3];                                      // 0x0391(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         贴图序号;                                          // 0x0394(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         受光照影响值;                                      // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           颜色和不透明度调整;                                // 0x039C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          夜间给单独的调整值;                                // 0x03AC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_3AD[0x3];                                      // 0x03AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           夜间的颜色和不透明度;                              // 0x03B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FKuroCurveFloat                        日夜混合曲线;                                      // 0x03C0(0x0090)(Edit, BlueprintVisible, AdvancedDisplay)
-	struct FVector2D                              流动速度_Add_;                                     // 0x0450(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         深度渐隐距离缩放;                                  // 0x0458(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         相机距离渐隐缩放;                                  // 0x045C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         固定旋转弹性;                                      // 0x0394(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         贴图序号;                                          // 0x0398(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         受光照影响值;                                      // 0x039C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           颜色和不透明度调整;                                // 0x03A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          夜间给单独的调整值;                                // 0x03B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3B1[0x3];                                      // 0x03B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           夜间的颜色和不透明度;                              // 0x03B4(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3C4[0x4];                                      // 0x03C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveFloat                        日夜混合曲线;                                      // 0x03C8(0x0090)(Edit, BlueprintVisible, AdvancedDisplay)
+	struct FVector2D                              流动速度_Add_;                                     // 0x0458(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         深度渐隐距离缩放;                                  // 0x0460(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         相机距离渐隐缩放;                                  // 0x0464(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();
@@ -55,18 +57,19 @@ public:
 	}
 };
 static_assert(alignof(ABP_SuperFarFog_C) == 0x000008, "Wrong alignment on ABP_SuperFarFog_C");
-static_assert(sizeof(ABP_SuperFarFog_C) == 0x000460, "Wrong size on ABP_SuperFarFog_C");
+static_assert(sizeof(ABP_SuperFarFog_C) == 0x000468, "Wrong size on ABP_SuperFarFog_C");
 static_assert(offsetof(ABP_SuperFarFog_C, UberGraphFrame) == 0x000388, "Member 'ABP_SuperFarFog_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_SuperFarFog_C, 固定旋转) == 0x000390, "Member 'ABP_SuperFarFog_C::固定旋转' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, 贴图序号) == 0x000394, "Member 'ABP_SuperFarFog_C::贴图序号' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, 受光照影响值) == 0x000398, "Member 'ABP_SuperFarFog_C::受光照影响值' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, 颜色和不透明度调整) == 0x00039C, "Member 'ABP_SuperFarFog_C::颜色和不透明度调整' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, 夜间给单独的调整值) == 0x0003AC, "Member 'ABP_SuperFarFog_C::夜间给单独的调整值' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, 夜间的颜色和不透明度) == 0x0003B0, "Member 'ABP_SuperFarFog_C::夜间的颜色和不透明度' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, 日夜混合曲线) == 0x0003C0, "Member 'ABP_SuperFarFog_C::日夜混合曲线' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, 流动速度_Add_) == 0x000450, "Member 'ABP_SuperFarFog_C::流动速度_Add_' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, 深度渐隐距离缩放) == 0x000458, "Member 'ABP_SuperFarFog_C::深度渐隐距离缩放' has a wrong offset!");
-static_assert(offsetof(ABP_SuperFarFog_C, 相机距离渐隐缩放) == 0x00045C, "Member 'ABP_SuperFarFog_C::相机距离渐隐缩放' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 固定旋转弹性) == 0x000394, "Member 'ABP_SuperFarFog_C::固定旋转弹性' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 贴图序号) == 0x000398, "Member 'ABP_SuperFarFog_C::贴图序号' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 受光照影响值) == 0x00039C, "Member 'ABP_SuperFarFog_C::受光照影响值' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 颜色和不透明度调整) == 0x0003A0, "Member 'ABP_SuperFarFog_C::颜色和不透明度调整' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 夜间给单独的调整值) == 0x0003B0, "Member 'ABP_SuperFarFog_C::夜间给单独的调整值' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 夜间的颜色和不透明度) == 0x0003B4, "Member 'ABP_SuperFarFog_C::夜间的颜色和不透明度' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 日夜混合曲线) == 0x0003C8, "Member 'ABP_SuperFarFog_C::日夜混合曲线' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 流动速度_Add_) == 0x000458, "Member 'ABP_SuperFarFog_C::流动速度_Add_' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 深度渐隐距离缩放) == 0x000460, "Member 'ABP_SuperFarFog_C::深度渐隐距离缩放' has a wrong offset!");
+static_assert(offsetof(ABP_SuperFarFog_C, 相机距离渐隐缩放) == 0x000464, "Member 'ABP_SuperFarFog_C::相机距离渐隐缩放' has a wrong offset!");
 
 }
 

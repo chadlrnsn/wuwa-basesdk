@@ -25,15 +25,15 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_SE_ControllerBase(int32 EntryPoint);
-	void ApplyEnvironmentFactor(float EnvironmentFactor);
-	void ApplyAlpha(float alpha);
-	void Loop(float time);
-	void Start(float time);
-	void End(float time);
-	void ReceiveTick(float DeltaSeconds);
-	void BeforeStart();
 	void ApplyVisibility(bool visibility);
+	void BeforeStart();
+	void ReceiveTick(float DeltaSeconds);
+	void End(float time);
+	void Start(float time);
+	void Loop(float time);
+	void ApplyAlpha(float alpha);
+	void ApplyEnvironmentFactor(float EnvironmentFactor);
+	void ExecuteUbergraph_SE_ControllerBase(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

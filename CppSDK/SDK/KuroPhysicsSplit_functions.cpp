@@ -49,8 +49,8 @@ bool UKuroPhysicsSplitSystem::IsTickFinishBP(class UWorld* World)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUseProcessNumPerFrame                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ProcessNumPerFrame                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bUseProcessNumPerFrame                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             ProcessNumPerFrame                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroPhysicsSplitSystem::StartTickPhysicsStateBP(class UWorld* World, const bool bUseProcessNumPerFrame, const int32 ProcessNumPerFrame)
 {

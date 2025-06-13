@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "KuroUtility_classes.hpp"
 #include "SCounterAttackCamera_structs.hpp"
 #include "STimeScale_structs.hpp"
-#include "KuroUtility_classes.hpp"
 
 
 namespace SDK

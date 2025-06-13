@@ -98,7 +98,7 @@ struct MagicLeapPlanesFunctionLibrary_PlanesPersistentQueryBeginAsync final
 public:
 	struct FMagicLeapPlanesQuery                  Query;                                             // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	struct FGuid                                  Handle;                                            // 0x0060(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(bool bSuccess, struct FGuid& QueryHandle, EMagicLeapPlaneQueryType QueryType, TArray<struct FMagicLeapPlaneResult>& NewPlanes, TArray<struct FGuid>& RemovedPlaneIDs, TArray<struct FMagicLeapPlaneBoundaries>& NewPolygons, TArray<struct FGuid>& RemovedPolygonIDs)> ResultDelegate;                                    // 0x0070(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const bool bSuccess, const struct FGuid& QueryHandle, const EMagicLeapPlaneQueryType QueryType, const TArray<struct FMagicLeapPlaneResult>& NewPlanes, const TArray<struct FGuid>& RemovedPlaneIDs, const TArray<struct FMagicLeapPlaneBoundaries>& NewPolygons, const TArray<struct FGuid>& RemovedPolygonIDs)> ResultDelegate; // 0x0070(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0098(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -115,7 +115,7 @@ struct MagicLeapPlanesFunctionLibrary_PlanesQueryBeginAsync final
 {
 public:
 	struct FMagicLeapPlanesQuery                  Query;                                             // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(bool bSuccess, TArray<struct FMagicLeapPlaneResult>& Planes, TArray<struct FMagicLeapPlaneBoundaries>& Polygons)> ResultDelegate;                                    // 0x0060(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const bool bSuccess, const TArray<struct FMagicLeapPlaneResult>& Planes, const TArray<struct FMagicLeapPlaneBoundaries>& Polygons)> ResultDelegate; // 0x0060(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0088(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };

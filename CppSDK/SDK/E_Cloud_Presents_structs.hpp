@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum E_Cloud_Presents.E_Cloud_Presents
-// NumValues: 0x003B
+// NumValues: 0x003D
 enum class E_Cloud_Presents : uint8
 {
 	NewEnumerator0                           = 0,
@@ -76,7 +76,9 @@ enum class E_Cloud_Presents : uint8
 	NewEnumerator58                          = 55,
 	NewEnumerator59                          = 56,
 	NewEnumerator60                          = 57,
-	E_Cloud_MAX                              = 58,
+	NewEnumerator61                          = 58,
+	NewEnumerator62                          = 59,
+	E_Cloud_MAX                              = 60,
 };
 
 }

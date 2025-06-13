@@ -178,7 +178,7 @@ static_assert(offsetof(MagicLeapARPinFunctionLibrary_ARPinIdToString, ReturnValu
 struct MagicLeapARPinFunctionLibrary_BindToOnMagicLeapARPinUpdatedDelegate final
 {
 public:
-	TDelegate<void(TArray<struct FGuid>& Added, TArray<struct FGuid>& Updated, TArray<struct FGuid>& Deleted)> Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<struct FGuid>& Added, const TArray<struct FGuid>& Updated, const TArray<struct FGuid>& Deleted)> Delegate; // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapARPinFunctionLibrary_BindToOnMagicLeapARPinUpdatedDelegate) == 0x000004, "Wrong alignment on MagicLeapARPinFunctionLibrary_BindToOnMagicLeapARPinUpdatedDelegate");
 static_assert(sizeof(MagicLeapARPinFunctionLibrary_BindToOnMagicLeapARPinUpdatedDelegate) == 0x000028, "Wrong size on MagicLeapARPinFunctionLibrary_BindToOnMagicLeapARPinUpdatedDelegate");
@@ -189,7 +189,7 @@ static_assert(offsetof(MagicLeapARPinFunctionLibrary_BindToOnMagicLeapARPinUpdat
 struct MagicLeapARPinFunctionLibrary_BindToOnMagicLeapContentBindingFoundDelegate final
 {
 public:
-	TDelegate<void(struct FGuid& PinId, TSet<class FString>& PinnedObjectIds)> Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FGuid& PinId, const TSet<class FString>& PinnedObjectIds)> Delegate; // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapARPinFunctionLibrary_BindToOnMagicLeapContentBindingFoundDelegate) == 0x000004, "Wrong alignment on MagicLeapARPinFunctionLibrary_BindToOnMagicLeapContentBindingFoundDelegate");
 static_assert(sizeof(MagicLeapARPinFunctionLibrary_BindToOnMagicLeapContentBindingFoundDelegate) == 0x000028, "Wrong size on MagicLeapARPinFunctionLibrary_BindToOnMagicLeapContentBindingFoundDelegate");
@@ -432,7 +432,7 @@ static_assert(offsetof(MagicLeapARPinFunctionLibrary_SetGlobalQueryFilter, Retur
 struct MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapARPinUpdatedDelegate final
 {
 public:
-	TDelegate<void(TArray<struct FGuid>& Added, TArray<struct FGuid>& Updated, TArray<struct FGuid>& Deleted)> Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<struct FGuid>& Added, const TArray<struct FGuid>& Updated, const TArray<struct FGuid>& Deleted)> Delegate; // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapARPinUpdatedDelegate) == 0x000004, "Wrong alignment on MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapARPinUpdatedDelegate");
 static_assert(sizeof(MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapARPinUpdatedDelegate) == 0x000028, "Wrong size on MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapARPinUpdatedDelegate");
@@ -443,7 +443,7 @@ static_assert(offsetof(MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapARPinUpd
 struct MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapContentBindingFoundDelegate final
 {
 public:
-	TDelegate<void(struct FGuid& PinId, TSet<class FString>& PinnedObjectIds)> Delegate;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FGuid& PinId, const TSet<class FString>& PinnedObjectIds)> Delegate; // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapContentBindingFoundDelegate) == 0x000004, "Wrong alignment on MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapContentBindingFoundDelegate");
 static_assert(sizeof(MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapContentBindingFoundDelegate) == 0x000028, "Wrong size on MagicLeapARPinFunctionLibrary_UnBindToOnMagicLeapContentBindingFoundDelegate");

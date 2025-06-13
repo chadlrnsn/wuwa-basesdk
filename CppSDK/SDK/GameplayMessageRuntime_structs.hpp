@@ -40,7 +40,7 @@ static_assert(sizeof(FGameplayMessageListenerData) == 0x000060, "Wrong size on F
 struct alignas(0x08) FGameplayMessageListenerHandle final
 {
 public:
-	TWeakObjectPtr<class UGameplayMessageSubsystem> Subsystem;                                         // 0x0000(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TWeakObjectPtr<class UGameplayMessageSubsystem> Subsystem;                                       // 0x0000(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FGameplayTag                           Channel;                                           // 0x0008(0x000C)(Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         ID;                                                // 0x0014(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])

@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // bool                                    bUseCurve                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Constant                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector2D>                KeyValues                                              (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<struct FVector2D>&         KeyValues                                              (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // struct FKuroCurveFloat                  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FKuroCurveFloat UKuroCurveLibrary::CreateCurveFloat(bool bUseCurve, float Constant, const TArray<struct FVector2D>& KeyValues)
@@ -52,7 +52,7 @@ struct FKuroCurveFloat UKuroCurveLibrary::CreateCurveFloat(bool bUseCurve, float
 // Function KuroCurve.KuroCurveLibrary.GetValue_Float
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKuroCurveFloat                  CurveFloat                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroCurveFloat&           CurveFloat                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -82,7 +82,7 @@ float UKuroCurveLibrary::GetValue_Float(const struct FKuroCurveFloat& CurveFloat
 // Function KuroCurve.KuroCurveLibrary.GetValue_LinearColor
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FKuroCurveLinearColor            CurveLinearColor                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroCurveLinearColor&     CurveLinearColor                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -112,7 +112,7 @@ struct FLinearColor UKuroCurveLibrary::GetValue_LinearColor(const struct FKuroCu
 // Function KuroCurve.KuroCurveLibrary.GetValue_Vector
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FKuroCurveVector                 CurveVector                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroCurveVector&          CurveVector                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -142,7 +142,7 @@ struct FVector UKuroCurveLibrary::GetValue_Vector(const struct FKuroCurveVector&
 // Function KuroCurve.KuroCurveLibrary.GetValue_Vector2D
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FKuroCurveVector2D               CurveVector2D                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroCurveVector2D&        CurveVector2D                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -172,7 +172,7 @@ struct FVector2D UKuroCurveLibrary::GetValue_Vector2D(const struct FKuroCurveVec
 // Function KuroCurve.KuroCurveLibrary.UseCurve_Float
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKuroCurveFloat                  CurveFloat                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroCurveFloat&           CurveFloat                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroCurveLibrary::UseCurve_Float(const struct FKuroCurveFloat& CurveFloat)
@@ -200,7 +200,7 @@ bool UKuroCurveLibrary::UseCurve_Float(const struct FKuroCurveFloat& CurveFloat)
 // Function KuroCurve.KuroCurveLibrary.UseCurve_LinearColor
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKuroCurveLinearColor            CurveLinearColor                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroCurveLinearColor&     CurveLinearColor                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroCurveLibrary::UseCurve_LinearColor(const struct FKuroCurveLinearColor& CurveLinearColor)
@@ -228,7 +228,7 @@ bool UKuroCurveLibrary::UseCurve_LinearColor(const struct FKuroCurveLinearColor&
 // Function KuroCurve.KuroCurveLibrary.UseCurve_Vector
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKuroCurveVector                 CurveVector                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroCurveVector&          CurveVector                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroCurveLibrary::UseCurve_Vector(const struct FKuroCurveVector& CurveVector)
@@ -256,7 +256,7 @@ bool UKuroCurveLibrary::UseCurve_Vector(const struct FKuroCurveVector& CurveVect
 // Function KuroCurve.KuroCurveLibrary.UseCurve_Vector2D
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKuroCurveVector2D               CurveVector2D                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FKuroCurveVector2D&        CurveVector2D                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroCurveLibrary::UseCurve_Vector2D(const struct FKuroCurveVector2D& CurveVector2D)

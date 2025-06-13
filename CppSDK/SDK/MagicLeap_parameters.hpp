@@ -65,7 +65,7 @@ struct MagicLeapRaycastComponent_RequestRaycast final
 {
 public:
 	struct FMagicLeapRaycastQueryParams           RequestParams;                                     // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	TDelegate<void(const struct FMagicLeapRaycastHitResult& HitResult)> ResultDelegate;                                    // 0x0038(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FMagicLeapRaycastHitResult& HitResult)> ResultDelegate;              // 0x0038(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0060(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -80,7 +80,7 @@ static_assert(offsetof(MagicLeapRaycastComponent_RequestRaycast, ReturnValue) ==
 struct MagicLeapHMDFunctionLibrary_GetGraphicsClientPerformanceInfo final
 {
 public:
-	struct FMagicLeapGraphicsClientPerformanceInfo PerformanceInfo;                                   // 0x0000(0x001C)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FMagicLeapGraphicsClientPerformanceInfo PerformanceInfo;                                  // 0x0000(0x001C)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -271,7 +271,7 @@ static_assert(offsetof(MagicLeapHMDFunctionLibrary_SetStabilizationDepthActor, b
 struct MagicLeapMeshTrackerComponent_ConnectBlockSelector final
 {
 public:
-	TScriptInterface<class IMagicLeapMeshBlockSelectorInterface> Selector;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TScriptInterface<class IMagicLeapMeshBlockSelectorInterface> Selector;                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(MagicLeapMeshTrackerComponent_ConnectBlockSelector) == 0x000008, "Wrong alignment on MagicLeapMeshTrackerComponent_ConnectBlockSelector");
 static_assert(sizeof(MagicLeapMeshTrackerComponent_ConnectBlockSelector) == 0x000010, "Wrong size on MagicLeapMeshTrackerComponent_ConnectBlockSelector");

@@ -196,7 +196,7 @@ void ABP_KuroMasterSeqEvent_C::开关人物飘带(bool enable)
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.执行流程行为
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_KuroMasterSeqEvent_C::执行流程行为(const class FString& key)
 {
@@ -286,10 +286,10 @@ void ABP_KuroMasterSeqEvent_C::展示游戏Logo(float time)
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.显示预览图
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           MaleAssetPath                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           FemaleAssetPath                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           maleSpineName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           femaleSpineName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    MaleAssetPath                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    FemaleAssetPath                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    maleSpineName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    femaleSpineName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    needLoop                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_KuroMasterSeqEvent_C::显示预览图(const class FString& MaleAssetPath, const class FString& FemaleAssetPath, const class FString& maleSpineName, const class FString& femaleSpineName, bool needLoop)
@@ -314,10 +314,10 @@ void ABP_KuroMasterSeqEvent_C::显示预览图(const class FString& MaleAssetPat
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.显示预览图(数组)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           MaleAssetPath                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           FemaleAssetPath                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// TArray<struct FSpineThingsInfo>         maleSpineArray                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSpineThingsInfo>         femaleSpineArray                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const class FString&                    MaleAssetPath                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    FemaleAssetPath                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// TArray<struct FSpineThingsInfo>&        maleSpineArray                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSpineThingsInfo>&        femaleSpineArray                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void ABP_KuroMasterSeqEvent_C::显示预览图_数组_(const class FString& MaleAssetPath, const class FString& FemaleAssetPath, TArray<struct FSpineThingsInfo>& maleSpineArray, TArray<struct FSpineThingsInfo>& femaleSpineArray)
 {
@@ -357,7 +357,7 @@ void ABP_KuroMasterSeqEvent_C::关闭预览图()
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.播放预览图动画
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           seqName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    seqName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_KuroMasterSeqEvent_C::播放预览图动画(const class FString& seqName)
 {
@@ -377,7 +377,7 @@ void ABP_KuroMasterSeqEvent_C::播放预览图动画(const class FString& seqNam
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.执行实体帧事件
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // int32                                   EntityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_KuroMasterSeqEvent_C::执行实体帧事件(const class FString& Key, int32 EntityId)
@@ -399,7 +399,7 @@ void ABP_KuroMasterSeqEvent_C::执行实体帧事件(const class FString& Key, i
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.播放Spine动画
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           SpineName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    SpineName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    needLoop                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_KuroMasterSeqEvent_C::播放Spine动画(const class FString& SpineName, bool needLoop)
@@ -421,8 +421,8 @@ void ABP_KuroMasterSeqEvent_C::播放Spine动画(const class FString& SpineName,
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.播放Spine动画(性别)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           maleSpineName1                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           femaleSpineName1                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    maleSpineName1                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    femaleSpineName1                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    needLoop                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_KuroMasterSeqEvent_C::播放Spine动画_性别_(const class FString& maleSpineName1, const class FString& femaleSpineName1, bool needLoop)
@@ -445,8 +445,8 @@ void ABP_KuroMasterSeqEvent_C::播放Spine动画_性别_(const class FString& ma
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.播放Spine动画(数组)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FSpineThingsInfo>         maleSpineArray                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSpineThingsInfo>         femaleSpineArray                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSpineThingsInfo>&        maleSpineArray                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSpineThingsInfo>&        femaleSpineArray                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void ABP_KuroMasterSeqEvent_C::播放Spine动画_数组_(TArray<struct FSpineThingsInfo>& maleSpineArray, TArray<struct FSpineThingsInfo>& femaleSpineArray)
 {
@@ -470,7 +470,7 @@ void ABP_KuroMasterSeqEvent_C::播放Spine动画_数组_(TArray<struct FSpineThi
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.关闭Spine动画
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           spineName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    spineName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_KuroMasterSeqEvent_C::关闭Spine动画(const class FString& spineName)
 {
@@ -490,7 +490,7 @@ void ABP_KuroMasterSeqEvent_C::关闭Spine动画(const class FString& spineName)
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.关闭Spine动画(数组)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class FString>                   spineArray                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class FString>&                  spineArray                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void ABP_KuroMasterSeqEvent_C::关闭Spine动画_数组_(TArray<class FString>& spineArray)
 {

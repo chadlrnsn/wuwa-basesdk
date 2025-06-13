@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "KuroGAS_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayAbilities_classes.hpp"
-#include "GameplayTags_structs.hpp"
-#include "KuroGAS_structs.hpp"
 
 
 namespace SDK
@@ -26,7 +26,7 @@ namespace SDK
 class UAsyncTaskAnyAttributeChanged final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(int32 AttributeID, float NewValue, float OldValue)> OnAttributeChanged;                                // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 AttributeID, float NewValue, float OldValue)> OnAttributeChanged; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
@@ -54,7 +54,7 @@ static_assert(offsetof(UAsyncTaskAnyAttributeChanged, ASC) == 0x000048, "Member 
 class UAsyncTaskAnyEffectInhibitionChanged final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(struct FActiveGameplayEffectHandle& Handle, bool bInhibited)> OnEffectInhibitionChanged;                         // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const struct FActiveGameplayEffectHandle& Handle, bool bInhibited)> OnEffectInhibitionChanged; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                AbilityComp;                                       // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
@@ -82,7 +82,7 @@ static_assert(offsetof(UAsyncTaskAnyEffectInhibitionChanged, AbilityComp) == 0x0
 class UAsyncTaskAnyEffectRemoved final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(struct FActiveGameplayEffectHandle& Handle, const struct FGameplayEffectSpec& Spec, struct FGameplayEffectRemovalInfo& RemovalInfo)> OnEffectRemoved;                                   // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const struct FActiveGameplayEffectHandle& Handle, const struct FGameplayEffectSpec& Spec, const struct FGameplayEffectRemovalInfo& RemovalInfo)> OnEffectRemoved; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -111,7 +111,7 @@ static_assert(offsetof(UAsyncTaskAnyEffectRemoved, ASC) == 0x000048, "Member 'UA
 class UAsyncTaskAnyEffectStackChanged final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(struct FActiveGameplayEffectHandle& Handle, int32 NewStack, int32 OldStack, bool bPremature)> OnStackChanged;                                    // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const struct FActiveGameplayEffectHandle& Handle, const int32 NewStack, const int32 OldStack, bool bPremature)> OnStackChanged; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                AbilityComp;                                       // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -140,7 +140,7 @@ static_assert(offsetof(UAsyncTaskAnyEffectStackChanged, AbilityComp) == 0x000048
 class UAsyncTaskEffectApplied final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(const struct FActiveGameplayEffectHandle& ActiveHandle)> OnEffectApplied;                                   // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const struct FActiveGameplayEffectHandle& ActiveHandle)> OnEffectApplied; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_50[0x18];                                      // 0x0050(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -169,7 +169,7 @@ static_assert(offsetof(UAsyncTaskEffectApplied, ASC) == 0x000048, "Member 'UAsyn
 class UAsyncTaskEffectDebugString final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(const class FString& DebugInfo)> OnAnyGameplayEffectExecuted;                       // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const class FString& DebugInfo)> OnAnyGameplayEffectExecuted;      // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
@@ -197,7 +197,7 @@ static_assert(offsetof(UAsyncTaskEffectDebugString, ASC) == 0x000048, "Member 'U
 class UAsyncTaskEffectInhibitionChanged final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(bool IsInhibited)> OnInhibitionChanged;                               // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsInhibited)> OnInhibitionChanged;                            // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_48[0x10];                                      // 0x0048(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -224,7 +224,7 @@ static_assert(offsetof(UAsyncTaskEffectInhibitionChanged, OnInhibitionChanged) =
 class UAsyncTaskEffectStackChanged final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(int32 NewStackCount, int32 PreviousStackCount, bool bPremature)> OnStackChanged;                                    // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 NewStackCount, int32 PreviousStackCount, bool bPremature)> OnStackChanged; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_48[0x10];                                      // 0x0048(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -251,7 +251,7 @@ static_assert(offsetof(UAsyncTaskEffectStackChanged, OnStackChanged) == 0x000038
 class UAsyncTaskGameplayCueNotify final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(const struct FActiveGameplayEffectHandle& ActiveHandle, const struct FGameplayEffectContextHandle& ContextHandle, int64 GameplayCueId, bool bIsAdd)> GameplayCueEvent;                                  // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const struct FActiveGameplayEffectHandle& ActiveHandle, const struct FGameplayEffectContextHandle& ContextHandle, int64 GameplayCueId, bool bIsAdd)> GameplayCueEvent; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
@@ -275,16 +275,17 @@ static_assert(offsetof(UAsyncTaskGameplayCueNotify, GameplayCueEvent) == 0x00003
 static_assert(offsetof(UAsyncTaskGameplayCueNotify, ASC) == 0x000048, "Member 'UAsyncTaskGameplayCueNotify::ASC' has a wrong offset!");
 
 // Class KuroGAS.AsyncTaskPlayMontageAndWait
-// 0x0048 (0x0080 - 0x0038)
+// 0x0058 (0x0090 - 0x0038)
 class UAsyncTaskPlayMontageAndWait final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(bool bInterrupted)> EndCallback;                                       // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
-	bool                                          bShouldEmitOnEndedEvent;                           // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimInstance*                          AnimInstance;                                      // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UAnimMontage*                           MontageToPlay;                                     // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_60[0x20];                                      // 0x0060(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(bool bInterrupted)> EndCallback;                                   // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(bool bInterrupted)> BlendOutCallback;                              // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	bool                                          bShouldEmitOnEndedEvent;                           // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimInstance*                          AnimInstance;                                      // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UAnimMontage*                           MontageToPlay;                                     // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_70[0x20];                                      // 0x0070(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UAsyncTaskPlayMontageAndWait* ListenForPlayMontage(class UAnimInstance* AnimInstance_0, class UAnimMontage* MontageToPlay_0, float PlayRate, float StartingPosition, class FName StartingSection);
@@ -303,18 +304,19 @@ public:
 	}
 };
 static_assert(alignof(UAsyncTaskPlayMontageAndWait) == 0x000008, "Wrong alignment on UAsyncTaskPlayMontageAndWait");
-static_assert(sizeof(UAsyncTaskPlayMontageAndWait) == 0x000080, "Wrong size on UAsyncTaskPlayMontageAndWait");
+static_assert(sizeof(UAsyncTaskPlayMontageAndWait) == 0x000090, "Wrong size on UAsyncTaskPlayMontageAndWait");
 static_assert(offsetof(UAsyncTaskPlayMontageAndWait, EndCallback) == 0x000038, "Member 'UAsyncTaskPlayMontageAndWait::EndCallback' has a wrong offset!");
-static_assert(offsetof(UAsyncTaskPlayMontageAndWait, bShouldEmitOnEndedEvent) == 0x000048, "Member 'UAsyncTaskPlayMontageAndWait::bShouldEmitOnEndedEvent' has a wrong offset!");
-static_assert(offsetof(UAsyncTaskPlayMontageAndWait, AnimInstance) == 0x000050, "Member 'UAsyncTaskPlayMontageAndWait::AnimInstance' has a wrong offset!");
-static_assert(offsetof(UAsyncTaskPlayMontageAndWait, MontageToPlay) == 0x000058, "Member 'UAsyncTaskPlayMontageAndWait::MontageToPlay' has a wrong offset!");
+static_assert(offsetof(UAsyncTaskPlayMontageAndWait, BlendOutCallback) == 0x000048, "Member 'UAsyncTaskPlayMontageAndWait::BlendOutCallback' has a wrong offset!");
+static_assert(offsetof(UAsyncTaskPlayMontageAndWait, bShouldEmitOnEndedEvent) == 0x000058, "Member 'UAsyncTaskPlayMontageAndWait::bShouldEmitOnEndedEvent' has a wrong offset!");
+static_assert(offsetof(UAsyncTaskPlayMontageAndWait, AnimInstance) == 0x000060, "Member 'UAsyncTaskPlayMontageAndWait::AnimInstance' has a wrong offset!");
+static_assert(offsetof(UAsyncTaskPlayMontageAndWait, MontageToPlay) == 0x000068, "Member 'UAsyncTaskPlayMontageAndWait::MontageToPlay' has a wrong offset!");
 
 // Class KuroGAS.AsyncTaskTagCountChanged
 // 0x0028 (0x0060 - 0x0038)
 class UAsyncTaskTagCountChanged final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(int32 NewCount)> OnTagCountChanged;                                 // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 NewCount)> OnTagCountChanged;                                // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_50[0x10];                                      // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -343,7 +345,7 @@ static_assert(offsetof(UAsyncTaskTagCountChanged, ASC) == 0x000048, "Member 'UAs
 class UAsyncTaskTagSignificantChanged final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(bool bTagExists)> OnTagSignificantChanged;                           // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bTagExists)> OnTagSignificantChanged;                         // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	class UAbilitySystemComponent*                ASC;                                               // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_50[0x10];                                      // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -372,7 +374,7 @@ static_assert(offsetof(UAsyncTaskTagSignificantChanged, ASC) == 0x000048, "Membe
 class UAsyncTaskWaitGameplayEvent final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag, const struct FGameplayEventData& Payload)> EventReceived;                                     // 0x0038(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const struct FGameplayTag& EventTag, const struct FGameplayEventData& Payload)> EventReceived; // 0x0038(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPrivate)
 	class UAbilitySystemComponent*                AbilitySystemComponent;                            // 0x0048(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
@@ -404,6 +406,7 @@ public:
 	void BP_InitAbilityActorInfo(class FName AnimInstanceTag);
 	void DestroyDynamicGameplayEffect(class UGameplayEffect* Ge);
 	struct FGameplayAbilitySpecHandle GetAbility(const TSubclassOf<class UGameplayAbility>& Ability);
+	int32 GetAbilityScopeLockCount();
 	TArray<struct FActiveGameplayEffectHandle> GetActiveEffectsByGrantedTags(const struct FGameplayTag& Tag);
 	TArray<struct FActiveGameplayEffectHandle> GetActiveEffectsById(const int64 GeId);
 	int32 GetGameplayEffectCountById(int64 GameplayEffectId, class UAbilitySystemComponent* OptionalInstigatorFilterComponent, bool bEnforceOnGoingCheck);

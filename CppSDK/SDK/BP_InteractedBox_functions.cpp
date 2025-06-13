@@ -20,7 +20,7 @@ namespace SDK
 // Function BP_InteractedBox.BP_InteractedBox_C.IsPhysicInteracted
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    OutInteracted                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   OutInteracted                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_InteractedBox_C::IsPhysicInteracted(bool* OutInteracted)
 {

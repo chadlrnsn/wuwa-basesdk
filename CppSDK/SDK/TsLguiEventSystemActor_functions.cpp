@@ -128,7 +128,7 @@ void ATsLguiEventSystemActor_C::InputScroll(float axisValue)
 // Parameters:
 // bool                                    touchPress                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 // int32                                   touchId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          touchPointPosition                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const struct FVector&                   touchPointPosition                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ATsLguiEventSystemActor_C::InputTouchTrigger(bool touchPress, int32 touchId, const struct FVector& touchPointPosition)
 {
@@ -156,7 +156,7 @@ void ATsLguiEventSystemActor_C::InputTouchTrigger(bool touchPress, int32 touchId
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   touchId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          touchPointPosition                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const struct FVector&                   touchPointPosition                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 void ATsLguiEventSystemActor_C::InputTouchMove(int32 touchId, const struct FVector& touchPointPosition)
 {

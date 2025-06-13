@@ -20,7 +20,7 @@ namespace SDK
 // Function BP_KuroRainGenerator.BP_KuroRainGenerator_C.StartWorldRain
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FSWorldRainComb                  Config                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSWorldRainComb&                 Config                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UBP_WorldRainComponent_Common_C*  Comp                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_KuroRainGenerator_C::StartWorldRain(struct FSWorldRainComb& Config, class UBP_WorldRainComponent_Common_C* Comp)
@@ -271,26 +271,6 @@ void ABP_KuroRainGenerator_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_KuroRainGenerator.BP_KuroRainGenerator_C.EditorTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_KuroRainGenerator_C::EditorTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroRainGenerator_C", "EditorTick");
-
-	Params::BP_KuroRainGenerator_C_EditorTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_KuroRainGenerator.BP_KuroRainGenerator_C.EnableRain
 // (Event, Public, BlueprintEvent)
 
@@ -348,6 +328,46 @@ void ABP_KuroRainGenerator_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 	Params::BP_KuroRainGenerator_C_ReceiveEndPlay Parms{};
 
 	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_KuroRainGenerator.BP_KuroRainGenerator_C.EditorTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_KuroRainGenerator_C::EditorTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroRainGenerator_C", "EditorTick");
+
+	Params::BP_KuroRainGenerator_C_EditorTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_KuroRainGenerator.BP_KuroRainGenerator_C.UpdatePlayingRainComponent
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UKuroRainComponent*               RainComponent                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_KuroRainGenerator_C::UpdatePlayingRainComponent(class UKuroRainComponent* RainComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroRainGenerator_C", "UpdatePlayingRainComponent");
+
+	Params::BP_KuroRainGenerator_C_UpdatePlayingRainComponent Parms{};
+
+	Parms.RainComponent = RainComponent;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
