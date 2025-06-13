@@ -18,91 +18,105 @@ namespace SDK::Params
 {
 
 // Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.ExecuteUbergraph_GA_Role_Move_B_Net
-// 0x01E0 (0x01E0 - 0x0000)
+// 0x0248 (0x0248 - 0x0000)
 struct GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc__________;                                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc________;                                  // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0018(0x0028)(ZeroConstructor)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0040(0x0028)(ZeroConstructor)
-	class ATsBaseCharacter_C*                     CallFunc___________1;                              // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     CallFunc___________2;                              // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc______________;                            // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 CallFunc_GetOwningActorFromActorInfo_ReturnValue;  // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_2;            // 0x0098(0x0028)(ZeroConstructor)
-	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAnimMontage*                           CallFunc___________3;                              // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x00D0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_3;            // 0x00E0(0x0028)(ZeroConstructor)
-	class UClass*                                 CallFunc_GetObjectClass_ReturnValue;               // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ClassClass_ReturnValue;        // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_4;            // 0x0118(0x0028)(ZeroConstructor)
-	class UAbilityTask_WaitGameplayTagAdded*      CallFunc_WaitGameplayTagAdd_ReturnValue;           // 0x0140(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_____GA______________;                     // 0x0148(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0158(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_159[0x3];                                      // 0x0159(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           ___struct_Variable;                                // 0x015C(0x000C)(NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x0168(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class UAnimMontage*                           CallFunc___________4;                              // 0x0178(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           K2Node_CustomEvent_Tag;                            // 0x0180(0x000C)(ConstParm, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x018C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_18D[0x3];                                      // 0x018D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc__________SpeedRatio;                      // 0x0190(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_194[0x4];                                      // 0x0194(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(struct FGameplayTag& Tag)>     K2Node_CreateDelegate_OutputDelegate_5;            // 0x0198(0x0028)(ZeroConstructor)
-	class UAbilityTask_PlayMontageAndWait*        CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue; // 0x01C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x01C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1C9[0x7];                                      // 0x01C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     CallFunc___________5;                              // 0x01D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_______________1;                          // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_Event_bWasCancelled;                        // 0x01D9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0010(0x0028)(ZeroConstructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0038(0x0028)(ZeroConstructor)
+	class ATsBaseCharacter_C*                     CallFunc___________1;                              // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetOwningActorFromActorInfo_ReturnValue;  // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc______________;                            // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_81[0x3];                                       // 0x0081(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_Conv_IntToFloat_ReturnValue;              // 0x0084(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_2;            // 0x0088(0x0028)(ZeroConstructor)
+	class UAnimMontage*                           CallFunc___________2;                              // 0x00B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetDisplayName_ReturnValue;               // 0x00B8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UClass*                                 CallFunc_GetObjectClass_ReturnValue;               // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ClassClass_ReturnValue;        // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_3;            // 0x00D8(0x0028)(ZeroConstructor)
+	class FString                                 CallFunc_____GA______________;                     // 0x0100(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_4;            // 0x0110(0x0028)(ZeroConstructor)
+	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x0138(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UAbilityTask_WaitGameplayTagAdded*      CallFunc_WaitGameplayTagAdd_ReturnValue;           // 0x0148(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           ___struct_Variable;                                // 0x0150(0x000C)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x015C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_15D[0x3];                                      // 0x015D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimMontage*                           CallFunc___________3;                              // 0x0160(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_169[0x3];                                      // 0x0169(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           K2Node_CustomEvent_Tag;                            // 0x016C(0x000C)(ConstParm, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     CallFunc___________4;                              // 0x0178(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(const struct FGameplayTag& Tag)> K2Node_CreateDelegate_OutputDelegate_5;          // 0x0180(0x0028)(ZeroConstructor)
+	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue; // 0x01A8(0x0020)()
+	struct FGameplayTagContainer                  CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_1; // 0x01C8(0x0020)()
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput; // 0x01E8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue;   // 0x01F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1F9[0x7];                                      // 0x01F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IGameplayTagAssetInterface> CallFunc_HasAnyMatchingGameplayTags_self_CastInput_1; // 0x0200(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_HasAnyMatchingGameplayTags_ReturnValue_1; // 0x0210(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_Event_bWasCancelled;                        // 0x0211(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_212[0x6];                                      // 0x0212(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     CallFunc___________5;                              // 0x0218(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc__________SpeedRatio;                      // 0x0220(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_______________1;                          // 0x0224(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_225[0x3];                                      // 0x0225(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityTask_PlayMontageAndWait*        CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue; // 0x0228(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0230(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_231[0x7];                                      // 0x0231(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     CallFunc___________6;                              // 0x0238(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc________;                                  // 0x0240(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net) == 0x000008, "Wrong alignment on GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net");
-static_assert(sizeof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net) == 0x0001E0, "Wrong size on GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net");
+static_assert(sizeof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net) == 0x000248, "Wrong size on GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net");
 static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, EntryPoint) == 0x000000, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::EntryPoint' has a wrong offset!");
 static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc__________) == 0x000008, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc__________' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc________) == 0x000010, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc________' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate) == 0x000018, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_1) == 0x000040, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________1) == 0x000068, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________1' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________2) == 0x000070, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________2' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc______________) == 0x000078, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc______________' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_GetOwningActorFromActorInfo_ReturnValue) == 0x000080, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_GetOwningActorFromActorInfo_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_DynamicCast_AsTs_Base_Character) == 0x000088, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_DynamicCast_bSuccess) == 0x000090, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_2) == 0x000098, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_2' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_Conv_IntToFloat_ReturnValue) == 0x0000C0, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_Conv_IntToFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________3) == 0x0000C8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________3' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_GetDisplayName_ReturnValue) == 0x0000D0, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_GetDisplayName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_3) == 0x0000E0, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_3' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_GetObjectClass_ReturnValue) == 0x000108, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_GetObjectClass_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_EqualEqual_ClassClass_ReturnValue) == 0x000110, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_EqualEqual_ClassClass_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_4) == 0x000118, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_4' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_WaitGameplayTagAdd_ReturnValue) == 0x000140, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_WaitGameplayTagAdd_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_____GA______________) == 0x000148, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_____GA______________' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_IsValid_ReturnValue) == 0x000158, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, ___struct_Variable) == 0x00015C, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::___struct_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_Conv_NameToString_ReturnValue) == 0x000168, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_Conv_NameToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate) == 0x000010, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_1) == 0x000038, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________1) == 0x000060, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________1' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_GetOwningActorFromActorInfo_ReturnValue) == 0x000068, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_GetOwningActorFromActorInfo_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc______________) == 0x000070, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc______________' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_DynamicCast_AsTs_Base_Character) == 0x000078, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_DynamicCast_AsTs_Base_Character' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_DynamicCast_bSuccess) == 0x000080, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_Conv_IntToFloat_ReturnValue) == 0x000084, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_Conv_IntToFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_2) == 0x000088, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_2' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________2) == 0x0000B0, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________2' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_GetDisplayName_ReturnValue) == 0x0000B8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_GetDisplayName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_GetObjectClass_ReturnValue) == 0x0000C8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_GetObjectClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_EqualEqual_ClassClass_ReturnValue) == 0x0000D0, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_EqualEqual_ClassClass_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_3) == 0x0000D8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_3' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_____GA______________) == 0x000100, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_____GA______________' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_4) == 0x000110, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_4' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_Conv_NameToString_ReturnValue) == 0x000138, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_Conv_NameToString_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_WaitGameplayTagAdd_ReturnValue) == 0x000148, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_WaitGameplayTagAdd_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, ___struct_Variable) == 0x000150, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::___struct_Variable' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_IsValid_ReturnValue) == 0x00015C, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________3) == 0x000160, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________3' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_IsValid_ReturnValue_1) == 0x000168, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CustomEvent_Tag) == 0x00016C, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CustomEvent_Tag' has a wrong offset!");
 static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________4) == 0x000178, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________4' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CustomEvent_Tag) == 0x000180, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CustomEvent_Tag' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_IsValid_ReturnValue_1) == 0x00018C, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_IsValid_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc__________SpeedRatio) == 0x000190, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc__________SpeedRatio' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_5) == 0x000198, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_5' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue) == 0x0001C0, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_IsValid_ReturnValue_2) == 0x0001C8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________5) == 0x0001D0, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________5' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_______________1) == 0x0001D8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_______________1' has a wrong offset!");
-static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_Event_bWasCancelled) == 0x0001D9, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_Event_bWasCancelled' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_CreateDelegate_OutputDelegate_5) == 0x000180, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_CreateDelegate_OutputDelegate_5' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue) == 0x0001A8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_1) == 0x0001C8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_MakeLiteralGameplayTagContainer_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_HasAnyMatchingGameplayTags_self_CastInput) == 0x0001E8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_HasAnyMatchingGameplayTags_self_CastInput' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_HasAnyMatchingGameplayTags_ReturnValue) == 0x0001F8, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_HasAnyMatchingGameplayTags_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_HasAnyMatchingGameplayTags_self_CastInput_1) == 0x000200, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_HasAnyMatchingGameplayTags_self_CastInput_1' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_HasAnyMatchingGameplayTags_ReturnValue_1) == 0x000210, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_HasAnyMatchingGameplayTags_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, K2Node_Event_bWasCancelled) == 0x000211, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::K2Node_Event_bWasCancelled' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________5) == 0x000218, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________5' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc__________SpeedRatio) == 0x000220, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc__________SpeedRatio' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_______________1) == 0x000224, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_______________1' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue) == 0x000228, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_CreatePlayMontageAndWaitProxy_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc_IsValid_ReturnValue_2) == 0x000230, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc_IsValid_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc___________6) == 0x000238, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc___________6' has a wrong offset!");
+static_assert(offsetof(GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net, CallFunc________) == 0x000240, "Member 'GA_Role_Move_B_Net_C_ExecuteUbergraph_GA_Role_Move_B_Net::CallFunc________' has a wrong offset!");
 
 // Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.K2_OnEndAbility
 // 0x0001 (0x0001 - 0x0000)
@@ -115,16 +129,16 @@ static_assert(alignof(GA_Role_Move_B_Net_C_K2_OnEndAbility) == 0x000001, "Wrong 
 static_assert(sizeof(GA_Role_Move_B_Net_C_K2_OnEndAbility) == 0x000001, "Wrong size on GA_Role_Move_B_Net_C_K2_OnEndAbility");
 static_assert(offsetof(GA_Role_Move_B_Net_C_K2_OnEndAbility, bWasCancelled) == 0x000000, "Member 'GA_Role_Move_B_Net_C_K2_OnEndAbility::bWasCancelled' has a wrong offset!");
 
-// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.Added_21071CB943CD992BF8EFD6A308FB4881
+// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.Added_21071CB943CD992BF8EFD6A3CD0BC55E
 // 0x000C (0x000C - 0x0000)
-struct GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A308FB4881 final
+struct GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A3CD0BC55E final
 {
 public:
 	struct FGameplayTag                           Tag;                                               // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A308FB4881) == 0x000004, "Wrong alignment on GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A308FB4881");
-static_assert(sizeof(GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A308FB4881) == 0x00000C, "Wrong size on GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A308FB4881");
-static_assert(offsetof(GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A308FB4881, Tag) == 0x000000, "Member 'GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A308FB4881::Tag' has a wrong offset!");
+static_assert(alignof(GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A3CD0BC55E) == 0x000004, "Wrong alignment on GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A3CD0BC55E");
+static_assert(sizeof(GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A3CD0BC55E) == 0x00000C, "Wrong size on GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A3CD0BC55E");
+static_assert(offsetof(GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A3CD0BC55E, Tag) == 0x000000, "Member 'GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A3CD0BC55E::Tag' has a wrong offset!");
 
 // Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.K2_CanActivateAbility
 // 0x00B0 (0x00B0 - 0x0000)

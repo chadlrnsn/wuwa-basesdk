@@ -24,8 +24,8 @@ namespace SDK
 class UAsyncLoadState final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(class UClass* ClassLoaded, class UObject* UserData)> ClassLoadedDelegate;                               // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UObject* ObjectLoaded, class UObject* UserData)> ObjectLoadedDelegate;                              // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UClass* ClassLoaded, class UObject* UserData)> ClassLoadedDelegate; // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UObject* ObjectLoaded, class UObject* UserData)> ObjectLoadedDelegate; // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	void AsyncLoadClass(const class FString& InPath, class UObject* UserData);
@@ -125,7 +125,7 @@ static_assert(sizeof(UKuroActorComponent) == 0x0000C0, "Wrong size on UKuroActor
 class UKuroActorEventBinder final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(class AActor* Actor, bool bContent)> Callback;                                          // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Actor, bool bContent)> Callback;                     // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -288,7 +288,7 @@ class UKuroStateMachineBase final : public UPrimaryDataAsset
 {
 public:
 	class FString                                 Name_0;                                            // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FString, class UKuroStateMachineConditionBase*> Transitions;                                       // 0x0048(0x0050)(Edit, BlueprintVisible, ExportObject, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TMap<class FString, class UKuroStateMachineConditionBase*> Transitions;                          // 0x0048(0x0050)(Edit, BlueprintVisible, ExportObject, ContainsInstancedReference, NativeAccessSpecifierPublic)
 	TArray<class UKuroStateMachineBase*>          Children;                                          // 0x0098(0x0010)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 public:
@@ -417,8 +417,8 @@ static_assert(offsetof(UKuroCollectActorComponent, CollectActorType) == 0x0000C0
 class UKuroCompressLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	static void CompressFileOrFolder(const class FString& Path, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, int64 MaxSingleFileReadSize);
-	static void CompressFilesOrFoldersAsync(const TArray<class FString>& Paths, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, bool bAutoIncludeFilesUnderFolder, int64 MaxSingleFileReadSize);
+	static void CompressFileOrFolder(const class FString& Path, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(const TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, int64 MaxSingleFileReadSize);
+	static void CompressFilesOrFoldersAsync(const TArray<class FString>& Paths, const class FString& DestPath, const TDelegate<void(float Rate)>& OnProgress, const TDelegate<void(const TArray<class FString>& SuccessedPaths)>& OnCompressComplete, const TDelegate<void()>& OnFail, bool bAutoIncludeFilesUnderFolder, int64 MaxSingleFileReadSize);
 
 public:
 	static class UClass* StaticClass()
@@ -432,6 +432,51 @@ public:
 };
 static_assert(alignof(UKuroCompressLibrary) == 0x000008, "Wrong alignment on UKuroCompressLibrary");
 static_assert(sizeof(UKuroCompressLibrary) == 0x000030, "Wrong size on UKuroCompressLibrary");
+
+// Class KuroUtility.KuroDemoInteractiveActor
+// 0x0000 (0x02B0 - 0x02B0)
+class AKuroDemoInteractiveActor final : public AActor
+{
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroDemoInteractiveActor">();
+	}
+	static class AKuroDemoInteractiveActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroDemoInteractiveActor>();
+	}
+};
+static_assert(alignof(AKuroDemoInteractiveActor) == 0x000008, "Wrong alignment on AKuroDemoInteractiveActor");
+static_assert(sizeof(AKuroDemoInteractiveActor) == 0x0002B0, "Wrong size on AKuroDemoInteractiveActor");
+
+// Class KuroUtility.KuroDemoInteractSubSystem
+// 0x0070 (0x00A8 - 0x0038)
+class UKuroDemoInteractSubSystem final : public UWorldSubsystem
+{
+public:
+	TMulticastInlineDelegate<void(class FName ActorKey)> OnDemoInteractiveActorAdd;                  // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName ActorKey)> OnDemoInteractiveActorRemove;               // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMap<class FName, class AActor*>              DemoInteractiveActorMap;                           // 0x0058(0x0050)(NativeAccessSpecifierPrivate)
+
+public:
+	class AActor* GetDemoInteractiveActor(class FName ActorKey);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"KuroDemoInteractSubSystem">();
+	}
+	static class UKuroDemoInteractSubSystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroDemoInteractSubSystem>();
+	}
+};
+static_assert(alignof(UKuroDemoInteractSubSystem) == 0x000008, "Wrong alignment on UKuroDemoInteractSubSystem");
+static_assert(sizeof(UKuroDemoInteractSubSystem) == 0x0000A8, "Wrong size on UKuroDemoInteractSubSystem");
+static_assert(offsetof(UKuroDemoInteractSubSystem, OnDemoInteractiveActorAdd) == 0x000038, "Member 'UKuroDemoInteractSubSystem::OnDemoInteractiveActorAdd' has a wrong offset!");
+static_assert(offsetof(UKuroDemoInteractSubSystem, OnDemoInteractiveActorRemove) == 0x000048, "Member 'UKuroDemoInteractSubSystem::OnDemoInteractiveActorRemove' has a wrong offset!");
+static_assert(offsetof(UKuroDemoInteractSubSystem, DemoInteractiveActorMap) == 0x000058, "Member 'UKuroDemoInteractSubSystem::DemoInteractiveActorMap' has a wrong offset!");
 
 // Class KuroUtility.KuroEntityActor
 // 0x0008 (0x02B8 - 0x02B0)
@@ -500,15 +545,6 @@ class UKuroMathLibrary final : public UBlueprintFunctionLibrary
 public:
 	static int64 BitwiseLeftShift(int64 Source, int32 Bit);
 	static int64 BitwiseRightShift(int64 Source, int32 Bit);
-	static int32 IntBitwiseAnd(int32 Num1, int32 Num2);
-	static int32 IntBitwiseNot(int32 Num);
-	static int32 IntBitwiseOr(int32 Num1, int32 Num2);
-	static int32 IntBitwiseXOr(int32 Num1, int32 Num2);
-	static int64 KuroStringToInt64(const class FString& StringNum);
-	static int64 LongBitwiseAnd(int64 Num1, int64 Num2);
-	static int64 LongBitwiseNot(int64 Num);
-	static int64 LongBitwiseOr(int64 Num1, int64 Num2);
-	static int64 LongBitwiseXOr(int64 Num1, int64 Num2);
 	static struct FVector2D Max(const struct FVector2D& A, const struct FVector2D& B);
 	static struct FVector2D Min(const struct FVector2D& A, const struct FVector2D& B);
 
@@ -550,10 +586,10 @@ static_assert(sizeof(UKuroMemoryLibrary) == 0x000030, "Wrong size on UKuroMemory
 class UKuroMeshTextureFunctionLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	static bool AddMeshesBundleStreamedAllMipsDelegate(const TDelegate<void(TArray<class USkeletalMesh*>& SkeletalMeshes, TArray<class UStaticMesh*>& StaticMeshes)>& InDelegate);
+	static bool AddMeshesBundleStreamedAllMipsDelegate(const TDelegate<void(const TArray<class USkeletalMesh*>& SkeletalMeshes, const TArray<class UStaticMesh*>& StaticMeshes)>& InDelegate);
 	static bool AddSkeletalStreamedAllMipsDelegate(const TDelegate<void(class USkeletalMesh* SkeletalMesh)>& InDelegate);
 	static bool AddStaticMeshStreamedAllMipsDelegate(const TDelegate<void(class UStaticMesh* StaticMesh)>& InDelegate);
-	static int32 ForceMeshesBundleStreamingInAllMips(const TArray<class USkeletalMesh*>& MeshBundleSkeletalMeshes, const TArray<class UStaticMesh*>& MeshBundleStaticMeshes, const TDelegate<void(TArray<class USkeletalMesh*>& SkeletalMeshes, TArray<class UStaticMesh*>& StaticMeshes)>& InDelegate);
+	static int32 ForceMeshesBundleStreamingInAllMips(const TArray<class USkeletalMesh*>& MeshBundleSkeletalMeshes, const TArray<class UStaticMesh*>& MeshBundleStaticMeshes, const TDelegate<void(const TArray<class USkeletalMesh*>& SkeletalMeshes, const TArray<class UStaticMesh*>& StaticMeshes)>& InDelegate);
 	static void HandleMeshesComponentsBundleStreaming(const TArray<class USkeletalMesh*>& MeshBundleSkeletalMeshes, const TArray<class UStaticMesh*>& MeshBundleStaticMeshes, const bool bStartForceStreamIn);
 	static void HandleSkeletalMeshComponentStreaming(class USkeletalMesh* skeletalMesh, const bool bStartForceStreamIn);
 	static void HandleStaticMeshComponentStreaming(class UStaticMesh* staticMesh, const bool bStartForceStreamIn);
@@ -582,7 +618,7 @@ static_assert(sizeof(UKuroMeshTextureFunctionLibrary) == 0x000030, "Wrong size o
 class UKuroPerceptionEventBinder final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(TArray<class AActor*>& AddActor, TArray<class AActor*>& RemoveActor, TArray<int32>& RemoveActorIds, int32 Num)> Callback;                                          // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)> Callback; // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -718,6 +754,7 @@ public:
 	static struct FArrayBuffer ArrayToBuffer(TArray<uint8>* InArray);
 	static class FString Base64Decode(const class FString& inString);
 	static class FString Base64Encode(const class FString& inString);
+	static class FString Base64EncodeBinary(const struct FArrayBuffer& InBuffer);
 	static class FString Base64EncodeWithConvertToUTF8(const class FString& inString);
 	static class FString Base64EncodeWithSpecifyChar(const TArray<uint8>& ByteArray, const class FString& SpecifyChar);
 	static class FString Base64EncodeWithSpecifyCharWithConvertToUTF8(const class FString& inString, const class FString& SpecifyChar);
@@ -762,6 +799,7 @@ public:
 	static class FString GetDeviceCPU();
 	static TArray<class FString> GetDirectories(const class FString& Path);
 	static class FString GetDiskSerialNo();
+	static bool GetEnableMobileLowStreaming(class ULevelSequence* Sequence);
 	static TArray<class FString> GetFiles(const class FString& Path, const class FString& Extension);
 	static TArray<class FString> GetFilesRecursive(const class FString& Path, const class FString& Filter, bool Files, bool Directories);
 	static struct FVector GetFirstLocationFromSeqTrack(class UMovieScene3DTransformTrack* TransformTrack);
@@ -957,7 +995,7 @@ public:
 
 	void AddLevel(int32 LinkId, class ULevel* Level);
 	void RemoveLevel(int32 LinkId);
-	bool SetLevelActorsVisible(const int32 LinkId, const bool Visible, const TDelegate<void(int32 LinkId)> FinishCallback);
+	bool SetLevelActorsVisible(const int32 LinkId, const bool Visible, const TDelegate<void(const int32 LinkId)> FinishCallback);
 	void SetOneFrameExecuteCount(const int32 Count);
 
 public:
@@ -989,7 +1027,7 @@ public:
 	static void SendLogToTencentCOS(const TDelegate<void(int32 State, float Rate)>& OnProgress);
 	static void SetAdmissibleValue(int32 SingleLogSizeInMb);
 	static void SetFilesToSend(const TArray<class FString>& FilePaths);
-	static void SetHandleFunc(const TDelegate<void(TArray<class FString>& FileNames)>& PrepareFunc, const TDelegate<void(TArray<class FString>& SendedFiles)>& PostSend);
+	static void SetHandleFunc(const TDelegate<void(const TArray<class FString>& FileNames)>& PrepareFunc, const TDelegate<void(const TArray<class FString>& SendedFiles)>& PostSend);
 	static void SetIsAutoSend(bool bIsAutoSend);
 	static void SetSendLogConfig(const class FString& SecretID, const class FString& SecretKey, const class FString& BucketName, const class FString& Region);
 	static void SetSendLogZipName(const class FString& ZipFileName);
@@ -1058,8 +1096,8 @@ static_assert(offsetof(AKuroTriggerVolume, VolumeId) == 0x0002E8, "Member 'AKuro
 class UKuroTriggerVolumeManager final : public UWorldSubsystem
 {
 public:
-	TMulticastInlineDelegate<void(class FName ActorKey)> OnTriggerVolumeAddToSubsystem;                     // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class FName ActorKey)> OnTriggerVolumeRemoveFromSubsystem;                // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName ActorKey)> OnTriggerVolumeAddToSubsystem;              // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class FName ActorKey)> OnTriggerVolumeRemoveFromSubsystem;         // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMap<class FName, class AActor*>              KuroTriggerVolumeMap;                              // 0x0058(0x0050)(NativeAccessSpecifierPrivate)
 
 public:
@@ -1110,8 +1148,8 @@ public:
 	void BindBeginTravelLoadMap(TDelegate<void(const class FString& MapName)> BeginTravelLoadMapHandler);
 	void BindEndLoadMap(TDelegate<void(const class FString& MapName)> EndLoadMapHandler);
 	void BindEndLoadTransitionMap(TDelegate<void()> EndLoadTransitionMapHandler);
-	void BindLoadStreamLevel(const TDelegate<void(int32 LinkId, class FName& LevelName, class ULevelStreaming* StreamingLevel)> LoadStreamLevelHandler);
-	void BindUnLoadStreamLevel(const TDelegate<void(int32 LinkId, class FName& LevelName)> UnLoadStreamLevelHandler);
+	void BindLoadStreamLevel(const TDelegate<void(const int32 LinkId, const class FName& LevelName, const class ULevelStreaming* StreamingLevel)> LoadStreamLevelHandler);
+	void BindUnLoadStreamLevel(const TDelegate<void(const int32 LinkId, const class FName& LevelName)> UnLoadStreamLevelHandler);
 	void Clear();
 	int32 LoadStreamLevel(const class FName& Path, bool bMakeVisibleAfterLoad, bool bShouldBlockOnLoad);
 	void OnLoadStreamLevel(const int32 LinkID);
@@ -1149,6 +1187,8 @@ public:
 	void RemovePrerequisiteActorComponent(const ETickingGroup TickingGroup, class UActorComponent* ActorComp, int32 Priority);
 	bool RemoveTick(const ETickingGroup TickingGroup);
 	void SetCharacterMovementProxyTickFunction(const ETickingGroup TickingGroup, class UCharacterMovementComponent* MoveComp, int32 Priority);
+	void SetGamePrerequisiteTickFunction(const ETickingGroup TickingGroup, int32 Priority);
+	void SetSkeletalMeshComponentPrerequisite(const ETickingGroup TickingGroup, int32 Priority, class USkeletalMeshComponent* SkeletalComp);
 	void SetSkeletalMeshProxyTickFunction(const ETickingGroup TickingGroup, class USkeletalMeshComponent* SkeletalComp, int32 Priority);
 	void SetTickFunctionCompletionCallbackInMainThread(const ETickingGroup TickingGroup, int32 Priority);
 

@@ -19,13 +19,13 @@ namespace SDK
 struct FSSceneInteractionActorSkeletalMeshDestructible final
 {
 public:
-	TArray<class ABP_KuroSkeletalMeshDestructibleActor_C*> PlayDestructionAllImmediately_8_CEE345CE4B337E583CB02FA768482D38; // 0x0000(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<class ABP_KuroSkeletalMeshDestructibleActor_C*> CanPlayDestructionWhenHit_9_6EBB7F64462CFC53CE836B87659E8992; // 0x0010(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<class AKuroDestructibleActor*>         PlayDestructionAllImmediately_10_CEE345CE4B337E583CB02FA768482D38; // 0x0000(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<class AKuroDestructibleActor*>         CanPlayDestructionWhenHit_11_6EBB7F64462CFC53CE836B87659E8992; // 0x0010(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 };
 static_assert(alignof(FSSceneInteractionActorSkeletalMeshDestructible) == 0x000008, "Wrong alignment on FSSceneInteractionActorSkeletalMeshDestructible");
 static_assert(sizeof(FSSceneInteractionActorSkeletalMeshDestructible) == 0x000020, "Wrong size on FSSceneInteractionActorSkeletalMeshDestructible");
-static_assert(offsetof(FSSceneInteractionActorSkeletalMeshDestructible, PlayDestructionAllImmediately_8_CEE345CE4B337E583CB02FA768482D38) == 0x000000, "Member 'FSSceneInteractionActorSkeletalMeshDestructible::PlayDestructionAllImmediately_8_CEE345CE4B337E583CB02FA768482D38' has a wrong offset!");
-static_assert(offsetof(FSSceneInteractionActorSkeletalMeshDestructible, CanPlayDestructionWhenHit_9_6EBB7F64462CFC53CE836B87659E8992) == 0x000010, "Member 'FSSceneInteractionActorSkeletalMeshDestructible::CanPlayDestructionWhenHit_9_6EBB7F64462CFC53CE836B87659E8992' has a wrong offset!");
+static_assert(offsetof(FSSceneInteractionActorSkeletalMeshDestructible, PlayDestructionAllImmediately_10_CEE345CE4B337E583CB02FA768482D38) == 0x000000, "Member 'FSSceneInteractionActorSkeletalMeshDestructible::PlayDestructionAllImmediately_10_CEE345CE4B337E583CB02FA768482D38' has a wrong offset!");
+static_assert(offsetof(FSSceneInteractionActorSkeletalMeshDestructible, CanPlayDestructionWhenHit_11_6EBB7F64462CFC53CE836B87659E8992) == 0x000010, "Member 'FSSceneInteractionActorSkeletalMeshDestructible::CanPlayDestructionWhenHit_11_6EBB7F64462CFC53CE836B87659E8992' has a wrong offset!");
 
 }
 

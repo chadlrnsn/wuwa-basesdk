@@ -81,7 +81,7 @@ public:
 	uint8                                         Pad_2D1[0x7];                                      // 0x02D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_10;           // 0x02D8(0x0028)(ZeroConstructor)
 	class ATsBaseCharacter_C*                     CallFunc___________8;                              // 0x0300(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(struct FGameplayTag& Tag)>     K2Node_CreateDelegate_OutputDelegate_11;           // 0x0308(0x0028)(ZeroConstructor)
+	TDelegate<void(const struct FGameplayTag& Tag)> K2Node_CreateDelegate_OutputDelegate_11;         // 0x0308(0x0028)(ZeroConstructor)
 	class ATsBaseCharacter_C*                     CallFunc___________9;                              // 0x0330(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAbilityTask_WaitGameplayTagAdded*      CallFunc_WaitGameplayTagAdd_ReturnValue;           // 0x0338(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue_4;                    // 0x0340(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)

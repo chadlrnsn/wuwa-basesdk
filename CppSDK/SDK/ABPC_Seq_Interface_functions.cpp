@@ -20,18 +20,18 @@ namespace SDK
 // Function ABPC_Seq_Interface.ABPC_Seq_Interface_C.GetABPC_Body_V2
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UABPC_Seq_Body_V2_C*              ABPC_Body_V2                                           (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UABPC_Seq_Body_V2_C**             ABPC_Body_V2                                           (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void IABPC_Seq_Interface_C::GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Body_V2)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABPC_Seq_Interface_C", "GetABPC_Body_V2");
+		Func = AsUObject()->Class->GetFunction("ABPC_Seq_Interface_C", "GetABPC_Body_V2");
 
 	Params::ABPC_Seq_Interface_C_GetABPC_Body_V2 Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	if (ABPC_Body_V2 != nullptr)
 		*ABPC_Body_V2 = Parms.ABPC_Body_V2;

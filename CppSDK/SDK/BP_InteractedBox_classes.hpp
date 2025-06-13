@@ -18,15 +18,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_InteractedBox.BP_InteractedBox_C
-// 0x0020 (0x0308 - 0x02E8)
+// 0x0020 (0x0300 - 0x02E0)
 class ABP_InteractedBox_C final : public ABP_BaseItem_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_InteractedBox_C;                 // 0x02E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UProceduralMeshComponent*               ProceduralMesh;                                    // 0x02F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          HandleGrab;                                        // 0x02F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2F9[0x7];                                      // 0x02F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimerHandle                           ReleaseTimeHandle;                                 // 0x0300(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_InteractedBox_C;                 // 0x02E0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UProceduralMeshComponent*               ProceduralMesh;                                    // 0x02E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          HandleGrab;                                        // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2F1[0x7];                                      // 0x02F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           ReleaseTimeHandle;                                 // 0x02F8(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void IsPhysicInteracted(bool* OutInteracted);
@@ -44,11 +44,11 @@ public:
 	}
 };
 static_assert(alignof(ABP_InteractedBox_C) == 0x000008, "Wrong alignment on ABP_InteractedBox_C");
-static_assert(sizeof(ABP_InteractedBox_C) == 0x000308, "Wrong size on ABP_InteractedBox_C");
-static_assert(offsetof(ABP_InteractedBox_C, UberGraphFrame_BP_InteractedBox_C) == 0x0002E8, "Member 'ABP_InteractedBox_C::UberGraphFrame_BP_InteractedBox_C' has a wrong offset!");
-static_assert(offsetof(ABP_InteractedBox_C, ProceduralMesh) == 0x0002F0, "Member 'ABP_InteractedBox_C::ProceduralMesh' has a wrong offset!");
-static_assert(offsetof(ABP_InteractedBox_C, HandleGrab) == 0x0002F8, "Member 'ABP_InteractedBox_C::HandleGrab' has a wrong offset!");
-static_assert(offsetof(ABP_InteractedBox_C, ReleaseTimeHandle) == 0x000300, "Member 'ABP_InteractedBox_C::ReleaseTimeHandle' has a wrong offset!");
+static_assert(sizeof(ABP_InteractedBox_C) == 0x000300, "Wrong size on ABP_InteractedBox_C");
+static_assert(offsetof(ABP_InteractedBox_C, UberGraphFrame_BP_InteractedBox_C) == 0x0002E0, "Member 'ABP_InteractedBox_C::UberGraphFrame_BP_InteractedBox_C' has a wrong offset!");
+static_assert(offsetof(ABP_InteractedBox_C, ProceduralMesh) == 0x0002E8, "Member 'ABP_InteractedBox_C::ProceduralMesh' has a wrong offset!");
+static_assert(offsetof(ABP_InteractedBox_C, HandleGrab) == 0x0002F0, "Member 'ABP_InteractedBox_C::HandleGrab' has a wrong offset!");
+static_assert(offsetof(ABP_InteractedBox_C, ReleaseTimeHandle) == 0x0002F8, "Member 'ABP_InteractedBox_C::ReleaseTimeHandle' has a wrong offset!");
 
 }
 

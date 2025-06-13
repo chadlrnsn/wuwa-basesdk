@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelNiagara.EffectModelNiagara_C
-// 0x0000 (0x0670 - 0x0670)
+// 0x0000 (0x06C0 - 0x06C0)
 class UEffectModelNiagara_C final : public UEffectModelNiagara
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UEffectModelNiagara_C) == 0x000008, "Wrong alignment on UEffectModelNiagara_C");
-static_assert(sizeof(UEffectModelNiagara_C) == 0x000670, "Wrong size on UEffectModelNiagara_C");
+static_assert(sizeof(UEffectModelNiagara_C) == 0x0006C0, "Wrong size on UEffectModelNiagara_C");
 
 }
 

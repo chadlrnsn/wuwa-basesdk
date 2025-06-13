@@ -60,8 +60,8 @@ void UABP_Mascot_Seq_C::BlueprintUpdateAnimation(float DeltaTimeX)
 // Function ABP_Mascot_Seq.ABP_Mascot_Seq_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink                        InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// struct FPoseLink                        AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// const struct FPoseLink&                 InPose                                                 (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
 void UABP_Mascot_Seq_C::AnimGraph(const struct FPoseLink& InPose, struct FPoseLink* AnimGraph_0)
 {

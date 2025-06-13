@@ -845,7 +845,7 @@ void UTrackEntry::SetTrackTime(float trackTime)
 // Function SpinePlugin.SpineSkeletonComponent.GetAnimationDuration
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float USpineSkeletonComponent::GetAnimationDuration(const class FString& AnimationName)
@@ -873,7 +873,7 @@ float USpineSkeletonComponent::GetAnimationDuration(const class FString& Animati
 // Function SpinePlugin.SpineSkeletonComponent.GetAnimations
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   Animations                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  Animations                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USpineSkeletonComponent::GetAnimations(TArray<class FString>* Animations)
 {
@@ -899,7 +899,7 @@ void USpineSkeletonComponent::GetAnimations(TArray<class FString>* Animations)
 // Function SpinePlugin.SpineSkeletonComponent.GetBones
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   Bones                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  Bones                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USpineSkeletonComponent::GetBones(TArray<class FString>* Bones)
 {
@@ -925,7 +925,7 @@ void USpineSkeletonComponent::GetBones(TArray<class FString>* Bones)
 // Function SpinePlugin.SpineSkeletonComponent.GetBoneWorldTransform
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FString                           BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FTransform USpineSkeletonComponent::GetBoneWorldTransform(const class FString& BoneName)
@@ -1003,7 +1003,7 @@ float USpineSkeletonComponent::GetScaleY()
 // Function SpinePlugin.SpineSkeletonComponent.GetSkins
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   Skins                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  Skins                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USpineSkeletonComponent::GetSkins(TArray<class FString>* Skins)
 {
@@ -1029,7 +1029,7 @@ void USpineSkeletonComponent::GetSkins(TArray<class FString>* Skins)
 // Function SpinePlugin.SpineSkeletonComponent.GetSlots
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   Slots                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  Slots                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USpineSkeletonComponent::GetSlots(TArray<class FString>* Slots)
 {
@@ -1055,7 +1055,7 @@ void USpineSkeletonComponent::GetSlots(TArray<class FString>* Slots)
 // Function SpinePlugin.SpineSkeletonComponent.HasAnimation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineSkeletonComponent::HasAnimation(const class FString& AnimationName)
@@ -1083,7 +1083,7 @@ bool USpineSkeletonComponent::HasAnimation(const class FString& AnimationName)
 // Function SpinePlugin.SpineSkeletonComponent.HasBone
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           BoneName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    BoneName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineSkeletonComponent::HasBone(const class FString& BoneName)
@@ -1111,7 +1111,7 @@ bool USpineSkeletonComponent::HasBone(const class FString& BoneName)
 // Function SpinePlugin.SpineSkeletonComponent.HasSkin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineSkeletonComponent::HasSkin(const class FString& SkinName)
@@ -1139,7 +1139,7 @@ bool USpineSkeletonComponent::HasSkin(const class FString& SkinName)
 // Function SpinePlugin.SpineSkeletonComponent.HasSlot
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineSkeletonComponent::HasSlot(const class FString& SlotName)
@@ -1167,8 +1167,8 @@ bool USpineSkeletonComponent::HasSlot(const class FString& SlotName)
 // Function SpinePlugin.SpineSkeletonComponent.SetAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           slotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           attachmentName                                         (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    slotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    attachmentName                                         (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineSkeletonComponent::SetAttachment(const class FString& slotName, const class FString& attachmentName)
@@ -1216,8 +1216,8 @@ void USpineSkeletonComponent::SetBonesToSetupPose()
 // Function SpinePlugin.SpineSkeletonComponent.SetBoneWorldPosition
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FString                           BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          position                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   position                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USpineSkeletonComponent::SetBoneWorldPosition(const class FString& BoneName, const struct FVector& position)
 {
@@ -1293,7 +1293,7 @@ void USpineSkeletonComponent::SetScaleY(float scaleY)
 // Function SpinePlugin.SpineSkeletonComponent.SetSkin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineSkeletonComponent::SetSkin(const class FString& SkinName)
@@ -1321,7 +1321,7 @@ bool USpineSkeletonComponent::SetSkin(const class FString& SkinName)
 // Function SpinePlugin.SpineSkeletonComponent.SetSkins
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   SkinNames                                              (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class FString>&                  SkinNames                                              (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineSkeletonComponent::SetSkins(TArray<class FString>& SkinNames)
@@ -1351,8 +1351,8 @@ bool USpineSkeletonComponent::SetSkins(TArray<class FString>& SkinNames)
 // Function SpinePlugin.SpineSkeletonComponent.SetSlotColor
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FString                           SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FColor                           color                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FColor&                    color                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void USpineSkeletonComponent::SetSlotColor(const class FString& SlotName, const struct FColor& color)
 {
@@ -1436,7 +1436,7 @@ void USpineSkeletonComponent::UpdateWorldTransform()
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   trackIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           animationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    animationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    loop                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTrackEntry*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1599,7 +1599,7 @@ float USpineSkeletonAnimationComponent::GetTimeScale()
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   trackIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           animationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    animationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    loop                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTrackEntry*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1738,7 +1738,7 @@ void USpineSkeletonAnimationComponent::SetTimeScale(float timeScale)
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   trackIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           animationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    animationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    loop                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTrackEntry*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1847,7 +1847,7 @@ void USpineWidget::ClearTracks()
 // Function SpinePlugin.SpineWidget.GetAnimationDuration
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float USpineWidget::GetAnimationDuration(const class FString& AnimationName)
@@ -1875,7 +1875,7 @@ float USpineWidget::GetAnimationDuration(const class FString& AnimationName)
 // Function SpinePlugin.SpineWidget.GetAnimations
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   Animations                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  Animations                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USpineWidget::GetAnimations(TArray<class FString>* Animations)
 {
@@ -1901,7 +1901,7 @@ void USpineWidget::GetAnimations(TArray<class FString>* Animations)
 // Function SpinePlugin.SpineWidget.GetBones
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   Bones                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  Bones                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USpineWidget::GetBones(TArray<class FString>* Bones)
 {
@@ -1927,7 +1927,7 @@ void USpineWidget::GetBones(TArray<class FString>* Bones)
 // Function SpinePlugin.SpineWidget.GetBoneTransform
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class FString                           BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 struct FTransform USpineWidget::GetBoneTransform(const class FString& BoneName)
@@ -2033,7 +2033,7 @@ float USpineWidget::GetScaleY()
 // Function SpinePlugin.SpineWidget.GetSkins
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   Skins                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  Skins                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USpineWidget::GetSkins(TArray<class FString>* Skins)
 {
@@ -2059,7 +2059,7 @@ void USpineWidget::GetSkins(TArray<class FString>* Skins)
 // Function SpinePlugin.SpineWidget.GetSlots
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TArray<class FString>                   Slots                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  Slots                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void USpineWidget::GetSlots(TArray<class FString>* Slots)
 {
@@ -2110,7 +2110,7 @@ float USpineWidget::GetTimeScale()
 // Function SpinePlugin.SpineWidget.HasAnimation
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineWidget::HasAnimation(const class FString& AnimationName)
@@ -2138,7 +2138,7 @@ bool USpineWidget::HasAnimation(const class FString& AnimationName)
 // Function SpinePlugin.SpineWidget.HasBone
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           BoneName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    BoneName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineWidget::HasBone(const class FString& BoneName)
@@ -2166,7 +2166,7 @@ bool USpineWidget::HasBone(const class FString& BoneName)
 // Function SpinePlugin.SpineWidget.HasSkin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineWidget::HasSkin(const class FString& SkinName)
@@ -2194,7 +2194,7 @@ bool USpineWidget::HasSkin(const class FString& SkinName)
 // Function SpinePlugin.SpineWidget.HasSlot
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineWidget::HasSlot(const class FString& SlotName)
@@ -2223,7 +2223,7 @@ bool USpineWidget::HasSlot(const class FString& SlotName)
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // int32                                   trackIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           animationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    animationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    loop                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UTrackEntry*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2254,8 +2254,8 @@ class UTrackEntry* USpineWidget::SetAnimation(int32 trackIndex, const class FStr
 // Function SpinePlugin.SpineWidget.SetAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           slotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           attachmentName                                         (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    slotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    attachmentName                                         (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineWidget::SetAttachment(const class FString& slotName, const class FString& attachmentName)
@@ -2435,7 +2435,7 @@ void USpineWidget::SetScaleY(float scaleY)
 // Function SpinePlugin.SpineWidget.SetSkin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineWidget::SetSkin(const class FString& SkinName)
@@ -2463,7 +2463,7 @@ bool USpineWidget::SetSkin(const class FString& SkinName)
 // Function SpinePlugin.SpineWidget.SetSkins
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   SkinNames                                              (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class FString>&                  SkinNames                                              (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool USpineWidget::SetSkins(TArray<class FString>& SkinNames)

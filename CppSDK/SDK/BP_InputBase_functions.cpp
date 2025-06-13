@@ -1609,7 +1609,7 @@ struct FSInputCommand UBP_InputBase_C::通用交互按下(float time)
 // Function BP_InputBase.BP_InputBase_C.GetMoveVector
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector2D                        ReturnVaule                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector2D*                       ReturnVaule                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_InputBase_C::GetMoveVector(struct FVector2D* ReturnVaule)
 {

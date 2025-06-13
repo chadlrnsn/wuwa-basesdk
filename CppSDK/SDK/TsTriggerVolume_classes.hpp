@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "Engine_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "ETriggerType_structs.hpp"
 
 
@@ -63,12 +63,12 @@ public:
 	TArray<class ABrush*>                         TriggerItems;                                      // 0x03E8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 
 public:
-	void TryReportSelfBuffDamageLog();
-	void AddBuffInner(int64 buffId);
-	void ReceiveBeginPlay();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_TsTriggerVolume(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveBeginPlay();
+	void AddBuffInner(int64 buffId);
+	void TryReportSelfBuffDamageLog();
 
 public:
 	static class UClass* StaticClass()

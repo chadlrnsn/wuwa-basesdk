@@ -14,28 +14,6 @@
 namespace SDK::Params
 {
 
-// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.自爆检测
-// 0x0001 (0x0001 - 0x0000)
-struct AIC_MO1HKacacaMd00101_C_自爆检测 final
-{
-public:
-	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(AIC_MO1HKacacaMd00101_C_自爆检测) == 0x000001, "Wrong alignment on AIC_MO1HKacacaMd00101_C_自爆检测");
-static_assert(sizeof(AIC_MO1HKacacaMd00101_C_自爆检测) == 0x000001, "Wrong size on AIC_MO1HKacacaMd00101_C_自爆检测");
-static_assert(offsetof(AIC_MO1HKacacaMd00101_C_自爆检测, bContent) == 0x000000, "Member 'AIC_MO1HKacacaMd00101_C_自爆检测::bContent' has a wrong offset!");
-
-// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.自爆死亡申请
-// 0x0001 (0x0001 - 0x0000)
-struct AIC_MO1HKacacaMd00101_C_自爆死亡申请 final
-{
-public:
-	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(AIC_MO1HKacacaMd00101_C_自爆死亡申请) == 0x000001, "Wrong alignment on AIC_MO1HKacacaMd00101_C_自爆死亡申请");
-static_assert(sizeof(AIC_MO1HKacacaMd00101_C_自爆死亡申请) == 0x000001, "Wrong size on AIC_MO1HKacacaMd00101_C_自爆死亡申请");
-static_assert(offsetof(AIC_MO1HKacacaMd00101_C_自爆死亡申请, bContent) == 0x000000, "Member 'AIC_MO1HKacacaMd00101_C_自爆死亡申请::bContent' has a wrong offset!");
-
 // Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.ExecuteUbergraph_AIC_MO1HKacacaMd00101
 // 0x0048 (0x0048 - 0x0000)
 struct AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd00101 final
@@ -50,7 +28,7 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class APawn*                                  CallFunc_K2_GetPawn_ReturnValue_1;                 // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> K2Node_DynamicCast_AsBPI_Creature_Interface;       // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_CreatureInterface_C> K2Node_DynamicCast_AsBPI_Creature_Interface;    // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -69,6 +47,28 @@ static_assert(offsetof(AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd
 static_assert(offsetof(AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd00101, K2Node_DynamicCast_bSuccess_1) == 0x000038, "Member 'AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd00101::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
 static_assert(offsetof(AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd00101, CallFunc_GetEntityId_ReturnValue) == 0x00003C, "Member 'AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd00101::CallFunc_GetEntityId_ReturnValue' has a wrong offset!");
 static_assert(offsetof(AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd00101, CallFunc_GetCreatureDataIdByEntity_ReturnValue) == 0x000040, "Member 'AIC_MO1HKacacaMd00101_C_ExecuteUbergraph_AIC_MO1HKacacaMd00101::CallFunc_GetCreatureDataIdByEntity_ReturnValue' has a wrong offset!");
+
+// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.自爆死亡申请
+// 0x0001 (0x0001 - 0x0000)
+struct AIC_MO1HKacacaMd00101_C_自爆死亡申请 final
+{
+public:
+	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(AIC_MO1HKacacaMd00101_C_自爆死亡申请) == 0x000001, "Wrong alignment on AIC_MO1HKacacaMd00101_C_自爆死亡申请");
+static_assert(sizeof(AIC_MO1HKacacaMd00101_C_自爆死亡申请) == 0x000001, "Wrong size on AIC_MO1HKacacaMd00101_C_自爆死亡申请");
+static_assert(offsetof(AIC_MO1HKacacaMd00101_C_自爆死亡申请, bContent) == 0x000000, "Member 'AIC_MO1HKacacaMd00101_C_自爆死亡申请::bContent' has a wrong offset!");
+
+// Function AIC_MO1HKacacaMd00101.AIC_MO1HKacacaMd00101_C.自爆检测
+// 0x0001 (0x0001 - 0x0000)
+struct AIC_MO1HKacacaMd00101_C_自爆检测 final
+{
+public:
+	bool                                          bContent;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(AIC_MO1HKacacaMd00101_C_自爆检测) == 0x000001, "Wrong alignment on AIC_MO1HKacacaMd00101_C_自爆检测");
+static_assert(sizeof(AIC_MO1HKacacaMd00101_C_自爆检测) == 0x000001, "Wrong size on AIC_MO1HKacacaMd00101_C_自爆检测");
+static_assert(offsetof(AIC_MO1HKacacaMd00101_C_自爆检测, bContent) == 0x000000, "Member 'AIC_MO1HKacacaMd00101_C_自爆检测::bContent' has a wrong offset!");
 
 }
 

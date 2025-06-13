@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ApexDestruction_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ApexDestruction_structs.hpp"
 
 
 namespace SDK
@@ -22,11 +22,11 @@ namespace SDK
 
 // Class ApexDestruction.DestructibleActor
 // 0x0018 (0x02C8 - 0x02B0)
-class ADestructibleActor : public AActor
+class ADestructibleActor final : public AActor
 {
 public:
 	class UDestructibleComponent*                 DestructibleComponent;                             // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TMulticastInlineDelegate<void(struct FVector& HitPoint, struct FVector& HitDirection)> OnActorFracture;                                   // 0x02B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FVector& HitPoint, const struct FVector& HitDirection)> OnActorFracture; // 0x02B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -55,7 +55,7 @@ public:
 	uint8                                         Pad_829[0x3];                                      // 0x0829(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         LargeChunkThreshold;                               // 0x082C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_830[0x10];                                     // 0x0830(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(struct FVector& HitPoint, struct FVector& HitDirection)> OnComponentFracture;                               // 0x0840(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FVector& HitPoint, const struct FVector& HitDirection)> OnComponentFracture; // 0x0840(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_850[0xA0];                                     // 0x0850(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

@@ -18,14 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ScreenEffectSystem.BP_ScreenEffectSystem_C
-// 0x00B0 (0x0360 - 0x02B0)
+// 0x00C0 (0x0370 - 0x02B0)
 class ABP_ScreenEffectSystem_C final : public AActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UEffectScreenPlayData_C*                DebugData;                                         // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class UEffectScreenPlayData_C*, class ABP_ScreenEffectPlayer_C*> Effects;                                           // 0x02C8(0x0050)(Edit, BlueprintVisible)
+	TMap<class UEffectScreenPlayData_C*, class ABP_ScreenEffectPlayer_C*> Effects;                   // 0x02C8(0x0050)(Edit, BlueprintVisible)
 	TArray<class UEffectScreenPlayData_C*>        OrderDatas;                                        // 0x0318(0x0010)(Edit, BlueprintVisible)
 	TArray<class UEffectScreenPlayData_C*>        IndependentDatas;                                  // 0x0328(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          bEvaluateOrderEffects;                             // 0x0338(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
@@ -34,6 +34,9 @@ public:
 	class AUIContainerActor*                      ScreenEffectFightRoot;                             // 0x0348(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class AUIContainerActor*                      ScreenEffectPlotRoot;                              // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         EnvironmentFactorDebug;                            // 0x0358(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_35C[0x4];                                      // 0x035C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AUIContainerActor*                      ScreenEffectGeneralRoot;                           // 0x0360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         DebugExtraState;                                   // 0x0368(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_ScreenEffectSystem(int32 EntryPoint);
@@ -48,14 +51,19 @@ public:
 	void SetVisibilityOfSystem(bool Visibility, bool bOverrideFadeSpeed, float OverrideFadeSpeed);
 	void ClearSystem();
 	void UpdateLGUIMaterialParams();
-	void GetScreenEffectFightRoot(class AUIContainerActor** ScreenEffectFightRoot_0);
 	void Init_SEFight_Root();
+	void GetScreenEffectFightRoot(class AUIContainerActor** ScreenEffectFightRoot_0);
 	void Init_SEPlotRoot();
 	void GetScreenEffectPlotRoot(class AUIContainerActor** ScreenEffectPlotRoot_0);
+	void Init_SEGeneralRoot();
+	void GetScreenEffectGeneralRoot(class AUIContainerActor** ScreenEffectGeneralRoot_0);
 	void SpawnPlayer(class UEffectScreenPlayData_C* Data, class ABP_ScreenEffectPlayer_C** OutputPlayer);
 	void DestroyScreenEffect(class UEffectScreenPlayData_C* Data);
 	void UpdateSEEnvironmentFactor(class UEffectScreenPlayData_C* Data, float EnvironmentFactor);
 	void UpdateEnvironmentFactorDebug();
+	void TweenEffectParameter(class UEffectScreenPlayData_C* EffectScreenPlayData, float targetProgress);
+	void SetEffectExtraState(class UEffectScreenPlayData_C* EffectScreenPlayData, int32 ExtraState);
+	void SetEffectExtraStateDebug();
 
 public:
 	static class UClass* StaticClass()
@@ -68,7 +76,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_ScreenEffectSystem_C) == 0x000008, "Wrong alignment on ABP_ScreenEffectSystem_C");
-static_assert(sizeof(ABP_ScreenEffectSystem_C) == 0x000360, "Wrong size on ABP_ScreenEffectSystem_C");
+static_assert(sizeof(ABP_ScreenEffectSystem_C) == 0x000370, "Wrong size on ABP_ScreenEffectSystem_C");
 static_assert(offsetof(ABP_ScreenEffectSystem_C, UberGraphFrame) == 0x0002B0, "Member 'ABP_ScreenEffectSystem_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(ABP_ScreenEffectSystem_C, DefaultSceneRoot) == 0x0002B8, "Member 'ABP_ScreenEffectSystem_C::DefaultSceneRoot' has a wrong offset!");
 static_assert(offsetof(ABP_ScreenEffectSystem_C, DebugData) == 0x0002C0, "Member 'ABP_ScreenEffectSystem_C::DebugData' has a wrong offset!");
@@ -80,6 +88,8 @@ static_assert(offsetof(ABP_ScreenEffectSystem_C, EditorScreenRoot) == 0x000340, 
 static_assert(offsetof(ABP_ScreenEffectSystem_C, ScreenEffectFightRoot) == 0x000348, "Member 'ABP_ScreenEffectSystem_C::ScreenEffectFightRoot' has a wrong offset!");
 static_assert(offsetof(ABP_ScreenEffectSystem_C, ScreenEffectPlotRoot) == 0x000350, "Member 'ABP_ScreenEffectSystem_C::ScreenEffectPlotRoot' has a wrong offset!");
 static_assert(offsetof(ABP_ScreenEffectSystem_C, EnvironmentFactorDebug) == 0x000358, "Member 'ABP_ScreenEffectSystem_C::EnvironmentFactorDebug' has a wrong offset!");
+static_assert(offsetof(ABP_ScreenEffectSystem_C, ScreenEffectGeneralRoot) == 0x000360, "Member 'ABP_ScreenEffectSystem_C::ScreenEffectGeneralRoot' has a wrong offset!");
+static_assert(offsetof(ABP_ScreenEffectSystem_C, DebugExtraState) == 0x000368, "Member 'ABP_ScreenEffectSystem_C::DebugExtraState' has a wrong offset!");
 
 }
 

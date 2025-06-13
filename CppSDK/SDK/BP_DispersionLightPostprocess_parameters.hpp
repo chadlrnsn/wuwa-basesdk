@@ -55,7 +55,7 @@ static_assert(sizeof(BP_DispersionLightPostprocess_C_UserConstructionScript) == 
 static_assert(offsetof(BP_DispersionLightPostprocess_C_UserConstructionScript, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000000, "Member 'BP_DispersionLightPostprocess_C_UserConstructionScript::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
 
 // Function BP_DispersionLightPostprocess.BP_DispersionLightPostprocess_C.Update
-// 0x0188 (0x0188 - 0x0000)
+// 0x01C8 (0x01C8 - 0x0000)
 struct BP_DispersionLightPostprocess_C_Update final
 {
 public:
@@ -76,25 +76,30 @@ public:
 	class FName                                   ___name_Variable_14;                               // 0x00A8(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   ___name_Variable_15;                               // 0x00B4(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   ___name_Variable_16;                               // 0x00C0(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetUpVector_ReturnValue;                  // 0x00CC(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue;     // 0x00D8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_E9[0x3];                                       // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x00EC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          CallFunc_D_K2_GetComponentLocation_ReturnValue;    // 0x0100(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0124(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue_1;   // 0x0128(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                CallFunc_GetForwardVector_ReturnValue;             // 0x0138(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue_2;   // 0x0144(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_GetScaledSphereRadius_ReturnValue;        // 0x0154(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FWeightedBlendable                     K2Node_MakeStruct_WeightedBlendable;               // 0x0158(0x0010)(NoDestructor)
-	TArray<struct FWeightedBlendable>             K2Node_MakeArray_Array;                            // 0x0168(0x0010)(ReferenceParm)
-	struct FWeightedBlendables                    K2Node_MakeStruct_WeightedBlendables;              // 0x0178(0x0010)()
+	class FName                                   ___name_Variable_17;                               // 0x00CC(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   ___name_Variable_18;                               // 0x00D8(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   ___name_Variable_19;                               // 0x00E4(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   ___name_Variable_20;                               // 0x00F0(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor;                     // 0x00FC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetUpVector_ReturnValue;                  // 0x010C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue;     // 0x0118(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_129[0x3];                                      // 0x0129(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           K2Node_MakeStruct_LinearColor_1;                   // 0x012C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13C[0x4];                                      // 0x013C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_K2_GetComponentLocation_ReturnValue;    // 0x0140(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_Conv_VectorDoubleToVector_ReturnValue;    // 0x0158(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x0164(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue_1;   // 0x0168(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                CallFunc_GetForwardVector_ReturnValue;             // 0x0178(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_Conv_VectorToLinearColor_ReturnValue_2;   // 0x0184(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetScaledSphereRadius_ReturnValue;        // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FWeightedBlendable                     K2Node_MakeStruct_WeightedBlendable;               // 0x0198(0x0010)(NoDestructor)
+	TArray<struct FWeightedBlendable>             K2Node_MakeArray_Array;                            // 0x01A8(0x0010)(ReferenceParm)
+	struct FWeightedBlendables                    K2Node_MakeStruct_WeightedBlendables;              // 0x01B8(0x0010)()
 };
 static_assert(alignof(BP_DispersionLightPostprocess_C_Update) == 0x000008, "Wrong alignment on BP_DispersionLightPostprocess_C_Update");
-static_assert(sizeof(BP_DispersionLightPostprocess_C_Update) == 0x000188, "Wrong size on BP_DispersionLightPostprocess_C_Update");
+static_assert(sizeof(BP_DispersionLightPostprocess_C_Update) == 0x0001C8, "Wrong size on BP_DispersionLightPostprocess_C_Update");
 static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable) == 0x000000, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable' has a wrong offset!");
 static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_1) == 0x00000C, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable_1' has a wrong offset!");
 static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_2) == 0x000018, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable_2' has a wrong offset!");
@@ -112,20 +117,25 @@ static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_
 static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_14) == 0x0000A8, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable_14' has a wrong offset!");
 static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_15) == 0x0000B4, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable_15' has a wrong offset!");
 static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_16) == 0x0000C0, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable_16' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_GetUpVector_ReturnValue) == 0x0000CC, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_GetUpVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Conv_VectorToLinearColor_ReturnValue) == 0x0000D8, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Conv_VectorToLinearColor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_IsValid_ReturnValue) == 0x0000E8, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, K2Node_MakeStruct_LinearColor) == 0x0000EC, "Member 'BP_DispersionLightPostprocess_C_Update::K2Node_MakeStruct_LinearColor' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_D_K2_GetComponentLocation_ReturnValue) == 0x000100, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_D_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x000118, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x000124, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Conv_VectorToLinearColor_ReturnValue_1) == 0x000128, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Conv_VectorToLinearColor_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_GetForwardVector_ReturnValue) == 0x000138, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_GetForwardVector_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Conv_VectorToLinearColor_ReturnValue_2) == 0x000144, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Conv_VectorToLinearColor_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_GetScaledSphereRadius_ReturnValue) == 0x000154, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_GetScaledSphereRadius_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, K2Node_MakeStruct_WeightedBlendable) == 0x000158, "Member 'BP_DispersionLightPostprocess_C_Update::K2Node_MakeStruct_WeightedBlendable' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, K2Node_MakeArray_Array) == 0x000168, "Member 'BP_DispersionLightPostprocess_C_Update::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, K2Node_MakeStruct_WeightedBlendables) == 0x000178, "Member 'BP_DispersionLightPostprocess_C_Update::K2Node_MakeStruct_WeightedBlendables' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_17) == 0x0000CC, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable_17' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_18) == 0x0000D8, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable_18' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_19) == 0x0000E4, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable_19' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, ___name_Variable_20) == 0x0000F0, "Member 'BP_DispersionLightPostprocess_C_Update::___name_Variable_20' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, K2Node_MakeStruct_LinearColor) == 0x0000FC, "Member 'BP_DispersionLightPostprocess_C_Update::K2Node_MakeStruct_LinearColor' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_GetUpVector_ReturnValue) == 0x00010C, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_GetUpVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Conv_VectorToLinearColor_ReturnValue) == 0x000118, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Conv_VectorToLinearColor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_IsValid_ReturnValue) == 0x000128, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, K2Node_MakeStruct_LinearColor_1) == 0x00012C, "Member 'BP_DispersionLightPostprocess_C_Update::K2Node_MakeStruct_LinearColor_1' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_D_K2_GetComponentLocation_ReturnValue) == 0x000140, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_D_K2_GetComponentLocation_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Conv_VectorDoubleToVector_ReturnValue) == 0x000158, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Conv_VectorDoubleToVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Subtract_FloatFloat_ReturnValue) == 0x000164, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Subtract_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Conv_VectorToLinearColor_ReturnValue_1) == 0x000168, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Conv_VectorToLinearColor_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_GetForwardVector_ReturnValue) == 0x000178, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_GetForwardVector_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_Conv_VectorToLinearColor_ReturnValue_2) == 0x000184, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_Conv_VectorToLinearColor_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, CallFunc_GetScaledSphereRadius_ReturnValue) == 0x000194, "Member 'BP_DispersionLightPostprocess_C_Update::CallFunc_GetScaledSphereRadius_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, K2Node_MakeStruct_WeightedBlendable) == 0x000198, "Member 'BP_DispersionLightPostprocess_C_Update::K2Node_MakeStruct_WeightedBlendable' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, K2Node_MakeArray_Array) == 0x0001A8, "Member 'BP_DispersionLightPostprocess_C_Update::K2Node_MakeArray_Array' has a wrong offset!");
+static_assert(offsetof(BP_DispersionLightPostprocess_C_Update, K2Node_MakeStruct_WeightedBlendables) == 0x0001B8, "Member 'BP_DispersionLightPostprocess_C_Update::K2Node_MakeStruct_WeightedBlendables' has a wrong offset!");
 
 }
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroCurve_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroCurve_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
@@ -42,7 +42,7 @@ public:
 	struct FKuroCurveLinearColor                  DissolveTexScaleOffset;                            // 0x0650(0x0220)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FKuroCurveLinearColor                  DissolveTexSpeed;                                  // 0x0870(0x0220)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FKuroCurveFloat                        RimPower;                                          // 0x0A90(0x0090)(Edit, BlueprintVisible, DisableEditOnInstance)
-	KuroRenderingRuntimeBPPlugin::ECharacterControllerUVSwitch DissolveUv;                                        // 0x0B20(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	KuroRenderingRuntimeBPPlugin::ECharacterControllerUVSwitch DissolveUv;                           // 0x0B20(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_B21[0x7];                                      // 0x0B21(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKuroCurveLinearColor                  DissolveEdageColor;                                // 0x0B28(0x0220)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FKuroCurveFloat                        DissolveEdageStrength;                             // 0x0D48(0x0090)(Edit, BlueprintVisible, DisableEditOnInstance)
@@ -90,7 +90,7 @@ public:
 	struct FKuroCurveFloat                        TransparencyQuanXiFengSuo;                         // 0x2788(0x0090)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FKuroCurveLinearColor                  TransparentColorQuanXiFengSuo;                     // 0x2818(0x0220)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FName, struct FKuroCurveFloat>     CustomScalarParMap;                                // 0x2A38(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<class FName, struct FKuroCurveLinearColor> CustomColorParMap;                                 // 0x2A88(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class FName, struct FKuroCurveLinearColor> CustomColorParMap;                               // 0x2A88(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

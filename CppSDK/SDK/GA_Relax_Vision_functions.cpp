@@ -145,8 +145,8 @@ void UGA_Relax_Vision_C::OnTick_5D118C384AE61F1C80292E817D55CBB2()
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               entity                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    是否找到                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FSVisionData                     输出行                                                 (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+// bool*                                   是否找到                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSVisionData*                    输出行                                                 (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
 
 void UGA_Relax_Vision_C::获得幻象数据(class ATsBaseCharacter_C* entity, bool* 是否找到, struct FSVisionData* 输出行)
 {

@@ -23,9 +23,9 @@ namespace SDK
 class UGameScreenshotTask final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(int32 Width, int32 Height, TArray<struct FColor>& Colors)> OnTakeScreenshotCapturedDelegate;                  // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(TArray<uint8>& CompressedBitMap)> OnTakeScreenshotCompressedDelegate;                // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(bool IsGranted)> OnIOSPhotoLibraryAuthorizationCompletedDelegate;   // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 Width, int32 Height, const TArray<struct FColor>& Colors)> OnTakeScreenshotCapturedDelegate; // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const TArray<uint8>& CompressedBitMap)> OnTakeScreenshotCompressedDelegate; // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool IsGranted)> OnIOSPhotoLibraryAuthorizationCompletedDelegate;  // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	uint8                                         Pad_60[0x30];                                      // 0x0060(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

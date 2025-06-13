@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Role_LandEnd_Net_C::ExecuteUbergraph_GA_Role_LandEnd_Net(int32 EntryPoint)
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::ExecuteUbergraph_GA_Role_LandEnd_Net(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -40,7 +40,7 @@ void UGA_Role_LandEnd_Net_C::ExecuteUbergraph_GA_Role_LandEnd_Net(int32 EntryPoi
 // Function GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C.K2_ActivateAbility
 // (Event, Protected, BlueprintEvent)
 
-void UGA_Role_LandEnd_Net_C::K2_ActivateAbility()
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
@@ -56,7 +56,7 @@ void UGA_Role_LandEnd_Net_C::K2_ActivateAbility()
 // Parameters:
 // bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Role_LandEnd_Net_C::K2_OnEndAbility(bool bWasCancelled)
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -74,7 +74,7 @@ void UGA_Role_LandEnd_Net_C::K2_OnEndAbility(bool bWasCancelled)
 // Function GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C.OnCompleted_5D118C384AE61F1C80292E8120D6F4B4
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_LandEnd_Net_C::OnCompleted_5D118C384AE61F1C80292E8120D6F4B4()
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::OnCompleted_5D118C384AE61F1C80292E8120D6F4B4()
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,7 +88,7 @@ void UGA_Role_LandEnd_Net_C::OnCompleted_5D118C384AE61F1C80292E8120D6F4B4()
 // Function GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C.OnBlendOut_5D118C384AE61F1C80292E8120D6F4B4
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_LandEnd_Net_C::OnBlendOut_5D118C384AE61F1C80292E8120D6F4B4()
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::OnBlendOut_5D118C384AE61F1C80292E8120D6F4B4()
 {
 	static class UFunction* Func = nullptr;
 
@@ -102,7 +102,7 @@ void UGA_Role_LandEnd_Net_C::OnBlendOut_5D118C384AE61F1C80292E8120D6F4B4()
 // Function GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C.OnInterrupted_5D118C384AE61F1C80292E8120D6F4B4
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_LandEnd_Net_C::OnInterrupted_5D118C384AE61F1C80292E8120D6F4B4()
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::OnInterrupted_5D118C384AE61F1C80292E8120D6F4B4()
 {
 	static class UFunction* Func = nullptr;
 
@@ -116,7 +116,7 @@ void UGA_Role_LandEnd_Net_C::OnInterrupted_5D118C384AE61F1C80292E8120D6F4B4()
 // Function GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C.OnCancelled_5D118C384AE61F1C80292E8120D6F4B4
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_LandEnd_Net_C::OnCancelled_5D118C384AE61F1C80292E8120D6F4B4()
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::OnCancelled_5D118C384AE61F1C80292E8120D6F4B4()
 {
 	static class UFunction* Func = nullptr;
 
@@ -130,7 +130,7 @@ void UGA_Role_LandEnd_Net_C::OnCancelled_5D118C384AE61F1C80292E8120D6F4B4()
 // Function GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C.OnTick_5D118C384AE61F1C80292E8120D6F4B4
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_LandEnd_Net_C::OnTick_5D118C384AE61F1C80292E8120D6F4B4()
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::OnTick_5D118C384AE61F1C80292E8120D6F4B4()
 {
 	static class UFunction* Func = nullptr;
 
@@ -144,7 +144,7 @@ void UGA_Role_LandEnd_Net_C::OnTick_5D118C384AE61F1C80292E8120D6F4B4()
 // Function GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C.OnFinish_60C8757C4F274DFA6A15BFB2BBC51946
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_LandEnd_Net_C::OnFinish_60C8757C4F274DFA6A15BFB2BBC51946()
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::OnFinish_60C8757C4F274DFA6A15BFB2BBC51946()
 {
 	static class UFunction* Func = nullptr;
 
@@ -158,9 +158,9 @@ void UGA_Role_LandEnd_Net_C::OnFinish_60C8757C4F274DFA6A15BFB2BBC51946()
 // Function GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C.Added_CF97F8BF4298CF4D3C76EB9D81A391D8
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Role_LandEnd_Net_C::Added_CF97F8BF4298CF4D3C76EB9D81A391D8(const struct FGameplayTag& Tag)
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::Added_CF97F8BF4298CF4D3C76EB9D81A391D8(const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
@@ -178,9 +178,9 @@ void UGA_Role_LandEnd_Net_C::Added_CF97F8BF4298CF4D3C76EB9D81A391D8(const struct
 // Function GA_Role_LandEnd_Net.GA_Role_LandEnd_Net_C.Added_B7E505E3445443CA4C27F38B7FAAFD98
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Role_LandEnd_Net_C::Added_B7E505E3445443CA4C27F38B7FAAFD98(const struct FGameplayTag& Tag)
+void GA_Role_LandEnd_Net::UGA_Role_LandEnd_Net_C::Added_B7E505E3445443CA4C27F38B7FAAFD98(const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 

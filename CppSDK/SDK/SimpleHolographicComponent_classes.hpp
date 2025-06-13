@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "SHolographicMaterialsCache_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EHolographicState_structs.hpp"
-#include "SHolographicMaterialsCache_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 namespace SDK
@@ -33,19 +33,19 @@ public:
 	EHolographicState                             State;                                             // 0x00F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bCached;                                           // 0x00F5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_F6[0x2];                                       // 0x00F6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class USkeletalMeshComponent*, struct FSHolographicMaterialsCache> ComponentMaterialsCache;                           // 0x00F8(0x0050)(Edit, BlueprintVisible, ContainsInstancedReference)
+	TMap<class USkeletalMeshComponent*, struct FSHolographicMaterialsCache> ComponentMaterialsCache; // 0x00F8(0x0050)(Edit, BlueprintVisible, ContainsInstancedReference)
 
 public:
-	void ExecuteUbergraph_SimpleHolographicComponent(int32 EntryPoint);
-	void ReceiveTick(float DeltaSeconds);
-	void CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& floats, TArray<struct FSMaterialControllerColorParameter>& colors, class UMaterialInstanceDynamic* material, bool bReplaceMaterial, int32 index, struct FSMaterialParamCache* result);
-	class UMaterialInstanceDynamic* CacheAndReplace(const struct FSHolographicData& SHolographicData, class UPrimitiveComponent* self2, int32 ElementIndex, class UMaterialInstanceDynamic* material, struct FSMaterialParamCache* CacheResult);
-	void RevertMaterialParamters(const struct FSMaterialParamCache& MaterialCache, class UMaterialInstanceDynamic** result);
-	void Clear();
-	void RemoveNpcEffect();
-	void UpdateMaterialsWithDa(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData);
-	void EndEffect();
 	void StartEffect();
+	void EndEffect();
+	void UpdateMaterialsWithDa(TArray<class UMaterialInstanceDynamic*>& Materials, const struct FSHolographicData& SHolographicData);
+	void RemoveNpcEffect();
+	void Clear();
+	void RevertMaterialParamters(const struct FSMaterialParamCache& MaterialCache, class UMaterialInstanceDynamic** result);
+	class UMaterialInstanceDynamic* CacheAndReplace(const struct FSHolographicData& SHolographicData, class UPrimitiveComponent* self2, int32 ElementIndex, class UMaterialInstanceDynamic* material, struct FSMaterialParamCache* CacheResult);
+	void CacheMaterialParameters(TArray<struct FSMaterialControllerFloatParameter>& floats, TArray<struct FSMaterialControllerColorParameter>& colors, class UMaterialInstanceDynamic* material, bool bReplaceMaterial, int32 index, struct FSMaterialParamCache* result);
+	void ReceiveTick(float DeltaSeconds);
+	void ExecuteUbergraph_SimpleHolographicComponent(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

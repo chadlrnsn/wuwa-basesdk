@@ -14,49 +14,16 @@
 namespace SDK::Params
 {
 
-// Function SE_ControllerInterface.SE_ControllerInterface_C.Start
+// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyEnvironmentFactor
 // 0x0004 (0x0004 - 0x0000)
-struct SE_ControllerInterface_C_Start final
+struct SE_ControllerInterface_C_ApplyEnvironmentFactor final
 {
 public:
-	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         EnvironmentFactor;                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(SE_ControllerInterface_C_Start) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_Start");
-static_assert(sizeof(SE_ControllerInterface_C_Start) == 0x000004, "Wrong size on SE_ControllerInterface_C_Start");
-static_assert(offsetof(SE_ControllerInterface_C_Start, time) == 0x000000, "Member 'SE_ControllerInterface_C_Start::time' has a wrong offset!");
-
-// Function SE_ControllerInterface.SE_ControllerInterface_C.Loop
-// 0x0004 (0x0004 - 0x0000)
-struct SE_ControllerInterface_C_Loop final
-{
-public:
-	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(SE_ControllerInterface_C_Loop) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_Loop");
-static_assert(sizeof(SE_ControllerInterface_C_Loop) == 0x000004, "Wrong size on SE_ControllerInterface_C_Loop");
-static_assert(offsetof(SE_ControllerInterface_C_Loop, time) == 0x000000, "Member 'SE_ControllerInterface_C_Loop::time' has a wrong offset!");
-
-// Function SE_ControllerInterface.SE_ControllerInterface_C.End
-// 0x0004 (0x0004 - 0x0000)
-struct SE_ControllerInterface_C_End final
-{
-public:
-	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(SE_ControllerInterface_C_End) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_End");
-static_assert(sizeof(SE_ControllerInterface_C_End) == 0x000004, "Wrong size on SE_ControllerInterface_C_End");
-static_assert(offsetof(SE_ControllerInterface_C_End, time) == 0x000000, "Member 'SE_ControllerInterface_C_End::time' has a wrong offset!");
-
-// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyAlpha
-// 0x0004 (0x0004 - 0x0000)
-struct SE_ControllerInterface_C_ApplyAlpha final
-{
-public:
-	float                                         alpha;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(SE_ControllerInterface_C_ApplyAlpha) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_ApplyAlpha");
-static_assert(sizeof(SE_ControllerInterface_C_ApplyAlpha) == 0x000004, "Wrong size on SE_ControllerInterface_C_ApplyAlpha");
-static_assert(offsetof(SE_ControllerInterface_C_ApplyAlpha, alpha) == 0x000000, "Member 'SE_ControllerInterface_C_ApplyAlpha::alpha' has a wrong offset!");
+static_assert(alignof(SE_ControllerInterface_C_ApplyEnvironmentFactor) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_ApplyEnvironmentFactor");
+static_assert(sizeof(SE_ControllerInterface_C_ApplyEnvironmentFactor) == 0x000004, "Wrong size on SE_ControllerInterface_C_ApplyEnvironmentFactor");
+static_assert(offsetof(SE_ControllerInterface_C_ApplyEnvironmentFactor, EnvironmentFactor) == 0x000000, "Member 'SE_ControllerInterface_C_ApplyEnvironmentFactor::EnvironmentFactor' has a wrong offset!");
 
 // Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyVisibility
 // 0x0001 (0x0001 - 0x0000)
@@ -69,16 +36,49 @@ static_assert(alignof(SE_ControllerInterface_C_ApplyVisibility) == 0x000001, "Wr
 static_assert(sizeof(SE_ControllerInterface_C_ApplyVisibility) == 0x000001, "Wrong size on SE_ControllerInterface_C_ApplyVisibility");
 static_assert(offsetof(SE_ControllerInterface_C_ApplyVisibility, visibility) == 0x000000, "Member 'SE_ControllerInterface_C_ApplyVisibility::visibility' has a wrong offset!");
 
-// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyEnvironmentFactor
+// Function SE_ControllerInterface.SE_ControllerInterface_C.ApplyAlpha
 // 0x0004 (0x0004 - 0x0000)
-struct SE_ControllerInterface_C_ApplyEnvironmentFactor final
+struct SE_ControllerInterface_C_ApplyAlpha final
 {
 public:
-	float                                         EnvironmentFactor;                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         alpha;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(SE_ControllerInterface_C_ApplyEnvironmentFactor) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_ApplyEnvironmentFactor");
-static_assert(sizeof(SE_ControllerInterface_C_ApplyEnvironmentFactor) == 0x000004, "Wrong size on SE_ControllerInterface_C_ApplyEnvironmentFactor");
-static_assert(offsetof(SE_ControllerInterface_C_ApplyEnvironmentFactor, EnvironmentFactor) == 0x000000, "Member 'SE_ControllerInterface_C_ApplyEnvironmentFactor::EnvironmentFactor' has a wrong offset!");
+static_assert(alignof(SE_ControllerInterface_C_ApplyAlpha) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_ApplyAlpha");
+static_assert(sizeof(SE_ControllerInterface_C_ApplyAlpha) == 0x000004, "Wrong size on SE_ControllerInterface_C_ApplyAlpha");
+static_assert(offsetof(SE_ControllerInterface_C_ApplyAlpha, alpha) == 0x000000, "Member 'SE_ControllerInterface_C_ApplyAlpha::alpha' has a wrong offset!");
+
+// Function SE_ControllerInterface.SE_ControllerInterface_C.End
+// 0x0004 (0x0004 - 0x0000)
+struct SE_ControllerInterface_C_End final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(SE_ControllerInterface_C_End) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_End");
+static_assert(sizeof(SE_ControllerInterface_C_End) == 0x000004, "Wrong size on SE_ControllerInterface_C_End");
+static_assert(offsetof(SE_ControllerInterface_C_End, time) == 0x000000, "Member 'SE_ControllerInterface_C_End::time' has a wrong offset!");
+
+// Function SE_ControllerInterface.SE_ControllerInterface_C.Loop
+// 0x0004 (0x0004 - 0x0000)
+struct SE_ControllerInterface_C_Loop final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(SE_ControllerInterface_C_Loop) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_Loop");
+static_assert(sizeof(SE_ControllerInterface_C_Loop) == 0x000004, "Wrong size on SE_ControllerInterface_C_Loop");
+static_assert(offsetof(SE_ControllerInterface_C_Loop, time) == 0x000000, "Member 'SE_ControllerInterface_C_Loop::time' has a wrong offset!");
+
+// Function SE_ControllerInterface.SE_ControllerInterface_C.Start
+// 0x0004 (0x0004 - 0x0000)
+struct SE_ControllerInterface_C_Start final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(SE_ControllerInterface_C_Start) == 0x000004, "Wrong alignment on SE_ControllerInterface_C_Start");
+static_assert(sizeof(SE_ControllerInterface_C_Start) == 0x000004, "Wrong size on SE_ControllerInterface_C_Start");
+static_assert(offsetof(SE_ControllerInterface_C_Start, time) == 0x000000, "Member 'SE_ControllerInterface_C_Start::time' has a wrong offset!");
 
 }
 

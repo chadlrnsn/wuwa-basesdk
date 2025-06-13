@@ -41,7 +41,7 @@ public:
 	bool                                          K2Node_Event_bWasCancelled;                        // 0x01B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc__________;                                // 0x01B9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_1BA[0x6];                                      // 0x01BA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate_1;            // 0x01C0(0x0028)(ZeroConstructor)
+	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate_1; // 0x01C0(0x0028)(ZeroConstructor)
 	int32                                         ___int_Loop_Counter_Variable;                      // 0x01E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x01EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc___________1;                              // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -106,23 +106,26 @@ public:
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue_4;          // 0x047B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue_5;          // 0x047C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue_6;          // 0x047D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x047E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x047F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanOR_ReturnValue_2;                  // 0x0480(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_481[0x7];                                      // 0x0481(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue_7;          // 0x047E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x047F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x0480(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_2;                  // 0x0481(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_482[0x6];                                      // 0x0482(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSVisionData                           CallFunc____________;                              // 0x0488(0x0098)(ContainsInstancedReference, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     CallFunc_____________1;                            // 0x0520(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue_3;           // 0x0528(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class UAbilityTask_WaitGameplayEvent*         CallFunc_WaitGameplayEvent_ReturnValue;            // 0x0538(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0540(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x0541(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_542[0x6];                                      // 0x0542(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_Vision_MB1Fuludelisi_C*             K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi;      // 0x0548(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0550(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue_7;          // 0x0551(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_552[0x6];                                      // 0x0552(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_Vision_MB1Fuludelisi_C*             K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi_1;    // 0x0558(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0560(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanOR_ReturnValue_3;                  // 0x0520(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_521[0x7];                                      // 0x0521(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     CallFunc_____________1;                            // 0x0528(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue_3;           // 0x0530(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class UAbilityTask_WaitGameplayEvent*         CallFunc_WaitGameplayEvent_ReturnValue;            // 0x0540(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_3;                    // 0x0548(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x0549(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_54A[0x6];                                      // 0x054A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_Vision_MB1Fuludelisi_C*             K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi;      // 0x0550(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0558(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue_8;          // 0x0559(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_55A[0x6];                                      // 0x055A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_Vision_MB1Fuludelisi_C*             K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi_1;    // 0x0560(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0568(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime) == 0x000010, "Wrong alignment on GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime");
 static_assert(sizeof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime) == 0x000570, "Wrong size on GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime");
@@ -194,20 +197,22 @@ static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime,
 static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_EqualEqual_IntInt_ReturnValue_4) == 0x00047B, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_EqualEqual_IntInt_ReturnValue_4' has a wrong offset!");
 static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_EqualEqual_IntInt_ReturnValue_5) == 0x00047C, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_EqualEqual_IntInt_ReturnValue_5' has a wrong offset!");
 static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_EqualEqual_IntInt_ReturnValue_6) == 0x00047D, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_EqualEqual_IntInt_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_BooleanOR_ReturnValue) == 0x00047E, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_BooleanOR_ReturnValue_1) == 0x00047F, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_BooleanOR_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_BooleanOR_ReturnValue_2) == 0x000480, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_BooleanOR_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_EqualEqual_IntInt_ReturnValue_7) == 0x00047E, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_EqualEqual_IntInt_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_BooleanOR_ReturnValue) == 0x00047F, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_BooleanOR_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_BooleanOR_ReturnValue_1) == 0x000480, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_BooleanOR_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_BooleanOR_ReturnValue_2) == 0x000481, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_BooleanOR_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc____________) == 0x000488, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc____________' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_____________1) == 0x000520, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_____________1' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_Conv_IntToString_ReturnValue_3) == 0x000528, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_Conv_IntToString_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_WaitGameplayEvent_ReturnValue) == 0x000538, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_WaitGameplayEvent_ReturnValue' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_IsValid_ReturnValue_3) == 0x000540, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, ___bool_Has_Been_Initd_Variable) == 0x000541, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::___bool_Has_Been_Initd_Variable' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi) == 0x000548, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, K2Node_DynamicCast_bSuccess_1) == 0x000550, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_EqualEqual_IntInt_ReturnValue_7) == 0x000551, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_EqualEqual_IntInt_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi_1) == 0x000558, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi_1' has a wrong offset!");
-static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, K2Node_DynamicCast_bSuccess_2) == 0x000560, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_BooleanOR_ReturnValue_3) == 0x000520, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_BooleanOR_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_____________1) == 0x000528, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_____________1' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_Conv_IntToString_ReturnValue_3) == 0x000530, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_Conv_IntToString_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_WaitGameplayEvent_ReturnValue) == 0x000540, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_WaitGameplayEvent_ReturnValue' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_IsValid_ReturnValue_3) == 0x000548, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_IsValid_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, ___bool_Has_Been_Initd_Variable) == 0x000549, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::___bool_Has_Been_Initd_Variable' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi) == 0x000550, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, K2Node_DynamicCast_bSuccess_1) == 0x000558, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, CallFunc_EqualEqual_IntInt_ReturnValue_8) == 0x000559, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::CallFunc_EqualEqual_IntInt_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi_1) == 0x000560, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::K2Node_DynamicCast_AsBP_Vision_MB1Fuludelisi_1' has a wrong offset!");
+static_assert(offsetof(GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime, K2Node_DynamicCast_bSuccess_2) == 0x000568, "Member 'GA_Vision_ShowTime_C_ExecuteUbergraph_GA_Vision_ShowTime::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
 
 // Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.材质结束
 // 0x0004 (0x0004 - 0x0000)

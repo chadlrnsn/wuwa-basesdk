@@ -25,8 +25,8 @@ public:
 	class FString                                 ActionName;                                        // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
-	void OnPressAction(const struct FKey& key);
 	void OnReleaseAction(const struct FKey& key);
+	void OnPressAction(const struct FKey& key);
 
 public:
 	static class UClass* StaticClass()

@@ -20,13 +20,13 @@ namespace SDK
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.BreakStruct
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGuid                            OutWwiseGuid                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutWwiseShortId                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OutWwiseName                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EWwiseEventSwitchContainerLoading       OutSwitchContainerLoading                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EWwiseEventDestroyOptions               OutDestroyOptions                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutHardCodedSoundBankShortId                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGuid*                           OutWwiseGuid                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutWwiseShortId                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutWwiseName                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWwiseEventSwitchContainerLoading*      OutSwitchContainerLoading                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EWwiseEventDestroyOptions*              OutDestroyOptions                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutHardCodedSoundBankShortId                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UWwiseEventInfoLibrary::BreakStruct(const struct FWwiseEventInfo& Ref, struct FGuid* OutWwiseGuid, int32* OutWwiseShortId, class FString* OutWwiseName, EWwiseEventSwitchContainerLoading* OutSwitchContainerLoading, EWwiseEventDestroyOptions* OutDestroyOptions, int32* OutHardCodedSoundBankShortId)
 {
@@ -69,7 +69,7 @@ void UWwiseEventInfoLibrary::BreakStruct(const struct FWwiseEventInfo& Ref, stru
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.GetDestroyOptions
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EWwiseEventDestroyOptions               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EWwiseEventDestroyOptions UWwiseEventInfoLibrary::GetDestroyOptions(const struct FWwiseEventInfo& Ref)
@@ -97,7 +97,7 @@ EWwiseEventDestroyOptions UWwiseEventInfoLibrary::GetDestroyOptions(const struct
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.GetHardCodedSoundBankShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UWwiseEventInfoLibrary::GetHardCodedSoundBankShortId(const struct FWwiseEventInfo& Ref)
@@ -125,7 +125,7 @@ int32 UWwiseEventInfoLibrary::GetHardCodedSoundBankShortId(const struct FWwiseEv
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.GetSwitchContainerLoading
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EWwiseEventSwitchContainerLoading       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 EWwiseEventSwitchContainerLoading UWwiseEventInfoLibrary::GetSwitchContainerLoading(const struct FWwiseEventInfo& Ref)
@@ -153,7 +153,7 @@ EWwiseEventSwitchContainerLoading UWwiseEventInfoLibrary::GetSwitchContainerLoad
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.GetWwiseGuid
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FGuid UWwiseEventInfoLibrary::GetWwiseGuid(const struct FWwiseEventInfo& Ref)
@@ -181,7 +181,7 @@ struct FGuid UWwiseEventInfoLibrary::GetWwiseGuid(const struct FWwiseEventInfo& 
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.GetWwiseName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UWwiseEventInfoLibrary::GetWwiseName(const struct FWwiseEventInfo& Ref)
@@ -209,7 +209,7 @@ class FString UWwiseEventInfoLibrary::GetWwiseName(const struct FWwiseEventInfo&
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.GetWwiseShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UWwiseEventInfoLibrary::GetWwiseShortId(const struct FWwiseEventInfo& Ref)
@@ -237,9 +237,9 @@ int32 UWwiseEventInfoLibrary::GetWwiseShortId(const struct FWwiseEventInfo& Ref)
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.MakeStruct
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGuid                            WwiseGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     WwiseGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   WwiseShortId                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EWwiseEventSwitchContainerLoading       SwitchContainerLoading                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EWwiseEventDestroyOptions               DestroyOptions                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   HardCodedSoundBankShortId                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -275,8 +275,8 @@ struct FWwiseEventInfo UWwiseEventInfoLibrary::MakeStruct(const struct FGuid& Ww
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.SetDestroyOptions
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EWwiseEventDestroyOptions               DestroyOptions                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EWwiseEventDestroyOptions&        DestroyOptions                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseEventInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FWwiseEventInfo UWwiseEventInfoLibrary::SetDestroyOptions(const struct FWwiseEventInfo& Ref, const EWwiseEventDestroyOptions& DestroyOptions)
@@ -305,7 +305,7 @@ struct FWwiseEventInfo UWwiseEventInfoLibrary::SetDestroyOptions(const struct FW
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.SetHardCodedSoundBankShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   HardCodedSoundBankShortId                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseEventInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -335,8 +335,8 @@ struct FWwiseEventInfo UWwiseEventInfoLibrary::SetHardCodedSoundBankShortId(cons
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.SetSwitchContainerLoading
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EWwiseEventSwitchContainerLoading       SwitchContainerLoading                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EWwiseEventSwitchContainerLoading&SwitchContainerLoading                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseEventInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FWwiseEventInfo UWwiseEventInfoLibrary::SetSwitchContainerLoading(const struct FWwiseEventInfo& Ref, const EWwiseEventSwitchContainerLoading& SwitchContainerLoading)
@@ -365,8 +365,8 @@ struct FWwiseEventInfo UWwiseEventInfoLibrary::SetSwitchContainerLoading(const s
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.SetWwiseGuid
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGuid                            WwiseGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     WwiseGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseEventInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FWwiseEventInfo UWwiseEventInfoLibrary::SetWwiseGuid(const struct FWwiseEventInfo& Ref, const struct FGuid& WwiseGuid)
@@ -395,8 +395,8 @@ struct FWwiseEventInfo UWwiseEventInfoLibrary::SetWwiseGuid(const struct FWwiseE
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.SetWwiseName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseEventInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FWwiseEventInfo UWwiseEventInfoLibrary::SetWwiseName(const struct FWwiseEventInfo& Ref, const class FString& WwiseName)
@@ -425,7 +425,7 @@ struct FWwiseEventInfo UWwiseEventInfoLibrary::SetWwiseName(const struct FWwiseE
 // Function WwiseResourceLoader.WwiseEventInfoLibrary.SetWwiseShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseEventInfo                  Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseEventInfo&           Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   WwiseShortId                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseEventInfo                  ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -455,11 +455,11 @@ struct FWwiseEventInfo UWwiseEventInfoLibrary::SetWwiseShortId(const struct FWwi
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.BreakStruct
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseGroupValueInfo             Ref                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGuid                            OutAssetGuid                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutGroupShortId                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutWwiseShortId                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OutWwiseName                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseGroupValueInfo&      Ref                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGuid*                           OutAssetGuid                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutGroupShortId                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutWwiseShortId                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutWwiseName                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UWwiseGroupValueInfoLibrary::BreakStruct(const struct FWwiseGroupValueInfo& Ref, struct FGuid* OutAssetGuid, int32* OutGroupShortId, int32* OutWwiseShortId, class FString* OutWwiseName)
 {
@@ -496,7 +496,7 @@ void UWwiseGroupValueInfoLibrary::BreakStruct(const struct FWwiseGroupValueInfo&
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.GetAssetGuid
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseGroupValueInfo             Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseGroupValueInfo&      Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FGuid UWwiseGroupValueInfoLibrary::GetAssetGuid(const struct FWwiseGroupValueInfo& Ref)
@@ -524,7 +524,7 @@ struct FGuid UWwiseGroupValueInfoLibrary::GetAssetGuid(const struct FWwiseGroupV
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.GetGroupShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseGroupValueInfo             Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseGroupValueInfo&      Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UWwiseGroupValueInfoLibrary::GetGroupShortId(const struct FWwiseGroupValueInfo& Ref)
@@ -552,7 +552,7 @@ int32 UWwiseGroupValueInfoLibrary::GetGroupShortId(const struct FWwiseGroupValue
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.GetWwiseName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseGroupValueInfo             Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseGroupValueInfo&      Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UWwiseGroupValueInfoLibrary::GetWwiseName(const struct FWwiseGroupValueInfo& Ref)
@@ -580,7 +580,7 @@ class FString UWwiseGroupValueInfoLibrary::GetWwiseName(const struct FWwiseGroup
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.GetWwiseShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseGroupValueInfo             Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseGroupValueInfo&      Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UWwiseGroupValueInfoLibrary::GetWwiseShortId(const struct FWwiseGroupValueInfo& Ref)
@@ -608,10 +608,10 @@ int32 UWwiseGroupValueInfoLibrary::GetWwiseShortId(const struct FWwiseGroupValue
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.MakeStruct
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGuid                            AssetGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     AssetGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   GroupShortId                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   WwiseShortId                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseGroupValueInfo             ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FWwiseGroupValueInfo UWwiseGroupValueInfoLibrary::MakeStruct(const struct FGuid& AssetGuid, int32 GroupShortId, int32 WwiseShortId, const class FString& WwiseName)
@@ -642,8 +642,8 @@ struct FWwiseGroupValueInfo UWwiseGroupValueInfoLibrary::MakeStruct(const struct
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.SetAssetGuid
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseGroupValueInfo             Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGuid                            AssetGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseGroupValueInfo&      Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     AssetGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseGroupValueInfo             ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FWwiseGroupValueInfo UWwiseGroupValueInfoLibrary::SetAssetGuid(const struct FWwiseGroupValueInfo& Ref, const struct FGuid& AssetGuid)
@@ -672,7 +672,7 @@ struct FWwiseGroupValueInfo UWwiseGroupValueInfoLibrary::SetAssetGuid(const stru
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.SetGroupShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseGroupValueInfo             Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseGroupValueInfo&      Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   GroupShortId                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseGroupValueInfo             ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -702,8 +702,8 @@ struct FWwiseGroupValueInfo UWwiseGroupValueInfoLibrary::SetGroupShortId(const s
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.SetWwiseName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseGroupValueInfo             Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseGroupValueInfo&      Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseGroupValueInfo             ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FWwiseGroupValueInfo UWwiseGroupValueInfoLibrary::SetWwiseName(const struct FWwiseGroupValueInfo& Ref, const class FString& WwiseName)
@@ -732,7 +732,7 @@ struct FWwiseGroupValueInfo UWwiseGroupValueInfoLibrary::SetWwiseName(const stru
 // Function WwiseResourceLoader.WwiseGroupValueInfoLibrary.SetWwiseShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseGroupValueInfo             Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseGroupValueInfo&      Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   WwiseShortId                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseGroupValueInfo             ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -762,11 +762,11 @@ struct FWwiseGroupValueInfo UWwiseGroupValueInfoLibrary::SetWwiseShortId(const s
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.BreakStruct
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseObjectInfo                 Ref                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGuid                            OutWwiseGuid                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutWwiseShortId                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           OutWwiseName                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OutHardCodedSoundBankShortId                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseObjectInfo&          Ref                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGuid*                           OutWwiseGuid                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutWwiseShortId                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString*                          OutWwiseName                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutHardCodedSoundBankShortId                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UWwiseObjectInfoLibrary::BreakStruct(const struct FWwiseObjectInfo& Ref, struct FGuid* OutWwiseGuid, int32* OutWwiseShortId, class FString* OutWwiseName, int32* OutHardCodedSoundBankShortId)
 {
@@ -803,7 +803,7 @@ void UWwiseObjectInfoLibrary::BreakStruct(const struct FWwiseObjectInfo& Ref, st
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.GetHardCodedSoundBankShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseObjectInfo                 Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseObjectInfo&          Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UWwiseObjectInfoLibrary::GetHardCodedSoundBankShortId(const struct FWwiseObjectInfo& Ref)
@@ -831,7 +831,7 @@ int32 UWwiseObjectInfoLibrary::GetHardCodedSoundBankShortId(const struct FWwiseO
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.GetWwiseGuid
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseObjectInfo                 Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseObjectInfo&          Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGuid                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FGuid UWwiseObjectInfoLibrary::GetWwiseGuid(const struct FWwiseObjectInfo& Ref)
@@ -859,7 +859,7 @@ struct FGuid UWwiseObjectInfoLibrary::GetWwiseGuid(const struct FWwiseObjectInfo
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.GetWwiseName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseObjectInfo                 Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseObjectInfo&          Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UWwiseObjectInfoLibrary::GetWwiseName(const struct FWwiseObjectInfo& Ref)
@@ -887,7 +887,7 @@ class FString UWwiseObjectInfoLibrary::GetWwiseName(const struct FWwiseObjectInf
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.GetWwiseShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseObjectInfo                 Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseObjectInfo&          Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UWwiseObjectInfoLibrary::GetWwiseShortId(const struct FWwiseObjectInfo& Ref)
@@ -915,9 +915,9 @@ int32 UWwiseObjectInfoLibrary::GetWwiseShortId(const struct FWwiseObjectInfo& Re
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.MakeStruct
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGuid                            WwiseGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     WwiseGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   WwiseShortId                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   HardCodedSoundBankShortId                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseObjectInfo                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -949,7 +949,7 @@ struct FWwiseObjectInfo UWwiseObjectInfoLibrary::MakeStruct(const struct FGuid& 
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.SetHardCodedSoundBankShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseObjectInfo                 Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseObjectInfo&          Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   HardCodedSoundBankShortId                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseObjectInfo                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -979,8 +979,8 @@ struct FWwiseObjectInfo UWwiseObjectInfoLibrary::SetHardCodedSoundBankShortId(co
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.SetWwiseGuid
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseObjectInfo                 Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGuid                            WwiseGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseObjectInfo&          Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGuid&                     WwiseGuid                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseObjectInfo                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FWwiseObjectInfo UWwiseObjectInfoLibrary::SetWwiseGuid(const struct FWwiseObjectInfo& Ref, const struct FGuid& WwiseGuid)
@@ -1009,8 +1009,8 @@ struct FWwiseObjectInfo UWwiseObjectInfoLibrary::SetWwiseGuid(const struct FWwis
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.SetWwiseName
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseObjectInfo                 Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseObjectInfo&          Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    WwiseName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseObjectInfo                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FWwiseObjectInfo UWwiseObjectInfoLibrary::SetWwiseName(const struct FWwiseObjectInfo& Ref, const class FString& WwiseName)
@@ -1039,7 +1039,7 @@ struct FWwiseObjectInfo UWwiseObjectInfoLibrary::SetWwiseName(const struct FWwis
 // Function WwiseResourceLoader.WwiseObjectInfoLibrary.SetWwiseShortId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FWwiseObjectInfo                 Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWwiseObjectInfo&          Ref                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   WwiseShortId                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWwiseObjectInfo                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SCounterAttackCamera_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "STimeScale_structs.hpp"
+#include "SCounterAttackCamera_structs.hpp"
 
 
 namespace SDK

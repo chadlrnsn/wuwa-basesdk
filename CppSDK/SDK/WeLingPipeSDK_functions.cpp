@@ -45,7 +45,7 @@ bool UPipeWrapper::InitPipe()
 // Function WeLingPipeSDK.PipeWrapper.SendDataToPipeBinary
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// TArray<uint8>                           data                                                   (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    data                                                   (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPipeWrapper::SendDataToPipeBinary(const TArray<uint8>& data)
@@ -73,8 +73,8 @@ bool UPipeWrapper::SendDataToPipeBinary(const TArray<uint8>& data)
 // Function WeLingPipeSDK.PipeWrapper.SendDataToPipeBinaryWithKey
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           data                                                   (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    data                                                   (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPipeWrapper::SendDataToPipeBinaryWithKey(const class FString& key, const TArray<uint8>& data)
@@ -103,9 +103,9 @@ bool UPipeWrapper::SendDataToPipeBinaryWithKey(const class FString& key, const T
 // Function WeLingPipeSDK.PipeWrapper.SendDataToPipeBinaryWithKeyEx
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<uint8>                           data                                                   (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// class FString                           userid                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    data                                                   (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class FString&                    userid                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UPipeWrapper::SendDataToPipeBinaryWithKeyEx(const class FString& key, const TArray<uint8>& data, const class FString& userid)

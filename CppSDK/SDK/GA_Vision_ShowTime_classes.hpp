@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SVisionData_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SVisionData_structs.hpp"
 #include "GA_Base_classes.hpp"
 
 
@@ -19,28 +19,28 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Vision_ShowTime.GA_Vision_ShowTime_C
-// 0x0108 (0x0660 - 0x0558)
+// 0x0108 (0x0670 - 0x0568)
 class UGA_Vision_ShowTime_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_ShowTime_C;               // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UAbilityTask_WaitDelay*                 Async_Task;                                        // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                召唤开始_材质特效;                                 // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                召唤开始_粒子特效;                                 // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_BaseVision_C*                       幻象BP;                                            // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     玩家BP;                                            // 0x0580(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSVisionData                           幻象数据;                                          // 0x0588(0x0098)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference, HasGetValueTypeHash)
-	class UAbilityTask_WaitDelay*                 异步任务_添加材质;                                 // 0x0620(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                召唤结束_材质特效;                                 // 0x0628(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                销毁材质;                                          // 0x0630(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         材质Handle;                                        // 0x0638(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_63C[0x4];                                      // 0x063C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                变身结束_材质特效;                                 // 0x0640(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          错误启动;                                          // 0x0648(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_649[0x3];                                      // 0x0649(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         声骸和目标距离;                                    // 0x064C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     跟随对象;                                          // 0x0650(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Id;                                                // 0x0658(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_ShowTime_C;               // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UAbilityTask_WaitDelay*                 Async_Task;                                        // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                召唤开始_材质特效;                                 // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                召唤开始_粒子特效;                                 // 0x0580(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_BaseVision_C*                       幻象BP;                                            // 0x0588(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     玩家BP;                                            // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSVisionData                           幻象数据;                                          // 0x0598(0x0098)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference, HasGetValueTypeHash)
+	class UAbilityTask_WaitDelay*                 异步任务_添加材质;                                 // 0x0630(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                召唤结束_材质特效;                                 // 0x0638(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                销毁材质;                                          // 0x0640(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         材质Handle;                                        // 0x0648(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_64C[0x4];                                      // 0x064C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                变身结束_材质特效;                                 // 0x0650(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          错误启动;                                          // 0x0658(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_659[0x3];                                      // 0x0659(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         声骸和目标距离;                                    // 0x065C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     跟随对象;                                          // 0x0660(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Id;                                                // 0x0668(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Vision_ShowTime(int32 EntryPoint);
@@ -61,23 +61,23 @@ public:
 	}
 };
 static_assert(alignof(UGA_Vision_ShowTime_C) == 0x000008, "Wrong alignment on UGA_Vision_ShowTime_C");
-static_assert(sizeof(UGA_Vision_ShowTime_C) == 0x000660, "Wrong size on UGA_Vision_ShowTime_C");
-static_assert(offsetof(UGA_Vision_ShowTime_C, UberGraphFrame_GA_Vision_ShowTime_C) == 0x000558, "Member 'UGA_Vision_ShowTime_C::UberGraphFrame_GA_Vision_ShowTime_C' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, Async_Task) == 0x000560, "Member 'UGA_Vision_ShowTime_C::Async_Task' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 召唤开始_材质特效) == 0x000568, "Member 'UGA_Vision_ShowTime_C::召唤开始_材质特效' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 召唤开始_粒子特效) == 0x000570, "Member 'UGA_Vision_ShowTime_C::召唤开始_粒子特效' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 幻象BP) == 0x000578, "Member 'UGA_Vision_ShowTime_C::幻象BP' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 玩家BP) == 0x000580, "Member 'UGA_Vision_ShowTime_C::玩家BP' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 幻象数据) == 0x000588, "Member 'UGA_Vision_ShowTime_C::幻象数据' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 异步任务_添加材质) == 0x000620, "Member 'UGA_Vision_ShowTime_C::异步任务_添加材质' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 召唤结束_材质特效) == 0x000628, "Member 'UGA_Vision_ShowTime_C::召唤结束_材质特效' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 销毁材质) == 0x000630, "Member 'UGA_Vision_ShowTime_C::销毁材质' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 材质Handle) == 0x000638, "Member 'UGA_Vision_ShowTime_C::材质Handle' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 变身结束_材质特效) == 0x000640, "Member 'UGA_Vision_ShowTime_C::变身结束_材质特效' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 错误启动) == 0x000648, "Member 'UGA_Vision_ShowTime_C::错误启动' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 声骸和目标距离) == 0x00064C, "Member 'UGA_Vision_ShowTime_C::声骸和目标距离' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, 跟随对象) == 0x000650, "Member 'UGA_Vision_ShowTime_C::跟随对象' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_ShowTime_C, Id) == 0x000658, "Member 'UGA_Vision_ShowTime_C::Id' has a wrong offset!");
+static_assert(sizeof(UGA_Vision_ShowTime_C) == 0x000670, "Wrong size on UGA_Vision_ShowTime_C");
+static_assert(offsetof(UGA_Vision_ShowTime_C, UberGraphFrame_GA_Vision_ShowTime_C) == 0x000568, "Member 'UGA_Vision_ShowTime_C::UberGraphFrame_GA_Vision_ShowTime_C' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, Async_Task) == 0x000570, "Member 'UGA_Vision_ShowTime_C::Async_Task' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 召唤开始_材质特效) == 0x000578, "Member 'UGA_Vision_ShowTime_C::召唤开始_材质特效' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 召唤开始_粒子特效) == 0x000580, "Member 'UGA_Vision_ShowTime_C::召唤开始_粒子特效' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 幻象BP) == 0x000588, "Member 'UGA_Vision_ShowTime_C::幻象BP' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 玩家BP) == 0x000590, "Member 'UGA_Vision_ShowTime_C::玩家BP' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 幻象数据) == 0x000598, "Member 'UGA_Vision_ShowTime_C::幻象数据' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 异步任务_添加材质) == 0x000630, "Member 'UGA_Vision_ShowTime_C::异步任务_添加材质' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 召唤结束_材质特效) == 0x000638, "Member 'UGA_Vision_ShowTime_C::召唤结束_材质特效' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 销毁材质) == 0x000640, "Member 'UGA_Vision_ShowTime_C::销毁材质' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 材质Handle) == 0x000648, "Member 'UGA_Vision_ShowTime_C::材质Handle' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 变身结束_材质特效) == 0x000650, "Member 'UGA_Vision_ShowTime_C::变身结束_材质特效' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 错误启动) == 0x000658, "Member 'UGA_Vision_ShowTime_C::错误启动' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 声骸和目标距离) == 0x00065C, "Member 'UGA_Vision_ShowTime_C::声骸和目标距离' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, 跟随对象) == 0x000660, "Member 'UGA_Vision_ShowTime_C::跟随对象' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_ShowTime_C, Id) == 0x000668, "Member 'UGA_Vision_ShowTime_C::Id' has a wrong offset!");
 
 }
 

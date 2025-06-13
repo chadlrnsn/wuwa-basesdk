@@ -10,15 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "E_SE_PlayOrder_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroCurve_structs.hpp"
+#include "E_SE_PlayOrder_structs.hpp"
+#include "E_SE_RootType_structs.hpp"
+#include "SScreenEffectExtraState_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass EffectScreenPlayData.EffectScreenPlayData_C
-// 0x0060 (0x0098 - 0x0038)
+// 0x0120 (0x0158 - 0x0038)
 class UEffectScreenPlayData_C final : public UPrimaryDataAsset
 {
 public:
@@ -34,15 +37,21 @@ public:
 	int32                                         Order;                                             // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         fadeSpeed;                                         // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bUsedForSequence;                                  // 0x005C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bAutoDestroy;                                      // 0x005D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bUseAudio;                                         // 0x005E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5F[0x1];                                       // 0x005F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	E_SE_RootType                                 RootType;                                          // 0x005D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bAutoDestroy;                                      // 0x005E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bUseAudio;                                         // 0x005F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	class UAkAudioEvent*                          AudioEvent;                                        // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UAkAudioEvent*                          AudioEventEnd;                                     // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         AudioEventEndDelay;                                // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ConsoleCommandOnBegin;                             // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash)
 	class FString                                 ConsoleCommandOnEnd;                               // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash)
+	TMap<class FString, struct FKuroCurveLinearColor> LinearColorParameter;                          // 0x0098(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, struct FKuroCurveFloat>   FloatParameter;                                    // 0x00E8(0x0050)(Edit, BlueprintVisible)
+	float                                         EffectTweenSpeed;                                  // 0x0138(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_13C[0x4];                                      // 0x013C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSScreenEffectExtraState>       ExtraStates;                                       // 0x0140(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bStartLoopEndByCurve;                              // 0x0150(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	static class UClass* StaticClass()
@@ -55,7 +64,7 @@ public:
 	}
 };
 static_assert(alignof(UEffectScreenPlayData_C) == 0x000008, "Wrong alignment on UEffectScreenPlayData_C");
-static_assert(sizeof(UEffectScreenPlayData_C) == 0x000098, "Wrong size on UEffectScreenPlayData_C");
+static_assert(sizeof(UEffectScreenPlayData_C) == 0x000158, "Wrong size on UEffectScreenPlayData_C");
 static_assert(offsetof(UEffectScreenPlayData_C, Start) == 0x000038, "Member 'UEffectScreenPlayData_C::Start' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, Loop) == 0x00003C, "Member 'UEffectScreenPlayData_C::Loop' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, End) == 0x000040, "Member 'UEffectScreenPlayData_C::End' has a wrong offset!");
@@ -66,13 +75,19 @@ static_assert(offsetof(UEffectScreenPlayData_C, bNormalizeTime) == 0x000051, "Me
 static_assert(offsetof(UEffectScreenPlayData_C, Order) == 0x000054, "Member 'UEffectScreenPlayData_C::Order' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, fadeSpeed) == 0x000058, "Member 'UEffectScreenPlayData_C::fadeSpeed' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, bUsedForSequence) == 0x00005C, "Member 'UEffectScreenPlayData_C::bUsedForSequence' has a wrong offset!");
-static_assert(offsetof(UEffectScreenPlayData_C, bAutoDestroy) == 0x00005D, "Member 'UEffectScreenPlayData_C::bAutoDestroy' has a wrong offset!");
-static_assert(offsetof(UEffectScreenPlayData_C, bUseAudio) == 0x00005E, "Member 'UEffectScreenPlayData_C::bUseAudio' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, RootType) == 0x00005D, "Member 'UEffectScreenPlayData_C::RootType' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, bAutoDestroy) == 0x00005E, "Member 'UEffectScreenPlayData_C::bAutoDestroy' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, bUseAudio) == 0x00005F, "Member 'UEffectScreenPlayData_C::bUseAudio' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, AudioEvent) == 0x000060, "Member 'UEffectScreenPlayData_C::AudioEvent' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, AudioEventEnd) == 0x000068, "Member 'UEffectScreenPlayData_C::AudioEventEnd' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, AudioEventEndDelay) == 0x000070, "Member 'UEffectScreenPlayData_C::AudioEventEndDelay' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, ConsoleCommandOnBegin) == 0x000078, "Member 'UEffectScreenPlayData_C::ConsoleCommandOnBegin' has a wrong offset!");
 static_assert(offsetof(UEffectScreenPlayData_C, ConsoleCommandOnEnd) == 0x000088, "Member 'UEffectScreenPlayData_C::ConsoleCommandOnEnd' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, LinearColorParameter) == 0x000098, "Member 'UEffectScreenPlayData_C::LinearColorParameter' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, FloatParameter) == 0x0000E8, "Member 'UEffectScreenPlayData_C::FloatParameter' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, EffectTweenSpeed) == 0x000138, "Member 'UEffectScreenPlayData_C::EffectTweenSpeed' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, ExtraStates) == 0x000140, "Member 'UEffectScreenPlayData_C::ExtraStates' has a wrong offset!");
+static_assert(offsetof(UEffectScreenPlayData_C, bStartLoopEndByCurve) == 0x000150, "Member 'UEffectScreenPlayData_C::bStartLoopEndByCurve' has a wrong offset!");
 
 }
 

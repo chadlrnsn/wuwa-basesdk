@@ -18,21 +18,21 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C
-// 0x0040 (0x0598 - 0x0558)
-class GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C final : public UGA_Base_C
+// 0x0040 (0x05A8 - 0x0568)
+class UGA_Destroy_Bianshen_Vision_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Destroy_Bianshen_Vision_C;       // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	int32                                         召唤者ID;                                          // 0x0560(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_564[0x4];                                      // 0x0564(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     召唤者;                                            // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_BaseVision_C*                       幻象BP;                                            // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class UObject*                                变身结束_粒子特效;                                 // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                变身结束_材质特效;                                 // 0x0580(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          主动结束;                                          // 0x0588(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_589[0x3];                                      // 0x0589(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         材质Handle;                                        // 0x058C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          已结束;                                            // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Destroy_Bianshen_Vision_C;       // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	int32                                         召唤者ID;                                          // 0x0570(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_574[0x4];                                      // 0x0574(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     召唤者;                                            // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_BaseVision_C*                       幻象BP;                                            // 0x0580(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class UObject*                                变身结束_粒子特效;                                 // 0x0588(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                变身结束_材质特效;                                 // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          主动结束;                                          // 0x0598(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_599[0x3];                                      // 0x0599(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         材质Handle;                                        // 0x059C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          已结束;                                            // 0x05A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_GA_Destroy_Bianshen_Vision(int32 EntryPoint);
@@ -58,24 +58,24 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass GA_Destroy_Bianshen_Vision.GA_Destroy_Bianshen_Vision_C", true, "GA_Destroy_Bianshen_Vision_C">();
+		return StaticBPGeneratedClassImpl<"GA_Destroy_Bianshen_Vision_C">();
 	}
-	static class GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C* GetDefaultObj()
+	static class UGA_Destroy_Bianshen_Vision_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C>();
+		return GetDefaultObjImpl<UGA_Destroy_Bianshen_Vision_C>();
 	}
 };
-static_assert(alignof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C) == 0x000008, "Wrong alignment on GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C");
-static_assert(sizeof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C) == 0x000598, "Wrong size on GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C, UberGraphFrame_GA_Destroy_Bianshen_Vision_C) == 0x000558, "Member 'GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::UberGraphFrame_GA_Destroy_Bianshen_Vision_C' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C, 召唤者ID) == 0x000560, "Member 'GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::召唤者ID' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C, 召唤者) == 0x000568, "Member 'GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::召唤者' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C, 幻象BP) == 0x000570, "Member 'GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::幻象BP' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C, 变身结束_粒子特效) == 0x000578, "Member 'GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::变身结束_粒子特效' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C, 变身结束_材质特效) == 0x000580, "Member 'GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::变身结束_材质特效' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C, 主动结束) == 0x000588, "Member 'GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::主动结束' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C, 材质Handle) == 0x00058C, "Member 'GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::材质Handle' has a wrong offset!");
-static_assert(offsetof(GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C, 已结束) == 0x000590, "Member 'GA_Destroy_Bianshen_Vision::UGA_Destroy_Bianshen_Vision_C::已结束' has a wrong offset!");
+static_assert(alignof(UGA_Destroy_Bianshen_Vision_C) == 0x000008, "Wrong alignment on UGA_Destroy_Bianshen_Vision_C");
+static_assert(sizeof(UGA_Destroy_Bianshen_Vision_C) == 0x0005A8, "Wrong size on UGA_Destroy_Bianshen_Vision_C");
+static_assert(offsetof(UGA_Destroy_Bianshen_Vision_C, UberGraphFrame_GA_Destroy_Bianshen_Vision_C) == 0x000568, "Member 'UGA_Destroy_Bianshen_Vision_C::UberGraphFrame_GA_Destroy_Bianshen_Vision_C' has a wrong offset!");
+static_assert(offsetof(UGA_Destroy_Bianshen_Vision_C, 召唤者ID) == 0x000570, "Member 'UGA_Destroy_Bianshen_Vision_C::召唤者ID' has a wrong offset!");
+static_assert(offsetof(UGA_Destroy_Bianshen_Vision_C, 召唤者) == 0x000578, "Member 'UGA_Destroy_Bianshen_Vision_C::召唤者' has a wrong offset!");
+static_assert(offsetof(UGA_Destroy_Bianshen_Vision_C, 幻象BP) == 0x000580, "Member 'UGA_Destroy_Bianshen_Vision_C::幻象BP' has a wrong offset!");
+static_assert(offsetof(UGA_Destroy_Bianshen_Vision_C, 变身结束_粒子特效) == 0x000588, "Member 'UGA_Destroy_Bianshen_Vision_C::变身结束_粒子特效' has a wrong offset!");
+static_assert(offsetof(UGA_Destroy_Bianshen_Vision_C, 变身结束_材质特效) == 0x000590, "Member 'UGA_Destroy_Bianshen_Vision_C::变身结束_材质特效' has a wrong offset!");
+static_assert(offsetof(UGA_Destroy_Bianshen_Vision_C, 主动结束) == 0x000598, "Member 'UGA_Destroy_Bianshen_Vision_C::主动结束' has a wrong offset!");
+static_assert(offsetof(UGA_Destroy_Bianshen_Vision_C, 材质Handle) == 0x00059C, "Member 'UGA_Destroy_Bianshen_Vision_C::材质Handle' has a wrong offset!");
+static_assert(offsetof(UGA_Destroy_Bianshen_Vision_C, 已结束) == 0x0005A0, "Member 'UGA_Destroy_Bianshen_Vision_C::已结束' has a wrong offset!");
 
 }
 

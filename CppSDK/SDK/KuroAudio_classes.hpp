@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "KuroAudio_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroAudio_structs.hpp"
 #include "MovieScene_classes.hpp"
 
 
@@ -67,7 +67,7 @@ static_assert(offsetof(AKuroAudioStateVolume, State) == 0x0002F8, "Member 'AKuro
 static_assert(offsetof(AKuroAudioStateVolume, Priority) == 0x000308, "Member 'AKuroAudioStateVolume::Priority' has a wrong offset!");
 
 // Class KuroAudio.KuroAmbientSoundComponent
-// 0x0020 (0x0240 - 0x0220)
+// 0x0050 (0x0270 - 0x0220)
 class UKuroAmbientSoundComponent final : public USceneComponent
 {
 public:
@@ -76,12 +76,13 @@ public:
 	uint8                                         Pad_221[0x3];                                      // 0x0221(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AttenuationScalingFactor;                          // 0x0224(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FTransform>                     SoundPositions;                                    // 0x0228(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_238[0x8];                                      // 0x0238(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_238[0x38];                                     // 0x0238(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	void PlaySound();
+	void StopSound();
+
 	bool IsPlaying() const;
-	void PlaySound() const;
-	void StopSound(const int32 FadeDuration) const;
 
 public:
 	static class UClass* StaticClass()
@@ -94,7 +95,7 @@ public:
 	}
 };
 static_assert(alignof(UKuroAmbientSoundComponent) == 0x000010, "Wrong alignment on UKuroAmbientSoundComponent");
-static_assert(sizeof(UKuroAmbientSoundComponent) == 0x000240, "Wrong size on UKuroAmbientSoundComponent");
+static_assert(sizeof(UKuroAmbientSoundComponent) == 0x000270, "Wrong size on UKuroAmbientSoundComponent");
 static_assert(offsetof(UKuroAmbientSoundComponent, AudioEvent) == 0x000218, "Member 'UKuroAmbientSoundComponent::AudioEvent' has a wrong offset!");
 static_assert(offsetof(UKuroAmbientSoundComponent, bAutoPlay) == 0x000220, "Member 'UKuroAmbientSoundComponent::bAutoPlay' has a wrong offset!");
 static_assert(offsetof(UKuroAmbientSoundComponent, AttenuationScalingFactor) == 0x000224, "Member 'UKuroAmbientSoundComponent::AttenuationScalingFactor' has a wrong offset!");
@@ -160,7 +161,6 @@ public:
 	void DynamicReverbReset();
 	void DynamicReverbTrace(const struct FVector& Location, const bool bForceUpdate);
 
-	struct FKuroDynamicReverbParam CalculateDynamicReverbParam(const struct FVector& Location, const float HorizontalTraceDistance, const float VerticalTraceDistance) const;
 	struct FKuroAudioEnvironmentInfo GetEnvironmentInfo(const struct FVector& Location) const;
 	struct FKuroAudioEnvironmentInfo GetEnvironmentInfo_MusicCompatible(const struct FVector& Location) const;
 	TMap<class FString, class FString> GetEnvironmentStates(const struct FVector& Location) const;

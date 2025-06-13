@@ -74,7 +74,7 @@ void UGA_Common_QTE_C::K2_ActivateAbility()
 // Function GA_Common_QTE.GA_Common_QTE_C.EventReceived_E8C2FC224B0A82D0076DE58540825291
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayEventData               Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void UGA_Common_QTE_C::EventReceived_E8C2FC224B0A82D0076DE58540825291(const struct FGameplayEventData& Payload)
 {

@@ -37,6 +37,20 @@ void ABP_DispersionLightPostprocess_C::ExecuteUbergraph_BP_DispersionLightPostpr
 }
 
 
+// Function BP_DispersionLightPostprocess.BP_DispersionLightPostprocess_C.ReceiveDestroyed
+// (Event, Public, BlueprintEvent)
+
+void ABP_DispersionLightPostprocess_C::ReceiveDestroyed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DispersionLightPostprocess_C", "ReceiveDestroyed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_DispersionLightPostprocess.BP_DispersionLightPostprocess_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:

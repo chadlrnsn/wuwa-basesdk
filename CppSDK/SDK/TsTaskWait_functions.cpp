@@ -17,23 +17,21 @@
 namespace SDK
 {
 
-// Function TsTaskWait.TsTaskWait_C.ReceiveExecuteAI
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsTaskWait.TsTaskWait_C.ExecuteUbergraph_TsTaskWait
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskWait_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+void UTsTaskWait_C::ExecuteUbergraph_TsTaskWait(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskWait_C", "ReceiveExecuteAI");
+		Func = Class->GetFunction("TsTaskWait_C", "ExecuteUbergraph_TsTaskWait");
 
-	Params::TsTaskWait_C_ReceiveExecuteAI Parms{};
+	Params::TsTaskWait_C_ExecuteUbergraph_TsTaskWait Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -73,21 +71,23 @@ void UTsTaskWait_C::ReceiveTickAI(class AAIController* OwnerController, class AP
 }
 
 
-// Function TsTaskWait.TsTaskWait_C.ExecuteUbergraph_TsTaskWait
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Function TsTaskWait.TsTaskWait_C.ReceiveExecuteAI
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskWait_C::ExecuteUbergraph_TsTaskWait(int32 EntryPoint)
+void UTsTaskWait_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskWait_C", "ExecuteUbergraph_TsTaskWait");
+		Func = Class->GetFunction("TsTaskWait_C", "ReceiveExecuteAI");
 
-	Params::TsTaskWait_C_ExecuteUbergraph_TsTaskWait Parms{};
+	Params::TsTaskWait_C_ReceiveExecuteAI Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "SMaterialDebugInfo_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -23,9 +23,9 @@ class UPD_MaterialDebug_C final : public UPrimaryDataAsset
 {
 public:
 	TMap<int32, class FString>                    MaterialControllerList;                            // 0x0038(0x0050)(Edit, BlueprintVisible)
-	TMap<class FString, struct FSMaterialDebugInfo> Body;                                              // 0x0088(0x0050)(Edit, BlueprintVisible)
-	TMap<class FString, struct FSMaterialDebugInfo> Weapon;                                            // 0x00D8(0x0050)(Edit, BlueprintVisible)
-	TMap<class FString, struct FSMaterialDebugInfo> Hulu;                                              // 0x0128(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, struct FSMaterialDebugInfo> Body;                                            // 0x0088(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, struct FSMaterialDebugInfo> Weapon;                                          // 0x00D8(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, struct FSMaterialDebugInfo> Hulu;                                            // 0x0128(0x0050)(Edit, BlueprintVisible)
 
 public:
 	static class UClass* StaticClass()

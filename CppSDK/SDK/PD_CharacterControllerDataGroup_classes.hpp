@@ -21,7 +21,7 @@ namespace SDK
 class UPD_CharacterControllerDataGroup_C final : public UPrimaryDataAsset
 {
 public:
-	TMap<class UPD_CharacterControllerData_C*, float> DataMap;                                           // 0x0038(0x0050)(Edit, BlueprintVisible)
+	TMap<class UPD_CharacterControllerData_C*, float> DataMap;                                       // 0x0038(0x0050)(Edit, BlueprintVisible)
 	bool                                          IgnoreTimeDilation;                                // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          CleanOriginEffect;                                 // 0x0089(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay)
 

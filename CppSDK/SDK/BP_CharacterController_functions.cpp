@@ -40,7 +40,7 @@ void ABP_CharacterController_C::ExecuteUbergraph_BP_CharacterController(int32 En
 // Function BP_CharacterController.BP_CharacterController_C.OnReleaseAnyKey
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FKey&                      key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
 void ABP_CharacterController_C::OnReleaseAnyKey(const struct FKey& key)
 {
@@ -60,7 +60,7 @@ void ABP_CharacterController_C::OnReleaseAnyKey(const struct FKey& key)
 // Function BP_CharacterController.BP_CharacterController_C.OnPressAnyKey
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FKey                             key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, UObjectWrapper, HasGetValueTypeHash)
+// const struct FKey&                      key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, UObjectWrapper, HasGetValueTypeHash)
 
 void ABP_CharacterController_C::OnPressAnyKey(const struct FKey& key)
 {

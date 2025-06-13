@@ -26,9 +26,9 @@ public:
 	class FString                                 ItemBlackboardKey;                                 // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 
 public:
-	void InitTsVariables();
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_TsTaskAiUseItem(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void InitTsVariables();
 
 public:
 	static class UClass* StaticClass()

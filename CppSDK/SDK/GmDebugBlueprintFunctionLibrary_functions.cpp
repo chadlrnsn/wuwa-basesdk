@@ -441,7 +441,7 @@ bool UGmDebugBlueprintFunctionLibrary_C::TsGetGmIsOpen(class UObject* __WorldCon
 // Function GmDebugBlueprintFunctionLibrary.GmDebugBlueprintFunctionLibrary_C.TsRunGm
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           gmStr                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    gmStr                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UGmDebugBlueprintFunctionLibrary_C::TsRunGm(const class FString& gmStr, class UObject* __WorldContext)

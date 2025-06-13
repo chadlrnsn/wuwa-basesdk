@@ -22,7 +22,7 @@ namespace SDK
 class alignas(0x10) UCommandService final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(const class FString& ReceiveData)> OnReceivedCommand;                                 // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& ReceiveData)> OnReceivedCommand;              // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_40[0x30];                                      // 0x0040(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -52,7 +52,7 @@ public:
 	static bool IsPortInUse(int32 Port);
 	static bool IsTcpPortInUse(int32 Port);
 	static bool IsUdpPortInUse(int32 Port);
-	static void ReadBatchFilesAsync(const TArray<class FString>& FilePaths, TDelegate<void(TArray<struct FReadFileData>& LoadedFiles, TArray<class FString>& ReadFailedFiles)> OnAllFilesRead);
+	static void ReadBatchFilesAsync(const TArray<class FString>& FilePaths, TDelegate<void(const TArray<struct FReadFileData>& LoadedFiles, const TArray<class FString>& ReadFailedFiles)> OnAllFilesRead);
 	static void ReadFileAsync(const class FString& FilePath, TDelegate<void(bool IsSuccess, const class FString& FileContent)> OnFileRead);
 	static void SendHttpRequest(const class FString& Method, const class FString& Url, const TMap<class FString, class FString>& HeaderParam, const class FString& Content, TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handler);
 	static bool SendMessage(const class FString& Msg, const class FString& Ip, int32 Port);

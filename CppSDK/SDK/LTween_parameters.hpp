@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "LTween_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -75,7 +75,7 @@ struct LTweenBPLibrary_ColorTo final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FColor& value)>         setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FColor& value)>   setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FColor                                 startValue;                                        // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FColor                                 endValue;                                          // 0x0034(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         duration;                                          // 0x0038(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -221,7 +221,7 @@ struct LTweenBPLibrary_LinearColorTo final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FLinearColor& value)>   setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FLinearColor& value)> setter;                                        // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FLinearColor                           startValue;                                        // 0x0030(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           endValue;                                          // 0x0040(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         duration;                                          // 0x0050(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -735,7 +735,7 @@ struct LTweenBPLibrary_QuaternionTo final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FQuat& value)>          setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FQuat& value)>    setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FQuat                                  startValue;                                        // 0x0030(0x0010)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FQuat                                  endValue;                                          // 0x0040(0x0010)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	float                                         duration;                                          // 0x0050(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -777,7 +777,7 @@ struct LTweenBPLibrary_RotatorTo final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FRotator& value)>       setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FRotator& value)> setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FRotator                               startValue;                                        // 0x0030(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FRotator                               endValue;                                          // 0x003C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	float                                         duration;                                          // 0x0048(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -816,7 +816,7 @@ struct LTweenBPLibrary_Vector2To final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FVector2D& value)>      setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FVector2D& value)> setter;                                           // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FVector2D                              startValue;                                        // 0x0030(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector2D                              endValue;                                          // 0x0038(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         duration;                                          // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -842,7 +842,7 @@ struct LTweenBPLibrary_Vector3To final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FVector& value)>        setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FVector& value)>  setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FVector                                startValue;                                        // 0x0030(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                endValue;                                          // 0x003C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         duration;                                          // 0x0048(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -868,7 +868,7 @@ struct LTweenBPLibrary_Vector4To final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(struct FVector4& value)>       setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FVector4& value)> setter;                                            // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 	struct FVector4                               startValue;                                        // 0x0030(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector4                               endValue;                                          // 0x0040(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         duration;                                          // 0x0050(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

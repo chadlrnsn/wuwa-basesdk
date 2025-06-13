@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_classes.hpp"
-#include "Engine_classes.hpp"
 #include "KuroHotPatch_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -91,7 +91,7 @@ class UKuroCheckFiles final : public UObject
 public:
 	TArray<struct FKuroCheckInfoEntry>            CheckList;                                         // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	class FString                                 TmpSuffix;                                         // 0x0040(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 Current, int32 Total)> ProgressDelegate;                                  // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 Current, int32 Total)> ProgressDelegate;                     // 0x0050(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              CompleteDelegate;                                  // 0x0060(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_70[0x8];                                       // 0x0070(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -141,8 +141,8 @@ static_assert(sizeof(UKuroConfigPatcher) == 0x000030, "Wrong size on UKuroConfig
 class UKuroBinPatch final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(int64 CurrentSize)> ProgressDelegate;                                  // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 ResultCode, const TArray<class FString>& SucFiles)> CompleteDelegate;                                  // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int64 CurrentSize)> ProgressDelegate;                              // 0x0030(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 ResultCode, const TArray<class FString>& SucFiles)> CompleteDelegate; // 0x0040(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_50[0x10];                                      // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

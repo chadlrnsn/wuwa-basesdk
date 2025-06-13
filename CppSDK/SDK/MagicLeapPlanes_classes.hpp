@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "MagicLeapPlanes_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -32,8 +32,8 @@ public:
 	uint8                                         Pad_23D[0x3];                                      // 0x023D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         SimilarityThreshold;                               // 0x0240(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_244[0x4];                                      // 0x0244(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool bSuccess, TArray<struct FMagicLeapPlaneResult>& Planes, TArray<struct FMagicLeapPlaneBoundaries>& Polygons)> OnPlanesQueryResult;                               // 0x0248(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
-	TMulticastInlineDelegate<void(bool bSuccess, struct FGuid& QueryHandle, EMagicLeapPlaneQueryType QueryType, TArray<struct FMagicLeapPlaneResult>& NewPlanes, TArray<struct FGuid>& RemovedPlaneIDs, TArray<struct FMagicLeapPlaneBoundaries>& NewPolygons, TArray<struct FGuid>& RemovedPolygonIDs)> OnPersistentPlanesQueryResult;                     // 0x0258(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const bool bSuccess, const TArray<struct FMagicLeapPlaneResult>& Planes, const TArray<struct FMagicLeapPlaneBoundaries>& Polygons)> OnPlanesQueryResult; // 0x0248(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(const bool bSuccess, const struct FGuid& QueryHandle, const EMagicLeapPlaneQueryType QueryType, const TArray<struct FMagicLeapPlaneResult>& NewPlanes, const TArray<struct FGuid>& RemovedPlaneIDs, const TArray<struct FMagicLeapPlaneBoundaries>& NewPolygons, const TArray<struct FGuid>& RemovedPolygonIDs)> OnPersistentPlanesQueryResult; // 0x0258(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_268[0x18];                                     // 0x0268(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -71,8 +71,8 @@ public:
 	static bool DestroyTracker();
 	static struct FTransform GetContentScale(const class AActor* ContentActor, const struct FMagicLeapPlaneResult& PlaneResult);
 	static bool IsTrackerValid();
-	static bool PlanesPersistentQueryBeginAsync(const struct FMagicLeapPlanesQuery& Query, const struct FGuid& Handle, const TDelegate<void(bool bSuccess, struct FGuid& QueryHandle, EMagicLeapPlaneQueryType QueryType, TArray<struct FMagicLeapPlaneResult>& NewPlanes, TArray<struct FGuid>& RemovedPlaneIDs, TArray<struct FMagicLeapPlaneBoundaries>& NewPolygons, TArray<struct FGuid>& RemovedPolygonIDs)>& ResultDelegate);
-	static bool PlanesQueryBeginAsync(const struct FMagicLeapPlanesQuery& Query, const TDelegate<void(bool bSuccess, TArray<struct FMagicLeapPlaneResult>& Planes, TArray<struct FMagicLeapPlaneBoundaries>& Polygons)>& ResultDelegate);
+	static bool PlanesPersistentQueryBeginAsync(const struct FMagicLeapPlanesQuery& Query, const struct FGuid& Handle, const TDelegate<void(const bool bSuccess, const struct FGuid& QueryHandle, const EMagicLeapPlaneQueryType QueryType, const TArray<struct FMagicLeapPlaneResult>& NewPlanes, const TArray<struct FGuid>& RemovedPlaneIDs, const TArray<struct FMagicLeapPlaneBoundaries>& NewPolygons, const TArray<struct FGuid>& RemovedPolygonIDs)>& ResultDelegate);
+	static bool PlanesQueryBeginAsync(const struct FMagicLeapPlanesQuery& Query, const TDelegate<void(const bool bSuccess, const TArray<struct FMagicLeapPlaneResult>& Planes, const TArray<struct FMagicLeapPlaneBoundaries>& Polygons)>& ResultDelegate);
 	static void RemoveFlagsNotInQuery(const TArray<EMagicLeapPlaneQueryFlags>& InQueryFlags, const TArray<EMagicLeapPlaneQueryFlags>& InResultFlags, TArray<EMagicLeapPlaneQueryFlags>* OutFlags);
 	static bool RemovePersistentQuery(const struct FGuid& Handle);
 	static void ReorderPlaneFlags(const TArray<EMagicLeapPlaneQueryFlags>& InPriority, const TArray<EMagicLeapPlaneQueryFlags>& InFlagsToReorder, TArray<EMagicLeapPlaneQueryFlags>* OutReorderedFlags);

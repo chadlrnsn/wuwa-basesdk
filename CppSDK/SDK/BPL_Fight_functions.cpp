@@ -21,7 +21,7 @@ namespace SDK
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::添加标签(class ATsBaseCharacter_C* 角色, const struct FGameplayTag& 标签, class UObject* __WorldContext)
@@ -45,7 +45,7 @@ void UBPL_Fight_C::添加标签(class ATsBaseCharacter_C* 角色, const struct F
 // (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::清除标签(class ATsBaseCharacter_C* 角色, const struct FGameplayTag& 标签, class UObject* __WorldContext)
@@ -69,7 +69,7 @@ void UBPL_Fight_C::清除标签(class ATsBaseCharacter_C* 角色, const struct F
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTag                     标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -96,7 +96,7 @@ bool UBPL_Fight_C::是否有标签(class ATsBaseCharacter_C* 角色, const struc
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UBP_MainGameInstance_C*           AsBP_Main_Game_Instance                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UBP_MainGameInstance_C**          AsBP_Main_Game_Instance                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::获取游戏实例(class UObject* __WorldContext, class UBP_MainGameInstance_C** AsBP_Main_Game_Instance)
 {
@@ -124,7 +124,7 @@ void UBPL_Fight_C::获取游戏实例(class UObject* __WorldContext, class UBP_M
 // float                                   仰角                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   长度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    坐标点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   坐标点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::获取Actor周围坐标点(class AActor* Actor, float 旋转, float 仰角, float 长度, class UObject* __WorldContext, struct FVectorDouble* 坐标点)
 {
@@ -152,17 +152,17 @@ void UBPL_Fight_C::获取Actor周围坐标点(class AActor* Actor, float 旋转,
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Context                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    Start                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    End                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             Start                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             End                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // ETraceTypeQuery                         TraceChannel                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bTraceComplex                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // EDrawDebugTrace                         DrawDebugType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bIgnoreSelf                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FLinearColor                     TraceColor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     TraceHitColor                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              TraceColor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              TraceHitColor                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   DrawTime                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FHitResult                       OutHit                                                 (Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// struct FHitResult*                      OutHit                                                 (Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_Fight_C::射线检测(class UObject* Context, const struct FVectorDouble& Start, const struct FVectorDouble& End, ETraceTypeQuery TraceChannel, bool bTraceComplex, EDrawDebugTrace DrawDebugType, bool bIgnoreSelf, const struct FLinearColor& TraceColor, const struct FLinearColor& TraceHitColor, float DrawTime, class UObject* __WorldContext, struct FHitResult* OutHit)
@@ -200,7 +200,7 @@ bool UBPL_Fight_C::射线检测(class UObject* Context, const struct FVectorDoub
 // Parameters:
 // float                                   Input                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Output                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  Output                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::角度转化(float Input, class UObject* __WorldContext, float* Output)
 {
@@ -228,7 +228,7 @@ void UBPL_Fight_C::角度转化(float Input, class UObject* __WorldContext, floa
 // float                                   总时间                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UCurveFloat*                      曲线                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   百分比                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  百分比                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::计算曲线值(float 已经过时间, float 总时间, class UCurveFloat* 曲线, class UObject* __WorldContext, float* 百分比)
 {
@@ -258,7 +258,7 @@ void UBPL_Fight_C::计算曲线值(float 已经过时间, float 总时间, class
 // float                                   总时间                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UCurveVector*                     向量曲线                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          向量值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         向量值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::计算向量曲线值(float 已经经过时间, float 总时间, class UCurveVector* 向量曲线, class UObject* __WorldContext, struct FVector* 向量值)
 {
@@ -284,13 +284,13 @@ void UBPL_Fight_C::计算向量曲线值(float 已经经过时间, float 总时�
 // Function BPL_Fight.BPL_Fight_C.获取目标周围坐标点
 // (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FRotator                         目标旋转                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FVectorDouble                    目标坐标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FRotator&                  目标旋转                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FVectorDouble&             目标坐标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   旋转                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   仰角                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   长度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble                    坐标点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   坐标点                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::获取目标周围坐标点(const struct FRotator& 目标旋转, const struct FVectorDouble& 目标坐标, float 旋转, float 仰角, float 长度, class UObject* __WorldContext, struct FVectorDouble* 坐标点)
 {
@@ -321,7 +321,7 @@ void UBPL_Fight_C::获取目标周围坐标点(const struct FRotator& 目标旋�
 // class ATsBaseCharacter_C*               设置对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UPD_CharacterControllerData_C*    材质配置                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::设置材质效果(class ATsBaseCharacter_C* 设置对象, class UPD_CharacterControllerData_C* 材质配置, class UObject* __WorldContext, int32* Handle)
 {
@@ -373,7 +373,7 @@ void UBPL_Fight_C::删除材质效果(class ATsBaseCharacter_C* 设置对象_, i
 // float                                   角色1反应精通                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   角色2反应精通                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::反应伤害倍率计算(float 角色1反应精通, float 角色2反应精通, class UObject* __WorldContext, float* Result)
 {
@@ -401,14 +401,14 @@ void UBPL_Fight_C::反应伤害倍率计算(float 角色1反应精通, float 角
 // class ATsBaseCharacter_C*               使用者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   GE的等级                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FGameplayTagContainer            添加AssetTags                                          (BlueprintVisible, BlueprintReadOnly, Parm)
-// struct FGameplayTagContainer            添加GrantedTags                                        (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FGameplayTagContainer&     添加AssetTags                                          (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FGameplayTagContainer&     添加GrantedTags                                        (BlueprintVisible, BlueprintReadOnly, Parm)
 // int32                                   层数                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UClass*                           GE的类型                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FKuroGameplayParameterContainer  GE的参数                                               (BlueprintVisible, BlueprintReadOnly, Parm)
+// const struct FKuroGameplayParameterContainer&GE的参数                                               (BlueprintVisible, BlueprintReadOnly, Parm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, OutParm, NoDestructor, HasGetValueTypeHash)
+// struct FActiveGameplayEffectHandle*     ActiveHandle                                           (Parm, OutParm, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_Fight_C::使用GE(class ATsBaseCharacter_C* 使用者, class ATsBaseCharacter_C* 目标, int32 GE的等级, const struct FGameplayTagContainer& 添加AssetTags, const struct FGameplayTagContainer& 添加GrantedTags, int32 层数, float Duration, class UClass* GE的类型, const struct FKuroGameplayParameterContainer& GE的参数, class UObject* __WorldContext, struct FActiveGameplayEffectHandle* ActiveHandle) const
 {

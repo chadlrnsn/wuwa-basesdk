@@ -37,17 +37,6 @@ enum class ESendStage : uint8
 	ESS_MAX                                  = 5,
 };
 
-// ScriptStruct KuroUtility.PreloadObjectCollection
-// 0x0010 (0x0010 - 0x0000)
-struct FPreloadObjectCollection final
-{
-public:
-	TArray<class UObject*>                        Assets;                                            // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FPreloadObjectCollection) == 0x000008, "Wrong alignment on FPreloadObjectCollection");
-static_assert(sizeof(FPreloadObjectCollection) == 0x000010, "Wrong size on FPreloadObjectCollection");
-static_assert(offsetof(FPreloadObjectCollection, Assets) == 0x000000, "Member 'FPreloadObjectCollection::Assets' has a wrong offset!");
-
 // ScriptStruct KuroUtility.TrophyDetailData
 // 0x0058 (0x0058 - 0x0000)
 struct FTrophyDetailData final
@@ -117,6 +106,58 @@ static_assert(offsetof(FTrophyInfoData, count) == 0x000004, "Member 'FTrophyInfo
 static_assert(offsetof(FTrophyInfoData, trophyDetail) == 0x000008, "Member 'FTrophyInfoData::trophyDetail' has a wrong offset!");
 static_assert(offsetof(FTrophyInfoData, trophyData) == 0x000018, "Member 'FTrophyInfoData::trophyData' has a wrong offset!");
 
+// ScriptStruct KuroUtility.PreloadObjectCollection
+// 0x0010 (0x0010 - 0x0000)
+struct FPreloadObjectCollection final
+{
+public:
+	TArray<class UObject*>                        Assets;                                            // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FPreloadObjectCollection) == 0x000008, "Wrong alignment on FPreloadObjectCollection");
+static_assert(sizeof(FPreloadObjectCollection) == 0x000010, "Wrong size on FPreloadObjectCollection");
+static_assert(offsetof(FPreloadObjectCollection, Assets) == 0x000000, "Member 'FPreloadObjectCollection::Assets' has a wrong offset!");
+
+// ScriptStruct KuroUtility.ProductData
+// 0x0090 (0x0090 - 0x0000)
+struct FProductData final
+{
+public:
+	class FString                                 id;                                                // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 type;                                              // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         price;                                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   displayPrice;                                      // 0x0028(0x0018)(NativeAccessSpecifierPublic)
+	class FText                                   description;                                       // 0x0040(0x0018)(NativeAccessSpecifierPublic)
+	class FText                                   displayName;                                       // 0x0058(0x0018)(NativeAccessSpecifierPublic)
+	class FText                                   label;                                             // 0x0070(0x0018)(NativeAccessSpecifierPublic)
+	struct FDateTime                              endData;                                           // 0x0088(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FProductData) == 0x000008, "Wrong alignment on FProductData");
+static_assert(sizeof(FProductData) == 0x000090, "Wrong size on FProductData");
+static_assert(offsetof(FProductData, id) == 0x000000, "Member 'FProductData::id' has a wrong offset!");
+static_assert(offsetof(FProductData, type) == 0x000010, "Member 'FProductData::type' has a wrong offset!");
+static_assert(offsetof(FProductData, price) == 0x000020, "Member 'FProductData::price' has a wrong offset!");
+static_assert(offsetof(FProductData, displayPrice) == 0x000028, "Member 'FProductData::displayPrice' has a wrong offset!");
+static_assert(offsetof(FProductData, description) == 0x000040, "Member 'FProductData::description' has a wrong offset!");
+static_assert(offsetof(FProductData, displayName) == 0x000058, "Member 'FProductData::displayName' has a wrong offset!");
+static_assert(offsetof(FProductData, label) == 0x000070, "Member 'FProductData::label' has a wrong offset!");
+static_assert(offsetof(FProductData, endData) == 0x000088, "Member 'FProductData::endData' has a wrong offset!");
+
+// ScriptStruct KuroUtility.BlockUserData
+// 0x0018 (0x0018 - 0x0000)
+struct FBlockUserData final
+{
+public:
+	int32                                         nextOffset;                                        // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         previousOffset;                                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         blockUsers;                                        // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FBlockUserData) == 0x000008, "Wrong alignment on FBlockUserData");
+static_assert(sizeof(FBlockUserData) == 0x000018, "Wrong size on FBlockUserData");
+static_assert(offsetof(FBlockUserData, nextOffset) == 0x000000, "Member 'FBlockUserData::nextOffset' has a wrong offset!");
+static_assert(offsetof(FBlockUserData, previousOffset) == 0x000004, "Member 'FBlockUserData::previousOffset' has a wrong offset!");
+static_assert(offsetof(FBlockUserData, blockUsers) == 0x000008, "Member 'FBlockUserData::blockUsers' has a wrong offset!");
+
 // ScriptStruct KuroUtility.PropertyPair
 // 0x0010 (0x0010 - 0x0000)
 struct FPropertyPair final
@@ -146,47 +187,6 @@ static_assert(sizeof(FBasicPresenceData) == 0x000018, "Wrong size on FBasicPrese
 static_assert(offsetof(FBasicPresenceData, accountId) == 0x000000, "Member 'FBasicPresenceData::accountId' has a wrong offset!");
 static_assert(offsetof(FBasicPresenceData, OnlineState) == 0x000010, "Member 'FBasicPresenceData::OnlineState' has a wrong offset!");
 static_assert(offsetof(FBasicPresenceData, Context) == 0x000014, "Member 'FBasicPresenceData::Context' has a wrong offset!");
-
-// ScriptStruct KuroUtility.BlockUserData
-// 0x0018 (0x0018 - 0x0000)
-struct FBlockUserData final
-{
-public:
-	int32                                         nextOffset;                                        // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         previousOffset;                                    // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         blockUsers;                                        // 0x0008(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FBlockUserData) == 0x000008, "Wrong alignment on FBlockUserData");
-static_assert(sizeof(FBlockUserData) == 0x000018, "Wrong size on FBlockUserData");
-static_assert(offsetof(FBlockUserData, nextOffset) == 0x000000, "Member 'FBlockUserData::nextOffset' has a wrong offset!");
-static_assert(offsetof(FBlockUserData, previousOffset) == 0x000004, "Member 'FBlockUserData::previousOffset' has a wrong offset!");
-static_assert(offsetof(FBlockUserData, blockUsers) == 0x000008, "Member 'FBlockUserData::blockUsers' has a wrong offset!");
-
-// ScriptStruct KuroUtility.ProductData
-// 0x0090 (0x0090 - 0x0000)
-struct FProductData final
-{
-public:
-	class FString                                 id;                                                // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 type;                                              // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         price;                                             // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   displayPrice;                                      // 0x0028(0x0018)(NativeAccessSpecifierPublic)
-	class FText                                   description;                                       // 0x0040(0x0018)(NativeAccessSpecifierPublic)
-	class FText                                   displayName;                                       // 0x0058(0x0018)(NativeAccessSpecifierPublic)
-	class FText                                   label;                                             // 0x0070(0x0018)(NativeAccessSpecifierPublic)
-	struct FDateTime                              endData;                                           // 0x0088(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FProductData) == 0x000008, "Wrong alignment on FProductData");
-static_assert(sizeof(FProductData) == 0x000090, "Wrong size on FProductData");
-static_assert(offsetof(FProductData, id) == 0x000000, "Member 'FProductData::id' has a wrong offset!");
-static_assert(offsetof(FProductData, type) == 0x000010, "Member 'FProductData::type' has a wrong offset!");
-static_assert(offsetof(FProductData, price) == 0x000020, "Member 'FProductData::price' has a wrong offset!");
-static_assert(offsetof(FProductData, displayPrice) == 0x000028, "Member 'FProductData::displayPrice' has a wrong offset!");
-static_assert(offsetof(FProductData, description) == 0x000040, "Member 'FProductData::description' has a wrong offset!");
-static_assert(offsetof(FProductData, displayName) == 0x000058, "Member 'FProductData::displayName' has a wrong offset!");
-static_assert(offsetof(FProductData, label) == 0x000070, "Member 'FProductData::label' has a wrong offset!");
-static_assert(offsetof(FProductData, endData) == 0x000088, "Member 'FProductData::endData' has a wrong offset!");
 
 }
 

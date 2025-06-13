@@ -22,7 +22,7 @@ namespace SDK
 class UDeviceHandle final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(bool bIsConnected, int32 PlatformUserId, int32 ControllerId, const TArray<class FString>& PidAndVidArray)> OnConnectionChanged;                               // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(bool bIsConnected, int32 PlatformUserId, int32 ControllerId, const TArray<class FString>& PidAndVidArray)> OnConnectionChanged; // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TArray<class FString>                         PidAndVidArray;                                    // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<class FString>                         DevicePathArray;                                   // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 

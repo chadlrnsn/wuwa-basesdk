@@ -14,19 +14,6 @@
 namespace SDK::Params
 {
 
-// Function TsTaskAiMarkItem.TsTaskAiMarkItem_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct TsTaskAiMarkItem_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(TsTaskAiMarkItem_C_ReceiveExecuteAI) == 0x000008, "Wrong alignment on TsTaskAiMarkItem_C_ReceiveExecuteAI");
-static_assert(sizeof(TsTaskAiMarkItem_C_ReceiveExecuteAI) == 0x000010, "Wrong size on TsTaskAiMarkItem_C_ReceiveExecuteAI");
-static_assert(offsetof(TsTaskAiMarkItem_C_ReceiveExecuteAI, OwnerController) == 0x000000, "Member 'TsTaskAiMarkItem_C_ReceiveExecuteAI::OwnerController' has a wrong offset!");
-static_assert(offsetof(TsTaskAiMarkItem_C_ReceiveExecuteAI, ControlledPawn) == 0x000008, "Member 'TsTaskAiMarkItem_C_ReceiveExecuteAI::ControlledPawn' has a wrong offset!");
-
 // Function TsTaskAiMarkItem.TsTaskAiMarkItem_C.ExecuteUbergraph_TsTaskAiMarkItem
 // 0x0018 (0x0018 - 0x0000)
 struct TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem final
@@ -42,6 +29,19 @@ static_assert(sizeof(TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem) == 0x
 static_assert(offsetof(TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem, EntryPoint) == 0x000000, "Member 'TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem::EntryPoint' has a wrong offset!");
 static_assert(offsetof(TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem, K2Node_Event_OwnerController) == 0x000008, "Member 'TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem::K2Node_Event_OwnerController' has a wrong offset!");
 static_assert(offsetof(TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem, K2Node_Event_ControlledPawn) == 0x000010, "Member 'TsTaskAiMarkItem_C_ExecuteUbergraph_TsTaskAiMarkItem::K2Node_Event_ControlledPawn' has a wrong offset!");
+
+// Function TsTaskAiMarkItem.TsTaskAiMarkItem_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct TsTaskAiMarkItem_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(TsTaskAiMarkItem_C_ReceiveExecuteAI) == 0x000008, "Wrong alignment on TsTaskAiMarkItem_C_ReceiveExecuteAI");
+static_assert(sizeof(TsTaskAiMarkItem_C_ReceiveExecuteAI) == 0x000010, "Wrong size on TsTaskAiMarkItem_C_ReceiveExecuteAI");
+static_assert(offsetof(TsTaskAiMarkItem_C_ReceiveExecuteAI, OwnerController) == 0x000000, "Member 'TsTaskAiMarkItem_C_ReceiveExecuteAI::OwnerController' has a wrong offset!");
+static_assert(offsetof(TsTaskAiMarkItem_C_ReceiveExecuteAI, ControlledPawn) == 0x000008, "Member 'TsTaskAiMarkItem_C_ReceiveExecuteAI::ControlledPawn' has a wrong offset!");
 
 }
 

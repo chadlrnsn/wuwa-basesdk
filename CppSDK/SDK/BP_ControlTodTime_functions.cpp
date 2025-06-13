@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function BP_ControlTodTime.BP_ControlTodTime_C.ExecuteUbergraph_BP_ControlTodTime
-// (Final, UbergraphFunction)
+// Function BP_ControlTodTime.BP_ControlTodTime_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ControlTodTime_C::ExecuteUbergraph_BP_ControlTodTime(int32 EntryPoint)
+void ABP_ControlTodTime_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ControlTodTime_C", "ExecuteUbergraph_BP_ControlTodTime");
+		Func = Class->GetFunction("BP_ControlTodTime_C", "ReceiveEndPlay");
 
-	Params::BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime Parms{};
+	Params::BP_ControlTodTime_C_ReceiveEndPlay Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void ABP_ControlTodTime_C::EditorTick(float DeltaSeconds)
 }
 
 
-// Function BP_ControlTodTime.BP_ControlTodTime_C.ReceiveEndPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_ControlTodTime.BP_ControlTodTime_C.ExecuteUbergraph_BP_ControlTodTime
+// (Final, UbergraphFunction)
 // Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ControlTodTime_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+void ABP_ControlTodTime_C::ExecuteUbergraph_BP_ControlTodTime(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ControlTodTime_C", "ReceiveEndPlay");
+		Func = Class->GetFunction("BP_ControlTodTime_C", "ExecuteUbergraph_BP_ControlTodTime");
 
-	Params::BP_ControlTodTime_C_ReceiveEndPlay Parms{};
+	Params::BP_ControlTodTime_C_ExecuteUbergraph_BP_ControlTodTime Parms{};
 
-	Parms.EndPlayReason = EndPlayReason;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

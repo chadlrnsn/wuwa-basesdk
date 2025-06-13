@@ -35,9 +35,9 @@ public:
 	int32                                         DistanceErrorThreshold;                            // 0x00E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_TsTaskAnimalMoveTo(int32 EntryPoint);
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ExecuteUbergraph_TsTaskAnimalMoveTo(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -22,7 +22,7 @@ namespace SDK
 class UPDA_ThunderConfigMap_C final : public UPrimaryDataAsset
 {
 public:
-	TMap<EKuroThunderType, class UPDA_ThunderConfig_C*> Data;                                              // 0x0038(0x0050)(Edit, BlueprintVisible)
+	TMap<EKuroThunderType, class UPDA_ThunderConfig_C*> Data;                                        // 0x0038(0x0050)(Edit, BlueprintVisible)
 
 public:
 	static class UClass* StaticClass()

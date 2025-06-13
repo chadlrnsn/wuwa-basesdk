@@ -24,7 +24,7 @@ struct GA_Vision_WaitTag_C_ExecuteUbergraph_GA_Vision_WaitTag final
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(struct FGameplayTag& Tag)>     K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0028)(ZeroConstructor)
+	TDelegate<void(const struct FGameplayTag& Tag)> K2Node_CreateDelegate_OutputDelegate;            // 0x0008(0x0028)(ZeroConstructor)
 	struct FGameplayTag                           K2Node_CustomEvent_Tag;                            // 0x0030(0x000C)(ConstParm, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           ___struct_Variable;                                // 0x003C(0x000C)(NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_Event_bWasCancelled;                        // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -49,7 +49,7 @@ public:
 	class ABP_BaseVision_C*                       K2Node_DynamicCast_AsBP_Base_Vision;               // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(struct FGameplayTag& Tag)>     K2Node_CreateDelegate_OutputDelegate_1;            // 0x00B0(0x0028)(ZeroConstructor)
+	TDelegate<void(const struct FGameplayTag& Tag)> K2Node_CreateDelegate_OutputDelegate_1;          // 0x00B0(0x0028)(ZeroConstructor)
 	struct FSVisionData                           CallFunc____________;                              // 0x00D8(0x0098)(ContainsInstancedReference, HasGetValueTypeHash)
 	class ATsBaseCharacter_C*                     CallFunc_____________1;                            // 0x0170(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FGameplayTag                           CallFunc_Array_Get_Item_1;                         // 0x0178(0x000C)(NoDestructor, HasGetValueTypeHash)

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Bulante_ChargeAttack.GA_Bulante_ChargeAttack_C
-// 0x0008 (0x0560 - 0x0558)
+// 0x0008 (0x0570 - 0x0568)
 class UGA_Bulante_ChargeAttack_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Bulante_ChargeAttack_C;          // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Bulante_ChargeAttack_C;          // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_GA_Bulante_ChargeAttack(int32 EntryPoint);
@@ -49,8 +49,8 @@ public:
 	}
 };
 static_assert(alignof(UGA_Bulante_ChargeAttack_C) == 0x000008, "Wrong alignment on UGA_Bulante_ChargeAttack_C");
-static_assert(sizeof(UGA_Bulante_ChargeAttack_C) == 0x000560, "Wrong size on UGA_Bulante_ChargeAttack_C");
-static_assert(offsetof(UGA_Bulante_ChargeAttack_C, UberGraphFrame_GA_Bulante_ChargeAttack_C) == 0x000558, "Member 'UGA_Bulante_ChargeAttack_C::UberGraphFrame_GA_Bulante_ChargeAttack_C' has a wrong offset!");
+static_assert(sizeof(UGA_Bulante_ChargeAttack_C) == 0x000570, "Wrong size on UGA_Bulante_ChargeAttack_C");
+static_assert(offsetof(UGA_Bulante_ChargeAttack_C, UberGraphFrame_GA_Bulante_ChargeAttack_C) == 0x000568, "Member 'UGA_Bulante_ChargeAttack_C::UberGraphFrame_GA_Bulante_ChargeAttack_C' has a wrong offset!");
 
 }
 

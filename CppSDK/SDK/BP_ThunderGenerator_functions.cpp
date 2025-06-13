@@ -34,9 +34,9 @@ void ABP_ThunderGenerator_C::UpdateCloudThunderParameter()
 // Function BP_ThunderGenerator.BP_ThunderGenerator_C.CalculateThunderPosition_Cloud
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransform                       CameraTransform                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
+// const struct FTransform&                CameraTransform                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
 // bool                                    bAttack                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FVector                          OutPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         OutPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_ThunderGenerator_C::CalculateThunderPosition_Cloud(const struct FTransform& CameraTransform, bool bAttack, struct FVector* OutPosition)
@@ -77,9 +77,9 @@ void ABP_ThunderGenerator_C::ForceUpdate()
 // Function BP_ThunderGenerator.BP_ThunderGenerator_C.CalculateThunderPosition_Common
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransform                       CameraTransform                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
+// const struct FTransform&                CameraTransform                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
 // bool                                    bAttack                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FVector                          OutPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         OutPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_ThunderGenerator_C::CalculateThunderPosition_Common(const struct FTransform& CameraTransform, bool bAttack, struct FVector* OutPosition)
@@ -106,8 +106,8 @@ bool ABP_ThunderGenerator_C::CalculateThunderPosition_Common(const struct FTrans
 // Function BP_ThunderGenerator.BP_ThunderGenerator_C.CalculateThunderPosition
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransform                       CameraTransform                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
-// struct FVector                          OutPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FTransform&                CameraTransform                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
+// struct FVector*                         OutPosition                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bAttack                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -177,7 +177,7 @@ void ABP_ThunderGenerator_C::UserConstructionScript()
 // Function BP_ThunderGenerator.BP_ThunderGenerator_C.OnReceiveThunderAttack
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// struct FVector                          Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bAttack                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_ThunderGenerator_C::OnReceiveThunderAttack(const struct FVector& Location, bool bAttack)
@@ -240,7 +240,7 @@ void ABP_ThunderGenerator_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // class AThunderTrigger*                  Trigger                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FTransform                       CameraTransform                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
+// const struct FTransform&                CameraTransform                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
 
 void ABP_ThunderGenerator_C::OnReceiveThunderTrigger(class AThunderTrigger* Trigger, const struct FTransform& CameraTransform)
 {

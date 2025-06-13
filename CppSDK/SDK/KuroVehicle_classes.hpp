@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
 #include "KuroVehicle_structs.hpp"
 #include "KuroAnim_classes.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
 #include "KuroGAS_classes.hpp"
 
 
@@ -69,8 +69,8 @@ class AKuroBaseVehicle : public ABaseCharacter
 {
 public:
 	class UKuroVehicleMovementComponent*          VehicleMovementComponent;                          // 0x0680(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AKuroBaseVehicle* Vehicle, EKuroVehicleMovementMode PrevMovementMode, uint8 PreviousCustomMode)> VehicleMovementModeChangedDelegate;                // 0x0688(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)> OnVehicleMovementUpdated;                          // 0x0698(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AKuroBaseVehicle* Vehicle, EKuroVehicleMovementMode PrevMovementMode, uint8 PreviousCustomMode)> VehicleMovementModeChangedDelegate; // 0x0688(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity)> OnVehicleMovementUpdated; // 0x0698(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_6A8[0x8];                                      // 0x06A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

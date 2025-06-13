@@ -27,11 +27,11 @@ int32 IBPI_CreatureInterface_C::GetEntityId()
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPI_CreatureInterface_C", "GetEntityId");
+		Func = AsUObject()->Class->GetFunction("BPI_CreatureInterface_C", "GetEntityId");
 
 	Params::BPI_CreatureInterface_C_GetEntityId Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
+	AsUObject()->ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }

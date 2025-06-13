@@ -110,8 +110,8 @@ void UBP_FightManager_C::初始化(class UBP_MainGameInstance_C* 游戏实例_0)
 // Parameters:
 // ECamp                                   自身阵营                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // ECamp                                   目标阵营                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ERelation                               关系                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   关系整数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ERelation*                              关系                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  关系整数                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_FightManager_C::阵营判断(ECamp 自身阵营, ECamp 目标阵营, ERelation* 关系, int32* 关系整数)
 {
@@ -186,7 +186,7 @@ void UBP_FightManager_C::注册BPai(class UObject* BPAI对象)
 // Function BP_FightManager.BP_FightManager_C.添加Debug的对象
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               baseChar                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class ATsBaseCharacter_C*&        baseChar                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_FightManager_C::添加Debug的对象(const class ATsBaseCharacter_C*& baseChar)
 {
@@ -206,7 +206,7 @@ void UBP_FightManager_C::添加Debug的对象(const class ATsBaseCharacter_C*& b
 // Function BP_FightManager.BP_FightManager_C.删除Debug的对象
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               baseChar                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class ATsBaseCharacter_C*&        baseChar                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBP_FightManager_C::删除Debug的对象(const class ATsBaseCharacter_C*& baseChar)
 {
@@ -226,7 +226,7 @@ void UBP_FightManager_C::删除Debug的对象(const class ATsBaseCharacter_C*& b
 // Function BP_FightManager.BP_FightManager_C.站位控制
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class UObject*>                  怪物数组                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class UObject*>&                 怪物数组                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void UBP_FightManager_C::站位控制(TArray<class UObject*>& 怪物数组)
 {
@@ -249,8 +249,8 @@ void UBP_FightManager_C::站位控制(TArray<class UObject*>& 怪物数组)
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // int32                                   ID                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSHitMapping                     受击覆盖                                               (Parm, OutParm, HasGetValueTypeHash)
-// bool                                    是否找到                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FSHitMapping*                    受击覆盖                                               (Parm, OutParm, HasGetValueTypeHash)
+// bool*                                   是否找到                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UBP_FightManager_C::查询受击类型覆盖(int32 ID, struct FSHitMapping* 受击覆盖, bool* 是否找到)
 {

@@ -79,6 +79,53 @@ bool UTsAnimNotifyStateRotate_C::K2_NotifyEnd(class USkeletalMeshComponent* Mesh
 }
 
 
+// Function TsAnimNotifyStateRotate.TsAnimNotifyStateRotate_C.Initialize
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UTsAnimNotifyStateRotate_C::Initialize()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAnimNotifyStateRotate_C", "Initialize");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsAnimNotifyStateRotate.TsAnimNotifyStateRotate_C.IsInContinueDetectionAngle
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   angle                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsAnimNotifyStateRotate_C::IsInContinueDetectionAngle(float angle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAnimNotifyStateRotate_C", "IsInContinueDetectionAngle");
+
+	Params::TsAnimNotifyStateRotate_C_IsInContinueDetectionAngle Parms{};
+
+	Parms.angle = angle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function TsAnimNotifyStateRotate.TsAnimNotifyStateRotate_C.K2_NotifyBegin
 // (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -108,25 +155,6 @@ bool UTsAnimNotifyStateRotate_C::K2_NotifyBegin(class USkeletalMeshComponent* Me
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function TsAnimNotifyStateRotate.TsAnimNotifyStateRotate_C.Initialize
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void UTsAnimNotifyStateRotate_C::Initialize()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsAnimNotifyStateRotate_C", "Initialize");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

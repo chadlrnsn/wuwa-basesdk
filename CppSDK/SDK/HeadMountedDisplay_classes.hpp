@@ -63,8 +63,8 @@ public:
 	static void SetSpectatorScreenTexture(class UTexture* InTexture);
 	static void SetTrackingOrigin(EHMDTrackingOrigin Origin);
 	static void SetWorldToMetersScale(class UObject* WorldContext, float NewScale);
-	static void SetXRDisconnectDelegate(const TDelegate<void(class FString& OutReason)>& InDisconnectedDelegate);
-	static void SetXRTimedInputActionDelegate(const class FName& ActionName, const TDelegate<void(float Value, struct FTimespan& Time)>& InDelegate);
+	static void SetXRDisconnectDelegate(const TDelegate<void(const class FString& OutReason)>& InDisconnectedDelegate);
+	static void SetXRTimedInputActionDelegate(const class FName& ActionName, const TDelegate<void(const float Value, const struct FTimespan& Time)>& InDelegate);
 	static void UpdateExternalTrackingHMDPosition(const struct FTransform& ExternalTrackingTransform);
 
 public:
@@ -237,8 +237,8 @@ static_assert(sizeof(UXRAssetFunctionLibrary) == 0x000030, "Wrong size on UXRAss
 class UAsyncTask_LoadXRDeviceVisComponent final : public UBlueprintAsyncActionBase
 {
 public:
-	TMulticastInlineDelegate<void(class UPrimitiveComponent* LoadedComponent)> OnModelLoaded;                                     // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UPrimitiveComponent* LoadedComponent)> OnLoadFailure;                                     // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class UPrimitiveComponent* LoadedComponent)> OnModelLoaded;  // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class UPrimitiveComponent* LoadedComponent)> OnLoadFailure;  // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_58[0x8];                                       // 0x0058(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPrimitiveComponent*                    SpawnedComponent;                                  // 0x0060(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 

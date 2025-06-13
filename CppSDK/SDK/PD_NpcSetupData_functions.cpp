@@ -20,7 +20,7 @@ namespace SDK
 // Function PD_NpcSetupData.PD_NpcSetupData_C.IsEmpty
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UPD_NpcSetupData_C::IsEmpty(bool* Result)
 {
@@ -41,7 +41,7 @@ void UPD_NpcSetupData_C::IsEmpty(bool* Result)
 // Function PD_NpcSetupData.PD_NpcSetupData_C.HasSkelMain
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UPD_NpcSetupData_C::HasSkelMain(bool* Result)
 {
@@ -62,7 +62,7 @@ void UPD_NpcSetupData_C::HasSkelMain(bool* Result)
 // Function PD_NpcSetupData.PD_NpcSetupData_C.HasSkelHair
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UPD_NpcSetupData_C::HasSkelHair(bool* Result)
 {
@@ -83,7 +83,7 @@ void UPD_NpcSetupData_C::HasSkelHair(bool* Result)
 // Function PD_NpcSetupData.PD_NpcSetupData_C.HasSkelFace
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UPD_NpcSetupData_C::HasSkelFace(bool* Result)
 {
@@ -104,7 +104,7 @@ void UPD_NpcSetupData_C::HasSkelFace(bool* Result)
 // Function PD_NpcSetupData.PD_NpcSetupData_C.HasSkelBodyUp
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UPD_NpcSetupData_C::HasSkelBodyUp(bool* Result)
 {
@@ -125,7 +125,7 @@ void UPD_NpcSetupData_C::HasSkelBodyUp(bool* Result)
 // Function PD_NpcSetupData.PD_NpcSetupData_C.HasSkelBodyDown
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UPD_NpcSetupData_C::HasSkelBodyDown(bool* Result)
 {
@@ -146,7 +146,7 @@ void UPD_NpcSetupData_C::HasSkelBodyDown(bool* Result)
 // Function PD_NpcSetupData.PD_NpcSetupData_C.HasSkelBody
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   Result                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UPD_NpcSetupData_C::HasSkelBody(bool* Result)
 {
@@ -167,7 +167,7 @@ void UPD_NpcSetupData_C::HasSkelBody(bool* Result)
 // Function PD_NpcSetupData.PD_NpcSetupData_C.GetAllParts
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class USkeletalMesh*>            OutParts                                               (Parm, OutParm)
+// TArray<class USkeletalMesh*>*           OutParts                                               (Parm, OutParm)
 
 void UPD_NpcSetupData_C::GetAllParts(TArray<class USkeletalMesh*>* OutParts)
 {
@@ -182,6 +182,27 @@ void UPD_NpcSetupData_C::GetAllParts(TArray<class USkeletalMesh*>* OutParts)
 
 	if (OutParts != nullptr)
 		*OutParts = std::move(Parms.OutParts);
+}
+
+
+// Function PD_NpcSetupData.PD_NpcSetupData_C.GetAllPartMaterials
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UMaterialInstance*>*       Results                                                (Parm, OutParm)
+
+void UPD_NpcSetupData_C::GetAllPartMaterials(TArray<class UMaterialInstance*>* Results)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PD_NpcSetupData_C", "GetAllPartMaterials");
+
+	Params::PD_NpcSetupData_C_GetAllPartMaterials Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Results != nullptr)
+		*Results = std::move(Parms.Results);
 }
 
 }

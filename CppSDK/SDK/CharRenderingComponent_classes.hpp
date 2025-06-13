@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ECharacterBodySpecifiedType_structs.hpp"
+#include "Engine_structs.hpp"
+#include "ECharacterDitherType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "Engine_structs.hpp"
-#include "ECharacterControllerCaseType_structs.hpp"
-#include "ECharacterDitherType_structs.hpp"
 #include "ECharacterSlotSpecifiedType_structs.hpp"
+#include "ECharacterControllerCaseType_structs.hpp"
+#include "ECharacterBodySpecifiedType_structs.hpp"
 #include "ECharacterRenderingType_structs.hpp"
 
 
@@ -24,14 +24,14 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass CharRenderingComponent.CharRenderingComponent_C
-// 0x0020 (0x00E8 - 0x00C8)
+// 0x0020 (0x00F8 - 0x00D8)
 class UCharRenderingComponent_C final : public UKuroCharRenderingComponent
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UPDA_InteractionPlayerConfig_C*         InteractionConfig;                                 // 0x00D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPDA_DecalShadowConfig_C*               DecalShadowConfig;                                 // 0x00D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          MonsterUseBodyEffect;                              // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UPDA_InteractionPlayerConfig_C*         InteractionConfig;                                 // 0x00E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPDA_DecalShadowConfig_C*               DecalShadowConfig;                                 // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          MonsterUseBodyEffect;                              // 0x00F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_CharRenderingComponent(int32 EntryPoint);
@@ -105,11 +105,11 @@ public:
 	}
 };
 static_assert(alignof(UCharRenderingComponent_C) == 0x000008, "Wrong alignment on UCharRenderingComponent_C");
-static_assert(sizeof(UCharRenderingComponent_C) == 0x0000E8, "Wrong size on UCharRenderingComponent_C");
-static_assert(offsetof(UCharRenderingComponent_C, UberGraphFrame) == 0x0000C8, "Member 'UCharRenderingComponent_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UCharRenderingComponent_C, InteractionConfig) == 0x0000D0, "Member 'UCharRenderingComponent_C::InteractionConfig' has a wrong offset!");
-static_assert(offsetof(UCharRenderingComponent_C, DecalShadowConfig) == 0x0000D8, "Member 'UCharRenderingComponent_C::DecalShadowConfig' has a wrong offset!");
-static_assert(offsetof(UCharRenderingComponent_C, MonsterUseBodyEffect) == 0x0000E0, "Member 'UCharRenderingComponent_C::MonsterUseBodyEffect' has a wrong offset!");
+static_assert(sizeof(UCharRenderingComponent_C) == 0x0000F8, "Wrong size on UCharRenderingComponent_C");
+static_assert(offsetof(UCharRenderingComponent_C, UberGraphFrame) == 0x0000D8, "Member 'UCharRenderingComponent_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UCharRenderingComponent_C, InteractionConfig) == 0x0000E0, "Member 'UCharRenderingComponent_C::InteractionConfig' has a wrong offset!");
+static_assert(offsetof(UCharRenderingComponent_C, DecalShadowConfig) == 0x0000E8, "Member 'UCharRenderingComponent_C::DecalShadowConfig' has a wrong offset!");
+static_assert(offsetof(UCharRenderingComponent_C, MonsterUseBodyEffect) == 0x0000F0, "Member 'UCharRenderingComponent_C::MonsterUseBodyEffect' has a wrong offset!");
 
 }
 

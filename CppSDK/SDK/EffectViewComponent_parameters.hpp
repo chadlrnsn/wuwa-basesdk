@@ -14,16 +14,16 @@
 namespace SDK::Params
 {
 
-// Function EffectViewComponent.EffectViewComponent_C.EditorTick
-// 0x0004 (0x0004 - 0x0000)
-struct EffectViewComponent_C_EditorTick final
+// Function EffectViewComponent.EffectViewComponent_C.Stop
+// 0x0001 (0x0001 - 0x0000)
+struct EffectViewComponent_C_Stop final
 {
 public:
-	float                                         deltaSecond;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          immediately;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-static_assert(alignof(EffectViewComponent_C_EditorTick) == 0x000004, "Wrong alignment on EffectViewComponent_C_EditorTick");
-static_assert(sizeof(EffectViewComponent_C_EditorTick) == 0x000004, "Wrong size on EffectViewComponent_C_EditorTick");
-static_assert(offsetof(EffectViewComponent_C_EditorTick, deltaSecond) == 0x000000, "Member 'EffectViewComponent_C_EditorTick::deltaSecond' has a wrong offset!");
+static_assert(alignof(EffectViewComponent_C_Stop) == 0x000001, "Wrong alignment on EffectViewComponent_C_Stop");
+static_assert(sizeof(EffectViewComponent_C_Stop) == 0x000001, "Wrong size on EffectViewComponent_C_Stop");
+static_assert(offsetof(EffectViewComponent_C_Stop, immediately) == 0x000000, "Member 'EffectViewComponent_C_Stop::immediately' has a wrong offset!");
 
 // Function EffectViewComponent.EffectViewComponent_C.SetAutoPlay
 // 0x0001 (0x0001 - 0x0000)
@@ -36,16 +36,16 @@ static_assert(alignof(EffectViewComponent_C_SetAutoPlay) == 0x000001, "Wrong ali
 static_assert(sizeof(EffectViewComponent_C_SetAutoPlay) == 0x000001, "Wrong size on EffectViewComponent_C_SetAutoPlay");
 static_assert(offsetof(EffectViewComponent_C_SetAutoPlay, autoPlay) == 0x000000, "Member 'EffectViewComponent_C_SetAutoPlay::autoPlay' has a wrong offset!");
 
-// Function EffectViewComponent.EffectViewComponent_C.Stop
-// 0x0001 (0x0001 - 0x0000)
-struct EffectViewComponent_C_Stop final
+// Function EffectViewComponent.EffectViewComponent_C.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct EffectViewComponent_C_EditorTick final
 {
 public:
-	bool                                          immediately;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         deltaSecond;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-static_assert(alignof(EffectViewComponent_C_Stop) == 0x000001, "Wrong alignment on EffectViewComponent_C_Stop");
-static_assert(sizeof(EffectViewComponent_C_Stop) == 0x000001, "Wrong size on EffectViewComponent_C_Stop");
-static_assert(offsetof(EffectViewComponent_C_Stop, immediately) == 0x000000, "Member 'EffectViewComponent_C_Stop::immediately' has a wrong offset!");
+static_assert(alignof(EffectViewComponent_C_EditorTick) == 0x000004, "Wrong alignment on EffectViewComponent_C_EditorTick");
+static_assert(sizeof(EffectViewComponent_C_EditorTick) == 0x000004, "Wrong size on EffectViewComponent_C_EditorTick");
+static_assert(offsetof(EffectViewComponent_C_EditorTick, deltaSecond) == 0x000000, "Member 'EffectViewComponent_C_EditorTick::deltaSecond' has a wrong offset!");
 
 }
 

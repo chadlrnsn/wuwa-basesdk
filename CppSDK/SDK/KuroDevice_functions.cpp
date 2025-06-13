@@ -83,7 +83,7 @@ void UDeviceHandle::Initialize()
 // Function KuroDevice.KuroDeviceBPLibrary.FindAllDeviceVidAndPid
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<class FString>                   DevicePathList                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  DevicePathList                                         (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroDeviceBPLibrary::FindAllDeviceVidAndPid(TArray<class FString>* DevicePathList)

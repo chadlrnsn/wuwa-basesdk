@@ -16,22 +16,22 @@
 namespace SDK
 {
 
-// BlueprintGeneratedClass KuroSceneInteraction_140.TPrefab_SM_Gat_39A_C
+// BlueprintGeneratedClass KuroSceneInteraction_140.TPrefab_SM_WYQ_Middle_Shengxian_C
 // 0x0000 (0x02B8 - 0x02B8)
-class KuroSceneInteraction_140::ATPrefab_SM_Gat_39A_C final : public ALevelScriptActor
+class KuroSceneInteraction_140::ATPrefab_SM_WYQ_Middle_Shengxian_C final : public ALevelScriptActor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass KuroSceneInteraction_140.TPrefab_SM_Gat_39A_C", true, "TPrefab_SM_Gat_39A_C">();
+		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass KuroSceneInteraction_140.TPrefab_SM_WYQ_Middle_Shengxian_C", true, "TPrefab_SM_WYQ_Middle_Shengxian_C">();
 	}
-	static class KuroSceneInteraction_140::ATPrefab_SM_Gat_39A_C* GetDefaultObj()
+	static class KuroSceneInteraction_140::ATPrefab_SM_WYQ_Middle_Shengxian_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<KuroSceneInteraction_140::ATPrefab_SM_Gat_39A_C>();
+		return GetDefaultObjImpl<KuroSceneInteraction_140::ATPrefab_SM_WYQ_Middle_Shengxian_C>();
 	}
 };
-static_assert(alignof(KuroSceneInteraction_140::ATPrefab_SM_Gat_39A_C) == 0x000008, "Wrong alignment on KuroSceneInteraction_140::ATPrefab_SM_Gat_39A_C");
-static_assert(sizeof(KuroSceneInteraction_140::ATPrefab_SM_Gat_39A_C) == 0x0002B8, "Wrong size on KuroSceneInteraction_140::ATPrefab_SM_Gat_39A_C");
+static_assert(alignof(KuroSceneInteraction_140::ATPrefab_SM_WYQ_Middle_Shengxian_C) == 0x000008, "Wrong alignment on KuroSceneInteraction_140::ATPrefab_SM_WYQ_Middle_Shengxian_C");
+static_assert(sizeof(KuroSceneInteraction_140::ATPrefab_SM_WYQ_Middle_Shengxian_C) == 0x0002B8, "Wrong size on KuroSceneInteraction_140::ATPrefab_SM_WYQ_Middle_Shengxian_C");
 
 }
 

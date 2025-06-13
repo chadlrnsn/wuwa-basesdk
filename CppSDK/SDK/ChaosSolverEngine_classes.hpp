@@ -67,8 +67,8 @@ class UChaosGameplayEventDispatcher final : public UChaosEventListenerComponent
 {
 public:
 	uint8                                         Pad_C8[0x110];                                     // 0x00C8(0x0110)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class UPrimitiveComponent*, struct FChaosHandlerSet> CollisionEventRegistrations;                       // 0x01D8(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TMap<class UPrimitiveComponent*, struct FBreakEventCallbackWrapper> BreakEventRegistrations;                           // 0x0228(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<class UPrimitiveComponent*, struct FChaosHandlerSet> CollisionEventRegistrations;           // 0x01D8(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	TMap<class UPrimitiveComponent*, struct FBreakEventCallbackWrapper> BreakEventRegistrations;     // 0x0228(0x0050)(ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_278[0x8];                                      // 0x0278(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -87,8 +87,8 @@ static_assert(offsetof(UChaosGameplayEventDispatcher, CollisionEventRegistration
 static_assert(offsetof(UChaosGameplayEventDispatcher, BreakEventRegistrations) == 0x000228, "Member 'UChaosGameplayEventDispatcher::BreakEventRegistrations' has a wrong offset!");
 
 // Class ChaosSolverEngine.ChaosNotifyHandlerInterface
-// 0x0000 (0x0030 - 0x0030)
-class IChaosNotifyHandlerInterface final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IChaosNotifyHandlerInterface final
 {
 public:
 	static class UClass* StaticClass()
@@ -99,9 +99,18 @@ public:
 	{
 		return GetDefaultObjImpl<IChaosNotifyHandlerInterface>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IChaosNotifyHandlerInterface) == 0x000008, "Wrong alignment on IChaosNotifyHandlerInterface");
-static_assert(sizeof(IChaosNotifyHandlerInterface) == 0x000030, "Wrong size on IChaosNotifyHandlerInterface");
+static_assert(alignof(IChaosNotifyHandlerInterface) == 0x000001, "Wrong alignment on IChaosNotifyHandlerInterface");
+static_assert(sizeof(IChaosNotifyHandlerInterface) == 0x000001, "Wrong size on IChaosNotifyHandlerInterface");
 
 // Class ChaosSolverEngine.ChaosSolverEngineBlueprintLibrary
 // 0x0000 (0x0030 - 0x0030)

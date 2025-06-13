@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "E_SE_PlayState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SE_ControllerBase_classes.hpp"
+#include "E_SE_PlayState_structs.hpp"
 
 
 namespace SDK
@@ -28,16 +28,16 @@ public:
 	TArray<class UMaterialInstanceDynamic*>       CachedMaterial;                                    // 0x00D8(0x0010)(Edit, BlueprintVisible)
 
 public:
-	void ExecuteUbergraph_SE_UISpriteController(int32 EntryPoint);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ApplyAlpha(float alpha);
-	void Loop(float time);
-	void End(float time);
-	void Start(float time);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveBeginPlay();
-	void UpdateComponent(E_SE_PlayState State, float Time);
 	void UpdateComponentAlpha(float Alpha);
+	void UpdateComponent(E_SE_PlayState State, float Time);
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void Start(float time);
+	void End(float time);
+	void Loop(float time);
+	void ApplyAlpha(float alpha);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ExecuteUbergraph_SE_UISpriteController(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

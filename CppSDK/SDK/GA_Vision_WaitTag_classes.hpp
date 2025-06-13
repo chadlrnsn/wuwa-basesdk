@@ -19,16 +19,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Vision_WaitTag.GA_Vision_WaitTag_C
-// 0x00D0 (0x0630 - 0x0560)
+// 0x00D0 (0x0640 - 0x0570)
 class UGA_Vision_WaitTag_C final : public UGa_Passive_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_WaitTag_C;                // 0x0560(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class UAbilityTask_WaitGameplayTagAdded*, struct FGameplayTag> 监听Tag添加;                                       // 0x0570(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<class UAbilityTask_WaitGameplayTagRemoved*, struct FGameplayTag> 监听Tag删除;                                       // 0x05C0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<class UAbilityTask_WaitGameplayTagAdded*> Tag添加任务;                                       // 0x0610(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<class UAbilityTask_WaitGameplayTagRemoved*> Tag移除任务;                                       // 0x0620(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_WaitTag_C;                // 0x0570(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class UAbilityTask_WaitGameplayTagAdded*, struct FGameplayTag> 监听Tag添加;                 // 0x0580(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class UAbilityTask_WaitGameplayTagRemoved*, struct FGameplayTag> 监听Tag删除;               // 0x05D0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class UAbilityTask_WaitGameplayTagAdded*> Tag添加任务;                                    // 0x0620(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class UAbilityTask_WaitGameplayTagRemoved*> Tag移除任务;                                  // 0x0630(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_GA_Vision_WaitTag(int32 EntryPoint);
@@ -49,13 +49,13 @@ public:
 	}
 };
 static_assert(alignof(UGA_Vision_WaitTag_C) == 0x000008, "Wrong alignment on UGA_Vision_WaitTag_C");
-static_assert(sizeof(UGA_Vision_WaitTag_C) == 0x000630, "Wrong size on UGA_Vision_WaitTag_C");
-static_assert(offsetof(UGA_Vision_WaitTag_C, UberGraphFrame_GA_Vision_WaitTag_C) == 0x000560, "Member 'UGA_Vision_WaitTag_C::UberGraphFrame_GA_Vision_WaitTag_C' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitTag_C, 召唤角色) == 0x000568, "Member 'UGA_Vision_WaitTag_C::召唤角色' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitTag_C, 监听Tag添加) == 0x000570, "Member 'UGA_Vision_WaitTag_C::监听Tag添加' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitTag_C, 监听Tag删除) == 0x0005C0, "Member 'UGA_Vision_WaitTag_C::监听Tag删除' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitTag_C, Tag添加任务) == 0x000610, "Member 'UGA_Vision_WaitTag_C::Tag添加任务' has a wrong offset!");
-static_assert(offsetof(UGA_Vision_WaitTag_C, Tag移除任务) == 0x000620, "Member 'UGA_Vision_WaitTag_C::Tag移除任务' has a wrong offset!");
+static_assert(sizeof(UGA_Vision_WaitTag_C) == 0x000640, "Wrong size on UGA_Vision_WaitTag_C");
+static_assert(offsetof(UGA_Vision_WaitTag_C, UberGraphFrame_GA_Vision_WaitTag_C) == 0x000570, "Member 'UGA_Vision_WaitTag_C::UberGraphFrame_GA_Vision_WaitTag_C' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitTag_C, 召唤角色) == 0x000578, "Member 'UGA_Vision_WaitTag_C::召唤角色' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitTag_C, 监听Tag添加) == 0x000580, "Member 'UGA_Vision_WaitTag_C::监听Tag添加' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitTag_C, 监听Tag删除) == 0x0005D0, "Member 'UGA_Vision_WaitTag_C::监听Tag删除' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitTag_C, Tag添加任务) == 0x000620, "Member 'UGA_Vision_WaitTag_C::Tag添加任务' has a wrong offset!");
+static_assert(offsetof(UGA_Vision_WaitTag_C, Tag移除任务) == 0x000630, "Member 'UGA_Vision_WaitTag_C::Tag移除任务' has a wrong offset!");
 
 }
 

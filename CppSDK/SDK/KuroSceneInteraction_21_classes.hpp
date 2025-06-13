@@ -16,22 +16,22 @@
 namespace SDK
 {
 
-// BlueprintGeneratedClass KuroSceneInteraction_21.TPrefab_SM_Pro_Tow_03A_C
+// BlueprintGeneratedClass KuroSceneInteraction_21.TPrefab_SM_Pro_Box_02_CBT3_C
 // 0x0000 (0x02B8 - 0x02B8)
-class KuroSceneInteraction_21::ATPrefab_SM_Pro_Tow_03A_C final : public ALevelScriptActor
+class KuroSceneInteraction_21::ATPrefab_SM_Pro_Box_02_CBT3_C final : public ALevelScriptActor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass KuroSceneInteraction_21.TPrefab_SM_Pro_Tow_03A_C", true, "TPrefab_SM_Pro_Tow_03A_C">();
+		return StaticBPGeneratedClassImpl<"BlueprintGeneratedClass KuroSceneInteraction_21.TPrefab_SM_Pro_Box_02_CBT3_C", true, "TPrefab_SM_Pro_Box_02_CBT3_C">();
 	}
-	static class KuroSceneInteraction_21::ATPrefab_SM_Pro_Tow_03A_C* GetDefaultObj()
+	static class KuroSceneInteraction_21::ATPrefab_SM_Pro_Box_02_CBT3_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<KuroSceneInteraction_21::ATPrefab_SM_Pro_Tow_03A_C>();
+		return GetDefaultObjImpl<KuroSceneInteraction_21::ATPrefab_SM_Pro_Box_02_CBT3_C>();
 	}
 };
-static_assert(alignof(KuroSceneInteraction_21::ATPrefab_SM_Pro_Tow_03A_C) == 0x000008, "Wrong alignment on KuroSceneInteraction_21::ATPrefab_SM_Pro_Tow_03A_C");
-static_assert(sizeof(KuroSceneInteraction_21::ATPrefab_SM_Pro_Tow_03A_C) == 0x0002B8, "Wrong size on KuroSceneInteraction_21::ATPrefab_SM_Pro_Tow_03A_C");
+static_assert(alignof(KuroSceneInteraction_21::ATPrefab_SM_Pro_Box_02_CBT3_C) == 0x000008, "Wrong alignment on KuroSceneInteraction_21::ATPrefab_SM_Pro_Box_02_CBT3_C");
+static_assert(sizeof(KuroSceneInteraction_21::ATPrefab_SM_Pro_Box_02_CBT3_C) == 0x0002B8, "Wrong size on KuroSceneInteraction_21::ATPrefab_SM_Pro_Box_02_CBT3_C");
 
 }
 

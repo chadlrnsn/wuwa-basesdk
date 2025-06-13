@@ -39,7 +39,7 @@ void UPerfSightHelper::BeginExclude()
 // Function PerfSight.PerfSightHelper.BeginTag
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           TagName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    TagName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::BeginTag(const class FString& TagName)
 {
@@ -64,7 +64,7 @@ void UPerfSightHelper::BeginTag(const class FString& TagName)
 // Function PerfSight.PerfSightHelper.BeginTupleWrap
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::BeginTupleWrap(const class FString& key)
 {
@@ -165,8 +165,8 @@ void UPerfSightHelper::EndTupleWrap()
 // Function PerfSight.PerfSightHelper.GetDeviceLevelByQcc
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           configName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           gpuFamily                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    configName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    gpuFamily                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UPerfSightHelper::GetDeviceLevelByQcc(const class FString& configName, const class FString& gpuFamily)
@@ -195,7 +195,7 @@ int32 UPerfSightHelper::GetDeviceLevelByQcc(const class FString& configName, con
 // Function PerfSight.PerfSightHelper.InitContext
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           AppID                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AppID                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::InitContext(const class FString& AppID)
 {
@@ -239,7 +239,7 @@ void UPerfSightHelper::MarkLevelFin()
 // Function PerfSight.PerfSightHelper.MarkLevelLoad
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           SceneName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    SceneName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   quality                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::MarkLevelLoad(const class FString& SceneName, int32 quality)
@@ -286,7 +286,7 @@ void UPerfSightHelper::MarkLevelLoadCompleted()
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // int32                                   key                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           info                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    info                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::PostEvent(int32 key, const class FString& info)
 {
@@ -338,8 +338,8 @@ void UPerfSightHelper::PostFrame(float deltatime)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // int32                                   latency                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           customInfo                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ipAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    customInfo                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ipAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::PostNetworkLatency(int32 latency, const class FString& customInfo, const class FString& ipAddress)
 {
@@ -366,8 +366,8 @@ void UPerfSightHelper::PostNetworkLatency(int32 latency, const class FString& cu
 // Function PerfSight.PerfSightHelper.PostValueF1
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   a                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::PostValueF1(const class FString& catgory, const class FString& key, float a)
@@ -395,8 +395,8 @@ void UPerfSightHelper::PostValueF1(const class FString& catgory, const class FSt
 // Function PerfSight.PerfSightHelper.PostValueF2
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   a                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   b                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -426,8 +426,8 @@ void UPerfSightHelper::PostValueF2(const class FString& catgory, const class FSt
 // Function PerfSight.PerfSightHelper.PostValueF3
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   a                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   b                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   c                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -459,8 +459,8 @@ void UPerfSightHelper::PostValueF3(const class FString& catgory, const class FSt
 // Function PerfSight.PerfSightHelper.PostValueI1
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   a                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::PostValueI1(const class FString& catgory, const class FString& key, int32 a)
@@ -488,8 +488,8 @@ void UPerfSightHelper::PostValueI1(const class FString& catgory, const class FSt
 // Function PerfSight.PerfSightHelper.PostValueI2
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   a                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   b                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -519,8 +519,8 @@ void UPerfSightHelper::PostValueI2(const class FString& catgory, const class FSt
 // Function PerfSight.PerfSightHelper.PostValueI3
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   a                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   b                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   c                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -552,9 +552,9 @@ void UPerfSightHelper::PostValueI3(const class FString& catgory, const class FSt
 // Function PerfSight.PerfSightHelper.PostValueS
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    catgory                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::PostValueS(const class FString& catgory, const class FString& key, const class FString& value)
 {
@@ -606,7 +606,7 @@ void UPerfSightHelper::SetCustomizedDeviceClass(int32 deviceLevel)
 // Function PerfSight.PerfSightHelper.SetMatchId
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           matchId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    matchId                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::SetMatchId(const class FString& matchId)
 {
@@ -631,7 +631,7 @@ void UPerfSightHelper::SetMatchId(const class FString& matchId)
 // Function PerfSight.PerfSightHelper.SetPCAppVersion
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           appVer                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    appVer                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::SetPCAppVersion(const class FString& appVer)
 {
@@ -656,7 +656,7 @@ void UPerfSightHelper::SetPCAppVersion(const class FString& appVer)
 // Function PerfSight.PerfSightHelper.SetPCServerURL
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    url                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::SetPCServerURL(const class FString& url)
 {
@@ -731,7 +731,7 @@ void UPerfSightHelper::SetTargetFrameRate(int32 target)
 // Function PerfSight.PerfSightHelper.SetUserId
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           UserId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    UserId                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::SetUserId(const class FString& UserId)
 {
@@ -756,7 +756,7 @@ void UPerfSightHelper::SetUserId(const class FString& UserId)
 // Function PerfSight.PerfSightHelper.SetVersionIden
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           versionName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    versionName                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::SetVersionIden(const class FString& versionName)
 {
@@ -782,8 +782,8 @@ void UPerfSightHelper::SetVersionIden(const class FString& versionName)
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // int32                                   latency                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           customInfo                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ipAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    customInfo                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    ipAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UPerfSightHelper::UpdateNetLatency(int32 latency, const class FString& customInfo, const class FString& ipAddress)
 {

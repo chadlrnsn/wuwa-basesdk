@@ -10,335 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "SMaterialControllerFloatParameter_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "SMaterialParamCache_structs.hpp"
 #include "SHolographicMaterialsCache_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "SMaterialControllerColorParameter_structs.hpp"
 #include "SHolographicData_structs.hpp"
 #include "KuroCurve_structs.hpp"
-#include "CoreUObject_structs.hpp"
+#include "SMaterialControllerFloatParameter_structs.hpp"
+#include "SMaterialControllerColorParameter_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.ExecuteUbergraph_SimpleHolographicComponent
-// 0x0010 (0x0010 - 0x0000)
-struct SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x000F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent) == 0x000004, "Wrong alignment on SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent");
-static_assert(sizeof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent) == 0x000010, "Wrong size on SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent");
-static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, EntryPoint) == 0x000000, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::EntryPoint' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, K2Node_Event_DeltaSeconds) == 0x000004, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::K2Node_Event_DeltaSeconds' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, CallFunc_Add_FloatFloat_ReturnValue) == 0x000008, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, K2Node_SwitchEnum_CmpSuccess) == 0x00000C, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, K2Node_SwitchEnum_CmpSuccess_1) == 0x00000D, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, CallFunc_Greater_FloatFloat_ReturnValue) == 0x00000E, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, CallFunc_Greater_FloatFloat_ReturnValue_1) == 0x00000F, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::CallFunc_Greater_FloatFloat_ReturnValue_1' has a wrong offset!");
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct SimpleHolographicComponent_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(SimpleHolographicComponent_C_ReceiveTick) == 0x000004, "Wrong alignment on SimpleHolographicComponent_C_ReceiveTick");
-static_assert(sizeof(SimpleHolographicComponent_C_ReceiveTick) == 0x000004, "Wrong size on SimpleHolographicComponent_C_ReceiveTick");
-static_assert(offsetof(SimpleHolographicComponent_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'SimpleHolographicComponent_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.CacheMaterialParameters
-// 0x0AA8 (0x0AA8 - 0x0000)
-struct SimpleHolographicComponent_C_CacheMaterialParameters final
-{
-public:
-	TArray<struct FSMaterialControllerFloatParameter> floats;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FSMaterialControllerColorParameter> colors;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UMaterialInstanceDynamic*               material;                                          // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bReplaceMaterial;                                  // 0x0028(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         index;                                             // 0x002C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMaterialParamCache                   result;                                            // 0x0030(0x00B0)(Parm, OutParm, HasGetValueTypeHash)
-	TMap<class FName, struct FLinearColor>        colorCaches;                                       // 0x00E0(0x0050)(Edit, BlueprintVisible)
-	TMap<class FName, float>                      floatCaches;                                       // 0x0130(0x0050)(Edit, BlueprintVisible)
-	int32                                         ___int_Array_Index_Variable;                       // 0x0180(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_184[0x4];                                      // 0x0184(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSMaterialControllerColorParameter     CallFunc_Array_Get_Item;                           // 0x0188(0x0670)(HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x07F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_K2_GetVectorParameterValue_ReturnValue;   // 0x07FC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x080C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0810(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0814(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_815[0x3];                                      // 0x0815(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0818(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x081C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMaterialControllerFloatParameter     CallFunc_Array_Get_Item_1;                         // 0x0820(0x01C0)(HasGetValueTypeHash)
-	float                                         CallFunc_K2_GetScalarParameterValue_ReturnValue;   // 0x09E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_9E4[0x4];                                      // 0x09E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSMaterialParamCache                   K2Node_MakeStruct_SMaterialParamCache;             // 0x09E8(0x00B0)(HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x0A98(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0A9C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A9D[0x3];                                      // 0x0A9D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0AA0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(SimpleHolographicComponent_C_CacheMaterialParameters) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_CacheMaterialParameters");
-static_assert(sizeof(SimpleHolographicComponent_C_CacheMaterialParameters) == 0x000AA8, "Wrong size on SimpleHolographicComponent_C_CacheMaterialParameters");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, floats) == 0x000000, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::floats' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, colors) == 0x000010, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::colors' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, material) == 0x000020, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::material' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, bReplaceMaterial) == 0x000028, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::bReplaceMaterial' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, index) == 0x00002C, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::index' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, result) == 0x000030, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::result' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, colorCaches) == 0x0000E0, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::colorCaches' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, floatCaches) == 0x000130, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::floatCaches' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, ___int_Array_Index_Variable) == 0x000180, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Array_Get_Item) == 0x000188, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Array_Length_ReturnValue) == 0x0007F8, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_K2_GetVectorParameterValue_ReturnValue) == 0x0007FC, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_K2_GetVectorParameterValue_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Array_Length_ReturnValue_1) == 0x00080C, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, ___int_Loop_Counter_Variable) == 0x000810, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Less_IntInt_ReturnValue) == 0x000814, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Add_IntInt_ReturnValue) == 0x000818, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, ___int_Array_Index_Variable_1) == 0x00081C, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Array_Get_Item_1) == 0x000820, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_K2_GetScalarParameterValue_ReturnValue) == 0x0009E0, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_K2_GetScalarParameterValue_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, K2Node_MakeStruct_SMaterialParamCache) == 0x0009E8, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::K2Node_MakeStruct_SMaterialParamCache' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, ___int_Loop_Counter_Variable_1) == 0x000A98, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Less_IntInt_ReturnValue_1) == 0x000A9C, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Add_IntInt_ReturnValue_1) == 0x000AA0, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.CacheAndReplace
-// 0x01F8 (0x01F8 - 0x0000)
-struct SimpleHolographicComponent_C_CacheAndReplace final
-{
-public:
-	struct FSHolographicData                      SHolographicData;                                  // 0x0000(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    self2;                                             // 0x0060(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	int32                                         ElementIndex;                                      // 0x0068(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               material;                                          // 0x0070(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               ReturnValue;                                       // 0x0078(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMaterialParamCache                   CacheResult;                                       // 0x0080(0x00B0)(Parm, OutParm, HasGetValueTypeHash)
-	class UMaterialInterface*                     ReplaceMaterial;                                   // 0x0130(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0139(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x013A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x013B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_13C[0x4];                                      // 0x013C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0140(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMaterialParamCache                   CallFunc_CacheMaterialParameters_result;           // 0x0148(0x00B0)(HasGetValueTypeHash)
-};
-static_assert(alignof(SimpleHolographicComponent_C_CacheAndReplace) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_CacheAndReplace");
-static_assert(sizeof(SimpleHolographicComponent_C_CacheAndReplace) == 0x0001F8, "Wrong size on SimpleHolographicComponent_C_CacheAndReplace");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, SHolographicData) == 0x000000, "Member 'SimpleHolographicComponent_C_CacheAndReplace::SHolographicData' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, self2) == 0x000060, "Member 'SimpleHolographicComponent_C_CacheAndReplace::self2' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, ElementIndex) == 0x000068, "Member 'SimpleHolographicComponent_C_CacheAndReplace::ElementIndex' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, material) == 0x000070, "Member 'SimpleHolographicComponent_C_CacheAndReplace::material' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, ReturnValue) == 0x000078, "Member 'SimpleHolographicComponent_C_CacheAndReplace::ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CacheResult) == 0x000080, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CacheResult' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, ReplaceMaterial) == 0x000130, "Member 'SimpleHolographicComponent_C_CacheAndReplace::ReplaceMaterial' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000138, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000139, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_BooleanAND_ReturnValue) == 0x00013A, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_IsValid_ReturnValue) == 0x00013B, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_IsValid_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000140, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_CacheMaterialParameters_result) == 0x000148, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_CacheMaterialParameters_result' has a wrong offset!");
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.RevertMaterialParamters
-// 0x01D8 (0x01D8 - 0x0000)
-struct SimpleHolographicComponent_C_RevertMaterialParamters final
-{
-public:
-	struct FSMaterialParamCache                   MaterialCache;                                     // 0x0000(0x00B0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               result;                                            // 0x00B0(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class FName, struct FLinearColor>        colorCaches;                                       // 0x00B8(0x0050)(Edit, BlueprintVisible)
-	TMap<class FName, float>                      floatCaches;                                       // 0x0108(0x0050)(Edit, BlueprintVisible)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0158(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_15C[0x4];                                      // 0x015C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           CallFunc_Map_Keys_Keys;                            // 0x0160(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0174(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class FName>                           CallFunc_Map_Keys_Keys_1;                          // 0x0178(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0188(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x018C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_18D[0x3];                                      // 0x018D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Array_Index_Variable;                       // 0x0190(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Array_Get_Item;                           // 0x0194(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Map_Find_Value;                           // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x01A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1A5[0x3];                                      // 0x01A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x01AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1B1[0x3];                                      // 0x01B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   CallFunc_Array_Get_Item_1;                         // 0x01B4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_Map_Find_Value_1;                         // 0x01C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Map_Find_ReturnValue_1;                   // 0x01D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1D1[0x3];                                      // 0x01D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x01D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(SimpleHolographicComponent_C_RevertMaterialParamters) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_RevertMaterialParamters");
-static_assert(sizeof(SimpleHolographicComponent_C_RevertMaterialParamters) == 0x0001D8, "Wrong size on SimpleHolographicComponent_C_RevertMaterialParamters");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, MaterialCache) == 0x000000, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::MaterialCache' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, result) == 0x0000B0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::result' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, colorCaches) == 0x0000B8, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::colorCaches' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, floatCaches) == 0x000108, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::floatCaches' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, ___int_Loop_Counter_Variable) == 0x000158, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Keys_Keys) == 0x000160, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Keys_Keys' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Add_IntInt_ReturnValue) == 0x000170, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Array_Length_ReturnValue) == 0x000174, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Keys_Keys_1) == 0x000178, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Keys_Keys_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Array_Length_ReturnValue_1) == 0x000188, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Less_IntInt_ReturnValue) == 0x00018C, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, ___int_Array_Index_Variable) == 0x000190, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Array_Get_Item) == 0x000194, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Find_Value) == 0x0001A0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Find_Value' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Find_ReturnValue) == 0x0001A4, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Find_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, ___int_Loop_Counter_Variable_1) == 0x0001A8, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, ___int_Array_Index_Variable_1) == 0x0001AC, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Less_IntInt_ReturnValue_1) == 0x0001B0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Array_Get_Item_1) == 0x0001B4, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Find_Value_1) == 0x0001C0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Find_Value_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Find_ReturnValue_1) == 0x0001D0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Find_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Add_IntInt_ReturnValue_1) == 0x0001D4, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.RemoveNpcEffect
-// 0x0118 (0x0118 - 0x0000)
-struct SimpleHolographicComponent_C_RemoveNpcEffect final
-{
-public:
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class USkeletalMeshComponent*>         CallFunc_Map_Keys_Keys;                            // 0x0018(0x0010)(ReferenceParm, ContainsInstancedReference)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMeshComponent*                 CallFunc_Array_Get_Item;                           // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSHolographicMaterialsCache            CallFunc_Map_Find_Value;                           // 0x0038(0x0010)(HasGetValueTypeHash)
-	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSMaterialParamCache                   CallFunc_Array_Get_Item_1;                         // 0x0058(0x00B0)(HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_RevertMaterialParamters_result;           // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0110(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0114(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(SimpleHolographicComponent_C_RemoveNpcEffect) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_RemoveNpcEffect");
-static_assert(sizeof(SimpleHolographicComponent_C_RemoveNpcEffect) == 0x000118, "Wrong size on SimpleHolographicComponent_C_RemoveNpcEffect");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, ___int_Loop_Counter_Variable) == 0x000000, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Add_IntInt_ReturnValue) == 0x000004, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, ___int_Array_Index_Variable) == 0x000008, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, ___int_Array_Index_Variable_1) == 0x00000C, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, ___int_Loop_Counter_Variable_1) == 0x000010, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Map_Keys_Keys) == 0x000018, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Map_Keys_Keys' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Add_IntInt_ReturnValue_1) == 0x000028, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Array_Get_Item) == 0x000030, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Map_Find_Value) == 0x000038, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Map_Find_Value' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Map_Find_ReturnValue) == 0x000048, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Map_Find_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Array_Length_ReturnValue) == 0x00004C, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Less_IntInt_ReturnValue) == 0x000050, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Array_Get_Item_1) == 0x000058, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_RevertMaterialParamters_result) == 0x000108, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_RevertMaterialParamters_result' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Array_Length_ReturnValue_1) == 0x000110, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Less_IntInt_ReturnValue_1) == 0x000114, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.UpdateMaterialsWithDa
-// 0x0BD0 (0x0BD0 - 0x0000)
-struct SimpleHolographicComponent_C_UpdateMaterialsWithDa final
-{
-public:
-	TArray<class UMaterialInstanceDynamic*>       Materials;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FSHolographicData                      SHolographicData;                                  // 0x0010(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
-	struct FKuroCurveLinearColor                  tempColor;                                         // 0x0070(0x0220)(Edit, BlueprintVisible)
-	struct FKuroCurveFloat                        tempFloat;                                         // 0x0290(0x0090)(Edit, BlueprintVisible)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0320(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0324(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0328(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x032C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0330(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_331[0x3];                                      // 0x0331(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0334(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable;                       // 0x0338(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x033C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMaterialControllerFloatParameter     CallFunc_Array_Get_Item;                           // 0x0340(0x01C0)(HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0500(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_501[0x3];                                      // 0x0501(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0504(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ___wildcard_Variable;                              // 0x0508(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x050C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0510(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_511[0x3];                                      // 0x0511(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0514(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_1;                     // 0x0518(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           ___wildcard_Variable_1;                            // 0x051C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_52C[0x4];                                      // 0x052C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CallFunc_Array_Get_Item_1;                         // 0x0530(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ___int_Array_Index_Variable_2;                     // 0x0538(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_53C[0x4];                                      // 0x053C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSMaterialControllerColorParameter     CallFunc_Array_Get_Item_2;                         // 0x0540(0x0670)(HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0BB0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_BB1[0x3];                                      // 0x0BB1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           CallFunc_GetValue_LinearColor_ReturnValue;         // 0x0BB4(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x0BC4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_BC5[0x3];                                      // 0x0BC5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_GetValue_Float_ReturnValue;               // 0x0BC8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(SimpleHolographicComponent_C_UpdateMaterialsWithDa) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_UpdateMaterialsWithDa");
-static_assert(sizeof(SimpleHolographicComponent_C_UpdateMaterialsWithDa) == 0x000BD0, "Wrong size on SimpleHolographicComponent_C_UpdateMaterialsWithDa");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, Materials) == 0x000000, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::Materials' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, SHolographicData) == 0x000010, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::SHolographicData' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, tempColor) == 0x000070, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::tempColor' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, tempFloat) == 0x000290, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::tempFloat' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue) == 0x000320, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue_1) == 0x000324, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue_2) == 0x000328, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable) == 0x00032C, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue) == 0x000330, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue) == 0x000334, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable) == 0x000338, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Array_Index_Variable' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable_1) == 0x00033C, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item) == 0x000340, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue_1) == 0x000500, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue_1) == 0x000504, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___wildcard_Variable) == 0x000508, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___wildcard_Variable' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable_2) == 0x00050C, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable_2' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue_2) == 0x000510, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue_2) == 0x000514, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable_1) == 0x000518, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Array_Index_Variable_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___wildcard_Variable_1) == 0x00051C, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___wildcard_Variable_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item_1) == 0x000530, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable_2) == 0x000538, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Array_Index_Variable_2' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item_2) == 0x000540, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item_2' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, K2Node_SwitchEnum_CmpSuccess) == 0x000BB0, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_GetValue_LinearColor_ReturnValue) == 0x000BB4, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_GetValue_LinearColor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, K2Node_SwitchEnum_CmpSuccess_1) == 0x000BC4, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
-static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_GetValue_Float_ReturnValue) == 0x000BC8, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_GetValue_Float_ReturnValue' has a wrong offset!");
-
-// Function SimpleHolographicComponent.SimpleHolographicComponent_C.EndEffect
-// 0x0001 (0x0001 - 0x0000)
-struct SimpleHolographicComponent_C_EndEffect final
-{
-public:
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(SimpleHolographicComponent_C_EndEffect) == 0x000001, "Wrong alignment on SimpleHolographicComponent_C_EndEffect");
-static_assert(sizeof(SimpleHolographicComponent_C_EndEffect) == 0x000001, "Wrong size on SimpleHolographicComponent_C_EndEffect");
-static_assert(offsetof(SimpleHolographicComponent_C_EndEffect, K2Node_SwitchEnum_CmpSuccess) == 0x000000, "Member 'SimpleHolographicComponent_C_EndEffect::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
 
 // Function SimpleHolographicComponent.SimpleHolographicComponent_C.StartEffect
 // 0x0210 (0x0210 - 0x0000)
@@ -429,6 +112,323 @@ static_assert(offsetof(SimpleHolographicComponent_C_StartEffect, CallFunc_GetObj
 static_assert(offsetof(SimpleHolographicComponent_C_StartEffect, CallFunc_Array_Add_ReturnValue_1) == 0x000200, "Member 'SimpleHolographicComponent_C_StartEffect::CallFunc_Array_Add_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(SimpleHolographicComponent_C_StartEffect, CallFunc_EndsWith_ReturnValue) == 0x000204, "Member 'SimpleHolographicComponent_C_StartEffect::CallFunc_EndsWith_ReturnValue' has a wrong offset!");
 static_assert(offsetof(SimpleHolographicComponent_C_StartEffect, CallFunc_Array_Add_ReturnValue_2) == 0x000208, "Member 'SimpleHolographicComponent_C_StartEffect::CallFunc_Array_Add_ReturnValue_2' has a wrong offset!");
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.EndEffect
+// 0x0001 (0x0001 - 0x0000)
+struct SimpleHolographicComponent_C_EndEffect final
+{
+public:
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(SimpleHolographicComponent_C_EndEffect) == 0x000001, "Wrong alignment on SimpleHolographicComponent_C_EndEffect");
+static_assert(sizeof(SimpleHolographicComponent_C_EndEffect) == 0x000001, "Wrong size on SimpleHolographicComponent_C_EndEffect");
+static_assert(offsetof(SimpleHolographicComponent_C_EndEffect, K2Node_SwitchEnum_CmpSuccess) == 0x000000, "Member 'SimpleHolographicComponent_C_EndEffect::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.UpdateMaterialsWithDa
+// 0x0BD0 (0x0BD0 - 0x0000)
+struct SimpleHolographicComponent_C_UpdateMaterialsWithDa final
+{
+public:
+	TArray<class UMaterialInstanceDynamic*>       Materials;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FSHolographicData                      SHolographicData;                                  // 0x0010(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+	struct FKuroCurveLinearColor                  tempColor;                                         // 0x0070(0x0220)(Edit, BlueprintVisible)
+	struct FKuroCurveFloat                        tempFloat;                                         // 0x0290(0x0090)(Edit, BlueprintVisible)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0320(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0324(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x0328(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x032C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0330(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_331[0x3];                                      // 0x0331(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0334(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0338(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x033C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMaterialControllerFloatParameter     CallFunc_Array_Get_Item;                           // 0x0340(0x01C0)(HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0500(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_501[0x3];                                      // 0x0501(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0504(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ___wildcard_Variable;                              // 0x0508(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_2;                    // 0x050C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_2;                // 0x0510(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_511[0x3];                                      // 0x0511(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_2;                 // 0x0514(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x0518(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           ___wildcard_Variable_1;                            // 0x051C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_52C[0x4];                                      // 0x052C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_Array_Get_Item_1;                         // 0x0530(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_2;                     // 0x0538(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_53C[0x4];                                      // 0x053C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSMaterialControllerColorParameter     CallFunc_Array_Get_Item_2;                         // 0x0540(0x0670)(HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0BB0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BB1[0x3];                                      // 0x0BB1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           CallFunc_GetValue_LinearColor_ReturnValue;         // 0x0BB4(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x0BC4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BC5[0x3];                                      // 0x0BC5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_GetValue_Float_ReturnValue;               // 0x0BC8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(SimpleHolographicComponent_C_UpdateMaterialsWithDa) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_UpdateMaterialsWithDa");
+static_assert(sizeof(SimpleHolographicComponent_C_UpdateMaterialsWithDa) == 0x000BD0, "Wrong size on SimpleHolographicComponent_C_UpdateMaterialsWithDa");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, Materials) == 0x000000, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::Materials' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, SHolographicData) == 0x000010, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::SHolographicData' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, tempColor) == 0x000070, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::tempColor' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, tempFloat) == 0x000290, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::tempFloat' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue) == 0x000320, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue_1) == 0x000324, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Length_ReturnValue_2) == 0x000328, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Length_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable) == 0x00032C, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue) == 0x000330, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue) == 0x000334, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable) == 0x000338, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable_1) == 0x00033C, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item) == 0x000340, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue_1) == 0x000500, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue_1) == 0x000504, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___wildcard_Variable) == 0x000508, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___wildcard_Variable' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Loop_Counter_Variable_2) == 0x00050C, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Loop_Counter_Variable_2' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Less_IntInt_ReturnValue_2) == 0x000510, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Less_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Add_IntInt_ReturnValue_2) == 0x000514, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Add_IntInt_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable_1) == 0x000518, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___wildcard_Variable_1) == 0x00051C, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___wildcard_Variable_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item_1) == 0x000530, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, ___int_Array_Index_Variable_2) == 0x000538, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::___int_Array_Index_Variable_2' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_Array_Get_Item_2) == 0x000540, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_Array_Get_Item_2' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, K2Node_SwitchEnum_CmpSuccess) == 0x000BB0, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_GetValue_LinearColor_ReturnValue) == 0x000BB4, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_GetValue_LinearColor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, K2Node_SwitchEnum_CmpSuccess_1) == 0x000BC4, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_UpdateMaterialsWithDa, CallFunc_GetValue_Float_ReturnValue) == 0x000BC8, "Member 'SimpleHolographicComponent_C_UpdateMaterialsWithDa::CallFunc_GetValue_Float_ReturnValue' has a wrong offset!");
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.RemoveNpcEffect
+// 0x0118 (0x0118 - 0x0000)
+struct SimpleHolographicComponent_C_RemoveNpcEffect final
+{
+public:
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class USkeletalMeshComponent*>         CallFunc_Map_Keys_Keys;                            // 0x0018(0x0010)(ReferenceParm, ContainsInstancedReference)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkeletalMeshComponent*                 CallFunc_Array_Get_Item;                           // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSHolographicMaterialsCache            CallFunc_Map_Find_Value;                           // 0x0038(0x0010)(HasGetValueTypeHash)
+	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSMaterialParamCache                   CallFunc_Array_Get_Item_1;                         // 0x0058(0x00B0)(HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_RevertMaterialParamters_result;           // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0110(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0114(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(SimpleHolographicComponent_C_RemoveNpcEffect) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_RemoveNpcEffect");
+static_assert(sizeof(SimpleHolographicComponent_C_RemoveNpcEffect) == 0x000118, "Wrong size on SimpleHolographicComponent_C_RemoveNpcEffect");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, ___int_Loop_Counter_Variable) == 0x000000, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Add_IntInt_ReturnValue) == 0x000004, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, ___int_Array_Index_Variable) == 0x000008, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, ___int_Array_Index_Variable_1) == 0x00000C, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, ___int_Loop_Counter_Variable_1) == 0x000010, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::___int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Map_Keys_Keys) == 0x000018, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Map_Keys_Keys' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Add_IntInt_ReturnValue_1) == 0x000028, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Array_Get_Item) == 0x000030, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Map_Find_Value) == 0x000038, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Map_Find_Value' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Map_Find_ReturnValue) == 0x000048, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Map_Find_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Array_Length_ReturnValue) == 0x00004C, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Less_IntInt_ReturnValue) == 0x000050, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Array_Get_Item_1) == 0x000058, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_RevertMaterialParamters_result) == 0x000108, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_RevertMaterialParamters_result' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Array_Length_ReturnValue_1) == 0x000110, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RemoveNpcEffect, CallFunc_Less_IntInt_ReturnValue_1) == 0x000114, "Member 'SimpleHolographicComponent_C_RemoveNpcEffect::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.RevertMaterialParamters
+// 0x01D8 (0x01D8 - 0x0000)
+struct SimpleHolographicComponent_C_RevertMaterialParamters final
+{
+public:
+	struct FSMaterialParamCache                   MaterialCache;                                     // 0x0000(0x00B0)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               result;                                            // 0x00B0(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class FName, struct FLinearColor>        colorCaches;                                       // 0x00B8(0x0050)(Edit, BlueprintVisible)
+	TMap<class FName, float>                      floatCaches;                                       // 0x0108(0x0050)(Edit, BlueprintVisible)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0158(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_15C[0x4];                                      // 0x015C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           CallFunc_Map_Keys_Keys;                            // 0x0160(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0174(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class FName>                           CallFunc_Map_Keys_Keys_1;                          // 0x0178(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0188(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x018C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_18D[0x3];                                      // 0x018D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Array_Index_Variable;                       // 0x0190(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Array_Get_Item;                           // 0x0194(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Map_Find_Value;                           // 0x01A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x01A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A5[0x3];                                      // 0x01A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x01A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x01AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1B1[0x3];                                      // 0x01B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   CallFunc_Array_Get_Item_1;                         // 0x01B4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_Map_Find_Value_1;                         // 0x01C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Map_Find_ReturnValue_1;                   // 0x01D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1D1[0x3];                                      // 0x01D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x01D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(SimpleHolographicComponent_C_RevertMaterialParamters) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_RevertMaterialParamters");
+static_assert(sizeof(SimpleHolographicComponent_C_RevertMaterialParamters) == 0x0001D8, "Wrong size on SimpleHolographicComponent_C_RevertMaterialParamters");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, MaterialCache) == 0x000000, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::MaterialCache' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, result) == 0x0000B0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::result' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, colorCaches) == 0x0000B8, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::colorCaches' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, floatCaches) == 0x000108, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::floatCaches' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, ___int_Loop_Counter_Variable) == 0x000158, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Keys_Keys) == 0x000160, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Keys_Keys' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Add_IntInt_ReturnValue) == 0x000170, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Array_Length_ReturnValue) == 0x000174, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Keys_Keys_1) == 0x000178, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Keys_Keys_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Array_Length_ReturnValue_1) == 0x000188, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Less_IntInt_ReturnValue) == 0x00018C, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, ___int_Array_Index_Variable) == 0x000190, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Array_Get_Item) == 0x000194, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Find_Value) == 0x0001A0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Find_Value' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Find_ReturnValue) == 0x0001A4, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Find_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, ___int_Loop_Counter_Variable_1) == 0x0001A8, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::___int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, ___int_Array_Index_Variable_1) == 0x0001AC, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Less_IntInt_ReturnValue_1) == 0x0001B0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Array_Get_Item_1) == 0x0001B4, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Find_Value_1) == 0x0001C0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Find_Value_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Map_Find_ReturnValue_1) == 0x0001D0, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Map_Find_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_RevertMaterialParamters, CallFunc_Add_IntInt_ReturnValue_1) == 0x0001D4, "Member 'SimpleHolographicComponent_C_RevertMaterialParamters::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.CacheAndReplace
+// 0x01F8 (0x01F8 - 0x0000)
+struct SimpleHolographicComponent_C_CacheAndReplace final
+{
+public:
+	struct FSHolographicData                      SHolographicData;                                  // 0x0000(0x0060)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    self2;                                             // 0x0060(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	int32                                         ElementIndex;                                      // 0x0068(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               material;                                          // 0x0070(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               ReturnValue;                                       // 0x0078(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMaterialParamCache                   CacheResult;                                       // 0x0080(0x00B0)(Parm, OutParm, HasGetValueTypeHash)
+	class UMaterialInterface*                     ReplaceMaterial;                                   // 0x0130(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EKuroFeatureLevel                             CallFunc_GetWorldFeatureLevel_ReturnValue;         // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0139(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x013A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x013B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_13C[0x4];                                      // 0x013C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0140(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMaterialParamCache                   CallFunc_CacheMaterialParameters_result;           // 0x0148(0x00B0)(HasGetValueTypeHash)
+};
+static_assert(alignof(SimpleHolographicComponent_C_CacheAndReplace) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_CacheAndReplace");
+static_assert(sizeof(SimpleHolographicComponent_C_CacheAndReplace) == 0x0001F8, "Wrong size on SimpleHolographicComponent_C_CacheAndReplace");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, SHolographicData) == 0x000000, "Member 'SimpleHolographicComponent_C_CacheAndReplace::SHolographicData' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, self2) == 0x000060, "Member 'SimpleHolographicComponent_C_CacheAndReplace::self2' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, ElementIndex) == 0x000068, "Member 'SimpleHolographicComponent_C_CacheAndReplace::ElementIndex' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, material) == 0x000070, "Member 'SimpleHolographicComponent_C_CacheAndReplace::material' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, ReturnValue) == 0x000078, "Member 'SimpleHolographicComponent_C_CacheAndReplace::ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CacheResult) == 0x000080, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CacheResult' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, ReplaceMaterial) == 0x000130, "Member 'SimpleHolographicComponent_C_CacheAndReplace::ReplaceMaterial' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_GetWorldFeatureLevel_ReturnValue) == 0x000138, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_GetWorldFeatureLevel_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000139, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_BooleanAND_ReturnValue) == 0x00013A, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_IsValid_ReturnValue) == 0x00013B, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_IsValid_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_CreateDynamicMaterialInstance_ReturnValue) == 0x000140, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_CreateDynamicMaterialInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheAndReplace, CallFunc_CacheMaterialParameters_result) == 0x000148, "Member 'SimpleHolographicComponent_C_CacheAndReplace::CallFunc_CacheMaterialParameters_result' has a wrong offset!");
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.CacheMaterialParameters
+// 0x0AA8 (0x0AA8 - 0x0000)
+struct SimpleHolographicComponent_C_CacheMaterialParameters final
+{
+public:
+	TArray<struct FSMaterialControllerFloatParameter> floats;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FSMaterialControllerColorParameter> colors;                                        // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UMaterialInstanceDynamic*               material;                                          // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bReplaceMaterial;                                  // 0x0028(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         index;                                             // 0x002C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMaterialParamCache                   result;                                            // 0x0030(0x00B0)(Parm, OutParm, HasGetValueTypeHash)
+	TMap<class FName, struct FLinearColor>        colorCaches;                                       // 0x00E0(0x0050)(Edit, BlueprintVisible)
+	TMap<class FName, float>                      floatCaches;                                       // 0x0130(0x0050)(Edit, BlueprintVisible)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0180(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_184[0x4];                                      // 0x0184(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSMaterialControllerColorParameter     CallFunc_Array_Get_Item;                           // 0x0188(0x0670)(HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x07F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_K2_GetVectorParameterValue_ReturnValue;   // 0x07FC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x080C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0810(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0814(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_815[0x3];                                      // 0x0815(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0818(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable_1;                     // 0x081C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMaterialControllerFloatParameter     CallFunc_Array_Get_Item_1;                         // 0x0820(0x01C0)(HasGetValueTypeHash)
+	float                                         CallFunc_K2_GetScalarParameterValue_ReturnValue;   // 0x09E0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9E4[0x4];                                      // 0x09E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSMaterialParamCache                   K2Node_MakeStruct_SMaterialParamCache;             // 0x09E8(0x00B0)(HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable_1;                    // 0x0A98(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0A9C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A9D[0x3];                                      // 0x0A9D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x0AA0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(SimpleHolographicComponent_C_CacheMaterialParameters) == 0x000008, "Wrong alignment on SimpleHolographicComponent_C_CacheMaterialParameters");
+static_assert(sizeof(SimpleHolographicComponent_C_CacheMaterialParameters) == 0x000AA8, "Wrong size on SimpleHolographicComponent_C_CacheMaterialParameters");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, floats) == 0x000000, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::floats' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, colors) == 0x000010, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::colors' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, material) == 0x000020, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::material' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, bReplaceMaterial) == 0x000028, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::bReplaceMaterial' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, index) == 0x00002C, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::index' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, result) == 0x000030, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::result' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, colorCaches) == 0x0000E0, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::colorCaches' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, floatCaches) == 0x000130, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::floatCaches' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, ___int_Array_Index_Variable) == 0x000180, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::___int_Array_Index_Variable' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Array_Get_Item) == 0x000188, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Array_Get_Item' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Array_Length_ReturnValue) == 0x0007F8, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Array_Length_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_K2_GetVectorParameterValue_ReturnValue) == 0x0007FC, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_K2_GetVectorParameterValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Array_Length_ReturnValue_1) == 0x00080C, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Array_Length_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, ___int_Loop_Counter_Variable) == 0x000810, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::___int_Loop_Counter_Variable' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Less_IntInt_ReturnValue) == 0x000814, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Less_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Add_IntInt_ReturnValue) == 0x000818, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Add_IntInt_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, ___int_Array_Index_Variable_1) == 0x00081C, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::___int_Array_Index_Variable_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Array_Get_Item_1) == 0x000820, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Array_Get_Item_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_K2_GetScalarParameterValue_ReturnValue) == 0x0009E0, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_K2_GetScalarParameterValue_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, K2Node_MakeStruct_SMaterialParamCache) == 0x0009E8, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::K2Node_MakeStruct_SMaterialParamCache' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, ___int_Loop_Counter_Variable_1) == 0x000A98, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::___int_Loop_Counter_Variable_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Less_IntInt_ReturnValue_1) == 0x000A9C, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Less_IntInt_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_CacheMaterialParameters, CallFunc_Add_IntInt_ReturnValue_1) == 0x000AA0, "Member 'SimpleHolographicComponent_C_CacheMaterialParameters::CallFunc_Add_IntInt_ReturnValue_1' has a wrong offset!");
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct SimpleHolographicComponent_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(SimpleHolographicComponent_C_ReceiveTick) == 0x000004, "Wrong alignment on SimpleHolographicComponent_C_ReceiveTick");
+static_assert(sizeof(SimpleHolographicComponent_C_ReceiveTick) == 0x000004, "Wrong size on SimpleHolographicComponent_C_ReceiveTick");
+static_assert(offsetof(SimpleHolographicComponent_C_ReceiveTick, DeltaSeconds) == 0x000000, "Member 'SimpleHolographicComponent_C_ReceiveTick::DeltaSeconds' has a wrong offset!");
+
+// Function SimpleHolographicComponent.SimpleHolographicComponent_C.ExecuteUbergraph_SimpleHolographicComponent
+// 0x0010 (0x0010 - 0x0000)
+struct SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchEnum_CmpSuccess_1;                    // 0x000D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x000E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue_1;         // 0x000F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent) == 0x000004, "Wrong alignment on SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent");
+static_assert(sizeof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent) == 0x000010, "Wrong size on SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent");
+static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, EntryPoint) == 0x000000, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::EntryPoint' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, K2Node_Event_DeltaSeconds) == 0x000004, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::K2Node_Event_DeltaSeconds' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, CallFunc_Add_FloatFloat_ReturnValue) == 0x000008, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, K2Node_SwitchEnum_CmpSuccess) == 0x00000C, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::K2Node_SwitchEnum_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, K2Node_SwitchEnum_CmpSuccess_1) == 0x00000D, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::K2Node_SwitchEnum_CmpSuccess_1' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, CallFunc_Greater_FloatFloat_ReturnValue) == 0x00000E, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::CallFunc_Greater_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent, CallFunc_Greater_FloatFloat_ReturnValue_1) == 0x00000F, "Member 'SimpleHolographicComponent_C_ExecuteUbergraph_SimpleHolographicComponent::CallFunc_Greater_FloatFloat_ReturnValue_1' has a wrong offset!");
 
 }
 

@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Role_Move_B_Net_C::ExecuteUbergraph_GA_Role_Move_B_Net(int32 EntryPoint)
+void GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::ExecuteUbergraph_GA_Role_Move_B_Net(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
@@ -42,7 +42,7 @@ void UGA_Role_Move_B_Net_C::ExecuteUbergraph_GA_Role_Move_B_Net(int32 EntryPoint
 // Parameters:
 // bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Role_Move_B_Net_C::K2_OnEndAbility(bool bWasCancelled)
+void GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
@@ -60,7 +60,7 @@ void UGA_Role_Move_B_Net_C::K2_OnEndAbility(bool bWasCancelled)
 // Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.K2_ActivateAbility
 // (Event, Protected, BlueprintEvent)
 
-void UGA_Role_Move_B_Net_C::K2_ActivateAbility()
+void GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
@@ -71,89 +71,89 @@ void UGA_Role_Move_B_Net_C::K2_ActivateAbility()
 }
 
 
-// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnCompleted_5D118C384AE61F1C80292E81A7B032EA
+// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnCompleted_5D118C384AE61F1C80292E81BE6DCD13
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_Move_B_Net_C::OnCompleted_5D118C384AE61F1C80292E81A7B032EA()
+void GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::OnCompleted_5D118C384AE61F1C80292E81BE6DCD13()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnCompleted_5D118C384AE61F1C80292E81A7B032EA");
+		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnCompleted_5D118C384AE61F1C80292E81BE6DCD13");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnBlendOut_5D118C384AE61F1C80292E81A7B032EA
+// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnBlendOut_5D118C384AE61F1C80292E81BE6DCD13
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_Move_B_Net_C::OnBlendOut_5D118C384AE61F1C80292E81A7B032EA()
+void GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::OnBlendOut_5D118C384AE61F1C80292E81BE6DCD13()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnBlendOut_5D118C384AE61F1C80292E81A7B032EA");
+		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnBlendOut_5D118C384AE61F1C80292E81BE6DCD13");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnInterrupted_5D118C384AE61F1C80292E81A7B032EA
+// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnInterrupted_5D118C384AE61F1C80292E81BE6DCD13
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_Move_B_Net_C::OnInterrupted_5D118C384AE61F1C80292E81A7B032EA()
+void GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::OnInterrupted_5D118C384AE61F1C80292E81BE6DCD13()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnInterrupted_5D118C384AE61F1C80292E81A7B032EA");
+		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnInterrupted_5D118C384AE61F1C80292E81BE6DCD13");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnCancelled_5D118C384AE61F1C80292E81A7B032EA
+// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnCancelled_5D118C384AE61F1C80292E81BE6DCD13
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_Move_B_Net_C::OnCancelled_5D118C384AE61F1C80292E81A7B032EA()
+void GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::OnCancelled_5D118C384AE61F1C80292E81BE6DCD13()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnCancelled_5D118C384AE61F1C80292E81A7B032EA");
+		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnCancelled_5D118C384AE61F1C80292E81BE6DCD13");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnTick_5D118C384AE61F1C80292E81A7B032EA
+// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.OnTick_5D118C384AE61F1C80292E81BE6DCD13
 // (BlueprintCallable, BlueprintEvent)
 
-void UGA_Role_Move_B_Net_C::OnTick_5D118C384AE61F1C80292E81A7B032EA()
+void GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::OnTick_5D118C384AE61F1C80292E81BE6DCD13()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnTick_5D118C384AE61F1C80292E81A7B032EA");
+		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "OnTick_5D118C384AE61F1C80292E81BE6DCD13");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.Added_21071CB943CD992BF8EFD6A308FB4881
+// Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.Added_21071CB943CD992BF8EFD6A3CD0BC55E
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Role_Move_B_Net_C::Added_21071CB943CD992BF8EFD6A308FB4881(const struct FGameplayTag& Tag)
+void GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::Added_21071CB943CD992BF8EFD6A3CD0BC55E(const struct FGameplayTag& Tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "Added_21071CB943CD992BF8EFD6A308FB4881");
+		Func = Class->GetFunction("GA_Role_Move_B_Net_C", "Added_21071CB943CD992BF8EFD6A3CD0BC55E");
 
-	Params::GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A308FB4881 Parms{};
+	Params::GA_Role_Move_B_Net_C_Added_21071CB943CD992BF8EFD6A3CD0BC55E Parms{};
 
 	Parms.Tag = std::move(Tag);
 
@@ -164,11 +164,11 @@ void UGA_Role_Move_B_Net_C::Added_21071CB943CD992BF8EFD6A308FB4881(const struct 
 // Function GA_Role_Move_B_Net.GA_Role_Move_B_Net_C.K2_CanActivateAbility
 // (Event, Protected, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// struct FGameplayAbilityActorInfo        ActorInfo                                              (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference)
-// struct FGameplayTagContainer            RelevantTags                                           (Parm, OutParm)
+// const struct FGameplayAbilityActorInfo& ActorInfo                                              (BlueprintVisible, BlueprintReadOnly, Parm, ContainsInstancedReference)
+// struct FGameplayTagContainer*           RelevantTags                                           (Parm, OutParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-bool UGA_Role_Move_B_Net_C::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, struct FGameplayTagContainer* RelevantTags) const
+bool GA_Role_Move_B_Net::UGA_Role_Move_B_Net_C::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, struct FGameplayTagContainer* RelevantTags) const
 {
 	static class UFunction* Func = nullptr;
 

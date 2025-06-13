@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "ECommonQteViewType_SingleButtonContinuousClick_structs.hpp"
-#include "SCommonQteButton_structs.hpp"
 #include "ECommonQteInteractiveTiming_structs.hpp"
+#include "SCommonQteButton_structs.hpp"
 
 
 namespace SDK
@@ -23,7 +23,7 @@ namespace SDK
 struct FSCommonQte_ContinuousClick final
 {
 public:
-	ECommonQteViewType_SingleButtonContinuousClick ViewType_31_18444E3942D5E78BD3CCE2853B53FED6;      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECommonQteViewType_SingleButtonContinuousClick ViewType_31_18444E3942D5E78BD3CCE2853B53FED6;     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSCommonQteButton                      UIConfig_24_17F2A82548DE4864C1C98DAD76E7E0B1;      // 0x0008(0x0048)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	ECommonQteInteractiveTiming                   InteractiveTiming_30_E8AC86F443D02F74858377A1C94A1910; // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

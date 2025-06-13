@@ -64,7 +64,7 @@ void UMagicLeapLightEstimationFunctionLibrary::DestroyTracker()
 // Function MagicLeapLightEstimation.MagicLeapLightEstimationFunctionLibrary.GetAmbientGlobalState
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMagicLeapLightEstimationAmbientGlobalStateGlobalAmbientState                                     (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FMagicLeapLightEstimationAmbientGlobalState*GlobalAmbientState                                     (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMagicLeapLightEstimationFunctionLibrary::GetAmbientGlobalState(struct FMagicLeapLightEstimationAmbientGlobalState* GlobalAmbientState)
@@ -93,7 +93,7 @@ bool UMagicLeapLightEstimationFunctionLibrary::GetAmbientGlobalState(struct FMag
 // Function MagicLeapLightEstimation.MagicLeapLightEstimationFunctionLibrary.GetColorTemperatureState
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FMagicLeapLightEstimationColorTemperatureStateColorTemperatureState                                  (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FMagicLeapLightEstimationColorTemperatureState*ColorTemperatureState                                  (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMagicLeapLightEstimationFunctionLibrary::GetColorTemperatureState(struct FMagicLeapLightEstimationColorTemperatureState* ColorTemperatureState)

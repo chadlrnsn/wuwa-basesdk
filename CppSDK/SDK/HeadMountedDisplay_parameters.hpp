@@ -589,7 +589,7 @@ static_assert(offsetof(HeadMountedDisplayFunctionLibrary_SetWorldToMetersScale, 
 struct HeadMountedDisplayFunctionLibrary_SetXRDisconnectDelegate final
 {
 public:
-	TDelegate<void(class FString& OutReason)>     InDisconnectedDelegate;                            // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& OutReason)> InDisconnectedDelegate;                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(HeadMountedDisplayFunctionLibrary_SetXRDisconnectDelegate) == 0x000004, "Wrong alignment on HeadMountedDisplayFunctionLibrary_SetXRDisconnectDelegate");
 static_assert(sizeof(HeadMountedDisplayFunctionLibrary_SetXRDisconnectDelegate) == 0x000028, "Wrong size on HeadMountedDisplayFunctionLibrary_SetXRDisconnectDelegate");
@@ -602,7 +602,7 @@ struct HeadMountedDisplayFunctionLibrary_SetXRTimedInputActionDelegate final
 public:
 	class FName                                   ActionName;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(float Value, struct FTimespan& Time)> InDelegate;                                        // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(const float Value, const struct FTimespan& Time)> InDelegate;                     // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(HeadMountedDisplayFunctionLibrary_SetXRTimedInputActionDelegate) == 0x000004, "Wrong alignment on HeadMountedDisplayFunctionLibrary_SetXRTimedInputActionDelegate");
 static_assert(sizeof(HeadMountedDisplayFunctionLibrary_SetXRTimedInputActionDelegate) == 0x000038, "Wrong size on HeadMountedDisplayFunctionLibrary_SetXRTimedInputActionDelegate");

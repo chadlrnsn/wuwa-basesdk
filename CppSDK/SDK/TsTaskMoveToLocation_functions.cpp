@@ -17,23 +17,21 @@
 namespace SDK
 {
 
-// Function TsTaskMoveToLocation.TsTaskMoveToLocation_C.ReceiveExecuteAI
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Function TsTaskMoveToLocation.TsTaskMoveToLocation_C.ExecuteUbergraph_TsTaskMoveToLocation
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskMoveToLocation_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
+void UTsTaskMoveToLocation_C::ExecuteUbergraph_TsTaskMoveToLocation(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskMoveToLocation_C", "ReceiveExecuteAI");
+		Func = Class->GetFunction("TsTaskMoveToLocation_C", "ExecuteUbergraph_TsTaskMoveToLocation");
 
-	Params::TsTaskMoveToLocation_C_ReceiveExecuteAI Parms{};
+	Params::TsTaskMoveToLocation_C_ExecuteUbergraph_TsTaskMoveToLocation Parms{};
 
-	Parms.OwnerController = OwnerController;
-	Parms.ControlledPawn = ControlledPawn;
+	Parms.EntryPoint = EntryPoint;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -73,21 +71,23 @@ void UTsTaskMoveToLocation_C::ReceiveTickAI(class AAIController* OwnerController
 }
 
 
-// Function TsTaskMoveToLocation.TsTaskMoveToLocation_C.ExecuteUbergraph_TsTaskMoveToLocation
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Function TsTaskMoveToLocation.TsTaskMoveToLocation_C.ReceiveExecuteAI
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    OwnerController                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ControlledPawn                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsTaskMoveToLocation_C::ExecuteUbergraph_TsTaskMoveToLocation(int32 EntryPoint)
+void UTsTaskMoveToLocation_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsTaskMoveToLocation_C", "ExecuteUbergraph_TsTaskMoveToLocation");
+		Func = Class->GetFunction("TsTaskMoveToLocation_C", "ReceiveExecuteAI");
 
-	Params::TsTaskMoveToLocation_C_ExecuteUbergraph_TsTaskMoveToLocation Parms{};
+	Params::TsTaskMoveToLocation_C_ReceiveExecuteAI Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.OwnerController = OwnerController;
+	Parms.ControlledPawn = ControlledPawn;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

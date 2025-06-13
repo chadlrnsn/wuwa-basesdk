@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "EQuestStepState_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -50,6 +50,8 @@ public:
 	static float GetLevelFloatVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
 	static struct FVector GetLevelPosVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
 	static bool GetLevelBoolVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
+	static void UpdateNpcStateData(int32 entityId, int32& animState, class UObject* __WorldContext);
+	static bool GetAndResetNoTransitionSwitch(int32 entityId, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

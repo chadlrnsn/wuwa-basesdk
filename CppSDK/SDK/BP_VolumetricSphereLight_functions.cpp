@@ -59,19 +59,19 @@ void ABP_VolumetricSphereLight_C::ReceiveBeginPlay()
 }
 
 
-// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.EditorTick
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.Update
 // (Event, Public, BlueprintEvent)
 // Parameters:
 // float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_VolumetricSphereLight_C::EditorTick(float DeltaSeconds)
+void ABP_VolumetricSphereLight_C::Update(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "EditorTick");
+		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "Update");
 
-	Params::BP_VolumetricSphereLight_C_EditorTick Parms{};
+	Params::BP_VolumetricSphereLight_C_Update Parms{};
 
 	Parms.DeltaSeconds = DeltaSeconds;
 
@@ -79,21 +79,21 @@ void ABP_VolumetricSphereLight_C::EditorTick(float DeltaSeconds)
 }
 
 
-// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.ReceiveTick
+// Function BP_VolumetricSphereLight.BP_VolumetricSphereLight_C.SetLightIntensityScale
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ScaleFactor                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_VolumetricSphereLight_C::ReceiveTick(float DeltaSeconds)
+void ABP_VolumetricSphereLight_C::SetLightIntensityScale(float ScaleFactor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "ReceiveTick");
+		Func = Class->GetFunction("BP_VolumetricSphereLight_C", "SetLightIntensityScale");
 
-	Params::BP_VolumetricSphereLight_C_ReceiveTick Parms{};
+	Params::BP_VolumetricSphereLight_C_SetLightIntensityScale Parms{};
 
-	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.ScaleFactor = ScaleFactor;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

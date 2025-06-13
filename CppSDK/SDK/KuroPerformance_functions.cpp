@@ -164,7 +164,7 @@ int32 UKuroPerformanceBPLibrary::GetCurrentAndroidDeviceRequireAdaptiveModule()
 // Function KuroPerformance.KuroPerformanceBPLibrary.GetCurrentTemperatureData
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(bool bResult, float CurrentTemperature, float TempBudget)>Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(bool bResult, float CurrentTemperature, float TempBudget)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroPerformanceBPLibrary::GetCurrentTemperatureData(const TDelegate<void(bool bResult, float CurrentTemperature, float TempBudget)>& Delegate)
 {
@@ -389,7 +389,7 @@ EKuroBoostFlags UKuroPerformanceBPLibrary::GetSupportedBoostFlag()
 // Function KuroPerformance.KuroPerformanceBPLibrary.GetTickedPerformanceReportAndAdvice
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TDelegate<void(const struct FKuroPerformanceReport& PerformanceReport)>ReportDelegate                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const struct FKuroPerformanceReport& PerformanceReport)>&ReportDelegate                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroPerformanceBPLibrary::GetTickedPerformanceReportAndAdvice(const TDelegate<void(const struct FKuroPerformanceReport& PerformanceReport)>& ReportDelegate)
 {
@@ -414,7 +414,7 @@ void UKuroPerformanceBPLibrary::GetTickedPerformanceReportAndAdvice(const TDeleg
 // Function KuroPerformance.KuroPerformanceBPLibrary.InitGameConfig
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKuroGameConfig                  GameConfig                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKuroGameConfig&           GameConfig                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroPerformanceBPLibrary::InitGameConfig(const struct FKuroGameConfig& GameConfig)
@@ -628,7 +628,7 @@ bool UKuroPerformanceBPLibrary::PredictWorkload(int32 CPULoadScale, int32 GPULoa
 // Function KuroPerformance.KuroPerformanceBPLibrary.QueryBoostCPU
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKuroBoostQueryResult            BoostQueryResult                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FKuroBoostQueryResult*           BoostQueryResult                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UKuroPerformanceBPLibrary::QueryBoostCPU(struct FKuroBoostQueryResult* BoostQueryResult)
 {
@@ -654,7 +654,7 @@ void UKuroPerformanceBPLibrary::QueryBoostCPU(struct FKuroBoostQueryResult* Boos
 // Function KuroPerformance.KuroPerformanceBPLibrary.QueryBoostGPU
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKuroBoostQueryResult            BoostQueryResult                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FKuroBoostQueryResult*           BoostQueryResult                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 void UKuroPerformanceBPLibrary::QueryBoostGPU(struct FKuroBoostQueryResult* BoostQueryResult)
 {
@@ -1042,7 +1042,7 @@ bool UKuroPerformanceBPLibrary::UnregisterCriticalThreads(int32 GameTid, int32 R
 // Function KuroPerformance.KuroPerformanceBPLibrary.UpdateGameConfig
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FKuroGameConfig                  GameConfig                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FKuroGameConfig&           GameConfig                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroPerformanceBPLibrary::UpdateGameConfig(const struct FKuroGameConfig& GameConfig)

@@ -77,7 +77,7 @@ bool UMagicLeapPrivilegesFunctionLibrary::RequestPrivilege(EMagicLeapPrivilege P
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // EMagicLeapPrivilege                     Privilege                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(EMagicLeapPrivilege RequestedPrivilege, bool WasGranted)>ResultDelegate                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(EMagicLeapPrivilege RequestedPrivilege, bool WasGranted)>&ResultDelegate                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UMagicLeapPrivilegesFunctionLibrary::RequestPrivilegeAsync(EMagicLeapPrivilege Privilege, const TDelegate<void(EMagicLeapPrivilege RequestedPrivilege, bool WasGranted)>& ResultDelegate)

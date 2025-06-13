@@ -148,7 +148,7 @@ void ABP_LightsGroup_C::TurnOnLights(float ElapsedTime)
 // Function BP_LightsGroup.BP_LightsGroup_C.Timer
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   ElapsedTime                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  ElapsedTime                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_LightsGroup_C::Timer(float* ElapsedTime)
 {
@@ -198,8 +198,8 @@ void ABP_LightsGroup_C::ToggleLightsColorChange()
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     ColorOriginal_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FLinearColor                     ColorTarget_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              ColorOriginal_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              ColorTarget_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_LightsGroup_C::LightsColorChange(float ElapsedTime, const struct FLinearColor& ColorOriginal_0, const struct FLinearColor& ColorTarget_0)
 {

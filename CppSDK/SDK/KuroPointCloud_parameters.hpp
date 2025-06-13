@@ -28,6 +28,86 @@ static_assert(alignof(KuroPointCloudActor_MarkPointsInBox) == 0x000004, "Wrong a
 static_assert(sizeof(KuroPointCloudActor_MarkPointsInBox) == 0x00001C, "Wrong size on KuroPointCloudActor_MarkPointsInBox");
 static_assert(offsetof(KuroPointCloudActor_MarkPointsInBox, BoxWS) == 0x000000, "Member 'KuroPointCloudActor_MarkPointsInBox::BoxWS' has a wrong offset!");
 
+// Function KuroPointCloud.KuroPointCloudCache.GetMetaDataFloat
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPointCloudCache_GetMetaDataFloat final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroPointCloudCache_GetMetaDataFloat) == 0x000004, "Wrong alignment on KuroPointCloudCache_GetMetaDataFloat");
+static_assert(sizeof(KuroPointCloudCache_GetMetaDataFloat) == 0x000010, "Wrong size on KuroPointCloudCache_GetMetaDataFloat");
+static_assert(offsetof(KuroPointCloudCache_GetMetaDataFloat, Name_0) == 0x000000, "Member 'KuroPointCloudCache_GetMetaDataFloat::Name_0' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudCache_GetMetaDataFloat, ReturnValue) == 0x00000C, "Member 'KuroPointCloudCache_GetMetaDataFloat::ReturnValue' has a wrong offset!");
+
+// Function KuroPointCloud.KuroPointCloudCache.GetMetaDataInt
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPointCloudCache_GetMetaDataInt final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroPointCloudCache_GetMetaDataInt) == 0x000004, "Wrong alignment on KuroPointCloudCache_GetMetaDataInt");
+static_assert(sizeof(KuroPointCloudCache_GetMetaDataInt) == 0x000010, "Wrong size on KuroPointCloudCache_GetMetaDataInt");
+static_assert(offsetof(KuroPointCloudCache_GetMetaDataInt, Name_0) == 0x000000, "Member 'KuroPointCloudCache_GetMetaDataInt::Name_0' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudCache_GetMetaDataInt, ReturnValue) == 0x00000C, "Member 'KuroPointCloudCache_GetMetaDataInt::ReturnValue' has a wrong offset!");
+
+// Function KuroPointCloud.KuroPointCloudCache.HasMetaDataFloat
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPointCloudCache_HasMetaDataFloat final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroPointCloudCache_HasMetaDataFloat) == 0x000004, "Wrong alignment on KuroPointCloudCache_HasMetaDataFloat");
+static_assert(sizeof(KuroPointCloudCache_HasMetaDataFloat) == 0x000010, "Wrong size on KuroPointCloudCache_HasMetaDataFloat");
+static_assert(offsetof(KuroPointCloudCache_HasMetaDataFloat, Name_0) == 0x000000, "Member 'KuroPointCloudCache_HasMetaDataFloat::Name_0' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudCache_HasMetaDataFloat, ReturnValue) == 0x00000C, "Member 'KuroPointCloudCache_HasMetaDataFloat::ReturnValue' has a wrong offset!");
+
+// Function KuroPointCloud.KuroPointCloudCache.HasMetaDataInt
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPointCloudCache_HasMetaDataInt final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(KuroPointCloudCache_HasMetaDataInt) == 0x000004, "Wrong alignment on KuroPointCloudCache_HasMetaDataInt");
+static_assert(sizeof(KuroPointCloudCache_HasMetaDataInt) == 0x000010, "Wrong size on KuroPointCloudCache_HasMetaDataInt");
+static_assert(offsetof(KuroPointCloudCache_HasMetaDataInt, Name_0) == 0x000000, "Member 'KuroPointCloudCache_HasMetaDataInt::Name_0' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudCache_HasMetaDataInt, ReturnValue) == 0x00000C, "Member 'KuroPointCloudCache_HasMetaDataInt::ReturnValue' has a wrong offset!");
+
+// Function KuroPointCloud.KuroPointCloudCache.SetMetaDataFloat
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPointCloudCache_SetMetaDataFloat final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroPointCloudCache_SetMetaDataFloat) == 0x000004, "Wrong alignment on KuroPointCloudCache_SetMetaDataFloat");
+static_assert(sizeof(KuroPointCloudCache_SetMetaDataFloat) == 0x000010, "Wrong size on KuroPointCloudCache_SetMetaDataFloat");
+static_assert(offsetof(KuroPointCloudCache_SetMetaDataFloat, Name_0) == 0x000000, "Member 'KuroPointCloudCache_SetMetaDataFloat::Name_0' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudCache_SetMetaDataFloat, Value) == 0x00000C, "Member 'KuroPointCloudCache_SetMetaDataFloat::Value' has a wrong offset!");
+
+// Function KuroPointCloud.KuroPointCloudCache.SetMetaDataInt
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPointCloudCache_SetMetaDataInt final
+{
+public:
+	class FName                                   Name_0;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KuroPointCloudCache_SetMetaDataInt) == 0x000004, "Wrong alignment on KuroPointCloudCache_SetMetaDataInt");
+static_assert(sizeof(KuroPointCloudCache_SetMetaDataInt) == 0x000010, "Wrong size on KuroPointCloudCache_SetMetaDataInt");
+static_assert(offsetof(KuroPointCloudCache_SetMetaDataInt, Name_0) == 0x000000, "Member 'KuroPointCloudCache_SetMetaDataInt::Name_0' has a wrong offset!");
+static_assert(offsetof(KuroPointCloudCache_SetMetaDataInt, Value) == 0x00000C, "Member 'KuroPointCloudCache_SetMetaDataInt::Value' has a wrong offset!");
+
 // Function KuroPointCloud.KuroPointCloudCache.UpdateFromData
 // 0x0030 (0x0030 - 0x0000)
 struct KuroPointCloudCache_UpdateFromData final

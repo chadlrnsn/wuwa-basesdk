@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // class UDataTable*                       Table                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void()>                       OnDataTableChanged                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void()>&                OnDataTableChanged                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UKuroDataTableFunctionLibrary::AddOnDataTableChangedDelegate(class UDataTable* Table, class UObject* Object, const TDelegate<void()>& OnDataTableChanged)
 {
@@ -50,8 +50,8 @@ void UKuroDataTableFunctionLibrary::AddOnDataTableChangedDelegate(class UDataTab
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UDataTable*                       Table                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           RowName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTableRowBase                    OutRow                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    RowName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTableRowBase*                   OutRow                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroDataTableFunctionLibrary::GetDataTableRowFromName(class UDataTable* Table, const class FString& RowName, struct FTableRowBase* OutRow)

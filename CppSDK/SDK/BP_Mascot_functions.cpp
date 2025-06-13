@@ -35,7 +35,7 @@ void ABP_Mascot_C::UserConstructionScript()
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   inValue                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   FixValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  FixValue                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_Mascot_C::GetFixValue(float inValue, float* FixValue)
 {
@@ -59,8 +59,8 @@ void ABP_Mascot_C::GetFixValue(float inValue, float* FixValue)
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FName                             CheckName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    Ret                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class FName                             FixName                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Ret                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class FName*                            FixName                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_Mascot_C::HasFixCurve(class FName CheckName, bool* Ret, class FName* FixName)
 {
@@ -86,7 +86,7 @@ void ABP_Mascot_C::HasFixCurve(class FName CheckName, bool* Ret, class FName* Fi
 // Function BP_Mascot.BP_Mascot_C.CalcAllCurve
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         Ret                                                    (Parm, OutParm)
+// TArray<struct FNamedCurveValue>*        Ret                                                    (Parm, OutParm)
 
 void ABP_Mascot_C::CalcAllCurve(TArray<struct FNamedCurveValue>* Ret)
 {
@@ -107,7 +107,7 @@ void ABP_Mascot_C::CalcAllCurve(TArray<struct FNamedCurveValue>* Ret)
 // Function BP_Mascot.BP_Mascot_C.CalcAllCurve_2
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         Ret                                                    (Parm, OutParm)
+// TArray<struct FNamedCurveValue>*        Ret                                                    (Parm, OutParm)
 
 void ABP_Mascot_C::CalcAllCurve_2(TArray<struct FNamedCurveValue>* Ret)
 {
@@ -128,7 +128,7 @@ void ABP_Mascot_C::CalcAllCurve_2(TArray<struct FNamedCurveValue>* Ret)
 // Function BP_Mascot.BP_Mascot_C.SetAnimDataVector
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TMap<class FName, struct FVector>       VectorCurveData                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TMap<class FName, struct FVector>&VectorCurveData                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_Mascot_C::SetAnimDataVector(const TMap<class FName, struct FVector>& VectorCurveData)
@@ -151,7 +151,7 @@ bool ABP_Mascot_C::SetAnimDataVector(const TMap<class FName, struct FVector>& Ve
 // Function BP_Mascot.BP_Mascot_C.SetAnimDataFloat
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         FloatCurveData                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const TArray<struct FNamedCurveValue>&  FloatCurveData                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_Mascot_C::SetAnimDataFloat(const TArray<struct FNamedCurveValue>& FloatCurveData)
@@ -194,7 +194,7 @@ TArray<class FName> ABP_Mascot_C::GetSupportGroupNames()
 // Function BP_Mascot.BP_Mascot_C.GetAnimDataVector
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TMap<class FName, struct FVector>       VectorCurveData                                        (Parm, OutParm)
+// TMap<class FName, struct FVector>*      VectorCurveData                                        (Parm, OutParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_Mascot_C::GetAnimDataVector(TMap<class FName, struct FVector>* VectorCurveData)
@@ -218,7 +218,7 @@ bool ABP_Mascot_C::GetAnimDataVector(TMap<class FName, struct FVector>* VectorCu
 // Function BP_Mascot.BP_Mascot_C.GetAnimDataFloat
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<struct FNamedCurveValue>         FloatCurveData                                         (Parm, OutParm)
+// TArray<struct FNamedCurveValue>*        FloatCurveData                                         (Parm, OutParm)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool ABP_Mascot_C::GetAnimDataFloat(TArray<struct FNamedCurveValue>* FloatCurveData)
@@ -242,7 +242,7 @@ bool ABP_Mascot_C::GetAnimDataFloat(TArray<struct FNamedCurveValue>* FloatCurveD
 // Function BP_Mascot.BP_Mascot_C.GetAddSpineValue
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FRotator                         AddSpine                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FRotator*                        AddSpine                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_Mascot_C::GetAddSpineValue(struct FRotator* AddSpine)
 {
@@ -263,7 +263,7 @@ void ABP_Mascot_C::GetAddSpineValue(struct FRotator* AddSpine)
 // Function BP_Mascot.BP_Mascot_C.GetAddSpineHeadValue
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FRotator                         AddSpineHead                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// struct FRotator*                        AddSpineHead                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void ABP_Mascot_C::GetAddSpineHeadValue(struct FRotator* AddSpineHead)
 {

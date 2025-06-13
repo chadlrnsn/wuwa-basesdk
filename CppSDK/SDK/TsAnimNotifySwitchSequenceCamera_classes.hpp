@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "SSequenceCamera_Settings_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "SSequenceCamera_SpecificConfig_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
@@ -42,7 +42,7 @@ public:
 	bool                                          强制播放Sequence;                                  // 0x00C7(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          启用特定功能下的镜头配置;                          // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSSequenceCamera_SpecificConfig> 特定功能下的镜头配置;                              // 0x00D0(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FSSequenceCamera_SpecificConfig> 特定功能下的镜头配置;                             // 0x00D0(0x0010)(Edit, BlueprintVisible)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

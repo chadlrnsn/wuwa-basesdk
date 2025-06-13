@@ -45,12 +45,12 @@ bool UKuroLogAnalyzerLibrary::Clear()
 // Function KuroLogAnalyzer.KuroLogAnalyzerLibrary.Initialize
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// int32                                   InVerbosity                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TDelegate<void(class FName& Category, int32 Verbosity, const class FString& Format, const class FString& Message)>InLogDelegate                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   InMessageMaxSize                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InVerbosity                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const class FName& Category, const int32 Verbosity, const class FString& Format, const class FString& Message)>&InLogDelegate                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const int32                             InMessageMaxSize                                       (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UKuroLogAnalyzerLibrary::Initialize(const int32 InVerbosity, const TDelegate<void(class FName& Category, int32 Verbosity, const class FString& Format, const class FString& Message)>& InLogDelegate, const int32 InMessageMaxSize)
+bool UKuroLogAnalyzerLibrary::Initialize(const int32 InVerbosity, const TDelegate<void(const class FName& Category, const int32 Verbosity, const class FString& Format, const class FString& Message)>& InLogDelegate, const int32 InMessageMaxSize)
 {
 	static class UFunction* Func = nullptr;
 
@@ -77,7 +77,7 @@ bool UKuroLogAnalyzerLibrary::Initialize(const int32 InVerbosity, const TDelegat
 // Function KuroLogAnalyzer.KuroLogAnalyzerLibrary.SetEnable
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bEnable                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroLogAnalyzerLibrary::SetEnable(const bool bEnable)
 {

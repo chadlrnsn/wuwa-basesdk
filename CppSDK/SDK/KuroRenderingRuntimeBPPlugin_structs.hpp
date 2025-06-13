@@ -29,7 +29,7 @@ enum class EKuroClusteredStuffBlendMode : uint8
 };
 
 // Enum KuroRenderingRuntimeBPPlugin.EKuroDynamicCloudType
-// NumValues: 0x003C
+// NumValues: 0x003E
 enum class EKuroDynamicCloudType : uint8
 {
 	Cloud_TianCheng                          = 0,
@@ -90,8 +90,10 @@ enum class EKuroDynamicCloudType : uint8
 	Cloud_CanPoJingJiChang                   = 55,
 	Cloud_JianCiShan                         = 56,
 	Cloud_GuanCeTa                           = 57,
-	Cloud_Max                                = 58,
-	Cloud_MAX                                = 59,
+	Cloud_ChuJianQiQiu                       = 58,
+	Cloud_QiQiuYeWan                         = 59,
+	Cloud_Max                                = 60,
+	Cloud_MAX                                = 61,
 };
 
 // Enum KuroRenderingRuntimeBPPlugin.EKuroRainType
@@ -174,6 +176,34 @@ enum class EBillboardMode : uint8
 	Right                                    = 2,
 	Max                                      = 3,
 	EBillboardMode_MAX                       = 4,
+};
+
+// Enum KuroRenderingRuntimeBPPlugin.ECaptureMode
+// NumValues: 0x0003
+enum class ECaptureMode : uint8
+{
+	Default                                  = 0,
+	VertexColor                              = 1,
+	ECaptureMode_MAX                         = 2,
+};
+
+// Enum KuroRenderingRuntimeBPPlugin.EKuroDebugDrawComponentType
+// NumValues: 0x0004
+enum class EKuroDebugDrawComponentType : uint8
+{
+	Box                                      = 0,
+	Sphere                                   = 1,
+	Cone                                     = 2,
+	EKuroDebugDrawComponentType_MAX          = 3,
+};
+
+// Enum KuroRenderingRuntimeBPPlugin.ECurveSourceType
+// NumValues: 0x0003
+enum class ECurveSourceType : uint8
+{
+	Function                                 = 0,
+	CurveFloat                               = 1,
+	ECurveSourceType_MAX                     = 2,
 };
 
 // Enum KuroRenderingRuntimeBPPlugin.EFloatLightMovement
@@ -369,6 +399,15 @@ enum class EKuroPerformanceMode : uint8
 	EPM_MAX                                  = 2,
 };
 
+// Enum KuroRenderingRuntimeBPPlugin.EKuroSmartLightActorDetectType
+// NumValues: 0x0003
+enum class EKuroSmartLightActorDetectType : uint8
+{
+	Box                                      = 0,
+	Sphere                                   = 1,
+	EKuroSmartLightActorDetectType_MAX       = 2,
+};
+
 // Enum KuroRenderingRuntimeBPPlugin.EKuroUiSceneLoadingState
 // NumValues: 0x0005
 enum class EKuroUiSceneLoadingState : uint8
@@ -414,6 +453,260 @@ enum class EBP_EWorldType : uint8
 	Inactive                                 = 7,
 	BP_MAX                                   = 8,
 };
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroRainMaterialColorParameter
+// 0x0230 (0x0230 - 0x0000)
+struct FKuroRainMaterialColorParameter final
+{
+public:
+	class FName                                   ParameterName;                                     // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveLinearColor                  Value;                                             // 0x0010(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroRainMaterialColorParameter) == 0x000008, "Wrong alignment on FKuroRainMaterialColorParameter");
+static_assert(sizeof(FKuroRainMaterialColorParameter) == 0x000230, "Wrong size on FKuroRainMaterialColorParameter");
+static_assert(offsetof(FKuroRainMaterialColorParameter, ParameterName) == 0x000000, "Member 'FKuroRainMaterialColorParameter::ParameterName' has a wrong offset!");
+static_assert(offsetof(FKuroRainMaterialColorParameter, Value) == 0x000010, "Member 'FKuroRainMaterialColorParameter::Value' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.GIMiscSetting
+// 0x0250 (0x0250 - 0x0000)
+struct FGIMiscSetting final
+{
+public:
+	uint8                                         bOverride_ThunderType : 1;                         // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ThunderGenerateChanceScale : 1;          // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ThunderAttackChance : 1;                 // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ThunderColor : 1;                        // 0x0000(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ThunderLightBrightness : 1;              // 0x0000(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ThunderLightColor : 1;                   // 0x0000(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ThunderCloudBrightness : 1;              // 0x0000(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	EKuroThunderType                              ThunderType;                                       // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ThunderGenerateChanceScale;                        // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ThunderAttackChance;                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ThunderColor;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ThunderLightBrightness;                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ThunderLightColor;                                 // 0x0024(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ThunderCloudBrightness;                            // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_RainType : 1;                            // 0x0038(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_RainDensity : 1;                         // 0x0038(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_RainLerpTime : 1;                        // 0x0038(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_RainLerpData : 1;                        // 0x0038(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_RainFogDensity : 1;                      // 0x0038(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_RainDensityChangeSpeed : 1;              // 0x0038(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_bRainAffactPointLight : 1;               // 0x0038(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_39[0x3];                                       // 0x0039(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	EKuroRainType                                 RainType;                                          // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RainDensity;                                       // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RainLerpTime;                                      // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               RainLerpData;                                      // 0x0050(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RainFogDensity;                                    // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RainDensityChangeSpeed;                            // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRainAffectPointLight;                             // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bOverride_RainWindSize : 1;                        // 0x006C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_RainGravity : 1;                         // 0x006C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_RainDrag : 1;                            // 0x006C(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_RainTimeDilation : 1;                    // 0x006C(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_6D[0x3];                                       // 0x006D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RainWindSizeOverride;                              // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                RainGravityOverride;                               // 0x0074(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RainDragOverride;                                  // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RainTimeDilationOverride;                          // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_RoughnessDensity : 1;                    // 0x0088(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MixRoughness : 1;                        // 0x0088(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MixRoughness_Mobile : 1;                 // 0x0088(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_EffectGravity : 1;                       // 0x0088(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LightFunctionIntensity : 1;              // 0x0088(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LightFunctionMapUVScaleBias : 1;         // 0x0088(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LightFunctionSpeed : 1;                  // 0x0088(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LightFunctionTexture : 1;                // 0x0088(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LightFunctionPerShadowTexture : 1;       // 0x0089(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_KuroDynamicCloudType : 1;                // 0x0089(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SequenceCloudTimeControl : 1;            // 0x0089(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SequenceCloudTimeOffset : 1;             // 0x0089(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_OverrideCloudRotation : 1;               // 0x0089(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SequenceGlobalTimeControl : 1;           // 0x0089(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MaterialDynamicReflectionTexture : 1;    // 0x0089(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_FogVisibilityCulling : 1;                // 0x0089(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_8A[0x2];                                       // 0x008A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RoughnessDensity;                                  // 0x008C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MixRoughness;                                      // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MixRoughness_Mobile;                               // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EffectGravity;                                     // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightFunctionIntensity;                            // 0x009C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector4                               LightFunctionMapUVScaleBias;                       // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightFunctionSpeed;                                // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             LightFunctionTexture;                              // 0x00B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture2D*                             LightFunctionPerShadowTexture;                     // 0x00C0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroDynamicCloudType                         KuroDynamicCloudType;                              // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C9[0x3];                                       // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SequenceCloudTimeControl;                          // 0x00CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SequenceCloudTimeOffset;                           // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOverrideCloudRotation;                            // 0x00D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D5[0x3];                                       // 0x00D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SequenceGlobalTimeControl;                         // 0x00D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTextureCube*                           MaterialDynamicReflectionTexture;                  // 0x00E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bEnableGlobalGIQualityLow : 1;                     // 0x00E8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_E9[0x3];                                       // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FogVisibilityCulling;                              // 0x00EC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_PauseEffects : 1;                        // 0x00F0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_F1[0x3];                                       // 0x00F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bPauseEffects;                                     // 0x00F4(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_BurstDissolveTexture : 1;                // 0x00F5(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_F6[0x2];                                       // 0x00F6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             BurstDissolveTexture;                              // 0x00F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_BurstDissolveThreshold : 1;              // 0x0100(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_101[0x3];                                      // 0x0101(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BurstDissolveThreshold;                            // 0x0104(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_BurstDissolveSmooth : 1;                 // 0x0108(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BurstDissolveSmooth;                               // 0x010C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_BurstClipThreshold : 1;                  // 0x0110(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_111[0x3];                                      // 0x0111(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BurstClipThreshold;                                // 0x0114(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_ForbidWeatherWhenTakeOver : 1;           // 0x0118(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	bool                                          ForbidWeatherWhenTakeOver;                         // 0x0119(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_GlobalFootstepMaterial : 1;              // 0x011A(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_11B[0x5];                                      // 0x011B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPhysicalMaterial*                      GlobalFootstepMaterial;                            // 0x0120(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveUsePolarPattern : 1;                 // 0x0128(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	bool                                          WaveUsePolarPattern;                               // 0x0129(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WavePatternTexture : 1;                  // 0x012A(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_12B[0x5];                                      // 0x012B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             WavePatternTexture;                                // 0x0130(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WavePatternScaleBias : 1;                // 0x0138(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_139[0x7];                                      // 0x0139(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               WavePatternScaleBias;                              // 0x0140(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveCenter : 1;                          // 0x0150(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_151[0x3];                                      // 0x0151(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                WaveCenter;                                        // 0x0154(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveFront : 1;                           // 0x0160(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_161[0x3];                                      // 0x0161(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              WaveFront;                                         // 0x0164(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveRadius : 1;                          // 0x016C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_16D[0x3];                                      // 0x016D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveRadius;                                        // 0x0170(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveRadiusSmooth : 1;                    // 0x0174(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_175[0x3];                                      // 0x0175(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveRadiusSmooth;                                  // 0x0178(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveHeight : 1;                          // 0x017C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveHeight;                                        // 0x0180(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveHeightSmooth : 1;                    // 0x0184(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_185[0x3];                                      // 0x0185(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveHeightSmooth;                                  // 0x0188(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveNormalSize : 1;                      // 0x018C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_18D[0x3];                                      // 0x018D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveNormalSize;                                    // 0x0190(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveRoughness : 1;                       // 0x0194(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_195[0x3];                                      // 0x0195(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveRoughness;                                     // 0x0198(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveDissolveTexture : 1;                 // 0x019C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_19D[0x3];                                      // 0x019D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             WaveDissolveTexture;                               // 0x01A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveDissolveScaleBias : 1;               // 0x01A8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1A9[0x7];                                      // 0x01A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               WaveDissolveScaleBias;                             // 0x01B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveDissolveProgress : 1;                // 0x01C0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1C1[0x3];                                      // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveDissolveProgress;                              // 0x01C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveDissolveSmooth : 1;                  // 0x01C8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1C9[0x3];                                      // 0x01C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveDissolveSmooth;                                // 0x01CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveColorTexture : 1;                    // 0x01D0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1D1[0x7];                                      // 0x01D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             WaveColorTexture;                                  // 0x01D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveColorScaleBias : 1;                  // 0x01E0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1E1[0xF];                                      // 0x01E1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               WaveColorScaleBias;                                // 0x01F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveColorTextureTint : 1;                // 0x0200(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_201[0x3];                                      // 0x0201(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           WaveColorTextureTint;                              // 0x0204(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveWiggleAmplitude : 1;                 // 0x0214(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_215[0x3];                                      // 0x0215(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveWiggleAmplitude;                               // 0x0218(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveColorTint : 1;                       // 0x021C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_21D[0x3];                                      // 0x021D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           WaveColorTint;                                     // 0x0220(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveColorAdd : 1;                        // 0x0230(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_231[0x3];                                      // 0x0231(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           WaveColorAdd;                                      // 0x0234(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_WaveOverallDensity : 1;                  // 0x0244(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_245[0x3];                                      // 0x0245(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaveOverallDensity;                                // 0x0248(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24C[0x4];                                      // 0x024C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FGIMiscSetting) == 0x000010, "Wrong alignment on FGIMiscSetting");
+static_assert(sizeof(FGIMiscSetting) == 0x000250, "Wrong size on FGIMiscSetting");
+static_assert(offsetof(FGIMiscSetting, ThunderType) == 0x000004, "Member 'FGIMiscSetting::ThunderType' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, ThunderGenerateChanceScale) == 0x000008, "Member 'FGIMiscSetting::ThunderGenerateChanceScale' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, ThunderAttackChance) == 0x00000C, "Member 'FGIMiscSetting::ThunderAttackChance' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, ThunderColor) == 0x000010, "Member 'FGIMiscSetting::ThunderColor' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, ThunderLightBrightness) == 0x000020, "Member 'FGIMiscSetting::ThunderLightBrightness' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, ThunderLightColor) == 0x000024, "Member 'FGIMiscSetting::ThunderLightColor' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, ThunderCloudBrightness) == 0x000034, "Member 'FGIMiscSetting::ThunderCloudBrightness' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainType) == 0x00003C, "Member 'FGIMiscSetting::RainType' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainDensity) == 0x000040, "Member 'FGIMiscSetting::RainDensity' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainLerpTime) == 0x000044, "Member 'FGIMiscSetting::RainLerpTime' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainLerpData) == 0x000050, "Member 'FGIMiscSetting::RainLerpData' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainFogDensity) == 0x000060, "Member 'FGIMiscSetting::RainFogDensity' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainDensityChangeSpeed) == 0x000064, "Member 'FGIMiscSetting::RainDensityChangeSpeed' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, bRainAffectPointLight) == 0x000068, "Member 'FGIMiscSetting::bRainAffectPointLight' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainWindSizeOverride) == 0x000070, "Member 'FGIMiscSetting::RainWindSizeOverride' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainGravityOverride) == 0x000074, "Member 'FGIMiscSetting::RainGravityOverride' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainDragOverride) == 0x000080, "Member 'FGIMiscSetting::RainDragOverride' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RainTimeDilationOverride) == 0x000084, "Member 'FGIMiscSetting::RainTimeDilationOverride' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, RoughnessDensity) == 0x00008C, "Member 'FGIMiscSetting::RoughnessDensity' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, MixRoughness) == 0x000090, "Member 'FGIMiscSetting::MixRoughness' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, MixRoughness_Mobile) == 0x000094, "Member 'FGIMiscSetting::MixRoughness_Mobile' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, EffectGravity) == 0x000098, "Member 'FGIMiscSetting::EffectGravity' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, LightFunctionIntensity) == 0x00009C, "Member 'FGIMiscSetting::LightFunctionIntensity' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, LightFunctionMapUVScaleBias) == 0x0000A0, "Member 'FGIMiscSetting::LightFunctionMapUVScaleBias' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, LightFunctionSpeed) == 0x0000B0, "Member 'FGIMiscSetting::LightFunctionSpeed' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, LightFunctionTexture) == 0x0000B8, "Member 'FGIMiscSetting::LightFunctionTexture' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, LightFunctionPerShadowTexture) == 0x0000C0, "Member 'FGIMiscSetting::LightFunctionPerShadowTexture' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, KuroDynamicCloudType) == 0x0000C8, "Member 'FGIMiscSetting::KuroDynamicCloudType' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, SequenceCloudTimeControl) == 0x0000CC, "Member 'FGIMiscSetting::SequenceCloudTimeControl' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, SequenceCloudTimeOffset) == 0x0000D0, "Member 'FGIMiscSetting::SequenceCloudTimeOffset' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, bOverrideCloudRotation) == 0x0000D4, "Member 'FGIMiscSetting::bOverrideCloudRotation' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, SequenceGlobalTimeControl) == 0x0000D8, "Member 'FGIMiscSetting::SequenceGlobalTimeControl' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, MaterialDynamicReflectionTexture) == 0x0000E0, "Member 'FGIMiscSetting::MaterialDynamicReflectionTexture' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, FogVisibilityCulling) == 0x0000EC, "Member 'FGIMiscSetting::FogVisibilityCulling' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, bPauseEffects) == 0x0000F4, "Member 'FGIMiscSetting::bPauseEffects' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, BurstDissolveTexture) == 0x0000F8, "Member 'FGIMiscSetting::BurstDissolveTexture' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, BurstDissolveThreshold) == 0x000104, "Member 'FGIMiscSetting::BurstDissolveThreshold' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, BurstDissolveSmooth) == 0x00010C, "Member 'FGIMiscSetting::BurstDissolveSmooth' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, BurstClipThreshold) == 0x000114, "Member 'FGIMiscSetting::BurstClipThreshold' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, ForbidWeatherWhenTakeOver) == 0x000119, "Member 'FGIMiscSetting::ForbidWeatherWhenTakeOver' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, GlobalFootstepMaterial) == 0x000120, "Member 'FGIMiscSetting::GlobalFootstepMaterial' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveUsePolarPattern) == 0x000129, "Member 'FGIMiscSetting::WaveUsePolarPattern' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WavePatternTexture) == 0x000130, "Member 'FGIMiscSetting::WavePatternTexture' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WavePatternScaleBias) == 0x000140, "Member 'FGIMiscSetting::WavePatternScaleBias' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveCenter) == 0x000154, "Member 'FGIMiscSetting::WaveCenter' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveFront) == 0x000164, "Member 'FGIMiscSetting::WaveFront' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveRadius) == 0x000170, "Member 'FGIMiscSetting::WaveRadius' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveRadiusSmooth) == 0x000178, "Member 'FGIMiscSetting::WaveRadiusSmooth' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveHeight) == 0x000180, "Member 'FGIMiscSetting::WaveHeight' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveHeightSmooth) == 0x000188, "Member 'FGIMiscSetting::WaveHeightSmooth' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveNormalSize) == 0x000190, "Member 'FGIMiscSetting::WaveNormalSize' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveRoughness) == 0x000198, "Member 'FGIMiscSetting::WaveRoughness' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveDissolveTexture) == 0x0001A0, "Member 'FGIMiscSetting::WaveDissolveTexture' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveDissolveScaleBias) == 0x0001B0, "Member 'FGIMiscSetting::WaveDissolveScaleBias' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveDissolveProgress) == 0x0001C4, "Member 'FGIMiscSetting::WaveDissolveProgress' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveDissolveSmooth) == 0x0001CC, "Member 'FGIMiscSetting::WaveDissolveSmooth' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveColorTexture) == 0x0001D8, "Member 'FGIMiscSetting::WaveColorTexture' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveColorScaleBias) == 0x0001F0, "Member 'FGIMiscSetting::WaveColorScaleBias' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveColorTextureTint) == 0x000204, "Member 'FGIMiscSetting::WaveColorTextureTint' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveWiggleAmplitude) == 0x000218, "Member 'FGIMiscSetting::WaveWiggleAmplitude' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveColorTint) == 0x000220, "Member 'FGIMiscSetting::WaveColorTint' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveColorAdd) == 0x000234, "Member 'FGIMiscSetting::WaveColorAdd' has a wrong offset!");
+static_assert(offsetof(FGIMiscSetting, WaveOverallDensity) == 0x000248, "Member 'FGIMiscSetting::WaveOverallDensity' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialCurveFloatGroup
 // 0x01B0 (0x01B0 - 0x0000)
@@ -517,254 +810,8 @@ static_assert(offsetof(FKuroMaterialControllerParam_Custom, CustomFloatParameter
 static_assert(offsetof(FKuroMaterialControllerParam_Custom, CustomColorParameters) == 0x000010, "Member 'FKuroMaterialControllerParam_Custom::CustomColorParameters' has a wrong offset!");
 static_assert(offsetof(FKuroMaterialControllerParam_Custom, CustomTextureParameters) == 0x000020, "Member 'FKuroMaterialControllerParam_Custom::CustomTextureParameters' has a wrong offset!");
 
-// ScriptStruct KuroRenderingRuntimeBPPlugin.GIMiscSetting
-// 0x0230 (0x0230 - 0x0000)
-struct FGIMiscSetting final
-{
-public:
-	uint8                                         bOverride_ThunderType : 1;                         // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_ThunderGenerateChanceScale : 1;          // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_ThunderAttackChance : 1;                 // 0x0000(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_ThunderColor : 1;                        // 0x0000(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_ThunderLightBrightness : 1;              // 0x0000(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_ThunderCloudBrightness : 1;              // 0x0000(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	EKuroThunderType                              ThunderType;                                       // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ThunderGenerateChanceScale;                        // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ThunderAttackChance;                               // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ThunderColor;                                      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ThunderLightBrightness;                            // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ThunderCloudBrightness;                            // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_RainType : 1;                            // 0x0028(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_RainDensity : 1;                         // 0x0028(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_RainFogDensity : 1;                      // 0x0028(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_RainDensityChangeSpeed : 1;              // 0x0028(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_bRainAffactPointLight : 1;               // 0x0028(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_29[0x3];                                       // 0x0029(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	EKuroRainType                                 RainType;                                          // 0x002C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RainDensity;                                       // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RainFogDensity;                                    // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RainDensityChangeSpeed;                            // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRainAffectPointLight;                             // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bOverride_RainWindSize : 1;                        // 0x0040(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_RainGravity : 1;                         // 0x0040(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_RainDrag : 1;                            // 0x0040(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_RainTimeDilation : 1;                    // 0x0040(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RainWindSizeOverride;                              // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                RainGravityOverride;                               // 0x0048(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RainDragOverride;                                  // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RainTimeDilationOverride;                          // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_RoughnessDensity : 1;                    // 0x005C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_MixRoughness : 1;                        // 0x005C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_MixRoughness_Mobile : 1;                 // 0x005C(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_EffectGravity : 1;                       // 0x005C(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_LightFunctionIntensity : 1;              // 0x005C(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_LightFunctionMapUVScaleBias : 1;         // 0x005C(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_LightFunctionSpeed : 1;                  // 0x005C(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_LightFunctionTexture : 1;                // 0x005C(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_LightFunctionPerShadowTexture : 1;       // 0x005D(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_KuroDynamicCloudType : 1;                // 0x005D(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_SequenceCloudTimeControl : 1;            // 0x005D(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_SequenceCloudTimeOffset : 1;             // 0x005D(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_OverrideCloudRotation : 1;               // 0x005D(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_SequenceGlobalTimeControl : 1;           // 0x005D(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_MaterialDynamicReflectionTexture : 1;    // 0x005D(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_FogVisibilityCulling : 1;                // 0x005D(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_5E[0x2];                                       // 0x005E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         RoughnessDensity;                                  // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MixRoughness;                                      // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MixRoughness_Mobile;                               // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EffectGravity;                                     // 0x006C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LightFunctionIntensity;                            // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_74[0xC];                                       // 0x0074(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector4                               LightFunctionMapUVScaleBias;                       // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LightFunctionSpeed;                                // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_94[0x4];                                       // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             LightFunctionTexture;                              // 0x0098(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             LightFunctionPerShadowTexture;                     // 0x00A0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKuroDynamicCloudType                         KuroDynamicCloudType;                              // 0x00A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A9[0x3];                                       // 0x00A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SequenceCloudTimeControl;                          // 0x00AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SequenceCloudTimeOffset;                           // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOverrideCloudRotation;                            // 0x00B4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B5[0x3];                                       // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SequenceGlobalTimeControl;                         // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTextureCube*                           MaterialDynamicReflectionTexture;                  // 0x00C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bEnableGlobalGIQualityLow : 1;                     // 0x00C8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_C9[0x3];                                       // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FogVisibilityCulling;                              // 0x00CC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_PauseEffects : 1;                        // 0x00D0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bPauseEffects;                                     // 0x00D4(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_BurstDissolveTexture : 1;                // 0x00D5(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_D6[0x2];                                       // 0x00D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             BurstDissolveTexture;                              // 0x00D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_BurstDissolveThreshold : 1;              // 0x00E0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_E1[0x3];                                       // 0x00E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BurstDissolveThreshold;                            // 0x00E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_BurstDissolveSmooth : 1;                 // 0x00E8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_E9[0x3];                                       // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BurstDissolveSmooth;                               // 0x00EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_BurstClipThreshold : 1;                  // 0x00F0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_F1[0x3];                                       // 0x00F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BurstClipThreshold;                                // 0x00F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_ForbidWeatherWhenTakeOver : 1;           // 0x00F8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	bool                                          ForbidWeatherWhenTakeOver;                         // 0x00F9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_GlobalFootstepMaterial : 1;              // 0x00FA(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_FB[0x5];                                       // 0x00FB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPhysicalMaterial*                      GlobalFootstepMaterial;                            // 0x0100(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveUsePolarPattern : 1;                 // 0x0108(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	bool                                          WaveUsePolarPattern;                               // 0x0109(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WavePatternTexture : 1;                  // 0x010A(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_10B[0x5];                                      // 0x010B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             WavePatternTexture;                                // 0x0110(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WavePatternScaleBias : 1;                // 0x0118(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector4                               WavePatternScaleBias;                              // 0x0120(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveCenter : 1;                          // 0x0130(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_131[0x3];                                      // 0x0131(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                WaveCenter;                                        // 0x0134(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveFront : 1;                           // 0x0140(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              WaveFront;                                         // 0x0144(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveRadius : 1;                          // 0x014C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_14D[0x3];                                      // 0x014D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveRadius;                                        // 0x0150(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveRadiusSmooth : 1;                    // 0x0154(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_155[0x3];                                      // 0x0155(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveRadiusSmooth;                                  // 0x0158(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveHeight : 1;                          // 0x015C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_15D[0x3];                                      // 0x015D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveHeight;                                        // 0x0160(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveHeightSmooth : 1;                    // 0x0164(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_165[0x3];                                      // 0x0165(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveHeightSmooth;                                  // 0x0168(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveNormalSize : 1;                      // 0x016C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_16D[0x3];                                      // 0x016D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveNormalSize;                                    // 0x0170(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveRoughness : 1;                       // 0x0174(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_175[0x3];                                      // 0x0175(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveRoughness;                                     // 0x0178(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveDissolveTexture : 1;                 // 0x017C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             WaveDissolveTexture;                               // 0x0180(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveDissolveScaleBias : 1;               // 0x0188(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_189[0x7];                                      // 0x0189(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector4                               WaveDissolveScaleBias;                             // 0x0190(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveDissolveProgress : 1;                // 0x01A0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1A1[0x3];                                      // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveDissolveProgress;                              // 0x01A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveDissolveSmooth : 1;                  // 0x01A8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveDissolveSmooth;                                // 0x01AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveColorTexture : 1;                    // 0x01B0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1B1[0x7];                                      // 0x01B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             WaveColorTexture;                                  // 0x01B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveColorScaleBias : 1;                  // 0x01C0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1C1[0xF];                                      // 0x01C1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector4                               WaveColorScaleBias;                                // 0x01D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveColorTextureTint : 1;                // 0x01E0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1E1[0x3];                                      // 0x01E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           WaveColorTextureTint;                              // 0x01E4(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveWiggleAmplitude : 1;                 // 0x01F4(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1F5[0x3];                                      // 0x01F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveWiggleAmplitude;                               // 0x01F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveColorTint : 1;                       // 0x01FC(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1FD[0x3];                                      // 0x01FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           WaveColorTint;                                     // 0x0200(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveColorAdd : 1;                        // 0x0210(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_211[0x3];                                      // 0x0211(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           WaveColorAdd;                                      // 0x0214(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_WaveOverallDensity : 1;                  // 0x0224(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_225[0x3];                                      // 0x0225(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaveOverallDensity;                                // 0x0228(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_22C[0x4];                                      // 0x022C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FGIMiscSetting) == 0x000010, "Wrong alignment on FGIMiscSetting");
-static_assert(sizeof(FGIMiscSetting) == 0x000230, "Wrong size on FGIMiscSetting");
-static_assert(offsetof(FGIMiscSetting, ThunderType) == 0x000004, "Member 'FGIMiscSetting::ThunderType' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, ThunderGenerateChanceScale) == 0x000008, "Member 'FGIMiscSetting::ThunderGenerateChanceScale' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, ThunderAttackChance) == 0x00000C, "Member 'FGIMiscSetting::ThunderAttackChance' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, ThunderColor) == 0x000010, "Member 'FGIMiscSetting::ThunderColor' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, ThunderLightBrightness) == 0x000020, "Member 'FGIMiscSetting::ThunderLightBrightness' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, ThunderCloudBrightness) == 0x000024, "Member 'FGIMiscSetting::ThunderCloudBrightness' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, RainType) == 0x00002C, "Member 'FGIMiscSetting::RainType' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, RainDensity) == 0x000030, "Member 'FGIMiscSetting::RainDensity' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, RainFogDensity) == 0x000034, "Member 'FGIMiscSetting::RainFogDensity' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, RainDensityChangeSpeed) == 0x000038, "Member 'FGIMiscSetting::RainDensityChangeSpeed' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, bRainAffectPointLight) == 0x00003C, "Member 'FGIMiscSetting::bRainAffectPointLight' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, RainWindSizeOverride) == 0x000044, "Member 'FGIMiscSetting::RainWindSizeOverride' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, RainGravityOverride) == 0x000048, "Member 'FGIMiscSetting::RainGravityOverride' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, RainDragOverride) == 0x000054, "Member 'FGIMiscSetting::RainDragOverride' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, RainTimeDilationOverride) == 0x000058, "Member 'FGIMiscSetting::RainTimeDilationOverride' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, RoughnessDensity) == 0x000060, "Member 'FGIMiscSetting::RoughnessDensity' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, MixRoughness) == 0x000064, "Member 'FGIMiscSetting::MixRoughness' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, MixRoughness_Mobile) == 0x000068, "Member 'FGIMiscSetting::MixRoughness_Mobile' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, EffectGravity) == 0x00006C, "Member 'FGIMiscSetting::EffectGravity' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, LightFunctionIntensity) == 0x000070, "Member 'FGIMiscSetting::LightFunctionIntensity' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, LightFunctionMapUVScaleBias) == 0x000080, "Member 'FGIMiscSetting::LightFunctionMapUVScaleBias' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, LightFunctionSpeed) == 0x000090, "Member 'FGIMiscSetting::LightFunctionSpeed' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, LightFunctionTexture) == 0x000098, "Member 'FGIMiscSetting::LightFunctionTexture' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, LightFunctionPerShadowTexture) == 0x0000A0, "Member 'FGIMiscSetting::LightFunctionPerShadowTexture' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, KuroDynamicCloudType) == 0x0000A8, "Member 'FGIMiscSetting::KuroDynamicCloudType' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, SequenceCloudTimeControl) == 0x0000AC, "Member 'FGIMiscSetting::SequenceCloudTimeControl' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, SequenceCloudTimeOffset) == 0x0000B0, "Member 'FGIMiscSetting::SequenceCloudTimeOffset' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, bOverrideCloudRotation) == 0x0000B4, "Member 'FGIMiscSetting::bOverrideCloudRotation' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, SequenceGlobalTimeControl) == 0x0000B8, "Member 'FGIMiscSetting::SequenceGlobalTimeControl' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, MaterialDynamicReflectionTexture) == 0x0000C0, "Member 'FGIMiscSetting::MaterialDynamicReflectionTexture' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, FogVisibilityCulling) == 0x0000CC, "Member 'FGIMiscSetting::FogVisibilityCulling' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, bPauseEffects) == 0x0000D4, "Member 'FGIMiscSetting::bPauseEffects' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, BurstDissolveTexture) == 0x0000D8, "Member 'FGIMiscSetting::BurstDissolveTexture' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, BurstDissolveThreshold) == 0x0000E4, "Member 'FGIMiscSetting::BurstDissolveThreshold' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, BurstDissolveSmooth) == 0x0000EC, "Member 'FGIMiscSetting::BurstDissolveSmooth' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, BurstClipThreshold) == 0x0000F4, "Member 'FGIMiscSetting::BurstClipThreshold' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, ForbidWeatherWhenTakeOver) == 0x0000F9, "Member 'FGIMiscSetting::ForbidWeatherWhenTakeOver' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, GlobalFootstepMaterial) == 0x000100, "Member 'FGIMiscSetting::GlobalFootstepMaterial' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveUsePolarPattern) == 0x000109, "Member 'FGIMiscSetting::WaveUsePolarPattern' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WavePatternTexture) == 0x000110, "Member 'FGIMiscSetting::WavePatternTexture' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WavePatternScaleBias) == 0x000120, "Member 'FGIMiscSetting::WavePatternScaleBias' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveCenter) == 0x000134, "Member 'FGIMiscSetting::WaveCenter' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveFront) == 0x000144, "Member 'FGIMiscSetting::WaveFront' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveRadius) == 0x000150, "Member 'FGIMiscSetting::WaveRadius' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveRadiusSmooth) == 0x000158, "Member 'FGIMiscSetting::WaveRadiusSmooth' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveHeight) == 0x000160, "Member 'FGIMiscSetting::WaveHeight' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveHeightSmooth) == 0x000168, "Member 'FGIMiscSetting::WaveHeightSmooth' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveNormalSize) == 0x000170, "Member 'FGIMiscSetting::WaveNormalSize' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveRoughness) == 0x000178, "Member 'FGIMiscSetting::WaveRoughness' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveDissolveTexture) == 0x000180, "Member 'FGIMiscSetting::WaveDissolveTexture' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveDissolveScaleBias) == 0x000190, "Member 'FGIMiscSetting::WaveDissolveScaleBias' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveDissolveProgress) == 0x0001A4, "Member 'FGIMiscSetting::WaveDissolveProgress' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveDissolveSmooth) == 0x0001AC, "Member 'FGIMiscSetting::WaveDissolveSmooth' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveColorTexture) == 0x0001B8, "Member 'FGIMiscSetting::WaveColorTexture' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveColorScaleBias) == 0x0001D0, "Member 'FGIMiscSetting::WaveColorScaleBias' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveColorTextureTint) == 0x0001E4, "Member 'FGIMiscSetting::WaveColorTextureTint' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveWiggleAmplitude) == 0x0001F8, "Member 'FGIMiscSetting::WaveWiggleAmplitude' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveColorTint) == 0x000200, "Member 'FGIMiscSetting::WaveColorTint' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveColorAdd) == 0x000214, "Member 'FGIMiscSetting::WaveColorAdd' has a wrong offset!");
-static_assert(offsetof(FGIMiscSetting, WaveOverallDensity) == 0x000228, "Member 'FGIMiscSetting::WaveOverallDensity' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_MotionOffsetConst
-// 0x000C (0x000C - 0x0000)
-struct FKuroMaterialControllerParam_MotionOffsetConst final
-{
-public:
-	float                                         MotionAffectVertexRange;                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MotionOffsetLength;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MotionNoiseSpeed;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroMaterialControllerParam_MotionOffsetConst) == 0x000004, "Wrong alignment on FKuroMaterialControllerParam_MotionOffsetConst");
-static_assert(sizeof(FKuroMaterialControllerParam_MotionOffsetConst) == 0x00000C, "Wrong size on FKuroMaterialControllerParam_MotionOffsetConst");
-static_assert(offsetof(FKuroMaterialControllerParam_MotionOffsetConst, MotionAffectVertexRange) == 0x000000, "Member 'FKuroMaterialControllerParam_MotionOffsetConst::MotionAffectVertexRange' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_MotionOffsetConst, MotionOffsetLength) == 0x000004, "Member 'FKuroMaterialControllerParam_MotionOffsetConst::MotionOffsetLength' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_MotionOffsetConst, MotionNoiseSpeed) == 0x000008, "Member 'FKuroMaterialControllerParam_MotionOffsetConst::MotionNoiseSpeed' has a wrong offset!");
-
 // ScriptStruct KuroRenderingRuntimeBPPlugin.MainLightSetting
-// 0x0040 (0x0040 - 0x0000)
+// 0x006C (0x006C - 0x0000)
 struct FMainLightSetting final
 {
 public:
@@ -776,7 +823,12 @@ public:
 	uint8                                         bOverride_MainLightSpecularIntensity : 1;          // 0x0000(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_ShadowTintIntensity : 1;                 // 0x0000(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_ShadowTintColor : 1;                     // 0x0000(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bOverride_NearMainLightColorPC : 1;                // 0x0001(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_NearMainLightDistancePC : 1;             // 0x0001(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_UseSeperateMobileNearMainLight : 1;      // 0x0001(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_NearMainLightColorMobile : 1;            // 0x0001(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_NearMainLightDistanceMobile : 1;         // 0x0001(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         MainLightIntensity;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bInCave : 1;                                       // 0x0008(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bPCInCave : 1;                                     // 0x0008(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -788,9 +840,15 @@ public:
 	float                                         MainLightSpecularIntensity;                        // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ShadowTintIntensity;                               // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           ShadowTintColor;                                   // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           NearMainLightColorPC;                              // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NearMainLightDistancePC;                           // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseSepMobileNearMainLight;                         // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           NearMainLightColorMobile;                          // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NearMainLightDistanceMobile;                       // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FMainLightSetting) == 0x000004, "Wrong alignment on FMainLightSetting");
-static_assert(sizeof(FMainLightSetting) == 0x000040, "Wrong size on FMainLightSetting");
+static_assert(sizeof(FMainLightSetting) == 0x00006C, "Wrong size on FMainLightSetting");
 static_assert(offsetof(FMainLightSetting, MainLightIntensity) == 0x000004, "Member 'FMainLightSetting::MainLightIntensity' has a wrong offset!");
 static_assert(offsetof(FMainLightSetting, MainLightTint) == 0x00000C, "Member 'FMainLightSetting::MainLightTint' has a wrong offset!");
 static_assert(offsetof(FMainLightSetting, MobileMainLightTintSaturation) == 0x00001C, "Member 'FMainLightSetting::MobileMainLightTintSaturation' has a wrong offset!");
@@ -799,6 +857,11 @@ static_assert(offsetof(FMainLightSetting, MainLightTemperature) == 0x000024, "Me
 static_assert(offsetof(FMainLightSetting, MainLightSpecularIntensity) == 0x000028, "Member 'FMainLightSetting::MainLightSpecularIntensity' has a wrong offset!");
 static_assert(offsetof(FMainLightSetting, ShadowTintIntensity) == 0x00002C, "Member 'FMainLightSetting::ShadowTintIntensity' has a wrong offset!");
 static_assert(offsetof(FMainLightSetting, ShadowTintColor) == 0x000030, "Member 'FMainLightSetting::ShadowTintColor' has a wrong offset!");
+static_assert(offsetof(FMainLightSetting, NearMainLightColorPC) == 0x000040, "Member 'FMainLightSetting::NearMainLightColorPC' has a wrong offset!");
+static_assert(offsetof(FMainLightSetting, NearMainLightDistancePC) == 0x000050, "Member 'FMainLightSetting::NearMainLightDistancePC' has a wrong offset!");
+static_assert(offsetof(FMainLightSetting, UseSepMobileNearMainLight) == 0x000054, "Member 'FMainLightSetting::UseSepMobileNearMainLight' has a wrong offset!");
+static_assert(offsetof(FMainLightSetting, NearMainLightColorMobile) == 0x000058, "Member 'FMainLightSetting::NearMainLightColorMobile' has a wrong offset!");
+static_assert(offsetof(FMainLightSetting, NearMainLightDistanceMobile) == 0x000068, "Member 'FMainLightSetting::NearMainLightDistanceMobile' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.SkyLightSetting
 // 0x0150 (0x0150 - 0x0000)
@@ -817,9 +880,10 @@ public:
 	uint8                                         bOverride_KuroInteriorSkyLightColor : 1;           // 0x0001(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_KuroNearSkyLightColorPC : 1;             // 0x0001(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_KuroNearSkyLightDistancePC : 1;          // 0x0001(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_KuroNearSkyLightColorMobile : 1;         // 0x0001(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_KuroNearSkyLightDistanceMobile : 1;      // 0x0001(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_AOColor : 1;                             // 0x0001(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_KuroUseSeperateMobileNearSkyLight : 1;   // 0x0001(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_KuroNearSkyLightColorMobile : 1;         // 0x0001(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_KuroNearSkyLightDistanceMobile : 1;      // 0x0001(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_AOColor : 1;                             // 0x0001(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           SkyLightColor;                                     // 0x0004(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MobileSkyLightColorSaturation;                     // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -832,17 +896,20 @@ public:
 	struct FLinearColor                           KuroInteriorSkyLightColor;                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           KuroNearSkyLightColorPC;                           // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         KuroNearSkyLightDistancePC;                        // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           KuroNearSkyLightColorMobile;                       // 0x0054(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroNearSkyLightDistanceMobile;                    // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           AOColor;                                           // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTextureCube*                           KuroSkyLightCubemap;                               // 0x0078(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                KuroSkyLightSH1;                                   // 0x0080(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                KuroSkyLightSH2;                                   // 0x008C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                KuroSkyLightSH3;                                   // 0x0098(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                KuroSkyLightSH4;                                   // 0x00A4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                KuroSkyLightSH5;                                   // 0x00B0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                KuroSkyLightSH6;                                   // 0x00BC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C8[0x48];                                      // 0x00C8(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          KuroUseSeperateMobileNearSkyLight;                 // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           KuroNearSkyLightColorMobile;                       // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroNearSkyLightDistanceMobile;                    // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           AOColor;                                           // 0x006C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTextureCube*                           KuroSkyLightCubemap;                               // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                KuroSkyLightSH1;                                   // 0x0088(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                KuroSkyLightSH2;                                   // 0x0094(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                KuroSkyLightSH3;                                   // 0x00A0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                KuroSkyLightSH4;                                   // 0x00AC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                KuroSkyLightSH5;                                   // 0x00B8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                KuroSkyLightSH6;                                   // 0x00C4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D0[0x40];                                      // 0x00D0(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bUseGradientColorTint;                             // 0x0110(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_111[0x3];                                      // 0x0111(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           SkyColor;                                          // 0x0114(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -863,16 +930,17 @@ static_assert(offsetof(FSkyLightSetting, KuroInteriorSkyLightIntensity) == 0x000
 static_assert(offsetof(FSkyLightSetting, KuroInteriorSkyLightColor) == 0x000030, "Member 'FSkyLightSetting::KuroInteriorSkyLightColor' has a wrong offset!");
 static_assert(offsetof(FSkyLightSetting, KuroNearSkyLightColorPC) == 0x000040, "Member 'FSkyLightSetting::KuroNearSkyLightColorPC' has a wrong offset!");
 static_assert(offsetof(FSkyLightSetting, KuroNearSkyLightDistancePC) == 0x000050, "Member 'FSkyLightSetting::KuroNearSkyLightDistancePC' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, KuroNearSkyLightColorMobile) == 0x000054, "Member 'FSkyLightSetting::KuroNearSkyLightColorMobile' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, KuroNearSkyLightDistanceMobile) == 0x000064, "Member 'FSkyLightSetting::KuroNearSkyLightDistanceMobile' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, AOColor) == 0x000068, "Member 'FSkyLightSetting::AOColor' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, KuroSkyLightCubemap) == 0x000078, "Member 'FSkyLightSetting::KuroSkyLightCubemap' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH1) == 0x000080, "Member 'FSkyLightSetting::KuroSkyLightSH1' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH2) == 0x00008C, "Member 'FSkyLightSetting::KuroSkyLightSH2' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH3) == 0x000098, "Member 'FSkyLightSetting::KuroSkyLightSH3' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH4) == 0x0000A4, "Member 'FSkyLightSetting::KuroSkyLightSH4' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH5) == 0x0000B0, "Member 'FSkyLightSetting::KuroSkyLightSH5' has a wrong offset!");
-static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH6) == 0x0000BC, "Member 'FSkyLightSetting::KuroSkyLightSH6' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroUseSeperateMobileNearSkyLight) == 0x000054, "Member 'FSkyLightSetting::KuroUseSeperateMobileNearSkyLight' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroNearSkyLightColorMobile) == 0x000058, "Member 'FSkyLightSetting::KuroNearSkyLightColorMobile' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroNearSkyLightDistanceMobile) == 0x000068, "Member 'FSkyLightSetting::KuroNearSkyLightDistanceMobile' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, AOColor) == 0x00006C, "Member 'FSkyLightSetting::AOColor' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroSkyLightCubemap) == 0x000080, "Member 'FSkyLightSetting::KuroSkyLightCubemap' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH1) == 0x000088, "Member 'FSkyLightSetting::KuroSkyLightSH1' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH2) == 0x000094, "Member 'FSkyLightSetting::KuroSkyLightSH2' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH3) == 0x0000A0, "Member 'FSkyLightSetting::KuroSkyLightSH3' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH4) == 0x0000AC, "Member 'FSkyLightSetting::KuroSkyLightSH4' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH5) == 0x0000B8, "Member 'FSkyLightSetting::KuroSkyLightSH5' has a wrong offset!");
+static_assert(offsetof(FSkyLightSetting, KuroSkyLightSH6) == 0x0000C4, "Member 'FSkyLightSetting::KuroSkyLightSH6' has a wrong offset!");
 static_assert(offsetof(FSkyLightSetting, bUseGradientColorTint) == 0x000110, "Member 'FSkyLightSetting::bUseGradientColorTint' has a wrong offset!");
 static_assert(offsetof(FSkyLightSetting, SkyColor) == 0x000114, "Member 'FSkyLightSetting::SkyColor' has a wrong offset!");
 static_assert(offsetof(FSkyLightSetting, GroudColor) == 0x000134, "Member 'FSkyLightSetting::GroudColor' has a wrong offset!");
@@ -1152,7 +1220,7 @@ static_assert(offsetof(FKuroTreeSetting, NearFarDistance) == 0x000030, "Member '
 static_assert(offsetof(FKuroTreeSetting, Saturation) == 0x000034, "Member 'FKuroTreeSetting::Saturation' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.VolumetricFogSetting
-// 0x0070 (0x0070 - 0x0000)
+// 0x0080 (0x0080 - 0x0000)
 struct FVolumetricFogSetting final
 {
 public:
@@ -1164,15 +1232,17 @@ public:
 	uint8                                         bOverride_VolumetricFogEmssive : 1;                // 0x0000(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_ViewDistance : 1;                        // 0x0000(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_VolumeMaterialSkyLightIntensity : 1;     // 0x0000(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_VolumetricLightFunctionTexture : 1;      // 0x0001(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_VolumetricLightFunctionIntensity : 1;    // 0x0001(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_VolumetricLightFunctionUVScale : 1;      // 0x0001(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_VolumetricLightFunctionSpeed : 1;        // 0x0001(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_VolumetricFogTransmittance : 1;          // 0x0001(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bEnableVolumetriFog : 1;                           // 0x0001(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bCastVolumetricShadow : 1;                         // 0x0001(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bVolumetricLightFunction : 1;                      // 0x0001(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bOverride_VolumeMaterialDirectionalLightIntensity : 1; // 0x0001(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_VolumeMaterialOpacity : 1;               // 0x0001(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_VolumetricLightFunctionTexture : 1;      // 0x0001(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_VolumetricLightFunctionIntensity : 1;    // 0x0001(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_VolumetricLightFunctionUVScale : 1;      // 0x0001(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_VolumetricLightFunctionSpeed : 1;        // 0x0001(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_VolumetricFogTransmittance : 1;          // 0x0001(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bEnableVolumetriFog : 1;                           // 0x0001(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bCastVolumetricShadow : 1;                         // 0x0002(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bVolumetricLightFunction : 1;                      // 0x0002(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         VolumetricLightFunctionIntensity;                  // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector4                               VolumetricLightFunctionUVScale;                    // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1188,10 +1258,12 @@ public:
 	float                                         ScatteringDistribution;                            // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ViewDistance;                                      // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         VolumeMaterialSkyLightIntensity;                   // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         VolumeMaterialDirectionalLightIntensity;           // 0x006C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VolumeMaterialOpacity;                             // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0xC];                                       // 0x0074(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FVolumetricFogSetting) == 0x000010, "Wrong alignment on FVolumetricFogSetting");
-static_assert(sizeof(FVolumetricFogSetting) == 0x000070, "Wrong size on FVolumetricFogSetting");
+static_assert(sizeof(FVolumetricFogSetting) == 0x000080, "Wrong size on FVolumetricFogSetting");
 static_assert(offsetof(FVolumetricFogSetting, VolumetricLightFunctionIntensity) == 0x000004, "Member 'FVolumetricFogSetting::VolumetricLightFunctionIntensity' has a wrong offset!");
 static_assert(offsetof(FVolumetricFogSetting, VolumetricLightFunctionUVScale) == 0x000010, "Member 'FVolumetricFogSetting::VolumetricLightFunctionUVScale' has a wrong offset!");
 static_assert(offsetof(FVolumetricFogSetting, VolumetricLightFunctionSpeed) == 0x000020, "Member 'FVolumetricFogSetting::VolumetricLightFunctionSpeed' has a wrong offset!");
@@ -1205,6 +1277,8 @@ static_assert(offsetof(FVolumetricFogSetting, ExtinctionScale) == 0x00005C, "Mem
 static_assert(offsetof(FVolumetricFogSetting, ScatteringDistribution) == 0x000060, "Member 'FVolumetricFogSetting::ScatteringDistribution' has a wrong offset!");
 static_assert(offsetof(FVolumetricFogSetting, ViewDistance) == 0x000064, "Member 'FVolumetricFogSetting::ViewDistance' has a wrong offset!");
 static_assert(offsetof(FVolumetricFogSetting, VolumeMaterialSkyLightIntensity) == 0x000068, "Member 'FVolumetricFogSetting::VolumeMaterialSkyLightIntensity' has a wrong offset!");
+static_assert(offsetof(FVolumetricFogSetting, VolumeMaterialDirectionalLightIntensity) == 0x00006C, "Member 'FVolumetricFogSetting::VolumeMaterialDirectionalLightIntensity' has a wrong offset!");
+static_assert(offsetof(FVolumetricFogSetting, VolumeMaterialOpacity) == 0x000070, "Member 'FVolumetricFogSetting::VolumeMaterialOpacity' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.SkyAtmosphereSetting
 // 0x0010 (0x0010 - 0x0000)
@@ -1266,7 +1340,7 @@ static_assert(offsetof(FKuroOceanSetting, ColorScaleBehindWater) == 0x000060, "M
 static_assert(offsetof(FKuroOceanSetting, WaterColorTint) == 0x000070, "Member 'FKuroOceanSetting::WaterColorTint' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroSkyboxSetting
-// 0x00F0 (0x00F0 - 0x0000)
+// 0x0108 (0x0108 - 0x0000)
 struct FKuroSkyboxSetting final
 {
 public:
@@ -1284,17 +1358,18 @@ public:
 	uint8                                         bOverride_SunScatterColor : 1;                     // 0x0001(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_SunSize : 1;                             // 0x0001(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_SunScatterSize : 1;                      // 0x0001(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_MoonTexture : 1;                         // 0x0001(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_MoonPhase : 1;                           // 0x0001(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_MoonDiscColor : 1;                       // 0x0002(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_MoonScatterColor : 1;                    // 0x0002(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_MoonSize : 1;                            // 0x0002(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_MoonScatterSize : 1;                     // 0x0002(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_ExtremeWeatherWeight : 1;                // 0x0002(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_ST_TopColor : 1;                         // 0x0002(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_ST_DomeColorTint : 1;                    // 0x0002(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_ST_TopWidth : 1;                         // 0x0002(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bOverride_SunMeshScale : 1;                        // 0x0001(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SunMeshColor : 1;                        // 0x0001(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonTexture : 1;                         // 0x0002(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonPhase : 1;                           // 0x0002(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonDiscColor : 1;                       // 0x0002(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonScatterColor : 1;                    // 0x0002(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonSize : 1;                            // 0x0002(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_MoonScatterSize : 1;                     // 0x0002(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ExtremeWeatherWeight : 1;                // 0x0002(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ST_TopColor : 1;                         // 0x0002(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ST_DomeColorTint : 1;                    // 0x0003(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ST_TopWidth : 1;                         // 0x0003(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	struct FLinearColor                           ZenithColor;                                       // 0x0004(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           NadirColor;                                        // 0x0014(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         NadirFalloff;                                      // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1309,20 +1384,23 @@ public:
 	struct FLinearColor                           SunScatterColor;                                   // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SunSize;                                           // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SunScatterSize;                                    // 0x008C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MoonDiscColor;                                     // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             MoonTexture;                                       // 0x00A0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoonPhase;                                         // 0x00A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           MoonScatterColor;                                  // 0x00AC(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoonSize;                                          // 0x00BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MoonScatterSize;                                   // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ExtremeWeatherWeight;                              // 0x00C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ST_TopColor;                                       // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ST_DomeColorTint;                                  // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ST_TopWidth;                                       // 0x00E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EC[0x4];                                       // 0x00EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         SunMeshScale;                                      // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           SunMeshColor;                                      // 0x0094(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MoonDiscColor;                                     // 0x00A4(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             MoonTexture;                                       // 0x00B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoonPhase;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           MoonScatterColor;                                  // 0x00C4(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoonSize;                                          // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoonScatterSize;                                   // 0x00D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ExtremeWeatherWeight;                              // 0x00DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ST_TopColor;                                       // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ST_DomeColorTint;                                  // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ST_TopWidth;                                       // 0x0100(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_104[0x4];                                      // 0x0104(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FKuroSkyboxSetting) == 0x000008, "Wrong alignment on FKuroSkyboxSetting");
-static_assert(sizeof(FKuroSkyboxSetting) == 0x0000F0, "Wrong size on FKuroSkyboxSetting");
+static_assert(sizeof(FKuroSkyboxSetting) == 0x000108, "Wrong size on FKuroSkyboxSetting");
 static_assert(offsetof(FKuroSkyboxSetting, ZenithColor) == 0x000004, "Member 'FKuroSkyboxSetting::ZenithColor' has a wrong offset!");
 static_assert(offsetof(FKuroSkyboxSetting, NadirColor) == 0x000014, "Member 'FKuroSkyboxSetting::NadirColor' has a wrong offset!");
 static_assert(offsetof(FKuroSkyboxSetting, NadirFalloff) == 0x000024, "Member 'FKuroSkyboxSetting::NadirFalloff' has a wrong offset!");
@@ -1337,16 +1415,18 @@ static_assert(offsetof(FKuroSkyboxSetting, SunDiscColor) == 0x000068, "Member 'F
 static_assert(offsetof(FKuroSkyboxSetting, SunScatterColor) == 0x000078, "Member 'FKuroSkyboxSetting::SunScatterColor' has a wrong offset!");
 static_assert(offsetof(FKuroSkyboxSetting, SunSize) == 0x000088, "Member 'FKuroSkyboxSetting::SunSize' has a wrong offset!");
 static_assert(offsetof(FKuroSkyboxSetting, SunScatterSize) == 0x00008C, "Member 'FKuroSkyboxSetting::SunScatterSize' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, MoonDiscColor) == 0x000090, "Member 'FKuroSkyboxSetting::MoonDiscColor' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, MoonTexture) == 0x0000A0, "Member 'FKuroSkyboxSetting::MoonTexture' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, MoonPhase) == 0x0000A8, "Member 'FKuroSkyboxSetting::MoonPhase' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, MoonScatterColor) == 0x0000AC, "Member 'FKuroSkyboxSetting::MoonScatterColor' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, MoonSize) == 0x0000BC, "Member 'FKuroSkyboxSetting::MoonSize' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, MoonScatterSize) == 0x0000C0, "Member 'FKuroSkyboxSetting::MoonScatterSize' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, ExtremeWeatherWeight) == 0x0000C4, "Member 'FKuroSkyboxSetting::ExtremeWeatherWeight' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, ST_TopColor) == 0x0000C8, "Member 'FKuroSkyboxSetting::ST_TopColor' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, ST_DomeColorTint) == 0x0000D8, "Member 'FKuroSkyboxSetting::ST_DomeColorTint' has a wrong offset!");
-static_assert(offsetof(FKuroSkyboxSetting, ST_TopWidth) == 0x0000E8, "Member 'FKuroSkyboxSetting::ST_TopWidth' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, SunMeshScale) == 0x000090, "Member 'FKuroSkyboxSetting::SunMeshScale' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, SunMeshColor) == 0x000094, "Member 'FKuroSkyboxSetting::SunMeshColor' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, MoonDiscColor) == 0x0000A4, "Member 'FKuroSkyboxSetting::MoonDiscColor' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, MoonTexture) == 0x0000B8, "Member 'FKuroSkyboxSetting::MoonTexture' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, MoonPhase) == 0x0000C0, "Member 'FKuroSkyboxSetting::MoonPhase' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, MoonScatterColor) == 0x0000C4, "Member 'FKuroSkyboxSetting::MoonScatterColor' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, MoonSize) == 0x0000D4, "Member 'FKuroSkyboxSetting::MoonSize' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, MoonScatterSize) == 0x0000D8, "Member 'FKuroSkyboxSetting::MoonScatterSize' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, ExtremeWeatherWeight) == 0x0000DC, "Member 'FKuroSkyboxSetting::ExtremeWeatherWeight' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, ST_TopColor) == 0x0000E0, "Member 'FKuroSkyboxSetting::ST_TopColor' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, ST_DomeColorTint) == 0x0000F0, "Member 'FKuroSkyboxSetting::ST_DomeColorTint' has a wrong offset!");
+static_assert(offsetof(FKuroSkyboxSetting, ST_TopWidth) == 0x000100, "Member 'FKuroSkyboxSetting::ST_TopWidth' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroLensFlareSetting
 // 0x0030 (0x0030 - 0x0000)
@@ -1403,7 +1483,7 @@ static_assert(offsetof(FWindSetting, SkyWind) == 0x00001C, "Member 'FWindSetting
 static_assert(offsetof(FWindSetting, SoundPower) == 0x000024, "Member 'FWindSetting::SoundPower' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.StarSetting
-// 0x0048 (0x0048 - 0x0000)
+// 0x0070 (0x0070 - 0x0000)
 struct FStarSetting final
 {
 public:
@@ -1419,32 +1499,45 @@ public:
 	uint8                                         bOverride_StarMapPC : 1;                           // 0x0001(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           StarFieldColor;                                    // 0x0004(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StarSize;                                          // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StarSpeed;                                         // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StarSwitch;                                        // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture2D*                             NoiseTexture;                                      // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseSwitch;                                       // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UVTillingU;                                        // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         UVTillingV;                                        // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture*                               StarMap;                                           // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               StarMap_PC;                                        // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_UseStarV2 : 1;                           // 0x0014(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_StarCloudFogColor : 1;                   // 0x0014(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_StarTex_V2 : 1;                          // 0x0014(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StarSize;                                          // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StarSpeed;                                         // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StarSwitch;                                        // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             NoiseTexture;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseSwitch;                                       // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UVTillingU;                                        // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UVTillingV;                                        // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture*                               StarMap;                                           // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               StarMap_PC;                                        // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseStarV2;                                        // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           StarCloudFogColor;                                 // 0x0054(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture*                               StarTex_V2;                                        // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FStarSetting) == 0x000008, "Wrong alignment on FStarSetting");
-static_assert(sizeof(FStarSetting) == 0x000048, "Wrong size on FStarSetting");
+static_assert(sizeof(FStarSetting) == 0x000070, "Wrong size on FStarSetting");
 static_assert(offsetof(FStarSetting, StarFieldColor) == 0x000004, "Member 'FStarSetting::StarFieldColor' has a wrong offset!");
-static_assert(offsetof(FStarSetting, StarSize) == 0x000014, "Member 'FStarSetting::StarSize' has a wrong offset!");
-static_assert(offsetof(FStarSetting, StarSpeed) == 0x000018, "Member 'FStarSetting::StarSpeed' has a wrong offset!");
-static_assert(offsetof(FStarSetting, StarSwitch) == 0x00001C, "Member 'FStarSetting::StarSwitch' has a wrong offset!");
-static_assert(offsetof(FStarSetting, NoiseTexture) == 0x000020, "Member 'FStarSetting::NoiseTexture' has a wrong offset!");
-static_assert(offsetof(FStarSetting, NoiseSwitch) == 0x000028, "Member 'FStarSetting::NoiseSwitch' has a wrong offset!");
-static_assert(offsetof(FStarSetting, UVTillingU) == 0x00002C, "Member 'FStarSetting::UVTillingU' has a wrong offset!");
-static_assert(offsetof(FStarSetting, UVTillingV) == 0x000030, "Member 'FStarSetting::UVTillingV' has a wrong offset!");
-static_assert(offsetof(FStarSetting, StarMap) == 0x000038, "Member 'FStarSetting::StarMap' has a wrong offset!");
-static_assert(offsetof(FStarSetting, StarMap_PC) == 0x000040, "Member 'FStarSetting::StarMap_PC' has a wrong offset!");
+static_assert(offsetof(FStarSetting, StarSize) == 0x000018, "Member 'FStarSetting::StarSize' has a wrong offset!");
+static_assert(offsetof(FStarSetting, StarSpeed) == 0x00001C, "Member 'FStarSetting::StarSpeed' has a wrong offset!");
+static_assert(offsetof(FStarSetting, StarSwitch) == 0x000020, "Member 'FStarSetting::StarSwitch' has a wrong offset!");
+static_assert(offsetof(FStarSetting, NoiseTexture) == 0x000028, "Member 'FStarSetting::NoiseTexture' has a wrong offset!");
+static_assert(offsetof(FStarSetting, NoiseSwitch) == 0x000030, "Member 'FStarSetting::NoiseSwitch' has a wrong offset!");
+static_assert(offsetof(FStarSetting, UVTillingU) == 0x000034, "Member 'FStarSetting::UVTillingU' has a wrong offset!");
+static_assert(offsetof(FStarSetting, UVTillingV) == 0x000038, "Member 'FStarSetting::UVTillingV' has a wrong offset!");
+static_assert(offsetof(FStarSetting, StarMap) == 0x000040, "Member 'FStarSetting::StarMap' has a wrong offset!");
+static_assert(offsetof(FStarSetting, StarMap_PC) == 0x000048, "Member 'FStarSetting::StarMap_PC' has a wrong offset!");
+static_assert(offsetof(FStarSetting, bUseStarV2) == 0x000050, "Member 'FStarSetting::bUseStarV2' has a wrong offset!");
+static_assert(offsetof(FStarSetting, StarCloudFogColor) == 0x000054, "Member 'FStarSetting::StarCloudFogColor' has a wrong offset!");
+static_assert(offsetof(FStarSetting, StarTex_V2) == 0x000068, "Member 'FStarSetting::StarTex_V2' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCloudCardSetting
-// 0x0084 (0x0084 - 0x0000)
+// 0x0094 (0x0094 - 0x0000)
 struct FKuroCloudCardSetting final
 {
 public:
@@ -1465,6 +1558,10 @@ public:
 	uint8                                         bOverride_Emissive : 1;                            // 0x0001(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_LightColor : 1;                          // 0x0001(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_Offset : 1;                              // 0x0002(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_BillboardCloudsNearFogDensity : 1;       // 0x0002(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_BillboardCloudsFarFogDensity : 1;        // 0x0002(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_BillboardCloudsBeginDistance : 1;        // 0x0002(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_BillboardCloudsFadeDistance : 1;         // 0x0002(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AtmoLightScale;                                    // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Contrast;                                          // 0x0008(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1483,9 +1580,13 @@ public:
 	struct FLinearColor                           Emissive;                                          // 0x0054(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           LightColor;                                        // 0x0064(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           Offset;                                            // 0x0074(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BillboardCloudsNearFogDensity;                     // 0x0084(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BillboardCloudsFarFogDensity;                      // 0x0088(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BillboardCloudsBeginDistance;                      // 0x008C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BillboardCloudsFadeDistance;                       // 0x0090(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FKuroCloudCardSetting) == 0x000004, "Wrong alignment on FKuroCloudCardSetting");
-static_assert(sizeof(FKuroCloudCardSetting) == 0x000084, "Wrong size on FKuroCloudCardSetting");
+static_assert(sizeof(FKuroCloudCardSetting) == 0x000094, "Wrong size on FKuroCloudCardSetting");
 static_assert(offsetof(FKuroCloudCardSetting, AtmoLightScale) == 0x000004, "Member 'FKuroCloudCardSetting::AtmoLightScale' has a wrong offset!");
 static_assert(offsetof(FKuroCloudCardSetting, Contrast) == 0x000008, "Member 'FKuroCloudCardSetting::Contrast' has a wrong offset!");
 static_assert(offsetof(FKuroCloudCardSetting, FogColorAmount) == 0x00000C, "Member 'FKuroCloudCardSetting::FogColorAmount' has a wrong offset!");
@@ -1503,6 +1604,26 @@ static_assert(offsetof(FKuroCloudCardSetting, DarkColor) == 0x000044, "Member 'F
 static_assert(offsetof(FKuroCloudCardSetting, Emissive) == 0x000054, "Member 'FKuroCloudCardSetting::Emissive' has a wrong offset!");
 static_assert(offsetof(FKuroCloudCardSetting, LightColor) == 0x000064, "Member 'FKuroCloudCardSetting::LightColor' has a wrong offset!");
 static_assert(offsetof(FKuroCloudCardSetting, Offset) == 0x000074, "Member 'FKuroCloudCardSetting::Offset' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCardSetting, BillboardCloudsNearFogDensity) == 0x000084, "Member 'FKuroCloudCardSetting::BillboardCloudsNearFogDensity' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCardSetting, BillboardCloudsFarFogDensity) == 0x000088, "Member 'FKuroCloudCardSetting::BillboardCloudsFarFogDensity' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCardSetting, BillboardCloudsBeginDistance) == 0x00008C, "Member 'FKuroCloudCardSetting::BillboardCloudsBeginDistance' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCardSetting, BillboardCloudsFadeDistance) == 0x000090, "Member 'FKuroCloudCardSetting::BillboardCloudsFadeDistance' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMultipleLayerSkySetting
+// 0x0024 (0x0024 - 0x0000)
+struct FKuroMultipleLayerSkySetting final
+{
+public:
+	uint8                                         bOverride_Layer1BaseColor : 1;                     // 0x0000(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_Layer2BaseColor : 1;                     // 0x0000(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           Layer1BaseColor;                                   // 0x0004(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Layer2BaseColor;                                   // 0x0014(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroMultipleLayerSkySetting) == 0x000004, "Wrong alignment on FKuroMultipleLayerSkySetting");
+static_assert(sizeof(FKuroMultipleLayerSkySetting) == 0x000024, "Wrong size on FKuroMultipleLayerSkySetting");
+static_assert(offsetof(FKuroMultipleLayerSkySetting, Layer1BaseColor) == 0x000004, "Member 'FKuroMultipleLayerSkySetting::Layer1BaseColor' has a wrong offset!");
+static_assert(offsetof(FKuroMultipleLayerSkySetting, Layer2BaseColor) == 0x000014, "Member 'FKuroMultipleLayerSkySetting::Layer2BaseColor' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMilkyWaySetting
 // 0x0088 (0x0088 - 0x0000)
@@ -1592,7 +1713,7 @@ static_assert(offsetof(FKuroGIMPCSetting, FloatParameters) == 0x000008, "Member 
 static_assert(offsetof(FKuroGIMPCSetting, ColorParameters) == 0x000060, "Member 'FKuroGIMPCSetting::ColorParameters' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroPostProcessSetting
-// 0x0058 (0x0058 - 0x0000)
+// 0x00C0 (0x00C0 - 0x0000)
 struct FKuroPostProcessSetting final
 {
 public:
@@ -1611,54 +1732,116 @@ public:
 	uint8                                         bOverride_AutoExposureNightBias : 1;               // 0x0001(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_LumenAutoExposureDayBias : 1;            // 0x0001(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverride_LumenAutoExposureNightBias : 1;          // 0x0001(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_SSFSIntensity : 1;                       // 0x0001(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_SSFSRadius : 1;                          // 0x0002(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_SSFSLuminanceWeighting : 1;              // 0x0002(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverride_SSFSVolumetricFogILSIntensity : 1;       // 0x0002(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         KuroBloomIntensity;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LumenKuroBloomIntensityOffset;                     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroBloomThreshold;                                // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroBloomStreakIntensity;                          // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroBloomStreakThreshold;                          // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroBloomStreakLength;                             // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroBloomStreakMipLevel;                           // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroBloomStreakRatio;                              // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         KuroBloomStreakOrientation;                        // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ColorGradingIntensity;                             // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture*                               ColorGradingLUT;                                   // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AutoExposureDayBias;                               // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AutoExposureNightBias;                             // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LumenAutoExposureDayBias;                          // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LumenAutoExposureNightBias;                        // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SSFSIntensity;                                     // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SSFSRadius;                                        // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SSFSLuminanceWeighting;                            // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SSFSVolumetricFogILSIntensity;                     // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         BitPad_1_7 : 1;                                    // 0x0001(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bOverride_KuroVolumetricLightIntensity : 1;        // 0x0004(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_KuroVolumetricLightColor : 1;            // 0x0004(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_KuroVolumetricLightPhaseG : 1;           // 0x0004(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_KuroVolumetricLightMaxDistance : 1;      // 0x0004(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         BitPad_4_4 : 4;                                    // 0x0004(0x0001)(Fixing Bit-Field Size For New Byte [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bOverride_SSFSIntensity : 1;                       // 0x0008(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SSFSRadius : 1;                          // 0x0008(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SSFSLuminanceWeighting : 1;              // 0x0008(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_SSFSVolumetricFogILSIntensity : 1;       // 0x0008(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LocalExposureHighlightContrastScale : 1; // 0x0008(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LocalExposureShadowContrastScale : 1;    // 0x0008(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LocalExposureHighlightThreshold : 1;     // 0x0008(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LocalExposureShadowThreshold : 1;        // 0x0008(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LumenLocalExposureHighlightContrastScale : 1; // 0x0009(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LumenLocalExposureShadowContrastScale : 1; // 0x0009(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LumenLocalExposureHighlightThreshold : 1; // 0x0009(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_LumenLocalExposureShadowThreshold : 1;   // 0x0009(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ScreenLeakIntensity : 1;                 // 0x0009(0x0001)(BitIndex: 0x04, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ScreenLeakThreshold : 1;                 // 0x0009(0x0001)(BitIndex: 0x05, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ScreenLeakDistance : 1;                  // 0x0009(0x0001)(BitIndex: 0x06, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ScreenLeakSkyBloomCompensation : 1;      // 0x0009(0x0001)(BitIndex: 0x07, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ScreenLeakTexture : 1;                   // 0x000A(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ScreenLeakTextureIntensity : 1;          // 0x000A(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverride_ScreenLeakRange : 1;                     // 0x000A(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_B[0x1];                                        // 0x000B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         KuroBloomIntensity;                                // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LumenKuroBloomIntensityOffset;                     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroBloomThreshold;                                // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroBloomStreakIntensity;                          // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroBloomStreakThreshold;                          // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroBloomStreakLength;                             // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroBloomStreakMipLevel;                           // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroBloomStreakRatio;                              // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroBloomStreakOrientation;                        // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ColorGradingIntensity;                             // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture*                               ColorGradingLUT;                                   // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AutoExposureDayBias;                               // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AutoExposureNightBias;                             // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LumenAutoExposureDayBias;                          // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LumenAutoExposureNightBias;                        // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroVolumetricLightIntensity;                      // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           KuroVolumetricLightColor;                          // 0x0054(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroVolumetricLightPhaseG;                         // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KuroVolumetricLightMaxDistance;                    // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SSFSIntensity;                                     // 0x006C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SSFSRadius;                                        // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SSFSLuminanceWeighting;                            // 0x0074(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_75[0x3];                                       // 0x0075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SSFSVolumetricFogILSIntensity;                     // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LocalExposureHighlightContrastScale;               // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LocalExposureShadowContrastScale;                  // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LocalExposureHighlightThreshold;                   // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LocalExposureShadowThreshold;                      // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LumenLocalExposureHighlightContrastScale;          // 0x008C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LumenLocalExposureShadowContrastScale;             // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LumenLocalExposureHighlightThreshold;              // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LumenLocalExposureShadowThreshold;                 // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScreenLeakIntensity;                               // 0x009C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScreenLeakThreshold;                               // 0x00A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScreenLeakDistance;                                // 0x00A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScreenLeakSkyBloomCompensation;                    // 0x00A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture*                               ScreenLeakTexture;                                 // 0x00B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScreenLeakTextureIntensity;                        // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ScreenLeakRange;                                   // 0x00BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FKuroPostProcessSetting) == 0x000008, "Wrong alignment on FKuroPostProcessSetting");
-static_assert(sizeof(FKuroPostProcessSetting) == 0x000058, "Wrong size on FKuroPostProcessSetting");
-static_assert(offsetof(FKuroPostProcessSetting, KuroBloomIntensity) == 0x000004, "Member 'FKuroPostProcessSetting::KuroBloomIntensity' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, LumenKuroBloomIntensityOffset) == 0x000008, "Member 'FKuroPostProcessSetting::LumenKuroBloomIntensityOffset' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, KuroBloomThreshold) == 0x00000C, "Member 'FKuroPostProcessSetting::KuroBloomThreshold' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakIntensity) == 0x000010, "Member 'FKuroPostProcessSetting::KuroBloomStreakIntensity' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakThreshold) == 0x000014, "Member 'FKuroPostProcessSetting::KuroBloomStreakThreshold' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakLength) == 0x000018, "Member 'FKuroPostProcessSetting::KuroBloomStreakLength' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakMipLevel) == 0x00001C, "Member 'FKuroPostProcessSetting::KuroBloomStreakMipLevel' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakRatio) == 0x000020, "Member 'FKuroPostProcessSetting::KuroBloomStreakRatio' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakOrientation) == 0x000024, "Member 'FKuroPostProcessSetting::KuroBloomStreakOrientation' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, ColorGradingIntensity) == 0x000028, "Member 'FKuroPostProcessSetting::ColorGradingIntensity' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, ColorGradingLUT) == 0x000030, "Member 'FKuroPostProcessSetting::ColorGradingLUT' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, AutoExposureDayBias) == 0x000038, "Member 'FKuroPostProcessSetting::AutoExposureDayBias' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, AutoExposureNightBias) == 0x00003C, "Member 'FKuroPostProcessSetting::AutoExposureNightBias' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, LumenAutoExposureDayBias) == 0x000040, "Member 'FKuroPostProcessSetting::LumenAutoExposureDayBias' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, LumenAutoExposureNightBias) == 0x000044, "Member 'FKuroPostProcessSetting::LumenAutoExposureNightBias' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, SSFSIntensity) == 0x000048, "Member 'FKuroPostProcessSetting::SSFSIntensity' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, SSFSRadius) == 0x00004C, "Member 'FKuroPostProcessSetting::SSFSRadius' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, SSFSLuminanceWeighting) == 0x000050, "Member 'FKuroPostProcessSetting::SSFSLuminanceWeighting' has a wrong offset!");
-static_assert(offsetof(FKuroPostProcessSetting, SSFSVolumetricFogILSIntensity) == 0x000054, "Member 'FKuroPostProcessSetting::SSFSVolumetricFogILSIntensity' has a wrong offset!");
+static_assert(sizeof(FKuroPostProcessSetting) == 0x0000C0, "Wrong size on FKuroPostProcessSetting");
+static_assert(offsetof(FKuroPostProcessSetting, KuroBloomIntensity) == 0x00000C, "Member 'FKuroPostProcessSetting::KuroBloomIntensity' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LumenKuroBloomIntensityOffset) == 0x000010, "Member 'FKuroPostProcessSetting::LumenKuroBloomIntensityOffset' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroBloomThreshold) == 0x000014, "Member 'FKuroPostProcessSetting::KuroBloomThreshold' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakIntensity) == 0x000018, "Member 'FKuroPostProcessSetting::KuroBloomStreakIntensity' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakThreshold) == 0x00001C, "Member 'FKuroPostProcessSetting::KuroBloomStreakThreshold' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakLength) == 0x000020, "Member 'FKuroPostProcessSetting::KuroBloomStreakLength' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakMipLevel) == 0x000024, "Member 'FKuroPostProcessSetting::KuroBloomStreakMipLevel' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakRatio) == 0x000028, "Member 'FKuroPostProcessSetting::KuroBloomStreakRatio' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroBloomStreakOrientation) == 0x00002C, "Member 'FKuroPostProcessSetting::KuroBloomStreakOrientation' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, ColorGradingIntensity) == 0x000030, "Member 'FKuroPostProcessSetting::ColorGradingIntensity' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, ColorGradingLUT) == 0x000038, "Member 'FKuroPostProcessSetting::ColorGradingLUT' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, AutoExposureDayBias) == 0x000040, "Member 'FKuroPostProcessSetting::AutoExposureDayBias' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, AutoExposureNightBias) == 0x000044, "Member 'FKuroPostProcessSetting::AutoExposureNightBias' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LumenAutoExposureDayBias) == 0x000048, "Member 'FKuroPostProcessSetting::LumenAutoExposureDayBias' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LumenAutoExposureNightBias) == 0x00004C, "Member 'FKuroPostProcessSetting::LumenAutoExposureNightBias' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroVolumetricLightIntensity) == 0x000050, "Member 'FKuroPostProcessSetting::KuroVolumetricLightIntensity' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroVolumetricLightColor) == 0x000054, "Member 'FKuroPostProcessSetting::KuroVolumetricLightColor' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroVolumetricLightPhaseG) == 0x000064, "Member 'FKuroPostProcessSetting::KuroVolumetricLightPhaseG' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, KuroVolumetricLightMaxDistance) == 0x000068, "Member 'FKuroPostProcessSetting::KuroVolumetricLightMaxDistance' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, SSFSIntensity) == 0x00006C, "Member 'FKuroPostProcessSetting::SSFSIntensity' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, SSFSRadius) == 0x000070, "Member 'FKuroPostProcessSetting::SSFSRadius' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, SSFSLuminanceWeighting) == 0x000074, "Member 'FKuroPostProcessSetting::SSFSLuminanceWeighting' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, SSFSVolumetricFogILSIntensity) == 0x000078, "Member 'FKuroPostProcessSetting::SSFSVolumetricFogILSIntensity' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LocalExposureHighlightContrastScale) == 0x00007C, "Member 'FKuroPostProcessSetting::LocalExposureHighlightContrastScale' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LocalExposureShadowContrastScale) == 0x000080, "Member 'FKuroPostProcessSetting::LocalExposureShadowContrastScale' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LocalExposureHighlightThreshold) == 0x000084, "Member 'FKuroPostProcessSetting::LocalExposureHighlightThreshold' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LocalExposureShadowThreshold) == 0x000088, "Member 'FKuroPostProcessSetting::LocalExposureShadowThreshold' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LumenLocalExposureHighlightContrastScale) == 0x00008C, "Member 'FKuroPostProcessSetting::LumenLocalExposureHighlightContrastScale' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LumenLocalExposureShadowContrastScale) == 0x000090, "Member 'FKuroPostProcessSetting::LumenLocalExposureShadowContrastScale' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LumenLocalExposureHighlightThreshold) == 0x000094, "Member 'FKuroPostProcessSetting::LumenLocalExposureHighlightThreshold' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, LumenLocalExposureShadowThreshold) == 0x000098, "Member 'FKuroPostProcessSetting::LumenLocalExposureShadowThreshold' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, ScreenLeakIntensity) == 0x00009C, "Member 'FKuroPostProcessSetting::ScreenLeakIntensity' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, ScreenLeakThreshold) == 0x0000A0, "Member 'FKuroPostProcessSetting::ScreenLeakThreshold' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, ScreenLeakDistance) == 0x0000A4, "Member 'FKuroPostProcessSetting::ScreenLeakDistance' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, ScreenLeakSkyBloomCompensation) == 0x0000A8, "Member 'FKuroPostProcessSetting::ScreenLeakSkyBloomCompensation' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, ScreenLeakTexture) == 0x0000B0, "Member 'FKuroPostProcessSetting::ScreenLeakTexture' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, ScreenLeakTextureIntensity) == 0x0000B8, "Member 'FKuroPostProcessSetting::ScreenLeakTextureIntensity' has a wrong offset!");
+static_assert(offsetof(FKuroPostProcessSetting, ScreenLeakRange) == 0x0000BC, "Member 'FKuroPostProcessSetting::ScreenLeakRange' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.GlobalLightSetting
 // 0x0010 (0x0010 - 0x0000)
@@ -1719,75 +1902,121 @@ static_assert(sizeof(FRayTracingSettings) == 0x00001C, "Wrong size on FRayTracin
 static_assert(offsetof(FRayTracingSettings, LumenGISettings) == 0x000000, "Member 'FRayTracingSettings::LumenGISettings' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroGISetting
-// 0x0DC0 (0x0DC0 - 0x0000)
+// 0x0EF0 (0x0EF0 - 0x0000)
 struct FKuroGISetting final
 {
 public:
-	struct FMainLightSetting                      MainLightSetting;                                  // 0x0000(0x0040)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSkyLightSetting                       SkyLightSetting;                                   // 0x0040(0x0150)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FShadowTintSetting                     ShadowTintSetting;                                 // 0x0190(0x0018)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FCharacterSetting                      CharacterSetting;                                  // 0x01A8(0x005C)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroHeightFogSetting                  KuroFogSetting;                                    // 0x0208(0x0118)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FKuroEffectFogSetting                  KuroEffectFogSetting;                              // 0x0320(0x0060)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FKuroTreeSetting                       KuroTreeSetting;                                   // 0x0380(0x0038)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3B8[0x8];                                      // 0x03B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVolumetricFogSetting                  VolumetricFogSetting;                              // 0x03C0(0x0070)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSkyAtmosphereSetting                  SkyAtmoSphereSetting;                              // 0x0430(0x0010)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FKuroOceanSetting                      FKuroOceanSetting;                                 // 0x0440(0x0080)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FKuroSkyboxSetting                     KuroSkybox;                                        // 0x04C0(0x00F0)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FKuroLensFlareSetting                  LensFlareSetting;                                  // 0x05B0(0x0030)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FWindSetting                           WindSetting;                                       // 0x05E0(0x0028)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FStarSetting                           StarSetting;                                       // 0x0608(0x0048)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FKuroCloudCardSetting                  CloudCardSetting;                                  // 0x0650(0x0084)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6D4[0x4];                                      // 0x06D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroMilkyWaySetting                   MilkyWaySetting;                                   // 0x06D8(0x0088)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGIMiscSetting                         MiscSetting;                                       // 0x0760(0x0230)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGIClusteredStuffSetting               ClusteredStuffSetting;                             // 0x0990(0x0030)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
-	struct FKuroGIMPCSetting                      GIMPCSetting;                                      // 0x09C0(0x00B0)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
-	struct FKuroPostProcessSetting                KuroPostProcess;                                   // 0x0A70(0x0058)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGlobalLightSetting                    GlobalLightSetting;                                // 0x0AC8(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRayTracingSettings                    RayTracingSettings;                                // 0x0AD8(0x001C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AF4[0x2CC];                                    // 0x0AF4(0x02CC)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMainLightSetting                      MainLightSetting;                                  // 0x0000(0x006C)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSkyLightSetting                       SkyLightSetting;                                   // 0x0070(0x0150)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FShadowTintSetting                     ShadowTintSetting;                                 // 0x01C0(0x0018)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCharacterSetting                      CharacterSetting;                                  // 0x01D8(0x005C)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_234[0x4];                                      // 0x0234(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroHeightFogSetting                  KuroFogSetting;                                    // 0x0238(0x0118)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroEffectFogSetting                  KuroEffectFogSetting;                              // 0x0350(0x0060)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroTreeSetting                       KuroTreeSetting;                                   // 0x03B0(0x0038)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3E8[0x8];                                      // 0x03E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVolumetricFogSetting                  VolumetricFogSetting;                              // 0x03F0(0x0080)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSkyAtmosphereSetting                  SkyAtmoSphereSetting;                              // 0x0470(0x0010)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroOceanSetting                      FKuroOceanSetting;                                 // 0x0480(0x0080)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroSkyboxSetting                     KuroSkybox;                                        // 0x0500(0x0108)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroLensFlareSetting                  LensFlareSetting;                                  // 0x0608(0x0030)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FWindSetting                           WindSetting;                                       // 0x0638(0x0028)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FStarSetting                           StarSetting;                                       // 0x0660(0x0070)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroCloudCardSetting                  CloudCardSetting;                                  // 0x06D0(0x0094)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroMultipleLayerSkySetting           MultipleLayerSkySetting;                           // 0x0764(0x0024)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroMilkyWaySetting                   MilkyWaySetting;                                   // 0x0788(0x0088)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGIMiscSetting                         MiscSetting;                                       // 0x0810(0x0250)(Edit, BlueprintVisible, Interp, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGIClusteredStuffSetting               ClusteredStuffSetting;                             // 0x0A60(0x0030)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
+	struct FKuroGIMPCSetting                      GIMPCSetting;                                      // 0x0A90(0x00B0)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
+	struct FKuroPostProcessSetting                KuroPostProcess;                                   // 0x0B40(0x00C0)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGlobalLightSetting                    GlobalLightSetting;                                // 0x0C00(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRayTracingSettings                    RayTracingSettings;                                // 0x0C10(0x001C)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C2C[0x2C4];                                    // 0x0C2C(0x02C4)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FKuroGISetting) == 0x000010, "Wrong alignment on FKuroGISetting");
-static_assert(sizeof(FKuroGISetting) == 0x000DC0, "Wrong size on FKuroGISetting");
+static_assert(sizeof(FKuroGISetting) == 0x000EF0, "Wrong size on FKuroGISetting");
 static_assert(offsetof(FKuroGISetting, MainLightSetting) == 0x000000, "Member 'FKuroGISetting::MainLightSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, SkyLightSetting) == 0x000040, "Member 'FKuroGISetting::SkyLightSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, ShadowTintSetting) == 0x000190, "Member 'FKuroGISetting::ShadowTintSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, CharacterSetting) == 0x0001A8, "Member 'FKuroGISetting::CharacterSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, KuroFogSetting) == 0x000208, "Member 'FKuroGISetting::KuroFogSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, KuroEffectFogSetting) == 0x000320, "Member 'FKuroGISetting::KuroEffectFogSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, KuroTreeSetting) == 0x000380, "Member 'FKuroGISetting::KuroTreeSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, VolumetricFogSetting) == 0x0003C0, "Member 'FKuroGISetting::VolumetricFogSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, SkyAtmoSphereSetting) == 0x000430, "Member 'FKuroGISetting::SkyAtmoSphereSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, FKuroOceanSetting) == 0x000440, "Member 'FKuroGISetting::FKuroOceanSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, KuroSkybox) == 0x0004C0, "Member 'FKuroGISetting::KuroSkybox' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, LensFlareSetting) == 0x0005B0, "Member 'FKuroGISetting::LensFlareSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, WindSetting) == 0x0005E0, "Member 'FKuroGISetting::WindSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, StarSetting) == 0x000608, "Member 'FKuroGISetting::StarSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, CloudCardSetting) == 0x000650, "Member 'FKuroGISetting::CloudCardSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, MilkyWaySetting) == 0x0006D8, "Member 'FKuroGISetting::MilkyWaySetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, MiscSetting) == 0x000760, "Member 'FKuroGISetting::MiscSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, ClusteredStuffSetting) == 0x000990, "Member 'FKuroGISetting::ClusteredStuffSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, GIMPCSetting) == 0x0009C0, "Member 'FKuroGISetting::GIMPCSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, KuroPostProcess) == 0x000A70, "Member 'FKuroGISetting::KuroPostProcess' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, GlobalLightSetting) == 0x000AC8, "Member 'FKuroGISetting::GlobalLightSetting' has a wrong offset!");
-static_assert(offsetof(FKuroGISetting, RayTracingSettings) == 0x000AD8, "Member 'FKuroGISetting::RayTracingSettings' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, SkyLightSetting) == 0x000070, "Member 'FKuroGISetting::SkyLightSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, ShadowTintSetting) == 0x0001C0, "Member 'FKuroGISetting::ShadowTintSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, CharacterSetting) == 0x0001D8, "Member 'FKuroGISetting::CharacterSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, KuroFogSetting) == 0x000238, "Member 'FKuroGISetting::KuroFogSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, KuroEffectFogSetting) == 0x000350, "Member 'FKuroGISetting::KuroEffectFogSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, KuroTreeSetting) == 0x0003B0, "Member 'FKuroGISetting::KuroTreeSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, VolumetricFogSetting) == 0x0003F0, "Member 'FKuroGISetting::VolumetricFogSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, SkyAtmoSphereSetting) == 0x000470, "Member 'FKuroGISetting::SkyAtmoSphereSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, FKuroOceanSetting) == 0x000480, "Member 'FKuroGISetting::FKuroOceanSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, KuroSkybox) == 0x000500, "Member 'FKuroGISetting::KuroSkybox' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, LensFlareSetting) == 0x000608, "Member 'FKuroGISetting::LensFlareSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, WindSetting) == 0x000638, "Member 'FKuroGISetting::WindSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, StarSetting) == 0x000660, "Member 'FKuroGISetting::StarSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, CloudCardSetting) == 0x0006D0, "Member 'FKuroGISetting::CloudCardSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, MultipleLayerSkySetting) == 0x000764, "Member 'FKuroGISetting::MultipleLayerSkySetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, MilkyWaySetting) == 0x000788, "Member 'FKuroGISetting::MilkyWaySetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, MiscSetting) == 0x000810, "Member 'FKuroGISetting::MiscSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, ClusteredStuffSetting) == 0x000A60, "Member 'FKuroGISetting::ClusteredStuffSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, GIMPCSetting) == 0x000A90, "Member 'FKuroGISetting::GIMPCSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, KuroPostProcess) == 0x000B40, "Member 'FKuroGISetting::KuroPostProcess' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, GlobalLightSetting) == 0x000C00, "Member 'FKuroGISetting::GlobalLightSetting' has a wrong offset!");
+static_assert(offsetof(FKuroGISetting, RayTracingSettings) == 0x000C10, "Member 'FKuroGISetting::RayTracingSettings' has a wrong offset!");
 
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCharMaterialControllerColorParameter
-// 0x0230 (0x0230 - 0x0000)
-struct FKuroCharMaterialControllerColorParameter final
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_TextureSample
+// 0x1698 (0x1698 - 0x0000)
+struct FKuroMaterialControllerParam_TextureSample final
 {
 public:
-	class FName                                   ParameterName;                                     // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroCurveLinearColor                  ParameterValue;                                    // 0x0010(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class UTexture2D*                             MaskTexture;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroMaterialCurveColorGroup           TextureScaleAndOffset;                             // 0x0008(0x0660)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialCurveColorGroup           TextureSpeed;                                      // 0x0668(0x0660)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialCurveColorGroup           TextureColorTint;                                  // 0x0CC8(0x0660)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroMaterialCurveFloatGroup           Rotation;                                          // 0x1328(0x01B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          bUseAlphaToMask;                                   // 0x14D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14D9[0x7];                                     // 0x14D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroMaterialCurveFloatGroup           TextureMaskRange;                                  // 0x14E0(0x01B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	KuroRenderingRuntimeBPPlugin::ECharacterControllerUVSwitch UvSelection;                          // 0x1690(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1691[0x7];                                     // 0x1691(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FKuroCharMaterialControllerColorParameter) == 0x000008, "Wrong alignment on FKuroCharMaterialControllerColorParameter");
-static_assert(sizeof(FKuroCharMaterialControllerColorParameter) == 0x000230, "Wrong size on FKuroCharMaterialControllerColorParameter");
-static_assert(offsetof(FKuroCharMaterialControllerColorParameter, ParameterName) == 0x000000, "Member 'FKuroCharMaterialControllerColorParameter::ParameterName' has a wrong offset!");
-static_assert(offsetof(FKuroCharMaterialControllerColorParameter, ParameterValue) == 0x000010, "Member 'FKuroCharMaterialControllerColorParameter::ParameterValue' has a wrong offset!");
+static_assert(alignof(FKuroMaterialControllerParam_TextureSample) == 0x000008, "Wrong alignment on FKuroMaterialControllerParam_TextureSample");
+static_assert(sizeof(FKuroMaterialControllerParam_TextureSample) == 0x001698, "Wrong size on FKuroMaterialControllerParam_TextureSample");
+static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, MaskTexture) == 0x000000, "Member 'FKuroMaterialControllerParam_TextureSample::MaskTexture' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, TextureScaleAndOffset) == 0x000008, "Member 'FKuroMaterialControllerParam_TextureSample::TextureScaleAndOffset' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, TextureSpeed) == 0x000668, "Member 'FKuroMaterialControllerParam_TextureSample::TextureSpeed' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, TextureColorTint) == 0x000CC8, "Member 'FKuroMaterialControllerParam_TextureSample::TextureColorTint' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, Rotation) == 0x001328, "Member 'FKuroMaterialControllerParam_TextureSample::Rotation' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, bUseAlphaToMask) == 0x0014D8, "Member 'FKuroMaterialControllerParam_TextureSample::bUseAlphaToMask' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, TextureMaskRange) == 0x0014E0, "Member 'FKuroMaterialControllerParam_TextureSample::TextureMaskRange' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, UvSelection) == 0x001690, "Member 'FKuroMaterialControllerParam_TextureSample::UvSelection' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.CloudCover
+// 0x0018 (0x0018 - 0x0000)
+struct FCloudCover final
+{
+public:
+	class UMaterialInterface*                     CoverMaterial;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            Mesh;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CloudAngle;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FCloudCover) == 0x000008, "Wrong alignment on FCloudCover");
+static_assert(sizeof(FCloudCover) == 0x000018, "Wrong size on FCloudCover");
+static_assert(offsetof(FCloudCover, CoverMaterial) == 0x000000, "Member 'FCloudCover::CoverMaterial' has a wrong offset!");
+static_assert(offsetof(FCloudCover, Mesh) == 0x000008, "Member 'FCloudCover::Mesh' has a wrong offset!");
+static_assert(offsetof(FCloudCover, CloudAngle) == 0x000010, "Member 'FCloudCover::CloudAngle' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_MotionOffset
+// 0x01B8 (0x01B8 - 0x0000)
+struct FKuroMaterialControllerParam_MotionOffset final
+{
+public:
+	float                                         MotionAffectVertexRange;                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MotionOffsetLength;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroMaterialCurveFloatGroup           MotionNoiseSpeed;                                  // 0x0008(0x01B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroMaterialControllerParam_MotionOffset) == 0x000008, "Wrong alignment on FKuroMaterialControllerParam_MotionOffset");
+static_assert(sizeof(FKuroMaterialControllerParam_MotionOffset) == 0x0001B8, "Wrong size on FKuroMaterialControllerParam_MotionOffset");
+static_assert(offsetof(FKuroMaterialControllerParam_MotionOffset, MotionAffectVertexRange) == 0x000000, "Member 'FKuroMaterialControllerParam_MotionOffset::MotionAffectVertexRange' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_MotionOffset, MotionOffsetLength) == 0x000004, "Member 'FKuroMaterialControllerParam_MotionOffset::MotionOffsetLength' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_MotionOffset, MotionNoiseSpeed) == 0x000008, "Member 'FKuroMaterialControllerParam_MotionOffset::MotionNoiseSpeed' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.MountainParameters
 // 0x0001 (0x0001 - 0x0000)
@@ -1799,6 +2028,52 @@ public:
 static_assert(alignof(FMountainParameters) == 0x000001, "Wrong alignment on FMountainParameters");
 static_assert(sizeof(FMountainParameters) == 0x000001, "Wrong size on FMountainParameters");
 static_assert(offsetof(FMountainParameters, bHasMountain) == 0x000000, "Member 'FMountainParameters::bHasMountain' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.BookPavingDataStruct
+// 0x00C0 (0x00C0 - 0x0000)
+struct FBookPavingDataStruct final
+{
+public:
+	class UStaticMeshComponent*                   MeshComponent;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       TransformOld;                                      // 0x0010(0x0040)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTransformDouble                       TransformNew;                                      // 0x0050(0x0040)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          PageTurning;                                       // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_91[0x3];                                       // 0x0091(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Tick_Add;                                          // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeltaSeconds_Add;                                  // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          PavingState;                                       // 0x009C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9D[0x3];                                       // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 PageTimes;                                         // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         PavingTime;                                        // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Speed;                                             // 0x00B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FBookPavingDataStruct) == 0x000010, "Wrong alignment on FBookPavingDataStruct");
+static_assert(sizeof(FBookPavingDataStruct) == 0x0000C0, "Wrong size on FBookPavingDataStruct");
+static_assert(offsetof(FBookPavingDataStruct, MeshComponent) == 0x000000, "Member 'FBookPavingDataStruct::MeshComponent' has a wrong offset!");
+static_assert(offsetof(FBookPavingDataStruct, TransformOld) == 0x000010, "Member 'FBookPavingDataStruct::TransformOld' has a wrong offset!");
+static_assert(offsetof(FBookPavingDataStruct, TransformNew) == 0x000050, "Member 'FBookPavingDataStruct::TransformNew' has a wrong offset!");
+static_assert(offsetof(FBookPavingDataStruct, PageTurning) == 0x000090, "Member 'FBookPavingDataStruct::PageTurning' has a wrong offset!");
+static_assert(offsetof(FBookPavingDataStruct, Tick_Add) == 0x000094, "Member 'FBookPavingDataStruct::Tick_Add' has a wrong offset!");
+static_assert(offsetof(FBookPavingDataStruct, DeltaSeconds_Add) == 0x000098, "Member 'FBookPavingDataStruct::DeltaSeconds_Add' has a wrong offset!");
+static_assert(offsetof(FBookPavingDataStruct, PavingState) == 0x00009C, "Member 'FBookPavingDataStruct::PavingState' has a wrong offset!");
+static_assert(offsetof(FBookPavingDataStruct, PageTimes) == 0x0000A0, "Member 'FBookPavingDataStruct::PageTimes' has a wrong offset!");
+static_assert(offsetof(FBookPavingDataStruct, PavingTime) == 0x0000B0, "Member 'FBookPavingDataStruct::PavingTime' has a wrong offset!");
+static_assert(offsetof(FBookPavingDataStruct, Speed) == 0x0000B4, "Member 'FBookPavingDataStruct::Speed' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.WPCoord
+// 0x0008 (0x0008 - 0x0000)
+struct FWPCoord final
+{
+public:
+	int32                                         X;                                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Y;                                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FWPCoord) == 0x000004, "Wrong alignment on FWPCoord");
+static_assert(sizeof(FWPCoord) == 0x000008, "Wrong size on FWPCoord");
+static_assert(offsetof(FWPCoord, X) == 0x000000, "Member 'FWPCoord::X' has a wrong offset!");
+static_assert(offsetof(FWPCoord, Y) == 0x000004, "Member 'FWPCoord::Y' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroDestructiblePieceInfo
 // 0x0050 (0x0050 - 0x0000)
@@ -1817,213 +2092,6 @@ static_assert(offsetof(FKuroDestructiblePieceInfo, StaticMesh) == 0x000000, "Mem
 static_assert(offsetof(FKuroDestructiblePieceInfo, InitialTransform) == 0x000010, "Member 'FKuroDestructiblePieceInfo::InitialTransform' has a wrong offset!");
 static_assert(offsetof(FKuroDestructiblePieceInfo, RelativeBoneName) == 0x000040, "Member 'FKuroDestructiblePieceInfo::RelativeBoneName' has a wrong offset!");
 
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroTODEntryData
-// 0x000C (0x000C - 0x0000)
-struct FKuroTODEntryData final
-{
-public:
-	struct FVector2D                              StartEndTime;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DataIndex;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroTODEntryData) == 0x000004, "Wrong alignment on FKuroTODEntryData");
-static_assert(sizeof(FKuroTODEntryData) == 0x00000C, "Wrong size on FKuroTODEntryData");
-static_assert(offsetof(FKuroTODEntryData, StartEndTime) == 0x000000, "Member 'FKuroTODEntryData::StartEndTime' has a wrong offset!");
-static_assert(offsetof(FKuroTODEntryData, DataIndex) == 0x000008, "Member 'FKuroTODEntryData::DataIndex' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroRainMaterialColorParameter
-// 0x0230 (0x0230 - 0x0000)
-struct FKuroRainMaterialColorParameter final
-{
-public:
-	class FName                                   ParameterName;                                     // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroCurveLinearColor                  Value;                                             // 0x0010(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroRainMaterialColorParameter) == 0x000008, "Wrong alignment on FKuroRainMaterialColorParameter");
-static_assert(sizeof(FKuroRainMaterialColorParameter) == 0x000230, "Wrong size on FKuroRainMaterialColorParameter");
-static_assert(offsetof(FKuroRainMaterialColorParameter, ParameterName) == 0x000000, "Member 'FKuroRainMaterialColorParameter::ParameterName' has a wrong offset!");
-static_assert(offsetof(FKuroRainMaterialColorParameter, Value) == 0x000010, "Member 'FKuroRainMaterialColorParameter::Value' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroGPUParticleMeshInfo
-// 0x0028 (0x0028 - 0x0000)
-struct FKuroGPUParticleMeshInfo final
-{
-public:
-	int32                                         StartFrame;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EndFrame;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BoundsCenter;                                      // 0x0008(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BoundsSize;                                        // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            Mesh;                                              // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroGPUParticleMeshInfo) == 0x000008, "Wrong alignment on FKuroGPUParticleMeshInfo");
-static_assert(sizeof(FKuroGPUParticleMeshInfo) == 0x000028, "Wrong size on FKuroGPUParticleMeshInfo");
-static_assert(offsetof(FKuroGPUParticleMeshInfo, StartFrame) == 0x000000, "Member 'FKuroGPUParticleMeshInfo::StartFrame' has a wrong offset!");
-static_assert(offsetof(FKuroGPUParticleMeshInfo, EndFrame) == 0x000004, "Member 'FKuroGPUParticleMeshInfo::EndFrame' has a wrong offset!");
-static_assert(offsetof(FKuroGPUParticleMeshInfo, BoundsCenter) == 0x000008, "Member 'FKuroGPUParticleMeshInfo::BoundsCenter' has a wrong offset!");
-static_assert(offsetof(FKuroGPUParticleMeshInfo, BoundsSize) == 0x000014, "Member 'FKuroGPUParticleMeshInfo::BoundsSize' has a wrong offset!");
-static_assert(offsetof(FKuroGPUParticleMeshInfo, Mesh) == 0x000020, "Member 'FKuroGPUParticleMeshInfo::Mesh' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.CloudParameters
-// 0x00C0 (0x00C0 - 0x0000)
-struct FCloudParameters final
-{
-public:
-	bool                                          bYesUV1NoUV2;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCloudRotation;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSDF;                                              // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture*                               Mask;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               NoiseMap;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         UVTiling;                                          // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CloudAngle;                                        // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CloudSpeed;                                        // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseSpeed;                                        // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseStrength;                                     // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseTilling;                                      // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroCurveFloat                        SDFTime;                                           // 0x0030(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FCloudParameters) == 0x000008, "Wrong alignment on FCloudParameters");
-static_assert(sizeof(FCloudParameters) == 0x0000C0, "Wrong size on FCloudParameters");
-static_assert(offsetof(FCloudParameters, bYesUV1NoUV2) == 0x000000, "Member 'FCloudParameters::bYesUV1NoUV2' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, bCloudRotation) == 0x000001, "Member 'FCloudParameters::bCloudRotation' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, bSDF) == 0x000002, "Member 'FCloudParameters::bSDF' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, Mask) == 0x000008, "Member 'FCloudParameters::Mask' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, NoiseMap) == 0x000010, "Member 'FCloudParameters::NoiseMap' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, UVTiling) == 0x000018, "Member 'FCloudParameters::UVTiling' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, CloudAngle) == 0x00001C, "Member 'FCloudParameters::CloudAngle' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, CloudSpeed) == 0x000020, "Member 'FCloudParameters::CloudSpeed' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, NoiseSpeed) == 0x000024, "Member 'FCloudParameters::NoiseSpeed' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, NoiseStrength) == 0x000028, "Member 'FCloudParameters::NoiseStrength' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, NoiseTilling) == 0x00002C, "Member 'FCloudParameters::NoiseTilling' has a wrong offset!");
-static_assert(offsetof(FCloudParameters, SDFTime) == 0x000030, "Member 'FCloudParameters::SDFTime' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.POICloudParameters
-// 0x0038 (0x0038 - 0x0000)
-struct FPOICloudParameters final
-{
-public:
-	bool                                          bYesUV1NoUV2;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCloudRotation;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSDF;                                              // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture*                               Mask;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               NoiseMap;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            Mesh;                                              // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         UVTiling;                                          // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CloudAngle;                                        // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CloudSpeed;                                        // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseSpeed;                                        // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseStrength;                                     // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseTilling;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FPOICloudParameters) == 0x000008, "Wrong alignment on FPOICloudParameters");
-static_assert(sizeof(FPOICloudParameters) == 0x000038, "Wrong size on FPOICloudParameters");
-static_assert(offsetof(FPOICloudParameters, bYesUV1NoUV2) == 0x000000, "Member 'FPOICloudParameters::bYesUV1NoUV2' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, bCloudRotation) == 0x000001, "Member 'FPOICloudParameters::bCloudRotation' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, bSDF) == 0x000002, "Member 'FPOICloudParameters::bSDF' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, Mask) == 0x000008, "Member 'FPOICloudParameters::Mask' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, NoiseMap) == 0x000010, "Member 'FPOICloudParameters::NoiseMap' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, Mesh) == 0x000018, "Member 'FPOICloudParameters::Mesh' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, UVTiling) == 0x000020, "Member 'FPOICloudParameters::UVTiling' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, CloudAngle) == 0x000024, "Member 'FPOICloudParameters::CloudAngle' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, CloudSpeed) == 0x000028, "Member 'FPOICloudParameters::CloudSpeed' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, NoiseSpeed) == 0x00002C, "Member 'FPOICloudParameters::NoiseSpeed' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, NoiseStrength) == 0x000030, "Member 'FPOICloudParameters::NoiseStrength' has a wrong offset!");
-static_assert(offsetof(FPOICloudParameters, NoiseTilling) == 0x000034, "Member 'FPOICloudParameters::NoiseTilling' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.AnomaliesParameters
-// 0x0038 (0x0038 - 0x0000)
-struct FAnomaliesParameters final
-{
-public:
-	bool                                          bRotation;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture*                               Color;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTexture*                               NoiseMap;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UStaticMesh*                            Mesh;                                              // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CloudAngle;                                        // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseSpeed;                                        // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseStrength;                                     // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NoiseTilling;                                      // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Luminance;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FAnomaliesParameters) == 0x000008, "Wrong alignment on FAnomaliesParameters");
-static_assert(sizeof(FAnomaliesParameters) == 0x000038, "Wrong size on FAnomaliesParameters");
-static_assert(offsetof(FAnomaliesParameters, bRotation) == 0x000000, "Member 'FAnomaliesParameters::bRotation' has a wrong offset!");
-static_assert(offsetof(FAnomaliesParameters, Color) == 0x000008, "Member 'FAnomaliesParameters::Color' has a wrong offset!");
-static_assert(offsetof(FAnomaliesParameters, NoiseMap) == 0x000010, "Member 'FAnomaliesParameters::NoiseMap' has a wrong offset!");
-static_assert(offsetof(FAnomaliesParameters, Mesh) == 0x000018, "Member 'FAnomaliesParameters::Mesh' has a wrong offset!");
-static_assert(offsetof(FAnomaliesParameters, CloudAngle) == 0x000020, "Member 'FAnomaliesParameters::CloudAngle' has a wrong offset!");
-static_assert(offsetof(FAnomaliesParameters, NoiseSpeed) == 0x000024, "Member 'FAnomaliesParameters::NoiseSpeed' has a wrong offset!");
-static_assert(offsetof(FAnomaliesParameters, NoiseStrength) == 0x000028, "Member 'FAnomaliesParameters::NoiseStrength' has a wrong offset!");
-static_assert(offsetof(FAnomaliesParameters, NoiseTilling) == 0x00002C, "Member 'FAnomaliesParameters::NoiseTilling' has a wrong offset!");
-static_assert(offsetof(FAnomaliesParameters, Luminance) == 0x000030, "Member 'FAnomaliesParameters::Luminance' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCharMaterialControllerFloatGroup
-// 0x01B0 (0x01B0 - 0x0000)
-struct FKuroCharMaterialControllerFloatGroup final
-{
-public:
-	struct FKuroCurveFloat                        Start;                                             // 0x0000(0x0090)(Edit, NativeAccessSpecifierPublic)
-	struct FKuroCurveFloat                        Loop;                                              // 0x0090(0x0090)(Edit, NativeAccessSpecifierPublic)
-	struct FKuroCurveFloat                        End;                                               // 0x0120(0x0090)(Edit, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroCharMaterialControllerFloatGroup) == 0x000008, "Wrong alignment on FKuroCharMaterialControllerFloatGroup");
-static_assert(sizeof(FKuroCharMaterialControllerFloatGroup) == 0x0001B0, "Wrong size on FKuroCharMaterialControllerFloatGroup");
-static_assert(offsetof(FKuroCharMaterialControllerFloatGroup, Start) == 0x000000, "Member 'FKuroCharMaterialControllerFloatGroup::Start' has a wrong offset!");
-static_assert(offsetof(FKuroCharMaterialControllerFloatGroup, Loop) == 0x000090, "Member 'FKuroCharMaterialControllerFloatGroup::Loop' has a wrong offset!");
-static_assert(offsetof(FKuroCharMaterialControllerFloatGroup, End) == 0x000120, "Member 'FKuroCharMaterialControllerFloatGroup::End' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_OutlineConst
-// 0x001C (0x001C - 0x0000)
-struct FKuroMaterialControllerParam_OutlineConst final
-{
-public:
-	bool                                          bOutlineUseTex;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseOuterOutlineEffect;                            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         OutlineWidth;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           OutlineColor;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OutlineIntensity;                                  // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroMaterialControllerParam_OutlineConst) == 0x000004, "Wrong alignment on FKuroMaterialControllerParam_OutlineConst");
-static_assert(sizeof(FKuroMaterialControllerParam_OutlineConst) == 0x00001C, "Wrong size on FKuroMaterialControllerParam_OutlineConst");
-static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, bOutlineUseTex) == 0x000000, "Member 'FKuroMaterialControllerParam_OutlineConst::bOutlineUseTex' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, bUseOuterOutlineEffect) == 0x000001, "Member 'FKuroMaterialControllerParam_OutlineConst::bUseOuterOutlineEffect' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, OutlineWidth) == 0x000004, "Member 'FKuroMaterialControllerParam_OutlineConst::OutlineWidth' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, OutlineColor) == 0x000008, "Member 'FKuroMaterialControllerParam_OutlineConst::OutlineColor' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, OutlineIntensity) == 0x000018, "Member 'FKuroMaterialControllerParam_OutlineConst::OutlineIntensity' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_MotionOffset
-// 0x01B8 (0x01B8 - 0x0000)
-struct FKuroMaterialControllerParam_MotionOffset final
-{
-public:
-	float                                         MotionAffectVertexRange;                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MotionOffsetLength;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroMaterialCurveFloatGroup           MotionNoiseSpeed;                                  // 0x0008(0x01B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroMaterialControllerParam_MotionOffset) == 0x000008, "Wrong alignment on FKuroMaterialControllerParam_MotionOffset");
-static_assert(sizeof(FKuroMaterialControllerParam_MotionOffset) == 0x0001B8, "Wrong size on FKuroMaterialControllerParam_MotionOffset");
-static_assert(offsetof(FKuroMaterialControllerParam_MotionOffset, MotionAffectVertexRange) == 0x000000, "Member 'FKuroMaterialControllerParam_MotionOffset::MotionAffectVertexRange' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_MotionOffset, MotionOffsetLength) == 0x000004, "Member 'FKuroMaterialControllerParam_MotionOffset::MotionOffsetLength' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_MotionOffset, MotionNoiseSpeed) == 0x000008, "Member 'FKuroMaterialControllerParam_MotionOffset::MotionNoiseSpeed' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCharMaterialControllerFloatParameter
-// 0x00A0 (0x00A0 - 0x0000)
-struct FKuroCharMaterialControllerFloatParameter final
-{
-public:
-	class FName                                   ParameterName;                                     // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroCurveFloat                        ParameterValue;                                    // 0x0010(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroCharMaterialControllerFloatParameter) == 0x000008, "Wrong alignment on FKuroCharMaterialControllerFloatParameter");
-static_assert(sizeof(FKuroCharMaterialControllerFloatParameter) == 0x0000A0, "Wrong size on FKuroCharMaterialControllerFloatParameter");
-static_assert(offsetof(FKuroCharMaterialControllerFloatParameter, ParameterName) == 0x000000, "Member 'FKuroCharMaterialControllerFloatParameter::ParameterName' has a wrong offset!");
-static_assert(offsetof(FKuroCharMaterialControllerFloatParameter, ParameterValue) == 0x000010, "Member 'FKuroCharMaterialControllerFloatParameter::ParameterValue' has a wrong offset!");
-
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCharMaterialControllerColorGroup
 // 0x0660 (0x0660 - 0x0000)
 struct FKuroCharMaterialControllerColorGroup final
@@ -2038,63 +2106,6 @@ static_assert(sizeof(FKuroCharMaterialControllerColorGroup) == 0x000660, "Wrong 
 static_assert(offsetof(FKuroCharMaterialControllerColorGroup, Start) == 0x000000, "Member 'FKuroCharMaterialControllerColorGroup::Start' has a wrong offset!");
 static_assert(offsetof(FKuroCharMaterialControllerColorGroup, Loop) == 0x000220, "Member 'FKuroCharMaterialControllerColorGroup::Loop' has a wrong offset!");
 static_assert(offsetof(FKuroCharMaterialControllerColorGroup, End) == 0x000440, "Member 'FKuroCharMaterialControllerColorGroup::End' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.CloudCover
-// 0x0008 (0x0008 - 0x0000)
-struct FCloudCover final
-{
-public:
-	class UMaterialInterface*                     CoverMaterial;                                     // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FCloudCover) == 0x000008, "Wrong alignment on FCloudCover");
-static_assert(sizeof(FCloudCover) == 0x000008, "Wrong size on FCloudCover");
-static_assert(offsetof(FCloudCover, CoverMaterial) == 0x000000, "Member 'FCloudCover::CoverMaterial' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.PostprocessGIDebugInfo
-// 0x00B8 (0x00B8 - 0x0000)
-struct FPostprocessGIDebugInfo final
-{
-public:
-	TWeakObjectPtr<class AActor>                  OwnerActor;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 OwnerActorName;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   ActorFolderPath;                                   // 0x0018(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ActorLabel;                                        // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsVolume;                                          // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ComponentName;                                     // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         WorldPriority;                                     // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LocalBlendWeight;                                  // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BlendWeight;                                       // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsUnbound;                                         // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 WeatherDAPath;                                     // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UKuroWeatherDataAsset>   WeatherDAData;                                     // 0x0078(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 TodDAPath;                                         // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class UKuroTODData>            TodDAData;                                         // 0x0090(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         OverridedProperties;                               // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 PostProcessMaterialPath;                           // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FPostprocessGIDebugInfo) == 0x000008, "Wrong alignment on FPostprocessGIDebugInfo");
-static_assert(sizeof(FPostprocessGIDebugInfo) == 0x0000B8, "Wrong size on FPostprocessGIDebugInfo");
-static_assert(offsetof(FPostprocessGIDebugInfo, OwnerActor) == 0x000000, "Member 'FPostprocessGIDebugInfo::OwnerActor' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, OwnerActorName) == 0x000008, "Member 'FPostprocessGIDebugInfo::OwnerActorName' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, ActorFolderPath) == 0x000018, "Member 'FPostprocessGIDebugInfo::ActorFolderPath' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, ActorLabel) == 0x000028, "Member 'FPostprocessGIDebugInfo::ActorLabel' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, IsVolume) == 0x000038, "Member 'FPostprocessGIDebugInfo::IsVolume' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, ComponentName) == 0x000040, "Member 'FPostprocessGIDebugInfo::ComponentName' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, Priority) == 0x000050, "Member 'FPostprocessGIDebugInfo::Priority' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, WorldPriority) == 0x000054, "Member 'FPostprocessGIDebugInfo::WorldPriority' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, LocalBlendWeight) == 0x000058, "Member 'FPostprocessGIDebugInfo::LocalBlendWeight' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, BlendWeight) == 0x00005C, "Member 'FPostprocessGIDebugInfo::BlendWeight' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, IsUnbound) == 0x000060, "Member 'FPostprocessGIDebugInfo::IsUnbound' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, WeatherDAPath) == 0x000068, "Member 'FPostprocessGIDebugInfo::WeatherDAPath' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, WeatherDAData) == 0x000078, "Member 'FPostprocessGIDebugInfo::WeatherDAData' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, TodDAPath) == 0x000080, "Member 'FPostprocessGIDebugInfo::TodDAPath' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, TodDAData) == 0x000090, "Member 'FPostprocessGIDebugInfo::TodDAData' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, OverridedProperties) == 0x000098, "Member 'FPostprocessGIDebugInfo::OverridedProperties' has a wrong offset!");
-static_assert(offsetof(FPostprocessGIDebugInfo, PostProcessMaterialPath) == 0x0000A8, "Member 'FPostprocessGIDebugInfo::PostProcessMaterialPath' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCloudTopData
 // 0x0040 (0x0040 - 0x0000)
@@ -2128,43 +2139,6 @@ static_assert(offsetof(FKuroCloudTopData, FadeOutTime) == 0x000030, "Member 'FKu
 static_assert(offsetof(FKuroCloudTopData, FadeInTime) == 0x000034, "Member 'FKuroCloudTopData::FadeInTime' has a wrong offset!");
 static_assert(offsetof(FKuroCloudTopData, FullStayTime) == 0x000038, "Member 'FKuroCloudTopData::FullStayTime' has a wrong offset!");
 static_assert(offsetof(FKuroCloudTopData, DisappearTime) == 0x00003C, "Member 'FKuroCloudTopData::DisappearTime' has a wrong offset!");
-
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCloudCircleData
-// 0x0048 (0x0048 - 0x0000)
-struct FKuroCloudCircleData final
-{
-public:
-	float                                         Distance;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Rotator;                                           // 0x0004(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TextureIdx;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HorizontalOffset;                                  // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Scale;                                             // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Offset;                                            // 0x001C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AlphaControl;                                      // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AlphaMax;                                          // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AlphaMin;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Brightness;                                        // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeOutTime;                                       // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FadeInTime;                                        // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FullStayTime;                                      // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DisappearTime;                                     // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FKuroCloudCircleData) == 0x000004, "Wrong alignment on FKuroCloudCircleData");
-static_assert(sizeof(FKuroCloudCircleData) == 0x000048, "Wrong size on FKuroCloudCircleData");
-static_assert(offsetof(FKuroCloudCircleData, Distance) == 0x000000, "Member 'FKuroCloudCircleData::Distance' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, Rotator) == 0x000004, "Member 'FKuroCloudCircleData::Rotator' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, TextureIdx) == 0x000010, "Member 'FKuroCloudCircleData::TextureIdx' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, HorizontalOffset) == 0x000014, "Member 'FKuroCloudCircleData::HorizontalOffset' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, Scale) == 0x000018, "Member 'FKuroCloudCircleData::Scale' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, Offset) == 0x00001C, "Member 'FKuroCloudCircleData::Offset' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, AlphaControl) == 0x000028, "Member 'FKuroCloudCircleData::AlphaControl' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, AlphaMax) == 0x00002C, "Member 'FKuroCloudCircleData::AlphaMax' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, AlphaMin) == 0x000030, "Member 'FKuroCloudCircleData::AlphaMin' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, Brightness) == 0x000034, "Member 'FKuroCloudCircleData::Brightness' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, FadeOutTime) == 0x000038, "Member 'FKuroCloudCircleData::FadeOutTime' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, FadeInTime) == 0x00003C, "Member 'FKuroCloudCircleData::FadeInTime' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, FullStayTime) == 0x000040, "Member 'FKuroCloudCircleData::FullStayTime' has a wrong offset!");
-static_assert(offsetof(FKuroCloudCircleData, DisappearTime) == 0x000044, "Member 'FKuroCloudCircleData::DisappearTime' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCloudLayerSetting
 // 0x00D0 (0x00D0 - 0x0000)
@@ -2272,18 +2246,262 @@ static_assert(offsetof(FKuroCloudLayerSetting, SecondLayerScale) == 0x0000C4, "M
 static_assert(offsetof(FKuroCloudLayerSetting, SecondLayerHardness) == 0x0000C8, "Member 'FKuroCloudLayerSetting::SecondLayerHardness' has a wrong offset!");
 static_assert(offsetof(FKuroCloudLayerSetting, SecondLayerWind) == 0x0000CC, "Member 'FKuroCloudLayerSetting::SecondLayerWind' has a wrong offset!");
 
-// ScriptStruct KuroRenderingRuntimeBPPlugin.WPCoord
-// 0x0008 (0x0008 - 0x0000)
-struct FWPCoord final
+// ScriptStruct KuroRenderingRuntimeBPPlugin.POICloudParameters
+// 0x0040 (0x0040 - 0x0000)
+struct FPOICloudParameters final
 {
 public:
-	int32                                         X;                                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Y;                                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bYesUV1NoUV2;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCloudRotation;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSDF;                                              // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture*                               Mask;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               NoiseMap;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            Mesh;                                              // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         UVTiling;                                          // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CloudAngle;                                        // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CloudSpeed;                                        // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseSpeed;                                        // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseStrength;                                     // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseTilling;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInstance*                      OverrideMaterial;                                  // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FWPCoord) == 0x000004, "Wrong alignment on FWPCoord");
-static_assert(sizeof(FWPCoord) == 0x000008, "Wrong size on FWPCoord");
-static_assert(offsetof(FWPCoord, X) == 0x000000, "Member 'FWPCoord::X' has a wrong offset!");
-static_assert(offsetof(FWPCoord, Y) == 0x000004, "Member 'FWPCoord::Y' has a wrong offset!");
+static_assert(alignof(FPOICloudParameters) == 0x000008, "Wrong alignment on FPOICloudParameters");
+static_assert(sizeof(FPOICloudParameters) == 0x000040, "Wrong size on FPOICloudParameters");
+static_assert(offsetof(FPOICloudParameters, bYesUV1NoUV2) == 0x000000, "Member 'FPOICloudParameters::bYesUV1NoUV2' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, bCloudRotation) == 0x000001, "Member 'FPOICloudParameters::bCloudRotation' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, bSDF) == 0x000002, "Member 'FPOICloudParameters::bSDF' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, Mask) == 0x000008, "Member 'FPOICloudParameters::Mask' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, NoiseMap) == 0x000010, "Member 'FPOICloudParameters::NoiseMap' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, Mesh) == 0x000018, "Member 'FPOICloudParameters::Mesh' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, UVTiling) == 0x000020, "Member 'FPOICloudParameters::UVTiling' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, CloudAngle) == 0x000024, "Member 'FPOICloudParameters::CloudAngle' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, CloudSpeed) == 0x000028, "Member 'FPOICloudParameters::CloudSpeed' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, NoiseSpeed) == 0x00002C, "Member 'FPOICloudParameters::NoiseSpeed' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, NoiseStrength) == 0x000030, "Member 'FPOICloudParameters::NoiseStrength' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, NoiseTilling) == 0x000034, "Member 'FPOICloudParameters::NoiseTilling' has a wrong offset!");
+static_assert(offsetof(FPOICloudParameters, OverrideMaterial) == 0x000038, "Member 'FPOICloudParameters::OverrideMaterial' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCharMaterialControllerColorParameter
+// 0x0230 (0x0230 - 0x0000)
+struct FKuroCharMaterialControllerColorParameter final
+{
+public:
+	class FName                                   ParameterName;                                     // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveLinearColor                  ParameterValue;                                    // 0x0010(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroCharMaterialControllerColorParameter) == 0x000008, "Wrong alignment on FKuroCharMaterialControllerColorParameter");
+static_assert(sizeof(FKuroCharMaterialControllerColorParameter) == 0x000230, "Wrong size on FKuroCharMaterialControllerColorParameter");
+static_assert(offsetof(FKuroCharMaterialControllerColorParameter, ParameterName) == 0x000000, "Member 'FKuroCharMaterialControllerColorParameter::ParameterName' has a wrong offset!");
+static_assert(offsetof(FKuroCharMaterialControllerColorParameter, ParameterValue) == 0x000010, "Member 'FKuroCharMaterialControllerColorParameter::ParameterValue' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCharMaterialControllerFloatParameter
+// 0x00A0 (0x00A0 - 0x0000)
+struct FKuroCharMaterialControllerFloatParameter final
+{
+public:
+	class FName                                   ParameterName;                                     // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKuroCurveFloat                        ParameterValue;                                    // 0x0010(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroCharMaterialControllerFloatParameter) == 0x000008, "Wrong alignment on FKuroCharMaterialControllerFloatParameter");
+static_assert(sizeof(FKuroCharMaterialControllerFloatParameter) == 0x0000A0, "Wrong size on FKuroCharMaterialControllerFloatParameter");
+static_assert(offsetof(FKuroCharMaterialControllerFloatParameter, ParameterName) == 0x000000, "Member 'FKuroCharMaterialControllerFloatParameter::ParameterName' has a wrong offset!");
+static_assert(offsetof(FKuroCharMaterialControllerFloatParameter, ParameterValue) == 0x000010, "Member 'FKuroCharMaterialControllerFloatParameter::ParameterValue' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCharMaterialControllerFloatGroup
+// 0x01B0 (0x01B0 - 0x0000)
+struct FKuroCharMaterialControllerFloatGroup final
+{
+public:
+	struct FKuroCurveFloat                        Start;                                             // 0x0000(0x0090)(Edit, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        Loop;                                              // 0x0090(0x0090)(Edit, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        End;                                               // 0x0120(0x0090)(Edit, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroCharMaterialControllerFloatGroup) == 0x000008, "Wrong alignment on FKuroCharMaterialControllerFloatGroup");
+static_assert(sizeof(FKuroCharMaterialControllerFloatGroup) == 0x0001B0, "Wrong size on FKuroCharMaterialControllerFloatGroup");
+static_assert(offsetof(FKuroCharMaterialControllerFloatGroup, Start) == 0x000000, "Member 'FKuroCharMaterialControllerFloatGroup::Start' has a wrong offset!");
+static_assert(offsetof(FKuroCharMaterialControllerFloatGroup, Loop) == 0x000090, "Member 'FKuroCharMaterialControllerFloatGroup::Loop' has a wrong offset!");
+static_assert(offsetof(FKuroCharMaterialControllerFloatGroup, End) == 0x000120, "Member 'FKuroCharMaterialControllerFloatGroup::End' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.AnomaliesParameters
+// 0x0038 (0x0038 - 0x0000)
+struct FAnomaliesParameters final
+{
+public:
+	bool                                          bRotation;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture*                               Color;                                             // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               NoiseMap;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            Mesh;                                              // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CloudAngle;                                        // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseSpeed;                                        // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseStrength;                                     // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseTilling;                                      // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Luminance;                                         // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FAnomaliesParameters) == 0x000008, "Wrong alignment on FAnomaliesParameters");
+static_assert(sizeof(FAnomaliesParameters) == 0x000038, "Wrong size on FAnomaliesParameters");
+static_assert(offsetof(FAnomaliesParameters, bRotation) == 0x000000, "Member 'FAnomaliesParameters::bRotation' has a wrong offset!");
+static_assert(offsetof(FAnomaliesParameters, Color) == 0x000008, "Member 'FAnomaliesParameters::Color' has a wrong offset!");
+static_assert(offsetof(FAnomaliesParameters, NoiseMap) == 0x000010, "Member 'FAnomaliesParameters::NoiseMap' has a wrong offset!");
+static_assert(offsetof(FAnomaliesParameters, Mesh) == 0x000018, "Member 'FAnomaliesParameters::Mesh' has a wrong offset!");
+static_assert(offsetof(FAnomaliesParameters, CloudAngle) == 0x000020, "Member 'FAnomaliesParameters::CloudAngle' has a wrong offset!");
+static_assert(offsetof(FAnomaliesParameters, NoiseSpeed) == 0x000024, "Member 'FAnomaliesParameters::NoiseSpeed' has a wrong offset!");
+static_assert(offsetof(FAnomaliesParameters, NoiseStrength) == 0x000028, "Member 'FAnomaliesParameters::NoiseStrength' has a wrong offset!");
+static_assert(offsetof(FAnomaliesParameters, NoiseTilling) == 0x00002C, "Member 'FAnomaliesParameters::NoiseTilling' has a wrong offset!");
+static_assert(offsetof(FAnomaliesParameters, Luminance) == 0x000030, "Member 'FAnomaliesParameters::Luminance' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.CloudParameters
+// 0x00C0 (0x00C0 - 0x0000)
+struct FCloudParameters final
+{
+public:
+	bool                                          bYesUV1NoUV2;                                      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCloudRotation;                                    // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSDF;                                              // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture*                               Mask;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTexture*                               NoiseMap;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         UVTiling;                                          // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CloudAngle;                                        // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CloudSpeed;                                        // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseSpeed;                                        // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseStrength;                                     // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NoiseTilling;                                      // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroCurveFloat                        SDFTime;                                           // 0x0030(0x0090)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FCloudParameters) == 0x000008, "Wrong alignment on FCloudParameters");
+static_assert(sizeof(FCloudParameters) == 0x0000C0, "Wrong size on FCloudParameters");
+static_assert(offsetof(FCloudParameters, bYesUV1NoUV2) == 0x000000, "Member 'FCloudParameters::bYesUV1NoUV2' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, bCloudRotation) == 0x000001, "Member 'FCloudParameters::bCloudRotation' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, bSDF) == 0x000002, "Member 'FCloudParameters::bSDF' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, Mask) == 0x000008, "Member 'FCloudParameters::Mask' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, NoiseMap) == 0x000010, "Member 'FCloudParameters::NoiseMap' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, UVTiling) == 0x000018, "Member 'FCloudParameters::UVTiling' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, CloudAngle) == 0x00001C, "Member 'FCloudParameters::CloudAngle' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, CloudSpeed) == 0x000020, "Member 'FCloudParameters::CloudSpeed' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, NoiseSpeed) == 0x000024, "Member 'FCloudParameters::NoiseSpeed' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, NoiseStrength) == 0x000028, "Member 'FCloudParameters::NoiseStrength' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, NoiseTilling) == 0x00002C, "Member 'FCloudParameters::NoiseTilling' has a wrong offset!");
+static_assert(offsetof(FCloudParameters, SDFTime) == 0x000030, "Member 'FCloudParameters::SDFTime' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.PostprocessGIDebugInfo
+// 0x00B8 (0x00B8 - 0x0000)
+struct FPostprocessGIDebugInfo final
+{
+public:
+	TWeakObjectPtr<class AActor>                  OwnerActor;                                        // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OwnerActorName;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ActorFolderPath;                                   // 0x0018(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ActorLabel;                                        // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsVolume;                                          // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ComponentName;                                     // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WorldPriority;                                     // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LocalBlendWeight;                                  // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BlendWeight;                                       // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsUnbound;                                         // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 WeatherDAPath;                                     // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UKuroWeatherDataAsset>   WeatherDAData;                                     // 0x0078(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 TodDAPath;                                         // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class UKuroTODData>            TodDAData;                                         // 0x0090(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         OverridedProperties;                               // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 PostProcessMaterialPath;                           // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FPostprocessGIDebugInfo) == 0x000008, "Wrong alignment on FPostprocessGIDebugInfo");
+static_assert(sizeof(FPostprocessGIDebugInfo) == 0x0000B8, "Wrong size on FPostprocessGIDebugInfo");
+static_assert(offsetof(FPostprocessGIDebugInfo, OwnerActor) == 0x000000, "Member 'FPostprocessGIDebugInfo::OwnerActor' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, OwnerActorName) == 0x000008, "Member 'FPostprocessGIDebugInfo::OwnerActorName' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, ActorFolderPath) == 0x000018, "Member 'FPostprocessGIDebugInfo::ActorFolderPath' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, ActorLabel) == 0x000028, "Member 'FPostprocessGIDebugInfo::ActorLabel' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, IsVolume) == 0x000038, "Member 'FPostprocessGIDebugInfo::IsVolume' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, ComponentName) == 0x000040, "Member 'FPostprocessGIDebugInfo::ComponentName' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, Priority) == 0x000050, "Member 'FPostprocessGIDebugInfo::Priority' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, WorldPriority) == 0x000054, "Member 'FPostprocessGIDebugInfo::WorldPriority' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, LocalBlendWeight) == 0x000058, "Member 'FPostprocessGIDebugInfo::LocalBlendWeight' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, BlendWeight) == 0x00005C, "Member 'FPostprocessGIDebugInfo::BlendWeight' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, IsUnbound) == 0x000060, "Member 'FPostprocessGIDebugInfo::IsUnbound' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, WeatherDAPath) == 0x000068, "Member 'FPostprocessGIDebugInfo::WeatherDAPath' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, WeatherDAData) == 0x000078, "Member 'FPostprocessGIDebugInfo::WeatherDAData' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, TodDAPath) == 0x000080, "Member 'FPostprocessGIDebugInfo::TodDAPath' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, TodDAData) == 0x000090, "Member 'FPostprocessGIDebugInfo::TodDAData' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, OverridedProperties) == 0x000098, "Member 'FPostprocessGIDebugInfo::OverridedProperties' has a wrong offset!");
+static_assert(offsetof(FPostprocessGIDebugInfo, PostProcessMaterialPath) == 0x0000A8, "Member 'FPostprocessGIDebugInfo::PostProcessMaterialPath' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroCloudCircleData
+// 0x0048 (0x0048 - 0x0000)
+struct FKuroCloudCircleData final
+{
+public:
+	float                                         Distance;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Rotator;                                           // 0x0004(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TextureIdx;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HorizontalOffset;                                  // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Scale;                                             // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Offset;                                            // 0x001C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlphaControl;                                      // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlphaMax;                                          // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AlphaMin;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Brightness;                                        // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeOutTime;                                       // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FadeInTime;                                        // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FullStayTime;                                      // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DisappearTime;                                     // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroCloudCircleData) == 0x000004, "Wrong alignment on FKuroCloudCircleData");
+static_assert(sizeof(FKuroCloudCircleData) == 0x000048, "Wrong size on FKuroCloudCircleData");
+static_assert(offsetof(FKuroCloudCircleData, Distance) == 0x000000, "Member 'FKuroCloudCircleData::Distance' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, Rotator) == 0x000004, "Member 'FKuroCloudCircleData::Rotator' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, TextureIdx) == 0x000010, "Member 'FKuroCloudCircleData::TextureIdx' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, HorizontalOffset) == 0x000014, "Member 'FKuroCloudCircleData::HorizontalOffset' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, Scale) == 0x000018, "Member 'FKuroCloudCircleData::Scale' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, Offset) == 0x00001C, "Member 'FKuroCloudCircleData::Offset' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, AlphaControl) == 0x000028, "Member 'FKuroCloudCircleData::AlphaControl' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, AlphaMax) == 0x00002C, "Member 'FKuroCloudCircleData::AlphaMax' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, AlphaMin) == 0x000030, "Member 'FKuroCloudCircleData::AlphaMin' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, Brightness) == 0x000034, "Member 'FKuroCloudCircleData::Brightness' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, FadeOutTime) == 0x000038, "Member 'FKuroCloudCircleData::FadeOutTime' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, FadeInTime) == 0x00003C, "Member 'FKuroCloudCircleData::FadeInTime' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, FullStayTime) == 0x000040, "Member 'FKuroCloudCircleData::FullStayTime' has a wrong offset!");
+static_assert(offsetof(FKuroCloudCircleData, DisappearTime) == 0x000044, "Member 'FKuroCloudCircleData::DisappearTime' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroTODEntryData
+// 0x000C (0x000C - 0x0000)
+struct FKuroTODEntryData final
+{
+public:
+	struct FVector2D                              StartEndTime;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DataIndex;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroTODEntryData) == 0x000004, "Wrong alignment on FKuroTODEntryData");
+static_assert(sizeof(FKuroTODEntryData) == 0x00000C, "Wrong size on FKuroTODEntryData");
+static_assert(offsetof(FKuroTODEntryData, StartEndTime) == 0x000000, "Member 'FKuroTODEntryData::StartEndTime' has a wrong offset!");
+static_assert(offsetof(FKuroTODEntryData, DataIndex) == 0x000008, "Member 'FKuroTODEntryData::DataIndex' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroGPUParticleMeshInfo
+// 0x0028 (0x0028 - 0x0000)
+struct FKuroGPUParticleMeshInfo final
+{
+public:
+	int32                                         StartFrame;                                        // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EndFrame;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BoundsCenter;                                      // 0x0008(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BoundsSize;                                        // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UStaticMesh*                            Mesh;                                              // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroGPUParticleMeshInfo) == 0x000008, "Wrong alignment on FKuroGPUParticleMeshInfo");
+static_assert(sizeof(FKuroGPUParticleMeshInfo) == 0x000028, "Wrong size on FKuroGPUParticleMeshInfo");
+static_assert(offsetof(FKuroGPUParticleMeshInfo, StartFrame) == 0x000000, "Member 'FKuroGPUParticleMeshInfo::StartFrame' has a wrong offset!");
+static_assert(offsetof(FKuroGPUParticleMeshInfo, EndFrame) == 0x000004, "Member 'FKuroGPUParticleMeshInfo::EndFrame' has a wrong offset!");
+static_assert(offsetof(FKuroGPUParticleMeshInfo, BoundsCenter) == 0x000008, "Member 'FKuroGPUParticleMeshInfo::BoundsCenter' has a wrong offset!");
+static_assert(offsetof(FKuroGPUParticleMeshInfo, BoundsSize) == 0x000014, "Member 'FKuroGPUParticleMeshInfo::BoundsSize' has a wrong offset!");
+static_assert(offsetof(FKuroGPUParticleMeshInfo, Mesh) == 0x000020, "Member 'FKuroGPUParticleMeshInfo::Mesh' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControlFilter
 // 0x0068 (0x0068 - 0x0000)
@@ -2422,32 +2640,20 @@ static_assert(alignof(FKuroMaterialControllerParam_DitherConst) == 0x000004, "Wr
 static_assert(sizeof(FKuroMaterialControllerParam_DitherConst) == 0x000004, "Wrong size on FKuroMaterialControllerParam_DitherConst");
 static_assert(offsetof(FKuroMaterialControllerParam_DitherConst, DitherValue) == 0x000000, "Member 'FKuroMaterialControllerParam_DitherConst::DitherValue' has a wrong offset!");
 
-// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_TextureSample
-// 0x1698 (0x1698 - 0x0000)
-struct FKuroMaterialControllerParam_TextureSample final
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_MotionOffsetConst
+// 0x000C (0x000C - 0x0000)
+struct FKuroMaterialControllerParam_MotionOffsetConst final
 {
 public:
-	class UTexture2D*                             MaskTexture;                                       // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKuroMaterialCurveColorGroup           TextureScaleAndOffset;                             // 0x0008(0x0660)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FKuroMaterialCurveColorGroup           TextureSpeed;                                      // 0x0668(0x0660)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FKuroMaterialCurveColorGroup           TextureColorTint;                                  // 0x0CC8(0x0660)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FKuroMaterialCurveFloatGroup           Rotation;                                          // 0x1328(0x01B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          bUseAlphaToMask;                                   // 0x14D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14D9[0x7];                                     // 0x14D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKuroMaterialCurveFloatGroup           TextureMaskRange;                                  // 0x14E0(0x01B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	KuroRenderingRuntimeBPPlugin::ECharacterControllerUVSwitch UvSelection;                                       // 0x1690(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1691[0x7];                                     // 0x1691(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         MotionAffectVertexRange;                           // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MotionOffsetLength;                                // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MotionNoiseSpeed;                                  // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FKuroMaterialControllerParam_TextureSample) == 0x000008, "Wrong alignment on FKuroMaterialControllerParam_TextureSample");
-static_assert(sizeof(FKuroMaterialControllerParam_TextureSample) == 0x001698, "Wrong size on FKuroMaterialControllerParam_TextureSample");
-static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, MaskTexture) == 0x000000, "Member 'FKuroMaterialControllerParam_TextureSample::MaskTexture' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, TextureScaleAndOffset) == 0x000008, "Member 'FKuroMaterialControllerParam_TextureSample::TextureScaleAndOffset' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, TextureSpeed) == 0x000668, "Member 'FKuroMaterialControllerParam_TextureSample::TextureSpeed' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, TextureColorTint) == 0x000CC8, "Member 'FKuroMaterialControllerParam_TextureSample::TextureColorTint' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, Rotation) == 0x001328, "Member 'FKuroMaterialControllerParam_TextureSample::Rotation' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, bUseAlphaToMask) == 0x0014D8, "Member 'FKuroMaterialControllerParam_TextureSample::bUseAlphaToMask' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, TextureMaskRange) == 0x0014E0, "Member 'FKuroMaterialControllerParam_TextureSample::TextureMaskRange' has a wrong offset!");
-static_assert(offsetof(FKuroMaterialControllerParam_TextureSample, UvSelection) == 0x001690, "Member 'FKuroMaterialControllerParam_TextureSample::UvSelection' has a wrong offset!");
+static_assert(alignof(FKuroMaterialControllerParam_MotionOffsetConst) == 0x000004, "Wrong alignment on FKuroMaterialControllerParam_MotionOffsetConst");
+static_assert(sizeof(FKuroMaterialControllerParam_MotionOffsetConst) == 0x00000C, "Wrong size on FKuroMaterialControllerParam_MotionOffsetConst");
+static_assert(offsetof(FKuroMaterialControllerParam_MotionOffsetConst, MotionAffectVertexRange) == 0x000000, "Member 'FKuroMaterialControllerParam_MotionOffsetConst::MotionAffectVertexRange' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_MotionOffsetConst, MotionOffsetLength) == 0x000004, "Member 'FKuroMaterialControllerParam_MotionOffsetConst::MotionOffsetLength' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_MotionOffsetConst, MotionNoiseSpeed) == 0x000008, "Member 'FKuroMaterialControllerParam_MotionOffsetConst::MotionNoiseSpeed' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_TextureSampleConst
 // 0x0048 (0x0048 - 0x0000)
@@ -2462,7 +2668,7 @@ public:
 	bool                                          bUseAlphaToMask;                                   // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         TextureMaskRange;                                  // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	KuroRenderingRuntimeBPPlugin::ECharacterControllerUVSwitch UvSelection;                                       // 0x0044(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	KuroRenderingRuntimeBPPlugin::ECharacterControllerUVSwitch UvSelection;                          // 0x0044(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FKuroMaterialControllerParam_TextureSampleConst) == 0x000008, "Wrong alignment on FKuroMaterialControllerParam_TextureSampleConst");
@@ -2539,6 +2745,26 @@ static_assert(offsetof(FKuroMaterialControllerParam_Outline, bUseOuterOutlineEff
 static_assert(offsetof(FKuroMaterialControllerParam_Outline, OutlineWidth) == 0x000008, "Member 'FKuroMaterialControllerParam_Outline::OutlineWidth' has a wrong offset!");
 static_assert(offsetof(FKuroMaterialControllerParam_Outline, OutlineColor) == 0x0001B8, "Member 'FKuroMaterialControllerParam_Outline::OutlineColor' has a wrong offset!");
 static_assert(offsetof(FKuroMaterialControllerParam_Outline, OutlineIntensity) == 0x000818, "Member 'FKuroMaterialControllerParam_Outline::OutlineIntensity' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_OutlineConst
+// 0x001C (0x001C - 0x0000)
+struct FKuroMaterialControllerParam_OutlineConst final
+{
+public:
+	bool                                          bOutlineUseTex;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseOuterOutlineEffect;                            // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         OutlineWidth;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           OutlineColor;                                      // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutlineIntensity;                                  // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroMaterialControllerParam_OutlineConst) == 0x000004, "Wrong alignment on FKuroMaterialControllerParam_OutlineConst");
+static_assert(sizeof(FKuroMaterialControllerParam_OutlineConst) == 0x00001C, "Wrong size on FKuroMaterialControllerParam_OutlineConst");
+static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, bOutlineUseTex) == 0x000000, "Member 'FKuroMaterialControllerParam_OutlineConst::bOutlineUseTex' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, bUseOuterOutlineEffect) == 0x000001, "Member 'FKuroMaterialControllerParam_OutlineConst::bUseOuterOutlineEffect' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, OutlineWidth) == 0x000004, "Member 'FKuroMaterialControllerParam_OutlineConst::OutlineWidth' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, OutlineColor) == 0x000008, "Member 'FKuroMaterialControllerParam_OutlineConst::OutlineColor' has a wrong offset!");
+static_assert(offsetof(FKuroMaterialControllerParam_OutlineConst, OutlineIntensity) == 0x000018, "Member 'FKuroMaterialControllerParam_OutlineConst::OutlineIntensity' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroMaterialControllerParam_Dissolve
 // 0x0B78 (0x0B78 - 0x0000)
@@ -2777,9 +3003,9 @@ static_assert(offsetof(FNiagaraDiKuroRenderingLinearColorParam, Val) == 0x00000C
 struct FNiagaraDiKuroRenderingParameters final
 {
 public:
-	TArray<struct FNiagaraDiKuroRenderingFloatParam> FloatParameters;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FNiagaraDiKuroRenderingVectorParam> VectorParameters;                                  // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FNiagaraDiKuroRenderingLinearColorParam> ColorParameters;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FNiagaraDiKuroRenderingFloatParam> FloatParameters;                                // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FNiagaraDiKuroRenderingVectorParam> VectorParameters;                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FNiagaraDiKuroRenderingLinearColorParam> ColorParameters;                          // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(FNiagaraDiKuroRenderingParameters) == 0x000008, "Wrong alignment on FNiagaraDiKuroRenderingParameters");
 static_assert(sizeof(FNiagaraDiKuroRenderingParameters) == 0x000030, "Wrong size on FNiagaraDiKuroRenderingParameters");
@@ -3046,6 +3272,49 @@ static_assert(offsetof(FKuroRainActorSpawnProperties, VelocityMax) == 0x000030, 
 static_assert(offsetof(FKuroRainActorSpawnProperties, ScaleMin) == 0x00003C, "Member 'FKuroRainActorSpawnProperties::ScaleMin' has a wrong offset!");
 static_assert(offsetof(FKuroRainActorSpawnProperties, ScaleMax) == 0x000040, "Member 'FKuroRainActorSpawnProperties::ScaleMax' has a wrong offset!");
 static_assert(offsetof(FKuroRainActorSpawnProperties, BaseMass) == 0x000044, "Member 'FKuroRainActorSpawnProperties::BaseMass' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroPoseSequence
+// 0x0018 (0x0018 - 0x0000)
+struct FKuroPoseSequence final
+{
+public:
+	TArray<class UPoseableMeshComponent*>         PoseableMeshComponents;                            // 0x0000(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class USkeletalMeshComponent*                 SkeletalMeshComponent;                             // 0x0010(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroPoseSequence) == 0x000008, "Wrong alignment on FKuroPoseSequence");
+static_assert(sizeof(FKuroPoseSequence) == 0x000018, "Wrong size on FKuroPoseSequence");
+static_assert(offsetof(FKuroPoseSequence, PoseableMeshComponents) == 0x000000, "Member 'FKuroPoseSequence::PoseableMeshComponents' has a wrong offset!");
+static_assert(offsetof(FKuroPoseSequence, SkeletalMeshComponent) == 0x000010, "Member 'FKuroPoseSequence::SkeletalMeshComponent' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroSmartLightCustomParameterLinearColor
+// 0x002C (0x002C - 0x0000)
+struct FKuroSmartLightCustomParameterLinearColor final
+{
+public:
+	class FName                                   ParamName;                                         // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           LightOffValue;                                     // 0x000C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           LightOnValue;                                      // 0x001C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroSmartLightCustomParameterLinearColor) == 0x000004, "Wrong alignment on FKuroSmartLightCustomParameterLinearColor");
+static_assert(sizeof(FKuroSmartLightCustomParameterLinearColor) == 0x00002C, "Wrong size on FKuroSmartLightCustomParameterLinearColor");
+static_assert(offsetof(FKuroSmartLightCustomParameterLinearColor, ParamName) == 0x000000, "Member 'FKuroSmartLightCustomParameterLinearColor::ParamName' has a wrong offset!");
+static_assert(offsetof(FKuroSmartLightCustomParameterLinearColor, LightOffValue) == 0x00000C, "Member 'FKuroSmartLightCustomParameterLinearColor::LightOffValue' has a wrong offset!");
+static_assert(offsetof(FKuroSmartLightCustomParameterLinearColor, LightOnValue) == 0x00001C, "Member 'FKuroSmartLightCustomParameterLinearColor::LightOnValue' has a wrong offset!");
+
+// ScriptStruct KuroRenderingRuntimeBPPlugin.KuroSmartLightCustomParameterFloat
+// 0x0014 (0x0014 - 0x0000)
+struct FKuroSmartLightCustomParameterFloat final
+{
+public:
+	class FName                                   ParamName;                                         // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightOffValue;                                     // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LightOnValue;                                      // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FKuroSmartLightCustomParameterFloat) == 0x000004, "Wrong alignment on FKuroSmartLightCustomParameterFloat");
+static_assert(sizeof(FKuroSmartLightCustomParameterFloat) == 0x000014, "Wrong size on FKuroSmartLightCustomParameterFloat");
+static_assert(offsetof(FKuroSmartLightCustomParameterFloat, ParamName) == 0x000000, "Member 'FKuroSmartLightCustomParameterFloat::ParamName' has a wrong offset!");
+static_assert(offsetof(FKuroSmartLightCustomParameterFloat, LightOffValue) == 0x00000C, "Member 'FKuroSmartLightCustomParameterFloat::LightOffValue' has a wrong offset!");
+static_assert(offsetof(FKuroSmartLightCustomParameterFloat, LightOnValue) == 0x000010, "Member 'FKuroSmartLightCustomParameterFloat::LightOnValue' has a wrong offset!");
 
 // ScriptStruct KuroRenderingRuntimeBPPlugin.KuroSplitTextureStreamer
 // 0x0040 (0x0040 - 0x0000)

@@ -22,7 +22,7 @@ namespace SDK
 class UKuroPushObject final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(const class FString& source, const class FString& result)> PushSdkMessageBluePrintDelegate;                   // 0x0030(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FString& source, const class FString& result)> PushSdkMessageBluePrintDelegate; // 0x0030(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(bool result)>   AllowedNotificationsDelegate;                      // 0x0040(0x0010)(Edit, ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:

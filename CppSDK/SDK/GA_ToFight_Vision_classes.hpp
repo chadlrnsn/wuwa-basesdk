@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_ToFight_Vision.GA_ToFight_Vision_C
-// 0x0010 (0x0568 - 0x0558)
+// 0x0010 (0x0578 - 0x0568)
 class UGA_ToFight_Vision_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_ToFight_Vision_C;                // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     召唤者;                                            // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_ToFight_Vision_C;                // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     召唤者;                                            // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_ToFight_Vision(int32 EntryPoint);
@@ -47,9 +47,9 @@ public:
 	}
 };
 static_assert(alignof(UGA_ToFight_Vision_C) == 0x000008, "Wrong alignment on UGA_ToFight_Vision_C");
-static_assert(sizeof(UGA_ToFight_Vision_C) == 0x000568, "Wrong size on UGA_ToFight_Vision_C");
-static_assert(offsetof(UGA_ToFight_Vision_C, UberGraphFrame_GA_ToFight_Vision_C) == 0x000558, "Member 'UGA_ToFight_Vision_C::UberGraphFrame_GA_ToFight_Vision_C' has a wrong offset!");
-static_assert(offsetof(UGA_ToFight_Vision_C, 召唤者) == 0x000560, "Member 'UGA_ToFight_Vision_C::召唤者' has a wrong offset!");
+static_assert(sizeof(UGA_ToFight_Vision_C) == 0x000578, "Wrong size on UGA_ToFight_Vision_C");
+static_assert(offsetof(UGA_ToFight_Vision_C, UberGraphFrame_GA_ToFight_Vision_C) == 0x000568, "Member 'UGA_ToFight_Vision_C::UberGraphFrame_GA_ToFight_Vision_C' has a wrong offset!");
+static_assert(offsetof(UGA_ToFight_Vision_C, 召唤者) == 0x000570, "Member 'UGA_ToFight_Vision_C::召唤者' has a wrong offset!");
 
 }
 

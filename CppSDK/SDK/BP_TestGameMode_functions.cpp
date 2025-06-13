@@ -20,9 +20,9 @@ namespace SDK
 // Function BP_TestGameMode.BP_TestGameMode_C.GetServerIpAndPort
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FString                           ServerIp                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           ApiServerPort                                          (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           LoginServerPort                                        (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          ServerIp                                               (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          ApiServerPort                                          (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          LoginServerPort                                        (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_TestGameMode_C::GetServerIpAndPort(class FString* ServerIp, class FString* ApiServerPort, class FString* LoginServerPort)
 {
@@ -77,8 +77,8 @@ void ABP_TestGameMode_C::StreamingCompleted()
 // Function BP_TestGameMode.BP_TestGameMode_C.Get Player Starts
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    Exist                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// TArray<class APlayerStart*>             PlayerStarts_0                                         (Parm, OutParm)
+// bool*                                   Exist                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// TArray<class APlayerStart*>*            PlayerStarts_0                                         (Parm, OutParm)
 
 void ABP_TestGameMode_C::Get_Player_Starts(bool* Exist, TArray<class APlayerStart*>* PlayerStarts_0)
 {
@@ -166,7 +166,7 @@ void ABP_TestGameMode_C::ReceiveTick(float DeltaSeconds)
 // Parameters:
 // bool                                    bConnectedSuccessfully                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // int32                                   HttpResponseCode                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_TestGameMode_C::LoginServerStatusResponse(bool bConnectedSuccessfully, int32 HttpResponseCode, const class FString& Data)
 {
@@ -190,7 +190,7 @@ void ABP_TestGameMode_C::LoginServerStatusResponse(bool bConnectedSuccessfully, 
 // Parameters:
 // bool                                    bConnectedSuccessfully                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // int32                                   HttpResponseCode                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    Data                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void ABP_TestGameMode_C::ApiServereStatusResponse(bool bConnectedSuccessfully, int32 HttpResponseCode, const class FString& Data)
 {

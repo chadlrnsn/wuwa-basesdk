@@ -209,8 +209,8 @@ void UAsyncTaskAnyEffectStackChanged::EndTask()
 // (Final, Native, Static, Private)
 // Parameters:
 // class UAbilitySystemComponent*          AbilitySystemComponent                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     EffectGameplayTag                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     IgnoreGameplayTag                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EffectGameplayTag                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              IgnoreGameplayTag                                      (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTaskEffectApplied*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAsyncTaskEffectApplied* UAsyncTaskEffectApplied::ListenForEffectApplied(class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayTag& EffectGameplayTag, const struct FGameplayTag& IgnoreGameplayTag)
@@ -306,7 +306,7 @@ void UAsyncTaskEffectDebugString::EndTask()
 // Function KuroGAS.AsyncTaskEffectInhibitionChanged.ListenForInhibitionChanged
 // (Final, Native, Static, Public)
 // Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTaskEffectInhibitionChanged*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAsyncTaskEffectInhibitionChanged* UAsyncTaskEffectInhibitionChanged::ListenForInhibitionChanged(const struct FActiveGameplayEffectHandle& Handle)
@@ -353,7 +353,7 @@ void UAsyncTaskEffectInhibitionChanged::EndTask()
 // Function KuroGAS.AsyncTaskEffectStackChanged.ListenForStackChanged
 // (Final, Native, Static, Public)
 // Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTaskEffectStackChanged*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAsyncTaskEffectStackChanged* UAsyncTaskEffectStackChanged::ListenForStackChanged(const struct FActiveGameplayEffectHandle& Handle)
@@ -522,7 +522,7 @@ void UAsyncTaskPlayMontageAndWait::StopMontage()
 // (Final, Native, Static, Public)
 // Parameters:
 // class UAbilitySystemComponent*          AbilitySystemComponent                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTaskTagCountChanged*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAsyncTaskTagCountChanged* UAsyncTaskTagCountChanged::ListenForTagCountChanged(class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayTag& Tag)
@@ -571,7 +571,7 @@ void UAsyncTaskTagCountChanged::EndTask()
 // (Final, Native, Static, Public)
 // Parameters:
 // class UAbilitySystemComponent*          AbilitySystemComponent                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UAsyncTaskTagSignificantChanged*  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UAsyncTaskTagSignificantChanged* UAsyncTaskTagSignificantChanged::ListenForTagSignificantChanged(class UAbilitySystemComponent* AbilitySystemComponent, const struct FGameplayTag& Tag)
@@ -667,7 +667,7 @@ void UAsyncTaskWaitGameplayEvent::EndTask()
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
 // int64                                   GameplayEffectId                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&Context                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ServerId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -745,7 +745,7 @@ void UBaseAbilitySystemComponent::DestroyDynamicGameplayEffect(class UGameplayEf
 // Function KuroGAS.BaseAbilitySystemComponent.GetAbility
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSubclassOf<class UGameplayAbility>     Ability                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSubclassOf<class UGameplayAbility>&Ability                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayAbilitySpecHandle       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FGameplayAbilitySpecHandle UBaseAbilitySystemComponent::GetAbility(const TSubclassOf<class UGameplayAbility>& Ability)
@@ -770,10 +770,35 @@ struct FGameplayAbilitySpecHandle UBaseAbilitySystemComponent::GetAbility(const 
 }
 
 
+// Function KuroGAS.BaseAbilitySystemComponent.GetAbilityScopeLockCount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UBaseAbilitySystemComponent::GetAbilityScopeLockCount()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BaseAbilitySystemComponent", "GetAbilityScopeLockCount");
+
+	Params::BaseAbilitySystemComponent_GetAbilityScopeLockCount Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroGAS.BaseAbilitySystemComponent.GetActiveEffectsByGrantedTags
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FActiveGameplayEffectHandle>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FActiveGameplayEffectHandle> UBaseAbilitySystemComponent::GetActiveEffectsByGrantedTags(const struct FGameplayTag& Tag)
@@ -801,7 +826,7 @@ TArray<struct FActiveGameplayEffectHandle> UBaseAbilitySystemComponent::GetActiv
 // Function KuroGAS.BaseAbilitySystemComponent.GetActiveEffectsById
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int64                                   GeId                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int64                             GeId                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FActiveGameplayEffectHandle>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FActiveGameplayEffectHandle> UBaseAbilitySystemComponent::GetActiveEffectsById(const int64 GeId)
@@ -861,7 +886,7 @@ int32 UBaseAbilitySystemComponent::GetGameplayEffectCountById(int64 GameplayEffe
 // Function KuroGAS.BaseAbilitySystemComponent.InternalApplyModToAttribute
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   AttributeId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             AttributeId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGameplayModOp                          ModifierOp                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ModifierMagnitude                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -890,8 +915,8 @@ void UBaseAbilitySystemComponent::InternalApplyModToAttribute(const int32 Attrib
 // Function KuroGAS.BaseAbilitySystemComponent.MakeDynamicGameplayEffect
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FName                             GeName                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int64                                   GeId                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName                       GeName                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int64                             GeId                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGameplayEffect*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class UGameplayEffect* UBaseAbilitySystemComponent::MakeDynamicGameplayEffect(const class FName GeName, const int64 GeId)
@@ -920,7 +945,7 @@ class UGameplayEffect* UBaseAbilitySystemComponent::MakeDynamicGameplayEffect(co
 // Function KuroGAS.BaseAbilitySystemComponent.OnAnyTagChangeInternal
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     GameplayTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   NewTagCount                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -945,7 +970,7 @@ bool UBaseAbilitySystemComponent::OnAnyTagChangeInternal(const struct FGameplayT
 // Function KuroGAS.BaseAbilitySystemComponent.PauseActiveGameplayEffect
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bPause                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBaseAbilitySystemComponent::PauseActiveGameplayEffect(const struct FActiveGameplayEffectHandle& Handle, bool bPause)
@@ -997,7 +1022,7 @@ void UBaseAbilitySystemComponent::PauseAllActiveGameplayEffects(bool bPause)
 // Function KuroGAS.BaseAbilitySystemComponent.RemoveAbility
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayAbilitySpecHandle       Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayAbilitySpecHandle&Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBaseAbilitySystemComponent::RemoveAbility(const struct FGameplayAbilitySpecHandle& Handle)
 {
@@ -1022,7 +1047,7 @@ void UBaseAbilitySystemComponent::RemoveAbility(const struct FGameplayAbilitySpe
 // Function KuroGAS.BaseAbilitySystemComponent.RemoveActiveEffectsById
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int64                                   GeId                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int64                             GeId                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   StackCount                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1052,7 +1077,7 @@ int32 UBaseAbilitySystemComponent::RemoveActiveEffectsById(const int64 GeId, int
 // Function KuroGAS.BaseAbilitySystemComponent.RemoveActiveEffectsByUniqueServerId
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   GameplayEffectSpecServerId                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             GameplayEffectSpecServerId                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBaseAbilitySystemComponent::RemoveActiveEffectsByUniqueServerId(const int32 GameplayEffectSpecServerId)
 {
@@ -1077,7 +1102,7 @@ void UBaseAbilitySystemComponent::RemoveActiveEffectsByUniqueServerId(const int3
 // Function KuroGAS.BaseAbilitySystemComponent.ResetDilationForActiveEffects
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   TimeDilation                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             TimeDilation                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBaseAbilitySystemComponent::ResetDilationForActiveEffects(const float TimeDilation)
 {
@@ -1102,8 +1127,8 @@ void UBaseAbilitySystemComponent::ResetDilationForActiveEffects(const float Time
 // Function KuroGAS.BaseAbilitySystemComponent.UpdateActiveGameplayEffectDurationHandle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DurationModifyValue                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             DurationModifyValue                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UBaseAbilitySystemComponent::UpdateActiveGameplayEffectDurationHandle(const struct FActiveGameplayEffectHandle& Handle, const float DurationModifyValue)
@@ -1133,7 +1158,7 @@ bool UBaseAbilitySystemComponent::UpdateActiveGameplayEffectDurationHandle(const
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UGameplayEffect*                  Ge                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayAbility>     Ability                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSubclassOf<class UGameplayAbility>&Ability                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGameplayEffectGrantedAbilityRemovePolicyRemovalPolicy                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1164,12 +1189,12 @@ void UBaseAbilitySystemComponent::AddGeGrantGa(class UGameplayEffect* Ge, const 
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UGameplayEffect*                  Ge                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ModifiedAttributeId                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             ModifiedAttributeId                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EAttributeBasedFloatCalculationType     CalculationType                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EGameplayModOp                          ModOp                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   AttributeId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     DataTag                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     DataTag2                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EGameplayModOp                    ModOp                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             AttributeId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              DataTag                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              DataTag2                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGameplayEffectAttributeCaptureSource   InSource                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    InSnapShot                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1206,8 +1231,8 @@ void UBaseAbilitySystemComponent::AddGeModifierByAttributeId(class UGameplayEffe
 // Parameters:
 // class UGameplayEffect*                  Ge                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ModifiedAttributeId                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EGameplayModOp                          ModOp                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ModifierKey                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EGameplayModOp                    ModOp                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             ModifierKey                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBaseAbilitySystemComponent::AddGeModifierByKey(class UGameplayEffect* Ge, int32 ModifiedAttributeId, const EGameplayModOp ModOp, const int32 ModifierKey) const
 {
@@ -1237,8 +1262,8 @@ void UBaseAbilitySystemComponent::AddGeModifierByKey(class UGameplayEffect* Ge, 
 // Parameters:
 // class UGameplayEffect*                  Ge                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ModifiedAttributeId                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EGameplayModOp                          ModOp                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayModMagnitudeCalculation>CalculationClassMagnitude                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EGameplayModOp                    ModOp                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSubclassOf<class UGameplayModMagnitudeCalculation>&CalculationClassMagnitude                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBaseAbilitySystemComponent::AddGeModifierByMMC(class UGameplayEffect* Ge, int32 ModifiedAttributeId, const EGameplayModOp ModOp, const TSubclassOf<class UGameplayModMagnitudeCalculation>& CalculationClassMagnitude) const
 {
@@ -1268,8 +1293,8 @@ void UBaseAbilitySystemComponent::AddGeModifierByMMC(class UGameplayEffect* Ge, 
 // Parameters:
 // class UGameplayEffect*                  Ge                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ModifiedAttributeId                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EGameplayModOp                          ModOp                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     ModifierTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EGameplayModOp                    ModOp                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              ModifierTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBaseAbilitySystemComponent::AddGeModifierByTag(class UGameplayEffect* Ge, int32 ModifiedAttributeId, const EGameplayModOp ModOp, const struct FGameplayTag& ModifierTag) const
 {
@@ -1297,7 +1322,7 @@ void UBaseAbilitySystemComponent::AddGeModifierByTag(class UGameplayEffect* Ge, 
 // Function KuroGAS.BaseAbilitySystemComponent.HasAllGameplayTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayTagContainer            GameplayTagContainer                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     GameplayTagContainer                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UBaseAbilitySystemComponent::HasAllGameplayTag(const struct FGameplayTagContainer& GameplayTagContainer) const
@@ -1325,7 +1350,7 @@ bool UBaseAbilitySystemComponent::HasAllGameplayTag(const struct FGameplayTagCon
 // Function KuroGAS.BaseAbilitySystemComponent.HasAnyGameplayTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayTagContainer            GameplayTagContainer                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     GameplayTagContainer                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UBaseAbilitySystemComponent::HasAnyGameplayTag(const struct FGameplayTagContainer& GameplayTagContainer) const
@@ -1353,7 +1378,7 @@ bool UBaseAbilitySystemComponent::HasAnyGameplayTag(const struct FGameplayTagCon
 // Function KuroGAS.BaseAbilitySystemComponent.HasGameplayTag
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayTag                     GameplayTag                                            (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayTag                                            (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UBaseAbilitySystemComponent::HasGameplayTag(const struct FGameplayTag& GameplayTag) const
@@ -1383,7 +1408,7 @@ bool UBaseAbilitySystemComponent::HasGameplayTag(const struct FGameplayTag& Game
 // Parameters:
 // class UGameplayEffect*                  GameplayEffect                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     Context                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&Context                                                (Parm, NativeAccessSpecifierPublic)
 // int32                                   GameplayEffectServerId                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -1417,7 +1442,7 @@ struct FGameplayEffectSpecHandle UBaseAbilitySystemComponent::MakeDynamicOutgoin
 // Parameters:
 // class UGameplayEffect*                  GameplayEffect                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     Context                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&Context                                                (Parm, NativeAccessSpecifierPublic)
 // int32                                   GameplayEffectServerId                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   InGeHandleId                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
@@ -1454,8 +1479,8 @@ struct FGameplayEffectSpecHandle UBaseAbilitySystemComponent::MakeRemoteDynamicO
 // class UGameplayEffect*                  Ge                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EAttributeBasedFloatCalculationType     CalculationType                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   AttributeId                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     DataTag                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     DataTag2                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              DataTag                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              DataTag2                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EGameplayEffectAttributeCaptureSource   InSource                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    InSnapShot                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -1489,7 +1514,7 @@ void UBaseAbilitySystemComponent::SetDurationMagnitudeByAttributeId(class UGamep
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UGameplayEffect*                  Ge                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     ModifierTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              ModifierTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UBaseAbilitySystemComponent::SetDurationMagnitudeByTag(class UGameplayEffect* Ge, const struct FGameplayTag& ModifierTag) const
 {
@@ -1675,7 +1700,7 @@ float UBaseAttributeSet::GetAttributeCurrentValueById(int32 AttributeType)
 // (Final, Native, Public, HasOutParams)
 // Parameters:
 // int32                                   AttributeType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayAttributeData           AttributeData                                          (Parm, OutParm, NativeAccessSpecifierPublic)
+// struct FGameplayAttributeData*          AttributeData                                          (Parm, OutParm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UBaseAttributeSet::GetAttributeData(int32 AttributeType, struct FGameplayAttributeData* AttributeData)
@@ -1706,8 +1731,8 @@ bool UBaseAttributeSet::GetAttributeData(int32 AttributeType, struct FGameplayAt
 // Function KuroGAS.BaseAttributeSet.SetAttributeIntervalLock
 // (Final, Native, Public)
 // Parameters:
-// int32                                   AttributeId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EIntervalLockType                       LockType                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             AttributeId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EIntervalLockType                 LockType                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   UpperBoundPercentage                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   UpperBoundOffset                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   LowerBoundPercentage                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1865,10 +1890,10 @@ void ABaseCharacter::RefreshCachedVelocity()
 // Function KuroGAS.BaseCharacter.SetActorLocationAndRotationExceptSkelMesh
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FVectorDouble                    NewLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         NewRotation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             NewLocation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  NewRotation                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    bSweep                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       SweepHitResult                                         (Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FHitResult*                      SweepHitResult                                         (Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    bTeleport                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIgnoreOverlap                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1905,9 +1930,9 @@ bool ABaseCharacter::SetActorLocationAndRotationExceptSkelMesh(const struct FVec
 // Function KuroGAS.BaseCharacter.SetActorTransformExceptSkelMesh
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FTransformDouble                 NewTransform                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FTransformDouble&          NewTransform                                           (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    bSweep                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       SweepHitResult                                         (Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// struct FHitResult*                      SweepHitResult                                         (Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    bTeleport                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIgnoreOverlap                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1943,7 +1968,7 @@ bool ABaseCharacter::SetActorTransformExceptSkelMesh(const struct FTransformDoub
 // Function KuroGAS.BaseCharacter.ContainsAllTag
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayTagContainer            TagToCheck                                             (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     TagToCheck                                             (ConstParm, Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ABaseCharacter::ContainsAllTag(const struct FGameplayTagContainer& TagToCheck) const
@@ -1971,7 +1996,7 @@ bool ABaseCharacter::ContainsAllTag(const struct FGameplayTagContainer& TagToChe
 // Function KuroGAS.BaseCharacter.ContainsAnyTag
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayTagContainer            TagToCheck                                             (ConstParm, Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     TagToCheck                                             (ConstParm, Parm, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ABaseCharacter::ContainsAnyTag(const struct FGameplayTagContainer& TagToCheck) const
@@ -1999,7 +2024,7 @@ bool ABaseCharacter::ContainsAnyTag(const struct FGameplayTagContainer& TagToChe
 // Function KuroGAS.BaseCharacter.ContainsTag
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FGameplayTag                     TagToCheck                                             (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              TagToCheck                                             (ConstParm, Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool ABaseCharacter::ContainsTag(const struct FGameplayTag& TagToCheck) const
@@ -2027,7 +2052,7 @@ bool ABaseCharacter::ContainsTag(const struct FGameplayTag& TagToCheck) const
 // Function KuroGAS.BaseGameplayAbility.GetCallerMagnitudeByTag
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UBaseGameplayAbility::GetCallerMagnitudeByTag(const struct FGameplayTag& Tag)
@@ -2072,7 +2097,7 @@ void UBaseGameplayAbility::PreAvatarSet()
 // int64                                   GameplayEffectId                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Level                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   StackNum                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayEffectContextHandle     Context                                                (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&Context                                                (Parm, NativeAccessSpecifierPublic)
 // class AActor*                           Instigator                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           Target                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
@@ -2162,7 +2187,7 @@ bool UGASBPLibrary::AddDataTableRowByName_EditorOnly(class UDataTable* DataTable
 // Function KuroGAS.GASBPLibrary.AddEffectContextTarget
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectContextHandle     EffectContext                                          (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&EffectContext                                          (Parm, NativeAccessSpecifierPublic)
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGASBPLibrary::AddEffectContextTarget(const struct FGameplayEffectContextHandle& EffectContext, class AActor* Actor)
@@ -2189,7 +2214,7 @@ void UGASBPLibrary::AddEffectContextTarget(const struct FGameplayEffectContextHa
 // Function KuroGAS.GASBPLibrary.AddGameplayTag
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTagContainer            TagContainer                                           (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FGameplayTagContainer&           TagContainer                                           (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // int32                                   TagHash                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGASBPLibrary::AddGameplayTag(struct FGameplayTagContainer& TagContainer, int32 TagHash)
@@ -2218,7 +2243,7 @@ void UGASBPLibrary::AddGameplayTag(struct FGameplayTagContainer& TagContainer, i
 // Function KuroGAS.GASBPLibrary.AddGrantedTag
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
 // int32                                   TagHash                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -2249,8 +2274,8 @@ struct FGameplayEffectSpecHandle UGASBPLibrary::AddGrantedTag(const struct FGame
 // (Final, Native, Static, Public)
 // Parameters:
 // class UAbilitySystemComponent*          Asc                                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InTagHash                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MarkTagHash                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InTagHash                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             MarkTagHash                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UGASBPLibrary::AddTagToActor(class UAbilitySystemComponent* Asc, const int32 InTagHash, const int32 MarkTagHash)
@@ -2300,7 +2325,7 @@ void UGASBPLibrary::EnsureGameplayTagDataTableLoaded()
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class FName                             BaseClassName                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FAssetData>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FAssetData> UGASBPLibrary::FindAllBlueprintAsset(class FName BaseClassName, const class FString& Path)
@@ -2329,7 +2354,7 @@ TArray<struct FAssetData> UGASBPLibrary::FindAllBlueprintAsset(class FName BaseC
 // Function KuroGAS.GASBPLibrary.FnvHash
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UGASBPLibrary::FnvHash(const class FString& Str)
@@ -2721,7 +2746,7 @@ float UGASBPLibrary::GetActiveBuffTotalDuration(int32 HandleId)
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectAssetTags
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayTagContainer UGASBPLibrary::GetActiveGameplayEffectAssetTags(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -2749,7 +2774,7 @@ struct FGameplayTagContainer UGASBPLibrary::GetActiveGameplayEffectAssetTags(con
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectDebugString
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UGASBPLibrary::GetActiveGameplayEffectDebugString(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -2777,7 +2802,7 @@ class FString UGASBPLibrary::GetActiveGameplayEffectDebugString(const struct FAc
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectGrantedTags
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayTagContainer            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayTagContainer UGASBPLibrary::GetActiveGameplayEffectGrantedTags(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -2805,7 +2830,7 @@ struct FGameplayTagContainer UGASBPLibrary::GetActiveGameplayEffectGrantedTags(c
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectHandleEffectContext
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectContextHandle     ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
 struct FGameplayEffectContextHandle UGASBPLibrary::GetActiveGameplayEffectHandleEffectContext(const struct FActiveGameplayEffectHandle& Handle)
@@ -2833,7 +2858,7 @@ struct FGameplayEffectContextHandle UGASBPLibrary::GetActiveGameplayEffectHandle
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectHandleGeId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int64                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int64 UGASBPLibrary::GetActiveGameplayEffectHandleGeId(const struct FActiveGameplayEffectHandle& Handle)
@@ -2861,7 +2886,7 @@ int64 UGASBPLibrary::GetActiveGameplayEffectHandleGeId(const struct FActiveGamep
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectHandleInstigator
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class AActor* UGASBPLibrary::GetActiveGameplayEffectHandleInstigator(const struct FActiveGameplayEffectHandle& Handle)
@@ -2889,7 +2914,7 @@ class AActor* UGASBPLibrary::GetActiveGameplayEffectHandleInstigator(const struc
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectHandleLevel
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&Handle                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UGASBPLibrary::GetActiveGameplayEffectHandleLevel(const struct FActiveGameplayEffectHandle& Handle)
@@ -2917,7 +2942,7 @@ float UGASBPLibrary::GetActiveGameplayEffectHandleLevel(const struct FActiveGame
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectModifiedAttributes
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<struct FGameplayAttribute>       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
 TArray<struct FGameplayAttribute> UGASBPLibrary::GetActiveGameplayEffectModifiedAttributes(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -2945,7 +2970,7 @@ TArray<struct FGameplayAttribute> UGASBPLibrary::GetActiveGameplayEffectModified
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectPeriod
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 float UGASBPLibrary::GetActiveGameplayEffectPeriod(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -2973,7 +2998,7 @@ float UGASBPLibrary::GetActiveGameplayEffectPeriod(const struct FActiveGameplayE
 // Function KuroGAS.GASBPLibrary.GetActiveGameplayEffectServerId
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UGASBPLibrary::GetActiveGameplayEffectServerId(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -3002,8 +3027,8 @@ int32 UGASBPLibrary::GetActiveGameplayEffectServerId(const struct FActiveGamepla
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class UAbilitySystemComponent*          ASC                                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTag                     Query                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            Result                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Query                                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGameplayTagContainer*           Result                                                 (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UGASBPLibrary::GetAllTagsByParentTags(class UAbilitySystemComponent* ASC, const struct FGameplayTag& Query, struct FGameplayTagContainer* Result)
 {
@@ -3060,7 +3085,7 @@ class FName UGASBPLibrary::GetAssetPath(class UObject* Object)
 // Function KuroGAS.GASBPLibrary.GetGameplayAbilitySourceGE
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UGameplayAbility*                 GameplayAbility                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UGameplayAbility*           GameplayAbility                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FActiveGameplayEffectHandle      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FActiveGameplayEffectHandle UGASBPLibrary::GetGameplayAbilitySourceGE(const class UGameplayAbility* GameplayAbility)
@@ -3088,7 +3113,7 @@ struct FActiveGameplayEffectHandle UGASBPLibrary::GetGameplayAbilitySourceGE(con
 // Function KuroGAS.GASBPLibrary.GetGameplayAbilitySystemActivatableAbilitiesDebugString
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UAbilitySystemComponent*          ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UAbilitySystemComponent*    ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UGASBPLibrary::GetGameplayAbilitySystemActivatableAbilitiesDebugString(const class UAbilitySystemComponent* ASC)
@@ -3116,8 +3141,8 @@ class FString UGASBPLibrary::GetGameplayAbilitySystemActivatableAbilitiesDebugSt
 // Function KuroGAS.GASBPLibrary.GetGameplayCueNotify
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     GameplayTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSoftObjectPath                  OutSoftObjectPath                                      (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              GameplayTag                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FSoftObjectPath*                 OutSoftObjectPath                                      (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGASBPLibrary::GetGameplayCueNotify(const struct FGameplayTag& GameplayTag, struct FSoftObjectPath* OutSoftObjectPath)
 {
@@ -3145,7 +3170,7 @@ void UGASBPLibrary::GetGameplayCueNotify(const struct FGameplayTag& GameplayTag,
 // Function KuroGAS.GASBPLibrary.GetGameplayEffectContextTarget
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FGameplayEffectContextHandle     handle                                                 (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectContextHandle&handle                                                 (Parm, NativeAccessSpecifierPublic)
 // class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class AActor* UGASBPLibrary::GetGameplayEffectContextTarget(const struct FGameplayEffectContextHandle& handle)
@@ -3201,7 +3226,7 @@ struct FGameplayTag UGASBPLibrary::GetGameplayTagFromTagHash(int32 TagHash)
 // Function KuroGAS.GASBPLibrary.GetGameplayTagId
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 int32 UGASBPLibrary::GetGameplayTagId(const struct FGameplayTag& Tag)
@@ -3229,7 +3254,7 @@ int32 UGASBPLibrary::GetGameplayTagId(const struct FGameplayTag& Tag)
 // Function KuroGAS.GASBPLibrary.GetGameplayTags
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TMap<int32, struct FGameplayTag>        Tags                                                   (Parm, OutParm, NativeAccessSpecifierPublic)
+// TMap<int32, struct FGameplayTag>*       Tags                                                   (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UGASBPLibrary::GetGameplayTags(TMap<int32, struct FGameplayTag>* Tags)
 {
@@ -3280,8 +3305,8 @@ int64 UGASBPLibrary::GetNetworkGameplayTagNodeIndexHash()
 // Function KuroGAS.GASBPLibrary.GetOwnedGameplayTags
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class UAbilitySystemComponent*          ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FGameplayTagContainer            TargetContainer                                        (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class UAbilitySystemComponent*    ASC                                                    (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FGameplayTagContainer*           TargetContainer                                        (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UGASBPLibrary::GetOwnedGameplayTags(const class UAbilitySystemComponent* ASC, struct FGameplayTagContainer* TargetContainer)
 {
@@ -3309,7 +3334,7 @@ void UGASBPLibrary::GetOwnedGameplayTags(const class UAbilitySystemComponent* AS
 // Function KuroGAS.GASBPLibrary.GetUglyTag
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Str                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 class FString UGASBPLibrary::GetUglyTag(const class FString& Str)
@@ -3365,7 +3390,7 @@ bool UGASBPLibrary::IsActiveBuffInhibited(int32 HandleId)
 // Function KuroGAS.GASBPLibrary.IsActiveGameplayEffectInhibited
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FActiveGameplayEffectHandle      ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FActiveGameplayEffectHandle&ActiveHandle                                           (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UGASBPLibrary::IsActiveGameplayEffectInhibited(const struct FActiveGameplayEffectHandle& ActiveHandle)
@@ -3531,8 +3556,8 @@ void UGASBPLibrary::RemoveAllGameplayEffects(class UAbilitySystemComponent* ASC)
 // (Final, Native, Static, Public)
 // Parameters:
 // class UAbilitySystemComponent*          Asc                                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InTagHash                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MarkTagHash                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InTagHash                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             MarkTagHash                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGASBPLibrary::RemoveBuffByTagFromActor(class UAbilitySystemComponent* Asc, const int32 InTagHash, const int32 MarkTagHash)
 {
@@ -3560,8 +3585,8 @@ void UGASBPLibrary::RemoveBuffByTagFromActor(class UAbilitySystemComponent* Asc,
 // (Final, Native, Static, Public)
 // Parameters:
 // class UAbilitySystemComponent*          Asc                                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InTagHash                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   MarkTagHash                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             InTagHash                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             MarkTagHash                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGASBPLibrary::RemoveTagFromActor(class UAbilitySystemComponent* Asc, const int32 InTagHash, const int32 MarkTagHash)
 {
@@ -3588,7 +3613,7 @@ void UGASBPLibrary::RemoveTagFromActor(class UAbilitySystemComponent* Asc, const
 // Function KuroGAS.GASBPLibrary.ResetGameplayEffectSpecPeriod
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FGameplayEffectSpecHandle        SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (Parm, NativeAccessSpecifierPublic)
 // float                                   NewPeriod                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FGameplayEffectSpecHandle        ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
@@ -3645,7 +3670,7 @@ void UGASBPLibrary::SetAttributeValue(class UBaseAttributeSet* AttributeSet, cla
 // Function KuroGAS.GASBPLibrary.SetNeedSyncAttributes
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TSet<int32>                             SourceNeedSyncAttributes                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const TSet<int32>&                      SourceNeedSyncAttributes                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGASBPLibrary::SetNeedSyncAttributes(const TSet<int32>& SourceNeedSyncAttributes)
 {

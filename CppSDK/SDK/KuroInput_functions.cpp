@@ -72,10 +72,10 @@ void ABasePlayerController::SetUseSonyGamepadState(bool value)
 // Function KuroInput.BasePlayerController.AddActionBinding
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             ActionName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EInputEvent                             KeyEvent                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      ActionName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EInputEvent                       KeyEvent                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ABasePlayerController::AddActionBinding(const class FName& ActionName, const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName)
 {
@@ -103,9 +103,9 @@ void ABasePlayerController::AddActionBinding(const class FName& ActionName, cons
 // Function KuroInput.BasePlayerController.AddAxisBinding
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FName                             AxisName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      AxisName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ABasePlayerController::AddAxisBinding(const class FName& AxisName, class UObject* Object, const class FName& FuncName)
 {
@@ -132,10 +132,10 @@ void ABasePlayerController::AddAxisBinding(const class FName& AxisName, class UO
 // Function KuroInput.BasePlayerController.AddKeyBinding
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FInputChord                      Chord                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EInputEvent                             KeyEvent                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FInputChord&               Chord                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EInputEvent                       KeyEvent                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ABasePlayerController::AddKeyBinding(const struct FInputChord& Chord, const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName)
 {
@@ -163,9 +163,9 @@ void ABasePlayerController::AddKeyBinding(const struct FInputChord& Chord, const
 // Function KuroInput.BasePlayerController.AddTouchBinding
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// EInputEvent                             KeyEvent                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EInputEvent                       KeyEvent                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ABasePlayerController::AddTouchBinding(const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName)
 {
@@ -348,8 +348,8 @@ void ABasePlayerController::ReceiveOnDeviceChanged()
 // Function KuroInput.BasePlayerController.ReceivePostProcessInput
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaTime                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bGamePaused                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             DeltaTime                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bGamePaused                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ABasePlayerController::ReceivePostProcessInput(const float DeltaTime, const bool bGamePaused)
 {
@@ -370,8 +370,8 @@ void ABasePlayerController::ReceivePostProcessInput(const float DeltaTime, const
 // Function KuroInput.BasePlayerController.ReceivePreProcessInput
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaTime                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bGamePaused                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             DeltaTime                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bGamePaused                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void ABasePlayerController::ReceivePreProcessInput(const float DeltaTime, const bool bGamePaused)
 {
@@ -477,7 +477,7 @@ void UKuroInputFunctionLibrary::ClearInputModeReply()
 // Function KuroInput.KuroInputFunctionLibrary.HasInputModeReply
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FInputModeReply                  InputModeReply                                         (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FInputModeReply&           InputModeReply                                         (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UKuroInputFunctionLibrary::HasInputModeReply(const struct FInputModeReply& InputModeReply)
@@ -506,7 +506,7 @@ bool UKuroInputFunctionLibrary::HasInputModeReply(const struct FInputModeReply& 
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class APlayerController*                InPlayerController                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FInputModeReply                  InputModeReply                                         (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FInputModeReply&           InputModeReply                                         (Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroInputFunctionLibrary::ReplyInputMode(class APlayerController* InPlayerController, const struct FInputModeReply& InputModeReply)
 {
@@ -558,7 +558,7 @@ void UKuroInputFunctionLibrary::ResetInputMode(class APlayerController* InPlayer
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class APlayerController*                InPlayerController                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Reason                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Reason                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bLockMouseToViewport                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bHideCursorDuringCapture                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FInputModeReply                  ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -592,7 +592,7 @@ struct FInputModeReply UKuroInputFunctionLibrary::SetGameAndUIInputMode(class AP
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class APlayerController*                InPlayerController                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Reason                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Reason                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FInputModeReply                  ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 struct FInputModeReply UKuroInputFunctionLibrary::SetGameOnlyInputMode(class APlayerController* InPlayerController, const class FString& Reason)
@@ -622,7 +622,7 @@ struct FInputModeReply UKuroInputFunctionLibrary::SetGameOnlyInputMode(class APl
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class APlayerController*                InPlayerController                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Reason                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Reason                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bLockMouseToViewport                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FInputModeReply                  ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 

@@ -201,7 +201,7 @@ static_assert(sizeof(UKuroMovementBPLibrary) == 0x000030, "Wrong size on UKuroMo
 class AKuroMoveTriggerController final : public AInfo
 {
 public:
-	TMulticastInlineDelegate<void(TArray<struct FOverlapActorRecord>& Records)> Callback;                                          // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const TArray<struct FOverlapActorRecord>& Records)> Callback;      // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TArray<struct FOverlapActorRecord>            Records;                                           // 0x02C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 
 public:

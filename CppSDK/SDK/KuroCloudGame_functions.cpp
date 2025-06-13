@@ -20,7 +20,7 @@ namespace SDK
 // Function KuroCloudGame.KuroCloudGameWrapper.SendDataToPipeBinary
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           Data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroCloudGameWrapper::SendDataToPipeBinary(const class FString& Data)
 {
@@ -45,8 +45,8 @@ void UKuroCloudGameWrapper::SendDataToPipeBinary(const class FString& Data)
 // Function KuroCloudGame.KuroCloudGameWrapper.SendDataToPipeBinaryWithKey
 // (Final, Native, Static, Public)
 // Parameters:
-// class FString                           Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           Data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Key                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Data                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UKuroCloudGameWrapper::SendDataToPipeBinaryWithKey(const class FString& Key, const class FString& Data)
 {

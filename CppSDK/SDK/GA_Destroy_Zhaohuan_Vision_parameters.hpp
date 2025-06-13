@@ -60,7 +60,7 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue_2;                    // 0x0241(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ___bool_IsClosed_Variable;                         // 0x0242(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_243[0x5];                                      // 0x0243(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate_5;            // 0x0248(0x0028)(ZeroConstructor)
+	TDelegate<void(const struct FGameplayEventData& Payload)> K2Node_CreateDelegate_OutputDelegate_5; // 0x0248(0x0028)(ZeroConstructor)
 	bool                                          ___bool_Has_Been_Initd_Variable;                   // 0x0270(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_271[0x7];                                      // 0x0271(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 CallFunc_GetOwningActorFromActorInfo_ReturnValue;  // 0x0278(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

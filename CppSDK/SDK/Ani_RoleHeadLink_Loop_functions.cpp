@@ -41,8 +41,8 @@ void Ani_RoleHeadLink_Loop::USequenceDirector_C::SequenceEvent__ENTRYPOINTSequen
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AUIContainerActor*                RoleQTEBar                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString                           sequenceName                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString                           eventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    sequenceName                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    eventName                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
 void Ani_RoleHeadLink_Loop::USequenceDirector_C::RoleQTEBar_Event_0(class AUIContainerActor* RoleQTEBar, const class FString& sequenceName, const class FString& eventName)
 {

@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ECameraAnsEffectiveClientType.ECameraAnsEffectiveClientType
-// NumValues: 0x0008
+// NumValues: 0x000A
 enum class ECameraAnsEffectiveClientType : uint8
 {
 	NewEnumerator0                           = 0,
@@ -25,7 +25,9 @@ enum class ECameraAnsEffectiveClientType : uint8
 	NewEnumerator4                           = 4,
 	NewEnumerator5                           = 5,
 	NewEnumerator6                           = 6,
-	ECameraAnsEffectiveClientType_MAX        = 7,
+	NewEnumerator7                           = 7,
+	NewEnumerator8                           = 8,
+	ECameraAnsEffectiveClientType_MAX        = 9,
 };
 
 }

@@ -199,7 +199,7 @@ int32 UTsMeshAnimBlueprintFunctionLibrary_C::GetCurrentWeaponHangState(int32 ent
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// struct FSWeaponSocketItem               weaponSocket                                           (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FSWeaponSocketItem&        weaponSocket                                           (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsMeshAnimBlueprintFunctionLibrary_C::ChangeWeapon(int32 entityId, const struct FSWeaponSocketItem& weaponSocket, class UObject* __WorldContext)
@@ -472,7 +472,7 @@ float UTsMeshAnimBlueprintFunctionLibrary_C::GetWeaponBreachLevel(int32 entityId
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FTransformDouble                 transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   timeLength                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -622,8 +622,8 @@ void UTsMeshAnimBlueprintFunctionLibrary_C::UpdateAnimInfoMeshAnimRoleNpc(int32 
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // int32                                   weaponState                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   lerpTime                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<class FName>                     sockets                                                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FTransform>               transforms                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class FName>&                    sockets                                                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FTransform>&              transforms                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsMeshAnimBlueprintFunctionLibrary_C::ChangeWeaponHangState(int32 entityId, int32 weaponState, float lerpTime, TArray<class FName>& sockets, TArray<struct FTransform>& transforms, class UObject* __WorldContext)
@@ -718,7 +718,7 @@ bool UTsMeshAnimBlueprintFunctionLibrary_C::GetIsCurrentWeaponHideEffectPlaying(
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // int32                                   角色蓝图EntityId                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// struct FSFootstepAudioEventParam        params                                                 (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference, UObjectWrapper, HasGetValueTypeHash)
+// const struct FSFootstepAudioEventParam& params                                                 (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference, UObjectWrapper, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsMeshAnimBlueprintFunctionLibrary_C::UpdateFootstepAudioEvent(int32 entityId, int32 角色蓝图EntityId, const struct FSFootstepAudioEventParam& params, class UObject* __WorldContext)
@@ -806,8 +806,8 @@ bool UTsMeshAnimBlueprintFunctionLibrary_C::IsNpcTurning(int32 entityId, class U
 // Parameters:
 // int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   deltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TMap<class FString, float>              outMap                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// struct FVector                          outOffset                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TMap<class FString, float>&             outMap                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// struct FVector&                         outOffset                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UTsMeshAnimBlueprintFunctionLibrary_C::UpdateAndGetRotateBonesMap(int32 entityId, float deltaSeconds, TMap<class FString, float>& outMap, struct FVector& outOffset, class UObject* __WorldContext)

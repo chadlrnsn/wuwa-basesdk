@@ -20,7 +20,7 @@ namespace SDK
 // Function ImgMedia.ImgMediaSource.SetSequencePath
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class FString                           Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UImgMediaSource::SetSequencePath(const class FString& Path)
 {
@@ -45,7 +45,7 @@ void UImgMediaSource::SetSequencePath(const class FString& Path)
 // Function ImgMedia.ImgMediaSource.GetProxies
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class FString>                   OutProxies                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class FString>*                  OutProxies                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
 void UImgMediaSource::GetProxies(TArray<class FString>* OutProxies) const
 {

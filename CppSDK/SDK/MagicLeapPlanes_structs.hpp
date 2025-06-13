@@ -41,6 +41,38 @@ enum class EMagicLeapPlaneQueryType : uint8
 	EMagicLeapPlaneQueryType_MAX             = 2,
 };
 
+// ScriptStruct MagicLeapPlanes.MagicLeapPlanesQuery
+// 0x0060 (0x0060 - 0x0000)
+struct FMagicLeapPlanesQuery final
+{
+public:
+	TArray<EMagicLeapPlaneQueryFlags>             Flags;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	class UBoxComponent*                          SearchVolume;                                      // 0x0010(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxResults;                                        // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinHoleLength;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinPlaneArea;                                      // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SearchVolumePosition;                              // 0x0024(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FQuat                                  SearchVolumeOrientation;                           // 0x0030(0x0010)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                SearchVolumeExtents;                               // 0x0040(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SimilarityThreshold;                               // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSearchVolumeTrackingSpace;                        // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bResultTrackingSpace;                              // 0x0051(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_52[0xE];                                       // 0x0052(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FMagicLeapPlanesQuery) == 0x000010, "Wrong alignment on FMagicLeapPlanesQuery");
+static_assert(sizeof(FMagicLeapPlanesQuery) == 0x000060, "Wrong size on FMagicLeapPlanesQuery");
+static_assert(offsetof(FMagicLeapPlanesQuery, Flags) == 0x000000, "Member 'FMagicLeapPlanesQuery::Flags' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, SearchVolume) == 0x000010, "Member 'FMagicLeapPlanesQuery::SearchVolume' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, MaxResults) == 0x000018, "Member 'FMagicLeapPlanesQuery::MaxResults' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, MinHoleLength) == 0x00001C, "Member 'FMagicLeapPlanesQuery::MinHoleLength' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, MinPlaneArea) == 0x000020, "Member 'FMagicLeapPlanesQuery::MinPlaneArea' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, SearchVolumePosition) == 0x000024, "Member 'FMagicLeapPlanesQuery::SearchVolumePosition' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, SearchVolumeOrientation) == 0x000030, "Member 'FMagicLeapPlanesQuery::SearchVolumeOrientation' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, SearchVolumeExtents) == 0x000040, "Member 'FMagicLeapPlanesQuery::SearchVolumeExtents' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, SimilarityThreshold) == 0x00004C, "Member 'FMagicLeapPlanesQuery::SimilarityThreshold' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, bSearchVolumeTrackingSpace) == 0x000050, "Member 'FMagicLeapPlanesQuery::bSearchVolumeTrackingSpace' has a wrong offset!");
+static_assert(offsetof(FMagicLeapPlanesQuery, bResultTrackingSpace) == 0x000051, "Member 'FMagicLeapPlanesQuery::bResultTrackingSpace' has a wrong offset!");
+
 // ScriptStruct MagicLeapPlanes.MagicLeapPolygon
 // 0x0010 (0x0010 - 0x0000)
 struct FMagicLeapPolygon final
@@ -77,38 +109,6 @@ static_assert(alignof(FMagicLeapPlaneBoundaries) == 0x000008, "Wrong alignment o
 static_assert(sizeof(FMagicLeapPlaneBoundaries) == 0x000020, "Wrong size on FMagicLeapPlaneBoundaries");
 static_assert(offsetof(FMagicLeapPlaneBoundaries, ID) == 0x000000, "Member 'FMagicLeapPlaneBoundaries::ID' has a wrong offset!");
 static_assert(offsetof(FMagicLeapPlaneBoundaries, Boundaries) == 0x000010, "Member 'FMagicLeapPlaneBoundaries::Boundaries' has a wrong offset!");
-
-// ScriptStruct MagicLeapPlanes.MagicLeapPlanesQuery
-// 0x0060 (0x0060 - 0x0000)
-struct FMagicLeapPlanesQuery final
-{
-public:
-	TArray<EMagicLeapPlaneQueryFlags>             Flags;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	class UBoxComponent*                          SearchVolume;                                      // 0x0010(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxResults;                                        // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinHoleLength;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinPlaneArea;                                      // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SearchVolumePosition;                              // 0x0024(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FQuat                                  SearchVolumeOrientation;                           // 0x0030(0x0010)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                SearchVolumeExtents;                               // 0x0040(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SimilarityThreshold;                               // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSearchVolumeTrackingSpace;                        // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bResultTrackingSpace;                              // 0x0051(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_52[0xE];                                       // 0x0052(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FMagicLeapPlanesQuery) == 0x000010, "Wrong alignment on FMagicLeapPlanesQuery");
-static_assert(sizeof(FMagicLeapPlanesQuery) == 0x000060, "Wrong size on FMagicLeapPlanesQuery");
-static_assert(offsetof(FMagicLeapPlanesQuery, Flags) == 0x000000, "Member 'FMagicLeapPlanesQuery::Flags' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, SearchVolume) == 0x000010, "Member 'FMagicLeapPlanesQuery::SearchVolume' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, MaxResults) == 0x000018, "Member 'FMagicLeapPlanesQuery::MaxResults' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, MinHoleLength) == 0x00001C, "Member 'FMagicLeapPlanesQuery::MinHoleLength' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, MinPlaneArea) == 0x000020, "Member 'FMagicLeapPlanesQuery::MinPlaneArea' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, SearchVolumePosition) == 0x000024, "Member 'FMagicLeapPlanesQuery::SearchVolumePosition' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, SearchVolumeOrientation) == 0x000030, "Member 'FMagicLeapPlanesQuery::SearchVolumeOrientation' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, SearchVolumeExtents) == 0x000040, "Member 'FMagicLeapPlanesQuery::SearchVolumeExtents' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, SimilarityThreshold) == 0x00004C, "Member 'FMagicLeapPlanesQuery::SimilarityThreshold' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, bSearchVolumeTrackingSpace) == 0x000050, "Member 'FMagicLeapPlanesQuery::bSearchVolumeTrackingSpace' has a wrong offset!");
-static_assert(offsetof(FMagicLeapPlanesQuery, bResultTrackingSpace) == 0x000051, "Member 'FMagicLeapPlanesQuery::bResultTrackingSpace' has a wrong offset!");
 
 // ScriptStruct MagicLeapPlanes.MagicLeapPlaneResult
 // 0x0060 (0x0060 - 0x0000)

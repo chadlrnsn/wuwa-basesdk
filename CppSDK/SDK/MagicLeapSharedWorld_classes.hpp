@@ -56,7 +56,7 @@ class AMagicLeapSharedWorldGameState final : public AGameState
 {
 public:
 	struct FMagicLeapSharedWorldSharedData        SharedWorldData;                                   // 0x0328(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, RepNotify, NativeAccessSpecifierPublic)
-	struct FMagicLeapSharedWorldAlignmentTransforms AlignmentTransforms;                               // 0x0338(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, RepNotify, NativeAccessSpecifierPublic)
+	struct FMagicLeapSharedWorldAlignmentTransforms AlignmentTransforms;                             // 0x0338(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, RepNotify, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnSharedWorldDataUpdated;                          // 0x0348(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnAlignmentTransformsUpdated;                      // 0x0358(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 

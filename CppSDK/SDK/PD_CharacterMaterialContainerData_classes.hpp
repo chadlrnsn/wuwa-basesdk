@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
-#include "ECharacterBodySpecifiedType_structs.hpp"
 #include "SCharacterBodySpecifiedStruct_structs.hpp"
+#include "ECharacterBodySpecifiedType_structs.hpp"
 #include "ECharacterSlotSpecifiedType_structs.hpp"
 #include "SCharacterSlotSpecifiedStruct_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -29,8 +29,8 @@ public:
 	TArray<class FName>                           WeaponNames;                                       // 0x0048(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<class FName>                           HuluNames;                                         // 0x0058(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<class FName>                           OtherNames;                                        // 0x0068(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<ECharacterBodySpecifiedType, struct FSCharacterBodySpecifiedStruct> BodySpecifiedTypes;                                // 0x0078(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<ECharacterSlotSpecifiedType, struct FSCharacterSlotSpecifiedStruct> SlotSpecifiedTypes;                                // 0x00C8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<ECharacterBodySpecifiedType, struct FSCharacterBodySpecifiedStruct> BodySpecifiedTypes;     // 0x0078(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<ECharacterSlotSpecifiedType, struct FSCharacterSlotSpecifiedStruct> SlotSpecifiedTypes;     // 0x00C8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

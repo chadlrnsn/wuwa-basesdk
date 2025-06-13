@@ -368,7 +368,7 @@ void UGA_Bulante_SwingCombo_EX_C::OnTick_5D118C384AE61F1C80292E819AC8C195()
 // Function GA_Bulante_SwingCombo_EX.GA_Bulante_SwingCombo_EX_C.Added_21071CB943CD992BF8EFD6A3E69C0900
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Bulante_SwingCombo_EX_C::Added_21071CB943CD992BF8EFD6A3E69C0900(const struct FGameplayTag& Tag)
 {
@@ -458,7 +458,7 @@ void UGA_Bulante_SwingCombo_EX_C::OnTick_5D118C384AE61F1C80292E818C48ACB6()
 // Function GA_Bulante_SwingCombo_EX.GA_Bulante_SwingCombo_EX_C.Added_21071CB943CD992BF8EFD6A34D02358F
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Bulante_SwingCombo_EX_C::Added_21071CB943CD992BF8EFD6A34D02358F(const struct FGameplayTag& Tag)
 {

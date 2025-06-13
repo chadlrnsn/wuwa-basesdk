@@ -18,14 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Common_AirAttack.GA_Common_AirAttack_C
-// 0x0010 (0x0568 - 0x0558)
+// 0x0010 (0x0578 - 0x0568)
 class UGA_Common_AirAttack_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Common_AirAttack_C;              // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          落地攻击;                                          // 0x0560(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_561[0x3];                                      // 0x0561(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BlockTime;                                         // 0x0564(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Common_AirAttack_C;              // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          落地攻击;                                          // 0x0570(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_571[0x3];                                      // 0x0571(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BlockTime;                                         // 0x0574(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Common_AirAttack(int32 EntryPoint);
@@ -58,10 +58,10 @@ public:
 	}
 };
 static_assert(alignof(UGA_Common_AirAttack_C) == 0x000008, "Wrong alignment on UGA_Common_AirAttack_C");
-static_assert(sizeof(UGA_Common_AirAttack_C) == 0x000568, "Wrong size on UGA_Common_AirAttack_C");
-static_assert(offsetof(UGA_Common_AirAttack_C, UberGraphFrame_GA_Common_AirAttack_C) == 0x000558, "Member 'UGA_Common_AirAttack_C::UberGraphFrame_GA_Common_AirAttack_C' has a wrong offset!");
-static_assert(offsetof(UGA_Common_AirAttack_C, 落地攻击) == 0x000560, "Member 'UGA_Common_AirAttack_C::落地攻击' has a wrong offset!");
-static_assert(offsetof(UGA_Common_AirAttack_C, BlockTime) == 0x000564, "Member 'UGA_Common_AirAttack_C::BlockTime' has a wrong offset!");
+static_assert(sizeof(UGA_Common_AirAttack_C) == 0x000578, "Wrong size on UGA_Common_AirAttack_C");
+static_assert(offsetof(UGA_Common_AirAttack_C, UberGraphFrame_GA_Common_AirAttack_C) == 0x000568, "Member 'UGA_Common_AirAttack_C::UberGraphFrame_GA_Common_AirAttack_C' has a wrong offset!");
+static_assert(offsetof(UGA_Common_AirAttack_C, 落地攻击) == 0x000570, "Member 'UGA_Common_AirAttack_C::落地攻击' has a wrong offset!");
+static_assert(offsetof(UGA_Common_AirAttack_C, BlockTime) == 0x000574, "Member 'UGA_Common_AirAttack_C::BlockTime' has a wrong offset!");
 
 }
 

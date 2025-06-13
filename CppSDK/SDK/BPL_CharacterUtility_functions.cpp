@@ -22,7 +22,7 @@ namespace SDK
 // Parameters:
 // class UAnimInstance*                    AnimInstance                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          LocalWind                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         LocalWind                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_CharacterUtility_C::GetLocalWind(class UAnimInstance* AnimInstance, class UObject* __WorldContext, struct FVector* LocalWind)
 {
@@ -49,7 +49,7 @@ void UBPL_CharacterUtility_C::GetLocalWind(class UAnimInstance* AnimInstance, cl
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSMovementSetting_State          data                                                   (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSMovementSetting_State*         data                                                   (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_CharacterUtility_C::DtGetMovementSettings(class UDataTable* dataTable, class FName rowName, class UObject* __WorldContext, struct FSMovementSetting_State* data)
@@ -80,7 +80,7 @@ bool UBPL_CharacterUtility_C::DtGetMovementSettings(class UDataTable* dataTable,
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSBulletDataMain                 data                                                   (Parm, OutParm, HasGetValueTypeHash)
+// struct FSBulletDataMain*                data                                                   (Parm, OutParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_CharacterUtility_C::DtGetBulletData(class UDataTable* dataTable, class FName rowName, class UObject* __WorldContext, struct FSBulletDataMain* data)
@@ -110,7 +110,7 @@ bool UBPL_CharacterUtility_C::DtGetBulletData(class UDataTable* dataTable, class
 // Parameters:
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSHitEffect                      backData                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSHitEffect&                     backData                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
@@ -142,7 +142,7 @@ bool UBPL_CharacterUtility_C::DtGetHitEffect(class UDataTable* dataTable, class 
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSSkillInfo                      data                                                   (Parm, OutParm, HasGetValueTypeHash)
+// struct FSSkillInfo*                     data                                                   (Parm, OutParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_CharacterUtility_C::DtGetSkillInfo(class UDataTable* dataTable, class FName rowName, class UObject* __WorldContext, struct FSSkillInfo* data)
@@ -173,7 +173,7 @@ bool UBPL_CharacterUtility_C::DtGetSkillInfo(class UDataTable* dataTable, class 
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSDamageData                     data                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSDamageData*                    data                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_CharacterUtility_C::DtGetDamageData(class UDataTable* dataTable, class FName rowName, class UObject* __WorldContext, struct FSDamageData* data)
@@ -204,7 +204,7 @@ bool UBPL_CharacterUtility_C::DtGetDamageData(class UDataTable* dataTable, class
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSAttributeModifierData          data                                                   (Parm, OutParm, HasGetValueTypeHash)
+// struct FSAttributeModifierData*         data                                                   (Parm, OutParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_CharacterUtility_C::DtGetAttributeModifierData(class UDataTable* dataTable, class FName rowName, class UObject* __WorldContext, struct FSAttributeModifierData* data)
@@ -235,7 +235,7 @@ bool UBPL_CharacterUtility_C::DtGetAttributeModifierData(class UDataTable* dataT
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSEffectData                     data                                                   (Parm, OutParm, HasGetValueTypeHash)
+// struct FSEffectData*                    data                                                   (Parm, OutParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_CharacterUtility_C::DtGetEffectData(class UDataTable* dataTable, class FName rowName, class UObject* __WorldContext, struct FSEffectData* data)
@@ -266,7 +266,7 @@ bool UBPL_CharacterUtility_C::DtGetEffectData(class UDataTable* dataTable, class
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSReBulletDataMain               data                                                   (Parm, OutParm, HasGetValueTypeHash)
+// struct FSReBulletDataMain*              data                                                   (Parm, OutParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_CharacterUtility_C::DtGetNewBulletData(class UDataTable* dataTable, class FName rowName, class UObject* __WorldContext, struct FSReBulletDataMain* data)
@@ -296,7 +296,7 @@ bool UBPL_CharacterUtility_C::DtGetNewBulletData(class UDataTable* dataTable, cl
 // Parameters:
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FSSkillInfo>              NewParam                                               (Parm, OutParm)
+// TArray<struct FSSkillInfo>*             NewParam                                               (Parm, OutParm)
 
 void UBPL_CharacterUtility_C::DtGetAllSkillInfos(class UDataTable* dataTable, class UObject* __WorldContext, TArray<struct FSSkillInfo>* NewParam)
 {
@@ -321,7 +321,7 @@ void UBPL_CharacterUtility_C::DtGetAllSkillInfos(class UDataTable* dataTable, cl
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FSCharacterPart>          partArrayRef                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSCharacterPart>&         partArrayRef                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UBPL_CharacterUtility_C::DtGetAllCharacterPartDatas(class UDataTable* dataTable, TArray<struct FSCharacterPart>& partArrayRef, class UObject* __WorldContext)
@@ -374,7 +374,7 @@ EMovementDirection UBPL_CharacterUtility_C::GetInputMovementDirection(class ATsB
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSVisionData                     data                                                   (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+// struct FSVisionData*                    data                                                   (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_CharacterUtility_C::DtGetVisionInfo(class UDataTable* dataTable, class FName rowName, class UObject* __WorldContext, struct FSVisionData* data)
@@ -405,7 +405,7 @@ bool UBPL_CharacterUtility_C::DtGetVisionInfo(class UDataTable* dataTable, class
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class FName                             rowName                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FSCaughtInfo                     data                                                   (Parm, OutParm, HasGetValueTypeHash)
+// struct FSCaughtInfo*                    data                                                   (Parm, OutParm, HasGetValueTypeHash)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
 bool UBPL_CharacterUtility_C::DtGetCaughtInfo(class UDataTable* dataTable, class FName rowName, class UObject* __WorldContext, struct FSCaughtInfo* data)
@@ -435,7 +435,7 @@ bool UBPL_CharacterUtility_C::DtGetCaughtInfo(class UDataTable* dataTable, class
 // Parameters:
 // class UDataTable*                       dataTable                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<struct FSReBulletDataMain>       NewParam                                               (Parm, OutParm)
+// TArray<struct FSReBulletDataMain>*      NewParam                                               (Parm, OutParm)
 
 void UBPL_CharacterUtility_C::DtGetAllBulletData(class UDataTable* dataTable, class UObject* __WorldContext, TArray<struct FSReBulletDataMain>* NewParam)
 {
@@ -460,7 +460,7 @@ void UBPL_CharacterUtility_C::DtGetAllBulletData(class UDataTable* dataTable, cl
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<EObjectTypeQuery>                value                                                  (Parm, OutParm)
+// TArray<EObjectTypeQuery>*               value                                                  (Parm, OutParm)
 
 void UBPL_CharacterUtility_C::DtGetBlockObjectType(class UObject* __WorldContext, TArray<EObjectTypeQuery>* value)
 {
@@ -486,7 +486,7 @@ void UBPL_CharacterUtility_C::DtGetBlockObjectType(class UObject* __WorldContext
 // class UAnimInstance*                    AnimInstance                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    SrcSimulateEnable                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    DstSimulateEnable                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   DstSimulateEnable                                      (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UBPL_CharacterUtility_C::UpdatePhysicsClothSimulateEnable(class UAnimInstance* AnimInstance, bool SrcSimulateEnable, class UObject* __WorldContext, bool* DstSimulateEnable)
 {
@@ -512,7 +512,7 @@ void UBPL_CharacterUtility_C::UpdatePhysicsClothSimulateEnable(class UAnimInstan
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<EObjectTypeQuery>                NewParam                                               (Parm, OutParm)
+// TArray<EObjectTypeQuery>*               NewParam                                               (Parm, OutParm)
 
 void UBPL_CharacterUtility_C::GetTypeQuery(class UObject* __WorldContext, TArray<EObjectTypeQuery>* NewParam)
 {
@@ -537,7 +537,7 @@ void UBPL_CharacterUtility_C::GetTypeQuery(class UObject* __WorldContext, TArray
 // Parameters:
 // class UAnimInstance*                    Target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    CachePoseEnable                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool*                                   CachePoseEnable                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 void UBPL_CharacterUtility_C::UpdateCachePoseEnable(class UAnimInstance* Target, class UObject* __WorldContext, bool* CachePoseEnable)
 {
@@ -562,7 +562,7 @@ void UBPL_CharacterUtility_C::UpdateCachePoseEnable(class UAnimInstance* Target,
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<class AActor*>                   ReturnValues                                           (Parm, OutParm)
+// TArray<class AActor*>*                  ReturnValues                                           (Parm, OutParm)
 
 void UBPL_CharacterUtility_C::CheckSimpleNpc(class UObject* __WorldContext, TArray<class AActor*>* ReturnValues)
 {
@@ -586,7 +586,7 @@ void UBPL_CharacterUtility_C::CheckSimpleNpc(class UObject* __WorldContext, TArr
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// TArray<class AActor*>                   ReturnValues                                           (Parm, OutParm)
+// TArray<class AActor*>*                  ReturnValues                                           (Parm, OutParm)
 
 void UBPL_CharacterUtility_C::CheckNpcSetupTools(class UObject* __WorldContext, TArray<class AActor*>* ReturnValues)
 {

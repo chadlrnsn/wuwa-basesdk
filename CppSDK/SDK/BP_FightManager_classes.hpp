@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "BP_ManagerBase_classes.hpp"
-#include "ERelation_structs.hpp"
 #include "ECamp_structs.hpp"
+#include "ERelation_structs.hpp"
 
 
 namespace SDK
@@ -28,19 +28,19 @@ public:
 	class UBP_ActorManager_C*                     角色管理器;                                        // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          初始化完成;                                        // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class ATsBaseCharacter_C* 触发者)> 三消触发;                                          // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void(class ATsBaseCharacter_C* 触发者)> 击飞触发;                                          // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void(class ATsBaseCharacter_C* 触发者)> 破白条触发;                                        // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void(class ATsBaseCharacter_C* 触发者)> 三红触发;                                          // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class ATsBaseCharacter_C* 触发者)> 三消触发;                    // 0x0060(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class ATsBaseCharacter_C* 触发者)> 击飞触发;                    // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class ATsBaseCharacter_C* 触发者)> 破白条触发;                  // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class ATsBaseCharacter_C* 触发者)> 三红触发;                    // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	class UDataTable*                             阵营关系数据;                                      // 0x00A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMulticastInlineDelegate<void()>              队伍角色加载完成;                                  // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMap<int32, class UObject*>                   BPai数组;                                          // 0x00B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TArray<class UObject*>                        怪物临时BPAI数组;                                  // 0x0108(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          场景加载完成;                                      // 0x0118(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, class ATsBaseCharacter_C*> Debug的对象集合;                                   // 0x0120(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMulticastInlineDelegate<void(const class FString& Option)> 添加Debug的FightAttribute;                         // 0x0170(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void(const class FString& Option)> 删除Debug的FightAttribute;                         // 0x0180(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMap<class FString, class ATsBaseCharacter_C*> Debug的对象集合;                                  // 0x0120(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMulticastInlineDelegate<void(const class FString& Option)> 添加Debug的FightAttribute;           // 0x0170(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(const class FString& Option)> 删除Debug的FightAttribute;           // 0x0180(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMap<int32, int32>                            站位怪物数量;                                      // 0x0190(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class UDataTable*                             受击类型覆盖表;                                    // 0x01E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         攻击位数量;                                        // 0x01E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

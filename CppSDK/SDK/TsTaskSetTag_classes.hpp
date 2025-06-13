@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "TsTaskAbortImmediatelyBase_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "TsTaskAbortImmediatelyBase_classes.hpp"
 
 
 namespace SDK
@@ -33,8 +33,8 @@ public:
 	bool                                          SetToPlayer;                                       // 0x00F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_TsTaskSetTag(int32 EntryPoint);
 	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ExecuteUbergraph_TsTaskSetTag(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

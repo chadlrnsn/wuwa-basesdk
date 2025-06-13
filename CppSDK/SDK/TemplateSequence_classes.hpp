@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "TemplateSequence_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
 #include "Engine_classes.hpp"
-#include "TemplateSequence_structs.hpp"
 
 
 namespace SDK
@@ -155,7 +155,7 @@ public:
 	uint8                                         Pad_30[0x458];                                     // 0x0030(0x0458)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                BoundObjectOverride;                               // 0x0488(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UMovieSceneSequence*                    Sequence;                                          // 0x0490(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FMovieSceneRootEvaluationTemplateInstance RootTemplateInstance;                              // 0x0498(0x00F8)(Transient, NativeAccessSpecifierPrivate)
+	struct FMovieSceneRootEvaluationTemplateInstance RootTemplateInstance;                           // 0x0498(0x00F8)(Transient, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_590[0x60];                                     // 0x0590(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:

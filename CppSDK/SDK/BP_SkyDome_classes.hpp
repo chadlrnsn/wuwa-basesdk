@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "TimeOfDayData_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "TimeOfDayCurves_structs.hpp"
 #include "WeatherData_structs.hpp"
-#include "PresetSelection_structs.hpp"
+#include "TimeOfDayCurves_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "PresetSelection_structs.hpp"
 #include "PresetChangeInfo_structs.hpp"
+#include "TimeOfDayData_structs.hpp"
 
 
 namespace SDK
@@ -136,8 +136,8 @@ public:
 	bool                                          UseWorldSpaceRotation;                             // 0x0880(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_881[0x3];                                      // 0x0881(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         DaysPassedBy;                                      // 0x0884(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void(class UClass* Preset, float TransitionDuration)> OnWeatherPresetChanged;                            // 0x0888(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void(class UClass* Preset, float TransitionDuraion)> OnTimeOfDayPresetChanged;                          // 0x0898(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class UClass* Preset, float TransitionDuration)> OnWeatherPresetChanged; // 0x0888(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(class UClass* Preset, float TransitionDuraion)> OnTimeOfDayPresetChanged; // 0x0898(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void(int32 Hour)>    OnHourPassedBy;                                    // 0x08A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void(int32 Day)>     OnDayPassedBy;                                     // 0x08B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	float                                         MoonLightLightning;                                // 0x08C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

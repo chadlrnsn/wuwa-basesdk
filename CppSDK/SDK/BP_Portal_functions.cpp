@@ -102,7 +102,7 @@ void ABP_Portal_C::DEBUG_开启1()
 // Function BP_Portal.BP_Portal_C.SetPortal1Bounds
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Bounds                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Bounds                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_Portal_C::SetPortal1Bounds(const struct FVector& Bounds)
 {
@@ -122,7 +122,7 @@ void ABP_Portal_C::SetPortal1Bounds(const struct FVector& Bounds)
 // Function BP_Portal.BP_Portal_C.SetPortal2Bounds
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FVector                          Bounds                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Bounds                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_Portal_C::SetPortal2Bounds(const struct FVector& Bounds)
 {
@@ -142,8 +142,8 @@ void ABP_Portal_C::SetPortal2Bounds(const struct FVector& Bounds)
 // Function BP_Portal.BP_Portal_C.SetPortal1Transform
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransformDouble                 Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// struct FTransformDouble                 CaptureTransform                                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          CaptureTransform                                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 
 void ABP_Portal_C::SetPortal1Transform(const struct FTransformDouble& Transform, const struct FTransformDouble& CaptureTransform)
 {
@@ -164,8 +164,8 @@ void ABP_Portal_C::SetPortal1Transform(const struct FTransformDouble& Transform,
 // Function BP_Portal.BP_Portal_C.SetPortal2Transform
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransformDouble                 Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// struct FTransformDouble                 CaptureTransform                                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          CaptureTransform                                       (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 
 void ABP_Portal_C::SetPortal2Transform(const struct FTransformDouble& Transform, const struct FTransformDouble& CaptureTransform)
 {
@@ -285,8 +285,8 @@ void ABP_Portal_C::DEBUG_关闭2()
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    IsCapture1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// TArray<class AActor*>                   HiddenActors                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<class AActor*>                   ForceShowActors                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class AActor*>&                  HiddenActors                                           (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class AActor*>&                  ForceShowActors                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
 void ABP_Portal_C::SetCaptureShowingActors(bool IsCapture1, TArray<class AActor*>& HiddenActors, TArray<class AActor*>& ForceShowActors)
 {
@@ -334,7 +334,7 @@ void ABP_Portal_C::SetCaptureMaxViewDistance(bool IsCapture1, float MaxViewDista
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    IsCapture1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// TMap<class FString, bool>               ShowFlags                                              (Parm, OutParm)
+// TMap<class FString, bool>*              ShowFlags                                              (Parm, OutParm)
 
 void ABP_Portal_C::GetCaptureShowFlags(bool IsCapture1, TMap<class FString, bool>* ShowFlags)
 {
@@ -358,7 +358,7 @@ void ABP_Portal_C::GetCaptureShowFlags(bool IsCapture1, TMap<class FString, bool
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    IsCapture1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// TMap<class FString, bool>               ShowFlags                                              (BlueprintVisible, BlueprintReadOnly, Parm)
+// const TMap<class FString, bool>&        ShowFlags                                              (BlueprintVisible, BlueprintReadOnly, Parm)
 
 void ABP_Portal_C::SetCaptureShowFlags(bool IsCapture1, const TMap<class FString, bool>& ShowFlags)
 {
@@ -387,8 +387,8 @@ void ABP_Portal_C::SetCaptureShowFlags(bool IsCapture1, const TMap<class FString
 // float                                   Counter                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UStaticMeshComponent*             SM                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UStaticMeshComponent*             DMI                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   OutputCounter                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Factor                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  OutputCounter                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  Factor                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_Portal_C::UpdatePortalAnimation(float ShowLen, float FadeLen, bool IsShown, class UCurveFloat* ShowCurve, class UCurveFloat* FadeCurve, float Counter, class UStaticMeshComponent* SM, class UStaticMeshComponent* DMI, float* OutputCounter, float* Factor)
 {
@@ -435,9 +435,9 @@ void ABP_Portal_C::UpdatePortalsCameraPosition()
 // Function BP_Portal.BP_Portal_C.GetMappingTransformToOtherPortal
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransformDouble                 SourceTransform                                        (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          SourceTransform                                        (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // bool                                    bA2B                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FTransformDouble                 TargetTransform                                        (Parm, OutParm, IsPlainOldData, NoDestructor)
+// struct FTransformDouble*                TargetTransform                                        (Parm, OutParm, IsPlainOldData, NoDestructor)
 
 void ABP_Portal_C::GetMappingTransformToOtherPortal(const struct FTransformDouble& SourceTransform, bool bA2B, struct FTransformDouble* TargetTransform)
 {
@@ -461,7 +461,7 @@ void ABP_Portal_C::GetMappingTransformToOtherPortal(const struct FTransformDoubl
 // Function BP_Portal.BP_Portal_C.DrawDebugFrustum
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FTransformDouble                 Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          Transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 // float                                   FovX                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   NearClipPlane                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   AspectRatio                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -487,9 +487,9 @@ void ABP_Portal_C::DrawDebugFrustum(const struct FTransformDouble& Transform, fl
 // Function BP_Portal.BP_Portal_C.GetAngleBetweenVector
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// struct FVector                          Vector1                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVector                          Vector2                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Angle                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Vector1                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Vector2                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  Angle                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_Portal_C::GetAngleBetweenVector(const struct FVector& Vector1, const struct FVector& Vector2, float* Angle)
 {
@@ -538,7 +538,7 @@ void ABP_Portal_C::ApplyCapturePerformace(bool IsPortalA, int32 ConfigLevel, flo
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    isPortalA                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FTransformDouble                 targetTrans                                            (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          targetTrans                                            (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 
 void ABP_Portal_C::CheckCapturePerformanceLevel(bool isPortalA, const struct FTransformDouble& targetTrans)
 {
@@ -560,7 +560,7 @@ void ABP_Portal_C::CheckCapturePerformanceLevel(bool isPortalA, const struct FTr
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // bool                                    IsCapture1                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// struct FSceneCaptureComponent2DParams   CaptureParam                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// const struct FSceneCaptureComponent2DParams&CaptureParam                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 
 void ABP_Portal_C::PrintDebugCaptureParams(bool IsCapture1, const struct FSceneCaptureComponent2DParams& CaptureParam)
 {

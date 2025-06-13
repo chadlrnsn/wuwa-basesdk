@@ -18,18 +18,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Bulante_QTE.GA_Bulante_QTE_C
-// 0x0030 (0x0588 - 0x0558)
+// 0x0030 (0x0598 - 0x0568)
 class UGA_Bulante_QTE_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Bulante_QTE_C;                   // 0x0558(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	int32                                         Entity_Id;                                         // 0x0560(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	uint8                                         Pad_564[0x4];                                      // 0x0564(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBP_QTE_Camera_C*                       QTECamera;                                         // 0x0568(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAbilityTask_WaitGameplayTagAdded*      异步任务_0;                                        // 0x0570(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          成功命中并释放派生;                                // 0x0578(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_579[0x7];                                      // 0x0579(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     技能目标;                                          // 0x0580(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Bulante_QTE_C;                   // 0x0568(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	int32                                         Entity_Id;                                         // 0x0570(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_574[0x4];                                      // 0x0574(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBP_QTE_Camera_C*                       QTECamera;                                         // 0x0578(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAbilityTask_WaitGameplayTagAdded*      异步任务_0;                                        // 0x0580(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          成功命中并释放派生;                                // 0x0588(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_589[0x7];                                      // 0x0589(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     技能目标;                                          // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Bulante_QTE(int32 EntryPoint);
@@ -58,13 +58,13 @@ public:
 	}
 };
 static_assert(alignof(UGA_Bulante_QTE_C) == 0x000008, "Wrong alignment on UGA_Bulante_QTE_C");
-static_assert(sizeof(UGA_Bulante_QTE_C) == 0x000588, "Wrong size on UGA_Bulante_QTE_C");
-static_assert(offsetof(UGA_Bulante_QTE_C, UberGraphFrame_GA_Bulante_QTE_C) == 0x000558, "Member 'UGA_Bulante_QTE_C::UberGraphFrame_GA_Bulante_QTE_C' has a wrong offset!");
-static_assert(offsetof(UGA_Bulante_QTE_C, Entity_Id) == 0x000560, "Member 'UGA_Bulante_QTE_C::Entity_Id' has a wrong offset!");
-static_assert(offsetof(UGA_Bulante_QTE_C, QTECamera) == 0x000568, "Member 'UGA_Bulante_QTE_C::QTECamera' has a wrong offset!");
-static_assert(offsetof(UGA_Bulante_QTE_C, 异步任务_0) == 0x000570, "Member 'UGA_Bulante_QTE_C::异步任务_0' has a wrong offset!");
-static_assert(offsetof(UGA_Bulante_QTE_C, 成功命中并释放派生) == 0x000578, "Member 'UGA_Bulante_QTE_C::成功命中并释放派生' has a wrong offset!");
-static_assert(offsetof(UGA_Bulante_QTE_C, 技能目标) == 0x000580, "Member 'UGA_Bulante_QTE_C::技能目标' has a wrong offset!");
+static_assert(sizeof(UGA_Bulante_QTE_C) == 0x000598, "Wrong size on UGA_Bulante_QTE_C");
+static_assert(offsetof(UGA_Bulante_QTE_C, UberGraphFrame_GA_Bulante_QTE_C) == 0x000568, "Member 'UGA_Bulante_QTE_C::UberGraphFrame_GA_Bulante_QTE_C' has a wrong offset!");
+static_assert(offsetof(UGA_Bulante_QTE_C, Entity_Id) == 0x000570, "Member 'UGA_Bulante_QTE_C::Entity_Id' has a wrong offset!");
+static_assert(offsetof(UGA_Bulante_QTE_C, QTECamera) == 0x000578, "Member 'UGA_Bulante_QTE_C::QTECamera' has a wrong offset!");
+static_assert(offsetof(UGA_Bulante_QTE_C, 异步任务_0) == 0x000580, "Member 'UGA_Bulante_QTE_C::异步任务_0' has a wrong offset!");
+static_assert(offsetof(UGA_Bulante_QTE_C, 成功命中并释放派生) == 0x000588, "Member 'UGA_Bulante_QTE_C::成功命中并释放派生' has a wrong offset!");
+static_assert(offsetof(UGA_Bulante_QTE_C, 技能目标) == 0x000590, "Member 'UGA_Bulante_QTE_C::技能目标' has a wrong offset!");
 
 }
 

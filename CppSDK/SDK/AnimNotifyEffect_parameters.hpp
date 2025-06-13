@@ -56,20 +56,20 @@ static_assert(offsetof(AnimNotifyEffect_C_K2_PostChangeProperty, PropertyName) =
 static_assert(offsetof(AnimNotifyEffect_C_K2_PostChangeProperty, ReturnValue) == 0x00000C, "Member 'AnimNotifyEffect_C_K2_PostChangeProperty::ReturnValue' has a wrong offset!");
 
 // Function AnimNotifyEffect.AnimNotifyEffect_C.TraceDetectClimbStep
-// 0x0050 (0x0050 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct AnimNotifyEffect_C_TraceDetectClimbStep final
 {
 public:
-	class ATsBaseCharacter_C*                     outer;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     outer1;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             outTrans;                                          // 0x0010(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	struct FTransformDouble                       outTrans1;                                         // 0x0010(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
 static_assert(alignof(AnimNotifyEffect_C_TraceDetectClimbStep) == 0x000010, "Wrong alignment on AnimNotifyEffect_C_TraceDetectClimbStep");
-static_assert(sizeof(AnimNotifyEffect_C_TraceDetectClimbStep) == 0x000050, "Wrong size on AnimNotifyEffect_C_TraceDetectClimbStep");
-static_assert(offsetof(AnimNotifyEffect_C_TraceDetectClimbStep, outer) == 0x000000, "Member 'AnimNotifyEffect_C_TraceDetectClimbStep::outer' has a wrong offset!");
-static_assert(offsetof(AnimNotifyEffect_C_TraceDetectClimbStep, outTrans) == 0x000010, "Member 'AnimNotifyEffect_C_TraceDetectClimbStep::outTrans' has a wrong offset!");
-static_assert(offsetof(AnimNotifyEffect_C_TraceDetectClimbStep, ReturnValue) == 0x000040, "Member 'AnimNotifyEffect_C_TraceDetectClimbStep::ReturnValue' has a wrong offset!");
+static_assert(sizeof(AnimNotifyEffect_C_TraceDetectClimbStep) == 0x000060, "Wrong size on AnimNotifyEffect_C_TraceDetectClimbStep");
+static_assert(offsetof(AnimNotifyEffect_C_TraceDetectClimbStep, outer1) == 0x000000, "Member 'AnimNotifyEffect_C_TraceDetectClimbStep::outer1' has a wrong offset!");
+static_assert(offsetof(AnimNotifyEffect_C_TraceDetectClimbStep, outTrans1) == 0x000010, "Member 'AnimNotifyEffect_C_TraceDetectClimbStep::outTrans1' has a wrong offset!");
+static_assert(offsetof(AnimNotifyEffect_C_TraceDetectClimbStep, ReturnValue) == 0x000050, "Member 'AnimNotifyEffect_C_TraceDetectClimbStep::ReturnValue' has a wrong offset!");
 
 // Function AnimNotifyEffect.AnimNotifyEffect_C.IsDisablePostProcess
 // 0x0010 (0x0010 - 0x0000)

@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BPI_SceneBp.BPI_SceneBp_C
-// 0x0000 (0x0030 - 0x0030)
-class IBPI_SceneBp_C final : public IInterface
+// 0x0000 (0x0000 - 0x0000)
+class IBPI_SceneBp_C final
 {
 public:
 	void TickOutside();
@@ -38,9 +38,18 @@ public:
 	{
 		return GetDefaultObjImpl<IBPI_SceneBp_C>();
 	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
 };
-static_assert(alignof(IBPI_SceneBp_C) == 0x000008, "Wrong alignment on IBPI_SceneBp_C");
-static_assert(sizeof(IBPI_SceneBp_C) == 0x000030, "Wrong size on IBPI_SceneBp_C");
+static_assert(alignof(IBPI_SceneBp_C) == 0x000001, "Wrong alignment on IBPI_SceneBp_C");
+static_assert(sizeof(IBPI_SceneBp_C) == 0x000001, "Wrong size on IBPI_SceneBp_C");
 
 }
 

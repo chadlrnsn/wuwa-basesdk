@@ -17,57 +17,45 @@
 namespace SDK
 {
 
-// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.ExecuteUbergraph_BP_PerformanceDisableLight
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.DisableLightFun
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_PerformanceDisableLight_C::ExecuteUbergraph_BP_PerformanceDisableLight(int32 EntryPoint)
+void ABP_PerformanceDisableLight_C::DisableLightFun()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "ExecuteUbergraph_BP_PerformanceDisableLight");
-
-	Params::BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_PerformanceDisableLight Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.ReceiveDestroyed
-// (Event, Public, BlueprintEvent)
-
-void ABP_PerformanceDisableLight_C::ReceiveDestroyed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "ReceiveDestroyed");
+		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "DisableLightFun");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.EditorTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_PerformanceDisableLight_C::EditorTick(float DeltaSeconds)
+void ABP_PerformanceDisableLight_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "EditorTick");
+		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "UserConstructionScript");
 
-	Params::BP_PerformanceDisableLight_C_EditorTick Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.DeltaSeconds = DeltaSeconds;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_PerformanceDisableLight_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -91,45 +79,57 @@ void ABP_PerformanceDisableLight_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.EditorTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PerformanceDisableLight_C::ReceiveBeginPlay()
+void ABP_PerformanceDisableLight_C::EditorTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "EditorTick");
+
+	Params::BP_PerformanceDisableLight_C_EditorTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.ReceiveDestroyed
+// (Event, Public, BlueprintEvent)
+
+void ABP_PerformanceDisableLight_C::ReceiveDestroyed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "ReceiveDestroyed");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.ExecuteUbergraph_BP_PerformanceDisableLight
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PerformanceDisableLight_C::UserConstructionScript()
+void ABP_PerformanceDisableLight_C::ExecuteUbergraph_BP_PerformanceDisableLight(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "ExecuteUbergraph_BP_PerformanceDisableLight");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::BP_PerformanceDisableLight_C_ExecuteUbergraph_BP_PerformanceDisableLight Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function BP_PerformanceDisableLight.BP_PerformanceDisableLight_C.DisableLightFun
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_PerformanceDisableLight_C::DisableLightFun()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PerformanceDisableLight_C", "DisableLightFun");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

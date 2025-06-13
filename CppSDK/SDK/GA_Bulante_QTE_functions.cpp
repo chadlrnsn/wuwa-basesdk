@@ -208,7 +208,7 @@ void UGA_Bulante_QTE_C::OnTick_5D118C384AE61F1C80292E815E8E3B2A()
 // Function GA_Bulante_QTE.GA_Bulante_QTE_C.Added_21071CB943CD992BF8EFD6A36138EBF2
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FGameplayTag                     Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash)
 
 void UGA_Bulante_QTE_C::Added_21071CB943CD992BF8EFD6A36138EBF2(const struct FGameplayTag& Tag)
 {

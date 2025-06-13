@@ -20,12 +20,12 @@ namespace SDK
 // Function KuroDynamicAtlas.DynamicAtlasBlueprintLibrary.AddTextureAsync
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FSoftObjectPath>          InSoftObjectPath                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TDelegate<void(TArray<struct FDynamicAtlasSlotManagedHandle>& ManagedHandle)>CompleteCallback                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const class FString&                    InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FSoftObjectPath>&   InSoftObjectPath                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TDelegate<void(const TArray<struct FDynamicAtlasSlotManagedHandle>& ManagedHandle)>CompleteCallback                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UDynamicAtlasBlueprintLibrary::AddTextureAsync(const class FString& InAtlasTag, const TArray<struct FSoftObjectPath>& InSoftObjectPath, TDelegate<void(TArray<struct FDynamicAtlasSlotManagedHandle>& ManagedHandle)> CompleteCallback)
+bool UDynamicAtlasBlueprintLibrary::AddTextureAsync(const class FString& InAtlasTag, const TArray<struct FSoftObjectPath>& InSoftObjectPath, TDelegate<void(const TArray<struct FDynamicAtlasSlotManagedHandle>& ManagedHandle)> CompleteCallback)
 {
 	static class UFunction* Func = nullptr;
 
@@ -52,7 +52,7 @@ bool UDynamicAtlasBlueprintLibrary::AddTextureAsync(const class FString& InAtlas
 // Function KuroDynamicAtlas.DynamicAtlasBlueprintLibrary.CleanAllAtlas
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UDynamicAtlasBlueprintLibrary::CleanAllAtlas(const class FString& InAtlasTag)
 {
@@ -77,7 +77,7 @@ void UDynamicAtlasBlueprintLibrary::CleanAllAtlas(const class FString& InAtlasTa
 // Function KuroDynamicAtlas.DynamicAtlasBlueprintLibrary.HasOverrideSetting
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool UDynamicAtlasBlueprintLibrary::HasOverrideSetting(const class FString& InAtlasTag)
@@ -105,7 +105,7 @@ bool UDynamicAtlasBlueprintLibrary::HasOverrideSetting(const class FString& InAt
 // Function KuroDynamicAtlas.DynamicAtlasBlueprintLibrary.RebuildAllAtlas
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class FString                           InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UDynamicAtlasBlueprintLibrary::RebuildAllAtlas(const class FString& InAtlasTag)
 {
@@ -130,8 +130,8 @@ void UDynamicAtlasBlueprintLibrary::RebuildAllAtlas(const class FString& InAtlas
 // Function KuroDynamicAtlas.DynamicAtlasBlueprintLibrary.SetOverrideSetting
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FString                           InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FDynamicTextureAtlasSetting      InSetting                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+// const class FString&                    InAtlasTag                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FDynamicTextureAtlasSetting*     InSetting                                              (Parm, OutParm, NativeAccessSpecifierPublic)
 
 void UDynamicAtlasBlueprintLibrary::SetOverrideSetting(const class FString& InAtlasTag, struct FDynamicTextureAtlasSetting* InSetting)
 {

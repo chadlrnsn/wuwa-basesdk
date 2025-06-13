@@ -145,7 +145,7 @@ void UChaosDestructionListener::SetBreakingEventEnabled(bool bIsEnabled)
 // Function GeometryCollectionEngine.ChaosDestructionListener.SetBreakingEventRequestSettings
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FChaosBreakingEventRequestSettingsInSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FChaosBreakingEventRequestSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UChaosDestructionListener::SetBreakingEventRequestSettings(const struct FChaosBreakingEventRequestSettings& InSettings)
 {
@@ -195,7 +195,7 @@ void UChaosDestructionListener::SetCollisionEventEnabled(bool bIsEnabled)
 // Function GeometryCollectionEngine.ChaosDestructionListener.SetCollisionEventRequestSettings
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FChaosCollisionEventRequestSettingsInSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FChaosCollisionEventRequestSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UChaosDestructionListener::SetCollisionEventRequestSettings(const struct FChaosCollisionEventRequestSettings& InSettings)
 {
@@ -245,7 +245,7 @@ void UChaosDestructionListener::SetTrailingEventEnabled(bool bIsEnabled)
 // Function GeometryCollectionEngine.ChaosDestructionListener.SetTrailingEventRequestSettings
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FChaosTrailingEventRequestSettingsInSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FChaosTrailingEventRequestSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
 void UChaosDestructionListener::SetTrailingEventRequestSettings(const struct FChaosTrailingEventRequestSettings& InSettings)
 {
@@ -270,7 +270,7 @@ void UChaosDestructionListener::SetTrailingEventRequestSettings(const struct FCh
 // Function GeometryCollectionEngine.ChaosDestructionListener.SortBreakingEvents
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FChaosBreakingEventData>  BreakingEvents                                         (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FChaosBreakingEventData>& BreakingEvents                                         (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // EChaosBreakingSortMethod                SortMethod                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UChaosDestructionListener::SortBreakingEvents(TArray<struct FChaosBreakingEventData>& BreakingEvents, EChaosBreakingSortMethod SortMethod)
@@ -299,7 +299,7 @@ void UChaosDestructionListener::SortBreakingEvents(TArray<struct FChaosBreakingE
 // Function GeometryCollectionEngine.ChaosDestructionListener.SortCollisionEvents
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FChaosCollisionEventData> CollisionEvents                                        (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FChaosCollisionEventData>&CollisionEvents                                        (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // EChaosCollisionSortMethod               SortMethod                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UChaosDestructionListener::SortCollisionEvents(TArray<struct FChaosCollisionEventData>& CollisionEvents, EChaosCollisionSortMethod SortMethod)
@@ -328,7 +328,7 @@ void UChaosDestructionListener::SortCollisionEvents(TArray<struct FChaosCollisio
 // Function GeometryCollectionEngine.ChaosDestructionListener.SortTrailingEvents
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TArray<struct FChaosTrailingEventData>  TrailingEvents                                         (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<struct FChaosTrailingEventData>& TrailingEvents                                         (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 // EChaosTrailingSortMethod                SortMethod                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UChaosDestructionListener::SortTrailingEvents(TArray<struct FChaosTrailingEventData>& TrailingEvents, EChaosTrailingSortMethod SortMethod)
@@ -407,9 +407,9 @@ void AGeometryCollectionActor::ChangeObjectTypeRuntime(EObjectStateTypeEnum type
 // Function GeometryCollectionEngine.GeometryCollectionActor.RaycastSingle
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// struct FVector                          Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          End                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FHitResult                       OutHit                                                 (Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FVector&                   Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   End                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FHitResult*                      OutHit                                                 (Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 bool AGeometryCollectionActor::RaycastSingle(const struct FVector& Start, const struct FVector& End, struct FHitResult* OutHit) const
@@ -442,7 +442,7 @@ bool AGeometryCollectionActor::RaycastSingle(const struct FVector& Start, const 
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // float                                   Radius                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          Position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Position                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 void UGeometryCollectionComponent::ApplyKinematicField(float Radius, const struct FVector& Position)
 {
@@ -524,7 +524,7 @@ void UGeometryCollectionComponent::NetAbandonCluster(int32 TransformIndex)
 // Function GeometryCollectionEngine.GeometryCollectionComponent.OnRep_RepData
 // (Final, Native, Protected, HasOutParams)
 // Parameters:
-// struct FGeometryCollectionRepData       OldData                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FGeometryCollectionRepData&OldData                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UGeometryCollectionComponent::OnRep_RepData(const struct FGeometryCollectionRepData& OldData)
 {
@@ -549,7 +549,7 @@ void UGeometryCollectionComponent::OnRep_RepData(const struct FGeometryCollectio
 // Function GeometryCollectionEngine.GeometryCollectionComponent.ReceivePhysicsCollision
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FChaosPhysicsCollisionInfo       CollisionInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FChaosPhysicsCollisionInfo&CollisionInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UGeometryCollectionComponent::ReceivePhysicsCollision(const struct FChaosPhysicsCollisionInfo& CollisionInfo)
 {
@@ -594,7 +594,7 @@ void UGeometryCollectionComponent::SetNotifyBreaks(bool bNewNotifyBreaks)
 // Function GeometryCollectionEngine.SkeletalMeshSimulationComponent.ReceivePhysicsCollision
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FChaosPhysicsCollisionInfo       CollisionInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FChaosPhysicsCollisionInfo&CollisionInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void USkeletalMeshSimulationComponent::ReceivePhysicsCollision(const struct FChaosPhysicsCollisionInfo& CollisionInfo)
 {
@@ -633,7 +633,7 @@ void UStaticMeshSimulationComponent::ForceRecreatePhysicsState()
 // Function GeometryCollectionEngine.StaticMeshSimulationComponent.ReceivePhysicsCollision
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// struct FChaosPhysicsCollisionInfo       CollisionInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FChaosPhysicsCollisionInfo&CollisionInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 void UStaticMeshSimulationComponent::ReceivePhysicsCollision(const struct FChaosPhysicsCollisionInfo& CollisionInfo)
 {
